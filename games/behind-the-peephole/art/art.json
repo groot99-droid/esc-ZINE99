@@ -1,0 +1,1558 @@
+{
+ "game": "behind-the-peephole",
+ "count": 194,
+ "assets": [
+  {
+   "id": "ending-title-next-watcher",
+   "group": "title",
+   "title": "Ending-card lettering: The Next Watcher",
+   "w": 1600,
+   "h": 260,
+   "row": "Title lettering; the \"o\" a lit rose"
+  },
+  {
+   "id": "ending-title-open-door",
+   "group": "title",
+   "title": "Ending-card lettering: The Open Door",
+   "w": 1600,
+   "h": 260,
+   "row": "Title lettering; the \"o\" a lit rose"
+  },
+  {
+   "id": "ending-title-the-sitter",
+   "group": "title",
+   "title": "Ending-card lettering: The Sitter",
+   "w": 1600,
+   "h": 260,
+   "row": "Title lettering; the \"o\" a lit rose"
+  },
+  {
+   "id": "ending-title-under-the-door",
+   "group": "title",
+   "title": "Ending-card lettering: Under The Door",
+   "w": 1600,
+   "h": 260,
+   "row": "Title lettering; the \"o\" a lit rose"
+  },
+  {
+   "id": "ending-title-wrong-picture",
+   "group": "title",
+   "title": "Ending-card lettering: The Wrong Picture",
+   "w": 1600,
+   "h": 260,
+   "row": "Title lettering; the \"o\" a lit rose"
+  },
+  {
+   "id": "title-lettering",
+   "group": "title",
+   "title": "Title lettering: the o is a lit rose",
+   "w": 1600,
+   "h": 500,
+   "row": "Title lettering; the \"o\" a lit rose"
+  },
+  {
+   "id": "eye-at-own-rose",
+   "group": "figures",
+   "title": "An eye at your own rose, from the passage side",
+   "w": 480,
+   "h": 320,
+   "row": "Lew, Dora, Fenn, 3 poses each (Fenn from behind)"
+  },
+  {
+   "id": "sprite-dora-trolley",
+   "group": "figures",
+   "title": "Race sprite: Dora and the linen trolley",
+   "w": 640,
+   "h": 360,
+   "row": "Race sprites (watcher, Dora and trolley, Fenn, wire, seventh coin)"
+  },
+  {
+   "id": "sprite-fenn",
+   "group": "figures",
+   "title": "Race sprite: Fenn, from behind, at a rose",
+   "w": 480,
+   "h": 360,
+   "row": "Race sprites (watcher, Dora and trolley, Fenn, wire, seventh coin)"
+  },
+  {
+   "id": "sprite-watcher",
+   "group": "figures",
+   "title": "Race sprite: the watcher, walk, run and crawl",
+   "w": 840,
+   "h": 360,
+   "row": "Race sprites (watcher, Dora and trolley, Fenn, wire, seventh coin)"
+  },
+  {
+   "id": "gap-401",
+   "group": "backdrops",
+   "title": "Gap strip, 401: boots, red clay on the welt",
+   "w": 1600,
+   "h": 144,
+   "row": "Gap strips"
+  },
+  {
+   "id": "gap-402",
+   "group": "backdrops",
+   "title": "Gap strip, 402: an envelope under the main door",
+   "w": 1600,
+   "h": 144,
+   "row": "Gap strips"
+  },
+  {
+   "id": "gap-403",
+   "group": "backdrops",
+   "title": "Gap strip, 403: the case on its edge",
+   "w": 1600,
+   "h": 144,
+   "row": "Gap strips"
+  },
+  {
+   "id": "gap-404",
+   "group": "backdrops",
+   "title": "Gap strip, 404: a miniature under the bed",
+   "w": 1600,
+   "h": 144,
+   "row": "Gap strips"
+  },
+  {
+   "id": "gap-405",
+   "group": "backdrops",
+   "title": "Gap strip, 405: cables and cereal",
+   "w": 1600,
+   "h": 144,
+   "row": "Gap strips"
+  },
+  {
+   "id": "gap-406",
+   "group": "backdrops",
+   "title": "Gap strip, 406: two pairs of feet",
+   "w": 1600,
+   "h": 144,
+   "row": "Gap strips"
+  },
+  {
+   "id": "lens-own-door",
+   "group": "backdrops",
+   "title": "Your own rose, from inside: the passage at 2:14",
+   "w": 960,
+   "h": 960,
+   "row": "Room plates, gouache paint-over"
+  },
+  {
+   "id": "overlay-401-photograph",
+   "group": "backdrops",
+   "title": "Plate overlay, 401: the photograph, face up",
+   "w": 640,
+   "h": 480,
+   "row": "Plate overlays (case, towel, banner, boats, pinned pictures)"
+  },
+  {
+   "id": "overlay-402-needle",
+   "group": "backdrops",
+   "title": "Plate overlay, 402: the hollow needle",
+   "w": 640,
+   "h": 480,
+   "row": "Plate overlays (case, towel, banner, boats, pinned pictures)"
+  },
+  {
+   "id": "overlay-403-case",
+   "group": "backdrops",
+   "title": "Plate overlay, 403: the case that was not there yesterday",
+   "w": 640,
+   "h": 480,
+   "row": "Plate overlays (case, towel, banner, boats, pinned pictures)"
+  },
+  {
+   "id": "overlay-403-case-open",
+   "group": "backdrops",
+   "title": "Plate overlay, 403: the backing peeled",
+   "w": 640,
+   "h": 480,
+   "row": "Plate overlays (case, towel, banner, boats, pinned pictures)"
+  },
+  {
+   "id": "overlay-403-pictures-2",
+   "group": "backdrops",
+   "title": "Plate overlay, 403: two rivers pinned up",
+   "w": 640,
+   "h": 480,
+   "row": "Plate overlays (case, towel, banner, boats, pinned pictures)"
+  },
+  {
+   "id": "overlay-403-pictures-5",
+   "group": "backdrops",
+   "title": "Plate overlay, 403: five rivers, some dots filled",
+   "w": 640,
+   "h": 480,
+   "row": "Plate overlays (case, towel, banner, boats, pinned pictures)"
+  },
+  {
+   "id": "overlay-403-sitting",
+   "group": "backdrops",
+   "title": "Plate overlay, 403: the picture that faces the rose",
+   "w": 640,
+   "h": 480,
+   "row": "Plate overlays (case, towel, banner, boats, pinned pictures)"
+  },
+  {
+   "id": "overlay-403-sitting-again",
+   "group": "backdrops",
+   "title": "Plate overlay, 403: the picture that faces the rose, a second shift",
+   "w": 640,
+   "h": 480,
+   "row": "Plate overlays (case, towel, banner, boats, pinned pictures)"
+  },
+  {
+   "id": "overlay-404-miniature",
+   "group": "backdrops",
+   "title": "Plate overlay, 404: one miniature, into the sink",
+   "w": 640,
+   "h": 480,
+   "row": "Plate overlays (case, towel, banner, boats, pinned pictures)"
+  },
+  {
+   "id": "overlay-406-banner-rolled",
+   "group": "backdrops",
+   "title": "Plate overlay, 406: rolled and tied",
+   "w": 640,
+   "h": 480,
+   "row": "Plate overlays (case, towel, banner, boats, pinned pictures)"
+  },
+  {
+   "id": "overlay-406-banner-sewn",
+   "group": "backdrops",
+   "title": "Plate overlay, 406: one letter a night",
+   "w": 640,
+   "h": 480,
+   "row": "Plate overlays (case, towel, banner, boats, pinned pictures)"
+  },
+  {
+   "id": "overlay-406-boats-1",
+   "group": "backdrops",
+   "title": "Plate overlay, 406: 1 paper boat on the sill",
+   "w": 640,
+   "h": 480,
+   "row": "Plate overlays (case, towel, banner, boats, pinned pictures)"
+  },
+  {
+   "id": "overlay-406-boats-4",
+   "group": "backdrops",
+   "title": "Plate overlay, 406: 4 paper boats on the sill",
+   "w": 640,
+   "h": 480,
+   "row": "Plate overlays (case, towel, banner, boats, pinned pictures)"
+  },
+  {
+   "id": "overlay-406-boats-7",
+   "group": "backdrops",
+   "title": "Plate overlay, 406: 7 paper boats on the sill",
+   "w": 640,
+   "h": 480,
+   "row": "Plate overlays (case, towel, banner, boats, pinned pictures)"
+  },
+  {
+   "id": "overlay-406-towel",
+   "group": "backdrops",
+   "title": "Plate overlay, 406: terry cloth over the rose",
+   "w": 640,
+   "h": 480,
+   "row": "Plate overlays (case, towel, banner, boats, pinned pictures)"
+  },
+  {
+   "id": "passage-blackout",
+   "group": "backdrops",
+   "title": "Passage long section: lights out",
+   "w": 3200,
+   "h": 520,
+   "row": "Passage long section: lit, dark, blackout"
+  },
+  {
+   "id": "passage-dark",
+   "group": "backdrops",
+   "title": "Passage long section: the shift",
+   "w": 3200,
+   "h": 520,
+   "row": "Passage long section: lit, dark, blackout"
+  },
+  {
+   "id": "passage-lit",
+   "group": "backdrops",
+   "title": "Passage long section: sconces lit",
+   "w": 3200,
+   "h": 520,
+   "row": "Passage long section: lit, dark, blackout"
+  },
+  {
+   "id": "plate-402",
+   "group": "backdrops",
+   "title": "Room plate, 402: the chain, the bed, the television",
+   "w": 1280,
+   "h": 960,
+   "row": "Room plates, gouache paint-over"
+  },
+  {
+   "id": "plate-403",
+   "group": "backdrops",
+   "title": "Room plate, 403: the desk under the north window",
+   "w": 1280,
+   "h": 960,
+   "row": "Room plates, gouache paint-over"
+  },
+  {
+   "id": "back-fenn",
+   "group": "cards",
+   "title": "Another deck: the rose back with a nicked petal",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "back-hotel",
+   "group": "cards",
+   "title": "Deco deck: the hotel's own back",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "back-second-hand",
+   "group": "cards",
+   "title": "Another deck: the rose back, whole",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "card-dotted",
+   "group": "cards",
+   "title": "The dotted card: a watercolour brass dot",
+   "w": 300,
+   "h": 420,
+   "row": "Slipped and reply cards, single-stroke script"
+  },
+  {
+   "id": "deck-clubs-10",
+   "group": "cards",
+   "title": "Deco deck: 10 of clubs",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-clubs-2",
+   "group": "cards",
+   "title": "Deco deck: 2 of clubs",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-clubs-3",
+   "group": "cards",
+   "title": "Deco deck: 3 of clubs",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-clubs-4",
+   "group": "cards",
+   "title": "Deco deck: 4 of clubs",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-clubs-5",
+   "group": "cards",
+   "title": "Deco deck: 5 of clubs",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-clubs-6",
+   "group": "cards",
+   "title": "Deco deck: 6 of clubs",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-clubs-7",
+   "group": "cards",
+   "title": "Deco deck: 7 of clubs",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-clubs-8",
+   "group": "cards",
+   "title": "Deco deck: 8 of clubs",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-clubs-9",
+   "group": "cards",
+   "title": "Deco deck: 9 of clubs",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-clubs-ace",
+   "group": "cards",
+   "title": "Deco deck: ace of clubs",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-clubs-jack",
+   "group": "cards",
+   "title": "Deco deck: jack of clubs",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-clubs-king",
+   "group": "cards",
+   "title": "Deco deck: king of clubs",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-clubs-queen",
+   "group": "cards",
+   "title": "Deco deck: queen of clubs",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-diamonds-10",
+   "group": "cards",
+   "title": "Deco deck: 10 of diamonds",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-diamonds-2",
+   "group": "cards",
+   "title": "Deco deck: 2 of diamonds",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-diamonds-3",
+   "group": "cards",
+   "title": "Deco deck: 3 of diamonds",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-diamonds-4",
+   "group": "cards",
+   "title": "Deco deck: 4 of diamonds",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-diamonds-5",
+   "group": "cards",
+   "title": "Deco deck: 5 of diamonds",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-diamonds-6",
+   "group": "cards",
+   "title": "Deco deck: 6 of diamonds",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-diamonds-7",
+   "group": "cards",
+   "title": "Deco deck: 7 of diamonds",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-diamonds-8",
+   "group": "cards",
+   "title": "Deco deck: 8 of diamonds",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-diamonds-9",
+   "group": "cards",
+   "title": "Deco deck: 9 of diamonds",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-diamonds-ace",
+   "group": "cards",
+   "title": "Deco deck: ace of diamonds",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-diamonds-jack",
+   "group": "cards",
+   "title": "Deco deck: jack of diamonds",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-diamonds-king",
+   "group": "cards",
+   "title": "Deco deck: king of diamonds",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-diamonds-queen",
+   "group": "cards",
+   "title": "Deco deck: queen of diamonds",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-hearts-10",
+   "group": "cards",
+   "title": "Deco deck: 10 of hearts",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-hearts-2",
+   "group": "cards",
+   "title": "Deco deck: 2 of hearts",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-hearts-3",
+   "group": "cards",
+   "title": "Deco deck: 3 of hearts",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-hearts-4",
+   "group": "cards",
+   "title": "Deco deck: 4 of hearts",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-hearts-5",
+   "group": "cards",
+   "title": "Deco deck: 5 of hearts",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-hearts-6",
+   "group": "cards",
+   "title": "Deco deck: 6 of hearts",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-hearts-7",
+   "group": "cards",
+   "title": "Deco deck: 7 of hearts",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-hearts-8",
+   "group": "cards",
+   "title": "Deco deck: 8 of hearts",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-hearts-9",
+   "group": "cards",
+   "title": "Deco deck: 9 of hearts",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-hearts-ace",
+   "group": "cards",
+   "title": "Deco deck: ace of hearts",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-hearts-jack",
+   "group": "cards",
+   "title": "Deco deck: jack of hearts",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-hearts-king",
+   "group": "cards",
+   "title": "Deco deck: king of hearts",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-hearts-queen",
+   "group": "cards",
+   "title": "Deco deck: queen of hearts",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-spades-10",
+   "group": "cards",
+   "title": "Deco deck: 10 of spades",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-spades-2",
+   "group": "cards",
+   "title": "Deco deck: 2 of spades",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-spades-3",
+   "group": "cards",
+   "title": "Deco deck: 3 of spades",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-spades-4",
+   "group": "cards",
+   "title": "Deco deck: 4 of spades",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-spades-5",
+   "group": "cards",
+   "title": "Deco deck: 5 of spades",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-spades-6",
+   "group": "cards",
+   "title": "Deco deck: 6 of spades",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-spades-7",
+   "group": "cards",
+   "title": "Deco deck: 7 of spades",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-spades-8",
+   "group": "cards",
+   "title": "Deco deck: 8 of spades",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-spades-9",
+   "group": "cards",
+   "title": "Deco deck: 9 of spades",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-spades-ace",
+   "group": "cards",
+   "title": "Deco deck: ace of spades",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-spades-jack",
+   "group": "cards",
+   "title": "Deco deck: jack of spades",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-spades-king",
+   "group": "cards",
+   "title": "Deco deck: king of spades",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "deck-spades-queen",
+   "group": "cards",
+   "title": "Deco deck: queen of spades",
+   "w": 300,
+   "h": 420,
+   "row": "Deco deck, 52 faces and 3 backs"
+  },
+  {
+   "id": "reply-blank",
+   "group": "cards",
+   "title": "Reply card: blank, with the pencil",
+   "w": 300,
+   "h": 420,
+   "row": "Slipped and reply cards, single-stroke script"
+  },
+  {
+   "id": "reply-who-paid",
+   "group": "cards",
+   "title": "Reply card: Who paid him?",
+   "w": 300,
+   "h": 420,
+   "row": "Slipped and reply cards, single-stroke script"
+  },
+  {
+   "id": "reply-who-was-here",
+   "group": "cards",
+   "title": "Reply card: Who was here before you?",
+   "w": 300,
+   "h": 420,
+   "row": "Slipped and reply cards, single-stroke script"
+  },
+  {
+   "id": "reply-who-watches",
+   "group": "cards",
+   "title": "Reply card: Who watches the watcher?",
+   "w": 300,
+   "h": 420,
+   "row": "Slipped and reply cards, single-stroke script"
+  },
+  {
+   "id": "slip-01",
+   "group": "cards",
+   "title": "Slipped card 1 (night 2)",
+   "w": 300,
+   "h": 420,
+   "row": "Slipped and reply cards, single-stroke script"
+  },
+  {
+   "id": "slip-02",
+   "group": "cards",
+   "title": "Slipped card 2 (night 2)",
+   "w": 300,
+   "h": 420,
+   "row": "Slipped and reply cards, single-stroke script"
+  },
+  {
+   "id": "slip-03",
+   "group": "cards",
+   "title": "Slipped card 3 (night 3)",
+   "w": 300,
+   "h": 420,
+   "row": "Slipped and reply cards, single-stroke script"
+  },
+  {
+   "id": "slip-04",
+   "group": "cards",
+   "title": "Slipped card 4 (night 3)",
+   "w": 300,
+   "h": 420,
+   "row": "Slipped and reply cards, single-stroke script"
+  },
+  {
+   "id": "slip-05",
+   "group": "cards",
+   "title": "Slipped card 5 (night 4)",
+   "w": 300,
+   "h": 420,
+   "row": "Slipped and reply cards, single-stroke script"
+  },
+  {
+   "id": "slip-06",
+   "group": "cards",
+   "title": "Slipped card 6 (night 4)",
+   "w": 300,
+   "h": 420,
+   "row": "Slipped and reply cards, single-stroke script"
+  },
+  {
+   "id": "slip-07",
+   "group": "cards",
+   "title": "Slipped card 7 (night 5)",
+   "w": 300,
+   "h": 420,
+   "row": "Slipped and reply cards, single-stroke script"
+  },
+  {
+   "id": "slip-08",
+   "group": "cards",
+   "title": "Slipped card 8 (night 5)",
+   "w": 300,
+   "h": 420,
+   "row": "Slipped and reply cards, single-stroke script"
+  },
+  {
+   "id": "slip-09",
+   "group": "cards",
+   "title": "Slipped card 9 (night 6)",
+   "w": 300,
+   "h": 420,
+   "row": "Slipped and reply cards, single-stroke script"
+  },
+  {
+   "id": "slip-10",
+   "group": "cards",
+   "title": "Slipped card 10 (night 6)",
+   "w": 300,
+   "h": 420,
+   "row": "Slipped and reply cards, single-stroke script"
+  },
+  {
+   "id": "slip-11",
+   "group": "cards",
+   "title": "Slipped card 11 (night 7)",
+   "w": 300,
+   "h": 420,
+   "row": "Slipped and reply cards, single-stroke script"
+  },
+  {
+   "id": "slip-12",
+   "group": "cards",
+   "title": "Slipped card 12 (night 7)",
+   "w": 300,
+   "h": 420,
+   "row": "Slipped and reply cards, single-stroke script"
+  },
+  {
+   "id": "slip-second-hand",
+   "group": "cards",
+   "title": "A slipped card from the second hand, face down",
+   "w": 300,
+   "h": 420,
+   "row": "Slipped and reply cards, single-stroke script"
+  },
+  {
+   "id": "clue-calls",
+   "group": "pieces",
+   "title": "Clue kind: Calls",
+   "w": 160,
+   "h": 160,
+   "row": "Clue-kind icons, the seven details"
+  },
+  {
+   "id": "clue-clothing",
+   "group": "pieces",
+   "title": "Clue kind: Clothing",
+   "w": 160,
+   "h": 160,
+   "row": "Clue-kind icons, the seven details"
+  },
+  {
+   "id": "clue-hands",
+   "group": "pieces",
+   "title": "Clue kind: Hands",
+   "w": 160,
+   "h": 160,
+   "row": "Clue-kind icons, the seven details"
+  },
+  {
+   "id": "clue-luggage",
+   "group": "pieces",
+   "title": "Clue kind: Luggage",
+   "w": 160,
+   "h": 160,
+   "row": "Clue-kind icons, the seven details"
+  },
+  {
+   "id": "clue-rituals",
+   "group": "pieces",
+   "title": "Clue kind: Rituals",
+   "w": 160,
+   "h": 160,
+   "row": "Clue-kind icons, the seven details"
+  },
+  {
+   "id": "clue-television",
+   "group": "pieces",
+   "title": "Clue kind: Television",
+   "w": 160,
+   "h": 160,
+   "row": "Clue-kind icons, the seven details"
+  },
+  {
+   "id": "clue-visitors",
+   "group": "pieces",
+   "title": "Clue kind: Visitors",
+   "w": 160,
+   "h": 160,
+   "row": "Clue-kind icons, the seven details"
+  },
+  {
+   "id": "clue-watcher",
+   "group": "pieces",
+   "title": "Clue kind: Watcher",
+   "w": 160,
+   "h": 160,
+   "row": "Clue-kind icons, the seven details"
+  },
+  {
+   "id": "pin-bonded-house",
+   "group": "pieces",
+   "title": "Mosaic pin card: Bonded House",
+   "w": 260,
+   "h": 240,
+   "row": "Pin cards, clippings, typed slips"
+  },
+  {
+   "id": "pin-case",
+   "group": "pieces",
+   "title": "Mosaic pin card: The Case",
+   "w": 260,
+   "h": 240,
+   "row": "Pin cards, clippings, typed slips"
+  },
+  {
+   "id": "pin-drost",
+   "group": "pieces",
+   "title": "Mosaic pin card: Drost",
+   "w": 260,
+   "h": 240,
+   "row": "Pin cards, clippings, typed slips"
+  },
+  {
+   "id": "pin-fenn",
+   "group": "pieces",
+   "title": "Mosaic pin card: Fenn",
+   "w": 260,
+   "h": 240,
+   "row": "Pin cards, clippings, typed slips"
+  },
+  {
+   "id": "pin-gala",
+   "group": "pieces",
+   "title": "Mosaic pin card: The Gala",
+   "w": 260,
+   "h": 240,
+   "row": "Pin cards, clippings, typed slips"
+  },
+  {
+   "id": "pin-guest-401",
+   "group": "pieces",
+   "title": "Mosaic guest card: 401, the mercenary",
+   "w": 260,
+   "h": 360,
+   "row": "Pin cards, clippings, typed slips"
+  },
+  {
+   "id": "pin-guest-402",
+   "group": "pieces",
+   "title": "Mosaic guest card: 402, the whistleblower",
+   "w": 260,
+   "h": 360,
+   "row": "Pin cards, clippings, typed slips"
+  },
+  {
+   "id": "pin-guest-403",
+   "group": "pieces",
+   "title": "Mosaic guest card: 403, the art thief",
+   "w": 260,
+   "h": 360,
+   "row": "Pin cards, clippings, typed slips"
+  },
+  {
+   "id": "pin-guest-404",
+   "group": "pieces",
+   "title": "Mosaic guest card: 404, the undercover journalist",
+   "w": 260,
+   "h": 360,
+   "row": "Pin cards, clippings, typed slips"
+  },
+  {
+   "id": "pin-guest-405",
+   "group": "pieces",
+   "title": "Mosaic guest card: 405, the hacker",
+   "w": 260,
+   "h": 360,
+   "row": "Pin cards, clippings, typed slips"
+  },
+  {
+   "id": "pin-guest-406",
+   "group": "pieces",
+   "title": "Mosaic guest card: 406, the activist",
+   "w": 260,
+   "h": 360,
+   "row": "Pin cards, clippings, typed slips"
+  },
+  {
+   "id": "pin-ledger",
+   "group": "pieces",
+   "title": "Mosaic pin card: The Ledger",
+   "w": 260,
+   "h": 240,
+   "row": "Pin cards, clippings, typed slips"
+  },
+  {
+   "id": "pin-needle",
+   "group": "pieces",
+   "title": "Mosaic pin card: The Needle",
+   "w": 260,
+   "h": 240,
+   "row": "Pin cards, clippings, typed slips"
+  },
+  {
+   "id": "pin-photograph",
+   "group": "pieces",
+   "title": "Mosaic pin card: The Photograph",
+   "w": 260,
+   "h": 240,
+   "row": "Pin cards, clippings, typed slips"
+  },
+  {
+   "id": "pin-stranger",
+   "group": "pieces",
+   "title": "Mosaic pin card: The Stranger",
+   "w": 260,
+   "h": 240,
+   "row": "Pin cards, clippings, typed slips"
+  },
+  {
+   "id": "pin-wren",
+   "group": "pieces",
+   "title": "Mosaic pin card: Wren",
+   "w": 260,
+   "h": 240,
+   "row": "Pin cards, clippings, typed slips"
+  },
+  {
+   "id": "pin-you",
+   "group": "pieces",
+   "title": "Mosaic pin card: You",
+   "w": 260,
+   "h": 240,
+   "row": "Pin cards, clippings, typed slips"
+  },
+  {
+   "id": "question-gather",
+   "group": "pieces",
+   "title": "Mosaic question card: Why gather them here?",
+   "w": 320,
+   "h": 220,
+   "row": "Pin cards, clippings, typed slips"
+  },
+  {
+   "id": "question-give",
+   "group": "pieces",
+   "title": "Mosaic question card: What did she give him?",
+   "w": 320,
+   "h": 220,
+   "row": "Pin cards, clippings, typed slips"
+  },
+  {
+   "id": "question-guarding",
+   "group": "pieces",
+   "title": "Mosaic question card: Who is he guarding it for?",
+   "w": 320,
+   "h": 220,
+   "row": "Pin cards, clippings, typed slips"
+  },
+  {
+   "id": "question-sisters",
+   "group": "pieces",
+   "title": "Mosaic question card: Why did she call?",
+   "w": 320,
+   "h": 220,
+   "row": "Pin cards, clippings, typed slips"
+  },
+  {
+   "id": "question-take",
+   "group": "pieces",
+   "title": "Mosaic question card: What did she take?",
+   "w": 320,
+   "h": 220,
+   "row": "Pin cards, clippings, typed slips"
+  },
+  {
+   "id": "question-watcher",
+   "group": "pieces",
+   "title": "Mosaic question card: Who watches the watcher?",
+   "w": 320,
+   "h": 220,
+   "row": "Pin cards, clippings, typed slips"
+  },
+  {
+   "id": "sprite-bell-wire",
+   "group": "pieces",
+   "title": "Race sprite: the bell wire and its pull",
+   "w": 640,
+   "h": 300,
+   "row": "Race sprites (watcher, Dora and trolley, Fenn, wire, seventh coin)"
+  },
+  {
+   "id": "sprite-seventh-coin",
+   "group": "pieces",
+   "title": "Race sprite: the seventh coin",
+   "w": 480,
+   "h": 360,
+   "row": "Race sprites (watcher, Dora and trolley, Fenn, wire, seventh coin)"
+  },
+  {
+   "id": "watcher-aud",
+   "group": "pieces",
+   "title": "The seventh row, mark 4 of 5: Fenn's aud. column",
+   "w": 320,
+   "h": 220,
+   "row": "Clue-kind icons, the seven details"
+  },
+  {
+   "id": "watcher-bell",
+   "group": "pieces",
+   "title": "The seventh row, mark 3 of 5: The bare pull",
+   "w": 320,
+   "h": 220,
+   "row": "Clue-kind icons, the seven details"
+  },
+  {
+   "id": "watcher-chalk",
+   "group": "pieces",
+   "title": "The seventh row, mark 2 of 5: Dora's ticks",
+   "w": 320,
+   "h": 220,
+   "row": "Clue-kind icons, the seven details"
+  },
+  {
+   "id": "watcher-dots",
+   "group": "pieces",
+   "title": "The seventh row, mark 1 of 5: Mara's dots",
+   "w": 320,
+   "h": 220,
+   "row": "Clue-kind icons, the seven details"
+  },
+  {
+   "id": "watcher-ledger",
+   "group": "pieces",
+   "title": "The seventh row, mark 5 of 5: The ledger",
+   "w": 320,
+   "h": 220,
+   "row": "Clue-kind icons, the seven details"
+  },
+  {
+   "id": "chapter-dawn",
+   "group": "chapters",
+   "title": "Chapter card: Dawn: The last lens",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter cards: seven roses, n lit, the act's word"
+  },
+  {
+   "id": "chapter-n1",
+   "group": "chapters",
+   "title": "Chapter card: Night One: Returns",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter cards: seven roses, n lit, the act's word"
+  },
+  {
+   "id": "chapter-n2",
+   "group": "chapters",
+   "title": "Chapter card: Night Two: The Bell Board",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter cards: seven roses, n lit, the act's word"
+  },
+  {
+   "id": "chapter-n3",
+   "group": "chapters",
+   "title": "Chapter card: Night Three: The Suitcase",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter cards: seven roses, n lit, the act's word"
+  },
+  {
+   "id": "chapter-n4",
+   "group": "chapters",
+   "title": "Chapter card: Night Four: Lost Property",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter cards: seven roses, n lit, the act's word"
+  },
+  {
+   "id": "chapter-n5",
+   "group": "chapters",
+   "title": "Chapter card: Night Five: The Confession Booth",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter cards: seven roses, n lit, the act's word"
+  },
+  {
+   "id": "chapter-n6",
+   "group": "chapters",
+   "title": "Chapter card: Night Six: One Hand",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter cards: seven roses, n lit, the act's word"
+  },
+  {
+   "id": "chapter-n7",
+   "group": "chapters",
+   "title": "Chapter card: Night Seven: The Lens in Your Door",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter cards: seven roses, n lit, the act's word"
+  },
+  {
+   "id": "stamp-amended",
+   "group": "ui",
+   "title": "Rubber stamp: AMENDED",
+   "w": 400,
+   "h": 240,
+   "row": "Forms S-1 to S-7 and four stamps"
+  },
+  {
+   "id": "stamp-carbon",
+   "group": "ui",
+   "title": "Rubber stamp: CARBON COPY",
+   "w": 400,
+   "h": 240,
+   "row": "Forms S-1 to S-7 and four stamps"
+  },
+  {
+   "id": "stamp-entered",
+   "group": "ui",
+   "title": "Rubber stamp: ENTERED",
+   "w": 400,
+   "h": 240,
+   "row": "Forms S-1 to S-7 and four stamps"
+  },
+  {
+   "id": "stamp-witness",
+   "group": "ui",
+   "title": "Rubber stamp: WITNESS",
+   "w": 400,
+   "h": 240,
+   "row": "Forms S-1 to S-7 and four stamps"
+  },
+  {
+   "id": "ui-bell-strip",
+   "group": "ui",
+   "title": "The bell board strip: six pulls, and a seventh with no label",
+   "w": 960,
+   "h": 300,
+   "row": "Ornaments (catch ring, watch face, bell strip, wren blind stamp, strip dots)"
+  },
+  {
+   "id": "ui-catch-ring-closed",
+   "group": "ui",
+   "title": "Catch ring: closed",
+   "w": 480,
+   "h": 480,
+   "row": "Ornaments (catch ring, watch face, bell strip, wren blind stamp, strip dots)"
+  },
+  {
+   "id": "ui-catch-ring-closing",
+   "group": "ui",
+   "title": "Catch ring: a third closed",
+   "w": 480,
+   "h": 480,
+   "row": "Ornaments (catch ring, watch face, bell strip, wren blind stamp, strip dots)"
+  },
+  {
+   "id": "ui-deco-divider",
+   "group": "ui",
+   "title": "Deco divider: stepped fans and a rose",
+   "w": 720,
+   "h": 120,
+   "row": "Ornaments (catch ring, watch face, bell strip, wren blind stamp, strip dots)"
+  },
+  {
+   "id": "ui-number-plates",
+   "group": "ui",
+   "title": "Brass number plates, 401 to 406",
+   "w": 720,
+   "h": 240,
+   "row": "Ornaments (catch ring, watch face, bell strip, wren blind stamp, strip dots)"
+  },
+  {
+   "id": "ui-rose-dark",
+   "group": "ui",
+   "title": "A brass rose, dark",
+   "w": 300,
+   "h": 300,
+   "row": "Ornaments (catch ring, watch face, bell strip, wren blind stamp, strip dots)"
+  },
+  {
+   "id": "ui-rose-lit",
+   "group": "ui",
+   "title": "A brass rose, lit",
+   "w": 300,
+   "h": 300,
+   "row": "Ornaments (catch ring, watch face, bell strip, wren blind stamp, strip dots)"
+  },
+  {
+   "id": "ui-seventh-row",
+   "group": "ui",
+   "title": "The seventh row: the notebook badge",
+   "w": 160,
+   "h": 160,
+   "row": "Ornaments (catch ring, watch face, bell strip, wren blind stamp, strip dots)"
+  },
+  {
+   "id": "ui-strip-dots",
+   "group": "ui",
+   "title": "The night strip: caught, missed, and the knock",
+   "w": 960,
+   "h": 220,
+   "row": "Ornaments (catch ring, watch face, bell strip, wren blind stamp, strip dots)"
+  },
+  {
+   "id": "ui-watch-face",
+   "group": "ui",
+   "title": "The pocket watch: the time, and minutes since the last bell",
+   "w": 480,
+   "h": 480,
+   "row": "Ornaments (catch ring, watch face, bell strip, wren blind stamp, strip dots)"
+  },
+  {
+   "id": "ui-wren-blind-stamp",
+   "group": "ui",
+   "title": "Wren's envelope: the blind stamp",
+   "w": 480,
+   "h": 360,
+   "row": "Ornaments (catch ring, watch face, bell strip, wren blind stamp, strip dots)"
+  },
+  {
+   "id": "clipping-caterers",
+   "group": "documents",
+   "title": "Evening paper clipping: Gala caterers briefed tonight",
+   "w": 440,
+   "h": 320,
+   "row": "Pin cards, clippings, typed slips"
+  },
+  {
+   "id": "clipping-listings",
+   "group": "documents",
+   "title": "Evening paper clipping: Tonight in town",
+   "w": 440,
+   "h": 320,
+   "row": "Pin cards, clippings, typed slips"
+  },
+  {
+   "id": "clipping-orchid",
+   "group": "documents",
+   "title": "Evening paper clipping: Orchid week at the Glasshouse",
+   "w": 440,
+   "h": 320,
+   "row": "Pin cards, clippings, typed slips"
+  },
+  {
+   "id": "doc-1971-page",
+   "group": "documents",
+   "title": "The 1971 page: a statement form signed by H. Wren, night auditor",
+   "w": 800,
+   "h": 1100,
+   "row": "Forms S-1 to S-7 and four stamps"
+  },
+  {
+   "id": "doc-second-tags",
+   "group": "documents",
+   "title": "Second shift: lost property, six new tags",
+   "w": 800,
+   "h": 480,
+   "row": "The six left things"
+  },
+  {
+   "id": "form-s1",
+   "group": "documents",
+   "title": "Statement form S-1: Room X Place",
+   "w": 800,
+   "h": 1100,
+   "row": "Forms S-1 to S-7 and four stamps"
+  },
+  {
+   "id": "form-s2",
+   "group": "documents",
+   "title": "Statement form S-2: Room X Object X Act",
+   "w": 800,
+   "h": 1100,
+   "row": "Forms S-1 to S-7 and four stamps"
+  },
+  {
+   "id": "form-s3",
+   "group": "documents",
+   "title": "Statement form S-3: Room X Who They Called X How It Ended",
+   "w": 800,
+   "h": 1100,
+   "row": "Forms S-1 to S-7 and four stamps"
+  },
+  {
+   "id": "form-s4",
+   "group": "documents",
+   "title": "Statement form S-4: Host Room X Visitor X What Passed",
+   "w": 800,
+   "h": 1100,
+   "row": "Forms S-1 to S-7 and four stamps"
+  },
+  {
+   "id": "form-s5",
+   "group": "documents",
+   "title": "Statement form S-5: Room X Name X Cover Story",
+   "w": 800,
+   "h": 1100,
+   "row": "Forms S-1 to S-7 and four stamps"
+  },
+  {
+   "id": "form-s6",
+   "group": "documents",
+   "title": "Statement form S-6: Room X Booked By X Night Of The 2:14 Knock",
+   "w": 800,
+   "h": 1100,
+   "row": "Forms S-1 to S-7 and four stamps"
+  },
+  {
+   "id": "form-s7",
+   "group": "documents",
+   "title": "Statement form S-7: the Account",
+   "w": 800,
+   "h": 1100,
+   "row": "Forms S-1 to S-7 and four stamps"
+  },
+  {
+   "id": "slip-row-401",
+   "group": "documents",
+   "title": "Typed slip: Room 401 Went To The Bonded House and came back at 01:30.",
+   "w": 560,
+   "h": 200,
+   "row": "Pin cards, clippings, typed slips"
+  },
+  {
+   "id": "slip-row-402",
+   "group": "documents",
+   "title": "Typed slip: Room 402 Went To The Glasshouse and came back at 23:25.",
+   "w": 560,
+   "h": 200,
+   "row": "Pin cards, clippings, typed slips"
+  },
+  {
+   "id": "slip-row-403",
+   "group": "documents",
+   "title": "Typed slip: Room 403 Went To The Fish Market and came back at 02:45.",
+   "w": 560,
+   "h": 200,
+   "row": "Pin cards, clippings, typed slips"
+  },
+  {
+   "id": "slip-row-406",
+   "group": "documents",
+   "title": "Typed slip: Room 406 Went To The Printworks and came back at 00:05.",
+   "w": 560,
+   "h": 200,
+   "row": "Pin cards, clippings, typed slips"
+  },
+  {
+   "id": "lock-drawer",
+   "group": "maps",
+   "title": "Lock plate: the desk drawer, three pins",
+   "w": 1200,
+   "h": 800,
+   "row": "Lock plates (drawer, stair, wafer, safe, lever)"
+  },
+  {
+   "id": "lock-lever",
+   "group": "maps",
+   "title": "Lock plate: your own door, two levers, worked from the wrong side",
+   "w": 1200,
+   "h": 800,
+   "row": "Lock plates (drawer, stair, wafer, safe, lever)"
+  },
+  {
+   "id": "lock-safe",
+   "group": "maps",
+   "title": "Lock plate: the back-office safe, three wheels",
+   "w": 1200,
+   "h": 800,
+   "row": "Lock plates (drawer, stair, wafer, safe, lever)"
+  },
+  {
+   "id": "lock-stair",
+   "group": "maps",
+   "title": "Lock plate: the stair door, five pins, two spools",
+   "w": 1200,
+   "h": 800,
+   "row": "Lock plates (drawer, stair, wafer, safe, lever)"
+  },
+  {
+   "id": "lock-wafer",
+   "group": "maps",
+   "title": "Lock plate: lost property, five wafers and the jiggler ring",
+   "w": 1200,
+   "h": 800,
+   "row": "Lock plates (drawer, stair, wafer, safe, lever)"
+  },
+  {
+   "id": "thread-guest",
+   "group": "thread",
+   "title": "Thread: a name written on the inside of a thing",
+   "w": 480,
+   "h": 480,
+   "row": ""
+  },
+  {
+   "id": "thread-own",
+   "group": "thread",
+   "title": "Thread: a clock stopped at 2:14",
+   "w": 480,
+   "h": 480,
+   "row": ""
+  }
+ ]
+}

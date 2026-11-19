@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160" role="img" aria-labelledby="ui-sigil-spear-t ui-sigil-spear-d">
+<title id="ui-sigil-spear-t">Sigil: spear (the Battlements)</title>
+<desc id="ui-sigil-spear-d">The spear sigil of the Battlements, cut into a bark token and filled with its strand's colour.</desc>
+<defs><filter id="ui-sigil-spear-bark1" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.04 0.012" numOctaves="4" seed="447"/><feDiffuseLighting surfaceScale="5" diffuseConstant="1.2" lighting-color="#ffc890"><feDistantLight azimuth="205" elevation="38"/></feDiffuseLighting><feBlend in2="SourceGraphic" mode="multiply"/><feComposite in2="SourceGraphic" operator="in"/></filter><radialGradient id="ui-sigil-spear-rg2" cx="0.35" cy="0.3" r="0.8"><stop offset="0%" stop-color="#fff6dc" stop-opacity="0.3"/><stop offset="100%" stop-color="#000000" stop-opacity="0.2"/></radialGradient></defs>
+<circle cx="80" cy="83" r="72" fill="#000" opacity="0.3"/>
+<circle cx="80" cy="80" r="72" fill="#b08a62" filter="url(#ui-sigil-spear-bark1)"/>
+<circle cx="80" cy="80" r="72" fill="none" stroke="#1b120c" stroke-width="4"/>
+<circle cx="80" cy="80" r="61" fill="#a8321e" opacity="0.9" stroke="#1b120c" stroke-width="2"/>
+<circle cx="80" cy="80" r="61" fill="url(#ui-sigil-spear-rg2)"/>
+<line x1="82" y1="126" x2="82" y2="59.5" stroke="#000" stroke-width="6" stroke-linecap="round"/>
+<polygon points="82,35 68,63 96,63" fill="#000"/>
+<line x1="66.2" y1="94.5" x2="97.8" y2="94.5" stroke="#000" stroke-width="4" stroke-linecap="round"/>
+<line x1="80" y1="124" x2="80" y2="57.5" stroke="#efe2c4" stroke-width="5.4" stroke-linecap="round"/>
+<polygon points="80,33 66,61 94,61" fill="#efe2c4"/>
+<line x1="64.2" y1="92.5" x2="95.8" y2="92.5" stroke="#efe2c4" stroke-width="3.6" stroke-linecap="round"/>
+</svg>

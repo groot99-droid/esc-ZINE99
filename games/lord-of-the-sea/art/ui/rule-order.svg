@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 90" width="800" height="90" role="img" aria-labelledby="rule-order-t rule-order-d">
+<title id="rule-order-t">Divider rule: Order</title>
+<desc id="rule-order-d">A divider for Company pages: a ruled double line with squared ends and the leaf mark at its centre.</desc>
+<defs><filter id="rule-order-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="62"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.2 0"/></filter><pattern id="rule-order-pat2" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(0)"><path d="M0,2 H4" stroke="#6B4A2B" stroke-width="0.5" opacity="0.1"/></pattern><pattern id="rule-order-pat3" width="47" height="47" patternUnits="userSpaceOnUse" patternTransform="rotate(90)"><path d="M0,23.5 H47" stroke="#6B4A2B" stroke-width="0.7" opacity="0.1"/></pattern><pattern id="rule-order-pat4" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(0)"><path d="M0,2 H4" stroke="#1F2E4A" stroke-width="1" opacity="1"/></pattern><pattern id="rule-order-pat5" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(0)"><path d="M0,2 H4" stroke="#1F2E4A" stroke-width="1" opacity="1"/></pattern></defs>
+<rect x="0" y="0" width="800" height="90" fill="#EFE6D0"/>
+<rect x="0" y="0" width="800" height="90" filter="url(#rule-order-grain1)"/>
+<rect x="0" y="0" width="800" height="90" fill="url(#rule-order-pat2)"/>
+<rect x="0" y="0" width="800" height="90" fill="url(#rule-order-pat3)"/>
+<path d="M40,40 H350 M40,50 H350 M450,40 H760 M450,50 H760" stroke="#1F2E4A" stroke-width="2"/>
+<rect x="60" y="37" width="270" height="16" fill="url(#rule-order-pat4)" opacity="0.6"/>
+<rect x="470" y="37" width="270" height="16" fill="url(#rule-order-pat5)" opacity="0.6"/>
+<rect x="30" y="35" width="10" height="20" fill="#1F2E4A"/>
+<rect x="760" y="35" width="10" height="20" fill="#1F2E4A"/>
+<polygon points="400,12 438,45 400,78 362,45" fill="#EFE6D0" stroke="#1F2E4A" stroke-width="2"/>
+<g opacity="1" fill="none" stroke="#1F2E4A" stroke-width="1.6" stroke-linecap="round">
+<circle cx="400" cy="45" r="17"/>
+<path d="M400,56.9 Q387.2,45 400,32.2 Q412.8,45 400,56.9 M400,56.9 V36.5"/>
+<path d="M394.9,44.1 L400,48.4 L405.1,44.1 M395.9,39 L400,43 L404.1,39" stroke-width="1"/>
+</g>
+</svg>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="slip-07-t slip-07-d">
+<title id="slip-07-t">Slipped card 7 (night 5)</title>
+<desc id="slip-07-d">Slipped card 7, found on night 5: the 6 of diamonds from another, river-grey deck, its face written across in blue-black ink: "Every season, six. Every season, one door at 2:14." A small ink drawing sits under the words.</desc>
+<defs><radialGradient id="slip-07-rg1" cx="0.5" cy="0.5" r="0.8"><stop offset="0%" stop-color="#fff" stop-opacity="0.3"/><stop offset="100%" stop-color="#6f7c80" stop-opacity="0.2"/></radialGradient></defs>
+<rect x="0" y="0" width="300" height="420" rx="18" fill="#f7f2e6" stroke="#6f7c80" stroke-width="2.4"/>
+<rect x="16" y="16" width="268" height="388" rx="8" fill="none" stroke="#6f7c80" stroke-width="1"/>
+<rect x="0" y="0" width="300" height="420" rx="18" fill="url(#slip-07-rg1)"/>
+<g opacity="0.8">
+<text x="40" y="58" font-size="34" font-family="serif" fill="#6f7c80" text-anchor="middle">6</text>
+<path d="M40,68.1 L47.2,78 L40,87.9 L32.8,78Z" fill="#6f7c80"/>
+</g>
+<g transform="rotate(180 150 210)" opacity="0.8">
+<text x="40" y="58" font-size="34" font-family="serif" fill="#6f7c80" text-anchor="middle">6</text>
+<path d="M40,68.1 L47.2,78 L40,87.9 L32.8,78Z" fill="#6f7c80"/>
+</g>
+<path d="M150,131.5 L210,214 L150,296.5 L90,214Z" fill="#a9b4b6" opacity="0.2"/>
+<text x="152" y="138" font-size="24" font-family="cursive" fill="#1a2a5a" font-style="italic" text-anchor="middle" transform="rotate(-1.5 152 138)">Every season, six.</text>
+<text x="152" y="168.7" font-size="24" font-family="cursive" fill="#1a2a5a" font-style="italic" text-anchor="middle" transform="rotate(-0.6 152 168.7)">Every season,</text>
+<text x="152" y="199.4" font-size="24" font-family="cursive" fill="#1a2a5a" font-style="italic" text-anchor="middle" transform="rotate(-0.5 152 199.4)">one door</text>
+<text x="152" y="230.2" font-size="24" font-family="cursive" fill="#1a2a5a" font-style="italic" text-anchor="middle" transform="rotate(-2.5 152 230.2)">at 2:14.</text>
+<circle cx="110" cy="338" r="5" fill="none" stroke="#1a2a5a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+<circle cx="126" cy="338" r="5" fill="none" stroke="#1a2a5a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+<circle cx="142" cy="338" r="5" fill="none" stroke="#1a2a5a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+<circle cx="158" cy="338" r="5" fill="none" stroke="#1a2a5a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+<circle cx="174" cy="338" r="5" fill="none" stroke="#1a2a5a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+<circle cx="190" cy="338" r="5" fill="none" stroke="#1a2a5a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+<circle cx="142" cy="338" r="5" fill="#1a2a5a"/>
+<circle cx="54" cy="370" r="13" fill="none" stroke="#8a826e" stroke-width="1"/>
+<text x="54" y="375" font-size="14" font-family="cursive" fill="#6b6456" text-anchor="middle">7</text>
+<circle cx="150" cy="30" r="4.5" fill="#3a3a3a"/>
+<circle cx="150" cy="30" r="7" fill="none" stroke="#8a826e" stroke-width="0.8"/>
+</svg>

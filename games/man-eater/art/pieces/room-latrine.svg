@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-labelledby="room-latrine-t room-latrine-d">
+<title id="room-latrine-t">Floor Plan room stamp: Latrine</title>
+<desc id="room-latrine-d">Blueprint room stamp for the latrine: three stalls against one wall, a row of basins against the other, and the window Fisk climbs out of.</desc>
+<defs><filter id="room-latrine-rough1"><feTurbulence type="turbulence" baseFrequency="0.1" numOctaves="2" seed="57" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.5"/></filter><clipPath id="room-latrine-clip2"><rect x="8" y="8" width="224" height="224"/></clipPath><filter id="room-latrine-spk3" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="86"/><feColorMatrix values="0 0 0 0 0.04  0 0 0 0 0.11  0 0 0 0 0.23  0 0 0 1 -0.4"/></filter><mask id="room-latrine-st4" maskUnits="userSpaceOnUse" x="51" y="196" width="138" height="36"><rect x="51" y="196" width="138" height="36" fill="#fff"/><rect x="76.2" y="204" width="1.6" height="20" fill="#000"/><rect x="90.2" y="204" width="1.6" height="20" fill="#000"/><rect x="104.2" y="204" width="1.6" height="20" fill="#000"/><rect x="118.2" y="204" width="1.6" height="20" fill="#000"/><rect x="132.2" y="204" width="1.6" height="20" fill="#000"/><rect x="146.2" y="204" width="1.6" height="20" fill="#000"/><rect x="160.2" y="204" width="1.6" height="20" fill="#000"/></mask></defs>
+<g filter="url(#room-latrine-rough1)">
+<rect x="8" y="8" width="224" height="224" rx="4" fill="#1D3F73"/>
+</g>
+<g clip-path="url(#room-latrine-clip2)">
+<rect x="0" y="0" width="240" height="240" filter="url(#room-latrine-spk3)"/>
+</g>
+<path d="M24,24V216M40,24V216M56,24V216M72,24V216M88,24V216M104,24V216M120,24V216M136,24V216M152,24V216M168,24V216M184,24V216M200,24V216M216,24V216M24,24H216M24,40H216M24,56H216M24,72H216M24,88H216M24,104H216M24,120H216M24,136H216M24,152H216M24,168H216M24,184H216M24,200H216M24,216H216" fill="none" stroke="#F4F7FF" stroke-width="0.4" opacity="0.2"/>
+<path d="M104.1,190.4 L81.1,189.8 L57.9,190.4 L34.4,189.4 L33.4,171.2 L34.2,150.8 L34.1,131.6 L34.4,112.3 L34.4,91.8 L34.2,73 L34.1,53.7 L34.4,34.3 L53.2,33.7 L72.7,34.6 L92,33.5 L110.2,34.5 L129.9,33.3 L148.7,33.9 L168.2,34 L187.4,33.6 L205.7,34.1 L206.3,53.4 L205.9,73.4 L205.9,92.9 L206.3,112.7 L206.3,130.9 L205.4,151.2 L205.4,171.2 L205.9,189.4 L183.4,189.4 L159.6,190.2 L136,189.8" fill="none" stroke-width="4" stroke-linecap="square" stroke-linejoin="miter" stroke="#F4F7FF"/>
+<path d="M104,190 v-32 a32,32 0 0 1 32,32" fill="none" stroke="#CFE0FF" stroke-width="1.5"/>
+<g mask="url(#room-latrine-st4)">
+<text x="71" y="220" font-size="20" font-family="monospace" fill="#F4F7FF" font-weight="bold" letter-spacing="2">LATRINE</text>
+</g>
+<path d="M42.5,42.1 L63.2,41.9 L83.4,41.6 L83.7,61.9 L84.3,82.4 L83.9,102.6 L62.9,101.4 L41.5,101.9 L42.1,81.8 L41.7,61.7 L42,42.2Z" fill="none" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" stroke="#F4F7FF"/>
+<ellipse cx="63" cy="64" rx="9" ry="12" fill="none" stroke="#CFE0FF" stroke-width="1.5"/>
+<path d="M84,41.3 L104.5,42 L125.5,42.6 L126.5,62.5 L125.7,82.7 L125.4,102 L104.4,102.1 L83.9,101.8 L84.7,82.4 L84.4,61.6 L84.6,42.3Z" fill="none" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" stroke="#F4F7FF"/>
+<ellipse cx="105" cy="64" rx="9" ry="12" fill="none" stroke="#CFE0FF" stroke-width="1.5"/>
+<path d="M126,42.6 L146.4,42.5 L167.3,42.6 L167.5,62.5 L168.5,81.4 L168.5,101.9 L147.3,101.7 L125.6,101.4 L126.4,81.4 L126.6,62.4 L125.4,41.8Z" fill="none" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" stroke="#F4F7FF"/>
+<ellipse cx="147" cy="64" rx="9" ry="12" fill="none" stroke="#CFE0FF" stroke-width="1.5"/>
+<circle cx="184" cy="60" r="9" fill="none" stroke="#F4F7FF" stroke-width="1.8"/>
+<circle cx="184" cy="60" r="2" fill="#F4F7FF"/>
+<circle cx="184" cy="92" r="9" fill="none" stroke="#F4F7FF" stroke-width="1.8"/>
+<circle cx="184" cy="92" r="2" fill="#F4F7FF"/>
+<circle cx="184" cy="124" r="9" fill="none" stroke="#F4F7FF" stroke-width="1.8"/>
+<circle cx="184" cy="124" r="2" fill="#F4F7FF"/>
+<circle cx="184" cy="156" r="9" fill="none" stroke="#F4F7FF" stroke-width="1.8"/>
+<circle cx="184" cy="156" r="2" fill="#F4F7FF"/>
+<rect x="30" y="110" width="8" height="40" fill="#1D3F73" stroke="#F4F7FF" stroke-width="1.5"/>
+</svg>

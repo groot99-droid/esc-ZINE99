@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-labelledby="stamp-sand-sea-t stamp-sand-sea-d">
+<title id="stamp-sand-sea-t">Tooling stamp: Sand Sea (place)</title>
+<desc id="stamp-sand-sea-d">A leather tile from the Place tray, stamped in gold: a breaking wave of sand. Below it, the word SAND SEA.</desc>
+<defs><clipPath id="stamp-sand-sea-clip1"><rect x="0" y="0" width="200" height="200" rx="10"/></clipPath><filter id="stamp-sand-sea-gr2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="2" seed="356"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.4 0"/></filter><filter id="stamp-sand-sea-gr3" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="445"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><radialGradient id="stamp-sand-sea-rg4" cx="0.5" cy="0.5" r="0.75"><stop offset="0%" stop-color="#000" stop-opacity="0"/><stop offset="60%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#140904" stop-opacity="0.5"/></radialGradient><linearGradient id="stamp-sand-sea-gold5" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="120" y2="84" spreadMethod="reflect"><stop offset="0" stop-color="#F0D488"/><stop offset="0.45" stop-color="#D4A23A"/><stop offset="0.75" stop-color="#9A6F1E"/><stop offset="1" stop-color="#D4A23A"/></linearGradient><filter id="stamp-sand-sea-gr6" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="584"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter></defs>
+<rect x="0" y="0" width="200" height="200" fill="#6B4423" rx="10"/>
+<rect x="0" y="0" width="200" height="200" filter="url(#stamp-sand-sea-gr2)" clip-path="url(#stamp-sand-sea-clip1)"/>
+<rect x="0" y="0" width="200" height="200" filter="url(#stamp-sand-sea-gr3)" clip-path="url(#stamp-sand-sea-clip1)"/>
+<rect x="0" y="0" width="200" height="200" fill="url(#stamp-sand-sea-rg4)" rx="10"/>
+<path d="M16,16 H184 V150 H16Z" fill="#4E3018" opacity="0.8"/>
+<path d="M16,16 H184 V150 H16Z" fill="none" stroke="#140904" stroke-width="5" opacity="0.5" transform="translate(1.5 2)"/>
+<path d="M16,16 H184 V150 H16Z" fill="none" stroke="url(#stamp-sand-sea-gold5)" stroke-width="3"/>
+<path d="M23,23 H177 V143 H23Z" fill="none" stroke="url(#stamp-sand-sea-gold5)" stroke-width="0.9"/>
+<g transform="translate(101.6 86.2) scale(1.06)" opacity="0.7">
+<path d="M-46,26 C-30,26 -22,-8 2,-22 C22,-32 38,-18 34,-4 C32,6 18,6 16,-4 C14,-12 24,-14 26,-8" fill="none" stroke="#140904" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-46,38 H46" fill="none" stroke="#140904" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-34,26 C-22,22 -12,4 2,-8 M-20,28 C-10,22 0,10 8,4 M-4,30 C6,26 14,18 20,10" fill="none" stroke="#140904" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M34.6,6a1.4,1.4 0 1,0 2.8,0a1.4,1.4 0 1,0 -2.8,0M40.6,14a1.4,1.4 0 1,0 2.8,0a1.4,1.4 0 1,0 -2.8,0M28.6,16a1.4,1.4 0 1,0 2.8,0a1.4,1.4 0 1,0 -2.8,0M38.6,24a1.4,1.4 0 1,0 2.8,0a1.4,1.4 0 1,0 -2.8,0M24.6,26a1.4,1.4 0 1,0 2.8,0a1.4,1.4 0 1,0 -2.8,0M42.6,30a1.4,1.4 0 1,0 2.8,0a1.4,1.4 0 1,0 -2.8,0M32.6,30a1.4,1.4 0 1,0 2.8,0a1.4,1.4 0 1,0 -2.8,0" fill="#140904"/>
+</g>
+<g transform="translate(100 84) scale(1.06)" opacity="1">
+<path d="M-46,26 C-30,26 -22,-8 2,-22 C22,-32 38,-18 34,-4 C32,6 18,6 16,-4 C14,-12 24,-14 26,-8" fill="none" stroke="url(#stamp-sand-sea-gold5)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-46,38 H46" fill="none" stroke="url(#stamp-sand-sea-gold5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-34,26 C-22,22 -12,4 2,-8 M-20,28 C-10,22 0,10 8,4 M-4,30 C6,26 14,18 20,10" fill="none" stroke="url(#stamp-sand-sea-gold5)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M34.6,6a1.4,1.4 0 1,0 2.8,0a1.4,1.4 0 1,0 -2.8,0M40.6,14a1.4,1.4 0 1,0 2.8,0a1.4,1.4 0 1,0 -2.8,0M28.6,16a1.4,1.4 0 1,0 2.8,0a1.4,1.4 0 1,0 -2.8,0M38.6,24a1.4,1.4 0 1,0 2.8,0a1.4,1.4 0 1,0 -2.8,0M24.6,26a1.4,1.4 0 1,0 2.8,0a1.4,1.4 0 1,0 -2.8,0M42.6,30a1.4,1.4 0 1,0 2.8,0a1.4,1.4 0 1,0 -2.8,0M32.6,30a1.4,1.4 0 1,0 2.8,0a1.4,1.4 0 1,0 -2.8,0" fill="url(#stamp-sand-sea-gold5)"/>
+</g>
+<text x="100.6" y="180.8" font-size="16" font-family="serif" fill="#1A0B05" opacity="0.8" text-anchor="middle" letter-spacing="2.4" font-weight="bold">SAND SEA</text>
+<text x="100" y="180" font-size="16" font-family="serif" fill="url(#stamp-sand-sea-gold5)" text-anchor="middle" letter-spacing="2.4" font-weight="bold">SAND SEA</text>
+<text x="99.8" y="179.7" font-size="16" font-family="serif" fill="none" stroke="#F0D488" stroke-width="0.4" opacity="0.6" text-anchor="middle" letter-spacing="2.4" font-weight="bold">SAND SEA</text>
+<path d="M30,160 H170" stroke="url(#stamp-sand-sea-gold5)" stroke-width="0.8" fill="none"/>
+<path d="M22,160 l4,-4 l4,4 l-4,4Z" fill="url(#stamp-sand-sea-gold5)"/>
+<path d="M178,160 l-4,-4 l-4,4 l4,4Z" fill="url(#stamp-sand-sea-gold5)"/>
+<rect x="0" y="0" width="200" height="200" filter="url(#stamp-sand-sea-gr6)"/>
+</svg>

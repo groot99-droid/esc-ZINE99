@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-labelledby="room-boiler-room-t room-boiler-room-d">
+<title id="room-boiler-room-t">Floor Plan room stamp: Boiler Room</title>
+<desc id="room-boiler-room-d">Blueprint room stamp for the boiler room: two boilers as ringed circles, the pipe run leaving through the wall, and a drain in the floor.</desc>
+<defs><filter id="room-boiler-room-rough1"><feTurbulence type="turbulence" baseFrequency="0.1" numOctaves="2" seed="341" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.5"/></filter><clipPath id="room-boiler-room-clip2"><rect x="8" y="8" width="224" height="224"/></clipPath><filter id="room-boiler-room-spk3" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="169"/><feColorMatrix values="0 0 0 0 0.04  0 0 0 0 0.11  0 0 0 0 0.23  0 0 0 1 -0.4"/></filter><mask id="room-boiler-room-st4" maskUnits="userSpaceOnUse" x="37.6" y="199.6" width="164.9" height="30.6"><rect x="37.6" y="199.6" width="164.9" height="30.6" fill="#fff"/><rect x="59" y="206.4" width="1.4" height="17" fill="#000"/><rect x="70.9" y="206.4" width="1.4" height="17" fill="#000"/><rect x="82.8" y="206.4" width="1.4" height="17" fill="#000"/><rect x="94.7" y="206.4" width="1.4" height="17" fill="#000"/><rect x="106.6" y="206.4" width="1.4" height="17" fill="#000"/><rect x="118.5" y="206.4" width="1.4" height="17" fill="#000"/><rect x="142.3" y="206.4" width="1.4" height="17" fill="#000"/><rect x="154.2" y="206.4" width="1.4" height="17" fill="#000"/><rect x="166.1" y="206.4" width="1.4" height="17" fill="#000"/><rect x="178" y="206.4" width="1.4" height="17" fill="#000"/></mask></defs>
+<g filter="url(#room-boiler-room-rough1)">
+<rect x="8" y="8" width="224" height="224" rx="4" fill="#1D3F73"/>
+</g>
+<g clip-path="url(#room-boiler-room-clip2)">
+<rect x="0" y="0" width="240" height="240" filter="url(#room-boiler-room-spk3)"/>
+</g>
+<path d="M24,24V216M40,24V216M56,24V216M72,24V216M88,24V216M104,24V216M120,24V216M136,24V216M152,24V216M168,24V216M184,24V216M200,24V216M216,24V216M24,24H216M24,40H216M24,56H216M24,72H216M24,88H216M24,104H216M24,120H216M24,136H216M24,152H216M24,168H216M24,184H216M24,200H216M24,216H216" fill="none" stroke="#F4F7FF" stroke-width="0.4" opacity="0.2"/>
+<path d="M104.4,189.9 L80.4,189.9 L57.6,190 L34.4,189.7 L34.5,170.5 L34.2,151.6 L34.6,132.1 L33.7,111.7 L33.8,92.3 L33.8,73.4 L33.5,53.7 L34.2,34.3 L52.9,34.1 L71.6,34.1 L91.8,33.4 L110.8,34.1 L129.4,34.7 L148.2,34.4 L167.2,34.3 L187.4,33.4 L206.2,33.4 L206.4,53.5 L206.5,73.2 L205.3,92.4 L206.3,111.4 L205.6,131.8 L206.1,151.1 L205.4,170.6 L205.9,189.9 L182.8,189.5 L159.1,189.7 L135.8,189.4" fill="none" stroke-width="4" stroke-linecap="square" stroke-linejoin="miter" stroke="#F4F7FF"/>
+<path d="M104,190 v-32 a32,32 0 0 1 32,32" fill="none" stroke="#CFE0FF" stroke-width="1.5"/>
+<g mask="url(#room-boiler-room-st4)">
+<text x="54.6" y="220" font-size="17" font-family="monospace" fill="#F4F7FF" font-weight="bold" letter-spacing="1.7">BOILER ROOM</text>
+</g>
+<path d="M111.5,90.4 L109.5,100.6 L104.4,109.1 L97.1,116.6 L87.1,120.2 L77.1,120 L66.4,115.8 L59.3,108.8 L53.6,99.8 L51.7,89.7 L53.4,79.4 L59.1,71.3 L67.4,64.4 L76.6,61.1 L87,61.1 L96.4,63.9 L104.5,71.1 L110.4,80.4 L112.4,90.2Z" fill="none" stroke-width="3.2" stroke-linecap="square" stroke-linejoin="miter" stroke="#F4F7FF"/>
+<circle cx="82" cy="90" r="18" fill="none" stroke="#CFE0FF" stroke-width="1.3" stroke-dasharray="4 3"/>
+<circle cx="82" cy="90" r="4" fill="#F4F7FF"/>
+<path d="M188.3,90.4 L186.2,100.8 L181.1,109.6 L173.2,115.3 L163,119 L152.7,119.2 L142.6,115.4 L134.8,108.7 L130.5,100.8 L127.4,90.6 L129.8,79.5 L134.8,70.7 L143.2,64.3 L152.6,60.1 L163.2,61 L172.6,64 L180.4,70.9 L185.9,79.4 L187.6,90.5Z" fill="none" stroke-width="3.2" stroke-linecap="square" stroke-linejoin="miter" stroke="#F4F7FF"/>
+<circle cx="158" cy="90" r="18" fill="none" stroke="#CFE0FF" stroke-width="1.3" stroke-dasharray="4 3"/>
+<circle cx="158" cy="90" r="4" fill="#F4F7FF"/>
+<path d="M82,120V154H210M158,120V154" fill="none" stroke="#F4F7FF" stroke-width="2.6"/>
+<rect x="108" y="166" width="24" height="12" fill="none" stroke="#CFE0FF" stroke-width="1.5"/>
+<path d="M112.0,166v12M117.0,166v12M122.0,166v12M127.0,166v12" stroke="#CFE0FF" stroke-width="1.1"/>
+</svg>

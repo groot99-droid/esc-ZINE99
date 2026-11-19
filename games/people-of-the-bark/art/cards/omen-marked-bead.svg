@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="omen-marked-bead-t omen-marked-bead-d">
+<title id="omen-marked-bead-t">Omen card: The Marked Bead</title>
+<desc id="omen-marked-bead-d">Omen card The Marked Bead: a bead of water as big as a house, measured against a ruled rod by a scholar with a quill. Suit Rain (blessing), the quill sigil, weight 2, with Pell's notches down the left edge.</desc>
+<defs><clipPath id="omen-marked-bead-clip1"><rect x="1" y="1" width="298" height="418" rx="16"/></clipPath><filter id="omen-marked-bead-grain2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="2" seed="223"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><radialGradient id="omen-marked-bead-vig3" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#6b4a20" stop-opacity="0"/><stop offset="100%" stop-color="#6b4a20" stop-opacity="0.3"/></radialGradient><clipPath id="omen-marked-bead-clip4"><rect x="0" y="0" width="244" height="236"/></clipPath><linearGradient id="omen-marked-bead-lg5" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fff6dc"/><stop offset="100%" stop-color="#cfdbe0"/></linearGradient></defs>
+<g clip-path="url(#omen-marked-bead-clip1)">
+<rect x="0" y="0" width="300" height="420" fill="#efe2c4"/>
+<rect x="0" y="0" width="300" height="420" filter="url(#omen-marked-bead-grain2)"/>
+<rect x="0" y="0" width="300" height="420" fill="url(#omen-marked-bead-vig3)"/>
+<rect x="14" y="14" width="272" height="392" rx="10" fill="none" stroke="#a8321e" stroke-width="1.4"/>
+<rect x="19" y="19" width="262" height="382" rx="5" fill="none" stroke="#2b1d14" stroke-width="1"/>
+<circle cx="40" cy="40" r="17" fill="#cfdbe0" stroke="#2b1d14" stroke-width="1.4"/>
+<path d="M40,30.2 Q49.4,43.9 40,49.6 Q30.6,43.9 40,30.2Z" fill="#2f4f8a"/>
+<circle cx="264" cy="40" r="7" fill="#f0c050" stroke="#2b1d14" stroke-width="1.2"/>
+<circle cx="262" cy="38" r="2" fill="#fff6dc" opacity="0.8"/>
+<circle cx="245" cy="40" r="7" fill="#f0c050" stroke="#2b1d14" stroke-width="1.2"/>
+<circle cx="243" cy="38" r="2" fill="#fff6dc" opacity="0.8"/>
+<text x="150" y="45" font-size="11" font-family="serif" fill="#a8321e" text-anchor="middle" letter-spacing="3">BLESSING</text>
+<g transform="translate(28 60)">
+<g clip-path="url(#omen-marked-bead-clip4)">
+<rect x="0" y="0" width="244" height="236" fill="#cfdbe0"/>
+<rect x="0" y="0" width="244" height="236" fill="url(#omen-marked-bead-lg5)" opacity="0.6"/>
+<path d="M0,191.7 C5.1,191.5 20.3,190.5 30.5,190.6 C40.7,190.7 50.8,192 61,192.2 C71.2,192.5 81.3,192.3 91.5,192 C101.7,191.7 111.8,190.9 122,190.6 C132.2,190.3 142.3,190.8 152.5,190.2 C162.7,189.7 172.8,187.7 183,187.2 C193.2,186.7 203.3,186.8 213.5,187.4 C223.7,188 238.9,190.3 244,190.9 L244,250 L0,250Z" fill="#c9a877" stroke="#2b1d14" stroke-width="1.6"/>
+<path d="M140.1,208.3 l11.4,1.3M106.8,219.5 l14.2,1.3M180.6,214.6 l15.9,3.6M131.9,211 l10,2.8M136.7,209.8 l9.3,3.2M35.5,217.4 l12.5,2.4M171,205.8 l10.6,1.3M111.9,214.2 l11.9,2.9M219.4,218.5 l13.9,2.3M16.7,204.1 l9.1,1.3M45.1,202.8 l11.6,4M42.4,218.3 l12.9,3.7M66.8,206.8 l11.7,3.4M132.8,217.8 l12.5,1.7M33.9,205.9 l9.9,2.9M12.4,207.5 l11.3,3.5" stroke="#2b1d14" stroke-width="1" fill="none" opacity="0.6"/>
+<ellipse cx="104" cy="118" rx="74" ry="68.1" fill="#2f4f8a" stroke="#2b1d14" stroke-width="1.5" opacity="0.9"/>
+<ellipse cx="78.1" cy="89.9" rx="20.7" ry="11.8" fill="#f4f8fa" opacity="0.8"/>
+<path d="M59.6,151.3 Q104,177.2 148.4,151.3" fill="none" stroke="#f4f8fa" stroke-width="1.2" opacity="0.6"/>
+<rect x="196" y="30" width="14" height="164" fill="#efe2c4" stroke="#2b1d14" stroke-width="1.4"/>
+<path d="M196,38 h14M196,50 h9M196,62 h14M196,74 h9M196,86 h14M196,98 h9M196,110 h14M196,122 h9M196,134 h14M196,146 h9M196,158 h14M196,170 h9M196,182 h14" stroke="#2b1d14" stroke-width="1.2"/>
+<line x1="30" y1="44" x2="196" y2="44" stroke="#a8321e" stroke-width="1.3" stroke-dasharray="5 4"/>
+<line x1="30" y1="190" x2="196" y2="190" stroke="#a8321e" stroke-width="1.3" stroke-dasharray="5 4"/>
+<path d="M30,44 l6,8 M30,44 l-6,8 M30,190 l6,-8 M30,190 l-6,-8 M30,44 V190" stroke="#a8321e" stroke-width="1.3" fill="none"/>
+<g transform="translate(224 218) rotate(0) scale(-0.9 0.9)">
+<path d="M-8,-64 L-14,-49 L-14,-42" fill="none" stroke="#2b1d14" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="-14" cy="-42" r="2.2" fill="#d9b88a" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M-4,-40 L-6.8,-20 L-9,0 l-5,0" fill="none" stroke="#2b1d14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4,-40 L5.6,-20 L9,0 l5,0" fill="none" stroke="#2b1d14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-9,-69 L9,-69 L11,-38 Q0,-34 -11,-38Z" fill="#7d6c5a" stroke="#2b1d14" stroke-width="1.4" stroke-linejoin="round"/>
+<path d="M-6,-64 L6,-64 L7,-30 L-7,-30Z" fill="#efe2c4" stroke="#2b1d14" stroke-width="1"/>
+<circle cx="2" cy="-46" r="2.2" fill="#2b1d14" opacity="0.7"/>
+<circle cx="-3" cy="-38" r="1.4" fill="#2b1d14" opacity="0.7"/>
+<circle cx="0" cy="-84" r="14" fill="#d9b88a" stroke="#2b1d14" stroke-width="1.4"/>
+<path d="M-14,-86 A14,14 0 0,1 12,-91 Q0,-90 -14,-86Z" fill="#3a281c"/>
+<circle cx="6" cy="-85" r="1.7" fill="#2b1d14"/>
+<path d="M8,-64 L17,-59 L20,-62" fill="none" stroke="#2b1d14" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="20" cy="-62" r="2.2" fill="#d9b88a" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M20,-62 q8,-18 2,-30 q-6,14 -2,30Z" fill="#efe2c4" stroke="#2b1d14" stroke-width="0.9"/>
+</g>
+</g>
+<rect x="0" y="0" width="244" height="236" fill="none" stroke="#2b1d14" stroke-width="1.8"/>
+<rect x="-3" y="-3" width="250" height="242" fill="none" stroke="#a8321e" stroke-width="0.9"/>
+</g>
+<text x="150" y="327" font-size="23" font-family="serif" fill="#2b1d14" text-anchor="middle" font-style="italic">The Marked Bead</text>
+<path d="M70,338 Q150,346 230,338" fill="none" stroke="#a8321e" stroke-width="1"/>
+<circle cx="150" cy="374" r="22" fill="#efe2c4" stroke="#2b1d14" stroke-width="1.4"/>
+<path d="M141.3,389.9 Q147.5,372.5 159.9,358.9 Q156.2,377.5 141.3,389.9Z" fill="none" stroke="#2f4f8a" stroke-width="2.4" stroke-linejoin="round"/>
+<line x1="141.3" y1="389.9" x2="155" y2="367.6" stroke="#2f4f8a" stroke-width="1.4"/>
+<path d="M126,374 C121.3,373 107.3,367 98,368 C88.7,369 79,379.3 70,380 C61,380.7 48.3,373.3 44,372" fill="none" stroke="#2b1d14" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M98,368 L108.3,368.7 L103.7,371.6 L99.2,370.6 L97,367.2 L97.6,363.2 L100.5,360.5 L103.9,359.9 L106.5,360.9" fill="none" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M98,368 Q88,363.8 81.9,375.2 Q91,377.8 98,368Z" fill="#5f7a3e" stroke="#2b1d14" stroke-width="0.9"/>
+<path d="M70,380 L59.7,368.1 L64.3,365.2 L68.8,366.2 L71,369.6 L70.4,373.6 L67.5,376.3 L64.1,376.9 L61.5,375.9" fill="none" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M70,380 Q80,375.8 86.1,387.2 Q77,389.8 70,380Z" fill="#f0c050" stroke="#2b1d14" stroke-width="0.9"/>
+<path d="M174,374 C178.7,373 192.7,367 202,368 C211.3,369 221,379.3 230,380 C239,380.7 251.7,373.3 256,372" fill="none" stroke="#2b1d14" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M202,368 L212.3,368.7 L207.7,371.6 L203.2,370.6 L201,367.2 L201.6,363.2 L204.5,360.5 L207.9,359.9 L210.5,360.9" fill="none" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M202,368 Q192,363.8 185.9,375.2 Q195,377.8 202,368Z" fill="#5f7a3e" stroke="#2b1d14" stroke-width="0.9"/>
+<path d="M230,380 L219.7,368.1 L224.3,365.2 L228.8,366.2 L231,369.6 L230.4,373.6 L227.5,376.3 L224.1,376.9 L221.5,375.9" fill="none" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M230,380 Q240,375.8 246.1,387.2 Q237,389.8 230,380Z" fill="#2f4f8a" stroke="#2b1d14" stroke-width="0.9"/>
+<polygon points="0,64 9,70 0,76" fill="#1b120c"/>
+<path d="M9,70 L0,76" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,80 9,86 0,92" fill="#1b120c"/>
+<path d="M9,86 L0,92" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,122 9,128 0,134" fill="#1b120c"/>
+<path d="M9,128 L0,134" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,138 9,144 0,150" fill="#1b120c"/>
+<path d="M9,144 L0,150" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,180 9,186 0,192" fill="#1b120c"/>
+<path d="M9,186 L0,192" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,196 9,202 0,208" fill="#1b120c"/>
+<path d="M9,202 L0,208" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,212 9,218 0,224" fill="#1b120c"/>
+<path d="M9,218 L0,224" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+</g>
+<rect x="1" y="1" width="298" height="418" rx="16" fill="none" stroke="#2b1d14" stroke-width="2"/>
+</svg>

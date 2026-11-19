@@ -1,0 +1,319 @@
+{
+  "state": [
+    {
+      "name": "readings",
+      "type": "ledger",
+      "default": [],
+      "description": "Every instrument reading Lira logs. One entry per reading. method is hand, relay or cipher; status is ok, error, forged, restored, doubted or misclassified. A node counts as verified only if its latest entry has method hand or cipher and status ok or restored.",
+      "fields": [
+        "node",
+        "book",
+        "instrument",
+        "method",
+        "status"
+      ]
+    },
+    {
+      "name": "margin_notes",
+      "type": "ledger",
+      "default": [],
+      "description": "The eight notes in another hand, and what the player did with each: ignored, circled, answered, acted, or answered-and-acted. The unsigned clandestine note of Book II is not one of them.",
+      "fields": [
+        "note",
+        "page",
+        "response"
+      ]
+    },
+    {
+      "name": "nodes_verified",
+      "type": "counter",
+      "default": 0,
+      "description": "How many of the twelve nodes N1 to N12 have a verified reading right now. N12 can never be verified, so the maximum is 11. Recomputed from readings whenever readings changes."
+    },
+    {
+      "name": "verified_share",
+      "type": "meter",
+      "default": 0,
+      "description": "The share of the twelve node inputs to the final model that were verified by hand, in percent: round(nodes_verified / 12 * 100). Frozen at the end of The Key III, before the descent. 60 or more (8 nodes) is a condition of The Archivist in Time.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "margin_notes_answered",
+      "type": "counter",
+      "default": 0,
+      "description": "How many of the eight margin notes the player wrote a reply beside (0 to 8). 6 or more is a condition of The Archivist in Time."
+    },
+    {
+      "name": "margin_notes_acted",
+      "type": "counter",
+      "default": 0,
+      "description": "How many margin notes the player acted on (re-sampled, re-checked, re-measured). Acting on note 1 corrects N1, note 4 marks a forgery in Journal Audit II, note 5 fixes N10, and note 7 highlights the damping test."
+    },
+    {
+      "name": "exposure",
+      "type": "meter",
+      "default": 0,
+      "description": "How visible Lira is to the Continuum. +10 publish note, +15 publish brief, +15 broadcast, +5 per margin reply, -3 per relay reading. At 40 or more, Journal Audit II gets two extra forgeries; at 70 or more, outpost and vault patrols double.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "relay_used",
+      "type": "counter",
+      "default": 0,
+      "description": "How many node readings were taken from the Continuum relay beacons instead of by hand."
+    },
+    {
+      "name": "gear_tier",
+      "type": "counter",
+      "default": 0,
+      "description": "Climbing gear, 0 to 3. Sets the highest band Lira can work in and how long her air lasts in the cross-section climb."
+    },
+    {
+      "name": "pattern_alpha",
+      "type": "bool",
+      "default": false,
+      "description": "Lira has recorded and named Pattern alpha in the Spore-Weaver valley."
+    },
+    {
+      "name": "fragment_salvaged",
+      "type": "bool",
+      "default": false,
+      "description": "Lira has the crystalline fragment from the storm-struck outpost."
+    },
+    {
+      "name": "hypothesis_1",
+      "type": "bool",
+      "default": false,
+      "description": "Hypothesis 1 is written in the journal."
+    },
+    {
+      "name": "note_published",
+      "type": "bool",
+      "default": false,
+      "description": "Lira published her cautious note at the end of Book I."
+    },
+    {
+      "name": "seeding_evidence",
+      "type": "bool",
+      "default": false,
+      "description": "The Assay II found non-natural isotope ratios."
+    },
+    {
+      "name": "veylor_named",
+      "type": "bool",
+      "default": false,
+      "description": "The sealed archive has given up the names Dr. Solace Veylor and Operation ReGenesis."
+    },
+    {
+      "name": "brief_redacted",
+      "type": "bool",
+      "default": false,
+      "description": "Lira's technical brief has been published and surgically redacted."
+    },
+    {
+      "name": "key_branches_added",
+      "type": "counter",
+      "default": 0,
+      "description": "New couplets the player has written into the dichotomous key when an anomaly broke it."
+    },
+    {
+      "name": "cipher_nodes_decoded",
+      "type": "counter",
+      "default": 0,
+      "description": "Nodes located correctly from songs and chants (N7 to N10), 0 to 4."
+    },
+    {
+      "name": "forgeries_caught",
+      "type": "counter",
+      "default": 0,
+      "description": "Altered or forged entries the player found in Journal Audits I and II."
+    },
+    {
+      "name": "forgeries_missed",
+      "type": "counter",
+      "default": 0,
+      "description": "Altered or forged entries the player let stand."
+    },
+    {
+      "name": "false_accusations",
+      "type": "counter",
+      "default": 0,
+      "description": "True entries in Lira's own hand that the player struck as forged."
+    },
+    {
+      "name": "second_genesis_proof",
+      "type": "bool",
+      "default": false,
+      "description": "Lira escaped the subterranean city with the logs that prove the Second Genesis."
+    },
+    {
+      "name": "broadcast_sent",
+      "type": "bool",
+      "default": false,
+      "description": "Lira broadcast her raw data dump to the settlements from the hideout."
+    },
+    {
+      "name": "joren_forgiven",
+      "type": "bool",
+      "default": false,
+      "description": "Lira took Joren back into the coalition in Book IV. Gives the eighth emitter and the Retune action."
+    },
+    {
+      "name": "emitters_available",
+      "type": "counter",
+      "default": 0,
+      "description": "Emitters for the Node Board II: 7, plus 1 if Joren is forgiven; the timing crystal from Under the lens III must be found or the count drops by 1."
+    },
+    {
+      "name": "home_terrace_held",
+      "type": "bool",
+      "default": false,
+      "description": "The terrace drill on the Node Board brought Hollin Terrace's network under the calm line. Also verifies node N11."
+    },
+    {
+      "name": "gamma_remeasured",
+      "type": "bool",
+      "default": false,
+      "description": "Lira measured the damping herself in The Assay III, so the Node Board II shows the true calm line instead of the Continuum's."
+    },
+    {
+      "name": "core_choice",
+      "type": "enum",
+      "default": "none",
+      "description": "What Lira does at the end of the Node Board II: fire the pulses (pulse), stand down (withhold), set Kade's charges (fire), or, offered only when gamma_remeasured and flyleaf_found are both true, withdraw her schedule and publish the correction to her own model, unsigned (withdraw; the ending Errata). Accepted 2026-11-15, the fourth choice built 2026-11-16.",
+      "values": [
+        "none",
+        "pulse",
+        "withhold",
+        "fire",
+        "withdraw"
+      ]
+    },
+    {
+      "name": "terraces_held",
+      "type": "counter",
+      "default": 0,
+      "description": "Terrace districts held when the pulses fire: one per damped node among N1 to N11, so 0 to 11; by design never 11."
+    },
+    {
+      "name": "pages_restored",
+      "type": "counter",
+      "default": 0,
+      "description": "Redacted passages the archivist restores in Journal Audit III, 0 to 12."
+    },
+    {
+      "name": "names_protected",
+      "type": "bool",
+      "default": false,
+      "description": "The archivist left every living person's name under the black bar."
+    },
+    {
+      "name": "book_closed",
+      "type": "bool",
+      "default": false,
+      "description": "At the last page the player chose to close the book rather than keep going."
+    },
+    {
+      "name": "bars_gauged",
+      "type": "counter",
+      "default": 0,
+      "description": "Surgical bars the player has measured with the bar gauge and called correctly (ruled with blue under the black is surgical; brushed is clumsy). 0 to 12: one surgical bar per stage, twelve across the four books, the long puzzle. Book I: The Key I, The Assay I, the Book I climb, Under the lens I. Book II: The Assay II, Under the lens II, and the four bars of the brief's Appendix C (ruled at the Excision Desk; the first gauged in Journal Audit I, all four read in Storm-Song Cipher III). Book III: the Book III climb and Journal Audit II. Read on the staff and plotted in b4-route (bars_route_plotted)."
+    },
+    {
+      "name": "pell_book_checked",
+      "type": "counter",
+      "default": 0,
+      "description": "Lines carried forward from Book I that the player checked against Pell's book in Journal Audit II. Pell's book is her copy of every Book I number, relay readings included, exactly as wrong as Lira was that day: it catches a forgery that misquotes Book I and cannot catch a seeded relay number. Accepted 2026-11-15."
+    },
+    {
+      "name": "flyleaf_found",
+      "type": "bool",
+      "default": false,
+      "description": "Lira opened the unindexed drawer in the Cinder Reach archive and found the key's first printing, initialled S.V., with her own Book I pencil couplet already on its flyleaf in a third hand. From then on every couplet in The Key is marked print, her pencil or his pencil. One of the two conditions of the accepted ending Errata, which is not in endings.json until phase 3. Accepted 2026-11-15."
+    },
+    {
+      "name": "desk_bars",
+      "type": "ledger",
+      "default": [],
+      "description": "What the player, as the archivist, did to each flagged line of Lira's brief at the Excision Desk (b2-excision-desk): cut the word only, or rule the whole line to a length. A line ruled whole is a black stratum in the escape (b3-escape), where it is cover from the lamps, and a struck-out figure (■) on that line's node on both Node Boards. A bar ruled to the crib's length carries the message and counts toward the twelve. Layer link 1. Accepted 2026-11-15, built 2026-11-16.",
+      "fields": [
+        "line",
+        "node",
+        "cut",
+        "length_mm",
+        "on_crib"
+      ]
+    },
+    {
+      "name": "desk_page_lost",
+      "type": "bool",
+      "default": false,
+      "description": "At the Excision Desk the player cut only the word on three lines, the supervisor took the page, and a clumsy censor blacked all of it with a brush: every stratum of the escape is brushed black and every node the page named is struck out. Accepted 2026-11-15, built 2026-11-16."
+    },
+    {
+      "name": "wolf_couplet",
+      "type": "enum",
+      "default": "none",
+      "description": "Whether the juvenile Ember Wolf was keyed with a new pencil couplet in The Key I (keyed) or went in under the old name (misclassified). The climbs read it: keyed, the shapes at 2,600 m are drawn as wolves whose trail marks warm ledges where air holds; otherwise they are grey shapes that knock Lira back a ledge. Layer link 3. Accepted 2026-11-15, built 2026-11-16.",
+      "values": [
+        "none",
+        "keyed",
+        "misclassified"
+      ]
+    },
+    {
+      "name": "cores_drilled",
+      "type": "counter",
+      "default": 0,
+      "description": "Rock cores taken at the marked strata of a climb (hold still 4 s while air drains). Each adds one true line in Lira's own hand to the next Assay's reference card; in The Assay III one of them contradicts the false line on the Continuum's printed card. 0 to 2 in the web build. Layer link 2. Accepted 2026-11-15, built 2026-11-16."
+    },
+    {
+      "name": "ringdown_measured",
+      "type": "bool",
+      "default": false,
+      "description": "In The Assay III the player pulsed the fragment and the scope drew its ring-down as Pattern α. The descent under Peak 12 (b4-descent) reads it: measured, the rhythm platforms carry beat marks at the ring-down's three arrivals; unmeasured, they carry none and are timed by eye. The second half of layer link 2. Accepted 2026-11-15, built 2026-11-16."
+    },
+    {
+      "name": "sluice_log_read",
+      "type": "bool",
+      "default": false,
+      "description": "On Joren's harvest terrace Lira read the logbook in the sluice house: the night the twin terrace drowned, the river level is a relay figure, in his own hand. On the Node Boards it is a witness token. Accepted 2026-11-15, built 2026-11-16."
+    },
+    {
+      "name": "pell_book_given",
+      "type": "bool",
+      "default": false,
+      "description": "While her family packs, Pell gave Lira her copy-book of Book I: the one off-site copy of those numbers. On the Node Boards it is a witness token; in Journal Audit it is already a tool (pell_book_checked). Accepted 2026-11-15, built 2026-11-16."
+    },
+    {
+      "name": "three_nights_kept",
+      "type": "bool",
+      "default": false,
+      "description": "In Three Nights (b3-three-nights) Lira told her own lines from the false ones with the field card, the clock and physics, after the loupe failed on her own hand. Accepted 2026-11-15, built 2026-11-16."
+    },
+    {
+      "name": "maker_mark_seen",
+      "type": "bool",
+      "default": false,
+      "description": "In the dream slide (b3-dream-slide) the player held the true channel, the ghost filaments that flicker at 12 Hz, until the lattice resolved at ×1 600 into ruled lines and a maker's mark, a 9. Accepted 2026-11-15, built 2026-11-16."
+    },
+    {
+      "name": "bars_route_plotted",
+      "type": "bool",
+      "default": false,
+      "description": "In b4-route, before the descent, Lira laid all twelve surgical bars under the staff (a bar's line is its pitch, 14 mm of it a rest) and walked them from the core under Peak 12 to the north shaft: the route the archivist ruled into her books. Read by The Archivist in Time, where it stands in for two of the six replies (4 replies and the route), by b4-collapse and by ep-audit-3, where an unplotted route is decoded by the archivist alone. Accepted 2026-11-15, built 2026-11-16."
+    },
+    {
+      "name": "testament_read",
+      "type": "bool",
+      "default": false,
+      "description": "A finished run exists in this save profile: an ending scene has been reached once. It is never reset. On a second playthrough the scenes that read it change: the relay at the Book I reading station is marked poisoned, the printed couplets of The Key carry Veylor's initials, Journal Audit shows the archivist's desk log beside her entries, and the Excision Desk shows what each cut will cost. A first run is unchanged. Accepted 2026-11-15, built 2026-11-16."
+    }
+  ]
+}

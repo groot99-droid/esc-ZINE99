@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" width="220" height="220" role="img" aria-labelledby="list-04-t list-04-d">
+<title id="list-04-t">The List, 4: a dog's bowl</title>
+<desc id="list-04-d">One tile of the List on Tam's notebook paper, in a single pencil weight with hatching: site 4 held a dog's bowl. The number is its place in the order the campground packed it; said backwards, the nineteen are the way out.</desc>
+<defs><filter id="list-04-blur1" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="8"/></filter><clipPath id="list-04-clip2"><polygon points="93,96.2 151,96.2 162.6,128.1 81.4,128.1"/></clipPath><filter id="list-04-rough3"><feTurbulence type="turbulence" baseFrequency="0.6" numOctaves="2" seed="121" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="1.6"/></filter><clipPath id="list-04-clip4"><polygon points="151,96.2 148.1,99.2 140.1,101.6 128.5,103 115.5,103 103.9,101.6 95.9,99.2 93,96.2 95.9,93.2 103.9,90.8 115.5,89.4 128.5,89.4 140.1,90.8 148.1,93.2"/></clipPath><filter id="list-04-tooth5" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.2" numOctaves="2" seed="52"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter></defs>
+<rect x="0" y="0" width="220" height="220" fill="#F6F1E2"/>
+<path d="M0,40h220M0,66h220M0,92h220M0,118h220M0,144h220M0,170h220M0,196h220" stroke="#A9C3CF" stroke-width="1" fill="none"/>
+<line x1="34" y1="0" x2="34" y2="220" stroke="#D58A7A" stroke-width="1.2"/>
+<ellipse cx="122" cy="104" rx="74" ry="62" fill="#4A4A48" opacity="0.1" filter="url(#list-04-blur1)"/>
+<polygon points="93,96.2 151,96.2 162.6,128.1 81.4,128.1" fill="#F8F4E8" opacity="0.9"/>
+<g clip-path="url(#list-04-clip2)">
+<path d="M142.4,46.6 L187.8,131.7 M138.5,48.7 L184,133.7 M134.2,51 L179.6,136.1 M129.9,53.3 L175.4,138.3 M125.2,55.8 L170.6,140.9 M121.1,58 L166.5,143 M117.6,59.8 L163,144.9 M112.9,62.3 L158.3,147.4 M109.2,64.3 L154.6,149.4 M104.8,66.7 L150.2,151.8 M100.5,69 L145.9,154 M97.6,70.5 L143,155.6 M93.3,72.8 L138.7,157.9 M89.8,74.7 L135.2,159.8 M85.7,76.9 L131.1,162 M81.7,79 L127.1,164.1 M77.1,81.4 L122.5,166.5 M72.5,83.9 L117.9,169 M68.4,86.1 L113.8,171.2 M64.7,88.1 L110.1,173.2 M60.5,90.3 L105.9,175.4" fill="none" stroke="#4A4A48" stroke-width="1.1" opacity="0.8"/>
+</g>
+<path d="M93,96.2 L103,96.8 L111.7,95.9 L121.9,96.8 L132.2,95.9 L141.8,95.6 L150.8,96.6 L155.3,106.6 L158.2,117.2 L162.4,128.7 L153.7,128.1 L144.5,127.7 L134.9,128.4 L126.9,128.5 L116.8,127.6 L108,128.1 L99.5,128.4 L90.9,128.8 L81.4,127.9 L85.2,116.9 L89.2,107.1 L92.7,95.9Z" fill="none" stroke="#4A4A48" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-04-rough3)"/>
+<path d="M92.6,96.8 L102.6,95.6 L112.8,95.6 L122.6,96.3 L132.2,96.8 L141.9,96 L151,96.8 L154.5,106.9 L158.3,117 L162.1,128.1 L153.1,127.4 L144.1,127.9 L135.3,127.6 L127.2,128.3 L117.2,128.7 L108.1,128.4 L98.7,127.8 L90.2,127.8 L81.1,127.8 L84.7,117.6 L89.6,106.8 L92.3,95.7Z" fill="none" stroke="#4A4A48" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-04-rough3)"/>
+<polygon points="151,96.2 148.1,99.2 140.1,101.6 128.5,103 115.5,103 103.9,101.6 95.9,99.2 93,96.2 95.9,93.2 103.9,90.8 115.5,89.4 128.5,89.4 140.1,90.8 148.1,93.2" fill="#F8F4E8" opacity="0.9"/>
+<g clip-path="url(#list-04-clip4)">
+<path d="M131.7,49.1 L168.8,107 M129,50.9 L166.1,108.8 M125.2,53.3 L162.3,111.2 M121.4,55.7 L158.6,113.6 M116.7,58.8 L153.8,116.7 M112.3,61.6 L149.4,119.5 M109.8,63.2 L146.9,121.1 M104.7,66.5 L141.8,124.4 M101.4,68.6 L138.5,126.5 M97.9,70.8 L135,128.7 M94.4,73.1 L131.5,131 M89.8,76 L126.9,133.9 M85.4,78.8 L122.5,136.7 M82.2,80.9 L119.3,138.8 M78.2,83.4 L115.3,141.3" fill="none" stroke="#4A4A48" stroke-width="1.1" opacity="0.8"/>
+</g>
+<path d="M151.3,96.2 L147.7,99.6 L140.6,102.3 L127.8,102.3 L114.9,102.3 L103.7,102 L95.7,99.5 L93.5,96.4 L96.1,92.8 L103.5,90.8 L114.9,89.8 L127.9,89.4 L139.6,90.9 L148.5,92.6 L151.3,96.6Z" fill="none" stroke="#4A4A48" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-04-rough3)"/>
+<path d="M151.1,95.7 L147.9,99.4 L139.9,100.9 L128,103.6 L115.4,103 L103.5,101.3 L95.7,98.9 L92.8,96.5 L96.4,92.5 L103.7,91.4 L114.9,90 L128.8,89.2 L139.8,90.4 L147.9,92.5 L151.5,95.6Z" fill="none" stroke="#4A4A48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-04-rough3)"/>
+<path d="M106.9,114.8 L117.2,114.2 L126.3,114.3 L136,114.3" fill="none" stroke="#4A4A48" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-04-rough3)"/>
+<polygon points="109.2,114.8 106.9,118.8 102.3,118.8 100,114.8 102.3,110.7 106.9,110.7" fill="#F8F4E8" opacity="0.9"/>
+<path d="M108.8,114.1 L106.6,118.5 L101.7,118.9 L100.5,114.8 L102.6,110.7 L106.6,110.7 L108.6,115.2Z" fill="none" stroke="#4A4A48" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-04-rough3)"/>
+<polygon points="144,114.8 141.7,118.8 137.1,118.8 134.8,114.8 137.1,110.7 141.7,110.7" fill="#F8F4E8" opacity="0.9"/>
+<path d="M144.7,115.4 L141.2,119.3 L136.5,118.4 L135.1,114.7 L137,111.3 L142.4,111.2 L144.6,115.1Z" fill="none" stroke="#4A4A48" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-04-rough3)"/>
+<text x="8" y="34" font-size="30" font-family="serif" fill="#4A4A48" transform="rotate(-0.6 8 34)" font-weight="bold" font-style="italic">4</text>
+<text x="42" y="198" font-size="19" font-family="serif" fill="#4A4A48" transform="rotate(-0.4 42 198)" font-style="italic">a dog's bowl</text>
+<text x="168" y="26" font-size="13" font-family="serif" fill="#77756f" transform="rotate(-3 168 26)" font-style="italic">then 3</text>
+<path d="M41,205.5 L53.6,206.2 L67.3,207.3 L78.3,205.8 L90.9,206.5 L103.9,206.3 L114.8,205.9 L128,206.9 L140.9,206.2" fill="none" stroke="#4A4A48" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6" filter="url(#list-04-rough3)"/>
+<rect x="0" y="0" width="220" height="220" filter="url(#list-04-tooth5)"/>
+</svg>

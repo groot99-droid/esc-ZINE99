@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="480" height="480" role="img" aria-labelledby="ui-watch-face-t ui-watch-face-d">
+<title id="ui-watch-face-t">The pocket watch: the time, and minutes since the last bell</title>
+<desc id="ui-watch-face-d">The pocket watch raised with Tab: a brass case and cream dial with deco numerals at the quarters, hands at fourteen minutes past two, and a second small dial that counts the minutes since the last bell.</desc>
+<defs><filter id="ui-watch-face-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.8" numOctaves="2" seed="402"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.4 0"/></filter><radialGradient id="ui-watch-face-rg2" cx="0.5" cy="0.5" r="0.75"><stop offset="0%" stop-color="#f1c77c" stop-opacity="0.2"/><stop offset="100%" stop-color="#000" stop-opacity="0.6"/></radialGradient><filter id="ui-watch-face-blur3" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="10"/></filter><radialGradient id="ui-watch-face-rg4" cx="0.4" cy="0.35" r="0.65"><stop offset="0%" stop-color="#e3c47a" stop-opacity="1"/><stop offset="70%" stop-color="#b8913f" stop-opacity="1"/><stop offset="100%" stop-color="#5d4518" stop-opacity="1"/></radialGradient><radialGradient id="ui-watch-face-rg5" cx="0.5" cy="0.5" r="0.6"><stop offset="0%" stop-color="#fff" stop-opacity="0.4"/><stop offset="100%" stop-color="#b8913f" stop-opacity="0.2"/></radialGradient><radialGradient id="ui-watch-face-rg6" cx="0.4" cy="0.35" r="0.65"><stop offset="0%" stop-color="#e3c47a" stop-opacity="1"/><stop offset="70%" stop-color="#b8913f" stop-opacity="1"/><stop offset="100%" stop-color="#5d4518" stop-opacity="1"/></radialGradient></defs>
+<rect x="0" y="0" width="480" height="480" fill="#173a28"/>
+<rect x="0" y="0" width="480" height="480" filter="url(#ui-watch-face-grain1)"/>
+<rect x="0" y="0" width="480" height="480" fill="url(#ui-watch-face-rg2)"/>
+<ellipse cx="248" cy="274" rx="186" ry="186" fill="#000" opacity="0.4" filter="url(#ui-watch-face-blur3)"/>
+<circle cx="240" cy="62" r="24" fill="none" stroke="#b8913f" stroke-width="9"/>
+<rect x="224" y="66" width="32" height="26" rx="4" fill="#b8913f"/>
+<circle cx="240" cy="262" r="182" fill="url(#ui-watch-face-rg4)" stroke="#5d4518" stroke-width="2"/>
+<circle cx="240" cy="262" r="160" fill="#f3ead2" stroke="#5d4518" stroke-width="2"/>
+<circle cx="240" cy="262" r="160" fill="url(#ui-watch-face-rg5)"/>
+<path d="M240,108L240,124M256.1,108.8L255.4,115.8M272,111.4L270.6,118.2M287.6,115.5L285.4,122.2M302.6,121.3L299.8,127.7M317,128.6L309,142.5M330.5,137.4L326.4,143.1M343,147.6L338.4,152.8M354.4,159L349.2,163.6M364.6,171.5L358.9,175.6M373.4,185L359.5,193M380.7,199.4L374.3,202.2M386.5,214.4L379.8,216.6M390.6,230L383.8,231.4M393.2,245.9L386.2,246.6M394,262L378,262M393.2,278.1L386.2,277.4M390.6,294L383.8,292.6M386.5,309.6L379.8,307.4M380.7,324.6L374.3,321.8M373.4,339L359.5,331M364.6,352.5L358.9,348.4M354.4,365L349.2,360.4M343,376.4L338.4,371.2M330.5,386.6L326.4,380.9M317,395.4L309,381.5M302.6,402.7L299.8,396.3M287.6,408.5L285.4,401.8M272,412.6L270.6,405.8M256.1,415.2L255.4,408.2M240,416L240,400M223.9,415.2L224.6,408.2M208,412.6L209.4,405.8M192.4,408.5L194.6,401.8M177.4,402.7L180.2,396.3M163,395.4L171,381.5M149.5,386.6L153.6,380.9M137,376.4L141.6,371.2M125.6,365L130.8,360.4M115.4,352.5L121.1,348.4M106.6,339L120.5,331M99.3,324.6L105.7,321.8M93.5,309.6L100.2,307.4M89.4,294L96.2,292.6M86.8,278.1L93.8,277.4M86,262L102,262M86.8,245.9L93.8,246.6M89.4,230L96.2,231.4M93.5,214.4L100.2,216.6M99.3,199.4L105.7,202.2M106.6,185L120.5,193M115.4,171.5L121.1,175.6M125.6,159L130.8,163.6M137,147.6L141.6,152.8M149.5,137.4L153.6,143.1M163,128.6L171,142.5M177.4,121.3L180.2,127.7M192.4,115.5L194.6,122.2M208,111.4L209.4,118.2M223.9,108.8L224.6,115.8" stroke="#1c1a17" stroke-width="1.6" fill="none"/>
+<g fill="none" stroke="#1c1a17" stroke-width="0.140" stroke-linecap="round" stroke-linejoin="round">
+<path d="M0,.2 L.24,0 V1" transform="translate(225.6 131) scale(30)"/>
+<path d="M.02,.24 A.26,.25 0 1 1 .46,.44 L0,1 H.54" transform="translate(238.2 131) scale(30)"/>
+</g>
+<g fill="none" stroke="#1c1a17" stroke-width="0.140" stroke-linecap="round" stroke-linejoin="round">
+<path d="M.04,.14 C.2,-.06 .54,0 .5,.26 C.48,.44 .3,.48 .2,.48 C.36,.48 .56,.56 .54,.76 C.52,1.04 .12,1.06 0,.84" transform="translate(347.9 247) scale(30)"/>
+</g>
+<g fill="none" stroke="#1c1a17" stroke-width="0.140" stroke-linecap="round" stroke-linejoin="round">
+<path d="M.08,.96 C.34,.9 .52,.6 .52,.3 A.26,.3 0 1 0 0,.3 A.26,.28 0 0 0 .5,.4" transform="translate(115.9 247) scale(30)"/>
+</g>
+<circle cx="240" cy="346" r="50" fill="#e9dfc4" stroke="#5d4518" stroke-width="1.6"/>
+<line x1="240" y1="302" x2="240" y2="308" stroke="#1c1a17" stroke-width="1.2"/>
+<line x1="262" y1="307.9" x2="259" y2="313.1" stroke="#1c1a17" stroke-width="1.2"/>
+<line x1="278.1" y1="324" x2="272.9" y2="327" stroke="#1c1a17" stroke-width="1.2"/>
+<line x1="284" y1="346" x2="278" y2="346" stroke="#1c1a17" stroke-width="1.2"/>
+<line x1="278.1" y1="368" x2="272.9" y2="365" stroke="#1c1a17" stroke-width="1.2"/>
+<line x1="262" y1="384.1" x2="259" y2="378.9" stroke="#1c1a17" stroke-width="1.2"/>
+<line x1="240" y1="390" x2="240" y2="384" stroke="#1c1a17" stroke-width="1.2"/>
+<line x1="218" y1="384.1" x2="221" y2="378.9" stroke="#1c1a17" stroke-width="1.2"/>
+<line x1="201.9" y1="368" x2="207.1" y2="365" stroke="#1c1a17" stroke-width="1.2"/>
+<line x1="196" y1="346" x2="202" y2="346" stroke="#1c1a17" stroke-width="1.2"/>
+<line x1="201.9" y1="324" x2="207.1" y2="327" stroke="#1c1a17" stroke-width="1.2"/>
+<line x1="218" y1="307.9" x2="221" y2="313.1" stroke="#1c1a17" stroke-width="1.2"/>
+<path d="M232,371.2 Q232,356 240,355.2 Q248,356 248,371.2 Q240,373.9 232,371.2Z" fill="url(#ui-watch-face-rg6)" stroke="#5d4518" stroke-width="1"/>
+<circle cx="240" cy="373.9" r="1.6" fill="#5d4518"/>
+<rect x="238.7" y="352.8" width="2.6" height="2.9" fill="#5d4518"/>
+<line x1="240" y1="346" x2="269.8" y2="342.9" stroke="#a3302a" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="240" cy="346" r="3.5" fill="#1c1a17"/>
+<line x1="225.3" y1="268.3" x2="315.5" y2="230" stroke="#1c1a17" stroke-width="9" stroke-linecap="round"/>
+<line x1="224.1" y1="263.7" x2="369.3" y2="248.4" stroke="#1c1a17" stroke-width="5" stroke-linecap="round"/>
+<circle cx="240" cy="262" r="8" fill="#b8913f" stroke="#1c1a17" stroke-width="2"/>
+<path d="M120,166 A150,150 0 0,1 220,112" fill="none" stroke="#fff" stroke-width="10" opacity="0.2" stroke-linecap="round"/>
+</svg>

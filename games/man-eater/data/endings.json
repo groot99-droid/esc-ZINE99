@@ -1,0 +1,166 @@
+{
+  "endings": [
+    {
+      "id": "rule_three",
+      "name": "Rule Three",
+      "as_written": false,
+      "priority": 10,
+      "when": {
+        "all": [
+          {
+            "is": "night7_choice",
+            "eq": "fence"
+          },
+          {
+            "is": "fence_crossed",
+            "eq": true
+          },
+          {
+            "is": "change",
+            "gte": 60
+          },
+          {
+            "ledger": "rules_broken",
+            "count_gte": 1,
+            "where": {
+              "rule": "base"
+            }
+          },
+          {
+            "is": "walked_back",
+            "eq": false
+          }
+        ]
+      },
+      "summary": "Fisk breaks the last rule and crosses the fence on night 7. Only a body that has eaten enough survives the cold, so he reaches the trees already changing. If Jax came, Jax stopped in the snow. His prints were photographed, not followed: the base had the route and let it be. 'Deep down, this would only spread.'",
+      "final_scenes": [
+        "n7_snow",
+        "n7_perimeter",
+        "e_tree_line"
+      ],
+      "cost": "He is loose, and he is what 'would only spread'. If Jax came, he is left in the snow."
+    },
+    {
+      "id": "one_set_of_prints",
+      "name": "One Set of Prints",
+      "as_written": false,
+      "priority": 20,
+      "when": {
+        "all": [
+          {
+            "is": "night7_choice",
+            "eq": "fence"
+          },
+          {
+            "is": "jax_carried",
+            "eq": true
+          },
+          {
+            "is": "walked_back",
+            "eq": true
+          },
+          {
+            "is": "strength",
+            "gte": 88
+          },
+          {
+            "ledger": "rules_broken",
+            "count_gte": 1,
+            "where": {
+              "rule": "base"
+            }
+          }
+        ]
+      },
+      "summary": "Accepted 2026-11-15. Fisk has eaten enough to carry Jax over the 400 m Jax's legs cannot cross. He sets him down at the trees with the list, and walks back to the wire treading every print he made. The base photographs one trail and counts no crossing: 'No crossing.' Then the bunk, the cloth, and the author's waking, unchanged.",
+      "cost": "He chose the zoo: he walked back in to be gassed in his bunk and wake as the author wrote it. The list Jax carries is written at whatever clarity that much eating left.",
+      "final_scenes": [
+        "n7_snow",
+        "n7_set_down",
+        "n7_snow_back",
+        "e_prints_bunk",
+        "e_zoo_wake"
+      ]
+    },
+    {
+      "id": "call_me_sam",
+      "name": "Call Me Sam",
+      "as_written": false,
+      "priority": 30,
+      "when": {
+        "all": [
+          {
+            "is": "jax_plan_answer",
+            "eq": "reported"
+          },
+          {
+            "is": "sam_offer_accepted",
+            "eq": true
+          },
+          {
+            "is": "night7_choice",
+            "eq": "stay"
+          },
+          {
+            "ledger": "rules_broken",
+            "count_lte": 2,
+            "where": {
+              "seen": "yes"
+            }
+          }
+        ]
+      },
+      "summary": "Fisk reported Jax and took Sam's key. He stays in on night 7 because staff are not called. He is kept on, and the game ends with him walking a new recruit down the tall halls and giving him the three rules. His sheet reads 'retained'.",
+      "final_scenes": [
+        "n7_bunk_stay",
+        "e_new_recruit"
+      ],
+      "cost": "Fisk is the result the project wanted: a changed man who still answers 'Sir yes Sir.' Jax's chair is the recruit's."
+    },
+    {
+      "id": "transferred",
+      "name": "Transferred",
+      "as_written": false,
+      "priority": 40,
+      "when": {
+        "all": [
+          {
+            "is": "night7_choice",
+            "eq": "stay"
+          },
+          {
+            "is": "nights_followed",
+            "lte": 0
+          },
+          {
+            "ledger": "meals",
+            "count_lte": 1,
+            "where": {
+              "kind": "ration"
+            }
+          }
+        ]
+      },
+      "summary": "Fisk refused the meat and never followed the call. He is too weak to work and no use to the project. He is put on a truck. Sam tells the bunk that he was transferred. In the cab, Duarte's letter is in the glovebox in front of him, and the truck slows at no town.",
+      "final_scenes": [
+        "n7_bunk_stay",
+        "e_transfer_truck"
+      ],
+      "cost": "He never learns what the base was for, and the letters he carried never leave the truck."
+    },
+    {
+      "id": "the_zoo",
+      "name": "The Zoo",
+      "as_written": true,
+      "priority": 50,
+      "when": true,
+      "summary": "As written. Fisk eats, follows the flute with Jax, meets the pale figure, is gassed and taken to the cave. Sam explains the project. Fisk wakes transformed, a tube in his arm, 'like an animal in a zoo'. Before the cave, the Schedule's last cell is stamped 'see previous'. Every other run that reaches night 7 without one of the four ways out ends here too: the base takes him another way.",
+      "final_scenes": [
+        "n7_windigo",
+        "e_cave",
+        "e_zoo_wake"
+      ],
+      "cost": "The mind. Nothing is added after the author's last line."
+    }
+  ]
+}

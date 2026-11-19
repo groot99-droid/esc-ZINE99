@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 140" width="1200" height="140" role="img" aria-labelledby="ui-night-clock-t ui-night-clock-d">
+<title id="ui-night-clock-t">The night clock</title>
+<desc id="ui-night-clock-d">The dollhouse night clock, 23:00 to 05:00, as a ruled lithograph scale: the hours past are hatched in night blue and a small amber lamp marks the present hour.</desc>
+<defs><filter id="ui-night-clock-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="201"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.2 0"/></filter><clipPath id="ui-night-clock-clip2"><rect x="90" y="69" width="544" height="18"/></clipPath><radialGradient id="ui-night-clock-rg3" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#E0902A" stop-opacity="0.9"/><stop offset="60%" stop-color="#E0902A" stop-opacity="0.3"/><stop offset="100%" stop-color="#E0902A" stop-opacity="0"/></radialGradient><radialGradient id="ui-night-clock-vig4" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#1a0f08" stop-opacity="0"/><stop offset="100%" stop-color="#1a0f08" stop-opacity="0.2"/></radialGradient></defs>
+<rect x="0" y="0" width="1200" height="140" fill="#e2d6c0"/>
+<rect x="0" y="0" width="1200" height="140" filter="url(#ui-night-clock-grain1)"/>
+<rect x="12" y="12" width="1176" height="116" fill="none" stroke="#2b1e15" stroke-width="2"/>
+<rect x="18" y="18" width="1164" height="104" fill="none" stroke="#2b1e15" stroke-width="0.7"/>
+<g clip-path="url(#ui-night-clock-clip2)">
+<path d="M463.4,-300.6 L740.6,179.4 M459.1,-298.1 L736.3,181.9 M454.8,-295.6 L731.9,184.4 M450.5,-293.1 L727.6,186.9 M446.1,-290.6 L723.3,189.4 M441.8,-288.1 L718.9,191.9 M437.5,-285.6 L714.6,194.4 M433.1,-283.1 L710.3,196.9 M428.8,-280.6 L706,199.4 M424.5,-278.1 L701.6,201.9 M420.1,-275.6 L697.3,204.4 M415.8,-273.1 L693,206.9 M411.5,-270.6 L688.6,209.4 M407.2,-268.1 L684.3,211.9 M402.8,-265.6 L680,214.4 M398.5,-263.1 L675.6,216.9 M394.2,-260.6 L671.3,219.4 M389.8,-258.1 L667,221.9 M385.5,-255.6 L662.7,224.4 M381.2,-253.1 L658.3,226.9 M376.8,-250.6 L654,229.4 M372.5,-248.1 L649.7,231.9 M368.2,-245.6 L645.3,234.4 M363.9,-243.1 L641,236.9 M359.5,-240.6 L636.7,239.4 M355.2,-238.1 L632.3,241.9 M350.9,-235.6 L628,244.4 M346.5,-233.1 L623.7,246.9 M342.2,-230.6 L619.3,249.4 M337.9,-228.1 L615,251.9 M333.5,-225.6 L610.7,254.4 M329.2,-223.1 L606.4,256.9 M324.9,-220.6 L602,259.4 M320.5,-218.1 L597.7,261.9 M316.2,-215.6 L593.4,264.4 M311.9,-213.1 L589,266.9 M307.6,-210.6 L584.7,269.4 M303.2,-208.1 L580.4,271.9 M298.9,-205.6 L576,274.4 M294.6,-203.1 L571.7,276.9 M290.2,-200.6 L567.4,279.4 M285.9,-198.1 L563.1,281.9 M281.6,-195.6 L558.7,284.4 M277.2,-193.1 L554.4,286.9 M272.9,-190.6 L550.1,289.4 M268.6,-188.1 L545.7,291.9 M264.3,-185.6 L541.4,294.4 M259.9,-183.1 L537.1,296.9 M255.6,-180.6 L532.7,299.4 M251.3,-178.1 L528.4,301.9 M246.9,-175.6 L524.1,304.4 M242.6,-173.1 L519.8,306.9 M238.3,-170.6 L515.4,309.4 M233.9,-168.1 L511.1,311.9 M229.6,-165.6 L506.8,314.4 M225.3,-163.1 L502.4,316.9 M221,-160.6 L498.1,319.4 M216.6,-158.1 L493.8,321.9 M212.3,-155.6 L489.4,324.4 M208,-153.1 L485.1,326.9 M203.6,-150.6 L480.8,329.4 M199.3,-148.1 L476.5,331.9 M195,-145.6 L472.1,334.4 M190.6,-143.1 L467.8,336.9 M186.3,-140.6 L463.5,339.4 M182,-138.1 L459.1,341.9 M177.7,-135.6 L454.8,344.4 M173.3,-133.1 L450.5,346.9 M169,-130.6 L446.1,349.4 M164.7,-128.1 L441.8,351.9 M160.3,-125.6 L437.5,354.4 M156,-123.1 L433.2,356.9 M151.7,-120.6 L428.8,359.4 M147.3,-118.1 L424.5,361.9 M143,-115.6 L420.2,364.4 M138.7,-113.1 L415.8,366.9 M134.4,-110.6 L411.5,369.4 M130,-108.1 L407.2,371.9 M125.7,-105.6 L402.8,374.4 M121.4,-103.1 L398.5,376.9 M117,-100.6 L394.2,379.4 M112.7,-98.1 L389.9,381.9 M108.4,-95.6 L385.5,384.4 M104,-93.1 L381.2,386.9 M99.7,-90.6 L376.9,389.4 M95.4,-88.1 L372.5,391.9 M91.1,-85.6 L368.2,394.4 M86.7,-83.1 L363.9,396.9 M82.4,-80.6 L359.5,399.4 M78.1,-78.1 L355.2,401.9 M73.7,-75.6 L350.9,404.4 M69.4,-73.1 L346.6,406.9 M65.1,-70.6 L342.2,409.4 M60.7,-68.1 L337.9,411.9 M56.4,-65.6 L333.6,414.4 M52.1,-63.1 L329.2,416.9 M47.8,-60.6 L324.9,419.4 M43.4,-58.1 L320.6,421.9 M39.1,-55.6 L316.2,424.4 M34.8,-53.1 L311.9,426.9 M30.4,-50.6 L307.6,429.4 M26.1,-48.1 L303.2,431.9 M21.8,-45.6 L298.9,434.4 M17.4,-43.1 L294.6,436.9 M13.1,-40.6 L290.3,439.4 M8.8,-38.1 L285.9,441.9 M4.5,-35.6 L281.6,444.4 M0.1,-33.1 L277.3,446.9 M-4.2,-30.6 L272.9,449.4 M-8.5,-28.1 L268.6,451.9 M-12.9,-25.6 L264.3,454.4" fill="none" stroke="#2E3A47" stroke-width="1.3"/>
+</g>
+<rect x="90" y="69" width="1020" height="18" fill="none" stroke="#2b1e15" stroke-width="1.4"/>
+<line x1="90" y1="60" x2="90" y2="96" stroke="#2b1e15" stroke-width="1.6"/>
+<text x="90" y="52" font-size="20" font-family="serif" fill="#2b1e15" text-anchor="middle">23:00</text>
+<line x1="132.5" y1="69" x2="132.5" y2="92" stroke="#2b1e15" stroke-width="0.8"/>
+<line x1="175" y1="69" x2="175" y2="92" stroke="#2b1e15" stroke-width="0.8"/>
+<line x1="217.5" y1="69" x2="217.5" y2="92" stroke="#2b1e15" stroke-width="0.8"/>
+<line x1="260" y1="60" x2="260" y2="96" stroke="#2b1e15" stroke-width="1.6"/>
+<text x="260" y="52" font-size="20" font-family="serif" fill="#2b1e15" text-anchor="middle">00:00</text>
+<line x1="302.5" y1="69" x2="302.5" y2="92" stroke="#2b1e15" stroke-width="0.8"/>
+<line x1="345" y1="69" x2="345" y2="92" stroke="#2b1e15" stroke-width="0.8"/>
+<line x1="387.5" y1="69" x2="387.5" y2="92" stroke="#2b1e15" stroke-width="0.8"/>
+<line x1="430" y1="60" x2="430" y2="96" stroke="#2b1e15" stroke-width="1.6"/>
+<text x="430" y="52" font-size="20" font-family="serif" fill="#2b1e15" text-anchor="middle">01:00</text>
+<line x1="472.5" y1="69" x2="472.5" y2="92" stroke="#2b1e15" stroke-width="0.8"/>
+<line x1="515" y1="69" x2="515" y2="92" stroke="#2b1e15" stroke-width="0.8"/>
+<line x1="557.5" y1="69" x2="557.5" y2="92" stroke="#2b1e15" stroke-width="0.8"/>
+<line x1="600" y1="60" x2="600" y2="96" stroke="#2b1e15" stroke-width="1.6"/>
+<text x="600" y="52" font-size="20" font-family="serif" fill="#2b1e15" text-anchor="middle">02:00</text>
+<line x1="642.5" y1="69" x2="642.5" y2="92" stroke="#2b1e15" stroke-width="0.8"/>
+<line x1="685" y1="69" x2="685" y2="92" stroke="#2b1e15" stroke-width="0.8"/>
+<line x1="727.5" y1="69" x2="727.5" y2="92" stroke="#2b1e15" stroke-width="0.8"/>
+<line x1="770" y1="60" x2="770" y2="96" stroke="#2b1e15" stroke-width="1.6"/>
+<text x="770" y="52" font-size="20" font-family="serif" fill="#2b1e15" text-anchor="middle">03:00</text>
+<line x1="812.5" y1="69" x2="812.5" y2="92" stroke="#2b1e15" stroke-width="0.8"/>
+<line x1="855" y1="69" x2="855" y2="92" stroke="#2b1e15" stroke-width="0.8"/>
+<line x1="897.5" y1="69" x2="897.5" y2="92" stroke="#2b1e15" stroke-width="0.8"/>
+<line x1="940" y1="60" x2="940" y2="96" stroke="#2b1e15" stroke-width="1.6"/>
+<text x="940" y="52" font-size="20" font-family="serif" fill="#2b1e15" text-anchor="middle">04:00</text>
+<line x1="982.5" y1="69" x2="982.5" y2="92" stroke="#2b1e15" stroke-width="0.8"/>
+<line x1="1025" y1="69" x2="1025" y2="92" stroke="#2b1e15" stroke-width="0.8"/>
+<line x1="1067.5" y1="69" x2="1067.5" y2="92" stroke="#2b1e15" stroke-width="0.8"/>
+<line x1="1110" y1="60" x2="1110" y2="96" stroke="#2b1e15" stroke-width="1.6"/>
+<text x="1110" y="52" font-size="20" font-family="serif" fill="#2b1e15" text-anchor="middle">05:00</text>
+<circle cx="634" cy="78" r="40" fill="url(#ui-night-clock-rg3)"/>
+<path d="M634,66L625,100L643,100z" fill="#E0902A" stroke="#2b1e15" stroke-width="1.2"/>
+<rect x="0" y="0" width="1200" height="140" fill="url(#ui-night-clock-vig4)"/>
+</svg>

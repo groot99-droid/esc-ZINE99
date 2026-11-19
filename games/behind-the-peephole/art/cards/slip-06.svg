@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="slip-06-t slip-06-d">
+<title id="slip-06-t">Slipped card 6 (night 4)</title>
+<desc id="slip-06-d">Slipped card 6, found on night 4: the 9 of spades from another, river-grey deck, its face written across in blue-black ink: "Lost property. Bottom drawer. My old book." A small ink drawing sits under the words.</desc>
+<defs><radialGradient id="slip-06-rg1" cx="0.5" cy="0.5" r="0.8"><stop offset="0%" stop-color="#fff" stop-opacity="0.3"/><stop offset="100%" stop-color="#6f7c80" stop-opacity="0.2"/></radialGradient></defs>
+<rect x="0" y="0" width="300" height="420" rx="18" fill="#f7f2e6" stroke="#6f7c80" stroke-width="2.4"/>
+<rect x="16" y="16" width="268" height="388" rx="8" fill="none" stroke="#6f7c80" stroke-width="1"/>
+<rect x="0" y="0" width="300" height="420" rx="18" fill="url(#slip-06-rg1)"/>
+<g opacity="0.8">
+<text x="40" y="58" font-size="34" font-family="serif" fill="#6f7c80" text-anchor="middle">9</text>
+<path d="M40,69 C52.6,78 50.8,87 40,81.6 C29.2,87 27.4,78 40,69Z M40,79.8 L43.6,88.8 L36.4,88.8Z" fill="#6f7c80"/>
+</g>
+<g transform="rotate(180 150 210)" opacity="0.8">
+<text x="40" y="58" font-size="34" font-family="serif" fill="#6f7c80" text-anchor="middle">9</text>
+<path d="M40,69 C52.6,78 50.8,87 40,81.6 C29.2,87 27.4,78 40,69Z M40,79.8 L43.6,88.8 L36.4,88.8Z" fill="#6f7c80"/>
+</g>
+<path d="M150,139 C255,214 240,289 150,244 C60,289 45,214 150,139Z M150,229 L180,304 L120,304Z" fill="#a9b4b6" opacity="0.2"/>
+<text x="152" y="150" font-size="27" font-family="cursive" fill="#1a2a5a" font-style="italic" text-anchor="middle" transform="rotate(1.9 152 150)">Lost property.</text>
+<text x="152" y="184.6" font-size="27" font-family="cursive" fill="#1a2a5a" font-style="italic" text-anchor="middle" transform="rotate(0.4 152 184.6)">Bottom drawer.</text>
+<text x="152" y="219.1" font-size="27" font-family="cursive" fill="#1a2a5a" font-style="italic" text-anchor="middle" transform="rotate(2.6 152 219.1)">My old book.</text>
+<path d="M116.5,317.5 L132.6,317.2 L150.4,317.4 L166.8,317.4 L183.9,318.2 L184.4,331.8 L183.8,346.7 L183.5,359.4 L167.1,360.3 L150,360 L132.8,360.7 L115.7,359.9 L115.4,346.5 L116.7,332 L115.9,317.3Z" fill="none" stroke="#1a2a5a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+<path d="M115.8,332.2 L133,332.5 L150.2,331.8 L166.9,331.6 L184.5,331.8" fill="none" stroke="#1a2a5a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+<path d="M116,346.2 L133.5,346.4 L149.6,345.4 L166.8,345.5 L183.4,346.1" fill="none" stroke="#1a2a5a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+<path d="M144,353 h12" fill="none" stroke="#1a2a5a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+<path d="M194,353 h14 m-5,-5 l5,5 l-5,5" transform="rotate(180 201 353)" fill="none" stroke="#1a2a5a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+<circle cx="54" cy="370" r="13" fill="none" stroke="#8a826e" stroke-width="1"/>
+<text x="54" y="375" font-size="14" font-family="cursive" fill="#6b6456" text-anchor="middle">6</text>
+<circle cx="150" cy="30" r="4.5" fill="#3a3a3a"/>
+<circle cx="150" cy="30" r="7" fill="none" stroke="#8a826e" stroke-width="0.8"/>
+</svg>

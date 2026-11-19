@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" width="320" height="220" role="img" aria-labelledby="watcher-bell-t watcher-bell-d">
+<title id="watcher-bell-t">The seventh row, mark 3 of 5: The bare pull</title>
+<desc id="watcher-bell-d">The third mark: the office bell board, six pulls with numbered cards and a seventh, longer, with an empty card, still swinging.</desc>
+<defs><clipPath id="watcher-bell-clip1"><rect x="14" y="38" width="292" height="128"/></clipPath><radialGradient id="watcher-bell-rg2" cx="0.4" cy="0.35" r="0.65"><stop offset="0%" stop-color="#e3c47a" stop-opacity="1"/><stop offset="70%" stop-color="#b8913f" stop-opacity="1"/><stop offset="100%" stop-color="#5d4518" stop-opacity="1"/></radialGradient><radialGradient id="watcher-bell-rg3" cx="0.4" cy="0.35" r="0.65"><stop offset="0%" stop-color="#e3c47a" stop-opacity="1"/><stop offset="70%" stop-color="#b8913f" stop-opacity="1"/><stop offset="100%" stop-color="#5d4518" stop-opacity="1"/></radialGradient><radialGradient id="watcher-bell-rg4" cx="0.4" cy="0.35" r="0.65"><stop offset="0%" stop-color="#e3c47a" stop-opacity="1"/><stop offset="70%" stop-color="#b8913f" stop-opacity="1"/><stop offset="100%" stop-color="#5d4518" stop-opacity="1"/></radialGradient><radialGradient id="watcher-bell-rg5" cx="0.4" cy="0.35" r="0.65"><stop offset="0%" stop-color="#e3c47a" stop-opacity="1"/><stop offset="70%" stop-color="#b8913f" stop-opacity="1"/><stop offset="100%" stop-color="#5d4518" stop-opacity="1"/></radialGradient><radialGradient id="watcher-bell-rg6" cx="0.4" cy="0.35" r="0.65"><stop offset="0%" stop-color="#e3c47a" stop-opacity="1"/><stop offset="70%" stop-color="#b8913f" stop-opacity="1"/><stop offset="100%" stop-color="#5d4518" stop-opacity="1"/></radialGradient><radialGradient id="watcher-bell-rg7" cx="0.4" cy="0.35" r="0.65"><stop offset="0%" stop-color="#e3c47a" stop-opacity="1"/><stop offset="70%" stop-color="#b8913f" stop-opacity="1"/><stop offset="100%" stop-color="#5d4518" stop-opacity="1"/></radialGradient><radialGradient id="watcher-bell-rg8" cx="0.4" cy="0.35" r="0.65"><stop offset="0%" stop-color="#e3c47a" stop-opacity="1"/><stop offset="70%" stop-color="#b8913f" stop-opacity="1"/><stop offset="100%" stop-color="#5d4518" stop-opacity="1"/></radialGradient></defs>
+<rect x="0" y="0" width="320" height="220" fill="#e9e1cb"/>
+<g transform="rotate(-1.2 160 108)">
+<rect x="15" y="15" width="300" height="200" fill="#000" opacity="0.3"/>
+<rect x="10" y="8" width="300" height="200" fill="#f6f1e4" stroke="#b8ab8a" stroke-width="0.8"/>
+<rect x="10" y="8" width="300" height="26" fill="#2a3a8c" opacity="0.9"/>
+<text x="20" y="26" font-size="13" font-family="monospace" fill="#f6f1e4" font-weight="bold" letter-spacing="2">WATCHER  3/5</text>
+<text x="300" y="26" font-size="11" font-family="monospace" fill="#f6f1e4" text-anchor="end" letter-spacing="1">THE BARE PULL</text>
+<g clip-path="url(#watcher-bell-clip1)">
+<rect x="14" y="38" width="292" height="128" fill="#2a1a10"/>
+<line x1="36" y1="44" x2="36" y2="92" stroke="#e3c47a" stroke-width="1.6"/>
+<circle cx="36" cy="98" r="7" fill="url(#watcher-bell-rg2)" stroke="#5d4518" stroke-width="1"/>
+<rect x="21" y="126" width="30" height="14" fill="#efe6cf" stroke="#5d4518" stroke-width="0.6"/>
+<text x="36" y="137" font-size="10" font-family="monospace" fill="#1c1a17" text-anchor="middle">401</text>
+<line x1="76" y1="44" x2="76" y2="92" stroke="#e3c47a" stroke-width="1.6"/>
+<circle cx="76" cy="98" r="7" fill="url(#watcher-bell-rg3)" stroke="#5d4518" stroke-width="1"/>
+<rect x="61" y="126" width="30" height="14" fill="#efe6cf" stroke="#5d4518" stroke-width="0.6"/>
+<text x="76" y="137" font-size="10" font-family="monospace" fill="#1c1a17" text-anchor="middle">402</text>
+<line x1="116" y1="44" x2="116" y2="92" stroke="#e3c47a" stroke-width="1.6"/>
+<circle cx="116" cy="98" r="7" fill="url(#watcher-bell-rg4)" stroke="#5d4518" stroke-width="1"/>
+<rect x="101" y="126" width="30" height="14" fill="#efe6cf" stroke="#5d4518" stroke-width="0.6"/>
+<text x="116" y="137" font-size="10" font-family="monospace" fill="#1c1a17" text-anchor="middle">403</text>
+<line x1="156" y1="44" x2="156" y2="92" stroke="#e3c47a" stroke-width="1.6"/>
+<circle cx="156" cy="98" r="7" fill="url(#watcher-bell-rg5)" stroke="#5d4518" stroke-width="1"/>
+<rect x="141" y="126" width="30" height="14" fill="#efe6cf" stroke="#5d4518" stroke-width="0.6"/>
+<text x="156" y="137" font-size="10" font-family="monospace" fill="#1c1a17" text-anchor="middle">404</text>
+<line x1="196" y1="44" x2="196" y2="92" stroke="#e3c47a" stroke-width="1.6"/>
+<circle cx="196" cy="98" r="7" fill="url(#watcher-bell-rg6)" stroke="#5d4518" stroke-width="1"/>
+<rect x="181" y="126" width="30" height="14" fill="#efe6cf" stroke="#5d4518" stroke-width="0.6"/>
+<text x="196" y="137" font-size="10" font-family="monospace" fill="#1c1a17" text-anchor="middle">405</text>
+<line x1="236" y1="44" x2="236" y2="92" stroke="#e3c47a" stroke-width="1.6"/>
+<circle cx="236" cy="98" r="7" fill="url(#watcher-bell-rg7)" stroke="#5d4518" stroke-width="1"/>
+<rect x="221" y="126" width="30" height="14" fill="#efe6cf" stroke="#5d4518" stroke-width="0.6"/>
+<text x="236" y="137" font-size="10" font-family="monospace" fill="#1c1a17" text-anchor="middle">406</text>
+<line x1="276" y1="44" x2="276" y2="112" stroke="#e3c47a" stroke-width="1.6"/>
+<circle cx="276" cy="118" r="7" fill="url(#watcher-bell-rg8)" stroke="#5d4518" stroke-width="1"/>
+<rect x="261" y="126" width="30" height="14" fill="none" stroke="#5d4518" stroke-width="0.8" stroke-dasharray="2 2"/>
+<path d="M264,110 q-6,8 0,16 M288,110 q6,8 0,16" fill="none" stroke="#f1c77c" stroke-width="1.4"/>
+</g>
+<line x1="20" y1="170" x2="300" y2="170" stroke="#2a3a8c" stroke-width="0.6" stroke-dasharray="2 3"/>
+<text x="19.4" y="191.6" font-size="12" font-family="monospace" fill="#1c1a17" opacity="0.9" letter-spacing="0.5">THE BOARD RINGS FOR THE OFFICE.</text>
+</g>
+</svg>

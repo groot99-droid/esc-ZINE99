@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 210" width="1200" height="210" role="img" aria-labelledby="lettering-archivist-in-time-t lettering-archivist-in-time-d">
+<title id="lettering-archivist-in-time-t">Ending lettering: The Archivist in Time</title>
+<desc id="lettering-archivist-in-time-d">The ending's name, The Archivist in Time, in iron-gall ink on laid paper between pencil guide lines, with its subtitle in pencil and one small sign of what it cost.</desc>
+<defs><filter id="lettering-archivist-in-time-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="144"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter><pattern id="lettering-archivist-in-time-pat2" width="46" height="20" patternUnits="userSpaceOnUse"><path d="M0,2.5H46M0,7.5H46M0,12.5H46M0,17.5H46" stroke="#3b2618" stroke-width="0.5" opacity="0.07"/><path d="M23,0V20" stroke="#3b2618" stroke-width="0.8" opacity="0.06"/></pattern><radialGradient id="lettering-archivist-in-time-vig3" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#7a5a2e" stop-opacity="0"/><stop offset="100%" stop-color="#7a5a2e" stop-opacity="0.2"/></radialGradient><filter id="lettering-archivist-in-time-blur4" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="4"/></filter><filter id="lettering-archivist-in-time-rough5"><feTurbulence type="turbulence" baseFrequency="0.3" numOctaves="2" seed="463" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2"/></filter><filter id="lettering-archivist-in-time-rough6"><feTurbulence type="turbulence" baseFrequency="0.5" numOctaves="2" seed="927" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="1.6"/></filter></defs>
+<rect x="0" y="0" width="1200" height="210" fill="#f1e8d2"/>
+<rect x="0" y="0" width="1200" height="210" filter="url(#lettering-archivist-in-time-grain1)"/>
+<rect x="0" y="0" width="1200" height="210" fill="url(#lettering-archivist-in-time-pat2)"/>
+<rect x="0" y="0" width="1200" height="210" fill="url(#lettering-archivist-in-time-vig3)"/>
+<line x1="40" y1="58.8" x2="1160" y2="58.3" stroke="#7d7a74" stroke-width="0.7" opacity="0.5"/>
+<line x1="40" y1="138.8" x2="1160" y2="138.7" stroke="#7d7a74" stroke-width="0.7" opacity="0.5"/>
+<line x1="40" y1="176.4" x2="1160" y2="175.3" stroke="#7d7a74" stroke-width="0.7" opacity="0.5"/>
+<line x1="72" y1="20" x2="72" y2="194" stroke="#b3212b" stroke-width="0.8" opacity="0.4"/>
+<text x="100" y="136" font-size="74" font-family="serif" fill="#8a5a2c" stroke="#8a5a2c" stroke-width="5.2" opacity="0.3" filter="url(#lettering-archivist-in-time-blur4)" font-style="italic" textLength="668.2" lengthAdjust="spacingAndGlyphs">The Archivist in Time</text>
+<text x="100" y="136" font-size="74" font-family="serif" fill="#3b2618" stroke="#3b2618" stroke-width="0.9" filter="url(#lettering-archivist-in-time-rough5)" font-style="italic" textLength="668.2" lengthAdjust="spacingAndGlyphs">The Archivist in Time</text>
+<text x="104" y="180" font-size="22" font-family="serif" font-style="italic" fill="#7d7a74" transform="rotate(-1 104 180)">her name on the cover</text>
+<path d="M891,73.4H1005M893,92.6H1004" stroke="#3c5a8c" stroke-width="1.1" fill="none" opacity="0.9"/>
+<rect x="899" y="73" width="98" height="20" fill="#3c5a8c" opacity="0.6"/>
+<rect x="900" y="74" width="96" height="18" fill="#141414" filter="url(#lettering-archivist-in-time-rough6)"/>
+<path d="M901,91.2l-1.1,-0.7M901,91l-5.1,-0.8M901,83.9l-2,0.1M901,74.9l-0.9,0.2M901,78.5l-3.2,-0.7M901,77.4l-1.2,-0M901,81.1l-1.7,-0.4M901,77.8l-0.8,-0.4M901,83.9l-1.3,0.1M901,85.1l-1.7,0.7M901,90.8l-2.7,0.6M901,77.1l-5.8,0.6M901,78.4l-2.2,0.7M901,79.4l-0.5,0.2M901,91.4l-1.5,0.6M901,75l-6.4,0.5M995,74.9l1.2,-0.4M995,86.8l0.4,-0.1M995,78.3l0.4,-0.5M995,79.5l1.2,-0.6M995,90.7l7,0.2M995,84.5l2.9,-0.4M995,77.1l1.3,0.4M995,85l2.9,-0.2M995,87.5l4.3,0.5M995,80.1l1.6,0.3M995,82.6l1.2,-0.8M995,76.2l3.9,-0.1M995,87.8l3,0.3M995,79.5l2,0.7M995,82.4l2.3,-0.8M995,91.1l3.4,-0.4" stroke="#141414" stroke-width="0.9" fill="none" stroke-linecap="round"/>
+<rect x="1010" y="72" width="104" height="22" fill="#3c5a8c" opacity="0.2"/>
+<path d="M1010,71H1114M1010,95H1114" stroke="#3c5a8c" stroke-width="1" opacity="0.6" fill="none"/>
+<text x="0" y="0" font-size="18" font-family="serif" font-style="italic" fill="#3c5a8c" transform="translate(900 128) skewX(24) rotate(-1.5)">six of twelve</text>
+</svg>

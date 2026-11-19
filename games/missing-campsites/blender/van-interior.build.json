@@ -1,0 +1,538 @@
+{
+  "game": "missing-campsites",
+  "location": "van-interior",
+  "name": "The van on the highway",
+  "reference": "assets/locations/van-interior.jpg",
+  "bounds_m": [
+    2.2,
+    4.5,
+    1.9
+  ],
+  "origin": "centre of the van floor; +y toward the windscreen; the player sits on the rear bench (the road and treelines ahead are sky pieces)",
+  "materials": {
+    "van-red": {
+      "color": [
+        0.45,
+        0.16,
+        0.13
+      ],
+      "roughness": 0.8
+    },
+    "seat-red": {
+      "color": [
+        0.38,
+        0.13,
+        0.11
+      ],
+      "roughness": 1.0
+    },
+    "headliner": {
+      "color": [
+        0.55,
+        0.5,
+        0.45
+      ],
+      "roughness": 1.0
+    },
+    "dash-black": {
+      "color": [
+        0.12,
+        0.1,
+        0.09
+      ],
+      "roughness": 0.7
+    },
+    "glass": {
+      "color": [
+        0.8,
+        0.88,
+        0.92
+      ],
+      "roughness": 0.05,
+      "emission": 0.8
+    },
+    "asphalt": {
+      "color": [
+        0.27,
+        0.27,
+        0.28
+      ],
+      "roughness": 0.9
+    },
+    "conifer": {
+      "color": [
+        0.17,
+        0.27,
+        0.15
+      ],
+      "roughness": 0.95
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        2.2,
+        4.5,
+        0.08
+      ],
+      "location": [
+        0,
+        0,
+        -0.04
+      ],
+      "material": "van-red"
+    },
+    {
+      "id": "roof",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        2.2,
+        4.5,
+        0.08
+      ],
+      "location": [
+        0,
+        0,
+        1.94
+      ],
+      "material": "headliner"
+    },
+    {
+      "id": "side-left-low",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.08,
+        4.5,
+        0.95
+      ],
+      "location": [
+        -1.1,
+        0,
+        0.47
+      ],
+      "material": "van-red"
+    },
+    {
+      "id": "side-left-high",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.08,
+        4.5,
+        0.15
+      ],
+      "location": [
+        -1.1,
+        0,
+        1.83
+      ],
+      "material": "van-red"
+    },
+    {
+      "id": "window-left",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        0.03,
+        3.6,
+        0.75
+      ],
+      "location": [
+        -1.1,
+        0.2,
+        1.33
+      ],
+      "material": "glass",
+      "collide": false
+    },
+    {
+      "id": "side-right-low",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.08,
+        4.5,
+        0.95
+      ],
+      "location": [
+        1.1,
+        0,
+        0.47
+      ],
+      "material": "van-red"
+    },
+    {
+      "id": "side-right-high",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.08,
+        4.5,
+        0.15
+      ],
+      "location": [
+        1.1,
+        0,
+        1.83
+      ],
+      "material": "van-red"
+    },
+    {
+      "id": "window-right",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        0.03,
+        3.6,
+        0.75
+      ],
+      "location": [
+        1.1,
+        0.2,
+        1.33
+      ],
+      "material": "glass",
+      "collide": false
+    },
+    {
+      "id": "rear-door",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        2.2,
+        0.08,
+        1.9
+      ],
+      "location": [
+        0,
+        -2.25,
+        0.95
+      ],
+      "material": "van-red"
+    },
+    {
+      "id": "windscreen",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        2.0,
+        0.03,
+        0.75
+      ],
+      "location": [
+        0,
+        2.2,
+        1.4
+      ],
+      "material": "glass",
+      "rotation_deg": [
+        -20,
+        0,
+        0
+      ],
+      "collide": false
+    },
+    {
+      "id": "dashboard",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        2.1,
+        0.5,
+        0.25
+      ],
+      "location": [
+        0,
+        1.95,
+        0.95
+      ],
+      "material": "van-red"
+    },
+    {
+      "id": "radio",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.35,
+        0.05,
+        0.1
+      ],
+      "location": [
+        0.15,
+        1.69,
+        0.85
+      ],
+      "material": "dash-black"
+    },
+    {
+      "id": "steering-wheel",
+      "shape": "cylinder",
+      "role": "trim",
+      "size_m": [
+        0.42,
+        0.42,
+        0.04
+      ],
+      "location": [
+        -0.5,
+        1.6,
+        1.05
+      ],
+      "material": "dash-black",
+      "rotation_deg": [
+        60,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "seat-driver",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.55,
+        0.5,
+        1.0
+      ],
+      "location": [
+        -0.5,
+        1.0,
+        0.5
+      ],
+      "material": "seat-red"
+    },
+    {
+      "id": "seat-passenger",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.55,
+        0.5,
+        1.0
+      ],
+      "location": [
+        0.5,
+        1.0,
+        0.5
+      ],
+      "material": "seat-red"
+    },
+    {
+      "id": "rear-bench",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        2.0,
+        0.6,
+        0.45
+      ],
+      "location": [
+        0,
+        -1.3,
+        0.22
+      ],
+      "material": "seat-red"
+    },
+    {
+      "id": "rear-bench-back",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        2.0,
+        0.15,
+        0.6
+      ],
+      "location": [
+        0,
+        -1.65,
+        0.75
+      ],
+      "material": "seat-red"
+    },
+    {
+      "id": "mirror",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.3,
+        0.03,
+        0.08
+      ],
+      "location": [
+        0,
+        2.0,
+        1.8
+      ],
+      "material": "dash-black"
+    },
+    {
+      "id": "highway",
+      "shape": "box",
+      "role": "sky",
+      "size_m": [
+        8,
+        400,
+        0.05
+      ],
+      "location": [
+        0,
+        205,
+        -0.6
+      ],
+      "material": "asphalt",
+      "collide": false
+    },
+    {
+      "id": "treeline-left",
+      "shape": "box",
+      "role": "sky",
+      "size_m": [
+        10,
+        400,
+        20
+      ],
+      "location": [
+        -14,
+        205,
+        9
+      ],
+      "material": "conifer",
+      "collide": false
+    },
+    {
+      "id": "treeline-right",
+      "shape": "box",
+      "role": "sky",
+      "size_m": [
+        10,
+        400,
+        20
+      ],
+      "location": [
+        14,
+        205,
+        9
+      ],
+      "material": "conifer",
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "notebook",
+      "object": "notebook",
+      "location": [
+        0.4,
+        2.0,
+        1.08
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "height_m": 0.02
+    },
+    {
+      "id": "van-keys",
+      "object": "van-keys",
+      "location": [
+        -0.25,
+        1.75,
+        0.8
+      ],
+      "ground": false
+    }
+  ],
+  "scenes": {
+    "drive_home": {
+      "note": "Nothing Missing. The van on the highway, afternoon sun through the windscreen. The notebook rides on the dash and cannot be opened; a seat with nobody in it; the radio gives the date.",
+      "world": {
+        "color": [
+          0.7,
+          0.78,
+          0.85
+        ],
+        "strength": 0.7
+      },
+      "lights": [
+        {
+          "name": "sun-ahead",
+          "type": "SUN",
+          "location": [
+            0,
+            60,
+            30
+          ],
+          "energy": 4.0,
+          "size": 0.5,
+          "color": [
+            1.0,
+            0.9,
+            0.75
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "cab-fill",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            1.85
+          ],
+          "energy": 40,
+          "size": 1.5,
+          "color": [
+            0.95,
+            0.85,
+            0.75
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          -1.3,
+          1.25
+        ],
+        "look_at": [
+          0,
+          2.2,
+          1.2
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -1.3,
+          0.45
+        ],
+        "facing_deg": 0.0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "notebook",
+          "verb": "Reach for the notebook"
+        }
+      ]
+    }
+  }
+}

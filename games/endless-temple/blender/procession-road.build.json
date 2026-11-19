@@ -1,0 +1,816 @@
+{
+  "game": "endless-temple",
+  "location": "procession-road",
+  "name": "The written road",
+  "reference": "assets/locations/procession-road.jpg",
+  "bounds_m": [
+    500,
+    60,
+    30
+  ],
+  "origin": "the road's midpoint; +x along the written road toward the cliff edge at x = 220 where it stops (the wagon at the procession's head near x = 150); -x where the Procession came from",
+  "materials": {
+    "grey-grass": {
+      "color": [
+        0.48,
+        0.48,
+        0.42
+      ],
+      "roughness": 0.95
+    },
+    "written-road": {
+      "color": [
+        0.86,
+        0.8,
+        0.62
+      ],
+      "roughness": 0.8
+    },
+    "sepia-wood": {
+      "color": [
+        0.42,
+        0.3,
+        0.18
+      ],
+      "roughness": 0.8
+    },
+    "canopy": {
+      "color": [
+        0.7,
+        0.55,
+        0.32
+      ],
+      "roughness": 0.9
+    },
+    "pale-cliff": {
+      "color": [
+        0.8,
+        0.78,
+        0.7
+      ],
+      "roughness": 0.95
+    },
+    "dusk-void": {
+      "color": [
+        0.55,
+        0.45,
+        0.38
+      ],
+      "roughness": 1.0,
+      "emission": 0.4
+    }
+  },
+  "blockout": [
+    {
+      "id": "grass-plain",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        470.0,
+        60.0,
+        1.0
+      ],
+      "location": [
+        -15.0,
+        0.0,
+        -0.5
+      ],
+      "material": "grey-grass"
+    },
+    {
+      "id": "road",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        466.0,
+        6.0,
+        0.04
+      ],
+      "location": [
+        -17.0,
+        0.0,
+        0.02
+      ],
+      "material": "written-road",
+      "collide": false
+    },
+    {
+      "id": "cliff-lip",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.6,
+        60.0,
+        0.1
+      ],
+      "location": [
+        219.7,
+        0.0,
+        0.05
+      ],
+      "material": "pale-cliff",
+      "collide": false
+    },
+    {
+      "id": "drop-below",
+      "shape": "plane",
+      "role": "sky",
+      "size_m": [
+        120.0,
+        160.0,
+        0.0
+      ],
+      "location": [
+        290.0,
+        0.0,
+        -40.0
+      ],
+      "material": "dusk-void",
+      "collide": false
+    },
+    {
+      "id": "far-headland",
+      "shape": "box",
+      "role": "sky",
+      "size_m": [
+        40.0,
+        30.0,
+        25.0
+      ],
+      "location": [
+        320.0,
+        -70.0,
+        -5.0
+      ],
+      "material": "pale-cliff",
+      "collide": false
+    },
+    {
+      "id": "wagon-body",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        3.2,
+        1.8,
+        1.2
+      ],
+      "location": [
+        150.0,
+        0.0,
+        1.1
+      ],
+      "material": "sepia-wood"
+    },
+    {
+      "id": "wagon-canopy",
+      "shape": "sphere",
+      "role": "structure",
+      "size_m": [
+        2.4,
+        1.9,
+        2.0
+      ],
+      "location": [
+        149.6,
+        0.0,
+        2.3
+      ],
+      "material": "canopy"
+    },
+    {
+      "id": "wagon-shaft-north",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        2.5,
+        0.1,
+        0.1
+      ],
+      "location": [
+        152.8,
+        0.5,
+        0.6
+      ],
+      "material": "sepia-wood"
+    },
+    {
+      "id": "wagon-shaft-south",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        2.5,
+        0.1,
+        0.1
+      ],
+      "location": [
+        152.8,
+        -0.5,
+        0.6
+      ],
+      "material": "sepia-wood"
+    },
+    {
+      "id": "wheel-rear-north",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.1,
+        1.1,
+        0.12
+      ],
+      "location": [
+        149.0,
+        0.95,
+        0.55
+      ],
+      "material": "sepia-wood",
+      "rotation_deg": [
+        90.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "wheel-rear-south",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.1,
+        1.1,
+        0.12
+      ],
+      "location": [
+        149.0,
+        -0.95,
+        0.55
+      ],
+      "material": "sepia-wood",
+      "rotation_deg": [
+        90.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "wheel-front-north",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.1,
+        1.1,
+        0.12
+      ],
+      "location": [
+        151.2,
+        0.95,
+        0.55
+      ],
+      "material": "sepia-wood",
+      "rotation_deg": [
+        90.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "wheel-front-south",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.1,
+        1.1,
+        0.12
+      ],
+      "location": [
+        151.2,
+        -0.95,
+        0.55
+      ],
+      "material": "sepia-wood",
+      "rotation_deg": [
+        90.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "lantern-post-1",
+      "shape": "cylinder",
+      "role": "trim",
+      "size_m": [
+        0.12,
+        0.12,
+        3.0
+      ],
+      "location": [
+        -200.0,
+        5.0,
+        1.5
+      ],
+      "material": "sepia-wood"
+    },
+    {
+      "id": "lantern-post-2",
+      "shape": "cylinder",
+      "role": "trim",
+      "size_m": [
+        0.12,
+        0.12,
+        3.0
+      ],
+      "location": [
+        -140.0,
+        -5.0,
+        1.5
+      ],
+      "material": "sepia-wood"
+    },
+    {
+      "id": "lantern-post-3",
+      "shape": "cylinder",
+      "role": "trim",
+      "size_m": [
+        0.12,
+        0.12,
+        3.0
+      ],
+      "location": [
+        -80.0,
+        5.0,
+        1.5
+      ],
+      "material": "sepia-wood"
+    },
+    {
+      "id": "lantern-post-4",
+      "shape": "cylinder",
+      "role": "trim",
+      "size_m": [
+        0.12,
+        0.12,
+        3.0
+      ],
+      "location": [
+        -20.0,
+        -5.0,
+        1.5
+      ],
+      "material": "sepia-wood"
+    },
+    {
+      "id": "lantern-post-5",
+      "shape": "cylinder",
+      "role": "trim",
+      "size_m": [
+        0.12,
+        0.12,
+        3.0
+      ],
+      "location": [
+        40.0,
+        5.0,
+        1.5
+      ],
+      "material": "sepia-wood"
+    },
+    {
+      "id": "lantern-post-6",
+      "shape": "cylinder",
+      "role": "trim",
+      "size_m": [
+        0.12,
+        0.12,
+        3.0
+      ],
+      "location": [
+        100.0,
+        -5.0,
+        1.5
+      ],
+      "material": "sepia-wood"
+    },
+    {
+      "id": "lantern-post-7",
+      "shape": "cylinder",
+      "role": "trim",
+      "size_m": [
+        0.12,
+        0.12,
+        3.0
+      ],
+      "location": [
+        190.0,
+        5.0,
+        1.5
+      ],
+      "material": "sepia-wood"
+    }
+  ],
+  "props": [
+    {
+      "id": "lantern-1",
+      "object": "pilgrim-lantern",
+      "location": [
+        -200.0,
+        5.0,
+        3.0
+      ],
+      "ground": false
+    },
+    {
+      "id": "lantern-2",
+      "object": "pilgrim-lantern",
+      "location": [
+        -140.0,
+        -5.0,
+        3.0
+      ],
+      "ground": false
+    },
+    {
+      "id": "lantern-3",
+      "object": "pilgrim-lantern",
+      "location": [
+        -80.0,
+        5.0,
+        3.0
+      ],
+      "ground": false
+    },
+    {
+      "id": "lantern-4",
+      "object": "pilgrim-lantern",
+      "location": [
+        -20.0,
+        -5.0,
+        3.0
+      ],
+      "ground": false
+    },
+    {
+      "id": "lantern-5",
+      "object": "pilgrim-lantern",
+      "location": [
+        40.0,
+        5.0,
+        3.0
+      ],
+      "ground": false
+    },
+    {
+      "id": "lantern-6",
+      "object": "pilgrim-lantern",
+      "location": [
+        100.0,
+        -5.0,
+        3.0
+      ],
+      "ground": false
+    },
+    {
+      "id": "lantern-7",
+      "object": "pilgrim-lantern",
+      "location": [
+        190.0,
+        5.0,
+        3.0
+      ],
+      "ground": false
+    },
+    {
+      "id": "lantern-wagon",
+      "object": "pilgrim-lantern",
+      "location": [
+        151.3,
+        0.0,
+        2.6
+      ],
+      "ground": false
+    },
+    {
+      "id": "scroll",
+      "object": "scribe-scroll",
+      "location": [
+        149.6,
+        0.0,
+        1.7
+      ]
+    },
+    {
+      "id": "quill",
+      "object": "quill-pen",
+      "location": [
+        150.1,
+        0.45,
+        1.7
+      ]
+    },
+    {
+      "id": "last-sheet",
+      "object": "scribe-scroll",
+      "location": [
+        216.5,
+        0.0,
+        0.04
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        90.0
+      ]
+    },
+    {
+      "id": "quill-cliff",
+      "object": "quill-pen",
+      "location": [
+        216.2,
+        0.6,
+        0.04
+      ]
+    }
+  ],
+  "scenes": {
+    "s3_procession_road": {
+      "note": "c7, Book Three (Oda): the grey-grass plain under a lantern sky at dusk; the masked Procession walks the road the Scribe's scroll writes; bells on staffs. At the head of it, the wagon.",
+      "world": {
+        "color": [
+          0.6,
+          0.45,
+          0.3
+        ],
+        "strength": 0.5
+      },
+      "lights": [
+        {
+          "name": "dusk-sun",
+          "type": "SUN",
+          "location": [
+            400.0,
+            0.0,
+            60.0
+          ],
+          "look_at": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "energy": 1.5,
+          "size": 1,
+          "color": [
+            1.0,
+            0.55,
+            0.25
+          ]
+        },
+        {
+          "name": "lantern-1",
+          "type": "POINT",
+          "location": [
+            -200.0,
+            5.0,
+            3.0
+          ],
+          "energy": 60,
+          "size": 0.2,
+          "color": [
+            1.0,
+            0.6,
+            0.25
+          ]
+        },
+        {
+          "name": "lantern-2",
+          "type": "POINT",
+          "location": [
+            -140.0,
+            -5.0,
+            3.0
+          ],
+          "energy": 60,
+          "size": 0.2,
+          "color": [
+            1.0,
+            0.6,
+            0.25
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -200.0,
+          0.0,
+          1.5
+        ],
+        "look_at": [
+          -100.0,
+          0.0,
+          1.5
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          -200.0,
+          0.0,
+          0.0
+        ],
+        "facing_deg": -90.0
+      },
+      "hide": [
+        "last-sheet",
+        "quill-cliff"
+      ],
+      "interactions": [
+        {
+          "prop": "lantern-wagon",
+          "verb": "Go up to the Scribe's wagon",
+          "leads_to": "s3_scribe_wagon"
+        }
+      ]
+    },
+    "s3_scribe_wagon": {
+      "note": "c7: the Scribe's wagon in lantern light. His hand shakes as he writes; the scroll unrolls onto the grass and the ink becomes road. Scrape lamp-ash from the lantern; read the vows.",
+      "world": {
+        "color": [
+          0.4,
+          0.3,
+          0.22
+        ],
+        "strength": 0.35
+      },
+      "lights": [
+        {
+          "name": "dusk-sun",
+          "type": "SUN",
+          "location": [
+            400.0,
+            0.0,
+            60.0
+          ],
+          "look_at": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "energy": 0.8,
+          "size": 1,
+          "color": [
+            1.0,
+            0.55,
+            0.25
+          ]
+        },
+        {
+          "name": "wagon-lantern",
+          "type": "POINT",
+          "location": [
+            151.3,
+            0.0,
+            2.5
+          ],
+          "energy": 150,
+          "size": 0.2,
+          "color": [
+            1.0,
+            0.6,
+            0.25
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          147.2,
+          -1.8,
+          1.5
+        ],
+        "look_at": [
+          149.6,
+          0.0,
+          1.8
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          147.2,
+          -1.8,
+          0.0
+        ],
+        "facing_deg": -53.1
+      },
+      "hide": [
+        "last-sheet",
+        "quill-cliff"
+      ],
+      "interactions": [
+        {
+          "prop": "quill",
+          "verb": "Hold the inkpot to his pen"
+        },
+        {
+          "prop": "lantern-wagon",
+          "verb": "Scrape lamp-ash from the lantern"
+        },
+        {
+          "prop": "scroll",
+          "verb": "Read the vows on the scroll",
+          "leads_to": "g_tablet_c7"
+        }
+      ]
+    },
+    "s3_procession_choice": {
+      "note": "c7: last light at the cliff edge where the road's last sheet stops. Oda chooses: write a city herself (city), steady the Scribe's hand to the edge and stop (end, needs loophole_procession), or hand back the pen and walk on.",
+      "world": {
+        "color": [
+          0.45,
+          0.32,
+          0.3
+        ],
+        "strength": 0.35
+      },
+      "lights": [
+        {
+          "name": "last-light",
+          "type": "SUN",
+          "location": [
+            500.0,
+            0.0,
+            15.0
+          ],
+          "look_at": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "energy": 0.8,
+          "size": 1,
+          "color": [
+            1.0,
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "name": "lantern-7",
+          "type": "POINT",
+          "location": [
+            190.0,
+            5.0,
+            3.0
+          ],
+          "energy": 60,
+          "size": 0.2,
+          "color": [
+            1.0,
+            0.6,
+            0.25
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          207.0,
+          -3.5,
+          3.0
+        ],
+        "look_at": [
+          219.0,
+          0.0,
+          0.4
+        ],
+        "lens_mm": 28,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          211.0,
+          -2.0,
+          0.0
+        ],
+        "facing_deg": -76.0
+      },
+      "hide": [
+        "quill"
+      ],
+      "interactions": [
+        {
+          "prop": "quill-cliff",
+          "verb": "Write a city yourself",
+          "leads_to": "g_name_c7"
+        },
+        {
+          "prop": "last-sheet",
+          "verb": "Steady his hand and stop at the edge",
+          "leads_to": "g_name_c7"
+        },
+        {
+          "prop": "quill-cliff",
+          "verb": "Hand back the pen and walk on",
+          "leads_to": "s3_halls_c8"
+        }
+      ]
+    }
+  }
+}

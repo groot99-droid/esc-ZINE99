@@ -1,0 +1,639 @@
+{
+  "game": "lira-calyx",
+  "location": "storm-singing-ledge",
+  "name": "The storm-singing ledge",
+  "reference": "assets/locations/storm-singing-ledge.jpg",
+  "bounds_m": [
+    60,
+    30,
+    20
+  ],
+  "origin": "ledge centre; +y toward the drop and the ice wall across the gorge (sky pieces); the stone circle is centred at (0, -3)",
+  "materials": {
+    "ledge-rock": {
+      "color": [
+        0.227,
+        0.227,
+        0.267
+      ],
+      "roughness": 0.95
+    },
+    "stone": {
+      "color": [
+        0.173,
+        0.173,
+        0.204
+      ],
+      "roughness": 0.95
+    },
+    "moss-glow": {
+      "color": [
+        0.102,
+        0.627,
+        0.565
+      ],
+      "roughness": 0.6,
+      "emission": 2.0
+    },
+    "pole": {
+      "color": [
+        0.353,
+        0.251,
+        0.157
+      ],
+      "roughness": 0.9
+    },
+    "banner": {
+      "color": [
+        0.659,
+        0.627,
+        0.753
+      ],
+      "roughness": 0.9
+    },
+    "ice-wall": {
+      "color": [
+        0.722,
+        0.847,
+        0.941
+      ],
+      "roughness": 0.4
+    },
+    "mist": {
+      "color": [
+        0.604,
+        0.565,
+        0.722
+      ],
+      "roughness": 1.0
+    },
+    "peaks": {
+      "color": [
+        0.784,
+        0.784,
+        0.878
+      ],
+      "roughness": 0.8
+    }
+  },
+  "blockout": [
+    {
+      "id": "ledge",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        60,
+        30,
+        1
+      ],
+      "location": [
+        0,
+        0,
+        -0.5
+      ],
+      "material": "ledge-rock"
+    },
+    {
+      "id": "ice-wall",
+      "shape": "box",
+      "role": "sky",
+      "size_m": [
+        400,
+        20,
+        80
+      ],
+      "location": [
+        0,
+        160,
+        20
+      ],
+      "material": "ice-wall"
+    },
+    {
+      "id": "far-peaks",
+      "shape": "box",
+      "role": "sky",
+      "size_m": [
+        600,
+        40,
+        120
+      ],
+      "location": [
+        0,
+        320,
+        60
+      ],
+      "material": "peaks"
+    },
+    {
+      "id": "mist-bank",
+      "shape": "box",
+      "role": "sky",
+      "size_m": [
+        400,
+        100,
+        2
+      ],
+      "location": [
+        0,
+        90,
+        -10
+      ],
+      "material": "mist"
+    },
+    {
+      "id": "moss-ring",
+      "shape": "cylinder",
+      "role": "trim",
+      "size_m": [
+        15,
+        15,
+        0.04
+      ],
+      "location": [
+        0,
+        -3,
+        0.02
+      ],
+      "material": "moss-glow",
+      "collide": false
+    },
+    {
+      "id": "boulder-1",
+      "shape": "sphere",
+      "role": "terrain",
+      "size_m": [
+        4,
+        3,
+        2
+      ],
+      "location": [
+        -16,
+        12,
+        0.5
+      ],
+      "material": "stone"
+    },
+    {
+      "id": "boulder-2",
+      "shape": "sphere",
+      "role": "terrain",
+      "size_m": [
+        3,
+        2.5,
+        1.6
+      ],
+      "location": [
+        20,
+        11,
+        0.4
+      ],
+      "material": "stone"
+    },
+    {
+      "id": "circle-stone-1",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.6,
+        1.2,
+        0.35
+      ],
+      "location": [
+        7.0,
+        -3.0,
+        0.175
+      ],
+      "material": "stone"
+    },
+    {
+      "id": "circle-stone-2",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.6,
+        1.2,
+        0.35
+      ],
+      "location": [
+        6.062,
+        0.5,
+        0.175
+      ],
+      "material": "stone"
+    },
+    {
+      "id": "circle-stone-3",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.6,
+        1.2,
+        0.35
+      ],
+      "location": [
+        3.5,
+        3.062,
+        0.175
+      ],
+      "material": "stone"
+    },
+    {
+      "id": "circle-stone-4",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.6,
+        1.2,
+        0.35
+      ],
+      "location": [
+        0.0,
+        4.0,
+        0.175
+      ],
+      "material": "stone"
+    },
+    {
+      "id": "circle-stone-5",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.6,
+        1.2,
+        0.35
+      ],
+      "location": [
+        -3.5,
+        3.062,
+        0.175
+      ],
+      "material": "stone"
+    },
+    {
+      "id": "circle-stone-6",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.6,
+        1.2,
+        0.35
+      ],
+      "location": [
+        -6.062,
+        0.5,
+        0.175
+      ],
+      "material": "stone"
+    },
+    {
+      "id": "circle-stone-7",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.6,
+        1.2,
+        0.35
+      ],
+      "location": [
+        -7.0,
+        -3.0,
+        0.175
+      ],
+      "material": "stone"
+    },
+    {
+      "id": "circle-stone-8",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.6,
+        1.2,
+        0.35
+      ],
+      "location": [
+        -6.062,
+        -6.5,
+        0.175
+      ],
+      "material": "stone"
+    },
+    {
+      "id": "circle-stone-9",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.6,
+        1.2,
+        0.35
+      ],
+      "location": [
+        -3.5,
+        -9.062,
+        0.175
+      ],
+      "material": "stone"
+    },
+    {
+      "id": "circle-stone-10",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.6,
+        1.2,
+        0.35
+      ],
+      "location": [
+        -0.0,
+        -10.0,
+        0.175
+      ],
+      "material": "stone"
+    },
+    {
+      "id": "circle-stone-11",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.6,
+        1.2,
+        0.35
+      ],
+      "location": [
+        3.5,
+        -9.062,
+        0.175
+      ],
+      "material": "stone"
+    },
+    {
+      "id": "circle-stone-12",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.6,
+        1.2,
+        0.35
+      ],
+      "location": [
+        6.062,
+        -6.5,
+        0.175
+      ],
+      "material": "stone"
+    },
+    {
+      "id": "banner-pole-1",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.12,
+        0.12,
+        3.2
+      ],
+      "location": [
+        -16,
+        8,
+        1.6
+      ],
+      "material": "pole"
+    },
+    {
+      "id": "banner-1",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        1.6,
+        0.04,
+        1.8
+      ],
+      "location": [
+        -15.15,
+        8,
+        2.1
+      ],
+      "material": "banner",
+      "collide": false
+    },
+    {
+      "id": "banner-pole-2",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.12,
+        0.12,
+        3.2
+      ],
+      "location": [
+        16,
+        8,
+        1.6
+      ],
+      "material": "pole"
+    },
+    {
+      "id": "banner-2",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        1.6,
+        0.04,
+        1.8
+      ],
+      "location": [
+        16.85,
+        8,
+        2.1
+      ],
+      "material": "banner",
+      "collide": false
+    },
+    {
+      "id": "banner-pole-3",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.12,
+        0.12,
+        3.2
+      ],
+      "location": [
+        20,
+        -2,
+        1.6
+      ],
+      "material": "pole"
+    },
+    {
+      "id": "banner-3",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        1.6,
+        0.04,
+        1.8
+      ],
+      "location": [
+        20.85,
+        -2,
+        2.1
+      ],
+      "material": "banner",
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "afu-meter",
+      "object": "afu-meter",
+      "location": [
+        9.5,
+        -6.5,
+        0
+      ]
+    },
+    {
+      "id": "recorder",
+      "object": "field-recorder",
+      "location": [
+        10.2,
+        -5.8,
+        0
+      ]
+    },
+    {
+      "id": "crystals-1",
+      "object": "crystal-cluster",
+      "location": [
+        -15,
+        7,
+        0
+      ]
+    },
+    {
+      "id": "crystals-2",
+      "object": "crystal-cluster",
+      "location": [
+        17,
+        7,
+        0
+      ]
+    },
+    {
+      "id": "crystals-3",
+      "object": "crystal-cluster",
+      "location": [
+        21,
+        -3,
+        0
+      ]
+    }
+  ],
+  "scenes": {
+    "b3-peakborn": {
+      "world": {
+        "color": [
+          0.235,
+          0.204,
+          0.345
+        ],
+        "strength": 0.35
+      },
+      "lights": [
+        {
+          "name": "dusk",
+          "type": "SUN",
+          "location": [
+            0,
+            40,
+            20
+          ],
+          "energy": 1.2,
+          "size": 6,
+          "color": [
+            0.612,
+            0.533,
+            0.816
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "moss-glow",
+          "type": "AREA",
+          "location": [
+            0,
+            -3,
+            1.5
+          ],
+          "energy": 600,
+          "size": 14,
+          "color": [
+            0.102,
+            0.627,
+            0.565
+          ],
+          "look_at": [
+            0,
+            -3,
+            0
+          ]
+        },
+        {
+          "name": "storm-in-rock",
+          "type": "POINT",
+          "location": [
+            0,
+            22,
+            6
+          ],
+          "energy": 4000,
+          "size": 3,
+          "color": [
+            0.753,
+            0.69,
+            1.0
+          ]
+        }
+      ],
+      "note": "Book III. The Peakborn singing circle at violet dusk, moss glowing in the ring. Record the songs with the AFU meter running beside them while Mara sings a storm in and out of the rock: 'Don't write the words. Write where I breathe.'",
+      "camera": {
+        "location": [
+          0.0,
+          -17.5,
+          2.65
+        ],
+        "look_at": [
+          0.0,
+          -10.0,
+          1.4
+        ],
+        "lens_mm": 31,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -14,
+          0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "afu-meter",
+          "verb": "Run the AFU meter"
+        },
+        {
+          "prop": "recorder",
+          "verb": "Record the song",
+          "leads_to": "b3-cipher-2"
+        }
+      ]
+    }
+  }
+}

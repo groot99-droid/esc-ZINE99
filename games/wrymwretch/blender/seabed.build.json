@@ -1,0 +1,497 @@
+{
+  "game": "wrymwretch",
+  "location": "seabed",
+  "name": "The seabed and the monolith",
+  "reference": "assets/locations/seabed.jpg",
+  "bounds_m": [
+    40,
+    40,
+    80
+  ],
+  "origin": "floor centre on the seabed; +y toward the monolith; the dive starts at the surface 80 m above and follows the west cliff down past three ledges, each with a lantern-crystal",
+  "materials": {
+    "bone": {
+      "color": [
+        0.902,
+        0.863,
+        0.769
+      ],
+      "roughness": 0.75
+    },
+    "bone-dark": {
+      "color": [
+        0.496,
+        0.475,
+        0.423
+      ],
+      "roughness": 0.85
+    },
+    "silver": {
+      "color": [
+        0.541,
+        0.557,
+        0.549
+      ],
+      "roughness": 0.45,
+      "metallic": 0.8
+    },
+    "void": {
+      "color": [
+        0.051,
+        0.055,
+        0.078
+      ],
+      "roughness": 1.0
+    },
+    "silt": {
+      "color": [
+        0.235,
+        0.306,
+        0.345
+      ],
+      "roughness": 1.0
+    },
+    "dead-coral": {
+      "color": [
+        0.659,
+        0.643,
+        0.588
+      ],
+      "roughness": 0.8
+    },
+    "rock": {
+      "color": [
+        0.149,
+        0.188,
+        0.227
+      ],
+      "roughness": 0.95
+    },
+    "surface": {
+      "color": [
+        0.055,
+        0.188,
+        0.22
+      ],
+      "roughness": 0.1,
+      "emission": 0.2
+    }
+  },
+  "blockout": [
+    {
+      "id": "seabed-floor",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        40,
+        40,
+        0.6
+      ],
+      "location": [
+        0,
+        0,
+        -0.3
+      ],
+      "material": "silt"
+    },
+    {
+      "id": "slope-south",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        40,
+        14,
+        3
+      ],
+      "location": [
+        0,
+        -16,
+        1.0
+      ],
+      "material": "silt",
+      "rotation_deg": [
+        8,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "dune-west",
+      "shape": "sphere",
+      "role": "terrain",
+      "size_m": [
+        12,
+        8,
+        3
+      ],
+      "location": [
+        -12,
+        6,
+        0.2
+      ],
+      "material": "silt"
+    },
+    {
+      "id": "dune-east",
+      "shape": "sphere",
+      "role": "terrain",
+      "size_m": [
+        10,
+        9,
+        2.5
+      ],
+      "location": [
+        13,
+        10,
+        0.2
+      ],
+      "material": "silt"
+    },
+    {
+      "id": "rubble-mound",
+      "shape": "cone",
+      "role": "terrain",
+      "size_m": [
+        10,
+        10,
+        3
+      ],
+      "location": [
+        0,
+        8,
+        1.5
+      ],
+      "material": "rock"
+    },
+    {
+      "id": "cliff-west",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        6,
+        40,
+        70
+      ],
+      "location": [
+        -18,
+        0,
+        35
+      ],
+      "material": "rock"
+    },
+    {
+      "id": "ledge-60",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        4,
+        4,
+        1
+      ],
+      "location": [
+        -13,
+        -8,
+        60
+      ],
+      "material": "rock"
+    },
+    {
+      "id": "ledge-35",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        4,
+        4,
+        1
+      ],
+      "location": [
+        -13,
+        0,
+        35
+      ],
+      "material": "rock"
+    },
+    {
+      "id": "ledge-10",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        4,
+        4,
+        1
+      ],
+      "location": [
+        -13,
+        6,
+        10
+      ],
+      "material": "rock"
+    },
+    {
+      "id": "coral-1",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        1.2,
+        1.2,
+        3
+      ],
+      "location": [
+        -8,
+        -6,
+        1.5
+      ],
+      "material": "dead-coral"
+    },
+    {
+      "id": "coral-2",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        1.2,
+        1.2,
+        2.5
+      ],
+      "location": [
+        6,
+        -4,
+        1.25
+      ],
+      "material": "dead-coral"
+    },
+    {
+      "id": "coral-3",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        1.2,
+        1.2,
+        3.5
+      ],
+      "location": [
+        9,
+        4,
+        1.75
+      ],
+      "material": "dead-coral"
+    },
+    {
+      "id": "coral-4",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        1.2,
+        1.2,
+        2
+      ],
+      "location": [
+        -5,
+        14,
+        1.0
+      ],
+      "material": "dead-coral"
+    },
+    {
+      "id": "coral-5",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        1.2,
+        1.2,
+        3
+      ],
+      "location": [
+        4,
+        16,
+        1.5
+      ],
+      "material": "dead-coral"
+    },
+    {
+      "id": "sea-surface",
+      "shape": "box",
+      "role": "water",
+      "size_m": [
+        40,
+        40,
+        0.2
+      ],
+      "location": [
+        0,
+        0,
+        80
+      ],
+      "material": "surface",
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "monolith",
+      "object": "monolith",
+      "location": [
+        0,
+        8,
+        3
+      ]
+    },
+    {
+      "id": "lantern-60",
+      "object": "lantern-crystal",
+      "location": [
+        -13,
+        -8,
+        60.5
+      ]
+    },
+    {
+      "id": "lantern-35",
+      "object": "lantern-crystal",
+      "location": [
+        -13,
+        0,
+        35.5
+      ]
+    },
+    {
+      "id": "lantern-10",
+      "object": "lantern-crystal",
+      "location": [
+        -13,
+        6,
+        10.5
+      ]
+    }
+  ],
+  "scenes": {
+    "s_seabed": {
+      "note": "The 80 m descent with the divers: darker every 10 m, colder, heavier; the lantern-crystal's light reaches 6 m; shapes that do not belong; the monolith on its rubble mound.",
+      "world": {
+        "color": [
+          0.012,
+          0.063,
+          0.071
+        ],
+        "strength": 0.12
+      },
+      "lights": [
+        {
+          "name": "lantern-radius",
+          "type": "POINT",
+          "location": [
+            -6,
+            -10,
+            74
+          ],
+          "energy": 400,
+          "size": 0.3,
+          "color": [
+            0.91,
+            0.925,
+            0.949
+          ]
+        },
+        {
+          "name": "far-shafts",
+          "type": "SUN",
+          "location": [
+            0,
+            0,
+            80
+          ],
+          "energy": 0.15,
+          "size": 1,
+          "color": [
+            0.416,
+            0.667,
+            0.69
+          ],
+          "rotation_deg": [
+            10,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "monolith-pearl",
+          "type": "POINT",
+          "location": [
+            0,
+            4,
+            6
+          ],
+          "energy": 600,
+          "size": 0.5,
+          "color": [
+            0.91,
+            0.925,
+            0.949
+          ]
+        },
+        {
+          "name": "rim",
+          "type": "SPOT",
+          "location": [
+            0,
+            -6,
+            20
+          ],
+          "energy": 1500,
+          "size": 0.5,
+          "color": [
+            0.749,
+            0.816,
+            0.949
+          ],
+          "look_at": [
+            0,
+            8,
+            6
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -6.0,
+          -14.5,
+          75.5
+        ],
+        "look_at": [
+          -6.0,
+          -4.0,
+          73.2
+        ],
+        "lens_mm": 31,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          -6,
+          -10,
+          72
+        ],
+        "facing_deg": 0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "lantern-60",
+          "verb": "Swap the lantern-crystal"
+        },
+        {
+          "prop": "lantern-35",
+          "verb": "Swap the lantern-crystal"
+        },
+        {
+          "prop": "lantern-10",
+          "verb": "Swap the lantern-crystal"
+        },
+        {
+          "prop": "monolith",
+          "verb": "Touch the monolith",
+          "leads_to": "s_glyph_monolith"
+        }
+      ]
+    }
+  }
+}

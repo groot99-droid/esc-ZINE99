@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160" role="img" aria-labelledby="clue-television-t clue-television-d">
+<title id="clue-television-t">Clue kind: Television</title>
+<desc id="clue-television-d">Clue-kind icon in technical pen inside a brass ring: a small television glowing blue, for the television.</desc>
+<defs><radialGradient id="clue-television-rg1" cx="0.5" cy="0.5" r="0.75"><stop offset="0%" stop-color="#fff" stop-opacity="0.5"/><stop offset="100%" stop-color="#b8ab8a" stop-opacity="0.5"/></radialGradient><clipPath id="clue-television-clip2"><circle cx="80" cy="70" r="50"/></clipPath></defs>
+<rect x="0" y="0" width="160" height="160" rx="10" fill="#f1ecdf"/>
+<rect x="0" y="0" width="160" height="160" rx="10" fill="url(#clue-television-rg1)"/>
+<circle cx="80" cy="70" r="56" fill="#f7f3e8" stroke="#b8913f" stroke-width="4"/>
+<circle cx="80" cy="70" r="51" fill="none" stroke="#5d4518" stroke-width="0.8"/>
+<g clip-path="url(#clue-television-clip2)">
+<rect x="42" y="46" width="76" height="54" rx="8" fill="none" stroke="#1c1a17" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="50" y="54" width="46" height="38" rx="6" fill="#7b9ad0" opacity="0.8" stroke="#1c1a17" stroke-width="1.4"/>
+<circle cx="106" cy="62" r="4" fill="none" stroke="#1c1a17" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="106" cy="78" r="4" fill="none" stroke="#1c1a17" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M68,46 L56,26 M90,46 L104,26 M54,100 l-6,12 M106,100 l6,12" fill="none" stroke="#1c1a17" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="52" y1="60" x2="94" y2="60" stroke="#fff" stroke-width="1.2" opacity="0.6"/>
+<line x1="52" y1="68" x2="94" y2="68" stroke="#fff" stroke-width="1.2" opacity="0.6"/>
+<line x1="52" y1="76" x2="94" y2="76" stroke="#fff" stroke-width="1.2" opacity="0.6"/>
+<line x1="52" y1="84" x2="94" y2="84" stroke="#fff" stroke-width="1.2" opacity="0.6"/>
+</g>
+<text x="80" y="148" font-size="13" font-family="monospace" fill="#2a3a8c" text-anchor="middle" letter-spacing="2" font-weight="bold">TELEVISION</text>
+</svg>

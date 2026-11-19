@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300" role="img" aria-labelledby="stamp-here-t stamp-here-d">
+<title id="stamp-here-t">Stamp: HERE</title>
+<desc id="stamp-here-d">Reconcile's ground stamp for a site that is here: a worn round rubber stamp in forest-green ink with a ring for its shape, pressed a little crooked onto ruled notebook paper.</desc>
+<defs><filter id="stamp-here-rough1"><feTurbulence type="turbulence" baseFrequency="0.3" numOctaves="2" seed="441" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4"/></filter><filter id="stamp-here-m2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="2" seed="91"/><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 -2.6 1.75"/><feComposite in="SourceGraphic" operator="in"/></filter><filter id="stamp-here-tooth3" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.2" numOctaves="2" seed="70"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter></defs>
+<rect x="0" y="0" width="300" height="300" fill="#F6F1E2"/>
+<path d="M0,40h300M0,74h300M0,108h300M0,142h300M0,176h300M0,210h300M0,244h300M0,278h300" stroke="#A9C3CF" stroke-width="1" fill="none"/>
+<g filter="url(#stamp-here-m2)">
+<g transform="rotate(-8 150 150)" filter="url(#stamp-here-rough1)" opacity="0.9">
+<circle cx="150" cy="150" r="112" fill="none" stroke="#2F6B3A" stroke-width="9"/>
+<circle cx="150" cy="150" r="96" fill="none" stroke="#2F6B3A" stroke-width="2.5"/>
+<circle cx="150" cy="112" r="30" fill="none" stroke="#2F6B3A" stroke-width="11"/>
+<text x="150" y="196" font-size="40" font-family="sans-serif" fill="#2F6B3A" text-anchor="middle" font-weight="bold" letter-spacing="3">HERE</text>
+<text x="150" y="226" font-size="14" font-family="sans-serif" fill="#2F6B3A" text-anchor="middle" letter-spacing="5">GROUND</text>
+</g>
+</g>
+<rect x="0" y="0" width="300" height="300" filter="url(#stamp-here-tooth3)"/>
+</svg>

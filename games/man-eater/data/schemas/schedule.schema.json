@@ -1,0 +1,161 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "schedule.json",
+  "type": "object",
+  "required": [
+    "note",
+    "source",
+    "game",
+    "read_in",
+    "requires",
+    "declined_by",
+    "header",
+    "empty_slot",
+    "lines",
+    "issued_entries",
+    "retries_per_strip",
+    "last_line",
+    "fisk_lines"
+  ],
+  "properties": {
+    "note": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string"
+    },
+    "game": {
+      "type": "string",
+      "description": "A games_1d id from scenes.json"
+    },
+    "read_in": {
+      "type": "string",
+      "description": "The scene the Schedule is first read in"
+    },
+    "requires": {
+      "type": "string",
+      "description": "A bool in flags.json"
+    },
+    "declined_by": {
+      "type": "string",
+      "description": "A bool in flags.json"
+    },
+    "header": {
+      "type": "object",
+      "required": [
+        "subject",
+        "line",
+        "footer"
+      ]
+    },
+    "empty_slot": {
+      "type": "object",
+      "required": [
+        "time",
+        "status",
+        "rule"
+      ],
+      "properties": {
+        "time": {
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "pending_consultant",
+            "approved",
+            "removed"
+          ]
+        },
+        "rule": {
+          "type": "string"
+        }
+      }
+    },
+    "lines": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "items": {
+        "type": "object",
+        "required": [
+          "day",
+          "time",
+          "issued",
+          "response",
+          "strip_found",
+          "laid_against"
+        ],
+        "properties": {
+          "day": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 7
+          },
+          "time": {
+            "type": "string"
+          },
+          "issued": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1
+          },
+          "response": {
+            "type": "string"
+          },
+          "response_quote": {
+            "type": "object",
+            "required": [
+              "text",
+              "line"
+            ]
+          },
+          "strip_found": {
+            "type": "string",
+            "description": "A scene id, or a note where no scene finds it yet"
+          },
+          "laid_against": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "An entry id in list_incidents.json or in issued_entries"
+          }
+        }
+      }
+    },
+    "issued_entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "day",
+          "added_in",
+          "incident",
+          "explanations",
+          "broken_by"
+        ]
+      }
+    },
+    "retries_per_strip": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "last_line": {
+      "type": "object",
+      "required": [
+        "scene",
+        "typed",
+        "untyped"
+      ]
+    },
+    "fisk_lines": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

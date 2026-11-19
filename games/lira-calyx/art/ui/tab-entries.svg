@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 110" width="260" height="110" role="img" aria-labelledby="tab-entries-t tab-entries-d">
+<title id="tab-entries-t">Journal tab: Entries</title>
+<desc id="tab-entries-d">A journal tab cut from laid paper with a band of wash along its top edge, lettered Entries in Lira's hand beside a small ink sign for that section.</desc>
+<defs><clipPath id="tab-entries-clip1"><path d="M8,104 L12,26 L22,12 L236,10.7 L250,24 L252,104Z"/></clipPath><filter id="tab-entries-blur2" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3"/></filter><filter id="tab-entries-grain3" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="807"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter><pattern id="tab-entries-pat4" width="46" height="20" patternUnits="userSpaceOnUse"><path d="M0,2.5H46M0,7.5H46M0,12.5H46M0,17.5H46" stroke="#3b2618" stroke-width="0.5" opacity="0.07"/><path d="M23,0V20" stroke="#3b2618" stroke-width="0.8" opacity="0.06"/></pattern><radialGradient id="tab-entries-vig5" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#7a5a2e" stop-opacity="0"/><stop offset="100%" stop-color="#7a5a2e" stop-opacity="0.2"/></radialGradient></defs>
+<path d="M8,104 L12,26 L22,12 L236,10.7 L250,24 L252,104Z" fill="#000" opacity="0.2" transform="translate(3,3)" filter="url(#tab-entries-blur2)"/>
+<g clip-path="url(#tab-entries-clip1)">
+<rect x="0" y="0" width="260" height="110" fill="#f1e8d2"/>
+<rect x="0" y="0" width="260" height="110" filter="url(#tab-entries-grain3)"/>
+<rect x="0" y="0" width="260" height="110" fill="url(#tab-entries-pat4)"/>
+<rect x="0" y="0" width="260" height="110" fill="url(#tab-entries-vig5)"/>
+<rect x="0" y="0" width="260" height="26" fill="#c8913a" opacity="0.5"/>
+<rect x="0" y="24" width="260" height="4" fill="#c8913a" opacity="0.5"/>
+<rect x="0" y="92" width="260" height="20" fill="#7a5a2e" opacity="0.2"/>
+</g>
+<path d="M8.7,104 L9.3,84.3 L9.8,64.4 L11.7,45.4 L12,26.3 L21.5,11.8 L38,11.3 L55.2,11.7 L71.6,11.2 L88.4,12.1 L104.7,11.6 L120.9,11.4 L136.6,10.7 L153.6,11.3 L170.4,10.8 L186.1,10.7 L202.7,11.5 L219,10.4 L236.2,10.3 L250,24.3 L250,39.5 L250.4,55.6 L250.8,72.5 L252.1,87.9 L252,103.9" stroke-width="2.4" stroke="#3b2618" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M30,78 C33,74.7 42.7,63.3 48,58 C53.3,52.7 60.7,45 62,46 C63.3,47 61.3,58.7 56,64 C50.7,69.3 34.3,75.7 30,78" stroke-width="2.2" stroke="#3b2618" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="30" y1="78" x2="50" y2="58" stroke="#3b2618" stroke-width="1.4"/>
+<circle cx="51" cy="57" r="2.4" fill="#3b2618"/>
+<text x="82" y="72" font-size="28" font-family="serif" font-style="italic" fill="#3b2618" transform="rotate(0.1 82 72)">Entries</text>
+<text x="216" y="22" font-size="12" font-family="monospace" fill="#3b2618" letter-spacing="1">1</text>
+</svg>

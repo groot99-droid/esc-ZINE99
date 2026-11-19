@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-labelledby="piece-debt-t piece-debt-d">
+<title id="piece-debt-t">Tea Board piece: Debt</title>
+<desc id="piece-debt-d">A Debt marker: a thick porcelain counter with a ledger-red centre marked Dr.</desc>
+<defs><radialGradient id="piece-debt-rg1" cx="0.4" cy="0.35" r="0.8"><stop offset="0%" stop-color="#fff" stop-opacity="0.9"/><stop offset="60%" stop-color="#fff" stop-opacity="0"/><stop offset="100%" stop-color="#A9BCE3" stop-opacity="0.7"/></radialGradient></defs>
+<rect x="0" y="0" width="240" height="240" fill="#F7F8FB"/>
+<rect x="0" y="0" width="240" height="240" fill="url(#piece-debt-rg1)"/>
+<rect x="8" y="8" width="224" height="224" fill="none" stroke="#1E3F8C" stroke-width="3"/>
+<rect x="18" y="18" width="204" height="204" fill="none" stroke="#3D63B8" stroke-width="5" stroke-dasharray="0.1 11" stroke-linecap="round"/>
+<ellipse cx="126" cy="176" rx="64" ry="14" fill="#1F2E4A" opacity="0.2"/>
+<path d="M47.2,134 v26 a72.8,31.2 0 0,0 145.6,0 v-26z" fill="#dfe5f2" stroke="#1E3F8C" stroke-width="2.8" stroke-linejoin="round"/>
+<path d="M47.2,148.3 a72.8,31.2 0 0,0 145.6,0" fill="none" stroke="#3D63B8" stroke-width="5" stroke-dasharray="2 7"/>
+<ellipse cx="120" cy="134" rx="72.8" ry="31.2" fill="#F7F8FB" stroke="#1E3F8C" stroke-width="2.8"/>
+<ellipse cx="120" cy="134" rx="61.2" ry="25.6" fill="none" stroke="#3D63B8" stroke-width="1.2" stroke-dasharray="2 4"/>
+<ellipse cx="120" cy="134" rx="49.5" ry="20" fill="#8C2B2B" stroke="#5e1818" stroke-width="2"/>
+<text x="120" y="143.1" font-size="24.7" font-family="serif" fill="#F4F1E8" text-anchor="middle" font-style="italic">Dr.</text>
+</svg>

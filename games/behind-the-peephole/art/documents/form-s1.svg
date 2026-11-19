@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1100" width="800" height="1100" role="img" aria-labelledby="form-s1-t form-s1-d">
+<title id="form-s1-t">Statement form S-1: Room X Place</title>
+<desc id="form-s1-d">Statement form S-1, a blue carbon copy typed on cream: six room rows against room x place, with rotated column heads, a ruled and empty seventh row under 406, statement lines, a place to sign, and a wren pressed blind into the corner.</desc>
+<defs><filter id="form-s1-pg1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="33"/><feColorMatrix values="0 0 0 0 0.16  0 0 0 0 0.22  0 0 0 0 0.55  0 0 0 0.16 0"/></filter><filter id="form-s1-blur2" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="14"/></filter></defs>
+<rect x="0" y="0" width="800" height="1100" fill="#c9c2b0"/>
+<g transform="rotate(0.69 400 550)">
+<rect x="26" y="22" width="756" height="1060" fill="#000" opacity="0.2"/>
+<rect x="20" y="16" width="756" height="1060" fill="#f1ecdf"/>
+<rect x="20" y="16" width="756" height="1060" filter="url(#form-s1-pg1)"/>
+<ellipse cx="91.8" cy="759" rx="38.9" ry="13.7" fill="#2a3a8c" opacity="0.2" filter="url(#form-s1-blur2)"/>
+<ellipse cx="491.2" cy="773.4" rx="57" ry="21.9" fill="#2a3a8c" opacity="0.1" filter="url(#form-s1-blur2)"/>
+<ellipse cx="314.9" cy="424.7" rx="86.4" ry="23.5" fill="#2a3a8c" opacity="0.1" filter="url(#form-s1-blur2)"/>
+<ellipse cx="555.7" cy="927.1" rx="62" ry="25.6" fill="#2a3a8c" opacity="0.1" filter="url(#form-s1-blur2)"/>
+<ellipse cx="231.8" cy="682.3" rx="53.1" ry="22.8" fill="#2a3a8c" opacity="0.1" filter="url(#form-s1-blur2)"/>
+<ellipse cx="97.1" cy="707.8" rx="47.6" ry="14.8" fill="#2a3a8c" opacity="0.1" filter="url(#form-s1-blur2)"/>
+<ellipse cx="269.5" cy="670.1" rx="84.9" ry="13.9" fill="#2a3a8c" opacity="0.1" filter="url(#form-s1-blur2)"/>
+<circle cx="46" cy="150" r="9" fill="#c9c2b0"/>
+<circle cx="46" cy="150" r="9" fill="none" stroke="#8a826e" stroke-width="0.8"/>
+<circle cx="46" cy="950" r="9" fill="#c9c2b0"/>
+<circle cx="46" cy="950" r="9" fill="none" stroke="#8a826e" stroke-width="0.8"/>
+<text x="80" y="73.6" font-size="20" font-family="monospace" fill="#2a3a8c" font-weight="bold" opacity="0.9" letter-spacing="0.5">THE CROSSING  -  NIGHT LOG  -  STATEMENT</text>
+<text x="79.5" y="103.9" font-size="17" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">FORM S-1</text>
+<text x="730.2" y="129.4" font-size="13" font-family="monospace" fill="#2a3a8c" text-anchor="end" opacity="0.9" letter-spacing="0.5">COPY 2 OF 2</text>
+<text x="80" y="129.5" font-size="13" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">CATEGORIES: ROOM x PLACE</text>
+<line x1="80" y1="144" x2="730" y2="144" stroke="#2a3a8c" stroke-width="1" stroke-dasharray="14 4" opacity="0.7"/>
+<rect x="548" y="90" width="18" height="18" fill="none" stroke="#2a3a8c" stroke-width="1"/>
+<path d="M550,92 l14,14 M564,92 l-14,14" stroke="#2a3a8c" stroke-width="2.2" fill="none"/>
+<rect x="574" y="90" width="18" height="18" fill="none" stroke="#2a3a8c" stroke-width="1"/>
+<rect x="600" y="90" width="18" height="18" fill="none" stroke="#2a3a8c" stroke-width="1"/>
+<rect x="626" y="90" width="18" height="18" fill="none" stroke="#2a3a8c" stroke-width="1"/>
+<rect x="652" y="90" width="18" height="18" fill="none" stroke="#2a3a8c" stroke-width="1"/>
+<rect x="678" y="90" width="18" height="18" fill="none" stroke="#2a3a8c" stroke-width="1"/>
+<rect x="704" y="90" width="18" height="18" fill="none" stroke="#2a3a8c" stroke-width="1"/>
+<text x="539.6" y="103.7" font-size="12" font-family="monospace" fill="#2a3a8c" text-anchor="end" opacity="0.9" letter-spacing="0.5">NIGHT</text>
+<text x="220.6" y="178.2" font-size="13" font-family="monospace" fill="#2a3a8c" font-weight="bold" opacity="0.9" letter-spacing="0.5">PLACE</text>
+<line x1="220" y1="184" x2="688" y2="184" stroke="#2a3a8c" stroke-width="0.8"/>
+<text x="263" y="322" font-size="11.5" font-family="monospace" fill="#2a3a8c" transform="rotate(-58 263 322)" letter-spacing="0.4">THE GLASSHOUSE</text>
+<text x="341" y="322" font-size="11.5" font-family="monospace" fill="#2a3a8c" transform="rotate(-58 341 322)" letter-spacing="0.4">THE PRINTWORKS</text>
+<text x="419" y="322" font-size="11.5" font-family="monospace" fill="#2a3a8c" transform="rotate(-58 419 322)" letter-spacing="0.4">ASSEMBLY ROOMS</text>
+<text x="497" y="322" font-size="11.5" font-family="monospace" fill="#2a3a8c" transform="rotate(-58 497 322)" letter-spacing="0.4">THE BONDED HOUSE</text>
+<text x="575" y="322" font-size="11.5" font-family="monospace" fill="#2a3a8c" transform="rotate(-58 575 322)" letter-spacing="0.4">THE TRAM DEPOT</text>
+<text x="653" y="322" font-size="11.5" font-family="monospace" fill="#2a3a8c" transform="rotate(-58 653 322)" letter-spacing="0.4">THE FISH MARKET</text>
+<path d="M219.6,330V606M298.2,330V606M375.8,330V606M454.3,330V606M531.7,330V606M609.8,330V606M687.8,330V606M220,330.3H688M220,376.3H688M220,421.5H688M220,468.4H688M220,514.3H688M220,559.9H688M220,606H688" fill="none" stroke="#2a3a8c" stroke-width="1.1" opacity="0.9"/>
+<path d="M220,606 v46 h468 v-46" fill="none" stroke="#2a3a8c" stroke-width="0.8" stroke-dasharray="5 3" opacity="0.8"/>
+<line x1="298" y1="606" x2="298" y2="652" stroke="#2a3a8c" stroke-width="0.5" stroke-dasharray="2 4" opacity="0.7"/>
+<line x1="376" y1="606" x2="376" y2="652" stroke="#2a3a8c" stroke-width="0.5" stroke-dasharray="2 4" opacity="0.7"/>
+<line x1="454" y1="606" x2="454" y2="652" stroke="#2a3a8c" stroke-width="0.5" stroke-dasharray="2 4" opacity="0.7"/>
+<line x1="532" y1="606" x2="532" y2="652" stroke="#2a3a8c" stroke-width="0.5" stroke-dasharray="2 4" opacity="0.7"/>
+<line x1="610" y1="606" x2="610" y2="652" stroke="#2a3a8c" stroke-width="0.5" stroke-dasharray="2 4" opacity="0.7"/>
+<text x="149.3" y="316.2" font-size="12" font-family="monospace" fill="#2a3a8c" font-weight="bold" opacity="0.9" letter-spacing="0.5">BACK</text>
+<text x="79.7" y="360.3" font-size="20" font-family="monospace" fill="#2a3a8c" font-weight="bold" opacity="0.9" letter-spacing="0.5">401</text>
+<text x="149.8" y="359.3" font-size="13" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">01:30</text>
+<text x="79.7" y="405.5" font-size="20" font-family="monospace" fill="#2a3a8c" font-weight="bold" opacity="0.9" letter-spacing="0.5">402</text>
+<text x="149.9" y="405.4" font-size="13" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">23:25</text>
+<text x="80" y="452.4" font-size="20" font-family="monospace" fill="#2a3a8c" font-weight="bold" opacity="0.9" letter-spacing="0.5">403</text>
+<text x="150.6" y="450.8" font-size="13" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">02:45</text>
+<text x="80.4" y="497.3" font-size="20" font-family="monospace" fill="#2a3a8c" font-weight="bold" opacity="0.9" letter-spacing="0.5">404</text>
+<text x="150.1" y="497.3" font-size="13" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">00:45</text>
+<text x="79.4" y="544.6" font-size="20" font-family="monospace" fill="#2a3a8c" font-weight="bold" opacity="0.9" letter-spacing="0.5">405</text>
+<text x="150.7" y="542.9" font-size="13" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">02:05</text>
+<text x="79.5" y="590.4" font-size="20" font-family="monospace" fill="#2a3a8c" font-weight="bold" opacity="0.9" letter-spacing="0.5">406</text>
+<text x="150.2" y="588.4" font-size="13" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">00:05</text>
+<text x="79.4" y="760.2" font-size="14" font-family="monospace" fill="#2a3a8c" font-weight="bold" opacity="0.9" letter-spacing="0.5">STATEMENT</text>
+<text x="80.4" y="789.7" font-size="14" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">401</text>
+<line x1="128" y1="792" x2="720" y2="792" stroke="#2a3a8c" stroke-width="0.7" stroke-dasharray="2 4" opacity="0.8"/>
+<text x="80.4" y="816.7" font-size="14" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">402</text>
+<line x1="128" y1="818" x2="720" y2="818" stroke="#2a3a8c" stroke-width="0.7" stroke-dasharray="2 4" opacity="0.8"/>
+<text x="79.7" y="842.4" font-size="14" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">403</text>
+<line x1="128" y1="844" x2="720" y2="844" stroke="#2a3a8c" stroke-width="0.7" stroke-dasharray="2 4" opacity="0.8"/>
+<text x="80" y="867.7" font-size="14" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">404</text>
+<line x1="128" y1="870" x2="720" y2="870" stroke="#2a3a8c" stroke-width="0.7" stroke-dasharray="2 4" opacity="0.8"/>
+<text x="80.2" y="893.9" font-size="14" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">405</text>
+<line x1="128" y1="896" x2="720" y2="896" stroke="#2a3a8c" stroke-width="0.7" stroke-dasharray="2 4" opacity="0.8"/>
+<text x="80.7" y="919.3" font-size="14" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">406</text>
+<line x1="128" y1="922" x2="720" y2="922" stroke="#2a3a8c" stroke-width="0.7" stroke-dasharray="2 4" opacity="0.8"/>
+<line x1="128" y1="948" x2="720" y2="948" stroke="#2a3a8c" stroke-width="0.7" stroke-dasharray="2 4" opacity="0.5"/>
+<text x="80.2" y="986.2" font-size="14" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">SECOND LOOK:  [ ]  [ ]</text>
+<text x="79.8" y="1022" font-size="14" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">SIGNED:</text>
+<path d="M160,1023.9 L174.3,1024 L188.2,1023.2 L202.9,1023.2 L216.3,1023.2 L230.5,1024 L245.3,1022.9 L259.7,1023.7 L273.9,1023.5 L288,1023.4 L302.5,1023.1 L315.8,1022.4 L331,1023.1 L344.8,1023.2 L359.2,1022.4 L373.1,1022 L387.2,1022.8 L401.6,1021.8 L415.5,1022.1 L429.7,1022.4" stroke="#2a3a8c" stroke-width="1" fill="none"/>
+<text x="80.3" y="1060.6" font-size="10" font-family="monospace" fill="#2a3a8c" opacity="0.7" letter-spacing="0.5">COPY - NOT VALID WITHOUT THE SEAL OF THE MANAGEMENT</text>
+<circle cx="670" cy="1022" r="51" fill="none" stroke="#fff" stroke-width="1.6" opacity="0.8" transform="translate(-1 -1)"/>
+<circle cx="670" cy="1022" r="51" fill="none" stroke="#8a826e" stroke-width="1.2" opacity="0.6"/>
+<path d="M655,1026.1a19,19 0 1,0 38.1,0a19,19 0 1,0 -38.1,0M643.1,1011.8a11.6,11.6 0 1,0 23.1,0a11.6,11.6 0 1,0 -23.1,0M645.5,1008.4 L629.2,1011.8 L644.8,1015.9Z M683.6,1011.8 L691.1,983.9 L699.2,987.3 L693.8,1025.4Z" fill="#fff" opacity="0.8" transform="translate(-1.2 -1.2)"/>
+<path d="M655,1026.1a19,19 0 1,0 38.1,0a19,19 0 1,0 -38.1,0M643.1,1011.8a11.6,11.6 0 1,0 23.1,0a11.6,11.6 0 1,0 -23.1,0M645.5,1008.4 L629.2,1011.8 L644.8,1015.9Z M683.6,1011.8 L691.1,983.9 L699.2,987.3 L693.8,1025.4Z" fill="#b9b09a" opacity="0.7" transform="translate(1 1)"/>
+<path d="M655,1026.1a19,19 0 1,0 38.1,0a19,19 0 1,0 -38.1,0M643.1,1011.8a11.6,11.6 0 1,0 23.1,0a11.6,11.6 0 1,0 -23.1,0M645.5,1008.4 L629.2,1011.8 L644.8,1015.9Z M683.6,1011.8 L691.1,983.9 L699.2,987.3 L693.8,1025.4Z" fill="#ebe5d6"/>
+</g>
+</svg>

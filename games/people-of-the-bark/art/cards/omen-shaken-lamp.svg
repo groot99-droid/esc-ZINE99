@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="omen-shaken-lamp-t omen-shaken-lamp-d">
+<title id="omen-shaken-lamp-t">Omen card: The Shaken Lamp</title>
+<desc id="omen-shaken-lamp-d">Omen card The Shaken Lamp: a lantern swinging on its hook as dust comes down, a robed hand lifted to steady it. Suit Tremor (message), the eye sigil, weight 1, with Pell's notches down the left edge.</desc>
+<defs><clipPath id="omen-shaken-lamp-clip1"><rect x="1" y="1" width="298" height="418" rx="16"/></clipPath><filter id="omen-shaken-lamp-grain2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="2" seed="484"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><radialGradient id="omen-shaken-lamp-vig3" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#6b4a20" stop-opacity="0"/><stop offset="100%" stop-color="#6b4a20" stop-opacity="0.3"/></radialGradient><clipPath id="omen-shaken-lamp-clip4"><rect x="0" y="0" width="244" height="236"/></clipPath><linearGradient id="omen-shaken-lamp-lg5" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fff6dc"/><stop offset="100%" stop-color="#ecc9ae"/></linearGradient><radialGradient id="omen-shaken-lamp-rg6" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#e8742a" stop-opacity="0.8"/><stop offset="100%" stop-color="#e8742a" stop-opacity="0"/></radialGradient></defs>
+<g clip-path="url(#omen-shaken-lamp-clip1)">
+<rect x="0" y="0" width="300" height="420" fill="#efe2c4"/>
+<rect x="0" y="0" width="300" height="420" filter="url(#omen-shaken-lamp-grain2)"/>
+<rect x="0" y="0" width="300" height="420" fill="url(#omen-shaken-lamp-vig3)"/>
+<rect x="14" y="14" width="272" height="392" rx="10" fill="none" stroke="#a8321e" stroke-width="1.4"/>
+<rect x="19" y="19" width="262" height="382" rx="5" fill="none" stroke="#2b1d14" stroke-width="1"/>
+<circle cx="40" cy="40" r="17" fill="#ecc9ae" stroke="#2b1d14" stroke-width="1.4"/>
+<path d="M24.2,41 L27,43.1 L29.9,37.9 L32.8,45.1 L35.7,35.9 L38.6,47.2 L41.4,33.8 L44.3,47.2 L47.2,35.9 L50.1,45.1 L53,37.9 L55.8,43.1" fill="none" stroke="#a8321e" stroke-width="1.6" stroke-linejoin="round"/>
+<circle cx="264" cy="40" r="7" fill="#f0c050" stroke="#2b1d14" stroke-width="1.2"/>
+<circle cx="262" cy="38" r="2" fill="#fff6dc" opacity="0.8"/>
+<text x="150" y="45" font-size="11" font-family="serif" fill="#a8321e" text-anchor="middle" letter-spacing="3">MESSAGE</text>
+<g transform="translate(28 60)">
+<g clip-path="url(#omen-shaken-lamp-clip4)">
+<rect x="0" y="0" width="244" height="236" fill="#ecc9ae"/>
+<rect x="0" y="0" width="244" height="236" fill="url(#omen-shaken-lamp-lg5)" opacity="0.6"/>
+<path d="M0,0 H244 V16 Q122,30 0,16Z" fill="#c9a877" stroke="#2b1d14" stroke-width="1.5"/>
+<path d="M116,20 q6,10 12,0" fill="none" stroke="#2b1d14" stroke-width="2.4"/>
+<g transform="rotate(-32 122 24)" opacity="0.2">
+<line x1="122" y1="24" x2="122" y2="96" stroke="#2b1d14" stroke-width="1.8"/>
+<path d="M108,98 h28 l4,10 h-36Z" fill="#5a3d2b" stroke="#2b1d14" stroke-width="1.4"/>
+<ellipse cx="122" cy="134" rx="26" ry="28" fill="#f0c050" stroke="#2b1d14" stroke-width="1.8"/>
+<path d="M106,112 Q122,134 106,156 M138,112 Q122,134 138,156 M122,106 V162" fill="none" stroke="#2b1d14" stroke-width="1"/>
+<path d="M122,118 q11,16 0,30 q-11,-14 0,-30Z" fill="#e8742a" stroke="#2b1d14" stroke-width="1"/>
+<path d="M110,160 h24 l-4,9 h-16Z" fill="#5a3d2b" stroke="#2b1d14" stroke-width="1.4"/>
+</g>
+<g transform="rotate(-14 122 24)" opacity="0.4">
+<line x1="122" y1="24" x2="122" y2="96" stroke="#2b1d14" stroke-width="1.8"/>
+<path d="M108,98 h28 l4,10 h-36Z" fill="#5a3d2b" stroke="#2b1d14" stroke-width="1.4"/>
+<ellipse cx="122" cy="134" rx="26" ry="28" fill="#f0c050" stroke="#2b1d14" stroke-width="1.8"/>
+<path d="M106,112 Q122,134 106,156 M138,112 Q122,134 138,156 M122,106 V162" fill="none" stroke="#2b1d14" stroke-width="1"/>
+<path d="M122,118 q11,16 0,30 q-11,-14 0,-30Z" fill="#e8742a" stroke="#2b1d14" stroke-width="1"/>
+<path d="M110,160 h24 l-4,9 h-16Z" fill="#5a3d2b" stroke="#2b1d14" stroke-width="1.4"/>
+</g>
+<g transform="rotate(24 122 24)" opacity="1">
+<line x1="122" y1="24" x2="122" y2="96" stroke="#2b1d14" stroke-width="1.8"/>
+<circle cx="122" cy="130" r="62" fill="url(#omen-shaken-lamp-rg6)"/>
+<path d="M108,98 h28 l4,10 h-36Z" fill="#5a3d2b" stroke="#2b1d14" stroke-width="1.4"/>
+<ellipse cx="122" cy="134" rx="26" ry="28" fill="#f0c050" stroke="#2b1d14" stroke-width="1.8"/>
+<path d="M106,112 Q122,134 106,156 M138,112 Q122,134 138,156 M122,106 V162" fill="none" stroke="#2b1d14" stroke-width="1"/>
+<path d="M122,118 q11,16 0,30 q-11,-14 0,-30Z" fill="#e8742a" stroke="#2b1d14" stroke-width="1"/>
+<path d="M110,160 h24 l-4,9 h-16Z" fill="#5a3d2b" stroke="#2b1d14" stroke-width="1.4"/>
+</g>
+<path d="M40,70 q-14,20 0,40 M26,60 q-20,30 0,60 M204,64 q14,22 0,44" fill="none" stroke="#a8321e" stroke-width="2" stroke-linecap="round"/>
+<path d="M224.6,50.9a1.4,1.4 0 1,0 2.7,0a1.4,1.4 0 1,0 -2.7,0M177.4,52.1a2,2 0 1,0 4,0a2,2 0 1,0 -4,0M53.9,65a1.3,1.3 0 1,0 2.6,0a1.3,1.3 0 1,0 -2.6,0M176,29.9a1.3,1.3 0 1,0 2.6,0a1.3,1.3 0 1,0 -2.6,0M146.6,48.7a1.9,1.9 0 1,0 3.8,0a1.9,1.9 0 1,0 -3.8,0M26.6,65.4a1.4,1.4 0 1,0 2.9,0a1.4,1.4 0 1,0 -2.9,0M92.2,33.4a1.4,1.4 0 1,0 2.7,0a1.4,1.4 0 1,0 -2.7,0M21.3,33.5a1.6,1.6 0 1,0 3.3,0a1.6,1.6 0 1,0 -3.3,0M42.8,80.7a1,1 0 1,0 1.9,0a1,1 0 1,0 -1.9,0M167,146.6a1.4,1.4 0 1,0 2.8,0a1.4,1.4 0 1,0 -2.8,0M173,138.5a1.7,1.7 0 1,0 3.5,0a1.7,1.7 0 1,0 -3.5,0M28,151.2a1.2,1.2 0 1,0 2.4,0a1.2,1.2 0 1,0 -2.4,0M114.1,84.4a1.4,1.4 0 1,0 2.8,0a1.4,1.4 0 1,0 -2.8,0M223,23a0.9,0.9 0 1,0 1.7,0a0.9,0.9 0 1,0 -1.7,0M224.8,154a1.3,1.3 0 1,0 2.5,0a1.3,1.3 0 1,0 -2.5,0M130.9,77.6a1.3,1.3 0 1,0 2.6,0a1.3,1.3 0 1,0 -2.6,0M198.3,180.4a1.6,1.6 0 1,0 3.3,0a1.6,1.6 0 1,0 -3.3,0M96.4,142.6a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0M103.6,176.2a0.9,0.9 0 1,0 1.8,0a0.9,0.9 0 1,0 -1.8,0M93.3,171.7a1.8,1.8 0 1,0 3.5,0a1.8,1.8 0 1,0 -3.5,0M107.3,174.2a1.9,1.9 0 1,0 3.9,0a1.9,1.9 0 1,0 -3.9,0M116,173.2a0.9,0.9 0 1,0 1.8,0a0.9,0.9 0 1,0 -1.8,0M113.5,62.5a0.9,0.9 0 1,0 1.8,0a0.9,0.9 0 1,0 -1.8,0M14.2,173.4a1.4,1.4 0 1,0 2.8,0a1.4,1.4 0 1,0 -2.8,0M85.5,118.3a1.7,1.7 0 1,0 3.4,0a1.7,1.7 0 1,0 -3.4,0M69.2,44.9a1.9,1.9 0 1,0 3.7,0a1.9,1.9 0 1,0 -3.7,0M125.9,33.1a1.9,1.9 0 1,0 3.8,0a1.9,1.9 0 1,0 -3.8,0M198.7,59.1a0.9,0.9 0 1,0 1.9,0a0.9,0.9 0 1,0 -1.9,0M231.8,148.2a1.6,1.6 0 1,0 3.2,0a1.6,1.6 0 1,0 -3.2,0M204.7,45a1.8,1.8 0 1,0 3.6,0a1.8,1.8 0 1,0 -3.6,0M164.1,64.7a1.9,1.9 0 1,0 3.7,0a1.9,1.9 0 1,0 -3.7,0M174.1,153.1a1.6,1.6 0 1,0 3.3,0a1.6,1.6 0 1,0 -3.3,0M85.8,91.9a1,1 0 1,0 2,0a1,1 0 1,0 -2,0M20.5,133.7a2,2 0 1,0 4,0a2,2 0 1,0 -4,0M151.7,83.2a1.4,1.4 0 1,0 2.9,0a1.4,1.4 0 1,0 -2.9,0M214.4,175.3a1.3,1.3 0 1,0 2.5,0a1.3,1.3 0 1,0 -2.5,0M158.5,127.2a1,1 0 1,0 2,0a1,1 0 1,0 -2,0M79.6,165.3a1.5,1.5 0 1,0 3.1,0a1.5,1.5 0 1,0 -3.1,0M122.2,162.3a1.9,1.9 0 1,0 3.9,0a1.9,1.9 0 1,0 -3.9,0M172.9,159.2a1.1,1.1 0 1,0 2.2,0a1.1,1.1 0 1,0 -2.2,0M54.3,182.1a1.2,1.2 0 1,0 2.4,0a1.2,1.2 0 1,0 -2.4,0M140.8,72.7a1.9,1.9 0 1,0 3.7,0a1.9,1.9 0 1,0 -3.7,0M12.7,84.3a0.9,0.9 0 1,0 1.9,0a0.9,0.9 0 1,0 -1.9,0M98.7,177.7a0.8,0.8 0 1,0 1.7,0a0.8,0.8 0 1,0 -1.7,0M216.3,112.4a2,2 0 1,0 4,0a2,2 0 1,0 -4,0M132.5,91.1a1,1 0 1,0 2.1,0a1,1 0 1,0 -2.1,0" fill="#5a3d2b" opacity="0.7"/>
+<path d="M0,214.8 C5.1,214.8 20.3,215.1 30.5,214.9 C40.7,214.7 50.8,214.7 61,213.9 C71.2,213.1 81.3,210.4 91.5,210 C101.7,209.5 111.8,210.6 122,211.1 C132.2,211.7 142.3,213.7 152.5,213.5 C162.7,213.2 172.8,209.4 183,209.5 C193.2,209.6 203.3,214 213.5,214.1 C223.7,214.1 238.9,210.4 244,209.6 L244,272 L0,272Z" fill="#c9a877" stroke="#2b1d14" stroke-width="1.6"/>
+<g transform="translate(204 214) rotate(-6) scale(-1 1)">
+<path d="M-8,-64 L-13,-51 L-12,-46" fill="none" stroke="#2b1d14" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="-12" cy="-46" r="2.2" fill="#d9b88a" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M-7,-6 l-1,6 l-4,0 M7,-6 l1,6 l4,0" fill="none" stroke="#2b1d14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-9,-69 L9,-69 Q14,-40 17,-5 Q0,-1 -17,-5 Q-14,-40 -9,-69Z" fill="#8f8a70" stroke="#2b1d14" stroke-width="1.4" stroke-linejoin="round"/>
+<path d="M0,-66 L1,-6" fill="none" stroke="#2b1d14" stroke-width="0.9" opacity="0.6"/>
+<path d="M-16,-72 Q-20,-102 0,-103 Q14,-102 13,-90 L10,-72 Q0,-66 -16,-72Z" fill="#8f8a70" stroke="#2b1d14" stroke-width="1.4"/>
+<circle cx="3" cy="-84" r="10.5" fill="#d9b88a" stroke="#2b1d14" stroke-width="1.2"/>
+<circle cx="8" cy="-85" r="1.7" fill="#2b1d14"/>
+<path d="M8,-64 L19,-70 L24,-84" fill="none" stroke="#2b1d14" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="24" cy="-84" r="2.2" fill="#d9b88a" stroke="#2b1d14" stroke-width="0.8"/>
+</g>
+</g>
+<rect x="0" y="0" width="244" height="236" fill="none" stroke="#2b1d14" stroke-width="1.8"/>
+<rect x="-3" y="-3" width="250" height="242" fill="none" stroke="#a8321e" stroke-width="0.9"/>
+</g>
+<text x="150" y="327" font-size="23" font-family="serif" fill="#2b1d14" text-anchor="middle" font-style="italic">The Shaken Lamp</text>
+<path d="M70,338 Q150,346 230,338" fill="none" stroke="#a8321e" stroke-width="1"/>
+<circle cx="150" cy="374" r="22" fill="#efe2c4" stroke="#2b1d14" stroke-width="1.4"/>
+<path d="M136.4,374 Q150,361.6 163.6,374 Q150,386.4 136.4,374Z" fill="none" stroke="#8a6a10" stroke-width="2.4" stroke-linejoin="round"/>
+<circle cx="150" cy="374" r="3.7" fill="#8a6a10"/>
+<path d="M126,374 C121.3,373 107.3,367 98,368 C88.7,369 79,379.3 70,380 C61,380.7 48.3,373.3 44,372" fill="none" stroke="#2b1d14" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M98,368 L108.3,368.7 L103.7,371.6 L99.2,370.6 L97,367.2 L97.6,363.2 L100.5,360.5 L103.9,359.9 L106.5,360.9" fill="none" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M98,368 Q88,363.8 81.9,375.2 Q91,377.8 98,368Z" fill="#2f4f8a" stroke="#2b1d14" stroke-width="0.9"/>
+<path d="M70,380 L59.7,368.1 L64.3,365.2 L68.8,366.2 L71,369.6 L70.4,373.6 L67.5,376.3 L64.1,376.9 L61.5,375.9" fill="none" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M70,380 Q80,375.8 86.1,387.2 Q77,389.8 70,380Z" fill="#5f7a3e" stroke="#2b1d14" stroke-width="0.9"/>
+<path d="M174,374 C178.7,373 192.7,367 202,368 C211.3,369 221,379.3 230,380 C239,380.7 251.7,373.3 256,372" fill="none" stroke="#2b1d14" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M202,368 L212.3,368.7 L207.7,371.6 L203.2,370.6 L201,367.2 L201.6,363.2 L204.5,360.5 L207.9,359.9 L210.5,360.9" fill="none" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M202,368 Q192,363.8 185.9,375.2 Q195,377.8 202,368Z" fill="#f0c050" stroke="#2b1d14" stroke-width="0.9"/>
+<path d="M230,380 L219.7,368.1 L224.3,365.2 L228.8,366.2 L231,369.6 L230.4,373.6 L227.5,376.3 L224.1,376.9 L221.5,375.9" fill="none" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M230,380 Q240,375.8 246.1,387.2 Q237,389.8 230,380Z" fill="#5f7a3e" stroke="#2b1d14" stroke-width="0.9"/>
+<polygon points="0,64 9,70 0,76" fill="#1b120c"/>
+<path d="M9,70 L0,76" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,80 9,86 0,92" fill="#1b120c"/>
+<path d="M9,86 L0,92" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,96 9,102 0,108" fill="#1b120c"/>
+<path d="M9,102 L0,108" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,112 9,118 0,124" fill="#1b120c"/>
+<path d="M9,118 L0,124" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,154 9,160 0,166" fill="#1b120c"/>
+<path d="M9,160 L0,166" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,196 9,202 0,208" fill="#1b120c"/>
+<path d="M9,202 L0,208" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+</g>
+<rect x="1" y="1" width="298" height="418" rx="16" fill="none" stroke="#2b1d14" stroke-width="2"/>
+</svg>

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="card-houses-2-t card-houses-2-d">
+<title id="card-houses-2-t">Short Rations: 2 of Houses</title>
+<desc id="card-houses-2-d">Ration-issue card, the 2 of Houses (Duarte's suit): worn card stock, the rank in army stencil at two corners, 2 of eight issue holes punched, and drawn by hand in the middle a hillside of 2 houses, one window lit.</desc>
+<defs><clipPath id="card-houses-2-clip1"><rect x="4" y="4" width="292" height="412" rx="16"/></clipPath><filter id="card-houses-2-spk2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="459"/><feColorMatrix values="0 0 0 0 0.44  0 0 0 0 0.40  0 0 0 0 0.31  0 0 0 0.7 -0.3"/></filter><mask id="card-houses-2-st3" maskUnits="userSpaceOnUse" x="-32" y="6" width="162" height="108"><rect x="-32" y="6" width="162" height="108" fill="#fff"/><rect x="43.6" y="30" width="4.8" height="60" fill="#000"/></mask><mask id="card-houses-2-st4" maskUnits="userSpaceOnUse" x="-32" y="6" width="162" height="108"><rect x="-32" y="6" width="162" height="108" fill="#fff"/><rect x="43.6" y="30" width="4.8" height="60" fill="#000"/></mask><clipPath id="card-houses-2-clip5"><rect x="40" y="296" width="222" height="40"/></clipPath><mask id="card-houses-2-st6" maskUnits="userSpaceOnUse" x="8" y="361.6" width="136.4" height="39.6"><rect x="8" y="361.6" width="136.4" height="39.6" fill="#fff"/><rect x="35.7" y="370.4" width="1.8" height="22" fill="#000"/><rect x="51.1" y="370.4" width="1.8" height="22" fill="#000"/><rect x="66.5" y="370.4" width="1.8" height="22" fill="#000"/><rect x="81.9" y="370.4" width="1.8" height="22" fill="#000"/><rect x="97.3" y="370.4" width="1.8" height="22" fill="#000"/><rect x="112.7" y="370.4" width="1.8" height="22" fill="#000"/></mask></defs>
+<rect x="4" y="4" width="292" height="412" rx="16" fill="#DDD4BD" stroke="#6f6750" stroke-width="2"/>
+<g clip-path="url(#card-houses-2-clip1)">
+<rect x="0" y="0" width="300" height="420" filter="url(#card-houses-2-spk2)"/>
+</g>
+<g clip-path="url(#card-houses-2-clip1)">
+<ellipse cx="109.7" cy="168.1" rx="25.5" ry="4.5" fill="#b3a786" opacity="0.3" transform="rotate(-39 109.7 168.1)"/>
+<ellipse cx="99.6" cy="203.7" rx="11.3" ry="4.3" fill="#b3a786" opacity="0.3" transform="rotate(-12.5 99.6 203.7)"/>
+<ellipse cx="28.8" cy="217.2" rx="24.7" ry="4.5" fill="#b3a786" opacity="0.3" transform="rotate(28.7 28.8 217.2)"/>
+<ellipse cx="175.3" cy="85" rx="25.8" ry="3.2" fill="#b3a786" opacity="0.3" transform="rotate(35.9 175.3 85)"/>
+<ellipse cx="79.8" cy="126.3" rx="29.6" ry="4" fill="#b3a786" opacity="0.3" transform="rotate(4.8 79.8 126.3)"/>
+<ellipse cx="106" cy="234.8" rx="19.1" ry="5.3" fill="#b3a786" opacity="0.3" transform="rotate(27.1 106 234.8)"/>
+<ellipse cx="204.9" cy="318.7" rx="21.4" ry="3" fill="#b3a786" opacity="0.3" transform="rotate(-17.1 204.9 318.7)"/>
+<ellipse cx="237.8" cy="252.3" rx="27.8" ry="1.7" fill="#b3a786" opacity="0.3" transform="rotate(-34.5 237.8 252.3)"/>
+<ellipse cx="60.2" cy="403.4" rx="13.8" ry="2.5" fill="#b3a786" opacity="0.3" transform="rotate(-19.6 60.2 403.4)"/>
+<ellipse cx="272.9" cy="260.8" rx="10.7" ry="3.3" fill="#b3a786" opacity="0.3" transform="rotate(-23.6 272.9 260.8)"/>
+<line x1="36.2" y1="416" x2="4" y2="383.8" stroke="#9b9072" stroke-width="1.5"/>
+<polygon points="36.2,416 4,416 4,383.8" fill="#000" opacity="0.1"/>
+</g>
+<rect x="16" y="16" width="268" height="388" rx="9" fill="none" stroke="#1B1D1F" stroke-width="2.4" stroke-dasharray="20 5"/>
+<g mask="url(#card-houses-2-st3)">
+<text x="28" y="78" font-size="60" font-family="monospace" fill="#1B1D1F" font-weight="bold" letter-spacing="6">2</text>
+</g>
+<path d="M38.2,113.2 L38,107.2 L37.5,101.4 L41,97.8 L44,94.3 L46.7,90.9 L49.8,94.1 L53.2,98.3 L56.1,100.9 L55.8,107.4 L56.5,113.2 L51.9,113.4 L46.8,112.9 L42.4,112.7 L37.9,113.2Z" stroke="#1B1D1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M34.9,103.4 L37.6,100.3 L41.1,97 L43.6,93.2 L46.8,90.4 L50.2,93.8 L53.3,96.8 L55.8,100.5 L59,104" stroke="#1B1D1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M44.8,112.6 L44.8,105.8 L49.9,106.2 L49.7,113.4" stroke="#1B1D1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<g transform="rotate(180 150.0 210.0)">
+<g mask="url(#card-houses-2-st4)">
+<text x="28" y="78" font-size="60" font-family="monospace" fill="#1B1D1F" font-weight="bold" letter-spacing="6">2</text>
+</g>
+<path d="M38.2,112.7 L38.3,107.3 L37.6,100.9 L40.6,97.8 L43.8,94.3 L46.9,91.1 L50.1,94.3 L53.3,98 L56.2,101.5 L56.4,107.3 L56.3,113.1 L51.6,113.5 L46.8,112.8 L42.1,113.5 L37.6,113.2Z" stroke="#1B1D1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M34.7,103.7 L37.8,99.9 L41,96.6 L44.1,93.9 L46.6,90.6 L50.2,94 L53.2,97.4 L55.8,100.5 L58.5,103.5" stroke="#1B1D1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M45.1,113 L45.3,106.3 L50,105.6 L49.8,112.9" stroke="#1B1D1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</g>
+<circle cx="110" cy="44" r="6.5" fill="#1B1D1F"/>
+<circle cx="108.5" cy="42.5" r="2" fill="#4a4e51"/>
+<circle cx="132" cy="44" r="6.5" fill="#1B1D1F"/>
+<circle cx="130.5" cy="42.5" r="2" fill="#4a4e51"/>
+<circle cx="154" cy="44" r="6.5" fill="none" stroke="#1B1D1F" stroke-width="1.3" stroke-dasharray="3 2.5"/>
+<circle cx="176" cy="44" r="6.5" fill="none" stroke="#1B1D1F" stroke-width="1.3" stroke-dasharray="3 2.5"/>
+<circle cx="198" cy="44" r="6.5" fill="none" stroke="#1B1D1F" stroke-width="1.3" stroke-dasharray="3 2.5"/>
+<circle cx="220" cy="44" r="6.5" fill="none" stroke="#1B1D1F" stroke-width="1.3" stroke-dasharray="3 2.5"/>
+<circle cx="242" cy="44" r="6.5" fill="none" stroke="#1B1D1F" stroke-width="1.3" stroke-dasharray="3 2.5"/>
+<circle cx="264" cy="44" r="6.5" fill="none" stroke="#1B1D1F" stroke-width="1.3" stroke-dasharray="3 2.5"/>
+<text x="108" y="72" font-size="13" font-family="monospace" fill="#1B1D1F" text-anchor="start">ISSUE 2/8</text>
+<rect x="43.1" y="260.6" width="37.8" height="24.3" fill="#DDD4BD"/>
+<path d="M43.6,285.5 L43.1,277.7 L42.3,268.4 L42.2,259.8 L49.7,253.2 L56.3,247 L61.4,239.5 L69.1,245.4 L74.3,253.6 L81.6,261.4 L81.6,269.6 L80.8,276.5 L80.1,284.7 L71.7,284.7 L61.7,284.7 L53.3,284.4 L42.8,285.2Z" stroke="#1B1D1F" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M36.8,264.6 L44.2,259 L50.5,251.7 L55.5,244.3 L62.1,237 L68.3,244.1 L74.3,251.8 L80.4,259.1 L86.3,264.3" stroke="#1B1D1F" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M57.3,284.1 L58.1,271 L67.2,270.1 L67.1,285.6" stroke="#1B1D1F" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<rect x="70.1" y="236.3" width="5.9" height="13.5" fill="#1B1D1F"/>
+<rect x="219.1" y="250.7" width="37.8" height="24.3" fill="#DDD4BD"/>
+<path d="M219.4,275.1 L219,263.3 L219.3,250.3 L224.5,244.1 L231.7,236.1 L238.3,229.7 L244.7,235.7 L249.8,243.2 L256,249.8 L257.2,263 L257.3,274.6 L247.8,275.7 L237.1,274.3 L228.9,275.1 L218.4,275.3Z" stroke="#1B1D1F" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M212.7,254.8 L219.6,247.6 L224.8,241.7 L231.7,233.8 L238.3,228 L244.3,235.5 L250.6,242.1 L256.1,248 L262.3,255.1" stroke="#1B1D1F" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M233.6,274.1 L233.8,260.6 L242.5,260.8 L244.3,275.2" stroke="#1B1D1F" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<rect x="246.1" y="226.3" width="5.9" height="13.5" fill="#1B1D1F"/>
+<rect x="48" y="267.4" width="8.1" height="8.1" fill="#D9A441" stroke="#1B1D1F" stroke-width="1.5"/>
+<path d="M71.5,236.2 L77.7,221.5 L72.3,209.9 L77.3,198.2" stroke="#3b3a38" stroke-width="1.6" opacity="0.7" fill="none"/>
+<path d="M39.6,298.5 L53.1,295.3 L64.9,292.5 L76.2,285.4 L91.3,283.4 L100.9,282.8 L114,284.3 L125.9,288.2 L137.9,288.2 L149.1,288.7 L162.1,285.8 L173,282.4 L186.2,279.3 L199.3,275.3 L208.7,268.8 L222.5,273.6 L236.7,276.8 L250,280.5 L261.3,284.9" stroke="#1B1D1F" stroke-width="2.4" fill="none"/>
+<g clip-path="url(#card-houses-2-clip5)">
+<path d="M-0.1,238.6 L227.7,164.5 M1.9,244.6 L229.7,170.6 M3.9,250.9 L231.8,176.9 M6.5,259.1 L234.4,185 M9.3,267.4 L237.1,193.4 M10.9,272.5 L238.8,198.5 M12.7,278.1 L240.6,204 M15.4,286.3 L243.3,212.3 M16.9,290.9 L244.7,216.8 M18.9,297.1 L246.8,223.1 M22.2,307.3 L250.1,233.3 M23.9,312.5 L251.7,238.4 M26.2,319.4 L254,245.4 M28.4,326.3 L256.2,252.2 M30.7,333.4 L258.6,259.4 M33.1,340.7 L260.9,266.6 M34.5,345.1 L262.4,271.1 M36.8,352.2 L264.7,278.2 M39.2,359.6 L267.1,285.6 M41.2,365.8 L269.1,291.8 M43.1,371.6 L271,297.6 M45.5,378.9 L273.3,304.8 M47.9,386.2 L275.7,312.2 M50.1,393.2 L278,319.2 M52.2,399.7 L280.1,325.6 M53.7,404.2 L281.6,330.2 M56.4,412.5 L284.3,338.5 M58.2,418.1 L286.1,344.1 M60.7,425.8 L288.6,351.8 M63.1,433.1 L290.9,359 M64.7,437.9 L292.5,363.9 M67.6,447 L295.5,373 M69.5,452.8 L297.3,378.8 M70.9,457.2 L298.8,383.2 M73.2,464.3 L301.1,390.3" fill="none" stroke="#5E7363" stroke-width="1.6" opacity="0.8"/>
+</g>
+<g mask="url(#card-houses-2-st6)">
+<text x="30" y="388" font-size="22" font-family="monospace" fill="#5E7363" font-weight="bold" letter-spacing="2.2">HOUSES</text>
+</g>
+<text x="32" y="364" font-size="13" font-family="monospace" fill="#3b3a38" text-anchor="start">TWO</text>
+</svg>

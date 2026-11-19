@@ -19,7 +19,25 @@ Ten games adapted from the author's creative-writing vault. Read `README.md` for
   with no travel: map pages, locks, card and board games, crafting, cooking. The test: in 2D the
   player is getting somewhere; in 1D the player is working something out.
 - **DESIGN.md and `data/` must agree.** After changing either, run `python tools/validate.py <slug>`
-  and fix what it reports. Do not loosen the validator to make a game pass.
+  and fix what it reports. Do not loosen the validator to make a game pass. After changing a
+  game's scenes or `docs/STORYBOARDS.md`, run `python tools/check_storyboards.py` too.
+- **Each 2D mode and 1D game owns one graphic style** (`docs/graphic_styles.json`, shown in
+  `docs/COLLECTION.md` section 7); no style is used twice. Pictographs are drawn by code in
+  `games/<slug>/pictographs/make.py`, never by hand: change the code and run
+  `python tools/pictographs/build.py`; `--check` must pass before a commit.
+- **Game art drawn by code** lives in `games/<slug>/art/`: the code in `art/src/`, one SVG per asset
+  under `art/<group>/`, with `art.json` and a gallery `README.md`. Never edit an SVG by hand: change the
+  code and run `python tools/art/build.py <slug>`; `--check` must pass before a commit.
+- **3D assets start from `games/<slug>/assets/assets.json`**: one location image per 3D place (the
+  Blender reference) and one isolated object image per Meshy prop. Keep the prompt, model and job
+  id with each image, never a link. No characters or creatures are Meshy props. After changing
+  scenes or assets, run `python tools/check_assets.py <slug>`.
+- **Each 3D location has one Blender build file** (`games/<slug>/blender/<location>.build.json`,
+  format in `docs/BLENDER.md`) covering every 3D scene played there. After changing scenes, assets
+  or build files, run `python tools/check_blender.py <slug>`. `build/` is generated; never commit it.
+- **The web build (`web/`, `docs/WEB.md`)** holds the hub, each game's loading screen and one
+  playable module per 2D mode and 1D game, in that mode's graphic style. No libraries and no network.
+  After a change, run `python tools/web/build.py` and `node tools/web/smoke.mjs <slug>`.
 - Horror games keep a cost in every ending; victims have interior lives; graphic detail is
   suggested, never instructed. These are the vault's own craft rules.
 - Do not recreate an existing commercial game, its characters, levels or look.

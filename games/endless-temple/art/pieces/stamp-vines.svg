@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-labelledby="stamp-vines-t stamp-vines-d">
+<title id="stamp-vines-t">Tooling stamp: Vines (place)</title>
+<desc id="stamp-vines-d">A leather tile from the Place tray, stamped in gold: a web of vine with six leaves. Below it, the word VINES.</desc>
+<defs><clipPath id="stamp-vines-clip1"><rect x="0" y="0" width="200" height="200" rx="10"/></clipPath><filter id="stamp-vines-gr2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="2" seed="875"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.4 0"/></filter><filter id="stamp-vines-gr3" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="463"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><radialGradient id="stamp-vines-rg4" cx="0.5" cy="0.5" r="0.75"><stop offset="0%" stop-color="#000" stop-opacity="0"/><stop offset="60%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#140904" stop-opacity="0.5"/></radialGradient><linearGradient id="stamp-vines-gold5" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="120" y2="84" spreadMethod="reflect"><stop offset="0" stop-color="#F0D488"/><stop offset="0.45" stop-color="#D4A23A"/><stop offset="0.75" stop-color="#9A6F1E"/><stop offset="1" stop-color="#D4A23A"/></linearGradient><filter id="stamp-vines-gr6" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="437"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter></defs>
+<rect x="0" y="0" width="200" height="200" fill="#6B4423" rx="10"/>
+<rect x="0" y="0" width="200" height="200" filter="url(#stamp-vines-gr2)" clip-path="url(#stamp-vines-clip1)"/>
+<rect x="0" y="0" width="200" height="200" filter="url(#stamp-vines-gr3)" clip-path="url(#stamp-vines-clip1)"/>
+<rect x="0" y="0" width="200" height="200" fill="url(#stamp-vines-rg4)" rx="10"/>
+<path d="M16,16 H184 V150 H16Z" fill="#4E3018" opacity="0.8"/>
+<path d="M16,16 H184 V150 H16Z" fill="none" stroke="#140904" stroke-width="5" opacity="0.5" transform="translate(1.5 2)"/>
+<path d="M16,16 H184 V150 H16Z" fill="none" stroke="url(#stamp-vines-gold5)" stroke-width="3"/>
+<path d="M23,23 H177 V143 H23Z" fill="none" stroke="url(#stamp-vines-gold5)" stroke-width="0.9"/>
+<g transform="translate(101.6 86.2) scale(1.06)" opacity="0.7">
+<path d="M-44,36 C-20,30 -26,2 -4,0 C16,-2 10,-28 36,-34" fill="none" stroke="#140904" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-4,0 C6,14 26,10 40,22 M-26,22 C-30,6 -40,0 -44,-14 M10,-18 C0,-26 -6,-36 -18,-38" fill="none" stroke="#140904" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M0,0 C5,-7 14,-7 18,0 C14,7 5,7 0,0Z" fill="#140904" transform="translate(-14 12) rotate(200)"/>
+<path d="M0,0 C5,-7 14,-7 18,0 C14,7 5,7 0,0Z" fill="#140904" transform="translate(16 -8) rotate(20)"/>
+<path d="M0,0 C5,-7 14,-7 18,0 C14,7 5,7 0,0Z" fill="#140904" transform="translate(28 14) rotate(60)"/>
+<path d="M0,0 C5,-7 14,-7 18,0 C14,7 5,7 0,0Z" fill="#140904" transform="translate(-36 4) rotate(250)"/>
+<path d="M0,0 C5,-7 14,-7 18,0 C14,7 5,7 0,0Z" fill="#140904" transform="translate(-4 -30) rotate(160)"/>
+<path d="M0,0 C5,-7 14,-7 18,0 C14,7 5,7 0,0Z" fill="#140904" transform="translate(24 -30) rotate(300)"/>
+<path d="M36,-34 q8,-2 6,6 q-2,5 -6,2" fill="none" stroke="#140904" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g transform="translate(100 84) scale(1.06)" opacity="1">
+<path d="M-44,36 C-20,30 -26,2 -4,0 C16,-2 10,-28 36,-34" fill="none" stroke="url(#stamp-vines-gold5)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-4,0 C6,14 26,10 40,22 M-26,22 C-30,6 -40,0 -44,-14 M10,-18 C0,-26 -6,-36 -18,-38" fill="none" stroke="url(#stamp-vines-gold5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M0,0 C5,-7 14,-7 18,0 C14,7 5,7 0,0Z" fill="url(#stamp-vines-gold5)" transform="translate(-14 12) rotate(200)"/>
+<path d="M0,0 C5,-7 14,-7 18,0 C14,7 5,7 0,0Z" fill="url(#stamp-vines-gold5)" transform="translate(16 -8) rotate(20)"/>
+<path d="M0,0 C5,-7 14,-7 18,0 C14,7 5,7 0,0Z" fill="url(#stamp-vines-gold5)" transform="translate(28 14) rotate(60)"/>
+<path d="M0,0 C5,-7 14,-7 18,0 C14,7 5,7 0,0Z" fill="url(#stamp-vines-gold5)" transform="translate(-36 4) rotate(250)"/>
+<path d="M0,0 C5,-7 14,-7 18,0 C14,7 5,7 0,0Z" fill="url(#stamp-vines-gold5)" transform="translate(-4 -30) rotate(160)"/>
+<path d="M0,0 C5,-7 14,-7 18,0 C14,7 5,7 0,0Z" fill="url(#stamp-vines-gold5)" transform="translate(24 -30) rotate(300)"/>
+<path d="M36,-34 q8,-2 6,6 q-2,5 -6,2" fill="none" stroke="url(#stamp-vines-gold5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<text x="100.7" y="180.9" font-size="19" font-family="serif" fill="#1A0B05" opacity="0.8" text-anchor="middle" letter-spacing="2.4" font-weight="bold">VINES</text>
+<text x="100" y="180" font-size="19" font-family="serif" fill="url(#stamp-vines-gold5)" text-anchor="middle" letter-spacing="2.4" font-weight="bold">VINES</text>
+<text x="99.8" y="179.7" font-size="19" font-family="serif" fill="none" stroke="#F0D488" stroke-width="0.4" opacity="0.6" text-anchor="middle" letter-spacing="2.4" font-weight="bold">VINES</text>
+<path d="M30,160 H170" stroke="url(#stamp-vines-gold5)" stroke-width="0.8" fill="none"/>
+<path d="M22,160 l4,-4 l4,4 l-4,4Z" fill="url(#stamp-vines-gold5)"/>
+<path d="M178,160 l-4,-4 l-4,4 l4,4Z" fill="url(#stamp-vines-gold5)"/>
+<rect x="0" y="0" width="200" height="200" filter="url(#stamp-vines-gr6)"/>
+</svg>

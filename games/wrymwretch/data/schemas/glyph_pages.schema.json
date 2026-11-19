@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "glyph_pages.json (WrymWretch)",
+  "description": "The Slipping Glyph's rune key, glyph parts and its three pages, row by row (DESIGN.md section 11).",
+  "type": "object",
+  "required": ["part_types", "part_variants", "runes", "rules", "pages"],
+  "$defs": {
+    "row": {"type": "object", "required": ["row", "answer", "stable"], "properties": {
+      "row": {"type": "integer", "minimum": 1},
+      "answer": {"type": ["string", "null"], "description": "A rune id; null only for an unreadable row"},
+      "stable": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": ["string", "null"]}, "description": "Which part of each glyph stays"},
+      "unreadable": {"type": "boolean"},
+      "names": {"type": "object", "required": ["kind", "place"], "properties": {"kind": {"enum": ["witness_slot", "ilvarra"]}, "slot": {"type": "integer"}, "place": {"type": "string"}}},
+      "signed_by": {"type": "string"},
+      "prefilled_from": {"type": "object", "required": ["scene", "row"], "properties": {"scene": {"type": "string"}, "row": {"type": "integer"}}},
+      "is_the_name": {"type": "boolean"}}}
+  },
+  "properties": {
+    "part_types": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"enum": ["crown", "stem", "foot", "mark"]}},
+    "part_variants": {"type": "object"},
+    "runes": {"type": "array", "minItems": 12, "maxItems": 12, "items": {"type": "object", "required": ["id", "parts"],
+      "properties": {"id": {"type": "string"}, "parts": {"type": "object", "required": ["crown", "stem", "foot", "mark"]}}}},
+    "rules": {"type": "object", "required": ["glyphs_per_row", "focus_hold_seconds", "wrong_runes_to_devour", "devour_realm_loss"]},
+    "pages": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object",
+      "required": ["scene", "slip_delay", "stable_moves_per_minute", "devour_realm", "rows", "on_rows_read"],
+      "properties": {
+        "scene": {"type": "string"}, "slip_delay": {"type": "number", "exclusiveMinimum": 0},
+        "stable_moves_per_minute": {"type": "integer", "minimum": 0},
+        "devour_realm": {"type": ["string", "null"]}, "time_limit_seconds": {"type": "integer"}, "ends_after_row": {"type": "integer"},
+        "rows": {"type": "array", "items": {"$ref": "#/$defs/row"}}, "on_rows_read": {"type": "object"}}}}
+  }
+}

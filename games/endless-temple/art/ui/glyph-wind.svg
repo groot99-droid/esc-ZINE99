@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160" role="img" aria-labelledby="glyph-wind-t glyph-wind-d">
+<title id="glyph-wind-t">Ink glyph: Wind the clock</title>
+<desc id="glyph-wind-d">The prompt for wind the clock: the clock key and a turning arrow, drawn with a dip pen on a small round of vellum.</desc>
+<defs><filter id="glyph-wind-rough1"><feTurbulence type="turbulence" baseFrequency="0.1" numOctaves="2" seed="223" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="4"/></filter><filter id="glyph-wind-blur2" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="5"/></filter><clipPath id="glyph-wind-clip3"><circle cx="80" cy="80" r="69"/></clipPath><filter id="glyph-wind-gr4" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="345"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.2 0"/></filter></defs>
+<circle cx="84" cy="86" r="68" fill="#22170E" opacity="0.3" filter="url(#glyph-wind-blur2)"/>
+<circle cx="80" cy="80" r="70" fill="#F3EAD2" stroke="#5A4230" stroke-width="1.6" filter="url(#glyph-wind-rough1)"/>
+<rect x="10" y="10" width="140" height="140" filter="url(#glyph-wind-gr4)" clip-path="url(#glyph-wind-clip3)"/>
+<circle cx="52" cy="60" r="22" fill="none" stroke="#33241A" stroke-width="6"/>
+<circle cx="52" cy="60" r="8" fill="#33241A"/>
+<path d="M69.7,72.3 L71,74.6 L73,77.2 L75.4,80.2 L78.2,83.4 L81.4,86.8 L85.4,89.6 L89.7,92.4 L94.1,94.9 L98.3,97.8 L102.3,100.6 L106.1,103.2 L109.5,105.8 L112.3,108.2 L115.1,109.7 L117.7,110.4 L118.3,109.6 L117.1,107.3 L114.9,104.9 L111.9,102.7 L108.7,100 L105.3,96.9 L101.6,93.6 L97.9,90.2 L94.3,86.5 L90.7,83 L87,79.7 L83,77.4 L79.2,75.4 L75.7,73.7 L72.8,72.4 L70.3,71.7Z M103.6,97.7 L98.7,99.6 L94.7,104.6 L93.6,109.7 L94.4,110.3 L99.2,108.3 L103.4,103.5 L104.4,98.3Z M115.5,107.6 L111.1,109.9 L106.2,114.2 L105.7,119.8 L106.3,120.2 L111.7,118.7 L115,113.2 L116.5,108.4Z" fill="#33241A"/>
+<path d="M92,40 A34,34 0 0,1 122,70" fill="none" stroke="#33241A" stroke-width="4" stroke-linecap="round"/>
+<polygon points="126,82 114,70 130,66" fill="#33241A"/>
+<path d="M84,95h0M44,79h0M125,93h0" fill="none" stroke="#33241A" stroke-width="1.6" stroke-linecap="round" opacity="0.7"/>
+<path d="M23,63h0M129,38h0" fill="none" stroke="#33241A" stroke-width="2.8" stroke-linecap="round" opacity="0.7"/>
+<path d="M129,55h0M94,80h0" fill="none" stroke="#33241A" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
+</svg>

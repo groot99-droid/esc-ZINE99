@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" width="220" height="220" role="img" aria-labelledby="list-17-t list-17-d">
+<title id="list-17-t">The List, 17: Puddle</title>
+<desc id="list-17-d">One tile of the List on Tam's notebook paper, in a single pencil weight with hatching: site 17 held Puddle. The number is its place in the order the campground packed it; said backwards, the nineteen are the way out.</desc>
+<defs><filter id="list-17-blur1" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="8"/></filter><filter id="list-17-rough2"><feTurbulence type="turbulence" baseFrequency="0.6" numOctaves="2" seed="929" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="1.6"/></filter><filter id="list-17-tooth3" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.2" numOctaves="2" seed="19"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter></defs>
+<rect x="0" y="0" width="220" height="220" fill="#F6F1E2"/>
+<path d="M0,40h220M0,66h220M0,92h220M0,118h220M0,144h220M0,170h220M0,196h220" stroke="#A9C3CF" stroke-width="1" fill="none"/>
+<line x1="34" y1="0" x2="34" y2="220" stroke="#D58A7A" stroke-width="1.2"/>
+<ellipse cx="122" cy="104" rx="74" ry="62" fill="#4A4A48" opacity="0.1" filter="url(#list-17-blur1)"/>
+<path d="M112.3,119.5 L111,126.1 L106.3,132.5 L100.9,137.3 L93.4,138 L85.5,136.7 L79,132.6 L75.5,126.3 L74.5,118.8 L75.6,112.1 L78.9,105.2 L86,102.1 L93.2,100.8 L99.9,101.3 L106.5,105.3 L111.2,111.7 L112.4,119.1Z" fill="none" stroke="#4A4A48" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-17-rough2)"/>
+<path d="M81.9,118.7 L92.5,120.1 L104.9,119.1" fill="none" stroke="#4A4A48" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-17-rough2)"/>
+<path d="M93,107.8 L92.9,118.8 L93.1,131.3" fill="none" stroke="#4A4A48" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-17-rough2)"/>
+<path d="M170.7,119.4 L168.1,126.8 L163.9,133.3 L158.6,136.4 L150.5,137.9 L143.6,137.5 L137.7,132.6 L133.2,126.4 L131.6,119.2 L133.9,112.5 L137,106.1 L143.4,101.9 L151.6,100.2 L158.9,101.4 L164.1,106.5 L169.4,112.3 L169.7,118.8Z" fill="none" stroke="#4A4A48" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-17-rough2)"/>
+<path d="M139.9,119 L150.9,119.9 L163.2,118.9" fill="none" stroke="#4A4A48" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-17-rough2)"/>
+<path d="M150.6,107.6 L150.6,119.2 L151.2,131.4" fill="none" stroke="#4A4A48" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-17-rough2)"/>
+<path d="M93.4,119.8 L98.4,111.8 L104.3,104.3 L109,98.2 L115.5,90.8 L128.5,90.9 L140.4,90.2 L134.1,100.5 L128.6,109.5 L123.5,119.8 L113.2,119.3 L103,118.9 L92.6,119.6" fill="none" stroke="#4A4A48" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-17-rough2)"/>
+<path d="M140.9,90.8 L144.3,99.6 L147.6,109.8 L150.3,118.8" fill="none" stroke="#4A4A48" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-17-rough2)"/>
+<path d="M115.4,90.4 L117.2,100.4 L120.7,109.8 L122.5,119" fill="none" stroke="#4A4A48" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-17-rough2)"/>
+<path d="M108.4,82.8 L120.7,82.3" fill="none" stroke="#4A4A48" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-17-rough2)"/>
+<path d="M115.6,81.6 L115.2,90.3" fill="none" stroke="#4A4A48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-17-rough2)"/>
+<path d="M140.7,90.8 L143.1,74.5 L132,70.6" fill="none" stroke="#4A4A48" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-17-rough2)"/>
+<path d="M123.2,118.7 L115.8,132.3 L104.5,137.6 L97,131" fill="none" stroke="#4A4A48" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-17-rough2)"/>
+<text x="8" y="34" font-size="30" font-family="serif" fill="#4A4A48" transform="rotate(3.9 8 34)" font-weight="bold" font-style="italic">17</text>
+<text x="42" y="198" font-size="19" font-family="serif" fill="#4A4A48" transform="rotate(0.8 42 198)" font-style="italic">Puddle</text>
+<text x="168" y="26" font-size="13" font-family="serif" fill="#77756f" transform="rotate(-3 168 26)" font-style="italic">then 16</text>
+<path d="M41.9,206.4 L54.1,206.7 L65.7,205.7 L79.7,207.7 L90.8,207.1" fill="none" stroke="#4A4A48" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6" filter="url(#list-17-rough2)"/>
+<rect x="0" y="0" width="220" height="220" filter="url(#list-17-tooth3)"/>
+</svg>

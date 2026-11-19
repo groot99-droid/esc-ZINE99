@@ -5,6 +5,7 @@ Stdlib only. Usage: python tools/validate.py [slug ...]
 Exits 0 when every game passes, 1 when any game fails, 2 on a usage error.
 """
 import json
+import subprocess
 import sys
 from pathlib import Path
 
@@ -193,6 +194,16 @@ def check_game(folder):
             for sid in e.get("final_scenes", []):
                 if sid not in scene_ids:
                     errors.append(f"{where}: final scene '{sid}' is not a scene id")
+
+    # A game may ship extra data files with their own check (see docs/TECH.md).
+    extra = folder / "tools" / "check_data.py"
+    if extra.is_file():
+        run = subprocess.run([sys.executable, "-I", str(extra)], cwd=ROOT,
+                             capture_output=True, text=True)
+        if run.returncode != 0:
+            lines = (run.stdout + run.stderr).strip().splitlines() or ["(no output)"]
+            errors.append(f"tools/check_data.py failed (exit {run.returncode}):")
+            errors.extend(f"  {line}" for line in lines[:40])
     return errors
 
 

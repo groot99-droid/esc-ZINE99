@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "list_incidents.json",
+  "type": "object",
+  "required": ["note", "source", "tiers", "doesnt_matter", "follow_night_offers_one_fewer", "knows_ladder", "entries"],
+  "properties": {
+    "note": {"type": "string"},
+    "source": {"type": "string", "description": "The vault path of the source work, as in game.json sources"},
+    "tiers": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "object",
+      "required": ["tier", "clarity", "offers"],
+      "properties": {
+        "tier": {"type": "integer", "minimum": 1, "maximum": 4},
+        "clarity": {"type": "array", "items": {"type": "integer"}, "minItems": 2, "maxItems": 2},
+        "offers": {"type": "string"}
+      }}},
+    "doesnt_matter": {"type": "string", "description": "The explanation every tier from 3 down falls back to"},
+    "follow_night_offers_one_fewer": {"type": "boolean"},
+    "knows_ladder": {"type": "array", "items": {"type": "object",
+      "required": ["rung", "broken_gte", "or_flags", "or_chart_days"],
+      "properties": {
+        "rung": {"type": "string", "description": "A value of the knows enum in flags.json"},
+        "broken_gte": {"type": "integer", "minimum": 0},
+        "or_flags": {"type": "array", "items": {"type": "string"}, "description": "Bool flags that also reach this rung"},
+        "or_chart_days": {"type": "array", "items": {"type": "integer"}, "description": "Chart days whose correct ruling also reaches this rung"}
+      }}},
+    "entries": {"type": "array", "minItems": 1, "items": {"type": "object",
+      "required": ["id", "day", "added_in", "incident", "quote", "explanations", "broken_by"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^L[0-9]+$"},
+        "day": {"type": "integer", "minimum": 1, "maximum": 7},
+        "added_in": {"type": "string", "description": "The scene id that adds the entry; it writes the_list"},
+        "incident": {"type": "string"},
+        "quote": {"type": ["object", "null"], "required": ["text", "line"],
+          "properties": {"text": {"type": "string"}, "line": {"type": "integer", "minimum": 1}},
+          "description": "A verbatim quote from the source, with its line"},
+        "explanations": {"type": "array", "items": {"type": "string"}, "minItems": 3, "maxItems": 3, "description": "The tier-1 options, in the order lower tiers keep them"},
+        "broken_by": {"type": "array", "minItems": 1, "items": {"type": "object",
+          "required": ["scene", "day", "how"],
+          "properties": {
+            "scene": {"type": "string", "description": "A scene id that writes the_list; any one of them breaks the entry"},
+            "day": {"type": "integer", "minimum": 1, "maximum": 7},
+            "how": {"type": "string"}
+          }}}
+      }}}
+  }
+}

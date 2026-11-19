@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 220" width="460" height="220" role="img" aria-labelledby="stamp-supported-t stamp-supported-d">
+<title id="stamp-supported-t">Stamp: SUPPORTED</title>
+<desc id="stamp-supported-d">The SUPPORTED rubber stamp in red: a long single-ruled box with a row of small ticks under the word, struck level and lightly, the ink thin at one end.</desc>
+<defs><filter id="stamp-supported-ink1" x="-10%" y="-20%" width="120%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="2" seed="302" result="n"/><feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -3.5 2.4" result="m"/><feComposite in="SourceGraphic" in2="m" operator="in" result="s"/><feTurbulence type="turbulence" baseFrequency="0.06" numOctaves="1" seed="305" result="d"/><feDisplacementMap in="s" in2="d" scale="2"/></filter></defs>
+<g transform="rotate(-2 230 110)" filter="url(#stamp-supported-ink1)" opacity="0.9">
+<rect x="34" y="52" width="392" height="116" rx="10" fill="none" stroke="#9B2F22" stroke-width="6"/>
+<text x="230" y="120" font-size="56" font-family="monospace" fill="#9B2F22" font-weight="bold" text-anchor="middle" letter-spacing="3">SUPPORTED</text>
+<path d="M70,150 l7,8 l13,-17M104,150 l7,8 l13,-17M138,150 l7,8 l13,-17M172,150 l7,8 l13,-17M206,150 l7,8 l13,-17M240,150 l7,8 l13,-17M274,150 l7,8 l13,-17M308,150 l7,8 l13,-17M342,150 l7,8 l13,-17M376,150 l7,8 l13,-17" fill="none" stroke="#9B2F22" stroke-width="3.5"/>
+</g>
+<g fill="#9B2F22" opacity="0.6">
+<circle cx="92" cy="156.1" r="0.9"/>
+<circle cx="408.7" cy="60.2" r="2.1"/>
+<circle cx="404.4" cy="69" r="1"/>
+<circle cx="284.5" cy="192.8" r="1.1"/>
+<circle cx="158.8" cy="45.5" r="1.2"/>
+<circle cx="349.5" cy="102.6" r="1.4"/>
+</g>
+</svg>

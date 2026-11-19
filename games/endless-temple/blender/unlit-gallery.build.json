@@ -1,0 +1,471 @@
+{
+  "game": "endless-temple",
+  "location": "unlit-gallery",
+  "name": "The unlit shelf",
+  "reference": "assets/locations/unlit-gallery.jpg",
+  "bounds_m": [
+    20,
+    4,
+    5
+  ],
+  "origin": "walkway centre; +x along the gallery away from the stacks doorway on the west end; +y the shelf wall; -y the balustrade over the drop",
+  "materials": {
+    "dark-wood": {
+      "color": [
+        0.06,
+        0.07,
+        0.1
+      ],
+      "roughness": 0.8
+    },
+    "stone": {
+      "color": [
+        0.08,
+        0.09,
+        0.12
+      ],
+      "roughness": 0.95
+    },
+    "frost": {
+      "color": [
+        0.8,
+        0.88,
+        0.95
+      ],
+      "roughness": 0.4,
+      "emission": 0.1
+    },
+    "void": {
+      "color": [
+        0.01,
+        0.015,
+        0.03
+      ],
+      "roughness": 1.0
+    }
+  },
+  "blockout": [
+    {
+      "id": "walkway",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        20.0,
+        3.45,
+        0.2
+      ],
+      "location": [
+        0.0,
+        0.125,
+        -0.1
+      ],
+      "material": "stone"
+    },
+    {
+      "id": "shelf-backing",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        20.0,
+        0.2,
+        5.0
+      ],
+      "location": [
+        0.0,
+        1.95,
+        2.5
+      ],
+      "material": "dark-wood"
+    },
+    {
+      "id": "shelf-cornice",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        20.0,
+        0.55,
+        1.6
+      ],
+      "location": [
+        0.0,
+        1.6,
+        4.2
+      ],
+      "material": "dark-wood"
+    },
+    {
+      "id": "ceiling",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        20.0,
+        3.7,
+        0.2
+      ],
+      "location": [
+        0.0,
+        0.15,
+        5.1
+      ],
+      "material": "dark-wood"
+    },
+    {
+      "id": "balustrade",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        20.0,
+        0.15,
+        1.0
+      ],
+      "location": [
+        0.0,
+        -1.55,
+        0.5
+      ],
+      "material": "dark-wood"
+    },
+    {
+      "id": "void-below",
+      "shape": "plane",
+      "role": "sky",
+      "size_m": [
+        40.0,
+        30.0,
+        0.0
+      ],
+      "location": [
+        0.0,
+        -16.0,
+        -15.0
+      ],
+      "material": "void",
+      "collide": false
+    },
+    {
+      "id": "wall-west-south",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.3,
+        1.5,
+        5.0
+      ],
+      "location": [
+        -10.15,
+        -0.85,
+        2.5
+      ],
+      "material": "dark-wood"
+    },
+    {
+      "id": "wall-west-north",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.3,
+        1.0,
+        5.0
+      ],
+      "location": [
+        -10.15,
+        1.35,
+        2.5
+      ],
+      "material": "dark-wood"
+    },
+    {
+      "id": "wall-west-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.3,
+        0.95,
+        1.8
+      ],
+      "location": [
+        -10.15,
+        0.375,
+        4.1
+      ],
+      "material": "dark-wood"
+    },
+    {
+      "id": "wall-east",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.3,
+        3.7,
+        5.0
+      ],
+      "location": [
+        10.15,
+        0.15,
+        2.5
+      ],
+      "material": "dark-wood"
+    },
+    {
+      "id": "frost-rime",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        2.0,
+        0.05,
+        0.03
+      ],
+      "location": [
+        2.0,
+        1.33,
+        3.25
+      ],
+      "material": "frost",
+      "collide": false
+    },
+    {
+      "id": "lamp-post-1",
+      "shape": "cylinder",
+      "role": "trim",
+      "size_m": [
+        0.15,
+        0.15,
+        1.25
+      ],
+      "location": [
+        -6.0,
+        -1.55,
+        0.625
+      ],
+      "material": "dark-wood"
+    },
+    {
+      "id": "lamp-post-2",
+      "shape": "cylinder",
+      "role": "trim",
+      "size_m": [
+        0.15,
+        0.15,
+        1.25
+      ],
+      "location": [
+        -2.0,
+        -1.55,
+        0.625
+      ],
+      "material": "dark-wood"
+    },
+    {
+      "id": "lamp-post-3",
+      "shape": "cylinder",
+      "role": "trim",
+      "size_m": [
+        0.15,
+        0.15,
+        1.25
+      ],
+      "location": [
+        2.0,
+        -1.55,
+        0.625
+      ],
+      "material": "dark-wood"
+    },
+    {
+      "id": "lamp-post-4",
+      "shape": "cylinder",
+      "role": "trim",
+      "size_m": [
+        0.15,
+        0.15,
+        1.25
+      ],
+      "location": [
+        6.0,
+        -1.55,
+        0.625
+      ],
+      "material": "dark-wood"
+    }
+  ],
+  "props": [
+    {
+      "id": "shelf-1",
+      "object": "bookshelf",
+      "location": [
+        -8.0,
+        1.6,
+        0.0
+      ]
+    },
+    {
+      "id": "shelf-2",
+      "object": "bookshelf",
+      "location": [
+        -6.0,
+        1.6,
+        0.0
+      ]
+    },
+    {
+      "id": "shelf-3",
+      "object": "bookshelf",
+      "location": [
+        -4.0,
+        1.6,
+        0.0
+      ]
+    },
+    {
+      "id": "shelf-4",
+      "object": "bookshelf",
+      "location": [
+        -2.0,
+        1.6,
+        0.0
+      ]
+    },
+    {
+      "id": "shelf-5",
+      "object": "bookshelf",
+      "location": [
+        0.0,
+        1.6,
+        0.0
+      ]
+    },
+    {
+      "id": "shelf-6",
+      "object": "bookshelf",
+      "location": [
+        2.0,
+        1.6,
+        0.0
+      ]
+    },
+    {
+      "id": "shelf-7",
+      "object": "bookshelf",
+      "location": [
+        4.0,
+        1.6,
+        0.0
+      ]
+    },
+    {
+      "id": "shelf-8",
+      "object": "bookshelf",
+      "location": [
+        6.0,
+        1.6,
+        0.0
+      ]
+    },
+    {
+      "id": "shelf-9",
+      "object": "bookshelf",
+      "location": [
+        8.0,
+        1.6,
+        0.0
+      ]
+    },
+    {
+      "id": "black-book",
+      "object": "black-book",
+      "location": [
+        2.2,
+        1.45,
+        1.9
+      ],
+      "ground": false
+    },
+    {
+      "id": "candle",
+      "object": "candlestick",
+      "location": [
+        1.6,
+        1.45,
+        1.85
+      ],
+      "ground": false
+    }
+  ],
+  "scenes": {
+    "s3_unlit_gallery": {
+      "note": "c8: the high gallery where light does not reach; the only light is Elaris's candle, about 2 m. One book has frost on its clasps; lifting it opens The Clasps (F6).",
+      "world": {
+        "color": [
+          0.01,
+          0.015,
+          0.03
+        ],
+        "strength": 0.1
+      },
+      "lights": [
+        {
+          "name": "carried-candle",
+          "type": "POINT",
+          "location": [
+            -8.6,
+            0.1,
+            1.7
+          ],
+          "energy": 20,
+          "size": 0.05,
+          "color": [
+            1.0,
+            0.72,
+            0.4
+          ]
+        },
+        {
+          "name": "frost-glint",
+          "type": "POINT",
+          "location": [
+            2.2,
+            1.0,
+            2.1
+          ],
+          "energy": 1.5,
+          "size": 0.02,
+          "color": [
+            0.8,
+            0.88,
+            0.95
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -9.0,
+          0.3,
+          2.3
+        ],
+        "look_at": [
+          2.2,
+          1.4,
+          1.9
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          -9.0,
+          0.3,
+          0.0
+        ],
+        "facing_deg": -84.4
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "black-book",
+          "verb": "Lift the frosted book",
+          "leads_to": "g_clasp_c8"
+        }
+      ]
+    }
+  }
+}

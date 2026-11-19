@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 360" width="840" height="360" role="img" aria-labelledby="sprite-watcher-t sprite-watcher-d">
+<title id="sprite-watcher-t">Race sprite: the watcher, walk, run and crawl</title>
+<desc id="sprite-watcher-d">The watcher as an architect's scale figure in solid ink, in three poses on one ground line: walking, running and crawling below the sill. The head is a plain disc; there is no face.</desc>
+<defs><filter id="sprite-watcher-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.6" numOctaves="2" seed="436"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter></defs>
+<rect x="0" y="0" width="840" height="360" fill="#f3efe4"/>
+<rect x="0" y="0" width="840" height="360" filter="url(#sprite-watcher-grain1)"/>
+<line x1="20" y1="300" x2="820" y2="300" stroke="#1c1a17" stroke-width="1.6"/>
+<path d="M28,300l-8,8M38,300l-8,8M48,300l-8,8M58,300l-8,8M68,300l-8,8M78,300l-8,8M88,300l-8,8M98,300l-8,8M108,300l-8,8M118,300l-8,8M128,300l-8,8M138,300l-8,8M148,300l-8,8M158,300l-8,8M168,300l-8,8M178,300l-8,8M188,300l-8,8M198,300l-8,8M208,300l-8,8M218,300l-8,8M228,300l-8,8M238,300l-8,8M248,300l-8,8M258,300l-8,8M268,300l-8,8M278,300l-8,8M288,300l-8,8M298,300l-8,8M308,300l-8,8M318,300l-8,8M328,300l-8,8M338,300l-8,8M348,300l-8,8M358,300l-8,8M368,300l-8,8M378,300l-8,8M388,300l-8,8M398,300l-8,8M408,300l-8,8M418,300l-8,8M428,300l-8,8M438,300l-8,8M448,300l-8,8M458,300l-8,8M468,300l-8,8M478,300l-8,8M488,300l-8,8M498,300l-8,8M508,300l-8,8M518,300l-8,8M528,300l-8,8M538,300l-8,8M548,300l-8,8M558,300l-8,8M568,300l-8,8M578,300l-8,8M588,300l-8,8M598,300l-8,8M608,300l-8,8M618,300l-8,8M628,300l-8,8M638,300l-8,8M648,300l-8,8M658,300l-8,8M668,300l-8,8M678,300l-8,8M688,300l-8,8M698,300l-8,8M708,300l-8,8M718,300l-8,8M728,300l-8,8M738,300l-8,8M748,300l-8,8M758,300l-8,8M768,300l-8,8M778,300l-8,8M788,300l-8,8M798,300l-8,8M808,300l-8,8M818,300l-8,8" stroke="#1c1a17" stroke-width="0.5" fill="none"/>
+<text x="820" y="324" font-size="11" font-family="monospace" fill="#1c1a17" text-anchor="end" letter-spacing="2">SCALE FIGURES  1:20</text>
+<path d="M118,150 Q140,128 162,150 L170,240 L112,240Z" fill="#1c1a17"/>
+<path d="M134,234 C132,240 125.3,259.3 122,270 C118.7,280.7 115.3,293.3 114,298" stroke="#1c1a17" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M148,234 C150,239.7 157.3,257.3 160,268 C162.7,278.7 163.3,293 164,298" stroke="#1c1a17" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M106,300 h22 M156,300 h24" stroke="#1c1a17" stroke-width="7" stroke-linecap="round"/>
+<path d="M158,156 C160,162 168.7,181 170,192 C171.3,203 166.7,217 166,222" stroke="#1c1a17" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<circle cx="142" cy="114" r="17" fill="#1c1a17"/>
+<line x1="70" y1="300" x2="70" y2="96" stroke="#1c1a17" stroke-width="0.6"/>
+<line x1="65" y1="300" x2="75" y2="300" stroke="#1c1a17" stroke-width="0.9"/>
+<line x1="65" y1="96" x2="75" y2="96" stroke="#1c1a17" stroke-width="0.9"/>
+<text x="62" y="198" font-size="10" font-family="monospace" fill="#1c1a17" text-anchor="middle" transform="rotate(-90 62 198)">1 700</text>
+<text x="140" y="344" font-size="12" font-family="monospace" fill="#1c1a17" text-anchor="middle">A  WALK 1.6 m/s</text>
+<path d="M386,150 Q414,124 442,138 L432,230 L376,222Z" fill="#1c1a17"/>
+<path d="M408,220 C415,224 442.3,231.7 450,244 C457.7,256.3 453.3,285.7 454,294" stroke="#1c1a17" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M394,220 C390,226 381,247.7 370,256 C359,264.3 335,267.7 328,270" stroke="#1c1a17" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M448,298 h26 M324,260 l-4,18" stroke="#1c1a17" stroke-width="7" stroke-linecap="round"/>
+<path d="M430,150 C435.7,153 456,169.3 464,168 C472,166.7 475.7,146.3 478,142" stroke="#1c1a17" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M394,154 C388.7,157.7 369.3,167.7 362,176 C354.7,184.3 352,199.3 350,204" stroke="#1c1a17" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<circle cx="446" cy="110" r="17" fill="#1c1a17"/>
+<line x1="290" y1="150" x2="330" y2="150" stroke="#1c1a17" stroke-width="1" stroke-dasharray="8 4"/>
+<line x1="274" y1="190" x2="314" y2="190" stroke="#1c1a17" stroke-width="1" stroke-dasharray="8 4"/>
+<line x1="258" y1="230" x2="298" y2="230" stroke="#1c1a17" stroke-width="1" stroke-dasharray="8 4"/>
+<text x="420" y="344" font-size="12" font-family="monospace" fill="#1c1a17" text-anchor="middle">B  RUN 4.0 m/s</text>
+<line x1="570" y1="180" x2="810" y2="180" stroke="#1c1a17" stroke-width="0.8" stroke-dasharray="10 5"/>
+<text x="810" y="174" font-size="10" font-family="monospace" fill="#1c1a17" text-anchor="end">SILL +1.00</text>
+<path d="M620,236 Q680,208 746,224 L750,256 L624,266Z" fill="#1c1a17"/>
+<path d="M630,256 C632.7,262.3 651.3,287.3 646,294 C640.7,300.7 606,295.7 598,296" stroke="#1c1a17" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M740,240 C741,245 744.3,260.7 746,270 C747.7,279.3 749.3,291.7 750,296" stroke="#1c1a17" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M724,240 C722.7,245 719,260.7 716,270 C713,279.3 707.7,291.7 706,296" stroke="#1c1a17" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<circle cx="772" cy="216" r="17" fill="#1c1a17"/>
+<text x="690" y="344" font-size="12" font-family="monospace" fill="#1c1a17" text-anchor="middle">C  CRAWL 0.8 m/s</text>
+</svg>

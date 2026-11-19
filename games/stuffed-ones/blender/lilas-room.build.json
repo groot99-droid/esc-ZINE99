@@ -1,0 +1,463 @@
+{
+  "game": "stuffed-ones",
+  "location": "lilas-room",
+  "name": "Lila's room",
+  "reference": "assets/locations/lilas-room.jpg",
+  "bounds_m": [
+    4.0,
+    3.5,
+    2.4
+  ],
+  "origin": "floor centre; +y toward the window wall, the door (with its lock) in the -x wall",
+  "materials": {
+    "cedar-plank": {
+      "color": [
+        0.42,
+        0.259,
+        0.149
+      ],
+      "roughness": 0.9
+    },
+    "carpet": {
+      "color": [
+        0.788,
+        0.725,
+        0.604
+      ],
+      "roughness": 1.0
+    },
+    "plaster": {
+      "color": [
+        0.788,
+        0.725,
+        0.604
+      ],
+      "roughness": 0.95
+    },
+    "gingham": {
+      "color": [
+        0.604,
+        0.322,
+        0.2
+      ],
+      "roughness": 0.9
+    },
+    "window-glass": {
+      "color": [
+        0.95,
+        0.92,
+        0.8
+      ],
+      "roughness": 0.1,
+      "emission": 1.2
+    },
+    "dark-wood": {
+      "color": [
+        0.353,
+        0.204,
+        0.125
+      ],
+      "roughness": 0.7
+    },
+    "frame": {
+      "color": [
+        0.549,
+        0.651,
+        0.749
+      ],
+      "roughness": 0.8
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        4.0,
+        3.5,
+        0.1
+      ],
+      "location": [
+        0,
+        0,
+        -0.05
+      ],
+      "material": "carpet"
+    },
+    {
+      "id": "ceiling",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        4.0,
+        3.5,
+        0.1
+      ],
+      "location": [
+        0,
+        0,
+        2.45
+      ],
+      "material": "plaster"
+    },
+    {
+      "id": "wall-north-0",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        2.2,
+        0.15,
+        2.4
+      ],
+      "location": [
+        -0.9,
+        1.825,
+        1.2
+      ],
+      "material": "cedar-plank"
+    },
+    {
+      "id": "wall-north-1-sill",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.8,
+        0.15,
+        0.9
+      ],
+      "location": [
+        0.6,
+        1.825,
+        0.45
+      ],
+      "material": "cedar-plank"
+    },
+    {
+      "id": "wall-north-2-head",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.8,
+        0.15,
+        0.5
+      ],
+      "location": [
+        0.6,
+        1.825,
+        2.15
+      ],
+      "material": "cedar-plank"
+    },
+    {
+      "id": "wall-north-3-glass",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        0.8,
+        0.03,
+        1.0
+      ],
+      "location": [
+        0.6,
+        1.825,
+        1.4
+      ],
+      "material": "window-glass",
+      "collide": false
+    },
+    {
+      "id": "wall-north-4",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.0,
+        0.15,
+        2.4
+      ],
+      "location": [
+        1.5,
+        1.825,
+        1.2
+      ],
+      "material": "cedar-plank"
+    },
+    {
+      "id": "wall-west-0",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        0.75,
+        2.4
+      ],
+      "location": [
+        -2.075,
+        -1.375,
+        1.2
+      ],
+      "material": "cedar-plank"
+    },
+    {
+      "id": "wall-west-1-head",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        0.8,
+        0.35
+      ],
+      "location": [
+        -2.075,
+        -0.6,
+        2.225
+      ],
+      "material": "cedar-plank"
+    },
+    {
+      "id": "wall-west-2",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        1.95,
+        2.4
+      ],
+      "location": [
+        -2.075,
+        0.775,
+        1.2
+      ],
+      "material": "cedar-plank"
+    },
+    {
+      "id": "wall-east",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        3.5,
+        2.4
+      ],
+      "location": [
+        2.075,
+        0,
+        1.2
+      ],
+      "material": "cedar-plank"
+    },
+    {
+      "id": "wall-south",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        4.0,
+        0.15,
+        2.4
+      ],
+      "location": [
+        0,
+        -1.825,
+        1.2
+      ],
+      "material": "cedar-plank"
+    },
+    {
+      "id": "dresser",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.0,
+        0.45,
+        0.8
+      ],
+      "location": [
+        -1.2,
+        1.5,
+        0.4
+      ],
+      "material": "dark-wood"
+    },
+    {
+      "id": "nightstand",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.45,
+        0.45,
+        0.6
+      ],
+      "location": [
+        1.5,
+        1.45,
+        0.3
+      ],
+      "material": "dark-wood"
+    },
+    {
+      "id": "curtain-left",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.3,
+        0.04,
+        1.4
+      ],
+      "location": [
+        0.1,
+        1.72,
+        1.45
+      ],
+      "material": "gingham",
+      "collide": false
+    },
+    {
+      "id": "curtain-right",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.3,
+        0.04,
+        1.4
+      ],
+      "location": [
+        1.1,
+        1.72,
+        1.45
+      ],
+      "material": "gingham",
+      "collide": false
+    },
+    {
+      "id": "framed-picture",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.03,
+        0.4,
+        0.45
+      ],
+      "location": [
+        -1.98,
+        0.9,
+        1.9
+      ],
+      "material": "frame",
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "bed",
+      "object": "quilted-bed",
+      "location": [
+        0.5,
+        0.75,
+        0
+      ]
+    },
+    {
+      "id": "rug",
+      "object": "rag-rug",
+      "location": [
+        -1.1,
+        -0.9,
+        0
+      ]
+    },
+    {
+      "id": "lamp",
+      "object": "guest-lamp",
+      "location": [
+        1.5,
+        1.45,
+        0.6
+      ]
+    }
+  ],
+  "scenes": {
+    "a3_warmth": {
+      "note": "Afternoon sun through the gingham curtain. Lila screams: the bear on her bed is 'alive warm'. Hold it (heartbeat in the controller) and feel along its seam for 3 s; a page is inside. Incident I4.",
+      "world": {
+        "color": [
+          0.6,
+          0.45,
+          0.32
+        ],
+        "strength": 0.4
+      },
+      "lights": [
+        {
+          "name": "window-sun",
+          "type": "AREA",
+          "location": [
+            0.6,
+            1.6,
+            1.4
+          ],
+          "energy": 260,
+          "size": 0.9,
+          "color": [
+            1.0,
+            0.8,
+            0.6
+          ],
+          "look_at": [
+            0.3,
+            0.2,
+            0.4
+          ]
+        },
+        {
+          "name": "lamp",
+          "type": "POINT",
+          "location": [
+            1.5,
+            1.45,
+            1.0
+          ],
+          "energy": 15,
+          "size": 0.12,
+          "color": [
+            1.0,
+            0.72,
+            0.45
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -1.6,
+          -0.6,
+          1.65
+        ],
+        "look_at": [
+          0.6,
+          0.8,
+          0.6
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          -1.6,
+          -0.6,
+          0
+        ],
+        "facing_deg": 290
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "bed",
+          "verb": "Hold the bear"
+        },
+        {
+          "prop": "bed",
+          "verb": "Feel along the seam (3 s)"
+        }
+      ]
+    }
+  }
+}

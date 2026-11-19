@@ -1,0 +1,836 @@
+{
+  "game": "heartstream",
+  "location": "heart-atrium",
+  "name": "The heart: the atrium",
+  "reference": "assets/locations/heart-atrium.jpg",
+  "bounds_m": [
+    150,
+    150,
+    200
+  ],
+  "origin": "floor centre on the whirling current; +x toward the far side where the vessels leave, the raft entering from the inflow on -x; the walls a ring of muscle 74 m out",
+  "materials": {
+    "blood-water": {
+      "color": [
+        0.702,
+        0.125,
+        0.18
+      ],
+      "roughness": 0.1,
+      "emission": 0.8
+    },
+    "muscle": {
+      "color": [
+        0.78,
+        0.22,
+        0.16
+      ],
+      "roughness": 0.5
+    },
+    "gold-light": {
+      "color": [
+        0.949,
+        0.71,
+        0.267
+      ],
+      "roughness": 0.4,
+      "emission": 2.0
+    },
+    "crimson-deep": {
+      "color": [
+        0.478,
+        0.063,
+        0.125
+      ],
+      "roughness": 0.45
+    }
+  },
+  "blockout": [
+    {
+      "id": "current",
+      "shape": "cylinder",
+      "role": "water",
+      "size_m": [
+        150,
+        150,
+        1
+      ],
+      "location": [
+        0,
+        0,
+        -0.5
+      ],
+      "material": "blood-water"
+    },
+    {
+      "id": "muscle-1",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        34,
+        6,
+        200
+      ],
+      "location": [
+        74.0,
+        0.0,
+        100.0
+      ],
+      "material": "muscle",
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "muscle-2",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        34,
+        6,
+        200
+      ],
+      "location": [
+        64.086,
+        37.0,
+        100.0
+      ],
+      "material": "muscle",
+      "rotation_deg": [
+        0,
+        0,
+        120
+      ]
+    },
+    {
+      "id": "muscle-3",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        34,
+        6,
+        200
+      ],
+      "location": [
+        37.0,
+        64.086,
+        100.0
+      ],
+      "material": "muscle",
+      "rotation_deg": [
+        0,
+        0,
+        150
+      ]
+    },
+    {
+      "id": "muscle-4",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        34,
+        6,
+        200
+      ],
+      "location": [
+        0.0,
+        74.0,
+        100.0
+      ],
+      "material": "muscle",
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ]
+    },
+    {
+      "id": "muscle-5",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        34,
+        6,
+        200
+      ],
+      "location": [
+        -37.0,
+        64.086,
+        100.0
+      ],
+      "material": "muscle",
+      "rotation_deg": [
+        0,
+        0,
+        210
+      ]
+    },
+    {
+      "id": "muscle-6",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        34,
+        6,
+        200
+      ],
+      "location": [
+        -64.086,
+        37.0,
+        100.0
+      ],
+      "material": "muscle",
+      "rotation_deg": [
+        0,
+        0,
+        240
+      ]
+    },
+    {
+      "id": "muscle-7",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        34,
+        6,
+        200
+      ],
+      "location": [
+        -74.0,
+        0.0,
+        100.0
+      ],
+      "material": "muscle",
+      "rotation_deg": [
+        0,
+        0,
+        270
+      ]
+    },
+    {
+      "id": "muscle-8",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        34,
+        6,
+        200
+      ],
+      "location": [
+        -64.086,
+        -37.0,
+        100.0
+      ],
+      "material": "muscle",
+      "rotation_deg": [
+        0,
+        0,
+        300
+      ]
+    },
+    {
+      "id": "muscle-9",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        34,
+        6,
+        200
+      ],
+      "location": [
+        -37.0,
+        -64.086,
+        100.0
+      ],
+      "material": "muscle",
+      "rotation_deg": [
+        0,
+        0,
+        330
+      ]
+    },
+    {
+      "id": "muscle-10",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        34,
+        6,
+        200
+      ],
+      "location": [
+        -0.0,
+        -74.0,
+        100.0
+      ],
+      "material": "muscle",
+      "rotation_deg": [
+        0,
+        0,
+        360
+      ]
+    },
+    {
+      "id": "muscle-11",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        34,
+        6,
+        200
+      ],
+      "location": [
+        37.0,
+        -64.086,
+        100.0
+      ],
+      "material": "muscle",
+      "rotation_deg": [
+        0,
+        0,
+        390
+      ]
+    },
+    {
+      "id": "muscle-12",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        34,
+        6,
+        200
+      ],
+      "location": [
+        64.086,
+        -37.0,
+        100.0
+      ],
+      "material": "muscle",
+      "rotation_deg": [
+        0,
+        0,
+        420
+      ]
+    },
+    {
+      "id": "crown",
+      "shape": "cylinder",
+      "role": "ceiling",
+      "size_m": [
+        90,
+        90,
+        4
+      ],
+      "location": [
+        0,
+        0,
+        198
+      ],
+      "material": "gold-light"
+    },
+    {
+      "id": "arch-1",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        150,
+        5,
+        8
+      ],
+      "location": [
+        0,
+        0,
+        160
+      ],
+      "material": "muscle",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "arch-2",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        150,
+        5,
+        8
+      ],
+      "location": [
+        0,
+        0,
+        160
+      ],
+      "material": "muscle",
+      "rotation_deg": [
+        0,
+        0,
+        45
+      ]
+    },
+    {
+      "id": "arch-3",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        150,
+        5,
+        8
+      ],
+      "location": [
+        0,
+        0,
+        160
+      ],
+      "material": "muscle",
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "arch-4",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        150,
+        5,
+        8
+      ],
+      "location": [
+        0,
+        0,
+        160
+      ],
+      "material": "muscle",
+      "rotation_deg": [
+        0,
+        0,
+        135
+      ]
+    },
+    {
+      "id": "beam-1",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        3,
+        3,
+        160
+      ],
+      "location": [
+        43.467,
+        11.647,
+        95
+      ],
+      "material": "gold-light",
+      "rotation_deg": [
+        18,
+        0,
+        105
+      ],
+      "collide": false
+    },
+    {
+      "id": "beam-2",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        3,
+        3,
+        160
+      ],
+      "location": [
+        11.647,
+        43.467,
+        95
+      ],
+      "material": "gold-light",
+      "rotation_deg": [
+        18,
+        0,
+        165
+      ],
+      "collide": false
+    },
+    {
+      "id": "beam-3",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        3,
+        3,
+        160
+      ],
+      "location": [
+        -31.82,
+        31.82,
+        95
+      ],
+      "material": "gold-light",
+      "rotation_deg": [
+        18,
+        0,
+        225
+      ],
+      "collide": false
+    },
+    {
+      "id": "beam-4",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        3,
+        3,
+        160
+      ],
+      "location": [
+        -43.467,
+        -11.647,
+        95
+      ],
+      "material": "gold-light",
+      "rotation_deg": [
+        18,
+        0,
+        285
+      ],
+      "collide": false
+    },
+    {
+      "id": "beam-5",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        3,
+        3,
+        160
+      ],
+      "location": [
+        -11.647,
+        -43.467,
+        95
+      ],
+      "material": "gold-light",
+      "rotation_deg": [
+        18,
+        0,
+        345
+      ],
+      "collide": false
+    },
+    {
+      "id": "beam-6",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        3,
+        3,
+        160
+      ],
+      "location": [
+        31.82,
+        -31.82,
+        95
+      ],
+      "material": "gold-light",
+      "rotation_deg": [
+        18,
+        0,
+        405
+      ],
+      "collide": false
+    },
+    {
+      "id": "inflow",
+      "shape": "cylinder",
+      "role": "opening",
+      "size_m": [
+        24,
+        24,
+        2
+      ],
+      "location": [
+        -72,
+        0,
+        10
+      ],
+      "material": "crimson-deep",
+      "rotation_deg": [
+        0,
+        90,
+        0
+      ],
+      "collide": false
+    },
+    {
+      "id": "outflow-1",
+      "shape": "cylinder",
+      "role": "opening",
+      "size_m": [
+        8,
+        8,
+        2
+      ],
+      "location": [
+        62,
+        -36,
+        4
+      ],
+      "material": "crimson-deep",
+      "rotation_deg": [
+        0,
+        90,
+        -30
+      ],
+      "collide": false
+    },
+    {
+      "id": "outflow-2",
+      "shape": "cylinder",
+      "role": "opening",
+      "size_m": [
+        8,
+        8,
+        2
+      ],
+      "location": [
+        62,
+        36,
+        4
+      ],
+      "material": "crimson-deep",
+      "rotation_deg": [
+        0,
+        90,
+        30
+      ],
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "raft",
+      "object": "raft",
+      "location": [
+        0,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "gift-hook",
+      "object": "gift-hook",
+      "location": [
+        -2.4,
+        0.8,
+        0.6
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "gift-awl",
+      "object": "gift-awl",
+      "location": [
+        -1.2,
+        -0.8,
+        0.6
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "gift-comb",
+      "object": "gift-comb",
+      "location": [
+        0.0,
+        0.8,
+        0.6
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "gift-scraper",
+      "object": "gift-scraper",
+      "location": [
+        1.2,
+        -0.8,
+        0.6
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "gift-flute",
+      "object": "gift-flute",
+      "location": [
+        2.4,
+        0.8,
+        0.6
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ]
+    }
+  ],
+  "scenes": {
+    "s3_heart": {
+      "note": "Chapter 8: the atrium, tempo 96 rising to 120; hold Grip and squeeze on the beat while the song is sung back; the grip always fails, and each brother is swept to his own vessel.",
+      "world": {
+        "color": [
+          0.3,
+          0.06,
+          0.04
+        ],
+        "strength": 0.7
+      },
+      "lights": [
+        {
+          "name": "crown-gold",
+          "type": "SUN",
+          "location": [
+            0,
+            0,
+            190
+          ],
+          "energy": 4,
+          "size": 1,
+          "rotation_deg": [
+            10,
+            0,
+            0
+          ],
+          "color": [
+            1.0,
+            0.78,
+            0.4
+          ]
+        },
+        {
+          "name": "current-red",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            0.2
+          ],
+          "energy": 200000,
+          "size": 140,
+          "look_at": [
+            0,
+            0,
+            100
+          ],
+          "color": [
+            1.0,
+            0.35,
+            0.25
+          ]
+        },
+        {
+          "name": "beam-1",
+          "type": "SPOT",
+          "location": [
+            40,
+            30,
+            180
+          ],
+          "energy": 400000,
+          "size": 4,
+          "look_at": [
+            0,
+            0,
+            0
+          ],
+          "color": [
+            1.0,
+            0.8,
+            0.45
+          ]
+        },
+        {
+          "name": "beam-2",
+          "type": "SPOT",
+          "location": [
+            -45,
+            -20,
+            185
+          ],
+          "energy": 400000,
+          "size": 4,
+          "look_at": [
+            0,
+            0,
+            0
+          ],
+          "color": [
+            1.0,
+            0.8,
+            0.45
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -9,
+          0,
+          9
+        ],
+        "look_at": [
+          8,
+          0,
+          2
+        ],
+        "lens_mm": 28,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          0,
+          0.6
+        ],
+        "facing_deg": 270
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "raft",
+          "verb": "Grip",
+          "leads_to": "s3_vessel"
+        },
+        {
+          "prop": "gift-hook",
+          "verb": "Squeeze on the last note",
+          "leads_to": "s3_vessel_two"
+        }
+      ]
+    }
+  }
+}

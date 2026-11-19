@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160" role="img" aria-labelledby="counter-ring-t counter-ring-d">
+<title id="counter-ring-t">Counter piece: ring</title>
+<desc id="counter-ring-d">A brother's own counter piece, carved with the ring mark and printed as a linocut: the piece cream on black, the mark in the one red of the print.</desc>
+<defs><filter id="counter-ring-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="166"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><filter id="counter-ring-rough2"><feTurbulence type="turbulence" baseFrequency="0" numOctaves="2" seed="334" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.2"/></filter><clipPath id="counter-ring-clip3"><rect x="10" y="10" width="140" height="140"/></clipPath></defs>
+<rect x="0" y="0" width="160" height="160" fill="#f0e6cf"/>
+<rect x="0" y="0" width="160" height="160" filter="url(#counter-ring-grain1)"/>
+<g filter="url(#counter-ring-rough2)">
+<rect x="10" y="10" width="140" height="140" fill="#17110f"/>
+<path d="M98.6,10.7l1.3,-7.2M95.2,142.5l1.9,13.8M119.9,133.9l5.4,7.8M12.8,124.9l-9.7,7.9M14.5,53.6l-7.4,-3.8M77.2,136.5l-0.1,7.9M75.3,144l-2.3,11.1M67.3,17.9l-1.4,-7.3M141,108.8l11.3,4.9M64.2,130.7l-2.3,8.3M147.5,148.1l4.5,4.5M111.6,15.8l4.9,-8.2M140.9,112l9.3,5.7M138.3,40.4l10.8,-8.4M104.5,18.7l4.2,-8.8M128,145.2l7.4,11.3M41,37.3l-7.4,-8M139.3,41.1l7.2,-6.2M88.7,143.2l1.2,9.6M63.7,129l-4.4,13.1M116.9,131.7l4.1,6.3M49.3,11.2l-4.7,-11.1M121.5,40.8l9.8,-7.7M35,40.3l-8,-8.7M114.9,141.6l4.8,7.5M69.2,148.5l-0.4,11.4M11,123.8l-5.5,3.8M23,119.2l-8.8,7.4" fill="none" stroke="#f0e6cf" stroke-width="2.6" stroke-linecap="round"/>
+<path d="M24,80 C24,52 52,40 80,40 C108,40 136,52 136,80 C136,108 108,120 80,120 C52,120 24,108 24,80Z" fill="#f0e6cf"/>
+<path d="M36,94 q44,28 88,2" fill="none" stroke="#17110f" stroke-width="4" stroke-linecap="round"/>
+<path d="M63.4,78a16.6,16.6 0 1,0 33.1,0a16.6,16.6 0 1,0 -33.1,0Z" fill="none" stroke="#B3202E" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>

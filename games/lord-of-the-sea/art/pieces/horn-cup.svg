@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 300" width="260" height="300" role="img" aria-labelledby="horn-cup-t horn-cup-d">
+<title id="horn-cup-t">The horn cup</title>
+<desc id="horn-cup-d">A sailor's horn dice cup, mouth down, tilted to show one die under its rim, with a red stir arrow circling clockwise above it.</desc>
+<defs><filter id="horn-cup-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="694"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><pattern id="horn-cup-pat2" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(84)"><path d="M0,4.5 H9" stroke="#16130F" stroke-width="1.6" opacity="1"/></pattern></defs>
+<rect x="0" y="0" width="260" height="300" fill="#DCCBA2"/>
+<rect x="0" y="0" width="260" height="300" filter="url(#horn-cup-grain1)"/>
+<path d="M111.2,128.7a1,1 0 1,0 2.1,0a1,1 0 1,0 -2.1,0M233.8,204.5a1.2,1.2 0 1,0 2.5,0a1.2,1.2 0 1,0 -2.5,0M47.6,67.3a0.9,0.9 0 1,0 1.8,0a0.9,0.9 0 1,0 -1.8,0M219.1,129.2a0.9,0.9 0 1,0 1.7,0a0.9,0.9 0 1,0 -1.7,0M207.3,191.2a1,1 0 1,0 2.1,0a1,1 0 1,0 -2.1,0M55.6,37.7a1.2,1.2 0 1,0 2.4,0a1.2,1.2 0 1,0 -2.4,0M35.2,100.8a0.9,0.9 0 1,0 1.8,0a0.9,0.9 0 1,0 -1.8,0M113.5,295.7a1.5,1.5 0 1,0 2.9,0a1.5,1.5 0 1,0 -2.9,0M54.7,25.5a0.5,0.5 0 1,0 1.1,0a0.5,0.5 0 1,0 -1.1,0M216.2,80.8a0.9,0.9 0 1,0 1.7,0a0.9,0.9 0 1,0 -1.7,0M78,216.7a1.2,1.2 0 1,0 2.5,0a1.2,1.2 0 1,0 -2.5,0M101.7,25.1a0.5,0.5 0 1,0 1,0a0.5,0.5 0 1,0 -1,0M1.6,244.3a0.5,0.5 0 1,0 1.1,0a0.5,0.5 0 1,0 -1.1,0M21.7,256.4a1,1 0 1,0 2,0a1,1 0 1,0 -2,0M231.5,162.8a1.5,1.5 0 1,0 2.9,0a1.5,1.5 0 1,0 -2.9,0M184.9,199.4a0.8,0.8 0 1,0 1.6,0a0.8,0.8 0 1,0 -1.6,0M70.2,60.7a1.2,1.2 0 1,0 2.4,0a1.2,1.2 0 1,0 -2.4,0M224.9,295.2a1,1 0 1,0 2,0a1,1 0 1,0 -2,0M155.9,108.8a1.3,1.3 0 1,0 2.7,0a1.3,1.3 0 1,0 -2.7,0M191.6,17.7a0.7,0.7 0 1,0 1.4,0a0.7,0.7 0 1,0 -1.4,0M133.2,181.6a0.6,0.6 0 1,0 1.3,0a0.6,0.6 0 1,0 -1.3,0M143.7,1.3a1.4,1.4 0 1,0 2.8,0a1.4,1.4 0 1,0 -2.8,0M199.5,233.6a1.2,1.2 0 1,0 2.4,0a1.2,1.2 0 1,0 -2.4,0M254.7,127.1a1.1,1.1 0 1,0 2.2,0a1.1,1.1 0 1,0 -2.2,0M21.9,202.2a1.1,1.1 0 1,0 2.1,0a1.1,1.1 0 1,0 -2.1,0M235.4,33.8a0.9,0.9 0 1,0 1.8,0a0.9,0.9 0 1,0 -1.8,0M121,108.1a1.2,1.2 0 1,0 2.4,0a1.2,1.2 0 1,0 -2.4,0M11.2,137.3a1.5,1.5 0 1,0 3,0a1.5,1.5 0 1,0 -3,0M247.9,200.9a0.7,0.7 0 1,0 1.4,0a0.7,0.7 0 1,0 -1.4,0M28.9,160.6a1.3,1.3 0 1,0 2.7,0a1.3,1.3 0 1,0 -2.7,0" fill="#6B4A2B" opacity="0.3"/>
+<rect x="16" y="16" width="228" height="268" rx="10" fill="none" stroke="#16130F" stroke-width="13"/>
+<rect x="16" y="16" width="228" height="268" rx="10" fill="none" stroke="#E7A93B" stroke-width="8"/>
+<rect x="16" y="16" width="228" height="268" rx="10" fill="none" stroke="#16130F" stroke-width="8" stroke-dasharray="2.5 9"/>
+<g transform="translate(196,196) rotate(14)">
+<rect x="-18.9" y="-18.9" width="46" height="46" rx="7.8" fill="#16130F"/>
+<rect x="-23" y="-23" width="46" height="46" rx="7.8" fill="#F6ECD2" stroke="#16130F" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M-9,7 q0,-16 16,-16" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+<g transform="scale(0.3)">
+<path d="M-50,2 A50,50 0 0,1 50,2 L16,40 L-16,40Z" fill="#E7A93B" stroke="#16130F" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="0" y1="40" x2="-41.6" y2="-19" stroke="#16130F" stroke-width="3.5" stroke-linecap="round"/>
+<line x1="0" y1="40" x2="-28.2" y2="-33.2" stroke="#16130F" stroke-width="3.5" stroke-linecap="round"/>
+<line x1="0" y1="40" x2="-10" y2="-41" stroke="#16130F" stroke-width="3.5" stroke-linecap="round"/>
+<line x1="0" y1="40" x2="10" y2="-41" stroke="#16130F" stroke-width="3.5" stroke-linecap="round"/>
+<line x1="0" y1="40" x2="28.2" y2="-33.2" stroke="#16130F" stroke-width="3.5" stroke-linecap="round"/>
+<line x1="0" y1="40" x2="41.6" y2="-19" stroke="#16130F" stroke-width="3.5" stroke-linecap="round"/>
+<path d="M-16,40 h32 v10 h-32z" fill="#8C2B2B" stroke="#16130F" stroke-width="4" stroke-linejoin="round"/>
+<path d="M-36,-14 A40,40 0 0,1 -8,-40" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+</g>
+</g>
+<g transform="rotate(-10 120 150)">
+<ellipse cx="126" cy="214" rx="72" ry="12" fill="#16130F" opacity="0.3"/>
+<path d="M78,74 Q120,60 162,74 L190,206 Q124,226 58,206Z" fill="#c99a4b" stroke="#16130F" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M78,74 Q120,60 162,74 L190,206 Q124,226 58,206Z" fill="url(#horn-cup-pat2)" opacity="0.3"/>
+<path d="M72,104 Q120,92 168,104 M62,180 Q124,198 186,180" fill="none" stroke="#16130F" stroke-width="9"/>
+<path d="M72,104 Q120,92 168,104 M62,180 Q124,198 186,180" fill="none" stroke="#F6ECD2" stroke-width="4"/>
+<ellipse cx="120" cy="72" rx="42" ry="9" fill="#e3bb74" stroke="#16130F" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M92,116 L84,170" stroke="#fff" stroke-width="6" stroke-linecap="round" opacity="0.8"/>
+</g>
+<path d="M80.2,83 A46,46 0 1,1 155.2,89.6" fill="none" stroke="#16130F" stroke-width="13" stroke-linecap="round"/>
+<path d="M80.2,83 A46,46 0 1,1 155.2,89.6" fill="none" stroke="#8C2B2B" stroke-width="7" stroke-linecap="round"/>
+<path d="M146,96 l22,-2 l-10,-20z" fill="#8C2B2B" stroke="#16130F" stroke-width="4" stroke-linejoin="round"/>
+<path d="M40,252 l34,0 l0,36 l-34,0 l15,-18.0z" fill="#6e1f1f" stroke="#16130F" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M220,252 l-34,0 l0,36 l34,0 l-15,-18.0z" fill="#6e1f1f" stroke="#16130F" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M80,238 Q130,224 180,238 L180,274 Q130,260 80,274Z" fill="#8C2B2B" stroke="#16130F" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="130" y="261.3" font-size="22" font-family="serif" fill="#F6ECD2" text-anchor="middle" font-weight="bold" letter-spacing="3">CUP</text>
+</svg>

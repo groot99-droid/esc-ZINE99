@@ -1,0 +1,457 @@
+{
+  "game": "endless-temple",
+  "location": "elaris-room",
+  "name": "Elaris's room",
+  "reference": "assets/locations/elaris-room.jpg",
+  "bounds_m": [
+    6,
+    5,
+    4
+  ],
+  "origin": "floor centre; +y toward the back wall with the bed and bookshelf; the plank door on the west (-x) wall, the arched window on the east (+x) wall near the back",
+  "materials": {
+    "floorboards": {
+      "color": [
+        0.55,
+        0.38,
+        0.2
+      ],
+      "roughness": 0.8
+    },
+    "plaster": {
+      "color": [
+        0.78,
+        0.62,
+        0.38
+      ],
+      "roughness": 0.9
+    },
+    "ceiling-planks": {
+      "color": [
+        0.42,
+        0.27,
+        0.15
+      ],
+      "roughness": 0.85
+    },
+    "walnut": {
+      "color": [
+        0.3,
+        0.19,
+        0.11
+      ],
+      "roughness": 0.7
+    },
+    "linen": {
+      "color": [
+        0.86,
+        0.86,
+        0.8
+      ],
+      "roughness": 0.9
+    },
+    "sage": {
+      "color": [
+        0.55,
+        0.7,
+        0.5
+      ],
+      "roughness": 0.9
+    },
+    "sky-glass": {
+      "color": [
+        0.72,
+        0.84,
+        0.92
+      ],
+      "roughness": 0.1,
+      "emission": 0.8
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        6.0,
+        5.0,
+        0.1
+      ],
+      "location": [
+        0.0,
+        0.0,
+        -0.05
+      ],
+      "material": "floorboards"
+    },
+    {
+      "id": "ceiling",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        6.0,
+        5.0,
+        0.1
+      ],
+      "location": [
+        0.0,
+        0.0,
+        4.05
+      ],
+      "material": "ceiling-planks"
+    },
+    {
+      "id": "wall-north",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        6.0,
+        0.15,
+        4.0
+      ],
+      "location": [
+        0.0,
+        2.575,
+        2.0
+      ],
+      "material": "plaster"
+    },
+    {
+      "id": "wall-south",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        6.0,
+        0.15,
+        4.0
+      ],
+      "location": [
+        0.0,
+        -2.575,
+        2.0
+      ],
+      "material": "plaster"
+    },
+    {
+      "id": "wall-west-front",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        0.6,
+        4.0
+      ],
+      "location": [
+        -3.075,
+        -2.2,
+        2.0
+      ],
+      "material": "plaster"
+    },
+    {
+      "id": "wall-west-back",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        3.0,
+        4.0
+      ],
+      "location": [
+        -3.075,
+        1.0,
+        2.0
+      ],
+      "material": "plaster"
+    },
+    {
+      "id": "wall-west-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        1.4,
+        0.8
+      ],
+      "location": [
+        -3.075,
+        -1.2,
+        3.6
+      ],
+      "material": "plaster"
+    },
+    {
+      "id": "door-leaf",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        0.08,
+        3.2
+      ],
+      "location": [
+        -2.3,
+        -2.45,
+        1.6
+      ],
+      "material": "walnut"
+    },
+    {
+      "id": "wall-east-front",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        3.7,
+        4.0
+      ],
+      "location": [
+        3.075,
+        -0.65,
+        2.0
+      ],
+      "material": "plaster"
+    },
+    {
+      "id": "wall-east-back",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        0.6,
+        4.0
+      ],
+      "location": [
+        3.075,
+        2.2,
+        2.0
+      ],
+      "material": "plaster"
+    },
+    {
+      "id": "wall-east-sill",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        0.7,
+        0.8
+      ],
+      "location": [
+        3.075,
+        1.55,
+        0.4
+      ],
+      "material": "plaster"
+    },
+    {
+      "id": "wall-east-head",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        0.7,
+        0.8
+      ],
+      "location": [
+        3.075,
+        1.55,
+        3.6
+      ],
+      "material": "plaster"
+    },
+    {
+      "id": "window-arch",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        0.05,
+        0.7,
+        2.4
+      ],
+      "location": [
+        3.0,
+        1.55,
+        2.0
+      ],
+      "material": "sky-glass",
+      "collide": false
+    },
+    {
+      "id": "bed-frame",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        2.1,
+        1.1,
+        0.55
+      ],
+      "location": [
+        0.9,
+        1.9,
+        0.275
+      ],
+      "material": "walnut"
+    },
+    {
+      "id": "bed-headboard",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.1,
+        1.1,
+        1.2
+      ],
+      "location": [
+        1.95,
+        1.9,
+        0.6
+      ],
+      "material": "walnut"
+    },
+    {
+      "id": "bed-footboard",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.1,
+        1.1,
+        0.9
+      ],
+      "location": [
+        -0.15,
+        1.9,
+        0.45
+      ],
+      "material": "walnut"
+    },
+    {
+      "id": "blanket",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        1.5,
+        1.14,
+        0.08
+      ],
+      "location": [
+        1.0,
+        1.9,
+        0.59
+      ],
+      "material": "sage",
+      "collide": false
+    },
+    {
+      "id": "robe-hook",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.06,
+        0.12,
+        0.06
+      ],
+      "location": [
+        1.0,
+        2.47,
+        2.4
+      ],
+      "material": "walnut",
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "bookshelf",
+      "object": "bookshelf",
+      "location": [
+        -1.4,
+        2.15,
+        0.0
+      ],
+      "height_m": 2.4
+    }
+  ],
+  "scenes": {
+    "s3_room_morning": {
+      "note": "Morning: one sunbeam from the high window across the floorboards, warm gold motes. Bed, window and robe hook are blockout (bed-frame, window-arch, robe-hook), so they carry no prop marker; the west door leads to the halls (s3_halls_c1).",
+      "world": {
+        "color": [
+          0.85,
+          0.7,
+          0.45
+        ],
+        "strength": 0.35
+      },
+      "lights": [
+        {
+          "name": "sunbeam",
+          "type": "SPOT",
+          "location": [
+            4.6,
+            1.55,
+            3.4
+          ],
+          "look_at": [
+            -1.4,
+            0.2,
+            0.0
+          ],
+          "energy": 1600,
+          "size": 0.3,
+          "color": [
+            1.0,
+            0.85,
+            0.55
+          ]
+        },
+        {
+          "name": "bounce",
+          "type": "AREA",
+          "location": [
+            0.0,
+            0.0,
+            3.9
+          ],
+          "look_at": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "energy": 80,
+          "size": 3,
+          "color": [
+            1.0,
+            0.88,
+            0.65
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.6,
+          0.8,
+          2.3
+        ],
+        "look_at": [
+          -2.0,
+          -0.6,
+          0.3
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0.6,
+          0.8,
+          0.0
+        ],
+        "facing_deg": 118.3
+      },
+      "hide": [],
+      "interactions": []
+    }
+  }
+}

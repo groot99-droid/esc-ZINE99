@@ -1,0 +1,1545 @@
+{
+  "game": "heartstream",
+  "location": "marrow-caverns",
+  "name": "The marrow caverns",
+  "reference": "assets/locations/marrow-caverns.jpg",
+  "bounds_m": [
+    60,
+    40,
+    12
+  ],
+  "origin": "floor centre of the main chamber; +y toward the far wall with the round shaft opening high in it; the alcove chamber at -x, the hall of unfinished boards at +x, the passage out on -y",
+  "materials": {
+    "marrow-deep": {
+      "color": [
+        0.118,
+        0.208,
+        0.341
+      ],
+      "roughness": 0.6,
+      "emission": 0.15
+    },
+    "marrow-tissue": {
+      "color": [
+        0.184,
+        0.365,
+        0.549
+      ],
+      "roughness": 0.5,
+      "emission": 0.3
+    },
+    "marrow-glow": {
+      "color": [
+        0.498,
+        0.698,
+        0.878
+      ],
+      "roughness": 0.3,
+      "emission": 1.0
+    },
+    "marrow-floor": {
+      "color": [
+        0.62,
+        0.66,
+        0.74
+      ],
+      "roughness": 0.35
+    },
+    "puddle": {
+      "color": [
+        0.184,
+        0.365,
+        0.549
+      ],
+      "roughness": 0.05,
+      "emission": 0.4
+    },
+    "shaft-dark": {
+      "color": [
+        0.03,
+        0.04,
+        0.07
+      ],
+      "roughness": 0.9
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        60,
+        40,
+        0.1
+      ],
+      "location": [
+        0,
+        0,
+        -0.05
+      ],
+      "material": "marrow-floor"
+    },
+    {
+      "id": "ceiling",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        60,
+        40,
+        0.3
+      ],
+      "location": [
+        0,
+        0,
+        12.15
+      ],
+      "material": "marrow-deep"
+    },
+    {
+      "id": "puddle-main",
+      "shape": "cylinder",
+      "role": "water",
+      "size_m": [
+        4,
+        2.5,
+        0.02
+      ],
+      "location": [
+        -4,
+        -7,
+        0.01
+      ],
+      "material": "puddle",
+      "collide": false
+    },
+    {
+      "id": "puddle-west",
+      "shape": "cylinder",
+      "role": "water",
+      "size_m": [
+        3,
+        2,
+        0.02
+      ],
+      "location": [
+        -19,
+        6,
+        0.01
+      ],
+      "material": "puddle",
+      "collide": false
+    },
+    {
+      "id": "puddle-east",
+      "shape": "cylinder",
+      "role": "water",
+      "size_m": [
+        3.5,
+        2,
+        0.02
+      ],
+      "location": [
+        18,
+        -9,
+        0.01
+      ],
+      "material": "puddle",
+      "collide": false
+    },
+    {
+      "id": "wall-north-left",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        28.5,
+        0.6,
+        12
+      ],
+      "location": [
+        -15.75,
+        20.3,
+        6.0
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "wall-north-right",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        28.5,
+        0.6,
+        12
+      ],
+      "location": [
+        15.75,
+        20.3,
+        6.0
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "wall-north-below",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        3,
+        0.6,
+        7.5
+      ],
+      "location": [
+        0,
+        20.3,
+        3.75
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "wall-north-above",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        3,
+        0.6,
+        1.5
+      ],
+      "location": [
+        0,
+        20.3,
+        11.25
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "shaft-opening",
+      "shape": "cylinder",
+      "role": "opening",
+      "size_m": [
+        3,
+        3,
+        0.4
+      ],
+      "location": [
+        0,
+        20.1,
+        9
+      ],
+      "material": "shaft-dark",
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "collide": false
+    },
+    {
+      "id": "wall-south-left",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        28,
+        0.6,
+        12
+      ],
+      "location": [
+        -16,
+        -20.3,
+        6.0
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "wall-south-right",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        28,
+        0.6,
+        12
+      ],
+      "location": [
+        16,
+        -20.3,
+        6.0
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "wall-south-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        4,
+        0.6,
+        8
+      ],
+      "location": [
+        0,
+        -20.3,
+        8
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "wall-west",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.6,
+        40,
+        12
+      ],
+      "location": [
+        -30.3,
+        0,
+        6.0
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "wall-east",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.6,
+        40,
+        12
+      ],
+      "location": [
+        30.3,
+        0,
+        6.0
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "divider-west-north",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.8,
+        14,
+        12
+      ],
+      "location": [
+        -10,
+        13,
+        6.0
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "divider-west-south",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.8,
+        14,
+        12
+      ],
+      "location": [
+        -10,
+        -13,
+        6.0
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "divider-west-arch",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.8,
+        12,
+        5
+      ],
+      "location": [
+        -10,
+        0,
+        9.5
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "divider-east-north",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.8,
+        14,
+        12
+      ],
+      "location": [
+        10,
+        13,
+        6.0
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "divider-east-south",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.8,
+        14,
+        12
+      ],
+      "location": [
+        10,
+        -13,
+        6.0
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "divider-east-arch",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.8,
+        12,
+        5
+      ],
+      "location": [
+        10,
+        0,
+        9.5
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "niche-pier-1",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.2,
+        0.8,
+        2.6
+      ],
+      "location": [
+        -29.4,
+        -12,
+        1.3
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "niche-pier-2",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.2,
+        0.8,
+        2.6
+      ],
+      "location": [
+        -29.4,
+        -6,
+        1.3
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "niche-pier-3",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.2,
+        0.8,
+        2.6
+      ],
+      "location": [
+        -29.4,
+        0,
+        1.3
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "niche-pier-4",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.2,
+        0.8,
+        2.6
+      ],
+      "location": [
+        -29.4,
+        6,
+        1.3
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "niche-pier-5",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.2,
+        0.8,
+        2.6
+      ],
+      "location": [
+        -29.4,
+        12,
+        1.3
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "glow-vein-north",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        56,
+        0.1,
+        0.3
+      ],
+      "location": [
+        0,
+        19.95,
+        6
+      ],
+      "material": "marrow-glow",
+      "collide": false
+    },
+    {
+      "id": "glow-vein-west",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.1,
+        38,
+        0.3
+      ],
+      "location": [
+        -29.95,
+        0,
+        5
+      ],
+      "material": "marrow-glow",
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "pod-seat-1",
+      "object": "sleeping-pod",
+      "location": [
+        -28.6,
+        -9,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "pod-seat-2",
+      "object": "sleeping-pod",
+      "location": [
+        -28.6,
+        -3,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "pod-seat-3",
+      "object": "sleeping-pod",
+      "location": [
+        -28.6,
+        3,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "pod-seat-4",
+      "object": "sleeping-pod",
+      "location": [
+        -28.6,
+        9,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "pod-next-1",
+      "object": "sleeping-pod",
+      "location": [
+        -26,
+        -18.8,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "pod-next-2",
+      "object": "sleeping-pod",
+      "location": [
+        -22,
+        -18.8,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "pod-next-3",
+      "object": "sleeping-pod",
+      "location": [
+        -18,
+        -18.8,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "pod-next-4",
+      "object": "sleeping-pod",
+      "location": [
+        -14,
+        -18.8,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "mark-stone",
+      "object": "mark-stone",
+      "location": [
+        0,
+        3,
+        0
+      ]
+    },
+    {
+      "id": "board-group",
+      "object": "counter-board",
+      "location": [
+        0,
+        -2,
+        0
+      ]
+    },
+    {
+      "id": "piece-1",
+      "object": "counter-piece",
+      "location": [
+        -0.3,
+        -2.08,
+        0.12
+      ]
+    },
+    {
+      "id": "piece-2",
+      "object": "counter-piece",
+      "location": [
+        -0.1,
+        -1.92,
+        0.12
+      ]
+    },
+    {
+      "id": "piece-3",
+      "object": "counter-piece",
+      "location": [
+        0.1,
+        -2.08,
+        0.12
+      ]
+    },
+    {
+      "id": "piece-4",
+      "object": "counter-piece",
+      "location": [
+        0.3,
+        -1.92,
+        0.12
+      ]
+    },
+    {
+      "id": "rack-1",
+      "object": "board-rack",
+      "location": [
+        28.9,
+        -12,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        -90
+      ]
+    },
+    {
+      "id": "rack-2",
+      "object": "board-rack",
+      "location": [
+        28.9,
+        -6,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        -90
+      ]
+    },
+    {
+      "id": "rack-3",
+      "object": "board-rack",
+      "location": [
+        28.9,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        -90
+      ]
+    },
+    {
+      "id": "rack-4",
+      "object": "board-rack",
+      "location": [
+        28.9,
+        6,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        -90
+      ]
+    },
+    {
+      "id": "rack-5",
+      "object": "board-rack",
+      "location": [
+        28.9,
+        12,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        -90
+      ]
+    },
+    {
+      "id": "rack-6",
+      "object": "board-rack",
+      "location": [
+        20,
+        19.3,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ]
+    },
+    {
+      "id": "rack-7",
+      "object": "board-rack",
+      "location": [
+        20,
+        -19.3,
+        0
+      ]
+    },
+    {
+      "id": "board-hall-1",
+      "object": "counter-board",
+      "location": [
+        28.9,
+        -12.4,
+        1.2
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "board-hall-2",
+      "object": "counter-board",
+      "location": [
+        28.9,
+        -11.6,
+        1.2
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "board-hall-3",
+      "object": "counter-board",
+      "location": [
+        28.9,
+        -6,
+        1.2
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "board-hall-4",
+      "object": "counter-board",
+      "location": [
+        28.9,
+        0.4,
+        1.2
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "board-hall-5",
+      "object": "counter-board",
+      "location": [
+        28.9,
+        6,
+        1.2
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "board-hall-6",
+      "object": "counter-board",
+      "location": [
+        28.9,
+        12,
+        1.2
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "board-hall-7",
+      "object": "counter-board",
+      "location": [
+        20,
+        19.3,
+        1.2
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "board-hall-8",
+      "object": "counter-board",
+      "location": [
+        20,
+        -19.3,
+        1.2
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "lamp-1",
+      "object": "marrow-lamp",
+      "location": [
+        -29.2,
+        -15,
+        0
+      ]
+    },
+    {
+      "id": "lamp-2",
+      "object": "marrow-lamp",
+      "location": [
+        -29.2,
+        15,
+        0
+      ]
+    },
+    {
+      "id": "lamp-3",
+      "object": "marrow-lamp",
+      "location": [
+        -10.6,
+        17,
+        0
+      ]
+    },
+    {
+      "id": "lamp-4",
+      "object": "marrow-lamp",
+      "location": [
+        -10.6,
+        -17,
+        0
+      ]
+    },
+    {
+      "id": "lamp-5",
+      "object": "marrow-lamp",
+      "location": [
+        10.6,
+        17,
+        0
+      ]
+    },
+    {
+      "id": "lamp-6",
+      "object": "marrow-lamp",
+      "location": [
+        10.6,
+        -17,
+        0
+      ]
+    },
+    {
+      "id": "lamp-7",
+      "object": "marrow-lamp",
+      "location": [
+        29.2,
+        -16,
+        0
+      ]
+    },
+    {
+      "id": "lamp-8",
+      "object": "marrow-lamp",
+      "location": [
+        29.2,
+        16,
+        0
+      ]
+    },
+    {
+      "id": "bowl-alcove",
+      "object": "bone-bowl",
+      "location": [
+        -27.2,
+        -6,
+        0
+      ]
+    },
+    {
+      "id": "bowl-board",
+      "object": "bone-bowl",
+      "location": [
+        -0.9,
+        -2.6,
+        0
+      ]
+    },
+    {
+      "id": "pillar-1",
+      "object": "membrane-pillar",
+      "location": [
+        -7,
+        14,
+        0
+      ]
+    },
+    {
+      "id": "pillar-2",
+      "object": "membrane-pillar",
+      "location": [
+        7,
+        14,
+        0
+      ]
+    },
+    {
+      "id": "pillar-3",
+      "object": "membrane-pillar",
+      "location": [
+        -7,
+        -14,
+        0
+      ]
+    },
+    {
+      "id": "pillar-4",
+      "object": "membrane-pillar",
+      "location": [
+        7,
+        -14,
+        0
+      ]
+    },
+    {
+      "id": "pillar-wall",
+      "object": "membrane-pillar",
+      "location": [
+        0,
+        19.2,
+        0
+      ]
+    }
+  ],
+  "scenes": {
+    "s3_marrow": {
+      "note": "Day of the wake: the brothers rise from their alcoves, see the hall of unfinished boards and gather at the mark stone; the walls brighten on each beat at 60 bpm.",
+      "world": {
+        "color": [
+          0.04,
+          0.08,
+          0.16
+        ],
+        "strength": 0.5
+      },
+      "lights": [
+        {
+          "name": "glow-west",
+          "type": "AREA",
+          "location": [
+            -20,
+            0,
+            11
+          ],
+          "energy": 6000.0,
+          "size": 16,
+          "look_at": [
+            -20,
+            0,
+            0
+          ],
+          "color": [
+            0.5,
+            0.7,
+            0.88
+          ]
+        },
+        {
+          "name": "glow-main",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            11
+          ],
+          "energy": 8000.0,
+          "size": 18,
+          "look_at": [
+            0,
+            0,
+            0
+          ],
+          "color": [
+            0.5,
+            0.7,
+            0.88
+          ]
+        },
+        {
+          "name": "glow-east",
+          "type": "AREA",
+          "location": [
+            20,
+            0,
+            11
+          ],
+          "energy": 6000.0,
+          "size": 16,
+          "look_at": [
+            20,
+            0,
+            0
+          ],
+          "color": [
+            0.5,
+            0.7,
+            0.88
+          ]
+        },
+        {
+          "name": "lamps-west",
+          "type": "POINT",
+          "location": [
+            -28.5,
+            0,
+            1.2
+          ],
+          "energy": 300.0,
+          "size": 0.3,
+          "color": [
+            1.0,
+            0.66,
+            0.3
+          ]
+        },
+        {
+          "name": "lamps-main",
+          "type": "POINT",
+          "location": [
+            0,
+            16,
+            1.2
+          ],
+          "energy": 300.0,
+          "size": 0.3,
+          "color": [
+            1.0,
+            0.66,
+            0.3
+          ]
+        },
+        {
+          "name": "lamps-east",
+          "type": "POINT",
+          "location": [
+            28.5,
+            0,
+            1.2
+          ],
+          "energy": 300.0,
+          "size": 0.3,
+          "color": [
+            1.0,
+            0.66,
+            0.3
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -29,
+          0,
+          3
+        ],
+        "look_at": [
+          -17,
+          0,
+          1.5
+        ],
+        "lens_mm": 28,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          -23,
+          0,
+          0
+        ],
+        "facing_deg": 270
+      },
+      "hide": [
+        "piece-1",
+        "piece-2",
+        "piece-3",
+        "piece-4"
+      ],
+      "interactions": [
+        {
+          "prop": "pod-seat-1",
+          "verb": "Rise"
+        },
+        {
+          "prop": "pod-next-1",
+          "verb": "Look"
+        },
+        {
+          "prop": "rack-1",
+          "verb": "Look at the boards"
+        },
+        {
+          "prop": "board-group",
+          "verb": "Look at the group's board"
+        },
+        {
+          "prop": "mark-stone",
+          "verb": "Lay your hand on your mark",
+          "leads_to": "s1_carve_counter"
+        }
+      ]
+    },
+    "s3_marrow_after": {
+      "note": "The one who stayed: lamps at 30%, the far shaft sealed, no voices; he taps the beat at the wall, carves for the next group and teaches the counters.",
+      "world": {
+        "color": [
+          0.02,
+          0.04,
+          0.08
+        ],
+        "strength": 0.3
+      },
+      "lights": [
+        {
+          "name": "glow-west",
+          "type": "AREA",
+          "location": [
+            -20,
+            0,
+            11
+          ],
+          "energy": 2700.0,
+          "size": 16,
+          "look_at": [
+            -20,
+            0,
+            0
+          ],
+          "color": [
+            0.5,
+            0.7,
+            0.88
+          ]
+        },
+        {
+          "name": "glow-main",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            11
+          ],
+          "energy": 3600.0,
+          "size": 18,
+          "look_at": [
+            0,
+            0,
+            0
+          ],
+          "color": [
+            0.5,
+            0.7,
+            0.88
+          ]
+        },
+        {
+          "name": "glow-east",
+          "type": "AREA",
+          "location": [
+            20,
+            0,
+            11
+          ],
+          "energy": 2700.0,
+          "size": 16,
+          "look_at": [
+            20,
+            0,
+            0
+          ],
+          "color": [
+            0.5,
+            0.7,
+            0.88
+          ]
+        },
+        {
+          "name": "lamps-west",
+          "type": "POINT",
+          "location": [
+            -28.5,
+            0,
+            1.2
+          ],
+          "energy": 90.0,
+          "size": 0.3,
+          "color": [
+            1.0,
+            0.66,
+            0.3
+          ]
+        },
+        {
+          "name": "lamps-main",
+          "type": "POINT",
+          "location": [
+            0,
+            16,
+            1.2
+          ],
+          "energy": 90.0,
+          "size": 0.3,
+          "color": [
+            1.0,
+            0.66,
+            0.3
+          ]
+        },
+        {
+          "name": "lamps-east",
+          "type": "POINT",
+          "location": [
+            28.5,
+            0,
+            1.2
+          ],
+          "energy": 90.0,
+          "size": 0.3,
+          "color": [
+            1.0,
+            0.66,
+            0.3
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          16,
+          3
+        ],
+        "look_at": [
+          0,
+          4,
+          1.5
+        ],
+        "lens_mm": 28,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          10,
+          0
+        ],
+        "facing_deg": 180
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "pillar-wall",
+          "verb": "Tap the beat on the wall",
+          "leads_to": "s3_marrow_pulse"
+        },
+        {
+          "prop": "bowl-alcove",
+          "verb": "Carve for the next group",
+          "leads_to": "s1_carve_next"
+        },
+        {
+          "prop": "board-group",
+          "verb": "Sit at the board",
+          "leads_to": "s1_counters_teach"
+        },
+        {
+          "prop": "pod-seat-1",
+          "verb": "Rest"
+        }
+      ]
+    },
+    "s3_lamps": {
+      "note": "Years on: the one who stayed dims the marrow lamps by hand while a new group sleeps in the alcoves and a child hums the song.",
+      "world": {
+        "color": [
+          0.03,
+          0.06,
+          0.12
+        ],
+        "strength": 0.4
+      },
+      "lights": [
+        {
+          "name": "glow-west",
+          "type": "AREA",
+          "location": [
+            -20,
+            0,
+            11
+          ],
+          "energy": 4800.0,
+          "size": 16,
+          "look_at": [
+            -20,
+            0,
+            0
+          ],
+          "color": [
+            0.5,
+            0.7,
+            0.88
+          ]
+        },
+        {
+          "name": "glow-main",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            11
+          ],
+          "energy": 6400.0,
+          "size": 18,
+          "look_at": [
+            0,
+            0,
+            0
+          ],
+          "color": [
+            0.5,
+            0.7,
+            0.88
+          ]
+        },
+        {
+          "name": "glow-east",
+          "type": "AREA",
+          "location": [
+            20,
+            0,
+            11
+          ],
+          "energy": 4800.0,
+          "size": 16,
+          "look_at": [
+            20,
+            0,
+            0
+          ],
+          "color": [
+            0.5,
+            0.7,
+            0.88
+          ]
+        },
+        {
+          "name": "lamps-west",
+          "type": "POINT",
+          "location": [
+            -28.5,
+            0,
+            1.2
+          ],
+          "energy": 240.0,
+          "size": 0.3,
+          "color": [
+            1.0,
+            0.66,
+            0.3
+          ]
+        },
+        {
+          "name": "lamps-main",
+          "type": "POINT",
+          "location": [
+            0,
+            16,
+            1.2
+          ],
+          "energy": 240.0,
+          "size": 0.3,
+          "color": [
+            1.0,
+            0.66,
+            0.3
+          ]
+        },
+        {
+          "name": "lamps-east",
+          "type": "POINT",
+          "location": [
+            28.5,
+            0,
+            1.2
+          ],
+          "energy": 240.0,
+          "size": 0.3,
+          "color": [
+            1.0,
+            0.66,
+            0.3
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -24,
+          5,
+          3
+        ],
+        "look_at": [
+          -29,
+          15,
+          1
+        ],
+        "lens_mm": 28,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          -26,
+          10,
+          0
+        ],
+        "facing_deg": 30
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "lamp-2",
+          "verb": "Dim the lamp"
+        },
+        {
+          "prop": "lamp-1",
+          "verb": "Dim the lamp"
+        },
+        {
+          "prop": "lamp-3",
+          "verb": "Dim the lamp"
+        },
+        {
+          "prop": "lamp-4",
+          "verb": "Dim the lamp"
+        }
+      ]
+    }
+  }
+}

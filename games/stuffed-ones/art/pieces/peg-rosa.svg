@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-labelledby="peg-rosa-t peg-rosa-d">
+<title id="peg-rosa-t">Rosa's button peg</title>
+<desc id="peg-rosa-d">Rosa's peg for the counting game: a flower button on a felt mark, with a cloth name tag.</desc>
+<defs><filter id="peg-rosa-felt1" x="-15%" y="-15%" width="130%" height="130%"><feGaussianBlur in="SourceAlpha" stdDeviation="2.2"/><feOffset dx="1.8" dy="3"/><feComponentTransfer result="s"><feFuncA type="linear" slope="0"/></feComponentTransfer><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="27" result="n"/><feColorMatrix in="n" values="0 0 0 0 1  0 0 0 0 0.96  0 0 0 0 0.88  0 0 0 -1.2 0.45"/><feComposite in2="SourceAlpha" operator="in" result="l"/><feColorMatrix in="n" values="0 0 0 0 0.1  0 0 0 0 0.06  0 0 0 0 0.03  0 0 0 1.3 -0.74"/><feComposite in2="SourceAlpha" operator="in" result="d"/><feMerge><feMergeNode in="s"/><feMergeNode in="SourceGraphic"/><feMergeNode in="l"/><feMergeNode in="d"/></feMerge></filter><filter id="peg-rosa-blur2" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="5"/></filter><filter id="peg-rosa-felt3" x="-15%" y="-15%" width="130%" height="130%"><feGaussianBlur in="SourceAlpha" stdDeviation="2.2"/><feOffset dx="1.8" dy="3"/><feComponentTransfer result="s"><feFuncA type="linear" slope="0.3"/></feComponentTransfer><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="27" result="n"/><feColorMatrix in="n" values="0 0 0 0 1  0 0 0 0 0.96  0 0 0 0 0.88  0 0 0 -1.2 0.45"/><feComposite in2="SourceAlpha" operator="in" result="l"/><feColorMatrix in="n" values="0 0 0 0 0.1  0 0 0 0 0.06  0 0 0 0 0.03  0 0 0 1.3 -0.74"/><feComposite in2="SourceAlpha" operator="in" result="d"/><feMerge><feMergeNode in="s"/><feMergeNode in="SourceGraphic"/><feMergeNode in="l"/><feMergeNode in="d"/></feMerge></filter><radialGradient id="peg-rosa-vig4" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#1a0f08" stop-opacity="0"/><stop offset="100%" stop-color="#1a0f08" stop-opacity="0.3"/></radialGradient></defs>
+<rect x="0" y="0" width="200" height="200" fill="#81664e"/>
+<rect x="0" y="0" width="200" height="200" fill="#81664e" filter="url(#peg-rosa-felt1)"/>
+<path d="M24,96a76,76 0 1,0 152,0a76,76 0 1,0 -152,0z" fill="none" stroke="#1a0f08" stroke-width="2" stroke-dasharray="6 5" stroke-linecap="round" opacity="0.3" transform="translate(0.8 1.4)"/>
+<path d="M24,96a76,76 0 1,0 152,0a76,76 0 1,0 -152,0z" fill="none" stroke="#F2EBDD" stroke-width="2" stroke-dasharray="6 5" stroke-linecap="round"/>
+<ellipse cx="108" cy="108" rx="54" ry="51.8" fill="#1a0f08" opacity="0.3" filter="url(#peg-rosa-blur2)"/>
+<path d="M154,96L152.2,101.1L147.7,105.5L142.9,109L139.9,112.5L139.5,117.1L140.4,123L140.5,129.3L138.2,134.2L133.3,136.5L127,136.4L121.1,135.5L116.5,135.9L113,138.9L109.5,143.7L105.1,148.2L100,150L94.9,148.2L90.5,143.7L87,138.9L83.5,135.9L78.9,135.5L73,136.4L66.7,136.5L61.8,134.2L59.5,129.3L59.6,123L60.5,117.1L60.1,112.5L57.1,109L52.3,105.5L47.8,101.1L46,96L47.8,90.9L52.3,86.5L57.1,83L60.1,79.5L60.5,74.9L59.6,69L59.5,62.7L61.8,57.8L66.7,55.5L73,55.6L78.9,56.5L83.5,56.1L87,53.1L90.5,48.3L94.9,43.8L100,42L105.1,43.8L109.5,48.3L113,53.1L116.5,56.1L121.1,56.5L127,55.6L133.3,55.5L138.2,57.8L140.5,62.7L140.4,69L139.5,74.9L139.9,79.5L142.9,83L147.7,86.5L152.2,90.9z" fill="#c9967d" stroke="#815f4e" stroke-width="3"/>
+<circle cx="100" cy="96" r="26" fill="#ae816b" stroke="#8a6654" stroke-width="2"/>
+<line x1="128" y1="96" x2="146" y2="96" stroke="#936d5a" stroke-width="2"/>
+<line x1="119.8" y1="115.8" x2="132.5" y2="128.5" stroke="#936d5a" stroke-width="2"/>
+<line x1="100" y1="124" x2="100" y2="142" stroke="#936d5a" stroke-width="2"/>
+<line x1="80.2" y1="115.8" x2="67.5" y2="128.5" stroke="#936d5a" stroke-width="2"/>
+<line x1="72" y1="96" x2="54" y2="96" stroke="#936d5a" stroke-width="2"/>
+<line x1="80.2" y1="76.2" x2="67.5" y2="63.5" stroke="#936d5a" stroke-width="2"/>
+<line x1="100" y1="68" x2="100" y2="50" stroke="#936d5a" stroke-width="2"/>
+<line x1="119.8" y1="76.2" x2="132.5" y2="63.5" stroke="#936d5a" stroke-width="2"/>
+<circle cx="92" cy="96" r="4.5" fill="#4b362b"/>
+<circle cx="108" cy="96" r="4.5" fill="#4b362b"/>
+<line x1="92" y1="96" x2="108" y2="96" stroke="#6F7A4B" stroke-width="5" stroke-linecap="round"/>
+<g transform="rotate(-6 148 173)">
+<path d="M111,158h74a3,3 0 0,1 3,3v24a3,3 0 0,1 -3,3h-74a3,3 0 0,1 -3,-3v-24a3,3 0 0,1 3,-3z" fill="#F2EBDD" filter="url(#peg-rosa-felt3)"/>
+<path d="M114,162h68a2,2 0 0,1 2,2v18a2,2 0 0,1 -2,2h-68a2,2 0 0,1 -2,-2v-18a2,2 0 0,1 2,-2z" fill="none" stroke="#988f83" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text x="148" y="179.5" font-size="18" font-family="serif" fill="#2b1e15" text-anchor="middle" font-style="italic">Rosa</text>
+</g>
+<rect x="0" y="0" width="200" height="200" fill="url(#peg-rosa-vig4)"/>
+</svg>

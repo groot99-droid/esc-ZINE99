@@ -1,0 +1,180 @@
+{
+  "notation": {
+    "cards": "Rank (A 2-9 T J Q K) then suit (S H D C). Hearts and diamonds are red.",
+    "columns": "Six columns, 401 to 406, each listed from the bottom card to the top; only the top card is dealt face up.",
+    "stock": "In the order the cards are turned, one at a time.",
+    "stock_position": "The slipped card is shown as this turn of the first pass (1-based); it lifts out to the spike and the stock card due on that turn follows.",
+    "moves": "D turn one stock card; R turn the waste back for a new pass; W>F or W>k waste to foundation or column k; j>F column j to foundation; j>kxn move the top n face-up cards of column j onto column k. Turning the stock and recycling are not counted as card moves."
+  },
+  "deck_size": 52,
+  "columns": 6,
+  "deals": [
+    {
+      "night": 2,
+      "scene": "n2_patience",
+      "passes": null,
+      "max_card_moves": 89,
+      "columns": [
+        ["6C"],
+        ["4C", "QS"],
+        ["9D", "2H", "8S"],
+        ["5C", "TH", "7C", "4H"],
+        ["5D", "7S", "3H", "8C", "3C"],
+        ["7H", "8D", "5H", "3S", "4D", "AC"]
+      ],
+      "stock": ["9S", "2D", "5S", "9H", "AH", "8H", "KD", "3D", "6H", "AS", "TS", "7D", "QD", "6D", "2S", "KC", "9C", "2C", "KH", "JD", "JH", "AD", "JS", "QH", "TD", "6S", "KS", "JC", "TC", "4S", "QC"],
+      "slipped": [
+        {
+          "card": 1,
+          "text": "Don't watch one door too long. They see the dark.",
+          "depth": "stock",
+          "stock_position": 7
+        },
+        {
+          "card": 2,
+          "text": "The bell gives you less time than you think. Run.",
+          "depth": "column6",
+          "position": "under the deepest face-down card"
+        }
+      ],
+      "solution": ["6>F", "5>4x1", "D", "D", "W>4", "D", "D", "D", "W>F", "D", "D", "D", "D", "D", "W>F", "D", "D", "W>3", "1>3x1", "D", "D", "D", "W>F", "D", "W>1", "D", "D", "W>F", "D", "D", "W>2", "D", "D", "W>F", "4>F", "4>F", "D", "D", "W>1", "W>1", "D", "W>1", "D", "D", "D", "D", "W>2", "D", "D", "R", "D", "W>1", "D", "D", "W>2", "3>2x3", "3>F", "5>3x1", "5>F", "4>F", "D", "W>1", "4>1x1", "D", "D", "W>F", "6>F", "6>F", "6>F", "5>6x1", "5>F", "W>5", "2>5x7", "2>F", "D", "W>F", "D", "D", "D", "W>F", "D", "W>4", "6>4x2", "6>F", "D", "W>2", "D", "D", "D", "W>6", "D", "D", "W>F", "D", "W>2", "R", "D", "W>F", "D", "D", "W>6", "D", "W>2", "W>2", "3>2x2", "D", "W>F", "4>F", "1>4x1", "1>F", "5>2x2", "5>F", "1>F", "5>F", "2>5x4", "2>F", "4>1x3", "4>F", "2>F", "4>F", "5>F", "1>F", "5>F", "1>F", "5>F", "1>F", "5>F", "1>F", "1>F", "1>F", "5>F", "5>F", "5>F", "6>F", "5>F", "6>F", "D", "W>F", "2>F", "1>F", "2>F"]
+    },
+    {
+      "night": 3,
+      "scene": "n3_patience",
+      "passes": 3,
+      "columns": [
+        ["8S"],
+        ["3C", "AS"],
+        ["JD", "7H", "QC"],
+        ["KH", "JS", "TD", "4D"],
+        ["7S", "AH", "6D", "KS", "QS"],
+        ["JH", "TH", "4H", "KC", "5C", "3D"]
+      ],
+      "stock": ["8H", "9D", "9C", "4C", "6C", "QH", "5S", "9H", "7C", "6H", "2S", "JC", "3S", "TC", "3H", "4S", "7D", "2D", "6S", "AC", "QD", "2C", "8C", "5D", "5H", "9S", "TS", "2H", "AD", "KD", "8D"],
+      "slipped": [
+        {"card": 3, "text": "Past 404 the boards talk. Walk them.", "depth": "stock", "stock_position": 8},
+        {
+          "card": 4,
+          "text": "The chute doesn't go to a manager.",
+          "depth": "column6",
+          "position": "under the deepest face-down card"
+        }
+      ],
+      "solution": ["2>F", "2>4x1", "D", "D", "D", "D", "D", "D", "D", "D", "D", "D", "D", "W>F", "D", "D", "W>F", "D", "D", "D", "W>F", "D", "W>1", "D", "W>4", "D", "W>1", "D", "W>F", "D", "D", "W>F", "D", "D", "W>1", "D", "D", "D", "D", "D", "W>F", "4>F", "4>F", "6>F", "4>F", "1>F", "D", "D", "R", "D", "D", "D", "W>4", "D", "W>F", "6>F", "6>2x1", "D", "W>F", "D", "D", "W>F", "D", "D", "W>F", "D", "D", "D", "D", "D", "W>2", "D", "W>F", "4>F", "D", "W>1", "D", "W>4", "D", "D", "D", "D", "R", "D", "W>4", "D", "D", "D", "D", "D", "W>2", "4>2x3", "D", "W>F", "2>4x3", "2>F", "3>F", "4>2x4", "5>4x1", "2>5x5", "2>F", "5>2x6", "5>F", "5>F", "1>3x2", "1>F", "3>1x3", "3>4x1", "5>2x1", "W>2", "D", "D", "W>4", "D", "W>F", "W>F", "6>F", "1>F", "1>F", "2>F", "1>F", "2>F", "1>F", "2>F", "W>F", "2>F", "4>F", "6>F", "6>F", "W>F", "D", "W>1", "4>1x2", "4>F", "D", "W>F", "W>F", "2>F", "1>F", "2>F", "1>F", "2>F", "1>F", "2>F"]
+    },
+    {
+      "night": 4,
+      "scene": "n4_patience",
+      "passes": 3,
+      "columns": [
+        ["3H"],
+        ["6C", "4H"],
+        ["TS", "AH", "JC"],
+        ["TC", "KC", "KD", "8D"],
+        ["7H", "7S", "QS", "4S", "9S"],
+        ["4C", "QH", "KS", "AC", "AS", "TH"]
+      ],
+      "stock": ["AD", "JD", "5C", "JS", "3C", "2D", "5H", "QC", "8S", "8H", "3S", "2C", "6H", "6S", "QD", "7C", "7D", "5D", "5S", "9H", "2S", "KH", "9C", "9D", "3D", "4D", "8C", "2H", "JH", "TD", "6D"],
+      "slipped": [
+        {
+          "card": 5,
+          "text": "The man who books is called Wren. Like the bird.",
+          "depth": "stock",
+          "stock_position": 6,
+          "sets": "card.wren_name"
+        },
+        {
+          "card": 6,
+          "text": "Lost property. Bottom drawer. My old book.",
+          "depth": "column6",
+          "position": "under the deepest face-down card"
+        }
+      ],
+      "solution": ["4>5x1", "5>6x2", "1>5x1", "4>1x1", "6>3x3", "6>F", "6>F", "D", "W>F", "D", "D", "D", "D", "W>2", "D", "W>F", "D", "D", "W>1", "D", "D", "D", "D", "W>F", "2>F", "W>2", "D", "D", "D", "W>4", "3>4x4", "3>F", "D", "W>4", "D", "D", "D", "D", "W>3", "D", "W>F", "2>F", "D", "D", "D", "D", "W>F", "D", "W>F", "D", "W>3", "D", "W>F", "5>F", "2>F", "5>F", "D", "W>1", "3>1x3", "4>3x7", "W>4", "D", "D", "W>3", "R", "D", "W>5", "4>5x2", "6>4x1", "6>4x1", "6>F", "D", "W>F", "2>F", "D", "W>4", "D", "W>F", "D", "W>5", "D", "D", "W>F", "D", "D", "W>1", "W>1", "D", "W>F", "3>F", "3>F", "1>5x2", "1>F", "D", "W>F", "5>F", "5>F", "3>F", "5>1x1", "5>F", "W>3", "D", "W>2", "5>2x3", "5>F", "1>F", "5>F", "3>F", "1>F", "3>F", "1>F", "3>F", "1>F", "4>F", "4>F", "2>1x2", "2>F", "2>F", "4>F", "D", "W>F", "1>F", "3>F", "D", "W>F", "1>F", "1>F", "3>F", "1>F", "3>F"]
+    },
+    {
+      "night": 5,
+      "scene": "n5_patience",
+      "passes": 2,
+      "columns": [
+        ["9S"],
+        ["5H", "2D"],
+        ["KH", "7C", "2H"],
+        ["6S", "3D", "8H", "8S"],
+        ["4D", "QC", "QS", "6H", "7H"],
+        ["TH", "QD", "6D", "9C", "5C", "QH"]
+      ],
+      "stock": ["TC", "8D", "TD", "3C", "JS", "4H", "KC", "3S", "5D", "JD", "2S", "KD", "AS", "3H", "JC", "5S", "JH", "TS", "4S", "9H", "AH", "KS", "2C", "7D", "4C", "6C", "9D", "AC", "8C", "7S", "AD"],
+      "slipped": [
+        {
+          "card": 7,
+          "text": "Every season, six. Every season, one door at 2:14.",
+          "depth": "stock",
+          "stock_position": 9
+        },
+        {
+          "card": 8,
+          "text": "When the lights go, follow the coins.",
+          "depth": "column6",
+          "position": "under the deepest face-down card"
+        }
+      ],
+      "solution": ["5>4x1", "D", "D", "W>1", "D", "D", "D", "W>6", "D", "D", "D", "D", "D", "D", "D", "D", "W>F", "D", "D", "D", "W>5", "D", "D", "D", "D", "D", "W>F", "3>F", "3>1x1", "5>1x2", "5>3x1", "D", "D", "D", "D", "D", "W>4", "D", "D", "W>F", "D", "D", "D", "W>F", "2>F", "2>4x1", "R", "D", "D", "W>6", "1>6x5", "D", "D", "W>6", "W>6", "D", "W>1", "6>1x10", "D", "D", "D", "W>3", "D", "W>F", "D", "W>2", "5>2x1", "5>6x1", "D", "W>F", "1>6x1", "1>F", "4>F", "W>4", "W>F", "W>3", "D", "D", "W>2", "D", "W>2", "D", "W>F", "1>F", "1>F", "D", "W>2", "4>2x4", "D", "W>5", "D", "W>F", "6>F", "D", "D", "W>F", "D", "W>3", "D", "W>3", "W>3", "2>3x2", "2>F", "4>F", "4>F", "4>F", "6>F", "3>F", "6>F", "3>F", "1>F", "3>2x1", "3>F", "6>F", "6>F", "2>F", "1>F", "3>F", "3>F", "W>F", "6>5x1", "1>6x1", "1>F", "3>F", "5>F", "2>3x4", "2>F", "2>F", "1>5x2", "1>F", "6>5x2", "D", "W>F", "3>F", "3>F", "5>F", "3>F", "5>F", "3>F", "5>F", "3>F", "5>F", "3>F", "5>F"]
+    },
+    {
+      "night": 6,
+      "scene": "n6_patience",
+      "passes": 2,
+      "columns": [
+        ["4D"],
+        ["2S", "2C"],
+        ["TS", "AD", "9S"],
+        ["KD", "4C", "7C", "4S"],
+        ["JH", "JD", "TH", "QH", "8S"],
+        ["AC", "2D", "QD", "9D", "3D", "9H"]
+      ],
+      "stock": ["KH", "8H", "KC", "7H", "TD", "4H", "QC", "2H", "8C", "6H", "7S", "5C", "6C", "JC", "TC", "KS", "3C", "3S", "6S", "5H", "AH", "3H", "7D", "JS", "5D", "8D", "9C", "5S", "6D", "AS", "QS"],
+      "slipped": [
+        {
+          "card": 9,
+          "text": "Back office safe: the year they built the passage, then the minute I knock.",
+          "depth": "stock",
+          "stock_position": 10,
+          "sets": "card.safe_combo"
+        },
+        {
+          "card": 10,
+          "text": "Wren's account ends in the time I knock.",
+          "depth": "column6",
+          "position": "under the deepest face-down card"
+        }
+      ],
+      "solution": ["5>6x1", "D", "D", "W>3", "D", "D", "W>6", "D", "D", "D", "D", "D", "D", "D", "W>3", "W>3", "D", "W>3", "1>3x1", "D", "W>6", "D", "W>5", "D", "D", "W>1", "5>1x2", "3>5x6", "3>F", "5>1x7", "3>5x1", "6>5x4", "2>6x1", "6>4x2", "D", "W>1", "D", "D", "D", "W>5", "4>5x3", "D", "W>F", "D", "D", "D", "D", "D", "D", "D", "D", "W>4", "W>4", "D", "W>F", "2>F", "D", "R", "D", "W>2", "D", "W>3", "D", "D", "W>4", "D", "W>2", "5>2x10", "D", "W>F", "D", "W>6", "D", "W>5", "6>5x2", "6>3x1", "6>F", "6>F", "2>F", "1>F", "2>F", "1>F", "D", "W>F", "2>F", "4>1x1", "4>F", "D", "W>F", "D", "W>F", "1>F", "2>F", "1>4x1", "1>F", "1>F", "2>5x2", "2>F", "4>1x3", "4>F", "1>F", "5>F", "5>F", "D", "W>5", "D", "W>3", "W>3", "D", "W>F", "1>F", "1>F", "1>F", "1>F", "2>F", "1>F", "2>F", "5>F", "5>F", "3>1x1", "3>F", "5>2x2", "5>F", "1>3x2", "1>F", "2>4x4", "2>F", "D", "W>F", "4>F", "3>F", "D", "W>F", "4>F", "3>F", "4>F", "3>F", "4>F", "3>F", "4>F", "D", "W>F", "1>F"]
+    },
+    {
+      "night": 7,
+      "scene": "n7_patience",
+      "passes": 1,
+      "columns": [
+        ["JC"],
+        ["AH", "6C"],
+        ["8D", "AC", "3S"],
+        ["QD", "6H", "QS", "TS"],
+        ["TD", "KD", "QC", "2S", "8S"],
+        ["QH", "3H", "TC", "KS", "2H", "5C"]
+      ],
+      "stock": ["9C", "JS", "4S", "8C", "9H", "7D", "KC", "6S", "4H", "8H", "7S", "4D", "JD", "9D", "5S", "5H", "4C", "KH", "2C", "JH", "TH", "AD", "3C", "AS", "7H", "2D", "9S", "5D", "3D", "7C", "6D"],
+      "slipped": [
+        {"card": 11, "text": "Look at your own door.", "depth": "stock", "stock_position": 6, "sets": "card.own_door"},
+        {
+          "card": 12,
+          "text": "I stopped writing it down. They didn't stop me.",
+          "depth": "column6",
+          "position": "under the deepest face-down card"
+        }
+      ],
+      "solution": ["D", "D", "D", "D", "D", "W>4", "5>4x1", "D", "W>4", "2>4x1", "2>F", "D", "D", "D", "W>6", "3>6x1", "3>F", "D", "D", "W>3", "D", "D", "D", "D", "D", "W>4", "D", "W>4", "D", "W>2", "D", "W>F", "D", "D", "W>1", "D", "W>F", "D", "W>F", "4>F", "D", "W>F", "5>F", "6>F", "5>2x1", "W>2", "4>2x6", "4>5x1", "4>3x1", "1>4x2", "5>1x2", "W>3", "6>3x1", "6>F", "6>F", "4>6x3", "6>4x4", "W>6", "W>1", "6>1x2", "6>F", "3>F", "2>F", "2>F", "W>3", "D", "D", "W>F", "D", "W>4", "D", "D", "W>F", "3>F", "W>F", "D", "W>F", "D", "W>F", "2>F", "W>2", "W>4", "3>4x3", "3>F", "1>F", "5>F", "W>2", "W>3", "W>F", "W>F", "4>F", "2>F", "4>F", "2>F", "4>F", "2>F", "4>F", "2>F", "4>F", "2>F", "W>F", "W>F", "1>F", "1>F", "1>F", "4>F", "2>F", "4>F", "2>F", "3>F", "4>F", "1>F", "4>F", "6>F", "2>F"]
+    }
+  ]
+}

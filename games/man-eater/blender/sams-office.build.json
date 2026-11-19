@@ -1,0 +1,684 @@
+{
+  "game": "man-eater",
+  "location": "sams-office",
+  "name": "Sam's office and the staff mess",
+  "reference": "assets/locations/sams-office.jpg",
+  "bounds_m": [
+    11,
+    5,
+    4
+  ],
+  "origin": "floor centre; +y toward the north wall and the filing cabinet; the office is the west 6 m, the staff mess the east 5 m through the partition doorway; the hall door on the south wall",
+  "materials": {
+    "dark-wood": {
+      "color": [
+        0.3,
+        0.2,
+        0.13
+      ],
+      "roughness": 0.8
+    },
+    "frost": {
+      "color": [
+        0.486,
+        0.549,
+        0.6
+      ],
+      "roughness": 0.7
+    },
+    "pale-wood": {
+      "color": [
+        0.55,
+        0.42,
+        0.28
+      ],
+      "roughness": 0.8
+    },
+    "steel": {
+      "color": [
+        0.541,
+        0.561,
+        0.576
+      ],
+      "roughness": 0.55,
+      "metallic": 0.8
+    },
+    "wall-cream": {
+      "color": [
+        0.851,
+        0.824,
+        0.749
+      ],
+      "roughness": 0.9
+    },
+    "wall-green": {
+      "color": [
+        0.369,
+        0.451,
+        0.388
+      ],
+      "roughness": 0.9
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        11,
+        5,
+        0.1
+      ],
+      "location": [
+        0,
+        0,
+        -0.05
+      ],
+      "material": "dark-wood"
+    },
+    {
+      "id": "ceiling-office",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        6,
+        5,
+        0.1
+      ],
+      "location": [
+        -2.5,
+        0,
+        4.05
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "ceiling-mess",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        5,
+        4,
+        0.1
+      ],
+      "location": [
+        3,
+        -0.5,
+        4.05
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "wall-north-office",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        6.15,
+        0.15,
+        4.0
+      ],
+      "location": [
+        -2.5,
+        2.575,
+        2.0
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "wall-north-mess",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        5.15,
+        0.15,
+        4.0
+      ],
+      "location": [
+        3.0,
+        1.575,
+        2.0
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "wall-east",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        4,
+        4.0
+      ],
+      "location": [
+        5.575,
+        -0.5,
+        2.0
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "wall-west-lower",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        5,
+        0.9
+      ],
+      "location": [
+        -5.575,
+        0,
+        0.45
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "wall-west-upper",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        5,
+        1.6
+      ],
+      "location": [
+        -5.575,
+        0,
+        3.2
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "wall-west-south",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        1.5,
+        1.5
+      ],
+      "location": [
+        -5.575,
+        -1.75,
+        1.65
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "wall-west-north",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        1.5,
+        1.5
+      ],
+      "location": [
+        -5.575,
+        1.75,
+        1.65
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "window-blinds",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        0.05,
+        2.0,
+        1.5
+      ],
+      "location": [
+        -5.53,
+        0,
+        1.65
+      ],
+      "material": "frost",
+      "collide": false
+    },
+    {
+      "id": "wall-south-left",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        2.95,
+        0.15,
+        4.0
+      ],
+      "location": [
+        -4.025,
+        -2.575,
+        2.0
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "wall-south-right",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        6.95,
+        0.15,
+        4.0
+      ],
+      "location": [
+        2.025,
+        -2.575,
+        2.0
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "wall-south-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.1,
+        0.15,
+        1.6
+      ],
+      "location": [
+        -2.0,
+        -2.575,
+        3.2
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "partition-south",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        1.7,
+        4.0
+      ],
+      "location": [
+        0.5,
+        -1.65,
+        2.0
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "partition-north",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        2.3,
+        4.0
+      ],
+      "location": [
+        0.5,
+        1.35,
+        2.0
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "partition-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        1.0,
+        1.6
+      ],
+      "location": [
+        0.5,
+        -0.3,
+        3.2
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "desk",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.7,
+        0.85,
+        0.76
+      ],
+      "location": [
+        -3.8,
+        0.5,
+        0.38
+      ],
+      "material": "dark-wood"
+    },
+    {
+      "id": "desk-lamp",
+      "shape": "cone",
+      "role": "trim",
+      "size_m": [
+        0.35,
+        0.35,
+        0.45
+      ],
+      "location": [
+        -4.3,
+        0.6,
+        0.98
+      ],
+      "material": "wall-green"
+    },
+    {
+      "id": "office-chair",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.45,
+        0.45,
+        0.9
+      ],
+      "location": [
+        -3.8,
+        1.25,
+        0.45
+      ],
+      "material": "dark-wood"
+    },
+    {
+      "id": "side-chair",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.45,
+        0.45,
+        0.9
+      ],
+      "location": [
+        -1.0,
+        2.0,
+        0.45
+      ],
+      "material": "dark-wood"
+    },
+    {
+      "id": "mess-shelf",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        1.4,
+        0.25,
+        0.04
+      ],
+      "location": [
+        3.0,
+        1.37,
+        1.6
+      ],
+      "material": "wall-cream"
+    },
+    {
+      "id": "mess-tins",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        1.2,
+        0.18,
+        0.25
+      ],
+      "location": [
+        3.0,
+        1.37,
+        1.75
+      ],
+      "material": "steel"
+    },
+    {
+      "id": "mess-table",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.0,
+        0.8,
+        0.75
+      ],
+      "location": [
+        3.4,
+        0.2,
+        0.375
+      ],
+      "material": "pale-wood"
+    }
+  ],
+  "props": [
+    {
+      "id": "cabinet",
+      "object": "filing-cabinet",
+      "location": [
+        -0.3,
+        2.15,
+        0
+      ]
+    },
+    {
+      "id": "folder-roster",
+      "object": "file-folder",
+      "location": [
+        -0.3,
+        2.15,
+        1.3
+      ]
+    },
+    {
+      "id": "folder-source",
+      "object": "file-folder",
+      "location": [
+        -3.5,
+        0.4,
+        0.76
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        10
+      ]
+    },
+    {
+      "id": "clock",
+      "object": "wall-clock",
+      "location": [
+        -1.2,
+        2.47,
+        3.0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ],
+      "ground": false
+    },
+    {
+      "id": "staff-plate",
+      "object": "meal-tray",
+      "location": [
+        3.4,
+        0.2,
+        0.75
+      ]
+    }
+  ],
+  "scenes": {
+    "n4_office": {
+      "note": "Night 4: Sam's office, the desk lamp left on. The cabinet holds the transfer roster and the project's source file; the staff mess has ordinary food, and taking some breaks rule one.",
+      "world": {
+        "color": [
+          0.04,
+          0.05,
+          0.06
+        ],
+        "strength": 0.1
+      },
+      "lights": [
+        {
+          "name": "desk-lamp",
+          "type": "POINT",
+          "location": [
+            -4.3,
+            0.6,
+            1.05
+          ],
+          "energy": 60,
+          "size": 0.15,
+          "color": [
+            1.0,
+            0.82,
+            0.55
+          ]
+        },
+        {
+          "name": "mess-dark",
+          "type": "POINT",
+          "location": [
+            3.0,
+            -0.3,
+            3.6
+          ],
+          "energy": 8,
+          "size": 0.3,
+          "color": [
+            0.62,
+            0.7,
+            0.9
+          ]
+        },
+        {
+          "name": "blinds-night",
+          "type": "AREA",
+          "location": [
+            -5.3,
+            0,
+            1.7
+          ],
+          "energy": 12,
+          "size": 1.5,
+          "color": [
+            0.62,
+            0.7,
+            0.9
+          ],
+          "look_at": [
+            -2,
+            0,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -2.0,
+          -2.0,
+          1.95
+        ],
+        "look_at": [
+          -0.3,
+          2.0,
+          1.3
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          -2.0,
+          -2.0,
+          0.0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "cabinet",
+          "verb": "Open the drawer"
+        },
+        {
+          "prop": "folder-roster",
+          "verb": "Read the transfer roster"
+        },
+        {
+          "prop": "folder-source",
+          "verb": "Read the project's file"
+        },
+        {
+          "prop": "staff-plate",
+          "verb": "Take food from the staff mess"
+        }
+      ]
+    },
+    "d5_sam_office": {
+      "note": "Day 5, reporting Jax: Sam listens and writes. Grey daylight from the window.",
+      "world": {
+        "color": [
+          0.6,
+          0.63,
+          0.66
+        ],
+        "strength": 0.35
+      },
+      "lights": [
+        {
+          "name": "window-day",
+          "type": "AREA",
+          "location": [
+            -5.2,
+            0,
+            1.7
+          ],
+          "energy": 220,
+          "size": 1.8,
+          "color": [
+            0.85,
+            0.9,
+            1.0
+          ],
+          "look_at": [
+            -2,
+            0,
+            0.8
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -3.6,
+          -1.0,
+          2.05
+        ],
+        "look_at": [
+          -3.9,
+          1.3,
+          1.3
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          -3.6,
+          -1.0,
+          0.0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [
+        "folder-roster",
+        "staff-plate"
+      ],
+      "interactions": [
+        {
+          "prop": "folder-source",
+          "verb": "Watch Sam write",
+          "leads_to": "d5_rations"
+        }
+      ]
+    }
+  }
+}

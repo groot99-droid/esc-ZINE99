@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-labelledby="icon-heel-t icon-heel-d">
+<title id="icon-heel-t">Tray icon: the bread heel</title>
+<desc id="icon-heel-d">Isotype icon of a bread heel: the end of a loaf, crust dark and crumb pale, the one food that changes nothing.</desc>
+<defs><clipPath id="icon-heel-clip1"><rect x="3" y="3" width="194" height="194" rx="6"/></clipPath><filter id="icon-heel-spk2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="463"/><feColorMatrix values="0 0 0 0 0.44  0 0 0 0 0.40  0 0 0 0 0.31  0 0 0 0.6 -0.2"/></filter></defs>
+<rect x="3" y="3" width="194" height="194" rx="6" fill="#EFE9DC" stroke="#1B1D1F" stroke-width="2"/>
+<line x1="14" y1="160" x2="186" y2="160" stroke="#1B1D1F" stroke-width="2"/>
+<text x="16" y="182" font-size="15" font-family="sans-serif" fill="#1B1D1F" font-weight="bold" letter-spacing="2">BREAD</text>
+<g transform="translate(4,3)" opacity="0.6">
+<path d="M40,128 V78 Q40,36 100,36 Q160,36 160,78 V128Z" fill="#7C8C99"/>
+</g>
+<path d="M40,128 V78 Q40,36 100,36 Q160,36 160,78 V128Z" fill="#7d5a2c"/>
+<path d="M54,128 V82 Q54,50 100,50 Q146,50 146,82 V128Z" fill="#E2C48E"/>
+<circle cx="80" cy="80" r="4" fill="#7d5a2c" opacity="0.5"/>
+<circle cx="112" cy="70" r="4" fill="#7d5a2c" opacity="0.5"/>
+<circle cx="124" cy="100" r="4" fill="#7d5a2c" opacity="0.5"/>
+<circle cx="88" cy="108" r="4" fill="#7d5a2c" opacity="0.5"/>
+<circle cx="104" cy="92" r="4" fill="#7d5a2c" opacity="0.5"/>
+<g clip-path="url(#icon-heel-clip1)">
+<rect x="0" y="0" width="200" height="200" filter="url(#icon-heel-spk2)"/>
+</g>
+</svg>

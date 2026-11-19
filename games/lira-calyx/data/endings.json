@@ -1,0 +1,136 @@
+{
+  "endings": [
+    {
+      "id": "directed-resilience",
+      "name": "Directed Resilience",
+      "as_written": false,
+      "priority": 1,
+      "when": {
+        "is": "core_choice",
+        "eq": "withhold"
+      },
+      "summary": "Lira accepts Veylor's argument and does not fire. The Second Genesis runs, the Peaks reset, and Lira catalogues the world that follows under the Continuum's seal. The archivist steals her original journals because the official catalogue leaves out what was done. Her last act is a Journal Audit in which she rules the bars herself.",
+      "cost": "The terraces, Hollin among them, are gone in the reset, and Joren receives a restored terrace he cannot live in. Her last act is a Journal Audit in which she rules the black bars over her own catalogue herself: she becomes the clerk the player was at the Excision Desk.",
+      "final_scenes": [
+        "b4-collapse",
+        "ep-tunnel",
+        "ep-vault",
+        "ep-audit-3",
+        "end-resilience"
+      ]
+    },
+    {
+      "id": "fire",
+      "name": "Fire",
+      "as_written": false,
+      "priority": 2,
+      "when": {
+        "is": "core_choice",
+        "eq": "fire"
+      },
+      "summary": "Lira gives up on phase offsets and lets Kade's charges destroy the core, against her own plea. The Continuum falls, and the Mid-Slope terraces fall with it. The archivist digs the books out of the rubble, and the songs that measured the core now decode to nothing.",
+      "cost": "“Phase offsets, not fire” was her plea: the Mid-Slope terraces fall, and a forgiven Joren dies keeping the water lifts running. The songs measured a core that is gone; every staff in her books now decodes to nothing.",
+      "final_scenes": [
+        "b4-collapse",
+        "ep-tunnel",
+        "ep-vault",
+        "ep-audit-3",
+        "end-fire"
+      ]
+    },
+    {
+      "id": "errata",
+      "name": "Errata",
+      "as_written": false,
+      "priority": 3,
+      "when": {
+        "all": [
+          {
+            "is": "core_choice",
+            "eq": "withdraw"
+          },
+          {
+            "is": "gamma_remeasured",
+            "eq": true
+          },
+          {
+            "is": "flyleaf_found",
+            "eq": true
+          }
+        ]
+      },
+      "summary": "Offered only to a Lira who measured the damping herself and found whose key she was using. She does not fire: she withdraws her schedule and publishes the correction to her own model, unsigned, pinned to the relay mast at Hollin. No pulse, no pause. She lives with her name on nothing, and a hundred settlements start re-measuring.",
+      "cost": "The storms take the terraces on the mountain's own period, Hollin among them, emptied on the siren baseline she set the first morning. The Continuum is not wounded and Veylor is not stopped. The clean result under her own name, the thing she wanted, is the thing she gives up.",
+      "final_scenes": [
+        "b4-collapse",
+        "ep-tunnel",
+        "ep-vault",
+        "ep-audit-3",
+        "end-errata"
+      ]
+    },
+    {
+      "id": "archivist-in-time",
+      "name": "The Archivist in Time",
+      "as_written": false,
+      "priority": 4,
+      "when": {
+        "all": [
+          {
+            "is": "core_choice",
+            "eq": "pulse"
+          },
+          {
+            "is": "verified_share",
+            "gte": 60
+          },
+          {
+            "any": [
+              {
+                "is": "margin_notes_answered",
+                "gte": 6
+              },
+              {
+                "all": [
+                  {
+                    "is": "margin_notes_answered",
+                    "gte": 4
+                  },
+                  {
+                    "is": "bars_route_plotted",
+                    "eq": true
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "summary": "Lira fires the pulses on data she mostly verified by hand, and through four books she answered the hand in her margins, or read its twelve bars as the route out. The follower knows where to wait, the north shaft holds long enough, and they reach her before the tunnels seal. She lives in hiding; the testament is published under her own name; the Continuum hunts them both.",
+      "cost": "The archivist breaks cover to reach her and loses the vault: only six of the twelve bars can ever be lifted from the books. Veylor lives, the Continuum hunts them both, and every terrace not held falls.",
+      "final_scenes": [
+        "b4-collapse",
+        "ep-tunnel",
+        "ep-vault",
+        "ep-audit-3",
+        "end-in-time"
+      ]
+    },
+    {
+      "id": "redacted-testament",
+      "name": "The Redacted Testament",
+      "as_written": true,
+      "priority": 5,
+      "when": true,
+      "summary": "As written. Lira fires the pulses on partly corrupted data. The result is a fragile pause and a partial fracture. She is taken into the mountain and pays with her life, and the archivist, who arrived too late, carries the books out.",
+      "cost": "She dies. In the epilogue the archivist decodes their own twelve bars, the route out of the mountain she never read.",
+      "final_scenes": [
+        "b4-collapse",
+        "ep-tunnel",
+        "ep-vault",
+        "ep-audit-3",
+        "end-written"
+      ]
+    }
+  ]
+}

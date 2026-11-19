@@ -1,0 +1,505 @@
+{
+  "state": [
+    {
+      "name": "season",
+      "type": "enum",
+      "default": "spring",
+      "description": "The current season.",
+      "values": [
+        "spring",
+        "summer",
+        "autumn",
+        "winter",
+        "shadow"
+      ]
+    },
+    {
+      "name": "inst.elders",
+      "type": "meter",
+      "default": 30,
+      "description": "Standing of the Knot (elders and priests, Eye). Sets Omen Spread hand size.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "inst.warriors",
+      "type": "meter",
+      "default": 30,
+      "description": "Standing of the Battlements (warriors, Spear). Sets crack defence squad size.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "inst.scholars",
+      "type": "meter",
+      "default": 30,
+      "description": "Standing of the Scroll House (scholars, Quill). Sets Tremor Scroll hints.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "year.leading",
+      "type": "enum",
+      "default": "none",
+      "description": "Set at the Winter Count: the institution at least 12 above each other, or none.",
+      "values": [
+        "none",
+        "elders",
+        "warriors",
+        "scholars"
+      ]
+    },
+    {
+      "name": "shadow_reading",
+      "type": "enum",
+      "default": "none",
+      "description": "The Reading of the Shadow laid in c6_omen.",
+      "values": [
+        "none",
+        "trial",
+        "enemy",
+        "habit",
+        "offering"
+      ]
+    },
+    {
+      "name": "morale",
+      "type": "meter",
+      "default": 60,
+      "description": "The city's spirits. Above 75 gives +1 council token; below 30 gives -2.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "bark.integrity",
+      "type": "meter",
+      "default": 80,
+      "description": "How sound the bark is. 25 or below at the touch is the Flake.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "sap",
+      "type": "meter",
+      "default": 60,
+      "description": "Sacred water, the main resource.",
+      "range": [
+        0,
+        300
+      ]
+    },
+    {
+      "name": "food",
+      "type": "meter",
+      "default": 50,
+      "description": "Food stores; each season the city eats hands / 2.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "flake_stock",
+      "type": "counter",
+      "default": 20,
+      "description": "Bark flake, a building material gathered by idle builders."
+    },
+    {
+      "name": "hands",
+      "type": "counter",
+      "default": 40,
+      "description": "The city's working population (cap 60)."
+    },
+    {
+      "name": "councils",
+      "type": "ledger",
+      "default": [],
+      "description": "One entry per seasonal council: the tokens given to each post.",
+      "fields": [
+        "season",
+        "elders",
+        "warriors",
+        "scholars",
+        "taps",
+        "builders"
+      ]
+    },
+    {
+      "name": "readings",
+      "type": "ledger",
+      "default": [],
+      "description": "One entry per Omen Spread.",
+      "fields": [
+        "season",
+        "event",
+        "meaning",
+        "policy",
+        "fit",
+        "crown"
+      ]
+    },
+    {
+      "name": "fit_hits",
+      "type": "counter",
+      "default": 0,
+      "description": "Readings whose meaning fitted the real cause."
+    },
+    {
+      "name": "scroll.hint_level",
+      "type": "counter",
+      "default": 0,
+      "description": "Extra Tremor Scroll hint levels from Tremor-reading Fits."
+    },
+    {
+      "name": "forecasts_made",
+      "type": "counter",
+      "default": 0,
+      "description": "Tremor forecasts sealed (18 in a full run)."
+    },
+    {
+      "name": "forecasts_correct",
+      "type": "counter",
+      "default": 0,
+      "description": "Tremor forecasts with the right day-part and face."
+    },
+    {
+      "name": "tread_forecast",
+      "type": "bool",
+      "default": false,
+      "description": "The player forecast the next seventh-day tread in c6_scroll: +1 card at the Shadow."
+    },
+    {
+      "name": "temples_opened",
+      "type": "counter",
+      "default": 0,
+      "description": "Ring Doors opened."
+    },
+    {
+      "name": "heartwood_opened",
+      "type": "bool",
+      "default": false,
+      "description": "The Heartwood Door was opened (integrity -8)."
+    },
+    {
+      "name": "recipes_found",
+      "type": "counter",
+      "default": 0,
+      "description": "Recipes found in the Sap Kitchen (of 12)."
+    },
+    {
+      "name": "offerings",
+      "type": "counter",
+      "default": 0,
+      "description": "Offering pots cooked."
+    },
+    {
+      "name": "great_offering",
+      "type": "bool",
+      "default": false,
+      "description": "The Great Offering was made in c6_offering."
+    },
+    {
+      "name": "tns.wins",
+      "type": "counter",
+      "default": 0,
+      "description": "Trunk and Shadow festivals won."
+    },
+    {
+      "name": "tns_rules",
+      "type": "ledger",
+      "default": [],
+      "description": "Rule cards added to Trunk and Shadow.",
+      "fields": [
+        "season",
+        "rule",
+        "source"
+      ]
+    },
+    {
+      "name": "shadow_rehearsed",
+      "type": "bool",
+      "default": false,
+      "description": "The winter festival was won: +1 card at the Shadow."
+    },
+    {
+      "name": "beetle_reading",
+      "type": "enum",
+      "default": "none",
+      "description": "How the Beetle was read.",
+      "values": [
+        "none",
+        "god",
+        "monster"
+      ]
+    },
+    {
+      "name": "ant_reading",
+      "type": "enum",
+      "default": "none",
+      "description": "How the ants were read (from the leaf spread's policy).",
+      "values": [
+        "none",
+        "god",
+        "monster"
+      ]
+    },
+    {
+      "name": "prophecy.suit",
+      "type": "enum",
+      "default": "none",
+      "description": "The Crown suit of the birdsong reading: the prophecy.",
+      "values": [
+        "none",
+        "wind",
+        "rain",
+        "song",
+        "tremor",
+        "leaf",
+        "mandible"
+      ]
+    },
+    {
+      "name": "expedition.heard",
+      "type": "bool",
+      "default": false,
+      "description": "The expedition reached the Listening Knot and heard the song."
+    },
+    {
+      "name": "defence.breaches",
+      "type": "counter",
+      "default": 0,
+      "description": "Crack defences breached."
+    },
+    {
+      "name": "fallen",
+      "type": "counter",
+      "default": 0,
+      "description": "Bark people lost this year."
+    },
+    {
+      "name": "roll",
+      "type": "ledger",
+      "default": [],
+      "description": "The Roll of the Bark: everyone lost, with one habit each.",
+      "fields": [
+        "name",
+        "season",
+        "cause",
+        "habit"
+      ]
+    },
+    {
+      "name": "burr.wounded",
+      "type": "bool",
+      "default": false,
+      "description": "Captain Burr was wounded (the Beetle fought and breached, or the war)."
+    },
+    {
+      "name": "mossa.on_time",
+      "type": "counter",
+      "default": 0,
+      "description": "Crack runs Mossa finished inside the limit."
+    },
+    {
+      "name": "mossa.shadow_late",
+      "type": "bool",
+      "default": false,
+      "description": "Mossa reached the cities after the dark in c6_run: -1 card at the Shadow."
+    },
+    {
+      "name": "pell.alive",
+      "type": "bool",
+      "default": true,
+      "description": "Elder Pell lives until his last spread."
+    },
+    {
+      "name": "pell.heir",
+      "type": "enum",
+      "default": "none",
+      "description": "Who inherits Pell's deck.",
+      "values": [
+        "none",
+        "hollow",
+        "burr",
+        "fenn",
+        "twig"
+      ]
+    },
+    {
+      "name": "twig.kite_freed",
+      "type": "bool",
+      "default": false,
+      "description": "The player freed Twig's kite at dawn."
+    },
+    {
+      "name": "pullbacks",
+      "type": "counter",
+      "default": 0,
+      "description": "Times the player looked up to the backyard."
+    },
+    {
+      "name": "edge_map",
+      "type": "bool",
+      "default": false,
+      "description": "Fenn drew the map with an edge (habit branch)."
+    },
+    {
+      "name": "pulse.heard",
+      "type": "bool",
+      "default": false,
+      "description": "The Pulse woke Highridge and the night spread was laid (c4_omen_pulse, a scene to add). Accepted 2026-11-15, phase 1."
+    },
+    {
+      "name": "pulse.blank_turned",
+      "type": "bool",
+      "default": false,
+      "description": "The player turned the Backyard card on the night of the Pulse and found it blank."
+    },
+    {
+      "name": "pulse.answer",
+      "type": "enum",
+      "default": "none",
+      "description": "Who answers the Pulse, from the night spread's policy: the Knot keeps it holy and unread, the Battlements stand a watch, the Scroll House records it, or all three.",
+      "values": [
+        "none",
+        "elders",
+        "warriors",
+        "scholars",
+        "all"
+      ]
+    },
+    {
+      "name": "faceless_marks",
+      "type": "counter",
+      "default": 0,
+      "description": "Faceless marks the player placed rightly on the Tremor Scroll (c4_scroll). Each shades one plate of the Pulse map."
+    },
+    {
+      "name": "pulse_map.complete",
+      "type": "bool",
+      "default": false,
+      "description": "Every faceless mark of the year was placed rightly, so the Pulse map shows the plate the second tap will find."
+    },
+    {
+      "name": "deck.honest",
+      "type": "bool",
+      "default": false,
+      "description": "Pell is dead and the heir deals: no card of the event's suit is guaranteed, and each heir deals in character."
+    },
+    {
+      "name": "pulse",
+      "type": "meter",
+      "default": 40,
+      "description": "Hidden. How loud the Trunk's Pulse is. Tap tokens beyond 3, Knot Sanctums and offering pots raise it; frost, the ants' procession (−15), each Gallery Plug pot (−8) and sealing the Heartwood (−10) lower it. Shown only as marks on the faceless row.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "sorrel.met",
+      "type": "bool",
+      "default": false,
+      "description": "Sorrel's Wall was played: at the end of the spring run she put Mossa's ear to a wall."
+    },
+    {
+      "name": "sorrel.backed",
+      "type": "bool",
+      "default": false,
+      "description": "One autumn council token went to Sorrel's listeners. If true, the lowest street of Lowridge was empty when it settled."
+    },
+    {
+      "name": "pell.thumb_seen",
+      "type": "bool",
+      "default": false,
+      "description": "The Thumb on the Deck was played: the player saw Pell deal by the notches. Opens notch-reading (once a spread)."
+    },
+    {
+      "name": "fenn.second_scroll",
+      "type": "bool",
+      "default": false,
+      "description": "The Faceless Marks was played: Fenn showed the player the scroll the Scroll House forbids."
+    },
+    {
+      "name": "lowridge.settled",
+      "type": "bool",
+      "default": false,
+      "description": "Lowridge Comes Up the Crack has happened: the lowest street settled into a gallery and Lowridge climbed to Highridge."
+    },
+    {
+      "name": "gallery_plug.site",
+      "type": "enum",
+      "default": "none",
+      "description": "Where the Gallery Plug pots were poured. That site's paper floors are solid in the next Crack runner.",
+      "values": [
+        "none",
+        "stair",
+        "ledges",
+        "gate"
+      ]
+    },
+    {
+      "name": "gallery_plug.pots",
+      "type": "counter",
+      "default": 0,
+      "description": "Gallery Plug pots cooked in The Great Mending. Each is pulse −8."
+    },
+    {
+      "name": "door.scars",
+      "type": "counter",
+      "default": 0,
+      "description": "Scars left on the last Ring Door (moves over par, at most 2 counted). Each is an extra side entrance in the next Crack defence."
+    },
+    {
+      "name": "door.clean_cuts",
+      "type": "counter",
+      "default": 0,
+      "description": "Ring Doors opened at or under par. Each is one more knot shelter in c6_shadow."
+    },
+    {
+      "name": "heartwood.state",
+      "type": "enum",
+      "default": "shut",
+      "description": "The Heartwood Door: never opened, standing open, or opened and sealed again (pulse −10, the Knot −4).",
+      "values": [
+        "shut",
+        "open",
+        "sealed"
+      ]
+    },
+    {
+      "name": "ants.escorted",
+      "type": "bool",
+      "default": false,
+      "description": "The autumn ants were read as gods and brought to the paper wall: the procession opened it (pulse −15)."
+    },
+    {
+      "name": "shadow.played",
+      "type": "bool",
+      "default": false,
+      "description": "The player won winter's Trunk and Shadow from Twig's side, as the Shadow. In c6_touch the three tap sites show ten seconds early."
+    },
+    {
+      "name": "sounding.heard",
+      "type": "bool",
+      "default": false,
+      "description": "The Sounding was played in c6_touch: each of the three taps answered by a plate."
+    },
+    {
+      "name": "playthroughs",
+      "type": "counter",
+      "default": 0,
+      "description": "Finished runs (written at the end of c7_backyard). From the second playthrough: the notches are readable from the first deal, the faceless row is on the scroll from chapter 1, the stump shows over the fence in the first pull-back, Sorrel can be a festival opponent, and Resin's thirteenth page shows its word from spring."
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "game": "endless-temple",
+  "style": "Hand-painted gouache and ink fantasy illustration with uneven brown-black dip-pen outlines (never pure black), visible brush texture and painted matte-painting depth, in the manner of an illuminated manuscript brought to full scenes; full-bleed, no border, unsigned. One warm light source per image, most often a single golden sunbeam through a tall arched window. Temple palette of honey gold, sage green and walnut brown with moon-silver sand; inside the sand book, moon silver, ochre and bruise-purple vines on grained vellum. Materials: vellum, cracked leather, verdigris brass, pouring sand.",
+  "images": [
+    {
+      "id": "key-art-wide",
+      "kind": "key-art",
+      "title": "The Keeper and the Sand Book",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Hand-painted gouache and ink fantasy illustration, uneven brown-black pen outlines, visible brush texture, matte-painting depth, full-bleed, no border, unsigned. In the right half of the frame, a very tall, slender adult elf keeper with pale sea-froth green skin, pointed ears, amber eyes and long black hair, in a plain floor-length sage green robe, sits in a worn high-backed reading chair in a vast ancient library temple, a large ochre leather book with a blank spine open on his lap; fine silver sand pours steadily from its pages over his knees into a small dune on the stone floor, half burying stacked books. He reads on, absorbed, a teacup beside him. A single golden sunbeam from a tall arched window falls across the chair, sand grains glowing in it. The left half is calm, shadowed walnut bookshelves receding into soft dark, left quiet for a title. Honey gold, sage green, walnut brown, moon silver sand. Cracked leather, vellum, brass. Eye-level wide shot, no text, no lettering, no watermark, no logo",
+      "job_id": "ea5eb1cc-fcd6-48e0-979a-019dd9f88f75",
+      "image": "keyart/key-art-wide.jpg"
+    },
+    {
+      "id": "key-art-tall",
+      "kind": "key-art",
+      "title": "The Keeper and the Sand Book",
+      "aspect_ratio": "2:3",
+      "model": "soul_cinematic",
+      "prompt": "Hand-painted gouache and ink fantasy illustration, uneven brown-black pen outlines, visible brush texture, matte-painting depth, full-bleed, no border, unsigned. Vertical composition. In the lower half, a very tall, slender adult elf keeper with a calm, gentle face, pale sea-froth green skin, pointed ears, amber eyes and long black hair, in a plain floor-length sage green robe, sits in a worn high-backed reading chair in a vast ancient library temple, a large ochre leather book with a plain unmarked cover open on his lap; fine silver sand pours steadily from its pages over his knees into a small dune on the stone floor, half burying a few plain closed books whose covers and spines are completely blank. He reads on, absorbed, a teacup beside him. A single golden sunbeam slants down from a tall arched window onto the chair, sand grains glowing in it. The upper third is calm: towering walnut bookshelves fading up into soft shadow, left quiet for a title. Honey gold, sage green, walnut brown, moon silver sand. Cracked leather, vellum, brass. Every book cover and spine is bare leather with no writing, no glyphs, no symbols; no text, no lettering, no watermark, no logo",
+      "job_id": "8d43dbb5-dabe-4b14-87dd-cbf9c441d9a7",
+      "image": "keyart/key-art-tall.jpg"
+    },
+    {
+      "id": "ending-reader-who-stayed",
+      "kind": "ending",
+      "ending": "reader_who_stayed",
+      "title": "The Reader Who Stayed",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Hand-painted gouache and ink fantasy illustration, uneven brown-black pen outlines, visible brush texture, matte-painting depth, full-bleed, no border, unsigned. Seen from across a vast ancient library temple hall, small in the upper middle, a very tall, slender adult elf keeper with pale sea-froth green skin, pointed ears, amber eyes and long black hair, in a plain floor-length sage green robe, sits motionless in a worn high-backed reading chair, an ochre leather book open on his lap, a full teacup in his hand, head bowed into the page; nobody else is there. The single golden sunbeam from the tall arched window has drawn back and stops on the floor short of the chair. Silver sand drifts round the chair legs. On a shelf behind him a black-bound book lets one thin thread of pale mist out from under its cover. A stopped cuckoo clock on a pillar. The lower quarter is empty shadowed stone floor. Dulled honey gold, sage green, walnut, moon silver, no text, no lettering, no watermark, no logo",
+      "job_id": "7b974f05-9a9c-4a2b-affa-c0707e5ebb48",
+      "image": "keyart/ending-reader-who-stayed.jpg"
+    },
+    {
+      "id": "ending-the-rider",
+      "kind": "ending",
+      "ending": "the_rider",
+      "title": "The Rider",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Hand-painted gouache and ink fantasy illustration, uneven brown-black pen outlines, visible brush texture, matte-painting depth, full-bleed painted to every edge, no border, unsigned. A storybook plate on grained vellum. A high, rising view over a moonlit sea of silver sand dunes shaped like slow breaking waves, fully painted in cool moon-silver and blue-grey washes with bruise-purple vines in the troughs, and a painted deep indigo night sky with a pale full moon. Far off in the upper right, tiny and seen from behind, a boy of about fourteen in a faded ochre head-cloth with a patched pack rides the long scaled back of a huge wet-sand-coloured beast, only the ridge of its back showing above the dunes like a whale's. Beyond them, only at the far right horizon, the painted dunes thin and fade into bare vellum paper. In the left foreground, left behind, a single plain weathered wooden pole, straight and unmarked, in a ring of stones, with one blank faded strip of plain cloth tied near its top, blowing softly; the pole and cloth are completely blank, smooth and unmarked. Cold full-moon light. Moon silver, ochre, bruise purple. The lower quarter is smooth empty painted silver sand, no text, no lettering, no watermark, no logo",
+      "job_id": "0518a039-b623-4621-bad8-e18cb5f70bb9",
+      "image": "keyart/ending-the-rider.jpg",
+      "known_issues": "Mostly fixed: no lettering, fully painted moonlit silver, boy seen from behind on the beast, calm sand below. Remaining: the boy and beast are larger than the tiny distant figure asked for, the marker's cloth reads as a flag, and the dunes do not fade to bare paper.",
+      "accepted": "author, 2026-11-16"
+    },
+    {
+      "id": "ending-named-book",
+      "kind": "ending",
+      "ending": "named_book",
+      "title": "The Named Book",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Hand-painted gouache and ink fantasy illustration, uneven brown-black pen outlines, visible brush texture, matte-painting depth, full-bleed, no border, unsigned. In a vast ancient library temple, a very tall, slender adult elf keeper with pale sea-froth green skin, pointed ears, amber eyes and long black hair, in a plain floor-length sage green robe, stands in profile at a walnut bookshelf on the right and slides a worn ochre leather book into place beside other books; the spine carries a small panel of fresh gold tooling, abstract ornament only. No sand spills from it now. The air is still: dust motes hang in a single golden sunbeam from a tall arched window. Behind him the reading chair stands empty, a washed teacup upturned on the cleared table, one last small heap of silver sand on the swept floor. The lower quarter is clean, bare stone floor in soft light. Honey gold, sage green, walnut brown, a little moon silver. Cracked leather, vellum, no text, no lettering, no watermark, no logo",
+      "job_id": "b6043b05-7fef-429f-a398-07d207f01edf",
+      "image": "keyart/ending-named-book.jpg"
+    },
+    {
+      "id": "ending-son-returns",
+      "kind": "ending",
+      "ending": "son_returns",
+      "title": "The Son Returns",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Hand-painted gouache and ink fantasy illustration, uneven brown-black pen outlines, visible brush texture, matte-painting depth, full-bleed, no border, unsigned. In a vast ancient library temple in early morning, a very tall, slender adult elf keeper with pale sea-froth green skin, pointed ears, amber eyes and long black hair, in a plain floor-length sage green robe, stands left of centre, bent over a long straw broom, sweeping a wide drift of fine silver sand across the stone floor back towards a reading table. On the table an ochre leather book with a blank spine lies open, and a thin stream of sand still sifts from its gutter over the table edge, faster than he can sweep. His face is calm. A single golden sunbeam from a tall arched window lights the falling grains. The lower quarter is pale swept stone with a faint dusting of sand. Honey gold, sage green, walnut brown, moon silver. Cracked leather, straw, vellum, no text, no lettering, no watermark, no logo",
+      "job_id": "fa1e77c1-9e30-4253-b13c-f18c78d8b835",
+      "image": "keyart/ending-son-returns.jpg"
+    },
+    {
+      "id": "ending-the-unread-page",
+      "kind": "ending",
+      "ending": "unread_page",
+      "title": "The Unread Page",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Hand-painted gouache and ink fantasy illustration, uneven brown-black pen outlines, visible brush texture, matte-painting depth, full-bleed, no border, unsigned. A quiet still life in a vast, deserted ancient library temple: an empty room, no people, no figure, no legs, no silhouette, nobody. Seen from a few steps back, on a heavy walnut reading table in the upper middle of the frame lies a closed, worn ochre leather book with a blank spine, its brass clasp shut; a single large woody leaf, shaped like a long animal ear, has slipped half out from between its pages. A thin scatter of silver sand around it, long settled. Beside the book an empty teacup with a dry stain ring. An unoccupied worn high-backed upholstered reading chair stands pushed back from the table, its seat bare; behind it only walnut bookshelves. One golden sunbeam from a tall arched window lies across the wood and the closed cover. The lower quarter is the plain dark front of the table and shadowed stone floor. Honey gold, sage green, walnut brown, moon silver. Cracked leather, brass, vellum, no text, no lettering, no watermark, no logo",
+      "job_id": "fb059319-2687-4ad6-b693-258cc0307939",
+      "image": "keyart/ending-the-unread-page.jpg"
+    }
+  ]
+}

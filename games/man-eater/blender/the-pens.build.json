@@ -1,0 +1,650 @@
+{
+  "game": "man-eater",
+  "location": "the-pens",
+  "name": "The pens below the cold store",
+  "reference": "assets/locations/the-pens.jpg",
+  "bounds_m": [
+    40,
+    6,
+    6
+  ],
+  "origin": "floor centre; +y toward the twelve frosted pens on the north side, +x east away from the hidden stair door at the west end",
+  "materials": {
+    "concrete": {
+      "color": [
+        0.45,
+        0.45,
+        0.44
+      ],
+      "roughness": 0.95
+    },
+    "frost": {
+      "color": [
+        0.486,
+        0.549,
+        0.6
+      ],
+      "roughness": 0.7
+    },
+    "frosted-glass": {
+      "color": [
+        0.86,
+        0.88,
+        0.86
+      ],
+      "roughness": 0.3,
+      "emission": 0.8
+    },
+    "ink": {
+      "color": [
+        0.106,
+        0.114,
+        0.122
+      ],
+      "roughness": 0.9
+    },
+    "steel": {
+      "color": [
+        0.541,
+        0.561,
+        0.576
+      ],
+      "roughness": 0.55,
+      "metallic": 0.8
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        40,
+        6,
+        0.1
+      ],
+      "location": [
+        0,
+        0,
+        -0.05
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "ceiling",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        40,
+        6,
+        0.1
+      ],
+      "location": [
+        0,
+        0,
+        6.05
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "frost-floor",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        38,
+        3.6,
+        0.02
+      ],
+      "location": [
+        0,
+        -1.0,
+        0.01
+      ],
+      "material": "frost"
+    },
+    {
+      "id": "wall-south",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        40,
+        0.15,
+        6.0
+      ],
+      "location": [
+        0,
+        -3.075,
+        3.0
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "wall-north",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        40,
+        0.15,
+        6.0
+      ],
+      "location": [
+        0,
+        3.075,
+        3.0
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "wall-east",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        6,
+        6.0
+      ],
+      "location": [
+        20.075,
+        0,
+        3.0
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "glass-front",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        36,
+        0.06,
+        4.6
+      ],
+      "location": [
+        0,
+        1.0,
+        2.5
+      ],
+      "material": "frosted-glass"
+    },
+    {
+      "id": "glass-head",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        40,
+        0.3,
+        1.2
+      ],
+      "location": [
+        0,
+        1.0,
+        5.4
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "light-rail",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        36,
+        0.1,
+        0.1
+      ],
+      "location": [
+        0,
+        -1.5,
+        5.9
+      ],
+      "material": "steel"
+    },
+    {
+      "id": "tube-line",
+      "shape": "cylinder",
+      "role": "trim",
+      "size_m": [
+        0.03,
+        0.03,
+        36
+      ],
+      "location": [
+        0,
+        1.6,
+        5.0
+      ],
+      "material": "ink",
+      "rotation_deg": [
+        0,
+        90,
+        0
+      ],
+      "collide": false
+    },
+    {
+      "id": "list-scratched",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        1.2,
+        0.01,
+        3.0
+      ],
+      "location": [
+        -16.5,
+        2.99,
+        2.6
+      ],
+      "material": "ink",
+      "collide": false
+    },
+    {
+      "id": "wall-west-south",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        0.95,
+        6.0
+      ],
+      "location": [
+        -20.075,
+        -2.525,
+        3.0
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "wall-west-north",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        3.95,
+        6.0
+      ],
+      "location": [
+        -20.075,
+        1.025,
+        3.0
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "wall-west-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        1.1,
+        1.8
+      ],
+      "location": [
+        -20.075,
+        -1.5,
+        5.1
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "pier-1",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.3,
+        2.1,
+        5.4
+      ],
+      "location": [
+        -18,
+        2.0,
+        2.7
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "pier-2",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.3,
+        2.1,
+        5.4
+      ],
+      "location": [
+        -15,
+        2.0,
+        2.7
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "pier-3",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.3,
+        2.1,
+        5.4
+      ],
+      "location": [
+        -12,
+        2.0,
+        2.7
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "pier-4",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.3,
+        2.1,
+        5.4
+      ],
+      "location": [
+        -9,
+        2.0,
+        2.7
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "pier-5",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.3,
+        2.1,
+        5.4
+      ],
+      "location": [
+        -6,
+        2.0,
+        2.7
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "pier-6",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.3,
+        2.1,
+        5.4
+      ],
+      "location": [
+        -3,
+        2.0,
+        2.7
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "pier-7",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.3,
+        2.1,
+        5.4
+      ],
+      "location": [
+        0,
+        2.0,
+        2.7
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "pier-8",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.3,
+        2.1,
+        5.4
+      ],
+      "location": [
+        3,
+        2.0,
+        2.7
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "pier-9",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.3,
+        2.1,
+        5.4
+      ],
+      "location": [
+        6,
+        2.0,
+        2.7
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "pier-10",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.3,
+        2.1,
+        5.4
+      ],
+      "location": [
+        9,
+        2.0,
+        2.7
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "pier-11",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.3,
+        2.1,
+        5.4
+      ],
+      "location": [
+        12,
+        2.0,
+        2.7
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "pier-12",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.3,
+        2.1,
+        5.4
+      ],
+      "location": [
+        15,
+        2.0,
+        2.7
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "pier-13",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.3,
+        2.1,
+        5.4
+      ],
+      "location": [
+        18,
+        2.0,
+        2.7
+      ],
+      "material": "concrete"
+    }
+  ],
+  "props": [
+    {
+      "id": "stand-first",
+      "object": "tube-stand",
+      "location": [
+        -16.5,
+        0.5,
+        0
+      ]
+    },
+    {
+      "id": "pump-end",
+      "object": "tube-stand",
+      "location": [
+        18.6,
+        -1.8,
+        0
+      ]
+    }
+  ],
+  "scenes": {
+    "n6_pens": {
+      "note": "Night 6, below the cold store: frost on glass, shapes behind it breathing slowly (never shown), a tube to each. The first bunkmate's list scratched on his pen wall ends 'doesn't matter'.",
+      "world": {
+        "color": [
+          0.06,
+          0.08,
+          0.12
+        ],
+        "strength": 0.15
+      },
+      "lights": [
+        {
+          "name": "work-1",
+          "type": "SPOT",
+          "location": [
+            -15,
+            -1.5,
+            5.8
+          ],
+          "energy": 300,
+          "size": 0.3,
+          "color": [
+            0.6,
+            0.75,
+            1.0
+          ],
+          "look_at": [
+            -15,
+            1.0,
+            1.5
+          ]
+        },
+        {
+          "name": "work-2",
+          "type": "SPOT",
+          "location": [
+            -5,
+            -1.5,
+            5.8
+          ],
+          "energy": 300,
+          "size": 0.3,
+          "color": [
+            0.6,
+            0.75,
+            1.0
+          ],
+          "look_at": [
+            -5,
+            1.0,
+            1.5
+          ]
+        },
+        {
+          "name": "work-3",
+          "type": "SPOT",
+          "location": [
+            5,
+            -1.5,
+            5.8
+          ],
+          "energy": 300,
+          "size": 0.3,
+          "color": [
+            0.6,
+            0.75,
+            1.0
+          ],
+          "look_at": [
+            5,
+            1.0,
+            1.5
+          ]
+        },
+        {
+          "name": "work-4",
+          "type": "SPOT",
+          "location": [
+            15,
+            -1.5,
+            5.8
+          ],
+          "energy": 300,
+          "size": 0.3,
+          "color": [
+            0.6,
+            0.75,
+            1.0
+          ],
+          "look_at": [
+            15,
+            1.0,
+            1.5
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -19.2,
+          -1.5,
+          2.15
+        ],
+        "look_at": [
+          -10,
+          1.0,
+          2.0
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          -19.2,
+          -1.5,
+          0.0
+        ],
+        "facing_deg": 270
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "stand-first",
+          "verb": "Read the list scratched in the first pen",
+          "leads_to": "d7_chart"
+        },
+        {
+          "prop": "pump-end",
+          "verb": "Listen to the pump"
+        }
+      ]
+    }
+  }
+}

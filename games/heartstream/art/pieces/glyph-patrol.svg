@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160" role="img" aria-labelledby="glyph-patrol-t glyph-patrol-d">
+<title id="glyph-patrol-t">Branch glyph: patrol</title>
+<desc id="glyph-patrol-d">A branch glyph from the chart, in red ink on vellum: a heavy-lidded eye under the vessel, and a pulse that falls off the beat, drawn on a short length of vessel.</desc>
+<defs><filter id="glyph-patrol-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="2" seed="519"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><radialGradient id="glyph-patrol-rg2" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#c9a36a" stop-opacity="0.3"/><stop offset="100%" stop-color="#c9a36a" stop-opacity="0"/></radialGradient><radialGradient id="glyph-patrol-rg3" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#c9a36a" stop-opacity="0.3"/><stop offset="100%" stop-color="#c9a36a" stop-opacity="0"/></radialGradient></defs>
+<rect x="0" y="0" width="160" height="160" fill="#e6d6b4"/>
+<rect x="0" y="0" width="160" height="160" filter="url(#glyph-patrol-grain1)"/>
+<circle cx="50.3" cy="135.2" r="26" fill="url(#glyph-patrol-rg2)"/>
+<circle cx="152.8" cy="24.8" r="26.4" fill="url(#glyph-patrol-rg3)"/>
+<rect x="8" y="8" width="144" height="144" fill="none" stroke="#B3202E" stroke-width="1.4"/>
+<rect x="15" y="15" width="130" height="130" fill="none" stroke="#B3202E" stroke-width="0.7"/>
+<text x="80" y="142" font-size="13" font-family="serif" fill="#7A1020" text-anchor="middle" letter-spacing="2.5" font-weight="bold">PATROL</text>
+<path d="M14,63 C21.7,62 45,57.2 60,57 C75,56.8 89.7,61.5 104,61.8 C118.3,62.1 139,59.3 146,58.8" fill="none" stroke="#B3202E" stroke-width="14" stroke-linecap="round" opacity="1"/>
+<path d="M14,63 C21.7,62 45,57.2 60,57 C75,56.8 89.7,61.5 104,61.8 C118.3,62.1 139,59.3 146,58.8" fill="none" stroke="#f5e4c6" stroke-width="11.4" stroke-linecap="round" opacity="1"/>
+<path d="M14,63 C21.7,62 45,57.2 60,57 C75,56.8 89.7,61.5 104,61.8 C118.3,62.1 139,59.3 146,58.8" fill="none" stroke="#B3202E" stroke-width="11" stroke-dasharray="1 9" opacity="0.5"/>
+<path d="M48,100 Q80,78 112,100 Q80,116 48,100Z" fill="#f5e4c6" stroke="#7A1020" stroke-width="2.4"/>
+<ellipse cx="80" cy="100" rx="5" ry="7" fill="#7A1020"/>
+<path d="M48,100 Q80,84 112,100" fill="none" stroke="#7A1020" stroke-width="4.5"/>
+<path d="M20,36 h22 l5,-12 l7,22 l5,-10 h30 l5,-12 l7,22 l5,-10 h14" fill="none" stroke="#B3202E" stroke-width="1.6" stroke-linejoin="round"/>
+</svg>

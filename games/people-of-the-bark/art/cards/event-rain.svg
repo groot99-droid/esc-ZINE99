@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="event-rain-t event-rain-d">
+<title id="event-rain-t">Event card: The Rain</title>
+<desc id="event-rain-d">Event card The Rain, as the people saw it. Houses of water roll down the grooves, each bead bigger than the dwellings beside it. Weight 2, suit Rain.</desc>
+<defs><clipPath id="event-rain-clip1"><rect x="1" y="1" width="298" height="418" rx="16"/></clipPath><filter id="event-rain-grain2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="2" seed="969"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><radialGradient id="event-rain-vig3" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#6b4a20" stop-opacity="0"/><stop offset="100%" stop-color="#6b4a20" stop-opacity="0.4"/></radialGradient><clipPath id="event-rain-clip4"><path d="M0,40 A128,60 0 0,1 256,40 V262 H0Z"/></clipPath><linearGradient id="event-rain-lg5" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1b120c"/><stop offset="100%" stop-color="#1b120c"/></linearGradient></defs>
+<g clip-path="url(#event-rain-clip1)">
+<rect x="0" y="0" width="300" height="420" fill="#d8c49a"/>
+<rect x="0" y="0" width="300" height="420" filter="url(#event-rain-grain2)"/>
+<rect x="0" y="0" width="300" height="420" fill="url(#event-rain-vig3)"/>
+<rect x="10" y="10" width="280" height="400" rx="10" fill="none" stroke="#a8321e" stroke-width="6"/>
+<rect x="17" y="17" width="266" height="386" rx="7" fill="none" stroke="#2b1d14" stroke-width="1"/>
+<rect x="90" y="6" width="120" height="30" rx="4" fill="#a8321e" stroke="#2b1d14" stroke-width="1.2"/>
+<text x="150" y="27" font-size="17" font-family="serif" fill="#efe2c4" text-anchor="middle" letter-spacing="5">EVENT</text>
+<g transform="translate(22 48)">
+<g clip-path="url(#event-rain-clip4)">
+<rect x="0" y="0" width="256" height="262" fill="#7f7058"/>
+<path d="M162.7,129.6 q-6.1,31.6 1.4,71M171.2,111.6 q-2.3,51.6 5.6,71.2M94.3,64.9 q0.9,48 -6,84.5M207.6,155.8 q-7.7,55.3 3.5,70.1M175.7,121.9 q-1.6,41.2 -0.4,72M10.9,27.4 q1.2,30.1 4.5,123.8M184.7,-6.2 q-1.6,46.5 -3.8,106.4M195.2,35.5 q3.4,39.7 -0.3,121.7M91.9,-15.6 q-1.9,45.2 2.5,112.5M139.9,-5.3 q0.3,43.3 3.1,75.5M118.6,32 q0.1,39.5 4.8,102.5M173.7,114.9 q0.6,37 3.3,110.6M193.8,4.7 q1.9,33.6 2.2,103.3M133.6,76.8 q-3.3,60 -1.8,129.6M185.3,-16.9 q7.1,59.6 4,86.9M102.1,-13.1 q4.4,30.5 1.6,88.8M49.2,123.9 q-4.4,39.8 3,89.2M213.5,51.9 q7,59.6 -2.2,81.3M197.7,124.8 q6,60 5.7,98.3M153.5,109.6 q1.1,31.9 4.4,116.2M24.1,52.7 q0.4,54.5 1.5,124.2M254.8,25.8 q-1.8,46.3 -5.2,94.6" fill="none" stroke="#2b1d14" stroke-width="1.3" opacity="0.5"/>
+<rect x="0" y="0" width="256" height="262" fill="url(#event-rain-lg5)" opacity="0.1"/>
+<path d="M34,0 Q24,130 36,262 H64 Q76,130 66,0Z" fill="#3a281c" opacity="0.7"/>
+<path d="M112,0 Q102,130 114,262 H142 Q154,130 144,0Z" fill="#3a281c" opacity="0.7"/>
+<path d="M190,0 Q180,130 192,262 H220 Q232,130 222,0Z" fill="#3a281c" opacity="0.7"/>
+<ellipse cx="50" cy="60" rx="30" ry="25.8" fill="#2f4f8a" stroke="#2b1d14" stroke-width="1.5" opacity="0.9"/>
+<ellipse cx="39.5" cy="48.6" rx="8.4" ry="4.8" fill="#f4f8fa" opacity="0.8"/>
+<path d="M32,73.5 Q50,84 68,73.5" fill="none" stroke="#f4f8fa" stroke-width="1.2" opacity="0.6"/>
+<path d="M35.0,24 v-22 M62.0,26 v-14" stroke="#f4f8fa" stroke-width="1.5" opacity="0.6"/>
+<ellipse cx="128" cy="150" rx="36" ry="31" fill="#2f4f8a" stroke="#2b1d14" stroke-width="1.5" opacity="0.9"/>
+<ellipse cx="115.4" cy="136.3" rx="10.1" ry="5.8" fill="#f4f8fa" opacity="0.8"/>
+<path d="M106.4,166.2 Q128,178.8 149.6,166.2" fill="none" stroke="#f4f8fa" stroke-width="1.2" opacity="0.6"/>
+<path d="M110.0,108 v-22 M142.4,110 v-14" stroke="#f4f8fa" stroke-width="1.5" opacity="0.6"/>
+<ellipse cx="206" cy="44" rx="22" ry="18.9" fill="#2f4f8a" stroke="#2b1d14" stroke-width="1.5" opacity="0.9"/>
+<ellipse cx="198.3" cy="35.6" rx="6.2" ry="3.5" fill="#f4f8fa" opacity="0.8"/>
+<path d="M192.8,53.9 Q206,61.6 219.2,53.9" fill="none" stroke="#f4f8fa" stroke-width="1.2" opacity="0.6"/>
+<path d="M195.0,16 v-22 M214.8,18 v-14" stroke="#f4f8fa" stroke-width="1.5" opacity="0.6"/>
+<ellipse cx="206" cy="190" rx="26" ry="22.4" fill="#2f4f8a" stroke="#2b1d14" stroke-width="1.5" opacity="0.9"/>
+<ellipse cx="196.9" cy="180.1" rx="7.3" ry="4.2" fill="#f4f8fa" opacity="0.8"/>
+<path d="M190.4,201.7 Q206,210.8 221.6,201.7" fill="none" stroke="#f4f8fa" stroke-width="1.2" opacity="0.6"/>
+<path d="M193.0,158 v-22 M216.4,160 v-14" stroke="#f4f8fa" stroke-width="1.5" opacity="0.6"/>
+<ellipse cx="50" cy="210" rx="20" ry="17.2" fill="#2f4f8a" stroke="#2b1d14" stroke-width="1.5" opacity="0.9"/>
+<ellipse cx="43" cy="202.4" rx="5.6" ry="3.2" fill="#f4f8fa" opacity="0.8"/>
+<path d="M38,219 Q50,226 62,219" fill="none" stroke="#f4f8fa" stroke-width="1.2" opacity="0.6"/>
+<path d="M40.0,184 v-22 M58.0,186 v-14" stroke="#f4f8fa" stroke-width="1.5" opacity="0.6"/>
+<path d="M75.6,120 Q75.6,96.6 90,96.6 Q104.4,96.6 104.4,120Z" fill="#b58d62" stroke="#2b1d14" stroke-width="1.3"/>
+<path d="M85.5,120 v-8.1 a4.5,4.5 0 0,1 9,0 v8.1Z" fill="#e8742a" stroke="#2b1d14" stroke-width="1"/>
+<path d="M153.6,86 Q153.6,62.6 168,62.6 Q182.4,62.6 182.4,86Z" fill="#b58d62" stroke="#2b1d14" stroke-width="1.3"/>
+<path d="M163.5,86 v-8.1 a4.5,4.5 0 0,1 9,0 v8.1Z" fill="#e8742a" stroke="#2b1d14" stroke-width="1"/>
+<path d="M75.6,236 Q75.6,212.6 90,212.6 Q104.4,212.6 104.4,236Z" fill="#b58d62" stroke="#2b1d14" stroke-width="1.3"/>
+<path d="M85.5,236 v-8.1 a4.5,4.5 0 0,1 9,0 v8.1Z" fill="#e8742a" stroke="#2b1d14" stroke-width="1"/>
+<path d="M153.6,232 Q153.6,208.6 168,208.6 Q182.4,208.6 182.4,232Z" fill="#b58d62" stroke="#2b1d14" stroke-width="1.3"/>
+<path d="M163.5,232 v-8.1 a4.5,4.5 0 0,1 9,0 v8.1Z" fill="#e8742a" stroke="#2b1d14" stroke-width="1"/>
+</g>
+<path d="M0,40 A128,60 0 0,1 256,40 V262 H0Z" fill="none" stroke="#2b1d14" stroke-width="2.2"/>
+</g>
+<text x="150" y="348" font-size="23" font-family="serif" fill="#2b1d14" text-anchor="middle" letter-spacing="3" font-weight="bold">THE RAIN</text>
+<path d="M56,360 H244" stroke="#a8321e" stroke-width="1.2"/>
+<circle cx="128" cy="384" r="15" fill="#cfdbe0" stroke="#2b1d14" stroke-width="1.3"/>
+<path d="M128,375.7 Q136.1,387.5 128,392.4 Q119.9,387.5 128,375.7Z" fill="#2f4f8a"/>
+<circle cx="160" cy="384" r="7" fill="#f0c050" stroke="#2b1d14" stroke-width="1.2"/>
+<circle cx="179" cy="384" r="7" fill="#f0c050" stroke="#2b1d14" stroke-width="1.2"/>
+<path d="M88,384 C84.3,383 73.7,377.3 66,378 C58.3,378.7 46,386.3 42,388" fill="none" stroke="#2b1d14" stroke-width="1.4" stroke-linecap="round"/>
+<path d="M66,378 L74.8,378.6 L70.9,381.1 L67.1,380.2 L65.1,377.3 L65.7,373.9 L68.1,371.6 L71.1,371 L73.3,371.9" fill="none" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M66,378 Q57,374.4 52.2,384.6 Q60,386.4 66,378Z" fill="#5f7a3e" stroke="#2b1d14" stroke-width="0.9"/>
+<path d="M212,384 C215.7,383 226.3,377.3 234,378 C241.7,378.7 254,386.3 258,388" fill="none" stroke="#2b1d14" stroke-width="1.4" stroke-linecap="round"/>
+<path d="M234,378 L242.8,378.6 L238.9,381.1 L235.1,380.2 L233.1,377.3 L233.7,373.9 L236.1,371.6 L239.1,371 L241.3,371.9" fill="none" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M234,378 Q225,374.4 220.2,384.6 Q228,386.4 234,378Z" fill="#a8321e" stroke="#2b1d14" stroke-width="0.9"/>
+</g>
+<rect x="1" y="1" width="298" height="418" rx="16" fill="none" stroke="#2b1d14" stroke-width="2"/>
+</svg>

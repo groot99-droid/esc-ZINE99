@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 800" width="560" height="800" role="img" aria-labelledby="cutout-sheet-t cutout-sheet-d">
+<title id="cutout-sheet-t">Halls cut-out: the hung laundry sheet</title>
+<desc id="cutout-sheet-d">A laundry sheet pegged to a line across the hall, lit from behind so its folds show as bands of cream and shade; a shape behind it reads only by its height.</desc>
+<defs><clipPath id="cutout-sheet-clip1"><path d="M40,82.9 C48,84.5 72,90.7 88,92.4 C104,94.1 120,91.8 136,93.2 C152,94.6 168,99.9 184,100.9 C200,101.9 216,98.7 232,99.2 C248,99.7 264,104 280,104 C296,104 312,99.7 328,99.2 C344,98.7 360,101.9 376,100.9 C392,99.9 408,94.6 424,93.2 C440,91.8 456,94.1 472,92.4 C488,90.7 512,84.5 520,82.9 L520,742 L472,751.6 L424,747.2 L376,735.1 L328,733.2 L280,744.2 L232,752 L184,745.2 L136,733.7 L88,734.4 L40,746.2Z"/></clipPath><linearGradient id="cutout-sheet-lg2" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#8f876f"/><stop offset="50%" stop-color="#b8b097"/><stop offset="100%" stop-color="#E9E2CF"/></linearGradient><linearGradient id="cutout-sheet-lg3" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#8f876f"/><stop offset="50%" stop-color="#b8b097"/><stop offset="100%" stop-color="#E9E2CF"/></linearGradient><linearGradient id="cutout-sheet-lg4" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#8f876f"/><stop offset="50%" stop-color="#b8b097"/><stop offset="100%" stop-color="#E9E2CF"/></linearGradient><linearGradient id="cutout-sheet-lg5" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#8f876f"/><stop offset="50%" stop-color="#b8b097"/><stop offset="100%" stop-color="#E9E2CF"/></linearGradient><linearGradient id="cutout-sheet-lg6" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#8f876f"/><stop offset="50%" stop-color="#b8b097"/><stop offset="100%" stop-color="#E9E2CF"/></linearGradient><linearGradient id="cutout-sheet-lg7" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#8f876f"/><stop offset="50%" stop-color="#b8b097"/><stop offset="100%" stop-color="#E9E2CF"/></linearGradient><linearGradient id="cutout-sheet-lg8" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#8f876f"/><stop offset="50%" stop-color="#b8b097"/><stop offset="100%" stop-color="#E9E2CF"/></linearGradient><linearGradient id="cutout-sheet-lg9" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#8f876f"/><stop offset="50%" stop-color="#b8b097"/><stop offset="100%" stop-color="#E9E2CF"/></linearGradient><linearGradient id="cutout-sheet-lg10" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#8f876f"/><stop offset="50%" stop-color="#b8b097"/><stop offset="100%" stop-color="#E9E2CF"/></linearGradient><linearGradient id="cutout-sheet-lg11" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#8f876f"/><stop offset="50%" stop-color="#b8b097"/><stop offset="100%" stop-color="#E9E2CF"/></linearGradient><linearGradient id="cutout-sheet-lg12" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#8f876f"/><stop offset="50%" stop-color="#b8b097"/><stop offset="100%" stop-color="#E9E2CF"/></linearGradient><filter id="cutout-sheet-blur13" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="10"/></filter><filter id="cutout-sheet-spk14" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="2" seed="502"/><feColorMatrix values="0 0 0 0 0.36  0 0 0 0 0.34  0 0 0 0 0.27  0 0 0 0.9 -0.4"/></filter><mask id="cutout-sheet-st15" maskUnits="userSpaceOnUse" x="398" y="689.6" width="121" height="39.6"><rect x="398" y="689.6" width="121" height="39.6" fill="#fff"/><rect x="425.7" y="698.4" width="1.8" height="22" fill="#000"/><rect x="441.1" y="698.4" width="1.8" height="22" fill="#000"/><rect x="456.5" y="698.4" width="1.8" height="22" fill="#000"/><rect x="487.3" y="698.4" width="1.8" height="22" fill="#000"/></mask></defs>
+<path d="M0,70 Q280,104 560,70" fill="none" stroke="#1B1D1F" stroke-width="4"/>
+<path d="M40,82.9 C48,84.5 72,90.7 88,92.4 C104,94.1 120,91.8 136,93.2 C152,94.6 168,99.9 184,100.9 C200,101.9 216,98.7 232,99.2 C248,99.7 264,104 280,104 C296,104 312,99.7 328,99.2 C344,98.7 360,101.9 376,100.9 C392,99.9 408,94.6 424,93.2 C440,91.8 456,94.1 472,92.4 C488,90.7 512,84.5 520,82.9 L520,742 L472,751.6 L424,747.2 L376,735.1 L328,733.2 L280,744.2 L232,752 L184,745.2 L136,733.7 L88,734.4 L40,746.2Z" fill="#E9E2CF" stroke="#1B1D1F" stroke-width="2" opacity="1"/>
+<g clip-path="url(#cutout-sheet-clip1)">
+<rect x="30" y="60" width="20" height="720" fill="url(#cutout-sheet-lg2)" opacity="0.6"/>
+<rect x="62" y="60" width="9" height="720" fill="#fff" opacity="0.3"/>
+<rect x="78" y="60" width="25" height="720" fill="url(#cutout-sheet-lg3)" opacity="0.6"/>
+<rect x="110" y="60" width="9" height="720" fill="#fff" opacity="0.3"/>
+<rect x="126" y="60" width="30" height="720" fill="url(#cutout-sheet-lg4)" opacity="0.6"/>
+<rect x="158" y="60" width="9" height="720" fill="#fff" opacity="0.3"/>
+<rect x="174" y="60" width="20" height="720" fill="url(#cutout-sheet-lg5)" opacity="0.6"/>
+<rect x="206" y="60" width="9" height="720" fill="#fff" opacity="0.3"/>
+<rect x="222" y="60" width="25" height="720" fill="url(#cutout-sheet-lg6)" opacity="0.6"/>
+<rect x="254" y="60" width="9" height="720" fill="#fff" opacity="0.3"/>
+<rect x="270" y="60" width="30" height="720" fill="url(#cutout-sheet-lg7)" opacity="0.6"/>
+<rect x="302" y="60" width="9" height="720" fill="#fff" opacity="0.3"/>
+<rect x="318" y="60" width="20" height="720" fill="url(#cutout-sheet-lg8)" opacity="0.6"/>
+<rect x="350" y="60" width="9" height="720" fill="#fff" opacity="0.3"/>
+<rect x="366" y="60" width="25" height="720" fill="url(#cutout-sheet-lg9)" opacity="0.6"/>
+<rect x="398" y="60" width="9" height="720" fill="#fff" opacity="0.3"/>
+<rect x="414" y="60" width="30" height="720" fill="url(#cutout-sheet-lg10)" opacity="0.6"/>
+<rect x="446" y="60" width="9" height="720" fill="#fff" opacity="0.3"/>
+<rect x="462" y="60" width="20" height="720" fill="url(#cutout-sheet-lg11)" opacity="0.6"/>
+<rect x="494" y="60" width="9" height="720" fill="#fff" opacity="0.3"/>
+<rect x="510" y="60" width="25" height="720" fill="url(#cutout-sheet-lg12)" opacity="0.6"/>
+<rect x="542" y="60" width="9" height="720" fill="#fff" opacity="0.3"/>
+<g opacity="0.2" filter="url(#cutout-sheet-blur13)">
+<g fill="#1B1D1F">
+<polygon points="303.3,469.5 317.5,617.6 283.3,622.3 256.7,476"/>
+<polygon points="317.6,619.1 318.6,750.2 294.9,751.4 283.2,620.8"/>
+<polygon points="290.8,747.6 350.3,758.8 359.9,770 287.6,770"/>
+<polygon points="303.5,474 289.2,622.1 254.7,620.2 256.5,471.5"/>
+<polygon points="289,623.6 264.9,752.5 241.5,749.1 254.9,618.7"/>
+<polygon points="237.2,747.6 296.8,758.8 306.4,770 234,770"/>
+<polygon points="245.9,482.4 254.9,290.7 340.5,298.6 314.1,488.7"/>
+<polygon points="283.6,273.7 288,251.9 312.9,255.1 311.7,277.2"/>
+<polygon points="319.1,286.9 345.7,387.9 323.2,394.8 289.1,296"/>
+<polygon points="344.2,384.8 397.3,468.9 383,478.6 324.7,398"/>
+<polygon points="398.6,468 413,495.7 402,503.1 381.6,479.5"/>
+<polygon points="306.5,295.4 276.3,395.5 253.6,389.5 276.1,287.5"/>
+<polygon points="276.7,392.5 273.1,492 255.7,491.9 253.2,392.4"/>
+<polygon points="274.7,492 270.9,522.9 257.6,522.8 254.1,491.9"/>
+<path d="M256.5,472.7a23.5,23.5 0 1,0 47,0a23.5,23.5 0 1,0 -47,0M283.2,620a17.2,17.2 0 1,0 34.5,0a17.2,17.2 0 1,0 -34.5,0M283.2,620a17.2,17.2 0 1,0 34.5,0a17.2,17.2 0 1,0 -34.5,0M294.9,750.8a11.8,11.8 0 1,0 23.6,0a11.8,11.8 0 1,0 -23.6,0M256.5,472.7a23.5,23.5 0 1,0 47,0a23.5,23.5 0 1,0 -47,0M254.7,621.1a17.2,17.2 0 1,0 34.5,0a17.2,17.2 0 1,0 -34.5,0M254.7,621.1a17.2,17.2 0 1,0 34.5,0a17.2,17.2 0 1,0 -34.5,0M241.4,750.8a11.8,11.8 0 1,0 23.6,0a11.8,11.8 0 1,0 -23.6,0M245.8,485.5a34.2,34.2 0 1,0 68.5,0a34.2,34.2 0 1,0 -68.5,0M254.7,294.7a43,43 0 1,0 85.9,0a43,43 0 1,0 -85.9,0M254.7,291.5a43,43 0 1,0 85.9,0a43,43 0 1,0 -85.9,0M283.5,275.5a14.2,14.2 0 1,0 28.3,0a14.2,14.2 0 1,0 -28.3,0M287.9,253.5a12.6,12.6 0 1,0 25.1,0a12.6,12.6 0 1,0 -25.1,0M288.4,291.5a15.7,15.7 0 1,0 31.4,0a15.7,15.7 0 1,0 -31.4,0M322.7,391.4a11.8,11.8 0 1,0 23.5,0a11.8,11.8 0 1,0 -23.5,0M322.7,391.4a11.8,11.8 0 1,0 23.5,0a11.8,11.8 0 1,0 -23.5,0M381.5,473.7a8.7,8.7 0 1,0 17.3,0a8.7,8.7 0 1,0 -17.3,0M379.9,473.7a10.3,10.3 0 1,0 20.5,0a10.3,10.3 0 1,0 -20.5,0M400.9,499.4a6.6,6.6 0 1,0 13.2,0a6.6,6.6 0 1,0 -13.2,0M275.6,291.5a15.7,15.7 0 1,0 31.4,0a15.7,15.7 0 1,0 -31.4,0M253.2,392.5a11.8,11.8 0 1,0 23.5,0a11.8,11.8 0 1,0 -23.5,0M253.2,392.5a11.8,11.8 0 1,0 23.5,0a11.8,11.8 0 1,0 -23.5,0M255.7,491.9a8.7,8.7 0 1,0 17.3,0a8.7,8.7 0 1,0 -17.3,0M254.1,491.9a10.3,10.3 0 1,0 20.5,0a10.3,10.3 0 1,0 -20.5,0M257.6,522.9a6.6,6.6 0 1,0 13.2,0a6.6,6.6 0 1,0 -13.2,0"/>
+<ellipse cx="305.1" cy="221.5" rx="33.8" ry="40.4" transform="rotate(6.2 305.1 221.5)"/>
+</g>
+</g>
+<g clip-path="url(#cutout-sheet-clip1)">
+<rect x="0" y="60" width="560" height="720" filter="url(#cutout-sheet-spk14)"/>
+</g>
+</g>
+<rect x="35" y="62.9" width="10" height="34" rx="2" fill="#6b5a45" stroke="#1B1D1F" stroke-width="1.5"/>
+<line x1="40" y1="62.9" x2="40" y2="96.9" stroke="#1B1D1F" stroke-width="1"/>
+<rect x="131" y="73.2" width="10" height="34" rx="2" fill="#6b5a45" stroke="#1B1D1F" stroke-width="1.5"/>
+<line x1="136" y1="73.2" x2="136" y2="107.2" stroke="#1B1D1F" stroke-width="1"/>
+<rect x="227" y="79.2" width="10" height="34" rx="2" fill="#6b5a45" stroke="#1B1D1F" stroke-width="1.5"/>
+<line x1="232" y1="79.2" x2="232" y2="113.2" stroke="#1B1D1F" stroke-width="1"/>
+<rect x="323" y="79.2" width="10" height="34" rx="2" fill="#6b5a45" stroke="#1B1D1F" stroke-width="1.5"/>
+<line x1="328" y1="79.2" x2="328" y2="113.2" stroke="#1B1D1F" stroke-width="1"/>
+<rect x="419" y="73.2" width="10" height="34" rx="2" fill="#6b5a45" stroke="#1B1D1F" stroke-width="1.5"/>
+<line x1="424" y1="73.2" x2="424" y2="107.2" stroke="#1B1D1F" stroke-width="1"/>
+<rect x="515" y="62.9" width="10" height="34" rx="2" fill="#6b5a45" stroke="#1B1D1F" stroke-width="1.5"/>
+<line x1="520" y1="62.9" x2="520" y2="96.9" stroke="#1B1D1F" stroke-width="1"/>
+<g mask="url(#cutout-sheet-st15)">
+<text x="420" y="716" font-size="22" font-family="monospace" fill="#5d5644" font-weight="bold" letter-spacing="2.2">LDY 7</text>
+</g>
+<path d="M41.4,747.6 L51.3,742.4 L63.5,739 L77.3,737.7 L87.7,734.6 L98.9,733.7 L111.7,735.3 L122.6,734.7 L136,732.7 L149.4,737.7 L160,739 L171.5,742.4 L185.2,746.3 L196.6,747.4 L207,749.8 L219.2,750.7 L232.7,752.6 L244.7,749.4 L256.1,747.4 L268.7,746.7 L281,744.3 L292.6,742.5 L303.3,739.8 L314.5,737 L327.5,732.5 L339.1,734.8 L350.8,733.6 L364.2,735.5 L375,736.2 L388.6,739.2 L400,740.1 L412.3,743.8 L423.1,745.9 L437,749.7 L448.7,750.4 L460,751.6 L471.3,750.8 L485.5,748.1 L496.1,747 L509.5,742.9 L520.7,742.9" stroke="#8f876f" stroke-width="3" opacity="0.7" fill="none"/>
+</svg>

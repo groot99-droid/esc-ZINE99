@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="backyard-beetle-t backyard-beetle-d">
+<title id="backyard-beetle-t">Backyard card: a ground beetle</title>
+<desc id="backyard-beetle-d">Backyard card, turned: the real cause, a ground beetle, drawn small and plain in ordinary daylight: a ground beetle walking through the grass toward the foot of the tree. In its corner, the suit that fits: Mandible.</desc>
+<defs><clipPath id="backyard-beetle-clip1"><rect x="1" y="1" width="298" height="418" rx="16"/></clipPath><filter id="backyard-beetle-grain2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="2" seed="465"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><radialGradient id="backyard-beetle-vig3" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#8a8f8c" stop-opacity="0"/><stop offset="100%" stop-color="#8a8f8c" stop-opacity="0.1"/></radialGradient><clipPath id="backyard-beetle-clip4"><rect x="0" y="0" width="252" height="300" rx="6"/></clipPath></defs>
+<g clip-path="url(#backyard-beetle-clip1)">
+<rect x="0" y="0" width="300" height="420" fill="#f6f1e4"/>
+<rect x="0" y="0" width="300" height="420" filter="url(#backyard-beetle-grain2)"/>
+<rect x="0" y="0" width="300" height="420" fill="url(#backyard-beetle-vig3)"/>
+<rect x="14" y="14" width="272" height="392" rx="10" fill="none" stroke="#8a8f8c" stroke-width="1.2"/>
+<g transform="translate(24 24)">
+<g clip-path="url(#backyard-beetle-clip4)">
+<rect x="0" y="0" width="252" height="300" fill="#bfdcec"/>
+<rect x="0" y="120" width="252" height="180" fill="#7fae5a"/>
+<path d="M8,134 l2,-7 l2,7M21,171 l2,-7 l2,7M34,148 l2,-7 l2,7M47,185 l2,-7 l2,7M60,162 l2,-7 l2,7M73,139 l2,-7 l2,7M86,176 l2,-7 l2,7M99,153 l2,-7 l2,7M112,190 l2,-7 l2,7M125,167 l2,-7 l2,7M138,144 l2,-7 l2,7M151,181 l2,-7 l2,7M164,158 l2,-7 l2,7M177,135 l2,-7 l2,7M190,172 l2,-7 l2,7M203,149 l2,-7 l2,7M216,186 l2,-7 l2,7M229,163 l2,-7 l2,7M242,140 l2,-7 l2,7" fill="none" stroke="#5c8a3e" stroke-width="1.2"/>
+<rect x="0" y="0" width="252" height="120" fill="#cfe2ee"/>
+<path d="M150,0 H260 Q252,210.0 276,300 H140 Q156,180.0 150,0Z" fill="#7a5a40" stroke="#4a3324" stroke-width="1.6"/>
+<path d="M170.8,157.2 q-1.9,20 0,48.1M201.6,234.6 q1.6,20 0,47.2M221.6,119.6 q-2.7,20 0,44.7M198,11 q2.8,20 0,42M174.8,128.3 q-2,20 0,41.9M227.2,50.4 q3.8,20 0,44M208.6,182.7 q-0.8,20 0,49.6M250.9,34.8 q-2.8,20 0,54.9M159.5,101.8 q2.1,20 0,34.8M213.6,146.6 q2.6,20 0,55.3M174.4,186.9 q1,20 0,46.9M197,64 q0.5,20 0,32.3" fill="none" stroke="#4a3324" stroke-width="1.3"/>
+<path d="M10,250 q-4,-40 6,-70M22,258 q-4,-40 6,-70M34,266 q-4,-40 6,-70M46,250 q-4,-40 6,-70M58,258 q-4,-40 6,-70M70,266 q-4,-40 6,-70M82,250 q-4,-40 6,-70M94,258 q-4,-40 6,-70M106,266 q-4,-40 6,-70M118,250 q-4,-40 6,-70M130,258 q-4,-40 6,-70M142,266 q-4,-40 6,-70M154,250 q-4,-40 6,-70" fill="none" stroke="#5c8a3e" stroke-width="3" stroke-linecap="round"/>
+<g transform="translate(86 214) rotate(-18)">
+<path d="M-22,-10 l-8,-26 l-12,-8 M-22,10 l-8,26 l-12,8" fill="none" stroke="#1e2420" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M0,-10 l-8,-26 l-12,-8 M0,10 l-8,26 l-12,8" fill="none" stroke="#1e2420" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M22,-10 l-8,-26 l-12,-8 M22,10 l-8,26 l-12,8" fill="none" stroke="#1e2420" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="0" cy="0" rx="40" ry="24" fill="#2e3a34" stroke="#141a17" stroke-width="1.5"/>
+<line x1="-36" y1="0" x2="38" y2="0" stroke="#141a17" stroke-width="1.2"/>
+<ellipse cx="48" cy="0" rx="14" ry="13" fill="#1e2420" stroke="#141a17" stroke-width="1.5"/>
+<path d="M58,-6 q14,-4 16,6 M58,6 q14,4 12,-4 M52,-10 q8,-22 26,-24 M52,10 q8,22 26,24" fill="none" stroke="#141a17" stroke-width="2"/>
+<ellipse cx="-12" cy="-8" rx="18" ry="6" fill="#cfe0c8" opacity="0.3"/>
+</g>
+</g>
+<rect x="0" y="0" width="252" height="300" rx="6" fill="none" stroke="#6f7471" stroke-width="1.4"/>
+</g>
+<circle cx="256" cy="368" r="22" fill="#d8cdb8" stroke="#2b1d14" stroke-width="1.4"/>
+<path d="M253.2,380.4 Q237,372.8 244.6,355.7 Q246.5,369 253.2,372.8" fill="#a8321e" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M258.9,380.4 Q275,372.8 267.4,355.7 Q265.5,369 258.9,372.8" fill="#a8321e" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M40,368 H222" stroke="#8a8f8c" stroke-width="1" stroke-dasharray="2 5"/>
+</g>
+<rect x="1" y="1" width="298" height="418" rx="16" fill="none" stroke="#2b1d14" stroke-width="2"/>
+</svg>

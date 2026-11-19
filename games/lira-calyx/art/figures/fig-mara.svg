@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 320" width="240" height="320" role="img" aria-labelledby="fig-mara-t fig-mara-d">
+<title id="fig-mara-t">Mara, storm-singer</title>
+<desc id="fig-mara-d">Mara of the Peakborn in a long violet cloak, hood up, one arm raised to the rock and her head back, the square notes of the song rising from her on a short red staff.</desc>
+<defs><filter id="fig-mara-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="944"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter><pattern id="fig-mara-pat2" width="46" height="20" patternUnits="userSpaceOnUse"><path d="M0,2.5H46M0,7.5H46M0,12.5H46M0,17.5H46" stroke="#3b2618" stroke-width="0.5" opacity="0.07"/><path d="M23,0V20" stroke="#3b2618" stroke-width="0.8" opacity="0.06"/></pattern><radialGradient id="fig-mara-vig3" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#7a5a2e" stop-opacity="0"/><stop offset="100%" stop-color="#7a5a2e" stop-opacity="0.2"/></radialGradient><clipPath id="fig-mara-clip4"><polygon points="10,262 24,263.3 42,263.3 60,262 78,263.5 96,262.8 114,262.7 132,260.1 150,261.3 168,261 186,262.8 204,260.6 222,261.8 232,262 226,302 18,302"/></clipPath></defs>
+<rect x="0" y="0" width="240" height="320" fill="#f1e8d2"/>
+<rect x="0" y="0" width="240" height="320" filter="url(#fig-mara-grain1)"/>
+<rect x="0" y="0" width="240" height="320" fill="url(#fig-mara-pat2)"/>
+<rect x="0" y="0" width="240" height="320" fill="url(#fig-mara-vig3)"/>
+<text x="16" y="26" font-size="12" font-family="monospace" fill="#7d7a74" letter-spacing="1">MARA  SING</text>
+<rect x="6" y="6" width="228" height="308" fill="none" stroke="#3b2618" stroke-width="1" opacity="0.5"/>
+<polygon points="10,262 24,263.3 42,263.3 60,262 78,263.5 96,262.8 114,262.7 132,260.1 150,261.3 168,261 186,262.8 204,260.6 222,261.8 232,262 226,302 18,302" fill="#5a3f7a" opacity="0.3"/>
+<g clip-path="url(#fig-mara-clip4)">
+<path d="M71.5,120 L283,232.5 M68.2,126.2 L279.7,238.7 M64.9,132.4 L276.4,244.8 M61.6,138.5 L273.1,251 M58.3,144.7 L269.9,257.2 M55,150.9 L266.6,263.4 M51.8,157.1 L263.3,269.6 M48.5,163.3 L260,275.7 M45.2,169.4 L256.7,281.9 M41.9,175.6 L253.4,288.1 M38.6,181.8 L250.1,294.3 M35.3,188 L246.9,300.5 M32,194.2 L243.6,306.6 M28.7,200.3 L240.3,312.8 M25.5,206.5 L237,319 M22.2,212.7 L233.7,325.2 M18.9,218.9 L230.4,331.4 M15.6,225.1 L227.1,337.5 M12.3,231.2 L223.8,343.7 M9,237.4 L220.6,349.9 M5.7,243.6 L217.3,356.1 M2.5,249.8 L214,362.3 M-0.8,256 L210.7,368.4 M-4.1,262.2 L207.4,374.6 M-7.4,268.3 L204.1,380.8 M-10.7,274.5 L200.8,387 M-14,280.7 L197.6,393.2 M-17.3,286.9 L194.3,399.3 M-20.5,293.1 L191,405.5 M-23.8,299.2 L187.7,411.7 M-27.1,305.4 L184.4,417.9 M-30.4,311.6 L181.1,424.1 M-33.7,317.8 L177.8,430.3 M-37,324 L174.6,436.4 M-40.3,330.1 L171.3,442.6" fill="none" stroke="#3b2618" stroke-width="1" opacity="0.7"/>
+</g>
+<path d="M9.1,262.9 L24.9,263.5 L42.8,262.7 L59.8,262.3 L78.1,264.1 L95.4,263.3 L113.2,261.8 L132.3,259.6 L149.8,260.5 L168.6,261.8 L185.7,262.6 L203.5,260.3 L222.7,262.8 L232.4,262.2" stroke-width="3" stroke="#3b2618" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<line x1="138" y1="52" x2="224" y2="52" stroke="#a8281e" stroke-width="1.3"/>
+<line x1="138" y1="63" x2="224" y2="63" stroke="#a8281e" stroke-width="1.3"/>
+<line x1="138" y1="74" x2="224" y2="74" stroke="#a8281e" stroke-width="1.3"/>
+<line x1="138" y1="85" x2="224" y2="85" stroke="#a8281e" stroke-width="1.3"/>
+<rect x="146" y="74" width="11" height="11" fill="#3b2618" transform="rotate(-6.0 146 74)"/>
+<rect x="164" y="63" width="11" height="11" fill="#3b2618" transform="rotate(-2.0 164 63)"/>
+<rect x="182" y="68" width="11" height="11" fill="#3b2618" transform="rotate(2.0 182 68)"/>
+<rect x="200" y="52" width="11" height="11" fill="#3b2618" transform="rotate(6.0 200 52)"/>
+<path d="M210,44 q8,-3 5,9" stroke="#3b2618" stroke-width="2.6" fill="none"/>
+<path d="M105.5,108.3 L117.1,140.3 L146.6,157.3" fill="none" stroke="#3b2618" stroke-width="13.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M105.5,108.3 L117.1,140.3 L146.6,157.3" fill="none" stroke="#6f5c4a" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M112,170 L108.8,215.9 L108.8,261.9" fill="none" stroke="#3b2618" stroke-width="15.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M112,170 L108.8,215.9 L108.8,261.9" fill="none" stroke="#6f5c4a" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M108.8,261.9 L120.8,262.9" fill="none" stroke="#3b2618" stroke-width="12.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M108.8,261.9 L120.8,262.9" fill="none" stroke="#3a2c22" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M112,170 L116.8,215.7 L116.8,261.7" fill="none" stroke="#3b2618" stroke-width="16.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M112,170 L116.8,215.7 L116.8,261.7" fill="none" stroke="#5b4a3a" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M116.8,261.7 L129.8,262.7" fill="none" stroke="#3b2618" stroke-width="13.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M116.8,261.7 L129.8,262.7" fill="none" stroke="#3a2c22" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M89.5,108.3 C96.4,88.7 111.8,91.7 119.5,112.3 C127.3,132.9 138.6,210.4 136,232 C133.4,253.6 113.7,242.3 104,242 C94.3,241.7 80.4,252.3 78,230 C75.6,207.7 82.6,127.9 89.5,108.3Z" fill="#6d5490" stroke="#3b2618" stroke-width="2.6" stroke-linejoin="round"/>
+<path d="M101.5,118.3 C102.3,130.3 106.6,170.7 106,190 C105.4,209.3 99.3,226.7 98,234" stroke="#3b2618" stroke-width="1.2" fill="none" opacity="0.7"/>
+<path d="M105.5,108.3 L135,91.3 L142,58.1" fill="none" stroke="#3b2618" stroke-width="13.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M105.5,108.3 L135,91.3 L142,58.1" fill="none" stroke="#6d5490" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="142" cy="58.1" r="5" fill="#d2a47c" stroke="#3b2618" stroke-width="1.8"/>
+<circle cx="93.9" cy="89.7" r="14.5" fill="#d2a47c" stroke="#3b2618" stroke-width="2.4"/>
+<path d="M87.9,104.7 Q69.9,89.7 85.9,72.7 Q105.9,67.7 106.9,83.7 Q91.9,81.7 87.9,104.7Z" fill="#6d5490" stroke="#3b2618" stroke-width="2.4" stroke-linejoin="round"/>
+<circle cx="100.9" cy="88.7" r="1.6" fill="#3b2618"/>
+<ellipse cx="103.9" cy="95.7" rx="2.6" ry="4" fill="#3b2618"/>
+</svg>

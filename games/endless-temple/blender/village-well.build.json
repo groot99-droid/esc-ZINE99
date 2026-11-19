@@ -1,0 +1,423 @@
+{
+  "game": "endless-temple",
+  "location": "village-well",
+  "name": "The well-post and the shrine-store",
+  "reference": "assets/locations/village-well.jpg",
+  "bounds_m": [
+    18,
+    14,
+    6
+  ],
+  "origin": "the middle of the open place; +y toward the round shrine-store and its plank door; the well and its post west (-x) of centre; huts along the east and west edges; open to the sky",
+  "materials": {
+    "packed-sand": {
+      "color": [
+        0.72,
+        0.52,
+        0.3
+      ],
+      "roughness": 0.95
+    },
+    "mud-brick": {
+      "color": [
+        0.6,
+        0.42,
+        0.26
+      ],
+      "roughness": 0.95
+    },
+    "well-stone": {
+      "color": [
+        0.45,
+        0.42,
+        0.4
+      ],
+      "roughness": 0.9
+    },
+    "carved-wood": {
+      "color": [
+        0.42,
+        0.28,
+        0.16
+      ],
+      "roughness": 0.8
+    },
+    "palm-thatch": {
+      "color": [
+        0.62,
+        0.5,
+        0.32
+      ],
+      "roughness": 1.0
+    },
+    "dark-gap": {
+      "color": [
+        0.02,
+        0.02,
+        0.04
+      ],
+      "roughness": 1.0
+    },
+    "moon": {
+      "color": [
+        0.85,
+        0.88,
+        0.95
+      ],
+      "roughness": 1.0,
+      "emission": 2.0
+    },
+    "lamp-glow": {
+      "color": [
+        1.0,
+        0.7,
+        0.35
+      ],
+      "roughness": 0.6,
+      "emission": 3.0
+    }
+  },
+  "blockout": [
+    {
+      "id": "sand-floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        18.0,
+        14.0,
+        0.2
+      ],
+      "location": [
+        0.0,
+        0.0,
+        -0.1
+      ],
+      "material": "packed-sand"
+    },
+    {
+      "id": "well-ring",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        2.4,
+        2.4,
+        0.9
+      ],
+      "location": [
+        -4.0,
+        -1.0,
+        0.45
+      ],
+      "material": "well-stone"
+    },
+    {
+      "id": "well-post",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.35,
+        0.35,
+        4.6
+      ],
+      "location": [
+        -4.0,
+        -0.2,
+        2.3
+      ],
+      "material": "carved-wood"
+    },
+    {
+      "id": "well-post-bar",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        1.1,
+        0.14,
+        0.14
+      ],
+      "location": [
+        -4.0,
+        -0.2,
+        4.3
+      ],
+      "material": "carved-wood"
+    },
+    {
+      "id": "store-wall",
+      "shape": "cylinder",
+      "role": "wall",
+      "size_m": [
+        5.0,
+        5.0,
+        2.6
+      ],
+      "location": [
+        3.0,
+        4.2,
+        1.3
+      ],
+      "material": "mud-brick"
+    },
+    {
+      "id": "store-roof",
+      "shape": "cone",
+      "role": "ceiling",
+      "size_m": [
+        6.0,
+        6.0,
+        1.8
+      ],
+      "location": [
+        3.0,
+        4.2,
+        3.5
+      ],
+      "material": "palm-thatch"
+    },
+    {
+      "id": "store-door",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        1.0,
+        0.12,
+        1.6
+      ],
+      "location": [
+        3.0,
+        1.72,
+        0.8
+      ],
+      "material": "carved-wood"
+    },
+    {
+      "id": "roof-gap",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        0.9,
+        0.5,
+        0.5
+      ],
+      "location": [
+        4.0,
+        2.6,
+        2.9
+      ],
+      "material": "dark-gap",
+      "collide": false
+    },
+    {
+      "id": "hut-west",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        4.0,
+        3.0,
+        2.4
+      ],
+      "location": [
+        -7.0,
+        4.5,
+        1.2
+      ],
+      "material": "mud-brick"
+    },
+    {
+      "id": "hut-west-roof",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        4.4,
+        3.4,
+        0.2
+      ],
+      "location": [
+        -7.0,
+        4.5,
+        2.5
+      ],
+      "material": "palm-thatch"
+    },
+    {
+      "id": "hut-east",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        3.0,
+        4.0,
+        2.6
+      ],
+      "location": [
+        7.5,
+        1.0,
+        1.3
+      ],
+      "material": "mud-brick"
+    },
+    {
+      "id": "hut-east-roof",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        3.4,
+        4.4,
+        0.2
+      ],
+      "location": [
+        7.5,
+        1.0,
+        2.7
+      ],
+      "material": "palm-thatch"
+    },
+    {
+      "id": "hut-far",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        2.6,
+        2.4,
+        2.0
+      ],
+      "location": [
+        -1.5,
+        5.6,
+        1.0
+      ],
+      "material": "mud-brick"
+    },
+    {
+      "id": "lamp-niche",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.3,
+        0.2,
+        0.4
+      ],
+      "location": [
+        5.95,
+        0.2,
+        1.4
+      ],
+      "material": "lamp-glow",
+      "collide": false
+    },
+    {
+      "id": "moon",
+      "shape": "sphere",
+      "role": "sky",
+      "size_m": [
+        6.0,
+        6.0,
+        6.0
+      ],
+      "location": [
+        -30.0,
+        90.0,
+        45.0
+      ],
+      "material": "moon",
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "fathers-waterskin",
+      "object": "waterskin",
+      "location": [
+        4.0,
+        2.2,
+        0.0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        30
+      ]
+    }
+  ],
+  "scenes": {
+    "s3_well_post": {
+      "note": "c2, on a linger after the shrine-store tablet solved clean: night, the moon just clear of the well-post. Wordless. From the well-post, the watching shaman's place, the camera sees the roof-gap where the boy's arm went in, then tilts up to the moon instead. Afterwards a second leaf-cord hangs restrung at the store door. No character is a prop; Xadra and Xandri are placed by the engine.",
+      "world": {
+        "color": [
+          0.05,
+          0.07,
+          0.16
+        ],
+        "strength": 0.35
+      },
+      "lights": [
+        {
+          "name": "full-moon",
+          "type": "SUN",
+          "location": [
+            -30.0,
+            90.0,
+            45.0
+          ],
+          "look_at": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "energy": 0.9,
+          "size": 1,
+          "color": [
+            0.72,
+            0.8,
+            1.0
+          ]
+        },
+        {
+          "name": "niche-lamp",
+          "type": "POINT",
+          "location": [
+            5.7,
+            0.2,
+            1.5
+          ],
+          "energy": 18,
+          "size": 0.05,
+          "color": [
+            1.0,
+            0.7,
+            0.4
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -4.6,
+          -1.8,
+          1.55
+        ],
+        "look_at": [
+          4.0,
+          2.6,
+          2.9
+        ],
+        "lens_mm": 35,
+        "mode": "fixed"
+      },
+      "player_start": {
+        "location": [
+          -4.6,
+          -1.8,
+          0.0
+        ],
+        "facing_deg": 62.9
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "fathers-waterskin",
+          "verb": "Go on to the hut",
+          "leads_to": "s3_hut_night"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160" role="img" aria-labelledby="clue-rituals-t clue-rituals-d">
+<title id="clue-rituals-t">Clue kind: Rituals</title>
+<desc id="clue-rituals-d">Clue-kind icon in technical pen inside a brass ring: a door chain and a tally of seven, for rituals.</desc>
+<defs><radialGradient id="clue-rituals-rg1" cx="0.5" cy="0.5" r="0.75"><stop offset="0%" stop-color="#fff" stop-opacity="0.5"/><stop offset="100%" stop-color="#b8ab8a" stop-opacity="0.5"/></radialGradient><clipPath id="clue-rituals-clip2"><circle cx="80" cy="70" r="50"/></clipPath></defs>
+<rect x="0" y="0" width="160" height="160" rx="10" fill="#f1ecdf"/>
+<rect x="0" y="0" width="160" height="160" rx="10" fill="url(#clue-rituals-rg1)"/>
+<circle cx="80" cy="70" r="56" fill="#f7f3e8" stroke="#b8913f" stroke-width="4"/>
+<circle cx="80" cy="70" r="51" fill="none" stroke="#5d4518" stroke-width="0.8"/>
+<g clip-path="url(#clue-rituals-clip2)">
+<path d="M40,48 H66 M94,92 H120" fill="none" stroke="#1c1a17" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="69" cy="52" rx="6" ry="4" transform="rotate(52 69 52)" fill="none" stroke="#1c1a17" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="76" cy="61" rx="6" ry="4" transform="rotate(52 76 61)" fill="none" stroke="#1c1a17" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="83" cy="70" rx="6" ry="4" transform="rotate(52 83 70)" fill="none" stroke="#1c1a17" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="90" cy="79" rx="6" ry="4" transform="rotate(52 90 79)" fill="none" stroke="#1c1a17" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="97" cy="88" rx="6" ry="4" transform="rotate(52 97 88)" fill="none" stroke="#1c1a17" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M52,104v16M60,104v16M68,104v16M76,104v16M48,118 L82,104 M90,104v16 M98,104v16" fill="none" stroke="#2a3a8c" stroke-width="1.8" stroke-linecap="round"/>
+</g>
+<text x="80" y="148" font-size="13" font-family="monospace" fill="#2a3a8c" text-anchor="middle" letter-spacing="2" font-weight="bold">RITUALS</text>
+</svg>

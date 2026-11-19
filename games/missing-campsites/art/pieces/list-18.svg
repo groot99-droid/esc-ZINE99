@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" width="220" height="220" role="img" aria-labelledby="list-18-t list-18-d">
+<title id="list-18-t">The List, 18: a tyre swing</title>
+<desc id="list-18-d">One tile of the List on Tam's notebook paper, in a single pencil weight with hatching: site 18 held a tyre swing. The number is its place in the order the campground packed it; said backwards, the nineteen are the way out.</desc>
+<defs><filter id="list-18-blur1" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="8"/></filter><filter id="list-18-rough2"><feTurbulence type="turbulence" baseFrequency="0.6" numOctaves="2" seed="924" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="1.6"/></filter><filter id="list-18-tooth3" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.2" numOctaves="2" seed="14"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter></defs>
+<rect x="0" y="0" width="220" height="220" fill="#F6F1E2"/>
+<path d="M0,40h220M0,66h220M0,92h220M0,118h220M0,144h220M0,170h220M0,196h220" stroke="#A9C3CF" stroke-width="1" fill="none"/>
+<line x1="34" y1="0" x2="34" y2="220" stroke="#D58A7A" stroke-width="1.2"/>
+<ellipse cx="122" cy="104" rx="74" ry="62" fill="#4A4A48" opacity="0.1" filter="url(#list-18-blur1)"/>
+<path d="M73.4,58.4 L82.5,58.8 L92.8,57.2 L102.8,57.9 L112.1,56.8 L122.4,56.7 L131.4,56.1 L141.6,56.1 L152.1,55.2 L161.8,54.9 L171.7,55" fill="none" stroke="#4A4A48" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-18-rough2)"/>
+<path d="M116.5,58 L115.9,69 L115,79.8 L114.9,91.2 L113.7,102.7" fill="none" stroke="#4A4A48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-18-rough2)"/>
+<path d="M133.6,57 L133.5,65.9 L132.7,74.5 L131.9,83.6 L131.4,93.5 L130.9,102.6" fill="none" stroke="#4A4A48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-18-rough2)"/>
+<path d="M149.1,120 L145.8,129.5 L138.4,136.2 L128.4,140.6 L116.9,140.4 L107.3,136.5 L100,129.2 L97.2,120.3 L100.6,111.9 L107.4,103.6 L117.6,99.8 L129.5,100.8 L139.6,104.9 L146.7,111.5 L148.9,121.2Z" fill="none" stroke="#4A4A48" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-18-rough2)"/>
+<path d="M136,120.1 L134.9,125.1 L131.2,129.4 L125.4,130.9 L119.7,130.1 L114.7,128.5 L111.7,125.2 L109.9,120.3 L111.5,115.5 L115,112.5 L120,110 L126.7,109.9 L131,112.6 L135,116.6 L135.3,121.3Z" fill="none" stroke="#4A4A48" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" filter="url(#list-18-rough2)"/>
+<text x="8" y="34" font-size="30" font-family="serif" fill="#4A4A48" transform="rotate(-2.1 8 34)" font-weight="bold" font-style="italic">18</text>
+<text x="42" y="198" font-size="19" font-family="serif" fill="#4A4A48" transform="rotate(-0.9 42 198)" font-style="italic">a tyre swing</text>
+<text x="168" y="26" font-size="13" font-family="serif" fill="#77756f" transform="rotate(-3 168 26)" font-style="italic">then 17</text>
+<path d="M41.2,205.9 L54,207.2 L67.4,206.3 L78.6,206.6 L91.5,206.3 L104,206.9 L116.6,206.3 L127.8,207 L139,207.2" fill="none" stroke="#4A4A48" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6" filter="url(#list-18-rough2)"/>
+<rect x="0" y="0" width="220" height="220" filter="url(#list-18-tooth3)"/>
+</svg>

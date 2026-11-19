@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-labelledby="tray-t tray-d">
+<title id="tray-t">The Tray: Isotype pictograms</title>
+<desc id="tray-d">The Tray (1D): the noon portioning game told as an Isotype chart of counted flat icons. Across the top, the orderly's gaze runs its eight-second cycle and rests on Fisk for three; below, the cut ration lies as six pieces on the tray, with the pill beside it. Each row counts where the pieces went (to the mouth, into the napkin that holds three, passed to Jax, left on the tray), and the bottom row shows the man growing a step taller for every piece eaten.</desc>
+<defs><filter id="tray-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="960"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter></defs>
+<rect x="0" y="0" width="1200" height="800" fill="#efe9dc"/>
+<rect x="0" y="0" width="1200" height="800" filter="url(#tray-grain1)"/>
+<text x="60" y="92" font-size="24" font-family="sans-serif" fill="#1B1D1F" font-weight="bold" letter-spacing="3">GAZE</text>
+<path d="M236.6,84 Q260,65.8 283.4,84 Q260,102.2 236.6,84Z" fill="#c9c2b2"/>
+<circle cx="260" cy="84" r="6.5" fill="#f1ece0"/>
+<path d="M306.6,84 Q330,65.8 353.4,84 Q330,102.2 306.6,84Z" fill="#c9c2b2"/>
+<circle cx="330" cy="84" r="6.5" fill="#f1ece0"/>
+<path d="M376.6,84 Q400,65.8 423.4,84 Q400,102.2 376.6,84Z" fill="#c9c2b2"/>
+<circle cx="400" cy="84" r="6.5" fill="#f1ece0"/>
+<path d="M446.6,84 Q470,65.8 493.4,84 Q470,102.2 446.6,84Z" fill="#1B1D1F"/>
+<circle cx="470" cy="84" r="6.5" fill="#f1ece0"/>
+<path d="M516.6,84 Q540,65.8 563.4,84 Q540,102.2 516.6,84Z" fill="#1B1D1F"/>
+<circle cx="540" cy="84" r="6.5" fill="#f1ece0"/>
+<path d="M586.6,84 Q610,65.8 633.4,84 Q610,102.2 586.6,84Z" fill="#1B1D1F"/>
+<circle cx="610" cy="84" r="6.5" fill="#f1ece0"/>
+<path d="M656.6,84 Q680,65.8 703.4,84 Q680,102.2 656.6,84Z" fill="#c9c2b2"/>
+<circle cx="680" cy="84" r="6.5" fill="#f1ece0"/>
+<path d="M726.6,84 Q750,65.8 773.4,84 Q750,102.2 726.6,84Z" fill="#c9c2b2"/>
+<circle cx="750" cy="84" r="6.5" fill="#f1ece0"/>
+<text x="830" y="92" font-size="20" font-family="sans-serif" fill="#1B1D1F">3 s of 8 on you</text>
+<rect x="430" y="58" width="210" height="52" fill="none" stroke="#b8462e" stroke-width="3"/>
+<rect x="60" y="140" width="1080" height="190" rx="14" fill="#c9ccce"/>
+<rect x="76" y="156" width="1048" height="158" rx="10" fill="none" stroke="#8A8F93" stroke-width="3"/>
+<text x="96" y="196" font-size="22" font-family="sans-serif" fill="#1B1D1F" font-weight="bold" letter-spacing="3">TRAY</text>
+<path d="M264.8,253.6 L273.6,214 Q300,200.8 330.8,216.2 L335.2,255.8Z" fill="#5A4F5E"/>
+<path d="M356.8,253.6 L365.6,214 Q392,200.8 422.8,216.2 L427.2,255.8Z" fill="#5A4F5E"/>
+<line x1="346" y1="200" x2="346" y2="272" stroke="#efe9dc" stroke-width="4" stroke-dasharray="6 5"/>
+<path d="M448.8,253.6 L457.6,214 Q484,200.8 514.8,216.2 L519.2,255.8Z" fill="#5A4F5E"/>
+<line x1="438" y1="200" x2="438" y2="272" stroke="#efe9dc" stroke-width="4" stroke-dasharray="6 5"/>
+<path d="M540.8,253.6 L549.6,214 Q576,200.8 606.8,216.2 L611.2,255.8Z" fill="#5A4F5E"/>
+<line x1="530" y1="200" x2="530" y2="272" stroke="#efe9dc" stroke-width="4" stroke-dasharray="6 5"/>
+<path d="M632.8,253.6 L641.6,214 Q668,200.8 698.8,216.2 L703.2,255.8Z" fill="#5A4F5E"/>
+<line x1="622" y1="200" x2="622" y2="272" stroke="#efe9dc" stroke-width="4" stroke-dasharray="6 5"/>
+<path d="M724.8,253.6 L733.6,214 Q760,200.8 790.8,216.2 L795.2,255.8Z" fill="#5A4F5E"/>
+<line x1="714" y1="200" x2="714" y2="272" stroke="#efe9dc" stroke-width="4" stroke-dasharray="6 5"/>
+<rect x="873" y="223.4" width="54" height="25.2" rx="12.6" fill="#efe9dc"/>
+<circle cx="1030" cy="236" r="46" fill="#D9A441"/>
+<circle cx="1030" cy="236" r="32" fill="#e6c27a"/>
+<polygon points="760,175 774,175 770,300 766,300" fill="#1B1D1F"/>
+<rect x="756" y="140" width="22" height="40" rx="4" fill="#3a3a3a"/>
+<line x1="60" y1="422" x2="1140" y2="422" stroke="#d4ccbb" stroke-width="1"/>
+<text x="60" y="400" font-size="22" font-family="sans-serif" fill="#1B1D1F" font-weight="bold" letter-spacing="2">TO MOUTH</text>
+<path d="M274.4,402.8 L280.8,374 Q300,364.4 322.4,375.6 L325.6,404.4Z" fill="#b8462e"/>
+<path d="M348.4,402.8 L354.8,374 Q374,364.4 396.4,375.6 L399.6,404.4Z" fill="#b8462e"/>
+<path d="M422.4,402.8 L428.8,374 Q448,364.4 470.4,375.6 L473.6,404.4Z" fill="#b8462e"/>
+<path d="M496,403 L503,374 Q522,364 544,376 L548,404Z" fill="none" stroke="#bdb5a3" stroke-width="2" stroke-dasharray="5 4"/>
+<path d="M570,403 L577,374 Q596,364 618,376 L622,404Z" fill="none" stroke="#bdb5a3" stroke-width="2" stroke-dasharray="5 4"/>
+<path d="M644,403 L651,374 Q670,364 692,376 L696,404Z" fill="none" stroke="#bdb5a3" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="780" y="398" font-size="20" font-family="sans-serif" fill="#5b5548">eaten</text>
+<line x1="60" y1="496" x2="1140" y2="496" stroke="#d4ccbb" stroke-width="1"/>
+<text x="60" y="474" font-size="22" font-family="sans-serif" fill="#1B1D1F" font-weight="bold" letter-spacing="2">NAPKIN</text>
+<polygon points="274.4,441.6 325.6,441.6 274.4,486.4" fill="#ffffff"/>
+<polygon points="274,442 326,442 274,486" fill="none" stroke="#1B1D1F" stroke-width="2"/>
+<path d="M278,468 L282,450 Q294,444 308,451 L310,469Z" fill="#5A4F5E"/>
+<polygon points="348.4,441.6 399.6,441.6 348.4,486.4" fill="#ffffff"/>
+<polygon points="348,442 400,442 348,486" fill="none" stroke="#1B1D1F" stroke-width="2"/>
+<path d="M352,468 L356,450 Q368,444 382,451 L384,469Z" fill="#5A4F5E"/>
+<path d="M422,477 L429,448 Q448,438 470,450 L474,478Z" fill="none" stroke="#bdb5a3" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="780" y="472" font-size="20" font-family="sans-serif" fill="#5b5548">of 3</text>
+<line x1="60" y1="570" x2="1140" y2="570" stroke="#d4ccbb" stroke-width="1"/>
+<text x="60" y="548" font-size="22" font-family="sans-serif" fill="#1B1D1F" font-weight="bold" letter-spacing="2">TO JAX</text>
+<path d="M274.4,550.8 L280.8,522 Q300,512.4 322.4,523.6 L325.6,552.4Z" fill="#5E7363"/>
+<path d="M348,551 L355,522 Q374,512 396,524 L400,552Z" fill="none" stroke="#bdb5a3" stroke-width="2" stroke-dasharray="5 4"/>
+<path d="M422,551 L429,522 Q448,512 470,524 L474,552Z" fill="none" stroke="#bdb5a3" stroke-width="2" stroke-dasharray="5 4"/>
+<path d="M496,551 L503,522 Q522,512 544,524 L548,552Z" fill="none" stroke="#bdb5a3" stroke-width="2" stroke-dasharray="5 4"/>
+<path d="M570,551 L577,522 Q596,512 618,524 L622,552Z" fill="none" stroke="#bdb5a3" stroke-width="2" stroke-dasharray="5 4"/>
+<path d="M644,551 L651,522 Q670,512 692,524 L696,552Z" fill="none" stroke="#bdb5a3" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="780" y="546" font-size="20" font-family="sans-serif" fill="#5b5548">passed</text>
+<line x1="60" y1="644" x2="1140" y2="644" stroke="#d4ccbb" stroke-width="1"/>
+<text x="60" y="622" font-size="22" font-family="sans-serif" fill="#1B1D1F" font-weight="bold" letter-spacing="2">LEFT</text>
+<path d="M274,625 L281,596 Q300,586 322,598 L326,626Z" fill="none" stroke="#bdb5a3" stroke-width="2" stroke-dasharray="5 4"/>
+<path d="M348,625 L355,596 Q374,586 396,598 L400,626Z" fill="none" stroke="#bdb5a3" stroke-width="2" stroke-dasharray="5 4"/>
+<path d="M422,625 L429,596 Q448,586 470,598 L474,626Z" fill="none" stroke="#bdb5a3" stroke-width="2" stroke-dasharray="5 4"/>
+<path d="M496,625 L503,596 Q522,586 544,598 L548,626Z" fill="none" stroke="#bdb5a3" stroke-width="2" stroke-dasharray="5 4"/>
+<path d="M570,625 L577,596 Q596,586 618,598 L622,626Z" fill="none" stroke="#bdb5a3" stroke-width="2" stroke-dasharray="5 4"/>
+<path d="M644,625 L651,596 Q670,586 692,598 L696,626Z" fill="none" stroke="#bdb5a3" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="780" y="620" font-size="20" font-family="sans-serif" fill="#5b5548">+5 suspicion each</text>
+<text x="60" y="760" font-size="22" font-family="sans-serif" fill="#1B1D1F" font-weight="bold" letter-spacing="2">FISK</text>
+<circle cx="320" cy="725.2" r="7.2" fill="#1B1D1F"/>
+<polygon points="311,734.2 329,734.2 327.2,754 312.8,754" fill="#1B1D1F"/>
+<rect x="312.8" y="754" width="5.4" height="18" fill="#1B1D1F"/>
+<rect x="321.8" y="754" width="5.4" height="18" fill="#1B1D1F"/>
+<circle cx="430" cy="716.4" r="8.6" fill="#1B1D1F"/>
+<polygon points="419.3,727.1 440.7,727.1 438.6,750.6 421.4,750.6" fill="#1B1D1F"/>
+<rect x="421.4" y="750.6" width="6.4" height="21.4" fill="#1B1D1F"/>
+<rect x="432.1" y="750.6" width="6.4" height="21.4" fill="#1B1D1F"/>
+<circle cx="540" cy="707.5" r="9.9" fill="#1B1D1F"/>
+<polygon points="527.6,719.9 552.4,719.9 549.9,747.2 530.1,747.2" fill="#1B1D1F"/>
+<rect x="530.1" y="747.2" width="7.4" height="24.8" fill="#1B1D1F"/>
+<rect x="542.5" y="747.2" width="7.4" height="24.8" fill="#1B1D1F"/>
+<circle cx="650" cy="698.7" r="11.3" fill="#1B1D1F"/>
+<polygon points="635.9,712.8 664.1,712.8 661.3,743.8 638.7,743.8" fill="#1B1D1F"/>
+<rect x="638.7" y="743.8" width="8.5" height="28.2" fill="#1B1D1F"/>
+<rect x="652.8" y="743.8" width="8.5" height="28.2" fill="#1B1D1F"/>
+<circle cx="760" cy="689.8" r="12.6" fill="#bdb5a3"/>
+<polygon points="744.2,705.6 775.8,705.6 772.6,740.4 747.4,740.4" fill="#bdb5a3"/>
+<rect x="747.4" y="740.4" width="9.5" height="31.6" fill="#bdb5a3"/>
+<rect x="763.2" y="740.4" width="9.5" height="31.6" fill="#bdb5a3"/>
+<circle cx="870" cy="681" r="14" fill="#bdb5a3"/>
+<polygon points="852.5,698.5 887.5,698.5 884,737 856,737" fill="#bdb5a3"/>
+<rect x="856" y="737" width="10.5" height="35" fill="#bdb5a3"/>
+<rect x="873.5" y="737" width="10.5" height="35" fill="#bdb5a3"/>
+<circle cx="980" cy="672.2" r="15.4" fill="#bdb5a3"/>
+<polygon points="960.8,691.4 999.2,691.4 995.4,733.6 964.6,733.6" fill="#bdb5a3"/>
+<rect x="964.6" y="733.6" width="11.5" height="38.4" fill="#bdb5a3"/>
+<rect x="983.8" y="733.6" width="11.5" height="38.4" fill="#bdb5a3"/>
+<text x="1110" y="760" font-size="26" font-family="sans-serif" fill="#b8462e" font-weight="bold" text-anchor="end">+2</text>
+</svg>

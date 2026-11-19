@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 120" width="600" height="120" role="img" aria-labelledby="ui-rule-running-t ui-rule-running-d">
+<title id="ui-rule-running-t">Thread rule: running stitch</title>
+<desc id="ui-rule-running-d">A divider: one row of bone running stitch on cedar felt, the needle still in the cloth at its end.</desc>
+<defs><filter id="ui-rule-running-felt1" x="-15%" y="-15%" width="130%" height="130%"><feGaussianBlur in="SourceAlpha" stdDeviation="2.2"/><feOffset dx="1.8" dy="3"/><feComponentTransfer result="s"><feFuncA type="linear" slope="0"/></feComponentTransfer><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="31" result="n"/><feColorMatrix in="n" values="0 0 0 0 1  0 0 0 0 0.96  0 0 0 0 0.88  0 0 0 -1.2 0.45"/><feComposite in2="SourceAlpha" operator="in" result="l"/><feColorMatrix in="n" values="0 0 0 0 0.1  0 0 0 0 0.06  0 0 0 0 0.03  0 0 0 1.3 -0.74"/><feComposite in2="SourceAlpha" operator="in" result="d"/><feMerge><feMergeNode in="s"/><feMergeNode in="SourceGraphic"/><feMergeNode in="l"/><feMergeNode in="d"/></feMerge></filter><linearGradient id="ui-rule-running-lg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f4f1ea"/><stop offset="50%" stop-color="#9aa0a4"/><stop offset="100%" stop-color="#5b6166"/></linearGradient><radialGradient id="ui-rule-running-vig3" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#1a0f08" stop-opacity="0"/><stop offset="100%" stop-color="#1a0f08" stop-opacity="0.3"/></radialGradient></defs>
+<rect x="0" y="0" width="600" height="120" fill="#5B3A24"/>
+<rect x="0" y="0" width="600" height="120" fill="#5B3A24" filter="url(#ui-rule-running-felt1)"/>
+<path d="M30,60H470" fill="none" stroke="#1a0f08" stroke-width="4.5" stroke-dasharray="20 12" stroke-linecap="round" opacity="0.3" transform="translate(0.8 1.4)"/>
+<path d="M30,60H470" fill="none" stroke="#F2EBDD" stroke-width="4.5" stroke-dasharray="20 12" stroke-linecap="round"/>
+<path d="M470,60 C473.7,58.7 485.3,50.3 492,52 C498.7,53.7 505,71 510,70 C515,69 520,50 522,46" fill="none" stroke="#F2EBDD" stroke-width="3" stroke-linecap="round"/>
+<g transform="translate(522 46) rotate(31.8)">
+<path d="M0,-3.0h54.6L68.3,0L54.6,3.0H0a3.0,3.0 0 0,1 0,-6z" fill="#1a0f08" opacity="0.3" transform="translate(3 5)"/>
+<path d="M0,-3.0h54.6L68.3,0L54.6,3.0H0a3.0,3.0 0 0,1 0,-6z" fill="url(#ui-rule-running-lg2)" stroke="#4a4f54" stroke-width="0.8"/>
+<ellipse cx="9.6" cy="0" rx="7.2" ry="1.3" fill="#2b1e15"/>
+</g>
+<rect x="0" y="0" width="600" height="120" fill="url(#ui-rule-running-vig3)"/>
+</svg>

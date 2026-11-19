@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160" role="img" aria-labelledby="counter-spiral-t counter-spiral-d">
+<title id="counter-spiral-t">Counter piece: spiral</title>
+<desc id="counter-spiral-d">A brother's own counter piece, carved with the spiral mark and printed as a linocut: the piece cream on black, the mark in the one red of the print.</desc>
+<defs><filter id="counter-spiral-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="922"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><filter id="counter-spiral-rough2"><feTurbulence type="turbulence" baseFrequency="0" numOctaves="2" seed="65" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.2"/></filter><clipPath id="counter-spiral-clip3"><rect x="10" y="10" width="140" height="140"/></clipPath></defs>
+<rect x="0" y="0" width="160" height="160" fill="#f0e6cf"/>
+<rect x="0" y="0" width="160" height="160" filter="url(#counter-spiral-grain1)"/>
+<g filter="url(#counter-spiral-rough2)">
+<rect x="10" y="10" width="140" height="140" fill="#17110f"/>
+<path d="M145.2,57.4l9.3,-4.1M62.2,30l-4.4,-11.4M79.5,18l-0.8,-11.4M13.7,138.8l-6.6,5.1M103.6,11.3l3.5,-8.3M129.4,114.8l8.4,5.8M21.4,145.2l-6.5,5.6M106.5,10.4l2.1,-8M143.7,11.4l6.8,-7.8M75.5,26.6l-2.3,-11.9M141.9,134.1l8.1,7.4M38.9,35.8l-7.4,-8.5M89.1,30.5l2.3,-11.7M34.9,149.6l-4.5,7.1M11.7,36.2l-10.2,-6.4M77.6,147.4l-0.6,7M109.1,127l3.9,7.7M38.7,20.4l-4.8,-9.2M15.7,35.6l-10.8,-5.7M65.3,138.8l-0.8,6.4M12.4,148.5l-7.9,7.5M102.8,30.2l2.9,-7.5M135.9,41.1l5.3,-3M56.5,12.1l-1.8,-7M87.9,144.8l1.6,10.5M123,123.2l6.5,8.1M13.6,13.3l-7.3,-6.3M26.9,14.5l-5.9,-8.2M147.5,145.2l7.1,6.6M35.3,28.7l-4.8,-5.5M27,35.7l-7.5,-6.2M13,113.9l-8.7,3.6M64.8,149.1l-2,6" fill="none" stroke="#f0e6cf" stroke-width="2.6" stroke-linecap="round"/>
+<path d="M24,80 C24,52 52,40 80,40 C108,40 136,52 136,80 C136,108 108,120 80,120 C52,120 24,108 24,80Z" fill="#f0e6cf"/>
+<path d="M36,94 q44,28 88,2" fill="none" stroke="#17110f" stroke-width="4" stroke-linecap="round"/>
+<path d="M80.7,79.7 L80,80.3 L79,80.5 L77.9,80.3 L76.8,79.6 L76,78.4 L75.7,76.8 L76.1,75 L77.2,73.4 L79,72.3 L81.2,71.9 L83.5,72.4 L85.7,73.8 L87.2,76 L87.9,78.8 L87.5,81.8 L85.9,84.6 L83.2,86.7 L79.8,87.7 L76.2,87.4 L72.7,85.7 L70.1,82.7 L68.6,78.8 L68.6,74.5 L70.3,70.4 L73.5,67 L77.9,65 L82.8,64.7 L87.7,66.2 L91.8,69.6 L94.5,74.3 L95.3,79.8 L93.9,85.5 L90.6,90.3 L85.5,93.7 L79.5,95.1 L73.1,94.1 L67.4,90.9 L63.2,85.6 L61.2,79.1" fill="none" stroke="#B3202E" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>

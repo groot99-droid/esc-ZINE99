@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-labelledby="patch-guest-sol-t patch-guest-sol-d">
+<title id="patch-guest-sol-t">Guest patch: No birds.</title>
+<desc id="patch-guest-sol-d">A pinked oval patch on night-blue felt: "No birds.", something you watched a guest do, arrived in the tray as a thing that can be kept.</desc>
+<defs><filter id="patch-guest-sol-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.4" numOctaves="2" seed="671"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><radialGradient id="patch-guest-sol-rg2" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#D9CBB0" stop-opacity="0.3"/><stop offset="60%" stop-color="#D9CBB0" stop-opacity="0.1"/><stop offset="100%" stop-color="#D9CBB0" stop-opacity="0"/></radialGradient><filter id="patch-guest-sol-felt3" x="-15%" y="-15%" width="130%" height="130%"><feGaussianBlur in="SourceAlpha" stdDeviation="2.2"/><feOffset dx="1.8" dy="3"/><feComponentTransfer result="s"><feFuncA type="linear" slope="0.3"/></feComponentTransfer><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="95" result="n"/><feColorMatrix in="n" values="0 0 0 0 1  0 0 0 0 0.96  0 0 0 0 0.88  0 0 0 -1.2 0.45"/><feComposite in2="SourceAlpha" operator="in" result="l"/><feColorMatrix in="n" values="0 0 0 0 0.1  0 0 0 0 0.06  0 0 0 0 0.03  0 0 0 1.3 -0.74"/><feComposite in2="SourceAlpha" operator="in" result="d"/><feMerge><feMergeNode in="s"/><feMergeNode in="SourceGraphic"/><feMergeNode in="l"/><feMergeNode in="d"/></feMerge></filter><pattern id="patch-guest-sol-sat4" width="3" height="3" patternUnits="userSpaceOnUse" patternTransform="rotate(120)"><path d="M0,0H3" stroke="#2E3A47" stroke-width="1" opacity="0.3"/></pattern><radialGradient id="patch-guest-sol-vig5" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#1a0f08" stop-opacity="0"/><stop offset="100%" stop-color="#1a0f08" stop-opacity="0.3"/></radialGradient></defs>
+<rect x="0" y="0" width="240" height="240" fill="#452d1d"/>
+<rect x="0" y="0" width="240" height="240" filter="url(#patch-guest-sol-grain1)"/>
+<circle cx="90" cy="50" r="230" fill="url(#patch-guest-sol-rg2)"/>
+<g transform="rotate(-4 120 104)">
+<path d="M209.3,104L215.2,115L206.2,124.2L208.7,136.1L197.3,143.1L196.2,155.1L183.1,159.2L178.4,170.6L164.6,171.7L156.7,181.6L143.1,179.5L132.5,187.3L120,182.1L107.5,187.3L96.9,179.5L83.3,181.6L75.4,171.7L61.6,170.6L56.9,159.2L43.8,155.1L42.7,143.1L31.3,136.1L33.8,124.2L24.8,115L30.7,104L24.8,93L33.8,83.8L31.3,71.9L42.7,64.9L43.8,52.9L56.9,48.8L61.6,37.4L75.4,36.3L83.3,26.4L96.9,28.5L107.5,20.7L120,25.9L132.5,20.7L143.1,28.5L156.7,26.4L164.6,36.3L178.4,37.4L183.1,48.8L196.2,52.9L197.3,64.9L208.7,71.9L206.2,83.8L215.2,93z" fill="#2E3A47" filter="url(#patch-guest-sol-felt3)"/>
+<path d="M40,104a80,68 0 1,0 160,0a80,68 0 1,0 -160,0z" fill="none" stroke="#1a0f08" stroke-width="2.4" stroke-dasharray="7 4" stroke-linecap="round" opacity="0.3" transform="translate(0.8 1.4)"/>
+<path d="M40,104a80,68 0 1,0 160,0a80,68 0 1,0 -160,0z" fill="none" stroke="#959186" stroke-width="2.4" stroke-dasharray="7 4" stroke-linecap="round"/>
+<path d="M48,104a72,60 0 1,0 144,0a72,60 0 1,0 -144,0z" fill="none" stroke="#F2EBDD" stroke-width="1.2" stroke-dasharray="1.5 5" stroke-linecap="round"/>
+<g transform="translate(74 56) scale(0.9)">
+<path d="M25,28h10a9,9 0 0,1 9,9v40a9,9 0 0,1 -9,9h-10a9,9 0 0,1 -9,-9v-40a9,9 0 0,1 9,-9zM65,28h10a9,9 0 0,1 9,9v40a9,9 0 0,1 -9,9h-10a9,9 0 0,1 -9,-9v-40a9,9 0 0,1 9,-9zM42,40h16v16h-16z" fill="#F2EBDD"/>
+<path d="M25,28h10a9,9 0 0,1 9,9v40a9,9 0 0,1 -9,9h-10a9,9 0 0,1 -9,-9v-40a9,9 0 0,1 9,-9zM65,28h10a9,9 0 0,1 9,9v40a9,9 0 0,1 -9,9h-10a9,9 0 0,1 -9,-9v-40a9,9 0 0,1 9,-9zM42,40h16v16h-16z" fill="url(#patch-guest-sol-sat4)"/>
+<path d="M23,16h14a3,3 0 0,1 3,3v8a3,3 0 0,1 -3,3h-14a3,3 0 0,1 -3,-3v-8a3,3 0 0,1 3,-3zM63,16h14a3,3 0 0,1 3,3v8a3,3 0 0,1 -3,3h-14a3,3 0 0,1 -3,-3v-8a3,3 0 0,1 3,-3z" fill="#959186"/>
+<path d="M23,16h14a3,3 0 0,1 3,3v8a3,3 0 0,1 -3,3h-14a3,3 0 0,1 -3,-3v-8a3,3 0 0,1 3,-3zM63,16h14a3,3 0 0,1 3,3v8a3,3 0 0,1 -3,3h-14a3,3 0 0,1 -3,-3v-8a3,3 0 0,1 3,-3z" fill="url(#patch-guest-sol-sat4)"/>
+<path d="M22,74a8,8 0 1,0 16,0a8,8 0 1,0 -16,0zM62,74a8,8 0 1,0 16,0a8,8 0 1,0 -16,0z" fill="#2E3A47"/>
+</g>
+</g>
+<g transform="rotate(-2.9766270366179617 120 204)">
+<path d="M63.7,189L176.3,189L168.3,204L176.3,219L63.7,219L71.7,204z" fill="#D9CBB0" filter="url(#patch-guest-sol-felt3)"/>
+<path d="M77.7,194H162.3M77.7,214H162.3" fill="none" stroke="#938672" stroke-width="1.1" stroke-dasharray="4 3" stroke-linecap="round"/>
+<text x="120" y="209.5" font-size="16" font-family="serif" fill="#2b1e15" text-anchor="middle" font-style="italic">No birds.</text>
+</g>
+<rect x="0" y="0" width="240" height="240" fill="url(#patch-guest-sol-vig5)"/>
+</svg>

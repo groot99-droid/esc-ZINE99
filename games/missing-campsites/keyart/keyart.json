@@ -1,0 +1,94 @@
+{
+  "game": "missing-campsites",
+  "style": "Photographic 35mm film still, naturalistic late-summer state-park realism: matte surfaces, fine film grain, sun-faded greens, cedar brown, dust gold, the van's dull red, cream paper and graphite. Night is one amber source in blue-black. The far side is a shadowless pearl sky with no sun, greens with no yellow, trees at exact equal intervals, every surface slightly too clean. Tam is only ever seen from behind; nothing is shown in the act of vanishing, and whatever takes it is never shown.",
+  "images": [
+    {
+      "id": "key-art-wide",
+      "kind": "key-art",
+      "title": "The map held up over empty ground",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Photographic 35mm film still, naturalistic, matte, fine grain. Over-the-shoulder view of a person in their early thirties seen only from behind, short dark hair, faded olive canvas jacket, holding up an unfolded paper campground map in both hands at the right of the frame. The cream map shows a loop road and a neat row of small printed squares in forest-green ink, too small to read. Beyond the map, exactly where the squares say campsites should be, there is only bare pine-needle forest floor between tall ponderosa pines: no posts, no tables, no fire rings, no road. Behind the figure, one square cedar post with a blank plate and a dull red camper van far back. Late afternoon sun, long shadows. Sun-faded greens, cedar brown, dust gold, cream paper. The left half and upper third are calm open forest and soft sky between trunks, left empty for a title. No face visible, no text, no lettering, no watermark, no logo",
+      "job_id": "373ac5da-ed34-4a24-b736-06a0fc977b65",
+      "image": "keyart/key-art-wide.jpg"
+    },
+    {
+      "id": "key-art-tall",
+      "kind": "key-art",
+      "title": "The map held up over empty ground",
+      "aspect_ratio": "2:3",
+      "model": "soul_cinematic",
+      "prompt": "Photographic 35mm film still, naturalistic, matte, fine grain. Vertical composition. In the lower third, a person in their early thirties seen only from behind, short dark hair, faded olive canvas jacket, from the shoulders up, holding an unfolded paper campground map in both hands. The cream map shows a loop road and a neat row of small printed squares in forest-green ink, too small to read. Above and beyond the map, exactly where the squares say campsites should be, there is only bare pine-needle forest floor between tall ponderosa pines: no posts, no tables, no fire rings, no road. At the frame's edge, one square cedar post with a blank plate and the nose of a dull red camper van. Late afternoon sun, long shadows. Sun-faded greens, cedar brown, dust gold, cream paper. The upper third is calm: straight trunks rising into pale sky, left empty for a title. No face visible, no text, no lettering, no watermark, no logo",
+      "job_id": "10b1a9bc-baf6-4d73-9588-9dfe3fdeddcb",
+      "image": "keyart/key-art-tall.jpg"
+    },
+    {
+      "id": "ending-slipped-through",
+      "kind": "ending",
+      "ending": "slipped_through",
+      "title": "Slipped Through",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Photographic 35mm film still, naturalistic, matte, fine grain, full frame with no border. Morning inside a pine forest that is wrong. Exactly five people stand apart from one another in a loose row at middle distance, each one fully visible with clear space between them, all seen from behind: one, a person in their early thirties with short dark hair and a faded olive canvas jacket; two, a stocky man in a rust flannel shirt; three, a tall man of about forty in a grey sweatshirt; four, a woman with a long dark braid and a camera on a strap; five, a teenager in a yellow raincoat holding a handheld radio. Each of the five holds a phone up overhead, searching; the screens are blank pale rectangles. The sky is flat pearl white with no sun. The pines stand at exact equal intervals in straight rows, like a pattern. Nothing casts a shadow. The ground is bare brown pine needles, no grass. Greens with no yellow in them, pearl, graphite grey. The lower quarter is plain even needle-covered ground, left calm for a caption, no text, no lettering, no watermark, no logo",
+      "job_id": "95857e10-12ec-47f3-81da-bb4a379ddcf7",
+      "image": "keyart/ending-slipped-through.jpg"
+    },
+    {
+      "id": "ending-brought-along",
+      "kind": "ending",
+      "ending": "brought_along",
+      "title": "Brought Along",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Photographic 35mm film still, naturalistic late-summer state-park realism: matte surfaces, fine film grain, sun-faded greens, cedar brown, dust gold, cream paper and graphite. Interior of a small cedar-plank ranger booth, looking out past the shoulder of an older adult in a plain work jacket who stands at the sliding service window, seen from behind as a dark shape, face not visible. Far across the gravel, at the edge of the pines, a car has just pulled in, small and distant, seen only as two blazing headlight flares shining straight through the glass and rimming the figure's hair and shoulder in warm amber; the car body is a dark smudge in the glare, its bumper and lower front lost in blinding light and dust, nothing legible on it. On the counter lies a closed plain cream register book with a single pencil resting on its blank cover. Pines at exact equal intervals under a flat pearl-white sky with no sun and no shadows. Cedar brown, pearl, greens with no yellow, headlight amber. The lower quarter is the plain dark wood of the counter front, left calm for a caption. No plate, no text, no lettering, no numbers, no watermark, no logo",
+      "job_id": "6828fd02-7685-4e08-9c63-06b2aa369646",
+      "image": "keyart/ending-brought-along.jpg",
+      "known_issues": "Mostly fixed. The car is small and distant with a tiny plate that is not legible; the closed register book shows faint print lines on its cover; trees are not at exact intervals and headlights are weaker than asked.",
+      "accepted": "author, 2026-11-16"
+    },
+    {
+      "id": "ending-held",
+      "kind": "ending",
+      "ending": "held",
+      "title": "Held",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Photographic 35mm film still, naturalistic, matte, fine grain. The front step of a modest suburban house on an ordinary overcast afternoon. In the left foreground, a person in their early thirties seen only from behind, short dark hair, faded olive canvas jacket, holding a small pencil notebook open in one hand as if having just read from it. In the half-open doorway stands a woman of about sixty-eight in a soft cardigan, grey hair pinned back, one hand on the door, giving the kind, polite smile one gives a stranger; she does not recognise her visitor. Parked at the kerb far behind, a dull red camper van with other people waiting inside, indistinct. Even grey daylight, soft ordinary shadows. Sun-faded greens of a clipped hedge, cedar-brown door, cream paper, dull red. The lower quarter is plain concrete step and path, left calm for a caption. The visitor's face is not visible, no text, no lettering, no watermark, no logo",
+      "job_id": "ce76a3fa-d659-4aff-abe7-177538ec9d1f",
+      "image": "keyart/ending-held.jpg"
+    },
+    {
+      "id": "ending-nothing-missing",
+      "kind": "ending",
+      "ending": "nothing_missing",
+      "title": "Nothing Missing",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Photographic 35mm film still, naturalistic, matte, fine grain. Interior of an old camper van on a highway in clear, ordinary morning light, seen from the rear bench looking forward. Through the windscreen, a straight two-lane highway through pine country under an ordinary blue sky. The driver is a tall man of about forty in a grey sweatshirt, seen from behind, hands on the wheel. One passenger seat in the middle row is conspicuously empty, its seat belt hanging unused, morning sun lying across the worn fabric; this empty seat is the centre of the picture. On the dashboard, a small closed pencil notebook with an elastic band around it, and the soft glow of an old radio dial. Dull red metal trim, sun-faded greens outside, dust gold light, cream and graphite. The lower quarter is the plain dark seat back, left calm for a caption, no text, no lettering, no watermark, no logo",
+      "job_id": "1b9d8f4d-5326-4697-8de3-e0795efb7e48",
+      "image": "keyart/ending-nothing-missing.jpg"
+    },
+    {
+      "id": "ending-one-who-left",
+      "kind": "ending",
+      "ending": "one_who_left",
+      "title": "The One Who Left",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Photographic 35mm film still, naturalistic late-summer state-park realism: matte surfaces, fine film grain, sun-faded greens, cedar brown, dust gold, cream paper and graphite. A small school recital hall on a weekday afternoon, seen from a few rows back. In the second row, a person in their early thirties seen strictly from behind, short dark hair, faded olive canvas jacket, head facing the stage so only the back of the head and collar show, no cheek, no profile, sitting very still. The seat immediately beside them holds a single folded cream card, completely plain and blank on every side, no print, no emblem, no marks, saving the place; no other seat has paper. On the person's knee, a small closed plain notebook with a pencil resting on its cover. Far ahead on a low stage, an upright piano under warm stage light, a small child seated at it with back to the audience, tiny, distant and clearly readable as a small seated figure. Warm amber stage light fading into blue-grey dimness over the seats; dull red seat fabric, cedar-brown stage boards. The lower quarter is the dark backs of the row of seats in front, left calm for a caption. No face visible, no handwriting, no text, no lettering, no watermark, no logo",
+      "job_id": "3443d69e-d86b-4dd1-99a5-8a6382ad0f38",
+      "image": "keyart/ending-one-who-left.jpg"
+    },
+    {
+      "id": "ending-unlisted",
+      "kind": "ending",
+      "ending": "unlisted",
+      "title": "Unlisted",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Photographic 35mm film still, naturalistic, matte, fine grain. A gravel road leaving a pine forest under an even pearl-white sky with no sun and no shadows. Five people seen from behind at middle distance, walking away close together: a person in their early thirties seen only from behind, short dark hair, faded olive canvas jacket, with empty hands; a stocky man in his thirties in a rust flannel shirt carrying a blue cooler; a tall man of about forty in a grey sweatshirt; a woman in her late twenties with a dark braid and a camera; a teenager in a yellow raincoat with a handheld radio, one sleeve pushed up, leading. In the left foreground, the corner of an empty cedar-plank ranger booth with a dark window and nobody inside; they have walked past it. Trees at exact equal intervals. Greens with no yellow, pearl, cedar brown. The lower quarter is plain pale gravel, left calm for a caption. No faces, no text, no lettering, no watermark, no logo",
+      "job_id": "32f472dd-2cc3-413c-850e-89133bb1089f",
+      "image": "keyart/ending-unlisted.jpg"
+    }
+  ]
+}

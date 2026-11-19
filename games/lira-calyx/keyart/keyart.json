@@ -1,0 +1,87 @@
+{
+  "game": "lira-calyx",
+  "style": "Cinematic illustrated realism, painterly matte-painting detail with a faint ink outline and paper grain, like a naturalist's field plate. Lit only by bioluminescence or a single lamp, never by direct sun. Palette by place: deep moss green, slate and glowing river cyan on the forested slopes; violet dusk, ice blue and teal on the peaks; matte black, cold white and seal red for the institution; warm paper, brown-black ink and pencil grey for the journal. Flat black redaction bars with fibrous ends are the one graphic intrusion. The scientist is always the same woman in her thirties: dark hair tied low, grey field jacket, dark trousers, worn brown canvas rucksack, seen from behind or by her hands. The archivist is only a dark hood and a pair of ink-stained hands, never a face.",
+  "images": [
+    {
+      "id": "key-art-wide",
+      "kind": "key-art",
+      "title": "The valley's edge, one bar across the sky",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Cinematic illustrated realism, painterly matte-painting detail with a faint ink outline and paper grain, like a naturalist's field plate. Night. Seen from behind, small at the right of the frame, a woman in her thirties with dark hair tied low, grey field jacket, dark trousers and worn brown canvas rucksack stands on a rock lip above a forested mountain valley, an open notebook in her left hand. The valley below is strung with vast fine webs between crystalline-bark trees, glowing river cyan in waves that travel along the strands. A huge violet megapeak rises left of centre. One flat matte black redaction bar with fibrous ends lies straight across the sky like ink ruled on the picture, hiding the summit. Low horizon; the upper left sky above the bar is calm empty violet dusk, kept clear for a title. Lit only by the web's glow: moss green, slate, cyan, violet, black. Thin mist, pale crystal grass, no text, no lettering, no watermark, no logo",
+      "job_id": "cb1d077e-3c5f-4f7a-97d6-24527aa5858b",
+      "image": "keyart/key-art-wide.jpg"
+    },
+    {
+      "id": "key-art-tall",
+      "kind": "key-art",
+      "title": "The valley's edge, one bar across the sky (tall)",
+      "aspect_ratio": "2:3",
+      "model": "soul_cinematic",
+      "prompt": "Cinematic illustrated realism, painterly matte-painting detail with a faint ink outline and paper grain, like a naturalist's field plate. Night, vertical composition. A single enormous violet megapeak rises from a forested valley, and its top is hidden behind one thick matte pure black horizontal redaction bar, about a fifth of the frame tall, placed at the upper third of the picture. The mountain's tip lies entirely within the bar's height: the two slopes rise into the bar's bottom edge and no rock, no tip, no ridge shows above the bar's top edge. The bar is a plain solid black band with square ends, no fringe, no red, no coloured edge. The whole area above the bar, the top third of the picture, is plain empty calm violet dusk sky. At the bottom, small, seen from behind, a woman in her thirties with dark hair tied low, grey field jacket, dark trousers and worn brown canvas rucksack stands on a rock lip, an open notebook in her left hand. The valley is strung with vast fine webs between crystalline-bark trees, glowing river cyan along the strands. Moss green, slate, cyan, violet, black. No text, no lettering, no watermark, no logo",
+      "job_id": "66f6af24-d74b-42b0-a7a4-8718d02c7b0e",
+      "image": "keyart/key-art-tall.jpg",
+      "known_issues": "Third attempt kept. The summit is hidden and the top third is empty sky (the red edge on the bar was repainted black in code). The bar floats just above the peak rather than lying across it, and the mountain is smaller than the 'enormous megapeak' the design asks for.",
+      "accepted": "author, 2026-11-16"
+    },
+    {
+      "id": "ending-redacted-testament",
+      "kind": "ending",
+      "ending": "redacted-testament",
+      "title": "The Redacted Testament: the archivist's desk",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Cinematic illustrated realism, painterly matte-painting detail with a faint ink outline and paper grain, like a naturalist's field plate. A small bare underground room at night. A plain wooden desk seen from above and behind a seated hooded figure whose face is never visible; two ink-stained hands rest flat on the open pages of a field journal in the middle of the desk. One page is torn across. The journal's lines of tiny illegible brown-black handwriting are covered by solid flat black rectangular redaction bars, pure black ink only: some bars crooked and smeared, some ruled perfectly straight. No red anywhere, no crosses, no scribbles. Three more worn closed journals are stacked beside it, grey rock dust on their covers. The chair opposite is empty. In the dark behind, a closed heavy door with a thin line of cold white light beneath it. A single warm lamp is the only light: warm paper, iron-gall brown, bar black, slate shadow, faint blue ink on the fingers. The lower quarter is dark, empty desk wood, no text, no lettering, no watermark, no logo",
+      "job_id": "92d94095-f52f-4d08-9786-e68bd3c5cd53",
+      "image": "keyart/ending-redacted-testament.jpg"
+    },
+    {
+      "id": "ending-archivist-in-time",
+      "kind": "ending",
+      "ending": "archivist-in-time",
+      "title": "The Archivist in Time: her name on the cover",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Cinematic illustrated realism, painterly matte-painting detail with a faint ink outline and paper grain, like a naturalist's field plate. A cramped hidden room at night, shutters closed, one candle on a rough table. The camera is directly behind a seated woman, so only the back of her head and back are seen, never her face: dark hair tied low, grey field jacket dusted with rock dust, worn brown canvas rucksack. She writes on the plain cover of a battered closed journal, her hand covering the words. Across the table a second person is cut off by shadow: only a dark hooded sleeve and two ink-stained hands pressing flat one loose cream page. The page is crossed by solid black rectangular bars, and between them run pale washed-out blue-grey strips where bars were lifted; the writing is a blurred unreadable texture, and there is no red, teal or white on it. Two packed bags by a plain bolted door, no blade, no glint; thin pale stripes of cold light from the shutter slats fall on the floor. Candlelight, warm paper, iron-gall brown, slate shadow. Lower quarter dark and calm, no text, no lettering, no watermark, no logo",
+      "job_id": "127c6f70-10a7-4816-b6ff-e7cd1870cf8e",
+      "image": "keyart/ending-archivist-in-time.jpg",
+      "known_issues": "Mostly fixed: no face, black bars and pale grey strips, no red, no blade glint. The page is an open book rather than a loose sheet, the strips read grey rather than blue, and some faint handwriting is legible-looking.",
+      "accepted": "author, 2026-11-16"
+    },
+    {
+      "id": "ending-directed-resilience",
+      "kind": "ending",
+      "ending": "directed-resilience",
+      "title": "Directed Resilience: a baseline for a species that did not exist yesterday",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Cinematic illustrated realism, painterly matte-painting detail with a faint ink outline and paper grain, like a naturalist's field plate. A sterile laboratory inside a mountain, seamless matte black walls, cold white overhead light. Seen from behind, a woman in her thirties with dark hair tied low, grey field jacket, dark trousers and worn brown canvas rucksack, sits alone at a spotless white bench, her right hand writing measurements in a bound catalogue whose cover carries a round red wax seal. Under a glass dome before her stands a small unfamiliar plant with translucent teal fronds. At her left hand lie a steel rule and a broad black pen; one line of her page is already covered by a neat black bar. Through a long window, violet peaks in a new, smoother shape, their slopes bare: no terraces, no villages, no lights. Matte black, cold white, seal red, a little teal. The lower quarter is empty white bench surface, no text, no lettering, no watermark, no logo",
+      "job_id": "c43756e0-e6a8-4837-9f50-40424383b20b",
+      "image": "keyart/ending-directed-resilience.jpg"
+    },
+    {
+      "id": "ending-fire",
+      "kind": "ending",
+      "ending": "fire",
+      "title": "Fire: silent water lifts, the river still glowing",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Cinematic illustrated realism, painterly matte-painting detail with a faint ink outline and paper grain, like a naturalist's field plate. Dusk after a collapse: a wide still view of a mountainside where stepped stone farming terraces have slid away. Tall wooden water lifts stand motionless and tilted among broken drystone walls and slate tiles, wheels stopped, buckets hanging. Far below in the gorge the river still glows cyan, the only light, casting a cold glow up the rubble. Above, the skyline has dropped a tier: a raw pale scar where a summit was, dust hanging in the air. In the middle distance, small, back turned, a lone hooded figure kneels lifting a dusty journal from between stones, three more stacked beside. No one else, no flames. Slate grey, bone dust, dead moss green, river cyan, violet sky. The lower quarter is dark foreground rubble, calm, no text, no lettering, no watermark, no logo",
+      "job_id": "6d7dfd03-1ab5-4471-a9f3-3a8d4b70413c",
+      "image": "keyart/ending-fire.jpg"
+    },
+    {
+      "id": "ending-errata",
+      "kind": "ending",
+      "ending": "Errata",
+      "title": "Errata: the correction, unsigned",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Cinematic illustrated realism, painterly matte-painting detail with a faint ink outline and paper grain, like a naturalist's field plate. Violet storm dusk on a high mountain ridge, the whole sky dark violet. Seen from behind at the left, a woman in her thirties with dark hair tied low, grey field jacket, dark trousers and worn brown canvas rucksack pins one small printed sheet, no bigger than a notebook page, to a weathered timber post at chest height. The sheet holds a small printed line diagram of a mountain slope across its upper two thirds, and below it only pristine, unmarked, empty cream paper to the bottom edge, with nothing at all written there. A thin sheaf of identical sheets is under her arm. Across a deep gorge, a small village of stepped drystone terraces and slate-roofed houses sits dark and emptied, shutters closed, as a churning violet storm front rolls onto its upper tier. Far off on the path, a line of tiny lantern points climbs away to safety, too distant to show any figure. Moss green, slate, violet, a thread of cyan river far below. Lower quarter dark ridge rock and pale grass, calm, no text, no lettering, no watermark, no logo",
+      "job_id": "3c0f7b71-68c8-41a5-a966-7aa86c502bfa",
+      "image": "keyart/ending-errata.jpg",
+      "known_issues": "Fixed on the named defect: the sheet is small and its lower part is blank, with no signature. Minor: the sheet looks like two pieces of paper, and one small distant figure is visible on the path at right.",
+      "accepted": "author, 2026-11-16"
+    }
+  ]
+}

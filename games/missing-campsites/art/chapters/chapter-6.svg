@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-labelledby="chapter-6-t chapter-6-d">
+<title id="chapter-6-t">Chapter 6: The Final Morning</title>
+<desc id="chapter-6-d">Chapter 6's card: a phone held up against an even pearl sky, its screen showing no signal, no time, no date; behind it the five tents and trunks that have begun to stand at equal intervals, with no shadows under anything. Beside the picture, the map's green legend box keeps its height with 2 of its nine rows printed; Tam's pencil count underneath agrees.</desc>
+<defs><filter id="chapter-6-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.0" numOctaves="2" seed="116"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter><clipPath id="chapter-6-clip2"><rect x="600" y="170" width="940" height="620"/></clipPath><filter id="chapter-6-tooth3" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.2" numOctaves="2" seed="82"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter></defs>
+<rect x="0" y="0" width="1600" height="900" fill="#F1E9D6"/>
+<rect x="0" y="0" width="1600" height="900" filter="url(#chapter-6-grain1)"/>
+<text x="70" y="86" font-size="22" font-family="sans-serif" fill="#2F6B3A" letter-spacing="8" font-weight="bold">CHAPTER 6</text>
+<text x="70" y="142" font-size="58" font-family="serif" fill="#2a2a28" font-weight="bold">The Final Morning</text>
+<text x="1540" y="86" font-size="20" font-family="monospace" fill="#2F6B3A" text-anchor="end">—</text>
+<rect x="70" y="170" width="460" height="620" fill="none" stroke="#2F6B3A" stroke-width="2.2"/>
+<rect x="77" y="177" width="446" height="606" fill="none" stroke="#2F6B3A" stroke-width="0.7"/>
+<text x="98" y="224" font-size="24" font-family="sans-serif" fill="#2F6B3A" letter-spacing="7" font-weight="bold">LEGEND</text>
+<line x1="98" y1="240" x2="502" y2="240" stroke="#2F6B3A" stroke-width="0.8"/>
+<line x1="96" y1="279" x2="126" y2="279" stroke="#2F6B3A" stroke-width="8"/>
+<line x1="96" y1="279" x2="126" y2="279" stroke="#F1E9D6" stroke-width="4"/>
+<text x="144" y="288" font-size="24" font-family="sans-serif" fill="#2F6B3A">Loop road, one way</text>
+<line x1="370.8" y1="282" x2="500" y2="282" stroke="#2F6B3A" stroke-width="0.9" stroke-dasharray="1 5"/>
+<rect x="98" y="322" width="26" height="26" fill="#2F6B3A"/>
+<text x="144" y="344" font-size="24" font-family="sans-serif" fill="#2F6B3A">Sites 20–24</text>
+<line x1="282.6" y1="338" x2="500" y2="338" stroke="#2F6B3A" stroke-width="0.9" stroke-dasharray="1 5"/>
+<rect x="99" y="379" width="26" height="26" fill="none" stroke="#fffdf4" stroke-width="1.4" opacity="0.8"/>
+<rect x="98" y="378" width="26" height="26" fill="none" stroke="#b5a988" stroke-width="0.8" opacity="0.5"/>
+<rect x="99" y="435" width="26" height="26" fill="none" stroke="#fffdf4" stroke-width="1.4" opacity="0.8"/>
+<rect x="98" y="434" width="26" height="26" fill="none" stroke="#b5a988" stroke-width="0.8" opacity="0.5"/>
+<rect x="99" y="491" width="26" height="26" fill="none" stroke="#fffdf4" stroke-width="1.4" opacity="0.8"/>
+<rect x="98" y="490" width="26" height="26" fill="none" stroke="#b5a988" stroke-width="0.8" opacity="0.5"/>
+<rect x="99" y="547" width="26" height="26" fill="none" stroke="#fffdf4" stroke-width="1.4" opacity="0.8"/>
+<rect x="98" y="546" width="26" height="26" fill="none" stroke="#b5a988" stroke-width="0.8" opacity="0.5"/>
+<rect x="99" y="603" width="26" height="26" fill="none" stroke="#fffdf4" stroke-width="1.4" opacity="0.8"/>
+<rect x="98" y="602" width="26" height="26" fill="none" stroke="#b5a988" stroke-width="0.8" opacity="0.5"/>
+<rect x="99" y="659" width="26" height="26" fill="none" stroke="#fffdf4" stroke-width="1.4" opacity="0.8"/>
+<rect x="98" y="658" width="26" height="26" fill="none" stroke="#b5a988" stroke-width="0.8" opacity="0.5"/>
+<rect x="99" y="715" width="26" height="26" fill="none" stroke="#fffdf4" stroke-width="1.4" opacity="0.8"/>
+<rect x="98" y="714" width="26" height="26" fill="none" stroke="#b5a988" stroke-width="0.8" opacity="0.5"/>
+<g clip-path="url(#chapter-6-clip2)">
+<rect x="600" y="170" width="940" height="620" fill="#DAD9D2"/>
+<rect x="600" y="570" width="940" height="220" fill="#b9bdb0"/>
+<polygon points="625.2,170 647.2,170 651.1,570 621.2,570" fill="#3d4a44"/>
+<polygon points="697.5,170 719.5,170 723.4,570 693.5,570" fill="#46544d"/>
+<polygon points="769.8,170 791.8,170 795.7,570 765.8,570" fill="#3d4a44"/>
+<polygon points="842.1,170 864.1,170 868,570 838.1,570" fill="#46544d"/>
+<polygon points="914.4,170 936.4,170 940.3,570 910.4,570" fill="#3d4a44"/>
+<polygon points="986.7,170 1008.7,170 1012.7,570 982.7,570" fill="#46544d"/>
+<polygon points="1059,170 1081,170 1085,570 1055,570" fill="#3d4a44"/>
+<polygon points="1131.3,170 1153.3,170 1157.3,570 1127.3,570" fill="#46544d"/>
+<polygon points="1203.6,170 1225.6,170 1229.6,570 1199.7,570" fill="#3d4a44"/>
+<polygon points="1275.9,170 1297.9,170 1301.9,570 1272,570" fill="#46544d"/>
+<polygon points="1348.2,170 1370.2,170 1374.2,570 1344.3,570" fill="#3d4a44"/>
+<polygon points="1420.5,170 1442.5,170 1446.5,570 1416.6,570" fill="#46544d"/>
+<polygon points="1492.8,170 1514.8,170 1518.8,570 1488.9,570" fill="#3d4a44"/>
+<polygon points="610,640 680,550 756,640" fill="#8b9c8f" stroke="#55605a" stroke-width="2"/>
+<polygon points="666,640 680,580 694,640" fill="#4d5752"/>
+<polygon points="800,640 870,550 946,640" fill="#9a8f86" stroke="#55605a" stroke-width="2"/>
+<polygon points="856,640 870,580 884,640" fill="#4d5752"/>
+<polygon points="990,640 1060,550 1136,640" fill="#7f93a0" stroke="#55605a" stroke-width="2"/>
+<polygon points="1046,640 1060,580 1074,640" fill="#4d5752"/>
+<polygon points="1180,640 1250,550 1326,640" fill="#9c9a84" stroke="#55605a" stroke-width="2"/>
+<polygon points="1236,640 1250,580 1264,640" fill="#4d5752"/>
+<polygon points="1370,640 1440,550 1516,640" fill="#8d8a9c" stroke="#55605a" stroke-width="2"/>
+<polygon points="1426,640 1440,580 1454,640" fill="#4d5752"/>
+<rect x="920" y="620" width="300" height="240" rx="60" fill="#b08a70" stroke="#7a5a44" stroke-width="2"/>
+<rect x="930" y="320" width="280" height="500" rx="30" fill="#17191c" stroke="#000" stroke-width="3"/>
+<rect x="946" y="360" width="248" height="420" fill="#e9ebe6"/>
+<text x="1070" y="510" font-size="32" font-family="sans-serif" fill="#5a5f5c" text-anchor="middle">no signal</text>
+<text x="1070" y="568" font-size="32" font-family="sans-serif" fill="#5a5f5c" text-anchor="middle">no time</text>
+<text x="1070" y="626" font-size="32" font-family="sans-serif" fill="#5a5f5c" text-anchor="middle">no date</text>
+<rect x="1030" y="334" width="80" height="10" rx="5" fill="#2a2d31"/>
+<ellipse cx="926" cy="620" rx="26" ry="19" fill="#c79a78" stroke="#7a5a44" stroke-width="2"/>
+<ellipse cx="926" cy="664" rx="26" ry="19" fill="#c79a78" stroke="#7a5a44" stroke-width="2"/>
+<ellipse cx="926" cy="708" rx="26" ry="19" fill="#c79a78" stroke="#7a5a44" stroke-width="2"/>
+<ellipse cx="926" cy="752" rx="26" ry="19" fill="#c79a78" stroke="#7a5a44" stroke-width="2"/>
+<ellipse cx="1216" cy="650" rx="24" ry="50" fill="#c79a78" stroke="#7a5a44" stroke-width="2"/>
+</g>
+<rect x="600" y="170" width="940" height="620" fill="none" stroke="#2F6B3A" stroke-width="2.2"/>
+<rect x="593" y="163" width="954" height="634" fill="none" stroke="#2F6B3A" stroke-width="0.7"/>
+<text x="74" y="840" font-size="28" font-family="serif" fill="#4A4A48" transform="rotate(-1 74 840)" font-style="italic">legend rows: 2</text>
+<path d="M290.1,811.5 L289,822.1 L289.7,832.3 L288.9,842.7" stroke="#4A4A48" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+<path d="M300,812.7 L299.6,822.5 L301,831.5 L301.4,841.4" stroke="#4A4A48" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+<rect x="0" y="0" width="1600" height="900" filter="url(#chapter-6-tooth3)"/>
+</svg>

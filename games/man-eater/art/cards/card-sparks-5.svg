@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="card-sparks-5-t card-sparks-5-d">
+<title id="card-sparks-5-t">Short Rations: 5 of Sparks</title>
+<desc id="card-sparks-5-d">Ration-issue card, the 5 of Sparks (Kimura's suit): worn card stock, the rank in army stencil at two corners, 5 of eight issue holes punched, and drawn by hand in the middle a radio mast throwing 5 sparks.</desc>
+<defs><clipPath id="card-sparks-5-clip1"><rect x="4" y="4" width="292" height="412" rx="16"/></clipPath><filter id="card-sparks-5-spk2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="220"/><feColorMatrix values="0 0 0 0 0.44  0 0 0 0 0.40  0 0 0 0 0.31  0 0 0 0.7 -0.3"/></filter><mask id="card-sparks-5-st3" maskUnits="userSpaceOnUse" x="-32" y="6" width="162" height="108"><rect x="-32" y="6" width="162" height="108" fill="#fff"/><rect x="43.6" y="30" width="4.8" height="60" fill="#000"/></mask><mask id="card-sparks-5-st4" maskUnits="userSpaceOnUse" x="-32" y="6" width="162" height="108"><rect x="-32" y="6" width="162" height="108" fill="#fff"/><rect x="43.6" y="30" width="4.8" height="60" fill="#000"/></mask><mask id="card-sparks-5-st5" maskUnits="userSpaceOnUse" x="8" y="361.6" width="136.4" height="39.6"><rect x="8" y="361.6" width="136.4" height="39.6" fill="#fff"/><rect x="35.7" y="370.4" width="1.8" height="22" fill="#000"/><rect x="51.1" y="370.4" width="1.8" height="22" fill="#000"/><rect x="66.5" y="370.4" width="1.8" height="22" fill="#000"/><rect x="81.9" y="370.4" width="1.8" height="22" fill="#000"/><rect x="97.3" y="370.4" width="1.8" height="22" fill="#000"/><rect x="112.7" y="370.4" width="1.8" height="22" fill="#000"/></mask></defs>
+<rect x="4" y="4" width="292" height="412" rx="16" fill="#DDD4BD" stroke="#6f6750" stroke-width="2"/>
+<g clip-path="url(#card-sparks-5-clip1)">
+<rect x="0" y="0" width="300" height="420" filter="url(#card-sparks-5-spk2)"/>
+</g>
+<g clip-path="url(#card-sparks-5-clip1)">
+<ellipse cx="10.9" cy="198.3" rx="22.2" ry="5.5" fill="#b3a786" opacity="0.3" transform="rotate(-14 10.9 198.3)"/>
+<ellipse cx="77.6" cy="22.4" rx="21.9" ry="4" fill="#b3a786" opacity="0.3" transform="rotate(-38.5 77.6 22.4)"/>
+<ellipse cx="250.9" cy="185.6" rx="29.5" ry="4.1" fill="#b3a786" opacity="0.3" transform="rotate(-9.8 250.9 185.6)"/>
+<ellipse cx="89" cy="406.2" rx="19.3" ry="2.3" fill="#b3a786" opacity="0.3" transform="rotate(-25.7 89 406.2)"/>
+<ellipse cx="265.3" cy="229.3" rx="25.6" ry="2.1" fill="#b3a786" opacity="0.3" transform="rotate(-29.4 265.3 229.3)"/>
+<ellipse cx="131.5" cy="147.6" rx="14.6" ry="3.7" fill="#b3a786" opacity="0.3" transform="rotate(-26.3 131.5 147.6)"/>
+<ellipse cx="60.9" cy="11.6" rx="11.3" ry="2.5" fill="#b3a786" opacity="0.3" transform="rotate(-11.9 60.9 11.6)"/>
+<ellipse cx="97.5" cy="220.7" rx="24.8" ry="5.5" fill="#b3a786" opacity="0.3" transform="rotate(-1.4 97.5 220.7)"/>
+<ellipse cx="251.9" cy="95.3" rx="23.6" ry="2.8" fill="#b3a786" opacity="0.3" transform="rotate(-34.9 251.9 95.3)"/>
+<line x1="245.8" y1="416" x2="296" y2="365.8" stroke="#9b9072" stroke-width="1.5"/>
+<polygon points="245.8,416 296,416 296,365.8" fill="#000" opacity="0.1"/>
+</g>
+<rect x="16" y="16" width="268" height="388" rx="9" fill="none" stroke="#1B1D1F" stroke-width="2.4" stroke-dasharray="20 5"/>
+<g mask="url(#card-sparks-5-st3)">
+<text x="28" y="78" font-size="60" font-family="monospace" fill="#1B1D1F" font-weight="bold" letter-spacing="6">5</text>
+</g>
+<path d="M50.6,88.8 L48.1,92.3 L44.9,96.3 L42.6,99.9 L40.6,103.9 L47.4,102.2 L45.9,106.4 L45,110.6 L43.8,114.8 L46,111.3 L49.1,107.1 L51.3,102.9 L53.9,99.4 L47,100.3 L48.8,94.3 L50.4,89.1Z" stroke="#1B1D1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<g transform="rotate(180 150.0 210.0)">
+<g mask="url(#card-sparks-5-st4)">
+<text x="28" y="78" font-size="60" font-family="monospace" fill="#1B1D1F" font-weight="bold" letter-spacing="6">5</text>
+</g>
+<path d="M50.2,89 L47.5,93 L45.7,96.2 L42.5,99.9 L40.9,103.9 L47.1,102.5 L46.5,107.2 L44.5,111.1 L43.9,114.7 L46,110.7 L48.7,107.2 L51.3,103.1 L54.2,99.7 L47.5,100.4 L49.1,94.6 L49.9,89.4Z" stroke="#1B1D1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</g>
+<circle cx="110" cy="44" r="6.5" fill="#1B1D1F"/>
+<circle cx="108.5" cy="42.5" r="2" fill="#4a4e51"/>
+<circle cx="132" cy="44" r="6.5" fill="#1B1D1F"/>
+<circle cx="130.5" cy="42.5" r="2" fill="#4a4e51"/>
+<circle cx="154" cy="44" r="6.5" fill="#1B1D1F"/>
+<circle cx="152.5" cy="42.5" r="2" fill="#4a4e51"/>
+<circle cx="176" cy="44" r="6.5" fill="#1B1D1F"/>
+<circle cx="174.5" cy="42.5" r="2" fill="#4a4e51"/>
+<circle cx="198" cy="44" r="6.5" fill="#1B1D1F"/>
+<circle cx="196.5" cy="42.5" r="2" fill="#4a4e51"/>
+<circle cx="220" cy="44" r="6.5" fill="none" stroke="#1B1D1F" stroke-width="1.3" stroke-dasharray="3 2.5"/>
+<circle cx="242" cy="44" r="6.5" fill="none" stroke="#1B1D1F" stroke-width="1.3" stroke-dasharray="3 2.5"/>
+<circle cx="264" cy="44" r="6.5" fill="none" stroke="#1B1D1F" stroke-width="1.3" stroke-dasharray="3 2.5"/>
+<text x="108" y="72" font-size="13" font-family="monospace" fill="#1B1D1F" text-anchor="start">ISSUE 5/8</text>
+<path d="M120,338 L150,196 L180,338" fill="none" stroke="#1B1D1F" stroke-width="3.2" stroke-linejoin="round"/>
+<path d="M120,338L174,309.6M180,338L126,309.6M126,309.6L168,281.2M174,309.6L132,281.2M132,281.2L162,252.8M168,281.2L138,252.8M138,252.8L156,224.4M162,252.8L144,224.4M144,224.4L150,196M156,224.4L150,196" stroke="#1B1D1F" stroke-width="1.6" fill="none"/>
+<line x1="150" y1="196" x2="150" y2="170" stroke="#1B1D1F" stroke-width="3"/>
+<line x1="100" y1="338" x2="200" y2="338" stroke="#1B1D1F" stroke-width="3"/>
+<path d="M126,170 A24,24 0 0 1 174,170" fill="none" stroke="#3b3a38" stroke-width="1.4" stroke-dasharray="5 5" opacity="0.7"/>
+<path d="M110,170 A40,40 0 0 1 190,170" fill="none" stroke="#3b3a38" stroke-width="1.4" stroke-dasharray="5 5" opacity="0.7"/>
+<g transform="rotate(-80 73.2 157.5)">
+<path d="M77.1,140.6 L74.4,144.9 L71,150.6 L68.1,154.5 L65.2,160.2 L73,158.3 L72.6,163.4 L70.3,169.7 L68.4,174.7 L72.1,169 L75.6,164.3 L78.9,159.4 L83.1,154.4 L73.9,155.9 L74.6,151 L76.7,145.4 L77.3,140.9Z" stroke="#1B1D1F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="#D9A441"/>
+</g>
+<g transform="rotate(-40 112.7 129.1)">
+<path d="M116.5,111.5 L114.1,116.4 L110.9,121.1 L107.1,126.3 L104.6,131.8 L112.7,130.2 L111.8,134.9 L110.3,140.4 L108.6,145.7 L112.1,141 L115.3,136.3 L118.6,131 L121.7,125.5 L113.1,127.1 L114.5,122.5 L115.9,117.1 L117.3,112.4Z" stroke="#1B1D1F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="#D9A441"/>
+</g>
+<g transform="rotate(0 150 98.2)">
+<path d="M154.2,81.5 L151.4,86.2 L147.4,91.1 L144.7,95.6 L141.4,100.4 L150.3,99 L148.7,103.9 L147.4,110.3 L145.8,115.2 L149.5,110 L152.4,105.2 L155.6,100.1 L159.4,94.8 L150.6,96 L151.3,90.8 L152.4,85.7 L153.7,80.8Z" stroke="#1B1D1F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="#D9A441"/>
+</g>
+<g transform="rotate(40 187.3 129.1)">
+<path d="M191.3,112.6 L188.9,116.4 L185.6,121.8 L182.1,127 L178.2,131.4 L187.8,130.3 L186.3,135.7 L184.6,141.3 L183.2,145.9 L186.4,141.5 L190,136.4 L192.9,130.7 L196.4,125.4 L188.2,127.5 L188.5,122.5 L189.7,117.2 L191.5,111.9Z" stroke="#1B1D1F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="#D9A441"/>
+</g>
+<g transform="rotate(80 226.8 157.5)">
+<path d="M230.7,140.4 L227.5,144.9 L224.7,150 L221.6,154.9 L218.1,159.7 L227,158 L226.2,164.2 L224.6,168.7 L222.5,175 L226.5,168.9 L229.4,164.2 L233.1,158.9 L235.6,154 L226.7,155.1 L228.4,150.4 L229.3,146.1 L231.2,140.6Z" stroke="#1B1D1F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="#D9A441"/>
+</g>
+<g mask="url(#card-sparks-5-st5)">
+<text x="30" y="388" font-size="22" font-family="monospace" fill="#8a6a1c" font-weight="bold" letter-spacing="2.2">SPARKS</text>
+</g>
+<text x="32" y="364" font-size="13" font-family="monospace" fill="#3b3a38" text-anchor="start">FIVE</text>
+</svg>

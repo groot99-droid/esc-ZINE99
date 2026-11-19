@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="slip-08-t slip-08-d">
+<title id="slip-08-t">Slipped card 8 (night 5)</title>
+<desc id="slip-08-d">Slipped card 8, found on night 5: the queen of clubs from another, river-grey deck, its face written across in blue-black ink: "When the lights go, follow the coins." A small ink drawing sits under the words.</desc>
+<defs><radialGradient id="slip-08-rg1" cx="0.5" cy="0.5" r="0.8"><stop offset="0%" stop-color="#fff" stop-opacity="0.3"/><stop offset="100%" stop-color="#6f7c80" stop-opacity="0.2"/></radialGradient></defs>
+<rect x="0" y="0" width="300" height="420" rx="18" fill="#f7f2e6" stroke="#6f7c80" stroke-width="2.4"/>
+<rect x="16" y="16" width="268" height="388" rx="8" fill="none" stroke="#6f7c80" stroke-width="1"/>
+<rect x="0" y="0" width="300" height="420" rx="18" fill="url(#slip-08-rg1)"/>
+<g opacity="0.8">
+<text x="40" y="58" font-size="34" font-family="serif" fill="#6f7c80" text-anchor="middle">Q</text>
+<path d="M35.5,73.5a4.5,4.5 0 1,0 9,0a4.5,4.5 0 1,0 -9,0M31,79.8a4.5,4.5 0 1,0 9,0a4.5,4.5 0 1,0 -9,0M40,79.8a4.5,4.5 0 1,0 9,0a4.5,4.5 0 1,0 -9,0M40,78 L43.6,88.8 L36.4,88.8Z" fill="#6f7c80"/>
+</g>
+<g transform="rotate(180 150 210)" opacity="0.8">
+<text x="40" y="58" font-size="34" font-family="serif" fill="#6f7c80" text-anchor="middle">Q</text>
+<path d="M35.5,73.5a4.5,4.5 0 1,0 9,0a4.5,4.5 0 1,0 -9,0M31,79.8a4.5,4.5 0 1,0 9,0a4.5,4.5 0 1,0 -9,0M40,79.8a4.5,4.5 0 1,0 9,0a4.5,4.5 0 1,0 -9,0M40,78 L43.6,88.8 L36.4,88.8Z" fill="#6f7c80"/>
+</g>
+<path d="M112.5,176.5a37.5,37.5 0 1,0 75,0a37.5,37.5 0 1,0 -75,0M75,229a37.5,37.5 0 1,0 75,0a37.5,37.5 0 1,0 -75,0M150,229a37.5,37.5 0 1,0 75,0a37.5,37.5 0 1,0 -75,0M150,214 L180,304 L120,304Z" fill="#a9b4b6" opacity="0.2"/>
+<text x="152" y="136.5" font-size="27" font-family="cursive" fill="#1a2a5a" font-style="italic" text-anchor="middle" transform="rotate(-1.2 152 136.5)">When the</text>
+<text x="152" y="171.1" font-size="27" font-family="cursive" fill="#1a2a5a" font-style="italic" text-anchor="middle" transform="rotate(0.7 152 171.1)">lights go,</text>
+<text x="152" y="205.6" font-size="27" font-family="cursive" fill="#1a2a5a" font-style="italic" text-anchor="middle" transform="rotate(0.5 152 205.6)">follow</text>
+<text x="152" y="240.2" font-size="27" font-family="cursive" fill="#1a2a5a" font-style="italic" text-anchor="middle" transform="rotate(2.3 152 240.2)">the coins.</text>
+<ellipse cx="105" cy="338" rx="7" ry="3" fill="#1a2a5a" opacity="0.2"/>
+<ellipse cx="123" cy="339.5" rx="7" ry="3" fill="#1a2a5a" opacity="0.4"/>
+<ellipse cx="141" cy="341" rx="7" ry="3" fill="#1a2a5a" opacity="0.5"/>
+<ellipse cx="159" cy="342.5" rx="7" ry="3" fill="#1a2a5a" opacity="0.6"/>
+<ellipse cx="177" cy="344" rx="7" ry="3" fill="#1a2a5a" opacity="0.7"/>
+<ellipse cx="195" cy="345.5" rx="7" ry="3" fill="#1a2a5a" opacity="0.8"/>
+<circle cx="54" cy="370" r="13" fill="none" stroke="#8a826e" stroke-width="1"/>
+<text x="54" y="375" font-size="14" font-family="cursive" fill="#6b6456" text-anchor="middle">8</text>
+<circle cx="150" cy="30" r="4.5" fill="#3a3a3a"/>
+<circle cx="150" cy="30" r="7" fill="none" stroke="#8a826e" stroke-width="0.8"/>
+</svg>

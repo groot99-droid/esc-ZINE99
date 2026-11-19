@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-labelledby="stamp-son-t stamp-son-d">
+<title id="stamp-son-t">Tooling stamp: Son (person)</title>
+<desc id="stamp-son-d">A leather tile from the Person tray, stamped in gold: A small footprint walking inside a large one. Below it, the word SON.</desc>
+<defs><clipPath id="stamp-son-clip1"><rect x="0" y="0" width="200" height="200" rx="10"/></clipPath><filter id="stamp-son-gr2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="2" seed="801"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.4 0"/></filter><filter id="stamp-son-gr3" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="656"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><radialGradient id="stamp-son-rg4" cx="0.5" cy="0.5" r="0.75"><stop offset="0%" stop-color="#000" stop-opacity="0"/><stop offset="60%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#140904" stop-opacity="0.5"/></radialGradient><linearGradient id="stamp-son-gold5" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="120" y2="84" spreadMethod="reflect"><stop offset="0" stop-color="#F0D488"/><stop offset="0.45" stop-color="#D4A23A"/><stop offset="0.75" stop-color="#9A6F1E"/><stop offset="1" stop-color="#D4A23A"/></linearGradient><filter id="stamp-son-gr6" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="22"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter></defs>
+<rect x="0" y="0" width="200" height="200" fill="#5E2A1E" rx="10"/>
+<rect x="0" y="0" width="200" height="200" filter="url(#stamp-son-gr2)" clip-path="url(#stamp-son-clip1)"/>
+<rect x="0" y="0" width="200" height="200" filter="url(#stamp-son-gr3)" clip-path="url(#stamp-son-clip1)"/>
+<rect x="0" y="0" width="200" height="200" fill="url(#stamp-son-rg4)" rx="10"/>
+<path d="M34,16 H166 L184,34 V132 L166,150 H34 L16,132 V34Z" fill="#431B12" opacity="0.8"/>
+<path d="M34,16 H166 L184,34 V132 L166,150 H34 L16,132 V34Z" fill="none" stroke="#140904" stroke-width="5" opacity="0.5" transform="translate(1.5 2)"/>
+<path d="M34,16 H166 L184,34 V132 L166,150 H34 L16,132 V34Z" fill="none" stroke="url(#stamp-son-gold5)" stroke-width="3"/>
+<path d="M37,23 H163 L177,37 V129 L163,143 H37 L23,129 V37Z" fill="none" stroke="url(#stamp-son-gold5)" stroke-width="0.9"/>
+<g transform="translate(101.6 86.2) scale(1.06)" opacity="0.7">
+<path d="M-20,-40 C0,-44 16,-30 14,-6 C12,10 18,22 12,36 C8,46 -12,46 -18,36 C-24,24 -12,12 -18,-4 C-22,-18 -30,-36 -20,-40Z" fill="none" stroke="#140904" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-6,2 C2,0 8,8 6,18 C5,26 8,30 4,36 C2,40 -8,40 -10,34 C-12,28 -6,24 -8,16 C-10,10 -12,4 -6,2Z" fill="#140904"/>
+<path d="M23.8,-30a2.2,2.2 0 1,0 4.4,0a2.2,2.2 0 1,0 -4.4,0M29.8,-20a2.2,2.2 0 1,0 4.4,0a2.2,2.2 0 1,0 -4.4,0M33.8,-8a2.2,2.2 0 1,0 4.4,0a2.2,2.2 0 1,0 -4.4,0M33.8,4a2.2,2.2 0 1,0 4.4,0a2.2,2.2 0 1,0 -4.4,0" fill="#140904"/>
+</g>
+<g transform="translate(100 84) scale(1.06)" opacity="1">
+<path d="M-20,-40 C0,-44 16,-30 14,-6 C12,10 18,22 12,36 C8,46 -12,46 -18,36 C-24,24 -12,12 -18,-4 C-22,-18 -30,-36 -20,-40Z" fill="none" stroke="url(#stamp-son-gold5)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-6,2 C2,0 8,8 6,18 C5,26 8,30 4,36 C2,40 -8,40 -10,34 C-12,28 -6,24 -8,16 C-10,10 -12,4 -6,2Z" fill="url(#stamp-son-gold5)"/>
+<path d="M23.8,-30a2.2,2.2 0 1,0 4.4,0a2.2,2.2 0 1,0 -4.4,0M29.8,-20a2.2,2.2 0 1,0 4.4,0a2.2,2.2 0 1,0 -4.4,0M33.8,-8a2.2,2.2 0 1,0 4.4,0a2.2,2.2 0 1,0 -4.4,0M33.8,4a2.2,2.2 0 1,0 4.4,0a2.2,2.2 0 1,0 -4.4,0" fill="url(#stamp-son-gold5)"/>
+</g>
+<text x="100.7" y="180.9" font-size="19" font-family="serif" fill="#1A0B05" opacity="0.8" text-anchor="middle" letter-spacing="2.4" font-weight="bold">SON</text>
+<text x="100" y="180" font-size="19" font-family="serif" fill="url(#stamp-son-gold5)" text-anchor="middle" letter-spacing="2.4" font-weight="bold">SON</text>
+<text x="99.8" y="179.7" font-size="19" font-family="serif" fill="none" stroke="#F0D488" stroke-width="0.4" opacity="0.6" text-anchor="middle" letter-spacing="2.4" font-weight="bold">SON</text>
+<path d="M30,160 H170" stroke="url(#stamp-son-gold5)" stroke-width="0.8" fill="none"/>
+<path d="M22,160 l4,-4 l4,4 l-4,4Z" fill="url(#stamp-son-gold5)"/>
+<path d="M178,160 l-4,-4 l-4,4 l4,4Z" fill="url(#stamp-son-gold5)"/>
+<rect x="0" y="0" width="200" height="200" filter="url(#stamp-son-gr6)"/>
+</svg>

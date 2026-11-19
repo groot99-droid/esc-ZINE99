@@ -1,0 +1,97 @@
+{
+  "slug": "missing-campsites",
+  "title": "Missing Campsites",
+  "sources": [
+    "04_Book_Concepts/02_Missing_Campsites.md"
+  ],
+  "target_minutes": {
+    "min": 75,
+    "max": 100
+  },
+  "players": {
+    "min": 1,
+    "max": 1
+  },
+  "core_verb": "compare",
+  "registers": [
+    "liminal",
+    "cosmic"
+  ],
+  "structure": "Three days on a shrinking map, then the other side",
+  "chapters": [
+    {
+      "id": "ch1_arrival",
+      "title": "Hollin Creek",
+      "minutes": 14,
+      "layers": [
+        "3d",
+        "1d"
+      ]
+    },
+    {
+      "id": "ch2_torchlight",
+      "title": "Torchlight",
+      "minutes": 15,
+      "layers": [
+        "1d",
+        "2d",
+        "3d"
+      ]
+    },
+    {
+      "id": "ch3_second_morning",
+      "title": "The Second Morning",
+      "minutes": 14,
+      "layers": [
+        "3d",
+        "1d"
+      ]
+    },
+    {
+      "id": "ch4_carrying",
+      "title": "Carrying",
+      "minutes": 16,
+      "layers": [
+        "3d",
+        "1d",
+        "2d"
+      ]
+    },
+    {
+      "id": "ch5_five_fixed_points",
+      "title": "Five Fixed Points",
+      "minutes": 12,
+      "layers": [
+        "2d",
+        "1d",
+        "3d"
+      ]
+    },
+    {
+      "id": "ch6_final_morning",
+      "title": "The Final Morning",
+      "minutes": 10,
+      "layers": [
+        "3d",
+        "1d"
+      ]
+    },
+    {
+      "id": "ch7_other_side",
+      "title": "The Other Side",
+      "minutes": 11,
+      "layers": [
+        "2d",
+        "3d",
+        "1d"
+      ]
+    }
+  ],
+  "branch_minutes": {
+    "slipped_through": 92,
+    "brought_along": 92,
+    "held": 89,
+    "nothing_missing": 87,
+    "one_who_left": 76
+  }
+}

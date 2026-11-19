@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 200" width="160" height="200" role="img" aria-labelledby="spr-lira-drill-t spr-lira-drill-d">
+<title id="spr-lira-drill-t">Sprite: Lira at the instrument</title>
+<desc id="spr-lira-drill-d">Lira kneeling still over an instrument on its rod, both hands on the crossbar, cut out for the hand readings of the climb in play.</desc>
+<path d="M95,86.3 L116.9,112.4 L138.7,138.4" fill="none" stroke="#3b2618" stroke-width="13.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M95,86.3 L116.9,112.4 L138.7,138.4" fill="none" stroke="#6f5c4a" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M64,140 L109.9,143.2 L64.1,148" fill="none" stroke="#3b2618" stroke-width="15.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M64,140 L109.9,143.2 L64.1,148" fill="none" stroke="#6f5c4a" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M64.1,148 L76.1,149" fill="none" stroke="#3b2618" stroke-width="12.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M64.1,148 L76.1,149" fill="none" stroke="#3a2c22" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="97.3" y="94.3" width="28" height="44" fill="#c8913a" stroke="#3b2618" stroke-width="2.4" rx="7" transform="rotate(30 112.3 96.3)"/>
+<line x1="99.3" y1="110.3" x2="123.3" y2="110.3" stroke="#3b2618" stroke-width="1.4" transform="rotate(30 112.3 96.3)"/>
+<path d="M64,140 L79.7,183.2 L33.8,184.8" fill="none" stroke="#3b2618" stroke-width="16.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M64,140 L79.7,183.2 L33.8,184.8" fill="none" stroke="#5b4a3a" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M33.8,184.8 L46.8,185.8" fill="none" stroke="#3b2618" stroke-width="13.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M33.8,184.8 L46.8,185.8" fill="none" stroke="#3a2c22" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M64,140 L95,86.3" fill="none" stroke="#3b2618" stroke-width="30.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M64,140 L95,86.3" fill="none" stroke="#3f5a2c" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M49,142 l-4,14 l34,2 l-2,-16Z" fill="#3f5a2c" stroke="#3b2618" stroke-width="2.2" stroke-linejoin="round"/>
+<line x1="51" y1="138" x2="77" y2="136" stroke="#3b2618" stroke-width="2.4"/>
+<path d="M95,86.3 L121.8,107.2 L138.8,136.7" fill="none" stroke="#3b2618" stroke-width="13.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M95,86.3 L121.8,107.2 L138.8,136.7" fill="none" stroke="#3f5a2c" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="138.8" cy="136.7" r="5" fill="#d2a47c" stroke="#3b2618" stroke-width="1.8"/>
+<circle cx="112.8" cy="73.4" r="14.5" fill="#d2a47c" stroke="#3b2618" stroke-width="2.4"/>
+<path d="M98.8,76.4 A14.5,14.5 0 0,1 122.8,62.4 Q112.8,68.4 108.8,77.4Z" fill="#3b2618"/>
+<path d="M99.8,71.4 C98,72.7 90.3,75.4 88.8,79.4 C87.3,83.4 90.5,92.7 90.8,95.4" stroke-width="5" stroke="#3b2618" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="119.8" cy="72.4" r="1.6" fill="#3b2618"/>
+<rect x="134.8" y="136.7" width="8" height="49.3" fill="#c9ced0" stroke="#3b2618" stroke-width="2"/>
+<line x1="122.8" y1="136.7" x2="156.8" y2="136.7" stroke="#3b2618" stroke-width="5" stroke-linecap="round"/>
+</svg>

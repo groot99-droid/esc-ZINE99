@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="deck-diamonds-ace-t deck-diamonds-ace-d">
+<title id="deck-diamonds-ace-t">Deco deck: ace of diamonds</title>
+<desc id="deck-diamonds-ace-d">The ace of diamonds from the office's deco deck: one large pip in a gold sunburst on bottle green, the house bell at its heart, stepped gold above and below.</desc>
+<defs><radialGradient id="deck-diamonds-ace-rg1" cx="0.5" cy="0.5" r="0.8"><stop offset="0%" stop-color="#fff" stop-opacity="0.3"/><stop offset="70%" stop-color="#fff" stop-opacity="0"/><stop offset="100%" stop-color="#8a6a28" stop-opacity="0.2"/></radialGradient></defs>
+<rect x="0" y="0" width="300" height="420" rx="18" fill="#f3ead2" stroke="#7a6630" stroke-width="2"/>
+<rect x="0" y="0" width="300" height="420" rx="18" fill="url(#deck-diamonds-ace-rg1)"/>
+<polygon points="50,22 250,22 250,36 264,36 264,50 278,50 278,370 264,370 264,384 250,384 250,398 50,398 50,384 36,384 36,370 22,370 22,50 36,50 36,36 50,36" fill="none" stroke="#d4ad57" stroke-width="2.2"/>
+<rect x="30" y="30" width="240" height="360" fill="none" stroke="#d4ad57" stroke-width="0.8" opacity="0.7"/>
+<circle cx="150" cy="210" r="104" fill="#1f3a2e"/>
+<circle cx="150" cy="210" r="104" fill="none" stroke="#d4ad57" stroke-width="3"/>
+<path d="M212,210L250,210M211.1,220.8L234.7,224.9M208.3,231.2L244,244.2M203.7,241L224.5,253M197.5,249.9L226.6,274.3M189.9,257.5L205.3,275.9M181,263.7L200,296.6M171.2,268.3L179.4,290.8M160.8,271.1L167.4,308.5M150,272L150,296M139.2,271.1L132.6,308.5M128.8,268.3L120.6,290.8M119,263.7L100,296.6M110.1,257.5L94.7,275.9M102.5,249.9L73.4,274.3M96.3,241L75.5,253M91.7,231.2L56,244.2M88.9,220.8L65.3,224.9M88,210L50,210M88.9,199.2L65.3,195.1M91.7,188.8L56,175.8M96.3,179L75.5,167M102.5,170.1L73.4,145.7M110.1,162.5L94.7,144.1M119,156.3L100,123.4M128.8,151.7L120.6,129.2M139.2,148.9L132.6,111.5M150,148L150,124M160.8,148.9L167.4,111.5M171.2,151.7L179.4,129.2M181,156.3L200,123.4M189.9,162.5L205.3,144.1M197.5,170.1L226.6,145.7M203.7,179L224.5,167M208.3,188.8L244,175.8M211.1,199.2L234.7,195.1" stroke="#d4ad57" stroke-width="1.6" fill="none"/>
+<circle cx="150" cy="210" r="60" fill="#f3ead2" stroke="#d4ad57" stroke-width="2.5"/>
+<path d="M150,165.1 L181.2,208 L150,250.9 L118.8,208Z" fill="#9b3a26"/>
+<rect x="102" y="70" width="96" height="6" fill="#d4ad57" opacity="0.8"/>
+<rect x="113" y="79" width="74" height="6" fill="#d4ad57" opacity="0.8"/>
+<rect x="124" y="88" width="52" height="6" fill="#d4ad57" opacity="0.8"/>
+<rect x="135" y="97" width="30" height="6" fill="#d4ad57" opacity="0.8"/>
+<rect x="102" y="344" width="96" height="6" fill="#d4ad57" opacity="0.8"/>
+<rect x="113" y="335" width="74" height="6" fill="#d4ad57" opacity="0.8"/>
+<rect x="124" y="326" width="52" height="6" fill="#d4ad57" opacity="0.8"/>
+<rect x="135" y="317" width="30" height="6" fill="#d4ad57" opacity="0.8"/>
+<path d="M142.2,213.8 Q142.8,200.2 150,199.9 Q157.2,200.2 157.8,213.8 Z M150,199.9 V196.9 M145.1,210.6 H154.9" fill="none" stroke="#f3ead2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="150" cy="216.1" r="1.6" fill="#f3ead2"/>
+<g >
+<rect x="30" y="30" width="46" height="92" fill="#f3ead2"/>
+<g fill="none" stroke="#9b3a26" stroke-width="0.150" stroke-linecap="round" stroke-linejoin="round">
+<path d="M0,1 L.35,0 L.7,1 M.13,.64 H.57" transform="translate(41.1 40) scale(34)"/>
+</g>
+<path d="M53,87.9 L61.8,100 L53,112.1 L44.2,100Z" fill="#9b3a26"/>
+</g>
+<g transform="rotate(180 150 210)">
+<rect x="30" y="30" width="46" height="92" fill="#f3ead2"/>
+<g fill="none" stroke="#9b3a26" stroke-width="0.150" stroke-linecap="round" stroke-linejoin="round">
+<path d="M0,1 L.35,0 L.7,1 M.13,.64 H.57" transform="translate(41.1 40) scale(34)"/>
+</g>
+<path d="M53,87.9 L61.8,100 L53,112.1 L44.2,100Z" fill="#9b3a26"/>
+</g>
+</svg>

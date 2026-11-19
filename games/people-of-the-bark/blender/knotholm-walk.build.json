@@ -1,0 +1,499 @@
+{
+  "game": "people-of-the-bark",
+  "location": "knotholm-walk",
+  "name": "The walk from Highridge to the temple by night",
+  "reference": "assets/locations/knotholm-walk.jpg",
+  "bounds_m": [
+    0.06,
+    0.06,
+    0.03
+  ],
+  "origin": "floor centre at the foot of the bark; the bark is a vertical wall whose face is the plane y = 0.01, with its relief toward -y and the open air in front of it. Gravity runs -z, down the screen. The god camera hovers in the air at -y and looks along +y straight at the bark, so 'top-down' here means straight onto the bark, which is the ground of the view. Real metres at human scale: the people are 2 mm tall. The route runs along a groove ledge from Pell's home (-x) up three steps to the temple knot's doorway (+x), 6 cm in all.",
+  "materials": {
+    "bark-umber": {
+      "color": [
+        0.353,
+        0.243,
+        0.169
+      ],
+      "roughness": 0.95
+    },
+    "bark-grey": {
+      "color": [
+        0.431,
+        0.388,
+        0.341
+      ],
+      "roughness": 0.95
+    },
+    "crack-dark": {
+      "color": [
+        0.141,
+        0.094,
+        0.059
+      ],
+      "roughness": 1.0
+    },
+    "lichen-sage": {
+      "color": [
+        0.612,
+        0.686,
+        0.533
+      ],
+      "roughness": 1.0
+    },
+    "lichen-lime": {
+      "color": [
+        0.71,
+        0.784,
+        0.29
+      ],
+      "roughness": 1.0
+    },
+    "frost": {
+      "color": [
+        0.867,
+        0.91,
+        0.949
+      ],
+      "roughness": 0.15
+    }
+  },
+  "blockout": [
+    {
+      "id": "bark-slab",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.06,
+        0.02,
+        0.03
+      ],
+      "location": [
+        0,
+        0.02,
+        0.015
+      ],
+      "material": "bark-grey"
+    },
+    {
+      "id": "path-1",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.02,
+        0.006,
+        0.008
+      ],
+      "location": [
+        -0.02,
+        0.007,
+        0.004
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "path-frost-1",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.02,
+        0.0055,
+        0.0003
+      ],
+      "location": [
+        -0.02,
+        0.007,
+        0.00815
+      ],
+      "material": "frost",
+      "collide": false
+    },
+    {
+      "id": "path-2",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.02,
+        0.006,
+        0.01
+      ],
+      "location": [
+        0.0,
+        0.007,
+        0.005
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "path-frost-2",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.02,
+        0.0055,
+        0.0003
+      ],
+      "location": [
+        0.0,
+        0.007,
+        0.01015
+      ],
+      "material": "frost",
+      "collide": false
+    },
+    {
+      "id": "path-3",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.02,
+        0.006,
+        0.012
+      ],
+      "location": [
+        0.02,
+        0.007,
+        0.006
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "path-frost-3",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.02,
+        0.0055,
+        0.0003
+      ],
+      "location": [
+        0.02,
+        0.007,
+        0.01215
+      ],
+      "material": "frost",
+      "collide": false
+    },
+    {
+      "id": "temple-knot",
+      "shape": "sphere",
+      "role": "structure",
+      "size_m": [
+        0.012,
+        0.008,
+        0.012
+      ],
+      "location": [
+        0.024,
+        0.008,
+        0.019
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "knot-doorway",
+      "shape": "cylinder",
+      "role": "opening",
+      "size_m": [
+        0.005,
+        0.005,
+        0.001
+      ],
+      "location": [
+        0.024,
+        0.0038,
+        0.0165
+      ],
+      "material": "crack-dark",
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "collide": false
+    },
+    {
+      "id": "far-knot",
+      "shape": "sphere",
+      "role": "structure",
+      "size_m": [
+        0.01,
+        0.006,
+        0.01
+      ],
+      "location": [
+        -0.008,
+        0.011,
+        0.022
+      ],
+      "material": "bark-grey"
+    },
+    {
+      "id": "groove-frost-1",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.002,
+        0.0006,
+        0.02
+      ],
+      "location": [
+        -0.02,
+        0.0097,
+        0.019
+      ],
+      "material": "frost",
+      "collide": false
+    },
+    {
+      "id": "groove-frost-2",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.002,
+        0.0006,
+        0.018
+      ],
+      "location": [
+        0.006,
+        0.0097,
+        0.02
+      ],
+      "material": "frost",
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "home-pell",
+      "object": "dwelling",
+      "location": [
+        -0.025,
+        0.008,
+        0.008
+      ]
+    },
+    {
+      "id": "home-mid",
+      "object": "dwelling",
+      "location": [
+        -0.014,
+        0.008,
+        0.008
+      ]
+    },
+    {
+      "id": "home-near-temple",
+      "object": "dwelling",
+      "location": [
+        0.004,
+        0.008,
+        0.01
+      ]
+    },
+    {
+      "id": "pells-lantern",
+      "object": "pells-lantern",
+      "location": [
+        -0.0205,
+        0.0055,
+        0.0145
+      ],
+      "ground": false
+    },
+    {
+      "id": "lantern-1",
+      "object": "lichen-lantern",
+      "location": [
+        -0.008,
+        0.005,
+        0.008
+      ]
+    },
+    {
+      "id": "lantern-2",
+      "object": "lichen-lantern",
+      "location": [
+        0.0,
+        0.005,
+        0.01
+      ]
+    },
+    {
+      "id": "lantern-3",
+      "object": "lichen-lantern",
+      "location": [
+        0.008,
+        0.005,
+        0.01
+      ]
+    },
+    {
+      "id": "lantern-4",
+      "object": "lichen-lantern",
+      "location": [
+        0.016,
+        0.005,
+        0.012
+      ]
+    }
+  ],
+  "scenes": {
+    "c5_temple": {
+      "note": "Pell's last night: walk Pell slowly from his home to the temple knot past the sayings the player made all year (painted on the path wall, 3 to 6), which he touches as he passes; he sits by the Roll.",
+      "world": {
+        "color": [
+          0.05,
+          0.07,
+          0.14
+        ],
+        "strength": 0.3
+      },
+      "lights": [
+        {
+          "name": "snow-sky",
+          "type": "AREA",
+          "location": [
+            0,
+            -0.03,
+            0.04
+          ],
+          "energy": 0.05,
+          "color": [
+            0.7,
+            0.8,
+            1.0
+          ],
+          "look_at": [
+            0,
+            0.01,
+            0.01
+          ],
+          "size": 0.05
+        },
+        {
+          "name": "pells-lantern",
+          "type": "POINT",
+          "location": [
+            -0.0205,
+            0.004,
+            0.0145
+          ],
+          "energy": 0.004,
+          "color": [
+            1.0,
+            0.6,
+            0.24
+          ],
+          "size": 0.001
+        },
+        {
+          "name": "glow-lantern-1",
+          "type": "POINT",
+          "location": [
+            -0.008,
+            0.004,
+            0.0155
+          ],
+          "energy": 0.004,
+          "color": [
+            1.0,
+            0.6,
+            0.24
+          ],
+          "size": 0.001
+        },
+        {
+          "name": "glow-lantern-2",
+          "type": "POINT",
+          "location": [
+            0.0,
+            0.004,
+            0.0175
+          ],
+          "energy": 0.004,
+          "color": [
+            1.0,
+            0.6,
+            0.24
+          ],
+          "size": 0.001
+        },
+        {
+          "name": "glow-lantern-3",
+          "type": "POINT",
+          "location": [
+            0.008,
+            0.004,
+            0.0175
+          ],
+          "energy": 0.004,
+          "color": [
+            1.0,
+            0.6,
+            0.24
+          ],
+          "size": 0.001
+        },
+        {
+          "name": "glow-lantern-4",
+          "type": "POINT",
+          "location": [
+            0.016,
+            0.004,
+            0.0195
+          ],
+          "energy": 0.004,
+          "color": [
+            1.0,
+            0.6,
+            0.24
+          ],
+          "size": 0.001
+        }
+      ],
+      "camera": {
+        "location": [
+          -0.018,
+          -0.02,
+          0.017
+        ],
+        "look_at": [
+          -0.016,
+          0.01,
+          0.01
+        ],
+        "lens_mm": 30,
+        "mode": "top-down"
+      },
+      "player_start": {
+        "location": [
+          -0.022,
+          0.006,
+          0.008
+        ],
+        "facing_deg": -90
+      },
+      "interactions": [
+        {
+          "prop": "lantern-1",
+          "verb": "Walk Pell on to the next saying"
+        },
+        {
+          "prop": "lantern-2",
+          "verb": "Walk Pell on to the next saying"
+        },
+        {
+          "prop": "lantern-3",
+          "verb": "Walk Pell on to the next saying"
+        },
+        {
+          "prop": "lantern-4",
+          "verb": "Bring Pell into the temple to sit by the Roll",
+          "leads_to": "c5_omen_pell"
+        }
+      ]
+    }
+  }
+}

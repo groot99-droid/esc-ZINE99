@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-labelledby="neume-torculus-t neume-torculus-d">
+<title id="neume-torculus-t">Neume: torculus</title>
+<desc id="neume-torculus-d">Neume tile on vellum with a red four-line staff: the torculus, three notes joined: low, high, low; its name beneath in italic and its reading in red.</desc>
+<defs><filter id="neume-torculus-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="63"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter><pattern id="neume-torculus-pat2" width="46" height="20" patternUnits="userSpaceOnUse"><path d="M0,2.5H46M0,7.5H46M0,12.5H46M0,17.5H46" stroke="#3b2618" stroke-width="0.5" opacity="0.07"/><path d="M23,0V20" stroke="#3b2618" stroke-width="0.8" opacity="0.06"/></pattern><radialGradient id="neume-torculus-vig3" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#7a5a2e" stop-opacity="0"/><stop offset="100%" stop-color="#7a5a2e" stop-opacity="0.3"/></radialGradient></defs>
+<rect x="0" y="0" width="200" height="200" fill="#f0e2bf"/>
+<rect x="0" y="0" width="200" height="200" filter="url(#neume-torculus-grain1)"/>
+<rect x="0" y="0" width="200" height="200" fill="url(#neume-torculus-pat2)"/>
+<rect x="0" y="0" width="200" height="200" fill="url(#neume-torculus-vig3)"/>
+<rect x="8" y="8" width="184" height="184" fill="none" stroke="#3b2618" stroke-width="1"/>
+<line x1="18" y1="52" x2="182" y2="52" stroke="#a8281e" stroke-width="2"/>
+<line x1="18" y1="76" x2="182" y2="76" stroke="#a8281e" stroke-width="2"/>
+<line x1="18" y1="100" x2="182" y2="100" stroke="#a8281e" stroke-width="2"/>
+<line x1="18" y1="124" x2="182" y2="124" stroke="#a8281e" stroke-width="2"/>
+<rect x="62" y="90" width="20" height="20" fill="#3b2618" transform="rotate(-2 72 100)"/>
+<line x1="81" y1="100" x2="81" y2="64" stroke="#3b2618" stroke-width="3"/>
+<rect x="82" y="54" width="20" height="20" fill="#3b2618" transform="rotate(3 92 64)"/>
+<line x1="101" y1="64" x2="101" y2="88" stroke="#3b2618" stroke-width="3"/>
+<rect x="102" y="78" width="20" height="20" fill="#3b2618" transform="rotate(-0.3 112 88)"/>
+<text x="20" y="172" font-size="21" font-family="serif" font-style="italic" fill="#3b2618">torculus</text>
+<text x="182" y="172" font-size="13" font-family="monospace" fill="#a8281e" text-anchor="end">+1  −1</text>
+<text x="182" y="28" font-size="12" font-family="monospace" fill="#7d7a74" text-anchor="end">05</text>
+</svg>

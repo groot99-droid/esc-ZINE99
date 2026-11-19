@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 150" width="300" height="150" role="img" aria-labelledby="sprite-swimmer-carry-t sprite-swimmer-carry-d">
+<title id="sprite-swimmer-carry-t">Cut-out: Alexi carrying</title>
+<desc id="sprite-swimmer-carry-d">The swimmer on no ground with a second, paler figure held in both arms under him: how he carries what the deep gives up.</desc>
+<g transform="translate(140,56) rotate(0) scale(1)">
+<path d="M40,36 L98,26" stroke="#0b1626" stroke-width="22" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M98,26 L124,42 L140,66" stroke="#0b1626" stroke-width="13" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M40,36 L14,50 L-2,74" stroke="#0b1626" stroke-width="13" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M44,38 L24,60 L22,86" stroke="#0b1626" stroke-width="13" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M92,22 L110,0 L106,-22" stroke="#0b1626" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M40,36 L98,26" stroke="#E8F2EE" stroke-width="17" opacity="0.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M98,26 L124,42 L140,66" stroke="#E8F2EE" stroke-width="8" opacity="0.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M40,36 L14,50 L-2,74" stroke="#E8F2EE" stroke-width="8" opacity="0.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M44,38 L24,60 L22,86" stroke="#E8F2EE" stroke-width="8" opacity="0.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M92,22 L110,0 L106,-22" stroke="#E8F2EE" stroke-width="7" opacity="0.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="110" cy="20" r="9" fill="#E8F2EE" opacity="0.8" stroke="#0b1626" stroke-width="2"/>
+<path d="M-30,-4 L-66,-12 L-100,-6 L-114,-12" stroke="#0b1626" stroke-width="18" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-30,8 L-64,18 L-98,22 L-112,30" stroke="#0b1626" stroke-width="18" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-34,2 L28,-2" stroke="#0b1626" stroke-width="43" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M26,-10 L52,8 L86,18" stroke="#0b1626" stroke-width="17" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M24,6 L46,28 L82,32" stroke="#0b1626" stroke-width="17" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="50" cy="-26" r="15" fill="#0b1626"/>
+<path d="M-30,-4 L-66,-12 L-100,-6 L-114,-12" stroke="#DCE8EC" stroke-width="13" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-30,8 L-64,18 L-98,22 L-112,30" stroke="#DCE8EC" stroke-width="13" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-34,2 L28,-2" stroke="#DCE8EC" stroke-width="38" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M26,-10 L52,8 L86,18" stroke="#DCE8EC" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M24,6 L46,28 L82,32" stroke="#DCE8EC" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="50" cy="-26" r="12.5" fill="#DCE8EC"/>
+<path d="M39,-32 q10,-13 22,-3" fill="none" stroke="#0b1626" stroke-width="1.4"/>
+<path d="M-40,-14 q30,-6 62,-3 M-36,-8 q30,-5 58,-3 M-40,16 q28,6 56,3" fill="none" stroke="#0b1626" stroke-width="1" opacity="0.7"/>
+</g>
+</svg>

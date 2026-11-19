@@ -1,0 +1,83 @@
+{
+  "game": "man-eater",
+  "style": "Muted cinematic photographic realism of a remote 1950s Arctic military research base, a cold desaturated film still with fine photo grain: matte painted concrete, steel, wool, canvas and paper, nothing glossy; institutional hospital green lower walls and pale cream upper walls indoors, snow white, steel grey and frost blue-grey outdoors, amber sodium lamps as the only warm points, bruise-violet shadows, ink-black silhouettes; light from high up so shadows fall long and down; quiet, empty, oppressive; the institution is the subject (gate, fence, doors), never a creature, and nothing graphic is shown.",
+  "images": [
+    {
+      "id": "key-art-wide",
+      "kind": "key-art",
+      "title": "The gate faces in",
+      "aspect_ratio": "16:9",
+      "model": "gpt_image_2_6",
+      "prompt": "Muted cinematic photographic realism of a remote 1950s Arctic military research base, a cold desaturated film still with fine photo grain: matte concrete, steel, canvas, nothing glossy; snow white, steel grey, frost blue-grey, ink-black silhouettes, one amber sodium lamp as the only warm point. View from inside the dark bed of a canvas-backed army truck, over the steel tailgate along the bottom edge, at a tall timber gate swinging shut. The two leaves are almost closed, meeting at a last narrow slit of white road and dark spruce forest between them. Dark riveted steel armour plates are bolted across the inside face of the gate toward the viewer, rows of rivets, heavy chains hanging slack. Tyre tracks in fresh snow lead from the gate to the tailgate. One amber lamp on a post at the right, a low grey concrete barracks at the left edge, blank wall. The truck's canvas hood is a thin plain near-black frame at the very top edge. The upper third above the gate is plain, empty, overcast white sky. No people, no figures, no signs, no text, no lettering, no watermark, no logo",
+      "job_id": "19e22a07-0757-4bbf-88ef-ce553d653fe0",
+      "image": "keyart/key-art-wide.jpg"
+    },
+    {
+      "id": "key-art-tall",
+      "kind": "key-art",
+      "title": "The gate faces in",
+      "aspect_ratio": "2:3",
+      "model": "soul_cinematic",
+      "prompt": "Muted realistic photograph, 1950s Arctic military research base, cold and desaturated, fine photo grain, matte surfaces, nothing glossy. Vertical composition, the gate centred, the tailgate along the bottom edge. View from inside the dark bed of a canvas-backed army truck, over the steel tailgate, at a tall timber gate swinging shut behind it. Dark riveted steel armour plates are bolted to the inside face of the gate, toward the viewer, chains hanging slack. The two leaves are almost closed on a last narrow slit of white road and dark spruce forest. Tyre tracks in fresh snow lead from the gate to the tailgate. One amber sodium lamp on a post at the right, a low dark concrete barracks at the left edge. The truck's canvas hood is a thin near-black frame at the very top edge only. Above the gate, the upper third of the picture is plain, empty, overcast white sky and nothing else. Flat grey daylight; snow white, steel grey, frost blue-grey, ink black, one amber point. A pure photograph with no graphics of any kind: no people, no figures, no signs, no text, no lettering, no title, no caption, no credits, no watermark, no logo",
+      "job_id": "c684f6fd-0a6d-4bec-8567-a9ae1ff0f11b",
+      "image": "keyart/key-art-tall.jpg"
+    },
+    {
+      "id": "ending-the-zoo",
+      "kind": "ending",
+      "ending": "the_zoo",
+      "title": "The Zoo",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Muted cinematic photographic realism of a remote 1950s Arctic military research base, a cold desaturated film still with fine photo grain: matte surfaces, nothing glossy. A heavy grey steel door seen from inside a bare white-tiled room, camera low, door upright in the upper centre of the frame. Set in the door is a small square wired-glass window, frosted, no larger than a hand-width pane, lit softly from the corridor behind it. Against that glow stands one backlit upright human-shaped silhouette, a tall narrow dark shape with a head and shoulders, completely out of focus, no face, no detail, no outline of features. The room is spotless and empty: clearly visible square white tiles with fine dark grout lines on the walls and the pale floor, freshly scrubbed. Flat cold fluorescent light from above. Palette only white, pale grey, steel grey, frost blue-grey. The lower quarter is plain empty tiled floor. Clinical and still. No objects on the floor, no stains, no warm colours, no text, no lettering, no watermark, no logo",
+      "job_id": "55899e1b-7cb0-48a2-9480-7a1bcce8b25f",
+      "image": "keyart/ending-the-zoo.jpg",
+      "known_issues": "Regenerated again. Remaining: the backlit silhouette in the pane is a crisp dark shape rather than a soft blur, and the door has a lever handle and double-leaf seam; palette is slightly blue-violet.",
+      "accepted": "author, 2026-11-16"
+    },
+    {
+      "id": "ending-rule-three",
+      "kind": "ending",
+      "ending": "rule_three",
+      "title": "Rule Three",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Muted cinematic realism, 1950s Arctic military research base, cold desaturated film still, fine photo grain, matte surfaces, nothing glossy. The edge of a dark spruce forest at first light, seen from the open snow just outside it. A single trail of deep, widely spaced footprints comes in from the right edge and ends at the foot of a trunk in the centre, where the snow is pressed flat as if someone sat there and then stood. Above that spot, well over two metres up, the low branches are pushed apart and their snow knocked off: bare dark needles among white, higher than any man's head. Far behind at the right edge, small and soft, a wire fence on wooden posts and one amber sodium lamp. Dawn blue light, windless, faint frost mist. Snow white, frost blue-grey, ink-black trunks, bruise-violet shadow, one amber point. The lower quarter is calm, smooth, untouched snow, left clear for a caption. No people, no figures, no animals, no text, no lettering, no watermark, no logo",
+      "job_id": "f1896948-efbb-4703-9a91-383965621b8c",
+      "image": "keyart/ending-rule-three.jpg"
+    },
+    {
+      "id": "ending-call-me-sam",
+      "kind": "ending",
+      "ending": "call_me_sam",
+      "title": "Call Me Sam",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Muted realistic photograph, 1950s Arctic military research base, cold and desaturated, fine photo grain, matte surfaces, nothing glossy. A long, very narrow, unnaturally tall barracks corridor, walls hospital green below and pale cream above, seen from an eye height well above a man's, looking slightly down its whole length. Far away at the end of the hall, a bright frosted window throws hard white backlight toward the camera. Against it, very small and far off, stand two flat, featureless, ink-black backlit silhouettes with no visible detail at all: one slight, with a kit bag on its shoulder, before a tall narrow steel door whose lever handle is far above its reach; the other upright in a long coat and peaked cap, further back. Their long black shadows fall down the floor toward the camera. Nothing and no one in the foreground. One dead fluorescent tube overhead. Green, cream, steel grey, ink black. The lower quarter is plain, bare concrete floor and nothing else. A pure photograph with no graphics of any kind: no faces, no skin, no clothing detail, no foreground figure, no text, no lettering, no subtitle, no caption, no watermark, no logo",
+      "job_id": "1455bc6d-d784-4b18-8c17-d344a380b4c9",
+      "image": "keyart/ending-call-me-sam.jpg"
+    },
+    {
+      "id": "ending-transferred",
+      "kind": "ending",
+      "ending": "transferred",
+      "title": "Transferred",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Muted cinematic realism, 1950s Arctic military research base, cold desaturated film still, fine photo grain, matte surfaces, nothing glossy. View from the passenger seat of an old army truck cab, through a flat frost-edged windscreen, at a straight snow-covered road running on through tall dark spruce forest to a pale vanishing point, with no building, sign or turning anywhere along it. On the right, at mid-height, the glovebox door hangs open: inside, a thick bundle of sealed paper envelopes tied with string, one more envelope lying loose on top. The corner of an olive canvas kit bag at the right edge. Grey overcast morning light through the glass, the cab interior dim. Snow white, steel grey, frost blue-grey, olive drab, cream paper, ink shadow. The lower quarter is calm, the plain painted-steel dashboard in shadow, left clear for a caption. No people, no hands, no driver visible, no writing on the envelopes, no text, no lettering, no watermark, no logo",
+      "job_id": "bcc6e84a-148a-4af1-a93f-222e7fceebf1",
+      "image": "keyart/ending-transferred.jpg"
+    },
+    {
+      "id": "ending-one-set-of-prints",
+      "kind": "ending",
+      "ending": "One Set of Prints",
+      "title": "One Set of Prints",
+      "aspect_ratio": "16:9",
+      "model": "soul_cinematic",
+      "prompt": "Muted realistic photograph, 1950s Arctic military research base, cold and desaturated, fine photo grain, matte surfaces, nothing glossy. Seen from just inside a dark spruce tree line at first light, looking back across a wide field of open snow toward a distant wire fence, low dark barracks and two amber sodium lamps. One single trail of deep, widely spaced footprints crosses the field from the fence to the trees, each print trodden twice, out and back, so only one line shows. Far off at the right, small in the middle distance, a single flat, featureless, ink-black backlit silhouette of a seated shape wrapped in a blanket leans against a black trunk, seen from behind against the pale snow, with no visible detail at all. Dawn blue light, long shadows, still air. Snow white, frost blue-grey, ink-black trunks, bruise-violet shadow, amber points. The lower quarter is plain, smooth, untouched snow and nothing else. A pure photograph with no graphics of any kind: no foreground figure, no face, no skin, no hands, no paper, no book, no other figures, no text, no lettering, no subtitle, no caption, no watermark, no logo",
+      "job_id": "645b36bc-78e9-4eeb-aadf-a260c67f7422",
+      "image": "keyart/ending-one-set-of-prints.jpg"
+    }
+  ]
+}

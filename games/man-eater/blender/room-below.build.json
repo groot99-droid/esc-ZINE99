@@ -1,0 +1,341 @@
+{
+  "game": "man-eater",
+  "location": "room-below",
+  "name": "The room below",
+  "reference": "assets/locations/room-below.jpg",
+  "bounds_m": [
+    5,
+    5,
+    3
+  ],
+  "origin": "floor centre; +y toward the door with the small window, the sheeted table against the west wall, Fisk's cot along the east wall",
+  "materials": {
+    "light-panel": {
+      "color": [
+        0.95,
+        0.97,
+        1.0
+      ],
+      "roughness": 0.2,
+      "emission": 3.0
+    },
+    "steel": {
+      "color": [
+        0.541,
+        0.561,
+        0.576
+      ],
+      "roughness": 0.55,
+      "metallic": 0.8
+    },
+    "tile-white": {
+      "color": [
+        0.78,
+        0.8,
+        0.8
+      ],
+      "roughness": 0.4
+    },
+    "window-glass": {
+      "color": [
+        0.75,
+        0.82,
+        0.88
+      ],
+      "roughness": 0.1,
+      "emission": 0.6
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        5,
+        5,
+        0.1
+      ],
+      "location": [
+        0,
+        0,
+        -0.05
+      ],
+      "material": "tile-white"
+    },
+    {
+      "id": "ceiling",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        5,
+        5,
+        0.1
+      ],
+      "location": [
+        0,
+        0,
+        3.05
+      ],
+      "material": "tile-white"
+    },
+    {
+      "id": "light-panel",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        3.0,
+        2.4,
+        0.05
+      ],
+      "location": [
+        0,
+        0.3,
+        2.97
+      ],
+      "material": "light-panel",
+      "collide": false
+    },
+    {
+      "id": "wall-south",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        5,
+        0.15,
+        3
+      ],
+      "location": [
+        0,
+        -2.575,
+        1.5
+      ],
+      "material": "tile-white"
+    },
+    {
+      "id": "wall-west",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        5,
+        3
+      ],
+      "location": [
+        -2.575,
+        0,
+        1.5
+      ],
+      "material": "tile-white"
+    },
+    {
+      "id": "wall-east",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        5,
+        3
+      ],
+      "location": [
+        2.575,
+        0,
+        1.5
+      ],
+      "material": "tile-white"
+    },
+    {
+      "id": "wall-north-left",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        2.95,
+        0.15,
+        3
+      ],
+      "location": [
+        -1.025,
+        2.575,
+        1.5
+      ],
+      "material": "tile-white"
+    },
+    {
+      "id": "wall-north-right",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.95,
+        0.15,
+        3
+      ],
+      "location": [
+        2.025,
+        2.575,
+        1.5
+      ],
+      "material": "tile-white"
+    },
+    {
+      "id": "wall-north-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.1,
+        0.15,
+        0.8
+      ],
+      "location": [
+        1.0,
+        2.575,
+        2.6
+      ],
+      "material": "tile-white"
+    },
+    {
+      "id": "door",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.1,
+        0.08,
+        2.2
+      ],
+      "location": [
+        1.0,
+        2.52,
+        1.1
+      ],
+      "material": "steel"
+    },
+    {
+      "id": "door-window",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        0.25,
+        0.1,
+        0.25
+      ],
+      "location": [
+        1.0,
+        2.52,
+        1.6
+      ],
+      "material": "window-glass",
+      "collide": false
+    },
+    {
+      "id": "cot",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.9,
+        2.0,
+        0.6
+      ],
+      "location": [
+        1.9,
+        -1.2,
+        0.3
+      ],
+      "material": "steel"
+    },
+    {
+      "id": "pump",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "location": [
+        0.6,
+        0.6,
+        0.15
+      ],
+      "material": "steel"
+    }
+  ],
+  "props": [
+    {
+      "id": "sheet-table",
+      "object": "sheet-covered-table",
+      "location": [
+        -1.9,
+        0.0,
+        0
+      ]
+    },
+    {
+      "id": "drip-stand",
+      "object": "tube-stand",
+      "location": [
+        1.2,
+        -0.6,
+        0
+      ]
+    }
+  ],
+  "scenes": {
+    "e_zoo_wake": {
+      "note": "The Zoo: waking. 'A tube ran through his arm.' The camera cannot rise; the sheeted table stays at the edge of vision and the camera never turns to it. Last image: the door's small window.",
+      "world": {
+        "color": [
+          0.85,
+          0.88,
+          0.9
+        ],
+        "strength": 0.6
+      },
+      "lights": [
+        {
+          "name": "surgical",
+          "type": "AREA",
+          "location": [
+            0,
+            0.3,
+            2.9
+          ],
+          "energy": 600,
+          "size": 2.8,
+          "color": [
+            0.97,
+            0.99,
+            1.0
+          ],
+          "look_at": [
+            0,
+            0.3,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          1.9,
+          -1.9,
+          1.05
+        ],
+        "look_at": [
+          1.0,
+          2.5,
+          1.6
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          1.9,
+          -1.9,
+          0.6
+        ],
+        "facing_deg": 0
+      },
+      "hide": [],
+      "interactions": []
+    }
+  }
+}

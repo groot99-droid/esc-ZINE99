@@ -1,0 +1,731 @@
+{
+  "game": "heartstream",
+  "location": "elders-cavern",
+  "name": "The cavern of the elders",
+  "reference": "assets/locations/elders-cavern.jpg",
+  "bounds_m": [
+    30,
+    30,
+    18
+  ],
+  "origin": "floor centre; +y toward the far wall and the shaft mouth; the elders' bench along the -x (left) wall; the way in on -y",
+  "materials": {
+    "ivory": {
+      "color": [
+        0.91,
+        0.863,
+        0.769
+      ],
+      "roughness": 0.85
+    },
+    "marrow-deep": {
+      "color": [
+        0.118,
+        0.208,
+        0.341
+      ],
+      "roughness": 0.6,
+      "emission": 0.15
+    },
+    "marrow-tissue": {
+      "color": [
+        0.184,
+        0.365,
+        0.549
+      ],
+      "roughness": 0.5,
+      "emission": 0.3
+    },
+    "red-glow": {
+      "color": [
+        0.878,
+        0.376,
+        0.227
+      ],
+      "roughness": 0.4,
+      "emission": 1.5
+    },
+    "tissue-pink": {
+      "color": [
+        0.85,
+        0.42,
+        0.42
+      ],
+      "roughness": 0.45
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        30,
+        30,
+        0.1
+      ],
+      "location": [
+        0,
+        0,
+        -0.05
+      ],
+      "material": "ivory"
+    },
+    {
+      "id": "ceiling",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        30,
+        30,
+        0.4
+      ],
+      "location": [
+        0,
+        0,
+        18.2
+      ],
+      "material": "marrow-deep"
+    },
+    {
+      "id": "wall-west",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.6,
+        30,
+        18
+      ],
+      "location": [
+        -15.3,
+        0,
+        9.0
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "wall-east",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.6,
+        30,
+        18
+      ],
+      "location": [
+        15.3,
+        0,
+        9.0
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "wall-north-left",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        13.5,
+        0.6,
+        18
+      ],
+      "location": [
+        -8.25,
+        15.3,
+        9.0
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "wall-north-right",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        13.5,
+        0.6,
+        18
+      ],
+      "location": [
+        8.25,
+        15.3,
+        9.0
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "wall-north-above",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        3,
+        0.6,
+        14.7
+      ],
+      "location": [
+        0,
+        15.3,
+        10.65
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "wall-north-lip",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        3,
+        0.6,
+        0.3
+      ],
+      "location": [
+        0,
+        15.3,
+        0.15
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "shaft-mouth",
+      "shape": "cylinder",
+      "role": "opening",
+      "size_m": [
+        3,
+        3,
+        0.4
+      ],
+      "location": [
+        0,
+        15.1,
+        1.8
+      ],
+      "material": "red-glow",
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "collide": false
+    },
+    {
+      "id": "shaft-lining",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        3.6,
+        3.6,
+        2
+      ],
+      "location": [
+        0,
+        16.6,
+        1.8
+      ],
+      "material": "tissue-pink",
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "collide": false
+    },
+    {
+      "id": "wall-south-left",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        13,
+        0.6,
+        18
+      ],
+      "location": [
+        -8.5,
+        -15.3,
+        9.0
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "wall-south-right",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        13,
+        0.6,
+        18
+      ],
+      "location": [
+        8.5,
+        -15.3,
+        9.0
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "wall-south-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        4,
+        0.6,
+        14
+      ],
+      "location": [
+        0,
+        -15.3,
+        11
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "rib-1-beam",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        30,
+        1,
+        1.5
+      ],
+      "location": [
+        0,
+        -12,
+        16.8
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "rib-1-west",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        1,
+        1,
+        16
+      ],
+      "location": [
+        -14.5,
+        -12,
+        8
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "rib-1-east",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        1,
+        1,
+        16
+      ],
+      "location": [
+        14.5,
+        -12,
+        8
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "rib-2-beam",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        30,
+        1,
+        1.5
+      ],
+      "location": [
+        0,
+        -6,
+        16.8
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "rib-2-west",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        1,
+        1,
+        16
+      ],
+      "location": [
+        -14.5,
+        -6,
+        8
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "rib-2-east",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        1,
+        1,
+        16
+      ],
+      "location": [
+        14.5,
+        -6,
+        8
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "rib-3-beam",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        30,
+        1,
+        1.5
+      ],
+      "location": [
+        0,
+        0,
+        16.8
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "rib-3-west",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        1,
+        1,
+        16
+      ],
+      "location": [
+        -14.5,
+        0,
+        8
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "rib-3-east",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        1,
+        1,
+        16
+      ],
+      "location": [
+        14.5,
+        0,
+        8
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "rib-4-beam",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        30,
+        1,
+        1.5
+      ],
+      "location": [
+        0,
+        6,
+        16.8
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "rib-4-west",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        1,
+        1,
+        16
+      ],
+      "location": [
+        -14.5,
+        6,
+        8
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "rib-4-east",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        1,
+        1,
+        16
+      ],
+      "location": [
+        14.5,
+        6,
+        8
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "rib-5-beam",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        30,
+        1,
+        1.5
+      ],
+      "location": [
+        0,
+        12,
+        16.8
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "rib-5-west",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        1,
+        1,
+        16
+      ],
+      "location": [
+        -14.5,
+        12,
+        8
+      ],
+      "material": "marrow-tissue"
+    },
+    {
+      "id": "rib-5-east",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        1,
+        1,
+        16
+      ],
+      "location": [
+        14.5,
+        12,
+        8
+      ],
+      "material": "marrow-tissue"
+    }
+  ],
+  "props": [
+    {
+      "id": "elders-bench",
+      "object": "elders-bench",
+      "location": [
+        -13,
+        2,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "lamp-mouth-left",
+      "object": "marrow-lamp",
+      "location": [
+        -3,
+        14.6,
+        3.2
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ],
+      "ground": false
+    },
+    {
+      "id": "lamp-mouth-right",
+      "object": "marrow-lamp",
+      "location": [
+        3,
+        14.6,
+        3.2
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ],
+      "ground": false
+    },
+    {
+      "id": "lamp-far-left",
+      "object": "marrow-lamp",
+      "location": [
+        -6,
+        14.6,
+        4.6
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ],
+      "ground": false
+    },
+    {
+      "id": "lamp-far-right",
+      "object": "marrow-lamp",
+      "location": [
+        6,
+        14.6,
+        4.6
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ],
+      "ground": false
+    },
+    {
+      "id": "lamp-east",
+      "object": "marrow-lamp",
+      "location": [
+        14.4,
+        -4,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "lamp-west",
+      "object": "marrow-lamp",
+      "location": [
+        -14.4,
+        -6,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        -90
+      ]
+    }
+  ],
+  "scenes": {
+    "s3_recognition": {
+      "note": "Chapter 4: the elders gather, arms redden, the glow dims from 100% to 30% over 20 s and the shaft opens red in the far wall; climb at the mouth or sit in the bench's empty seat. Neither is prompted on screen; the verbs are the held inputs.",
+      "world": {
+        "color": [
+          0.03,
+          0.05,
+          0.14
+        ],
+        "strength": 0.5
+      },
+      "lights": [
+        {
+          "name": "vault-glow",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            16
+          ],
+          "energy": 9000,
+          "size": 24,
+          "look_at": [
+            0,
+            0,
+            0
+          ],
+          "color": [
+            0.5,
+            0.7,
+            0.88
+          ]
+        },
+        {
+          "name": "shaft-red",
+          "type": "SPOT",
+          "location": [
+            0,
+            15.5,
+            1.8
+          ],
+          "energy": 1500,
+          "size": 1.5,
+          "look_at": [
+            0,
+            0,
+            0.5
+          ],
+          "color": [
+            1.0,
+            0.35,
+            0.25
+          ]
+        },
+        {
+          "name": "lamps",
+          "type": "POINT",
+          "location": [
+            0,
+            14,
+            4
+          ],
+          "energy": 150,
+          "size": 0.4,
+          "color": [
+            1.0,
+            0.66,
+            0.3
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          -14,
+          3
+        ],
+        "look_at": [
+          0,
+          0,
+          1.5
+        ],
+        "lens_mm": 28,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -8,
+          0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "lamp-mouth-left",
+          "verb": "Climb",
+          "leads_to": "s3_shaft"
+        },
+        {
+          "prop": "elders-bench",
+          "verb": "Sit",
+          "leads_to": "s3_marrow_after"
+        }
+      ]
+    }
+  }
+}

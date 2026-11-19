@@ -1,0 +1,862 @@
+{
+ "game": "lira-calyx",
+ "count": 107,
+ "assets": [
+  {
+   "id": "title-lettering",
+   "group": "title",
+   "title": "Title lettering",
+   "w": 1600,
+   "h": 500,
+   "row": "Title lettering"
+  },
+  {
+   "id": "fig-crawler",
+   "group": "figures",
+   "title": "Glassback crawler",
+   "w": 320,
+   "h": 240,
+   "row": "Climb figures"
+  },
+  {
+   "id": "fig-joren",
+   "group": "figures",
+   "title": "Joren, engineer",
+   "w": 240,
+   "h": 320,
+   "row": "Climb figures"
+  },
+  {
+   "id": "fig-kade",
+   "group": "figures",
+   "title": "Kade, scout",
+   "w": 240,
+   "h": 320,
+   "row": "Climb figures"
+  },
+  {
+   "id": "fig-lira-anchor",
+   "group": "figures",
+   "title": "Lira: anchored",
+   "w": 240,
+   "h": 320,
+   "row": "Climb figures"
+  },
+  {
+   "id": "fig-lira-climb",
+   "group": "figures",
+   "title": "Lira: climbing",
+   "w": 240,
+   "h": 320,
+   "row": "Climb figures"
+  },
+  {
+   "id": "fig-lira-drill",
+   "group": "figures",
+   "title": "Lira: core drill",
+   "w": 240,
+   "h": 320,
+   "row": "Climb figures"
+  },
+  {
+   "id": "fig-lira-jump",
+   "group": "figures",
+   "title": "Lira: jumping",
+   "w": 240,
+   "h": 320,
+   "row": "Climb figures"
+  },
+  {
+   "id": "fig-lira-stand",
+   "group": "figures",
+   "title": "Lira: standing, reading",
+   "w": 240,
+   "h": 320,
+   "row": "Climb figures"
+  },
+  {
+   "id": "fig-lira-walk",
+   "group": "figures",
+   "title": "Lira: walking",
+   "w": 240,
+   "h": 320,
+   "row": "Climb figures"
+  },
+  {
+   "id": "fig-mara",
+   "group": "figures",
+   "title": "Mara, storm-singer",
+   "w": 240,
+   "h": 320,
+   "row": "Climb figures"
+  },
+  {
+   "id": "fig-wolf",
+   "group": "figures",
+   "title": "Ember Wolf, juvenile",
+   "w": 320,
+   "h": 240,
+   "row": "Climb figures"
+  },
+  {
+   "id": "spr-lira-anchor",
+   "group": "figures",
+   "title": "Sprite: Lira anchored",
+   "w": 160,
+   "h": 200,
+   "row": "Climb sprites"
+  },
+  {
+   "id": "spr-lira-drill",
+   "group": "figures",
+   "title": "Sprite: Lira at the instrument",
+   "w": 160,
+   "h": 200,
+   "row": "Climb sprites"
+  },
+  {
+   "id": "spr-lira-jump",
+   "group": "figures",
+   "title": "Sprite: Lira jumping",
+   "w": 160,
+   "h": 200,
+   "row": "Climb sprites"
+  },
+  {
+   "id": "spr-lira-stand",
+   "group": "figures",
+   "title": "Sprite: Lira standing",
+   "w": 160,
+   "h": 200,
+   "row": "Climb sprites"
+  },
+  {
+   "id": "spr-lira-walk",
+   "group": "figures",
+   "title": "Sprite: Lira walking",
+   "w": 160,
+   "h": 200,
+   "row": "Climb sprites"
+  },
+  {
+   "id": "spr-lira-walk-2",
+   "group": "figures",
+   "title": "Sprite: Lira walking, passing step",
+   "w": 160,
+   "h": 200,
+   "row": "Climb sprites"
+  },
+  {
+   "id": "spr-mara",
+   "group": "figures",
+   "title": "Sprite: Mara at her camp",
+   "w": 160,
+   "h": 200,
+   "row": "Climb sprites"
+  },
+  {
+   "id": "section-b1-climb",
+   "group": "backdrops",
+   "title": "Section: the Aether-Vine ridge",
+   "w": 1600,
+   "h": 900,
+   "row": "Cross-section backdrops"
+  },
+  {
+   "id": "section-b2-descent",
+   "group": "backdrops",
+   "title": "Section: down to the Scorched Biome",
+   "w": 1600,
+   "h": 900,
+   "row": "Cross-section backdrops"
+  },
+  {
+   "id": "section-b3-climb",
+   "group": "backdrops",
+   "title": "Section: the High Peaks",
+   "w": 1600,
+   "h": 900,
+   "row": "Cross-section backdrops"
+  },
+  {
+   "id": "section-b3-escape",
+   "group": "backdrops",
+   "title": "Section: the shafts of the city",
+   "w": 1600,
+   "h": 900,
+   "row": "Cross-section backdrops"
+  },
+  {
+   "id": "section-b4-descent",
+   "group": "backdrops",
+   "title": "Section: under Peak 12",
+   "w": 1600,
+   "h": 900,
+   "row": "Cross-section backdrops"
+  },
+  {
+   "id": "section-redaction-overlay",
+   "group": "backdrops",
+   "title": "Section: the redaction overlay",
+   "w": 1600,
+   "h": 900,
+   "row": "Cross-section backdrops"
+  },
+  {
+   "id": "assay-cuvette",
+   "group": "pieces",
+   "title": "The cuvette",
+   "w": 240,
+   "h": 320,
+   "row": "Assay bench"
+  },
+  {
+   "id": "assay-scope",
+   "group": "pieces",
+   "title": "The scope",
+   "w": 640,
+   "h": 480,
+   "row": "Assay bench"
+  },
+  {
+   "id": "assay-standard",
+   "group": "pieces",
+   "title": "The standard",
+   "w": 240,
+   "h": 320,
+   "row": "Assay bench"
+  },
+  {
+   "id": "assay-vial-r1",
+   "group": "pieces",
+   "title": "Reagent vial R1",
+   "w": 160,
+   "h": 280,
+   "row": "Assay bench"
+  },
+  {
+   "id": "assay-vial-r2",
+   "group": "pieces",
+   "title": "Reagent vial R2",
+   "w": 160,
+   "h": 280,
+   "row": "Assay bench"
+  },
+  {
+   "id": "assay-vial-r3",
+   "group": "pieces",
+   "title": "Reagent vial R3",
+   "w": 160,
+   "h": 280,
+   "row": "Assay bench"
+  },
+  {
+   "id": "assay-vial-r4",
+   "group": "pieces",
+   "title": "Reagent vial R4",
+   "w": 160,
+   "h": 280,
+   "row": "Assay bench"
+  },
+  {
+   "id": "assay-vial-r5",
+   "group": "pieces",
+   "title": "Reagent vial R5",
+   "w": 160,
+   "h": 280,
+   "row": "Assay bench"
+  },
+  {
+   "id": "assay-vial-r6",
+   "group": "pieces",
+   "title": "Reagent vial R6",
+   "w": 160,
+   "h": 280,
+   "row": "Assay bench"
+  },
+  {
+   "id": "neume-breath",
+   "group": "pieces",
+   "title": "Neume: breath",
+   "w": 200,
+   "h": 200,
+   "row": "Cipher set"
+  },
+  {
+   "id": "neume-clef",
+   "group": "pieces",
+   "title": "Neume: clef",
+   "w": 200,
+   "h": 200,
+   "row": "Cipher set"
+  },
+  {
+   "id": "neume-climacus",
+   "group": "pieces",
+   "title": "Neume: climacus",
+   "w": 200,
+   "h": 200,
+   "row": "Cipher set"
+  },
+  {
+   "id": "neume-clivis",
+   "group": "pieces",
+   "title": "Neume: clivis",
+   "w": 200,
+   "h": 200,
+   "row": "Cipher set"
+  },
+  {
+   "id": "neume-custos",
+   "group": "pieces",
+   "title": "Neume: custos",
+   "w": 200,
+   "h": 200,
+   "row": "Cipher set"
+  },
+  {
+   "id": "neume-drone",
+   "group": "pieces",
+   "title": "Neume: drone",
+   "w": 200,
+   "h": 200,
+   "row": "Cipher set"
+  },
+  {
+   "id": "neume-pes",
+   "group": "pieces",
+   "title": "Neume: pes",
+   "w": 200,
+   "h": 200,
+   "row": "Cipher set"
+  },
+  {
+   "id": "neume-porrectus",
+   "group": "pieces",
+   "title": "Neume: porrectus",
+   "w": 200,
+   "h": 200,
+   "row": "Cipher set"
+  },
+  {
+   "id": "neume-punctum",
+   "group": "pieces",
+   "title": "Neume: punctum",
+   "w": 200,
+   "h": 200,
+   "row": "Cipher set"
+  },
+  {
+   "id": "neume-quilisma",
+   "group": "pieces",
+   "title": "Neume: quilisma",
+   "w": 200,
+   "h": 200,
+   "row": "Cipher set"
+  },
+  {
+   "id": "neume-rest",
+   "group": "pieces",
+   "title": "Neume: rest",
+   "w": 200,
+   "h": 200,
+   "row": "Cipher set"
+  },
+  {
+   "id": "neume-scandicus",
+   "group": "pieces",
+   "title": "Neume: scandicus",
+   "w": 200,
+   "h": 200,
+   "row": "Cipher set"
+  },
+  {
+   "id": "neume-torculus",
+   "group": "pieces",
+   "title": "Neume: torculus",
+   "w": 200,
+   "h": 200,
+   "row": "Cipher set"
+  },
+  {
+   "id": "neume-virga",
+   "group": "pieces",
+   "title": "Neume: virga",
+   "w": 200,
+   "h": 200,
+   "row": "Cipher set"
+  },
+  {
+   "id": "token-emitter",
+   "group": "pieces",
+   "title": "Token: emitter",
+   "w": 200,
+   "h": 200,
+   "row": "Board tokens"
+  },
+  {
+   "id": "token-seed",
+   "group": "pieces",
+   "title": "Token: seed",
+   "w": 200,
+   "h": 200,
+   "row": "Board tokens"
+  },
+  {
+   "id": "token-witness-bars",
+   "group": "pieces",
+   "title": "Token: witness, the bar cipher",
+   "w": 200,
+   "h": 200,
+   "row": "Board tokens"
+  },
+  {
+   "id": "token-witness-pell",
+   "group": "pieces",
+   "title": "Token: witness, Pell's book",
+   "w": 200,
+   "h": 200,
+   "row": "Board tokens"
+  },
+  {
+   "id": "token-witness-sluice",
+   "group": "pieces",
+   "title": "Token: witness, the sluice log",
+   "w": 200,
+   "h": 200,
+   "row": "Board tokens"
+  },
+  {
+   "id": "token-witness-song",
+   "group": "pieces",
+   "title": "Token: witness, Mara's song",
+   "w": 200,
+   "h": 200,
+   "row": "Board tokens"
+  },
+  {
+   "id": "lettering-archivist-in-time",
+   "group": "endings",
+   "title": "Ending lettering: The Archivist in Time",
+   "w": 1200,
+   "h": 210,
+   "row": "Ending cards"
+  },
+  {
+   "id": "lettering-directed-resilience",
+   "group": "endings",
+   "title": "Ending lettering: Directed Resilience",
+   "w": 1200,
+   "h": 210,
+   "row": "Ending cards"
+  },
+  {
+   "id": "lettering-errata",
+   "group": "endings",
+   "title": "Ending lettering: Errata",
+   "w": 1200,
+   "h": 210,
+   "row": "Ending cards"
+  },
+  {
+   "id": "lettering-fire",
+   "group": "endings",
+   "title": "Ending lettering: Fire",
+   "w": 1200,
+   "h": 210,
+   "row": "Ending cards"
+  },
+  {
+   "id": "lettering-redacted-testament",
+   "group": "endings",
+   "title": "Ending lettering: The Redacted Testament",
+   "w": 1200,
+   "h": 210,
+   "row": "Ending cards"
+  },
+  {
+   "id": "bar-clumsy",
+   "group": "ui",
+   "title": "Bar: clumsy",
+   "w": 600,
+   "h": 120,
+   "row": "UI ornaments"
+  },
+  {
+   "id": "bar-gauged",
+   "group": "ui",
+   "title": "Bar: under the gauge",
+   "w": 600,
+   "h": 120,
+   "row": "UI ornaments"
+  },
+  {
+   "id": "bar-lifted",
+   "group": "ui",
+   "title": "Bar: lifted",
+   "w": 600,
+   "h": 120,
+   "row": "UI ornaments"
+  },
+  {
+   "id": "bar-surgical",
+   "group": "ui",
+   "title": "Bar: surgical",
+   "w": 600,
+   "h": 120,
+   "row": "UI ornaments"
+  },
+  {
+   "id": "bracket-ink",
+   "group": "ui",
+   "title": "Margin bracket: Lira's brace",
+   "w": 200,
+   "h": 480,
+   "row": "UI ornaments"
+  },
+  {
+   "id": "bracket-pencil",
+   "group": "ui",
+   "title": "Margin bracket: the circling pencil",
+   "w": 200,
+   "h": 480,
+   "row": "UI ornaments"
+  },
+  {
+   "id": "bracket-small-hand",
+   "group": "ui",
+   "title": "Margin bracket: the small hand",
+   "w": 200,
+   "h": 480,
+   "row": "UI ornaments"
+  },
+  {
+   "id": "dial-afu",
+   "group": "ui",
+   "title": "Dial face: AFU needle",
+   "w": 320,
+   "h": 320,
+   "row": "UI ornaments"
+  },
+  {
+   "id": "dial-altimeter",
+   "group": "ui",
+   "title": "Dial face: altimeter",
+   "w": 320,
+   "h": 320,
+   "row": "UI ornaments"
+  },
+  {
+   "id": "dial-clock",
+   "group": "ui",
+   "title": "Dial face: clock",
+   "w": 320,
+   "h": 320,
+   "row": "UI ornaments"
+  },
+  {
+   "id": "dial-sampling",
+   "group": "ui",
+   "title": "Dial face: sampling dial",
+   "w": 320,
+   "h": 320,
+   "row": "UI ornaments"
+  },
+  {
+   "id": "seal-broken",
+   "group": "ui",
+   "title": "Seal: broken",
+   "w": 300,
+   "h": 300,
+   "row": "UI ornaments"
+  },
+  {
+   "id": "seal-continuum-wax",
+   "group": "ui",
+   "title": "Seal: the Continuum in wax",
+   "w": 300,
+   "h": 300,
+   "row": "UI ornaments"
+  },
+  {
+   "id": "seal-press-imprint",
+   "group": "ui",
+   "title": "Seal: the press imprint",
+   "w": 300,
+   "h": 300,
+   "row": "UI ornaments"
+  },
+  {
+   "id": "stamp-continuum",
+   "group": "ui",
+   "title": "Stamp: The Continuum's seal",
+   "w": 280,
+   "h": 280,
+   "row": "Audit set"
+  },
+  {
+   "id": "stamp-doubted",
+   "group": "ui",
+   "title": "Stamp: Doubted",
+   "w": 280,
+   "h": 280,
+   "row": "Audit set"
+  },
+  {
+   "id": "stamp-excised",
+   "group": "ui",
+   "title": "Stamp: Excised",
+   "w": 280,
+   "h": 280,
+   "row": "Audit set"
+  },
+  {
+   "id": "stamp-forged",
+   "group": "ui",
+   "title": "Stamp: Forged",
+   "w": 280,
+   "h": 280,
+   "row": "Audit set"
+  },
+  {
+   "id": "stamp-hers",
+   "group": "ui",
+   "title": "Stamp: Hers",
+   "w": 280,
+   "h": 280,
+   "row": "Audit set"
+  },
+  {
+   "id": "stamp-other-hand",
+   "group": "ui",
+   "title": "Stamp: Other hand",
+   "w": 280,
+   "h": 280,
+   "row": "Audit set"
+  },
+  {
+   "id": "stamp-restored",
+   "group": "ui",
+   "title": "Stamp: Restored",
+   "w": 280,
+   "h": 280,
+   "row": "Audit set"
+  },
+  {
+   "id": "stamp-sealed",
+   "group": "ui",
+   "title": "Stamp: Sealed",
+   "w": 280,
+   "h": 280,
+   "row": "Audit set"
+  },
+  {
+   "id": "tab-dossier",
+   "group": "ui",
+   "title": "Journal tab: Dossier",
+   "w": 260,
+   "h": 110,
+   "row": "UI ornaments"
+  },
+  {
+   "id": "tab-entries",
+   "group": "ui",
+   "title": "Journal tab: Entries",
+   "w": 260,
+   "h": 110,
+   "row": "UI ornaments"
+  },
+  {
+   "id": "tab-hypotheses",
+   "group": "ui",
+   "title": "Journal tab: Hypotheses",
+   "w": 260,
+   "h": 110,
+   "row": "UI ornaments"
+  },
+  {
+   "id": "tab-margin",
+   "group": "ui",
+   "title": "Journal tab: Margin",
+   "w": 260,
+   "h": 110,
+   "row": "UI ornaments"
+  },
+  {
+   "id": "tab-songs",
+   "group": "ui",
+   "title": "Journal tab: Songs",
+   "w": 260,
+   "h": 110,
+   "row": "UI ornaments"
+  },
+  {
+   "id": "tab-specimens",
+   "group": "ui",
+   "title": "Journal tab: Specimens",
+   "w": 260,
+   "h": 110,
+   "row": "UI ornaments"
+  },
+  {
+   "id": "bar-ledger",
+   "group": "documents",
+   "title": "The ledger of twelve bars",
+   "w": 640,
+   "h": 900,
+   "row": "Audit set"
+  },
+  {
+   "id": "bar-staff",
+   "group": "documents",
+   "title": "The bar staff",
+   "w": 1200,
+   "h": 640,
+   "row": "Cipher set"
+  },
+  {
+   "id": "desk-log",
+   "group": "documents",
+   "title": "The archivist's desk log",
+   "w": 600,
+   "h": 860,
+   "row": "Audit set"
+  },
+  {
+   "id": "errata-sheet",
+   "group": "documents",
+   "title": "Errata: the correction, unsigned",
+   "w": 600,
+   "h": 820,
+   "row": "Ending cards"
+  },
+  {
+   "id": "hand-archivist",
+   "group": "documents",
+   "title": "Hand 3: the small hand",
+   "w": 800,
+   "h": 560,
+   "row": "Audit set"
+  },
+  {
+   "id": "hand-continuum",
+   "group": "documents",
+   "title": "Hand 2: the Continuum",
+   "w": 800,
+   "h": 560,
+   "row": "Audit set"
+  },
+  {
+   "id": "hand-lira",
+   "group": "documents",
+   "title": "Hand 1: hers",
+   "w": 800,
+   "h": 560,
+   "row": "Audit set"
+  },
+  {
+   "id": "hand-pell",
+   "group": "documents",
+   "title": "Hand 4: Pell",
+   "w": 800,
+   "h": 560,
+   "row": "Audit set"
+  },
+  {
+   "id": "key-flyleaf",
+   "group": "documents",
+   "title": "The Key: the flyleaf",
+   "w": 800,
+   "h": 1100,
+   "row": "Key pages"
+  },
+  {
+   "id": "key-page-her-pencil",
+   "group": "documents",
+   "title": "The Key: her pencil",
+   "w": 800,
+   "h": 1100,
+   "row": "Key pages"
+  },
+  {
+   "id": "key-page-print",
+   "group": "documents",
+   "title": "The Key: the printed page",
+   "w": 800,
+   "h": 1100,
+   "row": "Key pages"
+  },
+  {
+   "id": "pell-page-1",
+   "group": "documents",
+   "title": "Pell's book, page 1",
+   "w": 600,
+   "h": 800,
+   "row": "Audit set"
+  },
+  {
+   "id": "pell-page-2",
+   "group": "documents",
+   "title": "Pell's book, page 2",
+   "w": 600,
+   "h": 800,
+   "row": "Audit set"
+  },
+  {
+   "id": "pell-page-3",
+   "group": "documents",
+   "title": "Pell's book, page 3",
+   "w": 600,
+   "h": 800,
+   "row": "Audit set"
+  },
+  {
+   "id": "pell-page-4",
+   "group": "documents",
+   "title": "Pell's book, page 4",
+   "w": 600,
+   "h": 800,
+   "row": "Audit set"
+  },
+  {
+   "id": "pell-page-5",
+   "group": "documents",
+   "title": "Pell's book, page 5",
+   "w": 600,
+   "h": 800,
+   "row": "Audit set"
+  },
+  {
+   "id": "pell-page-6",
+   "group": "documents",
+   "title": "Pell's book, page 6",
+   "w": 600,
+   "h": 800,
+   "row": "Audit set"
+  },
+  {
+   "id": "peak-map",
+   "group": "maps",
+   "title": "The peak map",
+   "w": 1200,
+   "h": 1200,
+   "row": "Cipher set"
+  },
+  {
+   "id": "thread-guest",
+   "group": "thread",
+   "title": "The unfinished game",
+   "w": 480,
+   "h": 480,
+   "row": "Thread"
+  },
+  {
+   "id": "thread-own",
+   "group": "thread",
+   "title": "The correction in the margin",
+   "w": 480,
+   "h": 480,
+   "row": "Thread"
+  }
+ ]
+}

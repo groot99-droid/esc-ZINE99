@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-labelledby="room-void-t room-void-d">
+<title id="room-void-t">Floor Plan stamp: the void</title>
+<desc id="room-void-d">The void stamp: a square of blueprint with no room in it, only a dashed outline, hatching, the missing paces written on a dimension line, and the faint treads of a stair going down.</desc>
+<defs><filter id="room-void-rough1"><feTurbulence type="turbulence" baseFrequency="0.1" numOctaves="2" seed="921" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.5"/></filter><clipPath id="room-void-clip2"><rect x="8" y="8" width="224" height="224"/></clipPath><filter id="room-void-spk3" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="564"/><feColorMatrix values="0 0 0 0 0.04  0 0 0 0 0.11  0 0 0 0 0.23  0 0 0 1 -0.4"/></filter><clipPath id="room-void-clip4"><rect x="38" y="38" width="164" height="148"/></clipPath><mask id="room-void-st5" maskUnits="userSpaceOnUse" x="72" y="196" width="96" height="36"><rect x="72" y="196" width="96" height="36" fill="#fff"/><rect x="97.2" y="204" width="1.6" height="20" fill="#000"/><rect x="111.2" y="204" width="1.6" height="20" fill="#000"/><rect x="125.2" y="204" width="1.6" height="20" fill="#000"/><rect x="139.2" y="204" width="1.6" height="20" fill="#000"/></mask></defs>
+<g filter="url(#room-void-rough1)">
+<rect x="8" y="8" width="224" height="224" rx="4" fill="#1D3F73"/>
+</g>
+<g clip-path="url(#room-void-clip2)">
+<rect x="0" y="0" width="240" height="240" filter="url(#room-void-spk3)"/>
+</g>
+<rect x="34" y="34" width="172" height="156" fill="none" stroke="#F4F7FF" stroke-width="3" stroke-dasharray="12 8"/>
+<g clip-path="url(#room-void-clip4)">
+<path d="M120,-62.6 L294.6,112 M110.8,-53.4 L285.4,121.2 M101.6,-44.2 L276.2,130.4 M92.4,-35 L267,139.6 M83.2,-25.8 L257.8,148.8 M74,-16.6 L248.6,158 M64.8,-7.4 L239.4,167.2 M55.7,1.8 L230.2,176.3 M46.5,10.9 L221.1,185.5 M37.3,20.1 L211.9,194.7 M28.1,29.3 L202.7,203.9 M18.9,38.5 L193.5,213.1 M9.7,47.7 L184.3,222.3 M0.5,56.9 L175.1,231.5 M-8.7,66.1 L165.9,240.7 M-17.9,75.3 L156.7,249.9 M-27.1,84.5 L147.5,259.1 M-36.3,93.7 L138.3,268.3 M-45.5,102.9 L129.1,277.5" fill="none" stroke="#F4F7FF" stroke-width="1.1" opacity="0.6"/>
+</g>
+<rect x="64" y="70" width="112" height="84" fill="#1D3F73" opacity="0.9"/>
+<path d="M72,78V146" stroke="#CFE0FF" stroke-width="1.5" opacity="0.9"/>
+<path d="M88,82V142" stroke="#CFE0FF" stroke-width="1.5" opacity="0.8"/>
+<path d="M104,86V138" stroke="#CFE0FF" stroke-width="1.5" opacity="0.7"/>
+<path d="M120,90V134" stroke="#CFE0FF" stroke-width="1.5" opacity="0.5"/>
+<path d="M136,94V130" stroke="#CFE0FF" stroke-width="1.5" opacity="0.4"/>
+<path d="M152,98V126" stroke="#CFE0FF" stroke-width="1.5" opacity="0.3"/>
+<path d="M70,112 h94 l-10,-7 m10,7 l-10,7" fill="none" stroke="#D9A441" stroke-width="2"/>
+<path d="M34,22 H206 M34,14 v16 M206,14 v16" stroke="#D9A441" stroke-width="2" fill="none"/>
+<rect x="84" y="12" width="72" height="20" fill="#1D3F73"/>
+<text x="120" y="28" font-size="17" font-family="monospace" fill="#D9A441" text-anchor="middle" font-weight="bold">18-24</text>
+<g mask="url(#room-void-st5)">
+<text x="92" y="220" font-size="20" font-family="monospace" fill="#F4F7FF" font-weight="bold" letter-spacing="2">VOID</text>
+</g>
+</svg>

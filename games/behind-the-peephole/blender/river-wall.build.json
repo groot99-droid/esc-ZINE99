@@ -1,0 +1,569 @@
+{
+  "game": "behind-the-peephole",
+  "location": "river-wall",
+  "name": "The river wall at dawn",
+  "reference": "assets/locations/river-wall.jpg",
+  "bounds_m": [
+    40.0,
+    8.0,
+    6.0
+  ],
+  "origin": "floor centre of the playable strip; +y toward the hotel facade (the staff alley's mouth at x 10 to 14), -y toward the parapet and the river; the upper facade, the river, the bridge and the cranes are sky pieces beyond the bounds",
+  "materials": {
+    "flagstone": {
+      "color": [
+        0.431,
+        0.416,
+        0.392
+      ],
+      "roughness": 0.6
+    },
+    "granite": {
+      "color": [
+        0.369,
+        0.361,
+        0.345
+      ],
+      "roughness": 0.8
+    },
+    "wet-cobbles": {
+      "color": [
+        0.18,
+        0.165,
+        0.157
+      ],
+      "roughness": 0.25
+    },
+    "brick": {
+      "color": [
+        0.353,
+        0.204,
+        0.149
+      ],
+      "roughness": 0.9
+    },
+    "bulb-yellow": {
+      "color": [
+        0.949,
+        0.776,
+        0.42
+      ],
+      "roughness": 0.5,
+      "emission": 1.0
+    },
+    "dark-window": {
+      "color": [
+        0.102,
+        0.11,
+        0.118
+      ],
+      "roughness": 0.1
+    },
+    "river-grey": {
+      "color": [
+        0.498,
+        0.541,
+        0.565
+      ],
+      "roughness": 0.2
+    },
+    "fog-grey": {
+      "color": [
+        0.604,
+        0.639,
+        0.651
+      ],
+      "roughness": 1.0
+    },
+    "iron": {
+      "color": [
+        0.118,
+        0.118,
+        0.118
+      ],
+      "roughness": 0.5,
+      "metallic": 0.7
+    }
+  },
+  "blockout": [
+    {
+      "id": "walkway",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        40.0,
+        2.5,
+        0.15
+      ],
+      "location": [
+        0,
+        -2.25,
+        0.075
+      ],
+      "material": "flagstone"
+    },
+    {
+      "id": "kerb",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        40.0,
+        0.15,
+        0.17
+      ],
+      "location": [
+        0,
+        -1.0,
+        0.085
+      ],
+      "material": "granite"
+    },
+    {
+      "id": "roadway",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        40.0,
+        5.0,
+        0.1
+      ],
+      "location": [
+        0,
+        1.5,
+        -0.05
+      ],
+      "material": "wet-cobbles"
+    },
+    {
+      "id": "parapet",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        40.0,
+        0.5,
+        1.0
+      ],
+      "location": [
+        0,
+        -3.75,
+        0.5
+      ],
+      "material": "granite"
+    },
+    {
+      "id": "parapet-cap",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        40.0,
+        0.6,
+        0.1
+      ],
+      "location": [
+        0,
+        -3.75,
+        1.05
+      ],
+      "material": "granite"
+    },
+    {
+      "id": "facade-west",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        30.0,
+        0.6,
+        6.0
+      ],
+      "location": [
+        -5.0,
+        4.3,
+        3.0
+      ],
+      "material": "brick"
+    },
+    {
+      "id": "facade-east",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        6.0,
+        0.6,
+        6.0
+      ],
+      "location": [
+        17.0,
+        4.3,
+        3.0
+      ],
+      "material": "brick"
+    },
+    {
+      "id": "alley-arch",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        4.0,
+        0.6,
+        2.5
+      ],
+      "location": [
+        12.0,
+        4.3,
+        4.75
+      ],
+      "material": "brick"
+    },
+    {
+      "id": "alley-floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        4.0,
+        1.0,
+        0.1
+      ],
+      "location": [
+        12.0,
+        4.3,
+        -0.05
+      ],
+      "material": "wet-cobbles"
+    },
+    {
+      "id": "arch-lamp",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.3,
+        0.1,
+        0.3
+      ],
+      "location": [
+        13.6,
+        3.95,
+        2.8
+      ],
+      "material": "bulb-yellow",
+      "collide": false
+    },
+    {
+      "id": "ground-arches",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        28.0,
+        0.05,
+        2.6
+      ],
+      "location": [
+        -5.0,
+        3.98,
+        1.6
+      ],
+      "material": "dark-window",
+      "collide": false
+    },
+    {
+      "id": "facade-upper",
+      "shape": "box",
+      "role": "sky",
+      "size_m": [
+        40.0,
+        0.6,
+        18.0
+      ],
+      "location": [
+        0,
+        4.3,
+        15.0
+      ],
+      "material": "brick",
+      "collide": false
+    },
+    {
+      "id": "fourth-floor-dark-window",
+      "shape": "box",
+      "role": "sky",
+      "size_m": [
+        1.0,
+        0.05,
+        1.8
+      ],
+      "location": [
+        12.0,
+        3.98,
+        16.5
+      ],
+      "material": "dark-window",
+      "collide": false
+    },
+    {
+      "id": "river",
+      "shape": "plane",
+      "role": "sky",
+      "size_m": [
+        400.0,
+        120.0,
+        0.0
+      ],
+      "location": [
+        0,
+        -64.0,
+        -1.5
+      ],
+      "material": "river-grey",
+      "collide": false
+    },
+    {
+      "id": "far-bank",
+      "shape": "box",
+      "role": "sky",
+      "size_m": [
+        300.0,
+        20.0,
+        8.0
+      ],
+      "location": [
+        0,
+        -140.0,
+        2.0
+      ],
+      "material": "fog-grey",
+      "collide": false
+    },
+    {
+      "id": "bridge",
+      "shape": "box",
+      "role": "sky",
+      "size_m": [
+        120.0,
+        6.0,
+        1.5
+      ],
+      "location": [
+        -20.0,
+        -90.0,
+        8.0
+      ],
+      "material": "iron",
+      "collide": false
+    },
+    {
+      "id": "crane-1",
+      "shape": "box",
+      "role": "sky",
+      "size_m": [
+        2.0,
+        2.0,
+        30.0
+      ],
+      "location": [
+        -40.0,
+        -125.0,
+        15.0
+      ],
+      "material": "iron",
+      "collide": false
+    },
+    {
+      "id": "crane-2",
+      "shape": "box",
+      "role": "sky",
+      "size_m": [
+        2.0,
+        2.0,
+        26.0
+      ],
+      "location": [
+        -30.0,
+        -128.0,
+        13.0
+      ],
+      "material": "iron",
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "bollard-1",
+      "object": "mooring-bollard",
+      "location": [
+        -15.0,
+        -2.6,
+        0.15
+      ]
+    },
+    {
+      "id": "bollard-2",
+      "object": "mooring-bollard",
+      "location": [
+        -6.0,
+        -2.6,
+        0.15
+      ]
+    },
+    {
+      "id": "bollard-3",
+      "object": "mooring-bollard",
+      "location": [
+        3.0,
+        -2.6,
+        0.15
+      ]
+    },
+    {
+      "id": "bollard-4",
+      "object": "mooring-bollard",
+      "location": [
+        12.0,
+        -2.6,
+        0.15
+      ]
+    },
+    {
+      "id": "lamp-post-1",
+      "object": "iron-lamp-post",
+      "location": [
+        -11.0,
+        -3.2,
+        0.15
+      ]
+    },
+    {
+      "id": "lamp-post-2",
+      "object": "iron-lamp-post",
+      "location": [
+        6.0,
+        -3.2,
+        0.15
+      ]
+    },
+    {
+      "id": "dustbin-1",
+      "object": "dustbin",
+      "location": [
+        9.4,
+        3.6,
+        0
+      ]
+    },
+    {
+      "id": "dustbin-2",
+      "object": "dustbin",
+      "location": [
+        8.8,
+        3.65,
+        0
+      ]
+    }
+  ],
+  "scenes": {
+    "end_open_door": {
+      "note": "The Open Door. Out of the staff alley onto the river wall at grey dawn, walking beside Fenn, fog lifting; look up at the fourth floor, where one window is dark.",
+      "world": {
+        "color": [
+          0.45,
+          0.49,
+          0.52
+        ],
+        "strength": 0.6
+      },
+      "lights": [
+        {
+          "name": "grey-dawn",
+          "type": "SUN",
+          "location": [
+            0,
+            -20.0,
+            30.0
+          ],
+          "energy": 1.5,
+          "size": 1.0,
+          "color": [
+            0.74,
+            0.79,
+            0.84
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "lamp-1",
+          "type": "POINT",
+          "location": [
+            -11.0,
+            -3.2,
+            4.0
+          ],
+          "energy": 80,
+          "size": 0.3,
+          "color": [
+            1.0,
+            0.85,
+            0.6
+          ]
+        },
+        {
+          "name": "lamp-2",
+          "type": "POINT",
+          "location": [
+            6.0,
+            -3.2,
+            4.0
+          ],
+          "energy": 80,
+          "size": 0.3,
+          "color": [
+            1.0,
+            0.85,
+            0.6
+          ]
+        },
+        {
+          "name": "alley-arch-lamp",
+          "type": "POINT",
+          "location": [
+            13.6,
+            3.8,
+            2.8
+          ],
+          "energy": 30,
+          "size": 0.1,
+          "color": [
+            1.0,
+            0.8,
+            0.45
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          12.0,
+          2.5,
+          1.62
+        ],
+        "look_at": [
+          12.0,
+          3.98,
+          16.5
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          12.0,
+          2.5,
+          0
+        ],
+        "facing_deg": 180
+      },
+      "hide": [],
+      "interactions": []
+    }
+  }
+}

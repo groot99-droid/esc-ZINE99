@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-labelledby="stamp-xadra-t stamp-xadra-d">
+<title id="stamp-xadra-t">Tooling stamp: Xadra (person)</title>
+<desc id="stamp-xadra-d">A leather tile from the Person tray, stamped in gold: The head shaman's cane and the feather tied to it. Below it, the word XADRA.</desc>
+<defs><clipPath id="stamp-xadra-clip1"><rect x="0" y="0" width="200" height="200" rx="10"/></clipPath><filter id="stamp-xadra-gr2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="2" seed="209"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.4 0"/></filter><filter id="stamp-xadra-gr3" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="743"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><radialGradient id="stamp-xadra-rg4" cx="0.5" cy="0.5" r="0.75"><stop offset="0%" stop-color="#000" stop-opacity="0"/><stop offset="60%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#140904" stop-opacity="0.5"/></radialGradient><linearGradient id="stamp-xadra-gold5" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="120" y2="84" spreadMethod="reflect"><stop offset="0" stop-color="#F0D488"/><stop offset="0.45" stop-color="#D4A23A"/><stop offset="0.75" stop-color="#9A6F1E"/><stop offset="1" stop-color="#D4A23A"/></linearGradient><filter id="stamp-xadra-gr6" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="674"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter></defs>
+<rect x="0" y="0" width="200" height="200" fill="#5E2A1E" rx="10"/>
+<rect x="0" y="0" width="200" height="200" filter="url(#stamp-xadra-gr2)" clip-path="url(#stamp-xadra-clip1)"/>
+<rect x="0" y="0" width="200" height="200" filter="url(#stamp-xadra-gr3)" clip-path="url(#stamp-xadra-clip1)"/>
+<rect x="0" y="0" width="200" height="200" fill="url(#stamp-xadra-rg4)" rx="10"/>
+<path d="M34,16 H166 L184,34 V132 L166,150 H34 L16,132 V34Z" fill="#431B12" opacity="0.8"/>
+<path d="M34,16 H166 L184,34 V132 L166,150 H34 L16,132 V34Z" fill="none" stroke="#140904" stroke-width="5" opacity="0.5" transform="translate(1.5 2)"/>
+<path d="M34,16 H166 L184,34 V132 L166,150 H34 L16,132 V34Z" fill="none" stroke="url(#stamp-xadra-gold5)" stroke-width="3"/>
+<path d="M37,23 H163 L177,37 V129 L163,143 H37 L23,129 V37Z" fill="none" stroke="url(#stamp-xadra-gold5)" stroke-width="0.9"/>
+<g transform="translate(101.6 86.2) scale(1.06)" opacity="0.7">
+<path d="M-8,44 L2,-30 C4,-42 18,-42 20,-32 C21,-26 16,-22 12,-24" fill="none" stroke="#140904" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M0,-12 C-14,-18 -30,-14 -40,-2 C-26,-2 -12,-4 0,-12Z" fill="#140904"/>
+<path d="M0,-12 C-12,-12 -26,-8 -40,-2" fill="none" stroke="#3a1a0e" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-2,2 h8 M-3,8 h8" fill="none" stroke="#140904" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M20.2,30a1.8,1.8 0 1,0 3.6,0a1.8,1.8 0 1,0 -3.6,0M28.2,20a1.8,1.8 0 1,0 3.6,0a1.8,1.8 0 1,0 -3.6,0M24.2,40a1.8,1.8 0 1,0 3.6,0a1.8,1.8 0 1,0 -3.6,0M34.2,34a1.8,1.8 0 1,0 3.6,0a1.8,1.8 0 1,0 -3.6,0" fill="#140904"/>
+</g>
+<g transform="translate(100 84) scale(1.06)" opacity="1">
+<path d="M-8,44 L2,-30 C4,-42 18,-42 20,-32 C21,-26 16,-22 12,-24" fill="none" stroke="url(#stamp-xadra-gold5)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M0,-12 C-14,-18 -30,-14 -40,-2 C-26,-2 -12,-4 0,-12Z" fill="url(#stamp-xadra-gold5)"/>
+<path d="M0,-12 C-12,-12 -26,-8 -40,-2" fill="none" stroke="#3a1a0e" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-2,2 h8 M-3,8 h8" fill="none" stroke="url(#stamp-xadra-gold5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M20.2,30a1.8,1.8 0 1,0 3.6,0a1.8,1.8 0 1,0 -3.6,0M28.2,20a1.8,1.8 0 1,0 3.6,0a1.8,1.8 0 1,0 -3.6,0M24.2,40a1.8,1.8 0 1,0 3.6,0a1.8,1.8 0 1,0 -3.6,0M34.2,34a1.8,1.8 0 1,0 3.6,0a1.8,1.8 0 1,0 -3.6,0" fill="url(#stamp-xadra-gold5)"/>
+</g>
+<text x="100.7" y="180.9" font-size="19" font-family="serif" fill="#1A0B05" opacity="0.8" text-anchor="middle" letter-spacing="2.4" font-weight="bold">XADRA</text>
+<text x="100" y="180" font-size="19" font-family="serif" fill="url(#stamp-xadra-gold5)" text-anchor="middle" letter-spacing="2.4" font-weight="bold">XADRA</text>
+<text x="99.8" y="179.7" font-size="19" font-family="serif" fill="none" stroke="#F0D488" stroke-width="0.4" opacity="0.6" text-anchor="middle" letter-spacing="2.4" font-weight="bold">XADRA</text>
+<path d="M30,160 H170" stroke="url(#stamp-xadra-gold5)" stroke-width="0.8" fill="none"/>
+<path d="M22,160 l4,-4 l4,4 l-4,4Z" fill="url(#stamp-xadra-gold5)"/>
+<path d="M178,160 l-4,-4 l-4,4 l4,4Z" fill="url(#stamp-xadra-gold5)"/>
+<rect x="0" y="0" width="200" height="200" filter="url(#stamp-xadra-gr6)"/>
+</svg>

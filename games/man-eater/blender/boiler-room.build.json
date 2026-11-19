@@ -1,0 +1,489 @@
+{
+  "game": "man-eater",
+  "location": "boiler-room",
+  "name": "The boiler room",
+  "reference": "assets/locations/boiler-room.jpg",
+  "bounds_m": [
+    12,
+    8,
+    5
+  ],
+  "origin": "floor centre; +y toward the two boilers on the north wall, the door on the south wall",
+  "materials": {
+    "concrete": {
+      "color": [
+        0.45,
+        0.45,
+        0.44
+      ],
+      "roughness": 0.95
+    },
+    "frost": {
+      "color": [
+        0.486,
+        0.549,
+        0.6
+      ],
+      "roughness": 0.7
+    },
+    "ink": {
+      "color": [
+        0.106,
+        0.114,
+        0.122
+      ],
+      "roughness": 0.9
+    },
+    "pale-wood": {
+      "color": [
+        0.55,
+        0.42,
+        0.28
+      ],
+      "roughness": 0.8
+    },
+    "steel": {
+      "color": [
+        0.541,
+        0.561,
+        0.576
+      ],
+      "roughness": 0.55,
+      "metallic": 0.8
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        12,
+        8,
+        0.1
+      ],
+      "location": [
+        0,
+        0,
+        -0.05
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "ceiling",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        12,
+        8,
+        0.1
+      ],
+      "location": [
+        0,
+        0,
+        5.05
+      ],
+      "material": "ink"
+    },
+    {
+      "id": "wall-north",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        12,
+        0.15,
+        5
+      ],
+      "location": [
+        0,
+        4.075,
+        2.5
+      ],
+      "material": "ink"
+    },
+    {
+      "id": "wall-west",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        8,
+        5
+      ],
+      "location": [
+        -6.075,
+        0,
+        2.5
+      ],
+      "material": "ink"
+    },
+    {
+      "id": "wall-east",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        8,
+        5
+      ],
+      "location": [
+        6.075,
+        0,
+        2.5
+      ],
+      "material": "pale-wood"
+    },
+    {
+      "id": "wall-south-left",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        5.45,
+        0.15,
+        5
+      ],
+      "location": [
+        -3.275,
+        -4.075,
+        2.5
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "wall-south-right",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        5.45,
+        0.15,
+        5
+      ],
+      "location": [
+        3.275,
+        -4.075,
+        2.5
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "wall-south-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.1,
+        0.15,
+        0.8
+      ],
+      "location": [
+        0,
+        -4.075,
+        4.6
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "pipe-a",
+      "shape": "cylinder",
+      "role": "trim",
+      "size_m": [
+        0.4,
+        0.4,
+        12
+      ],
+      "location": [
+        0,
+        3.4,
+        4.5
+      ],
+      "material": "steel",
+      "rotation_deg": [
+        0,
+        90,
+        0
+      ]
+    },
+    {
+      "id": "pipe-b",
+      "shape": "cylinder",
+      "role": "trim",
+      "size_m": [
+        0.25,
+        0.25,
+        12
+      ],
+      "location": [
+        0,
+        2.7,
+        4.7
+      ],
+      "material": "steel",
+      "rotation_deg": [
+        0,
+        90,
+        0
+      ]
+    },
+    {
+      "id": "duct",
+      "shape": "cylinder",
+      "role": "trim",
+      "size_m": [
+        0.6,
+        0.6,
+        6
+      ],
+      "location": [
+        0.5,
+        0,
+        4.4
+      ],
+      "material": "steel",
+      "rotation_deg": [
+        90,
+        0,
+        30
+      ]
+    },
+    {
+      "id": "frost-west",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.3,
+        7.6,
+        0.05
+      ],
+      "location": [
+        -5.8,
+        0,
+        0.03
+      ],
+      "material": "frost"
+    },
+    {
+      "id": "frost-north",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        11.6,
+        0.3,
+        0.05
+      ],
+      "location": [
+        0,
+        3.8,
+        0.03
+      ],
+      "material": "frost"
+    },
+    {
+      "id": "frost-east",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.3,
+        3.0,
+        0.05
+      ],
+      "location": [
+        5.8,
+        1.5,
+        0.03
+      ],
+      "material": "frost"
+    }
+  ],
+  "props": [
+    {
+      "id": "boiler-a",
+      "object": "boiler",
+      "location": [
+        -2.6,
+        2.1,
+        0
+      ]
+    },
+    {
+      "id": "boiler-b",
+      "object": "boiler",
+      "location": [
+        2.0,
+        2.2,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        -8
+      ]
+    },
+    {
+      "id": "drain-1",
+      "object": "floor-drain",
+      "location": [
+        -2.2,
+        -0.6,
+        0
+      ]
+    },
+    {
+      "id": "drain-2",
+      "object": "floor-drain",
+      "location": [
+        1.8,
+        -0.2,
+        0
+      ]
+    },
+    {
+      "id": "drain-3",
+      "object": "floor-drain",
+      "location": [
+        4.3,
+        -2.2,
+        0
+      ]
+    },
+    {
+      "id": "drain-4",
+      "object": "floor-drain",
+      "location": [
+        -0.4,
+        -3.0,
+        0
+      ]
+    },
+    {
+      "id": "drain-5",
+      "object": "floor-drain",
+      "location": [
+        -4.6,
+        -2.0,
+        0
+      ]
+    }
+  ],
+  "scenes": {
+    "d4_duty_boiler": {
+      "note": "Day 4 duty: the gauges read hot, but the floor drains breathe frost upward; a hand over one loses warmth (cold_from_below; L4 broken, L13 added).",
+      "world": {
+        "color": [
+          0.04,
+          0.05,
+          0.07
+        ],
+        "strength": 0.2
+      },
+      "lights": [
+        {
+          "name": "firebox-a",
+          "type": "POINT",
+          "location": [
+            -2.6,
+            0.2,
+            1.4
+          ],
+          "energy": 140,
+          "size": 0.3,
+          "color": [
+            1.0,
+            0.45,
+            0.15
+          ]
+        },
+        {
+          "name": "firebox-b",
+          "type": "POINT",
+          "location": [
+            2.0,
+            0.3,
+            1.4
+          ],
+          "energy": 140,
+          "size": 0.3,
+          "color": [
+            1.0,
+            0.45,
+            0.15
+          ]
+        },
+        {
+          "name": "ember-wall",
+          "type": "AREA",
+          "location": [
+            5.6,
+            0,
+            2.5
+          ],
+          "energy": 80,
+          "size": 3,
+          "color": [
+            1.0,
+            0.6,
+            0.3
+          ],
+          "look_at": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "name": "drain-cold",
+          "type": "AREA",
+          "location": [
+            0,
+            -1.5,
+            4.6
+          ],
+          "energy": 60,
+          "size": 6,
+          "color": [
+            0.6,
+            0.75,
+            1.0
+          ],
+          "look_at": [
+            0,
+            -1.5,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          -3.4,
+          1.95
+        ],
+        "look_at": [
+          0,
+          1.5,
+          0.8
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -3.4,
+          0.0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "boiler-a",
+          "verb": "Read the gauges"
+        },
+        {
+          "prop": "drain-1",
+          "verb": "Hold a hand over the drain",
+          "leads_to": "d4_tray"
+        }
+      ]
+    }
+  }
+}

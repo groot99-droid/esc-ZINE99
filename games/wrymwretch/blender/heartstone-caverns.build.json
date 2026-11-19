@@ -1,0 +1,820 @@
+{
+  "game": "wrymwretch",
+  "location": "heartstone-caverns",
+  "name": "The Heartstone hall and the Deep Core",
+  "reference": "assets/locations/heartstone-caverns.jpg",
+  "bounds_m": [
+    60,
+    90,
+    30
+  ],
+  "origin": "floor centre on the Deep Core floor; +y toward the Heartstone on its plinth; the plaza of the underground city is a raised level (top at 12 m) over the north half, the Deep Core and its fissure the lower cavern to the south, joined by the stair at +x; bounds deepened from 50 to 90 m so the 60 x 40 m hall and the 50 m core both fit",
+  "materials": {
+    "bone": {
+      "color": [
+        0.902,
+        0.863,
+        0.769
+      ],
+      "roughness": 0.75
+    },
+    "bone-dark": {
+      "color": [
+        0.496,
+        0.475,
+        0.423
+      ],
+      "roughness": 0.85
+    },
+    "silver": {
+      "color": [
+        0.541,
+        0.557,
+        0.549
+      ],
+      "roughness": 0.45,
+      "metallic": 0.8
+    },
+    "void": {
+      "color": [
+        0.051,
+        0.055,
+        0.078
+      ],
+      "roughness": 1.0
+    },
+    "cavern-rock": {
+      "color": [
+        0.227,
+        0.227,
+        0.251
+      ],
+      "roughness": 0.95
+    },
+    "plaza-stone": {
+      "color": [
+        0.416,
+        0.416,
+        0.431
+      ],
+      "roughness": 0.9
+    },
+    "gem-ochre": {
+      "color": [
+        0.784,
+        0.549,
+        0.204
+      ],
+      "roughness": 0.3,
+      "emission": 1.5
+    },
+    "fissure": {
+      "color": [
+        1.0,
+        0.439,
+        0.094
+      ],
+      "roughness": 0.3,
+      "emission": 6.0
+    },
+    "crystal-ash": {
+      "color": [
+        0.29,
+        0.29,
+        0.306
+      ],
+      "roughness": 0.6
+    }
+  },
+  "blockout": [
+    {
+      "id": "core-floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        60,
+        50,
+        0.4
+      ],
+      "location": [
+        0,
+        -20,
+        -0.2
+      ],
+      "material": "cavern-rock"
+    },
+    {
+      "id": "plaza",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        60,
+        40,
+        12
+      ],
+      "location": [
+        0,
+        25,
+        6
+      ],
+      "material": "plaza-stone"
+    },
+    {
+      "id": "fissure",
+      "shape": "box",
+      "role": "water",
+      "size_m": [
+        30,
+        3,
+        0.2
+      ],
+      "location": [
+        -4,
+        -24,
+        0.05
+      ],
+      "material": "fissure",
+      "collide": false
+    },
+    {
+      "id": "wall-west",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1,
+        90,
+        30
+      ],
+      "location": [
+        -30.5,
+        0,
+        15
+      ],
+      "material": "cavern-rock"
+    },
+    {
+      "id": "wall-east",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1,
+        90,
+        30
+      ],
+      "location": [
+        30.5,
+        0,
+        15
+      ],
+      "material": "cavern-rock"
+    },
+    {
+      "id": "wall-back",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        60,
+        1,
+        18
+      ],
+      "location": [
+        0,
+        45.5,
+        21
+      ],
+      "material": "cavern-rock"
+    },
+    {
+      "id": "wall-front",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        60,
+        1,
+        30
+      ],
+      "location": [
+        0,
+        -45.5,
+        15
+      ],
+      "material": "cavern-rock"
+    },
+    {
+      "id": "cavern-roof",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        60,
+        90,
+        1
+      ],
+      "location": [
+        0,
+        0,
+        30.5
+      ],
+      "material": "void"
+    },
+    {
+      "id": "stair-1",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        4,
+        2,
+        2
+      ],
+      "location": [
+        26,
+        -6,
+        1
+      ],
+      "material": "plaza-stone"
+    },
+    {
+      "id": "stair-2",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        4,
+        2,
+        4
+      ],
+      "location": [
+        26,
+        -4,
+        2
+      ],
+      "material": "plaza-stone"
+    },
+    {
+      "id": "stair-3",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        4,
+        2,
+        6
+      ],
+      "location": [
+        26,
+        -2,
+        3
+      ],
+      "material": "plaza-stone"
+    },
+    {
+      "id": "stair-4",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        4,
+        2,
+        8
+      ],
+      "location": [
+        26,
+        0,
+        4
+      ],
+      "material": "plaza-stone"
+    },
+    {
+      "id": "stair-5",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        4,
+        2,
+        10
+      ],
+      "location": [
+        26,
+        2,
+        5
+      ],
+      "material": "plaza-stone"
+    },
+    {
+      "id": "stair-6",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        4,
+        2,
+        12
+      ],
+      "location": [
+        26,
+        4,
+        6
+      ],
+      "material": "plaza-stone"
+    },
+    {
+      "id": "houses-w-low",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        6,
+        30,
+        6
+      ],
+      "location": [
+        -26.5,
+        28,
+        15
+      ],
+      "material": "bone"
+    },
+    {
+      "id": "houses-w-high",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        5,
+        20,
+        6
+      ],
+      "location": [
+        -27,
+        32,
+        21
+      ],
+      "material": "bone"
+    },
+    {
+      "id": "gems-w",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.3,
+        26,
+        4
+      ],
+      "location": [
+        -23.4,
+        28,
+        15
+      ],
+      "material": "gem-ochre",
+      "collide": false
+    },
+    {
+      "id": "houses-e-low",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        6,
+        30,
+        6
+      ],
+      "location": [
+        26.5,
+        28,
+        15
+      ],
+      "material": "bone"
+    },
+    {
+      "id": "houses-e-high",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        5,
+        20,
+        6
+      ],
+      "location": [
+        27,
+        32,
+        21
+      ],
+      "material": "bone"
+    },
+    {
+      "id": "gems-e",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.3,
+        26,
+        4
+      ],
+      "location": [
+        23.4,
+        28,
+        15
+      ],
+      "material": "gem-ochre",
+      "collide": false
+    },
+    {
+      "id": "plinth-1",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        12,
+        10,
+        1
+      ],
+      "location": [
+        0,
+        36,
+        12.5
+      ],
+      "material": "silver"
+    },
+    {
+      "id": "plinth-2",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        9,
+        7,
+        1
+      ],
+      "location": [
+        0,
+        36,
+        13.5
+      ],
+      "material": "silver"
+    },
+    {
+      "id": "plinth-3",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        6,
+        5,
+        1
+      ],
+      "location": [
+        0,
+        36,
+        14.5
+      ],
+      "material": "silver"
+    },
+    {
+      "id": "reliquary-frame",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        16,
+        1.5,
+        12
+      ],
+      "location": [
+        0,
+        41,
+        18
+      ],
+      "material": "silver"
+    },
+    {
+      "id": "wall-crystals-1",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        4,
+        3,
+        6
+      ],
+      "location": [
+        -24,
+        -40,
+        3
+      ],
+      "material": "crystal-ash"
+    },
+    {
+      "id": "wall-crystals-2",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        4,
+        3,
+        6
+      ],
+      "location": [
+        -12,
+        -42,
+        3
+      ],
+      "material": "crystal-ash"
+    },
+    {
+      "id": "wall-crystals-3",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        4,
+        3,
+        6
+      ],
+      "location": [
+        10,
+        -42,
+        3
+      ],
+      "material": "crystal-ash"
+    },
+    {
+      "id": "wall-crystals-4",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        4,
+        3,
+        6
+      ],
+      "location": [
+        22,
+        -38,
+        3
+      ],
+      "material": "crystal-ash"
+    }
+  ],
+  "props": [
+    {
+      "id": "heartstone",
+      "object": "heartstone",
+      "location": [
+        0,
+        36,
+        15
+      ]
+    },
+    {
+      "id": "living-shard",
+      "object": "living-shard",
+      "location": [
+        10,
+        -42.5,
+        3.5
+      ],
+      "ground": false
+    },
+    {
+      "id": "crystal-core",
+      "object": "memory-crystal",
+      "location": [
+        16,
+        -30,
+        0
+      ]
+    }
+  ],
+  "scenes": {
+    "s_heartstone_hall": {
+      "note": "Dim amber, the gems like dying embers: Rhyla crosses the empty plaza at an elder's pace and kneels at the Heartstone; the vision is a 30-second playable space.",
+      "world": {
+        "color": [
+          0.063,
+          0.047,
+          0.031
+        ],
+        "strength": 0.12
+      },
+      "lights": [
+        {
+          "name": "heartstone-ember",
+          "type": "POINT",
+          "location": [
+            0,
+            34,
+            17
+          ],
+          "energy": 3000,
+          "size": 2,
+          "color": [
+            0.941,
+            0.627,
+            0.251
+          ]
+        },
+        {
+          "name": "gem-glints-w",
+          "type": "AREA",
+          "location": [
+            -20,
+            28,
+            16
+          ],
+          "energy": 400,
+          "size": 8,
+          "color": [
+            0.784,
+            0.549,
+            0.204
+          ],
+          "look_at": [
+            0,
+            20,
+            12
+          ]
+        },
+        {
+          "name": "gem-glints-e",
+          "type": "AREA",
+          "location": [
+            20,
+            28,
+            16
+          ],
+          "energy": 400,
+          "size": 8,
+          "color": [
+            0.784,
+            0.549,
+            0.204
+          ],
+          "look_at": [
+            0,
+            20,
+            12
+          ]
+        },
+        {
+          "name": "rim",
+          "type": "SPOT",
+          "location": [
+            0,
+            5,
+            26
+          ],
+          "energy": 2000,
+          "size": 1,
+          "color": [
+            0.749,
+            0.816,
+            0.949
+          ],
+          "look_at": [
+            0,
+            36,
+            15
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.0,
+          13.5,
+          15.5
+        ],
+        "look_at": [
+          0.0,
+          24.0,
+          13.2
+        ],
+        "lens_mm": 31,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          18,
+          12
+        ],
+        "facing_deg": 0
+      },
+      "hide": [
+        "living-shard",
+        "crystal-core"
+      ],
+      "interactions": [
+        {
+          "prop": "heartstone",
+          "verb": "Lay both palms on the stone",
+          "leads_to": "s_heart_rekindle"
+        }
+      ]
+    },
+    "s_deep_core": {
+      "note": "The Deep Core: tremors, crystals shattering to ash, molten light from the fissure; Gaia rises; battle with Crystal Crawlers and a Fossil Wurm; one wall crystal still glows.",
+      "world": {
+        "color": [
+          0.078,
+          0.031,
+          0.016
+        ],
+        "strength": 0.1
+      },
+      "lights": [
+        {
+          "name": "fissure",
+          "type": "AREA",
+          "location": [
+            -4,
+            -24,
+            0.5
+          ],
+          "energy": 9000,
+          "size": 30,
+          "color": [
+            1.0,
+            0.439,
+            0.094
+          ],
+          "look_at": [
+            -4,
+            -24,
+            20
+          ]
+        },
+        {
+          "name": "living-glow",
+          "type": "POINT",
+          "location": [
+            10,
+            -41.5,
+            3.5
+          ],
+          "energy": 150,
+          "size": 0.3,
+          "color": [
+            0.784,
+            0.549,
+            0.204
+          ]
+        },
+        {
+          "name": "crystal-glow",
+          "type": "POINT",
+          "location": [
+            16,
+            -30,
+            1.8
+          ],
+          "energy": 150,
+          "size": 0.4,
+          "color": [
+            0.784,
+            0.549,
+            0.204
+          ]
+        },
+        {
+          "name": "rim",
+          "type": "SPOT",
+          "location": [
+            0,
+            0,
+            25
+          ],
+          "energy": 3000,
+          "size": 1,
+          "color": [
+            0.749,
+            0.816,
+            0.949
+          ],
+          "look_at": [
+            0,
+            -30,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          22.0,
+          -5.5,
+          3.5
+        ],
+        "look_at": [
+          22.0,
+          -16.0,
+          1.2
+        ],
+        "lens_mm": 31,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          22,
+          -10,
+          0.0
+        ],
+        "facing_deg": 180
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "crystal-core",
+          "verb": "Record"
+        },
+        {
+          "prop": "living-shard",
+          "verb": "Take the shard that still glows",
+          "leads_to": "s_flight_gaia"
+        }
+      ]
+    }
+  }
+}

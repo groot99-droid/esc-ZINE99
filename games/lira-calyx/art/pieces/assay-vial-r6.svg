@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 280" width="160" height="280" role="img" aria-labelledby="assay-vial-r6-t assay-vial-r6-d">
+<title id="assay-vial-r6-t">Reagent vial R6</title>
+<desc id="assay-vial-r6-d">A squat dropper bottle of clear quench, the rubber teat perished on the dark bench, its paper label numbered R6 in Lira's hand with a small sketch of what it does to a peak.</desc>
+<defs><filter id="assay-vial-r6-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="524"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.2 0"/></filter><radialGradient id="assay-vial-r6-rg2" cx="0.5" cy="0.35" r="0.75"><stop offset="0%" stop-color="#3a4a44" stop-opacity="0.9"/><stop offset="100%" stop-color="#1d2221" stop-opacity="0"/></radialGradient><linearGradient id="assay-vial-r6-lg3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4a3a2a"/><stop offset="100%" stop-color="#17120e"/></linearGradient><filter id="assay-vial-r6-blur4" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="4"/></filter><clipPath id="assay-vial-r6-clip5"><path d="M64,96 V116 Q40,124 40,150 V212.4 H120 V150 Q120,124 96,116 V96 Z"/></clipPath></defs>
+<rect x="0" y="0" width="160" height="280" fill="#1d2221"/>
+<rect x="0" y="0" width="160" height="280" filter="url(#assay-vial-r6-grain1)"/>
+<rect x="0" y="0" width="160" height="280" fill="url(#assay-vial-r6-rg2)"/>
+<path d="M0,0V218.4M20,0V218.4M40,0V218.4M60,0V218.4M80,0V218.4M100,0V218.4M120,0V218.4M140,0V218.4M160,0V218.4M0,0H160M0,20H160M0,40H160M0,60H160M0,80H160M0,100H160M0,120H160M0,140H160M0,160H160M0,180H160M0,200H160" fill="none" stroke="#7dff9a" stroke-width="0.5" opacity="0.1"/>
+<rect x="0" y="218.4" width="160" height="61.6" fill="#120f0c"/>
+<rect x="0" y="218.4" width="160" height="61.6" fill="url(#assay-vial-r6-lg3)" opacity="0.9"/>
+<line x1="0" y1="218.4" x2="160" y2="218.4" stroke="#7a6248" stroke-width="1.5"/>
+<ellipse cx="80" cy="222.4" rx="54" ry="8" fill="#000" opacity="0.5" filter="url(#assay-vial-r6-blur4)"/>
+<path d="M64,96 V116 Q40,124 40,150 V212.4 H120 V150 Q120,124 96,116 V96 Z" fill="#dff2ee" fill-opacity="0.1"/>
+<g clip-path="url(#assay-vial-r6-clip5)">
+<rect x="40" y="164" width="80" height="48.4" fill="#d9d2c0" opacity="0.8"/>
+<rect x="40" y="164" width="24" height="48.4" fill="#fff" opacity="0.2"/>
+<rect x="97.6" y="164" width="22.4" height="48.4" fill="#000" opacity="0.2"/>
+<ellipse cx="80" cy="164" rx="40" ry="5" fill="#fff" opacity="0.3"/>
+</g>
+<path d="M64,96 V116 Q40,124 40,150 V212.4 H120 V150 Q120,124 96,116 V96 Z" fill="none" stroke="#f2f4f5" stroke-width="2.6" stroke-linejoin="round" opacity="0.9"/>
+<path d="M64,96 V116 Q40,124 40,150 V212.4 H120 V150 Q120,124 96,116 V96 Z" fill="none" stroke="#7dff9a" stroke-width="1" opacity="0.5" transform="translate(-2,0)"/>
+<rect x="60" y="80" width="40" height="18" fill="#2a2622" stroke="#3b2618" stroke-width="2"/>
+<path d="M68,80 Q62,44 80,40 Q98,44 92,80 Z" fill="#7a3a2e" stroke="#3b2618" stroke-width="2"/>
+<path d="M72,58 l6,6 M84,52 l5,7 M76,70 l4,4" stroke="#3b2618" stroke-width="1"/>
+<line x1="80" y1="98" x2="80" y2="178.4" stroke="#f2f4f5" stroke-width="3" opacity="0.6"/>
+<g transform="rotate(2 36 132.4)">
+<rect x="36" y="132.4" width="88" height="56" fill="#f1e8d2" stroke="#3b2618" stroke-width="1.6"/>
+<rect x="36" y="132.4" width="88" height="56" fill="#7a5a2e" opacity="0.1"/>
+<path d="M42,152.4 L44.6,139.4 L49.8,139.4 L51.1,141.6 L50.6,144.2 L48.4,146.3 L43.2,146.3 M46.7,146.3 L48.9,152.4 M61.3,140.3 L58.7,139.4 L56.1,142 L53.9,145.9 L53,150.2 L54.4,152.4 L57.8,152.4 L60,150.2 L60.5,147.6 L59.2,145.7 L55.7,145.7 L53.6,147.6" fill="none" stroke="#3b2618" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="43" y1="182.4" x2="117" y2="182.4" stroke="#3b2618" stroke-width="1.2"/>
+<path d="M43,182.4 C44.3,182.1 49,181.2 51,180.4 C53,179.6 53.7,177.4 55,177.4 C56.3,177.4 57,179.6 59,180.4 C61,181.2 65.7,182.1 67,182.4" stroke-width="1.8" stroke="#7d7a74" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M61,182.4 C62.3,182.1 67,181.2 69,180.4 C71,179.6 71.7,177.4 73,177.4 C74.3,177.4 75,179.6 77,180.4 C79,181.2 83.7,182.1 85,182.4" stroke-width="1.8" stroke="#7d7a74" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M93,182.4 C94.3,182.1 99,181.2 101,180.4 C103,179.6 103.7,177.4 105,177.4 C106.3,177.4 107,179.6 109,180.4 C111,181.2 115.7,182.1 117,182.4" stroke-width="1.8" stroke="#7d7a74" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M77,182.4 C78.3,182.1 83,184.7 85,180.4 C87,176.1 87.7,156.4 89,156.4 C90.3,156.4 91,176.1 93,180.4 C95,184.7 99.7,182.1 101,182.4" stroke-width="1.8" stroke="#3b2618" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<circle cx="22" cy="266" r="3.2" fill="none" stroke="#7dff9a" stroke-width="1" opacity="0.8"/>
+<circle cx="32" cy="266" r="3.2" fill="none" stroke="#7dff9a" stroke-width="1" opacity="0.8"/>
+<circle cx="42" cy="266" r="3.2" fill="none" stroke="#7dff9a" stroke-width="1" opacity="0.8"/>
+<circle cx="52" cy="266" r="3.2" fill="none" stroke="#7dff9a" stroke-width="1" opacity="0.8"/>
+<circle cx="62" cy="266" r="3.2" fill="none" stroke="#7dff9a" stroke-width="1" opacity="0.8"/>
+<circle cx="72" cy="266" r="3.2" fill="#7dff9a" stroke="#7dff9a" stroke-width="1" opacity="0.8"/>
+</svg>

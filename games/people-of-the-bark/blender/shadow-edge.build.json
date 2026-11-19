@@ -1,0 +1,547 @@
+{
+  "game": "people-of-the-bark",
+  "location": "shadow-edge",
+  "name": "The shadow's edge",
+  "reference": "assets/locations/shadow-edge.jpg",
+  "bounds_m": [
+    0.2,
+    0.1,
+    0.2
+  ],
+  "origin": "floor centre at the foot of the bark; the bark is a vertical wall whose face is the plane y = 0.03, with its relief toward -y and the open air in front of it. Gravity runs -z, down the screen. The god camera hovers in the air at -y and looks along +y straight at the bark, so 'top-down' here means straight onto the bark, which is the ground of the view. Real metres at human scale: the people are 2 mm tall. Open bark 20 x 20 cm; the edge of the shadow curves from the foot (+x) to the top (toward the centre). Stakes are driven into the bark, pointing out (-y).",
+  "materials": {
+    "bark-umber": {
+      "color": [
+        0.353,
+        0.243,
+        0.169
+      ],
+      "roughness": 0.95
+    },
+    "bark-grey": {
+      "color": [
+        0.431,
+        0.388,
+        0.341
+      ],
+      "roughness": 0.95
+    },
+    "crack-dark": {
+      "color": [
+        0.141,
+        0.094,
+        0.059
+      ],
+      "roughness": 1.0
+    },
+    "lichen-sage": {
+      "color": [
+        0.612,
+        0.686,
+        0.533
+      ],
+      "roughness": 1.0
+    },
+    "lichen-lime": {
+      "color": [
+        0.71,
+        0.784,
+        0.29
+      ],
+      "roughness": 1.0
+    }
+  },
+  "blockout": [
+    {
+      "id": "bark-slab",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.2,
+        0.02,
+        0.2
+      ],
+      "location": [
+        0,
+        0.04,
+        0.1
+      ],
+      "material": "bark-grey"
+    },
+    {
+      "id": "foot-ledge",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        0.2,
+        0.02,
+        0.004
+      ],
+      "location": [
+        0,
+        0.02,
+        0.002
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "ridge-1",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.016,
+        0.004,
+        0.196
+      ],
+      "location": [
+        -0.08,
+        0.028,
+        0.102
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "ridge-2",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.016,
+        0.004,
+        0.196
+      ],
+      "location": [
+        -0.05,
+        0.028,
+        0.102
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "ridge-3",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.016,
+        0.004,
+        0.196
+      ],
+      "location": [
+        -0.02,
+        0.028,
+        0.102
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "ridge-4",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.016,
+        0.004,
+        0.196
+      ],
+      "location": [
+        0.01,
+        0.028,
+        0.102
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "ridge-5",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.016,
+        0.004,
+        0.196
+      ],
+      "location": [
+        0.04,
+        0.028,
+        0.102
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "ridge-6",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.016,
+        0.004,
+        0.196
+      ],
+      "location": [
+        0.07,
+        0.028,
+        0.102
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "lichen-1",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.012,
+        0.0008,
+        0.01
+      ],
+      "location": [
+        -0.07,
+        0.0256,
+        0.02
+      ],
+      "material": "lichen-sage",
+      "collide": false
+    },
+    {
+      "id": "lichen-2",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.01,
+        0.0008,
+        0.012
+      ],
+      "location": [
+        -0.04,
+        0.0256,
+        0.03
+      ],
+      "material": "lichen-lime",
+      "collide": false
+    },
+    {
+      "id": "long-groove",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        0.003,
+        0.002,
+        0.18
+      ],
+      "location": [
+        -0.065,
+        0.029,
+        0.1
+      ],
+      "material": "crack-dark",
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "stake-1",
+      "object": "edge-stake",
+      "location": [
+        0.065,
+        0.027,
+        0.012
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "ground": false
+    },
+    {
+      "id": "stake-2",
+      "object": "edge-stake",
+      "location": [
+        0.05788,
+        0.027,
+        0.028
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "ground": false
+    },
+    {
+      "id": "stake-3",
+      "object": "edge-stake",
+      "location": [
+        0.05091,
+        0.027,
+        0.044
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "ground": false
+    },
+    {
+      "id": "stake-4",
+      "object": "edge-stake",
+      "location": [
+        0.04423,
+        0.027,
+        0.06
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "ground": false
+    },
+    {
+      "id": "stake-5",
+      "object": "edge-stake",
+      "location": [
+        0.03797,
+        0.027,
+        0.076
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "ground": false
+    },
+    {
+      "id": "stake-6",
+      "object": "edge-stake",
+      "location": [
+        0.03226,
+        0.027,
+        0.092
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "ground": false
+    },
+    {
+      "id": "stake-7",
+      "object": "edge-stake",
+      "location": [
+        0.02721,
+        0.027,
+        0.108
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "ground": false
+    },
+    {
+      "id": "stake-8",
+      "object": "edge-stake",
+      "location": [
+        0.02294,
+        0.027,
+        0.124
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "ground": false
+    },
+    {
+      "id": "stake-9",
+      "object": "edge-stake",
+      "location": [
+        0.01952,
+        0.027,
+        0.14
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "ground": false
+    },
+    {
+      "id": "stake-10",
+      "object": "edge-stake",
+      "location": [
+        0.01703,
+        0.027,
+        0.156
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "ground": false
+    },
+    {
+      "id": "stake-11",
+      "object": "edge-stake",
+      "location": [
+        0.01551,
+        0.027,
+        0.172
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "ground": false
+    },
+    {
+      "id": "stake-12",
+      "object": "edge-stake",
+      "location": [
+        0.015,
+        0.027,
+        0.188
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "ground": false
+    }
+  ],
+  "scenes": {
+    "c6_edge": {
+      "note": "Habit: Fenn's scholars walk the shadow's edge and stake its outline, twelve stakes along the curved line between pale winter light (-x) and deep blue dark (+x); Fenn counting.",
+      "world": {
+        "color": [
+          0.03,
+          0.04,
+          0.08
+        ],
+        "strength": 0.2
+      },
+      "lights": [
+        {
+          "name": "winter-light",
+          "type": "SPOT",
+          "location": [
+            -0.15,
+            -0.2,
+            0.2
+          ],
+          "energy": 3.0,
+          "color": [
+            0.9,
+            0.93,
+            1.0
+          ],
+          "look_at": [
+            -0.04,
+            0.03,
+            0.09
+          ],
+          "size": 0.02
+        },
+        {
+          "name": "dark-fill",
+          "type": "AREA",
+          "location": [
+            0.06,
+            -0.08,
+            0.12
+          ],
+          "energy": 0.05,
+          "color": [
+            0.2,
+            0.3,
+            0.6
+          ],
+          "look_at": [
+            0.06,
+            0.03,
+            0.1
+          ],
+          "size": 0.1
+        }
+      ],
+      "camera": {
+        "location": [
+          0.06,
+          -0.01,
+          0.02
+        ],
+        "look_at": [
+          0.06,
+          0.03,
+          0.015
+        ],
+        "lens_mm": 30,
+        "mode": "top-down"
+      },
+      "player_start": {
+        "location": [
+          0.06,
+          0.022,
+          0.004
+        ],
+        "facing_deg": 0
+      },
+      "interactions": [
+        {
+          "prop": "stake-1",
+          "verb": "Drive a stake on the edge"
+        },
+        {
+          "prop": "stake-2",
+          "verb": "Drive a stake on the edge"
+        },
+        {
+          "prop": "stake-3",
+          "verb": "Drive a stake on the edge"
+        },
+        {
+          "prop": "stake-4",
+          "verb": "Drive a stake on the edge"
+        },
+        {
+          "prop": "stake-5",
+          "verb": "Drive a stake on the edge"
+        },
+        {
+          "prop": "stake-6",
+          "verb": "Drive a stake on the edge"
+        },
+        {
+          "prop": "stake-7",
+          "verb": "Drive a stake on the edge"
+        },
+        {
+          "prop": "stake-8",
+          "verb": "Drive a stake on the edge"
+        },
+        {
+          "prop": "stake-9",
+          "verb": "Drive a stake on the edge"
+        },
+        {
+          "prop": "stake-10",
+          "verb": "Drive a stake on the edge"
+        },
+        {
+          "prop": "stake-11",
+          "verb": "Drive a stake on the edge"
+        },
+        {
+          "prop": "stake-12",
+          "verb": "Drive the twelfth stake",
+          "leads_to": "c6_touch"
+        }
+      ]
+    }
+  }
+}

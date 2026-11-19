@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 140" width="900" height="140" role="img" aria-labelledby="ui-warmth-meter-t ui-warmth-meter-d">
+<title id="ui-warmth-meter-t">The hunger meter</title>
+<desc id="ui-warmth-meter-d">The hunger meter: a row of thirty satin stitches running from attic dust through amber to red, two thirds of them worked, with the spread-three number in a stitched roundel.</desc>
+<defs><filter id="ui-warmth-meter-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="559"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.2 0"/></filter><pattern id="ui-warmth-meter-wv2" width="6" height="6" patternUnits="userSpaceOnUse"><path d="M0,1.5H6M0,4.5H6" stroke="#F2EBDD" stroke-width="1.4" opacity="0.28"/><path d="M1.5,0V6M4.5,0V6" stroke="#2b1e15" stroke-width="1.2" opacity="0.16"/></pattern><radialGradient id="ui-warmth-meter-rg3" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#E0902A" stop-opacity="0.6"/><stop offset="60%" stop-color="#E0902A" stop-opacity="0.2"/><stop offset="100%" stop-color="#E0902A" stop-opacity="0"/></radialGradient><radialGradient id="ui-warmth-meter-vig4" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#1a0f08" stop-opacity="0"/><stop offset="100%" stop-color="#1a0f08" stop-opacity="0.2"/></radialGradient></defs>
+<rect x="0" y="0" width="900" height="140" fill="#b9a486"/>
+<rect x="0" y="0" width="900" height="140" filter="url(#ui-warmth-meter-grain1)"/>
+<rect x="0" y="0" width="900" height="140" fill="url(#ui-warmth-meter-wv2)"/>
+<rect x="60" y="44" width="17" height="52" rx="4" fill="#d9cbb0" stroke="#9e927e" stroke-width="1"/>
+<path d="M64,48v44M69,48v44M73,48v44" stroke="#e3d8c2" stroke-width="1" opacity="0.6"/>
+<rect x="83" y="44" width="17" height="52" rx="4" fill="#d9c7a7" stroke="#9e8f77" stroke-width="1"/>
+<path d="M87,48v44M92,48v44M96,48v44" stroke="#e3d5bd" stroke-width="1" opacity="0.6"/>
+<rect x="106" y="44" width="17" height="52" rx="4" fill="#dac39e" stroke="#9f8c71" stroke-width="1"/>
+<path d="M110,48v44M115,48v44M119,48v44" stroke="#e4d3b7" stroke-width="1" opacity="0.6"/>
+<rect x="129" y="44" width="17" height="52" rx="4" fill="#dabf94" stroke="#9f8a6a" stroke-width="1"/>
+<path d="M133,48v44M138,48v44M142,48v44" stroke="#e4d1b1" stroke-width="1" opacity="0.6"/>
+<rect x="152" y="44" width="17" height="52" rx="4" fill="#dbbb8b" stroke="#a08764" stroke-width="1"/>
+<path d="M156,48v44M161,48v44M165,48v44" stroke="#e4ceac" stroke-width="1" opacity="0.6"/>
+<rect x="175" y="44" width="17" height="52" rx="4" fill="#dbb782" stroke="#a0845d" stroke-width="1"/>
+<path d="M179,48v44M184,48v44M188,48v44" stroke="#e4cca6" stroke-width="1" opacity="0.6"/>
+<rect x="198" y="44" width="17" height="52" rx="4" fill="#dcb379" stroke="#a08157" stroke-width="1"/>
+<path d="M202,48v44M207,48v44M211,48v44" stroke="#e5c9a1" stroke-width="1" opacity="0.6"/>
+<rect x="221" y="44" width="17" height="52" rx="4" fill="#dcaf6f" stroke="#a07e50" stroke-width="1"/>
+<path d="M225,48v44M230,48v44M234,48v44" stroke="#e5c79b" stroke-width="1" opacity="0.6"/>
+<rect x="244" y="44" width="17" height="52" rx="4" fill="#ddaa66" stroke="#a17b4a" stroke-width="1"/>
+<path d="M248,48v44M253,48v44M257,48v44" stroke="#e5c496" stroke-width="1" opacity="0.6"/>
+<rect x="267" y="44" width="17" height="52" rx="4" fill="#dda65d" stroke="#a17844" stroke-width="1"/>
+<path d="M271,48v44M276,48v44M280,48v44" stroke="#e5c290" stroke-width="1" opacity="0.6"/>
+<rect x="290" y="44" width="17" height="52" rx="4" fill="#dea254" stroke="#a2753d" stroke-width="1"/>
+<path d="M294,48v44M299,48v44M303,48v44" stroke="#e6bf8b" stroke-width="1" opacity="0.6"/>
+<rect x="313" y="44" width="17" height="52" rx="4" fill="#de9e4a" stroke="#a27236" stroke-width="1"/>
+<path d="M317,48v44M322,48v44M326,48v44" stroke="#e6bd85" stroke-width="1" opacity="0.6"/>
+<rect x="336" y="44" width="17" height="52" rx="4" fill="#df9a41" stroke="#a27030" stroke-width="1"/>
+<path d="M340,48v44M345,48v44M349,48v44" stroke="#e7ba7f" stroke-width="1" opacity="0.6"/>
+<rect x="359" y="44" width="17" height="52" rx="4" fill="#df9638" stroke="#a26d2a" stroke-width="1"/>
+<path d="M363,48v44M368,48v44M372,48v44" stroke="#e7b87a" stroke-width="1" opacity="0.6"/>
+<rect x="382" y="44" width="17" height="52" rx="4" fill="#e0922f" stroke="#a36a23" stroke-width="1"/>
+<path d="M386,48v44M391,48v44M395,48v44" stroke="#e7b675" stroke-width="1" opacity="0.6"/>
+<rect x="405" y="44" width="17" height="52" rx="4" fill="#de8c2a" stroke="#a26620" stroke-width="1"/>
+<path d="M409,48v44M414,48v44M418,48v44" stroke="#e6b272" stroke-width="1" opacity="0.6"/>
+<rect x="428" y="44" width="17" height="52" rx="4" fill="#db8529" stroke="#a0611f" stroke-width="1"/>
+<path d="M432,48v44M437,48v44M441,48v44" stroke="#e4ae71" stroke-width="1" opacity="0.6"/>
+<rect x="451" y="44" width="17" height="52" rx="4" fill="#d87e28" stroke="#9e5c1e" stroke-width="1"/>
+<path d="M455,48v44M460,48v44M464,48v44" stroke="#e2aa70" stroke-width="1" opacity="0.6"/>
+<rect x="474" y="44" width="17" height="52" rx="4" fill="#d57627" stroke="#9b561e" stroke-width="1"/>
+<path d="M478,48v44M483,48v44M487,48v44" stroke="#e1a570" stroke-width="1" opacity="0.6"/>
+<rect x="497" y="44" width="17" height="52" rx="4" fill="#d26f26" stroke="#99521d" stroke-width="1"/>
+<path d="M501,48v44M506,48v44M510,48v44" stroke="#dfa16f" stroke-width="1" opacity="0.6"/>
+<rect x="520" y="44" width="17" height="52" rx="4" fill="none" stroke="#80654b" stroke-width="1.4" stroke-dasharray="3 3"/>
+<rect x="543" y="44" width="17" height="52" rx="4" fill="none" stroke="#80654b" stroke-width="1.4" stroke-dasharray="3 3"/>
+<rect x="566" y="44" width="17" height="52" rx="4" fill="none" stroke="#80654b" stroke-width="1.4" stroke-dasharray="3 3"/>
+<rect x="589" y="44" width="17" height="52" rx="4" fill="none" stroke="#80654b" stroke-width="1.4" stroke-dasharray="3 3"/>
+<rect x="612" y="44" width="17" height="52" rx="4" fill="none" stroke="#80654b" stroke-width="1.4" stroke-dasharray="3 3"/>
+<rect x="635" y="44" width="17" height="52" rx="4" fill="none" stroke="#80654b" stroke-width="1.4" stroke-dasharray="3 3"/>
+<rect x="658" y="44" width="17" height="52" rx="4" fill="none" stroke="#80654b" stroke-width="1.4" stroke-dasharray="3 3"/>
+<rect x="681" y="44" width="17" height="52" rx="4" fill="none" stroke="#80654b" stroke-width="1.4" stroke-dasharray="3 3"/>
+<rect x="704" y="44" width="17" height="52" rx="4" fill="none" stroke="#80654b" stroke-width="1.4" stroke-dasharray="3 3"/>
+<rect x="727" y="44" width="17" height="52" rx="4" fill="none" stroke="#80654b" stroke-width="1.4" stroke-dasharray="3 3"/>
+<circle cx="520" cy="70" r="70" fill="url(#ui-warmth-meter-rg3)"/>
+<circle cx="820" cy="70" r="42" fill="#F2EBDD" stroke="#B3261E" stroke-width="3" stroke-dasharray="7 4"/>
+<text x="820" y="84" font-size="40" font-family="serif" fill="#B3261E" text-anchor="middle" font-weight="bold">67</text>
+<path d="M56,112H750" fill="none" stroke="#5B3A24" stroke-width="1.8" stroke-dasharray="4 5" stroke-linecap="round"/>
+<rect x="0" y="0" width="900" height="140" fill="url(#ui-warmth-meter-vig4)"/>
+</svg>

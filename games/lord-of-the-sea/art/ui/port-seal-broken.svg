@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260" width="260" height="260" role="img" aria-labelledby="port-seal-broken-t port-seal-broken-d">
+<title id="port-seal-broken-t">Port seal: broken</title>
+<desc id="port-seal-broken-d">A port whose charter was struck: the same seal cracked across, a crumb of wax beside it, the ribbon cut.</desc>
+<defs><filter id="port-seal-broken-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="378"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.2 0"/></filter><pattern id="port-seal-broken-pat2" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(0)"><path d="M0,2 H4" stroke="#6B4A2B" stroke-width="0.5" opacity="0.1"/></pattern><pattern id="port-seal-broken-pat3" width="47" height="47" patternUnits="userSpaceOnUse" patternTransform="rotate(90)"><path d="M0,23.5 H47" stroke="#6B4A2B" stroke-width="0.7" opacity="0.1"/></pattern><radialGradient id="port-seal-broken-rg4" cx="0.36" cy="0.3" r="0.8"><stop offset="0%" stop-color="#fff" stop-opacity="0.3"/><stop offset="60%" stop-color="#fff" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity="0.2"/></radialGradient></defs>
+<rect x="0" y="0" width="260" height="260" fill="#EFE6D0"/>
+<rect x="0" y="0" width="260" height="260" filter="url(#port-seal-broken-grain1)"/>
+<rect x="0" y="0" width="260" height="260" fill="url(#port-seal-broken-pat2)"/>
+<rect x="0" y="0" width="260" height="260" fill="url(#port-seal-broken-pat3)"/>
+<path d="M0,0V260M60,0V260M120,0V260M180,0V260M240,0V260M0,0H260M0,60H260M0,120H260M0,180H260M0,240H260" fill="none" stroke="#1F2E4A" stroke-width="0.4" opacity="0.4"/>
+<circle cx="130" cy="120" r="92" fill="none" stroke="#1F2E4A" stroke-width="1.2" stroke-dasharray="3 5"/>
+<text x="130" y="244" font-size="15" font-family="serif" fill="#1F2E4A" text-anchor="middle" letter-spacing="3.3" font-weight="normal">BROKEN</text>
+<path d="M200.1,118 C201,123.2 198.2,129.1 196.6,134.4 C195.1,139.7 193.7,145.5 190.6,149.8 C187.4,154.1 181.6,156.5 177.9,160.4 C174.2,164.4 172.6,170.7 168.4,173.6 C164.1,176.4 157.5,175.3 152.5,177.3 C147.5,179.4 143.3,184.6 138.2,185.8 C133.1,186.9 127.3,185 122,184.1 C116.7,183.2 110.9,182.9 106.3,180.4 C101.8,177.9 99.4,171.8 94.9,168.9 C90.4,165.9 83.1,166.2 79.5,162.7 C75.9,159.2 75.1,152.7 73.3,147.7 C71.5,142.8 70.7,138.1 68.7,133.1 C66.6,128.2 61.9,123.3 61,118 C60.1,112.7 61.4,106.7 63.1,101.5 C64.8,96.4 68.1,91.5 71.2,87.2 C74.4,82.8 78.6,79.7 81.9,75.4 C85.2,71.1 86.7,64.1 91,61.6 C95.4,59 102.8,61.4 108,60 C113.2,58.7 117.3,54.2 122.2,53.6 C127.1,53 132.4,55.8 137.5,56.6 C142.5,57.4 147.5,57.3 152.7,58.2 C157.9,59 164.1,59.3 168.8,61.8 C173.4,64.3 176.7,69.3 180.5,73.2 C184.4,77.2 190.1,80.6 191.9,85.5 C193.6,90.5 189.7,97.5 191,103 C192.4,108.4 199.2,112.8 200.1,118Z" fill="#000" opacity="0.2" transform="translate(3,4)"/>
+<path d="M200.1,118 C201,123.2 198.2,129.1 196.6,134.4 C195.1,139.7 193.7,145.5 190.6,149.8 C187.4,154.1 181.6,156.5 177.9,160.4 C174.2,164.4 172.6,170.7 168.4,173.6 C164.1,176.4 157.5,175.3 152.5,177.3 C147.5,179.4 143.3,184.6 138.2,185.8 C133.1,186.9 127.3,185 122,184.1 C116.7,183.2 110.9,182.9 106.3,180.4 C101.8,177.9 99.4,171.8 94.9,168.9 C90.4,165.9 83.1,166.2 79.5,162.7 C75.9,159.2 75.1,152.7 73.3,147.7 C71.5,142.8 70.7,138.1 68.7,133.1 C66.6,128.2 61.9,123.3 61,118 C60.1,112.7 61.4,106.7 63.1,101.5 C64.8,96.4 68.1,91.5 71.2,87.2 C74.4,82.8 78.6,79.7 81.9,75.4 C85.2,71.1 86.7,64.1 91,61.6 C95.4,59 102.8,61.4 108,60 C113.2,58.7 117.3,54.2 122.2,53.6 C127.1,53 132.4,55.8 137.5,56.6 C142.5,57.4 147.5,57.3 152.7,58.2 C157.9,59 164.1,59.3 168.8,61.8 C173.4,64.3 176.7,69.3 180.5,73.2 C184.4,77.2 190.1,80.6 191.9,85.5 C193.6,90.5 189.7,97.5 191,103 C192.4,108.4 199.2,112.8 200.1,118Z" fill="#8C2B2B"/>
+<circle cx="130" cy="118" r="64.7" fill="url(#port-seal-broken-rg4)"/>
+<circle cx="130" cy="118" r="48.8" fill="none" stroke="#000" stroke-width="3.3" opacity="0.3"/>
+<circle cx="130" cy="118" r="47.5" fill="none" stroke="#fff" stroke-width="1.7" opacity="0.3"/>
+<g opacity="0.5" fill="none" stroke="#000" stroke-width="2.9" stroke-linecap="round">
+<circle cx="130" cy="118" r="40.9"/>
+<path d="M130,146.6 Q99.3,118 130,87.3 Q160.7,118 130,146.6 M130,146.6 V97.5"/>
+<path d="M117.7,116 L130,126.2 L142.3,116 M120.2,103.7 L130,113.1 L139.8,103.7" stroke-width="1.7"/>
+</g>
+<path d="M60.7,98.2 l33,14.5 l14.5,-13.2 l33,33 l19.8,-5.3 l26.4,19.8" fill="none" stroke="#EFE6D0" stroke-width="5.9" stroke-linejoin="bevel"/>
+<path d="M60.7,98.2 l33,14.5 l14.5,-13.2 l33,33 l19.8,-5.3 l26.4,19.8" fill="none" stroke="#000" stroke-width="1" opacity="0.5" transform="translate(1.5,2)"/>
+<polygon points="197.9,166.1 207.3,161.1 214.9,168.4 210.2,177.9 199.7,176.5" fill="#8C2B2B" stroke="#5e1818" stroke-width="1"/>
+<polygon points="63,67.2 56,66.5 54.5,59.6 60.6,56 65.9,60.8" fill="#8C2B2B" stroke="#5e1818" stroke-width="1"/>
+<polygon points="210.7,183.8 215.1,182.2 218,185.9 215.4,189.8 210.8,188.5" fill="#8C2B2B" stroke="#5e1818" stroke-width="1"/>
+<path d="M96,186 l-8,40 l14,-8 l8,12 l4,-40z" fill="#1F2E4A" opacity="0.9"/>
+</svg>

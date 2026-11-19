@@ -1,0 +1,1089 @@
+{
+  "game": "wrymwretch",
+  "location": "duskbane-underworld",
+  "name": "The Duskbane halls, the forbidden chamber and the tunnels",
+  "reference": "assets/locations/duskbane-underworld.jpg",
+  "bounds_m": [
+    40,
+    50,
+    12
+  ],
+  "origin": "floor centre in the vaulted hall; +y toward the forbidden door and the 12 x 12 m chamber beyond it; tunnels run round the hall on both sides and behind the chamber (a 150 m route folded into a loop); bounds deepened from 40 to 50 m",
+  "materials": {
+    "bone": {
+      "color": [
+        0.902,
+        0.863,
+        0.769
+      ],
+      "roughness": 0.75
+    },
+    "bone-dark": {
+      "color": [
+        0.496,
+        0.475,
+        0.423
+      ],
+      "roughness": 0.85
+    },
+    "silver": {
+      "color": [
+        0.541,
+        0.557,
+        0.549
+      ],
+      "roughness": 0.45,
+      "metallic": 0.8
+    },
+    "void": {
+      "color": [
+        0.051,
+        0.055,
+        0.078
+      ],
+      "roughness": 1.0
+    },
+    "vault-stone": {
+      "color": [
+        0.353,
+        0.345,
+        0.392
+      ],
+      "roughness": 0.9
+    },
+    "flagstone": {
+      "color": [
+        0.165,
+        0.157,
+        0.188
+      ],
+      "roughness": 0.95
+    },
+    "obsidian": {
+      "color": [
+        0.078,
+        0.071,
+        0.094
+      ],
+      "roughness": 0.2,
+      "metallic": 0.3
+    },
+    "violet-glow": {
+      "color": [
+        0.502,
+        0.282,
+        0.753
+      ],
+      "roughness": 0.3,
+      "emission": 2.0
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        40,
+        46,
+        0.4
+      ],
+      "location": [
+        0,
+        2,
+        -0.2
+      ],
+      "material": "flagstone"
+    },
+    {
+      "id": "hall-vault",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        28,
+        26,
+        0.6
+      ],
+      "location": [
+        0,
+        -7,
+        10.3
+      ],
+      "material": "vault-stone"
+    },
+    {
+      "id": "south-wall",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        40,
+        0.8,
+        10
+      ],
+      "location": [
+        0,
+        -20.4,
+        5
+      ],
+      "material": "vault-stone"
+    },
+    {
+      "id": "hall-west-s",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.8,
+        18,
+        10
+      ],
+      "location": [
+        -14,
+        -11,
+        5
+      ],
+      "material": "vault-stone"
+    },
+    {
+      "id": "hall-west-n",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.8,
+        4,
+        10
+      ],
+      "location": [
+        -14,
+        4,
+        5
+      ],
+      "material": "vault-stone"
+    },
+    {
+      "id": "hall-west-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.8,
+        4,
+        6
+      ],
+      "location": [
+        -14,
+        0,
+        7
+      ],
+      "material": "vault-stone"
+    },
+    {
+      "id": "hall-east-s",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.8,
+        18,
+        10
+      ],
+      "location": [
+        14,
+        -11,
+        5
+      ],
+      "material": "vault-stone"
+    },
+    {
+      "id": "hall-east-n",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.8,
+        4,
+        10
+      ],
+      "location": [
+        14,
+        4,
+        5
+      ],
+      "material": "vault-stone"
+    },
+    {
+      "id": "hall-east-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.8,
+        4,
+        6
+      ],
+      "location": [
+        14,
+        0,
+        7
+      ],
+      "material": "vault-stone"
+    },
+    {
+      "id": "north-wall-w",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        11.5,
+        0.8,
+        10
+      ],
+      "location": [
+        -8.25,
+        7,
+        5
+      ],
+      "material": "vault-stone"
+    },
+    {
+      "id": "north-wall-e",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        11.5,
+        0.8,
+        10
+      ],
+      "location": [
+        8.25,
+        7,
+        5
+      ],
+      "material": "vault-stone"
+    },
+    {
+      "id": "door-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        5,
+        0.8,
+        5
+      ],
+      "location": [
+        0,
+        7,
+        7.5
+      ],
+      "material": "vault-stone"
+    },
+    {
+      "id": "door-gable",
+      "shape": "cone",
+      "role": "trim",
+      "size_m": [
+        6,
+        1.2,
+        4
+      ],
+      "location": [
+        0,
+        7,
+        12
+      ],
+      "material": "bone"
+    },
+    {
+      "id": "chamber-west",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.8,
+        12,
+        6
+      ],
+      "location": [
+        -6,
+        13.5,
+        3
+      ],
+      "material": "vault-stone"
+    },
+    {
+      "id": "chamber-east",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.8,
+        12,
+        6
+      ],
+      "location": [
+        6,
+        13.5,
+        3
+      ],
+      "material": "vault-stone"
+    },
+    {
+      "id": "chamber-back",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        12,
+        0.8,
+        6
+      ],
+      "location": [
+        0,
+        19.5,
+        3
+      ],
+      "material": "vault-stone"
+    },
+    {
+      "id": "chamber-ceiling",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        12,
+        12,
+        0.5
+      ],
+      "location": [
+        0,
+        13.5,
+        6.25
+      ],
+      "material": "vault-stone"
+    },
+    {
+      "id": "tunnel-west-outer",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.8,
+        46,
+        5
+      ],
+      "location": [
+        -20,
+        2,
+        2.5
+      ],
+      "material": "obsidian"
+    },
+    {
+      "id": "tunnel-east-outer",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.8,
+        46,
+        5
+      ],
+      "location": [
+        20,
+        2,
+        2.5
+      ],
+      "material": "obsidian"
+    },
+    {
+      "id": "tunnel-west-roof",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        6,
+        45,
+        0.5
+      ],
+      "location": [
+        -17,
+        2.5,
+        5.25
+      ],
+      "material": "obsidian"
+    },
+    {
+      "id": "tunnel-east-roof",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        6,
+        45,
+        0.5
+      ],
+      "location": [
+        17,
+        2.5,
+        5.25
+      ],
+      "material": "obsidian"
+    },
+    {
+      "id": "tunnel-north-link",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        28,
+        6,
+        0.5
+      ],
+      "location": [
+        0,
+        22,
+        5.25
+      ],
+      "material": "obsidian"
+    },
+    {
+      "id": "tunnel-north-wall",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        40,
+        0.8,
+        5
+      ],
+      "location": [
+        0,
+        25,
+        2.5
+      ],
+      "material": "obsidian"
+    },
+    {
+      "id": "pillar-1",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        1.4,
+        10
+      ],
+      "location": [
+        -9,
+        -14,
+        5
+      ],
+      "material": "bone"
+    },
+    {
+      "id": "pillar-2",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        1.4,
+        10
+      ],
+      "location": [
+        9,
+        -14,
+        5
+      ],
+      "material": "bone"
+    },
+    {
+      "id": "pillar-3",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        1.4,
+        10
+      ],
+      "location": [
+        -9,
+        -2,
+        5
+      ],
+      "material": "bone"
+    },
+    {
+      "id": "pillar-4",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        1.4,
+        10
+      ],
+      "location": [
+        9,
+        -2,
+        5
+      ],
+      "material": "bone"
+    },
+    {
+      "id": "long-stone-table",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        2,
+        10,
+        0.8
+      ],
+      "location": [
+        0,
+        -12,
+        0.4
+      ],
+      "material": "bone"
+    }
+  ],
+  "props": [
+    {
+      "id": "elder-table",
+      "object": "game-table",
+      "location": [
+        0,
+        -3.5,
+        0
+      ]
+    },
+    {
+      "id": "forbidden-door",
+      "object": "forbidden-door",
+      "location": [
+        0,
+        7.2,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        35
+      ]
+    },
+    {
+      "id": "prophecy-pedestal",
+      "object": "prophecy-pedestal",
+      "location": [
+        0,
+        16.5,
+        0
+      ]
+    },
+    {
+      "id": "prophecy-tome",
+      "object": "prophecy-tome",
+      "location": [
+        0,
+        16.5,
+        1.2
+      ]
+    },
+    {
+      "id": "candles-nw",
+      "object": "candle-stand",
+      "location": [
+        -2.5,
+        18,
+        0
+      ]
+    },
+    {
+      "id": "candles-ne",
+      "object": "candle-stand",
+      "location": [
+        2.5,
+        18,
+        0
+      ]
+    },
+    {
+      "id": "candles-sw",
+      "object": "candle-stand",
+      "location": [
+        -2.5,
+        15,
+        0
+      ]
+    },
+    {
+      "id": "candles-se",
+      "object": "candle-stand",
+      "location": [
+        2.5,
+        15,
+        0
+      ]
+    },
+    {
+      "id": "torch-hall-w1",
+      "object": "torch-sconce",
+      "location": [
+        -13.4,
+        -14,
+        3
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        -90
+      ],
+      "ground": false
+    },
+    {
+      "id": "torch-hall-w2",
+      "object": "torch-sconce",
+      "location": [
+        -13.4,
+        -6,
+        3
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        -90
+      ],
+      "ground": false
+    },
+    {
+      "id": "torch-hall-e1",
+      "object": "torch-sconce",
+      "location": [
+        13.4,
+        -14,
+        3
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ],
+      "ground": false
+    },
+    {
+      "id": "torch-hall-e2",
+      "object": "torch-sconce",
+      "location": [
+        13.4,
+        -6,
+        3
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ],
+      "ground": false
+    },
+    {
+      "id": "torch-tunnel-w",
+      "object": "torch-sconce",
+      "location": [
+        -19.4,
+        -10,
+        2.5
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        -90
+      ],
+      "ground": false
+    },
+    {
+      "id": "torch-tunnel-e",
+      "object": "torch-sconce",
+      "location": [
+        19.4,
+        12,
+        2.5
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ],
+      "ground": false
+    },
+    {
+      "id": "remnant-mask",
+      "object": "remnant-mask",
+      "location": [
+        17,
+        16,
+        0
+      ]
+    },
+    {
+      "id": "crystal-chamber",
+      "object": "memory-crystal",
+      "location": [
+        4,
+        11,
+        0
+      ]
+    }
+  ],
+  "scenes": {
+    "s_duskbane_halls": {
+      "note": "The labyrinth's vaulted hall: violet torchlight and deep shadow, echoes and dripping; the Syndicate Elder's table holds the way to the forbidden chamber.",
+      "world": {
+        "color": [
+          0.031,
+          0.024,
+          0.047
+        ],
+        "strength": 0.06
+      },
+      "lights": [
+        {
+          "name": "torch-w1",
+          "type": "POINT",
+          "location": [
+            -13,
+            -14,
+            3.3
+          ],
+          "energy": 250,
+          "size": 0.3,
+          "color": [
+            0.502,
+            0.282,
+            0.753
+          ]
+        },
+        {
+          "name": "torch-w2",
+          "type": "POINT",
+          "location": [
+            -13,
+            -6,
+            3.3
+          ],
+          "energy": 250,
+          "size": 0.3,
+          "color": [
+            0.502,
+            0.282,
+            0.753
+          ]
+        },
+        {
+          "name": "torch-e1",
+          "type": "POINT",
+          "location": [
+            13,
+            -14,
+            3.3
+          ],
+          "energy": 250,
+          "size": 0.3,
+          "color": [
+            0.502,
+            0.282,
+            0.753
+          ]
+        },
+        {
+          "name": "torch-e2",
+          "type": "POINT",
+          "location": [
+            13,
+            -6,
+            3.3
+          ],
+          "energy": 250,
+          "size": 0.3,
+          "color": [
+            0.502,
+            0.282,
+            0.753
+          ]
+        },
+        {
+          "name": "chamber-spill",
+          "type": "POINT",
+          "location": [
+            0,
+            12,
+            3
+          ],
+          "energy": 120,
+          "size": 0.5,
+          "color": [
+            0.91,
+            0.784,
+            0.565
+          ]
+        },
+        {
+          "name": "rim",
+          "type": "SPOT",
+          "location": [
+            0,
+            -18,
+            9
+          ],
+          "energy": 800,
+          "size": 0.5,
+          "color": [
+            0.749,
+            0.816,
+            0.949
+          ],
+          "look_at": [
+            0,
+            -3,
+            1
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.0,
+          -21.5,
+          3.5
+        ],
+        "look_at": [
+          0.0,
+          -11.0,
+          1.2
+        ],
+        "lens_mm": 31,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -17,
+          0.0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [
+        "remnant-mask"
+      ],
+      "interactions": [
+        {
+          "prop": "elder-table",
+          "verb": "Sit at the Elder's table",
+          "leads_to": "s_realms_syndicate"
+        }
+      ]
+    },
+    "s_forbidden_chamber": {
+      "note": "The forbidden chamber: stone door, dust, candles flaring round the bone pedestal; the prophecy; THE NAME enters the Record; the Elder asks for a Remnant's mask.",
+      "world": {
+        "color": [
+          0.039,
+          0.031,
+          0.047
+        ],
+        "strength": 0.05
+      },
+      "lights": [
+        {
+          "name": "candles-flare",
+          "type": "POINT",
+          "location": [
+            0,
+            16.5,
+            2.2
+          ],
+          "energy": 400,
+          "size": 1.0,
+          "color": [
+            0.941,
+            0.816,
+            0.627
+          ]
+        },
+        {
+          "name": "violet-dust",
+          "type": "AREA",
+          "location": [
+            0,
+            13.5,
+            5.8
+          ],
+          "energy": 300,
+          "size": 4,
+          "color": [
+            0.502,
+            0.282,
+            0.753
+          ],
+          "look_at": [
+            0,
+            16.5,
+            1
+          ]
+        },
+        {
+          "name": "crystal-glow",
+          "type": "POINT",
+          "location": [
+            4,
+            11,
+            1.8
+          ],
+          "energy": 120,
+          "size": 0.4,
+          "color": [
+            0.502,
+            0.282,
+            0.753
+          ]
+        },
+        {
+          "name": "rim",
+          "type": "SPOT",
+          "location": [
+            0,
+            8,
+            5
+          ],
+          "energy": 400,
+          "size": 0.4,
+          "color": [
+            0.749,
+            0.816,
+            0.949
+          ],
+          "look_at": [
+            0,
+            16.5,
+            1.2
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.0,
+          5.0,
+          3.5
+        ],
+        "look_at": [
+          0.0,
+          15.5,
+          1.2
+        ],
+        "lens_mm": 31,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          9.5,
+          0.0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [
+        "remnant-mask"
+      ],
+      "interactions": [
+        {
+          "prop": "prophecy-tome",
+          "verb": "Read the prophecy"
+        },
+        {
+          "prop": "crystal-chamber",
+          "verb": "Record"
+        },
+        {
+          "prop": "prophecy-pedestal",
+          "verb": "Close the tome and go",
+          "leads_to": "s_underworld_tunnels"
+        }
+      ]
+    },
+    "s_underworld_tunnels": {
+      "note": "The tunnels (a 150 m loop round the halls): torchlight that Umbra swallows, Shadehounds; a Remnant Eraser over a wounded archivist; fight now or follow; battle with the Eraser.",
+      "world": {
+        "color": [
+          0.016,
+          0.012,
+          0.024
+        ],
+        "strength": 0.03
+      },
+      "lights": [
+        {
+          "name": "torch-tunnel-w",
+          "type": "POINT",
+          "location": [
+            -19,
+            -10,
+            2.8
+          ],
+          "energy": 90,
+          "size": 0.3,
+          "color": [
+            0.502,
+            0.282,
+            0.753
+          ]
+        },
+        {
+          "name": "torch-tunnel-e",
+          "type": "POINT",
+          "location": [
+            19,
+            12,
+            2.8
+          ],
+          "energy": 90,
+          "size": 0.3,
+          "color": [
+            0.502,
+            0.282,
+            0.753
+          ]
+        },
+        {
+          "name": "rim",
+          "type": "SPOT",
+          "location": [
+            -17,
+            -20,
+            4.5
+          ],
+          "energy": 400,
+          "size": 0.4,
+          "color": [
+            0.749,
+            0.816,
+            0.949
+          ],
+          "look_at": [
+            -17,
+            0,
+            1
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -17.0,
+          -20.5,
+          3.5
+        ],
+        "look_at": [
+          -17.0,
+          -10.0,
+          1.2
+        ],
+        "lens_mm": 31,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          -17,
+          -16,
+          0.0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "remnant-mask",
+          "verb": "Take the Remnant's mask",
+          "leads_to": "s_flight_umbra"
+        }
+      ]
+    }
+  }
+}

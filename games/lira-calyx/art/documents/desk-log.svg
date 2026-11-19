@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 860" width="600" height="860" role="img" aria-labelledby="desk-log-t desk-log-d">
+<title id="desk-log-t">The archivist's desk log</title>
+<desc id="desk-log-d">A clerk's desk log on grey ruled stock: dated entries in the small blue-black hand, one per ruled bar, each with the bar drawn to its length beside it; the last line left blank and dated.</desc>
+<defs><filter id="desk-log-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="366"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter><pattern id="desk-log-pat2" width="46" height="20" patternUnits="userSpaceOnUse"><path d="M0,2.5H46M0,7.5H46M0,12.5H46M0,17.5H46" stroke="#3b2618" stroke-width="0.5" opacity="0.07"/><path d="M23,0V20" stroke="#3b2618" stroke-width="0.8" opacity="0.06"/></pattern><radialGradient id="desk-log-vig3" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#7a5a2e" stop-opacity="0"/><stop offset="100%" stop-color="#7a5a2e" stop-opacity="0.2"/></radialGradient></defs>
+<rect x="0" y="0" width="600" height="860" fill="#e9e4d6"/>
+<rect x="0" y="0" width="600" height="860" filter="url(#desk-log-grain1)"/>
+<rect x="0" y="0" width="600" height="860" fill="url(#desk-log-pat2)"/>
+<rect x="0" y="0" width="600" height="860" fill="url(#desk-log-vig3)"/>
+<rect x="0" y="0" width="600" height="70" fill="#2b2e33" opacity="0.9"/>
+<text x="28" y="44" font-size="20" font-family="monospace" fill="#e8e2d0">EXCISION DESK 4 · LOG</text>
+<text x="450" y="44" font-size="12" font-family="monospace" fill="#f3b4b4" letter-spacing="1">NOT FOR FILE</text>
+<line x1="28" y1="120" x2="572" y2="120" stroke="#3c5a8c" stroke-width="0.6" opacity="0.3"/>
+<line x1="28" y1="166" x2="572" y2="166" stroke="#3c5a8c" stroke-width="0.6" opacity="0.3"/>
+<line x1="28" y1="212" x2="572" y2="212" stroke="#3c5a8c" stroke-width="0.6" opacity="0.3"/>
+<line x1="28" y1="258" x2="572" y2="258" stroke="#3c5a8c" stroke-width="0.6" opacity="0.3"/>
+<line x1="28" y1="304" x2="572" y2="304" stroke="#3c5a8c" stroke-width="0.6" opacity="0.3"/>
+<line x1="28" y1="350" x2="572" y2="350" stroke="#3c5a8c" stroke-width="0.6" opacity="0.3"/>
+<line x1="28" y1="396" x2="572" y2="396" stroke="#3c5a8c" stroke-width="0.6" opacity="0.3"/>
+<line x1="28" y1="442" x2="572" y2="442" stroke="#3c5a8c" stroke-width="0.6" opacity="0.3"/>
+<line x1="28" y1="488" x2="572" y2="488" stroke="#3c5a8c" stroke-width="0.6" opacity="0.3"/>
+<line x1="28" y1="534" x2="572" y2="534" stroke="#3c5a8c" stroke-width="0.6" opacity="0.3"/>
+<line x1="28" y1="580" x2="572" y2="580" stroke="#3c5a8c" stroke-width="0.6" opacity="0.3"/>
+<line x1="28" y1="626" x2="572" y2="626" stroke="#3c5a8c" stroke-width="0.6" opacity="0.3"/>
+<line x1="28" y1="672" x2="572" y2="672" stroke="#3c5a8c" stroke-width="0.6" opacity="0.3"/>
+<line x1="28" y1="718" x2="572" y2="718" stroke="#3c5a8c" stroke-width="0.6" opacity="0.3"/>
+<line x1="28" y1="764" x2="572" y2="764" stroke="#3c5a8c" stroke-width="0.6" opacity="0.3"/>
+<line x1="28" y1="810" x2="572" y2="810" stroke="#3c5a8c" stroke-width="0.6" opacity="0.3"/>
+<line x1="110" y1="84" x2="110" y2="830" stroke="#b3212b" stroke-width="0.8" opacity="0.5"/>
+<text x="0" y="0" font-size="16" font-family="serif" font-style="italic" fill="#3c5a8c" transform="translate(30 114) skewX(24) rotate(-1.5)">D 41</text>
+<text x="0" y="0" font-size="16" font-family="serif" font-style="italic" fill="#3c5a8c" transform="translate(124 114) skewX(24) rotate(-1.5)">Book I. First of hers to bar. 28 mm, line 1.</text>
+<path d="M127,127.4H245.8M129,138.6H244.8" stroke="#3c5a8c" stroke-width="1.1" fill="none" opacity="0.9"/>
+<rect x="135" y="127" width="102.8" height="12" fill="#3c5a8c" opacity="0.6"/>
+<rect x="136" y="128" width="100.8" height="10" fill="#141414"/>
+<path d="M137,133l-1.6,0.1M137,136.6l-2.4,0.7M137,134.3l-1.6,0.2M137,128.9l-1.3,0.5M137,131.8l-1.7,0.6M137,132.8l-5.2,-0.2M137,129.3l-1.1,0.4M137,133.6l-1.9,0.8M137,129.1l-4.2,0.5M235.8,135.5l1.3,0M235.8,134.5l2.4,0.6M235.8,133.9l1.8,-0.4M235.8,131.3l1,-0.7M235.8,133.8l1.9,0.4M235.8,130.2l1.2,-0.2M235.8,129.4l1.4,-0.2M235.8,136.9l3.7,0.1M235.8,129.9l0.6,0.4" stroke="#141414" stroke-width="0.9" fill="none" stroke-linecap="round"/>
+<text x="250.8" y="138" font-size="11" font-family="monospace" fill="#3c5a8c" letter-spacing="1">28</text>
+<text x="0" y="0" font-size="16" font-family="serif" font-style="italic" fill="#3c5a8c" transform="translate(30 188) skewX(24) rotate(-1.5)">D 44</text>
+<text x="0" y="0" font-size="16" font-family="serif" font-style="italic" fill="#3c5a8c" transform="translate(124 188) skewX(24) rotate(-1.5)">Bench at Hollin. 14 mm, line 2. She ran her standard.</text>
+<path d="M127,201.4H195.4M129,212.6H194.4" stroke="#3c5a8c" stroke-width="1.1" fill="none" opacity="0.9"/>
+<rect x="135" y="201" width="52.4" height="12" fill="#3c5a8c" opacity="0.6"/>
+<rect x="136" y="202" width="50.4" height="10" fill="#141414"/>
+<path d="M137,207.3l-1.3,-0.2M137,210.1l-2.7,0.7M137,203l-2.4,0.5M137,209l-1.2,-0.7M137,204.4l-2.1,-0.2M137,203.7l-0.8,-0.3M137,208.9l-1.8,-0.3M137,209.9l-0.8,-0.6M137,204.2l-1.2,0.3M185.4,207.3l0.6,0.6M185.4,207.9l3.9,0.1M185.4,203.6l3.8,-0.4M185.4,202.7l1.8,-0.7M185.4,204.7l4.6,0.6M185.4,207.7l3.5,-0M185.4,211.1l2.2,-0.7M185.4,211.2l1.5,0.1M185.4,204.4l2,0.7" stroke="#141414" stroke-width="0.9" fill="none" stroke-linecap="round"/>
+<text x="200.4" y="212" font-size="11" font-family="monospace" fill="#3c5a8c" letter-spacing="1">14</text>
+<text x="0" y="0" font-size="16" font-family="serif" font-style="italic" fill="#3c5a8c" transform="translate(30 262) skewX(24) rotate(-1.5)">D 52</text>
+<text x="0" y="0" font-size="16" font-family="serif" font-style="italic" fill="#3c5a8c" transform="translate(124 262) skewX(24) rotate(-1.5)">Ridge sheet. 41 mm on the drone line.</text>
+<path d="M127,275.4H292.6M129,286.6H291.6" stroke="#3c5a8c" stroke-width="1.1" fill="none" opacity="0.9"/>
+<rect x="135" y="275" width="149.6" height="12" fill="#3c5a8c" opacity="0.6"/>
+<rect x="136" y="276" width="147.6" height="10" fill="#141414"/>
+<path d="M137,282.4l-1.9,0.5M137,278.4l-1.2,-0.1M137,276.8l-1.8,-0.7M137,283.6l-1.3,-0.1M137,281.7l-4.3,0.2M137,279.5l-4.9,0.5M137,278.8l-1.9,-0.1M137,278.6l-2.7,-0.2M137,277.7l-0.8,0.8M282.6,282.5l0.9,0.7M282.6,278l2.4,0.1M282.6,284.7l0.9,0.6M282.6,280.2l1.7,-0.4M282.6,284.3l2,-0.1M282.6,282.4l0.7,0.1M282.6,280.6l3.7,0.2M282.6,282.4l0.6,0.1M282.6,280.8l1,0.8" stroke="#141414" stroke-width="0.9" fill="none" stroke-linecap="round"/>
+<text x="297.6" y="286" font-size="11" font-family="monospace" fill="#3c5a8c" letter-spacing="1">41</text>
+<text x="0" y="0" font-size="16" font-family="serif" font-style="italic" fill="#3c5a8c" transform="translate(30 336) skewX(24) rotate(-1.5)">D 58</text>
+<text x="0" y="0" font-size="16" font-family="serif" font-style="italic" fill="#3c5a8c" transform="translate(124 336) skewX(24) rotate(-1.5)">Plate 1. 28 mm. She wrote made.</text>
+<path d="M127,349.4H245.8M129,360.6H244.8" stroke="#3c5a8c" stroke-width="1.1" fill="none" opacity="0.9"/>
+<rect x="135" y="349" width="102.8" height="12" fill="#3c5a8c" opacity="0.6"/>
+<rect x="136" y="350" width="100.8" height="10" fill="#141414"/>
+<path d="M137,356.9l-0.6,-0.6M137,352.4l-5.5,0.3M137,358.7l-0.6,0M137,358l-2.1,0.5M137,350.9l-1.3,-0.5M137,357.1l-2.4,0M137,353.1l-1,0.7M137,352l-2.6,-0.3M137,357l-1.6,0.7M235.8,354.5l1.7,-0.2M235.8,358.4l1,0.4M235.8,359.2l2.8,0.2M235.8,352.5l1.3,-0.4M235.8,354.6l2.3,0.6M235.8,356.6l5.5,0.7M235.8,352.9l2.1,-0.6M235.8,355.4l0.6,0.5M235.8,357.3l6.2,-0.3" stroke="#141414" stroke-width="0.9" fill="none" stroke-linecap="round"/>
+<text x="250.8" y="360" font-size="11" font-family="monospace" fill="#3c5a8c" letter-spacing="1">28</text>
+<text x="0" y="0" font-size="16" font-family="serif" font-style="italic" fill="#3c5a8c" transform="translate(30 410) skewX(24) rotate(-1.5)">D 120</text>
+<text x="0" y="0" font-size="16" font-family="serif" font-style="italic" fill="#3c5a8c" transform="translate(124 410) skewX(24) rotate(-1.5)">The well. 41 mm, line 1.</text>
+<path d="M127,423.4H292.6M129,434.6H291.6" stroke="#3c5a8c" stroke-width="1.1" fill="none" opacity="0.9"/>
+<rect x="135" y="423" width="149.6" height="12" fill="#3c5a8c" opacity="0.6"/>
+<rect x="136" y="424" width="147.6" height="10" fill="#141414"/>
+<path d="M137,430.5l-1.5,-0.3M137,432.3l-2.6,0.4M137,431l-3.1,-0.5M137,427.7l-3.7,0.5M137,433.3l-0.6,-0.6M137,430.1l-0.8,-0.1M137,431l-3.4,-0.8M137,433.1l-4.6,-0.8M137,430.7l-5.1,0.8M282.6,424.5l2.8,0.2M282.6,428l1.1,0M282.6,432.7l1.1,-0.4M282.6,426.9l3.9,0.4M282.6,426.8l1.7,0.7M282.6,424.7l3.7,-0.8M282.6,430.1l1,-0.6M282.6,429.1l1.7,-0.3M282.6,425.9l0.9,0.5" stroke="#141414" stroke-width="0.9" fill="none" stroke-linecap="round"/>
+<text x="297.6" y="434" font-size="11" font-family="monospace" fill="#3c5a8c" letter-spacing="1">41</text>
+<text x="0" y="0" font-size="16" font-family="serif" font-style="italic" fill="#3c5a8c" transform="translate(30 484) skewX(24) rotate(-1.5)">D 131</text>
+<text x="0" y="0" font-size="16" font-family="serif" font-style="italic" fill="#3c5a8c" transform="translate(124 484) skewX(24) rotate(-1.5)">Their lab. 14 mm, top line.</text>
+<path d="M127,497.4H195.4M129,508.6H194.4" stroke="#3c5a8c" stroke-width="1.1" fill="none" opacity="0.9"/>
+<rect x="135" y="497" width="52.4" height="12" fill="#3c5a8c" opacity="0.6"/>
+<rect x="136" y="498" width="50.4" height="10" fill="#141414"/>
+<path d="M137,507.1l-3.6,0.7M137,503.1l-2.2,-0.3M137,502.8l-0.4,0.7M137,505.4l-1.7,0.6M137,507.1l-2.6,-0.3M137,506.8l-1,-0.7M137,504.6l-1.2,0.2M137,500.9l-0.7,0.2M137,507.3l-2.2,0.1M185.4,502.8l1.5,-0M185.4,506.6l2.3,0.4M185.4,505.7l1.2,-0.1M185.4,501.1l2.7,0M185.4,500.9l2,-0.8M185.4,501.9l0.6,0.4M185.4,507.1l2.3,0.8M185.4,499.6l0.5,-0.4M185.4,507.2l1.5,-0.7" stroke="#141414" stroke-width="0.9" fill="none" stroke-linecap="round"/>
+<text x="200.4" y="508" font-size="11" font-family="monospace" fill="#3c5a8c" letter-spacing="1">14</text>
+<text x="0" y="0" font-size="16" font-family="serif" font-style="italic" fill="#3c5a8c" transform="translate(30 558) skewX(24) rotate(-1.5)">D 146</text>
+<text x="0" y="0" font-size="16" font-family="serif" font-style="italic" fill="#3c5a8c" transform="translate(124 558) skewX(24) rotate(-1.5)">Appendix C, desk 4. Four lines. Crib.</text>
+<path d="M127,571.4H292.6M129,582.6H291.6" stroke="#3c5a8c" stroke-width="1.1" fill="none" opacity="0.9"/>
+<rect x="135" y="571" width="149.6" height="12" fill="#3c5a8c" opacity="0.6"/>
+<rect x="136" y="572" width="147.6" height="10" fill="#141414"/>
+<path d="M137,576.8l-3.6,-0.3M137,580l-1.8,-0.6M137,579.2l-4.1,0.2M137,577.4l-3.7,-0.4M137,579.3l-2.6,-0.2M137,575.1l-4.1,-0.2M137,579.7l-0.5,0.5M137,578.8l-1.3,-0.7M137,577.2l-2.4,-0.7M282.6,579.7l2.8,-0.6M282.6,580.5l2.3,-0.4M282.6,574.9l0.7,-0M282.6,575l1.1,0.3M282.6,581.3l1.6,-0.3M282.6,576.9l1.1,-0.2M282.6,572.6l0.6,-0.2M282.6,576.7l3.7,0.4M282.6,581.2l5.6,0.1" stroke="#141414" stroke-width="0.9" fill="none" stroke-linecap="round"/>
+<text x="297.6" y="582" font-size="11" font-family="monospace" fill="#3c5a8c" letter-spacing="1">41</text>
+<text x="0" y="0" font-size="16" font-family="serif" font-style="italic" fill="#3c5a8c" transform="translate(30 632) skewX(24) rotate(-1.5)">D 186</text>
+<text x="0" y="0" font-size="16" font-family="serif" font-style="italic" fill="#3c5a8c" transform="translate(124 632) skewX(24) rotate(-1.5)">The Peaks sheet. 28 mm, the drone again.</text>
+<path d="M127,645.4H245.8M129,656.6H244.8" stroke="#3c5a8c" stroke-width="1.1" fill="none" opacity="0.9"/>
+<rect x="135" y="645" width="102.8" height="12" fill="#3c5a8c" opacity="0.6"/>
+<rect x="136" y="646" width="100.8" height="10" fill="#141414"/>
+<path d="M137,648.3l-2.2,-0.7M137,653.9l-2,0.6M137,650.3l-1.2,-0.1M137,654.3l-0.9,-0.6M137,648.8l-1.3,-0.3M137,651.5l-1.5,0.2M137,648l-2.5,0.5M137,649.8l-3.7,-0.6M137,652.5l-4.3,0.4M235.8,650.9l3.8,0.2M235.8,651.8l3.5,0.2M235.8,653.3l2.6,-0.8M235.8,652.1l3.1,-0.6M235.8,653.1l3.3,0.1M235.8,653.3l3.6,-0.8M235.8,652l3.8,-0.6M235.8,652.6l0.9,0M235.8,647.5l2.6,0" stroke="#141414" stroke-width="0.9" fill="none" stroke-linecap="round"/>
+<text x="250.8" y="656" font-size="11" font-family="monospace" fill="#3c5a8c" letter-spacing="1">28</text>
+<text x="0" y="0" font-size="16" font-family="serif" font-style="italic" fill="#3c5a8c" transform="translate(30 706) skewX(24) rotate(-1.5)">D 202</text>
+<text x="0" y="0" font-size="16" font-family="serif" font-style="italic" fill="#3c5a8c" transform="translate(124 706) skewX(24) rotate(-1.5)">Her log, left page. 28 mm. She will gauge it.</text>
+<path d="M127,719.4H245.8M129,730.6H244.8" stroke="#3c5a8c" stroke-width="1.1" fill="none" opacity="0.9"/>
+<rect x="135" y="719" width="102.8" height="12" fill="#3c5a8c" opacity="0.6"/>
+<rect x="136" y="720" width="100.8" height="10" fill="#141414"/>
+<path d="M137,726.5l-2.1,0.6M137,724.5l-1.1,-0.5M137,721.2l-1.1,0.7M137,727.1l-2,-0.5M137,722.3l-5.2,0.8M137,725.2l-1.8,-0.1M137,724.4l-1.8,0.8M137,726.5l-0.6,0.1M137,724.4l-3.4,0.1M235.8,726.2l3.3,-0.7M235.8,722.3l1.2,-0.6M235.8,726.9l1.5,0.7M235.8,729.5l3.3,-0.6M235.8,724.9l0.5,-0.4M235.8,728.4l1.7,0M235.8,727l2.7,-0.5M235.8,726.1l0.9,-0.1M235.8,720.6l4,-0.4" stroke="#141414" stroke-width="0.9" fill="none" stroke-linecap="round"/>
+<text x="250.8" y="730" font-size="11" font-family="monospace" fill="#3c5a8c" letter-spacing="1">28</text>
+<text x="0" y="0" font-size="16" font-family="serif" font-style="italic" fill="#3c5a8c" transform="translate(30 780) skewX(24) rotate(-1.5)">D 231</text>
+<text x="0" y="0" font-size="16" font-family="serif" font-style="italic" fill="#3c5a8c" transform="translate(124 780) skewX(24) rotate(-1.5)">The order, on a scrap: “She’s close. Move the logs.”</text>
+<path d="M534.1,800 C534.4,800.8 535.7,802 535.3,802.9 C535,803.7 533,804.9 531.8,805.2 C530.6,805.4 528.9,804.9 527.9,804.5 C527,804.1 526.4,803.4 526.1,802.7 C525.7,802 525.9,800.8 526.1,800 C526.2,799.2 526.5,798.3 526.9,797.7 C527.4,797.1 528.1,796.7 528.9,796.5 C529.6,796.2 530.6,796 531.4,796.3 C532.1,796.5 532.8,797.3 533.3,797.9 C533.7,798.5 533.7,799.2 534.1,800Z" fill="#3c5a8c" opacity="0.7"/>
+<circle cx="522.6" cy="808.3" r="1" fill="#3c5a8c" opacity="0.7"/>
+<circle cx="525.9" cy="791.3" r="0.7" fill="#3c5a8c" opacity="0.7"/>
+<circle cx="537.6" cy="808" r="0.8" fill="#3c5a8c" opacity="0.7"/>
+</svg>

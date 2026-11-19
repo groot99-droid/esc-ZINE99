@@ -1,0 +1,655 @@
+{
+  "game": "lira-calyx",
+  "location": "peak-core",
+  "name": "The core beneath Peak 12",
+  "reference": "assets/locations/peak-core.jpg",
+  "bounds_m": [
+    90,
+    40,
+    40
+  ],
+  "origin": "cavern floor centre; the cavern runs along x, entered through the -x end; the crystal mass and the dais toward +x",
+  "materials": {
+    "cavern": {
+      "color": [
+        0.18,
+        0.173,
+        0.188
+      ],
+      "roughness": 0.95
+    },
+    "rib": {
+      "color": [
+        0.235,
+        0.227,
+        0.251
+      ],
+      "roughness": 0.95
+    },
+    "dais": {
+      "color": [
+        0.118,
+        0.118,
+        0.133
+      ],
+      "roughness": 0.7
+    },
+    "core-crystal": {
+      "color": [
+        0.91,
+        0.878,
+        1.0
+      ],
+      "roughness": 0.1,
+      "emission": 4.0
+    },
+    "roots": {
+      "color": [
+        0.149,
+        0.133,
+        0.141
+      ],
+      "roughness": 0.9
+    },
+    "amber": {
+      "color": [
+        0.941,
+        0.659,
+        0.188
+      ],
+      "roughness": 0.3,
+      "emission": 3.0
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        90,
+        40,
+        0.4
+      ],
+      "location": [
+        0,
+        0,
+        -0.2
+      ],
+      "material": "cavern"
+    },
+    {
+      "id": "wall-north",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        90,
+        1,
+        40
+      ],
+      "location": [
+        0,
+        20.5,
+        20
+      ],
+      "material": "cavern"
+    },
+    {
+      "id": "wall-south",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        90,
+        1,
+        40
+      ],
+      "location": [
+        0,
+        -20.5,
+        20
+      ],
+      "material": "cavern"
+    },
+    {
+      "id": "ceiling",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        90,
+        42,
+        1
+      ],
+      "location": [
+        0,
+        0,
+        40.5
+      ],
+      "material": "cavern"
+    },
+    {
+      "id": "end-east",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1,
+        40,
+        40
+      ],
+      "location": [
+        45.5,
+        0,
+        20
+      ],
+      "material": "cavern"
+    },
+    {
+      "id": "end-west-n",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1,
+        15,
+        40
+      ],
+      "location": [
+        -45.5,
+        12.5,
+        20
+      ],
+      "material": "cavern"
+    },
+    {
+      "id": "end-west-s",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1,
+        15,
+        40
+      ],
+      "location": [
+        -45.5,
+        -12.5,
+        20
+      ],
+      "material": "cavern"
+    },
+    {
+      "id": "end-west-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1,
+        10,
+        32
+      ],
+      "location": [
+        -45.5,
+        0,
+        24
+      ],
+      "material": "cavern"
+    },
+    {
+      "id": "dais",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        26,
+        16,
+        0.6
+      ],
+      "location": [
+        8,
+        0,
+        0.3
+      ],
+      "material": "dais"
+    },
+    {
+      "id": "crystal-mass-1",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        5,
+        4,
+        40
+      ],
+      "location": [
+        14,
+        0,
+        20
+      ],
+      "material": "core-crystal"
+    },
+    {
+      "id": "crystal-mass-2",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        4,
+        3.5,
+        40
+      ],
+      "location": [
+        18.5,
+        1,
+        20
+      ],
+      "material": "core-crystal"
+    },
+    {
+      "id": "root-mound",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        12,
+        12,
+        3
+      ],
+      "location": [
+        16,
+        0,
+        2.1
+      ],
+      "material": "roots"
+    },
+    {
+      "id": "rib-n1",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        2,
+        1.5,
+        38
+      ],
+      "location": [
+        -30,
+        19.5,
+        19
+      ],
+      "material": "rib"
+    },
+    {
+      "id": "rib-s1",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        2,
+        1.5,
+        38
+      ],
+      "location": [
+        -30,
+        -19.5,
+        19
+      ],
+      "material": "rib"
+    },
+    {
+      "id": "rib-n2",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        2,
+        1.5,
+        38
+      ],
+      "location": [
+        -10,
+        19.5,
+        19
+      ],
+      "material": "rib"
+    },
+    {
+      "id": "rib-s2",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        2,
+        1.5,
+        38
+      ],
+      "location": [
+        -10,
+        -19.5,
+        19
+      ],
+      "material": "rib"
+    },
+    {
+      "id": "rib-n3",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        2,
+        1.5,
+        38
+      ],
+      "location": [
+        30,
+        19.5,
+        19
+      ],
+      "material": "rib"
+    },
+    {
+      "id": "rib-s3",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        2,
+        1.5,
+        38
+      ],
+      "location": [
+        30,
+        -19.5,
+        19
+      ],
+      "material": "rib"
+    },
+    {
+      "id": "amber-vein-1",
+      "shape": "cone",
+      "role": "trim",
+      "size_m": [
+        1,
+        1,
+        2.4
+      ],
+      "location": [
+        -35,
+        19.6,
+        4
+      ],
+      "material": "amber",
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "collide": false
+    },
+    {
+      "id": "amber-vein-2",
+      "shape": "cone",
+      "role": "trim",
+      "size_m": [
+        1,
+        1,
+        2.4
+      ],
+      "location": [
+        -15,
+        -19.6,
+        8
+      ],
+      "material": "amber",
+      "rotation_deg": [
+        -90,
+        0,
+        0
+      ],
+      "collide": false
+    },
+    {
+      "id": "amber-vein-3",
+      "shape": "cone",
+      "role": "trim",
+      "size_m": [
+        1,
+        1,
+        2.4
+      ],
+      "location": [
+        25,
+        19.6,
+        6
+      ],
+      "material": "amber",
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "collide": false
+    },
+    {
+      "id": "amber-vein-4",
+      "shape": "cone",
+      "role": "trim",
+      "size_m": [
+        1,
+        1,
+        2.4
+      ],
+      "location": [
+        38,
+        -19.6,
+        3
+      ],
+      "material": "amber",
+      "rotation_deg": [
+        -90,
+        0,
+        0
+      ],
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "emitter-1",
+      "object": "aetheric-emitter",
+      "location": [
+        -3,
+        -6.5,
+        0.6
+      ]
+    },
+    {
+      "id": "emitter-2",
+      "object": "aetheric-emitter",
+      "location": [
+        -3,
+        6.5,
+        0.6
+      ]
+    },
+    {
+      "id": "emitter-3",
+      "object": "aetheric-emitter",
+      "location": [
+        6,
+        -7.2,
+        0.6
+      ]
+    },
+    {
+      "id": "emitter-4",
+      "object": "aetheric-emitter",
+      "location": [
+        6,
+        7.2,
+        0.6
+      ]
+    },
+    {
+      "id": "emitter-5",
+      "object": "aetheric-emitter",
+      "location": [
+        24,
+        -6,
+        0
+      ]
+    },
+    {
+      "id": "emitter-6",
+      "object": "aetheric-emitter",
+      "location": [
+        24,
+        6,
+        0
+      ]
+    },
+    {
+      "id": "board-table",
+      "object": "board-table",
+      "location": [
+        -10,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "crystals-1",
+      "object": "crystal-cluster",
+      "location": [
+        -30,
+        -18,
+        0
+      ]
+    },
+    {
+      "id": "crystals-2",
+      "object": "crystal-cluster",
+      "location": [
+        -20,
+        18,
+        0
+      ]
+    },
+    {
+      "id": "crystals-3",
+      "object": "crystal-cluster",
+      "location": [
+        30,
+        -18,
+        0
+      ]
+    },
+    {
+      "id": "crystals-4",
+      "object": "crystal-cluster",
+      "location": [
+        36,
+        17,
+        0
+      ]
+    }
+  ],
+  "scenes": {
+    "b4-core": {
+      "world": {
+        "color": [
+          0.11,
+          0.094,
+          0.157
+        ],
+        "strength": 0.2
+      },
+      "lights": [
+        {
+          "name": "crystal-mass",
+          "type": "AREA",
+          "location": [
+            10,
+            0,
+            20
+          ],
+          "energy": 30000,
+          "size": 6,
+          "color": [
+            0.878,
+            0.816,
+            1.0
+          ],
+          "look_at": [
+            -10,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "core-violet",
+          "type": "POINT",
+          "location": [
+            16,
+            0,
+            6
+          ],
+          "energy": 6000,
+          "size": 2,
+          "color": [
+            0.627,
+            0.502,
+            1.0
+          ]
+        },
+        {
+          "name": "amber-walls",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            38
+          ],
+          "energy": 3000,
+          "size": 40,
+          "color": [
+            0.941,
+            0.659,
+            0.188
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "note": "Book IV. The core beneath Peak 12: the crystal mass hums white-violet at the mountain's frequency, amber crystals in the walls. Veylor's sparse lines ('a hard reset is a mercy'); he seeded the data years ago. The emitter array stands round the dais; the board table opens the Node Board.",
+      "camera": {
+        "location": [
+          -41.5,
+          0.0,
+          2.65
+        ],
+        "look_at": [
+          -34.0,
+          -0.0,
+          1.4
+        ],
+        "lens_mm": 31,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          -38,
+          0,
+          0
+        ],
+        "facing_deg": 270
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "emitter-1",
+          "verb": "Check the emitter array"
+        },
+        {
+          "prop": "board-table",
+          "verb": "Lay out the core network",
+          "leads_to": "b4-board-core"
+        }
+      ]
+    }
+  }
+}

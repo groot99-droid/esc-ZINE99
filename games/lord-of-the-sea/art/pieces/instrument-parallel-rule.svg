@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 340" width="520" height="340" role="img" aria-labelledby="instrument-parallel-rule-t instrument-parallel-rule-d">
+<title id="instrument-parallel-rule-t">Dead Reckoning: the parallel rule</title>
+<desc id="instrument-parallel-rule-d">The parallel rule: two ebony bars edged in brass and joined by two swinging brass arms, lying open across the sheet with a pencilled course along its edge.</desc>
+<defs><filter id="instrument-parallel-rule-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="43"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter></defs>
+<rect x="0" y="0" width="520" height="340" fill="#E7E8DA"/>
+<rect x="0" y="0" width="520" height="340" filter="url(#instrument-parallel-rule-grain1)"/>
+<path d="M0,0V340M80,0V340M160,0V340M240,0V340M320,0V340M400,0V340M480,0V340M0,0H520M0,80H520M0,160H520M0,240H520M0,320H520" fill="none" stroke="#1F2E4A" stroke-width="0.5" opacity="0.3"/>
+<path d="M0,0V340M16,0V340M32,0V340M48,0V340M64,0V340M80,0V340M96,0V340M112,0V340M128,0V340M144,0V340M160,0V340M176,0V340M192,0V340M208,0V340M224,0V340M240,0V340M256,0V340M272,0V340M288,0V340M304,0V340M320,0V340M336,0V340M352,0V340M368,0V340M384,0V340M400,0V340M416,0V340M432,0V340M448,0V340M464,0V340M480,0V340M496,0V340M512,0V340M0,0H520M0,16H520M0,32H520M0,48H520M0,64H520M0,80H520M0,96H520M0,112H520M0,128H520M0,144H520M0,160H520M0,176H520M0,192H520M0,208H520M0,224H520M0,240H520M0,256H520M0,272H520M0,288H520M0,304H520M0,320H520M0,336H520" fill="none" stroke="#1F2E4A" stroke-width="0.3" opacity="0.1"/>
+<path d="M20.5,299.7 L60.2,284.4 L99.8,269.8 L140,253.3 L180.6,238.7 L220.3,223.7 L260.3,208.3 L300.5,192.1 L340.7,176.7 L379.8,162.2 L420,146.5 L460.5,131.6 L500.3,116.7" fill="none" stroke="#55524c" stroke-width="2"/>
+<g transform="translate(260,170) rotate(-21)">
+<rect x="-214" y="-72" width="430" height="44" rx="3" fill="#000" opacity="0.2"/>
+<rect x="-218" y="-78" width="430" height="44" rx="3" fill="#2a2420" stroke="#000" stroke-width="1.2"/>
+<rect x="-218" y="-78" width="430" height="7" fill="#C9A24A"/>
+<rect x="-218" y="-41" width="430" height="7" fill="#C9A24A"/>
+<path d="M-210,-71v9M-200,-71v5M-190,-71v5M-180,-71v5M-170,-71v5M-160,-71v9M-150,-71v5M-140,-71v5M-130,-71v5M-120,-71v5M-110,-71v9M-100,-71v5M-90,-71v5M-80,-71v5M-70,-71v5M-60,-71v9M-50,-71v5M-40,-71v5M-30,-71v5M-20,-71v5M-10,-71v9M0,-71v5M10,-71v5M20,-71v5M30,-71v5M40,-71v9M50,-71v5M60,-71v5M70,-71v5M80,-71v5M90,-71v9M100,-71v5M110,-71v5M120,-71v5M130,-71v5M140,-71v9M150,-71v5M160,-71v5M170,-71v5M180,-71v5M190,-71v9M200,-71v5" stroke="#C9A24A" stroke-width="1"/>
+<path d="M-200,-56 h396" stroke="#fff" stroke-width="1" opacity="0.2"/>
+<rect x="-214" y="42" width="430" height="44" rx="3" fill="#000" opacity="0.2"/>
+<rect x="-218" y="36" width="430" height="44" rx="3" fill="#2a2420" stroke="#000" stroke-width="1.2"/>
+<rect x="-218" y="36" width="430" height="7" fill="#C9A24A"/>
+<rect x="-218" y="73" width="430" height="7" fill="#C9A24A"/>
+<path d="M-210,43v9M-200,43v5M-190,43v5M-180,43v5M-170,43v5M-160,43v9M-150,43v5M-140,43v5M-130,43v5M-120,43v5M-110,43v9M-100,43v5M-90,43v5M-80,43v5M-70,43v5M-60,43v9M-50,43v5M-40,43v5M-30,43v5M-20,43v5M-10,43v9M0,43v5M10,43v5M20,43v5M30,43v5M40,43v9M50,43v5M60,43v5M70,43v5M80,43v5M90,43v9M100,43v5M110,43v5M120,43v5M130,43v5M140,43v9M150,43v5M160,43v5M170,43v5M180,43v5M190,43v9M200,43v5" stroke="#C9A24A" stroke-width="1"/>
+<path d="M-200,58 h396" stroke="#fff" stroke-width="1" opacity="0.2"/>
+<path d="M-130,-56 L-86,58" stroke="#8A6A2F" stroke-width="17" stroke-linecap="round"/>
+<path d="M-130,-56 L-86,58" stroke="#C9A24A" stroke-width="12" stroke-linecap="round"/>
+<circle cx="-130" cy="-56" r="5" fill="#8A6A2F" stroke="#000" stroke-width="0.8"/>
+<circle cx="-86" cy="58" r="5" fill="#8A6A2F" stroke="#000" stroke-width="0.8"/>
+<path d="M100,-56 L144,58" stroke="#8A6A2F" stroke-width="17" stroke-linecap="round"/>
+<path d="M100,-56 L144,58" stroke="#C9A24A" stroke-width="12" stroke-linecap="round"/>
+<circle cx="100" cy="-56" r="5" fill="#8A6A2F" stroke="#000" stroke-width="0.8"/>
+<circle cx="144" cy="58" r="5" fill="#8A6A2F" stroke="#000" stroke-width="0.8"/>
+</g>
+</svg>

@@ -1,0 +1,782 @@
+{
+  "game": "lira-calyx",
+  "location": "cinder-reach-archive",
+  "name": "The Cinder Reach patent archive",
+  "reference": "assets/locations/cinder-reach-archive.jpg",
+  "bounds_m": [
+    50,
+    30,
+    10
+  ],
+  "origin": "floor centre; +y toward the back wall, the entrance in the -y wall; skylights run along x down the middle of the ceiling",
+  "materials": {
+    "floor-concrete": {
+      "color": [
+        0.541,
+        0.439,
+        0.282
+      ],
+      "roughness": 0.6
+    },
+    "wall-ochre": {
+      "color": [
+        0.753,
+        0.518,
+        0.22
+      ],
+      "roughness": 0.85
+    },
+    "ceiling": {
+      "color": [
+        0.353,
+        0.267,
+        0.157
+      ],
+      "roughness": 0.9
+    },
+    "skylight": {
+      "color": [
+        1.0,
+        0.941,
+        0.784
+      ],
+      "roughness": 0.2,
+      "emission": 1.5
+    },
+    "puddle": {
+      "color": [
+        0.478,
+        0.408,
+        0.314
+      ],
+      "roughness": 0.05
+    },
+    "vitrine-glass": {
+      "color": [
+        0.847,
+        0.878,
+        0.878
+      ],
+      "roughness": 0.05
+    },
+    "steel": {
+      "color": [
+        0.29,
+        0.29,
+        0.282
+      ],
+      "roughness": 0.6,
+      "metallic": 0.7
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        50,
+        30,
+        0.2
+      ],
+      "location": [
+        0,
+        0,
+        -0.1
+      ],
+      "material": "floor-concrete"
+    },
+    {
+      "id": "wall-north",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        50,
+        0.4,
+        10
+      ],
+      "location": [
+        0,
+        15.2,
+        5
+      ],
+      "material": "wall-ochre"
+    },
+    {
+      "id": "wall-west",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.4,
+        30,
+        10
+      ],
+      "location": [
+        -25.2,
+        0,
+        5
+      ],
+      "material": "wall-ochre"
+    },
+    {
+      "id": "wall-east",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.4,
+        30,
+        10
+      ],
+      "location": [
+        25.2,
+        0,
+        5
+      ],
+      "material": "wall-ochre"
+    },
+    {
+      "id": "wall-south-w",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        23.5,
+        0.4,
+        10
+      ],
+      "location": [
+        -13.25,
+        -15.2,
+        5
+      ],
+      "material": "wall-ochre"
+    },
+    {
+      "id": "wall-south-e",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        23.5,
+        0.4,
+        10
+      ],
+      "location": [
+        13.25,
+        -15.2,
+        5
+      ],
+      "material": "wall-ochre"
+    },
+    {
+      "id": "wall-south-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        3,
+        0.4,
+        6.5
+      ],
+      "location": [
+        0,
+        -15.2,
+        6.75
+      ],
+      "material": "wall-ochre"
+    },
+    {
+      "id": "ceiling-south",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        50,
+        13,
+        0.4
+      ],
+      "location": [
+        0,
+        -8.5,
+        10.2
+      ],
+      "material": "ceiling"
+    },
+    {
+      "id": "ceiling-north",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        50,
+        13,
+        0.4
+      ],
+      "location": [
+        0,
+        8.5,
+        10.2
+      ],
+      "material": "ceiling"
+    },
+    {
+      "id": "ceiling-mid-1",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        7.5,
+        4,
+        0.4
+      ],
+      "location": [
+        -21.25,
+        0,
+        10.2
+      ],
+      "material": "ceiling"
+    },
+    {
+      "id": "ceiling-mid-2",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        5.0,
+        4,
+        0.4
+      ],
+      "location": [
+        -12.0,
+        0,
+        10.2
+      ],
+      "material": "ceiling"
+    },
+    {
+      "id": "ceiling-mid-3",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        5.0,
+        4,
+        0.4
+      ],
+      "location": [
+        -4.0,
+        0,
+        10.2
+      ],
+      "material": "ceiling"
+    },
+    {
+      "id": "ceiling-mid-4",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        5.0,
+        4,
+        0.4
+      ],
+      "location": [
+        4.0,
+        0,
+        10.2
+      ],
+      "material": "ceiling"
+    },
+    {
+      "id": "ceiling-mid-5",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        5.0,
+        4,
+        0.4
+      ],
+      "location": [
+        12.0,
+        0,
+        10.2
+      ],
+      "material": "ceiling"
+    },
+    {
+      "id": "ceiling-mid-6",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        7.5,
+        4,
+        0.4
+      ],
+      "location": [
+        21.25,
+        0,
+        10.2
+      ],
+      "material": "ceiling"
+    },
+    {
+      "id": "skylight-1",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        3,
+        4,
+        0.1
+      ],
+      "location": [
+        -16,
+        0,
+        10.2
+      ],
+      "material": "skylight",
+      "collide": false
+    },
+    {
+      "id": "skylight-2",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        3,
+        4,
+        0.1
+      ],
+      "location": [
+        -8,
+        0,
+        10.2
+      ],
+      "material": "skylight",
+      "collide": false
+    },
+    {
+      "id": "skylight-3",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        3,
+        4,
+        0.1
+      ],
+      "location": [
+        0,
+        0,
+        10.2
+      ],
+      "material": "skylight",
+      "collide": false
+    },
+    {
+      "id": "skylight-4",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        3,
+        4,
+        0.1
+      ],
+      "location": [
+        8,
+        0,
+        10.2
+      ],
+      "material": "skylight",
+      "collide": false
+    },
+    {
+      "id": "skylight-5",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        3,
+        4,
+        0.1
+      ],
+      "location": [
+        16,
+        0,
+        10.2
+      ],
+      "material": "skylight",
+      "collide": false
+    },
+    {
+      "id": "puddle",
+      "shape": "box",
+      "role": "water",
+      "size_m": [
+        10,
+        5,
+        0.02
+      ],
+      "location": [
+        -2,
+        -4,
+        0.01
+      ],
+      "material": "puddle"
+    },
+    {
+      "id": "vitrine-plinth",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        3.4,
+        2.6,
+        0.25
+      ],
+      "location": [
+        0,
+        6,
+        0.125
+      ],
+      "material": "steel"
+    },
+    {
+      "id": "vitrine-glass",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        3.2,
+        2.4,
+        2.4
+      ],
+      "location": [
+        0,
+        6,
+        1.45
+      ],
+      "material": "vitrine-glass",
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "drawers-1",
+      "object": "patent-drawer-cabinet",
+      "location": [
+        -24.4,
+        -9,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "drawers-2",
+      "object": "patent-drawer-cabinet",
+      "location": [
+        24.4,
+        -9,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        270
+      ]
+    },
+    {
+      "id": "drawers-3",
+      "object": "patent-drawer-cabinet",
+      "location": [
+        -24.4,
+        -4,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "drawers-4",
+      "object": "patent-drawer-cabinet",
+      "location": [
+        24.4,
+        -4,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        270
+      ]
+    },
+    {
+      "id": "drawers-5",
+      "object": "patent-drawer-cabinet",
+      "location": [
+        -24.4,
+        1,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "drawers-6",
+      "object": "patent-drawer-cabinet",
+      "location": [
+        24.4,
+        1,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        270
+      ]
+    },
+    {
+      "id": "drawers-7",
+      "object": "patent-drawer-cabinet",
+      "location": [
+        -24.4,
+        6,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "drawers-8",
+      "object": "patent-drawer-cabinet",
+      "location": [
+        24.4,
+        6,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        270
+      ]
+    },
+    {
+      "id": "drawers-9",
+      "object": "patent-drawer-cabinet",
+      "location": [
+        -15,
+        14.5,
+        0
+      ]
+    },
+    {
+      "id": "drawers-10",
+      "object": "patent-drawer-cabinet",
+      "location": [
+        -8,
+        14.5,
+        0
+      ]
+    },
+    {
+      "id": "drawers-11",
+      "object": "patent-drawer-cabinet",
+      "location": [
+        8,
+        14.5,
+        0
+      ]
+    },
+    {
+      "id": "drawers-12",
+      "object": "patent-drawer-cabinet",
+      "location": [
+        15,
+        14.5,
+        0
+      ]
+    },
+    {
+      "id": "light-table",
+      "object": "light-table",
+      "location": [
+        0,
+        6,
+        0.25
+      ]
+    },
+    {
+      "id": "fragment",
+      "object": "fused-glass-fragment",
+      "location": [
+        0.2,
+        6,
+        1.25
+      ]
+    }
+  ],
+  "scenes": {
+    "b2-archive": {
+      "world": {
+        "color": [
+          0.227,
+          0.18,
+          0.118
+        ],
+        "strength": 0.25
+      },
+      "lights": [
+        {
+          "name": "skylight-sun",
+          "type": "SUN",
+          "location": [
+            0,
+            0,
+            20
+          ],
+          "energy": 3.0,
+          "size": 1,
+          "color": [
+            1.0,
+            0.91,
+            0.722
+          ],
+          "look_at": [
+            2,
+            1,
+            0
+          ]
+        },
+        {
+          "name": "shaft-1",
+          "type": "AREA",
+          "location": [
+            -16,
+            0,
+            9.9
+          ],
+          "energy": 400,
+          "size": 3,
+          "color": [
+            1.0,
+            0.91,
+            0.722
+          ],
+          "look_at": [
+            -15,
+            1,
+            0
+          ]
+        },
+        {
+          "name": "shaft-2",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            9.9
+          ],
+          "energy": 400,
+          "size": 3,
+          "color": [
+            1.0,
+            0.91,
+            0.722
+          ],
+          "look_at": [
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "name": "shaft-3",
+          "type": "AREA",
+          "location": [
+            16,
+            0,
+            9.9
+          ],
+          "energy": 400,
+          "size": 3,
+          "color": [
+            1.0,
+            0.91,
+            0.722
+          ],
+          "look_at": [
+            17,
+            1,
+            0
+          ]
+        },
+        {
+          "name": "light-table-glow",
+          "type": "AREA",
+          "location": [
+            0,
+            6,
+            1.3
+          ],
+          "energy": 60,
+          "size": 1.2,
+          "color": [
+            0.941,
+            0.957,
+            1.0
+          ],
+          "look_at": [
+            0,
+            6,
+            3
+          ]
+        }
+      ],
+      "note": "Book II, Cinder Reach. Dust hangs in the skylight shafts; water drips into the puddle. Pull patent drawers (120 across the 12 cabinets) and match three lattice drawings to the fragment on the light table: the consortium's signature.",
+      "camera": {
+        "location": [
+          0.0,
+          -16.0,
+          2.65
+        ],
+        "look_at": [
+          0.0,
+          -8.5,
+          1.4
+        ],
+        "lens_mm": 31,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -12.5,
+          0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "drawers-1",
+          "verb": "Pull a drawer"
+        },
+        {
+          "prop": "drawers-6",
+          "verb": "Pull a drawer"
+        },
+        {
+          "prop": "drawers-10",
+          "verb": "Pull a drawer"
+        },
+        {
+          "prop": "light-table",
+          "verb": "Match the lattice drawing"
+        },
+        {
+          "prop": "fragment",
+          "verb": "Lay the fragment on the glass",
+          "leads_to": "b2-assay-2"
+        }
+      ]
+    }
+  }
+}

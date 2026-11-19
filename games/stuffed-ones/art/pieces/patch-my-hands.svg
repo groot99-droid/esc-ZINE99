@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-labelledby="patch-my-hands-t patch-my-hands-d">
+<title id="patch-my-hands-t">Memory patch: My hands</title>
+<desc id="patch-my-hands-d">A round embroidered patch from the Stuffing tray, in the felt colour of its person: the memory "My hands", its picture worked in satin stitch, its name on a ribbon.</desc>
+<defs><filter id="patch-my-hands-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.4" numOctaves="2" seed="373"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><radialGradient id="patch-my-hands-rg2" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#D9CBB0" stop-opacity="0.3"/><stop offset="60%" stop-color="#D9CBB0" stop-opacity="0.1"/><stop offset="100%" stop-color="#D9CBB0" stop-opacity="0"/></radialGradient><filter id="patch-my-hands-felt3" x="-15%" y="-15%" width="130%" height="130%"><feGaussianBlur in="SourceAlpha" stdDeviation="2.2"/><feOffset dx="1.8" dy="3"/><feComponentTransfer result="s"><feFuncA type="linear" slope="0.3"/></feComponentTransfer><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="57" result="n"/><feColorMatrix in="n" values="0 0 0 0 1  0 0 0 0 0.96  0 0 0 0 0.88  0 0 0 -1.2 0.45"/><feComposite in2="SourceAlpha" operator="in" result="l"/><feColorMatrix in="n" values="0 0 0 0 0.1  0 0 0 0 0.06  0 0 0 0 0.03  0 0 0 1.3 -0.74"/><feComposite in2="SourceAlpha" operator="in" result="d"/><feMerge><feMergeNode in="s"/><feMergeNode in="SourceGraphic"/><feMergeNode in="l"/><feMergeNode in="d"/></feMerge></filter><pattern id="patch-my-hands-sat4" width="3" height="3" patternUnits="userSpaceOnUse" patternTransform="rotate(60)"><path d="M0,0H3" stroke="#F2EBDD" stroke-width="1" opacity="0.32"/></pattern><radialGradient id="patch-my-hands-vig5" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#1a0f08" stop-opacity="0"/><stop offset="100%" stop-color="#1a0f08" stop-opacity="0.3"/></radialGradient></defs>
+<rect x="0" y="0" width="240" height="240" fill="#452d1d"/>
+<rect x="0" y="0" width="240" height="240" filter="url(#patch-my-hands-grain1)"/>
+<circle cx="110" cy="50" r="230" fill="url(#patch-my-hands-rg2)"/>
+<g transform="rotate(-5.4 120 104)">
+<path d="M30,104a90,90 0 1,0 180,0a90,90 0 1,0 -180,0z" fill="#e2d6c0" filter="url(#patch-my-hands-felt3)"/>
+<path d="M36,104a84,84 0 1,0 168,0a84,84 0 1,0 -168,0z" fill="none" stroke="#A8512E" stroke-width="13" stroke-dasharray="2.6 2.4"/>
+<path d="M36,104a84,84 0 1,0 168,0a84,84 0 1,0 -168,0z" fill="none" stroke="#A8512E" stroke-width="2.1" stroke-dasharray="3.5 1.5" opacity="0.9"/>
+<path d="M48,104a72,72 0 1,0 144,0a72,72 0 1,0 -144,0z" fill="none" stroke="#5B3A24" stroke-width="1.6" stroke-dasharray="5 4" stroke-linecap="round" opacity="0.8"/>
+<g transform="translate(68 50) scale(1)">
+<path d="M28,92V58L15,42q-5,-9 4,-9l13,11V18q0,-6 6,-6t6,6v18V12q0,-6 6,-6t6,6v24V18q0,-6 6,-6t6,6v24V30q0,-6 5.5,-6t5.5,6v32q0,18 -14,30z" fill="#3f2819"/>
+<path d="M28,92V58L15,42q-5,-9 4,-9l13,11V18q0,-6 6,-6t6,6v18V12q0,-6 6,-6t6,6v24V18q0,-6 6,-6t6,6v24V30q0,-6 5.5,-6t5.5,6v32q0,18 -14,30z" fill="url(#patch-my-hands-sat4)"/>
+<path d="M36,72q14,6 30,-4" fill="none" stroke="#ece3d1" stroke-width="3.4" stroke-dasharray="5 4" stroke-linecap="round"/>
+</g>
+</g>
+<g transform="rotate(-0.027420289543506282 120 204)">
+<path d="M67.4,189L172.6,189L164.6,204L172.6,219L67.4,219L75.4,204z" fill="#F2EBDD" filter="url(#patch-my-hands-felt3)"/>
+<path d="M81.4,194H158.6M81.4,214H158.6" fill="none" stroke="#a2998d" stroke-width="1.1" stroke-dasharray="4 3" stroke-linecap="round"/>
+<text x="120" y="209.5" font-size="16" font-family="serif" fill="#2b1e15" text-anchor="middle" font-style="italic">My hands</text>
+</g>
+<rect x="0" y="0" width="240" height="240" fill="url(#patch-my-hands-vig5)"/>
+</svg>

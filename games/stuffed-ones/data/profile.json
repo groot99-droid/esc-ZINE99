@@ -1,0 +1,89 @@
+{
+  "store": {
+    "backend": "indexeddb",
+    "name": "profile",
+    "records": "one",
+    "beside_slots": true,
+    "note": "Kept apart from the three save slots and the autosave. A save never holds these keys and loading a save never changes them (DESIGN.md section 12, 'The loop')."
+  },
+  "written": {
+    "when": "ending_resolves",
+    "before": "credits",
+    "once_per_run": true,
+    "scenes": ["e_cycle_shelf", "e_empty_toy", "e_warning_unpick", "e_keeper_porch", "e_page_circle"]
+  },
+  "cleared_by": {
+    "control": "Settings: Empty the shelf",
+    "confirm": true,
+    "resets_to_defaults": true
+  },
+  "keys": [
+    {
+      "name": "run.number",
+      "flag": "run.number",
+      "type": "counter",
+      "default": 1,
+      "read_at": "new_game",
+      "write": "increment",
+      "write_note": "Plus one when an ending resolves, so the next new game is the next turn of the cycle."
+    },
+    {
+      "name": "shelf.generations",
+      "flag": "shelf.generations",
+      "type": "ledger",
+      "fields": ["run", "group", "guest", "form", "ending"],
+      "default": [],
+      "read_at": "new_game",
+      "write": "append_by_ending",
+      "write_note": "Appends the entries the ending's row in 'shelf_writes' names. The next run's shelf, guestbook and four Act 1 incidents are built from the entries whose run is the previous run; older entries are the circle of torn fabric skins."
+    },
+    {
+      "name": "shelf.previous_ending",
+      "flag": "shelf.previous_ending",
+      "type": "enum",
+      "values": ["none", "cycle", "warning", "empty_toy", "keeper", "the_page"],
+      "default": "none",
+      "read_at": "new_game",
+      "write": "set_to_ending",
+      "write_note": "Set to the id of the ending that resolved."
+    },
+    {
+      "name": "book.carried",
+      "flag": "book.carried",
+      "type": "ledger",
+      "fields": ["spread", "run"],
+      "default": [],
+      "read_at": "new_game",
+      "write": "append_new_spreads",
+      "write_note": "Appends one entry for each book.spread_N true this run that is not already carried. Those spreads start the next run already in order."
+    },
+    {
+      "name": "book.player_page",
+      "flag": "book.player_page",
+      "type": "ledger",
+      "fields": ["run", "mark", "order"],
+      "default": [],
+      "read_at": "new_game",
+      "write": "replace_by_page",
+      "write_note": "Phase 3. Replaced by the marks sewn in e_page_circle when The Page resolves; every other ending leaves it as it is. The next run's book holds it as a page with no front, read right to left like Ruth's."
+    }
+  ],
+  "derived": [
+    {
+      "name": "run.hunt_group",
+      "from": "run.number",
+      "stored": false,
+      "set_at": "new_game",
+      "rule": {"odd": "b", "even": "c"},
+      "note": "Not stored in the profile: derived from run.number at every new game. Odd runs bring Group B, even runs Group C."
+    }
+  ],
+  "shelf_writes": [
+    {"ending": "cycle", "entries": "herded_guests", "group_from": "run.hunt_group", "note": "Each herded guest, with their stuffed form."},
+    {"ending": "empty_toy", "entries": "herded_guests", "group_from": "run.hunt_group", "note": "The same, since the others herd them."},
+    {"ending": "warning", "entries": "none", "note": "Nothing; three empty places on the next run's shelf."},
+    {"ending": "keeper", "entries": "friends", "group_from": "pack", "note": "Jamie, Lila, Marcus and Dani, as the shelf you keep."},
+    {"ending": "the_page", "entries": "herded_guests", "group_from": "run.hunt_group", "note": "Phase 3. The friends herd the guests down without you, so the guests go on the shelf as in the Cycle; the cat is not among them. The next run's shelf has one clean place in the dust where it sat."}
+  ],
+  "generations_on_shelf": 1
+}

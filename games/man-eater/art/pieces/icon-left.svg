@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-labelledby="icon-left-t icon-left-d">
+<title id="icon-left-t">Tray icon: pieces left on the tray</title>
+<desc id="icon-left-d">Isotype icon of the collected tray: two pieces left on it and the orderly's pencil tick beside each, counted by pieces and not by weight.</desc>
+<defs><clipPath id="icon-left-clip1"><rect x="3" y="3" width="194" height="194" rx="6"/></clipPath><filter id="icon-left-spk2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="353"/><feColorMatrix values="0 0 0 0 0.44  0 0 0 0 0.40  0 0 0 0 0.31  0 0 0 0.6 -0.2"/></filter></defs>
+<rect x="3" y="3" width="194" height="194" rx="6" fill="#EFE9DC" stroke="#1B1D1F" stroke-width="2"/>
+<line x1="14" y1="160" x2="186" y2="160" stroke="#1B1D1F" stroke-width="2"/>
+<text x="16" y="182" font-size="15" font-family="sans-serif" fill="#1B1D1F" font-weight="bold" letter-spacing="2">LEFT</text>
+<g transform="translate(4,3)" opacity="0.6">
+<rect x="26" y="34" width="148" height="108" rx="12" fill="#7C8C99"/>
+</g>
+<rect x="26" y="34" width="148" height="108" rx="12" fill="#8A8F93"/>
+<rect x="36" y="44" width="128" height="88" rx="8" fill="none" stroke="#EFE9DC" stroke-width="3"/>
+<path d="M50.4,92.2 L55.8,66.5 Q72,57 90.9,67.8 L95,93.5Z" fill="#5A4F5E"/>
+<path d="M60,112 l8,10 l16,-22" fill="none" stroke="#1B1D1F" stroke-width="4.5" stroke-linecap="round"/>
+<path d="M104.4,92.2 L109.8,66.5 Q126,57 144.9,67.8 L148.9,93.5Z" fill="#5A4F5E"/>
+<path d="M114,112 l8,10 l16,-22" fill="none" stroke="#1B1D1F" stroke-width="4.5" stroke-linecap="round"/>
+<g clip-path="url(#icon-left-clip1)">
+<rect x="0" y="0" width="200" height="200" filter="url(#icon-left-spk2)"/>
+</g>
+</svg>

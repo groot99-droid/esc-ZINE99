@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-labelledby="mark-twig-t mark-twig-d">
+<title id="mark-twig-t">Cast mark: Twig</title>
+<desc id="mark-twig-d">Cast mark, an ink silhouette on a bark-paper roundel. Twig, small, one arm up on the thread of a bark-flake kite.</desc>
+<defs><filter id="mark-twig-bark1" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.5 0.06" numOctaves="2" seed="302"/><feDiffuseLighting surfaceScale="1.6" diffuseConstant="1.2" lighting-color="#fff4dc"><feDistantLight azimuth="205" elevation="60"/></feDiffuseLighting><feBlend in2="SourceGraphic" mode="multiply"/><feComposite in2="SourceGraphic" operator="in"/></filter></defs>
+<circle cx="120" cy="120" r="116" fill="#1b120c"/>
+<circle cx="120" cy="120" r="108" fill="#efe2c4" filter="url(#mark-twig-bark1)"/>
+<circle cx="120" cy="120" r="108" fill="none" stroke="#2b1d14" stroke-width="2"/>
+<circle cx="120" cy="120" r="98" fill="none" stroke="#c4d65a" stroke-width="2.5" stroke-dasharray="2 7" stroke-linecap="round"/>
+<path d="M40,196 Q120,182 200,196" fill="none" stroke="#2b1d14" stroke-width="3" stroke-linecap="round"/>
+<g transform="translate(96 198) rotate(-6) scale(1 1)">
+<path d="M-8,-64 L-13,-50 L-12,-44" fill="none" stroke="#2b1d14" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="-12" cy="-44" r="2.2" fill="#2b1d14" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M-4,-40 L-9.6,-20 L-13,0 l-5,0" fill="none" stroke="#2b1d14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4,-40 L7.2,-20 L13,0 l5,0" fill="none" stroke="#2b1d14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-9,-69 L9,-69 L11,-38 Q0,-34 -11,-38Z" fill="#2b1d14" stroke="#2b1d14" stroke-width="1.4" stroke-linejoin="round"/>
+<circle cx="0" cy="-84" r="14" fill="#2b1d14" stroke="#2b1d14" stroke-width="1.4"/>
+<path d="M-14,-86 A14,14 0 0,1 12,-91 Q0,-90 -14,-86Z" fill="#2b1d14"/>
+<path d="M8,-64 L15,-70 L16,-84" fill="none" stroke="#2b1d14" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="16" cy="-84" r="2.2" fill="#2b1d14" stroke="#2b1d14" stroke-width="0.8"/>
+</g>
+<path d="M160,86 Q156,116 112,114" fill="none" stroke="#2b1d14" stroke-width="1.8" opacity="0.8"/>
+<polygon points="160,30 180,56 166,88 142,66" fill="#c4d65a" stroke="#2b1d14" stroke-width="2.4" stroke-linejoin="round"/>
+<line x1="160" y1="30" x2="166" y2="88" stroke="#2b1d14" stroke-width="0.7"/>
+<line x1="142" y1="66" x2="180" y2="56" stroke="#2b1d14" stroke-width="0.7"/>
+<path d="M163,90 q8,10 -2,20 q-8,10 4,20" fill="none" stroke="#2b1d14" stroke-width="1.3"/>
+</svg>

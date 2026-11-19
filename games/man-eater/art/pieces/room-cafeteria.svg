@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-labelledby="room-cafeteria-t room-cafeteria-d">
+<title id="room-cafeteria-t">Floor Plan room stamp: Cafeteria</title>
+<desc id="room-cafeteria-d">Blueprint room stamp for the cafeteria: two long tables with their benches and the serving hatch in the far wall.</desc>
+<defs><filter id="room-cafeteria-rough1"><feTurbulence type="turbulence" baseFrequency="0.1" numOctaves="2" seed="229" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.5"/></filter><clipPath id="room-cafeteria-clip2"><rect x="8" y="8" width="224" height="224"/></clipPath><filter id="room-cafeteria-spk3" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="888"/><feColorMatrix values="0 0 0 0 0.04  0 0 0 0 0.11  0 0 0 0 0.23  0 0 0 1 -0.4"/></filter><mask id="room-cafeteria-st4" maskUnits="userSpaceOnUse" x="37" y="196" width="166" height="36"><rect x="37" y="196" width="166" height="36" fill="#fff"/><rect x="62.2" y="204" width="1.6" height="20" fill="#000"/><rect x="76.2" y="204" width="1.6" height="20" fill="#000"/><rect x="90.2" y="204" width="1.6" height="20" fill="#000"/><rect x="104.2" y="204" width="1.6" height="20" fill="#000"/><rect x="118.2" y="204" width="1.6" height="20" fill="#000"/><rect x="132.2" y="204" width="1.6" height="20" fill="#000"/><rect x="146.2" y="204" width="1.6" height="20" fill="#000"/><rect x="160.2" y="204" width="1.6" height="20" fill="#000"/><rect x="174.2" y="204" width="1.6" height="20" fill="#000"/></mask></defs>
+<g filter="url(#room-cafeteria-rough1)">
+<rect x="8" y="8" width="224" height="224" rx="4" fill="#1D3F73"/>
+</g>
+<g clip-path="url(#room-cafeteria-clip2)">
+<rect x="0" y="0" width="240" height="240" filter="url(#room-cafeteria-spk3)"/>
+</g>
+<path d="M24,24V216M40,24V216M56,24V216M72,24V216M88,24V216M104,24V216M120,24V216M136,24V216M152,24V216M168,24V216M184,24V216M200,24V216M216,24V216M24,24H216M24,40H216M24,56H216M24,72H216M24,88H216M24,104H216M24,120H216M24,136H216M24,152H216M24,168H216M24,184H216M24,200H216M24,216H216" fill="none" stroke="#F4F7FF" stroke-width="0.4" opacity="0.2"/>
+<path d="M104.2,190.6 L80.5,189.8 L57.7,190.6 L34.2,190.7 L34,171 L34.1,151.6 L33.8,131 L34.4,112.2 L33.4,92.2 L34.3,73 L34.5,53.5 L34.5,34.7 L52.9,33.9 L71.7,34.6 L91.7,34.2 L110.8,34.4 L130.2,34.6 L148.8,33.9 L167.7,33.7 L186.4,34.3 L205.6,33.7 L206.5,53.8 L206.6,73.3 L205.6,92 L205.7,112.4 L206,130.8 L205.7,151.3 L205.3,170.4 L205.3,189.6 L182.7,190.4 L159,189.4 L136,189.4" fill="none" stroke-width="4" stroke-linecap="square" stroke-linejoin="miter" stroke="#F4F7FF"/>
+<path d="M104,190 v-32 a32,32 0 0 1 32,32" fill="none" stroke="#CFE0FF" stroke-width="1.5"/>
+<g mask="url(#room-cafeteria-st4)">
+<text x="57" y="220" font-size="20" font-family="monospace" fill="#F4F7FF" font-weight="bold" letter-spacing="2">CAFETERIA</text>
+</g>
+<path d="M56.3,77.7 L74.9,77.9 L92.8,78.1 L110.4,78.3 L129.7,78.3 L147.3,77.6 L165.4,77.5 L184.1,77.6 L184.3,100.7 L166.3,99.9 L147.2,99.3 L129.1,99.5 L110.4,100.1 L92.1,100.7 L73.7,99.7 L56.2,100.1 L56.3,77.9Z" fill="none" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" stroke="#F4F7FF"/>
+<path d="M56,69h128M56,109h128" stroke="#CFE0FF" stroke-width="3" stroke-dasharray="14 5"/>
+<path d="M56.2,133.8 L74.3,134.5 L93.1,134.2 L110.9,134.4 L128.8,133.9 L147.6,134.4 L166,133.7 L184.4,133.9 L183.8,156.2 L165.4,156.6 L147.2,155.4 L129.2,156.4 L111.3,156.6 L92,156.1 L74.6,155.6 L55.3,155.4 L55.6,134.4Z" fill="none" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" stroke="#F4F7FF"/>
+<path d="M56,125h128M56,165h128" stroke="#CFE0FF" stroke-width="3" stroke-dasharray="14 5"/>
+<rect x="86" y="29" width="68" height="10" fill="#1D3F73" stroke="#F4F7FF" stroke-width="1.5"/>
+<path d="M86.0,46h68" stroke="#CFE0FF" stroke-width="1.5" stroke-dasharray="3 3"/>
+</svg>

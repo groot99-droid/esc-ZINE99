@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160" role="img" aria-labelledby="counter-plain-t counter-plain-d">
+<title id="counter-plain-t">A plain counter</title>
+<desc id="counter-plain-d">One plain bone counter, a rounded lozenge, printed large from a small block: cream bone on black, a gouged highlight along its shoulder and the cuts of the knife around it.</desc>
+<defs><filter id="counter-plain-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="395"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><filter id="counter-plain-rough2"><feTurbulence type="turbulence" baseFrequency="0" numOctaves="2" seed="604" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.2"/></filter><clipPath id="counter-plain-clip3"><rect x="10" y="10" width="140" height="140"/></clipPath></defs>
+<rect x="0" y="0" width="160" height="160" fill="#f0e6cf"/>
+<rect x="0" y="0" width="160" height="160" filter="url(#counter-plain-grain1)"/>
+<g filter="url(#counter-plain-rough2)">
+<rect x="10" y="10" width="140" height="140" fill="#17110f"/>
+<path d="M147.9,142.1l8,7.2M50.8,25.4l-5.1,-8.4M22.9,146.3l-4.9,7.2M71.1,30.9l-1.8,-6.8M39.6,18l-4.7,-9.6M139.7,113l9.6,6.1M11.3,71.6l-10,-0.2M73.7,136.4l-1.2,9.2M19.3,139l-3.8,4.8M145.2,27.2l11.5,-7.9M112.4,28.7l3.6,-5.5M27,34.6l-10.4,-7.9M124,149.9l7.1,9.3M131.9,38.5l10.3,-6.6M85.4,140.7l1.3,7.7M120.6,150l3.4,6.8M135.7,124.1l9,8.7M136.4,47.1l9.2,-5.3M16.5,57.8l-10.9,-4.2M39,121l-6.4,6.3M136.5,142.2l7.8,9.9M17.8,52.2l-6.3,-3.7M108.6,145.1l5.1,12.5M130.1,24.1l8.3,-11.1M140.7,50.8l8.6,-4.8M134.2,141.6l5.7,7.6M49.7,14.3l-2.9,-9.1M29.6,116.5l-11.3,6.7M15.4,41.8l-9.4,-6.7M20.5,127.7l-10.9,8.7M15.4,131.8l-10.2,9.6" fill="none" stroke="#f0e6cf" stroke-width="2.6" stroke-linecap="round"/>
+<path d="M26,80 C26,54.8 53,44 80,44 C107,44 134,54.8 134,80 C134,105.2 107,116 80,116 C53,116 26,105.2 26,80Z" fill="#f0e6cf"/>
+<path d="M40,92 q40,26 80,2" fill="none" stroke="#17110f" stroke-width="5" stroke-linecap="round"/>
+<path d="M93,72.3l8.1,-1.1M82.1,75.8l10.6,-0.5M106.3,78l17.3,-2.5M45,61.8l9.1,-1.9M103.9,73.7l8.1,-0.7M74.6,70l17.2,-4.4M111.7,75l9.7,-2.2" fill="none" stroke="#17110f" stroke-width="3" stroke-linecap="round"/>
+</g>
+</svg>

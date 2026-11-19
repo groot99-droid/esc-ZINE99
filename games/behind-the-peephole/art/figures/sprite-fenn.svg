@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" width="480" height="360" role="img" aria-labelledby="sprite-fenn-t sprite-fenn-d">
+<title id="sprite-fenn-t">Race sprite: Fenn, from behind, at a rose</title>
+<desc id="sprite-fenn-d">Abel Fenn as a scale figure seen from behind: hat, long overcoat, a cream envelope in one hand, stopped at a valet door whose rose is lit. No face is drawn.</desc>
+<defs><filter id="sprite-fenn-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.6" numOctaves="2" seed="274"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter><radialGradient id="sprite-fenn-rg2" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#f1c77c" stop-opacity="0.9"/><stop offset="100%" stop-color="#c98a3a" stop-opacity="0"/></radialGradient></defs>
+<rect x="0" y="0" width="480" height="360" fill="#f3efe4"/>
+<rect x="0" y="0" width="480" height="360" filter="url(#sprite-fenn-grain1)"/>
+<line x1="20" y1="300" x2="460" y2="300" stroke="#1c1a17" stroke-width="1.6"/>
+<path d="M28,300l-8,8M38,300l-8,8M48,300l-8,8M58,300l-8,8M68,300l-8,8M78,300l-8,8M88,300l-8,8M98,300l-8,8M108,300l-8,8M118,300l-8,8M128,300l-8,8M138,300l-8,8M148,300l-8,8M158,300l-8,8M168,300l-8,8M178,300l-8,8M188,300l-8,8M198,300l-8,8M208,300l-8,8M218,300l-8,8M228,300l-8,8M238,300l-8,8M248,300l-8,8M258,300l-8,8M268,300l-8,8M278,300l-8,8M288,300l-8,8M298,300l-8,8M308,300l-8,8M318,300l-8,8M328,300l-8,8M338,300l-8,8M348,300l-8,8M358,300l-8,8M368,300l-8,8M378,300l-8,8M388,300l-8,8M398,300l-8,8M408,300l-8,8M418,300l-8,8M428,300l-8,8M438,300l-8,8M448,300l-8,8M458,300l-8,8" stroke="#1c1a17" stroke-width="0.5" fill="none"/>
+<text x="460" y="324" font-size="11" font-family="monospace" fill="#1c1a17" text-anchor="end" letter-spacing="2">THE STRANGER  -  ONE DOOR EVERY 2 MIN</text>
+<rect x="250" y="50" width="110" height="250" fill="#e6dcc4" stroke="#1c1a17" stroke-width="1.6"/>
+<rect x="262" y="62" width="86" height="100" fill="none" stroke="#1c1a17" stroke-width="0.6"/>
+<rect x="262" y="180" width="86" height="108" fill="none" stroke="#1c1a17" stroke-width="0.6"/>
+<circle cx="305" cy="120" r="34" fill="url(#sprite-fenn-rg2)"/>
+<circle cx="305" cy="120" r="7" fill="#c98a3a" stroke="#1c1a17" stroke-width="1.4"/>
+<path d="M134,136 Q170,114 206,136 L216,274 L124,274Z" fill="#1c1a17"/>
+<line x1="170" y1="150" x2="170" y2="270" stroke="#f3efe4" stroke-width="0.9"/>
+<line x1="140" y1="204" x2="200" y2="204" stroke="#f3efe4" stroke-width="0.9"/>
+<path d="M154,272 C153.7,276 152.3,292 152,296" stroke="#1c1a17" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M186,272 C186.3,276 187.7,292 188,296" stroke="#1c1a17" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M140,299 h22 M178,299 h22" stroke="#1c1a17" stroke-width="7" stroke-linecap="round"/>
+<path d="M134,144 C132.3,151.7 125.3,176 124,190 C122.7,204 125.7,221.7 126,228" stroke="#1c1a17" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M206,144 C208,150.3 214,172 218,182 C222,192 228,200.3 230,204" stroke="#1c1a17" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<polygon points="217.4,197.6 259.2,184 267.9,210.6 226.1,224.2" fill="#efe6cf" stroke="#1c1a17" stroke-width="1.2"/>
+<circle cx="170" cy="100" r="17" fill="#1c1a17"/>
+<ellipse cx="170" cy="90" rx="30" ry="6" fill="#1c1a17"/>
+<path d="M153,90 q0,-20 17,-20 q17,0 17,20Z" fill="#1c1a17"/>
+<line x1="60" y1="300" x2="60" y2="68" stroke="#1c1a17" stroke-width="0.6"/>
+<line x1="55" y1="300" x2="65" y2="300" stroke="#1c1a17" stroke-width="0.9"/>
+<line x1="55" y1="68" x2="65" y2="68" stroke="#1c1a17" stroke-width="0.9"/>
+<text x="52" y="184" font-size="10" font-family="monospace" fill="#1c1a17" text-anchor="middle" transform="rotate(-90 52 184)">1 800</text>
+<text x="40" y="40" font-size="11" font-family="monospace" fill="#1c1a17" letter-spacing="2">STANDS ASIDE 3 s</text>
+</svg>

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 300" width="260" height="300" role="img" aria-labelledby="die-face-5-lantern-t die-face-5-lantern-d">
+<title id="die-face-5-lantern-t">Tide die face 5: Lantern</title>
+<desc id="die-face-5-lantern-d">Face 5 of a tide die in tattoo flash, bold outline and flat colour: a gold storm lantern with a red flame and rays.</desc>
+<defs><filter id="die-face-5-lantern-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="367"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter></defs>
+<rect x="0" y="0" width="260" height="300" fill="#DCCBA2"/>
+<rect x="0" y="0" width="260" height="300" filter="url(#die-face-5-lantern-grain1)"/>
+<path d="M48.7,191.6a0.6,0.6 0 1,0 1.1,0a0.6,0.6 0 1,0 -1.1,0M226,177.9a1.4,1.4 0 1,0 2.7,0a1.4,1.4 0 1,0 -2.7,0M137.7,34.4a1.1,1.1 0 1,0 2.3,0a1.1,1.1 0 1,0 -2.3,0M203.4,58.9a0.5,0.5 0 1,0 1,0a0.5,0.5 0 1,0 -1,0M110.5,39.3a1,1 0 1,0 1.9,0a1,1 0 1,0 -1.9,0M196.9,0.5a1.4,1.4 0 1,0 2.7,0a1.4,1.4 0 1,0 -2.7,0M14,270.2a1.5,1.5 0 1,0 3,0a1.5,1.5 0 1,0 -3,0M195.5,241.6a0.8,0.8 0 1,0 1.6,0a0.8,0.8 0 1,0 -1.6,0M62.4,183.5a1,1 0 1,0 2,0a1,1 0 1,0 -2,0M19.2,208.8a0.6,0.6 0 1,0 1.2,0a0.6,0.6 0 1,0 -1.2,0M33.9,119.9a1,1 0 1,0 2,0a1,1 0 1,0 -2,0M246.8,42.7a0.8,0.8 0 1,0 1.6,0a0.8,0.8 0 1,0 -1.6,0M78.8,260.3a0.7,0.7 0 1,0 1.4,0a0.7,0.7 0 1,0 -1.4,0M136.5,152.4a1,1 0 1,0 1.9,0a1,1 0 1,0 -1.9,0M256.7,180.2a1,1 0 1,0 1.9,0a1,1 0 1,0 -1.9,0M191,282.7a0.7,0.7 0 1,0 1.5,0a0.7,0.7 0 1,0 -1.5,0M241.1,122.1a0.7,0.7 0 1,0 1.4,0a0.7,0.7 0 1,0 -1.4,0M22.9,234.9a1.5,1.5 0 1,0 3,0a1.5,1.5 0 1,0 -3,0M123,55.7a1,1 0 1,0 2,0a1,1 0 1,0 -2,0M230,294.6a0.5,0.5 0 1,0 1.1,0a0.5,0.5 0 1,0 -1.1,0M12.9,211.4a0.9,0.9 0 1,0 1.7,0a0.9,0.9 0 1,0 -1.7,0M16.7,216a1.1,1.1 0 1,0 2.1,0a1.1,1.1 0 1,0 -2.1,0M22.5,28.7a1.1,1.1 0 1,0 2.2,0a1.1,1.1 0 1,0 -2.2,0M59.1,151.1a0.8,0.8 0 1,0 1.7,0a0.8,0.8 0 1,0 -1.7,0M95.6,173.2a0.9,0.9 0 1,0 1.7,0a0.9,0.9 0 1,0 -1.7,0M21.2,191.7a1.5,1.5 0 1,0 3,0a1.5,1.5 0 1,0 -3,0M14.9,192.4a1.1,1.1 0 1,0 2.3,0a1.1,1.1 0 1,0 -2.3,0M-0.2,191a1.2,1.2 0 1,0 2.5,0a1.2,1.2 0 1,0 -2.5,0M95.7,228.6a1.2,1.2 0 1,0 2.3,0a1.2,1.2 0 1,0 -2.3,0M129.2,229.1a1.1,1.1 0 1,0 2.2,0a1.1,1.1 0 1,0 -2.2,0" fill="#6B4A2B" opacity="0.3"/>
+<rect x="16" y="16" width="228" height="268" rx="10" fill="none" stroke="#16130F" stroke-width="13"/>
+<rect x="16" y="16" width="228" height="268" rx="10" fill="none" stroke="#E7A93B" stroke-width="8"/>
+<rect x="16" y="16" width="228" height="268" rx="10" fill="none" stroke="#16130F" stroke-width="8" stroke-dasharray="2.5 9"/>
+<path d="M40,37 Q40,44 47,44 Q40,44 40,51 Q40,44 33,44 Q40,44 40,37Z" fill="#16130F"/>
+<path d="M222,43 Q222,52 231,52 Q222,52 222,61 Q222,52 213,52 Q222,52 222,43Z" fill="#16130F"/>
+<path d="M36,192 Q36,200 44,200 Q36,200 36,208 Q36,200 28,200 Q36,200 36,192Z" fill="#16130F"/>
+<path d="M226,190 Q226,196 232,196 Q226,196 226,202 Q226,196 220,196 Q226,196 226,190Z" fill="#16130F"/>
+<g transform="translate(130,124) rotate(0)">
+<rect x="-61.5" y="-61.5" width="150" height="150" rx="25.5" fill="#16130F"/>
+<rect x="-75" y="-75" width="150" height="150" rx="25.5" fill="#F6ECD2" stroke="#16130F" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M-61,-45 q0,-16 16,-16" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+<g transform="scale(1)">
+<line x1="42.7" y1="19.2" x2="55.6" y2="24.5" stroke="#16130F" stroke-width="5" stroke-linecap="round"/>
+<line x1="18" y1="44.3" x2="23.4" y2="57.2" stroke="#16130F" stroke-width="5" stroke-linecap="round"/>
+<line x1="-17.2" y1="44.7" x2="-22.5" y2="57.6" stroke="#16130F" stroke-width="5" stroke-linecap="round"/>
+<line x1="-42.3" y1="20" x2="-55.2" y2="25.4" stroke="#16130F" stroke-width="5" stroke-linecap="round"/>
+<line x1="-42.7" y1="-15.2" x2="-55.6" y2="-20.5" stroke="#16130F" stroke-width="5" stroke-linecap="round"/>
+<line x1="-18" y1="-40.3" x2="-23.4" y2="-53.2" stroke="#16130F" stroke-width="5" stroke-linecap="round"/>
+<line x1="17.2" y1="-40.7" x2="22.5" y2="-53.6" stroke="#16130F" stroke-width="5" stroke-linecap="round"/>
+<line x1="42.3" y1="-16" x2="55.2" y2="-21.4" stroke="#16130F" stroke-width="5" stroke-linecap="round"/>
+<path d="M-10,-34 a10,10 0 1,1 20,0" fill="none" stroke="#16130F" stroke-width="5"/>
+<path d="M-22,-30 h44 l-6,10 h-32z M-22,34 h44 l-6,-10 h-32z" fill="#2F4E8A" stroke="#16130F" stroke-width="5" stroke-linejoin="round"/>
+<rect x="-20" y="-20" width="40" height="44" rx="5" fill="#E7A93B" stroke="#16130F" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M0,16 q-14,-12 0,-30 q14,18 0,30z" fill="#8C2B2B" stroke="#16130F" stroke-width="3.5" stroke-linejoin="round"/>
+<path d="M-12,-14 v30" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+</g>
+<circle cx="-59" cy="61" r="2.8" fill="#16130F"/>
+<circle cx="-50" cy="61" r="2.8" fill="#16130F"/>
+<circle cx="-41" cy="61" r="2.8" fill="#16130F"/>
+<circle cx="-32" cy="61" r="2.8" fill="#16130F"/>
+<circle cx="-23" cy="61" r="2.8" fill="#16130F"/>
+</g>
+<path d="M10.5,242 l34,0 l0,40 l-34,0 l15,-20.0z" fill="#6e1f1f" stroke="#16130F" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M249.5,242 l-34,0 l0,40 l34,0 l-15,-20.0z" fill="#6e1f1f" stroke="#16130F" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M50.5,228 Q130,214 209.5,228 L209.5,268 Q130,254 50.5,268Z" fill="#8C2B2B" stroke="#16130F" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="130" y="253.3" font-size="22" font-family="serif" fill="#F6ECD2" text-anchor="middle" font-weight="bold" letter-spacing="3">LANTERN</text>
+</svg>

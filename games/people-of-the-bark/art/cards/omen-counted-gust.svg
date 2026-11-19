@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="omen-counted-gust-t omen-counted-gust-d">
+<title id="omen-counted-gust-t">Omen card: The Counted Gust</title>
+<desc id="omen-counted-gust-d">Omen card The Counted Gust: a scholar holding a streamer up to the wind beside a slate of tallied gusts. Suit Wind (trial), the quill sigil, weight 1, with Pell's notches down the left edge.</desc>
+<defs><clipPath id="omen-counted-gust-clip1"><rect x="1" y="1" width="298" height="418" rx="16"/></clipPath><filter id="omen-counted-gust-grain2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="2" seed="343"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><radialGradient id="omen-counted-gust-vig3" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#6b4a20" stop-opacity="0"/><stop offset="100%" stop-color="#6b4a20" stop-opacity="0.3"/></radialGradient><clipPath id="omen-counted-gust-clip4"><rect x="0" y="0" width="244" height="236"/></clipPath><linearGradient id="omen-counted-gust-lg5" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fff6dc"/><stop offset="100%" stop-color="#dfe3c4"/></linearGradient></defs>
+<g clip-path="url(#omen-counted-gust-clip1)">
+<rect x="0" y="0" width="300" height="420" fill="#efe2c4"/>
+<rect x="0" y="0" width="300" height="420" filter="url(#omen-counted-gust-grain2)"/>
+<rect x="0" y="0" width="300" height="420" fill="url(#omen-counted-gust-vig3)"/>
+<rect x="14" y="14" width="272" height="392" rx="10" fill="none" stroke="#a8321e" stroke-width="1.4"/>
+<rect x="19" y="19" width="262" height="382" rx="5" fill="none" stroke="#2b1d14" stroke-width="1"/>
+<circle cx="40" cy="40" r="17" fill="#dfe3c4" stroke="#2b1d14" stroke-width="1.4"/>
+<path d="M27,38.1 h15.8 a4.3,4.3 0 1,0 -4.3,-4.3 M27,44.6 h21.6 a3.6,3.6 0 1,1 -3.6,3.6" fill="none" stroke="#8fa37a" stroke-width="1.7" stroke-linecap="round"/>
+<circle cx="264" cy="40" r="7" fill="#f0c050" stroke="#2b1d14" stroke-width="1.2"/>
+<circle cx="262" cy="38" r="2" fill="#fff6dc" opacity="0.8"/>
+<text x="150" y="45" font-size="11" font-family="serif" fill="#a8321e" text-anchor="middle" letter-spacing="3">TRIAL</text>
+<g transform="translate(28 60)">
+<g clip-path="url(#omen-counted-gust-clip4)">
+<rect x="0" y="0" width="244" height="236" fill="#dfe3c4"/>
+<rect x="0" y="0" width="244" height="236" fill="url(#omen-counted-gust-lg5)" opacity="0.6"/>
+<path d="M8,52 h110 a9.9,9.9 0 1,0 -9.9,-9.9" fill="none" stroke="#2b1d14" stroke-width="4" stroke-linecap="round"/>
+<path d="M8,52 h110 a9.9,9.9 0 1,0 -9.9,-9.9" fill="none" stroke="#8fa37a" stroke-width="2.4" stroke-linecap="round"/>
+<path d="M60,92 h150 a10.8,10.8 0 1,0 -10.8,-10.8" fill="none" stroke="#2b1d14" stroke-width="4" stroke-linecap="round"/>
+<path d="M60,92 h150 a10.8,10.8 0 1,0 -10.8,-10.8" fill="none" stroke="#8fa37a" stroke-width="2.4" stroke-linecap="round"/>
+<path d="M20,132 h70 a8.1,8.1 0 1,0 -8.1,-8.1" fill="none" stroke="#2b1d14" stroke-width="4" stroke-linecap="round"/>
+<path d="M20,132 h70 a8.1,8.1 0 1,0 -8.1,-8.1" fill="none" stroke="#8fa37a" stroke-width="2.4" stroke-linecap="round"/>
+<path d="M0,203.5 C5.1,204.1 20.3,206.5 30.5,207 C40.7,207.5 50.8,207.4 61,206.5 C71.2,205.6 81.3,201.8 91.5,201.6 C101.7,201.5 111.8,205.3 122,205.7 C132.2,206 142.3,204 152.5,203.6 C162.7,203.3 172.8,203.9 183,203.5 C193.2,203.1 203.3,200.9 213.5,201.1 C223.7,201.3 238.9,204.1 244,204.7 L244,264 L0,264Z" fill="#c9a877" stroke="#2b1d14" stroke-width="1.6"/>
+<path d="M219.7,221.4 l11,1.4M6.4,213.7 l10,3.2M135.4,223.4 l12,2.6M103.9,218.8 l12.1,1.9M50,233.7 l15,1.6M48.5,214.3 l8.2,1.1M223.1,230.1 l12.2,3.7M91.1,229 l15.2,2.6M77.9,212.4 l14.7,2.8M139.8,216.1 l12.4,2.1M139.8,232.8 l11.2,2.6M190.6,217.8 l12,1.4M7.5,216.1 l12.8,2M105.5,215 l8.9,1.5M87.7,223 l12.7,2.2M185,215.8 l9.8,3.1" stroke="#2b1d14" stroke-width="1" fill="none" opacity="0.6"/>
+<g transform="translate(70 206) rotate(0) scale(1.2 1.2)">
+<path d="M-8,-64 L-14,-50 L-14,-44" fill="none" stroke="#2b1d14" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="-14" cy="-44" r="2.2" fill="#d9b88a" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M-4,-40 L-6.8,-20 L-9,0 l-5,0" fill="none" stroke="#2b1d14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4,-40 L5.6,-20 L9,0 l5,0" fill="none" stroke="#2b1d14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-9,-69 L9,-69 L11,-38 Q0,-34 -11,-38Z" fill="#7d6c5a" stroke="#2b1d14" stroke-width="1.4" stroke-linejoin="round"/>
+<path d="M-6,-64 L6,-64 L7,-30 L-7,-30Z" fill="#efe2c4" stroke="#2b1d14" stroke-width="1"/>
+<circle cx="2" cy="-46" r="2.2" fill="#2b1d14" opacity="0.7"/>
+<circle cx="-3" cy="-38" r="1.4" fill="#2b1d14" opacity="0.7"/>
+<circle cx="0" cy="-84" r="14" fill="#d9b88a" stroke="#2b1d14" stroke-width="1.4"/>
+<path d="M-14,-86 A14,14 0 0,1 12,-91 Q0,-90 -14,-86Z" fill="#3a281c"/>
+<circle cx="6" cy="-85" r="1.7" fill="#2b1d14"/>
+<path d="M8,-64 L16,-63 L18,-70" fill="none" stroke="#2b1d14" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="18" cy="-70" r="2.2" fill="#d9b88a" stroke="#2b1d14" stroke-width="0.8"/>
+<line x1="18" y1="-44" x2="18" y2="-112" stroke="#2b1d14" stroke-width="2"/>
+<path d="M18,-110 q22,-8 40,2 q-18,4 -40,10Z" fill="#a8321e" stroke="#2b1d14" stroke-width="1"/>
+</g>
+<rect x="140" y="150" width="86" height="44" fill="#efe2c4" stroke="#2b1d14" stroke-width="1.4" transform="rotate(-4 180 170)"/>
+<path d="M150,160 l1.2,16M157,160 l1.2,16M164,160 l1.2,16M171,160 l1.2,16M145.8,174 L175.2,162M185,160 l1.2,16M192,160 l1.2,16M199,160 l1.2,16M206,160 l1.2,16" fill="none" stroke="#a8321e" stroke-width="1.8" stroke-linecap="round"/>
+</g>
+<rect x="0" y="0" width="244" height="236" fill="none" stroke="#2b1d14" stroke-width="1.8"/>
+<rect x="-3" y="-3" width="250" height="242" fill="none" stroke="#a8321e" stroke-width="0.9"/>
+</g>
+<text x="150" y="327" font-size="23" font-family="serif" fill="#2b1d14" text-anchor="middle" font-style="italic">The Counted Gust</text>
+<path d="M70,338 Q150,346 230,338" fill="none" stroke="#a8321e" stroke-width="1"/>
+<circle cx="150" cy="374" r="22" fill="#efe2c4" stroke="#2b1d14" stroke-width="1.4"/>
+<path d="M141.3,389.9 Q147.5,372.5 159.9,358.9 Q156.2,377.5 141.3,389.9Z" fill="none" stroke="#2f4f8a" stroke-width="2.4" stroke-linejoin="round"/>
+<line x1="141.3" y1="389.9" x2="155" y2="367.6" stroke="#2f4f8a" stroke-width="1.4"/>
+<path d="M126,374 C121.3,373 107.3,367 98,368 C88.7,369 79,379.3 70,380 C61,380.7 48.3,373.3 44,372" fill="none" stroke="#2b1d14" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M98,368 L108.3,368.7 L103.7,371.6 L99.2,370.6 L97,367.2 L97.6,363.2 L100.5,360.5 L103.9,359.9 L106.5,360.9" fill="none" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M98,368 Q88,363.8 81.9,375.2 Q91,377.8 98,368Z" fill="#5f7a3e" stroke="#2b1d14" stroke-width="0.9"/>
+<path d="M70,380 L59.7,368.1 L64.3,365.2 L68.8,366.2 L71,369.6 L70.4,373.6 L67.5,376.3 L64.1,376.9 L61.5,375.9" fill="none" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M70,380 Q80,375.8 86.1,387.2 Q77,389.8 70,380Z" fill="#a8321e" stroke="#2b1d14" stroke-width="0.9"/>
+<path d="M174,374 C178.7,373 192.7,367 202,368 C211.3,369 221,379.3 230,380 C239,380.7 251.7,373.3 256,372" fill="none" stroke="#2b1d14" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M202,368 L212.3,368.7 L207.7,371.6 L203.2,370.6 L201,367.2 L201.6,363.2 L204.5,360.5 L207.9,359.9 L210.5,360.9" fill="none" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M202,368 Q192,363.8 185.9,375.2 Q195,377.8 202,368Z" fill="#5f7a3e" stroke="#2b1d14" stroke-width="0.9"/>
+<path d="M230,380 L219.7,368.1 L224.3,365.2 L228.8,366.2 L231,369.6 L230.4,373.6 L227.5,376.3 L224.1,376.9 L221.5,375.9" fill="none" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M230,380 Q240,375.8 246.1,387.2 Q237,389.8 230,380Z" fill="#2f4f8a" stroke="#2b1d14" stroke-width="0.9"/>
+<polygon points="0,64 9,70 0,76" fill="#1b120c"/>
+<path d="M9,70 L0,76" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,106 9,112 0,118" fill="#1b120c"/>
+<path d="M9,112 L0,118" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,148 9,154 0,160" fill="#1b120c"/>
+<path d="M9,154 L0,160" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,164 9,170 0,176" fill="#1b120c"/>
+<path d="M9,170 L0,176" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,180 9,186 0,192" fill="#1b120c"/>
+<path d="M9,186 L0,192" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+</g>
+<rect x="1" y="1" width="298" height="418" rx="16" fill="none" stroke="#2b1d14" stroke-width="2"/>
+</svg>

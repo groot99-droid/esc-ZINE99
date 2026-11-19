@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="ui-frame-card-t ui-frame-card-d">
+<title id="ui-frame-card-t">Card frame (linocut)</title>
+<desc id="ui-frame-card-d">A small linocut frame for cards and tiles: a black border with the knife's chatter along its inner edge, a red beat mark at the top and a bare label strip at the foot.</desc>
+<defs><filter id="ui-frame-card-rough1"><feTurbulence type="turbulence" baseFrequency="0" numOctaves="2" seed="29" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4"/></filter></defs>
+<g filter="url(#ui-frame-card-rough1)">
+<path d="M8,8 H292 V412 H8Z M30,30 V352 H270 V30Z" fill="#17110f" fill-rule="evenodd"/>
+<rect x="30" y="364" width="240" height="36" fill="#f0e6cf"/>
+</g>
+<path d="M220.9,404.3l-5.7,0.4M15.7,52.4l4.1,3.1M12.7,390.3l-4.9,10M284.7,359l-3.2,5M176.6,354.8l-7.2,2.5M275,333.5l5.1,10.6M23.8,361.9l5,0.9M25,243.2l11.7,2.1M177,14.8l-7,5.1M234.3,405.8l-3.3,4.1M24.3,47.6l-4.4,9.3M283.3,206.5l-8.4,2.8M279.1,372.3l-11.6,1.8M274.7,252.7l3.3,4.5M274.7,50.1l6.6,1.1M24.1,295.1l-10.1,3.7M286.1,175.9l-5.8,4.9M18.6,326.9l-7.5,2.9M270.1,14.7l5.6,9.9M24.9,201l-7.6,4.5M25.6,168.2l-5,10.4M98.3,355l-9.4,3.9M165.2,14.4l-7.8,8.9M283.7,128.7l-2.6,9.2M113.2,354.4l-4.3,9.5M277.2,126.1l-9.6,5.7" fill="none" stroke="#f0e6cf" stroke-width="2.4" stroke-linecap="round"/>
+<path d="M112,19 h22 l6,-9 l10,18 l6,-9 h22" fill="none" stroke="#B3202E" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M258.8,234.6l13.6,4.8M119.5,338.8l-1.8,6.8M105.2,44.8l-1.6,-6.5" fill="none" stroke="#17110f" stroke-width="2.6" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-labelledby="sprite-tam-carry-two-t sprite-tam-carry-two-d">
+<title id="sprite-tam-carry-two-t">Sprite: Tam from above, two posts</title>
+<desc id="sprite-tam-carry-two-d">Tam from above on a clear ground, facing right, a cedar post on each shoulder and the torch clamped under one; the plates are blank.</desc>
+<defs><filter id="sprite-tam-carry-two-blur1" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="5"/></filter></defs>
+<g transform="translate(116 120) rotate(0)">
+<ellipse cx="4" cy="6" rx="46" ry="30" fill="#000" opacity="0.3" filter="url(#sprite-tam-carry-two-blur1)"/>
+<ellipse cx="9.1" cy="-15" rx="14" ry="8" fill="#1c1a18"/>
+<ellipse cx="-7.7" cy="15" rx="14" ry="8" fill="#1c1a18"/>
+<path d="M-8,-42 C-2,-44.3 11.3,-43 16,-36 C20.7,-29 20,-12 20,0 C20,12 20.7,29 16,36 C11.3,43 -2,44.3 -8,42 C-14,39.7 -17.7,29 -20,22 C-22.3,15 -22,7.3 -22,0 C-22,-7.3 -22.3,-15 -20,-22 C-17.7,-29 -14,-39.7 -8,-42Z" fill="#2a3346" stroke="#0b0d12" stroke-width="2"/>
+<path d="M-14,-30 C-12.7,-26.7 -7.3,-16.7 -6,-10 C-4.7,-3.3 -4.7,3.3 -6,10 C-7.3,16.7 -12.7,26.7 -14,30" fill="none" stroke="#fff" stroke-width="1.4" opacity="0.1"/>
+<circle cx="2" cy="0" r="16" fill="#3b2b22" stroke="#0b0d12" stroke-width="1.5"/>
+<path d="M-6,-8 C-4.3,-8.5 1,-11.7 4,-11 C7,-10.3 10.7,-5.2 12,-4" fill="none" stroke="#fff" stroke-width="1.6" opacity="0.2"/>
+</g>
+<g transform="translate(118 82) rotate(-3)">
+<rect x="-78" y="-10" width="156" height="20" fill="#7A4A2E" stroke="#3a2212" stroke-width="2"/>
+<line x1="-70" y1="-8" x2="-50" y2="8" stroke="#5c3a24" stroke-width="1.2"/>
+<line x1="-40" y1="-6" x2="-20" y2="5" stroke="#5c3a24" stroke-width="1.2"/>
+<line x1="-10" y1="-4" x2="10" y2="8" stroke="#5c3a24" stroke-width="1.2"/>
+<line x1="20" y1="-8" x2="40" y2="5" stroke="#5c3a24" stroke-width="1.2"/>
+<line x1="50" y1="-6" x2="70" y2="8" stroke="#5c3a24" stroke-width="1.2"/>
+<rect x="48" y="-9" width="26" height="18" fill="#e8d9a8" stroke="#3a2212" stroke-width="1.2"/>
+<polygon points="-78,-10 -100,0 -78,10" fill="#3a2a1a"/>
+</g>
+<g transform="translate(122 158) rotate(4)">
+<rect x="-78" y="-10" width="156" height="20" fill="#7A4A2E" stroke="#3a2212" stroke-width="2"/>
+<line x1="-70" y1="-8" x2="-50" y2="8" stroke="#5c3a24" stroke-width="1.2"/>
+<line x1="-40" y1="-6" x2="-20" y2="5" stroke="#5c3a24" stroke-width="1.2"/>
+<line x1="-10" y1="-4" x2="10" y2="8" stroke="#5c3a24" stroke-width="1.2"/>
+<line x1="20" y1="-8" x2="40" y2="5" stroke="#5c3a24" stroke-width="1.2"/>
+<line x1="50" y1="-6" x2="70" y2="8" stroke="#5c3a24" stroke-width="1.2"/>
+<rect x="48" y="-9" width="26" height="18" fill="#e8d9a8" stroke="#3a2212" stroke-width="1.2"/>
+<polygon points="-78,-10 -100,0 -78,10" fill="#3a2a1a"/>
+</g>
+<circle cx="206" cy="120" r="6" fill="#fff3c4"/>
+</svg>

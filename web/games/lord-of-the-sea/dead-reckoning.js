@@ -1,0 +1,471 @@
+// The Lord of the Sea: Dead Reckoning (1D, nautical plotting sheet).
+// `g-reckon-unwritten` from DESIGN.md section 11: one leg from the fix to the Gullwife boat,
+// a steady tidal set, two rocks, a 2 nm target circle. Lay a heading (drag on the rose, or the
+// arrow keys) and a time; the still-water run is pencilled. Then lay each hour's tide from the
+// table onto the end of that hour's run, mark the dead-reckoned position, and commit. A track
+// across a rock is refused and shown. The Unwritten's Wild is 85, so Alexi may stir an hour's
+// tide vector up to 30 degrees either way (Wild +5 each). Off target: you arrive in fog.
+// Added to fit the browser: two erasers to rub out a plot and try again.
+// Refine pass: the princess checks the leg once (section 11 hints, trust 40+), the stir and her check
+// unlock as the plot goes on, a worked-example card opens the sheet, and the beats and closing lines
+// are written for the game (refine additions list).
+// Art pass (2026-11-15): the sheet is the game's plotting sheet (reckon-unwritten), drawn at 46 points to the
+// nautical mile on a 1600 x 900 plate and laid here at 1000 x 562.5; the module pencils only the plot, the rose's
+// needle, the rule and the clock on it. The tray's instruments are the game's own. Without the art the old
+// sheet is drawn as before.
+import { pic, chapterStrip, endCard } from "./_art.js";
+import { ladder, note, flag, setFlag, gainChit } from "./_ladder.js";
+
+const PAPER = "#F4F1E8", GRID = "#9fb0c4", INK = "#1F2E4A", RED = "#8C2B2B", PENCIL = "#4a4a4a", GOLD = "#E7A93B", GREEN = "#2F6B5E";
+let NM = 30;                           // px per nautical mile
+let OX = 40, OY = 620;                 // chart origin (0, 0) in px; y grows north
+let FIX = { x: 3, y: 4 }, TARGET = { x: 24, y: 15, r: 2 };
+let ROCKS = [{ x: 17.2, y: 6.1, r: 0.8 }, { x: 11.5, y: 12.6, r: 0.8 }];
+let SPEED = 6;                         // knots, from the log-line
+let TIDE = [{ set: 160, rate: 2.0 }];  // the table, hour by hour (the last row repeats)
+// Phase 2 (accepted 2026-11-15, built 2026-11-16): the ladder. Teach is the sheet above: one leg, a steady tide. Test
+// is the Lamplit Strait (`g-reckon-strait`): the tide reverses after the second hour, and the Company's table lies
+// about the reversed stream (each such arrow carries a cone of error) until the lead is dropped, once, and the true
+// set is sounded. Twist is the back-plot of a Tide Reckoning: from where a skiff was found and the hours since,
+// plot back to where she went over. Every arrow turns round; the tide laid as printed is now the mistake.
+const SHEETS = {
+  teach: { fix: { x: 3, y: 4 }, target: { x: 24, y: 15, r: 2 }, rocks: [{ x: 17.2, y: 6.1, r: 0.8 }, { x: 11.5, y: 12.6, r: 0.8 }], speed: 6, tide: [{ set: 160, rate: 2.0 }], heading: 62, quarters: 16, wild: 85, t0: 6, name: "GULLWIFE BOAT", fixName: "FIX 0600" },
+  test: { fix: { x: 3, y: 9 }, target: { x: 25, y: 9.5, r: 1 }, rocks: [{ x: 12.6, y: 10.6, r: 0.8 }, { x: 19.4, y: 4.4, r: 0.8 }], speed: 6, tide: [{ set: 160, rate: 2.0 }, { set: 160, rate: 2.0 }, { set: 340, rate: 2.0 }], heading: 90, quarters: 16, wild: 20, t0: 18, name: "CORRAN'S LIGHT", fixName: "FIX 1800" },
+  twist: { fix: { x: 23, y: 12 }, target: { x: 10.9, y: 10.3, r: 1 }, rocks: [], speed: 4, tide: [{ set: 160, rate: 2.0 }, { set: 160, rate: 1.5 }, { set: 340, rate: 2.0 }], heading: 75, quarters: 16, wild: 0, t0: 9, name: "WHERE SHE WENT OVER", fixName: "FOUND 0900" },
+};
+const LADDER = {
+  title: "Dead Reckoning", kicker: "1D · PLOTTING SHEET · THREE SHEETS",
+  stages: {
+    teach: { name: "Off the Chart's Edge", where: "Chapter III, the Unwritten: one leg, a steady tide.", line: "One leg, a steady tide." },
+    test: { name: "The Strait", where: "Chapter IV, the Lamplit Strait: the tide reverses, and the Company's table lies.", line: "The tide reverses, and the Company's table lies about it." },
+    twist: { name: "The Back-plot", where: "A Tide Reckoning: from where she was found, plot back to where she went over.", line: "A skiff found adrift. Plot backwards." },
+  },
+};
+export default { mount(root, api) { return ladder(root, api, LADDER, (r, a) => game.mount(r, a)); } };
+const ROSE = { x: 27.6, y: 3.6, r: 3 };
+const px = (p) => [OX + p.x * NM, OY - p.y * NM];
+const rad = (d) => (d * Math.PI) / 180;
+const vec = (bearing, len) => ({ x: Math.sin(rad(bearing)) * len, y: Math.cos(rad(bearing)) * len });
+
+const game = {
+  mount(root, api) {
+    const P = "lord-of-the-sea-dead-reckoning-";
+    const art = api.art;
+    const stage = api.stage || "teach", teach = stage === "teach", strait = stage === "test", back = stage === "twist";
+    const SH = SHEETS[stage];
+    FIX = SH.fix; TARGET = SH.target; ROCKS = SH.rocks; SPEED = SH.speed; TIDE = SH.tide;
+    // a back-plot reads the table from its last hour
+    const row = (h) => (back ? TIDE[Math.max(0, TIDE.length - 1 - h)] : TIDE[Math.min(h, TIDE.length - 1)]);
+    // the Strait: the table lies about the reversed stream. A crew singing in sight narrows the lie (a link).
+    const sung = strait && !!flag(api, "crew.gullwife");
+    const CONE = sung ? 12 : 25, LIE = (api.rng("strait")() < 0.5 ? -1 : 1) * (sung ? 11 : 22);
+    const lies = (h) => strait && h >= 2;
+    const A = teach && art.has("reckon-unwritten");
+    if (A) { NM = 28.75; OX = 25; OY = 513.75; } else { NM = 30; OX = 40; OY = 620; }
+    const VH = A ? 562.5 : 660;
+    const tool = (id) => pic(art, "instrument-" + id, "", `class="${P}tool"`);
+    const S = { rev: false, sounded: false, heading: SH.heading, quarters: SH.quarters, laid: [], stir: [], sel: -1, marked: false, erasers: 2, wild: SH.wild, msg: "", refused: null, over: false, checks: 1, beat: "", voice: false, refusals: 0, flash: 0 };
+    const losses = +api.store.get("losses", 0) || 0;
+    if (losses >= 2) S.checks = 3;
+
+    root.innerHTML = `
+    <style>
+      .${P}w { position:absolute; inset:0; overflow:auto; background:#d9d4c4; color:${INK}; font-family:'IM Fell English',Georgia,serif; }
+      .${P}lay { display:grid; grid-template-columns:minmax(0,1fr) 230px; gap:12px; padding:10px clamp(8px,2vw,20px) 16px; max-width:1300px; margin:0 auto; }
+      .${P}sheet { width:100%; height:auto; max-height:calc(100vh - 110px); display:block; background:${PAPER}; box-shadow:0 4px 16px rgba(0,0,0,.25); touch-action:none; }
+      .${P}tray { display:grid; gap:10px; align-content:start; }
+      .${P}card { background:${PAPER}; border:1px solid ${INK}; padding:9px 10px; box-shadow:2px 3px 0 rgba(31,46,74,.25); }
+      .${P}card h3 { margin:0 0 6px; font-family:'IM Fell English SC',Georgia,serif; font-weight:400; font-size:13px; letter-spacing:.14em; }
+      .${P}tool { width:54px; height:auto; flex:none; border:1px solid ${GRID}; vertical-align:middle; }
+      .${P}card h3 .${P}tool { float:right; margin:-4px -4px 2px 6px; }
+      .${P}tray button .${P}tool { width:34px; margin-right:5px; border:0; }
+      .${P}tray button { display:inline-flex; align-items:center; }
+      .${P}row { display:flex; align-items:center; gap:6px; flex-wrap:wrap; }
+      .${P}row b { font-family:ui-monospace,'JetBrains Mono',monospace; font-weight:600; font-size:18px; min-width:4.5ch; text-align:center; }
+      .${P}tray button, .${P}how button { font:inherit; font-size:15px; padding:5px 10px; border:1px solid ${INK}; background:#fff; color:${INK}; cursor:pointer; }
+      .${P}tray button:disabled { opacity:.4; cursor:default; }
+      .${P}tray button.main { background:${INK}; color:${PAPER}; }
+      .${P}tide { font-family:ui-monospace,'JetBrains Mono',monospace; font-size:13px; width:100%; border-collapse:collapse; }
+      .${P}tide td { padding:3px 4px; border-bottom:1px dotted ${GRID}; }
+      .${P}tide tr[data-h] { cursor:grab; }
+      .${P}tide tr.done { color:${GREEN}; }
+      .${P}tide tr.next { background:#fff3d6; }
+      .${P}msg { font-size:16px; line-height:1.35; min-height:2.6em; }
+      .${P}how { position:absolute; inset:0; display:grid; place-items:center; background:rgba(217,212,196,.92); z-index:3; padding:14px; overflow:auto; }
+      .${P}card2 { position:relative; max-width:540px; box-sizing:border-box; margin:8px; background:${PAPER}; border:1px solid ${INK}; padding:18px 22px 16px; box-shadow:4px 5px 0 rgba(31,46,74,.3);
+        background-image: linear-gradient(${GRID}40 1px, transparent 1px), linear-gradient(90deg, ${GRID}40 1px, transparent 1px); background-size:24px 24px; }
+      .${P}card2 .hd { display:flex; justify-content:space-between; font-family:ui-monospace,'JetBrains Mono',monospace; font-size:13px; border-bottom:2px solid ${INK}; padding-bottom:4px; letter-spacing:.06em; }
+      .${P}card2 h2 { font-weight:400; font-size:clamp(28px,6vw,34px); margin:8px 0 2px; }
+      .${P}card2 .goal { font-size:17px; margin:0 0 6px; line-height:1.35; }
+      .${P}card2 .open { font-style:italic; font-size:15px; line-height:1.4; margin:0 0 10px; color:#3b4660; }
+      .${P}card2 table { width:100%; border-collapse:collapse; font-size:15px; margin:0 0 12px; }
+      .${P}card2 td { border-top:1px dotted ${INK}; padding:5px 4px; vertical-align:top; line-height:1.3; }
+      .${P}card2 td:first-child { font-family:ui-monospace,'JetBrains Mono',monospace; font-size:14px; white-space:nowrap; color:${RED}; width:1%; padding-right:10px; }
+      .${P}card2 kbd { font-family:ui-monospace,monospace; border:1px solid ${INK}; padding:0 3px; font-size:13px; background:#fff; }
+      .${P}card2 .gentle { font-style:italic; color:${GREEN}; font-size:15px; margin:0 0 8px; }
+      .${P}card2 button { font:inherit; font-size:18px; padding:7px 22px; background:${INK}; color:${PAPER}; border:0; cursor:pointer; }
+      .${P}card2 button:hover, .${P}card2 button:focus-visible { background:${RED}; }
+      .${P}beat { font-size:15px; line-height:1.35; padding:7px 10px; border-left:4px solid ${INK}; background:#fffdf6; }
+      .${P}beat.voice { font-style:italic; color:${GREEN}; border-color:${GREEN}; }
+      .${P}beat:empty { display:none; }
+      @media (min-width:821px) { .${P}beat { position:absolute; left:26px; top:26px; width:min(400px,42%); z-index:1; box-shadow:2px 3px 0 rgba(31,46,74,.2); } }
+      @media (max-width:820px) { .${P}beat { margin:0 0 8px; } }
+      .${P}tray button:not(:disabled):hover { background:#eef1f6; }
+      .${P}tray button.main:not(:disabled):hover { background:${RED}; }
+      .${P}tide tr[data-h]:hover td { background:#f3ecd8; }
+      .${P}sheetbox { min-width:0; }
+      .${P}sheet.refused { animation:${P}ref .6s; }
+      @keyframes ${P}ref { 0%,100% { transform:none; } 25% { transform:translateX(-6px); } 75% { transform:translateX(6px); } }
+      @media (prefers-reduced-motion: reduce) { .${P}sheet.refused { animation:none; outline:3px solid ${RED}; } }
+      @media (max-width:820px) { .${P}lay { grid-template-columns:1fr; } .${P}sheet { max-height:none; }
+        .${P}sheetbox { overflow-x:auto; overscroll-behavior-x:contain; } .${P}sheetbox .${P}sheet { width:760px; max-width:none; touch-action:pan-x pan-y; } .${P}pan { display:block !important; } }
+      .${P}pan { display:none; font-size:14px; font-style:italic; text-align:center; margin:4px 0 0; }
+    </style>
+    <div class="${P}w"><div class="${P}lay">
+      <div style="position:relative"><div class="${P}beat" aria-live="polite"></div><div class="${P}sheetbox"><svg class="${P}sheet" viewBox="0 0 1000 ${VH}" role="img" aria-label="Plotting sheet"></svg></div><p class="${P}pan">Swipe the sheet sideways for the boat and the rose; the course buttons below set the heading.</p></div>
+      <div class="${P}tray"></div>
+    </div>
+    <div class="${P}how" role="dialog" aria-label="How to play"><div class="${P}card2">
+      ${chapterStrip(art, teach ? 4 : 5, teach ? "Chapter IV: What Is Left of the Old Sea" : "Chapter V: The Open Chart")}
+      <div class="hd"><span>PLOTTING SHEET No. ${teach ? 3 : strait ? 5 : 9}</span><span>${teach ? "CH. III" : strait ? "CH. IV" : "TIDE RECKONING"}</span><span>${SH.fixName}</span></div>
+      <h2>${teach ? "Dead Reckoning" : strait ? "The Strait" : "The Back-plot"}</h2>
+      <p class="goal">${teach ? "Plot a course from the fix to the Gullwife boat, ending inside the red circle and clear of both rocks."
+        : strait ? "Plot a course through the Strait to Corran's light: inside the red circle, one mile across the middle, and clear of both wrecks."
+        : "A reef skiff was found adrift at 0900, empty. Plot back to where she went over at 0600, to within a mile."}</p>
+      <p class="open">${teach ? "No chart reaches the Unwritten. The Gullwife crew fish out there, past the last Company buoy, and the only way to meet them is a pencil, a rose and the tide table."
+        : strait ? "The lights are the Company's and so is the tide table. It is exact for the stream it was written for. After the second hour the stream turns, and for the turned stream the table is a guess with a seal on it."
+        : "The Tide Reckoning has a name on it and an hour. She drifted three hours before the wind, 075 degrees at 4 knots by the skiff's own log, and with the tide of the table. Nobody knows where she started. That is the plot."}</p>
+      ${losses >= 2 ? `<p class="gentle">${teach ? "The cabin's old maps hold a worked example in pencil: aim well north of the boat, the tide carries you south-east. She will check your leg three times." : "She will check the plot three times."}</p>` : ""}
+      <table>
+        ${back ? `<tr><td>1 BACK</td><td>She came here on 075°. Lay the course <b>back</b> along it from where she was found (rose, or <kbd>←</kbd><kbd>→</kbd>), for the hours she drifted (<kbd>↑</kbd><kbd>↓</kbd>).</td></tr>
+        <tr><td>2 TURN</td><td>The table prints where the tide was <b>going</b>. Turn the arrows round (<kbd>R</kbd>) before you lay them, or you plot where she would drift next.</td></tr>
+        <tr><td>3 COMMIT</td><td>There is no circle on this sheet. Mark the position and Commit; a good plot starts the rescue dive above her.</td></tr>`
+        : strait ? `<tr><td>1 PLOT</td><td>Heading and time as before (<kbd>←</kbd><kbd>→</kbd>, <kbd>↑</kbd><kbd>↓</kbd>), then lay each hour's tide (<kbd>T</kbd>). After hour 2 the set reverses.</td></tr>
+        <tr><td>2 THE CONE</td><td>Each arrow of the turned stream carries a red cone: the table's lie. The true stream is somewhere inside it.</td></tr>
+        <tr><td>3 THE LEAD</td><td>Once, <b>drop the lead</b> (<kbd>D</kbd>): the depth gives one position line, and the cone closes on the true set. Then erase, re-aim, and commit.</td></tr>`
+        : `<tr><td>1 COURSE</td><td>Drag on the rose (or <kbd>←</kbd><kbd>→</kbd>) for a heading; <kbd>↑</kbd><kbd>↓</kbd> for the time. The boat makes 6 knots.</td></tr>
+        <tr><td>2 TIDE</td><td>Click each hour's row in the table (or <kbd>T</kbd>) to lay its tide from the end of that hour's run.</td></tr>
+        <tr><td>3 COMMIT</td><td>Mark the dead-reckoned position with the dividers, then Commit.</td></tr>`}
+      </table>
+      <button type="button">Unroll the sheet</button>
+    </div></div>
+    </div>`;
+    const w = root.querySelector("." + P + "w");
+    const svg = w.querySelector("svg");
+    const tray = w.querySelector("." + P + "tray");
+    const beatEl = w.querySelector("." + P + "beat");
+    const how = w.querySelector("." + P + "how");
+
+    const hours = () => Math.ceil(S.quarters / 4);
+    const hourFrac = (h) => Math.min(1, S.quarters / 4 - h); // h from 0
+    // what the sheet shows: the table's set (the sounded one once the lead is down), turned round if he has turned it
+    const setFor = (h, truth) => row(h).set + (lies(h) && (truth || S.sounded) ? LIE : 0) + (S.stir[h] || 0) + (back && S.rev ? 180 : 0);
+    const tideFor = (h, truth) => vec(setFor(h, truth), row(h).rate * hourFrac(h));
+    function plot(truth) { // the zigzag: run ends and tide ends
+      const pts = [{ ...FIX }], runs = [];
+      let p = { ...FIX };
+      for (let h = 0; h < hours(); h++) {
+        const r = vec(S.heading, SPEED * hourFrac(h));
+        const q = { x: p.x + r.x, y: p.y + r.y };
+        runs.push([p, q]);
+        if (S.laid[h] || truth) { const t = tideFor(h, truth); p = { x: q.x + t.x, y: q.y + t.y }; } else p = q;
+        pts.push(p);
+      }
+      return { pts, runs, end: p };
+    }
+    const allLaid = () => Array.from({ length: hours() }, (_, h) => !!S.laid[h]).every(Boolean);
+    function segHitsCircle(a, b, c) {
+      const dx = b.x - a.x, dy = b.y - a.y, l2 = dx * dx + dy * dy || 1;
+      const t = Math.max(0, Math.min(1, ((c.x - a.x) * dx + (c.y - a.y) * dy) / l2));
+      const qx = a.x + t * dx, qy = a.y + t * dy;
+      return Math.hypot(qx - c.x, qy - c.y) < c.r ? { x: qx, y: qy } : null;
+    }
+
+    // ---- drawing ----
+    function rose() {
+      const [cx, cy] = px(ROSE), R = ROSE.r * NM;
+      if (A) { // the sheet carries the rose; the heading is the game's red needle on it
+        const ha = rad(S.heading), Rn = R * 0.86;
+        return `<g class="${P}rose" style="cursor:crosshair"><line x1="${cx}" y1="${cy}" x2="${cx + Math.sin(ha) * Rn}" y2="${cy - Math.cos(ha) * Rn}" stroke="${RED}" stroke-width="2.4"/><circle cx="${cx + Math.sin(ha) * Rn}" cy="${cy - Math.cos(ha) * Rn}" r="6" fill="${RED}" stroke="${PAPER}" stroke-width="1.5"/>
+          <text x="${cx}" y="${cy - R - 10}" text-anchor="middle" font-size="13" font-family="ui-monospace,monospace" fill="${RED}">${String(S.heading).padStart(3, "0")}°</text><circle cx="${cx}" cy="${cy}" r="${R + 16}" fill="transparent" data-rose="1"/></g>`;
+      }
+      let s = `<circle cx="${cx}" cy="${cy}" r="${R}" fill="${PAPER}" stroke="${INK}" stroke-width="1.4"/><circle cx="${cx}" cy="${cy}" r="${R - 12}" fill="none" stroke="${INK}" stroke-width=".8"/><circle cx="${cx}" cy="${cy}" r="${R * 0.56}" fill="none" stroke="${RED}" stroke-width=".8" stroke-dasharray="2 3"/>`;
+      for (let d = 0; d < 360; d += 5) {
+        const a = rad(d), l = d % 30 === 0 ? 12 : d % 10 === 0 ? 8 : 4;
+        s += `<line x1="${cx + Math.sin(a) * R}" y1="${cy - Math.cos(a) * R}" x2="${cx + Math.sin(a) * (R - l)}" y2="${cy - Math.cos(a) * (R - l)}" stroke="${INK}" stroke-width=".8"/>`;
+        if (d % 30 === 0) s += `<text x="${cx + Math.sin(a) * (R + 13)}" y="${cy - Math.cos(a) * (R + 13) + 4}" text-anchor="middle" font-size="11" font-family="ui-monospace,monospace" fill="${INK}">${String(d).padStart(3, "0")}</text>`;
+      }
+      for (let k = 0; k < 8; k++) {
+        const a = rad(k * 45), l = k % 2 ? R * 0.42 : R * 0.7, a1 = rad(k * 45 + 90 / 8 * 2), a2 = rad(k * 45 - 90 / 8 * 2);
+        s += `<path d="M${cx + Math.sin(a) * l} ${cy - Math.cos(a) * l} L${cx + Math.sin(a1) * 9} ${cy - Math.cos(a1) * 9} L${cx} ${cy} Z" fill="${INK}"/><path d="M${cx + Math.sin(a) * l} ${cy - Math.cos(a) * l} L${cx + Math.sin(a2) * 9} ${cy - Math.cos(a2) * 9} L${cx} ${cy} Z" fill="${PAPER}" stroke="${INK}" stroke-width=".8"/>`;
+      }
+      const ha = rad(S.heading);
+      s += `<line x1="${cx}" y1="${cy}" x2="${cx + Math.sin(ha) * (R - 2)}" y2="${cy - Math.cos(ha) * (R - 2)}" stroke="${RED}" stroke-width="2"/><circle cx="${cx + Math.sin(ha) * (R - 2)}" cy="${cy - Math.cos(ha) * (R - 2)}" r="5" fill="${RED}"/>`;
+      s += `<path d="M${cx} ${cy - R + 18} l-5 10 h10z" fill="${RED}"/>`;
+      return `<g class="${P}rose" style="cursor:crosshair">${s}<circle cx="${cx}" cy="${cy}" r="${R + 16}" fill="transparent" data-rose="1"/></g>`;
+    }
+    function arrowHead(x1, y1, x2, y2, col, triple) {
+      const a = Math.atan2(y2 - y1, x2 - x1);
+      let s = "";
+      const n = triple ? 3 : 1;
+      for (let i = 0; i < n; i++) {
+        const t = 0.5 + (i - (n - 1) / 2) * 0.12, x = x1 + (x2 - x1) * t, y = y1 + (y2 - y1) * t;
+        s += `<path d="M${x - Math.cos(a - 0.45) * 9} ${y - Math.sin(a - 0.45) * 9} L${x} ${y} L${x - Math.cos(a + 0.45) * 9} ${y - Math.sin(a + 0.45) * 9}" fill="none" stroke="${col}" stroke-width="1.6"/>`;
+      }
+      return s;
+    }
+    function render() {
+      let s = "";
+      const [tx, ty] = px(TARGET);
+      const [fx, fy] = px(FIX);
+      if (A) {
+        s += `<image href="${art.url("reckon-unwritten")}" x="0" y="0" width="1000" height="${VH}"/>`;
+        for (const r of ROCKS) { const [x, y] = px(r); s += `<text x="${x + 20}" y="${y - 14}" font-size="12" font-style="italic" fill="${INK}">rock</text>`; }
+        s += `<text x="${tx - TARGET.r * NM}" y="${ty + TARGET.r * NM + 16}" font-size="13" letter-spacing="2" fill="${RED}" font-family="IM Fell English SC,Georgia,serif">GULLWIFE BOAT</text>`;
+      } else {
+      // grid
+      for (let i = 0; i <= 31; i++) s += `<line x1="${OX + i * NM}" y1="20" x2="${OX + i * NM}" y2="${OY + 20}" stroke="${GRID}" stroke-width="${i % 5 ? 0.5 : 1.1}"/>`;
+      for (let j = -1; j <= 20; j++) s += `<line x1="20" y1="${OY - j * NM}" x2="980" y2="${OY - j * NM}" stroke="${GRID}" stroke-width="${j % 5 ? 0.5 : 1.1}"/>`;
+      s += `<rect x="14" y="14" width="972" height="632" fill="none" stroke="${INK}" stroke-width="3" stroke-dasharray="14 6"/>`;
+      for (let j = 0; j <= 15; j += 5) s += ` <text x="22" y="${OY - j * NM - 4}" font-size="12" fill="${INK}" font-family="ui-monospace,monospace">41°${String(j).padStart(2, "0")}'</text>`;
+      // scale of miles
+      s += `<g transform="translate(330,${OY + 14})">${[0, 1, 2, 3, 4].map((i) => `<rect x="${i * NM}" y="0" width="${NM}" height="6" fill="${i % 2 ? PAPER : INK}" stroke="${INK}"/>`).join("")}<text x="${5 * NM + 8}" y="7" font-size="12" font-style="italic" fill="${INK}">nautical miles</text></g>`;
+      // hazards
+      for (const r of ROCKS) {
+        const [x, y] = px(r);
+        s += `<circle cx="${x}" cy="${y}" r="${r.r * NM}" fill="none" stroke="${INK}" stroke-width="1" stroke-dasharray="2 3"/><path d="M${x - 7} ${y} h14 M${x} ${y - 7} v14 M${x - 5} ${y - 5} l10 10 M${x + 5} ${y - 5} l-10 10" stroke="${INK}" stroke-width="1.6"/><text x="${x + 14}" y="${y - 10}" font-size="12" font-style="italic" fill="${INK}">${strait ? "old wreck" : "rock"}</text>`;
+      }
+      // target and fix
+      if (!back || S.over) s += `<circle cx="${tx}" cy="${ty}" r="${TARGET.r * NM}" fill="rgba(140,43,43,.06)" stroke="${RED}" stroke-width="1.6" stroke-dasharray="6 4"/><text x="${tx + (back ? -150 : TARGET.r * NM + 6)}" y="${ty - (back ? TARGET.r * NM + 8 : 6)}" font-size="13" letter-spacing="2" fill="${RED}" font-family="IM Fell English SC,Georgia,serif">${SH.name}</text><circle cx="${tx}" cy="${ty}" r="3" fill="${RED}"/>`;
+      s += `<circle cx="${fx}" cy="${fy}" r="8" fill="none" stroke="${INK}" stroke-width="1.6"/><circle cx="${fx}" cy="${fy}" r="2" fill="${INK}"/><text x="${fx - 10}" y="${fy + 24}" font-size="13" font-family="ui-monospace,monospace" fill="${INK}">${SH.fixName}</text>`;
+      if (back) s += `<g transform="translate(${fx + 16},${fy - 26})"><path d="M0 8 q14 10 30 0 l-4 -6 h-22z" fill="${PAPER}" stroke="${INK}" stroke-width="1.4"/><path d="M15 2 v-14" stroke="${INK}" stroke-width="1.4"/></g><text x="${fx + 52}" y="${fy - 20}" font-size="13" font-style="italic" fill="${INK}">the skiff, empty</text>
+        <g transform="translate(${OX + 40},${OY - 16 * NM})"><path d="M0 0 l${Math.sin(rad(75)) * 60} ${-Math.cos(rad(75)) * 60}" stroke="${INK}" stroke-width="2"/><path d="M${Math.sin(rad(75)) * 60} ${-Math.cos(rad(75)) * 60} l-12 -2 l5 10z" fill="${INK}"/><text x="0" y="20" font-size="13" font-style="italic" fill="${INK}">wind: sets a boat 075° at 4 kn</text></g>`;
+      if (strait) { // the five lights along the north shore, and the Company's lane buoys
+        for (let i = 0; i < 5; i++) { const lx = OX + (5 + i * 5.4) * NM, ly = OY - 17.6 * NM; s += `<path d="M${lx - 5} ${ly + 16} L${lx - 2.5} ${ly} h5 L${lx + 5} ${ly + 16}z" fill="${PAPER}" stroke="${INK}" stroke-width="1.2"/><circle cx="${lx}" cy="${ly - 4}" r="3.4" fill="${GOLD}" stroke="${INK}"/>`; }
+        s += `<text x="${OX + 5 * NM}" y="${OY - 18.6 * NM}" font-size="12" font-style="italic" fill="${INK}">the five lights (the Company's)</text><path d="M20 ${OY - 16.6 * NM} q240 -26 480 -6 t480 4" fill="none" stroke="${INK}" stroke-width="1.2"/><path d="M20 ${OY - 1.6 * NM} q260 30 500 8 t460 -10" fill="none" stroke="${INK}" stroke-width="1.2"/>`;
+      }
+      }
+      s += rose();
+      // parallel rule along the heading, from the fix
+      const hv = vec(S.heading, 1);
+      const L = 360, nx = -hv.y, ny = -hv.x; // screen normal
+      const ax = fx + hv.x * 30 + nx * 22, ay = fy - hv.y * 30 + ny * 22;
+      s += `<g opacity=".55"><path d="M${ax} ${ay} l${hv.x * L} ${-hv.y * L} l${nx * 26} ${ny * 26} l${-hv.x * L} ${hv.y * L}z" fill="#cfe2e6" stroke="${INK}" stroke-width=".8"/>${Array.from({ length: 24 }, (_, i) => `<line x1="${ax + hv.x * i * 15}" y1="${ay - hv.y * i * 15}" x2="${ax + hv.x * i * 15 + nx * (i % 2 ? 5 : 9)}" y2="${ay - hv.y * i * 15 + ny * (i % 2 ? 5 : 9)}" stroke="${INK}" stroke-width=".7"/>`).join("")}</g>`;
+      // the plot
+      const pl = plot();
+      pl.runs.forEach(([a, b], h) => {
+        const [x1, y1] = px(a), [x2, y2] = px(b);
+        s += `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${PENCIL}" stroke-width="1.6" ${S.laid[h] ? "" : 'stroke-dasharray="7 5"'}/>${arrowHead(x1, y1, x2, y2, PENCIL, false)}`;
+        if (h === 0) s += `<text x="${(x1 + x2) / 2 - 30}" y="${(y1 + y2) / 2 - 10}" font-size="12" font-family="ui-monospace,monospace" fill="${PENCIL}" transform="rotate(${S.heading - 90} ${(x1 + x2) / 2} ${(y1 + y2) / 2})">C ${String(S.heading).padStart(3, "0")}°T S ${SPEED} kn</text>`;
+        s += `<line x1="${x2 - 4}" y1="${y2 - 4}" x2="${x2 + 4}" y2="${y2 + 4}" stroke="${PENCIL}"/><text x="${x2 + 6}" y="${y2 + 14}" font-size="12" fill="${PENCIL}" font-family="ui-monospace,monospace">${back ? String(SH.t0 - Math.min(h + 1, Math.floor(S.quarters / 4))).padStart(2, "0") + (h + 1 > S.quarters / 4 ? "" : "00") : h + 1 > S.quarters / 4 ? String(SH.t0 + h).padStart(2, "0") + String((S.quarters % 4) * 15).padStart(2, "0") : String(SH.t0 + 1 + h).padStart(2, "0") + "00"}</text>`;
+        if (S.laid[h]) {
+          const t = tideFor(h), [x3, y3] = px({ x: b.x + t.x, y: b.y + t.y });
+          if (lies(h) && !S.sounded) { // the table's lie: the true set is somewhere in this cone
+            const c1 = vec(setFor(h) - CONE, row(h).rate * hourFrac(h) * 1.08), c2 = vec(setFor(h) + CONE, row(h).rate * hourFrac(h) * 1.08), [xa, ya] = px({ x: b.x + c1.x, y: b.y + c1.y }), [xb, yb] = px({ x: b.x + c2.x, y: b.y + c2.y });
+            s += `<path d="M${x2} ${y2} L${xa} ${ya} A${row(h).rate * NM} ${row(h).rate * NM} 0 0 1 ${xb} ${yb} Z" fill="rgba(140,43,43,.16)" stroke="${RED}" stroke-width="1" stroke-dasharray="3 3"/>`;
+          }
+          s += `<g data-vec="${h}" style="cursor:pointer"><line x1="${x2}" y1="${y2}" x2="${x3}" y2="${y3}" stroke="${S.sel === h ? GOLD : INK}" stroke-width="${S.sel === h ? 3.4 : 2}"/>${arrowHead(x2, y2, x3, y3, S.sel === h ? GOLD : INK, true)}<line x1="${x2}" y1="${y2}" x2="${x3}" y2="${y3}" stroke="transparent" stroke-width="18"/></g>`;
+          if (lies(h) && S.sounded) s += `<text x="${x3 + 6}" y="${y3 + 16}" font-size="11" fill="${RED}" font-style="italic">sounded: ${String(((setFor(h) % 360) + 360) % 360).padStart(3, "0")}°</text>`;
+          if (S.stir[h]) s += `<text x="${x3 + 6}" y="${y3 + 4}" font-size="11" fill="${GREEN}" font-style="italic">stirred ${S.stir[h] > 0 ? "+" : ""}${S.stir[h]}°</text>`;
+        }
+      });
+      // DR mark and dividers
+      const [ex, ey] = px(pl.end);
+      if (S.marked) {
+        s += `<path d="M${ex - 9} ${ey + 6} L${ex} ${ey - 9} L${ex + 9} ${ey + 6}Z" fill="none" stroke="${INK}" stroke-width="1.8"/><circle cx="${ex}" cy="${ey}" r="2" fill="${INK}"/><text x="${ex + 12}" y="${ey - 8}" font-size="13" font-family="ui-monospace,monospace" fill="${INK}">DR ${back ? String(SH.t0 - Math.floor(S.quarters / 4)).padStart(2, "0") + "00" : String(SH.t0 + Math.floor(S.quarters / 4)).padStart(2, "0") + String((S.quarters % 4) * 15).padStart(2, "0")}</text>`;
+        s += `<g stroke="${INK}" stroke-width="2.2" fill="none"><line x1="${ex}" y1="${ey}" x2="${ex + 26}" y2="${ey - 110}"/><line x1="${ex + 52}" y1="${ey - 4}" x2="${ex + 26}" y2="${ey - 110}"/></g><circle cx="${ex + 26}" cy="${ey - 112}" r="7" fill="${GOLD}" stroke="${INK}"/>`;
+      }
+      if (S.refused) { const [rx, ry] = px(S.refused); s += `<circle cx="${rx}" cy="${ry}" r="14" fill="none" stroke="${RED}" stroke-width="3"/><path d="M${rx - 10} ${ry - 10} l20 20 m0 -20 l-20 20" stroke="${RED}" stroke-width="3"/>`; }
+      // clock
+      const cx = A ? 935 : 925, cy = A ? 66 : 70, hr = S.quarters / 4;
+      s += `<circle cx="${cx}" cy="${cy}" r="38" fill="#fff" stroke="${INK}" stroke-width="2"/><path d="M${cx} ${cy} L${cx} ${cy - 34} A34 34 0 ${hr > 6 ? 1 : 0} 1 ${cx + Math.sin(rad(hr * 30)) * 34} ${cy - Math.cos(rad(hr * 30)) * 34}Z" fill="#f5dca6"/>${Array.from({ length: 12 }, (_, i) => `<line x1="${cx + Math.sin(rad(i * 30)) * 30}" y1="${cy - Math.cos(rad(i * 30)) * 30}" x2="${cx + Math.sin(rad(i * 30)) * 36}" y2="${cy - Math.cos(rad(i * 30)) * 36}" stroke="${INK}"/>`).join("")}<line x1="${cx}" y1="${cy}" x2="${cx + Math.sin(rad(hr * 30)) * 30}" y2="${cy - Math.cos(rad(hr * 30)) * 30}" stroke="${INK}" stroke-width="2.4"/><text x="${cx}" y="${cy + 56}" text-anchor="middle" font-size="13" font-family="ui-monospace,monospace" fill="${INK}">${Math.floor(hr)} h ${String((S.quarters % 4) * 15).padStart(2, "0")}</text>`;
+      // pencil
+      if (!A) s += `<g transform="translate(560,600) rotate(-14)"><rect x="0" y="0" width="150" height="12" fill="${GOLD}" stroke="${INK}"/><path d="M150 0 l22 6 l-22 6z" fill="#e8cfa0" stroke="${INK}"/><path d="M166 4.5 l6 1.5 l-6 1.5z" fill="${PENCIL}"/><rect x="-14" y="0" width="14" height="12" fill="#d79b9b" stroke="${INK}"/></g>`;
+      svg.innerHTML = s;
+      svg.querySelectorAll("[data-vec]").forEach((g) => g.addEventListener("click", (e) => { e.stopPropagation(); S.sel = S.sel === +g.dataset.vec ? -1 : +g.dataset.vec; S.msg = S.sel >= 0 ? "Stir it: circle on the sheet (clockwise turns it right), or use the buttons." : ""; render(); }));
+      renderTray(pl);
+    }
+    function renderTray(pl) {
+      const locked = S.laid.some(Boolean);
+      const next = Array.from({ length: hours() }, (_, h) => h).find((h) => !S.laid[h]);
+      // the table is printed forwards in time; a back-plot lays its hours from the last one
+      const clock = (h) => (back ? `${String(SH.t0 - 1 - h).padStart(2, "0")}–${String(SH.t0 - h).padStart(2, "0")}` : `${String(SH.t0 + h).padStart(2, "0")}–${String(SH.t0 + 1 + h).padStart(2, "0")}`);
+      const rows = Array.from({ length: Math.max(back ? 3 : 5, hours()) }, (_, h) => `<tr data-h="${h}" class="${S.laid[h] ? "done" : h === next ? "next" : ""}" ${h < hours() ? 'draggable="true"' : 'style="opacity:.4"'}><td>${clock(h)}</td><td>${row(h).set}°${lies(h) ? (S.sounded ? ` → ${String((((row(h).set + LIE) % 360) + 360) % 360).padStart(3, "0")}°` : ` ±${CONE}°`) : ""}</td><td>${row(h).rate.toFixed(1)} kn</td><td>${S.laid[h] ? "✓" : h < hours() ? "lay" : ""}</td></tr>`).join("");
+      const anyLaid = S.laid.some(Boolean);
+      tray.innerHTML = `
+        <div class="${P}card"><h3>${tool("parallel-rule")}COURSE</h3>
+          <div class="${P}row">Heading <button type="button" data-a="h-10" ${locked ? "disabled" : ""}>−10</button><button type="button" data-a="h-1" ${locked ? "disabled" : ""}>−1</button><b>${String(S.heading).padStart(3, "0")}°</b><button type="button" data-a="h+1" ${locked ? "disabled" : ""}>+1</button><button type="button" data-a="h+10" ${locked ? "disabled" : ""}>+10</button></div>
+          <div class="${P}row" style="margin-top:6px">Time <button type="button" data-a="t-" ${locked ? "disabled" : ""}>−¼</button><b>${(S.quarters / 4).toFixed(2)}h</b><button type="button" data-a="t+" ${locked ? "disabled" : ""}>+¼</button></div>
+          <div style="font-size:13px;margin-top:4px;opacity:.8">Log-line: ${SPEED} knots. Run: ${(SPEED * S.quarters / 4).toFixed(1)} nm.</div></div>
+        <div class="${P}card"><h3>${tool("pencil")}TIDAL STREAM</h3><table class="${P}tide"><tr><td>HR</td><td>SET</td><td>RATE</td><td></td></tr>${rows}</table>
+          <div style="font-size:13px;margin-top:4px;opacity:.8">Click a row (or drag it onto the sheet, or press T) to lay that hour's tide.</div></div>
+        ${back ? `<div class="${P}card"><h3>THE ARROWS</h3><div class="${P}row"><button type="button" data-a="rev" ${locked ? "disabled" : ""} aria-pressed="${S.rev}">${S.rev ? "↺ turned round: where the tide came from" : "→ as printed: where the tide was going"}</button></div><div style="font-size:13px;margin-top:4px;opacity:.8">Turn them (R) before the first is laid. Erase to change your mind.</div></div>` : ""}
+        ${strait ? `<div class="${P}card"><h3>${pic(art, "lead-line", "", `class="${P}tool"`)}THE LEAD · ONCE A LEG</h3><div class="${P}row"><button type="button" data-a="lead" ${anyLaid && S.laid[2] && !S.sounded ? "" : "disabled"}>${S.sounded ? "Sounded: the cone has closed" : "Drop the lead (D)"}</button></div><div style="font-size:13px;margin-top:4px;opacity:.8">${S.sounded ? "The true set of the turned stream is in the table now." : "Lay the third hour's tide first: the lead is dropped in the turned stream."}${sung ? " The Gullwife crew are singing in sight: the cone is half as wide." : ""}</div></div>` : ""}
+        ${anyLaid && SH.wild >= 45 ? `<div class="${P}card"><h3>STIR · WILD ${S.wild} (+5 AN HOUR)</h3>
+          <div class="${P}row"><button type="button" data-a="s-" ${S.sel >= 0 ? "" : "disabled"} aria-label="Turn left 5 degrees ([)">↺ 5°</button><button type="button" data-a="s+" ${S.sel >= 0 ? "" : "disabled"} aria-label="Turn right 5 degrees (])">↻ 5°</button><span style="font-size:14px">${S.sel >= 0 ? `hour ${S.sel + 1}: ${(S.stir[S.sel] || 0)}°` : "click a tide arrow (or 1–6)"}</span></div>
+          </div>` : ""}
+        <div class="${P}card"><div class="${P}row">
+          <button type="button" data-a="mark" ${allLaid() && !S.marked ? "" : "disabled"}>${tool("dividers")}Mark DR</button>
+          <button type="button" class="main" data-a="commit" ${S.marked && !S.over ? "" : "disabled"}>Commit</button>
+          <button type="button" data-a="erase" ${locked && S.erasers > 0 && !S.over ? "" : "disabled"}>${tool("eraser")}Erase (${S.erasers})</button>
+          ${anyLaid ? `<button type="button" data-a="check" ${S.checks > 0 && !S.over ? "" : "disabled"} title="Trust 40+: she checks the leg">Ask her (${S.checks})</button>` : ""}</div>
+          <p class="${P}msg" aria-live="polite">${S.msg}</p></div>`;
+      beatEl.textContent = S.beat; beatEl.classList.toggle("voice", S.voice);
+      tray.querySelectorAll("[data-a]").forEach((b) => b.addEventListener("click", () => act(b.dataset.a)));
+      tray.querySelectorAll("tr[data-h]").forEach((tr) => {
+        tr.addEventListener("click", () => layTide(+tr.dataset.h));
+        tr.addEventListener("dragstart", (e) => { e.dataTransfer.setData("text/plain", tr.dataset.h); });
+      });
+    }
+    function layTide(h) {
+      if (S.over || h >= hours()) return;
+      const next = Array.from({ length: hours() }, (_, k) => k).find((k) => !S.laid[k]);
+      if (next === undefined) return;
+      if (h !== next) { S.msg = `Lay the tide in order: hour ${next + 1} first, from the end of its run.`; render(); return; }
+      S.laid[h] = true; S.refused = null;
+      if (h === 0 && !S.stirShown && teach) { S.stirShown = true; beat("The first triple arrow goes down in ink. The water out here is wild enough to argue with: click a tide arrow and circle on the sheet to turn it up to 30°. She will check the leg for you once.", false); }
+      if (h === 2 && strait && !S.coneShown) { S.coneShown = true; beat("The third arrow goes down with a red cone round it. The stream has turned, and the table is only guessing where. Drop the lead (D): once.", false); }
+      if (h === 0 && back && !S.revShown) { S.revShown = true; beat(S.rev ? "The arrow points up-tide, against the print. That is where the water came from, and she came with it." : "The arrow goes down as printed: where the tide was going. But she has already gone.", !S.rev); }
+      if (allLaid() && !S.allShown) { S.allShown = true; beat(teach ? "Every hour laid. Out past the buoys the fog is already coming down; whatever the pencil says is all he will have." : strait ? (S.sounded ? "Every hour laid, on a stream the lead has found." : "Every hour laid. The last arrows are the table's guess, and the cone is where the truth could be.") : S.rev ? "Three hours laid, against the print. The pencil is going back the way the water came." : "Three hours laid as printed. That is where she would be by noon, not where she was at six.", teach || (back && S.rev)); }
+      S.msg = allLaid() ? "Every hour's tide is laid. Mark the dead-reckoned position with the dividers." : `Hour ${h + 1}'s tide laid. Next: hour ${h + 2}.`;
+      render();
+    }
+    function beat(t, v) { S.beat = t; S.voice = !!v; }
+    function check() {
+      if (S.checks <= 0) return;
+      S.checks--;
+      const pl = plot();
+      const dx = pl.end.x - TARGET.x, dy = pl.end.y - TARGET.y, off = Math.hypot(dx, dy);
+      const hit = pl.pts.some((p, i) => i && ROCKS.some((r) => segHitsCircle(pl.pts[i - 1], p, r)));
+      const dir = Math.abs(dy) > Math.abs(dx) ? (dy > 0 ? "north of her" : "south of her") : (dx > 0 ? "past her, to the east" : "short of her, to the west");
+      if (back) {
+        const hv = vec(S.heading, 1), wv = vec(75, 1), dot = hv.x * wv.x + hv.y * wv.y;
+        S.msg = !allLaid() ? "She runs a finger along it: “Lay the tide first. All three hours.”" : off <= TARGET.r ? "She looks at the mark a long time. “That is where I would put the boat.”"
+          : dot > -0.8 ? "“The wind set her 075. To go back you sail into it. Turn the rule end for end.”" : !S.rev ? "“The tide carried her here, Alexi. To go back, every arrow turns round.”"
+          : S.quarters !== 12 ? "“Six until nine. Three hours, no more and no less.”" : "“Nearly. Reciprocal of 075: add a hundred and eighty.”";
+        return;
+      }
+      if (!allLaid()) S.msg = `She runs a finger along it: “Lay the rest of the tide first. Without it you are only guessing.”`;
+      else if (hit) S.msg = "She taps a rock: “That line goes straight over it. Turn a tide arrow, or erase.”";
+      else if (off <= TARGET.r) S.msg = "She nods once: “That will find her. If the pencil is honest.”";
+      else S.msg = `She frowns at the circle: “You'll come up ${dir}, about ${off.toFixed(0)} miles out.”`;
+    }
+    function act(a) {
+      if (S.over) return;
+      if (a === "check") { check(); render(); return; }
+      const locked = S.laid.some(Boolean);
+      const m = a.match(/^h([+-]\d+)$/);
+      if (m && !locked) S.heading = (S.heading + +m[1] + 360) % 360;
+      if (a === "t-" && !locked) S.quarters = Math.max(4, S.quarters - 1);
+      if (a === "t+" && !locked) S.quarters = Math.min(24, S.quarters + 1);
+      if ((a === "s-" || a === "s+") && S.sel >= 0) stirBy(S.sel, a === "s+" ? 5 : -5);
+      if (a === "rev" && back && !locked) { S.rev = !S.rev; S.msg = S.rev ? "The arrows are turned round: each will be laid against its printed set." : "The arrows are as printed."; }
+      if (a === "lead" && strait && S.laid[2] && !S.sounded) { S.sounded = true; S.marked = false; S.msg = `The lead comes up with grey sand in the tallow: forty fathoms, not the twenty-six the table's stream would give. One position line. The turned stream sets ${String((((row(2).set + LIE) % 360) + 360) % 360).padStart(3, "0")}°, not ${row(2).set}°. The pencil line has moved: erase and re-aim if it has left the circle.`; beat("The cone closes to one arrow. It was never where the Company printed it.", true); }
+      if (a === "mark" && allLaid()) { S.marked = true; S.msg = "Dividers on the DR. Commit when you trust it."; }
+      if (a === "erase" && S.erasers > 0) { S.erasers--; S.laid = []; S.stir = []; S.sel = -1; S.marked = false; S.refused = null; S.msg = `Rubbed out. ${S.erasers} eraser${S.erasers === 1 ? "" : "s"} left.`; }
+      if (a === "commit" && S.marked) { commit(); return; }
+      render();
+    }
+    function stirBy(h, d) {
+      if (SH.wild < 45) { S.msg = back ? "The water that has already run will not be argued with." : "The Strait is too ordered to stir: Wild 20."; return; }
+      const before = S.stir[h] || 0, after = Math.max(-30, Math.min(30, before + d));
+      if (after === before) { S.msg = "Thirty degrees is all the water will give."; return; }
+      if (!before) S.wild = Math.min(100, S.wild + 5);
+      S.stir[h] = after; S.marked = false;
+      S.msg = `Hour ${h + 1}'s tide turned to ${row(h).set + after}°. Mark the DR again.`;
+    }
+    function commit() {
+      const pl = plot(strait);       // in the Strait the boat goes where the true stream takes it, whatever was pencilled
+      if (back) {
+        const off = Math.hypot(pl.end.x - TARGET.x, pl.end.y - TARGET.y), good = off <= TARGET.r;
+        S.over = true; render();
+        api.store.set("losses", good ? 0 : losses + 1);
+        setFlag(api, "backplot.good", good);
+        endCard(root, art, "reckon-back-plot", good ? "THE BACK-PLOT · ABOVE HER" : "THE BACK-PLOT · WIDE", "#1F2E4A");
+        if (good) api.end({ outcome: "win", text: `The mark falls ${off.toFixed(1)} nm from where she went over. Back along 255, three hours, every arrow turned against its print: the rescue dive starts above her, with the whole of her air still to spend. The Tide Reckoning has an hour and a place on it now, and they are the right ones.` });
+        else api.end({ outcome: "lose", text: `The mark falls ${off.toFixed(1)} nm wide. ${!S.rev ? "The tide went down as printed: that is where she would have drifted next, not where she came from." : S.quarters !== 12 ? "She drifted three hours, from six until nine." : "She came here on 075: the way back is its reciprocal."} The dive starts a long swim from her, and her air is already running.` });
+        return;
+      }
+      for (let i = 1; i < pl.pts.length; i++) for (const r of ROCKS) {
+        const hit = segHitsCircle(pl.pts[i - 1], pl.pts[i], r);
+        if (hit) { S.refused = hit; S.marked = false; S.refusals++; S.msg = "Refused: that track runs over a rock. See the red cross. Erase or stir to clear it."; render(); svg.classList.remove(P + "refused"); void svg.getBoundingClientRect(); svg.classList.add(P + "refused"); return; }
+      }
+      const off = Math.hypot(pl.end.x - TARGET.x, pl.end.y - TARGET.y);
+      S.over = true; render();
+      const stirred = S.stir.filter(Boolean).length;
+      api.store.set("losses", off <= TARGET.r ? 0 : losses + 1);
+      if (strait) {
+        endCard(root, art, off <= TARGET.r ? "chit-4-lease-schedule" : "reckon-strait", off <= TARGET.r ? "CHIT No. 4 · A FOG" : "THE LAMPLIT STRAIT", "#1F2E4A");
+        if (off <= TARGET.r) gainChit(api, 4);
+        if (off <= TARGET.r) api.end({ outcome: "win", text: `Under Corran's light, ${off.toFixed(1)} nm off the mark${S.sounded ? ", on a stream the lead found and the table did not" : ", by luck: the lead was never dropped"}. In the lamp room the lease schedule hangs on a nail, and pinned to it, in a hand he knows, chit No. 4: “a fog. Pays next tide.” The fourth of eight. There has not been a thick night here in twenty years, and now he knows whose it was.` });
+        else api.end({ outcome: "lose", text: `The pencil said the circle. The stream said otherwise: ${off.toFixed(1)} nm wide of Corran's light, in among the old wrecks, and clear of them only by a stir the Strait barely answered. Notice +5. ${S.sounded ? "The lead told the truth; the plot was not redrawn to it." : "The table lies about the turned stream. Drop the lead once the third hour is laid, then erase and re-aim."}` });
+        return;
+      }
+      if (off <= TARGET.r) api.end({ outcome: "win", text: `Arrived, ${off.toFixed(1)} nm from the Gullwife boat: fifty metres off her bow when the fog lifts, and someone aboard is already singing.${stirred ? ` The tide was stirred ${stirred === 1 ? "once" : stirred + " times"}: Wild ${S.wild} in the Unwritten.` : " Not a stir: the pencil did it alone."}` });
+      else api.end({ outcome: "lose", text: `Arrived off-target: the pencil put him ${off.toFixed(1)} nm wide. He finds the Gullwife boat only by their singing, and comes up in fog, three hundred metres from the Gullwife boat instead of fifty. His mark fell ${pl.end.y < TARGET.y ? "south" : "north"} of her; let the tide table do its share next time.` });
+    }
+
+    // ---- pointer: the rose, dropping tide rows, the circle stir ----
+    function toSvg(e) { const pt = svg.createSVGPoint(); pt.x = e.clientX; pt.y = e.clientY; return pt.matrixTransform(svg.getScreenCTM().inverse()); }
+    const g = { mode: null, ang: 0, last: null, cx: 0, cy: 0 };
+    svg.addEventListener("pointerdown", (e) => {
+      if (S.over) return;
+      const p = toSvg(e), [rx, ry] = px(ROSE);
+      if (Math.hypot(p.x - rx, p.y - ry) < ROSE.r * NM + 16) {
+        if (S.laid.some(Boolean)) { S.msg = "The plot is pencilled in. Erase it to lay a new heading."; render(); return; }
+        g.mode = "rose"; svg.setPointerCapture?.(e.pointerId); setHeading(p); e.preventDefault(); return;
+      }
+      if (S.sel >= 0) { g.mode = "stir"; g.ang = 0; g.last = null; g.cx = p.x; g.cy = p.y; g.pts = 0; svg.setPointerCapture?.(e.pointerId); }
+    });
+    svg.addEventListener("pointermove", (e) => {
+      if (!g.mode) return;
+      const p = toSvg(e);
+      if (g.mode === "rose") { setHeading(p); return; }
+      g.pts++; g.cx += (p.x - g.cx) / Math.min(g.pts, 20); g.cy += (p.y - g.cy) / Math.min(g.pts, 20);
+      if (Math.hypot(p.x - g.cx, p.y - g.cy) < 10) return;
+      const a = Math.atan2(p.y - g.cy, p.x - g.cx);
+      if (g.last != null) { let d = a - g.last; if (d > Math.PI) d -= 2 * Math.PI; if (d < -Math.PI) d += 2 * Math.PI; g.ang += d; }
+      g.last = a;
+      if (Math.abs(g.ang) >= Math.PI / 2) { stirBy(S.sel, g.ang > 0 ? 5 : -5); g.ang = 0; render(); }
+    });
+    const end = () => { g.mode = null; };
+    svg.addEventListener("pointerup", end); svg.addEventListener("pointercancel", end);
+    svg.addEventListener("dragover", (e) => e.preventDefault());
+    svg.addEventListener("drop", (e) => { e.preventDefault(); const h = +e.dataTransfer.getData("text/plain"); if (!Number.isNaN(h)) layTide(h); });
+    function setHeading(p) {
+      const [rx, ry] = px(ROSE);
+      const d = (Math.round((Math.atan2(p.x - rx, -(p.y - ry)) * 180) / Math.PI) + 360) % 360;
+      if (d !== S.heading) { S.heading = d; render(); }
+    }
+    const onKey = (e) => {
+      if (how.isConnected || S.over) return;
+      if (e.target.closest && e.target.closest("button")) return;
+      const step = e.shiftKey ? 10 : 1;
+      if (e.key === "ArrowLeft") { act(`h-${step}`); e.preventDefault(); }
+      if (e.key === "ArrowRight") { act(`h+${step}`); e.preventDefault(); }
+      if (e.key === "ArrowUp") { act("t+"); e.preventDefault(); }
+      if (e.key === "ArrowDown") { act("t-"); e.preventDefault(); }
+      if ((e.key === "r" || e.key === "R") && back) { act("rev"); }
+      if ((e.key === "d" || e.key === "D") && strait) { act("lead"); }
+      if (e.key === "t") { const next = Array.from({ length: hours() }, (_, k) => k).find((k) => !S.laid[k]); if (next !== undefined) layTide(next); }
+      if (e.key === "[" && S.sel >= 0) { stirBy(S.sel, -5); render(); }
+      if (e.key === "]" && S.sel >= 0) { stirBy(S.sel, 5); render(); }
+      if (/^[1-6]$/.test(e.key) && S.laid[+e.key - 1]) { S.sel = S.sel === +e.key - 1 ? -1 : +e.key - 1; render(); }
+      if (e.key === "a" && S.laid.some(Boolean)) act("check");
+      if (e.key === "m" && allLaid() && !S.marked) act("mark");
+    };
+    addEventListener("keydown", onKey);
+    render();
+    const b = how.querySelector("button");
+    let unnote = null;
+    b.addEventListener("click", () => {
+      how.remove();
+      S.msg = teach ? "Lay a heading on the rose. The tide will set you south-east; aim off." : strait ? "East through the Strait. The tide sets you south-east for two hours, then turns." : "Start at the skiff. Which way did she come from?";
+      beat(teach ? "Six in the morning, the last buoy astern. The princess holds the lamp over the sheet; the boat holds its breath." : strait ? "Six in the evening, and the lights coming on in sequence along the north shore. Corran trims the fifth." : "Nine in the morning. The skiff is alongside, empty, her log-line still streaming. The sheet is turned to a clean corner.", false);
+      render();
+      if (sung) unnote = note(w, "Because the Gullwife crew sing for you (Liar's Tide), a crew is singing in sight: the tide table's cone of error is half as wide.", 9000, true);
+    });
+    b.focus();
+    return { unmount() { removeEventListener("keydown", onKey); S.over = true; if (unnote) unnote(); } };
+  },
+};

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160" role="img" aria-labelledby="bead-laughs-t bead-laughs-d">
+<title id="bead-laughs-t">Song bead: the one who laughs</title>
+<desc id="bead-laughs-d">A song bead in the timbre of the one who laughs (bright, ringing: ripples spread from it), threaded on its strand against the marrow dark; its height on the five faint lines is its pitch.</desc>
+<defs><linearGradient id="bead-laughs-lg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0e1a2e"/><stop offset="100%" stop-color="#1E3557"/></linearGradient><filter id="bead-laughs-grain2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="786"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.2 0"/></filter><radialGradient id="bead-laughs-rg3" cx="0.38" cy="0.34" r="0.8"><stop offset="0%" stop-color="#fde3a0" stop-opacity="1"/><stop offset="55%" stop-color="#F2B544" stop-opacity="1"/><stop offset="100%" stop-color="#a8641a" stop-opacity="1"/></radialGradient></defs>
+<rect x="0" y="0" width="160" height="160" fill="url(#bead-laughs-lg1)"/>
+<rect x="0" y="0" width="160" height="160" fill="none"/>
+<rect x="0" y="0" width="160" height="160" filter="url(#bead-laughs-grain2)"/>
+<path d="M54.6,56.5a0.8,0.8 0 1,0 1.6,0a0.8,0.8 0 1,0 -1.6,0M146.2,73.3a1.1,1.1 0 1,0 2.2,0a1.1,1.1 0 1,0 -2.2,0M4.8,60.4a0.9,0.9 0 1,0 1.8,0a0.9,0.9 0 1,0 -1.8,0M130.8,109.5a0.7,0.7 0 1,0 1.3,0a0.7,0.7 0 1,0 -1.3,0M10.9,96.8a0.5,0.5 0 1,0 1.1,0a0.5,0.5 0 1,0 -1.1,0M158.8,28a1.1,1.1 0 1,0 2.2,0a1.1,1.1 0 1,0 -2.2,0M136.1,36.8a0.7,0.7 0 1,0 1.4,0a0.7,0.7 0 1,0 -1.4,0M112.7,123.9a0.6,0.6 0 1,0 1.1,0a0.6,0.6 0 1,0 -1.1,0M80.1,115a0.7,0.7 0 1,0 1.4,0a0.7,0.7 0 1,0 -1.4,0M17.1,5.7a0.7,0.7 0 1,0 1.3,0a0.7,0.7 0 1,0 -1.3,0M35.8,119.7a0.8,0.8 0 1,0 1.6,0a0.8,0.8 0 1,0 -1.6,0M66.3,86.6a0.5,0.5 0 1,0 0.9,0a0.5,0.5 0 1,0 -0.9,0M37.8,107.8a0.7,0.7 0 1,0 1.4,0a0.7,0.7 0 1,0 -1.4,0M77.3,100.3a0.6,0.6 0 1,0 1.1,0a0.6,0.6 0 1,0 -1.1,0M43.2,33.8a0.8,0.8 0 1,0 1.7,0a0.8,0.8 0 1,0 -1.7,0M68.1,32.6a1.2,1.2 0 1,0 2.4,0a1.2,1.2 0 1,0 -2.4,0M62.3,50.3a1.2,1.2 0 1,0 2.4,0a1.2,1.2 0 1,0 -2.4,0M59.4,128.2a0.5,0.5 0 1,0 1.1,0a0.5,0.5 0 1,0 -1.1,0M100.7,79.6a1.2,1.2 0 1,0 2.4,0a1.2,1.2 0 1,0 -2.4,0M38.6,99.2a0.9,0.9 0 1,0 1.9,0a0.9,0.9 0 1,0 -1.9,0M64.4,126.7a0.8,0.8 0 1,0 1.7,0a0.8,0.8 0 1,0 -1.7,0M33.2,149.1a1.1,1.1 0 1,0 2.2,0a1.1,1.1 0 1,0 -2.2,0M49.4,156.8a0.5,0.5 0 1,0 1.1,0a0.5,0.5 0 1,0 -1.1,0M30.9,136.8a1.3,1.3 0 1,0 2.6,0a1.3,1.3 0 1,0 -2.6,0M29.7,32.9a0.5,0.5 0 1,0 1,0a0.5,0.5 0 1,0 -1,0M109.7,75.3a1,1 0 1,0 2,0a1,1 0 1,0 -2,0M54.5,85.1a0.6,0.6 0 1,0 1.2,0a0.6,0.6 0 1,0 -1.2,0M11.3,6.3a1.1,1.1 0 1,0 2.3,0a1.1,1.1 0 1,0 -2.3,0" fill="#7FB2E0" opacity="0.3"/>
+<line x1="8" y1="25.6" x2="152" y2="25.6" stroke="#7FB2E0" stroke-width="0.8" opacity="0.2" stroke-dasharray="2 6"/>
+<line x1="8" y1="52.8" x2="152" y2="52.8" stroke="#7FB2E0" stroke-width="0.8" opacity="0.2" stroke-dasharray="2 6"/>
+<line x1="8" y1="80" x2="152" y2="80" stroke="#7FB2E0" stroke-width="0.8" opacity="0.2" stroke-dasharray="2 6"/>
+<line x1="8" y1="107.2" x2="152" y2="107.2" stroke="#7FB2E0" stroke-width="0.8" opacity="0.2" stroke-dasharray="2 6"/>
+<line x1="8" y1="134.4" x2="152" y2="134.4" stroke="#7FB2E0" stroke-width="0.8" opacity="0.2" stroke-dasharray="2 6"/>
+<circle cx="80" cy="58" r="36" fill="none" stroke="#F2B544" stroke-width="2.4" opacity="0.6" stroke-dasharray="14 6"/>
+<circle cx="80" cy="58" r="48" fill="none" stroke="#F2B544" stroke-width="1.9" opacity="0.4" stroke-dasharray="20 8"/>
+<circle cx="80" cy="58" r="60" fill="none" stroke="#F2B544" stroke-width="1.4" opacity="0.3" stroke-dasharray="26 10"/>
+<path d="M0,96 Q40.0,83.0 57,58" fill="none" stroke="#E8DCC4" stroke-width="2.4" stroke-linecap="round" opacity="0.8"/>
+<path d="M103,58 Q120.0,58.0 160,70" fill="none" stroke="#E8DCC4" stroke-width="2.4" stroke-linecap="round" opacity="0.8"/>
+<circle cx="80" cy="58" r="25" fill="url(#bead-laughs-rg3)" stroke="#17110f" stroke-width="3"/>
+<ellipse cx="71.2" cy="48" rx="7.5" ry="4.5" fill="#fff" opacity="0.8" transform="rotate(-30 71.25 48.0)"/>
+<circle cx="58" cy="58" r="2.4" fill="#17110f"/>
+<circle cx="102" cy="58" r="2.4" fill="#17110f"/>
+<path d="M129.2,138 Q136,147.9 142.8,138" fill="none" stroke="#F2B544" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M131.5,134.8 l-1.6,-4" fill="none" stroke="#F2B544" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M136,134.8 l0,-4" fill="none" stroke="#F2B544" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M140.5,134.8 l1.6,-4" fill="none" stroke="#F2B544" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

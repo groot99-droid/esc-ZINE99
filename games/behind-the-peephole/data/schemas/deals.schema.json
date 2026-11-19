@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "deals.json (Behind the Peephole)",
+  "description": "The Night Patience deals, nights two to seven: six tableau columns, the stock, the two slipped message cards and where they sit, and a winning line that proves each deal can be won within its passes.",
+  "type": "object",
+  "required": ["notation", "deck_size", "columns", "deals"],
+  "$defs": {
+    "card": {"type": "string", "pattern": "^[A23456789TJQK][SHDC]$"}
+  },
+  "properties": {
+    "notation": {"type": "object", "additionalProperties": {"type": "string"}},
+    "deck_size": {"const": 52},
+    "columns": {"const": 6},
+    "deals": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "object",
+      "required": ["night", "scene", "passes", "columns", "stock", "slipped", "solution"],
+      "additionalProperties": false,
+      "properties": {
+        "night": {"type": "integer", "minimum": 2, "maximum": 7},
+        "scene": {"type": "string"},
+        "passes": {"type": ["integer", "null"], "minimum": 1, "description": "Passes through the stock; null is unlimited."},
+        "max_card_moves": {"type": "integer", "description": "The solution must win in at most this many card moves."},
+        "columns": {"type": "array", "minItems": 6, "maxItems": 6,
+          "items": {"type": "array", "items": {"$ref": "#/$defs/card"}, "minItems": 1, "maxItems": 6}},
+        "stock": {"type": "array", "items": {"$ref": "#/$defs/card"}, "minItems": 31, "maxItems": 31},
+        "slipped": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "object",
+          "required": ["card", "text", "depth"], "additionalProperties": false,
+          "properties": {
+            "card": {"type": "integer", "minimum": 1, "maximum": 12},
+            "text": {"type": "string"},
+            "depth": {"enum": ["stock", "column6"]},
+            "stock_position": {"type": "integer", "minimum": 6, "maximum": 10},
+            "position": {"type": "string"},
+            "sets": {"type": "string", "description": "A flag from flags.json set when the card is read."}}}},
+        "solution": {"type": "array", "items": {"type": "string", "pattern": "^(D|R|W>F|W>[1-6]|[1-6]>F|[1-6]>[1-6]x[0-9]+)$"}}}}}
+  }
+}

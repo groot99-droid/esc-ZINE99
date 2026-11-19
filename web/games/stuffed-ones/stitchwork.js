@@ -1,0 +1,704 @@
+// The Stuffed Ones: Stitchwork (1D, crafting), drawn as a cross-stitch pattern chart.
+//
+// DESIGN.md section 11 "Stitchwork", appearance 3 (`c12_stitch_mend`): a whip stitch on a torn
+// seam, 10 stitches, 60 seconds of dawn before Mabel arrives. Each stitch is three inputs: press at
+// the entry point (in), drag to the exit point (out), hold to pull and let go while the tension
+// needle is in the green band. Accuracy: within 6 px perfect, within 14 px good (scaled to the
+// chart), otherwise off. Tension: in band good, under loose, over tears (redo, 2 s lost).
+// Score per stitch: perfect and in band 1.0, good 0.7, loose 0.4, off 0.2. Seam quality: Strong
+// 85 percent or more, Fair 60-84, Poor under 60.
+//
+// Actions: Stitch (in, out, pull); Steady, from section 12's tremors (from the fourth stitch the
+// pack's pulse beats through the thread; a Steady inside its window holds the needle, a missed
+// beat drifts the next point or jerks the pull); Unpick (twice, 3 s each) takes out the last stitch
+// to sew it again. Phases: calm (stitches 1-3), the pulse (4-6), dawn (7-10 or under 25 s): the
+// pull runs faster. Narrative lines are written for the game (listed in the refine additions).
+//
+// The cloth under the chart, the pattern card, the Steady mark and the needle are the game's art
+// (api.art); the counted chart itself is still drawn cell by cell, since it is the play.
+//
+// Phase 2 (DESIGN.md section 21, built 2026-11-16): three stages. Teach: Marcus's strap
+// (`a1_stitch_strap`), eight running stitches and no clock; a Strong strap keeps his map, which the
+// Labyrinth's last stage reads (api.shared "strap"). Test: Lila's seam before dawn on the pulse, with
+// thread drawn from one of your own seams, and the ripper: Ruth's five tightening stitches come out
+// last sewn first, or the cloth tears. Twist: Jamie's Seam (`c13_jamies_seam`): stitching is moving.
+// A guest's eye runs along the top of the chart and the needle may travel only while it is shut. Ten
+// stitches, or you may put the needle down and leave him open; the game does not say which is kinder.
+//
+// Phase 3 (DESIGN.md section 21, built 2026-11-16): Lila's seam is the design's ten whip stitches
+// (appearance 3), with 75 s: 60 for the seam and 15 for the ripper. When Ruth's five stitches come out
+// in order, the lining under them is tissue: Ruth's third pattern, with Mabel's pencil key to three of
+// Ruth's marks (mother, cut, unpick). They cross into the glossary, and the selvage reads more of itself.
+import { artKit, FACE } from "./art-kit.js";
+import { runStages, stagePicker } from "./stages.js";
+const PRE = "stuffed-ones-stitchwork-";
+const C = { moss: "#7d8a5a", mossL: "#a3ad83", rust: "#a5553a", rustL: "#c98a6e", sky: "#8fa9bf", cream: "#efe5cf", bone: "#f6f1e4",
+  ink: "#2a211b", paper: "#f4efe3", amber: "#e39a2d", red: "#b8322a", night: "#56627a", band: "#8e9f68", green: "#4f6b2c" };
+const COLS = 40, ROWS = 28, TEAR = 14;
+let N = 10, SP = 3.4, POINTS = [];
+function setN(n) { N = n; SP = 34 / n; POINTS = Array.from({ length: n }, (_, i) => ({ inX: Math.round(4 + SP * i), inY: TEAR - 3, outX: Math.round(5.6 + SP * i), outY: TEAR + 3 })); }
+const BLURBS = ["Marcus's strap: eight stitches, no clock.", "Lila's seam on the pulse, your own thread, and the ripper.", "Jamie's Seam: sew only while the eye is shut."];
+const STAGE = [
+  { n: 8, time: 0, pulse: false, eye: false, ground: "ground-webbing", chart: "chart-1-running", head: "MARCUS'S STRAP", card: "CARD 1" },
+  { n: 10, time: 75, pulse: true, eye: false, ground: "ground-torn-seam", chart: "chart-3-whip", head: "LILA'S SEAM", card: "CARD 3" },
+  { n: 10, time: 150, pulse: false, eye: true, ground: "ground-torn-seam", chart: "chart-5-jamies-seam", head: "JAMIE'S SEAM", card: "CARD 5" },
+];
+const MY_SEAMS = ["head", "chest", "left arm", "right arm", "left leg", "right leg"];
+// the ripper: Ruth's five stitches at these columns; RIP_ORDER[k] is where the (k + 1)th was sewn
+const RIP_X = [23, 26.2, 29.4, 32.6, 35.8], RIP_Y = TEAR + 6, RIP_ORDER = [2, 0, 3, 1, 4];
+const EYE_OPEN = 2.0, EYE_WARN = 0.9, SEEN_MAX = 3;
+const BAND = [0.56, 0.76];
+const PULSE_EVERY = 4, PULSE_WIN = 0.9, UNPICKS = 2;
+
+function kit() {
+  const offs = [], timers = new Set(); let raf = 0;
+  return {
+    on(t, ev, fn, o) { t.addEventListener(ev, fn, o); offs.push(() => t.removeEventListener(ev, fn, o)); },
+    after(ms, fn) { const id = setTimeout(() => { timers.delete(id); fn(); }, ms); timers.add(id); return id; },
+    frame(fn) { cancelAnimationFrame(raf); raf = requestAnimationFrame(fn); },
+    dispose() { cancelAnimationFrame(raf); timers.forEach(clearTimeout); offs.forEach((f) => f()); },
+  };
+}
+function hash(x, y) { let h = (x * 374761393 + y * 668265263) >>> 0; h = (h ^ (h >>> 13)) * 1274126177 >>> 0; return (h & 0xffff) / 65536; }
+
+export default { mount(root, api) { return runStages(root, api, run, BLURBS); } };
+
+function run(root, api, flow) {
+  {
+    const stage = flow.stage, ST = STAGE[stage];
+    setN(ST.n);
+    const K = kit();
+    const A = artKit(api);
+    const losses = api.store.get("losses", 0);
+    const wrap = document.createElement("div");
+    wrap.className = PRE + "wrap";
+    wrap.tabIndex = 0;
+    const grid = `background-color:${C.bone};background-image:linear-gradient(rgba(42,33,27,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(42,33,27,.09) 1px,transparent 1px),linear-gradient(rgba(42,33,27,.22) 1px,transparent 1px),linear-gradient(90deg,rgba(42,33,27,.22) 1px,transparent 1px);background-size:12px 12px,12px 12px,120px 120px,120px 120px`;
+    wrap.innerHTML = `<style>
+.${PRE}wrap{position:absolute;inset:0;background:${C.paper};color:${C.ink};font-family:Karla,Arial,sans-serif;overflow:hidden;touch-action:none;outline:none}
+.${PRE}wrap canvas{position:absolute;inset:0;width:100%;height:100%;display:block;cursor:crosshair}
+.${PRE}acts{position:absolute;display:flex;gap:8px;z-index:2}
+.${PRE}acts button{font:600 14px Karla,Arial,sans-serif;background:${C.bone};color:${C.ink};border:1.5px solid ${C.ink};padding:8px 12px;min-height:42px;cursor:pointer;display:flex;align-items:center;gap:8px}
+.${PRE}acts button i{font:600 12px ui-monospace,Menlo,monospace;font-style:normal;border:1px solid ${C.ink};padding:1px 5px;background:${C.paper}}
+.${PRE}acts button:hover:not(:disabled){background:${C.cream}}
+.${PRE}acts button:disabled{opacity:.4;cursor:not-allowed}
+.${PRE}acts button[hidden]{display:none}
+.${PRE}acts button.${PRE}hot{background:${C.red};color:${C.bone};border-color:${C.red}}
+.${PRE}beat{position:absolute;left:50%;bottom:70px;transform:translateX(-50%);width:min(520px,calc(100% - 32px));box-sizing:border-box;${grid};border:1.5px solid ${C.ink};box-shadow:3px 3px 0 ${C.moss};padding:10px 14px 10px 44px;font:15px/1.4 Karla,Arial,sans-serif;z-index:3;transition:opacity .4s;pointer-events:none}
+.${PRE}beat::before{content:"";position:absolute;left:12px;top:12px;width:18px;height:18px;background:${C.red};box-shadow:inset 0 0 0 3px ${C.bone}}
+.${PRE}beat b{font:400 17px 'IM Fell English',Georgia,serif;display:block;margin-bottom:2px}
+.${PRE}intro{position:absolute;inset:0;display:grid;place-items:center;background:rgba(244,239,227,.72);z-index:4;padding:16px;overflow:auto}
+.${PRE}card{width:min(470px,100%);${grid};border:2px solid ${C.ink};box-shadow:5px 5px 0 ${C.moss};padding:0 0 16px;position:relative}
+.${PRE}card header{display:flex;justify-content:space-between;font:600 12px ui-monospace,Menlo,monospace;letter-spacing:.08em;background:${C.ink};color:${C.bone};padding:7px 14px}
+.${PRE}card h2{margin:14px 18px 2px;font:400 34px/1 'IM Fell English',Georgia,serif}
+.${PRE}card .${PRE}goal{margin:6px 18px 12px;font:15px/1.45 Karla,Arial,sans-serif}
+.${PRE}key{margin:0 18px;border-top:1.5px solid ${C.ink};border-bottom:1.5px solid ${C.ink};padding:6px 0}
+.${PRE}key div{display:grid;grid-template-columns:26px 1fr auto;gap:10px;align-items:center;font:15px Karla,Arial,sans-serif;padding:4px 0}
+.${PRE}key span.${PRE}sym{width:20px;height:20px;border:1.5px solid ${C.ink};display:grid;place-items:center;font:700 12px ui-monospace,monospace}
+.${PRE}key kbd{font:600 12px ui-monospace,Menlo,monospace;border:1px solid ${C.ink};padding:1px 6px;background:${C.bone}}
+.${PRE}key em{grid-column:2/4;font:italic 14px 'IM Fell English',Georgia,serif;opacity:.8;margin-top:-4px}
+.${PRE}choose{display:flex;flex-wrap:wrap;gap:8px;margin:12px 18px 0}
+.${PRE}pickhost{color:${C.ink}}
+.${PRE}choose button{font:600 15px Karla,Arial,sans-serif;background:${C.ink};color:${C.bone};border:0;padding:10px 16px;cursor:pointer;min-height:44px}
+.${PRE}choose button+button{background:${C.bone};color:${C.ink};box-shadow:inset 0 0 0 1.5px ${C.ink}}
+.${PRE}choose button:focus-visible{outline:3px solid ${C.red};outline-offset:2px}
+.${PRE}card canvas{position:static;width:auto;height:auto}
+.${PRE}card .${PRE}pat{float:right;margin:12px 18px 6px 12px;border:1px solid ${C.ink};box-shadow:3px 3px 0 ${C.moss}}
+.${PRE}choose button{display:flex;align-items:center;gap:8px}
+.${PRE}card label{font:14px Karla,Arial,sans-serif;display:flex;gap:8px;align-items:center;margin:12px 18px 0}
+.${PRE}card .${PRE}kind{margin:10px 18px 0;font:italic 14px 'IM Fell English',Georgia,serif;color:${C.red}}
+</style><canvas aria-label="A cross-stitch chart of a torn seam with numbered entry points"></canvas>
+<div class="${PRE}acts"><button type="button" data-a="steady" hidden>Steady <i>S</i></button><button type="button" data-a="unpick" hidden>Unpick <i>U</i></button><button type="button" data-a="leave" hidden>Leave him open <i>L</i></button></div>
+<div class="${PRE}beat" aria-live="polite" style="opacity:0"></div>`;
+    root.appendChild(wrap);
+    const cv = wrap.querySelector("canvas"), g = cv.getContext("2d");
+    const acts = wrap.querySelector("." + PRE + "acts");
+    const steadyBtn = acts.querySelector('[data-a="steady"]'), unpickBtn = acts.querySelector('[data-a="unpick"]'), leaveBtn = acts.querySelector('[data-a="leave"]');
+    const beatEl = wrap.querySelector("." + PRE + "beat");
+
+    let started = false, over = false, whose = "lila", speed = 1, gentle = false;
+    let timeLeft = 60, idle = 0, lockT = 0;
+    let idx = 0, phase = "in", inAcc = null, outAcc = null, tension = 0, pulling = false;
+    let ptr = null;
+    let pulseT = 0, pulseOn = false, pulseLive = false, steadied = false, drift = [0, 0], drifts = 0, steadies = 0;
+    let unpicks = UNPICKS, dawnSaid = false, mabelSaid = false;
+    let mySeam = "left arm", rip = null, ripCur = 4;
+    const eye = { s: "shut", t: 5.5, n: 0, caught: false, at: null };
+    let seen = 0;
+    const scores = [], pops = [];
+    let L = null, vx = 0, beatTimer = 0;
+
+    // ---- narrative beats --------------------------------------------------------------------
+    function beat(title, text, ms = 4200) {
+      beatEl.innerHTML = "";
+      const b = document.createElement("b"); b.textContent = title; beatEl.appendChild(b);
+      beatEl.appendChild(document.createTextNode(text));
+      beatEl.style.opacity = 1;
+      clearTimeout(beatTimer); beatTimer = K.after(ms, () => (beatEl.style.opacity = 0));
+    }
+    function pop(text, x, y, col) { pops.push({ text, x, y, col, t0: performance.now() }); }
+
+    function layout() {
+      const W = wrap.clientWidth, H = wrap.clientHeight, wide = W >= 720;
+      let c, gx, gy, VC, R0, R1, px, py, pw, ph;
+      if (wide) {
+        VC = COLS; R0 = 0; R1 = ROWS;
+        const pnl = Math.min(300, W * 0.3);
+        const avW = W - pnl - 70, avH = H - 140 - (ST.eye ? 24 : 0);
+        c = Math.max(6, Math.min(avW / COLS, avH / ROWS));
+        gx = 44 + (avW - c * COLS) / 2; gy = ST.eye ? 110 : 86;
+        px = W - pnl - 14; py = 86; pw = pnl; ph = H - 100;
+      } else {
+        VC = 18; R0 = 7; R1 = 21;
+        c = Math.max(10, Math.min((W - 52) / VC, (H - 330) / (R1 - R0)));
+        gx = 36 + (W - 52 - c * VC) / 2; gy = 112;
+        px = 14; py = gy + (R1 - R0) * c + 16; pw = W - 28; ph = H - py - 66;
+      }
+      L = { W, H, wide, c, gx, gy, VC, R0, R1, px, py, pw, ph };
+      acts.style.left = wide ? px + "px" : "14px";
+      acts.style.right = wide ? "auto" : "14px";
+      acts.style.bottom = "14px";
+      acts.style.justifyContent = wide ? "flex-start" : "center";
+      if (!wide) vx = rip ? COLS - VC - 1 : Math.max(0, Math.min(COLS - VC, POINTS[Math.min(idx, N - 1)].inX - 5));
+    }
+    const toScr = (x, y) => [L.gx + (x - vx) * L.c, L.gy + (y - L.R0) * L.c];
+
+    // ---- the chart --------------------------------------------------------------------------
+    function cellSym(x, y) {
+      const torn = Math.abs(y + 0.5 - TEAR) < 1.1 + hash(x, 99) * 1.2;
+      if (torn) return "torn";
+      if (y < TEAR) { if (y >= TEAR - 2) return "lining"; return (x % 8 < 2 && y % 6 < 2) ? "rust" : "moss"; }
+      if (y <= TEAR + 1) return "lining";
+      return (x + y) % 5 === 0 ? "sky" : "rust";
+    }
+    function drawCell(sx, sy, kind, c, x, y, q = g) {
+      const fill = { moss: C.mossL, rust: C.rustL, sky: C.rustL, lining: C.cream, torn: "#fbf8f1" }[kind];
+      q.fillStyle = fill; q.fillRect(sx, sy, c, c);
+      if (c < 7) return;
+      q.strokeStyle = "rgba(42,33,27,.55)"; q.fillStyle = "rgba(42,33,27,.55)"; q.lineWidth = 1;
+      const m = c * 0.28;
+      if (kind === "moss") { q.beginPath(); q.moveTo(sx + m, sy + m); q.lineTo(sx + c - m, sy + c - m); q.moveTo(sx + c - m, sy + m); q.lineTo(sx + m, sy + c - m); q.stroke(); }
+      else if (kind === "rust") { q.beginPath(); q.arc(sx + c / 2, sy + c / 2, c * 0.13, 0, 7); q.fill(); }
+      else if (kind === "sky") { q.fillStyle = C.sky; q.beginPath(); q.moveTo(sx + c / 2, sy + m); q.lineTo(sx + c - m, sy + c - m); q.lineTo(sx + m, sy + c - m); q.closePath(); q.fill(); }
+      else if (kind === "lining") { q.beginPath(); q.moveTo(sx + c - m, sy + m); q.lineTo(sx + m, sy + c - m); q.stroke(); }
+      else if (kind === "torn" && hash(x, y) < 0.35) { q.fillStyle = "rgba(107,74,50,.7)"; q.beginPath(); q.moveTo(sx + c / 2, sy + m); q.lineTo(sx + c - m, sy + c / 2); q.lineTo(sx + c / 2, sy + c - m); q.lineTo(sx + m, sy + c / 2); q.closePath(); q.fill(); }
+    }
+    // the counted cloth never changes, so it is drawn once per layout and blitted each frame
+    let chartTex = null;
+    function buildChart(c) {
+      const dpr = Math.min(2, devicePixelRatio || 1), cv2 = document.createElement("canvas");
+      cv2.width = Math.round(COLS * c * dpr); cv2.height = Math.round(ROWS * c * dpr);
+      const q = cv2.getContext("2d"); q.scale(dpr, dpr);
+      for (let y = 0; y < ROWS; y++) for (let x = 0; x < COLS; x++) drawCell(x * c, y * c, cellSym(x, y), c, x, y, q);
+      return { cv: cv2, c };
+    }
+    function stitchLine(a, b, w, col) {
+      g.strokeStyle = "rgba(42,33,27,.6)"; g.lineWidth = w + 2.2; g.lineCap = "round";
+      g.beginPath(); g.moveTo(a[0], a[1]); g.lineTo(b[0], b[1]); g.stroke();
+      g.strokeStyle = col; g.lineWidth = w; g.beginPath(); g.moveTo(a[0], a[1]); g.lineTo(b[0], b[1]); g.stroke();
+    }
+    function marker(p, n, style, pulse, hover) {
+      const r = Math.max(9, L.c * 0.6);
+      if (pulse) { g.strokeStyle = C.red; g.lineWidth = 2; g.globalAlpha = 0.7; g.beginPath(); g.arc(p[0], p[1], r + 4 + pulse * 10, 0, 7); g.stroke(); g.globalAlpha = 1; }
+      if (hover) { g.strokeStyle = C.green; g.lineWidth = 3; g.beginPath(); g.arc(p[0], p[1], r + 5, 0, 7); g.stroke(); }
+      g.fillStyle = style === "in" ? C.ink : C.bone; g.strokeStyle = style === "in" ? C.red : C.ink; g.lineWidth = 2;
+      if (style === "out") g.setLineDash([3, 2]);
+      g.beginPath(); g.arc(p[0], p[1], r, 0, 7); g.fill(); g.stroke(); g.setLineDash([]);
+      g.fillStyle = style === "in" ? C.bone : C.ink; g.font = `700 ${Math.round(r * 1.05)}px ui-monospace,Menlo,monospace`; g.textAlign = "center"; g.textBaseline = "middle";
+      g.fillText(n, p[0], p[1] + 0.5);
+    }
+    const target = (which) => { const p = POINTS[idx]; return which === "in" ? [p.inX + drift[0], p.inY + drift[1]] : [p.outX + drift[0], p.outY + drift[1]]; };
+
+    function draw(now) {
+      if (!L) layout();
+      const { W, H, c, VC, R0, R1, wide } = L, dpr = Math.min(2, devicePixelRatio || 1);
+      if (cv.width !== Math.round(W * dpr) || cv.height !== Math.round(H * dpr)) { cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr); }
+      g.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const total = (ST.time || 60) * speed, dawn = ST.time ? Math.max(0, Math.min(1, 1 - timeLeft / total)) : 0;
+      g.fillStyle = C.paper; g.fillRect(0, 0, W, H);
+      // the cloth itself, under the lamp: the friend's torn seam, or your own felt
+      if (A.draw(g, ST.ground, 0, 0, W, H, { cover: true, key: "bg" })) {
+        g.fillStyle = "rgba(244,239,227,.93)";
+        g.fillRect(L.gx - 34, L.gy - 24, VC * c + 46, (R1 - R0) * c + 34);
+        g.fillRect(L.px - 10, L.py - 14, L.pw + 20, wide ? L.ph - 44 : L.ph + 8);
+      }
+      // dawn growing over the paper: night blue-grey to warm light as Mabel nears
+      const gr = g.createLinearGradient(0, 0, W, 0);
+      gr.addColorStop(0, `rgba(86,98,122,${0.35 * (1 - dawn)})`); gr.addColorStop(1, `rgba(227,154,45,${0.36 * dawn})`);
+      g.fillStyle = gr; g.fillRect(0, 0, W, H);
+      // the dawn bar along the top: the pressure, always in view
+      const bx = 14, bw = W - 28, by = 14, bh = 30;
+      g.fillStyle = C.bone; g.fillRect(bx, by, bw, bh); g.strokeStyle = C.ink; g.lineWidth = 1.5; g.strokeRect(bx, by, bw, bh);
+      const cells = Math.floor(bw / 12);
+      for (let k = 0; k < cells; k++) {
+        const f = k / cells; if (f > dawn) break;
+        g.fillStyle = f > 0.75 ? C.red : f > 0.45 ? C.amber : C.night; g.fillRect(bx + 2 + k * 12, by + 4, 10, bh - 8);
+      }
+      const secs = Math.max(0, Math.ceil(timeLeft));
+      const warn = !!ST.time && timeLeft < 15 * speed;
+      g.font = `700 ${warn ? 16 : 14}px Karla,Arial,sans-serif`; g.textBaseline = "middle"; g.textAlign = "right";
+      const lbl = !ST.time ? "No hurry tonight" : `${ST.eye ? "They pick him up in" : "Mabel at the door in"} ${Math.floor(secs / 60)}:${String(secs % 60).padStart(2, "0")}`;
+      const lw = g.measureText(lbl).width + 16;
+      g.fillStyle = warn && !api.reducedMotion && Math.floor(now / 400) % 2 ? C.red : C.ink; g.fillRect(bx + bw - lw - 2, by + 2, lw, bh - 4);
+      g.fillStyle = C.bone; g.fillText(lbl, bx + bw - 10, by + bh / 2 + 1);
+      g.textAlign = "left"; g.font = "600 13px ui-monospace,Menlo,monospace";
+      if (bw - lw > 170) { const cap2 = !ST.time ? "THE FIRST EVENING · THE COUNTING GAME" : ST.eye ? "THE THIRD MORNING" : "NIGHT → DAWN"; const tw2 = g.measureText(cap2).width + 12; g.fillStyle = C.bone; g.fillRect(bx + 4, by + 5, tw2, bh - 10); g.fillStyle = C.ink; g.fillText(cap2, bx + 10, by + bh / 2 + 1); }
+
+      // grid cells in view
+      g.save(); g.beginPath(); g.rect(L.gx, L.gy, VC * c, (R1 - R0) * c); g.clip();
+      const x0 = Math.floor(vx), x1 = Math.min(COLS, Math.ceil(vx + VC));
+      if (!chartTex || chartTex.c !== c) chartTex = buildChart(c);
+      { const [sx, sy] = toScr(0, 0); g.drawImage(chartTex.cv, sx, sy, COLS * c, ROWS * c); }
+      // the open tear: a ragged dark gap the stitches close
+      g.fillStyle = "rgba(74,50,34,.85)";
+      g.beginPath();
+      const open = (x) => 1 - Math.min(1, Math.max(0, scores.length * SP + 4 - x) / 3) * 0.85;
+      for (let x = 0; x <= COLS; x++) { const [sx, sy] = toScr(x, TEAR + 0.5 - (0.35 + hash(x, 7) * 0.5) * open(x)); x ? g.lineTo(sx, sy) : g.moveTo(sx, sy); }
+      for (let x = COLS; x >= 0; x--) { const fill = 1 - open(x); const [sx, sy] = toScr(x, TEAR + 0.5 + (0.35 + hash(x, 11) * 0.5) * (1 - fill)); g.lineTo(sx, sy); }
+      g.closePath(); g.fill();
+      // the Aida grid, bold every 10
+      g.lineWidth = 1;
+      for (let x = x0; x <= x1; x++) { const [sx] = toScr(x, 0); g.strokeStyle = x % 10 === 0 ? "rgba(42,33,27,.85)" : "rgba(42,33,27,.18)"; g.beginPath(); g.moveTo(sx + 0.5, L.gy); g.lineTo(sx + 0.5, L.gy + (R1 - R0) * c); g.stroke(); }
+      for (let y = R0; y <= R1; y++) { const [, sy] = toScr(0, y); g.strokeStyle = y % 10 === 0 ? "rgba(42,33,27,.85)" : "rgba(42,33,27,.18)"; g.beginPath(); g.moveTo(L.gx, sy + 0.5); g.lineTo(L.gx + VC * c, sy + 0.5); g.stroke(); }
+      // done stitches
+      for (let i = 0; i < scores.length; i++) {
+        const p = POINTS[i], s = scores[i];
+        stitchLine(toScr(p.inX, p.inY), toScr(p.outX, p.outY), Math.max(2.5, c * 0.32), s >= 0.7 ? C.bone : "#d9cfb8");
+        if (s < 0.7) { const [mx, my] = toScr((p.inX + p.outX) / 2, (p.inY + p.outY) / 2); g.fillStyle = C.red; g.font = `700 ${Math.max(12, c * 0.7)}px ui-monospace,monospace`; g.textAlign = "center"; g.textBaseline = "middle"; g.fillText(s === 0.4 ? "~" : "?", mx + c * 0.8, my); }
+        const q = POINTS[i + 1];
+        if (q && i < scores.length - 1) { g.strokeStyle = "rgba(246,241,228,.5)"; g.lineWidth = 1.2; g.setLineDash([3, 3]); const a = toScr(p.outX, p.outY), b = toScr(q.inX, q.inY); g.beginPath(); g.moveTo(a[0], a[1]); g.quadraticCurveTo((a[0] + b[0]) / 2 + c, (a[1] + b[1]) / 2, b[0], b[1]); g.stroke(); g.setLineDash([]); }
+      }
+      // the working stitch
+      if (!over && idx < N && started) {
+        const A = toScr(...target("in")), B = toScr(...target("out"));
+        const pulse = idle > 8 ? (api.reducedMotion ? 0.4 : (now / 600) % 1) : 0;
+        const nearIn = ptr && Math.hypot(ptr[0] - A[0], ptr[1] - A[1]) <= tol().good;
+        const nearOut = ptr && Math.hypot(ptr[0] - B[0], ptr[1] - B[1]) <= tol().good;
+        if (drift[0] || drift[1]) { const [ox, oy] = toScr(POINTS[idx].inX, POINTS[idx].inY); g.strokeStyle = "rgba(184,50,42,.6)"; g.setLineDash([2, 3]); g.lineWidth = 1.5; g.beginPath(); g.moveTo(ox, oy); g.lineTo(A[0], A[1]); g.stroke(); g.setLineDash([]); }
+        if (phase === "in") { marker(B, idx + 1, "out", 0, false); marker(A, idx + 1, "in", pulse, nearIn); }
+        else if (phase === "drag") { marker(B, idx + 1, "out", pulse, nearOut); if (ptr) stitchLine(A, ptr, Math.max(2, c * 0.22), C.bone); marker(A, idx + 1, "in", 0, false); }
+        else if (phase === "pull") {
+          const sag = (1 - tension) * c * 1.4;
+          g.strokeStyle = C.bone; g.lineWidth = Math.max(2, c * 0.24); g.lineCap = "round";
+          g.beginPath(); g.moveTo(A[0], A[1]); g.quadraticCurveTo((A[0] + B[0]) / 2 + sag, (A[1] + B[1]) / 2 + sag * 0.3, B[0], B[1]); g.stroke();
+        }
+      }
+      // the pulse: a ring that beats through the whole chart
+      if (pulseOn && !steadied) { const mw = Math.min(210, VC * c * 0.6); A.draw(g, "ui-steady-mark", L.gx + (VC * c - mw) / 2, L.gy + 8, mw, mw / 3); }
+      if (pulseOn) { g.strokeStyle = steadied ? C.green : C.red; g.lineWidth = steadied ? 6 : 4; g.globalAlpha = 0.55; g.strokeRect(L.gx + 2, L.gy + 2, VC * c - 4, (R1 - R0) * c - 4); g.globalAlpha = 1; }
+      if (rip) drawRip(now);
+      if (ST.eye && eye.s === "open" && started && !over) { g.strokeStyle = C.red; g.lineWidth = 6; g.globalAlpha = 0.6; g.strokeRect(L.gx + 3, L.gy + 3, VC * c - 6, (R1 - R0) * c - 6); g.globalAlpha = 1; }
+      g.restore();
+      if (ST.eye) drawEye(now);
+      g.strokeStyle = C.ink; g.lineWidth = 1.5; g.strokeRect(L.gx, L.gy, VC * c, (R1 - R0) * c);
+      // margin counts
+      g.fillStyle = C.ink; g.font = "12px ui-monospace,Menlo,monospace"; g.textAlign = "center"; g.textBaseline = "bottom";
+      for (let x = Math.ceil(vx / 10) * 10; x <= vx + VC; x += 10) g.fillText(String(x), L.gx + (x - vx) * c, L.gy - 4);
+      g.textAlign = "right"; g.textBaseline = "middle";
+      for (let y = Math.ceil(R0 / 10) * 10; y <= R1; y += 10) g.fillText(String(y), L.gx - 6, L.gy + (y - R0) * c);
+      g.fillStyle = C.red; g.fillText("▶", L.gx - 6, L.gy + (TEAR + 0.5 - R0) * c);
+      if (!wide && vx > 0.5) { g.fillStyle = C.ink; g.textAlign = "left"; g.fillText("◀", L.gx + 4, L.gy - 10); }
+      drawPanel(now);
+      // flourishes
+      for (let i = pops.length - 1; i >= 0; i--) {
+        const p = pops[i], a = (now - p.t0) / 1300;
+        if (a >= 1) { pops.splice(i, 1); continue; }
+        const rise = api.reducedMotion ? 0 : a * 26;
+        g.globalAlpha = 1 - a * a; g.font = "700 16px Karla,Arial,sans-serif"; g.textAlign = "center"; g.textBaseline = "middle";
+        const w = g.measureText(p.text).width + 14;
+        g.fillStyle = C.bone; g.fillRect(p.x - w / 2, p.y - rise - 12, w, 24); g.strokeStyle = p.col; g.lineWidth = 2; g.strokeRect(p.x - w / 2, p.y - rise - 12, w, 24);
+        g.fillStyle = p.col; g.fillText(p.text, p.x, p.y - rise + 1);
+        g.globalAlpha = 1;
+      }
+      K.frame(draw);
+    }
+
+    // Ruth's five tightening stitches on the seam you drew thread from, numbered as she sewed them
+    function drawRip(now) {
+      const c = L.c, a0 = toScr(RIP_X[0] - 2, RIP_Y), a1 = toScr(RIP_X[4] + 2, RIP_Y);
+      g.fillStyle = "rgba(246,241,228,.9)"; g.fillRect(a0[0] - 6, a0[1] - c * 2.6, a1[0] - a0[0] + 12, c * 4.4);
+      g.strokeStyle = C.ink; g.lineWidth = 1; g.setLineDash([4, 3]); g.strokeRect(a0[0] - 6, a0[1] - c * 2.6, a1[0] - a0[0] + 12, c * 4.4); g.setLineDash([]);
+      g.strokeStyle = "rgba(42,33,27,.7)"; g.lineWidth = 2; g.beginPath(); g.moveTo(a0[0], a0[1]); g.lineTo(a1[0], a1[1]); g.stroke();
+      RIP_ORDER.forEach((pos, k) => {
+        const [x, y] = toScr(RIP_X[pos], RIP_Y), gone = rip.cut.includes(k);
+        if (gone) { g.strokeStyle = "rgba(184,50,42,.55)"; g.lineWidth = 1.5; g.beginPath(); g.moveTo(x - 3, y - c * 0.9); g.lineTo(x - 5, y - c * 0.3); g.moveTo(x + 3, y + c * 0.9); g.lineTo(x + 5, y + c * 0.3); g.stroke(); }
+        else stitchLine([x - c * 0.25, y - c * 1.1], [x + c * 0.25, y + c * 1.1], Math.max(3, c * 0.34), C.red);
+        const r = Math.max(9, c * 0.55), hot = !gone && ripCur === k && kbRip;
+        g.fillStyle = gone ? "rgba(42,33,27,.25)" : C.ink; g.beginPath(); g.arc(x, y - c * 1.9, r, 0, 7); g.fill();
+        if (hot) { g.strokeStyle = C.green; g.lineWidth = 3; g.beginPath(); g.arc(x, y - c * 1.9, r + 4, 0, 7); g.stroke(); }
+        g.fillStyle = C.bone; g.font = `700 ${Math.round(r * 1.1)}px ui-monospace,Menlo,monospace`; g.textAlign = "center"; g.textBaseline = "middle"; g.fillText(String(k + 1), x, y - c * 1.9 + 0.5);
+      });
+      g.fillStyle = C.ink; g.font = "700 12px ui-monospace,Menlo,monospace"; g.textAlign = "left"; g.textBaseline = "top";
+      g.fillText(`RUTH'S STITCHES · YOUR ${mySeam.toUpperCase()}`, a0[0], a0[1] + c * 1.25);
+    }
+    // the eye strip along the top of the chart: the needle may travel only while it is shut
+    function drawEye(now) {
+      const x = L.gx, w = L.VC * L.c, y = L.gy - 42, h = 24, open = eye.s === "open", warn = eye.s === "warn";
+      g.fillStyle = open ? C.red : warn ? C.amber : C.bone; g.fillRect(x, y, w, h);
+      g.strokeStyle = C.ink; g.lineWidth = 1.5; g.strokeRect(x, y, w, h);
+      g.strokeStyle = open ? C.bone : C.ink; g.fillStyle = open ? C.bone : C.ink; g.lineWidth = 2; g.lineCap = "round";
+      const n = Math.max(3, Math.floor(w / 64));
+      for (let k = 0; k < n; k++) {
+        const ex = x + (k + 0.5) * (w / n), ey = y + h / 2;
+        g.beginPath();
+        if (open) { g.ellipse(ex, ey, 11, 6.5, 0, 0, 7); g.stroke(); g.beginPath(); g.arc(ex, ey, 3.4, 0, 7); g.fill(); }
+        else { g.arc(ex, ey - 5, 11, 0.35, Math.PI - 0.35); g.stroke(); if (warn) { g.beginPath(); g.moveTo(ex - 9, ey - 6); g.lineTo(ex + 9, ey - 6); g.stroke(); } }
+      }
+      g.lineCap = "butt";
+      const txt = open ? "WES IS LOOKING: DO NOT MOVE" : warn ? "he is turning" : "his eye is shut: sew";
+      g.font = "700 12px Karla,Arial,sans-serif"; g.textAlign = "left"; g.textBaseline = "bottom"; g.fillStyle = open ? C.red : C.ink;
+      const tw = g.measureText(txt).width + 10; g.fillStyle = C.bone; g.fillRect(x, y - 17, tw, 16); g.fillStyle = open ? C.red : C.ink; g.fillText(txt, x + 5, y - 3);
+      if (seen) { g.textAlign = "right"; const st = `seen ${seen} of ${SEEN_MAX}`, sw = g.measureText(st).width + 10; g.fillStyle = C.red; g.fillRect(x + w - sw, y - 17, sw, 16); g.fillStyle = C.bone; g.fillText(st, x + w - 5, y - 3); }
+    }
+
+    function drawPanel(now) {
+      const { px, py, pw, wide } = L;
+      let y = py + 4;
+      g.textAlign = "left"; g.textBaseline = "alphabetic"; g.fillStyle = C.ink;
+      const head = (t) => { g.font = "700 12px ui-monospace,Menlo,monospace"; g.fillStyle = C.ink; g.fillText(t, px, y); g.strokeStyle = C.ink; g.lineWidth = 1; g.beginPath(); g.moveTo(px, y + 5); g.lineTo(px + pw, y + 5); g.stroke(); y += 22; };
+      if (wide) {
+        head("KEY");
+        [["moss", "moss felt"], ["rust", "rust felt"], ["lining", "cream lining"], ["torn", "torn edge"]].forEach(([k, name]) => {
+          drawCell(px, y - 12, k, 16, 0, 0); g.strokeStyle = C.ink; g.strokeRect(px, y - 12, 16, 16);
+          g.fillStyle = C.ink; g.font = "13px ui-monospace,Menlo,monospace"; g.fillText(name, px + 24, y + 1); y += 21;
+        });
+        y += 8;
+      }
+      head(`STITCH · ${ST.head}`);
+      g.font = "700 26px ui-monospace,Menlo,monospace"; g.fillText(`${Math.min(idx, N)}/${N}`, px, y + 8);
+      const bx = px + (wide ? 100 : 96);
+      for (let i = 0; i < N; i++) {
+        const x = bx + (i % 5) * 18, yy = y - 16 + Math.floor(i / 5) * 18;
+        g.strokeStyle = C.ink; g.lineWidth = 1; g.strokeRect(x, yy, 14, 14);
+        if (i < scores.length) { g.fillStyle = scores[i] >= 1 ? C.green : scores[i] >= 0.7 ? C.ink : scores[i] >= 0.4 ? C.amber : C.red; g.fillRect(x + 2, yy + 2, 10, 10); }
+        else if (i === idx) { g.strokeStyle = C.red; g.lineWidth = 2; g.strokeRect(x - 1, yy - 1, 16, 16); }
+      }
+      if (!wide) { g.font = "13px Karla,Arial,sans-serif"; g.fillStyle = C.ink; g.fillText(`quality ${quality()}%`, bx + 100, y + 2); }
+      else { y += 34; g.font = "14px Karla,Arial,sans-serif"; g.fillText(`Seam so far: ${quality()}% · ${grade(quality())}`, px, y - 6); }
+      y += wide ? 20 : 34;
+      head("TENSION");
+      const tw = Math.min(pw, 280), th = 20;
+      const inBand = tension >= BAND[0] && tension <= BAND[1];
+      g.fillStyle = C.bone; g.fillRect(px, y - 10, tw, th);
+      g.fillStyle = pulling && inBand ? C.green : C.band; g.fillRect(px + tw * BAND[0], y - 10, tw * (BAND[1] - BAND[0]), th);
+      g.save(); g.beginPath(); g.rect(px + tw * 0.9, y - 10, tw * 0.1, th); g.clip();
+      g.strokeStyle = C.red; g.lineWidth = 1; for (let k = -20; k < 40; k += 4) { g.beginPath(); g.moveTo(px + tw * 0.9 + k, y + 10); g.lineTo(px + tw * 0.9 + k + 20, y - 10); g.stroke(); }
+      g.restore();
+      g.strokeStyle = C.ink; g.lineWidth = 1.5; g.strokeRect(px, y - 10, tw, th);
+      const nx = px + tw * Math.min(1, tension);
+      g.fillStyle = inBand ? C.green : tension > BAND[1] ? C.red : C.ink;
+      g.beginPath(); g.moveTo(nx - 6, y - 19); g.lineTo(nx + 6, y - 19); g.lineTo(nx, y - 10); g.closePath(); g.fill();
+      g.fillRect(nx - 1.5, y - 10, 3, th);
+      g.font = "13px Karla,Arial,sans-serif"; g.fillStyle = C.ink; g.fillText("loose", px, y + 26); g.textAlign = "center"; g.fillText("let go here", px + tw * (BAND[0] + BAND[1]) / 2, y + 26); g.textAlign = "right"; g.fillStyle = C.red; g.fillText("tear", px + tw, y + 26); g.textAlign = "left";
+      y += 52;
+      // the next move, in words
+      g.fillStyle = C.ink; g.font = "600 15px Karla,Arial,sans-serif";
+      const step = rip ? (wide ? "④ The ripper: cut Ruth's stitches, last sewn first" : "④ Cut last sewn first: 5, 4, 3…") : ST.eye && eye.s === "open" ? "Hold still. Do not move the needle." : lockT > 0 ? (ST.eye && eye.caught ? "He saw. Wait for his eye to shut." : "The thread tore. Rethreading…") : phase === "in" ? "① Press the dark point (in)" : phase === "drag" ? "② Drag to the dashed point (out)" : pulling ? "③ Pulling… let go in the green" : "③ Hold to pull the thread";
+      const ic = started && !over && A.draw(g, "ui-needle-cursor", px, y - 20, 30, 30) ? 38 : 0;
+      if (started && !over) g.fillText(step, px + ic, y);
+      y += 22;
+      if (drifts + steadies > 0 && wide) { g.font = "13px Karla,Arial,sans-serif"; g.fillStyle = "rgba(42,33,27,.8)"; g.fillText(`pulse: ${steadies} steadied, ${drifts} slipped`, px + ic, y); }
+      // the pattern card this seam is worked from
+      if (wide) {
+        const room = L.py + L.ph - 60 - (y + 18), th = Math.min(250, room), tw = th * 900 / 1100;
+        if (th > 110 && A.draw(g, ST.chart, px, y + 18, tw, th)) { g.strokeStyle = C.ink; g.lineWidth = 1; g.strokeRect(px, y + 18, tw, th); g.font = "700 12px ui-monospace,Menlo,monospace"; g.fillStyle = C.ink; g.textAlign = "left"; g.fillText("PATTERN", px + tw + 10, y + 32); g.fillText(ST.card, px + tw + 10, y + 48); if (stage === 1) { g.fillText("THREAD FROM", px + tw + 10, y + 76); g.fillText("YOUR " + mySeam.toUpperCase(), px + tw + 10, y + 92); } }
+      }
+    }
+
+    // ---- scoring ------------------------------------------------------------------------------
+    const quality = () => Math.round(scores.reduce((a, b) => a + b, 0) / N * 100);
+    const grade = (q) => (q >= 85 ? "Strong" : q >= 60 ? "Fair" : "Poor");
+
+    // ---- the three inputs ----------------------------------------------------------------
+    const tol = () => ({ perfect: Math.max(6, L.c * 0.45), good: Math.max(14, L.c * 1.0) });
+    function acc(pt, gx, gy) {
+      const [sx, sy] = toScr(gx, gy), d = Math.hypot(pt[0] - sx, pt[1] - sy), t = tol();
+      return d <= t.perfect ? "perfect" : d <= t.good ? "good" : "off";
+    }
+    // Jamie's Seam: anything the needle does while the eye is open is seen, once a glance
+    function eyeOpen() { return ST.eye && eye.s === "open" && started && !over; }
+    function caught() {
+      if (eye.caught) return;
+      eye.caught = true; seen++; pulling = false; tension = 0; phase = "in"; inAcc = outAcc = null; lockT = Math.max(lockT, eye.t + 0.3);
+      pop("seen", L.gx + L.VC * L.c / 2, L.gy + 22, C.red);
+      if (seen >= SEEN_MAX) { K.after(500, lose); return; }
+      if (seen === 1) beat("Wes, from the armchair", "“Did you see that?” He looks at the bear on the floor for a long moment. The needle is in your paw. Nothing moves while his eye is open.", 5200);
+      else beat("He half gets up", "Then he sits down again, and does not look away for a while. Once more and he will come over and look.", 5000);
+    }
+    function pressIn(pt) {
+      if (rip) return;
+      if (eyeOpen()) { caught(); return; }
+      if (phase !== "in" || lockT > 0) return;
+      const [tx, ty] = target("in");
+      inAcc = pt ? acc(pt, tx, ty) : "good";
+      if (pt && inAcc === "off") { const [sx, sy] = toScr(tx, ty); if (Math.hypot(pt[0] - sx, pt[1] - sy) > L.c * 4) { inAcc = null; return; } }
+      const [sx, sy] = toScr(tx, ty);
+      if (pt) pop(inAcc === "perfect" ? "in: perfect" : inAcc === "good" ? "in: good" : "in: off the point", sx, sy - 26, inAcc === "off" ? C.red : C.green);
+      phase = "drag"; idle = 0; ptr = pt || [sx, sy];
+    }
+    function releaseOut(pt) {
+      if (phase !== "drag") return;
+      if (eyeOpen()) { caught(); return; }
+      const [tx, ty] = target("out");
+      outAcc = pt ? acc(pt, tx, ty) : "good";
+      const [sx, sy] = toScr(tx, ty);
+      if (pt) pop(outAcc === "perfect" ? "out: perfect" : outAcc === "good" ? "out: good" : "out: off", sx, sy + 26, outAcc === "off" ? C.red : C.green);
+      phase = "pull"; tension = 0; idle = 0;
+    }
+    function startPull() { if (eyeOpen()) { caught(); return; } if (phase === "pull" && !pulling && lockT <= 0) { pulling = true; tension = 0; } }
+    function endPull() {
+      if (!pulling) return;
+      if (eyeOpen()) { caught(); return; }
+      pulling = false;
+      const t = tension;
+      if (t > BAND[1]) { tear(); return; }
+      const loose = t < BAND[0];
+      let s;
+      if (inAcc === "off" || outAcc === "off") s = 0.2;
+      else if (loose) s = 0.4;
+      else if (inAcc === "perfect" && outAcc === "perfect") s = 1.0;
+      else s = 0.7;
+      scores.push(s);
+      const [mx, my] = toScr((POINTS[idx].inX + POINTS[idx].outX) / 2, TEAR);
+      pop(s === 1 ? "perfect stitch" : s === 0.7 ? "good stitch" : s === 0.4 ? "loose" : "off the point", mx, my - L.c * 2, s >= 0.7 ? C.green : C.red);
+      idx++; phase = "in"; tension = 0; idle = 0; drift = [0, 0];
+      if (s < 0.7 && unpicks > 0) unpickBtn.classList.add(PRE + "hot");
+      else unpickBtn.classList.remove(PRE + "hot");
+      progressBeats();
+      if (!L.wide) layout();
+      if (idx >= N) { if (stage === 1) startRip(); else finish(); }
+      syncButtons();
+    }
+    // the ripper: Ruth's stitches come out last sewn first; one cut out of order tears the cloth
+    let kbRip = false;
+    function startRip() {
+      rip = { cut: [], torn: false }; ripCur = 4; phase = "rip"; pulseLive = false; pulseOn = false;
+      layout(); syncButtons();
+      beat("The ripper", `The seam holds. Now your own ${mySeam}: Ruth pulled it tight with five red stitches, and the thread you gave came out of it. Cut them last sewn first (tap 5, then 4…) and the hollow is yours again. One cut out of order tears the cloth.`, 8000);
+    }
+    function ripCut(k) {
+      if (!rip || over || rip.cut.includes(k)) return;
+      const [x, y] = toScr(RIP_X[RIP_ORDER[k]], RIP_Y);
+      if (k === 4 - rip.cut.length) {
+        rip.cut.push(k); pop("cut", x, y - L.c * 3, C.green); ripCur = 3 - (rip.cut.length - 1);
+        if (rip.cut.length === 5) finish();
+      } else { rip.torn = true; pop("out of order: torn", x, y - L.c * 3, C.red); finish(); }
+    }
+    function tear() {
+      pulling = false; tension = 0; phase = "in"; lockT = 2; drift = [0, 0];
+      const [mx, my] = toScr((POINTS[idx].inX + POINTS[idx].outX) / 2, TEAR);
+      pop("too tight: torn", mx, my - L.c * 2, C.red);
+    }
+    function unpick() {
+      if (!started || over || unpicks <= 0 || !scores.length || pulling || phase !== "in") return;
+      if (eyeOpen()) { caught(); return; }
+      unpicks--; scores.pop(); idx--; timeLeft -= 3; phase = "in"; drift = [0, 0];
+      const [mx, my] = toScr((POINTS[idx].inX + POINTS[idx].outX) / 2, TEAR);
+      pop("unpicked: −3 s", mx, my - L.c * 2, C.amber);
+      unpickBtn.classList.remove(PRE + "hot");
+      if (!L.wide) layout();
+      syncButtons();
+    }
+    function steady() {
+      if (!started || over || !pulseLive) return;
+      if (pulseOn && !steadied) { steadied = true; steadies++; pop("steady", L.gx + 60, L.gy + 18, C.green); }
+      else if (!pulseOn) pop("between beats", L.gx + 80, L.gy + 18, C.amber);
+    }
+    function syncButtons() {
+      steadyBtn.hidden = !pulseLive;
+      leaveBtn.hidden = !ST.eye || !started;
+      unpickBtn.hidden = !!rip || (idx < 1 && unpicks === UNPICKS);
+      unpickBtn.disabled = unpicks <= 0 || !scores.length;
+      unpickBtn.querySelector("i").textContent = `U · ${unpicks}`;
+    }
+    function progressBeats() {
+      if (stage === 0 && idx === 2) beat("At the table", "Jamie says “catastrophe” and takes four spaces. Dani says that is not how syllables work. Nobody is watching your hands.", 4600);
+      if (stage === 0 && idx === 5) beat("Marcus", "He turns the pack over to see. “There's always a way out,” he tells the strap. “You just haven't drawn it yet.”", 4800);
+      if (stage === 2 && idx === 5) beat("Half closed", "He does not thank you. He cannot. Under your paw his side is warm, and something in it is pulling the other way.", 4800);
+      if (ST.pulse && idx === 3 && !pulseLive) {
+        pulseLive = true; pulseT = 1.2;
+        beat("The pulse", "Across the room the pack's one heartbeat comes down the thread. When the chart flashes red, press Steady (S) or the needle slips.", 5200);
+      }
+      if (stage === 1 && idx === 6 && !dawnSaid) { dawnSaid = true; beat("Grey at the window", "The first birds would be singing, if the forest let them. The thread pulls faster in the cold."); }
+    }
+    function finish() {
+      if (over) return;
+      over = true; pulling = false;
+      const q = quality(), gr = grade(q);
+      const best = api.store.get("best", 0); if (q > best) api.store.set("best", q);
+      api.store.set("losses", 0);
+      let text, outcome = gr === "Poor" ? "done" : "win";
+      if (stage === 0) {
+        flow.S.set("strap", gr.toLowerCase());
+        text = `${gr} strap, ${q} percent. ` + (gr === "Strong" ? "Marcus hauls on it twice and grins: “Your stitches held.” He folds the paper map into the top pocket of the pack. With a strap he trusts, he will keep it on him wherever the trip goes."
+          : gr === "Fair" ? "Marcus hauls on it once and nods. It will do for a hike. The map goes into his back pocket, where maps get lost."
+            : "It holds if nobody runs. Marcus says thanks, and means it, and carries the pack by its other strap.");
+      } else if (stage === 1) {
+        let key = "";
+        if (rip && rip.cut.length === 5) { const fresh = flow.S.learn(["mother", "cut", "unpick"]); flow.S.set("key", true); key = ` Under them the lining is not felt but tissue, pencilled RUTH: an older pattern of hers, cut larger, and at its foot Mabel's small pencil key to three of Ruth's marks: mother, cut, unpick.${fresh.length ? " You will know them in her wool now." : ""}`; }
+        const slot = rip && rip.cut.length === 5 ? ` Ruth's five stitches came out in the order they went in, backwards, and the hollow in your ${mySeam} is yours again.${key}` : rip && rip.torn ? ` You cut Ruth's stitches out of order and the cloth tore: the hollow in your ${mySeam} is gone for good.` : ` Ruth's stitches are still in your ${mySeam}; the hollow you gave stays shut.`;
+        const effect = gr === "Poor" ? "Lila's seam is closed, barely; the hunger will find the gaps." : "Lila's hunger will rise more slowly now. She does not say thank you; she cannot. She is very still.";
+        text = `${gr} seam, ${q} percent, with ${Math.max(0, Math.ceil(timeLeft))} s of dark to spare. ${effect}${slot}${gr !== "Poor" && steadies >= 2 && !drifts ? " The pulse never once got into your hands." : ""}`;
+      } else {
+        flow.S.set("jamie", "mended");
+        text = `Ten stitches, one for each time Wes looked away${seen ? `; he saw the needle move ${seen === 1 ? "once" : "twice"}` : ", and he never saw one of them"}. ${gr} seam, ${q} percent. Jamie threw himself off the couch to be seen, and you have sewn him shut. He stays in the pack, hungry. “Jamie didn't move. / Not yet. / We were still playing.”`;
+      }
+      K.after(600, () => flow.done({ outcome, text }));
+    }
+    function leaveOpen() {
+      if (!ST.eye || !started || over) return;
+      over = true; pulling = false;
+      flow.S.set("jamie", "open");
+      api.store.set("losses", 0);
+      flow.done({ outcome: "done", text: `You put the needle down with ${idx} of ${N} stitches in. His side stays open. Wes sets him back on the couch, facing the room. By evening Jamie's glow has thinned out of the pulse, and there are four of you. Nobody tells you which would have been kinder.` });
+    }
+    function lose() {
+      if (over) return;
+      over = true; pulling = false;
+      api.store.set("losses", losses + 1);
+      const text = ST.eye
+        ? (seen >= SEEN_MAX ? `Three times he saw the needle move. Wes crosses the room, lifts Jamie by one arm and carries him to the kitchen table to look at the seam under the light, ${idx} of ${N} stitches in. You are still on the floor. You hold still.` : `The others come in from the porch and someone picks Jamie up, ${idx} of ${N} stitches in. The seam stays open, and the needle is still in it.`)
+        : `Mabel's key turns in the lock. You go still with the needle in the cloth, ${idx} of ${N} stitches in. The seam stays open, and she will see it when she dusts.`;
+      flow.done({ outcome: "lose", text });
+    }
+
+    const pt = (e) => { const b = cv.getBoundingClientRect(); return [e.clientX - b.left, e.clientY - b.top]; };
+    K.on(cv, "pointerdown", (e) => {
+      if (!started || over) return;
+      cv.setPointerCapture(e.pointerId);
+      ptr = pt(e);
+      if (rip) {
+        let best = -1, bd = 1e9;
+        RIP_ORDER.forEach((pos, k) => { if (rip.cut.includes(k)) return; const [x, y] = toScr(RIP_X[pos], RIP_Y), d = Math.min(Math.hypot(ptr[0] - x, ptr[1] - y), Math.hypot(ptr[0] - x, ptr[1] - (y - L.c * 1.9))); if (d < bd) { bd = d; best = k; } });
+        if (best >= 0 && bd <= Math.max(20, L.c * 1.4)) ripCut(best);
+        return;
+      }
+      if (eyeOpen()) { caught(); return; }
+      if (phase === "in") pressIn(pt(e));
+      else if (phase === "pull") startPull();
+    });
+    K.on(cv, "pointermove", (e) => { ptr = pt(e); if (eyeOpen() && phase === "drag" && eye.at && Math.hypot(ptr[0] - eye.at[0], ptr[1] - eye.at[1]) > 8) caught(); });
+    K.on(cv, "pointerup", (e) => {
+      if (!started || over) return;
+      if (phase === "drag") releaseOut(pt(e));
+      else if (pulling) endPull();
+    });
+    K.on(cv, "pointercancel", () => { if (pulling) endPull(); });
+    K.on(cv, "pointerleave", () => { if (phase !== "drag") ptr = null; });
+    // keyboard: Enter snaps to the point (counts as good); hold Space to pull; S steadies; U unpicks
+    K.on(wrap, "keydown", (e) => {
+      if (!started || over || e.repeat) return;
+      if (e.target.tagName === "BUTTON" && (e.key === "Enter" || e.key === " ")) return;
+      const k = e.key.toLowerCase();
+      if (rip) {
+        kbRip = true;
+        if (["1", "2", "3", "4", "5"].includes(k)) ripCut(+k - 1);
+        else if (e.key === "ArrowLeft" || e.key === "ArrowRight") { e.preventDefault(); for (let q = 0; q < 5; q++) { ripCur = (ripCur + (e.key === "ArrowLeft" ? 4 : 1)) % 5; if (!rip.cut.includes(ripCur)) break; } }
+        else if (e.key === "Enter" || e.key === " ") { e.preventDefault(); ripCut(ripCur); }
+        return;
+      }
+      if (k === "l" && ST.eye) { leaveOpen(); return; }
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        if (eyeOpen()) { caught(); return; }
+        if (phase === "in") pressIn(null);
+        else if (phase === "drag") releaseOut(null);
+        else if (phase === "pull") startPull();
+      } else if (k === "s") steady();
+      else if (k === "u") unpick();
+    });
+    K.on(wrap, "keyup", (e) => { if ((e.key === " " || e.key === "Enter") && pulling) { e.preventDefault(); endPull(); } });
+    K.on(steadyBtn, "pointerdown", (e) => { e.preventDefault(); steady(); });
+    K.on(steadyBtn, "click", (e) => { if (e.detail === 0) steady(); });
+    K.on(unpickBtn, "click", () => { unpick(); wrap.focus(); });
+    K.on(leaveBtn, "click", () => leaveOpen());
+
+    let prev = performance.now();
+    function tick(now) {
+      const dt = Math.min(0.05, (now - prev) / 1000); prev = now;
+      if (started && !over) {
+        if (ST.time) timeLeft -= dt;
+        idle += dt;
+        if (lockT > 0) lockT -= dt;
+        if (ST.eye) {
+          eye.t -= dt;
+          if (eye.t <= 0) {
+            if (eye.s === "shut") { eye.s = "warn"; eye.t = EYE_WARN * (gentle ? 1.6 : 1); }
+            else if (eye.s === "warn") { eye.s = "open"; eye.t = EYE_OPEN; eye.caught = false; eye.at = ptr ? ptr.slice() : null; }
+            else { eye.s = "shut"; eye.n++; eye.t = (4.4 + (eye.n * 7 % 3) * 0.7) * (gentle ? 1.5 : 1); }
+          }
+        }
+        const late = stage === 1 && (idx >= 6 || timeLeft < 25 * speed);
+        if (pulling && !(ST.eye && eye.s === "open")) { tension += dt * 0.62 * (late ? 1.25 : 1) / speed; if (tension >= 1) tear(); }
+        if (pulseLive) {
+          pulseT -= dt / speed;
+          if (pulseT <= 0 && !pulseOn) { pulseOn = true; steadied = false; pulseT = (gentle ? PULSE_WIN * 1.7 : PULSE_WIN) * speed; }
+          else if (pulseOn && pulseT <= 0) {
+            pulseOn = false; pulseT = PULSE_EVERY * speed;
+            if (!steadied) {
+              drifts++;
+              if (pulling) { tension = Math.min(1.02, tension + 0.1); pop("the pulse jerks the thread", L.gx + L.VC * L.c / 2, L.gy + 18, C.red); if (tension >= 1) tear(); }
+              else if (phase !== "pull") { drift = [drift[0] + (drifts % 2 ? 1 : -1), drift[1] + (drifts % 3 === 0 ? 1 : 0)]; drift[0] = Math.max(-2, Math.min(2, drift[0])); pop("the needle slips", L.gx + L.VC * L.c / 2, L.gy + 18, C.red); }
+            }
+          }
+        }
+        if (ST.time && timeLeft < 20 * speed && !mabelSaid) { mabelSaid = true; if (ST.eye) beat("Voices on the porch", "Noor and Ana, coming back in. One of them will pick him up off the floor."); else beat("Gravel on the path", "Someone humming, coming up to the porch with a sewing tin."); }
+        if (ST.time && timeLeft <= 0) { if (rip) finish(); else lose(); }
+      }
+      tickRaf = requestAnimationFrame(tick);
+    }
+    let tickRaf = requestAnimationFrame(tick);
+
+    // ---- how to play: a pattern card ----------------------------------------------------------
+    const CARD = [
+      { head: ["PATTERN No. 1", "RUNNING STITCH · 8 ST."], goal: "The first evening. Marcus's pack strap tore on the trail. Mend it in eight stitches while the four of them play the counting game. Nobody is timing you.", note: "Too tight tears the thread. A strap he trusts keeps his map on him.", go: [["go", "Thread the needle"]] },
+      { head: ["PATTERN No. 12", "WHIP STITCH · 8 ST."], goal: "The second night, before dawn. Lila's seam split while the pack slept. Close it in eight stitches before Mabel comes with her sewing tin. The thread has to come from somewhere: choose which of your own seams gives it.", note: "From the fourth stitch the pulse beats through the thread: Steady (S) on the red flash. Then the ripper.", go: MY_SEAMS.map((s) => [s, s[0].toUpperCase() + s.slice(1)]) },
+      { head: ["PATTERN No. 5", "JAMIE'S SEAM · 10 ST."], goal: "The third morning. Jamie threw himself off the couch to be seen, and the pulse, you included, held him still. His side has split. Wes is in the armchair. Here, stitching is moving: the needle may travel only while his eye is shut.", note: "If his eye opens mid-stitch, freeze: keep the button held and do not move. Three sightings and he comes over. You may also put the needle down (L).", go: [["go", "Take the needle"]] },
+    ][stage];
+    const intro = document.createElement("div");
+    intro.className = PRE + "intro";
+    intro.innerHTML = `<div class="${PRE}card" role="dialog" aria-label="How to play Stitchwork">
+      <header><span>${CARD.head[0]}</span><span>${CARD.head[1]}</span></header>
+      <h2>Stitchwork</h2>
+      <p class="${PRE}goal">${CARD.goal}</p>
+      <div class="${PRE}key">
+        <div><span class="${PRE}sym" style="background:${C.ink};color:${C.bone}">1</span><span>Press the dark point: <b>in</b></span><kbd>Enter</kbd></div>
+        <div><span class="${PRE}sym">1</span><span>Drag to the dashed point: <b>out</b></span><kbd>Enter</kbd></div>
+        <div><span class="${PRE}sym" style="background:${C.band}">⟋</span><span>Hold to <b>pull</b>, let go in the green</span><kbd>hold Space</kbd></div>
+        <div><em>${CARD.note}</em></div>
+      </div>
+      <p class="${PRE}kind" ${losses >= 2 ? "" : "hidden"}>Two seams left open. Gentle thread is ticked for you: more time, a slower pull, a wider beat.</p>
+      <label><input type="checkbox" ${losses >= 2 ? "checked" : ""}> Gentle thread (twice the time, slower pull)</label>
+      <div class="${PRE}pickhost" style="margin:0 18px"></div>
+      <div class="${PRE}choose">${CARD.go.map(([w, t]) => `<button type="button" data-w="${w}">${t}</button>`).join("")}</div>
+    </div>`;
+    wrap.appendChild(intro);
+    {
+      const cardEl = intro.querySelector("." + PRE + "card"), h2 = intro.querySelector("h2");
+      const pat = A.picture(ST.chart, 108, { alt: "Stitch chart" });
+      if (pat) { pat.className = PRE + "pat"; cardEl.insertBefore(pat, h2); }
+      const ttl = A.word("Stitchwork", 34);
+      if (ttl) { h2.textContent = ""; h2.appendChild(ttl); }
+      const band = A.picture("ui-rule-band", Math.min(300, wrap.clientWidth - 90), { alt: "" });
+      if (band) { band.style.margin = "8px 18px 0"; cardEl.insertBefore(band, cardEl.querySelector("." + PRE + "key")); }
+      if (stage !== 1) { const f = A.picture(stage === 0 ? "medallion-marcus" : "medallion-jamie", 34, { ...FACE, alt: "" }); if (f) intro.querySelector("." + PRE + "choose button").prepend(f); }
+      stagePicker(intro.querySelector("." + PRE + "pickhost"), api, stage, BLURBS, (n) => flow.pick(n));
+    }
+    intro.querySelectorAll("." + PRE + "choose button").forEach((b) => K.on(b, "click", () => {
+      if (stage === 1) mySeam = b.dataset.w;
+      whose = "lila"; gentle = intro.querySelector("input").checked; speed = gentle ? 2 : 1; timeLeft = (ST.time || 60) * speed;
+      intro.remove(); started = true; wrap.focus();
+      if (stage === 0) beat("Marcus's strap", "Webbing, torn across. He holds the pack steady on the table with one hand and moves his peg with the other.", 4600);
+      else if (stage === 1) beat("Lila's seam", `She was the hungriest, so hers split first. You pull a length of thread out of your own ${mySeam}; that seam has one hollow fewer now.`, 5200);
+      else beat("Jamie's seam", "He lies where he fell, on his side, on the rug. The eye strip along the top is Wes. Sew while it is shut.", 5200);
+      syncButtons();
+    }));
+    intro.querySelector("." + PRE + "choose button").focus();
+
+    const ro = new ResizeObserver(() => { A.flush(); layout(); });
+    ro.observe(wrap);
+    // a read-only probe for automated play tests
+    layout(); K.frame(draw);
+    return { unmount() { cancelAnimationFrame(tickRaf); K.dispose(); A.dispose(); ro.disconnect(); wrap.remove(); } };
+  }
+}

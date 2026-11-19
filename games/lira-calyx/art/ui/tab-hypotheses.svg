@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 110" width="260" height="110" role="img" aria-labelledby="tab-hypotheses-t tab-hypotheses-d">
+<title id="tab-hypotheses-t">Journal tab: Hypotheses</title>
+<desc id="tab-hypotheses-d">A journal tab cut from laid paper with a band of wash along its top edge, lettered Hypotheses in Lira's hand beside a small ink sign for that section.</desc>
+<defs><clipPath id="tab-hypotheses-clip1"><path d="M8,104 L11.1,26 L22,12 L236,8.5 L250,24 L252,104Z"/></clipPath><filter id="tab-hypotheses-blur2" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3"/></filter><filter id="tab-hypotheses-grain3" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="665"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter><pattern id="tab-hypotheses-pat4" width="46" height="20" patternUnits="userSpaceOnUse"><path d="M0,2.5H46M0,7.5H46M0,12.5H46M0,17.5H46" stroke="#3b2618" stroke-width="0.5" opacity="0.07"/><path d="M23,0V20" stroke="#3b2618" stroke-width="0.8" opacity="0.06"/></pattern><radialGradient id="tab-hypotheses-vig5" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#7a5a2e" stop-opacity="0"/><stop offset="100%" stop-color="#7a5a2e" stop-opacity="0.2"/></radialGradient></defs>
+<path d="M8,104 L11.1,26 L22,12 L236,8.5 L250,24 L252,104Z" fill="#000" opacity="0.2" transform="translate(3,3)" filter="url(#tab-hypotheses-blur2)"/>
+<g clip-path="url(#tab-hypotheses-clip1)">
+<rect x="0" y="0" width="260" height="110" fill="#f1e8d2"/>
+<rect x="0" y="0" width="260" height="110" filter="url(#tab-hypotheses-grain3)"/>
+<rect x="0" y="0" width="260" height="110" fill="url(#tab-hypotheses-pat4)"/>
+<rect x="0" y="0" width="260" height="110" fill="url(#tab-hypotheses-vig5)"/>
+<rect x="0" y="0" width="260" height="26" fill="#3fc4d0" opacity="0.5"/>
+<rect x="0" y="24" width="260" height="4" fill="#3fc4d0" opacity="0.5"/>
+<rect x="0" y="92" width="260" height="20" fill="#7a5a2e" opacity="0.2"/>
+</g>
+<path d="M7.9,104.6 L8.9,84 L9.6,65.5 L10.1,45.8 L11,26.5 L22.4,12.6 L39,11.5 L55.6,11.4 L71.1,11.5 L88.3,11.3 L104.9,10.4 L120.8,10.1 L136.9,9.8 L154,9.1 L170.1,9.4 L187.2,8.9 L203.4,8.8 L219.9,8.9 L235.5,8.7 L250.2,24.5 L250.8,39.7 L251.3,55.5 L250.5,71.4 L251.1,88.7 L251.4,103.7" stroke-width="2.4" stroke="#3b2618" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M26,62 C26.3,61.1 27.3,57.9 28,56.3 C28.7,54.8 29.3,53.5 30,52.7 C30.7,51.8 31.3,51.4 32,51.3 C32.7,51.3 33.3,51.7 34,52.3 C34.7,52.9 35.3,53.9 36,55 C36.7,56 37.3,57.4 38,58.6 C38.7,59.8 39.3,61.2 40,62.3 C40.7,63.5 41.3,64.6 42,65.4 C42.7,66.3 43.3,66.9 44,67.4 C44.7,67.8 45.3,68 46,68 C46.7,68 47.3,67.7 48,67.4 C48.7,67 49.3,66.4 50,65.8 C50.7,65.2 51.3,64.4 52,63.7 C52.7,63 53.3,62.3 54,61.6 C54.7,61 55.3,60.4 56,60 C56.7,59.5 57.3,59.1 58,58.9 C58.7,58.7 59.3,58.6 60,58.6 C60.7,58.7 61.3,58.8 62,59 C62.7,59.3 63.3,59.6 64,60 C64.7,60.3 65.7,60.9 66,61.1" stroke-width="2.2" stroke="#3b2618" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="24" y1="62" x2="68" y2="62" stroke="#7d7a74" stroke-width="1"/>
+<text x="82" y="72" font-size="25" font-family="serif" font-style="italic" fill="#3b2618" transform="rotate(-0.2 82 72)">Hypotheses</text>
+<text x="216" y="22" font-size="12" font-family="monospace" fill="#3b2618" letter-spacing="1">5</text>
+</svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 340" width="520" height="340" role="img" aria-labelledby="instrument-pencil-t instrument-pencil-d">
+<title id="instrument-pencil-t">Dead Reckoning: the pencil</title>
+<desc id="instrument-pencil-d">A carpenter-sharpened pencil in dawn gold lying beside the line and the three-arrow tide vector it has just drawn, shavings beside it.</desc>
+<defs><filter id="instrument-pencil-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="285"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter></defs>
+<rect x="0" y="0" width="520" height="340" fill="#E7E8DA"/>
+<rect x="0" y="0" width="520" height="340" filter="url(#instrument-pencil-grain1)"/>
+<path d="M0,0V340M80,0V340M160,0V340M240,0V340M320,0V340M400,0V340M480,0V340M0,0H520M0,80H520M0,160H520M0,240H520M0,320H520" fill="none" stroke="#1F2E4A" stroke-width="0.5" opacity="0.3"/>
+<path d="M0,0V340M16,0V340M32,0V340M48,0V340M64,0V340M80,0V340M96,0V340M112,0V340M128,0V340M144,0V340M160,0V340M176,0V340M192,0V340M208,0V340M224,0V340M240,0V340M256,0V340M272,0V340M288,0V340M304,0V340M320,0V340M336,0V340M352,0V340M368,0V340M384,0V340M400,0V340M416,0V340M432,0V340M448,0V340M464,0V340M480,0V340M496,0V340M512,0V340M0,0H520M0,16H520M0,32H520M0,48H520M0,64H520M0,80H520M0,96H520M0,112H520M0,128H520M0,144H520M0,160H520M0,176H520M0,192H520M0,208H520M0,224H520M0,240H520M0,256H520M0,272H520M0,288H520M0,304H520M0,320H520M0,336H520" fill="none" stroke="#1F2E4A" stroke-width="0.3" opacity="0.1"/>
+<path d="M39.7,250.1 L77.3,232.9 L114.9,215 L151.7,199.1 L189.2,181.7 L225.9,163.8 L262.3,147.1 L299.4,130.1" fill="none" stroke="#55524c" stroke-width="2.2"/>
+<path d="M300,130 l120,-10" stroke="#3C7A6A" stroke-width="2.4"/>
+<path d="M350,119 L360,125 L351,133" fill="none" stroke="#3C7A6A" stroke-width="2.4"/>
+<path d="M364.4,117.8 L374.4,123.8 L365.4,131.8" fill="none" stroke="#3C7A6A" stroke-width="2.4"/>
+<path d="M378.8,116.6 L388.8,122.6 L379.8,130.6" fill="none" stroke="#3C7A6A" stroke-width="2.4"/>
+<g transform="translate(250,214) rotate(-25)">
+<rect x="-176" y="0" width="320" height="26" fill="#000" opacity="0.2" transform="translate(4,8)"/>
+<rect x="-180" y="-13" width="300" height="26" fill="#E7A93B" stroke="#7a5a18" stroke-width="1.4"/>
+<path d="M-180,-4 h300 M-180,5 h300" stroke="#7a5a18" stroke-width="1" opacity="0.6"/>
+<path d="M120,-13 L176,0 L120,13Z" fill="#e7cfa0" stroke="#7a5a18" stroke-width="1.4"/>
+<path d="M158,-4 L176,0 L158,4Z" fill="#55524c"/>
+<rect x="-200" y="-13" width="20" height="26" fill="#8C2B2B" stroke="#5e1818" stroke-width="1.2"/>
+<rect x="-184" y="-13" width="8" height="26" fill="#C9A24A"/>
+</g>
+<path d="M420,250 q14,-10 26,2 q-12,12 -26,-2z" fill="#e7cfa0" stroke="#7a5a18" stroke-width="1" transform="rotate(20 420 250)"/>
+<path d="M452,276 q14,-10 26,2 q-12,12 -26,-2z" fill="#e7cfa0" stroke="#7a5a18" stroke-width="1" transform="rotate(-40 452 276)"/>
+<path d="M400,286 q14,-10 26,2 q-12,12 -26,-2z" fill="#e7cfa0" stroke="#7a5a18" stroke-width="1" transform="rotate(70 400 286)"/>
+</svg>

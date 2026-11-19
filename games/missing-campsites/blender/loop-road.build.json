@@ -1,0 +1,1492 @@
+{
+  "game": "missing-campsites",
+  "location": "loop-road",
+  "name": "The loop road",
+  "reference": "assets/locations/loop-road.jpg",
+  "bounds_m": [
+    240,
+    180,
+    30
+  ],
+  "origin": "loop centre; +x north toward the booth and sites 20-24, the west leg (posts 1-12, creek side) on -y running south, the east leg (13-24) on +y running north. The 900 m loop is compressed into the design's 240 x 180 m: posts stand 17.5 m apart, not 35",
+  "materials": {
+    "gravel": {
+      "color": [
+        0.62,
+        0.56,
+        0.46
+      ],
+      "roughness": 0.95
+    },
+    "gravel-wet": {
+      "color": [
+        0.42,
+        0.4,
+        0.36
+      ],
+      "roughness": 0.6
+    },
+    "forest-floor": {
+      "color": [
+        0.36,
+        0.29,
+        0.19
+      ],
+      "roughness": 1.0
+    },
+    "grass-faded": {
+      "color": [
+        0.45,
+        0.48,
+        0.29
+      ],
+      "roughness": 0.95
+    },
+    "cedar": {
+      "color": [
+        0.55,
+        0.33,
+        0.18
+      ],
+      "roughness": 0.85
+    },
+    "trunk": {
+      "color": [
+        0.3,
+        0.21,
+        0.14
+      ],
+      "roughness": 0.95
+    },
+    "conifer": {
+      "color": [
+        0.17,
+        0.27,
+        0.15
+      ],
+      "roughness": 0.95
+    },
+    "creek": {
+      "color": [
+        0.28,
+        0.36,
+        0.33
+      ],
+      "roughness": 0.15
+    },
+    "sign-brown": {
+      "color": [
+        0.36,
+        0.2,
+        0.13
+      ],
+      "roughness": 0.8
+    },
+    "cream": {
+      "color": [
+        0.91,
+        0.87,
+        0.75
+      ],
+      "roughness": 0.9
+    },
+    "tin": {
+      "color": [
+        0.62,
+        0.63,
+        0.62
+      ],
+      "roughness": 0.5,
+      "metallic": 0.7
+    },
+    "glass": {
+      "color": [
+        0.72,
+        0.78,
+        0.8
+      ],
+      "roughness": 0.1,
+      "emission": 0.2
+    },
+    "concrete": {
+      "color": [
+        0.6,
+        0.59,
+        0.56
+      ],
+      "roughness": 0.95
+    },
+    "asphalt": {
+      "color": [
+        0.27,
+        0.27,
+        0.28
+      ],
+      "roughness": 0.9
+    },
+    "rock": {
+      "color": [
+        0.55,
+        0.54,
+        0.5
+      ],
+      "roughness": 0.95
+    }
+  },
+  "blockout": [
+    {
+      "id": "ground",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        240,
+        180,
+        0.2
+      ],
+      "location": [
+        0,
+        0,
+        -0.1
+      ],
+      "material": "forest-floor"
+    },
+    {
+      "id": "road-west",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        220,
+        5,
+        0.06
+      ],
+      "location": [
+        0,
+        -70,
+        0.03
+      ],
+      "material": "gravel"
+    },
+    {
+      "id": "road-east",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        220,
+        5,
+        0.06
+      ],
+      "location": [
+        0,
+        70,
+        0.03
+      ],
+      "material": "gravel"
+    },
+    {
+      "id": "road-south-end",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        5,
+        145,
+        0.06
+      ],
+      "location": [
+        -112,
+        0,
+        0.03
+      ],
+      "material": "gravel"
+    },
+    {
+      "id": "road-north-end",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        5,
+        145,
+        0.06
+      ],
+      "location": [
+        112,
+        0,
+        0.03
+      ],
+      "material": "gravel"
+    },
+    {
+      "id": "spur",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        6,
+        20,
+        0.06
+      ],
+      "location": [
+        112,
+        -82,
+        0.03
+      ],
+      "material": "gravel"
+    },
+    {
+      "id": "booth-block",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        2.6,
+        2.4,
+        2.6
+      ],
+      "location": [
+        117,
+        -80,
+        1.3
+      ],
+      "material": "cedar"
+    },
+    {
+      "id": "creek",
+      "shape": "box",
+      "role": "water",
+      "size_m": [
+        230,
+        4,
+        0.1
+      ],
+      "location": [
+        0,
+        -82,
+        0.0
+      ],
+      "material": "creek"
+    },
+    {
+      "id": "creek-bank",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        230,
+        3,
+        0.3
+      ],
+      "location": [
+        0,
+        -78.5,
+        0.05
+      ],
+      "material": "gravel-wet"
+    },
+    {
+      "id": "pads-west",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        210,
+        12,
+        0.05
+      ],
+      "location": [
+        0,
+        -60,
+        0.025
+      ],
+      "material": "gravel"
+    },
+    {
+      "id": "pads-east",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        210,
+        12,
+        0.05
+      ],
+      "location": [
+        0,
+        60,
+        0.025
+      ],
+      "material": "gravel"
+    },
+    {
+      "id": "inner-forest",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        200,
+        100,
+        18
+      ],
+      "location": [
+        0,
+        0,
+        9
+      ],
+      "material": "conifer",
+      "collide": false
+    },
+    {
+      "id": "outer-forest-east",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        230,
+        12,
+        22
+      ],
+      "location": [
+        0,
+        88,
+        11
+      ],
+      "material": "conifer",
+      "collide": false
+    },
+    {
+      "id": "register-post",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.15,
+        0.15,
+        1.0
+      ],
+      "location": [
+        -100,
+        -76,
+        0.5
+      ],
+      "material": "cedar"
+    },
+    {
+      "id": "quiet-post",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.12,
+        0.12,
+        1.6
+      ],
+      "location": [
+        104,
+        66,
+        0.8
+      ],
+      "material": "cedar"
+    },
+    {
+      "id": "trailhead",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        2,
+        10,
+        0.05
+      ],
+      "location": [
+        -100,
+        -82,
+        0.03
+      ],
+      "material": "forest-floor"
+    },
+    {
+      "id": "pine-1-trunk",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.9,
+        0.9,
+        24
+      ],
+      "location": [
+        79,
+        -55,
+        12.0
+      ],
+      "material": "trunk"
+    },
+    {
+      "id": "pine-1-crown",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        4.05,
+        4.05,
+        16.8
+      ],
+      "location": [
+        79,
+        -55,
+        15.6
+      ],
+      "material": "conifer",
+      "collide": false
+    },
+    {
+      "id": "pine-2-trunk",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.9,
+        0.9,
+        24
+      ],
+      "location": [
+        60,
+        -54,
+        12.0
+      ],
+      "material": "trunk"
+    },
+    {
+      "id": "pine-2-crown",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        4.05,
+        4.05,
+        16.8
+      ],
+      "location": [
+        60,
+        -54,
+        15.6
+      ],
+      "material": "conifer",
+      "collide": false
+    },
+    {
+      "id": "pine-3-trunk",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.9,
+        0.9,
+        24
+      ],
+      "location": [
+        25,
+        -55,
+        12.0
+      ],
+      "material": "trunk"
+    },
+    {
+      "id": "pine-3-crown",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        4.05,
+        4.05,
+        16.8
+      ],
+      "location": [
+        25,
+        -55,
+        15.6
+      ],
+      "material": "conifer",
+      "collide": false
+    },
+    {
+      "id": "pine-4-trunk",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.9,
+        0.9,
+        24
+      ],
+      "location": [
+        -60,
+        -54,
+        12.0
+      ],
+      "material": "trunk"
+    },
+    {
+      "id": "pine-4-crown",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        4.05,
+        4.05,
+        16.8
+      ],
+      "location": [
+        -60,
+        -54,
+        15.6
+      ],
+      "material": "conifer",
+      "collide": false
+    },
+    {
+      "id": "pine-5-trunk",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.9,
+        0.9,
+        24
+      ],
+      "location": [
+        -1,
+        55,
+        12.0
+      ],
+      "material": "trunk"
+    },
+    {
+      "id": "pine-5-crown",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        4.05,
+        4.05,
+        16.8
+      ],
+      "location": [
+        -1,
+        55,
+        15.6
+      ],
+      "material": "conifer",
+      "collide": false
+    },
+    {
+      "id": "pine-6-trunk",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.9,
+        0.9,
+        24
+      ],
+      "location": [
+        -60,
+        55,
+        12.0
+      ],
+      "material": "trunk"
+    },
+    {
+      "id": "pine-6-crown",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        4.05,
+        4.05,
+        16.8
+      ],
+      "location": [
+        -60,
+        55,
+        15.6
+      ],
+      "material": "conifer",
+      "collide": false
+    },
+    {
+      "id": "pine-7-trunk",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.9,
+        0.9,
+        24
+      ],
+      "location": [
+        60,
+        55,
+        12.0
+      ],
+      "material": "trunk"
+    },
+    {
+      "id": "pine-7-crown",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        4.05,
+        4.05,
+        16.8
+      ],
+      "location": [
+        60,
+        55,
+        15.6
+      ],
+      "material": "conifer",
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "post-1",
+      "object": "site-post",
+      "location": [
+        96.0,
+        -59,
+        0
+      ]
+    },
+    {
+      "id": "post-2",
+      "object": "site-post",
+      "location": [
+        78.5,
+        -59,
+        0
+      ]
+    },
+    {
+      "id": "post-3",
+      "object": "site-post",
+      "location": [
+        61.0,
+        -59,
+        0
+      ]
+    },
+    {
+      "id": "post-4",
+      "object": "site-post",
+      "location": [
+        43.5,
+        -59,
+        0
+      ]
+    },
+    {
+      "id": "post-5",
+      "object": "site-post",
+      "location": [
+        26.0,
+        -59,
+        0
+      ]
+    },
+    {
+      "id": "post-6",
+      "object": "site-post",
+      "location": [
+        8.5,
+        -59,
+        0
+      ]
+    },
+    {
+      "id": "post-7",
+      "object": "site-post",
+      "location": [
+        -9.0,
+        -59,
+        0
+      ]
+    },
+    {
+      "id": "post-8",
+      "object": "site-post",
+      "location": [
+        -26.5,
+        -59,
+        0
+      ]
+    },
+    {
+      "id": "post-9",
+      "object": "site-post",
+      "location": [
+        -44.0,
+        -59,
+        0
+      ]
+    },
+    {
+      "id": "post-10",
+      "object": "site-post",
+      "location": [
+        -61.5,
+        -59,
+        0
+      ]
+    },
+    {
+      "id": "post-11",
+      "object": "site-post",
+      "location": [
+        -79.0,
+        -59,
+        0
+      ]
+    },
+    {
+      "id": "post-12",
+      "object": "site-post",
+      "location": [
+        -96.5,
+        -59,
+        0
+      ]
+    },
+    {
+      "id": "post-13",
+      "object": "site-post",
+      "location": [
+        -96.0,
+        59,
+        0
+      ]
+    },
+    {
+      "id": "post-14",
+      "object": "site-post",
+      "location": [
+        -78.5,
+        59,
+        0
+      ]
+    },
+    {
+      "id": "post-15",
+      "object": "site-post",
+      "location": [
+        -61.0,
+        59,
+        0
+      ]
+    },
+    {
+      "id": "post-16",
+      "object": "site-post",
+      "location": [
+        -43.5,
+        59,
+        0
+      ]
+    },
+    {
+      "id": "post-17",
+      "object": "site-post",
+      "location": [
+        -26.0,
+        59,
+        0
+      ]
+    },
+    {
+      "id": "post-18",
+      "object": "site-post",
+      "location": [
+        -8.5,
+        59,
+        0
+      ]
+    },
+    {
+      "id": "post-19",
+      "object": "site-post",
+      "location": [
+        9.0,
+        59,
+        0
+      ]
+    },
+    {
+      "id": "post-20",
+      "object": "site-post",
+      "location": [
+        26.5,
+        59,
+        0
+      ]
+    },
+    {
+      "id": "post-21",
+      "object": "site-post",
+      "location": [
+        44.0,
+        59,
+        0
+      ]
+    },
+    {
+      "id": "post-22",
+      "object": "site-post",
+      "location": [
+        61.5,
+        59,
+        0
+      ]
+    },
+    {
+      "id": "post-23",
+      "object": "site-post",
+      "location": [
+        79.0,
+        59,
+        0
+      ]
+    },
+    {
+      "id": "post-24",
+      "object": "site-post",
+      "location": [
+        96.5,
+        59,
+        0
+      ]
+    },
+    {
+      "id": "table-5",
+      "object": "picnic-table",
+      "location": [
+        29.0,
+        -54,
+        0
+      ]
+    },
+    {
+      "id": "kettle",
+      "object": "blue-kettle",
+      "location": [
+        29.0,
+        -54,
+        0.75
+      ]
+    },
+    {
+      "id": "ring-5",
+      "object": "fire-ring",
+      "location": [
+        23.0,
+        -54,
+        0
+      ]
+    },
+    {
+      "id": "ring-7",
+      "object": "fire-ring",
+      "location": [
+        -12.0,
+        -54,
+        0
+      ]
+    },
+    {
+      "id": "owl-box",
+      "object": "owl-box",
+      "location": [
+        25,
+        -55.5,
+        3.2
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ],
+      "ground": false
+    },
+    {
+      "id": "register-box",
+      "object": "register-box",
+      "location": [
+        -100,
+        -75.6,
+        0
+      ]
+    },
+    {
+      "id": "table-17",
+      "object": "picnic-table",
+      "location": [
+        -23.0,
+        54,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ]
+    },
+    {
+      "id": "ring-17",
+      "object": "fire-ring",
+      "location": [
+        -30.0,
+        54,
+        0
+      ]
+    },
+    {
+      "id": "tent-17",
+      "object": "tent",
+      "location": [
+        -26.0,
+        48,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ]
+    },
+    {
+      "id": "lantern-17",
+      "object": "camp-lantern",
+      "location": [
+        -23.0,
+        54,
+        0.75
+      ]
+    },
+    {
+      "id": "bicycle",
+      "object": "bicycle",
+      "location": [
+        -27.0,
+        58,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "table-22",
+      "object": "picnic-table",
+      "location": [
+        64.5,
+        54,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ]
+    },
+    {
+      "id": "ring-22",
+      "object": "fire-ring",
+      "location": [
+        57.5,
+        54,
+        0
+      ]
+    },
+    {
+      "id": "chalkboard",
+      "object": "chalkboard",
+      "location": [
+        60.5,
+        59,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ]
+    },
+    {
+      "id": "quiet-hours-board",
+      "object": "quiet-hours-board",
+      "location": [
+        104,
+        65.9,
+        1.4
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ],
+      "ground": false
+    },
+    {
+      "id": "cooler-22",
+      "object": "cooler",
+      "location": [
+        66.5,
+        54,
+        0
+      ]
+    }
+  ],
+  "scenes": {
+    "loop_day1": {
+      "note": "Day 1, late afternoon, long shadows. Tam walks ahead of the van from the booth: posts 1-3 absent (map lens tutorial), the owl box at 7, the creek bend at 12, Abel at the register, Lottie's chain at 17.",
+      "world": {
+        "color": [
+          0.55,
+          0.64,
+          0.75
+        ],
+        "strength": 0.6
+      },
+      "lights": [
+        {
+          "name": "sun-low",
+          "type": "SUN",
+          "location": [
+            -60,
+            -120,
+            40
+          ],
+          "energy": 4.0,
+          "size": 0.5,
+          "color": [
+            1.0,
+            0.76,
+            0.48
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "sky-fill",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            60
+          ],
+          "energy": 6000,
+          "size": 200,
+          "color": [
+            0.7,
+            0.8,
+            0.95
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          104,
+          -70,
+          1.65
+        ],
+        "look_at": [
+          90,
+          -62,
+          0.6
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          104,
+          -70,
+          0
+        ],
+        "facing_deg": 60.3
+      },
+      "hide": [
+        "post-1",
+        "post-2",
+        "post-3",
+        "cooler-22"
+      ],
+      "interactions": [
+        {
+          "prop": "post-4",
+          "verb": "Raise the map lens"
+        },
+        {
+          "prop": "owl-box",
+          "verb": "Photograph the owl box"
+        },
+        {
+          "prop": "register-box",
+          "verb": "Copy Abel's line"
+        },
+        {
+          "prop": "bicycle",
+          "verb": "Fix the chain"
+        },
+        {
+          "prop": "kettle",
+          "verb": "Look at the kettle"
+        },
+        {
+          "prop": "post-12",
+          "verb": "Photograph the creek bend"
+        },
+        {
+          "prop": "post-20",
+          "verb": "Walk on to site 20",
+          "leads_to": "fixed_sites_day1"
+        }
+      ]
+    },
+    "loop_day2am": {
+      "note": "Day 2, grey noon. The east leg is normal; the west leg ends at 12; the creek runs past forest where seven sites stood. Abel's register line is a smooth gap. Reaching the booth.",
+      "world": {
+        "color": [
+          0.6,
+          0.62,
+          0.64
+        ],
+        "strength": 0.8
+      },
+      "lights": [
+        {
+          "name": "overcast",
+          "type": "SUN",
+          "location": [
+            0,
+            0,
+            60
+          ],
+          "energy": 1.5,
+          "size": 10,
+          "color": [
+            0.82,
+            0.85,
+            0.88
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "sky-fill",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            60
+          ],
+          "energy": 7000,
+          "size": 220,
+          "color": [
+            0.82,
+            0.85,
+            0.88
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          96,
+          70,
+          1.65
+        ],
+        "look_at": [
+          40,
+          66,
+          0.8
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          96,
+          70,
+          0
+        ],
+        "facing_deg": 94.1
+      },
+      "hide": [
+        "post-1",
+        "post-2",
+        "post-3",
+        "post-4",
+        "post-5",
+        "post-6",
+        "post-7",
+        "post-8",
+        "post-9",
+        "post-10",
+        "post-11",
+        "owl-box",
+        "kettle",
+        "table-5",
+        "ring-5",
+        "ring-7",
+        "cooler-22"
+      ],
+      "interactions": [
+        {
+          "prop": "register-box",
+          "verb": "Read the register (a gap)"
+        },
+        {
+          "prop": "post-12",
+          "verb": "Look past post 12"
+        },
+        {
+          "prop": "post-24",
+          "verb": "Walk up to the booth",
+          "leads_to": "booth_day2"
+        }
+      ]
+    },
+    "loop_day2pm": {
+      "note": "Day 2 afternoon, dimming, wind. The hub: what is left of the loop, 16 to 24 and the booth. Dell's chalkboard lists the errands; each costs time units; carried things go into the ten slots.",
+      "world": {
+        "color": [
+          0.5,
+          0.55,
+          0.6
+        ],
+        "strength": 0.6
+      },
+      "lights": [
+        {
+          "name": "sun-veiled",
+          "type": "SUN",
+          "location": [
+            -80,
+            -60,
+            30
+          ],
+          "energy": 2.0,
+          "size": 3,
+          "color": [
+            0.92,
+            0.85,
+            0.75
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "sky-fill",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            60
+          ],
+          "energy": 4500,
+          "size": 220,
+          "color": [
+            0.75,
+            0.8,
+            0.85
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          60,
+          62,
+          1.65
+        ],
+        "look_at": [
+          60.5,
+          59,
+          1.0
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          60,
+          62,
+          0
+        ],
+        "facing_deg": 189.5
+      },
+      "hide": [
+        "post-1",
+        "post-2",
+        "post-3",
+        "post-4",
+        "post-5",
+        "post-6",
+        "post-7",
+        "post-8",
+        "post-9",
+        "post-10",
+        "post-11",
+        "owl-box",
+        "kettle",
+        "table-5",
+        "ring-5",
+        "ring-7",
+        "post-12",
+        "post-13",
+        "post-14",
+        "post-15",
+        "register-box",
+        "cooler-22"
+      ],
+      "interactions": [
+        {
+          "prop": "chalkboard",
+          "verb": "Read the errands"
+        },
+        {
+          "prop": "quiet-hours-board",
+          "verb": "Unscrew the board"
+        },
+        {
+          "prop": "post-16",
+          "verb": "Pull the post"
+        },
+        {
+          "prop": "post-17",
+          "verb": "Pull the post"
+        },
+        {
+          "prop": "post-18",
+          "verb": "Pull the post"
+        },
+        {
+          "prop": "post-19",
+          "verb": "Pull the post"
+        },
+        {
+          "prop": "bicycle",
+          "verb": "Wheel the bicycle up"
+        },
+        {
+          "prop": "post-24",
+          "verb": "Go up to the booth for the book",
+          "leads_to": "rangers_book_2"
+        },
+        {
+          "prop": "post-16",
+          "verb": "Go down to the creek trail",
+          "leads_to": "creek_trail"
+        },
+        {
+          "prop": "table-22",
+          "verb": "Sit with the friends; Dell calls everyone back",
+          "leads_to": "dusk_choice"
+        }
+      ]
+    },
+    "ordinary_morning": {
+      "note": "Nothing Missing. Bright Sunday sun; phones read 09:14. The campground is whole from post 4 to 24. Marisol waves. The cooler holds one packet too many.",
+      "world": {
+        "color": [
+          0.6,
+          0.72,
+          0.88
+        ],
+        "strength": 0.8
+      },
+      "lights": [
+        {
+          "name": "sun-high",
+          "type": "SUN",
+          "location": [
+            40,
+            -80,
+            90
+          ],
+          "energy": 5.0,
+          "size": 0.5,
+          "color": [
+            1.0,
+            0.93,
+            0.8
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "sky-fill",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            60
+          ],
+          "energy": 7000,
+          "size": 220,
+          "color": [
+            0.75,
+            0.85,
+            1.0
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          56,
+          1.65
+        ],
+        "look_at": [
+          61.5,
+          62,
+          1.0
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          56,
+          0
+        ],
+        "facing_deg": 275.6
+      },
+      "hide": [
+        "post-1",
+        "post-2",
+        "post-3"
+      ],
+      "interactions": [
+        {
+          "prop": "cooler-22",
+          "verb": "Open the cooler",
+          "leads_to": "foil_supper_3"
+        },
+        {
+          "prop": "post-4",
+          "verb": "Count the posts"
+        }
+      ]
+    }
+  }
+}

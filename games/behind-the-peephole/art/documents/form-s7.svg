@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1100" width="800" height="1100" role="img" aria-labelledby="form-s7-t form-s7-d">
+<title id="form-s7-t">Statement form S-7: the Account</title>
+<desc id="form-s7-d">Form S-7, the Account, already typed when it arrives: six rooms against six missions, three single questions with their choices, and a tenth line that reads 400 and a blank.</desc>
+<defs><filter id="form-s7-pg1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="75"/><feColorMatrix values="0 0 0 0 0.16  0 0 0 0 0.22  0 0 0 0 0.55  0 0 0 0.16 0"/></filter><filter id="form-s7-blur2" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="14"/></filter></defs>
+<rect x="0" y="0" width="800" height="1100" fill="#c9c2b0"/>
+<g transform="rotate(0.34 400 550)">
+<rect x="26" y="22" width="756" height="1060" fill="#000" opacity="0.2"/>
+<rect x="20" y="16" width="756" height="1060" fill="#f1ecdf"/>
+<rect x="20" y="16" width="756" height="1060" filter="url(#form-s7-pg1)"/>
+<ellipse cx="434.3" cy="321.3" rx="24.2" ry="13.5" fill="#2a3a8c" opacity="0.2" filter="url(#form-s7-blur2)"/>
+<ellipse cx="137.7" cy="379.1" rx="83.2" ry="15.4" fill="#2a3a8c" opacity="0.1" filter="url(#form-s7-blur2)"/>
+<ellipse cx="504.1" cy="930.4" rx="62.1" ry="24.4" fill="#2a3a8c" opacity="0.1" filter="url(#form-s7-blur2)"/>
+<ellipse cx="665.9" cy="596.3" rx="54" ry="18.6" fill="#2a3a8c" opacity="0.1" filter="url(#form-s7-blur2)"/>
+<ellipse cx="106.3" cy="305.8" rx="45.7" ry="24.5" fill="#2a3a8c" opacity="0.2" filter="url(#form-s7-blur2)"/>
+<ellipse cx="381.9" cy="133.2" rx="21.4" ry="14.4" fill="#2a3a8c" opacity="0.1" filter="url(#form-s7-blur2)"/>
+<ellipse cx="295.9" cy="449.1" rx="20.9" ry="8.7" fill="#2a3a8c" opacity="0.2" filter="url(#form-s7-blur2)"/>
+<circle cx="46" cy="150" r="9" fill="#c9c2b0"/>
+<circle cx="46" cy="150" r="9" fill="none" stroke="#8a826e" stroke-width="0.8"/>
+<circle cx="46" cy="950" r="9" fill="#c9c2b0"/>
+<circle cx="46" cy="950" r="9" fill="none" stroke="#8a826e" stroke-width="0.8"/>
+<text x="80.6" y="74.1" font-size="20" font-family="monospace" fill="#2a3a8c" font-weight="bold" opacity="0.9" letter-spacing="0.5">THE CROSSING  -  NIGHT LOG  -  STATEMENT</text>
+<text x="79.3" y="103.7" font-size="17" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">FORM S-7</text>
+<text x="730.1" y="130.6" font-size="13" font-family="monospace" fill="#2a3a8c" text-anchor="end" opacity="0.9" letter-spacing="0.5">COPY 2 OF 2</text>
+<text x="80.4" y="130.1" font-size="13" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">CATEGORIES: ROOM x MISSION, AND THREE QUESTIONS</text>
+<line x1="80" y1="144" x2="730" y2="144" stroke="#2a3a8c" stroke-width="1" stroke-dasharray="14 4" opacity="0.7"/>
+<rect x="548" y="90" width="18" height="18" fill="none" stroke="#2a3a8c" stroke-width="1"/>
+<rect x="574" y="90" width="18" height="18" fill="none" stroke="#2a3a8c" stroke-width="1"/>
+<rect x="600" y="90" width="18" height="18" fill="none" stroke="#2a3a8c" stroke-width="1"/>
+<rect x="626" y="90" width="18" height="18" fill="none" stroke="#2a3a8c" stroke-width="1"/>
+<rect x="652" y="90" width="18" height="18" fill="none" stroke="#2a3a8c" stroke-width="1"/>
+<rect x="678" y="90" width="18" height="18" fill="none" stroke="#2a3a8c" stroke-width="1"/>
+<rect x="704" y="90" width="18" height="18" fill="none" stroke="#2a3a8c" stroke-width="1"/>
+<path d="M706,92 l14,14 M720,92 l-14,14" stroke="#2a3a8c" stroke-width="2.2" fill="none"/>
+<text x="539.8" y="103.9" font-size="12" font-family="monospace" fill="#2a3a8c" text-anchor="end" opacity="0.9" letter-spacing="0.5">NIGHT</text>
+<text x="80.5" y="182.4" font-size="16" font-family="monospace" fill="#2a3a8c" font-weight="bold" opacity="0.9" letter-spacing="0.5">THE ACCOUNT.  TONIGHT YOU ONLY CONFIRM.</text>
+<text x="79.8" y="231.3" font-size="20" font-family="monospace" fill="#2a3a8c" font-weight="bold" opacity="0.9" letter-spacing="0.5">401</text>
+<rect x="140" y="212" width="580" height="30" fill="none" stroke="#2a3a8c" stroke-width="0.9"/>
+<text x="149.6" y="231.9" font-size="14" font-family="monospace" fill="#1c1a17" opacity="0.9" letter-spacing="0.5">REPORT ON DROST FROM INSIDE THE GALA</text>
+<text x="79.5" y="275.9" font-size="20" font-family="monospace" fill="#2a3a8c" font-weight="bold" opacity="0.9" letter-spacing="0.5">402</text>
+<rect x="140" y="256" width="580" height="30" fill="none" stroke="#2a3a8c" stroke-width="0.9"/>
+<text x="149.4" y="275.5" font-size="14" font-family="monospace" fill="#1c1a17" opacity="0.9" letter-spacing="0.5">RECOVER THE PAINTING FOR DROST AND FIND THE LEAK</text>
+<text x="80" y="320.6" font-size="20" font-family="monospace" fill="#2a3a8c" font-weight="bold" opacity="0.9" letter-spacing="0.5">403</text>
+<rect x="140" y="300" width="580" height="30" fill="none" stroke="#2a3a8c" stroke-width="0.9"/>
+<text x="150.1" y="320.6" font-size="14" font-family="monospace" fill="#1c1a17" opacity="0.9" letter-spacing="0.5">DROP A BANNER AT THE GALA</text>
+<text x="80.7" y="363.6" font-size="20" font-family="monospace" fill="#2a3a8c" font-weight="bold" opacity="0.9" letter-spacing="0.5">404</text>
+<rect x="140" y="344" width="580" height="30" fill="none" stroke="#2a3a8c" stroke-width="0.9"/>
+<text x="150.5" y="364.1" font-size="14" font-family="monospace" fill="#1c1a17" opacity="0.9" letter-spacing="0.5">GIVE DROST'S ACCOUNTS TO THE PRESS</text>
+<text x="79.9" y="407.3" font-size="20" font-family="monospace" fill="#2a3a8c" font-weight="bold" opacity="0.9" letter-spacing="0.5">405</text>
+<rect x="140" y="388" width="580" height="30" fill="none" stroke="#2a3a8c" stroke-width="0.9"/>
+<text x="150.7" y="408.2" font-size="14" font-family="monospace" fill="#1c1a17" opacity="0.9" letter-spacing="0.5">WIPE THE CAMERAS AND PLANT THE GALA LOGGER</text>
+<text x="79.6" y="452.3" font-size="20" font-family="monospace" fill="#2a3a8c" font-weight="bold" opacity="0.9" letter-spacing="0.5">406</text>
+<rect x="140" y="432" width="580" height="30" fill="none" stroke="#2a3a8c" stroke-width="0.9"/>
+<text x="150.7" y="452.2" font-size="14" font-family="monospace" fill="#1c1a17" opacity="0.9" letter-spacing="0.5">STEAL THE NIGHT VISITOR FROM THE BONDED HOUSE</text>
+<text x="80.6" y="496.7" font-size="20" font-family="monospace" fill="#2a3a8c" font-weight="bold" opacity="0.8" letter-spacing="0.5">400</text>
+<rect x="140" y="476" width="580" height="30" fill="none" stroke="#2a3a8c" stroke-width="0.9" stroke-dasharray="5 3"/>
+<text x="149.8" y="496.5" font-size="14" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">______   WITNESS / PRODUCT / GUEST / NOBODY</text>
+<text x="80.7" y="572.1" font-size="16" font-family="monospace" fill="#2a3a8c" font-weight="bold" opacity="0.9" letter-spacing="0.5">7.  WHO BOOKED THEM ALL?</text>
+<rect x="110" y="590" width="16" height="16" fill="none" stroke="#2a3a8c" stroke-width="1"/>
+<text x="133.7" y="603.8" font-size="13" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">WREN</text>
+<rect x="188.4" y="590" width="16" height="16" fill="none" stroke="#2a3a8c" stroke-width="1"/>
+<text x="212" y="603.7" font-size="13" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">DROST</text>
+<rect x="275.4" y="590" width="16" height="16" fill="none" stroke="#2a3a8c" stroke-width="1"/>
+<text x="299" y="604.2" font-size="13" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">THE PORTER</text>
+<rect x="405.4" y="590" width="16" height="16" fill="none" stroke="#2a3a8c" stroke-width="1"/>
+<text x="429.6" y="604" font-size="13" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">THE STRANGER</text>
+<rect x="552.6" y="590" width="16" height="16" fill="none" stroke="#2a3a8c" stroke-width="1"/>
+<text x="577.2" y="604.1" font-size="13" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">YOU</text>
+<line x1="80" y1="626" x2="720" y2="626" stroke="#2a3a8c" stroke-width="0.6" stroke-dasharray="2 4" opacity="0.7"/>
+<text x="79.9" y="667.4" font-size="16" font-family="monospace" fill="#2a3a8c" font-weight="bold" opacity="0.9" letter-spacing="0.5">8.  WHO IS THE STRANGER?</text>
+<rect x="110" y="686" width="16" height="16" fill="none" stroke="#2a3a8c" stroke-width="1"/>
+<text x="134.6" y="699.9" font-size="13" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">ABEL FENN</text>
+<rect x="231.4" y="686" width="16" height="16" fill="none" stroke="#2a3a8c" stroke-width="1"/>
+<text x="255.1" y="700.2" font-size="13" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">DROST</text>
+<rect x="318.4" y="686" width="16" height="16" fill="none" stroke="#2a3a8c" stroke-width="1"/>
+<text x="342" y="699.3" font-size="13" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">WREN</text>
+<rect x="396.8" y="686" width="16" height="16" fill="none" stroke="#2a3a8c" stroke-width="1"/>
+<text x="420.4" y="700.6" font-size="13" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">LEW</text>
+<rect x="466.6" y="686" width="16" height="16" fill="none" stroke="#2a3a8c" stroke-width="1"/>
+<text x="490.4" y="700.5" font-size="13" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">A GUEST</text>
+<line x1="80" y1="722" x2="720" y2="722" stroke="#2a3a8c" stroke-width="0.6" stroke-dasharray="2 4" opacity="0.7"/>
+<text x="80.3" y="763.8" font-size="16" font-family="monospace" fill="#2a3a8c" font-weight="bold" opacity="0.9" letter-spacing="0.5">9.  WHAT IS THE PRODUCT?</text>
+<rect x="110" y="782" width="16" height="16" fill="none" stroke="#2a3a8c" stroke-width="1"/>
+<text x="134.2" y="795.9" font-size="13" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">THE LOG</text>
+<rect x="214.2" y="782" width="16" height="16" fill="none" stroke="#2a3a8c" stroke-width="1"/>
+<text x="238.6" y="796.1" font-size="13" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">THE PAINTING</text>
+<rect x="361.4" y="782" width="16" height="16" fill="none" stroke="#2a3a8c" stroke-width="1"/>
+<text x="385.6" y="796.4" font-size="13" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">THE LEDGER</text>
+<rect x="491.4" y="782" width="16" height="16" fill="none" stroke="#2a3a8c" stroke-width="1"/>
+<text x="515.5" y="795.4" font-size="13" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">THE LOGGER</text>
+<rect x="621.4" y="782" width="16" height="16" fill="none" stroke="#2a3a8c" stroke-width="1"/>
+<text x="645.1" y="796" font-size="13" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">THE BANNER</text>
+<line x1="80" y1="818" x2="720" y2="818" stroke="#2a3a8c" stroke-width="0.6" stroke-dasharray="2 4" opacity="0.7"/>
+<path d="M146.5,314.8 L160.9,312.8 L173.5,313 L188.4,314 L202.9,314.1 L216.5,314.4 L231.2,312.6 L245.6,313.3 L258.6,312.6 L273.6,312.6 L287.5,314.4 L301.7,314 L316.4,313.2 L331.6,313.9 L345.6,313.8 L359.1,312.1 L373.4,312.7 L386.9,312.3 L402.4,313.4 L416.3,313.6 L429.1,312.5 L444.6,311.8 L459.5,312.9 L473.2,312.4 L485.6,313.5 L501.9,311.8 L515.1,312.6 L529,313.4 L544.1,312.3 L557.2,313.7 L572.2,312.4 L586.9,312.3 L600.2,312.6 L614.3,312 L629.9,311.5 L643.4,311.3 L656.5,312.8 L671.2,311.2 L686.7,312.5 L700.4,311.2 L713.1,312.4" stroke="#1c1a17" stroke-width="2.4" fill="none"/>
+<text x="80.2" y="880" font-size="14" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">NO SECOND LOOK.</text>
+<text x="80.2" y="916.3" font-size="14" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">SIGNED:</text>
+<path d="M160.5,917.7 L174.6,917.4 L187.8,917.5 L203,917.2 L217.1,917.9 L230.9,917.3 L245.1,917 L259.8,917.4 L273.8,917.7 L288.1,916.7 L302.6,916.9 L315.9,916.7 L330.3,917 L344.3,916.9 L358.8,916.4 L373.5,916.1 L387.2,916.9 L401.8,916.8 L415.2,915.8 L429.7,915.9" stroke="#2a3a8c" stroke-width="1" fill="none"/>
+<text x="79.6" y="1010.4" font-size="10" font-family="monospace" fill="#2a3a8c" opacity="0.7" letter-spacing="0.5">COPY - NOT VALID WITHOUT THE SEAL OF THE MANAGEMENT</text>
+<circle cx="670" cy="930" r="51" fill="none" stroke="#fff" stroke-width="1.6" opacity="0.8" transform="translate(-1 -1)"/>
+<circle cx="670" cy="930" r="51" fill="none" stroke="#8a826e" stroke-width="1.2" opacity="0.6"/>
+<path d="M655,934.1a19,19 0 1,0 38.1,0a19,19 0 1,0 -38.1,0M643.1,919.8a11.6,11.6 0 1,0 23.1,0a11.6,11.6 0 1,0 -23.1,0M645.5,916.4 L629.2,919.8 L644.8,923.9Z M683.6,919.8 L691.1,891.9 L699.2,895.3 L693.8,933.4Z" fill="#fff" opacity="0.8" transform="translate(-1.2 -1.2)"/>
+<path d="M655,934.1a19,19 0 1,0 38.1,0a19,19 0 1,0 -38.1,0M643.1,919.8a11.6,11.6 0 1,0 23.1,0a11.6,11.6 0 1,0 -23.1,0M645.5,916.4 L629.2,919.8 L644.8,923.9Z M683.6,919.8 L691.1,891.9 L699.2,895.3 L693.8,933.4Z" fill="#b9b09a" opacity="0.7" transform="translate(1 1)"/>
+<path d="M655,934.1a19,19 0 1,0 38.1,0a19,19 0 1,0 -38.1,0M643.1,919.8a11.6,11.6 0 1,0 23.1,0a11.6,11.6 0 1,0 -23.1,0M645.5,916.4 L629.2,919.8 L644.8,923.9Z M683.6,919.8 L691.1,891.9 L699.2,895.3 L693.8,933.4Z" fill="#ebe5d6"/>
+</g>
+</svg>

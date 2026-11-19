@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="card-sparks-8-t card-sparks-8-d">
+<title id="card-sparks-8-t">Short Rations: 8 of Sparks</title>
+<desc id="card-sparks-8-d">Ration-issue card, the 8 of Sparks (Kimura's suit): worn card stock, the rank in army stencil at two corners, 8 of eight issue holes punched, and drawn by hand in the middle a radio mast throwing 8 sparks.</desc>
+<defs><clipPath id="card-sparks-8-clip1"><rect x="4" y="4" width="292" height="412" rx="16"/></clipPath><filter id="card-sparks-8-spk2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="491"/><feColorMatrix values="0 0 0 0 0.44  0 0 0 0 0.40  0 0 0 0 0.31  0 0 0 0.7 -0.3"/></filter><mask id="card-sparks-8-st3" maskUnits="userSpaceOnUse" x="-32" y="6" width="162" height="108"><rect x="-32" y="6" width="162" height="108" fill="#fff"/><rect x="43.6" y="30" width="4.8" height="60" fill="#000"/></mask><mask id="card-sparks-8-st4" maskUnits="userSpaceOnUse" x="-32" y="6" width="162" height="108"><rect x="-32" y="6" width="162" height="108" fill="#fff"/><rect x="43.6" y="30" width="4.8" height="60" fill="#000"/></mask><mask id="card-sparks-8-st5" maskUnits="userSpaceOnUse" x="8" y="361.6" width="136.4" height="39.6"><rect x="8" y="361.6" width="136.4" height="39.6" fill="#fff"/><rect x="35.7" y="370.4" width="1.8" height="22" fill="#000"/><rect x="51.1" y="370.4" width="1.8" height="22" fill="#000"/><rect x="66.5" y="370.4" width="1.8" height="22" fill="#000"/><rect x="81.9" y="370.4" width="1.8" height="22" fill="#000"/><rect x="97.3" y="370.4" width="1.8" height="22" fill="#000"/><rect x="112.7" y="370.4" width="1.8" height="22" fill="#000"/></mask></defs>
+<rect x="4" y="4" width="292" height="412" rx="16" fill="#DDD4BD" stroke="#6f6750" stroke-width="2"/>
+<g clip-path="url(#card-sparks-8-clip1)">
+<rect x="0" y="0" width="300" height="420" filter="url(#card-sparks-8-spk2)"/>
+</g>
+<g clip-path="url(#card-sparks-8-clip1)">
+<ellipse cx="233.7" cy="212.3" rx="18" ry="2.4" fill="#b3a786" opacity="0.3" transform="rotate(-36.3 233.7 212.3)"/>
+<ellipse cx="103.3" cy="239" rx="29.2" ry="5.2" fill="#b3a786" opacity="0.3" transform="rotate(-13.7 103.3 239)"/>
+<ellipse cx="277.1" cy="383.8" rx="19.4" ry="3.6" fill="#b3a786" opacity="0.3" transform="rotate(38.2 277.1 383.8)"/>
+<ellipse cx="173.6" cy="124.7" rx="9.3" ry="4" fill="#b3a786" opacity="0.3" transform="rotate(-32.5 173.6 124.7)"/>
+<ellipse cx="10.1" cy="180.9" rx="19.5" ry="5.6" fill="#b3a786" opacity="0.3" transform="rotate(11.6 10.1 180.9)"/>
+<ellipse cx="158.3" cy="123.2" rx="27.8" ry="5" fill="#b3a786" opacity="0.3" transform="rotate(-34.3 158.3 123.2)"/>
+<line x1="37.9" y1="416" x2="4" y2="382.1" stroke="#9b9072" stroke-width="1.5"/>
+<polygon points="37.9,416 4,416 4,382.1" fill="#000" opacity="0.1"/>
+</g>
+<rect x="16" y="16" width="268" height="388" rx="9" fill="none" stroke="#1B1D1F" stroke-width="2.4" stroke-dasharray="20 5"/>
+<g mask="url(#card-sparks-8-st3)">
+<text x="28" y="78" font-size="60" font-family="monospace" fill="#1B1D1F" font-weight="bold" letter-spacing="6">8</text>
+</g>
+<path d="M50.1,88.7 L48.2,92.5 L45.6,96.3 L42.6,100.1 L40.9,103.3 L47.2,102.3 L46.5,107.1 L45,110.6 L43.6,115.3 L46.7,111.4 L49.1,107.2 L51.3,103.6 L54.2,99.4 L47.3,100.4 L48.5,94.4 L50.3,88.6Z" stroke="#1B1D1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<g transform="rotate(180 150.0 210.0)">
+<g mask="url(#card-sparks-8-st4)">
+<text x="28" y="78" font-size="60" font-family="monospace" fill="#1B1D1F" font-weight="bold" letter-spacing="6">8</text>
+</g>
+<path d="M50.6,88.6 L47.8,92.5 L45.7,96.6 L43.1,99.5 L40.4,104 L47.7,103 L46.1,106.6 L45,111.2 L43.5,114.6 L46.6,111.2 L49.3,107.6 L51.3,103.1 L54.2,99.5 L47.2,100.9 L48.6,95.1 L50.5,88.8Z" stroke="#1B1D1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</g>
+<circle cx="110" cy="44" r="6.5" fill="#1B1D1F"/>
+<circle cx="108.5" cy="42.5" r="2" fill="#4a4e51"/>
+<circle cx="132" cy="44" r="6.5" fill="#1B1D1F"/>
+<circle cx="130.5" cy="42.5" r="2" fill="#4a4e51"/>
+<circle cx="154" cy="44" r="6.5" fill="#1B1D1F"/>
+<circle cx="152.5" cy="42.5" r="2" fill="#4a4e51"/>
+<circle cx="176" cy="44" r="6.5" fill="#1B1D1F"/>
+<circle cx="174.5" cy="42.5" r="2" fill="#4a4e51"/>
+<circle cx="198" cy="44" r="6.5" fill="#1B1D1F"/>
+<circle cx="196.5" cy="42.5" r="2" fill="#4a4e51"/>
+<circle cx="220" cy="44" r="6.5" fill="#1B1D1F"/>
+<circle cx="218.5" cy="42.5" r="2" fill="#4a4e51"/>
+<circle cx="242" cy="44" r="6.5" fill="#1B1D1F"/>
+<circle cx="240.5" cy="42.5" r="2" fill="#4a4e51"/>
+<circle cx="264" cy="44" r="6.5" fill="#1B1D1F"/>
+<circle cx="262.5" cy="42.5" r="2" fill="#4a4e51"/>
+<text x="108" y="72" font-size="13" font-family="monospace" fill="#1B1D1F" text-anchor="start">ISSUE 8/8</text>
+<path d="M120,338 L150,196 L180,338" fill="none" stroke="#1B1D1F" stroke-width="3.2" stroke-linejoin="round"/>
+<path d="M120,338L174,309.6M180,338L126,309.6M126,309.6L168,281.2M174,309.6L132,281.2M132,281.2L162,252.8M168,281.2L138,252.8M138,252.8L156,224.4M162,252.8L144,224.4M144,224.4L150,196M156,224.4L150,196" stroke="#1B1D1F" stroke-width="1.6" fill="none"/>
+<line x1="150" y1="196" x2="150" y2="170" stroke="#1B1D1F" stroke-width="3"/>
+<line x1="100" y1="338" x2="200" y2="338" stroke="#1B1D1F" stroke-width="3"/>
+<path d="M126,170 A24,24 0 0 1 174,170" fill="none" stroke="#3b3a38" stroke-width="1.4" stroke-dasharray="5 5" opacity="0.7"/>
+<path d="M110,170 A40,40 0 0 1 190,170" fill="none" stroke="#3b3a38" stroke-width="1.4" stroke-dasharray="5 5" opacity="0.7"/>
+<g transform="rotate(-87.5 72.1 166.9)">
+<path d="M76.2,150.2 L73.4,154.9 L69.6,159 L67.1,163.7 L63.2,169.5 L72.5,167.5 L70.6,173.3 L69.6,178.3 L68.1,184.3 L71.3,178.7 L75.1,173.6 L78.4,168.2 L81.4,162.9 L72.9,164.8 L74.3,159.8 L75.4,155.1 L76.8,149.7Z" stroke="#1B1D1F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="#D9A441"/>
+</g>
+<g transform="rotate(-62.5 98.6 145.4)">
+<path d="M102.7,128.2 L99.5,132.6 L96,137.7 L92.9,142.5 L89.5,147.1 L99.4,145.6 L97.5,151.3 L96.1,156.9 L94.3,162.2 L98.2,157 L100.6,151.6 L104.3,147.1 L108.5,142.3 L99.3,143.1 L100.3,138.6 L101.8,133.3 L102.4,128Z" stroke="#1B1D1F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="#D9A441"/>
+</g>
+<g transform="rotate(-37.5 102.5 113.1)">
+<path d="M106.3,96.1 L103.6,101 L100.9,106.1 L97.4,109.9 L94.1,115.2 L102.3,114.2 L101.9,118.8 L99.9,125 L98.4,130.5 L101.9,124.7 L105.2,119.7 L108.5,115.1 L112.2,109.3 L102.7,111.6 L104.2,105.8 L106,100.6 L107.2,95.8Z" stroke="#1B1D1F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="#D9A441"/>
+</g>
+<g transform="rotate(-12.5 137.4 117.9)">
+<path d="M141.5,100.5 L139,105.9 L135,111 L132.4,114.9 L128.8,120.1 L138.3,118.2 L136.6,124 L134.4,129.9 L132.8,135.4 L136.1,130.4 L139.6,124.5 L143.6,120 L146.7,114.2 L137.8,115.7 L139.5,111.1 L140.5,105.3 L141.8,100.3Z" stroke="#1B1D1F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="#D9A441"/>
+</g>
+<g transform="rotate(12.5 166.9 99.9)">
+<path d="M171.3,82.9 L168.4,87.1 L165.2,92.5 L161,97.6 L158.1,102 L167.2,101 L166.2,105.9 L164,111.5 L162,116.6 L165.7,112.2 L168.9,106.9 L172.5,101.6 L175.8,96.5 L167,98.2 L169.1,92.5 L169.4,88.3 L170.6,83.3Z" stroke="#1B1D1F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="#D9A441"/>
+</g>
+<g transform="rotate(37.5 185.3 127.7)">
+<path d="M189.9,110.4 L186.8,115.3 L183.5,120.6 L179.9,125 L177.3,129.9 L186,128.7 L184.2,134.3 L183,139.4 L181.4,144.8 L184.8,139.1 L187.5,134.8 L191.6,129.5 L194.7,124.3 L185.2,125.6 L186.5,120.9 L188.5,115.5 L189.1,110.9Z" stroke="#1B1D1F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="#D9A441"/>
+</g>
+<g transform="rotate(62.5 219.2 136.9)">
+<path d="M223.5,119.8 L220,125.2 L216.9,128.9 L213.9,133.9 L211.1,139 L219.4,137.1 L218.4,142.9 L216.8,148.2 L214.9,153.6 L218.7,148.5 L222.1,144 L225.1,138.4 L228.9,133.5 L219.1,134.5 L220.8,130.3 L221.9,125.4 L223.7,120Z" stroke="#1B1D1F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="#D9A441"/>
+</g>
+<g transform="rotate(87.5 207.9 167.7)">
+<path d="M212.5,150.6 L208.5,155.9 L205.7,160.1 L202.6,165.4 L199.1,170.1 L208.3,168.4 L206.8,173.5 L204.8,179.7 L203.3,184.3 L206.8,179.7 L210.4,174.7 L213.9,169.7 L217.2,163.9 L208.7,165.1 L209.4,160.3 L211,155.4 L212.2,150.4Z" stroke="#1B1D1F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="#D9A441"/>
+</g>
+<g mask="url(#card-sparks-8-st5)">
+<text x="30" y="388" font-size="22" font-family="monospace" fill="#8a6a1c" font-weight="bold" letter-spacing="2.2">SPARKS</text>
+</g>
+<text x="32" y="364" font-size="13" font-family="monospace" fill="#3b3a38" text-anchor="start">EIGHT</text>
+</svg>

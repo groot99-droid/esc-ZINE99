@@ -1,0 +1,510 @@
+{
+  "game": "man-eater",
+  "location": "truck-cab",
+  "name": "The truck cab",
+  "reference": "assets/locations/truck-cab.jpg",
+  "bounds_m": [
+    8,
+    10,
+    4
+  ],
+  "origin": "snow beside the driver's door; +y toward the truck's nose and the north fence; the truck stands along y with its cab at +y, the open door on its -x side",
+  "materials": {
+    "snow": {
+      "color": [
+        0.933,
+        0.945,
+        0.949
+      ],
+      "roughness": 0.9
+    },
+    "olive": {
+      "color": [
+        0.2,
+        0.23,
+        0.17
+      ],
+      "roughness": 0.85
+    },
+    "canvas": {
+      "color": [
+        0.3,
+        0.31,
+        0.24
+      ],
+      "roughness": 0.95
+    },
+    "steel": {
+      "color": [
+        0.541,
+        0.561,
+        0.576
+      ],
+      "roughness": 0.55,
+      "metallic": 0.8
+    },
+    "ink": {
+      "color": [
+        0.106,
+        0.114,
+        0.122
+      ],
+      "roughness": 0.9
+    },
+    "frosted-glass": {
+      "color": [
+        0.78,
+        0.83,
+        0.86
+      ],
+      "roughness": 0.35,
+      "emission": 0.15
+    },
+    "paper": {
+      "color": [
+        0.851,
+        0.824,
+        0.749
+      ],
+      "roughness": 0.9
+    }
+  },
+  "blockout": [
+    {
+      "id": "snow-ground",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        8.0,
+        10.0,
+        0.2
+      ],
+      "location": [
+        0,
+        0,
+        -0.1
+      ],
+      "material": "snow"
+    },
+    {
+      "id": "drift-against-cab",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        2.6,
+        1.2,
+        0.7
+      ],
+      "location": [
+        1.2,
+        3.6,
+        0.35
+      ],
+      "material": "snow"
+    },
+    {
+      "id": "cab-floor",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.9,
+        1.5,
+        0.08
+      ],
+      "location": [
+        1.2,
+        2.1,
+        1.0
+      ],
+      "material": "steel"
+    },
+    {
+      "id": "cab-back-wall",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.9,
+        0.08,
+        1.4
+      ],
+      "location": [
+        1.2,
+        1.35,
+        1.75
+      ],
+      "material": "olive"
+    },
+    {
+      "id": "cab-roof",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.9,
+        1.5,
+        0.08
+      ],
+      "location": [
+        1.2,
+        2.1,
+        2.5
+      ],
+      "material": "olive"
+    },
+    {
+      "id": "cab-far-wall",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.08,
+        1.5,
+        1.4
+      ],
+      "location": [
+        2.15,
+        2.1,
+        1.75
+      ],
+      "material": "olive"
+    },
+    {
+      "id": "bench-seat",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.7,
+        0.55,
+        0.3
+      ],
+      "location": [
+        1.25,
+        1.7,
+        1.2
+      ],
+      "material": "canvas"
+    },
+    {
+      "id": "bench-back",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.7,
+        0.12,
+        0.55
+      ],
+      "location": [
+        1.25,
+        1.44,
+        1.6
+      ],
+      "material": "canvas"
+    },
+    {
+      "id": "dashboard",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.9,
+        0.3,
+        0.35
+      ],
+      "location": [
+        1.2,
+        2.7,
+        1.55
+      ],
+      "material": "olive"
+    },
+    {
+      "id": "windscreen",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        1.8,
+        0.04,
+        0.6
+      ],
+      "location": [
+        1.2,
+        2.83,
+        2.1
+      ],
+      "material": "frosted-glass",
+      "collide": false
+    },
+    {
+      "id": "far-window",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        0.04,
+        0.8,
+        0.5
+      ],
+      "location": [
+        2.13,
+        2.0,
+        2.05
+      ],
+      "material": "frosted-glass",
+      "collide": false
+    },
+    {
+      "id": "steering-wheel",
+      "shape": "cylinder",
+      "role": "trim",
+      "size_m": [
+        0.45,
+        0.45,
+        0.04
+      ],
+      "location": [
+        0.7,
+        2.4,
+        1.75
+      ],
+      "rotation_deg": [
+        60,
+        0,
+        0
+      ],
+      "material": "ink"
+    },
+    {
+      "id": "glovebox",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.45,
+        0.28,
+        0.2
+      ],
+      "location": [
+        1.7,
+        2.62,
+        1.5
+      ],
+      "material": "ink"
+    },
+    {
+      "id": "glovebox-door",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.45,
+        0.02,
+        0.2
+      ],
+      "location": [
+        1.7,
+        2.46,
+        1.38
+      ],
+      "material": "olive",
+      "rotation_deg": [
+        80,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "letters-in-glovebox",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.38,
+        0.22,
+        0.14
+      ],
+      "location": [
+        1.7,
+        2.6,
+        1.5
+      ],
+      "material": "paper"
+    },
+    {
+      "id": "letters-on-seat",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.3,
+        0.2,
+        0.05
+      ],
+      "location": [
+        1.5,
+        1.75,
+        1.38
+      ],
+      "material": "paper"
+    },
+    {
+      "id": "door-open",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.06,
+        1.0,
+        1.3
+      ],
+      "location": [
+        -0.25000000000000006,
+        2.65,
+        1.7
+      ],
+      "material": "olive",
+      "rotation_deg": [
+        0,
+        0,
+        55
+      ]
+    },
+    {
+      "id": "door-step",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.4,
+        0.6,
+        0.06
+      ],
+      "location": [
+        0.0,
+        2.0,
+        0.55
+      ],
+      "material": "steel"
+    },
+    {
+      "id": "lamp-post",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.12,
+        0.12,
+        2.8
+      ],
+      "location": [
+        3.2,
+        4.2,
+        1.4
+      ],
+      "material": "ink"
+    },
+    {
+      "id": "fence-line",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        8.0,
+        0.05,
+        2.4
+      ],
+      "location": [
+        0,
+        4.7,
+        1.2
+      ],
+      "material": "ink",
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "truck",
+      "object": "army-truck",
+      "location": [
+        1.2,
+        -0.5,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ]
+    }
+  ],
+  "scenes": {
+    "n3_glovebox": {
+      "note": "Night 3, after the kennel shed. Duarte asked Fisk to put his letter in the truck, not the sack. The cab door is frozen half open; the glovebox is already full of letters, tied in bundles. Fisk lays Duarte's on top (glovebox_seen). Nothing here is read aloud.",
+      "world": {
+        "color": [
+          0.12,
+          0.14,
+          0.2
+        ],
+        "strength": 0.12
+      },
+      "lights": [
+        {
+          "name": "yard-lamp",
+          "type": "POINT",
+          "location": [
+            3.2,
+            4.2,
+            2.75
+          ],
+          "energy": 180,
+          "size": 0.2,
+          "color": [
+            0.851,
+            0.643,
+            0.255
+          ]
+        },
+        {
+          "name": "snow-fill",
+          "type": "AREA",
+          "location": [
+            -2.4,
+            0.5,
+            2.8
+          ],
+          "look_at": [
+            0.9,
+            2.1,
+            1.3
+          ],
+          "energy": 40,
+          "size": 3,
+          "color": [
+            0.62,
+            0.7,
+            0.85
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -0.55,
+          1.9,
+          1.98
+        ],
+        "look_at": [
+          1.7,
+          2.62,
+          1.5
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          -0.55,
+          1.9,
+          0.0
+        ],
+        "facing_deg": 288
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "truck",
+          "verb": "Put Duarte's letter in the glovebox",
+          "leads_to": "d4_chart"
+        }
+      ]
+    }
+  }
+}

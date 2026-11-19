@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" width="800" height="560" role="img" aria-labelledby="hand-continuum-t hand-continuum-d">
+<title id="hand-continuum-t">Hand 2: the Continuum</title>
+<desc id="hand-continuum-d">The Continuum's hand as a stroke set: every stroke the same flat black weight and dead upright; figures with no crossbar on the seven; a typed line that writes deg for the degree sign and spells her name wrong.</desc>
+<defs><filter id="hand-continuum-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="900"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter><pattern id="hand-continuum-pat2" width="46" height="20" patternUnits="userSpaceOnUse"><path d="M0,2.5H46M0,7.5H46M0,12.5H46M0,17.5H46" stroke="#3b2618" stroke-width="0.5" opacity="0.07"/><path d="M23,0V20" stroke="#3b2618" stroke-width="0.8" opacity="0.06"/></pattern><radialGradient id="hand-continuum-vig3" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#7a5a2e" stop-opacity="0"/><stop offset="100%" stop-color="#7a5a2e" stop-opacity="0.2"/></radialGradient></defs>
+<rect x="0" y="0" width="800" height="560" fill="#f1e8d2"/>
+<rect x="0" y="0" width="800" height="560" filter="url(#hand-continuum-grain1)"/>
+<rect x="0" y="0" width="800" height="560" fill="url(#hand-continuum-pat2)"/>
+<rect x="0" y="0" width="800" height="560" fill="url(#hand-continuum-vig3)"/>
+<rect x="24" y="24" width="752" height="512" fill="none" stroke="#3b2618" stroke-width="1.2"/>
+<text x="44" y="58" font-size="16" font-family="monospace" fill="#3b2618" letter-spacing="1">HAND 2  THE CONTINUUM</text>
+<line x1="44" y1="70" x2="756" y2="70" stroke="#3b2618" stroke-width="1"/>
+<text x="44" y="98" font-size="12" font-family="monospace" fill="#7d7a74" letter-spacing="1">STROKES</text>
+<text x="44" y="258" font-size="12" font-family="monospace" fill="#7d7a74" letter-spacing="1">FIGURES</text>
+<text x="44" y="372" font-size="12" font-family="monospace" fill="#7d7a74" letter-spacing="1">A LINE</text>
+<circle cx="634" cy="190" r="96" fill="#fff" opacity="0.3"/>
+<circle cx="634" cy="190" r="96" fill="none" stroke="#3b2618" stroke-width="5"/>
+<circle cx="634" cy="190" r="88" fill="none" stroke="#7d7a74" stroke-width="1"/>
+<line x1="700" y1="262" x2="748" y2="318" stroke="#3b2618" stroke-width="11" stroke-linecap="round"/>
+<text x="566" y="318" font-size="11" font-family="monospace" fill="#7d7a74" letter-spacing="1">×12  pressure, slant</text>
+<line x1="84" y1="228" x2="84" y2="234" stroke="#7d7a74" stroke-width="1"/>
+<line x1="176" y1="228" x2="176" y2="234" stroke="#7d7a74" stroke-width="1"/>
+<line x1="268" y1="228" x2="268" y2="234" stroke="#7d7a74" stroke-width="1"/>
+<line x1="360" y1="228" x2="360" y2="234" stroke="#7d7a74" stroke-width="1"/>
+<line x1="452" y1="228" x2="452" y2="234" stroke="#7d7a74" stroke-width="1"/>
+<line x1="90" y1="120" x2="90" y2="214" stroke="#141414" stroke-width="7"/>
+<line x1="150" y1="214" x2="196" y2="122" stroke="#141414" stroke-width="7"/>
+<line x1="338" y1="168" x2="400" y2="168" stroke="#141414" stroke-width="7"/>
+<circle cx="270" cy="166" r="34" fill="none" stroke="#141414" stroke-width="7"/>
+<rect x="446" y="180" width="12" height="12" fill="#141414"/>
+<path d="M65.9,290 L73.8,290 L78.7,298 L78.7,322 L73.8,330 L65.9,330 L61,322 L61,298 L65.9,290 M110.3,298.7 L114.8,290 L114.8,330 M147.8,298 L152.7,290 L162.6,290 L167.5,296.7 L167.5,304.7 L147.8,330 L167.5,330 M194.6,295.3 L199.6,290 L209.4,290 L214.4,296.7 L214.4,304.7 L209.4,310 L202,310 M209.4,310 L214.4,315.3 L214.4,323.3 L209.4,330 L199.6,330 L194.6,324.7 M256.3,330 L256.3,290 L241.5,316.7 L261.2,316.7 M308.1,290 L290.8,290 L289.3,307.3 L303.1,307.3 L308.1,314 L308.1,323.3 L303.1,330 L293.3,330 L288.3,324.7 M353,292.7 L345.1,290 L339.1,298 L335.2,310 L335.2,323.3 L340.1,330 L350,330 L354.9,323.3 L354.9,315.3 L350,309.3 L340.1,309.3 L335.2,315.3 M382.1,290 L401.8,290 L389.5,330 M433.8,310 L428.9,303.3 L428.9,296.7 L433.8,290 L443.7,290 L448.6,296.7 L448.6,303.3 L443.7,310 L433.8,310 L428.9,316.7 L428.9,323.3 L433.8,330 L443.7,330 L448.6,323.3 L448.6,316.7 L443.7,310 M495.5,304.7 L490.6,310.7 L480.7,310.7 L475.8,304.7 L475.8,296.7 L480.7,290 L490.6,290 L495.5,296.7 L495.5,310 L491.5,322 L485.6,330 L478.7,328.7" fill="none" stroke="#141414" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="60" y="418" font-size="26" font-family="monospace" fill="#141414">06:10  STRIDER COUNT 17</text>
+<text x="60" y="458" font-size="26" font-family="monospace" fill="#141414">PHASE OFFSET 47 deg   DR. LIRA CALIX</text>
+<path d="M370,466 h60 M582,466 h72" stroke="#b3212b" stroke-width="2" fill="none"/>
+<text x="60" y="512" font-size="13" font-family="monospace" fill="#7d7a74" letter-spacing="1">deg for °   flat register   misspelled names   clocks out of order</text>
+<line x1="590" y1="132" x2="690" y2="132" stroke="#141414" stroke-width="13"/>
+<line x1="684" y1="132" x2="640" y2="256" stroke="#141414" stroke-width="13"/>
+<line x1="634" y1="268" x2="634" y2="118" stroke="#b3212b" stroke-width="1" stroke-dasharray="5 4"/>
+<line x1="634" y1="268" x2="634" y2="118" stroke="#7d7a74" stroke-width="1" stroke-dasharray="2 4"/>
+<text x="668" y="236" font-size="17" font-family="monospace" fill="#b3212b">+0°</text>
+</svg>

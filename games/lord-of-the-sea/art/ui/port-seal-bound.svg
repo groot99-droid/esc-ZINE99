@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260" width="260" height="260" role="img" aria-labelledby="port-seal-bound-t port-seal-bound-d">
+<title id="port-seal-bound-t">Port seal: bound</title>
+<desc id="port-seal-bound-d">A port on the chart table that is still bound: whole red wax with the Company's mark, a ribbon under it.</desc>
+<defs><filter id="port-seal-bound-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="514"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.2 0"/></filter><pattern id="port-seal-bound-pat2" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(0)"><path d="M0,2 H4" stroke="#6B4A2B" stroke-width="0.5" opacity="0.1"/></pattern><pattern id="port-seal-bound-pat3" width="47" height="47" patternUnits="userSpaceOnUse" patternTransform="rotate(90)"><path d="M0,23.5 H47" stroke="#6B4A2B" stroke-width="0.7" opacity="0.1"/></pattern><radialGradient id="port-seal-bound-rg4" cx="0.36" cy="0.3" r="0.8"><stop offset="0%" stop-color="#fff" stop-opacity="0.3"/><stop offset="60%" stop-color="#fff" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity="0.2"/></radialGradient></defs>
+<rect x="0" y="0" width="260" height="260" fill="#EFE6D0"/>
+<rect x="0" y="0" width="260" height="260" filter="url(#port-seal-bound-grain1)"/>
+<rect x="0" y="0" width="260" height="260" fill="url(#port-seal-bound-pat2)"/>
+<rect x="0" y="0" width="260" height="260" fill="url(#port-seal-bound-pat3)"/>
+<path d="M0,0V260M60,0V260M120,0V260M180,0V260M240,0V260M0,0H260M0,60H260M0,120H260M0,180H260M0,240H260" fill="none" stroke="#1F2E4A" stroke-width="0.4" opacity="0.4"/>
+<circle cx="130" cy="120" r="92" fill="none" stroke="#1F2E4A" stroke-width="1.2" stroke-dasharray="3 5"/>
+<text x="130" y="244" font-size="15" font-family="serif" fill="#1F2E4A" text-anchor="middle" letter-spacing="3.3" font-weight="normal">BOUND</text>
+<path d="M111.1,100 l-16.2,102.6 l16.2,-13.5 l16.2,13.5 l-2.7,-102.6z" fill="#1F2E4A" stroke="#16130F" stroke-width="0.8" opacity="0.9" transform="rotate(14 130 100)"/>
+<path d="M146.2,100 l-16.2,102.6 l16.2,-13.5 l16.2,13.5 l-2.7,-102.6z" fill="#1F2E4A" stroke="#16130F" stroke-width="0.8" opacity="0.9" transform="rotate(-10 130 100)"/>
+<path d="M185.2,100 C184.6,104.4 183.2,108.5 182.3,112.9 C181.4,117.3 182.3,122.7 179.9,126.2 C177.6,129.7 171.2,130.5 168.2,133.8 C165.2,137.2 165.2,143.7 161.9,146.2 C158.6,148.6 152.6,146.8 148.4,148.5 C144.2,150.3 141.1,155.3 136.9,156.8 C132.7,158.2 127.4,158.3 123.1,157.1 C118.8,155.9 115.2,151.5 111.2,149.5 C107.2,147.5 102.3,147.5 98.9,145.1 C95.5,142.6 93.1,138.4 90.7,134.8 C88.3,131.3 87.4,127.3 84.5,123.9 C81.6,120.4 75.2,118 73.1,114 C71,110 71.7,104.6 71.9,100 C72.1,95.4 72.4,90.3 74.5,86.3 C76.6,82.4 82.1,79.8 84.7,76.3 C87.4,72.7 88.5,69 90.6,65.1 C92.8,61.2 94.1,55.6 97.4,52.8 C100.8,50.1 106.3,50.1 110.6,48.7 C114.9,47.3 118.9,45.4 123.3,44.5 C127.6,43.5 132.5,42.5 136.9,43.2 C141.2,44 145.1,47.3 149.4,49 C153.6,50.7 159,50.5 162.2,53.4 C165.3,56.3 164.9,63 168.1,66.2 C171.4,69.5 178.5,69.6 181.5,73 C184.5,76.3 185.4,81.7 186,86.2 C186.6,90.7 185.9,95.6 185.2,100Z" fill="#000" opacity="0.2" transform="translate(3,4)"/>
+<path d="M185.2,100 C184.6,104.4 183.2,108.5 182.3,112.9 C181.4,117.3 182.3,122.7 179.9,126.2 C177.6,129.7 171.2,130.5 168.2,133.8 C165.2,137.2 165.2,143.7 161.9,146.2 C158.6,148.6 152.6,146.8 148.4,148.5 C144.2,150.3 141.1,155.3 136.9,156.8 C132.7,158.2 127.4,158.3 123.1,157.1 C118.8,155.9 115.2,151.5 111.2,149.5 C107.2,147.5 102.3,147.5 98.9,145.1 C95.5,142.6 93.1,138.4 90.7,134.8 C88.3,131.3 87.4,127.3 84.5,123.9 C81.6,120.4 75.2,118 73.1,114 C71,110 71.7,104.6 71.9,100 C72.1,95.4 72.4,90.3 74.5,86.3 C76.6,82.4 82.1,79.8 84.7,76.3 C87.4,72.7 88.5,69 90.6,65.1 C92.8,61.2 94.1,55.6 97.4,52.8 C100.8,50.1 106.3,50.1 110.6,48.7 C114.9,47.3 118.9,45.4 123.3,44.5 C127.6,43.5 132.5,42.5 136.9,43.2 C141.2,44 145.1,47.3 149.4,49 C153.6,50.7 159,50.5 162.2,53.4 C165.3,56.3 164.9,63 168.1,66.2 C171.4,69.5 178.5,69.6 181.5,73 C184.5,76.3 185.4,81.7 186,86.2 C186.6,90.7 185.9,95.6 185.2,100Z" fill="#8C2B2B"/>
+<circle cx="130" cy="100" r="52.9" fill="url(#port-seal-bound-rg4)"/>
+<circle cx="130" cy="100" r="40" fill="none" stroke="#000" stroke-width="2.7" opacity="0.3"/>
+<circle cx="130" cy="100" r="38.9" fill="none" stroke="#fff" stroke-width="1.4" opacity="0.3"/>
+<g opacity="0.5" fill="none" stroke="#000" stroke-width="2.3" stroke-linecap="round">
+<circle cx="130" cy="100" r="33.5"/>
+<path d="M130,123.4 Q104.9,100 130,74.9 Q155.1,100 130,123.4 M130,123.4 V83.3"/>
+<path d="M120,98.3 L130,106.7 L140,98.3 M122,88.3 L130,96 L138,88.3" stroke-width="1.4"/>
+</g>
+</svg>

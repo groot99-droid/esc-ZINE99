@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160" role="img" aria-labelledby="clue-visitors-t clue-visitors-d">
+<title id="clue-visitors-t">Clue kind: Visitors</title>
+<desc id="clue-visitors-d">Clue-kind icon in technical pen inside a brass ring: a door, three knock marks and 2:14, for visitors.</desc>
+<defs><radialGradient id="clue-visitors-rg1" cx="0.5" cy="0.5" r="0.75"><stop offset="0%" stop-color="#fff" stop-opacity="0.5"/><stop offset="100%" stop-color="#b8ab8a" stop-opacity="0.5"/></radialGradient><clipPath id="clue-visitors-clip2"><circle cx="80" cy="70" r="50"/></clipPath></defs>
+<rect x="0" y="0" width="160" height="160" rx="10" fill="#f1ecdf"/>
+<rect x="0" y="0" width="160" height="160" rx="10" fill="url(#clue-visitors-rg1)"/>
+<circle cx="80" cy="70" r="56" fill="#f7f3e8" stroke="#b8913f" stroke-width="4"/>
+<circle cx="80" cy="70" r="51" fill="none" stroke="#5d4518" stroke-width="0.8"/>
+<g clip-path="url(#clue-visitors-clip2)">
+<path d="M52,124 V34 H104 V124" fill="none" stroke="#1c1a17" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="96" cy="80" r="3" fill="#1c1a17"/>
+<path d="M52,124 H104" fill="none" stroke="#1c1a17" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="66" cy="54" r="5" fill="none" stroke="#1c1a17" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="74" cy="60" r="4.7" fill="none" stroke="#1c1a17" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="88" cy="72" r="4.4" fill="none" stroke="#1c1a17" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="80" y="114" font-size="13" font-family="monospace" fill="#1c1a17" text-anchor="middle" font-weight="bold">2:14</text>
+<polygon points="58,124 98,124 110,134 46,134" fill="#f1c77c" opacity="0.8"/>
+</g>
+<text x="80" y="148" font-size="13" font-family="monospace" fill="#2a3a8c" text-anchor="middle" letter-spacing="2" font-weight="bold">VISITORS</text>
+</svg>

@@ -1,0 +1,1142 @@
+{
+ "game": "people-of-the-bark",
+ "count": 142,
+ "assets": [
+  {
+   "id": "title-lettering",
+   "group": "title",
+   "title": "People of the Bark: carved title",
+   "w": 1600,
+   "h": 500,
+   "row": "Title lettering, carved, with a ring counter"
+  },
+  {
+   "id": "mark-burr",
+   "group": "figures",
+   "title": "Cast mark: Captain Burr",
+   "w": 240,
+   "h": 240,
+   "row": "Cast marks (silhouette glyphs)"
+  },
+  {
+   "id": "mark-fenn",
+   "group": "figures",
+   "title": "Cast mark: Fenn of the Scroll House",
+   "w": 240,
+   "h": 240,
+   "row": "Cast marks (silhouette glyphs)"
+  },
+  {
+   "id": "mark-hollow",
+   "group": "figures",
+   "title": "Cast mark: Chanter Hollow",
+   "w": 240,
+   "h": 240,
+   "row": "Cast marks (silhouette glyphs)"
+  },
+  {
+   "id": "mark-mossa",
+   "group": "figures",
+   "title": "Cast mark: Mossa, the messenger",
+   "w": 240,
+   "h": 240,
+   "row": "Cast marks (silhouette glyphs)"
+  },
+  {
+   "id": "mark-pell",
+   "group": "figures",
+   "title": "Cast mark: Elder Pell",
+   "w": 240,
+   "h": 240,
+   "row": "Cast marks (silhouette glyphs)"
+  },
+  {
+   "id": "mark-resin",
+   "group": "figures",
+   "title": "Cast mark: Old Resin",
+   "w": 240,
+   "h": 240,
+   "row": "Cast marks (silhouette glyphs)"
+  },
+  {
+   "id": "mark-sorrel",
+   "group": "figures",
+   "title": "Cast mark: Sorrel, wall-listener of Lowridge",
+   "w": 240,
+   "h": 240,
+   "row": "Cast marks (silhouette glyphs)"
+  },
+  {
+   "id": "mark-twig",
+   "group": "figures",
+   "title": "Cast mark: Twig",
+   "w": 240,
+   "h": 240,
+   "row": "Cast marks (silhouette glyphs)"
+  },
+  {
+   "id": "runner-sheet-crowd",
+   "group": "figures",
+   "title": "Crack runner sprites: the crowd",
+   "w": 960,
+   "h": 384,
+   "row": "Runner sprite sheets: Mossa, crowd, hazards"
+  },
+  {
+   "id": "runner-sheet-mossa",
+   "group": "figures",
+   "title": "Crack runner sprites: Mossa",
+   "w": 960,
+   "h": 384,
+   "row": "Runner sprite sheets: Mossa, crowd, hazards"
+  },
+  {
+   "id": "defence-backdrop-beetle-crack",
+   "group": "backdrops",
+   "title": "Crack defence backdrop: the Beetle crack",
+   "w": 1600,
+   "h": 900,
+   "row": "Defence backdrops: mite crack, Beetle crack, paper wall, knuckle"
+  },
+  {
+   "id": "defence-backdrop-knuckle",
+   "group": "backdrops",
+   "title": "Crack defence backdrop: the knuckle",
+   "w": 1600,
+   "h": 900,
+   "row": "Defence backdrops: mite crack, Beetle crack, paper wall, knuckle"
+  },
+  {
+   "id": "defence-backdrop-mite-crack",
+   "group": "backdrops",
+   "title": "Crack defence backdrop: the mite crack",
+   "w": 1600,
+   "h": 900,
+   "row": "Defence backdrops: mite crack, Beetle crack, paper wall, knuckle"
+  },
+  {
+   "id": "defence-backdrop-paper-wall",
+   "group": "backdrops",
+   "title": "Crack defence backdrop: the paper wall",
+   "w": 1600,
+   "h": 900,
+   "row": "Defence backdrops: mite crack, Beetle crack, paper wall, knuckle"
+  },
+  {
+   "id": "runner-backdrop-frost-crowd",
+   "group": "backdrops",
+   "title": "Crack runner backdrop: frost, with the crowd",
+   "w": 1600,
+   "h": 900,
+   "row": "Runner backdrops: spring, sap flow, frost with crowd, shadow"
+  },
+  {
+   "id": "runner-backdrop-sap-flow",
+   "group": "backdrops",
+   "title": "Crack runner backdrop: summer sap flow",
+   "w": 1600,
+   "h": 900,
+   "row": "Runner backdrops: spring, sap flow, frost with crowd, shadow"
+  },
+  {
+   "id": "runner-backdrop-shadow",
+   "group": "backdrops",
+   "title": "Crack runner backdrop: the Shadow",
+   "w": 1600,
+   "h": 900,
+   "row": "Runner backdrops: spring, sap flow, frost with crowd, shadow"
+  },
+  {
+   "id": "runner-backdrop-spring",
+   "group": "backdrops",
+   "title": "Crack runner backdrop: spring",
+   "w": 1600,
+   "h": 900,
+   "row": "Runner backdrops: spring, sap flow, frost with crowd, shadow"
+  },
+  {
+   "id": "backyard-beetle",
+   "group": "cards",
+   "title": "Backyard card: a ground beetle",
+   "w": 300,
+   "h": 420,
+   "row": "Omen cards: 18 faces, 9 event cards, 8 Backyard faces (one blank), 1 back"
+  },
+  {
+   "id": "backyard-blank",
+   "group": "cards",
+   "title": "Backyard card: blank",
+   "w": 300,
+   "h": 420,
+   "row": "Omen cards: 18 faces, 9 event cards, 8 Backyard faces (one blank), 1 back"
+  },
+  {
+   "id": "backyard-leaf",
+   "group": "cards",
+   "title": "Backyard card: autumn",
+   "w": 300,
+   "h": 420,
+   "row": "Omen cards: 18 faces, 9 event cards, 8 Backyard faces (one blank), 1 back"
+  },
+  {
+   "id": "backyard-rain",
+   "group": "cards",
+   "title": "Backyard card: a spring shower",
+   "w": 300,
+   "h": 420,
+   "row": "Omen cards: 18 faces, 9 event cards, 8 Backyard faces (one blank), 1 back"
+  },
+  {
+   "id": "backyard-shadow",
+   "group": "cards",
+   "title": "Backyard card: a hand, checking for termites",
+   "w": 300,
+   "h": 420,
+   "row": "Omen cards: 18 faces, 9 event cards, 8 Backyard faces (one blank), 1 back"
+  },
+  {
+   "id": "backyard-song",
+   "group": "cards",
+   "title": "Backyard card: a small bird",
+   "w": 300,
+   "h": 420,
+   "row": "Omen cards: 18 faces, 9 event cards, 8 Backyard faces (one blank), 1 back"
+  },
+  {
+   "id": "backyard-tremor",
+   "group": "cards",
+   "title": "Backyard card: a squirrel",
+   "w": 300,
+   "h": 420,
+   "row": "Omen cards: 18 faces, 9 event cards, 8 Backyard faces (one blank), 1 back"
+  },
+  {
+   "id": "backyard-wind",
+   "group": "cards",
+   "title": "Backyard card: a summer gust",
+   "w": 300,
+   "h": 420,
+   "row": "Omen cards: 18 faces, 9 event cards, 8 Backyard faces (one blank), 1 back"
+  },
+  {
+   "id": "backyard-wind-stump",
+   "group": "cards",
+   "title": "Backyard card: a summer gust, and a stump over the fence",
+   "w": 300,
+   "h": 420,
+   "row": "Omen cards: 18 faces, 9 event cards, 8 Backyard faces (one blank), 1 back"
+  },
+  {
+   "id": "event-beetle",
+   "group": "cards",
+   "title": "Event card: The Beetle",
+   "w": 300,
+   "h": 420,
+   "row": "Omen cards: 18 faces, 9 event cards, 8 Backyard faces (one blank), 1 back"
+  },
+  {
+   "id": "event-leaf",
+   "group": "cards",
+   "title": "Event card: The Leaf",
+   "w": 300,
+   "h": 420,
+   "row": "Omen cards: 18 faces, 9 event cards, 8 Backyard faces (one blank), 1 back"
+  },
+  {
+   "id": "event-pulse",
+   "group": "cards",
+   "title": "Event card: The Pulse",
+   "w": 300,
+   "h": 420,
+   "row": "Omen cards: 18 faces, 9 event cards, 8 Backyard faces (one blank), 1 back"
+  },
+  {
+   "id": "event-rain",
+   "group": "cards",
+   "title": "Event card: The Rain",
+   "w": 300,
+   "h": 420,
+   "row": "Omen cards: 18 faces, 9 event cards, 8 Backyard faces (one blank), 1 back"
+  },
+  {
+   "id": "event-shadow",
+   "group": "cards",
+   "title": "Event card: The Shadow",
+   "w": 300,
+   "h": 420,
+   "row": "Omen cards: 18 faces, 9 event cards, 8 Backyard faces (one blank), 1 back"
+  },
+  {
+   "id": "event-song",
+   "group": "cards",
+   "title": "Event card: The Birdsong",
+   "w": 300,
+   "h": 420,
+   "row": "Omen cards: 18 faces, 9 event cards, 8 Backyard faces (one blank), 1 back"
+  },
+  {
+   "id": "event-tremor",
+   "group": "cards",
+   "title": "Event card: The Tremor",
+   "w": 300,
+   "h": 420,
+   "row": "Omen cards: 18 faces, 9 event cards, 8 Backyard faces (one blank), 1 back"
+  },
+  {
+   "id": "event-wind",
+   "group": "cards",
+   "title": "Event card: The Windstorm",
+   "w": 300,
+   "h": 420,
+   "row": "Omen cards: 18 faces, 9 event cards, 8 Backyard faces (one blank), 1 back"
+  },
+  {
+   "id": "event-year",
+   "group": "cards",
+   "title": "Event card: The Year",
+   "w": 300,
+   "h": 420,
+   "row": "Omen cards: 18 faces, 9 event cards, 8 Backyard faces (one blank), 1 back"
+  },
+  {
+   "id": "omen-back",
+   "group": "cards",
+   "title": "Omen card: the back",
+   "w": 300,
+   "h": 420,
+   "row": "Omen cards: 18 faces, 9 event cards, 8 Backyard faces (one blank), 1 back"
+  },
+  {
+   "id": "omen-bending-ridge",
+   "group": "cards",
+   "title": "Omen card: The Bending Ridge",
+   "w": 300,
+   "h": 420,
+   "row": "Omen cards: 18 faces, 9 event cards, 8 Backyard faces (one blank), 1 back"
+  },
+  {
+   "id": "omen-biting-thing",
+   "group": "cards",
+   "title": "Omen card: The Biting Thing",
+   "w": 300,
+   "h": 420,
+   "row": "Omen cards: 18 faces, 9 event cards, 8 Backyard faces (one blank), 1 back"
+  },
+  {
+   "id": "omen-bowed-elder",
+   "group": "cards",
+   "title": "Omen card: The Bowed Elder",
+   "w": 300,
+   "h": 420,
+   "row": "Omen cards: 18 faces, 9 event cards, 8 Backyard faces (one blank), 1 back"
+  },
+  {
+   "id": "omen-braced-wall",
+   "group": "cards",
+   "title": "Omen card: The Braced Wall",
+   "w": 300,
+   "h": 420,
+   "row": "Omen cards: 18 faces, 9 event cards, 8 Backyard faces (one blank), 1 back"
+  },
+  {
+   "id": "omen-counted-gust",
+   "group": "cards",
+   "title": "Omen card: The Counted Gust",
+   "w": 300,
+   "h": 420,
+   "row": "Omen cards: 18 faces, 9 event cards, 8 Backyard faces (one blank), 1 back"
+  },
+  {
+   "id": "omen-falling-shield",
+   "group": "cards",
+   "title": "Omen card: The Falling Shield",
+   "w": 300,
+   "h": 420,
+   "row": "Omen cards: 18 faces, 9 event cards, 8 Backyard faces (one blank), 1 back"
+  },
+  {
+   "id": "omen-full-cup",
+   "group": "cards",
+   "title": "Omen card: The Full Cup",
+   "w": 300,
+   "h": 420,
+   "row": "Omen cards: 18 faces, 9 event cards, 8 Backyard faces (one blank), 1 back"
+  },
+  {
+   "id": "omen-great-visitor",
+   "group": "cards",
+   "title": "Omen card: The Great Visitor",
+   "w": 300,
+   "h": 420,
+   "row": "Omen cards: 18 faces, 9 event cards, 8 Backyard faces (one blank), 1 back"
+  },
+  {
+   "id": "omen-last-leaf",
+   "group": "cards",
+   "title": "Omen card: The Last Leaf",
+   "w": 300,
+   "h": 420,
+   "row": "Omen cards: 18 faces, 9 event cards, 8 Backyard faces (one blank), 1 back"
+  },
+  {
+   "id": "omen-leaf-count",
+   "group": "cards",
+   "title": "Omen card: The Leaf Count",
+   "w": 300,
+   "h": 420,
+   "row": "Omen cards: 18 faces, 9 event cards, 8 Backyard faces (one blank), 1 back"
+  },
+  {
+   "id": "omen-long-scroll",
+   "group": "cards",
+   "title": "Omen card: The Long Scroll",
+   "w": 300,
+   "h": 420,
+   "row": "Omen cards: 18 faces, 9 event cards, 8 Backyard faces (one blank), 1 back"
+  },
+  {
+   "id": "omen-marked-bead",
+   "group": "cards",
+   "title": "Omen card: The Marked Bead",
+   "w": 300,
+   "h": 420,
+   "row": "Omen cards: 18 faces, 9 event cards, 8 Backyard faces (one blank), 1 back"
+  },
+  {
+   "id": "omen-measured-shell",
+   "group": "cards",
+   "title": "Omen card: The Measured Shell",
+   "w": 300,
+   "h": 420,
+   "row": "Omen cards: 18 faces, 9 event cards, 8 Backyard faces (one blank), 1 back"
+  },
+  {
+   "id": "omen-shaken-lamp",
+   "group": "cards",
+   "title": "Omen card: The Shaken Lamp",
+   "w": 300,
+   "h": 420,
+   "row": "Omen cards: 18 faces, 9 event cards, 8 Backyard faces (one blank), 1 back"
+  },
+  {
+   "id": "omen-singer-above",
+   "group": "cards",
+   "title": "Omen card: The Singer Above",
+   "w": 300,
+   "h": 420,
+   "row": "Omen cards: 18 faces, 9 event cards, 8 Backyard faces (one blank), 1 back"
+  },
+  {
+   "id": "omen-war-note",
+   "group": "cards",
+   "title": "Omen card: The War Note",
+   "w": 300,
+   "h": 420,
+   "row": "Omen cards: 18 faces, 9 event cards, 8 Backyard faces (one blank), 1 back"
+  },
+  {
+   "id": "omen-washed-spear",
+   "group": "cards",
+   "title": "Omen card: The Washed Spear",
+   "w": 300,
+   "h": 420,
+   "row": "Omen cards: 18 faces, 9 event cards, 8 Backyard faces (one blank), 1 back"
+  },
+  {
+   "id": "omen-written-tune",
+   "group": "cards",
+   "title": "Omen card: The Written Tune",
+   "w": 300,
+   "h": 420,
+   "row": "Omen cards: 18 faces, 9 event cards, 8 Backyard faces (one blank), 1 back"
+  },
+  {
+   "id": "tns-rule-blessing",
+   "group": "cards",
+   "title": "Rule card: Blessing",
+   "w": 300,
+   "h": 420,
+   "row": "Board, pieces, 11 rule cards"
+  },
+  {
+   "id": "tns-rule-eye",
+   "group": "cards",
+   "title": "Rule card: Eye",
+   "w": 300,
+   "h": 420,
+   "row": "Board, pieces, 11 rule cards"
+  },
+  {
+   "id": "tns-rule-gust",
+   "group": "cards",
+   "title": "Rule card: Gust",
+   "w": 300,
+   "h": 420,
+   "row": "Board, pieces, 11 rule cards"
+  },
+  {
+   "id": "tns-rule-hand",
+   "group": "cards",
+   "title": "Rule card: The Hand",
+   "w": 300,
+   "h": 420,
+   "row": "Board, pieces, 11 rule cards"
+  },
+  {
+   "id": "tns-rule-hollow-square",
+   "group": "cards",
+   "title": "Rule card: Hollow Square",
+   "w": 300,
+   "h": 420,
+   "row": "Board, pieces, 11 rule cards"
+  },
+  {
+   "id": "tns-rule-leaf",
+   "group": "cards",
+   "title": "Rule card: Leaf",
+   "w": 300,
+   "h": 420,
+   "row": "Board, pieces, 11 rule cards"
+  },
+  {
+   "id": "tns-rule-mandible",
+   "group": "cards",
+   "title": "Rule card: Mandible",
+   "w": 300,
+   "h": 420,
+   "row": "Board, pieces, 11 rule cards"
+  },
+  {
+   "id": "tns-rule-prophecy",
+   "group": "cards",
+   "title": "Rule card: Prophecy",
+   "w": 300,
+   "h": 420,
+   "row": "Board, pieces, 11 rule cards"
+  },
+  {
+   "id": "tns-rule-quill",
+   "group": "cards",
+   "title": "Rule card: Quill",
+   "w": 300,
+   "h": 420,
+   "row": "Board, pieces, 11 rule cards"
+  },
+  {
+   "id": "tns-rule-spear",
+   "group": "cards",
+   "title": "Rule card: Spear",
+   "w": 300,
+   "h": 420,
+   "row": "Board, pieces, 11 rule cards"
+  },
+  {
+   "id": "tns-rule-tremor",
+   "group": "cards",
+   "title": "Rule card: Tremor",
+   "w": 300,
+   "h": 420,
+   "row": "Board, pieces, 11 rule cards"
+  },
+  {
+   "id": "defence-piece-ant",
+   "group": "pieces",
+   "title": "Crack defence piece: ant",
+   "w": 360,
+   "h": 360,
+   "row": "Defence pieces: warrior, barricade, Beetle, ant, mud wall, plugged door"
+  },
+  {
+   "id": "defence-piece-barricade",
+   "group": "pieces",
+   "title": "Crack defence piece: barricade",
+   "w": 360,
+   "h": 360,
+   "row": "Defence pieces: warrior, barricade, Beetle, ant, mud wall, plugged door"
+  },
+  {
+   "id": "defence-piece-beetle",
+   "group": "pieces",
+   "title": "Crack defence piece: the Beetle",
+   "w": 360,
+   "h": 360,
+   "row": "Defence pieces: warrior, barricade, Beetle, ant, mud wall, plugged door"
+  },
+  {
+   "id": "defence-piece-mud-wall",
+   "group": "pieces",
+   "title": "Crack defence piece: mud wall",
+   "w": 360,
+   "h": 360,
+   "row": "Defence pieces: warrior, barricade, Beetle, ant, mud wall, plugged door"
+  },
+  {
+   "id": "defence-piece-plugged-door",
+   "group": "pieces",
+   "title": "Crack defence piece: the plugged door",
+   "w": 360,
+   "h": 360,
+   "row": "Defence pieces: warrior, barricade, Beetle, ant, mud wall, plugged door"
+  },
+  {
+   "id": "defence-piece-warrior",
+   "group": "pieces",
+   "title": "Crack defence piece: warrior",
+   "w": 360,
+   "h": 360,
+   "row": "Defence pieces: warrior, barricade, Beetle, ant, mud wall, plugged door"
+  },
+  {
+   "id": "defence-sprite-beetle",
+   "group": "pieces",
+   "title": "Crack defence sprite: the Beetle",
+   "w": 360,
+   "h": 240,
+   "row": "Defence sprites: warrior, Burr, people, the Beetle, mite"
+  },
+  {
+   "id": "defence-sprite-burr",
+   "group": "pieces",
+   "title": "Crack defence sprite: Captain Burr",
+   "w": 120,
+   "h": 200,
+   "row": "Defence sprites: warrior, Burr, people, the Beetle, mite"
+  },
+  {
+   "id": "defence-sprite-mite",
+   "group": "pieces",
+   "title": "Crack defence sprite: mite",
+   "w": 120,
+   "h": 90,
+   "row": "Defence sprites: warrior, Burr, people, the Beetle, mite"
+  },
+  {
+   "id": "defence-sprite-people",
+   "group": "pieces",
+   "title": "Crack defence sprite: people in the crack",
+   "w": 200,
+   "h": 160,
+   "row": "Defence sprites: warrior, Burr, people, the Beetle, mite"
+  },
+  {
+   "id": "defence-sprite-warrior",
+   "group": "pieces",
+   "title": "Crack defence sprite: warrior",
+   "w": 120,
+   "h": 200,
+   "row": "Defence sprites: warrior, Burr, people, the Beetle, mite"
+  },
+  {
+   "id": "glyph-eaten-arc",
+   "group": "pieces",
+   "title": "Chronicle glyph: The eaten arc",
+   "w": 240,
+   "h": 240,
+   "row": "Doors and new chronicle glyphs"
+  },
+  {
+   "id": "glyph-floor-went-first",
+   "group": "pieces",
+   "title": "Chronicle glyph: The floor went first",
+   "w": 240,
+   "h": 240,
+   "row": "Doors and new chronicle glyphs"
+  },
+  {
+   "id": "glyph-pulse",
+   "group": "pieces",
+   "title": "Chronicle glyph: The Pulse",
+   "w": 240,
+   "h": 240,
+   "row": "Doors and new chronicle glyphs"
+  },
+  {
+   "id": "glyph-turned-since",
+   "group": "pieces",
+   "title": "Chronicle glyph: Turned since",
+   "w": 240,
+   "h": 240,
+   "row": "Doors and new chronicle glyphs"
+  },
+  {
+   "id": "runner-sheet-hazards",
+   "group": "pieces",
+   "title": "Crack runner sprites: hazards",
+   "w": 924,
+   "h": 504,
+   "row": "Runner sprite sheets: Mossa, crowd, hazards"
+  },
+  {
+   "id": "scroll-glyph-set",
+   "group": "pieces",
+   "title": "Tremor Scroll: the glyph set",
+   "w": 1200,
+   "h": 600,
+   "row": "Glyph set, weather marks, faceless row, Pulse map strip"
+  },
+  {
+   "id": "scroll-weather-marks",
+   "group": "pieces",
+   "title": "Tremor Scroll: weather marks",
+   "w": 800,
+   "h": 260,
+   "row": "Glyph set, weather marks, faceless row, Pulse map strip"
+  },
+  {
+   "id": "tns-piece-beetle",
+   "group": "pieces",
+   "title": "Trunk and Shadow piece: Beetle piece",
+   "w": 200,
+   "h": 200,
+   "row": "Board, pieces, 11 rule cards"
+  },
+  {
+   "id": "tns-piece-folk",
+   "group": "pieces",
+   "title": "Trunk and Shadow piece: Folk",
+   "w": 200,
+   "h": 200,
+   "row": "Board, pieces, 11 rule cards"
+  },
+  {
+   "id": "tns-piece-hand",
+   "group": "pieces",
+   "title": "Trunk and Shadow piece: The Hand",
+   "w": 200,
+   "h": 200,
+   "row": "Board, pieces, 11 rule cards"
+  },
+  {
+   "id": "tns-piece-hollow-square",
+   "group": "pieces",
+   "title": "Trunk and Shadow piece: Hollow square",
+   "w": 200,
+   "h": 200,
+   "row": "Board, pieces, 11 rule cards"
+  },
+  {
+   "id": "tns-piece-leaf",
+   "group": "pieces",
+   "title": "Trunk and Shadow piece: Leaf token",
+   "w": 200,
+   "h": 200,
+   "row": "Board, pieces, 11 rule cards"
+  },
+  {
+   "id": "tns-piece-shadow",
+   "group": "pieces",
+   "title": "Trunk and Shadow piece: The Shadow",
+   "w": 200,
+   "h": 200,
+   "row": "Board, pieces, 11 rule cards"
+  },
+  {
+   "id": "ending-the-edge-of-the-world",
+   "group": "endings",
+   "title": "Ending: The Edge of the World",
+   "w": 1600,
+   "h": 900,
+   "row": "Ending diptychs: the bark above, the yard below"
+  },
+  {
+   "id": "ending-the-flake",
+   "group": "endings",
+   "title": "Ending: The Flake",
+   "w": 1600,
+   "h": 900,
+   "row": "Ending diptychs: the bark above, the yard below"
+  },
+  {
+   "id": "ending-the-ring",
+   "group": "endings",
+   "title": "Ending: The Ring",
+   "w": 1600,
+   "h": 900,
+   "row": "Ending diptychs: the bark above, the yard below"
+  },
+  {
+   "id": "ending-the-shadow-passes",
+   "group": "endings",
+   "title": "Ending: The Shadow Passes",
+   "w": 1600,
+   "h": 900,
+   "row": "Ending diptychs: the bark above, the yard below"
+  },
+  {
+   "id": "ending-the-war-on-the-god",
+   "group": "endings",
+   "title": "Ending: The War on the God",
+   "w": 1600,
+   "h": 900,
+   "row": "Ending diptychs: the bark above, the yard below"
+  },
+  {
+   "id": "chapter-1-the-tremor",
+   "group": "chapters",
+   "title": "Chapter 1: The Tremor",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter cards, one more ring on each"
+  },
+  {
+   "id": "chapter-2-spring",
+   "group": "chapters",
+   "title": "Chapter 2: Spring",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter cards, one more ring on each"
+  },
+  {
+   "id": "chapter-3-summer",
+   "group": "chapters",
+   "title": "Chapter 3: Summer",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter cards, one more ring on each"
+  },
+  {
+   "id": "chapter-4-autumn",
+   "group": "chapters",
+   "title": "Chapter 4: Autumn",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter cards, one more ring on each"
+  },
+  {
+   "id": "chapter-5-winter",
+   "group": "chapters",
+   "title": "Chapter 5: Winter",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter cards, one more ring on each"
+  },
+  {
+   "id": "chapter-6-the-shadow",
+   "group": "chapters",
+   "title": "Chapter 6: The Shadow",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter cards, one more ring on each"
+  },
+  {
+   "id": "chapter-7-the-pull-back",
+   "group": "chapters",
+   "title": "Chapter 7: The Pull-Back",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter cards, one more ring on each"
+  },
+  {
+   "id": "ui-balance-rope",
+   "group": "ui",
+   "title": "The Balance Rope",
+   "w": 200,
+   "h": 640,
+   "row": "UI ornaments: Rope, season wheel, bark-song crack, frames, sigils"
+  },
+  {
+   "id": "ui-bark-song",
+   "group": "ui",
+   "title": "Bark-song crack",
+   "w": 1200,
+   "h": 140,
+   "row": "UI ornaments: Rope, season wheel, bark-song crack, frames, sigils"
+  },
+  {
+   "id": "ui-divider",
+   "group": "ui",
+   "title": "Divider: the Long Crack",
+   "w": 600,
+   "h": 120,
+   "row": "UI ornaments: Rope, season wheel, bark-song crack, frames, sigils"
+  },
+  {
+   "id": "ui-frame-bark",
+   "group": "ui",
+   "title": "Carved-bark frame",
+   "w": 800,
+   "h": 600,
+   "row": "UI ornaments: Rope, season wheel, bark-song crack, frames, sigils"
+  },
+  {
+   "id": "ui-frame-paper",
+   "group": "ui",
+   "title": "Bark-paper page frame",
+   "w": 800,
+   "h": 600,
+   "row": "UI ornaments: Rope, season wheel, bark-song crack, frames, sigils"
+  },
+  {
+   "id": "ui-icon-food",
+   "group": "ui",
+   "title": "Food basket",
+   "w": 160,
+   "h": 160,
+   "row": "UI ornaments: Rope, season wheel, bark-song crack, frames, sigils"
+  },
+  {
+   "id": "ui-icon-hands",
+   "group": "ui",
+   "title": "Hands",
+   "w": 160,
+   "h": 160,
+   "row": "UI ornaments: Rope, season wheel, bark-song crack, frames, sigils"
+  },
+  {
+   "id": "ui-icon-sap",
+   "group": "ui",
+   "title": "Sap jar",
+   "w": 160,
+   "h": 160,
+   "row": "UI ornaments: Rope, season wheel, bark-song crack, frames, sigils"
+  },
+  {
+   "id": "ui-season-wheel",
+   "group": "ui",
+   "title": "Season wheel",
+   "w": 400,
+   "h": 400,
+   "row": "UI ornaments: Rope, season wheel, bark-song crack, frames, sigils"
+  },
+  {
+   "id": "ui-sigil-eye",
+   "group": "ui",
+   "title": "Sigil: eye (the Knot)",
+   "w": 160,
+   "h": 160,
+   "row": "UI ornaments: Rope, season wheel, bark-song crack, frames, sigils"
+  },
+  {
+   "id": "ui-sigil-quill",
+   "group": "ui",
+   "title": "Sigil: quill (the Scroll House)",
+   "w": 160,
+   "h": 160,
+   "row": "UI ornaments: Rope, season wheel, bark-song crack, frames, sigils"
+  },
+  {
+   "id": "ui-sigil-spear",
+   "group": "ui",
+   "title": "Sigil: spear (the Battlements)",
+   "w": 160,
+   "h": 160,
+   "row": "UI ornaments: Rope, season wheel, bark-song crack, frames, sigils"
+  },
+  {
+   "id": "recipe-01-groove-syrup",
+   "group": "documents",
+   "title": "Recipe plate 1: Groove Syrup",
+   "w": 420,
+   "h": 560,
+   "row": "Recipe plates, 1 to 13"
+  },
+  {
+   "id": "recipe-02-lichen-loaf",
+   "group": "documents",
+   "title": "Recipe plate 2: Lichen Loaf",
+   "w": 420,
+   "h": 560,
+   "row": "Recipe plates, 1 to 13"
+  },
+  {
+   "id": "recipe-03-pollen-cake",
+   "group": "documents",
+   "title": "Recipe plate 3: Pollen Cake",
+   "w": 420,
+   "h": 560,
+   "row": "Recipe plates, 1 to 13"
+  },
+  {
+   "id": "recipe-04-dew-broth",
+   "group": "documents",
+   "title": "Recipe plate 4: Dew Broth",
+   "w": 420,
+   "h": 560,
+   "row": "Recipe plates, 1 to 13"
+  },
+  {
+   "id": "recipe-05-ridge-glue",
+   "group": "documents",
+   "title": "Recipe plate 5: Ridge Glue",
+   "w": 420,
+   "h": 560,
+   "row": "Recipe plates, 1 to 13"
+  },
+  {
+   "id": "recipe-06-ashpatch",
+   "group": "documents",
+   "title": "Recipe plate 6: Ashpatch",
+   "w": 420,
+   "h": 560,
+   "row": "Recipe plates, 1 to 13"
+  },
+  {
+   "id": "recipe-07-leaf-skin-plaster",
+   "group": "documents",
+   "title": "Recipe plate 7: Leaf-skin Plaster",
+   "w": 420,
+   "h": 560,
+   "row": "Recipe plates, 1 to 13"
+  },
+  {
+   "id": "recipe-08-gold-tear",
+   "group": "documents",
+   "title": "Recipe plate 8: Gold Tear",
+   "w": 420,
+   "h": 560,
+   "row": "Recipe plates, 1 to 13"
+  },
+  {
+   "id": "recipe-09-ember-drop",
+   "group": "documents",
+   "title": "Recipe plate 9: Ember Drop",
+   "w": 420,
+   "h": 560,
+   "row": "Recipe plates, 1 to 13"
+  },
+  {
+   "id": "recipe-10-frost-candy",
+   "group": "documents",
+   "title": "Recipe plate 10: Frost Candy",
+   "w": 420,
+   "h": 560,
+   "row": "Recipe plates, 1 to 13"
+  },
+  {
+   "id": "recipe-11-winter-bread",
+   "group": "documents",
+   "title": "Recipe plate 11: Winter Bread",
+   "w": 420,
+   "h": 560,
+   "row": "Recipe plates, 1 to 13"
+  },
+  {
+   "id": "recipe-12-pells-tear",
+   "group": "documents",
+   "title": "Recipe plate 12: Pell\u2019s Tear",
+   "w": 420,
+   "h": 560,
+   "row": "Recipe plates, 1 to 13"
+  },
+  {
+   "id": "recipe-13-gallery-plug",
+   "group": "documents",
+   "title": "Recipe plate 13: Gallery Plug",
+   "w": 420,
+   "h": 560,
+   "row": "Recipe plates, 1 to 13"
+  },
+  {
+   "id": "roll-of-the-bark",
+   "group": "documents",
+   "title": "The Roll of the Bark",
+   "w": 800,
+   "h": 1100,
+   "row": "Saying wall and Roll templates"
+  },
+  {
+   "id": "saying-wall",
+   "group": "documents",
+   "title": "The saying wall",
+   "w": 1600,
+   "h": 900,
+   "row": "Saying wall and Roll templates"
+  },
+  {
+   "id": "scroll-faceless-row",
+   "group": "documents",
+   "title": "Tremor Scroll: the faceless row",
+   "w": 1600,
+   "h": 420,
+   "row": "Glyph set, weather marks, faceless row, Pulse map strip"
+  },
+  {
+   "id": "door-deep-knot",
+   "group": "maps",
+   "title": "The Deep Knot",
+   "w": 800,
+   "h": 800,
+   "row": "Doors and new chronicle glyphs"
+  },
+  {
+   "id": "door-first-ring",
+   "group": "maps",
+   "title": "The Door of the First Ring",
+   "w": 800,
+   "h": 800,
+   "row": "Doors and new chronicle glyphs"
+  },
+  {
+   "id": "door-heartwood",
+   "group": "maps",
+   "title": "The Heartwood Door",
+   "w": 800,
+   "h": 800,
+   "row": "Doors and new chronicle glyphs"
+  },
+  {
+   "id": "door-heartwood-sealed",
+   "group": "maps",
+   "title": "The Heartwood Door, sealed",
+   "w": 800,
+   "h": 800,
+   "row": "Doors and new chronicle glyphs"
+  },
+  {
+   "id": "heartwood-interior-open",
+   "group": "maps",
+   "title": "The Heartwood, opened",
+   "w": 1200,
+   "h": 800,
+   "row": "Doors and new chronicle glyphs"
+  },
+  {
+   "id": "scroll-pulse-map",
+   "group": "maps",
+   "title": "Tremor Scroll: the Pulse map strip",
+   "w": 420,
+   "h": 1100,
+   "row": "Glyph set, weather marks, faceless row, Pulse map strip"
+  },
+  {
+   "id": "scroll-pulse-map-blank",
+   "group": "maps",
+   "title": "Tremor Scroll: the Pulse map strip, not yet filled",
+   "w": 420,
+   "h": 1100,
+   "row": "Glyph set, weather marks, faceless row, Pulse map strip"
+  },
+  {
+   "id": "scroll-pulse-map-sounded",
+   "group": "maps",
+   "title": "Tremor Scroll: the Pulse map after the Sounding",
+   "w": 420,
+   "h": 1100,
+   "row": "Glyph set, weather marks, faceless row, Pulse map strip"
+  },
+  {
+   "id": "tns-board",
+   "group": "maps",
+   "title": "Trunk and Shadow: the board",
+   "w": 800,
+   "h": 1100,
+   "row": "Board, pieces, 11 rule cards"
+  },
+  {
+   "id": "thread-guest",
+   "group": "thread",
+   "title": "Thread (guest): a slip that says You're at the far end",
+   "w": 480,
+   "h": 480,
+   "row": ""
+  },
+  {
+   "id": "thread-own",
+   "group": "thread",
+   "title": "Thread: a knock answered from the other side of a wall",
+   "w": 480,
+   "h": 480,
+   "row": ""
+  }
+ ]
+}

@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "incidents.json",
+  "type": "object",
+  "required": [
+    "explanations",
+    "responses",
+    "incidents"
+  ],
+  "properties": {
+    "explanations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "text",
+          "flag"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "flag": {
+            "type": "string"
+          }
+        }
+      },
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "responses": {
+      "type": "object",
+      "required": [
+        "shelve",
+        "keep"
+      ],
+      "properties": {
+        "shelve": {
+          "type": "object",
+          "required": [
+            "unease"
+          ],
+          "properties": {
+            "unease": {
+              "type": "integer"
+            },
+            "note": {
+              "type": "string"
+            }
+          }
+        },
+        "keep": {
+          "type": "object",
+          "required": [
+            "unease",
+            "reveals_next_lead"
+          ],
+          "properties": {
+            "unease": {
+              "type": "integer"
+            },
+            "reveals_next_lead": {
+              "type": "boolean"
+            },
+            "note": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "incidents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "source_chapter",
+          "scene",
+          "shelvable",
+          "breaks"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "source_chapter": {
+            "type": "integer"
+          },
+          "scene": {
+            "type": "string"
+          },
+          "shelvable": {
+            "type": "boolean"
+          },
+          "breaks": {
+            "type": "object",
+            "required": [
+              "house",
+              "us",
+              "wild",
+              "me"
+            ],
+            "properties": {
+              "house": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "us": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "wild": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "me": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          },
+          "note": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

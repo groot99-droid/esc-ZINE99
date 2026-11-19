@@ -1,0 +1,640 @@
+{
+  "game": "stuffed-ones",
+  "location": "overlook-trail",
+  "name": "The overlook trail",
+  "reference": "assets/locations/overlook-trail.jpg",
+  "bounds_m": [
+    15.0,
+    400.0,
+    20.0
+  ],
+  "origin": "centre of the playable band; the trail climbs toward +y to the overlook, the forest on -x, the drop to the valley on +x (valley and far ridge are sky pieces)",
+  "materials": {
+    "pine-needles": {
+      "color": [
+        0.478,
+        0.322,
+        0.212
+      ],
+      "roughness": 1.0
+    },
+    "path": {
+      "color": [
+        0.541,
+        0.392,
+        0.275
+      ],
+      "roughness": 1.0
+    },
+    "bark": {
+      "color": [
+        0.306,
+        0.227,
+        0.165
+      ],
+      "roughness": 0.9
+    },
+    "pine": {
+      "color": [
+        0.2,
+        0.251,
+        0.165
+      ],
+      "roughness": 1.0
+    },
+    "granite": {
+      "color": [
+        0.478,
+        0.463,
+        0.408
+      ],
+      "roughness": 0.95
+    },
+    "deadwood": {
+      "color": [
+        0.612,
+        0.573,
+        0.51
+      ],
+      "roughness": 0.9
+    },
+    "valley": {
+      "color": [
+        0.243,
+        0.29,
+        0.18
+      ],
+      "roughness": 1.0
+    },
+    "far-ridge": {
+      "color": [
+        0.69,
+        0.478,
+        0.322
+      ],
+      "roughness": 1.0
+    }
+  },
+  "blockout": [
+    {
+      "id": "ground-1",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        15.0,
+        50.229,
+        0.5
+      ],
+      "location": [
+        0,
+        -175.0,
+        0.607
+      ],
+      "material": "pine-needles",
+      "rotation_deg": [
+        1.964,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "ground-2",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        15.0,
+        50.229,
+        0.5
+      ],
+      "location": [
+        0,
+        -125.0,
+        2.321
+      ],
+      "material": "pine-needles",
+      "rotation_deg": [
+        1.964,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "ground-3",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        15.0,
+        50.229,
+        0.5
+      ],
+      "location": [
+        0,
+        -75.0,
+        4.036
+      ],
+      "material": "pine-needles",
+      "rotation_deg": [
+        1.964,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "ground-4",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        15.0,
+        50.229,
+        0.5
+      ],
+      "location": [
+        0,
+        -25.0,
+        5.75
+      ],
+      "material": "pine-needles",
+      "rotation_deg": [
+        1.964,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "ground-5",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        15.0,
+        50.229,
+        0.5
+      ],
+      "location": [
+        0,
+        25.0,
+        7.464
+      ],
+      "material": "pine-needles",
+      "rotation_deg": [
+        1.964,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "ground-6",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        15.0,
+        50.229,
+        0.5
+      ],
+      "location": [
+        0,
+        75.0,
+        9.179
+      ],
+      "material": "pine-needles",
+      "rotation_deg": [
+        1.964,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "ground-7",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        15.0,
+        50.229,
+        0.5
+      ],
+      "location": [
+        0,
+        125.0,
+        10.893
+      ],
+      "material": "pine-needles",
+      "rotation_deg": [
+        1.964,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "ground-overlook",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        15.0,
+        50.2,
+        0.5
+      ],
+      "location": [
+        0,
+        175,
+        11.75
+      ],
+      "material": "pine-needles"
+    },
+    {
+      "id": "path-climb",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        2.4,
+        350.4,
+        0
+      ],
+      "location": [
+        1.5,
+        -25,
+        6.02
+      ],
+      "material": "path",
+      "rotation_deg": [
+        1.964,
+        0,
+        0
+      ],
+      "collide": false
+    },
+    {
+      "id": "path-overlook",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        3.5,
+        50,
+        0
+      ],
+      "location": [
+        1.5,
+        175,
+        12.02
+      ],
+      "material": "path",
+      "collide": false
+    },
+    {
+      "id": "pine-1",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        3,
+        3,
+        14
+      ],
+      "location": [
+        -5.5,
+        -180,
+        7.686
+      ],
+      "material": "pine"
+    },
+    {
+      "id": "pine-2",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        3,
+        3,
+        14
+      ],
+      "location": [
+        -5.5,
+        -130,
+        9.4
+      ],
+      "material": "pine"
+    },
+    {
+      "id": "pine-3",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        3,
+        3,
+        14
+      ],
+      "location": [
+        -5.5,
+        -80,
+        11.114
+      ],
+      "material": "pine"
+    },
+    {
+      "id": "pine-4",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        3,
+        3,
+        14
+      ],
+      "location": [
+        -5.5,
+        -30,
+        12.829
+      ],
+      "material": "pine"
+    },
+    {
+      "id": "pine-5",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        3,
+        3,
+        14
+      ],
+      "location": [
+        -5.5,
+        20,
+        14.543
+      ],
+      "material": "pine"
+    },
+    {
+      "id": "pine-6",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        3,
+        3,
+        14
+      ],
+      "location": [
+        -5.5,
+        70,
+        16.257
+      ],
+      "material": "pine"
+    },
+    {
+      "id": "pine-7",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        3,
+        3,
+        14
+      ],
+      "location": [
+        -5.5,
+        120,
+        17.971
+      ],
+      "material": "pine"
+    },
+    {
+      "id": "pine-8",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        3,
+        3,
+        14
+      ],
+      "location": [
+        -5.5,
+        170,
+        19.0
+      ],
+      "material": "pine"
+    },
+    {
+      "id": "rock-outcrop",
+      "shape": "sphere",
+      "role": "structure",
+      "size_m": [
+        4,
+        6,
+        1.6
+      ],
+      "location": [
+        5.6,
+        178,
+        12.0
+      ],
+      "material": "granite"
+    },
+    {
+      "id": "rock-ledge",
+      "shape": "sphere",
+      "role": "structure",
+      "size_m": [
+        5,
+        8,
+        1.2
+      ],
+      "location": [
+        6.5,
+        190,
+        11.6
+      ],
+      "material": "granite"
+    },
+    {
+      "id": "rail-log-1",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.3,
+        0.3,
+        12
+      ],
+      "location": [
+        4.0,
+        168,
+        12.25
+      ],
+      "material": "deadwood",
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "rail-log-2",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.3,
+        0.3,
+        10
+      ],
+      "location": [
+        4.4,
+        185,
+        12.25
+      ],
+      "material": "deadwood",
+      "rotation_deg": [
+        90,
+        0,
+        8
+      ]
+    },
+    {
+      "id": "valley-floor",
+      "shape": "box",
+      "role": "sky",
+      "size_m": [
+        600,
+        800,
+        1
+      ],
+      "location": [
+        300,
+        150,
+        -80
+      ],
+      "material": "valley"
+    },
+    {
+      "id": "far-ridge",
+      "shape": "cone",
+      "role": "sky",
+      "size_m": [
+        500,
+        700,
+        180
+      ],
+      "location": [
+        450,
+        200,
+        -10
+      ],
+      "material": "far-ridge"
+    }
+  ],
+  "props": [
+    {
+      "id": "map",
+      "object": "paper-map",
+      "location": [
+        1.6,
+        182,
+        12.0
+      ]
+    },
+    {
+      "id": "rucksack",
+      "object": "rucksack",
+      "location": [
+        0.8,
+        184,
+        12.0
+      ]
+    },
+    {
+      "id": "binoculars",
+      "object": "binoculars",
+      "location": [
+        5.2,
+        178,
+        12.75
+      ]
+    }
+  ],
+  "scenes": {
+    "a1_trail_overlook": {
+      "note": "The overlook loop at walking pace with Marcus, late sun warm and low. He shows you his paper map; the overlook rail at the top. Birds, wind.",
+      "world": {
+        "color": [
+          0.8,
+          0.66,
+          0.5
+        ],
+        "strength": 0.6
+      },
+      "lights": [
+        {
+          "name": "late-sun",
+          "type": "SUN",
+          "location": [
+            60,
+            120,
+            40
+          ],
+          "energy": 3.5,
+          "size": 1,
+          "color": [
+            1.0,
+            0.76,
+            0.5
+          ],
+          "look_at": [
+            0,
+            150,
+            0
+          ]
+        },
+        {
+          "name": "sky-fill",
+          "type": "AREA",
+          "location": [
+            0,
+            175,
+            19
+          ],
+          "energy": 400,
+          "size": 10.0,
+          "color": [
+            0.9,
+            0.85,
+            0.78
+          ],
+          "look_at": [
+            0,
+            175,
+            12
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          1.5,
+          -195,
+          1.821
+        ],
+        "look_at": [
+          1.5,
+          -150,
+          2.914
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          1.5,
+          -195,
+          0.171
+        ],
+        "facing_deg": 0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "map",
+          "verb": "Look at Marcus's map"
+        },
+        {
+          "prop": "binoculars",
+          "verb": "Look out from the overlook"
+        },
+        {
+          "prop": "rucksack",
+          "verb": "Head back for dinner",
+          "leads_to": "a1_dinner"
+        }
+      ]
+    }
+  }
+}

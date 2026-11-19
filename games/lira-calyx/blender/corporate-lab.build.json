@@ -1,0 +1,839 @@
+{
+  "game": "lira-calyx",
+  "location": "corporate-lab",
+  "name": "The corporate lab",
+  "reference": "assets/locations/corporate-lab.jpg",
+  "bounds_m": [
+    40,
+    25,
+    8
+  ],
+  "origin": "floor centre; +y toward the mezzanine (z 4, y 3.5 to 12.5), stairs up on the west; doors in the west and east walls",
+  "materials": {
+    "floor-white": {
+      "color": [
+        0.902,
+        0.929,
+        0.949
+      ],
+      "roughness": 0.4
+    },
+    "wall-white": {
+      "color": [
+        0.941,
+        0.949,
+        0.957
+      ],
+      "roughness": 0.6
+    },
+    "matte-black": {
+      "color": [
+        0.043,
+        0.043,
+        0.047
+      ],
+      "roughness": 0.9
+    },
+    "glass": {
+      "color": [
+        0.784,
+        0.847,
+        0.847
+      ],
+      "roughness": 0.05
+    },
+    "ceiling-panel": {
+      "color": [
+        0.91,
+        0.941,
+        1.0
+      ],
+      "roughness": 0.3,
+      "emission": 2.0
+    },
+    "steel": {
+      "color": [
+        0.502,
+        0.533,
+        0.565
+      ],
+      "roughness": 0.4,
+      "metallic": 0.8
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        40,
+        25,
+        0.2
+      ],
+      "location": [
+        0,
+        0,
+        -0.1
+      ],
+      "material": "floor-white"
+    },
+    {
+      "id": "ceiling",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        40,
+        25,
+        0.2
+      ],
+      "location": [
+        0,
+        0,
+        8.1
+      ],
+      "material": "wall-white"
+    },
+    {
+      "id": "wall-north",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        40,
+        0.3,
+        8
+      ],
+      "location": [
+        0,
+        12.65,
+        4
+      ],
+      "material": "wall-white"
+    },
+    {
+      "id": "wall-south",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        40,
+        0.3,
+        8
+      ],
+      "location": [
+        0,
+        -12.65,
+        4
+      ],
+      "material": "matte-black"
+    },
+    {
+      "id": "wall-west-s",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.3,
+        5.8,
+        8
+      ],
+      "location": [
+        -20.15,
+        -9.6,
+        4
+      ],
+      "material": "matte-black"
+    },
+    {
+      "id": "wall-west-n",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.3,
+        17.8,
+        8
+      ],
+      "location": [
+        -20.15,
+        3.6,
+        4
+      ],
+      "material": "matte-black"
+    },
+    {
+      "id": "wall-west-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.3,
+        1.4,
+        5.6
+      ],
+      "location": [
+        -20.15,
+        -6,
+        5.2
+      ],
+      "material": "matte-black"
+    },
+    {
+      "id": "wall-east-s",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.3,
+        3.8,
+        8
+      ],
+      "location": [
+        20.15,
+        -10.6,
+        4
+      ],
+      "material": "wall-white"
+    },
+    {
+      "id": "wall-east-n",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.3,
+        19.8,
+        8
+      ],
+      "location": [
+        20.15,
+        2.6,
+        4
+      ],
+      "material": "wall-white"
+    },
+    {
+      "id": "wall-east-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.3,
+        1.4,
+        5.6
+      ],
+      "location": [
+        20.15,
+        -8,
+        5.2
+      ],
+      "material": "wall-white"
+    },
+    {
+      "id": "mezzanine",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        40,
+        9,
+        0.3
+      ],
+      "location": [
+        0,
+        8,
+        4.0
+      ],
+      "material": "matte-black"
+    },
+    {
+      "id": "mezzanine-glass",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        33,
+        0.1,
+        2.4
+      ],
+      "location": [
+        3.5,
+        3.55,
+        5.35
+      ],
+      "material": "glass"
+    },
+    {
+      "id": "lower-back-w",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        16,
+        0.2,
+        3.85
+      ],
+      "location": [
+        -12,
+        3.5,
+        1.925
+      ],
+      "material": "wall-white"
+    },
+    {
+      "id": "lower-back-e",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        20,
+        0.2,
+        3.85
+      ],
+      "location": [
+        10,
+        3.5,
+        1.925
+      ],
+      "material": "wall-white"
+    },
+    {
+      "id": "lower-back-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        4,
+        0.2,
+        1.45
+      ],
+      "location": [
+        -2,
+        3.5,
+        3.125
+      ],
+      "material": "wall-white"
+    },
+    {
+      "id": "upper-partition-1",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        9,
+        3.7
+      ],
+      "location": [
+        -8,
+        8,
+        6.0
+      ],
+      "material": "glass"
+    },
+    {
+      "id": "upper-partition-2",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        9,
+        3.7
+      ],
+      "location": [
+        2,
+        8,
+        6.0
+      ],
+      "material": "glass"
+    },
+    {
+      "id": "upper-partition-3",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        9,
+        3.7
+      ],
+      "location": [
+        12,
+        8,
+        6.0
+      ],
+      "material": "glass"
+    },
+    {
+      "id": "lower-partition-1",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        9,
+        3.85
+      ],
+      "location": [
+        -6,
+        8,
+        1.925
+      ],
+      "material": "wall-white"
+    },
+    {
+      "id": "lower-partition-2",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        9,
+        3.85
+      ],
+      "location": [
+        8,
+        8,
+        1.925
+      ],
+      "material": "wall-white"
+    },
+    {
+      "id": "stair-1",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        1.06,
+        0.5
+      ],
+      "location": [
+        -16,
+        -4.5,
+        0.25
+      ],
+      "material": "matte-black"
+    },
+    {
+      "id": "stair-2",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        1.06,
+        1.0
+      ],
+      "location": [
+        -16,
+        -3.438,
+        0.5
+      ],
+      "material": "matte-black"
+    },
+    {
+      "id": "stair-3",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        1.06,
+        1.5
+      ],
+      "location": [
+        -16,
+        -2.375,
+        0.75
+      ],
+      "material": "matte-black"
+    },
+    {
+      "id": "stair-4",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        1.06,
+        2.0
+      ],
+      "location": [
+        -16,
+        -1.312,
+        1.0
+      ],
+      "material": "matte-black"
+    },
+    {
+      "id": "stair-5",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        1.06,
+        2.5
+      ],
+      "location": [
+        -16,
+        -0.25,
+        1.25
+      ],
+      "material": "matte-black"
+    },
+    {
+      "id": "stair-6",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        1.06,
+        3.0
+      ],
+      "location": [
+        -16,
+        0.812,
+        1.5
+      ],
+      "material": "matte-black"
+    },
+    {
+      "id": "stair-7",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        1.06,
+        3.5
+      ],
+      "location": [
+        -16,
+        1.875,
+        1.75
+      ],
+      "material": "matte-black"
+    },
+    {
+      "id": "stair-8",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        1.06,
+        4.0
+      ],
+      "location": [
+        -16,
+        2.938,
+        2.0
+      ],
+      "material": "matte-black"
+    },
+    {
+      "id": "light-panel-1",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        6,
+        2,
+        0.05
+      ],
+      "location": [
+        -10,
+        -4,
+        7.97
+      ],
+      "material": "ceiling-panel",
+      "collide": false
+    },
+    {
+      "id": "light-panel-2",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        6,
+        2,
+        0.05
+      ],
+      "location": [
+        0,
+        -4,
+        7.97
+      ],
+      "material": "ceiling-panel",
+      "collide": false
+    },
+    {
+      "id": "light-panel-3",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        6,
+        2,
+        0.05
+      ],
+      "location": [
+        10,
+        -4,
+        7.97
+      ],
+      "material": "ceiling-panel",
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "rig-1",
+      "object": "pulse-rig",
+      "location": [
+        4,
+        -6,
+        0
+      ]
+    },
+    {
+      "id": "rig-2",
+      "object": "pulse-rig",
+      "location": [
+        9,
+        -3,
+        0
+      ]
+    },
+    {
+      "id": "rig-3",
+      "object": "pulse-rig",
+      "location": [
+        14,
+        -7,
+        0
+      ]
+    },
+    {
+      "id": "rig-4",
+      "object": "pulse-rig",
+      "location": [
+        -8,
+        -6,
+        0
+      ]
+    },
+    {
+      "id": "logs-1",
+      "object": "log-cabinet",
+      "location": [
+        -9,
+        3.1,
+        0
+      ]
+    },
+    {
+      "id": "logs-2",
+      "object": "log-cabinet",
+      "location": [
+        4,
+        3.1,
+        0
+      ]
+    },
+    {
+      "id": "logs-3",
+      "object": "log-cabinet",
+      "location": [
+        -4,
+        12.15,
+        4.15
+      ]
+    },
+    {
+      "id": "logs-4",
+      "object": "log-cabinet",
+      "location": [
+        6,
+        12.15,
+        4.15
+      ]
+    },
+    {
+      "id": "console",
+      "object": "lab-console",
+      "location": [
+        19.5,
+        0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        270
+      ]
+    }
+  ],
+  "scenes": {
+    "b2-lab": {
+      "world": {
+        "color": [
+          0.784,
+          0.831,
+          0.91
+        ],
+        "strength": 0.25
+      },
+      "lights": [
+        {
+          "name": "ceiling-1",
+          "type": "AREA",
+          "location": [
+            -10,
+            -4,
+            7.9
+          ],
+          "energy": 600,
+          "size": 4,
+          "color": [
+            0.91,
+            0.941,
+            1.0
+          ],
+          "look_at": [
+            -10,
+            -4,
+            0
+          ]
+        },
+        {
+          "name": "ceiling-2",
+          "type": "AREA",
+          "location": [
+            0,
+            -4,
+            7.9
+          ],
+          "energy": 600,
+          "size": 4,
+          "color": [
+            0.91,
+            0.941,
+            1.0
+          ],
+          "look_at": [
+            0,
+            -4,
+            0
+          ]
+        },
+        {
+          "name": "ceiling-3",
+          "type": "AREA",
+          "location": [
+            10,
+            -4,
+            7.9
+          ],
+          "energy": 600,
+          "size": 4,
+          "color": [
+            0.91,
+            0.941,
+            1.0
+          ],
+          "look_at": [
+            10,
+            -4,
+            0
+          ]
+        },
+        {
+          "name": "guard-lamp-1",
+          "type": "SPOT",
+          "location": [
+            -4,
+            -9,
+            1.5
+          ],
+          "energy": 120,
+          "size": 0.1,
+          "color": [
+            1.0,
+            0.941,
+            0.816
+          ],
+          "look_at": [
+            6,
+            -9,
+            0
+          ]
+        },
+        {
+          "name": "guard-lamp-2",
+          "type": "SPOT",
+          "location": [
+            10,
+            8,
+            5.5
+          ],
+          "energy": 120,
+          "size": 0.1,
+          "color": [
+            1.0,
+            0.941,
+            0.816
+          ],
+          "look_at": [
+            0,
+            8,
+            4.15
+          ]
+        },
+        {
+          "name": "console-red",
+          "type": "POINT",
+          "location": [
+            19,
+            0,
+            1.2
+          ],
+          "energy": 20,
+          "size": 0.3,
+          "color": [
+            1.0,
+            0.188,
+            0.188
+          ]
+        }
+      ],
+      "note": "Book II, after hours. Two floors (the hall and the mezzanine; partitions mark the rooms). Guards walk fixed routes with lamp cones; take logs, not fights, from four cabinets; watch the pulse rigs alter the cultures; the scrap behind the console ('She's close. Move the logs.'); the manifest with margin note 4.",
+      "camera": {
+        "location": [
+          -20.0,
+          -6.0,
+          2.65
+        ],
+        "look_at": [
+          -14.5,
+          -6.0,
+          1.4
+        ],
+        "lens_mm": 31,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          -18.5,
+          -6,
+          0
+        ],
+        "facing_deg": 270
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "logs-1",
+          "verb": "Take the logs"
+        },
+        {
+          "prop": "logs-2",
+          "verb": "Take the logs"
+        },
+        {
+          "prop": "logs-3",
+          "verb": "Take the logs"
+        },
+        {
+          "prop": "logs-4",
+          "verb": "Read the manifest"
+        },
+        {
+          "prop": "rig-1",
+          "verb": "Watch the culture"
+        },
+        {
+          "prop": "console",
+          "verb": "Reach behind the console",
+          "leads_to": "b2-lens-2"
+        }
+      ]
+    }
+  }
+}

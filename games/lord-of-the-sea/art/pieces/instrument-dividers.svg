@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 340" width="520" height="340" role="img" aria-labelledby="instrument-dividers-t instrument-dividers-d">
+<title id="instrument-dividers-t">Dead Reckoning: the dividers</title>
+<desc id="instrument-dividers-d">A pair of brass dividers stepping off a distance: steel points on two pencilled marks, the hinge bright.</desc>
+<defs><filter id="instrument-dividers-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="479"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter></defs>
+<rect x="0" y="0" width="520" height="340" fill="#E7E8DA"/>
+<rect x="0" y="0" width="520" height="340" filter="url(#instrument-dividers-grain1)"/>
+<path d="M0,0V340M80,0V340M160,0V340M240,0V340M320,0V340M400,0V340M480,0V340M0,0H520M0,80H520M0,160H520M0,240H520M0,320H520" fill="none" stroke="#1F2E4A" stroke-width="0.5" opacity="0.3"/>
+<path d="M0,0V340M16,0V340M32,0V340M48,0V340M64,0V340M80,0V340M96,0V340M112,0V340M128,0V340M144,0V340M160,0V340M176,0V340M192,0V340M208,0V340M224,0V340M240,0V340M256,0V340M272,0V340M288,0V340M304,0V340M320,0V340M336,0V340M352,0V340M368,0V340M384,0V340M400,0V340M416,0V340M432,0V340M448,0V340M464,0V340M480,0V340M496,0V340M512,0V340M0,0H520M0,16H520M0,32H520M0,48H520M0,64H520M0,80H520M0,96H520M0,112H520M0,128H520M0,144H520M0,160H520M0,176H520M0,192H520M0,208H520M0,224H520M0,240H520M0,256H520M0,272H520M0,288H520M0,304H520M0,320H520M0,336H520" fill="none" stroke="#1F2E4A" stroke-width="0.3" opacity="0.1"/>
+<path d="M59.8,286.5 L100.8,285.5 L141.7,286.2 L182.8,285.9 L223.9,285.6 L265.2,285.8 L306.2,286.6 L346.8,286.3 L388.1,286.4 L428.9,285.7 L470.2,286.3" fill="none" stroke="#55524c" stroke-width="2"/>
+<path d="M163,279l14,14M177,279l-14,14" stroke="#55524c" stroke-width="1.8"/>
+<path d="M355,279l14,14M369,279l-14,14" stroke="#55524c" stroke-width="1.8"/>
+<path d="M270,56 L174,292" stroke="#000" stroke-width="10" opacity="0.1" stroke-linecap="round"/>
+<path d="M270,56 L366,292" stroke="#000" stroke-width="10" opacity="0.1" stroke-linecap="round"/>
+<path d="M266,50 L202.64,205.76000000000002" stroke="#8A6A2F" stroke-width="15" stroke-linecap="round"/>
+<path d="M266,50 L202.64,205.76000000000002" stroke="#C9A24A" stroke-width="10" stroke-linecap="round"/>
+<path d="M264,60 L200.64,199.76000000000002" stroke="#fff" stroke-width="1.6" opacity="0.5"/>
+<path d="M197.6,205.8 L170,286 L207.6,205.8Z" fill="#9aa0a8" stroke="#333" stroke-width="1"/>
+<path d="M266,50 L329.36,205.76000000000002" stroke="#8A6A2F" stroke-width="15" stroke-linecap="round"/>
+<path d="M266,50 L329.36,205.76000000000002" stroke="#C9A24A" stroke-width="10" stroke-linecap="round"/>
+<path d="M268,60 L331.36,199.76000000000002" stroke="#fff" stroke-width="1.6" opacity="0.5"/>
+<path d="M324.4,205.8 L362,286 L334.4,205.8Z" fill="#9aa0a8" stroke="#333" stroke-width="1"/>
+<circle cx="266" cy="50" r="17" fill="#C9A24A" stroke="#8A6A2F" stroke-width="3"/>
+<circle cx="266" cy="50" r="6" fill="#8A6A2F"/>
+<rect x="261" y="10" width="10" height="26" rx="3" fill="#C9A24A" stroke="#8A6A2F" stroke-width="2"/>
+<path d="M322.2,189.1 A150,150 0 0,1 209.8,189.1" fill="none" stroke="#55524c" stroke-width="1" stroke-dasharray="4 5"/>
+</svg>

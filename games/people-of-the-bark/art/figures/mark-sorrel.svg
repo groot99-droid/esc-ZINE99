@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-labelledby="mark-sorrel-t mark-sorrel-d">
+<title id="mark-sorrel-t">Cast mark: Sorrel, wall-listener of Lowridge</title>
+<desc id="mark-sorrel-d">Cast mark, an ink silhouette on a bark-paper roundel. Sorrel with her tapping mallet, ear laid to a wall that ticks back in cold chalk grey.</desc>
+<defs><filter id="mark-sorrel-bark1" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.5 0.06" numOctaves="2" seed="818"/><feDiffuseLighting surfaceScale="1.6" diffuseConstant="1.2" lighting-color="#fff4dc"><feDistantLight azimuth="205" elevation="60"/></feDiffuseLighting><feBlend in2="SourceGraphic" mode="multiply"/><feComposite in2="SourceGraphic" operator="in"/></filter><clipPath id="mark-sorrel-clip2"><circle cx="120" cy="120" r="106"/></clipPath></defs>
+<circle cx="120" cy="120" r="116" fill="#1b120c"/>
+<circle cx="120" cy="120" r="108" fill="#efe2c4" filter="url(#mark-sorrel-bark1)"/>
+<circle cx="120" cy="120" r="108" fill="none" stroke="#2b1d14" stroke-width="2"/>
+<circle cx="120" cy="120" r="98" fill="none" stroke="#b9c2c4" stroke-width="2.5" stroke-dasharray="2 7" stroke-linecap="round"/>
+<path d="M40,196 Q120,182 200,196" fill="none" stroke="#2b1d14" stroke-width="3" stroke-linecap="round"/>
+<rect x="150" y="30" width="60" height="172" fill="#2b1d14" clip-path="url(#mark-sorrel-clip2)"/>
+<g transform="translate(122 198) rotate(11) scale(1.5 1.5)">
+<path d="M-8,-64 L-16,-48 L-18,-40" fill="none" stroke="#2b1d14" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="-18" cy="-40" r="2.2" fill="#2b1d14" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M-4,-40 L-8.9,-20 L-12,0 l-5,0" fill="none" stroke="#2b1d14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4,-40 L6.8,-20 L12,0 l5,0" fill="none" stroke="#2b1d14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-9,-69 L9,-69 L11,-38 Q0,-34 -11,-38Z" fill="#2b1d14" stroke="#2b1d14" stroke-width="1.4" stroke-linejoin="round"/>
+<circle cx="0" cy="-84" r="14" fill="#2b1d14" stroke="#2b1d14" stroke-width="1.4"/>
+<path d="M-14,-86 A14,14 0 0,1 12,-91 Q0,-90 -14,-86Z" fill="#2b1d14"/>
+<path d="M8,-64 L15.5,-63 L17,-70" fill="none" stroke="#2b1d14" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="17" cy="-70" r="2.2" fill="#2b1d14" stroke="#2b1d14" stroke-width="0.8"/>
+<line x1="-18" y1="-40" x2="-30" y2="-66" stroke="#2b1d14" stroke-width="2.4" stroke-linecap="round"/>
+<rect x="-38" y="-74" width="14" height="9" rx="2" fill="#2b1d14" transform="rotate(-25 -31 -70)"/>
+</g>
+<path d="M166,70 l10,-5 l-3,9 l11,-4" fill="none" stroke="#b9c2c4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M176,90 l10,-5 l-3,9 l11,-4" fill="none" stroke="#b9c2c4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M166,110 l10,-5 l-3,9 l11,-4" fill="none" stroke="#b9c2c4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M176,130 l10,-5 l-3,9 l11,-4" fill="none" stroke="#b9c2c4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M166,150 l10,-5 l-3,9 l11,-4" fill="none" stroke="#b9c2c4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

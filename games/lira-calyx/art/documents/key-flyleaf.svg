@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1100" width="800" height="1100" role="img" aria-labelledby="key-flyleaf-t key-flyleaf-d">
+<title id="key-flyleaf-t">The Key: the flyleaf</title>
+<desc id="key-flyleaf-d">The flyleaf of the key's first printing from the Cinder Reach archive, foxed and nearly empty: the initials S.V., and in a precise upright pencil the same couplet with not yet, leave room, above ruled places for species that do not exist, each beside a dotted outline.</desc>
+<defs><filter id="key-flyleaf-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="696"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter><pattern id="key-flyleaf-pat2" width="46" height="20" patternUnits="userSpaceOnUse"><path d="M0,2.5H46M0,7.5H46M0,12.5H46M0,17.5H46" stroke="#3b2618" stroke-width="0.5" opacity="0.07"/><path d="M23,0V20" stroke="#3b2618" stroke-width="0.8" opacity="0.06"/></pattern><radialGradient id="key-flyleaf-vig3" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#7a5a2e" stop-opacity="0"/><stop offset="100%" stop-color="#7a5a2e" stop-opacity="0.4"/></radialGradient><linearGradient id="key-flyleaf-lg4" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#5a3c1a"/><stop offset="100%" stop-color="#e9dcbc"/></linearGradient><filter id="key-flyleaf-rough5"><feTurbulence type="turbulence" baseFrequency="0.5" numOctaves="2" seed="826" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2"/></filter></defs>
+<rect x="0" y="0" width="800" height="1100" fill="#e9dcbc"/>
+<rect x="0" y="0" width="800" height="1100" filter="url(#key-flyleaf-grain1)"/>
+<rect x="0" y="0" width="800" height="1100" fill="url(#key-flyleaf-pat2)"/>
+<rect x="0" y="0" width="800" height="1100" fill="url(#key-flyleaf-vig3)"/>
+<circle cx="356.6" cy="301.7" r="8.4" fill="#a8763a" opacity="0.2"/>
+<circle cx="31.1" cy="557.8" r="5" fill="#a8763a" opacity="0.1"/>
+<circle cx="165.2" cy="359.1" r="2.6" fill="#a8763a" opacity="0.1"/>
+<circle cx="361.9" cy="898.5" r="7.5" fill="#a8763a" opacity="0.2"/>
+<circle cx="53" cy="830.8" r="5" fill="#a8763a" opacity="0.2"/>
+<circle cx="701" cy="407.8" r="6" fill="#a8763a" opacity="0.1"/>
+<circle cx="307.7" cy="195.2" r="8.7" fill="#a8763a" opacity="0.1"/>
+<circle cx="427.1" cy="254.7" r="8.1" fill="#a8763a" opacity="0.2"/>
+<circle cx="320.7" cy="828.9" r="3.6" fill="#a8763a" opacity="0.2"/>
+<circle cx="126.7" cy="126.1" r="6.9" fill="#a8763a" opacity="0.1"/>
+<circle cx="455.6" cy="602.7" r="5.3" fill="#a8763a" opacity="0.1"/>
+<circle cx="185.1" cy="294.1" r="4.6" fill="#a8763a" opacity="0.1"/>
+<circle cx="109.5" cy="854" r="5.8" fill="#a8763a" opacity="0.1"/>
+<circle cx="646" cy="658.9" r="2.7" fill="#a8763a" opacity="0.2"/>
+<circle cx="55.3" cy="332.5" r="3.7" fill="#a8763a" opacity="0.2"/>
+<circle cx="599" cy="397" r="8.3" fill="#a8763a" opacity="0.2"/>
+<circle cx="296.6" cy="943.9" r="8.6" fill="#a8763a" opacity="0.2"/>
+<circle cx="227.8" cy="939" r="8" fill="#a8763a" opacity="0.2"/>
+<circle cx="409" cy="845.3" r="5.9" fill="#a8763a" opacity="0.1"/>
+<circle cx="355.9" cy="205.3" r="4.1" fill="#a8763a" opacity="0.2"/>
+<circle cx="122.3" cy="779.6" r="2.5" fill="#a8763a" opacity="0.2"/>
+<circle cx="461.8" cy="307.9" r="4.9" fill="#a8763a" opacity="0.1"/>
+<circle cx="498.3" cy="191.8" r="6.7" fill="#a8763a" opacity="0.1"/>
+<circle cx="460.9" cy="391.3" r="8.1" fill="#a8763a" opacity="0.2"/>
+<circle cx="443.4" cy="536.2" r="4.5" fill="#a8763a" opacity="0.1"/>
+<circle cx="63.2" cy="280.6" r="6.5" fill="#a8763a" opacity="0.2"/>
+<circle cx="483.9" cy="400.1" r="6.6" fill="#a8763a" opacity="0.1"/>
+<circle cx="453.3" cy="88.6" r="6.1" fill="#a8763a" opacity="0.2"/>
+<circle cx="447.6" cy="1003.1" r="3.6" fill="#a8763a" opacity="0.2"/>
+<circle cx="693.3" cy="145.3" r="4.6" fill="#a8763a" opacity="0.2"/>
+<circle cx="731.5" cy="170.8" r="3.6" fill="#a8763a" opacity="0.1"/>
+<circle cx="86.3" cy="102.9" r="8.6" fill="#a8763a" opacity="0.2"/>
+<circle cx="723.2" cy="61.8" r="2.3" fill="#a8763a" opacity="0.1"/>
+<circle cx="548" cy="717.4" r="2.7" fill="#a8763a" opacity="0.1"/>
+<circle cx="549.2" cy="544.6" r="4" fill="#a8763a" opacity="0.1"/>
+<circle cx="172.9" cy="323.9" r="4.4" fill="#a8763a" opacity="0.2"/>
+<circle cx="208.5" cy="776.1" r="4.7" fill="#a8763a" opacity="0.1"/>
+<circle cx="58.6" cy="291.8" r="8.4" fill="#a8763a" opacity="0.2"/>
+<circle cx="608.6" cy="712.2" r="3.7" fill="#a8763a" opacity="0.2"/>
+<circle cx="745.7" cy="325.3" r="5.1" fill="#a8763a" opacity="0.2"/>
+<rect x="0" y="0" width="34" height="1100" fill="url(#key-flyleaf-lg4)" opacity="0.6"/>
+<g transform="rotate(-4 600 120)" filter="url(#key-flyleaf-rough5)">
+<rect x="486" y="84" width="236" height="70" fill="none" stroke="#3c5a8c" stroke-width="3"/>
+<text x="604" y="114" font-size="22" font-family="serif" fill="#3c5a8c" text-anchor="middle" letter-spacing="3">CINDER REACH</text>
+<text x="604" y="140" font-size="16" font-family="serif" fill="#3c5a8c" text-anchor="middle" letter-spacing="3">FIRST PRINTING</text>
+</g>
+<text x="120" y="250" font-size="44" font-family="serif" fill="#63605b" letter-spacing="0.4">S.V.</text>
+<path d="M118,264 h96" stroke="#7d7a74" stroke-width="1.4" fill="none"/>
+<circle cx="120" cy="394" r="6" fill="none" stroke="#7d7a74" stroke-width="2"/>
+<text x="142" y="400" font-size="28" font-family="serif" fill="#63605b" letter-spacing="0.4">2b.  Found above 2 000 m:</text>
+<text x="196" y="440" font-size="28" font-family="serif" fill="#63605b" letter-spacing="0.4">not yet.  Leave room.</text>
+<circle cx="120" cy="534" r="6" fill="none" stroke="#7d7a74" stroke-width="2"/>
+<text x="142" y="540" font-size="24" font-family="serif" fill="#63605b" letter-spacing="0.4">3a.</text>
+<line x1="200" y1="542" x2="520" y2="542" stroke="#7d7a74" stroke-width="1" stroke-dasharray="2 5"/>
+<text x="142" y="584" font-size="24" font-family="serif" fill="#63605b" letter-spacing="0.4">3b.</text>
+<line x1="200" y1="586" x2="520" y2="586" stroke="#7d7a74" stroke-width="1" stroke-dasharray="2 5"/>
+<path d="M570,586 C573.3,579.3 578.3,553.3 590,546 C601.7,538.7 628.3,547 640,542 C651.7,537 654.3,516.3 660,516 C665.7,515.7 667.3,533.3 674,540 C680.7,546.7 700,551.7 700,556 C700,560.3 680.7,559.3 674,566 C667.3,572.7 664.7,595.7 660,596 C655.3,596.3 656,572.3 646,568 C636,563.7 610,564.7 600,570 C590,575.3 588.3,595 586,600" stroke="#7d7a74" stroke-width="1.6" stroke-dasharray="3 6" fill="none" stroke-linecap="round"/>
+<circle cx="120" cy="684" r="6" fill="none" stroke="#7d7a74" stroke-width="2"/>
+<text x="142" y="690" font-size="24" font-family="serif" fill="#63605b" letter-spacing="0.4">4a.</text>
+<line x1="200" y1="692" x2="520" y2="692" stroke="#7d7a74" stroke-width="1" stroke-dasharray="2 5"/>
+<text x="142" y="734" font-size="24" font-family="serif" fill="#63605b" letter-spacing="0.4">4b.</text>
+<line x1="200" y1="736" x2="520" y2="736" stroke="#7d7a74" stroke-width="1" stroke-dasharray="2 5"/>
+<path d="M580,750 C583.3,742.7 590,717.3 600,706 C610,694.7 625,687 640,682 C655,677 681.7,677 690,676" stroke="#7d7a74" stroke-width="1.6" stroke-dasharray="3 6" fill="none" stroke-linecap="round"/>
+<ellipse cx="610" cy="684" rx="18" ry="8" transform="rotate(-30 610 684)" stroke="#7d7a74" stroke-width="1.6" stroke-dasharray="3 6" fill="none" stroke-linecap="round"/>
+<ellipse cx="638" cy="680" rx="18" ry="8" transform="rotate(-30 638 684)" stroke="#7d7a74" stroke-width="1.6" stroke-dasharray="3 6" fill="none" stroke-linecap="round"/>
+<ellipse cx="666" cy="676" rx="18" ry="8" transform="rotate(-30 666 684)" stroke="#7d7a74" stroke-width="1.6" stroke-dasharray="3 6" fill="none" stroke-linecap="round"/>
+<circle cx="120" cy="834" r="6" fill="none" stroke="#7d7a74" stroke-width="2"/>
+<text x="142" y="840" font-size="24" font-family="serif" fill="#63605b" letter-spacing="0.4">5a.</text>
+<line x1="200" y1="842" x2="520" y2="842" stroke="#7d7a74" stroke-width="1" stroke-dasharray="2 5"/>
+<text x="142" y="884" font-size="24" font-family="serif" fill="#63605b" letter-spacing="0.4">5b.</text>
+<line x1="200" y1="886" x2="520" y2="886" stroke="#7d7a74" stroke-width="1" stroke-dasharray="2 5"/>
+<polygon points="648,862 641.2,876.1 626,879.5 613.8,869.8 613.8,854.2 626,844.5 641.2,847.9" stroke="#7d7a74" stroke-width="1.6" stroke-dasharray="3 6" fill="none" stroke-linecap="round"/>
+<polygon points="663.6,867.3 646.8,891.6 617.3,893.6 597.4,871.8 602.1,842.6 627.7,828.1 655.1,839.1" stroke="#7d7a74" stroke-width="1.6" stroke-dasharray="3 6" fill="none" stroke-linecap="round"/>
+<polygon points="677.6,877.5 647.6,908.8 604.4,904.9 580.5,868.7 593.9,827.4 634.5,812.2 671.7,834.5" stroke="#7d7a74" stroke-width="1.6" stroke-dasharray="3 6" fill="none" stroke-linecap="round"/>
+<text x="120" y="1040" font-size="14" font-family="monospace" fill="#7d7a74" letter-spacing="1">drawer 14</text>
+</svg>

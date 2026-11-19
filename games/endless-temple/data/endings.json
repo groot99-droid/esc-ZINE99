@@ -1,0 +1,114 @@
+{
+  "endings": [
+    {
+      "id": "unread_page",
+      "name": "The Unread Page",
+      "as_written": false,
+      "priority": 5,
+      "when": {
+        "all": [
+          {
+            "is": "xandri_fate",
+            "eq": "unseen"
+          },
+          {
+            "is": "parting_cup",
+            "eq": true
+          },
+          {
+            "is": "other_hand_seen",
+            "eq": true
+          }
+        ]
+      },
+      "summary": "At the herd Elaris looks away and does not look back. With the Parting Cup on the cover he closes the book while the story is still running, and shelves it unnamed. Months later one woody leaf slips from its pages.",
+      "cost": "Neither he nor the player ever learns what Xandri chose, or whether the desert ends. The book can never be named.",
+      "final_scenes": [
+        "s3_herd_final",
+        "s3_last_cup",
+        "e_unread"
+      ]
+    },
+    {
+      "id": "reader_who_stayed",
+      "name": "The Reader Who Stayed",
+      "as_written": false,
+      "priority": 10,
+      "when": {
+        "all": [
+          {
+            "is": "last_cup",
+            "eq": "drunk"
+          },
+          {
+            "is": "steep",
+            "gte": 60
+          }
+        ]
+      },
+      "summary": "Elaris drinks the last cup and, steeped deep enough, does not come back out. In the book Xandri looks up out of the page at the hand with the cup, and walks on. In the temple, with nobody watching, a second book begins to leak: an unnamed book if one is left, otherwise the black book's mist.",
+      "final_scenes": [
+        "s3_last_cup",
+        "e_stayed"
+      ],
+      "cost": "Elaris is Maudric now: the reader whose wanting walks a boy past his turning, with a cup in his hand."
+    },
+    {
+      "id": "the_rider",
+      "name": "The Rider",
+      "as_written": false,
+      "priority": 20,
+      "when": {
+        "is": "xandri_fate",
+        "eq": "rider"
+      },
+      "summary": "Xandri climbs onto a Xandrix and rides past what the shamans said could not be reached; riding a god is taking the pen, and the gods' smooth track is the story's written line. He does not come home to tell them. The book writes its own name in a hand that is not Elaris's.",
+      "final_scenes": [
+        "s3_xandrix_back",
+        "s3_last_cup",
+        "e_rider"
+      ],
+      "cost": "Xandri is written out of his clan. In the village the tale now names two explorers who died, and Xadra adds a rule in fresh clay."
+    },
+    {
+      "id": "named_book",
+      "name": "The Named Book",
+      "as_written": false,
+      "priority": 30,
+      "when": {
+        "all": [
+          {
+            "is": "xandri_fate",
+            "eq": "walked_on"
+          },
+          {
+            "is": "book1_named",
+            "eq": true
+          }
+        ]
+      },
+      "summary": "Xandri walks the gods' track on leaf shoes, breaking no rule, further than his father did. Elaris names the book, the sand stops sifting from its pages, and he shelves it. A named book rests, and rest is stillness: the last plate fixes Xandri past the mark, mid-stride, for good.",
+      "final_scenes": [
+        "s2_li_c9",
+        "g_name_c9",
+        "s3_last_cup",
+        "e_named"
+      ],
+      "cost": "Elaris finishes what Maudric could not, and the wind in that desert stops."
+    },
+    {
+      "id": "son_returns",
+      "name": "The Son Returns",
+      "as_written": false,
+      "priority": 40,
+      "when": true,
+      "summary": "Catch-all; in practice xandri_fate is returned. Xandri turns back and becomes the storyteller; the tale told at the start is now told about him. If own is 3 or more, the grown Xandri changes one word of it: “and no one knows how he died.”",
+      "final_scenes": [
+        "s3_village_return",
+        "s3_last_cup",
+        "e_returned"
+      ],
+      "cost": "The book stays nameless and keeps leaking sand, and Elaris sweeps every morning of an eternity."
+    }
+  ]
+}

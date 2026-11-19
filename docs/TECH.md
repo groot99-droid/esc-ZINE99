@@ -3,6 +3,11 @@
 One shared engine runs all ten games. Each game is data plus a thin layer of game-specific code.
 This file is the proposal; the decisions marked **Decision** are for the author to confirm.
 
+The engine is not started: there is no `engine/` and no `games/<slug>/src/` yet. The playable
+prototypes of the 2D modes and 1D games in `web/` are separate from it: plain JavaScript modules with
+no build step and no libraries (`docs/WEB.md`). The 3D scenes exist as Blender build files
+(`docs/BLENDER.md`).
+
 ## Stack
 
 | Part | Choice | Why |
@@ -27,9 +32,19 @@ formats below still hold; only `engine/` changes.
 esc-zine99/
   README.md
   CLAUDE.md
-  docs/                 PILLARS.md, COLLECTION.md, TECH.md, DESIGN_TEMPLATE.md, ADAPTATIONS.md
-  schemas/              JSON Schemas for every data file a game ships
-  tools/validate.py     checks every game's data against the schemas and against itself
+  docs/                 PILLARS.md, COLLECTION.md, TECH.md, DESIGN_TEMPLATE.md, STORYBOARDS.md,
+                        PICTOGRAPHS.md (generated), graphic_styles.json, BLENDER.md, WEB.md, and the
+                        historical ADAPTATIONS.md, REFINE_ADDITIONS.md and DEEP_DIVE.md
+  schemas/              JSON Schemas for the four shared data files
+  tools/
+    validate.py         checks every game's data against the schemas and against itself
+    check_storyboards.py, check_assets.py, check_blender.py
+    pictographs/        build.py: draws every pictograph, regenerates docs/PICTOGRAPHS.md and
+                        docs/COLLECTION.md section 7
+    art/                build.py: draws a game's code-drawn art (artkit.py, sheet.mjs)
+    blender/            compile.py, blockout.py, build_lib.py (docs/BLENDER.md)
+    web/                build.py and smoke.mjs (docs/WEB.md)
+  web/                  the hub and the playable 2D and 1D prototypes (docs/WEB.md)
   engine/               the shared engine (not yet written)
     core/               state store, flags, meters, ending resolver, save system, clock
     layers/             Layer3D, Layer2D, Layer1D and the transitions between them
@@ -38,13 +53,22 @@ esc-zine99/
     input/              keyboard, mouse, gamepad, touch; remappable
   games/<slug>/
     DESIGN.md           the game's full design
+    DEEP_DIVE.md        the development plan of 2026-11-14 (historical; built into DESIGN.md)
+    storyboard_additions.md  phase 2 and 3 storyboard rows (historical; merged into docs/STORYBOARDS.md)
     data/
       game.json         title, length, chapters, layers used
       scenes.json       every 3D scene, 2D sequence and 1D game, with ids
       flags.json        every flag and meter, with type, range and what sets it
       endings.json      every ending and its exact conditions
-    src/                game-specific code (not yet written)
-    assets/             models, textures, audio (not yet made)
+      schemas/          optional: schemas for any extra data files this game needs
+    tools/check_data.py optional: checks those extra files; validate.py runs it
+    reference/          four mood stills
+    pictographs/        make.py and one SVG per 2D mode and 1D game
+    art/                art drawn by code: src/, one SVG per asset, art.json, README.md
+    keyart/             generated key art and ending cards, keyart.json
+    assets/             assets.json, locations/ and objects/: the Blender and Meshy reference images
+    blender/            one <location>.build.json per 3D location
+    src/                game-specific engine code (not yet written)
 ```
 
 ## The engine
@@ -63,6 +87,13 @@ A game is a sequence of **scenes**. Every scene has one layer: `3d`, `2d` or `1d
 Transitions between layers are part of the design. Each scene names its `enter` and `exit`
 transition: `cut`, `fade`, `push-in` (3D camera moves into a surface that becomes the 1D page),
 `pull-out`, or `flatten` (3D camera rotates to orthographic, becoming 2D).
+When a scene branches, its `exit` is the default; if the scene that follows names a different
+`enter`, the following scene's `enter` wins for that branch.
+
+Each `Layer2D` mode and `Layer1D` game is drawn in its own graphic style (`docs/graphic_styles.json`).
+A game's palette and materials are shared across its layers; the style is a per-page render
+treatment (line weight, fills, texture, type), so it lives in that page's theme, not in the shared
+materials. The pictographs in `games/<slug>/pictographs/` are the reference for each theme.
 
 ### State
 
@@ -82,13 +113,19 @@ in priority order has the condition `true`, so a run always ends somewhere. A co
 expression tree (see `schemas/endings.schema.json`), never code, so it can be tested and shown in
 a debug panel that explains which ending fired and why.
 
+In a game with several players (Heartstream), each client's state store holds only its own
+player's values for per-player names, written `self.<name>`, and the resolver runs once per
+client, on that store, when the client leaves the shared session.
+
 The ending the author wrote is marked `"as_written": true`. Exactly one ending per game may carry
 it, and only if the author wrote one.
 
 ### Saves
 
 Autosave at every chapter boundary and every layer change. Three manual slots. A save stores the
-current scene id, every flag, meter, counter and ledger, and the playtime. Heartstream is the
+current scene id, every flag, meter, counter and ledger, and the playtime. A game may also keep a **profile**: one IndexedDB record beside the slots that survives a new
+game. `flags.json` marks its names "PROFILE" and the game's `data/profile.json` declares them
+(The Stuffed Ones uses it to put the last run's guests on the shelf). Heartstream is the
 exception: it has no saves by design, and its session is resumable only if a player drops out.
 
 ### Accessibility (all games)
@@ -115,6 +152,13 @@ note at start that names what they contain.
 - every scene id referenced exists in `scenes.json`;
 - each game has at least four 3D scenes, two 2D modes and four 1D games;
 - each game has at least four endings, at most one `as_written`, and a final catch-all ending;
-- chapter minutes add up to a total between 45 and 180.
+- chapter minutes add up to a total between 45 and 180;
+- if the game has `tools/check_data.py`, it runs and must exit 0.
+
+**Extra data files.** A game whose design needs data the shared schemas do not cover (Behind the
+Peephole's night scripts, answer tables and card deals, for example) adds the files to its own
+`data/`, their schemas to `data/schemas/`, and a stdlib `tools/check_data.py` that checks them
+against each other and the four shared files. `validate.py` runs that check, so one command still
+covers everything.
 
 Run it after any change to a game's data.

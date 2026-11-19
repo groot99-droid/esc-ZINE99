@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-labelledby="ending-two-together-t ending-two-together-d">
+<title id="ending-two-together-t">Ending: Two Together</title>
+<desc id="ending-two-together-d">The ending card for Two Together: two red hands locked, two gifts and two glows beneath them, cut as a block print, beside the ending's name and its lines.</desc>
+<defs><filter id="ending-two-together-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="790"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><filter id="ending-two-together-rough2"><feTurbulence type="turbulence" baseFrequency="0" numOctaves="2" seed="86" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3"/></filter><clipPath id="ending-two-together-clip3"><rect x="22" y="22" width="1556" height="856"/></clipPath><radialGradient id="ending-two-together-rg4" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#F2B544" stop-opacity="0.7"/><stop offset="100%" stop-color="#F2B544" stop-opacity="0"/></radialGradient><radialGradient id="ending-two-together-rg5" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#7FB2E0" stop-opacity="0.7"/><stop offset="100%" stop-color="#7FB2E0" stop-opacity="0"/></radialGradient></defs>
+<rect x="0" y="0" width="1600" height="900" fill="#f0e6cf"/>
+<rect x="0" y="0" width="1600" height="900" filter="url(#ending-two-together-grain1)"/>
+<g filter="url(#ending-two-together-rough2)">
+<rect x="22" y="22" width="1556" height="856" fill="#17110f"/>
+<g clip-path="url(#ending-two-together-clip3)">
+<rect x="22" y="22" width="800" height="856" fill="#5a0b17"/>
+<path d="M422,430 L1178.2,391.9 L1178.6,458.7ZM422,430 L1117.7,572.9 L1110.5,604.3ZM422,430 L1027.3,682.1 L1018.5,702.2ZM422,430 L1147.8,902.2 L1109.9,955.9ZM422,430 L1018.4,1060.4 L969.3,1103.5ZM422,430 L835.9,1097.3 L809.9,1112.7ZM422,430 L686,1087.6 L635.4,1105.7ZM422,430 L490.9,983.9 L462,986.8ZM422,430 L366,1239.5 L330.7,1236.3ZM422,430 L229.5,1124.2 L199.6,1115.2ZM422,430 L79.9,1025 L55.1,1010ZM422,430 L14.1,890.3 L-18.7,859.1ZM422,430 L-67.2,803.5 L-98.2,759ZM422,430 L-178.1,718.1 L-193.2,684.1ZM422,430 L-352.1,622.8 L-364.4,564.6ZM422,430 L-400.9,439.2 L-400.6,405.8ZM422,430 L-209.6,297.2 L-201.7,263.9ZM422,430 L-127.5,195.7 L-119.9,178.7ZM422,430 L1,122.5 L10.6,109.7ZM422,430 L-88.7,-70.1 L-44.2,-111.9ZM422,430 L92.7,-94.7 L111.1,-105.8ZM422,430 L236.5,-133.6 L266.1,-142.5ZM422,430 L315.5,-426.2 L348,-429.6ZM422,430 L500.6,-398.5 L536.1,-394.4ZM422,430 L664.1,-428.8 L729.9,-407.5ZM422,430 L814.7,-338.3 L867.4,-309ZM422,430 L980.7,-229.9 L1035.6,-179.3ZM422,430 L978.3,34.4 L992.4,55ZM422,430 L1121.1,82.2 L1134,109.5ZM422,430 L1191.4,235.9 L1202.6,287.3Z" fill="#B3202E" opacity="0.8"/>
+<circle cx="300" cy="720" r="110" fill="url(#ending-two-together-rg4)"/>
+<circle cx="544" cy="720" r="110" fill="url(#ending-two-together-rg5)"/>
+<path d="M22,360 L250,380 L250,500 L22,540Z" fill="#B3202E" stroke="#17110f" stroke-width="9"/>
+<path d="M822,360 L594,380 L594,500 L822,540Z" fill="#c8352e" stroke="#17110f" stroke-width="9"/>
+<path d="M272,362 L365.6,351.6 L417.6,372.4 L433.2,408.8 L438.4,445.2 L430.6,481.6 L407.2,512.8 L350,523.2 L272,512.8 L251.2,440Z M339.6,351.6 L370.8,315.2 L412.4,325.6 L407.2,362 L365.6,382.8Z" fill="#17110f" stroke="#17110f" stroke-width="10" stroke-linejoin="round"/>
+<path d="M272,362 L365.6,351.6 L417.6,372.4 L433.2,408.8 L438.4,445.2 L430.6,481.6 L407.2,512.8 L350,523.2 L272,512.8 L251.2,440Z M339.6,351.6 L370.8,315.2 L412.4,325.6 L407.2,362 L365.6,382.8Z" fill="#B3202E"/>
+<path d="M572,518 L478.4,528.4 L426.4,507.6 L410.8,471.2 L405.6,434.8 L413.4,398.4 L436.8,367.2 L494,356.8 L572,367.2 L592.8,440Z M504.4,528.4 L473.2,564.8 L431.6,554.4 L436.8,518 L478.4,497.2Z" fill="#17110f" stroke="#17110f" stroke-width="10" stroke-linejoin="round"/>
+<path d="M572,518 L478.4,528.4 L426.4,507.6 L410.8,471.2 L405.6,434.8 L413.4,398.4 L436.8,367.2 L494,356.8 L572,367.2 L592.8,440Z M504.4,528.4 L473.2,564.8 L431.6,554.4 L436.8,518 L478.4,497.2Z" fill="#c8352e"/>
+<path d="M392,372 h60" stroke="#17110f" stroke-width="30" stroke-linecap="round" fill="none"/>
+<path d="M392,372 h60" stroke="#c8352e" stroke-width="18" stroke-linecap="round" fill="none"/>
+<path d="M392,412 h60" stroke="#17110f" stroke-width="30" stroke-linecap="round" fill="none"/>
+<path d="M392,412 h60" stroke="#B3202E" stroke-width="18" stroke-linecap="round" fill="none"/>
+<path d="M392,452 h60" stroke="#17110f" stroke-width="30" stroke-linecap="round" fill="none"/>
+<path d="M392,452 h60" stroke="#c8352e" stroke-width="18" stroke-linecap="round" fill="none"/>
+<path d="M392,492 h60" stroke="#17110f" stroke-width="30" stroke-linecap="round" fill="none"/>
+<path d="M392,492 h60" stroke="#B3202E" stroke-width="18" stroke-linecap="round" fill="none"/>
+<path d="M240,740 l110,-26 q26,-2 26,-22" fill="none" stroke="#17110f" stroke-width="20" stroke-linecap="round"/>
+<path d="M240,740 l110,-26 q26,-2 26,-22" fill="none" stroke="#E8DCC4" stroke-width="10" stroke-linecap="round"/>
+<path d="M480,716 l130,16" fill="none" stroke="#17110f" stroke-width="22" stroke-linecap="round"/>
+<path d="M480,716 l130,16" fill="none" stroke="#E8DCC4" stroke-width="12" stroke-linecap="round"/>
+<circle cx="506" cy="719" r="3.5" fill="#17110f"/>
+<circle cx="532" cy="722.2" r="3.5" fill="#17110f"/>
+<circle cx="558" cy="725.4" r="3.5" fill="#17110f"/>
+<circle cx="584" cy="728.6" r="3.5" fill="#17110f"/>
+<rect x="822" y="22" width="756" height="856" fill="#17110f"/>
+<line x1="822" y1="22" x2="822" y2="878" stroke="#f0e6cf" stroke-width="5"/>
+<path d="M1459.1,826.4l14.1,13M836.6,369.7l-11.8,2.3M1400.3,64.5l-7.3,4.1M1056,845.5l-5.7,14.1M852.1,132.3l10.4,2.6M1246.4,43.4l-8,19.1M1199.6,868.7l-6.7,19.8M1044.5,846.8l-12.9,8.2M844.7,741.4l10.3,12M1038.6,846.7l7.4,6.5M869.7,403.3l10.5,2M1320.3,785.4l-2.4,13.8M998.7,99.2l17.4,8.2M1528.9,587.1l-5.1,8.9M1549.4,173.8l19.7,9.3M1074.1,93.9l1.8,12.5M853.7,93.5l-13.3,10.7M1248.2,828.4l10.4,7.9M1535.9,776l9,18.7M1110.3,117.7l20,4.9M1541.2,559.6l-9,3.3M1280.4,858.5l-12.2,0.8M907.9,848.2l7.5,9.2M1451.9,111.9l11.8,4.8M1538,120.7l-16,4.2M1356.2,819.6l-6,18.8M1225.5,51.1l-18.9,4.2M1509.5,308.7l-13.4,13.8M1201,43.4l3.9,13.8M1415.9,815.3l-9.8,17.5" fill="none" stroke="#7A1020" stroke-width="3" stroke-linecap="round"/>
+<text x="1200" y="301" font-size="24" font-family="sans-serif" fill="#F2B544" text-anchor="middle" letter-spacing="14">AN ENDING</text>
+<text x="1200" y="401" font-size="70" font-family="serif" fill="#f0e6cf" text-anchor="middle" letter-spacing="4" stroke="#7A1020" stroke-width="7" stroke-linejoin="round" paint-order="stroke" font-weight="bold">TWO TOGETHER</text>
+<path d="M1010,457 h150 l8,-16 l12,32 l12,-32 l8,16 h150" fill="none" stroke="#B3202E" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1200" y="537" font-size="38" font-family="serif" fill="#f0e6cf" text-anchor="middle" font-style="italic">…never lets you hold</text>
+<text x="1200" y="593" font-size="38" font-family="serif" fill="#f0e6cf" text-anchor="middle" font-style="italic">what you love for long.</text>
+</g>
+</g>
+</svg>

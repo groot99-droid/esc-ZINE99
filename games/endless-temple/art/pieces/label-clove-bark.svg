@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="label-clove-bark-t label-clove-bark-d">
+<title id="label-clove-bark-t">Jar label: Clove-Bark</title>
+<desc id="label-clove-bark-d">The apothecary label on the clove-bark jar: the herb drawn in a round window between whiplash stems, its name, and its marks for depth 0, length 3 and binding 1.</desc>
+<defs><clipPath id="label-clove-bark-clip1"><path d="M22,402 V120 C22,52 80,22 150,22 C220,22 278,52 278,120 V402 Q150,418 22,402Z"/></clipPath><filter id="label-clove-bark-gr2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="384"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.2 0"/></filter><linearGradient id="label-clove-bark-lg3" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#ffffff"/><stop offset="20%" stop-color="#ffffff"/><stop offset="100%" stop-color="#3A2A1A"/></linearGradient></defs>
+<rect x="0" y="0" width="300" height="420" fill="#DCE5DC"/>
+<rect x="0" y="0" width="40" height="420" fill="#fff" opacity="0.3"/>
+<rect x="270" y="0" width="30" height="420" fill="#7A8A80" opacity="0.2"/>
+<path d="M22,402 V120 C22,52 80,22 150,22 C220,22 278,52 278,120 V402 Q150,418 22,402Z" fill="#F5ECD4" stroke="#4A3220" stroke-width="3.4" stroke-linejoin="round"/>
+<rect x="0" y="0" width="300" height="420" filter="url(#label-clove-bark-gr2)" clip-path="url(#label-clove-bark-clip1)"/>
+<path d="M36,394 V122 C36,66 86,38 150,38 C214,38 264,66 264,122 V394" fill="none" stroke="#9A6F1E" stroke-width="1.6"/>
+<path d="M36.4,392.1 L40.8,384.2 L45.7,372.5 L50.4,358.5 L53.6,343.7 L54.7,329.9 L52.5,317 L47.2,304.7 L40.9,292.9 L36.1,281.4 L33.6,270 L35.9,258.5 L41,246.7 L47.6,234.8 L53,222.5 L55.3,210.1 L54.1,197.5 L49.6,185.2 L44.5,173 L40.4,161.3 L39.3,150.1 L42.5,138.4 L48.4,125.9 L55.6,114 L62.1,103.6 L66.3,96.2 L65.7,95.8 L60.9,102.8 L53.8,112.8 L46.4,124.8 L39.9,137.5 L36.7,149.9 L37.6,161.9 L41.6,174.1 L46.8,186.3 L51,198.3 L52.7,209.9 L49.8,221.5 L44.3,233.2 L38.2,245.3 L32.7,257.5 L30.4,270 L31.7,282.6 L36.6,294.9 L41.9,307.1 L46.7,318.8 L49.3,330.1 L48.1,342.8 L44.5,356.8 L40.2,370.6 L36.7,382.8 L35.6,391.9Z" fill="#5F7A5E"/>
+<path d="M52,330 C51.6,319 61.4,312.6 73.1,314.8 C72.4,326.4 62.6,332.9 52,330Z" fill="#8A5A34" stroke="#33241A" stroke-width="1.1" stroke-linejoin="round"/>
+<line x1="54" y1="328.4" x2="69.3" y2="316.3" stroke="#33241A" stroke-width="0.7" opacity="0.7"/>
+<path d="M32,270 C42.5,266.7 51.3,274.4 52.3,286.3 C40.9,288.7 32.1,281 32,270Z" fill="#8A5A34" stroke="#33241A" stroke-width="1.1" stroke-linejoin="round"/>
+<line x1="34.1" y1="271.5" x2="49.9" y2="283" stroke="#33241A" stroke-width="0.7" opacity="0.7"/>
+<path d="M54,210 C53.6,199 63.4,192.6 75.1,194.8 C74.4,206.4 64.6,212.9 54,210Z" fill="#8A5A34" stroke="#33241A" stroke-width="1.1" stroke-linejoin="round"/>
+<line x1="56" y1="208.4" x2="71.3" y2="196.3" stroke="#33241A" stroke-width="0.7" opacity="0.7"/>
+<path d="M38,150 C48.5,146.7 57.3,154.4 58.3,166.3 C46.9,168.7 38.1,161 38,150Z" fill="#8A5A34" stroke="#33241A" stroke-width="1.1" stroke-linejoin="round"/>
+<line x1="40.1" y1="151.5" x2="55.9" y2="163" stroke="#33241A" stroke-width="0.7" opacity="0.7"/>
+<path d="M66,96 q16,-16 6,-28 q-10,-6 -10,6 q2,8 8,5" fill="none" stroke="#5F7A5E" stroke-width="2.4" stroke-linecap="round"/>
+<path d="M264.4,391.9 L262.7,383 L258.9,370.9 L254.1,357.2 L250.9,343 L249.2,330.1 L251.9,318.3 L257.1,306.6 L263.1,294.7 L268.6,282.7 L270.3,270 L268.3,257.2 L263,244.8 L256.9,232.6 L251.4,221.1 L248,209.9 L249.4,198.4 L253.3,186.3 L258.3,174.1 L262,161.8 L262.7,149.9 L259.6,137.6 L253.1,125.1 L245.7,113.2 L238.9,103 L234.2,95.9 L233.8,96.1 L238.1,103.5 L244.9,113.7 L252.1,125.6 L257.9,138.3 L261.3,150.1 L260,161.4 L255.6,173.1 L250.2,185.1 L245.5,197.4 L244,210.1 L245.9,222.9 L251.3,235.4 L257.8,247.2 L263.1,258.8 L265.7,270 L263.6,281.3 L259.5,293.1 L253.7,305.1 L248.8,317.4 L246.8,329.9 L247.4,343.6 L251.1,358 L255.1,372.2 L259.8,384 L263.6,392.1Z" fill="#5F7A5E"/>
+<path d="M248,330 C237.4,332.9 228.9,324.8 228.4,312.9 C239.9,310.9 248.4,319 248,330Z" fill="#8A5A34" stroke="#33241A" stroke-width="1.1" stroke-linejoin="round"/>
+<line x1="246" y1="328.4" x2="230.7" y2="316.3" stroke="#33241A" stroke-width="0.7" opacity="0.7"/>
+<path d="M268,270 C267.9,281 257.9,287 246.2,284.3 C247.5,272.7 257.5,266.7 268,270Z" fill="#8A5A34" stroke="#33241A" stroke-width="1.1" stroke-linejoin="round"/>
+<line x1="265.9" y1="271.5" x2="250.1" y2="283" stroke="#33241A" stroke-width="0.7" opacity="0.7"/>
+<path d="M246,210 C235.4,212.9 226.9,204.8 226.4,192.9 C237.9,190.9 246.4,199 246,210Z" fill="#8A5A34" stroke="#33241A" stroke-width="1.1" stroke-linejoin="round"/>
+<line x1="244" y1="208.4" x2="228.7" y2="196.3" stroke="#33241A" stroke-width="0.7" opacity="0.7"/>
+<path d="M262,150 C261.9,161 251.9,167 240.2,164.3 C241.5,152.7 251.5,146.7 262,150Z" fill="#8A5A34" stroke="#33241A" stroke-width="1.1" stroke-linejoin="round"/>
+<line x1="259.9" y1="151.5" x2="244.1" y2="163" stroke="#33241A" stroke-width="0.7" opacity="0.7"/>
+<path d="M234,96 q-16,-16 -6,-28 q10,-6 10,6 q2,8 8,5" fill="none" stroke="#5F7A5E" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="150" cy="168" r="84" fill="#FBF5E4" stroke="#4A3220" stroke-width="2.2"/>
+<circle cx="150" cy="168" r="92" fill="none" stroke="#9A6F1E" stroke-width="1.2"/>
+<path d="M213.5,172 C213.8,181.4 206.2,193.2 199.4,200.5 C192.5,207.9 182.1,212.2 172.5,216.3 C162.8,220.4 151.5,225.9 141.5,225.1 C131.5,224.2 120.9,217.2 112.5,211 C104,204.7 93.1,196.4 90.8,187.6 C88.6,178.9 95.3,167.5 99.1,158.5 C102.8,149.6 106.3,140 113.5,134.1 C120.7,128.2 131.7,125.6 142.2,123.2 C152.7,120.7 167.4,115.9 176.7,119.4 C186,122.9 191.9,135.5 198,144.2 C204.1,153 213.3,162.6 213.5,172Z" fill="#8A5A34" opacity="0.2"/>
+<path d="M213.5,172 C213.8,181.4 206.2,193.2 199.4,200.5 C192.5,207.9 182.1,212.2 172.5,216.3 C162.8,220.4 151.5,225.9 141.5,225.1 C131.5,224.2 120.9,217.2 112.5,211 C104,204.7 93.1,196.4 90.8,187.6 C88.6,178.9 95.3,167.5 99.1,158.5 C102.8,149.6 106.3,140 113.5,134.1 C120.7,128.2 131.7,125.6 142.2,123.2 C152.7,120.7 167.4,115.9 176.7,119.4 C186,122.9 191.9,135.5 198,144.2 C204.1,153 213.3,162.6 213.5,172Z" fill="none" stroke="#8A5A34" stroke-width="2" opacity="0.4"/>
+<g transform="translate(150 168) scale(1.1)">
+<path d="M-36,-30.0 h24 v80 h-24Z" fill="#8A5A34" stroke="#33241A" stroke-width="1.6" transform="rotate(-18 -24 10)"/>
+<path d="M-36,-30.0 q12,8 24,0 M-30,-26.0 v72 M-19,-26.0 v72" stroke="#33241A" stroke-width="1.1" fill="none" transform="rotate(-18 -24 10)" opacity="0.8"/>
+<path d="M-6,-19.0 h24 v70 h-24Z" fill="#8A5A34" stroke="#33241A" stroke-width="1.6" transform="rotate(12 6 16)"/>
+<path d="M-6,-19.0 q12,8 24,0 M0,-15.0 v62 M11,-15.0 v62" stroke="#33241A" stroke-width="1.1" fill="none" transform="rotate(12 6 16)" opacity="0.8"/>
+<g transform="translate(36 -30) rotate(20)">
+<path d="M0,0 v-22" stroke="#5A3A1E" stroke-width="5" stroke-linecap="round"/>
+<circle cx="0" cy="-27" r="6" fill="#7A4A24" stroke="#33241A" stroke-width="1.2"/>
+<path d="M-6,-24 l-5,-7 M6,-24 l5,-7 M0,-33 v-7" stroke="#33241A" stroke-width="1.6" stroke-linecap="round"/>
+</g>
+<g transform="translate(44 20) rotate(-30)">
+<path d="M0,0 v-22" stroke="#5A3A1E" stroke-width="5" stroke-linecap="round"/>
+<circle cx="0" cy="-27" r="6" fill="#7A4A24" stroke="#33241A" stroke-width="1.2"/>
+<path d="M-6,-24 l-5,-7 M6,-24 l5,-7 M0,-33 v-7" stroke="#33241A" stroke-width="1.6" stroke-linecap="round"/>
+</g>
+<g transform="translate(30 48) rotate(60)">
+<path d="M0,0 v-22" stroke="#5A3A1E" stroke-width="5" stroke-linecap="round"/>
+<circle cx="0" cy="-27" r="6" fill="#7A4A24" stroke="#33241A" stroke-width="1.2"/>
+<path d="M-6,-24 l-5,-7 M6,-24 l5,-7 M0,-33 v-7" stroke="#33241A" stroke-width="1.6" stroke-linecap="round"/>
+</g>
+</g>
+<path d="M40,268 Q150,248 260,268 V312 Q150,330 40,312Z" fill="#4A3220"/>
+<path d="M46,273 Q150,254 254,273 M46,307 Q150,325 254,307" fill="none" stroke="#D4A23A" stroke-width="1"/>
+<text x="150" y="298.8" font-size="26" font-family="serif" fill="#F5ECD4" text-anchor="middle" letter-spacing="2" font-weight="bold">CLOVE-BARK</text>
+<path d="M30,336 h72 v34 q-36,12 -72,0Z" fill="#F8F0DA" stroke="#4A3220" stroke-width="1.4"/>
+<text x="42" y="364" font-size="22" font-family="serif" fill="#4A3220" font-weight="bold">D</text>
+<line x1="64" y1="357" x2="88" y2="357" stroke="#4A3220" stroke-width="1.2" stroke-dasharray="2 4" opacity="0.7"/>
+<path d="M114,336 h72 v34 q-36,12 -72,0Z" fill="#F8F0DA" stroke="#4A3220" stroke-width="1.4"/>
+<text x="126" y="364" font-size="22" font-family="serif" fill="#4A3220" font-weight="bold">L</text>
+<rect x="146" y="344" width="7" height="22" rx="1.5" fill="#4A3220"/>
+<rect x="157" y="344" width="7" height="22" rx="1.5" fill="#4A3220"/>
+<rect x="168" y="344" width="7" height="22" rx="1.5" fill="#4A3220"/>
+<path d="M198,336 h72 v34 q-36,12 -72,0Z" fill="#F8F0DA" stroke="#4A3220" stroke-width="1.4"/>
+<text x="210" y="364" font-size="22" font-family="serif" fill="#4A3220" font-weight="bold">B</text>
+<rect x="230" y="344" width="7" height="22" rx="1.5" fill="#4A3220"/>
+<rect x="0" y="0" width="300" height="420" fill="url(#label-clove-bark-lg3)" opacity="0.1"/>
+</svg>

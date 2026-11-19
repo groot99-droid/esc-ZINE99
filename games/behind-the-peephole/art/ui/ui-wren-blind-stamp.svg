@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" width="480" height="360" role="img" aria-labelledby="ui-wren-blind-stamp-t ui-wren-blind-stamp-d">
+<title id="ui-wren-blind-stamp-t">Wren's envelope: the blind stamp</title>
+<desc id="ui-wren-blind-stamp-d">A cream envelope, unsealed, seen at the flap: a wren pressed blind into the paper, with no ink, catching the light on one side.</desc>
+<defs><filter id="ui-wren-blind-stamp-blur1" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="8"/></filter><linearGradient id="ui-wren-blind-stamp-lg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fff"/><stop offset="100%" stop-color="#b8ab8a"/></linearGradient><radialGradient id="ui-wren-blind-stamp-rg3" cx="0.4" cy="0.3" r="0.8"><stop offset="0%" stop-color="#f1c77c" stop-opacity="0.2"/><stop offset="100%" stop-color="#000" stop-opacity="0.5"/></radialGradient></defs>
+<rect x="0" y="0" width="480" height="360" fill="#101010"/>
+<rect x="0" y="250" width="480" height="110" fill="#2a1c10"/>
+<polygon points="30,60 450,44 456,310 36,324" fill="#000" opacity="0.5" filter="url(#ui-wren-blind-stamp-blur1)"/>
+<polygon points="24,50 444,34 450,300 30,314" fill="#efe6cf"/>
+<polygon points="24,50 444,34 238,214" fill="#f6efdc" stroke="#b8ab8a" stroke-width="1.2"/>
+<polygon points="24,50 444,34 238,214" fill="url(#ui-wren-blind-stamp-lg2)" opacity="0.3"/>
+<path d="M30,314 L236,170 L450,300" fill="none" stroke="#c9bfa4" stroke-width="1.2"/>
+<circle cx="236" cy="118" r="60" fill="none" stroke="#fff" stroke-width="1.6" opacity="0.8" transform="translate(-1 -1)"/>
+<circle cx="236" cy="118" r="60" fill="none" stroke="#8a826e" stroke-width="1.2" opacity="0.6"/>
+<path d="M218.4,122.8a22.4,22.4 0 1,0 44.8,0a22.4,22.4 0 1,0 -44.8,0M204.4,106a13.6,13.6 0 1,0 27.2,0a13.6,13.6 0 1,0 -27.2,0M207.2,102 L188,106 L206.4,110.8Z M252,106 L260.8,73.2 L270.4,77.2 L264,122Z" fill="#fff" opacity="0.8" transform="translate(-1.2 -1.2)"/>
+<path d="M218.4,122.8a22.4,22.4 0 1,0 44.8,0a22.4,22.4 0 1,0 -44.8,0M204.4,106a13.6,13.6 0 1,0 27.2,0a13.6,13.6 0 1,0 -27.2,0M207.2,102 L188,106 L206.4,110.8Z M252,106 L260.8,73.2 L270.4,77.2 L264,122Z" fill="#b9b09a" opacity="0.7" transform="translate(1 1)"/>
+<path d="M218.4,122.8a22.4,22.4 0 1,0 44.8,0a22.4,22.4 0 1,0 -44.8,0M204.4,106a13.6,13.6 0 1,0 27.2,0a13.6,13.6 0 1,0 -27.2,0M207.2,102 L188,106 L206.4,110.8Z M252,106 L260.8,73.2 L270.4,77.2 L264,122Z" fill="#ebe5d6"/>
+<rect x="0" y="0" width="480" height="360" fill="url(#ui-wren-blind-stamp-rg3)"/>
+</svg>

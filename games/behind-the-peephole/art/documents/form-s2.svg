@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1100" width="800" height="1100" role="img" aria-labelledby="form-s2-t form-s2-d">
+<title id="form-s2-t">Statement form S-2: Room X Object X Act</title>
+<desc id="form-s2-d">Statement form S-2, a blue carbon copy typed on cream: six room rows against room x object x act, with rotated column heads, a ruled and empty seventh row under 406, statement lines, a place to sign, and a wren pressed blind into the corner.</desc>
+<defs><filter id="form-s2-pg1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="60"/><feColorMatrix values="0 0 0 0 0.16  0 0 0 0 0.22  0 0 0 0 0.55  0 0 0 0.16 0"/></filter><filter id="form-s2-blur2" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="14"/></filter></defs>
+<rect x="0" y="0" width="800" height="1100" fill="#c9c2b0"/>
+<g transform="rotate(-0.35 400 550)">
+<rect x="26" y="22" width="756" height="1060" fill="#000" opacity="0.2"/>
+<rect x="20" y="16" width="756" height="1060" fill="#f1ecdf"/>
+<rect x="20" y="16" width="756" height="1060" filter="url(#form-s2-pg1)"/>
+<ellipse cx="587.8" cy="342" rx="59.6" ry="12.9" fill="#2a3a8c" opacity="0.1" filter="url(#form-s2-blur2)"/>
+<ellipse cx="65.2" cy="853.3" rx="45.1" ry="21.1" fill="#2a3a8c" opacity="0.1" filter="url(#form-s2-blur2)"/>
+<ellipse cx="173.9" cy="124.7" rx="38.8" ry="25.6" fill="#2a3a8c" opacity="0.2" filter="url(#form-s2-blur2)"/>
+<ellipse cx="113.7" cy="462.7" rx="57.3" ry="16.1" fill="#2a3a8c" opacity="0.2" filter="url(#form-s2-blur2)"/>
+<ellipse cx="590.1" cy="149.4" rx="29.4" ry="21.2" fill="#2a3a8c" opacity="0.2" filter="url(#form-s2-blur2)"/>
+<ellipse cx="187.1" cy="690.7" rx="53.5" ry="10.7" fill="#2a3a8c" opacity="0.1" filter="url(#form-s2-blur2)"/>
+<ellipse cx="445.5" cy="382.2" rx="76.2" ry="23.8" fill="#2a3a8c" opacity="0.1" filter="url(#form-s2-blur2)"/>
+<circle cx="46" cy="150" r="9" fill="#c9c2b0"/>
+<circle cx="46" cy="150" r="9" fill="none" stroke="#8a826e" stroke-width="0.8"/>
+<circle cx="46" cy="950" r="9" fill="#c9c2b0"/>
+<circle cx="46" cy="950" r="9" fill="none" stroke="#8a826e" stroke-width="0.8"/>
+<text x="79.9" y="74.1" font-size="20" font-family="monospace" fill="#2a3a8c" font-weight="bold" opacity="0.9" letter-spacing="0.5">THE CROSSING  -  NIGHT LOG  -  STATEMENT</text>
+<text x="80.2" y="104" font-size="17" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">FORM S-2</text>
+<text x="729.7" y="130.1" font-size="13" font-family="monospace" fill="#2a3a8c" text-anchor="end" opacity="0.9" letter-spacing="0.5">COPY 2 OF 2</text>
+<text x="79.5" y="129.9" font-size="13" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">CATEGORIES: ROOM x OBJECT x ACT</text>
+<line x1="80" y1="144" x2="730" y2="144" stroke="#2a3a8c" stroke-width="1" stroke-dasharray="14 4" opacity="0.7"/>
+<rect x="548" y="90" width="18" height="18" fill="none" stroke="#2a3a8c" stroke-width="1"/>
+<rect x="574" y="90" width="18" height="18" fill="none" stroke="#2a3a8c" stroke-width="1"/>
+<path d="M576,92 l14,14 M590,92 l-14,14" stroke="#2a3a8c" stroke-width="2.2" fill="none"/>
+<rect x="600" y="90" width="18" height="18" fill="none" stroke="#2a3a8c" stroke-width="1"/>
+<rect x="626" y="90" width="18" height="18" fill="none" stroke="#2a3a8c" stroke-width="1"/>
+<rect x="652" y="90" width="18" height="18" fill="none" stroke="#2a3a8c" stroke-width="1"/>
+<rect x="678" y="90" width="18" height="18" fill="none" stroke="#2a3a8c" stroke-width="1"/>
+<rect x="704" y="90" width="18" height="18" fill="none" stroke="#2a3a8c" stroke-width="1"/>
+<text x="540.3" y="103.9" font-size="12" font-family="monospace" fill="#2a3a8c" text-anchor="end" opacity="0.9" letter-spacing="0.5">NIGHT</text>
+<text x="149.9" y="177.6" font-size="13" font-family="monospace" fill="#2a3a8c" font-weight="bold" opacity="0.9" letter-spacing="0.5">OBJECT</text>
+<line x1="150" y1="184" x2="414" y2="184" stroke="#2a3a8c" stroke-width="0.8"/>
+<text x="176" y="322" font-size="11.5" font-family="monospace" fill="#2a3a8c" transform="rotate(-58 176 322)" letter-spacing="0.4">PHOTOCOPIED PAGE</text>
+<text x="220" y="322" font-size="11.5" font-family="monospace" fill="#2a3a8c" transform="rotate(-58 220 322)" letter-spacing="0.4">AN ORCHID</text>
+<text x="264" y="322" font-size="11.5" font-family="monospace" fill="#2a3a8c" transform="rotate(-58 264 322)" letter-spacing="0.4">SECURITY PASS</text>
+<text x="308" y="322" font-size="11.5" font-family="monospace" fill="#2a3a8c" transform="rotate(-58 308 322)" letter-spacing="0.4">CABLE SPOOL</text>
+<text x="352" y="322" font-size="11.5" font-family="monospace" fill="#2a3a8c" transform="rotate(-58 352 322)" letter-spacing="0.4">COIL OF ROPE</text>
+<text x="396" y="322" font-size="11.5" font-family="monospace" fill="#2a3a8c" transform="rotate(-58 396 322)" letter-spacing="0.4">CRATE TAG</text>
+<path d="M149.6,330V606M193.6,330V606M238.1,330V606M282.3,330V606M325.6,330V606M370.4,330V606M413.9,330V606M150,329.8H414M150,376.1H414M150,421.6H414M150,468.3H414M150,514.4H414M150,560.3H414M150,606.1H414" fill="none" stroke="#2a3a8c" stroke-width="1.1" opacity="0.9"/>
+<path d="M150,606 v46 h264 v-46" fill="none" stroke="#2a3a8c" stroke-width="0.8" stroke-dasharray="5 3" opacity="0.8"/>
+<line x1="194" y1="606" x2="194" y2="652" stroke="#2a3a8c" stroke-width="0.5" stroke-dasharray="2 4" opacity="0.7"/>
+<line x1="238" y1="606" x2="238" y2="652" stroke="#2a3a8c" stroke-width="0.5" stroke-dasharray="2 4" opacity="0.7"/>
+<line x1="282" y1="606" x2="282" y2="652" stroke="#2a3a8c" stroke-width="0.5" stroke-dasharray="2 4" opacity="0.7"/>
+<line x1="326" y1="606" x2="326" y2="652" stroke="#2a3a8c" stroke-width="0.5" stroke-dasharray="2 4" opacity="0.7"/>
+<line x1="370" y1="606" x2="370" y2="652" stroke="#2a3a8c" stroke-width="0.5" stroke-dasharray="2 4" opacity="0.7"/>
+<text x="457.3" y="178" font-size="13" font-family="monospace" fill="#2a3a8c" font-weight="bold" opacity="0.9" letter-spacing="0.5">ACT</text>
+<line x1="458" y1="184" x2="722" y2="184" stroke="#2a3a8c" stroke-width="0.8"/>
+<text x="484" y="322" font-size="11.5" font-family="monospace" fill="#2a3a8c" transform="rotate(-58 484 322)" letter-spacing="0.4">RECEIVED</text>
+<text x="528" y="322" font-size="11.5" font-family="monospace" fill="#2a3a8c" transform="rotate(-58 528 322)" letter-spacing="0.4">HANDED OVER</text>
+<text x="572" y="322" font-size="11.5" font-family="monospace" fill="#2a3a8c" transform="rotate(-58 572 322)" letter-spacing="0.4">WAS BRIEFED</text>
+<text x="616" y="322" font-size="11.5" font-family="monospace" fill="#2a3a8c" transform="rotate(-58 616 322)" letter-spacing="0.4">ERASED</text>
+<text x="660" y="322" font-size="11.5" font-family="monospace" fill="#2a3a8c" transform="rotate(-58 660 322)" letter-spacing="0.4">BOUGHT</text>
+<text x="704" y="322" font-size="11.5" font-family="monospace" fill="#2a3a8c" transform="rotate(-58 704 322)" letter-spacing="0.4">STOLE</text>
+<path d="M457.9,330V606M502,330V606M545.7,330V606M590,330V606M633.9,330V606M677.9,330V606M722.4,330V606M458,330.2H722M458,376.4H722M458,422.1H722M458,467.8H722M458,514.3H722M458,559.8H722M458,605.8H722" fill="none" stroke="#2a3a8c" stroke-width="1.1" opacity="0.9"/>
+<path d="M458,606 v46 h264 v-46" fill="none" stroke="#2a3a8c" stroke-width="0.8" stroke-dasharray="5 3" opacity="0.8"/>
+<line x1="502" y1="606" x2="502" y2="652" stroke="#2a3a8c" stroke-width="0.5" stroke-dasharray="2 4" opacity="0.7"/>
+<line x1="546" y1="606" x2="546" y2="652" stroke="#2a3a8c" stroke-width="0.5" stroke-dasharray="2 4" opacity="0.7"/>
+<line x1="590" y1="606" x2="590" y2="652" stroke="#2a3a8c" stroke-width="0.5" stroke-dasharray="2 4" opacity="0.7"/>
+<line x1="634" y1="606" x2="634" y2="652" stroke="#2a3a8c" stroke-width="0.5" stroke-dasharray="2 4" opacity="0.7"/>
+<line x1="678" y1="606" x2="678" y2="652" stroke="#2a3a8c" stroke-width="0.5" stroke-dasharray="2 4" opacity="0.7"/>
+<text x="80.6" y="359.8" font-size="20" font-family="monospace" fill="#2a3a8c" font-weight="bold" opacity="0.9" letter-spacing="0.5">401</text>
+<text x="80.4" y="405.6" font-size="20" font-family="monospace" fill="#2a3a8c" font-weight="bold" opacity="0.9" letter-spacing="0.5">402</text>
+<text x="79.7" y="452.4" font-size="20" font-family="monospace" fill="#2a3a8c" font-weight="bold" opacity="0.9" letter-spacing="0.5">403</text>
+<text x="80.1" y="498.5" font-size="20" font-family="monospace" fill="#2a3a8c" font-weight="bold" opacity="0.9" letter-spacing="0.5">404</text>
+<text x="80.2" y="544.6" font-size="20" font-family="monospace" fill="#2a3a8c" font-weight="bold" opacity="0.9" letter-spacing="0.5">405</text>
+<text x="80.5" y="589.5" font-size="20" font-family="monospace" fill="#2a3a8c" font-weight="bold" opacity="0.9" letter-spacing="0.5">406</text>
+<text x="79.4" y="760.5" font-size="14" font-family="monospace" fill="#2a3a8c" font-weight="bold" opacity="0.9" letter-spacing="0.5">STATEMENT</text>
+<text x="80.4" y="790.6" font-size="14" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">401</text>
+<line x1="128" y1="792" x2="720" y2="792" stroke="#2a3a8c" stroke-width="0.7" stroke-dasharray="2 4" opacity="0.8"/>
+<text x="79.4" y="815.9" font-size="14" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">402</text>
+<line x1="128" y1="818" x2="720" y2="818" stroke="#2a3a8c" stroke-width="0.7" stroke-dasharray="2 4" opacity="0.8"/>
+<text x="80.1" y="842.3" font-size="14" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">403</text>
+<line x1="128" y1="844" x2="720" y2="844" stroke="#2a3a8c" stroke-width="0.7" stroke-dasharray="2 4" opacity="0.8"/>
+<text x="79.5" y="867.6" font-size="14" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">404</text>
+<line x1="128" y1="870" x2="720" y2="870" stroke="#2a3a8c" stroke-width="0.7" stroke-dasharray="2 4" opacity="0.8"/>
+<text x="79.4" y="894.6" font-size="14" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">405</text>
+<line x1="128" y1="896" x2="720" y2="896" stroke="#2a3a8c" stroke-width="0.7" stroke-dasharray="2 4" opacity="0.8"/>
+<text x="80.1" y="920.4" font-size="14" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">406</text>
+<line x1="128" y1="922" x2="720" y2="922" stroke="#2a3a8c" stroke-width="0.7" stroke-dasharray="2 4" opacity="0.8"/>
+<line x1="128" y1="948" x2="720" y2="948" stroke="#2a3a8c" stroke-width="0.7" stroke-dasharray="2 4" opacity="0.5"/>
+<text x="79.5" y="986.2" font-size="14" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">SECOND LOOK:  [ ]  [ ]</text>
+<text x="80.2" y="1022.3" font-size="14" font-family="monospace" fill="#2a3a8c" opacity="0.9" letter-spacing="0.5">SIGNED:</text>
+<path d="M159.7,1024.5 L173.6,1023.3 L188.1,1024.2 L202.8,1024.1 L216.4,1023.3 L230.8,1023.4 L244.8,1023.3 L259.6,1023.3 L273.4,1023 L287.4,1023.4 L301.6,1023.1 L315.9,1022.9 L330.6,1023.3 L344.4,1022.8 L359,1022.1 L372.7,1022.3 L386.9,1022.4 L402,1022.5 L416.1,1021.7 L429.6,1021.6" stroke="#2a3a8c" stroke-width="1" fill="none"/>
+<text x="80.1" y="1060.2" font-size="10" font-family="monospace" fill="#2a3a8c" opacity="0.7" letter-spacing="0.5">COPY - NOT VALID WITHOUT THE SEAL OF THE MANAGEMENT</text>
+<circle cx="670" cy="1022" r="51" fill="none" stroke="#fff" stroke-width="1.6" opacity="0.8" transform="translate(-1 -1)"/>
+<circle cx="670" cy="1022" r="51" fill="none" stroke="#8a826e" stroke-width="1.2" opacity="0.6"/>
+<path d="M655,1026.1a19,19 0 1,0 38.1,0a19,19 0 1,0 -38.1,0M643.1,1011.8a11.6,11.6 0 1,0 23.1,0a11.6,11.6 0 1,0 -23.1,0M645.5,1008.4 L629.2,1011.8 L644.8,1015.9Z M683.6,1011.8 L691.1,983.9 L699.2,987.3 L693.8,1025.4Z" fill="#fff" opacity="0.8" transform="translate(-1.2 -1.2)"/>
+<path d="M655,1026.1a19,19 0 1,0 38.1,0a19,19 0 1,0 -38.1,0M643.1,1011.8a11.6,11.6 0 1,0 23.1,0a11.6,11.6 0 1,0 -23.1,0M645.5,1008.4 L629.2,1011.8 L644.8,1015.9Z M683.6,1011.8 L691.1,983.9 L699.2,987.3 L693.8,1025.4Z" fill="#b9b09a" opacity="0.7" transform="translate(1 1)"/>
+<path d="M655,1026.1a19,19 0 1,0 38.1,0a19,19 0 1,0 -38.1,0M643.1,1011.8a11.6,11.6 0 1,0 23.1,0a11.6,11.6 0 1,0 -23.1,0M645.5,1008.4 L629.2,1011.8 L644.8,1015.9Z M683.6,1011.8 L691.1,983.9 L699.2,987.3 L693.8,1025.4Z" fill="#ebe5d6"/>
+</g>
+</svg>

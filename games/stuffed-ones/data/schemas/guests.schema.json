@@ -1,0 +1,262 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "guests.json",
+  "type": "object",
+  "required": [
+    "source",
+    "pack",
+    "groups",
+    "carried_incidents"
+  ],
+  "properties": {
+    "source": {
+      "type": "string"
+    },
+    "pack": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "form",
+          "hunger",
+          "origin"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "form": {
+            "type": "string"
+          },
+          "hunger": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "origin": {
+            "enum": [
+              "source",
+              "added"
+            ]
+          },
+          "note": {
+            "type": "string"
+          }
+        }
+      },
+      "minItems": 5
+    },
+    "groups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "act",
+          "runs",
+          "scenes",
+          "leaves_alive",
+          "members",
+          "arrives_in_act",
+          "act2_roles"
+        ],
+        "properties": {
+          "id": {
+            "enum": [
+              "b",
+              "c"
+            ]
+          },
+          "name": {
+            "type": "string"
+          },
+          "act": {
+            "const": 3
+          },
+          "runs": {
+            "enum": [
+              "odd",
+              "even"
+            ]
+          },
+          "scenes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "leaves_alive": {
+            "type": "boolean"
+          },
+          "source_note": {
+            "type": "string"
+          },
+          "members": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "name",
+                "age",
+                "interior",
+                "lines"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "slot": {
+                  "type": "integer"
+                },
+                "dread": {
+                  "type": "string",
+                  "description": "A dread meter in flags.json"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "age": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ]
+                },
+                "form": {
+                  "type": "string"
+                },
+                "parlour_symbol": {
+                  "type": "string"
+                },
+                "interior": {
+                  "type": "string"
+                },
+                "habit": {
+                  "type": "string"
+                },
+                "learnable": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "mechanics": {
+                  "type": [
+                    "object",
+                    "null"
+                  ]
+                },
+                "carried_habit": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "lines": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "text",
+                      "verbatim"
+                    ],
+                    "properties": {
+                      "text": {
+                        "type": "string"
+                      },
+                      "verbatim": {
+                        "type": "boolean"
+                      },
+                      "chapter": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "minItems": 3,
+            "maxItems": 3
+          },
+          "arrives_in_act": {
+            "const": 2
+          },
+          "act2_roles": {
+            "type": "object",
+            "required": [
+              "reads_guestbook",
+              "puts_jamie_on_couch",
+              "did_you_see_that",
+              "light_sleeper"
+            ],
+            "properties": {
+              "reads_guestbook": {
+                "type": "string"
+              },
+              "puts_jamie_on_couch": {
+                "type": "string"
+              },
+              "did_you_see_that": {
+                "type": "string"
+              },
+              "light_sleeper": {
+                "type": "string"
+              }
+            }
+          },
+          "act2_note": {
+            "type": "string"
+          }
+        }
+      },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "carried_incidents": {
+      "type": "object",
+      "required": [
+        "rows"
+      ],
+      "properties": {
+        "note": {
+          "type": "string"
+        },
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "incident",
+              "toy",
+              "slot"
+            ],
+            "properties": {
+              "incident": {
+                "type": "string"
+              },
+              "toy": {
+                "type": "string"
+              },
+              "slot": {
+                "type": "integer"
+              },
+              "place": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "groups_note": {
+      "type": "string"
+    }
+  }
+}

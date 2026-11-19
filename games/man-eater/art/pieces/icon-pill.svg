@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-labelledby="icon-pill-t icon-pill-d">
+<title id="icon-pill-t">Tray icon: the pill</title>
+<desc id="icon-pill-d">Isotype icon of the pill in its paper cup: a two-tone capsule standing over a pleated cup.</desc>
+<defs><clipPath id="icon-pill-clip1"><rect x="3" y="3" width="194" height="194" rx="6"/></clipPath><filter id="icon-pill-spk2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="245"/><feColorMatrix values="0 0 0 0 0.44  0 0 0 0 0.40  0 0 0 0 0.31  0 0 0 0.6 -0.2"/></filter></defs>
+<rect x="3" y="3" width="194" height="194" rx="6" fill="#EFE9DC" stroke="#1B1D1F" stroke-width="2"/>
+<line x1="14" y1="160" x2="186" y2="160" stroke="#1B1D1F" stroke-width="2"/>
+<text x="16" y="182" font-size="15" font-family="sans-serif" fill="#1B1D1F" font-weight="bold" letter-spacing="2">PILL</text>
+<g transform="translate(4,3)" opacity="0.6">
+<polygon points="60,96 140,96 128,146 72,146" fill="#7C8C99"/>
+</g>
+<polygon points="60,96 140,96 128,146 72,146" fill="#8A8F93"/>
+<path d="M68,98l-2.0,46M77,98l-1.5,46M86,98l-1.0,46M95,98l-0.5,46M104,98l0.0,46M113,98l0.5,46M122,98l1.0,46M131,98l1.5,46" stroke="#EFE9DC" stroke-width="2"/>
+<g transform="rotate(-28 100 62)">
+<g transform="translate(4,3)" opacity="0.6">
+<rect x="62" y="46" width="76" height="32" rx="16" fill="#7C8C99"/>
+</g>
+<rect x="62" y="46" width="76" height="32" rx="16" fill="#1B1D1F"/>
+<path d="M100,46 h22 a16,16 0 0 1 0,32 h-22z" fill="#D9A441"/>
+</g>
+<g clip-path="url(#icon-pill-clip1)">
+<rect x="0" y="0" width="200" height="200" filter="url(#icon-pill-spk2)"/>
+</g>
+</svg>

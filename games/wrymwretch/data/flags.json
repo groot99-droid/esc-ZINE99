@@ -1,0 +1,427 @@
+{
+  "state": [
+    {
+      "name": "memory.west",
+      "type": "meter",
+      "default": 75,
+      "description": "How much the Cedarheart Forest remembers. Tiers: 80+ Whole, 60-79 Thinning, 40-59 Fading, 20-39 Hollow, 0-19 Unmade. -4 at each chapter boundary and each seal crack; changed by recording, retelling, requests, 1D games, Remind, witnesses killed, Burn.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "memory.north",
+      "type": "meter",
+      "default": 75,
+      "description": "How much the Galewing Peaks remembers. Tiers: 80+ Whole, 60-79 Thinning, 40-59 Fading, 20-39 Hollow, 0-19 Unmade. -4 at each chapter boundary and each seal crack; changed by recording, retelling, requests, 1D games, Remind, witnesses killed, Burn.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "memory.south",
+      "type": "meter",
+      "default": 75,
+      "description": "How much the Mosswhisper Depths remembers. Tiers: 80+ Whole, 60-79 Thinning, 40-59 Fading, 20-39 Hollow, 0-19 Unmade. -4 at each chapter boundary and each seal crack; changed by recording, retelling, requests, 1D games, Remind, witnesses killed, Burn.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "memory.east",
+      "type": "meter",
+      "default": 75,
+      "description": "How much the Tidecaller Shores remembers. Tiers: 80+ Whole, 60-79 Thinning, 40-59 Fading, 20-39 Hollow, 0-19 Unmade. -4 at each chapter boundary and each seal crack; changed by recording, retelling, requests, 1D games, Remind, witnesses killed, Burn.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "memory.below",
+      "type": "meter",
+      "default": 75,
+      "description": "How much the Duskbane Underworld remembers. Tiers: 80+ Whole, 60-79 Thinning, 40-59 Fading, 20-39 Hollow, 0-19 Unmade. -4 at each chapter boundary and each seal crack; changed by recording, retelling, requests, 1D games, Remind, witnesses killed, Burn.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "memory.above",
+      "type": "meter",
+      "default": 75,
+      "description": "How much the High Realm remembers. Tiers: 80+ Whole, 60-79 Thinning, 40-59 Fading, 20-39 Hollow, 0-19 Unmade. -4 at each chapter boundary and each seal crack; changed by recording, retelling, requests, 1D games, Remind, witnesses killed, Burn.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "world_memory",
+      "type": "meter",
+      "default": 75,
+      "description": "Mean of the six realm meters, recomputed whenever one changes. Under 25 at the end: The Architect Rises. 65+ is needed for Remembered Whole.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "echoes",
+      "type": "counter",
+      "default": 0,
+      "description": "Currency gained by witnessing (lore objects, Remind, Six Realms wins, Concentration pairs); spent to record, to Recall in battle, and to retell a forgotten request."
+    },
+    {
+      "name": "izladar_fragments",
+      "type": "counter",
+      "default": 0,
+      "description": "What the party has learned of who Izladar was. Nine sources (section 13); 6+ needed for Remembered Whole; 4+ before Star Chart III makes every line known."
+    },
+    {
+      "name": "ward_names_kept",
+      "type": "counter",
+      "default": 0,
+      "description": "Pairs kept in Concentration I (0-6). 5+ gives the Galechanters trust. Accepted 2026-11-15 (names become ground): each name kept is a lit lantern, with that patient's name on it, in s_run_bone_bridge and s_run_expanse; three or more lost leave those stretches dark."
+    },
+    {
+      "name": "monolith_rows",
+      "type": "counter",
+      "default": 0,
+      "description": "Rows of the monolith read in Slipping Glyph I (0-3). 3 gives a fragment; read rows are pre-filled in Glyph III."
+    },
+    {
+      "name": "stars_redrawn",
+      "type": "counter",
+      "default": 0,
+      "description": "Constellations named across all Star Chart pages. Accepted 2026-11-15 (stars become the route): each constellation's Record entry lights its realm's band in s_flight_descent for good."
+    },
+    {
+      "name": "tribes_trusted",
+      "type": "counter",
+      "default": 0,
+      "description": "How many of the six trust flags are true."
+    },
+    {
+      "name": "realms_matches_won",
+      "type": "counter",
+      "default": 0,
+      "description": "Six Realms matches won."
+    },
+    {
+      "name": "witnesses_lost",
+      "type": "counter",
+      "default": 0,
+      "description": "Witnesses killed by the Remnants."
+    },
+    {
+      "name": "requests_done",
+      "type": "counter",
+      "default": 0,
+      "description": "Requests delivered (0-6)."
+    },
+    {
+      "name": "seals_cracked",
+      "type": "counter",
+      "default": 0,
+      "description": "Seals cracked (0-3): after chapter 3, after chapter 6, entering the Expanse."
+    },
+    {
+      "name": "moot_watches_left",
+      "type": "counter",
+      "default": 4,
+      "description": "Watches left in the Rim Moot night; each activity costs one."
+    },
+    {
+      "name": "trust.wood",
+      "type": "bool",
+      "default": false,
+      "description": "The wood tribe trusts the pairs: from a Six Realms win, its request, or (sky) Concentration I at 5+, or (celestial) Star Chart I complete plus the request. Gives one aid in the final battle and a shard set for the Anchor."
+    },
+    {
+      "name": "trust.sky",
+      "type": "bool",
+      "default": false,
+      "description": "The sky tribe trusts the pairs: from a Six Realms win, its request, or (sky) Concentration I at 5+, or (celestial) Star Chart I complete plus the request. Gives one aid in the final battle and a shard set for the Anchor."
+    },
+    {
+      "name": "trust.earth",
+      "type": "bool",
+      "default": false,
+      "description": "The earth tribe trusts the pairs: from a Six Realms win, its request, or (sky) Concentration I at 5+, or (celestial) Star Chart I complete plus the request. Gives one aid in the final battle and a shard set for the Anchor."
+    },
+    {
+      "name": "trust.water",
+      "type": "bool",
+      "default": false,
+      "description": "The water tribe trusts the pairs: from a Six Realms win, its request, or (sky) Concentration I at 5+, or (celestial) Star Chart I complete plus the request. Gives one aid in the final battle and a shard set for the Anchor."
+    },
+    {
+      "name": "trust.dark",
+      "type": "bool",
+      "default": false,
+      "description": "The dark tribe trusts the pairs: from a Six Realms win, its request, or (sky) Concentration I at 5+, or (celestial) Star Chart I complete plus the request. Gives one aid in the final battle and a shard set for the Anchor."
+    },
+    {
+      "name": "trust.celestial",
+      "type": "bool",
+      "default": false,
+      "description": "The celestial tribe trusts the pairs: from a Six Realms win, its request, or (sky) Concentration I at 5+, or (celestial) Star Chart I complete plus the request. Gives one aid in the final battle and a shard set for the Anchor."
+    },
+    {
+      "name": "name_in_record",
+      "type": "bool",
+      "default": false,
+      "description": "THE NAME (Shallock Izladar) has entered the Record, in the forbidden chamber."
+    },
+    {
+      "name": "name_recorded",
+      "type": "bool",
+      "default": false,
+      "description": "THE NAME was recorded at a crystal and is kept; needed to retell it at the Moot fire and for the Priory request."
+    },
+    {
+      "name": "priory_charts_complete",
+      "type": "bool",
+      "default": false,
+      "description": "All three constellations of Star Chart I were named."
+    },
+    {
+      "name": "sigil_seen",
+      "type": "bool",
+      "default": false,
+      "description": "The Sigil of Izladar has formed in Star Chart I."
+    },
+    {
+      "name": "ilvarra_met",
+      "type": "bool",
+      "default": false,
+      "description": "The party has met Ilvarra at the Rim Moot."
+    },
+    {
+      "name": "ilvarra_memory_kept",
+      "type": "bool",
+      "default": false,
+      "description": "Concentration III reached 9+ pairs: Ilvarra keeps her knowledge of the Imprisonment."
+    },
+    {
+      "name": "killlist_read",
+      "type": "bool",
+      "default": false,
+      "description": "Four or more rows of the Remnants kill-list were read."
+    },
+    {
+      "name": "unwriter_name_known",
+      "type": "bool",
+      "default": false,
+      "description": "The Unwriter's given-up name is known (Kael followed the Eraser, or the kill-list's fifth row was read); enables Remind in his battle. Accepted 2026-11-15: the name is Dorrin Vael, and the kill-list's fifth row is signed with it."
+    },
+    {
+      "name": "unwriter_reminded",
+      "type": "bool",
+      "default": false,
+      "description": "The Unwriter was reminded of his name instead of defeated. Phase 3: one of the conditions of The Empty Saddle. In the web build the seal page stands in for the battle: both names said at the door after row IV is read."
+    },
+    {
+      "name": "because_of_us_recorded",
+      "type": "bool",
+      "default": false,
+      "description": "Accepted 2026-11-15. Aetherius's answer to Aeris, \"Because of us\" (WW 149), was written into the Record during s_flight_aetherius (Record, within ten seconds of the line; her song rests 8 s). At Ilvarra's fire a party that holds it can say it back when she tells The Price."
+    },
+    {
+      "name": "price_told",
+      "type": "bool",
+      "default": false,
+      "description": "Accepted 2026-11-15. Ilvarra has told The Price at the Moot fire: the dragons' dormancy was what the six tribes paid for the seal. Set in s_moot_camp. Read at the choice and by the endings: with it, their closing text names the bargain (section 13)."
+    },
+    {
+      "name": "choir_opened",
+      "type": "bool",
+      "default": false,
+      "description": "Heartstone II tuned the Bone Choir."
+    },
+    {
+      "name": "seal_text_read",
+      "type": "bool",
+      "default": false,
+      "description": "All six rows of the seal were read in Slipping Glyph III."
+    },
+    {
+      "name": "izladar_constellation_drawn",
+      "type": "bool",
+      "default": false,
+      "description": "Star Chart III drew the Scholar's constellation in full."
+    },
+    {
+      "name": "anchor_forged",
+      "type": "bool",
+      "default": false,
+      "description": "Heartstone III forged the Anchor. Needed for Remembered Whole."
+    },
+    {
+      "name": "ilvarra_alive",
+      "type": "bool",
+      "default": true,
+      "description": "Ilvarra lives. False only if the player chooses to go on without her at the bone bridge, or burns her Record entry."
+    },
+    {
+      "name": "heartstone_kept",
+      "type": "enum",
+      "default": "none",
+      "description": "Which memory Rhyla keeps in Heartstone I. vision gives a fragment. Accepted 2026-11-15 (the Heartstone's memory changes rooms): founding, Stonekeeper home hexes cannot be tide-taken in any Six Realms match; vision, the Architect's Echo's intents are shown in s_battle_echo; song, s_heart_choir starts with one rib tuned and the tuned rib is audible in s_bone_choir.",
+      "values": [
+        "none",
+        "founding",
+        "vision",
+        "song"
+      ]
+    },
+    {
+      "name": "kael_choice",
+      "type": "enum",
+      "default": "none",
+      "description": "Kael in the tunnels: saved_witness gives a fragment; followed kills the witness and reveals the Unwriter's name.",
+      "values": [
+        "none",
+        "saved_witness",
+        "followed"
+      ]
+    },
+    {
+      "name": "ysolde",
+      "type": "enum",
+      "values": [
+        "none",
+        "kept",
+        "let_off"
+      ],
+      "default": "none",
+      "description": "Accepted 2026-11-15. Ysolde, the archivist Kael saved in the tunnels, asks at the Moot fire to have her Record entry Burned. none: she is not at the fire (kael_choice is not saved_witness). kept: the party keeps her entry; she stays on the kill-list as a witness. let_off: her entry was Burned as a mercy (burned ledger, memory.below -4); her row on the kill-list is struck and she is no longer a witness."
+    },
+    {
+      "name": "fourth_row_parts",
+      "type": "counter",
+      "default": 0,
+      "description": "Still parts of the monolith's fourth row noticed and recorded in the world (0-6), one a realm: the crack in the split tree (s_cedar_grove), a rune on Aetherius's scales (s_cloud_platform), a vein in the Heartstone (s_heartstone_hall), a kelp line on the seabed (s_seabed), a candle shadow (s_forbidden_chamber), a star in the Priory dome (s_priory_halls). Read by s_glyph_seal, where each fills one part of row IV. Accepted 2026-11-15, built 2026-11-16 (phase 2); phase 3 (built 2026-11-16): with all six, row IV of the seal holds and can be read (fourth_row_read)."
+    },
+    {
+      "name": "fourth_row_read",
+      "type": "bool",
+      "default": false,
+      "description": "Row IV of the seal was read in s_glyph_seal, possible only with all six fourth_row_parts: the terms of the bargain (what was given: the dragons' memory of us; by whom: six tribes, and not the dragons; for how long: until someone else carries it). Opens the fourth answer at s_choice (with unwriter_reminded and tarns_rib_tuned) and changes the closing of the other endings. Accepted 2026-11-15, built 2026-11-16 (phase 3)."
+    },
+    {
+      "name": "second_reader_seen",
+      "type": "bool",
+      "default": false,
+      "description": "The Second Reader: in Star Chart II a line drew itself to the Scholar's Lamp's lost star, in Seraphyne's hand, and Kael saw it. Read at the Moot (Kael's lines) and in Star Chart III, where the Scholar's missing star is the one she placed. Accepted 2026-11-15, built 2026-11-16 (phase 2)."
+    },
+    {
+      "name": "stars_black",
+      "type": "counter",
+      "default": 0,
+      "description": "Figures named to a lying strip and left gilded black (Star Chart II and III). Each lights a false band in s_flight_descent until it is unpicked. Accepted 2026-11-15, built 2026-11-16 (phase 2)."
+    },
+    {
+      "name": "tarns_rib_tuned",
+      "type": "bool",
+      "default": false,
+      "description": "After the Bone Choir's door opened, the one rib that is not ancient was tuned anyway, and the hall played a seventh note. One of the conditions of The Empty Saddle (phase 3). Accepted 2026-11-15, built 2026-11-16 (phase 2)."
+    },
+    {
+      "name": "tarn_named",
+      "type": "bool",
+      "default": false,
+      "description": "In s_empty_saddle the party learned whose rib it is: Tarn, Dorrin Vael's dragon, dead in the long sleep. Accepted 2026-11-15, built 2026-11-16 (phase 2)."
+    },
+    {
+      "name": "ilvarra_recalled",
+      "type": "bool",
+      "default": false,
+      "description": "On the bone bridge Ilvarra stopped, drawn in outline, and was Recalled as a ledge is. Accepted 2026-11-15, built 2026-11-16 (phase 2)."
+    },
+    {
+      "name": "name_retold_to_voice",
+      "type": "bool",
+      "default": false,
+      "description": "In s_last_witness the party Retold the prisoner's name to him, as it did for forgetful elders. Accepted 2026-11-15, built 2026-11-16 (phase 2); phase 3 (built 2026-11-16): in The Architect Rises the voice then loses its last word first."
+    },
+    {
+      "name": "final_choice",
+      "type": "enum",
+      "default": "none",
+      "description": "The answer at s_choice. dorrin_watch (phase 3, built 2026-11-16) is the fourth answer, offered only with unwriter_reminded, tarns_rib_tuned and fourth_row_read: Dorrin Vael takes the watch.",
+      "values": [
+        "none",
+        "keep_watch",
+        "remember_him",
+        "give_bonds",
+        "dorrin_watch"
+      ]
+    },
+    {
+      "name": "keeper_pair",
+      "type": "enum",
+      "default": "none",
+      "description": "The pair that keeps watch in The Rememberer; only pairs whose realm is 20+.",
+      "values": [
+        "none",
+        "thalen_sylvan",
+        "aeris_aetherius",
+        "rhyla_gaia",
+        "lunessa_aquatica",
+        "kael_umbra",
+        "seraphyne_astraia"
+      ]
+    },
+    {
+      "name": "record",
+      "type": "ledger",
+      "default": [],
+      "description": "The party's Record: every entry kept, fading or forgotten.",
+      "fields": [
+        "kind",
+        "id",
+        "realm",
+        "state"
+      ]
+    },
+    {
+      "name": "burned",
+      "type": "ledger",
+      "default": [],
+      "description": "Entries burned in battle. Accepted 2026-11-15: a Burn made at a witness's own asking is a mercy, and takes that witness off the kill-list (see ysolde).",
+      "fields": [
+        "entry",
+        "realm",
+        "chapter"
+      ]
+    },
+    {
+      "name": "witnesses",
+      "type": "ledger",
+      "default": [],
+      "description": "People who remember, and their fate.",
+      "fields": [
+        "who",
+        "realm",
+        "fate"
+      ]
+    },
+    {
+      "name": "requests",
+      "type": "ledger",
+      "default": [],
+      "description": "The six requests and their state (open, forgotten, delivered).",
+      "fields": [
+        "giver",
+        "realm",
+        "state"
+      ]
+    }
+  ]
+}

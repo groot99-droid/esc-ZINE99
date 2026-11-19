@@ -1,0 +1,875 @@
+{
+  "statements": [
+    {
+      "night": 1,
+      "scene": "n1_statement",
+      "rows": "Room",
+      "categories": [
+        {
+          "id": "place",
+          "name": "Place",
+          "options": [
+            {"id": "glasshouse", "name": "The Glasshouse"},
+            {"id": "printworks", "name": "The Printworks"},
+            {"id": "assembly", "name": "The Assembly Rooms"},
+            {"id": "bonded", "name": "The Bonded House"},
+            {"id": "depot", "name": "The tram depot"},
+            {"id": "fishmarket", "name": "The fish market"}
+          ]
+        }
+      ],
+      "truth": [
+        {
+          "room": "r402",
+          "answers": {"place": "glasshouse"},
+          "evidence": {
+            "place": ["c.n1.r402.pollen", "o.n1.paper_glasshouse", "o.n1.lew"]
+          }
+        },
+        {
+          "room": "r406",
+          "answers": {"place": "printworks"},
+          "evidence": {
+            "place": ["c.n1.r406.ink", "c.n1.r406.leaflets", "o.n1.paper_printworks"]
+          }
+        },
+        {
+          "room": "r404",
+          "answers": {"place": "assembly"},
+          "evidence": {
+            "place": ["c.n1.r404.jacket", "o.n1.paper_assembly"]
+          }
+        },
+        {
+          "room": "r401",
+          "answers": {"place": "bonded"},
+          "evidence": {
+            "place": ["c.n1.r401.clay"]
+          }
+        },
+        {
+          "room": "r405",
+          "answers": {"place": "depot"},
+          "evidence": {
+            "place": ["c.n1.r405.grease"]
+          }
+        },
+        {
+          "room": "r403",
+          "answers": {"place": "fishmarket"},
+          "evidence": {
+            "place": ["c.n1.r403.salt", "o.n1.paper_fishmarket"]
+          }
+        }
+      ]
+    },
+    {
+      "night": 2,
+      "scene": "n2_statement",
+      "rows": "Room",
+      "categories": [
+        {
+          "id": "object",
+          "name": "Object",
+          "options": [
+            {"id": "photocopy", "name": "A photocopied page"},
+            {"id": "orchid", "name": "An orchid"},
+            {"id": "pass", "name": "A security pass"},
+            {"id": "spool", "name": "A cable spool"},
+            {"id": "rope", "name": "A coil of rope"},
+            {"id": "tag", "name": "A crate tag"}
+          ]
+        },
+        {
+          "id": "act",
+          "name": "Act",
+          "options": [
+            {"id": "received", "name": "Received"},
+            {"id": "handed_over", "name": "Handed over"},
+            {"id": "briefed", "name": "Was briefed"},
+            {"id": "erased", "name": "Erased"},
+            {"id": "bought", "name": "Bought"},
+            {"id": "stole", "name": "Stole"}
+          ]
+        }
+      ],
+      "truth": [
+        {
+          "room": "r404",
+          "answers": {"object": "photocopy", "act": "received"},
+          "evidence": {
+            "object": ["c.n2.r404.photocopy"],
+            "act": ["c.n2.r404.photocopy", "c.n2.r402.orchid"]
+          }
+        },
+        {
+          "room": "r402",
+          "answers": {"object": "orchid", "act": "handed_over"},
+          "evidence": {
+            "object": ["c.n2.r402.orchid", "c.n2.r402.pressed", "o.n2.paper_orchid"],
+            "act": ["c.n2.r402.keycard", "c.n2.r404.photocopy"]
+          }
+        },
+        {
+          "room": "r401",
+          "answers": {"object": "pass", "act": "briefed"},
+          "evidence": {
+            "object": ["c.n2.r401.pass"],
+            "act": ["c.n2.r401.suit", "o.n2.paper_caterers"]
+          }
+        },
+        {
+          "room": "r405",
+          "answers": {"object": "spool", "act": "erased"},
+          "evidence": {
+            "object": ["c.n2.r405.spool"],
+            "act": ["c.n2.r405.grease", "c.n2.r405.cash"]
+          }
+        },
+        {
+          "room": "r406",
+          "answers": {"object": "rope", "act": "bought"},
+          "evidence": {
+            "object": ["c.n2.r406.rope"],
+            "act": ["c.n2.r406.burn"]
+          }
+        },
+        {
+          "room": "r403",
+          "answers": {"object": "tag", "act": "stole"},
+          "evidence": {
+            "object": ["c.n2.r403.tag"],
+            "act": ["c.n2.r403.clay", "c.n2.r403.cut", "c.n2.r403.awake"]
+          }
+        }
+      ]
+    },
+    {
+      "night": 3,
+      "scene": "n3_statement",
+      "rows": "Room",
+      "categories": [
+        {
+          "id": "called",
+          "name": "Who they called",
+          "options": [
+            {"id": "friends", "name": "\"Friends of the River\""},
+            {"id": "daughter", "name": "His daughter"},
+            {"id": "r406", "name": "Room 406"},
+            {"id": "editor", "name": "His editor"},
+            {"id": "neighbour", "name": "Her neighbour"},
+            {"id": "abbot", "name": "Abbot Fine Art"}
+          ]
+        },
+        {
+          "id": "ended",
+          "name": "How it ended",
+          "options": [
+            {"id": "never", "name": "Never connected"},
+            {"id": "to_the_end", "name": "Read to the end"},
+            {"id": "cut_short", "name": "Cut short"},
+            {"id": "angry", "name": "Hung up angry"},
+            {"id": "whispered", "name": "Whispered"},
+            {"id": "message", "name": "Left a message"}
+          ]
+        }
+      ],
+      "truth": [
+        {
+          "room": "r406",
+          "answers": {"called": "friends", "ended": "never"},
+          "evidence": {
+            "called": ["c.n3.r406.dials"],
+            "ended": ["c.n3.r406.dials"]
+          }
+        },
+        {
+          "room": "r401",
+          "answers": {"called": "daughter", "ended": "to_the_end"},
+          "evidence": {
+            "called": ["c.n3.r401.chapter3"],
+            "ended": ["c.n3.r401.chapter3"]
+          }
+        },
+        {
+          "room": "r405",
+          "answers": {"called": "r406", "ended": "cut_short"},
+          "evidence": {
+            "called": ["c.n3.r405.ruthie", "c.n3.r406.phone"],
+            "ended": ["c.n3.r405.ruthie", "c.n3.r405.receiver"]
+          }
+        },
+        {
+          "room": "r404",
+          "answers": {"called": "editor", "ended": "angry"},
+          "evidence": {
+            "called": ["c.n3.r404.source"],
+            "ended": ["c.n3.r404.source"]
+          }
+        },
+        {
+          "room": "r402",
+          "answers": {"called": "neighbour", "ended": "whispered"},
+          "evidence": {
+            "called": ["c.n3.r402.whisper"],
+            "ended": ["c.n3.r402.whisper", "c.n3.r402.gameshow"]
+          }
+        },
+        {
+          "room": "r403",
+          "answers": {"called": "abbot", "ended": "message"},
+          "evidence": {
+            "called": ["c.n3.r403.message"],
+            "ended": ["c.n3.r403.message"]
+          }
+        }
+      ]
+    },
+    {
+      "night": 4,
+      "scene": "n4_statement",
+      "rows": "Host room",
+      "categories": [
+        {
+          "id": "visitor",
+          "name": "Visitor",
+          "options": [
+            {"id": "lew", "name": "Lew the porter"},
+            {"id": "r401", "name": "Room 401"},
+            {"id": "r404", "name": "Room 404"},
+            {"id": "stranger", "name": "The stranger"},
+            {"id": "r405", "name": "Room 405"},
+            {"id": "room_service", "name": "Room service"}
+          ]
+        },
+        {
+          "id": "passed",
+          "name": "What passed",
+          "options": [
+            {"id": "iron", "name": "An iron"},
+            {"id": "card", "name": "A business card"},
+            {"id": "needle", "name": "A knitting needle"},
+            {"id": "money", "name": "An envelope of money"},
+            {"id": "photograph", "name": "A photograph"},
+            {"id": "tea", "name": "A pot of tea"}
+          ]
+        }
+      ],
+      "truth": [
+        {
+          "room": "r401",
+          "answers": {"visitor": "lew", "passed": "iron"},
+          "evidence": {
+            "visitor": ["c.n4.r401.lew"],
+            "passed": ["c.n4.r401.lew", "c.n4.r401.irons"]
+          }
+        },
+        {
+          "room": "r405",
+          "answers": {"visitor": "r401", "passed": "card"},
+          "evidence": {
+            "visitor": ["c.n4.r405.security"],
+            "passed": ["c.n4.r405.corvane"]
+          }
+        },
+        {
+          "room": "r402",
+          "answers": {"visitor": "r404", "passed": "needle"},
+          "evidence": {
+            "visitor": ["c.n4.r402.visitor"],
+            "passed": ["c.n4.r402.needle", "c.n4.r402.gives", "c.n4.r404.needle"]
+          }
+        },
+        {
+          "room": "r404",
+          "answers": {"visitor": "stranger", "passed": "money"},
+          "evidence": {
+            "visitor": ["c.n4.r404.stranger"],
+            "passed": ["c.n4.r404.bin"]
+          }
+        },
+        {
+          "room": "r406",
+          "answers": {"visitor": "r405", "passed": "photograph"},
+          "evidence": {
+            "visitor": ["c.n4.r406.feet"],
+            "passed": ["c.n4.r406.photo"]
+          }
+        },
+        {
+          "room": "r403",
+          "answers": {"visitor": "room_service", "passed": "tea"},
+          "evidence": {
+            "visitor": ["c.n4.r403.tea"],
+            "passed": ["c.n4.r403.tea"]
+          }
+        }
+      ]
+    },
+    {
+      "night": 5,
+      "scene": "n5_statement",
+      "rows": "Room",
+      "categories": [
+        {
+          "id": "name",
+          "name": "Name",
+          "options": [
+            {"id": "ferrer", "name": "Jonah Ferrer"},
+            {"id": "maro", "name": "Ines Maro"},
+            {"id": "vell", "name": "Tomas Vell"},
+            {"id": "ruth", "name": "Ruth Saelens"},
+            {"id": "kit", "name": "Kit Saelens"},
+            {"id": "linde", "name": "Mara Linde"}
+          ]
+        },
+        {
+          "id": "cover",
+          "name": "Cover story",
+          "options": [
+            {"id": "wine", "name": "Wine salesman"},
+            {"id": "interpreter", "name": "Conference interpreter"},
+            {"id": "assessor", "name": "Insurance assessor"},
+            {"id": "nurse", "name": "Nurse"},
+            {"id": "student", "name": "Student"},
+            {"id": "restorer", "name": "Restorer"}
+          ]
+        }
+      ],
+      "truth": [
+        {
+          "room": "r404",
+          "answers": {"name": "ferrer", "cover": "wine"},
+          "evidence": {
+            "name": ["c.n5.r404.press"],
+            "cover": ["c.n5.r404.bizcard"]
+          }
+        },
+        {
+          "room": "r402",
+          "answers": {"name": "maro", "cover": "interpreter"},
+          "evidence": {
+            "name": ["c.n5.r402.name"],
+            "cover": ["c.n5.r402.lanyard"]
+          }
+        },
+        {
+          "room": "r401",
+          "answers": {"name": "vell", "cover": "assessor"},
+          "evidence": {
+            "name": ["c.n5.r401.postcard"],
+            "cover": ["c.n5.r401.folder"]
+          }
+        },
+        {
+          "room": "r406",
+          "answers": {"name": "ruth", "cover": "nurse"},
+          "evidence": {
+            "name": ["c.n5.r406.letter"],
+            "cover": ["c.n5.r406.watch"]
+          }
+        },
+        {
+          "room": "r405",
+          "answers": {"name": "kit", "cover": "student"},
+          "evidence": {
+            "name": ["c.n5.r405.name"],
+            "cover": ["c.n5.r405.student"]
+          }
+        },
+        {
+          "room": "r403",
+          "answers": {"name": "linde", "cover": "restorer"},
+          "evidence": {
+            "name": ["c.n5.r403.label_name"],
+            "cover": ["c.n5.r403.label_trade"]
+          }
+        }
+      ]
+    },
+    {
+      "night": 6,
+      "scene": "n6_statement",
+      "rows": "Room",
+      "categories": [
+        {
+          "id": "booked_by",
+          "name": "Booked by",
+          "options": [
+            {"id": "corvane", "name": "Corvane Risk"},
+            {"id": "ashdown", "name": "Ashdown Relocation"},
+            {"id": "abbot", "name": "Abbot Fine Art"},
+            {"id": "courant", "name": "The Evening Courant"},
+            {"id": "lantern", "name": "LANTERN"},
+            {"id": "friends", "name": "Friends of the River"}
+          ]
+        },
+        {
+          "id": "knock_night",
+          "name": "Night of the 2:14 knock",
+          "options": [
+            {"id": "n1", "name": "Night one"},
+            {"id": "n2", "name": "Night two"},
+            {"id": "n3", "name": "Night three"},
+            {"id": "n4", "name": "Night four"},
+            {"id": "n5", "name": "Night five"},
+            {"id": "n6", "name": "Night six"}
+          ]
+        }
+      ],
+      "truth": [
+        {
+          "room": "r401",
+          "answers": {"booked_by": "corvane", "knock_night": "n3"},
+          "evidence": {
+            "booked_by": ["c.n4.r405.corvane", "o.n6.booking_ledger"],
+            "knock_night": ["knock.n3", "c.n3.r401.stranger"]
+          }
+        },
+        {
+          "room": "r402",
+          "answers": {"booked_by": "ashdown", "knock_night": "n1"},
+          "evidence": {
+            "booked_by": ["c.n6.r402.ashdown", "o.n6.booking_ledger"],
+            "knock_night": ["knock.n1", "c.n1.r402.envelope"]
+          }
+        },
+        {
+          "room": "r403",
+          "answers": {"booked_by": "abbot", "knock_night": "n6"},
+          "evidence": {
+            "booked_by": ["c.n6.r403.invoice", "c.n3.r403.message", "o.n6.booking_ledger"],
+            "knock_night": ["knock.n6", "c.n6.r403.stranger"]
+          }
+        },
+        {
+          "room": "r404",
+          "answers": {"booked_by": "courant", "knock_night": "n4"},
+          "evidence": {
+            "booked_by": ["c.n6.r404.courant", "o.n6.booking_ledger"],
+            "knock_night": ["knock.n4", "c.n4.r404.stranger"]
+          }
+        },
+        {
+          "room": "r405",
+          "answers": {"booked_by": "lantern", "knock_night": "n2"},
+          "evidence": {
+            "booked_by": ["c.n6.r405.lantern", "o.n6.booking_ledger"],
+            "knock_night": ["knock.n2", "c.n2.r405.envelope"]
+          }
+        },
+        {
+          "room": "r406",
+          "answers": {"booked_by": "friends", "knock_night": "n5"},
+          "evidence": {
+            "booked_by": ["c.n3.r406.dials", "o.n6.booking_ledger"],
+            "knock_night": ["knock.n5", "slip.7"]
+          }
+        }
+      ]
+    }
+  ],
+  "account": {
+    "scene": "n7_account",
+    "second_look": false,
+    "missions": {
+      "options": [
+        {"id": "recover_painting", "name": "Recover the painting for Drost and find the leak"},
+        {"id": "give_accounts", "name": "Give Drost's accounts to the press"},
+        {"id": "steal_painting", "name": "Steal The Night Visitor from the Bonded House"},
+        {"id": "report_gala", "name": "Report on Drost from inside the gala"},
+        {"id": "wipe_and_logger", "name": "Wipe the cameras and plant the gala logger"},
+        {"id": "drop_banner", "name": "Drop a banner at the gala"}
+      ],
+      "truth": [
+        {
+          "room": "r401",
+          "answer": "recover_painting",
+          "evidence": ["c.n2.r401.pass", "c.n3.r401.photo", "c.n4.r405.corvane", "c.n6.r403.visit"]
+        },
+        {
+          "room": "r402",
+          "answer": "give_accounts",
+          "evidence": ["c.n4.r402.needle", "c.n5.r402.mirror"]
+        },
+        {
+          "room": "r403",
+          "answer": "steal_painting",
+          "evidence": ["c.n2.r403.tag", "c.n3.r403.case", "c.n4.r403.backing"]
+        },
+        {
+          "room": "r404",
+          "answer": "report_gala",
+          "evidence": ["c.n1.r404.jacket", "c.n5.r404.press", "o.n2.paper_caterers"]
+        },
+        {
+          "room": "r405",
+          "answer": "wipe_and_logger",
+          "evidence": ["c.n2.r405.spool", "c.n1.r405.laptops", "c.n6.r405.lantern"]
+        },
+        {
+          "room": "r406",
+          "answer": "drop_banner",
+          "evidence": ["c.n2.r406.rope", "c.n5.r406.sews", "c.n6.r406.banner"]
+        }
+      ]
+    },
+    "questions": [
+      {
+        "id": "booker",
+        "question": "Who booked them all?",
+        "options": [
+          {"id": "wren", "name": "Wren"},
+          {"id": "drost", "name": "Drost"},
+          {"id": "porter", "name": "The porter"},
+          {"id": "stranger", "name": "The stranger"},
+          {"id": "you", "name": "You"}
+        ],
+        "answer": "wren",
+        "evidence": ["o.n6.booking_ledger", "slip.5", "slip.10"]
+      },
+      {
+        "id": "stranger",
+        "question": "Who is the stranger?",
+        "options": [
+          {"id": "fenn", "name": "Abel Fenn"},
+          {"id": "drost", "name": "Drost"},
+          {"id": "wren", "name": "Wren"},
+          {"id": "lew", "name": "Lew"},
+          {"id": "guest", "name": "A guest"}
+        ],
+        "answer": "fenn",
+        "evidence": ["o.n4.fenn_log", "slip.6"]
+      },
+      {
+        "id": "product",
+        "question": "What is the product?",
+        "options": [
+          {"id": "log", "name": "The log"},
+          {"id": "painting", "name": "The painting"},
+          {"id": "ledger", "name": "The ledger"},
+          {"id": "logger", "name": "The logger"},
+          {"id": "banner", "name": "The banner"}
+        ],
+        "answer": "log",
+        "evidence": ["o.n6.hiring_folder", "o.n3.chute_box", "slip.4"]
+      }
+    ],
+    "scapegoat": {
+      "rule": "The room put against the first mission whose row is wrong, in this order; otherwise the default.",
+      "missions_in_order": ["steal_painting", "wipe_and_logger"],
+      "default": "r406",
+      "flag": "account_scapegoat"
+    }
+  },
+  "mosaic": {
+    "scenes": {"2": "n2_mosaic", "3": "n3_mosaic", "4": "n4_mosaic", "5": "n5_mosaic", "6": "n6_mosaic"},
+    "lengths": {"2": 6, "3": 6, "4": 7, "5": 7, "6": 8},
+    "link_types": [
+      {"id": "met", "name": "met", "colour": "red", "pattern": "solid"},
+      {"id": "works_for", "name": "works for", "colour": "blue", "pattern": "dashed"},
+      {"id": "booked_by", "name": "booked by", "colour": "blue", "pattern": "dashed"},
+      {"id": "family", "name": "family", "colour": "yellow", "pattern": "double"},
+      {"id": "after", "name": "after", "colour": "white", "pattern": "dotted"}
+    ],
+    "pins": [
+      {
+        "id": "r401",
+        "kind": "guest",
+        "name": "Room 401",
+        "appears": {"night": 2}
+      },
+      {
+        "id": "r402",
+        "kind": "guest",
+        "name": "Room 402",
+        "appears": {"night": 2}
+      },
+      {
+        "id": "r403",
+        "kind": "guest",
+        "name": "Room 403",
+        "appears": {"night": 2}
+      },
+      {
+        "id": "r404",
+        "kind": "guest",
+        "name": "Room 404",
+        "appears": {"night": 2}
+      },
+      {
+        "id": "r405",
+        "kind": "guest",
+        "name": "Room 405",
+        "appears": {"night": 2}
+      },
+      {
+        "id": "r406",
+        "kind": "guest",
+        "name": "Room 406",
+        "appears": {"night": 2}
+      },
+      {
+        "id": "bonded_house",
+        "kind": "place",
+        "name": "The Bonded House",
+        "appears": {"night": 2}
+      },
+      {
+        "id": "gala",
+        "kind": "place",
+        "name": "The gala",
+        "appears": {"night": 2}
+      },
+      {
+        "id": "stranger",
+        "kind": "person",
+        "name": "The stranger",
+        "appears": {"night": 2}
+      },
+      {
+        "id": "you",
+        "kind": "person",
+        "name": "You",
+        "appears": {"night": 2}
+      },
+      {
+        "id": "case",
+        "kind": "object",
+        "name": "The case",
+        "appears": {"link": "r403-bonded_house"}
+      },
+      {
+        "id": "drost",
+        "kind": "person",
+        "name": "Drost",
+        "appears": {"link": "r401-bonded_house"}
+      },
+      {
+        "id": "photograph",
+        "kind": "object",
+        "name": "The photograph",
+        "appears": {"night": 3, "clue": "c.n3.r401.photo"}
+      },
+      {
+        "id": "ledger",
+        "kind": "object",
+        "name": "The ledger",
+        "appears": {"night": 4, "clue": "c.n4.r403.pages"}
+      },
+      {
+        "id": "needle",
+        "kind": "object",
+        "name": "The needle",
+        "appears": {"night": 4, "clue": "c.n4.r402.needle"}
+      },
+      {
+        "id": "wren",
+        "kind": "person",
+        "name": "Wren",
+        "appears": {
+          "any": [
+            {"card": "slip.5"},
+            {"link": "r404-stranger"}
+          ]
+        }
+      },
+      {
+        "id": "fenn",
+        "kind": "person",
+        "name": "Fenn",
+        "appears": {"night": 4, "flag": "fenn_log_found"}
+      }
+    ],
+    "links": [
+      {
+        "id": "r402-r404",
+        "from": "r402",
+        "to": "r404",
+        "type": "met",
+        "earliest_night": 2,
+        "question": "What did she give him?",
+        "effect": {
+          "rings": {"room": "r402", "night": 4, "time": "00:30"}
+        },
+        "evidence": ["c.n2.r402.orchid", "c.n2.r404.photocopy"]
+      },
+      {
+        "id": "r403-bonded_house",
+        "from": "r403",
+        "to": "bonded_house",
+        "type": "after",
+        "earliest_night": 2,
+        "question": "What did she take?",
+        "effect": {"adds_pin": "case"},
+        "evidence": ["c.n2.r403.tag", "c.n2.r403.clay"]
+      },
+      {
+        "id": "r401-bonded_house",
+        "from": "r401",
+        "to": "bonded_house",
+        "type": "works_for",
+        "earliest_night": 2,
+        "question": "Who is he guarding it for?",
+        "effect": {"adds_pin": "drost"},
+        "evidence": ["c.n2.r401.pass", "c.n1.r401.clay"]
+      },
+      {
+        "id": "r403-case",
+        "from": "r403",
+        "to": "case",
+        "type": "after",
+        "earliest_night": 3,
+        "question": "Who wants it back?",
+        "effect": {
+          "rings": {"room": "r405", "night": 4, "time": "23:50"}
+        },
+        "evidence": ["c.n3.r403.case"]
+      },
+      {
+        "id": "r405-r406",
+        "from": "r405",
+        "to": "r406",
+        "type": "family",
+        "earliest_night": 3,
+        "question": "Why did she call?",
+        "effect": {
+          "sets": "link.sisters",
+          "rings": {"room": "r406", "night": 4, "time": "01:10"}
+        },
+        "evidence": ["c.n3.r405.ruthie", "c.n3.r406.phone"]
+      },
+      {
+        "id": "r401-r403",
+        "from": "r401",
+        "to": "r403",
+        "type": "after",
+        "earliest_night": 3,
+        "question": "What will he do?",
+        "effect": {
+          "rings": {"room": "r403", "night": 6, "time": "01:30"}
+        },
+        "evidence": ["c.n3.r401.photo"]
+      },
+      {
+        "id": "r405-bonded_house",
+        "from": "r405",
+        "to": "bonded_house",
+        "type": "works_for",
+        "earliest_night": 3,
+        "question": "What did she erase?",
+        "effect": {"account_clue": "r405"},
+        "evidence": ["c.n2.r405.spool", "row.n2.r405"]
+      },
+      {
+        "id": "case-ledger",
+        "from": "case",
+        "to": "ledger",
+        "type": "after",
+        "earliest_night": 4,
+        "question": "Why is it heavier than it should be?",
+        "effect": {"sets": "link.case_ledger"},
+        "evidence": ["c.n4.r403.pages", "c.n3.r403.message"]
+      },
+      {
+        "id": "r402-ledger",
+        "from": "r402",
+        "to": "ledger",
+        "type": "after",
+        "earliest_night": 4,
+        "question": "Who else has a copy?",
+        "effect": {"account_clue": "r402"},
+        "evidence": ["c.n4.r402.needle"]
+      },
+      {
+        "id": "r404-stranger",
+        "from": "r404",
+        "to": "stranger",
+        "type": "met",
+        "earliest_night": 4,
+        "question": "Who paid him?",
+        "effect": {"adds_pin": "wren"},
+        "evidence": ["c.n4.r404.stranger", "c.n4.r404.bin"]
+      },
+      {
+        "id": "r401-r405",
+        "from": "r401",
+        "to": "r405",
+        "type": "met",
+        "earliest_night": 4,
+        "question": "What does he know about her?",
+        "effect": {"account_clue": "r401"},
+        "evidence": ["c.n4.r405.security", "c.n4.r405.corvane"]
+      },
+      {
+        "id": "stranger-fenn",
+        "from": "stranger",
+        "to": "fenn",
+        "type": "met",
+        "earliest_night": 4,
+        "question": "Who was here before you?",
+        "effect": {"sets": "link.stranger_fenn", "label": "same as"},
+        "evidence": ["o.n4.fenn_log"]
+      },
+      {
+        "id": "r406-gala",
+        "from": "r406",
+        "to": "gala",
+        "type": "after",
+        "earliest_night": 5,
+        "question": "Who gave her the date?",
+        "effect": {
+          "rings": {"notice": "the paper's gala notice"}
+        },
+        "evidence": ["c.n5.r406.sews", "c.n5.r406.letter", "o.n1.paper_assembly"]
+      },
+      {
+        "id": "r405-gala",
+        "from": "r405",
+        "to": "gala",
+        "type": "after",
+        "earliest_night": 5,
+        "question": "What will her logger do?",
+        "effect": {"account_clue": "r405"},
+        "evidence": ["c.n2.r405.spool", "c.n1.r405.laptops", "o.n1.paper_assembly"]
+      },
+      {
+        "id": "wren-all_six",
+        "from": "wren",
+        "to": ["r401", "r402", "r403", "r404", "r405", "r406"],
+        "type": "booked_by",
+        "earliest_night": 6,
+        "question": "Why gather them here?",
+        "effect": {"sets": "link.one_hand", "offers": "slide_pages"},
+        "evidence": ["o.n6.booking_ledger", "slip.10"],
+        "true_when": {
+          "any_of": [
+            {"flag": "ledger_read"},
+            {
+              "card": "slip.10",
+              "booker_names_min": 4,
+              "booker_names": {
+                "r401": ["c.n4.r405.corvane"],
+                "r402": ["c.n6.r402.ashdown"],
+                "r403": ["c.n3.r403.message", "c.n6.r403.invoice"],
+                "r404": ["c.n6.r404.courant"],
+                "r405": ["c.n6.r405.lantern"],
+                "r406": ["c.n3.r406.dials"]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "wren-you",
+        "from": "wren",
+        "to": "you",
+        "type": "booked_by",
+        "earliest_night": 6,
+        "question": "Who watches the watcher?",
+        "effect": {"sets": "link.wren_you"},
+        "evidence": ["o.n6.hiring_folder"]
+      }
+    ]
+  }
+}

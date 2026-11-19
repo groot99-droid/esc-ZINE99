@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="card-anchors-5-t card-anchors-5-d">
+<title id="card-anchors-5-t">Short Rations: 5 of Anchors</title>
+<desc id="card-anchors-5-d">Ration-issue card, the 5 of Anchors (Pell's suit): worn card stock, the rank in army stencil at two corners, 5 of eight issue holes punched, and drawn by hand in the middle an anchor on a chain of 5 links.</desc>
+<defs><clipPath id="card-anchors-5-clip1"><rect x="4" y="4" width="292" height="412" rx="16"/></clipPath><filter id="card-anchors-5-spk2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="50"/><feColorMatrix values="0 0 0 0 0.44  0 0 0 0 0.40  0 0 0 0 0.31  0 0 0 0.7 -0.3"/></filter><mask id="card-anchors-5-st3" maskUnits="userSpaceOnUse" x="-32" y="6" width="162" height="108"><rect x="-32" y="6" width="162" height="108" fill="#fff"/><rect x="43.6" y="30" width="4.8" height="60" fill="#000"/></mask><mask id="card-anchors-5-st4" maskUnits="userSpaceOnUse" x="-32" y="6" width="162" height="108"><rect x="-32" y="6" width="162" height="108" fill="#fff"/><rect x="43.6" y="30" width="4.8" height="60" fill="#000"/></mask><mask id="card-anchors-5-st5" maskUnits="userSpaceOnUse" x="8" y="361.6" width="151.8" height="39.6"><rect x="8" y="361.6" width="151.8" height="39.6" fill="#fff"/><rect x="35.7" y="370.4" width="1.8" height="22" fill="#000"/><rect x="51.1" y="370.4" width="1.8" height="22" fill="#000"/><rect x="66.5" y="370.4" width="1.8" height="22" fill="#000"/><rect x="81.9" y="370.4" width="1.8" height="22" fill="#000"/><rect x="97.3" y="370.4" width="1.8" height="22" fill="#000"/><rect x="112.7" y="370.4" width="1.8" height="22" fill="#000"/><rect x="128.1" y="370.4" width="1.8" height="22" fill="#000"/></mask></defs>
+<rect x="4" y="4" width="292" height="412" rx="16" fill="#DDD4BD" stroke="#6f6750" stroke-width="2"/>
+<g clip-path="url(#card-anchors-5-clip1)">
+<rect x="0" y="0" width="300" height="420" filter="url(#card-anchors-5-spk2)"/>
+</g>
+<g clip-path="url(#card-anchors-5-clip1)">
+<ellipse cx="102.4" cy="325.5" rx="7.2" ry="4.6" fill="#b3a786" opacity="0.3" transform="rotate(-0.1 102.4 325.5)"/>
+<ellipse cx="103.6" cy="224.4" rx="24.8" ry="4.2" fill="#b3a786" opacity="0.3" transform="rotate(11.8 103.6 224.4)"/>
+<ellipse cx="235.4" cy="394.3" rx="6.8" ry="3.3" fill="#b3a786" opacity="0.3" transform="rotate(33.6 235.4 394.3)"/>
+<ellipse cx="10.8" cy="67.3" rx="22.8" ry="2" fill="#b3a786" opacity="0.3" transform="rotate(-39.7 10.8 67.3)"/>
+<ellipse cx="227.3" cy="14.5" rx="14.9" ry="4.2" fill="#b3a786" opacity="0.3" transform="rotate(-9.7 227.3 14.5)"/>
+<ellipse cx="141.3" cy="409" rx="14.7" ry="5.3" fill="#b3a786" opacity="0.3" transform="rotate(-14.4 141.3 409)"/>
+<line x1="254.9" y1="416" x2="296" y2="374.9" stroke="#9b9072" stroke-width="1.5"/>
+<polygon points="254.9,416 296,416 296,374.9" fill="#000" opacity="0.1"/>
+</g>
+<rect x="16" y="16" width="268" height="388" rx="9" fill="none" stroke="#1B1D1F" stroke-width="2.4" stroke-dasharray="20 5"/>
+<g mask="url(#card-anchors-5-st3)">
+<text x="28" y="78" font-size="60" font-family="monospace" fill="#1B1D1F" font-weight="bold" letter-spacing="6">5</text>
+</g>
+<path d="M49,90.9 L48.8,92.3 L47,93.6 L45.7,93.1 L45,92.1 L44.8,90.8 L46.3,89.9 L47.4,89.1 L48.5,89.9 L49.4,91.4Z" stroke="#1B1D1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M46.9,93.8 L47,97.1 L46.6,102 L47,105.2 L47,109.6 L47.4,113.8" stroke="#1B1D1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M41.7,96.8 L47.3,97.1 L52.5,96.8" stroke="#1B1D1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M58.1,104.2 L57.1,107.3 L56.1,110 L53.5,111.9 L50.1,113.8 L47.4,113.6 L43.9,113.3 L40.1,112.6 L38.3,110.5 L36.4,107.7 L36.2,104.5" stroke="#1B1D1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M34,107.6 L35.7,104.5 L38.8,106.4" stroke="#1B1D1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M59.5,107.4 L57.7,104.9 L55,106.2" stroke="#1B1D1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<g transform="rotate(180 150.0 210.0)">
+<g mask="url(#card-anchors-5-st4)">
+<text x="28" y="78" font-size="60" font-family="monospace" fill="#1B1D1F" font-weight="bold" letter-spacing="6">5</text>
+</g>
+<path d="M48.7,91 L48.7,92.6 L47.1,93.1 L45.6,93.1 L44.8,91.8 L45.1,90.9 L45.9,89.8 L47.7,88.9 L48.6,89.7 L48.8,91.7Z" stroke="#1B1D1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M46.7,93.1 L46.7,97.3 L47.1,101.6 L46.8,105.9 L46.9,109.7 L46.7,113.5" stroke="#1B1D1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M41.7,96.7 L46.9,97 L52.3,97.2" stroke="#1B1D1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M58.2,104.5 L57.3,107.9 L56.1,109.7 L53.3,112.5 L50.7,113.5 L47.2,114.3 L43.7,113.5 L40.5,112.3 L38.1,109.9 L36.9,107.6 L36,104.5" stroke="#1B1D1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M34.3,107.1 L35.6,104.9 L38.7,106.2" stroke="#1B1D1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M60,107.2 L58.3,104.9 L54.9,106.9" stroke="#1B1D1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</g>
+<circle cx="110" cy="44" r="6.5" fill="#1B1D1F"/>
+<circle cx="108.5" cy="42.5" r="2" fill="#4a4e51"/>
+<circle cx="132" cy="44" r="6.5" fill="#1B1D1F"/>
+<circle cx="130.5" cy="42.5" r="2" fill="#4a4e51"/>
+<circle cx="154" cy="44" r="6.5" fill="#1B1D1F"/>
+<circle cx="152.5" cy="42.5" r="2" fill="#4a4e51"/>
+<circle cx="176" cy="44" r="6.5" fill="#1B1D1F"/>
+<circle cx="174.5" cy="42.5" r="2" fill="#4a4e51"/>
+<circle cx="198" cy="44" r="6.5" fill="#1B1D1F"/>
+<circle cx="196.5" cy="42.5" r="2" fill="#4a4e51"/>
+<circle cx="220" cy="44" r="6.5" fill="none" stroke="#1B1D1F" stroke-width="1.3" stroke-dasharray="3 2.5"/>
+<circle cx="242" cy="44" r="6.5" fill="none" stroke="#1B1D1F" stroke-width="1.3" stroke-dasharray="3 2.5"/>
+<circle cx="264" cy="44" r="6.5" fill="none" stroke="#1B1D1F" stroke-width="1.3" stroke-dasharray="3 2.5"/>
+<text x="108" y="72" font-size="13" font-family="monospace" fill="#1B1D1F" text-anchor="start">ISSUE 5/8</text>
+<path d="M116.5,236.9 L113.7,239.9 L107.6,246.2 L104.2,243.5 L100.8,239.6 L99.3,233.7 L101.6,227.9 L109.2,227.7 L116.3,229.5 L118,236.4Z" stroke="#1B1D1F" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M106.8,244 L109.9,263.8 L106.7,279.5 L106.1,297 L107.6,315.2 L107.6,330.6" stroke="#1B1D1F" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M83.7,261 L106.4,261 L131.3,258" stroke="#1B1D1F" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M157.4,293.7 L151.5,307.5 L145.1,315.2 L135.6,325.2 L124.4,332.6 L109.6,333.2 L91.6,329.7 L81.3,324.8 L69.7,316.3 L61.1,306.2 L58.7,291.6" stroke="#1B1D1F" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M52.1,305.6 L61.5,292.4 L72.6,301.8" stroke="#1B1D1F" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M163.2,305.9 L156.9,293.8 L144.3,301.1" stroke="#1B1D1F" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M118.9,237.7 L114.4,243.1 L109.7,247.4 L103.1,246.6 L102.2,239.6 L101.6,233.4 L104.3,229.1 L110.6,226.8 L117.7,232.5 L116.1,235.8Z" stroke="#7C8C99" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M109.6,247.4 L110.1,262.7 L110.9,281.7 L107.4,296.6 L108.4,317.9 L107.9,335.3" stroke="#7C8C99" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M87.4,262 L108.3,260.1 L132.7,262.3" stroke="#7C8C99" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M156.4,293.2 L155.1,306.2 L149.1,316.9 L137.7,328.6 L125.4,333.1 L109.7,333.8 L94.7,332.4 L81.8,327.4 L71.8,318.9 L62.6,308.1 L61.7,294.7" stroke="#7C8C99" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M55.2,307.8 L60,295.9 L75.5,302.5" stroke="#7C8C99" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M165.5,305.6 L157.1,295 L142.4,302.2" stroke="#7C8C99" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<g transform="rotate(-20 110 222)">
+<path d="M124.6,221.8 L123.5,226.3 L117.8,229.8 L110.3,230.3 L103.1,228.7 L96.9,226.6 L94.5,221.8 L97.5,217.4 L102.8,214.9 L110.4,213.6 L118,214.7 L122.9,218.4 L125,222.4Z" fill="none" stroke="#1B1D1F" stroke-width="4"/>
+<path d="M125,221.6 L122.6,226.2 L117.7,228.9 L110,230 L102.3,229.8 L96.7,226.4 L95.2,221.7 L97.4,217.7 L102.5,214.8 L109.6,214 L117.9,214.2 L123.2,217.3 L124.8,222.3Z" fill="none" stroke="#7C8C99" stroke-width="1.2"/>
+</g>
+<g transform="rotate(-23.2 152.6 206.5)">
+<path d="M167.8,206 L165.3,208.8 L160.7,210.5 L152,211.3 L144.9,211 L139.8,209.4 L138.3,206.9 L139.8,203.6 L145.8,203.2 L152.9,202 L160.5,202.5 L166.1,204.5 L168.2,206.2Z" fill="none" stroke="#1B1D1F" stroke-width="4"/>
+<path d="M167.9,206.4 L166,208.9 L159.7,210 L152.2,211.4 L145.4,210.4 L139.7,208.6 L137.8,206.3 L139.4,203.8 L145.1,202.8 L152.6,201.6 L159.7,202.8 L165.4,204.3 L167.8,206.2Z" fill="none" stroke="#7C8C99" stroke-width="1.2"/>
+</g>
+<g transform="rotate(-32.7 188.7 191)">
+<path d="M204,191 L201.6,195.6 L195.8,197.8 L189.1,199.6 L181.6,198.6 L176.1,194.7 L173.5,190.6 L175.8,187.4 L181.2,183.9 L189.4,182.1 L196.9,183.4 L201.8,186.2 L204.1,191.3Z" fill="none" stroke="#1B1D1F" stroke-width="4"/>
+<path d="M204,190.6 L201.3,195.7 L195.9,198.7 L188.5,199.5 L181.6,197.9 L175.5,194.8 L173.3,191.2 L175.9,186.6 L181.6,183.6 L188.3,182.5 L196.2,183.4 L201.6,187.2 L203.9,190.8Z" fill="none" stroke="#7C8C99" stroke-width="1.2"/>
+</g>
+<g transform="rotate(-60.5 212.9 175.5)">
+<path d="M228.6,175.5 L226.3,178.3 L220.2,179 L213.2,180.4 L205.8,178.8 L200.3,177.7 L197.5,176.1 L200.6,173.8 L204.9,171.4 L212.4,170.9 L220.9,171.1 L226.5,173.4 L227.4,175.1Z" fill="none" stroke="#1B1D1F" stroke-width="4"/>
+<path d="M227.5,175.2 L225.6,177.6 L220.5,179.5 L212.5,180.2 L205.8,178.9 L199.9,178.2 L197.9,175.7 L200.4,173.4 L205.8,172 L212.6,171.3 L220.5,171.7 L226.2,172.8 L227.4,175.5Z" fill="none" stroke="#7C8C99" stroke-width="1.2"/>
+</g>
+<g transform="rotate(-60.5 221.6 160)">
+<path d="M236.5,159.6 L234.8,164 L229.3,167.2 L222.3,168.6 L214.4,167.1 L208.3,164.3 L206.2,159.3 L208.6,155.6 L214.5,153.1 L221.7,151.4 L229.6,152.5 L234.9,156.3 L237.3,159.7Z" fill="none" stroke="#1B1D1F" stroke-width="4"/>
+<path d="M236.3,159.5 L234.7,164.2 L229.3,167.5 L221.9,168.9 L214.5,166.9 L208.5,163.9 L206.5,160 L209.1,155.8 L214.5,153.1 L221.9,151.5 L228.9,153 L234.3,156.1 L236.2,160.2Z" fill="none" stroke="#7C8C99" stroke-width="1.2"/>
+</g>
+<path d="M48.2,316.4 L59.2,315.5 L71.6,318.1 L84.6,320.6 L95.9,318.9 L108,315.3 L120.6,315.6 L131.8,319.5 L143.9,320.9 L156.6,317.7 L167.4,314.6 L179.6,315.7 L191.7,319.3 L204.7,320.8 L215.9,317.6 L228.5,315.9 L239.7,317.3 L252.6,320.6" stroke="#7C8C99" stroke-width="2" fill="none"/>
+<path d="M48.3,329.5 L59.6,332.3 L71.8,334.5 L83.4,332.3 L96.2,328.8 L107.4,329.3 L119.3,332.9 L131.6,335.6 L144.3,332.6 L155.9,329.9 L168.6,329.8 L180.6,333.4 L191.6,334.1 L203.6,332.1 L216.6,329.1 L228.2,331 L239.3,334.8 L251.4,334.6" stroke="#7C8C99" stroke-width="2" fill="none"/>
+<g mask="url(#card-anchors-5-st5)">
+<text x="30" y="388" font-size="22" font-family="monospace" fill="#7C8C99" font-weight="bold" letter-spacing="2.2">ANCHORS</text>
+</g>
+<text x="32" y="364" font-size="13" font-family="monospace" fill="#3b3a38" text-anchor="start">FIVE</text>
+</svg>

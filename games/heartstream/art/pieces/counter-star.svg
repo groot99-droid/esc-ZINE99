@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160" role="img" aria-labelledby="counter-star-t counter-star-d">
+<title id="counter-star-t">Counter piece: star</title>
+<desc id="counter-star-d">A brother's own counter piece, carved with the star mark and printed as a linocut: the piece cream on black, the mark in the one red of the print.</desc>
+<defs><filter id="counter-star-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="677"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><filter id="counter-star-rough2"><feTurbulence type="turbulence" baseFrequency="0" numOctaves="2" seed="857" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.2"/></filter><clipPath id="counter-star-clip3"><rect x="10" y="10" width="140" height="140"/></clipPath></defs>
+<rect x="0" y="0" width="160" height="160" fill="#f0e6cf"/>
+<rect x="0" y="0" width="160" height="160" filter="url(#counter-star-grain1)"/>
+<g filter="url(#counter-star-rough2)">
+<rect x="10" y="10" width="140" height="140" fill="#17110f"/>
+<path d="M135.7,38.3l7.5,-4.9M17.6,149l-6.7,8.5M109.7,141.8l4.5,8.6M57.6,17.6l-2.5,-5.5M100.6,19.3l5.3,-12.3M25.6,40.5l-6.8,-5.6M73.7,15.6l-1.1,-6M131.2,37l6.9,-7.3M137.8,113.2l6.2,3.1M138,105.5l10.3,5.2M18.6,41.2l-5,-3.9M102.5,12.6l2.5,-11.2M145,14.5l7.3,-8.6M144.3,145.4l10.1,8.1M139.4,142.3l7.6,7.7M133.9,132.3l8.8,7.5M121.4,12.6l5.7,-11.1M86.4,145.9l1.9,8.9M37.6,15.5l-4.3,-8.3M143.5,110.1l8.7,3M46.4,33.7l-5.1,-5.5M18.5,51.9l-9.8,-5.2M16.7,129.8l-8,5.4M113.7,25.9l5,-10.5M99.5,144.4l3.6,12.8M26.8,128.3l-6.4,4.7M148.2,114.3l7.3,3.3M136.3,17.5l3.9,-4.7M47.8,128.1l-5.2,8.1M89.6,135.8l2.5,11.2M78.7,21.4l-1,-8.7M14.3,30.9l-6.9,-5.5M124.1,135l9.8,9.6M85.7,22.5l1,-8.1M105.6,148l2.7,8.3M108.1,146.8l5.6,9.8M40,140.3l-5.3,10.2M128.8,15l8.1,-10.9M125.3,146.7l6.3,8.8" fill="none" stroke="#f0e6cf" stroke-width="2.6" stroke-linecap="round"/>
+<path d="M24,80 C24,52 52,40 80,40 C108,40 136,52 136,80 C136,108 108,120 80,120 C52,120 24,108 24,80Z" fill="#f0e6cf"/>
+<path d="M36,94 q44,28 88,2" fill="none" stroke="#17110f" stroke-width="4" stroke-linecap="round"/>
+<path d="M80,59.6 L80,96.4 M64.1,68.8 L95.9,87.2 M95.9,68.8 L64.1,87.2" fill="none" stroke="#B3202E" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>

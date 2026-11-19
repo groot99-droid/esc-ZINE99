@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160" role="img" aria-labelledby="mark-wave-t mark-wave-d">
+<title id="mark-wave-t">Mark: wave</title>
+<desc id="mark-wave-d">The wave mark, one of the six signs a brother may choose: cut into a bare disc of bone and rubbed red, on a hatched ground.</desc>
+<defs><filter id="mark-wave-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="586"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.2 0"/></filter><clipPath id="mark-wave-clip2"><rect x="16" y="16" width="128" height="128"/></clipPath><radialGradient id="mark-wave-rg3" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#B3202E" stop-opacity="0.2"/><stop offset="100%" stop-color="#B3202E" stop-opacity="0"/></radialGradient></defs>
+<rect x="0" y="0" width="160" height="160" fill="#efe3c8"/>
+<rect x="0" y="0" width="160" height="160" filter="url(#mark-wave-grain1)"/>
+<path d="M0,14 C6.7,13.9 26.7,13.7 40,13.5 C53.3,13.3 66.7,13.1 80,12.9 C93.3,12.6 106.7,12.2 120,12 C133.3,11.8 153.3,11.9 160,11.9" fill="none" stroke="#8a7350" stroke-width="0.8" opacity="0.3"/>
+<path d="M0,38.3 C6.7,38.4 26.7,38.7 40,38.7 C53.3,38.7 66.7,38.3 80,38.4 C93.3,38.6 106.7,39.4 120,39.7 C133.3,40.1 153.3,40.3 160,40.5" fill="none" stroke="#8a7350" stroke-width="0.8" opacity="0.3"/>
+<path d="M0,56.2 C6.7,56.2 26.7,56.3 40,56.3 C53.3,56.3 66.7,56.3 80,56.4 C93.3,56.6 106.7,57.1 120,57.2 C133.3,57.3 153.3,57.1 160,57.1" fill="none" stroke="#8a7350" stroke-width="0.8" opacity="0.3"/>
+<path d="M0,81.7 C6.7,81.5 26.7,80.8 40,80.4 C53.3,80.1 66.7,79.8 80,79.4 C93.3,79 106.7,78.3 120,78 C133.3,77.8 153.3,77.9 160,77.9" fill="none" stroke="#8a7350" stroke-width="0.8" opacity="0.3"/>
+<path d="M0,117.2 C6.7,117 26.7,116.6 40,116.3 C53.3,115.9 66.7,115.3 80,114.9 C93.3,114.6 106.7,114.5 120,114.2 C133.3,114 153.3,113.7 160,113.6" fill="none" stroke="#8a7350" stroke-width="0.8" opacity="0.3"/>
+<path d="M0,141.3 C6.7,141.2 26.7,141.1 40,141 C53.3,141 66.7,141.1 80,141 C93.3,140.8 106.7,140.5 120,140 C133.3,139.6 153.3,138.4 160,138.1" fill="none" stroke="#8a7350" stroke-width="0.8" opacity="0.3"/>
+<g clip-path="url(#mark-wave-clip2)">
+<path d="M16.2,-56.9 L216.9,16.2 M14.4,-52.2 L215.2,20.9 M12.7,-47.5 L213.5,25.6 M11,-42.8 L211.8,30.2 M9.3,-38.1 L210.1,34.9 M7.6,-33.4 L208.4,39.6 M5.9,-28.7 L206.7,44.3 M4.2,-24 L204.9,49 M2.5,-19.3 L203.2,53.7 M0.8,-14.6 L201.5,58.4 M-0.9,-9.9 L199.8,63.1 M-2.7,-5.2 L198.1,67.8 M-4.4,-0.5 L196.4,72.5 M-6.1,4.2 L194.7,77.2 M-7.8,8.9 L193,81.9 M-9.5,13.6 L191.3,86.6 M-11.2,18.3 L189.6,91.3 M-12.9,23 L187.8,96 M-14.6,27.7 L186.1,100.7 M-16.3,32.4 L184.4,105.4 M-18,37.1 L182.7,110.1 M-19.8,41.8 L181,114.8 M-21.5,46.4 L179.3,119.5 M-23.2,51.1 L177.6,124.2 M-24.9,55.8 L175.9,128.9 M-26.6,60.5 L174.2,133.6 M-28.3,65.2 L172.5,138.3 M-30,69.9 L170.7,143 M-31.7,74.6 L169,147.7 M-33.4,79.3 L167.3,152.4 M-35.1,84 L165.6,157.1 M-36.9,88.7 L163.9,161.8 M-38.6,93.4 L162.2,166.5 M-40.3,98.1 L160.5,171.2 M-42,102.8 L158.8,175.9 M-43.7,107.5 L157.1,180.6 M-45.4,112.2 L155.4,185.3 M-47.1,116.9 L153.6,190 M-48.8,121.6 L151.9,194.7 M-50.5,126.3 L150.2,199.4 M-52.2,131 L148.5,204.1 M-54,135.7 L146.8,208.8 M-55.7,140.4 L145.1,213.5" fill="none" stroke="#17110f" stroke-width="0.7" opacity="0.5"/>
+</g>
+<g clip-path="url(#mark-wave-clip2)">
+<path d="M-74.7,93.5 L66.5,-74.7 M-68.6,98.7 L72.6,-69.6 M-62.5,103.8 L78.7,-64.4 M-56.3,109 L84.8,-59.3 M-50.2,114.1 L91,-54.2 M-44.1,119.2 L97.1,-49 M-38,124.4 L103.2,-43.9 M-31.8,129.5 L109.4,-38.7 M-25.7,134.7 L115.5,-33.6 M-19.6,139.8 L121.6,-28.4 M-13.4,145 L127.7,-23.3 M-7.3,150.1 L133.9,-18.2 M-1.2,155.2 L140,-13 M4.9,160.4 L146.1,-7.9 M11.1,165.5 L152.3,-2.7 M17.2,170.7 L158.4,2.4 M23.3,175.8 L164.5,7.6 M29.5,181 L170.6,12.7 M35.6,186.1 L176.8,17.8 M41.7,191.2 L182.9,23 M47.8,196.4 L189,28.1 M54,201.5 L195.2,33.3 M60.1,206.7 L201.3,38.4 M66.2,211.8 L207.4,43.6 M72.4,217 L213.5,48.7 M78.5,222.1 L219.7,53.8 M84.6,227.2 L225.8,59 M90.7,232.4 L231.9,64.1" fill="none" stroke="#17110f" stroke-width="0.5" opacity="0.3"/>
+</g>
+<rect x="8" y="8" width="144" height="144" fill="none" stroke="#17110f" stroke-width="1.6"/>
+<rect x="14" y="14" width="132" height="132" fill="none" stroke="#17110f" stroke-width="3" stroke-dasharray="1.5 5"/>
+<circle cx="80" cy="76" r="54" fill="#000" opacity="0.2" transform="translate(2,3)"/>
+<circle cx="80" cy="76" r="54" fill="#f7efdc" stroke="#17110f" stroke-width="1.6"/>
+<path d="M127,76 L132,76M126,85.8 L130.9,86.8M122.9,95.1 L127.5,97.2M118,103.6 L122.1,106.6M111.4,110.9 L114.8,114.6M103.5,116.7 L106,121M94.5,120.7 L96.1,125.5M84.9,122.7 L85.4,127.7M75.1,122.7 L74.6,127.7M65.5,120.7 L63.9,125.5M56.5,116.7 L54,121M48.6,110.9 L45.2,114.6M42,103.6 L37.9,106.6M37.1,95.1 L32.5,97.2M34,85.8 L29.1,86.8M33,76 L28,76M34,66.2 L29.1,65.2M37.1,56.9 L32.5,54.8M42,48.4 L37.9,45.4M48.6,41.1 L45.2,37.4M56.5,35.3 L54,31M65.5,31.3 L63.9,26.5M75.1,29.3 L74.6,24.3M84.9,29.3 L85.4,24.3M94.5,31.3 L96.1,26.5M103.5,35.3 L106,31M111.4,41.1 L114.8,37.4M118,48.4 L122.1,45.4M122.9,56.9 L127.5,54.8M126,66.2 L130.9,65.2" stroke="#17110f" stroke-width="1" fill="none"/>
+<circle cx="80" cy="76" r="40" fill="url(#mark-wave-rg3)"/>
+<path d="M54.5,80.5 C63.5,52 71,52 80,76 C89,100 96.5,100 105.5,71.5" fill="none" stroke="#fffaf0" stroke-width="3.3" stroke-linecap="round" stroke-linejoin="round" transform="translate(1.9,2.2)" opacity="0.7"/>
+<path d="M54.5,80.5 C63.5,52 71,52 80,76 C89,100 96.5,100 105.5,71.5" fill="none" stroke="#7A1020" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M54.5,80.5 C63.5,52 71,52 80,76 C89,100 96.5,100 105.5,71.5" fill="none" stroke="#17110f" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+<rect x="40" y="132" width="80" height="18" fill="#efe3c8" stroke="#17110f" stroke-width="1"/>
+<text x="80" y="146" font-size="12" font-family="serif" fill="#17110f" text-anchor="middle" letter-spacing="3" font-weight="bold">WAVE</text>
+</svg>

@@ -1,0 +1,659 @@
+{
+  "game": "missing-campsites",
+  "location": "gravel-clearing",
+  "name": "The gravel clearing",
+  "reference": "assets/locations/gravel-clearing.jpg",
+  "bounds_m": [
+    180,
+    1600,
+    20
+  ],
+  "origin": "midpoint of the gravel road; +y up the mile of gravel to the highway, the clearing with the five sites at the -y end (y = -760)",
+  "materials": {
+    "gravel": {
+      "color": [
+        0.62,
+        0.56,
+        0.46
+      ],
+      "roughness": 0.95
+    },
+    "gravel-wet": {
+      "color": [
+        0.42,
+        0.4,
+        0.36
+      ],
+      "roughness": 0.6
+    },
+    "forest-floor": {
+      "color": [
+        0.36,
+        0.29,
+        0.19
+      ],
+      "roughness": 1.0
+    },
+    "grass-faded": {
+      "color": [
+        0.45,
+        0.48,
+        0.29
+      ],
+      "roughness": 0.95
+    },
+    "cedar": {
+      "color": [
+        0.55,
+        0.33,
+        0.18
+      ],
+      "roughness": 0.85
+    },
+    "trunk": {
+      "color": [
+        0.3,
+        0.21,
+        0.14
+      ],
+      "roughness": 0.95
+    },
+    "conifer": {
+      "color": [
+        0.17,
+        0.27,
+        0.15
+      ],
+      "roughness": 0.95
+    },
+    "creek": {
+      "color": [
+        0.28,
+        0.36,
+        0.33
+      ],
+      "roughness": 0.15
+    },
+    "sign-brown": {
+      "color": [
+        0.36,
+        0.2,
+        0.13
+      ],
+      "roughness": 0.8
+    },
+    "cream": {
+      "color": [
+        0.91,
+        0.87,
+        0.75
+      ],
+      "roughness": 0.9
+    },
+    "tin": {
+      "color": [
+        0.62,
+        0.63,
+        0.62
+      ],
+      "roughness": 0.5,
+      "metallic": 0.7
+    },
+    "glass": {
+      "color": [
+        0.72,
+        0.78,
+        0.8
+      ],
+      "roughness": 0.1,
+      "emission": 0.2
+    },
+    "concrete": {
+      "color": [
+        0.6,
+        0.59,
+        0.56
+      ],
+      "roughness": 0.95
+    },
+    "asphalt": {
+      "color": [
+        0.27,
+        0.27,
+        0.28
+      ],
+      "roughness": 0.9
+    },
+    "rock": {
+      "color": [
+        0.55,
+        0.54,
+        0.5
+      ],
+      "roughness": 0.95
+    }
+  },
+  "blockout": [
+    {
+      "id": "ground",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        180,
+        1600,
+        0.2
+      ],
+      "location": [
+        0,
+        0,
+        -0.1
+      ],
+      "material": "forest-floor"
+    },
+    {
+      "id": "clearing",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        70,
+        60,
+        0.08
+      ],
+      "location": [
+        0,
+        -760,
+        0.04
+      ],
+      "material": "grass-faded"
+    },
+    {
+      "id": "gravel-road",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        6,
+        1500,
+        0.06
+      ],
+      "location": [
+        0,
+        20,
+        0.03
+      ],
+      "material": "gravel"
+    },
+    {
+      "id": "highway",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        180,
+        12,
+        0.08
+      ],
+      "location": [
+        0,
+        790,
+        0.04
+      ],
+      "material": "asphalt"
+    },
+    {
+      "id": "forest-west",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        55,
+        1500,
+        22
+      ],
+      "location": [
+        -62,
+        20,
+        11
+      ],
+      "material": "conifer",
+      "collide": false
+    },
+    {
+      "id": "forest-east",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        55,
+        1500,
+        22
+      ],
+      "location": [
+        62,
+        20,
+        11
+      ],
+      "material": "conifer",
+      "collide": false
+    },
+    {
+      "id": "stone-pile",
+      "shape": "sphere",
+      "role": "structure",
+      "size_m": [
+        3.5,
+        2,
+        0.9
+      ],
+      "location": [
+        22,
+        -748,
+        0.45
+      ],
+      "material": "rock"
+    },
+    {
+      "id": "forest-close-west",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        30,
+        70,
+        24
+      ],
+      "location": [
+        -50,
+        -760,
+        12
+      ],
+      "material": "conifer",
+      "collide": false
+    },
+    {
+      "id": "forest-close-east",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        30,
+        70,
+        24
+      ],
+      "location": [
+        50,
+        -760,
+        12
+      ],
+      "material": "conifer",
+      "collide": false
+    },
+    {
+      "id": "pine-1-trunk",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.0,
+        1.0,
+        28
+      ],
+      "location": [
+        -30,
+        -735,
+        14.0
+      ],
+      "material": "trunk"
+    },
+    {
+      "id": "pine-1-crown",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        4.5,
+        4.5,
+        19.6
+      ],
+      "location": [
+        -30,
+        -735,
+        18.2
+      ],
+      "material": "conifer",
+      "collide": false
+    },
+    {
+      "id": "pine-2-trunk",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.0,
+        1.0,
+        28
+      ],
+      "location": [
+        30,
+        -738,
+        14.0
+      ],
+      "material": "trunk"
+    },
+    {
+      "id": "pine-2-crown",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        4.5,
+        4.5,
+        19.6
+      ],
+      "location": [
+        30,
+        -738,
+        18.2
+      ],
+      "material": "conifer",
+      "collide": false
+    },
+    {
+      "id": "pine-3-trunk",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.0,
+        1.0,
+        28
+      ],
+      "location": [
+        -28,
+        -780,
+        14.0
+      ],
+      "material": "trunk"
+    },
+    {
+      "id": "pine-3-crown",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        4.5,
+        4.5,
+        19.6
+      ],
+      "location": [
+        -28,
+        -780,
+        18.2
+      ],
+      "material": "conifer",
+      "collide": false
+    },
+    {
+      "id": "pine-4-trunk",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.0,
+        1.0,
+        28
+      ],
+      "location": [
+        32,
+        -782,
+        14.0
+      ],
+      "material": "trunk"
+    },
+    {
+      "id": "pine-4-crown",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        4.5,
+        4.5,
+        19.6
+      ],
+      "location": [
+        32,
+        -782,
+        18.2
+      ],
+      "material": "conifer",
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "tent-a",
+      "object": "tent",
+      "location": [
+        -12,
+        -745,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        160
+      ]
+    },
+    {
+      "id": "tent-b",
+      "object": "tent",
+      "location": [
+        4,
+        -742,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        190
+      ]
+    },
+    {
+      "id": "tent-c",
+      "object": "tent",
+      "location": [
+        -20,
+        -760,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        120
+      ]
+    },
+    {
+      "id": "table-a",
+      "object": "picnic-table",
+      "location": [
+        -9,
+        -762,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        5
+      ]
+    },
+    {
+      "id": "table-b",
+      "object": "picnic-table",
+      "location": [
+        12,
+        -748,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "table-c",
+      "object": "picnic-table",
+      "location": [
+        16,
+        -756,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        20
+      ]
+    },
+    {
+      "id": "fire-ring",
+      "object": "fire-ring",
+      "location": [
+        0,
+        -764,
+        0
+      ]
+    },
+    {
+      "id": "post-20",
+      "object": "site-post",
+      "location": [
+        -18,
+        -772,
+        0
+      ]
+    },
+    {
+      "id": "post-22",
+      "object": "site-post",
+      "location": [
+        3,
+        -775,
+        0
+      ]
+    },
+    {
+      "id": "post-24",
+      "object": "site-post",
+      "location": [
+        22,
+        -770,
+        0
+      ]
+    },
+    {
+      "id": "heron-sign",
+      "object": "heron-sign",
+      "location": [
+        12,
+        -772,
+        0
+      ],
+      "rotation_deg": [
+        -10,
+        0,
+        10
+      ]
+    },
+    {
+      "id": "van",
+      "object": "camper-van",
+      "location": [
+        20,
+        -760,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        30
+      ]
+    }
+  ],
+  "scenes": {
+    "gravel_morning": {
+      "note": "Held. The sky is right: ordinary morning sun, the highway far off. The five sites sit in a clearing at the end of a mile of gravel; no booth, no loop, no sign but the one carried in. Getting in the van.",
+      "world": {
+        "color": [
+          0.65,
+          0.72,
+          0.8
+        ],
+        "strength": 0.7
+      },
+      "lights": [
+        {
+          "name": "morning-sun",
+          "type": "SUN",
+          "location": [
+            80,
+            -900,
+            25
+          ],
+          "energy": 4.0,
+          "size": 0.5,
+          "color": [
+            1.0,
+            0.88,
+            0.7
+          ],
+          "look_at": [
+            0,
+            -760,
+            0
+          ]
+        },
+        {
+          "name": "sky-fill",
+          "type": "AREA",
+          "location": [
+            0,
+            -760,
+            40
+          ],
+          "energy": 2500,
+          "size": 80,
+          "color": [
+            0.8,
+            0.88,
+            0.95
+          ],
+          "look_at": [
+            0,
+            -760,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          -778,
+          1.65
+        ],
+        "look_at": [
+          0,
+          -600,
+          3
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -778,
+          0
+        ],
+        "facing_deg": 0.0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "heron-sign",
+          "verb": "Look at the sign"
+        },
+        {
+          "prop": "van",
+          "verb": "Get in the van",
+          "leads_to": "foil_supper_3"
+        }
+      ]
+    }
+  }
+}

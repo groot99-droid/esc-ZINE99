@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360" width="360" height="360" role="img" aria-labelledby="defence-piece-warrior-t defence-piece-warrior-d">
+<title id="defence-piece-warrior-t">Crack defence piece: warrior</title>
+<desc id="defence-piece-warrior-d">A warrior of the Battlements on a floor tile: bark-plate, a splinter spear held upright, and beside him Captain Burr with the orange crest, spear polished and never blooded.</desc>
+<defs><radialGradient id="defence-piece-warrior-rg1" cx="0.5" cy="0.5" r="0.75"><stop offset="0%" stop-color="#4a3324" stop-opacity="1"/><stop offset="100%" stop-color="#1b120c" stop-opacity="1"/></radialGradient><radialGradient id="defence-piece-warrior-rg2" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#e8742a" stop-opacity="0.5"/><stop offset="35%" stop-color="#e8742a" stop-opacity="0.2"/><stop offset="100%" stop-color="#e8742a" stop-opacity="0"/></radialGradient><radialGradient id="defence-piece-warrior-vig3" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity="0.5"/></radialGradient></defs>
+<rect x="0" y="0" width="360" height="360" fill="url(#defence-piece-warrior-rg1)"/>
+<circle cx="180" cy="200" r="170" fill="url(#defence-piece-warrior-rg2)"/>
+<polygon points="117.6,262.6 180,298.6 180,277 117.6,241" fill="#4a3323" stroke="#1b120c" stroke-width="1.1" stroke-linejoin="round"/>
+<polygon points="242.4,262.6 180,298.6 180,277 242.4,241" fill="#322318" stroke="#1b120c" stroke-width="1.1" stroke-linejoin="round"/>
+<polygon points="180,205 242.4,241 180,277 117.6,241" fill="#6a4a33" stroke="#1b120c" stroke-width="1.1" stroke-linejoin="round"/>
+<line x1="161.3" y1="230.2" x2="198.7" y2="251.8" stroke="#523927" stroke-width="1"/>
+<polygon points="55.3,298.6 117.6,334.6 117.6,313 55.3,277" fill="#3e2a1e" stroke="#1b120c" stroke-width="1.1" stroke-linejoin="round"/>
+<polygon points="180,298.6 117.6,334.6 117.6,313 180,277" fill="#2b1d14" stroke="#1b120c" stroke-width="1.1" stroke-linejoin="round"/>
+<polygon points="117.6,241 180,277 117.6,313 55.3,277" fill="#5a3d2b" stroke="#1b120c" stroke-width="1.1" stroke-linejoin="round"/>
+<line x1="98.9" y1="266.2" x2="136.4" y2="287.8" stroke="#462f21" stroke-width="1"/>
+<polygon points="180,298.6 242.4,334.6 242.4,313 180,277" fill="#3e2a1e" stroke="#1b120c" stroke-width="1.1" stroke-linejoin="round"/>
+<polygon points="304.7,298.6 242.4,334.6 242.4,313 304.7,277" fill="#2b1d14" stroke="#1b120c" stroke-width="1.1" stroke-linejoin="round"/>
+<polygon points="242.4,241 304.7,277 242.4,313 180,277" fill="#5a3d2b" stroke="#1b120c" stroke-width="1.1" stroke-linejoin="round"/>
+<line x1="223.6" y1="266.2" x2="261.1" y2="287.8" stroke="#462f21" stroke-width="1"/>
+<polygon points="117.6,334.6 180,370.6 180,349 117.6,313" fill="#4a3323" stroke="#1b120c" stroke-width="1.1" stroke-linejoin="round"/>
+<polygon points="242.4,334.6 180,370.6 180,349 242.4,313" fill="#322318" stroke="#1b120c" stroke-width="1.1" stroke-linejoin="round"/>
+<polygon points="180,277 242.4,313 180,349 117.6,313" fill="#6a4a33" stroke="#1b120c" stroke-width="1.1" stroke-linejoin="round"/>
+<line x1="161.3" y1="302.2" x2="198.7" y2="323.8" stroke="#523927" stroke-width="1"/>
+<g transform="translate(136.4 273.4) scale(2)">
+<ellipse cx="0" cy="0" rx="12" ry="5" fill="#000" opacity="0.4"/>
+<path d="M-5,0 L-4,-16 M5,0 L4,-16" stroke="#1b120c" stroke-width="3" fill="none" stroke-linecap="round"/>
+<path d="M-8,-14 L-6,-36 L6,-36 L8,-14Z" fill="#8a6a48" stroke="#1b120c" stroke-width="1.4"/>
+<circle cx="0" cy="-46" r="10.5" fill="#d9b88a" stroke="#1b120c" stroke-width="1.4"/>
+<path d="M-11,-48 a11,11 0 0,1 22,0Z" fill="#3a281c" stroke="#1b120c" stroke-width="1"/>
+<line x1="12" y1="4" x2="17" y2="-72" stroke="#e6cfa0" stroke-width="2.6" stroke-linecap="round"/>
+<polygon points="17.5,-80 13,-66 21,-66" fill="#f6e8c8" stroke="#1b120c" stroke-width="0.8"/>
+</g>
+<g transform="translate(223.6 284.2) scale(2.3)">
+<ellipse cx="0" cy="0" rx="12" ry="5" fill="#000" opacity="0.4"/>
+<path d="M-5,0 L-4,-16 M5,0 L4,-16" stroke="#1b120c" stroke-width="3" fill="none" stroke-linecap="round"/>
+<path d="M-8,-14 L-6,-36 L6,-36 L8,-14Z" fill="#9a7a52" stroke="#1b120c" stroke-width="1.4"/>
+<circle cx="0" cy="-46" r="10.5" fill="#d9b88a" stroke="#1b120c" stroke-width="1.4"/>
+<path d="M-11,-48 a11,11 0 0,1 22,0Z" fill="#3a281c" stroke="#1b120c" stroke-width="1"/>
+<path d="M-4,-58 q8,-22 22,-14 q-10,2 -14,16Z" fill="#e8742a" stroke="#1b120c" stroke-width="1"/>
+<line x1="12" y1="4" x2="17" y2="-72" stroke="#e6cfa0" stroke-width="2.6" stroke-linecap="round"/>
+<polygon points="17.5,-80 13,-66 21,-66" fill="#f6e8c8" stroke="#1b120c" stroke-width="0.8"/>
+</g>
+<rect x="0" y="0" width="360" height="360" fill="url(#defence-piece-warrior-vig3)"/>
+</svg>

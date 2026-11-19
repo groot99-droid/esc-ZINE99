@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160" role="img" aria-labelledby="counter-fork-t counter-fork-d">
+<title id="counter-fork-t">Counter piece: fork</title>
+<desc id="counter-fork-d">A brother's own counter piece, carved with the fork mark and printed as a linocut: the piece cream on black, the mark in the one red of the print.</desc>
+<defs><filter id="counter-fork-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="813"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><filter id="counter-fork-rough2"><feTurbulence type="turbulence" baseFrequency="0" numOctaves="2" seed="790" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.2"/></filter><clipPath id="counter-fork-clip3"><rect x="10" y="10" width="140" height="140"/></clipPath></defs>
+<rect x="0" y="0" width="160" height="160" fill="#f0e6cf"/>
+<rect x="0" y="0" width="160" height="160" filter="url(#counter-fork-grain1)"/>
+<g filter="url(#counter-fork-rough2)">
+<rect x="10" y="10" width="140" height="140" fill="#17110f"/>
+<path d="M116.6,37.7l8.7,-7.8M50.1,147l-4.9,10.6M139,36l5.6,-3.2M57.3,11.9l-1.8,-6.8M46.5,138.7l-5,7.6M114.9,16.7l5.4,-11.5M15.3,26.8l-8.7,-8.1M128.4,16.4l3.6,-5.4M88.8,135.5l2.7,11.1M146.4,65.5l8.4,-0.9M90.8,144.2l1.9,8.2M115.2,12.7l3.5,-6.3M26.4,124.6l-5,4.9M114.2,136.5l7.8,10.6M100.3,128l4.2,13.1M41,135.6l-5,7M12.3,145.5l-4.7,5.2M18.5,137.3l-7.4,8.5M117.8,129l4.2,4.5M60.4,149.2l-3.8,12M138,124.8l7.7,4.7M11,106.3l-9.2,3.9M135.7,14.4l6.8,-8.3M112,29.1l7.7,-11.3M22.9,20.9l-7.5,-7.3M116.7,32.3l5.8,-5.8" fill="none" stroke="#f0e6cf" stroke-width="2.6" stroke-linecap="round"/>
+<path d="M24,80 C24,52 52,40 80,40 C108,40 136,52 136,80 C136,108 108,120 80,120 C52,120 24,108 24,80Z" fill="#f0e6cf"/>
+<path d="M36,94 q44,28 88,2" fill="none" stroke="#17110f" stroke-width="4" stroke-linecap="round"/>
+<path d="M80,96.9 L80,79.2 M66.2,60.1 L80,79.2 L93.8,60.1" fill="none" stroke="#B3202E" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>

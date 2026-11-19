@@ -1,0 +1,93 @@
+{
+  "slug": "lord-of-the-sea",
+  "title": "The Lord of the Sea",
+  "sources": [
+    "02_Novels/02_WrymWretch.md"
+  ],
+  "target_minutes": {
+    "min": 160,
+    "max": 180
+  },
+  "players": {
+    "min": 1,
+    "max": 1
+  },
+  "core_verb": "stir",
+  "chapters": [
+    {
+      "id": "ch0-shore",
+      "title": "The Shore Between Worlds",
+      "minutes": 14,
+      "layers": [
+        "3d"
+      ]
+    },
+    {
+      "id": "ch1-princess",
+      "title": "The Princess on the Shore",
+      "minutes": 16,
+      "layers": [
+        "3d",
+        "1d"
+      ]
+    },
+    {
+      "id": "ch2-ordered-sea",
+      "title": "The Ordered Sea",
+      "minutes": 24,
+      "layers": [
+        "3d",
+        "2d",
+        "1d"
+      ]
+    },
+    {
+      "id": "ch3-old-sea",
+      "title": "What Is Left of the Old Sea",
+      "minutes": 28,
+      "layers": [
+        "3d",
+        "2d",
+        "1d"
+      ]
+    },
+    {
+      "id": "ch4-open-chart",
+      "title": "The Open Chart",
+      "minutes": 40,
+      "layers": [
+        "3d",
+        "2d",
+        "1d"
+      ]
+    },
+    {
+      "id": "ch5-kings-halls",
+      "title": "Debts and Halls",
+      "minutes": 22,
+      "layers": [
+        "3d",
+        "2d",
+        "1d"
+      ]
+    },
+    {
+      "id": "ch6-lord-of-tea",
+      "title": "The Lord of Tea",
+      "minutes": 22,
+      "layers": [
+        "3d",
+        "2d",
+        "1d"
+      ]
+    },
+    {
+      "id": "ch7-tideline",
+      "title": "The Tideline",
+      "minutes": 8,
+      "layers": [
+        "3d"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "anchors.json",
+  "description": "Missing Campsites: the anchors, their weights and slots, and the Held threshold (DESIGN.md section 12).",
+  "type": "object",
+  "required": ["ledger", "meter", "held_threshold", "max_without_person", "slots", "placed_in_chapter", "anchors"],
+  "properties": {
+    "source": {"type": "string"},
+    "ledger": {"type": "string"},
+    "meter": {"type": "string"},
+    "held_threshold": {"type": "integer", "minimum": 1},
+    "max_without_person": {"type": "integer", "minimum": 0},
+    "slots": {"type": "object", "required": ["sites", "per_site", "total"],
+      "properties": {
+        "sites": {"type": "array", "items": {"type": "integer", "minimum": 1, "maximum": 24}},
+        "per_site": {"type": "array", "items": {"type": "string"}},
+        "total": {"type": "integer", "minimum": 1},
+        "marked_by": {"type": "string"}
+      }},
+    "placed_in_chapter": {"type": "string"},
+    "rules": {"type": "array", "items": {"type": "string"}},
+    "anchors": {"type": "array", "items": {"type": "object",
+      "required": ["id", "name", "kind", "weight", "slots", "how", "units", "units_if_warm", "scenes", "flag", "post", "person"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[a-z0-9_]+$"},
+        "name": {"type": "string"},
+        "kind": {"enum": ["thing", "person"]},
+        "weight": {"type": "integer", "minimum": 1},
+        "slots": {"type": "integer", "minimum": 1, "maximum": 2},
+        "how": {"type": "string"},
+        "units": {"type": "integer", "minimum": 0, "description": "Time units the errand costs; 0 when had on day 1 or by asking at dusk"},
+        "units_if_warm": {"type": ["integer", "null"], "description": "Cost when warmth >= 6 at dusk"},
+        "scenes": {"type": "array", "items": {"type": "string"}, "description": "Scenes where it is had or placed"},
+        "flag": {"type": ["string", "null"], "description": "State that records it, beyond the anchors ledger"},
+        "needs": {"type": "string", "description": "person only: the flag that lets them be asked"},
+        "post": {"type": ["integer", "null"]},
+        "person": {"type": ["string", "null"], "description": "person only: the person_brought value"},
+        "brings": {"type": "string", "description": "An anchor id that comes with this person and shares their site"}
+      }}}
+  }
+}

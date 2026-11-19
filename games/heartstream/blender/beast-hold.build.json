@@ -1,0 +1,450 @@
+{
+  "game": "heartstream",
+  "location": "beast-hold",
+  "name": "Inside the immune beast",
+  "reference": "assets/locations/beast-hold.jpg",
+  "bounds_m": [
+    15,
+    15,
+    10
+  ],
+  "origin": "floor centre; +y toward where the raft's glow is seen through the skin; the skin is a translucent dome over a soft membrane floor",
+  "materials": {
+    "membrane-white": {
+      "color": [
+        0.9,
+        0.89,
+        0.92
+      ],
+      "roughness": 0.3,
+      "emission": 0.4
+    },
+    "red-glow": {
+      "color": [
+        0.878,
+        0.376,
+        0.227
+      ],
+      "roughness": 0.4,
+      "emission": 1.5
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor",
+      "shape": "cylinder",
+      "role": "floor",
+      "size_m": [
+        15,
+        15,
+        0.3
+      ],
+      "location": [
+        0,
+        0,
+        -0.15
+      ],
+      "material": "membrane-white"
+    },
+    {
+      "id": "skin",
+      "shape": "sphere",
+      "role": "wall",
+      "size_m": [
+        15,
+        15,
+        20
+      ],
+      "location": [
+        0,
+        0,
+        0
+      ],
+      "material": "membrane-white",
+      "collide": false
+    },
+    {
+      "id": "fold-1",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        6,
+        0.6,
+        0.3
+      ],
+      "location": [
+        -2,
+        3,
+        0.15
+      ],
+      "material": "membrane-white"
+    },
+    {
+      "id": "fold-2",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        5,
+        0.6,
+        0.25
+      ],
+      "location": [
+        3,
+        -3.5,
+        0.12
+      ],
+      "material": "membrane-white",
+      "rotation_deg": [
+        0,
+        0,
+        30
+      ]
+    },
+    {
+      "id": "fold-3",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        4,
+        0.5,
+        0.25
+      ],
+      "location": [
+        -3.5,
+        -2,
+        0.12
+      ],
+      "material": "membrane-white",
+      "rotation_deg": [
+        0,
+        0,
+        -50
+      ]
+    },
+    {
+      "id": "raft-glow",
+      "shape": "sphere",
+      "role": "sky",
+      "size_m": [
+        6,
+        3,
+        1
+      ],
+      "location": [
+        0,
+        2,
+        13
+      ],
+      "material": "red-glow",
+      "collide": false
+    },
+    {
+      "id": "rib-1",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.25,
+        0.25,
+        7
+      ],
+      "location": [
+        6.6,
+        0.0,
+        3.5
+      ],
+      "material": "membrane-white",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "collide": false
+    },
+    {
+      "id": "rib-2",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.25,
+        0.25,
+        7
+      ],
+      "location": [
+        3.3,
+        5.716,
+        3.5
+      ],
+      "material": "membrane-white",
+      "rotation_deg": [
+        0,
+        0,
+        60
+      ],
+      "collide": false
+    },
+    {
+      "id": "rib-3",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.25,
+        0.25,
+        7
+      ],
+      "location": [
+        -3.3,
+        5.716,
+        3.5
+      ],
+      "material": "membrane-white",
+      "rotation_deg": [
+        0,
+        0,
+        120
+      ],
+      "collide": false
+    },
+    {
+      "id": "rib-4",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.25,
+        0.25,
+        7
+      ],
+      "location": [
+        -6.6,
+        0.0,
+        3.5
+      ],
+      "material": "membrane-white",
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ],
+      "collide": false
+    },
+    {
+      "id": "rib-5",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.25,
+        0.25,
+        7
+      ],
+      "location": [
+        -3.3,
+        -5.716,
+        3.5
+      ],
+      "material": "membrane-white",
+      "rotation_deg": [
+        0,
+        0,
+        240
+      ],
+      "collide": false
+    },
+    {
+      "id": "rib-6",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.25,
+        0.25,
+        7
+      ],
+      "location": [
+        3.3,
+        -5.716,
+        3.5
+      ],
+      "material": "membrane-white",
+      "rotation_deg": [
+        0,
+        0,
+        300
+      ],
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "old-hook",
+      "object": "old-carved-hook",
+      "location": [
+        1.5,
+        -1,
+        0
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        30
+      ]
+    }
+  ],
+  "scenes": {
+    "s3_hold": {
+      "note": "The taken brother: inside the immune beast, the raft a warm glow above through the skin; he knocks on the beat and pings hazards from below; an old carved hook lies here.",
+      "world": {
+        "color": [
+          0.85,
+          0.84,
+          0.86
+        ],
+        "strength": 0.8
+      },
+      "lights": [
+        {
+          "name": "skin-diffuse",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            9
+          ],
+          "energy": 1200,
+          "size": 10,
+          "look_at": [
+            0,
+            0,
+            0
+          ],
+          "color": [
+            0.95,
+            0.95,
+            1.0
+          ]
+        },
+        {
+          "name": "raft-above",
+          "type": "POINT",
+          "location": [
+            0,
+            2,
+            12
+          ],
+          "energy": 3000,
+          "size": 2,
+          "color": [
+            1.0,
+            0.5,
+            0.3
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          -6.5,
+          3
+        ],
+        "look_at": [
+          0,
+          0,
+          1.5
+        ],
+        "lens_mm": 28,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -1,
+          0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "old-hook",
+          "verb": "Look at the old hook"
+        }
+      ]
+    },
+    "s3_hold_turn": {
+      "note": "The heart: the beast turns into a side vessel; the raft's glow above shrinks and drifts away, and his voice is cut from them.",
+      "world": {
+        "color": [
+          0.85,
+          0.84,
+          0.86
+        ],
+        "strength": 0.8
+      },
+      "lights": [
+        {
+          "name": "skin-diffuse",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            9
+          ],
+          "energy": 900,
+          "size": 10,
+          "look_at": [
+            0,
+            0,
+            0
+          ],
+          "color": [
+            0.95,
+            0.95,
+            1.0
+          ]
+        },
+        {
+          "name": "raft-above",
+          "type": "POINT",
+          "location": [
+            5,
+            9,
+            16
+          ],
+          "energy": 500,
+          "size": 1,
+          "color": [
+            1.0,
+            0.5,
+            0.3
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          -6.5,
+          3
+        ],
+        "look_at": [
+          0,
+          3,
+          6
+        ],
+        "lens_mm": 28,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -1,
+          0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "old-hook",
+          "verb": "Hold the old hook"
+        }
+      ]
+    }
+  }
+}

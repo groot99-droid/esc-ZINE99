@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360" role="img" aria-labelledby="sprite-dora-trolley-t sprite-dora-trolley-d">
+<title id="sprite-dora-trolley-t">Race sprite: Dora and the linen trolley</title>
+<desc id="sprite-dora-trolley-d">Dora the night maid as a scale figure in ink, apron tied behind, pushing the linen trolley west: folded sheets, a laundry sack, and a chalk in her apron pocket.</desc>
+<defs><filter id="sprite-dora-trolley-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.6" numOctaves="2" seed="786"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter><clipPath id="sprite-dora-trolley-clip2"><rect x="90" y="212" width="230" height="56"/></clipPath></defs>
+<rect x="0" y="0" width="640" height="360" fill="#f3efe4"/>
+<rect x="0" y="0" width="640" height="360" filter="url(#sprite-dora-trolley-grain1)"/>
+<line x1="20" y1="296" x2="620" y2="296" stroke="#1c1a17" stroke-width="1.6"/>
+<path d="M28,296l-8,8M38,296l-8,8M48,296l-8,8M58,296l-8,8M68,296l-8,8M78,296l-8,8M88,296l-8,8M98,296l-8,8M108,296l-8,8M118,296l-8,8M128,296l-8,8M138,296l-8,8M148,296l-8,8M158,296l-8,8M168,296l-8,8M178,296l-8,8M188,296l-8,8M198,296l-8,8M208,296l-8,8M218,296l-8,8M228,296l-8,8M238,296l-8,8M248,296l-8,8M258,296l-8,8M268,296l-8,8M278,296l-8,8M288,296l-8,8M298,296l-8,8M308,296l-8,8M318,296l-8,8M328,296l-8,8M338,296l-8,8M348,296l-8,8M358,296l-8,8M368,296l-8,8M378,296l-8,8M388,296l-8,8M398,296l-8,8M408,296l-8,8M418,296l-8,8M428,296l-8,8M438,296l-8,8M448,296l-8,8M458,296l-8,8M468,296l-8,8M478,296l-8,8M488,296l-8,8M498,296l-8,8M508,296l-8,8M518,296l-8,8M528,296l-8,8M538,296l-8,8M548,296l-8,8M558,296l-8,8M568,296l-8,8M578,296l-8,8M588,296l-8,8M598,296l-8,8M608,296l-8,8M618,296l-8,8" stroke="#1c1a17" stroke-width="0.5" fill="none"/>
+<text x="620" y="320" font-size="11" font-family="monospace" fill="#1c1a17" text-anchor="end" letter-spacing="2">DORA  -  TROLLEY 0.9 m/s  WEST</text>
+<rect x="90" y="146" width="230" height="122" fill="#e6dcc4" stroke="#1c1a17" stroke-width="1.8"/>
+<g clip-path="url(#sprite-dora-trolley-clip2)">
+<path d="M250.5,70.1 L374.9,285.5 M245.3,73.1 L369.7,288.5 M240.1,76.1 L364.5,291.5 M234.9,79.1 L359.3,294.5 M229.7,82.1 L354.1,297.5 M224.5,85.1 L348.9,300.5 M219.3,88.1 L343.7,303.5 M214.1,91.1 L338.5,306.5 M208.9,94.1 L333.3,309.5 M203.8,97.1 L328.1,312.5 M198.6,100.1 L322.9,315.5 M193.4,103.1 L317.7,318.5 M188.2,106.1 L312.5,321.5 M183,109.1 L307.3,324.5 M177.8,112.1 L302.1,327.5 M172.6,115.1 L296.9,330.5 M167.4,118.1 L291.7,333.5 M162.2,121.1 L286.5,336.5 M157,124.1 L281.3,339.5 M151.8,127.1 L276.2,342.5 M146.6,130.1 L271,345.5 M141.4,133.1 L265.8,348.5 M136.2,136.1 L260.6,351.5 M131,139.1 L255.4,354.5 M125.8,142.1 L250.2,357.5 M120.6,145.1 L245,360.5 M115.4,148.1 L239.8,363.5 M110.2,151.1 L234.6,366.5 M105,154.1 L229.4,369.5 M99.8,157.1 L224.2,372.5 M94.6,160.1 L219,375.5 M89.4,163.1 L213.8,378.5 M84.2,166.1 L208.6,381.5 M79,169.1 L203.4,384.5 M73.8,172.1 L198.2,387.5 M68.7,175.1 L193,390.5 M63.5,178.1 L187.8,393.5 M58.3,181.1 L182.6,396.5 M53.1,184.1 L177.4,399.5 M47.9,187.1 L172.2,402.5 M42.7,190.1 L167,405.5 M37.5,193.1 L161.8,408.5" fill="none" stroke="#1c1a17" stroke-width="0.4"/>
+</g>
+<line x1="90" y1="212" x2="320" y2="212" stroke="#1c1a17" stroke-width="1.4"/>
+<rect x="104" y="135" width="120" height="11" rx="4" fill="#fbf8ef" stroke="#1c1a17" stroke-width="1"/>
+<rect x="104" y="124" width="116" height="11" rx="4" fill="#fbf8ef" stroke="#1c1a17" stroke-width="1"/>
+<rect x="104" y="113" width="112" height="11" rx="4" fill="#fbf8ef" stroke="#1c1a17" stroke-width="1"/>
+<rect x="104" y="102" width="108" height="11" rx="4" fill="#fbf8ef" stroke="#1c1a17" stroke-width="1"/>
+<rect x="104" y="91" width="104" height="11" rx="4" fill="#fbf8ef" stroke="#1c1a17" stroke-width="1"/>
+<path d="M240,146 q-6,-70 30,-74 q38,2 34,74Z" fill="#d9cdaf" stroke="#1c1a17" stroke-width="1.4"/>
+<path d="M262,74 q8,-14 18,0" fill="none" stroke="#1c1a17" stroke-width="1.4"/>
+<circle cx="124" cy="282" r="14" fill="#f3efe4" stroke="#1c1a17" stroke-width="2.4"/>
+<circle cx="124" cy="282" r="3" fill="#1c1a17"/>
+<line x1="124" y1="268" x2="124" y2="256" stroke="#1c1a17" stroke-width="2"/>
+<circle cx="286" cy="282" r="14" fill="#f3efe4" stroke="#1c1a17" stroke-width="2.4"/>
+<circle cx="286" cy="282" r="3" fill="#1c1a17"/>
+<line x1="286" y1="268" x2="286" y2="256" stroke="#1c1a17" stroke-width="2"/>
+<path d="M320,146 l34,-24" stroke="#1c1a17" stroke-width="4" stroke-linecap="round"/>
+<path d="M414,140 Q440,118 464,140 L480,262 L396,262Z" fill="#1c1a17"/>
+<path d="M410,176 L396,256 L432,256 L428,172Z" fill="#fbf8ef" stroke="#1c1a17" stroke-width="1"/>
+<path d="M462,178 q22,6 14,30 M462,178 q26,-8 20,-30" fill="none" stroke="#fbf8ef" stroke-width="4" stroke-linecap="round"/>
+<rect x="404" y="200" width="14" height="5" fill="#f3efe4" stroke="#1c1a17" stroke-width="0.6"/>
+<path d="M426,260 C425,265.3 421,286.7 420,292" stroke="#1c1a17" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M452,260 C453.7,265.3 460.3,286.7 462,292" stroke="#1c1a17" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M406,295 h20 M450,295 h22" stroke="#1c1a17" stroke-width="7" stroke-linecap="round"/>
+<path d="M420,148 C411.7,147.7 386.3,150 370,146 C353.7,142 330,127.7 322,124" stroke="#1c1a17" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<circle cx="436" cy="102" r="17" fill="#1c1a17"/>
+<path d="M436,84 q26,-6 22,18 q-2,10 -10,12" fill="#1c1a17"/>
+<rect x="418" y="82" width="30" height="8" rx="3" fill="#fbf8ef" stroke="#1c1a17" stroke-width="1"/>
+<polygon points="60,216 36,226 60,236" fill="#1c1a17"/>
+<line x1="580" y1="296" x2="580" y2="146" stroke="#1c1a17" stroke-width="0.6"/>
+<line x1="575" y1="296" x2="585" y2="296" stroke="#1c1a17" stroke-width="0.9"/>
+<line x1="575" y1="146" x2="585" y2="146" stroke="#1c1a17" stroke-width="0.9"/>
+<text x="572" y="221" font-size="10" font-family="monospace" fill="#1c1a17" text-anchor="middle" transform="rotate(-90 572 221)">TROLLEY 1 100</text>
+<text x="40" y="40" font-size="11" font-family="monospace" fill="#1c1a17" letter-spacing="2">IN VIEW AT 6 m, SAME LEVEL</text>
+</svg>

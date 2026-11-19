@@ -1,0 +1,1162 @@
+{
+  "game": "behind-the-peephole",
+  "location": "back-stair",
+  "name": "The back stair and back of house",
+  "reference": "assets/locations/back-stair.jpg",
+  "bounds_m": [
+    3.0,
+    23.0,
+    16.0
+  ],
+  "origin": "floor centre at the back-of-house level; +y north along the back corridor to the back-office door; the stair well fills y -11.5 to -5 and rises four floors to the passage's stair door at z 14; Lew's lodge window on the +x corridor wall",
+  "materials": {
+    "concrete": {
+      "color": [
+        0.333,
+        0.322,
+        0.298
+      ],
+      "roughness": 0.95
+    },
+    "brick": {
+      "color": [
+        0.353,
+        0.204,
+        0.149
+      ],
+      "roughness": 0.9
+    },
+    "green-gloss": {
+      "color": [
+        0.243,
+        0.353,
+        0.267
+      ],
+      "roughness": 0.4
+    },
+    "cream-paint": {
+      "color": [
+        0.851,
+        0.812,
+        0.706
+      ],
+      "roughness": 0.8
+    },
+    "iron": {
+      "color": [
+        0.118,
+        0.118,
+        0.118
+      ],
+      "roughness": 0.5,
+      "metallic": 0.7
+    },
+    "bulb-yellow": {
+      "color": [
+        0.949,
+        0.776,
+        0.42
+      ],
+      "roughness": 0.5,
+      "emission": 1.0
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        3.0,
+        23.0,
+        0.1
+      ],
+      "location": [
+        0,
+        0,
+        -0.05
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "corridor-ceiling",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        3.0,
+        16.5,
+        0.1
+      ],
+      "location": [
+        0,
+        3.25,
+        3.35
+      ],
+      "material": "cream-paint"
+    },
+    {
+      "id": "well-top",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        3.0,
+        6.5,
+        0.1
+      ],
+      "location": [
+        0,
+        -8.25,
+        16.05
+      ],
+      "material": "cream-paint"
+    },
+    {
+      "id": "wall-south-end",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        3.0,
+        0.15,
+        16.0
+      ],
+      "location": [
+        0,
+        -11.575,
+        8.0
+      ],
+      "material": "brick"
+    },
+    {
+      "id": "well-wall-west",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        6.5,
+        16.0
+      ],
+      "location": [
+        -1.575,
+        -8.25,
+        8.0
+      ],
+      "material": "brick"
+    },
+    {
+      "id": "well-wall-east",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        6.5,
+        16.0
+      ],
+      "location": [
+        1.575,
+        -8.25,
+        8.0
+      ],
+      "material": "brick"
+    },
+    {
+      "id": "well-wall-north-upper",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        3.0,
+        0.15,
+        12.7
+      ],
+      "location": [
+        0,
+        -4.925,
+        9.65
+      ],
+      "material": "brick"
+    },
+    {
+      "id": "corridor-wall-west",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        16.5,
+        3.3
+      ],
+      "location": [
+        -1.575,
+        3.25,
+        1.65
+      ],
+      "material": "green-gloss"
+    },
+    {
+      "id": "corridor-wall-east-low",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        16.5,
+        1.0
+      ],
+      "location": [
+        1.575,
+        3.25,
+        0.5
+      ],
+      "material": "green-gloss"
+    },
+    {
+      "id": "corridor-wall-east-high",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        16.5,
+        1.1
+      ],
+      "location": [
+        1.575,
+        3.25,
+        2.75
+      ],
+      "material": "brick"
+    },
+    {
+      "id": "corridor-wall-east-south",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        9.0,
+        1.2
+      ],
+      "location": [
+        1.575,
+        -0.5,
+        1.6
+      ],
+      "material": "brick"
+    },
+    {
+      "id": "corridor-wall-east-north",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        6.0,
+        1.2
+      ],
+      "location": [
+        1.575,
+        8.5,
+        1.6
+      ],
+      "material": "brick"
+    },
+    {
+      "id": "lodge-window",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        0.05,
+        1.5,
+        1.2
+      ],
+      "location": [
+        1.5,
+        4.75,
+        1.6
+      ],
+      "material": "bulb-yellow",
+      "collide": false
+    },
+    {
+      "id": "end-wall-north-west",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.0,
+        0.15,
+        3.3
+      ],
+      "location": [
+        -1.0,
+        11.575,
+        1.65
+      ],
+      "material": "brick"
+    },
+    {
+      "id": "end-wall-north-east",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.0,
+        0.15,
+        3.3
+      ],
+      "location": [
+        1.0,
+        11.575,
+        1.65
+      ],
+      "material": "brick"
+    },
+    {
+      "id": "end-wall-north-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.0,
+        0.15,
+        1.2
+      ],
+      "location": [
+        0,
+        11.575,
+        2.7
+      ],
+      "material": "brick"
+    },
+    {
+      "id": "ceiling-pipes",
+      "shape": "cylinder",
+      "role": "trim",
+      "size_m": [
+        0.15,
+        16.0,
+        0.15
+      ],
+      "location": [
+        1.2,
+        3.25,
+        3.15
+      ],
+      "material": "iron",
+      "collide": false
+    },
+    {
+      "id": "chute-mouth",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.6,
+        0.6,
+        0.6
+      ],
+      "location": [
+        1.15,
+        -4.3,
+        2.6
+      ],
+      "material": "iron"
+    },
+    {
+      "id": "flight-1a-low",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        3.7,
+        0.875
+      ],
+      "location": [
+        -0.75,
+        -8.25,
+        0.438
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "flight-1a-high",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        1.85,
+        0.875
+      ],
+      "location": [
+        -0.75,
+        -9.175,
+        1.312
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "half-landing-1",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        3.0,
+        1.4,
+        0.15
+      ],
+      "location": [
+        0,
+        -10.8,
+        1.675
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "flight-1b-low",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        3.7,
+        0.875
+      ],
+      "location": [
+        0.75,
+        -8.25,
+        2.188
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "flight-1b-high",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        1.85,
+        0.875
+      ],
+      "location": [
+        0.75,
+        -7.325,
+        3.062
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "flight-2a-low",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        3.7,
+        0.875
+      ],
+      "location": [
+        -0.75,
+        -8.25,
+        3.938
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "flight-2a-high",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        1.85,
+        0.875
+      ],
+      "location": [
+        -0.75,
+        -9.175,
+        4.812
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "half-landing-2",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        3.0,
+        1.4,
+        0.15
+      ],
+      "location": [
+        0,
+        -10.8,
+        5.175
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "flight-2b-low",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        3.7,
+        0.875
+      ],
+      "location": [
+        0.75,
+        -8.25,
+        5.688
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "flight-2b-high",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        1.85,
+        0.875
+      ],
+      "location": [
+        0.75,
+        -7.325,
+        6.562
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "flight-3a-low",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        3.7,
+        0.875
+      ],
+      "location": [
+        -0.75,
+        -8.25,
+        7.438
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "flight-3a-high",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        1.85,
+        0.875
+      ],
+      "location": [
+        -0.75,
+        -9.175,
+        8.312
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "half-landing-3",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        3.0,
+        1.4,
+        0.15
+      ],
+      "location": [
+        0,
+        -10.8,
+        8.675
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "flight-3b-low",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        3.7,
+        0.875
+      ],
+      "location": [
+        0.75,
+        -8.25,
+        9.188
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "flight-3b-high",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        1.85,
+        0.875
+      ],
+      "location": [
+        0.75,
+        -7.325,
+        10.062
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "flight-4a-low",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        3.7,
+        0.875
+      ],
+      "location": [
+        -0.75,
+        -8.25,
+        10.938
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "flight-4a-high",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        1.85,
+        0.875
+      ],
+      "location": [
+        -0.75,
+        -9.175,
+        11.812
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "half-landing-4",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        3.0,
+        1.4,
+        0.15
+      ],
+      "location": [
+        0,
+        -10.8,
+        12.175
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "flight-4b-low",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        3.7,
+        0.875
+      ],
+      "location": [
+        0.75,
+        -8.25,
+        12.688
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "flight-4b-high",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        1.85,
+        0.875
+      ],
+      "location": [
+        0.75,
+        -7.325,
+        13.562
+      ],
+      "material": "concrete"
+    },
+    {
+      "id": "top-landing",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        3.0,
+        1.4,
+        0.15
+      ],
+      "location": [
+        0,
+        -5.7,
+        13.925
+      ],
+      "material": "concrete"
+    }
+  ],
+  "props": [
+    {
+      "id": "chute-box",
+      "object": "chute-box",
+      "location": [
+        1.05,
+        -4.3,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "cart-1",
+      "object": "laundry-cart",
+      "location": [
+        -0.95,
+        0.5,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "cart-2",
+      "object": "laundry-cart",
+      "location": [
+        -0.95,
+        1.7,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        85
+      ]
+    },
+    {
+      "id": "cart-3",
+      "object": "laundry-cart",
+      "location": [
+        -0.95,
+        3.0,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        95
+      ]
+    },
+    {
+      "id": "stair-door",
+      "object": "staff-door",
+      "location": [
+        -1.42,
+        -5.7,
+        14.0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "back-office-door",
+      "object": "staff-door",
+      "location": [
+        0,
+        11.42,
+        0
+      ]
+    }
+  ],
+  "scenes": {
+    "n3_stairwell": {
+      "note": "Night 3, world running. Down four flights from the passage to the back of house: Lew's lodge window, laundry steam, and the chute box with its 'W' plate and '2:14' chalked on the lid. From 02:08 to 02:18 the stranger passes going up.",
+      "world": {
+        "color": [
+          0.07,
+          0.06,
+          0.045
+        ],
+        "strength": 0.25
+      },
+      "lights": [
+        {
+          "name": "bulb-floor-0",
+          "type": "POINT",
+          "location": [
+            0,
+            -8.2,
+            2.9
+          ],
+          "energy": 40,
+          "size": 0.08,
+          "color": [
+            1.0,
+            0.8,
+            0.45
+          ]
+        },
+        {
+          "name": "bulb-floor-1",
+          "type": "POINT",
+          "location": [
+            0,
+            -8.2,
+            6.4
+          ],
+          "energy": 40,
+          "size": 0.08,
+          "color": [
+            1.0,
+            0.8,
+            0.45
+          ]
+        },
+        {
+          "name": "bulb-floor-2",
+          "type": "POINT",
+          "location": [
+            0,
+            -8.2,
+            9.9
+          ],
+          "energy": 40,
+          "size": 0.08,
+          "color": [
+            1.0,
+            0.8,
+            0.45
+          ]
+        },
+        {
+          "name": "bulb-floor-3",
+          "type": "POINT",
+          "location": [
+            0,
+            -8.2,
+            13.4
+          ],
+          "energy": 40,
+          "size": 0.08,
+          "color": [
+            1.0,
+            0.8,
+            0.45
+          ]
+        },
+        {
+          "name": "bulb-floor-4",
+          "type": "POINT",
+          "location": [
+            0,
+            -8.2,
+            16.9
+          ],
+          "energy": 40,
+          "size": 0.08,
+          "color": [
+            1.0,
+            0.8,
+            0.45
+          ]
+        },
+        {
+          "name": "bulb-corridor-0",
+          "type": "POINT",
+          "location": [
+            0,
+            -2.0,
+            2.9
+          ],
+          "energy": 50,
+          "size": 0.08,
+          "color": [
+            1.0,
+            0.8,
+            0.45
+          ]
+        },
+        {
+          "name": "bulb-corridor-1",
+          "type": "POINT",
+          "location": [
+            0,
+            4.0,
+            2.9
+          ],
+          "energy": 50,
+          "size": 0.08,
+          "color": [
+            1.0,
+            0.8,
+            0.45
+          ]
+        },
+        {
+          "name": "bulb-corridor-2",
+          "type": "POINT",
+          "location": [
+            0,
+            10.0,
+            2.9
+          ],
+          "energy": 50,
+          "size": 0.08,
+          "color": [
+            1.0,
+            0.8,
+            0.45
+          ]
+        },
+        {
+          "name": "lodge-lamp",
+          "type": "POINT",
+          "location": [
+            2.0,
+            4.75,
+            1.8
+          ],
+          "energy": 30,
+          "size": 0.15,
+          "color": [
+            1.0,
+            0.66,
+            0.33
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.75,
+          -5.7,
+          15.62
+        ],
+        "look_at": [
+          0.75,
+          -10.0,
+          12.8
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0.75,
+          -5.7,
+          14.0
+        ],
+        "facing_deg": 180
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "chute-box",
+          "verb": "Look at the box"
+        },
+        {
+          "prop": "stair-door",
+          "verb": "Back up to the passage",
+          "leads_to": "n3_shift_race"
+        }
+      ]
+    },
+    "n6_stairwell": {
+      "note": "Night 6. The same stair; after 00:00 the back-office door at the end of the corridor is unlocked.",
+      "world": {
+        "color": [
+          0.07,
+          0.06,
+          0.045
+        ],
+        "strength": 0.25
+      },
+      "lights": [
+        {
+          "name": "bulb-floor-0",
+          "type": "POINT",
+          "location": [
+            0,
+            -8.2,
+            2.9
+          ],
+          "energy": 40,
+          "size": 0.08,
+          "color": [
+            1.0,
+            0.8,
+            0.45
+          ]
+        },
+        {
+          "name": "bulb-floor-1",
+          "type": "POINT",
+          "location": [
+            0,
+            -8.2,
+            6.4
+          ],
+          "energy": 40,
+          "size": 0.08,
+          "color": [
+            1.0,
+            0.8,
+            0.45
+          ]
+        },
+        {
+          "name": "bulb-floor-2",
+          "type": "POINT",
+          "location": [
+            0,
+            -8.2,
+            9.9
+          ],
+          "energy": 40,
+          "size": 0.08,
+          "color": [
+            1.0,
+            0.8,
+            0.45
+          ]
+        },
+        {
+          "name": "bulb-floor-3",
+          "type": "POINT",
+          "location": [
+            0,
+            -8.2,
+            13.4
+          ],
+          "energy": 40,
+          "size": 0.08,
+          "color": [
+            1.0,
+            0.8,
+            0.45
+          ]
+        },
+        {
+          "name": "bulb-floor-4",
+          "type": "POINT",
+          "location": [
+            0,
+            -8.2,
+            16.9
+          ],
+          "energy": 40,
+          "size": 0.08,
+          "color": [
+            1.0,
+            0.8,
+            0.45
+          ]
+        },
+        {
+          "name": "bulb-corridor-0",
+          "type": "POINT",
+          "location": [
+            0,
+            -2.0,
+            2.9
+          ],
+          "energy": 50,
+          "size": 0.08,
+          "color": [
+            1.0,
+            0.8,
+            0.45
+          ]
+        },
+        {
+          "name": "bulb-corridor-1",
+          "type": "POINT",
+          "location": [
+            0,
+            4.0,
+            2.9
+          ],
+          "energy": 50,
+          "size": 0.08,
+          "color": [
+            1.0,
+            0.8,
+            0.45
+          ]
+        },
+        {
+          "name": "bulb-corridor-2",
+          "type": "POINT",
+          "location": [
+            0,
+            10.0,
+            2.9
+          ],
+          "energy": 50,
+          "size": 0.08,
+          "color": [
+            1.0,
+            0.8,
+            0.45
+          ]
+        },
+        {
+          "name": "lodge-lamp",
+          "type": "POINT",
+          "location": [
+            2.0,
+            4.75,
+            1.8
+          ],
+          "energy": 30,
+          "size": 0.15,
+          "color": [
+            1.0,
+            0.66,
+            0.33
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.75,
+          -5.7,
+          15.62
+        ],
+        "look_at": [
+          0.75,
+          -10.0,
+          12.8
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0.75,
+          -5.7,
+          14.0
+        ],
+        "facing_deg": 180
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "chute-box",
+          "verb": "Look at the box"
+        },
+        {
+          "prop": "back-office-door",
+          "verb": "Open the back-office door",
+          "leads_to": "n6_back_office"
+        },
+        {
+          "prop": "stair-door",
+          "verb": "Back up to the passage",
+          "leads_to": "n6_shift_race"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="card-back-t card-back-d">
+<title id="card-back-t">Short Rations: card back</title>
+<desc id="card-back-d">The back of the ration-issue deck: institutional green crossed with a stencilled lattice, a cream roundel in the middle carrying the form number, worn pale at the corners where six men have dealt it.</desc>
+<defs><clipPath id="card-back-clip1"><rect x="4" y="4" width="292" height="412" rx="16"/></clipPath><filter id="card-back-spk2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="234"/><feColorMatrix values="0 0 0 0 0.44  0 0 0 0 0.40  0 0 0 0 0.31  0 0 0 0.7 -0.3"/></filter><clipPath id="card-back-clip3"><rect x="22" y="22" width="256" height="376"/></clipPath><clipPath id="card-back-clip4"><rect x="22" y="22" width="256" height="376"/></clipPath><clipPath id="card-back-clip5"><rect x="22" y="22" width="256" height="376"/></clipPath><radialGradient id="card-back-rg6" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#D9D2BF" stop-opacity="0.6"/><stop offset="100%" stop-color="#D9D2BF" stop-opacity="0"/></radialGradient><radialGradient id="card-back-rg7" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#D9D2BF" stop-opacity="0.6"/><stop offset="100%" stop-color="#D9D2BF" stop-opacity="0"/></radialGradient><radialGradient id="card-back-rg8" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#D9D2BF" stop-opacity="0.6"/><stop offset="100%" stop-color="#D9D2BF" stop-opacity="0"/></radialGradient><radialGradient id="card-back-rg9" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#D9D2BF" stop-opacity="0.6"/><stop offset="100%" stop-color="#D9D2BF" stop-opacity="0"/></radialGradient><mask id="card-back-st10" maskUnits="userSpaceOnUse" x="55.7" y="170.8" width="188.6" height="82.8"><rect x="55.7" y="170.8" width="188.6" height="82.8" fill="#fff"/><rect x="113.7" y="189.2" width="3.7" height="46" fill="#000"/><rect x="178.1" y="189.2" width="3.7" height="46" fill="#000"/></mask><mask id="card-back-st11" maskUnits="userSpaceOnUse" x="84" y="41.2" width="132" height="43.2"><rect x="84" y="41.2" width="132" height="43.2" fill="#fff"/><rect x="114.2" y="50.8" width="1.9" height="24" fill="#000"/><rect x="131" y="50.8" width="1.9" height="24" fill="#000"/><rect x="147.8" y="50.8" width="1.9" height="24" fill="#000"/><rect x="164.6" y="50.8" width="1.9" height="24" fill="#000"/><rect x="181.4" y="50.8" width="1.9" height="24" fill="#000"/></mask><mask id="card-back-st12" maskUnits="userSpaceOnUse" x="84" y="321.2" width="132" height="43.2"><rect x="84" y="321.2" width="132" height="43.2" fill="#fff"/><rect x="114.2" y="330.8" width="1.9" height="24" fill="#000"/><rect x="131" y="330.8" width="1.9" height="24" fill="#000"/><rect x="147.8" y="330.8" width="1.9" height="24" fill="#000"/><rect x="164.6" y="330.8" width="1.9" height="24" fill="#000"/><rect x="181.4" y="330.8" width="1.9" height="24" fill="#000"/></mask><filter id="card-back-spk13" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="234"/><feColorMatrix values="0 0 0 0 0.11  0 0 0 0 0.11  0 0 0 0 0.12  0 0 0 0.9 -0.4"/></filter></defs>
+<rect x="4" y="4" width="292" height="412" rx="16" fill="#4d6052" stroke="#6f6750" stroke-width="2"/>
+<g clip-path="url(#card-back-clip1)">
+<rect x="0" y="0" width="300" height="420" filter="url(#card-back-spk2)"/>
+</g>
+<g clip-path="url(#card-back-clip1)">
+<ellipse cx="247.5" cy="78.9" rx="17.6" ry="2.3" fill="#b3a786" opacity="0.3" transform="rotate(-22.7 247.5 78.9)"/>
+<ellipse cx="97.1" cy="233.2" rx="20.4" ry="3.7" fill="#b3a786" opacity="0.3" transform="rotate(9.8 97.1 233.2)"/>
+<ellipse cx="260.6" cy="335.4" rx="18.9" ry="2.7" fill="#b3a786" opacity="0.3" transform="rotate(14.4 260.6 335.4)"/>
+<ellipse cx="205.6" cy="270.2" rx="27.1" ry="4.7" fill="#b3a786" opacity="0.3" transform="rotate(-34.6 205.6 270.2)"/>
+<ellipse cx="112.7" cy="116.1" rx="17" ry="3.3" fill="#b3a786" opacity="0.3" transform="rotate(-23.8 112.7 116.1)"/>
+<line x1="46.7" y1="416" x2="4" y2="373.3" stroke="#9b9072" stroke-width="1.5"/>
+<polygon points="46.7,416 4,416 4,373.3" fill="#000" opacity="0.1"/>
+</g>
+<g clip-path="url(#card-back-clip1)">
+<g clip-path="url(#card-back-clip3)">
+<path d="M150,-142.8 L502.8,210 M134.4,-127.2 L487.2,225.6 M118.9,-111.6 L471.6,241.1 M103.3,-96.1 L456.1,256.7 M87.8,-80.5 L440.5,272.2 M72.2,-65 L425,287.8 M56.7,-49.4 L409.4,303.3 M41.1,-33.9 L393.9,318.9 M25.5,-18.3 L378.3,334.5 M10,-2.8 L362.8,350 M-5.6,12.8 L347.2,365.6 M-21.1,28.4 L331.6,381.1 M-36.7,43.9 L316.1,396.7 M-52.2,59.5 L300.5,412.2 M-67.8,75 L285,427.8 M-83.3,90.6 L269.4,443.3 M-98.9,106.1 L253.9,458.9 M-114.5,121.7 L238.3,474.5 M-130,137.3 L222.7,490 M-145.6,152.8 L207.2,505.6 M-161.1,168.4 L191.6,521.1 M-176.7,183.9 L176.1,536.7 M-192.2,199.5 L160.5,552.2" fill="none" stroke="#D9D2BF" stroke-width="5" opacity="0.5"/>
+</g>
+<g clip-path="url(#card-back-clip4)">
+<path d="M-202.8,210 L150,-142.8 M-187.2,225.6 L165.6,-127.2 M-171.6,241.1 L181.1,-111.6 M-156.1,256.7 L196.7,-96.1 M-140.5,272.2 L212.2,-80.5 M-125,287.8 L227.8,-65 M-109.4,303.3 L243.3,-49.4 M-93.9,318.9 L258.9,-33.9 M-78.3,334.5 L274.5,-18.3 M-62.8,350 L290,-2.8 M-47.2,365.6 L305.6,12.8 M-31.6,381.1 L321.1,28.4 M-16.1,396.7 L336.7,43.9 M-0.5,412.2 L352.2,59.5 M15,427.8 L367.8,75 M30.6,443.3 L383.3,90.6 M46.1,458.9 L398.9,106.1 M61.7,474.5 L414.5,121.7 M77.3,490 L430,137.3 M92.8,505.6 L445.6,152.8 M108.4,521.1 L461.1,168.4 M123.9,536.7 L476.7,183.9 M139.5,552.2 L492.2,199.5" fill="none" stroke="#D9D2BF" stroke-width="5" opacity="0.5"/>
+</g>
+<g clip-path="url(#card-back-clip5)">
+<path d="M150,-142.8 L502.8,210 M134.4,-127.2 L487.2,225.6 M118.9,-111.6 L471.6,241.1 M103.3,-96.1 L456.1,256.7 M87.8,-80.5 L440.5,272.2 M72.2,-65 L425,287.8 M56.7,-49.4 L409.4,303.3 M41.1,-33.9 L393.9,318.9 M25.5,-18.3 L378.3,334.5 M10,-2.8 L362.8,350 M-5.6,12.8 L347.2,365.6 M-21.1,28.4 L331.6,381.1 M-36.7,43.9 L316.1,396.7 M-52.2,59.5 L300.5,412.2 M-67.8,75 L285,427.8 M-83.3,90.6 L269.4,443.3 M-98.9,106.1 L253.9,458.9 M-114.5,121.7 L238.3,474.5 M-130,137.3 L222.7,490 M-145.6,152.8 L207.2,505.6 M-161.1,168.4 L191.6,521.1 M-176.7,183.9 L176.1,536.7 M-192.2,199.5 L160.5,552.2" fill="none" stroke="#4d6052" stroke-width="1.5"/>
+</g>
+<circle cx="4" cy="4" r="46" fill="url(#card-back-rg6)"/>
+<circle cx="296" cy="4" r="46" fill="url(#card-back-rg7)"/>
+<circle cx="4" cy="416" r="46" fill="url(#card-back-rg8)"/>
+<circle cx="296" cy="416" r="46" fill="url(#card-back-rg9)"/>
+</g>
+<rect x="16" y="16" width="268" height="388" rx="9" fill="none" stroke="#D9D2BF" stroke-width="5"/>
+<rect x="24" y="24" width="252" height="372" rx="5" fill="none" stroke="#D9D2BF" stroke-width="1.5" stroke-dasharray="12 4"/>
+<circle cx="150" cy="210" r="74" fill="#D9D2BF" stroke="#1B1D1F" stroke-width="3"/>
+<circle cx="150" cy="210" r="64" fill="none" stroke="#1B1D1F" stroke-width="1.5" stroke-dasharray="6 4"/>
+<g mask="url(#card-back-st10)">
+<text x="101.7" y="226" font-size="46" font-family="monospace" fill="#1B1D1F" font-weight="bold" letter-spacing="4.6">7-F</text>
+</g>
+<text x="150" y="182" font-size="14" font-family="monospace" fill="#1B1D1F" text-anchor="middle">RATION</text>
+<text x="150" y="252" font-size="14" font-family="monospace" fill="#1B1D1F" text-anchor="middle">ISSUE</text>
+<rect x="84" y="50" width="132" height="30" fill="#4d6052"/>
+<g mask="url(#card-back-st11)">
+<text x="108" y="70" font-size="24" font-family="monospace" fill="#D9D2BF" font-weight="bold" letter-spacing="2.4">ISSUE</text>
+</g>
+<rect x="84" y="330" width="132" height="30" fill="#4d6052"/>
+<g mask="url(#card-back-st12)">
+<text x="108" y="350" font-size="24" font-family="monospace" fill="#D9D2BF" font-weight="bold" letter-spacing="2.4">ISSUE</text>
+</g>
+<g clip-path="url(#card-back-clip1)">
+<rect x="0" y="0" width="300" height="420" filter="url(#card-back-spk13)"/>
+</g>
+</svg>

@@ -1,0 +1,49 @@
+{
+  "endings": [
+    {
+      "id": "keeper",
+      "name": "The Keeper",
+      "as_written": false,
+      "priority": 1,
+      "when": {"is": "altar.choice", "eq": "stitch"},
+      "summary": "As a guest you translated all six spreads of the hand-sewn book, and at the altar you chose to stitch instead of being stitched. Your four friends go on the shelf. You stand on the porch beside Mabel and Ruth and greet the next car with \"They like company.\" The run ends after Act 1. The cost (accepted 2026-11-15, phase 3): your first task is to re-cut Ruth's pattern, a size larger, and you take Mabel's place at the table; on the porch Mabel, for the first time, sits down.",
+      "final_scenes": ["a5_altar_stitch", "e_keeper_porch"]
+    },
+    {
+      "id": "warning",
+      "name": "The Warning",
+      "as_written": false,
+      "priority": 2,
+      "when": {"all": [{"is": "guests_fled", "eq": true}, {"is": "memory.kept", "gte": 5}]},
+      "summary": "You kept at least five memories and drove the group's dread to 70 (55 after the Door sentence) before the cabin sealed on the third morning, so they packed and left alive. Mabel and Ruth unpick your seams, and the cabin is listed again. The cost (accepted 2026-11-15): you are unmade for three strangers, and if you mended Jamie he is still on the shelf, hungry, watching it done.",
+      "final_scenes": ["c13_flight", "e_warning_unpick"]
+    },
+    {
+      "id": "empty_toy",
+      "name": "The Empty Toy",
+      "as_written": false,
+      "priority": 3,
+      "when": {"any": [{"ledger": "hunt_log", "count_gte": 5, "where": {"joined": false}}, {"is": "seams.all_wadded", "eq": true}]},
+      "summary": "You refused all five games of the hunt. The hunger, never fed by you, took your memories in lurches. The others hunt without you; the guests go down; you stay on the shelf, awake and still. Accepted 2026-11-15: it can also be chosen by hand, by packing all six seams with wadding at a Stuffing, after which no game can be joined. The cost: you keep nothing, the guests go down all the same, and you are awake for every minute of it.",
+      "final_scenes": ["c14_hold_shelf", "e_empty_toy"]
+    },
+    {
+      "id": "the_page",
+      "name": "The Page",
+      "as_written": false,
+      "priority": 4,
+      "when": {"all": [{"is": "book.backs_read", "gte": 6}, {"is": "threshold.walked_in", "eq": true}]},
+      "summary": "Accepted 2026-11-15, built 2026-11-16 (phase 3; a proposal, not the author's ending). You read all six of Ruth's backs, the selvage sentence that says how a bound thing is let go, and at the end of the Chase you walked into the centre after the guests instead of holding the doorway. You lie down in the \"circle of torn fabric skins\" (ch 11) and sew a page of your own into the book, in marks you learned; it is where the novel's first line is spoken from: \"I don't know how long I've been down here.\" (ch 1). The cost: the guests went down all the same, your friends hunt without you, and you are awake in the dark with no pulse for company. What it buys: your page is in the next run's book, to be translated.",
+      "final_scenes": ["c14_labyrinth_inner", "e_page_circle"]
+    },
+    {
+      "id": "cycle",
+      "name": "The Cycle",
+      "as_written": true,
+      "priority": 5,
+      "when": true,
+      "summary": "The novel's ending. You play the hunt and herd the guests to the trapdoor. New stuffed ones sit on the shelf beside you, and car doors slam outside. The cost made visible (accepted 2026-11-15, phase 3): the new stuffed ones carry what you used against them; the guest you made It in Parlour sits beside you, facing the door.",
+      "final_scenes": ["c14_labyrinth_inner", "e_cycle_shelf"]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-labelledby="tns-piece-beetle-t tns-piece-beetle-d">
+<title id="tns-piece-beetle-t">Trunk and Shadow piece: Beetle piece</title>
+<desc id="tns-piece-beetle-d">The beetle piece of the Mandible rule: a beetle seen from above on a gold disc; read as a god it blocks, read as a monster it hides any Folk it touches.</desc>
+<defs><filter id="tns-piece-beetle-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.5" numOctaves="2" seed="578"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.2 0"/></filter><radialGradient id="tns-piece-beetle-rg2" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#5a3d2b" stop-opacity="0.9"/><stop offset="100%" stop-color="#5a3d2b" stop-opacity="0"/></radialGradient></defs>
+<rect x="0" y="0" width="200" height="200" fill="#24170f"/>
+<rect x="0" y="0" width="200" height="200" fill="#2e1f15"/>
+<rect x="0" y="0" width="200" height="200" filter="url(#tns-piece-beetle-grain1)"/>
+<circle cx="100" cy="100" r="92" fill="url(#tns-piece-beetle-rg2)"/>
+<circle cx="100" cy="104" r="78" fill="#000" opacity="0.3"/>
+<circle cx="100" cy="100" r="78" fill="#f0c050" stroke="#140d08" stroke-width="5"/>
+<circle cx="100" cy="100" r="68" fill="none" stroke="#140d08" stroke-width="1.2" stroke-dasharray="3 5"/>
+<path d="M77,91.9 l-18.4,-13.8 l-6.9,11.5" fill="none" stroke="#140d08" stroke-width="3.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M123,91.9 l18.4,-13.8 l6.9,11.5" fill="none" stroke="#140d08" stroke-width="3.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M77,108 l-18.4,-6.9 l-6.9,11.5" fill="none" stroke="#140d08" stroke-width="3.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M123,108 l18.4,-6.9 l6.9,11.5" fill="none" stroke="#140d08" stroke-width="3.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M77,124.1 l-18.4,0 l-6.9,11.5" fill="none" stroke="#140d08" stroke-width="3.9" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M123,124.1 l18.4,0 l6.9,11.5" fill="none" stroke="#140d08" stroke-width="3.9" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="100" cy="112.6" rx="29.9" ry="39.1" fill="#2e3a34" stroke="#140d08" stroke-width="3.4"/>
+<line x1="100" y1="75.8" x2="100" y2="151.7" stroke="#140d08" stroke-width="1.8"/>
+<ellipse cx="100" cy="68.9" rx="14.9" ry="11.5" fill="#1e2420" stroke="#140d08" stroke-width="3.4"/>
+<path d="M93.1,59.7 q-11.5,-9.2 -4.6,-20.7 M106.9,59.7 q11.5,-9.2 4.6,-20.7" fill="none" stroke="#140d08" stroke-width="3.4" stroke-linecap="round"/>
+<ellipse cx="88.5" cy="98.8" rx="6.9" ry="16.1" fill="#cfe0c8" opacity="0.3"/>
+</svg>

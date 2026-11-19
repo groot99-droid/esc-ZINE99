@@ -1,0 +1,103 @@
+{
+  "slug": "man-eater",
+  "title": "Project: Man Eater",
+  "sources": [
+    "03_Stories/07_Project_-_Man_Eater.md"
+  ],
+  "target_minutes": {
+    "min": 90,
+    "max": 120
+  },
+  "players": {
+    "min": 1,
+    "max": 1
+  },
+  "core_verb": "eat",
+  "chapters": [
+    {
+      "id": "ch1_arrival",
+      "title": "Arrival",
+      "minutes": 9,
+      "layers": [
+        "3d"
+      ]
+    },
+    {
+      "id": "ch2_day1",
+      "title": "Day One: The Ration",
+      "minutes": 13,
+      "layers": [
+        "3d",
+        "1d"
+      ]
+    },
+    {
+      "id": "ch3_day2",
+      "title": "Day Two: Transferred",
+      "minutes": 14,
+      "layers": [
+        "3d",
+        "1d",
+        "2d"
+      ]
+    },
+    {
+      "id": "ch4_day3",
+      "title": "Day Three: The Yard",
+      "minutes": 13,
+      "layers": [
+        "3d",
+        "1d",
+        "2d"
+      ]
+    },
+    {
+      "id": "ch5_day4",
+      "title": "Day Four: The Measure of the Halls",
+      "minutes": 14,
+      "layers": [
+        "3d",
+        "1d",
+        "2d"
+      ]
+    },
+    {
+      "id": "ch6_day5",
+      "title": "Day Five: Jax's Plan",
+      "minutes": 14,
+      "layers": [
+        "3d",
+        "1d",
+        "2d"
+      ]
+    },
+    {
+      "id": "ch7_day6",
+      "title": "Day Six: Below",
+      "minutes": 15,
+      "layers": [
+        "3d",
+        "1d",
+        "2d"
+      ]
+    },
+    {
+      "id": "ch8_day7",
+      "title": "Day Seven: The Last Call",
+      "minutes": 14,
+      "layers": [
+        "3d",
+        "1d",
+        "2d"
+      ]
+    },
+    {
+      "id": "ch9_end",
+      "title": "The Endings",
+      "minutes": 6,
+      "layers": [
+        "3d"
+      ]
+    }
+  ]
+}

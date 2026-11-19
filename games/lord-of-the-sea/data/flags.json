@@ -1,0 +1,567 @@
+{
+  "state": [
+    {
+      "name": "wild.home",
+      "type": "meter",
+      "default": 50,
+      "description": "Order (0) to Wild (100) for region 'home'. Changed by tideline stones, charters, lanes, tide stirs and Company pressure at each Tide Reckoning.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "wild.lanes",
+      "type": "meter",
+      "default": 10,
+      "description": "Order (0) to Wild (100) for region 'lanes'. Changed by tideline stones, charters, lanes, tide stirs and Company pressure at each Tide Reckoning.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "wild.unwritten",
+      "type": "meter",
+      "default": 85,
+      "description": "Order (0) to Wild (100) for region 'unwritten'. Changed by tideline stones, charters, lanes, tide stirs and Company pressure at each Tide Reckoning.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "wild.salt",
+      "type": "meter",
+      "default": 45,
+      "description": "Order (0) to Wild (100) for region 'salt'. Changed by tideline stones, charters, lanes, tide stirs and Company pressure at each Tide Reckoning.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "wild.strait",
+      "type": "meter",
+      "default": 20,
+      "description": "Order (0) to Wild (100) for region 'strait'. Changed by tideline stones, charters, lanes, tide stirs and Company pressure at each Tide Reckoning.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "wild.pearl",
+      "type": "meter",
+      "default": 35,
+      "description": "Order (0) to Wild (100) for region 'pearl'. Changed by tideline stones, charters, lanes, tide stirs and Company pressure at each Tide Reckoning.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "wild.spice",
+      "type": "meter",
+      "default": 25,
+      "description": "Order (0) to Wild (100) for region 'spice'. Changed by tideline stones, charters, lanes, tide stirs and Company pressure at each Tide Reckoning.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "wild.halls",
+      "type": "meter",
+      "default": 30,
+      "description": "Order (0) to Wild (100) for region 'halls'. Changed by tideline stones, charters, lanes, tide stirs and Company pressure at each Tide Reckoning.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "devotion",
+      "type": "meter",
+      "default": 5,
+      "description": "Sailors' devotion to Alexi. Sets his power tier (15/30/45/60/75/90) and his posture.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "princess.trust",
+      "type": "meter",
+      "default": 30,
+      "description": "The princess's trust. 40 hints, 50 Rewrite, 60 holds the pen for Sign.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "notice",
+      "type": "meter",
+      "default": 0,
+      "description": "The Company's attention. 50+ two cutters per chase; 70+ the Lord starts the final match with one more Chest.",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "port.lanes",
+      "type": "enum",
+      "default": "bound",
+      "description": "Hold on the port of region 'lanes': bound, broken (struck or won) or rewritten (redrafted by the princess).",
+      "values": [
+        "bound",
+        "broken",
+        "rewritten"
+      ]
+    },
+    {
+      "name": "lane.lanes",
+      "type": "bool",
+      "default": false,
+      "description": "A safe lane is kept in region 'lanes' (laid by Dead Reckoning, or given by a Rewrite). Raises its toll thresholds by 15."
+    },
+    {
+      "name": "port.salt",
+      "type": "enum",
+      "default": "bound",
+      "description": "Hold on the port of region 'salt': bound, broken (struck or won) or rewritten (redrafted by the princess).",
+      "values": [
+        "bound",
+        "broken",
+        "rewritten"
+      ]
+    },
+    {
+      "name": "lane.salt",
+      "type": "bool",
+      "default": false,
+      "description": "A safe lane is kept in region 'salt' (laid by Dead Reckoning, or given by a Rewrite). Raises its toll thresholds by 15."
+    },
+    {
+      "name": "port.strait",
+      "type": "enum",
+      "default": "bound",
+      "description": "Hold on the port of region 'strait': bound, broken (struck or won) or rewritten (redrafted by the princess).",
+      "values": [
+        "bound",
+        "broken",
+        "rewritten"
+      ]
+    },
+    {
+      "name": "lane.strait",
+      "type": "bool",
+      "default": false,
+      "description": "A safe lane is kept in region 'strait' (laid by Dead Reckoning, or given by a Rewrite). Raises its toll thresholds by 15."
+    },
+    {
+      "name": "port.pearl",
+      "type": "enum",
+      "default": "bound",
+      "description": "Hold on the port of region 'pearl': bound, broken (struck or won) or rewritten (redrafted by the princess).",
+      "values": [
+        "bound",
+        "broken",
+        "rewritten"
+      ]
+    },
+    {
+      "name": "lane.pearl",
+      "type": "bool",
+      "default": false,
+      "description": "A safe lane is kept in region 'pearl' (laid by Dead Reckoning, or given by a Rewrite). Raises its toll thresholds by 15."
+    },
+    {
+      "name": "port.spice",
+      "type": "enum",
+      "default": "bound",
+      "description": "Hold on the port of region 'spice': bound, broken (struck or won) or rewritten (redrafted by the princess).",
+      "values": [
+        "bound",
+        "broken",
+        "rewritten"
+      ]
+    },
+    {
+      "name": "lane.spice",
+      "type": "bool",
+      "default": false,
+      "description": "A safe lane is kept in region 'spice' (laid by Dead Reckoning, or given by a Rewrite). Raises its toll thresholds by 15."
+    },
+    {
+      "name": "port.halls",
+      "type": "enum",
+      "default": "bound",
+      "description": "Hold on the port of region 'halls': bound, broken (struck or won) or rewritten (redrafted by the princess).",
+      "values": [
+        "bound",
+        "broken",
+        "rewritten"
+      ]
+    },
+    {
+      "name": "lane.halls",
+      "type": "bool",
+      "default": false,
+      "description": "A safe lane is kept in region 'halls' (laid by Dead Reckoning, or given by a Rewrite). Raises its toll thresholds by 15."
+    },
+    {
+      "name": "tea.final_result",
+      "type": "enum",
+      "default": "none",
+      "description": "Result of the final Tea Board match against the Lord of Tea.",
+      "values": [
+        "none",
+        "win",
+        "draw",
+        "loss"
+      ]
+    },
+    {
+      "name": "final_choice",
+      "type": "enum",
+      "default": "none",
+      "description": "After a final win, at the tideline: keep the sea or give it up. 'pay' (phase 3) is offered only when pay_open is true: eight counter-clockwise stirs at the tideline, one for each chit.",
+      "values": [
+        "none",
+        "keep",
+        "relinquish",
+        "pay"
+      ]
+    },
+    {
+      "name": "tideline_answered",
+      "type": "bool",
+      "default": false,
+      "description": "Alexi has stirred at the tideline in chapter 0."
+    },
+    {
+      "name": "princess_aboard",
+      "type": "bool",
+      "default": false,
+      "description": "The princess has come aboard."
+    },
+    {
+      "name": "deed_read",
+      "type": "bool",
+      "default": false,
+      "description": "The binding clause of the halls' sale deed has been found."
+    },
+    {
+      "name": "met.wenna",
+      "type": "bool",
+      "default": false,
+      "description": "The player has ridden Wenna's ferry; unlocks the Tidewater stone."
+    },
+    {
+      "name": "met.salt",
+      "type": "bool",
+      "default": false,
+      "description": "The player has met Old Marrow's grandchildren on the reef; unlocks the Salt Steps stone."
+    },
+    {
+      "name": "met.strait",
+      "type": "bool",
+      "default": false,
+      "description": "The player has trimmed the lamp with Corran; unlocks the Strait stone and gives his logbook."
+    },
+    {
+      "name": "met.pearl",
+      "type": "bool",
+      "default": false,
+      "description": "The player has dived the shallow bank with Ide; unlocks the Pearl Banks stone."
+    },
+    {
+      "name": "met.spice",
+      "type": "bool",
+      "default": false,
+      "description": "The player has seen pay day with the dock-warden; unlocks the Spice Mouth stone."
+    },
+    {
+      "name": "met.halls",
+      "type": "bool",
+      "default": false,
+      "description": "The player has found the king; unlocks the halls' sea-gate stone."
+    },
+    {
+      "name": "met.halse",
+      "type": "bool",
+      "default": false,
+      "description": "Mother Halse has turned the slate round at the Tidewater chandlery (The Slate, accepted 2026-11-15)."
+    },
+    {
+      "name": "crew.wenna",
+      "type": "bool",
+      "default": false,
+      "description": "Wenna's crew were won at Liar's Tide (accepted 2026-11-15, built 2026-11-16). Their call in the Engraved Sea: the ferry's crossings are shown on the coast strip, so a crest can be timed round her."
+    },
+    {
+      "name": "crew.gullwife",
+      "type": "bool",
+      "default": false,
+      "description": "The Gullwife crew were won at Liar's Tide. Their call: every stir one tier higher while they sing; and a crew singing in sight halves the tide table's cone of error in Dead Reckoning."
+    },
+    {
+      "name": "crew.kettle",
+      "type": "bool",
+      "default": false,
+      "description": "The Kettle crew were won at the Flooding Table. Their call in the Engraved Sea: the reef stands covered."
+    },
+    {
+      "name": "has_harbour_book",
+      "type": "bool",
+      "default": false,
+      "description": "The Tidewater harbour book has been raised from the sunken tender."
+    },
+    {
+      "name": "has_logbook",
+      "type": "bool",
+      "default": false,
+      "description": "Corran's logbook is in the evidence drawer."
+    },
+    {
+      "name": "has_compact_rubbing",
+      "type": "bool",
+      "default": false,
+      "description": "The compact stone rubbing from the trench is in the evidence drawer."
+    },
+    {
+      "name": "strait.lights_dark",
+      "type": "bool",
+      "default": false,
+      "description": "The Strait's lights are dark because the lease was struck."
+    },
+    {
+      "name": "blockade_plotted",
+      "type": "bool",
+      "default": false,
+      "description": "The blockade course arrived inside tolerance and the slack window."
+    },
+    {
+      "name": "blockade_run",
+      "type": "bool",
+      "default": false,
+      "description": "The blockade was run without being caught."
+    },
+    {
+      "name": "backplot.good",
+      "type": "bool",
+      "default": false,
+      "description": "The back-plot at a Tide Reckoning fell within a mile of where the boat went over: the rescue dive starts above the person."
+    },
+    {
+      "name": "payment_delivered",
+      "type": "bool",
+      "default": false,
+      "description": "The king's payment reached the halls; its receipt is evidence."
+    },
+    {
+      "name": "tab.known",
+      "type": "bool",
+      "default": false,
+      "description": "Schedule C of the harbour book has been traced to the bottle: the player knows the Company's title is Alexi's own chit."
+    },
+    {
+      "name": "reckoning.countersigned",
+      "type": "bool",
+      "default": false,
+      "description": "The first Tide Reckoning came back with the Lord of Tea's green tick; every later sheet arrives countersigned."
+    },
+    {
+      "name": "pay_open",
+      "type": "bool",
+      "default": false,
+      "description": "All eight chits were pinned at the tally. Read by the Paid in Kind ending when phase 3 adds it."
+    },
+    {
+      "name": "tea.parlour_won",
+      "type": "bool",
+      "default": false,
+      "description": "Won the parlour match against the factor; +1 Hymn in the final."
+    },
+    {
+      "name": "tea.comptroller_won",
+      "type": "bool",
+      "default": false,
+      "description": "Won the Spice Mouth match against the Comptroller."
+    },
+    {
+      "name": "crews",
+      "type": "counter",
+      "default": 0,
+      "description": "Singing crews joined (0-7)."
+    },
+    {
+      "name": "clauses",
+      "type": "counter",
+      "default": 0,
+      "description": "Clause tokens for the final Tea Board: +1 per charter struck or rewritten, +1 for the Comptroller match."
+    },
+    {
+      "name": "ports_freed",
+      "type": "counter",
+      "default": 0,
+      "description": "Ports broken or rewritten (0-6)."
+    },
+    {
+      "name": "liars.caught",
+      "type": "counter",
+      "default": 0,
+      "description": "Times Alexi was caught stirring his cup at Liar's Tide."
+    },
+    {
+      "name": "tab.matched",
+      "type": "counter",
+      "default": 0,
+      "description": "Chits pinned to the region whose order they bought, at the tally (0-8)."
+    },
+    {
+      "name": "debts.answered",
+      "type": "counter",
+      "default": 0,
+      "description": "Named Debts struck from the Wreck Book before the final match: one for each ship named by its bell in the Deep (0-4)."
+    },
+    {
+      "name": "tea.cracked",
+      "type": "counter",
+      "default": 0,
+      "description": "Lanes of the Tea Board cracked by a second Stir in one High tide in the final match (0-2). A cracked lane scores for no one and cannot be laid as a safe lane on the chart."
+    },
+    {
+      "name": "chart.wild_regions",
+      "type": "counter",
+      "default": 0,
+      "description": "Written at the tally: regions (of 8) with Wild 60 or more."
+    },
+    {
+      "name": "chart.order_regions",
+      "type": "counter",
+      "default": 0,
+      "description": "Written at the tally: regions (of 8) with Wild 40 or less."
+    },
+    {
+      "name": "chart.balanced_regions",
+      "type": "counter",
+      "default": 0,
+      "description": "Written at the tally: peopled regions (of 6) with a lane kept and Wild 45 or more."
+    },
+    {
+      "name": "toll",
+      "type": "ledger",
+      "default": [],
+      "description": "Wrecks and drownings from wildness, at each Tide Reckoning. At most one of each per region.",
+      "fields": [
+        "region",
+        "kind",
+        "person",
+        "outcome",
+        "chapter"
+      ]
+    },
+    {
+      "name": "stirs",
+      "type": "ledger",
+      "default": [],
+      "description": "Every tideline stone choice: Still, Ripple, Raise or Rouse.",
+      "fields": [
+        "region",
+        "choice",
+        "chapter"
+      ]
+    },
+    {
+      "name": "news",
+      "type": "ledger",
+      "default": [],
+      "description": "News won at Liar's Tide.",
+      "fields": [
+        "source",
+        "topic"
+      ]
+    },
+    {
+      "name": "chits",
+      "type": "ledger",
+      "default": [],
+      "description": "The tab: Alexi's chits as they are found, one to a region, each a different way. Eight in all.",
+      "fields": [
+        "number",
+        "pledge",
+        "found",
+        "chapter"
+      ]
+    },
+    {
+      "name": "bells",
+      "type": "ledger",
+      "default": [],
+      "description": "Ships of the Standing Fleet named by ringing their bells in the Deep. Each answers one Named Debt in the final match.",
+      "fields": [
+        "ship",
+        "chapter"
+      ]
+    },
+    {
+      "name": "writ.handed",
+      "type": "bool",
+      "default": false,
+      "description": "The princess has handed over the writ naming Alexi principal debtor and her father's house surety: at once, in chapter 1, if a second run shows her the bottle on the cabin wall (the open-book start); otherwise it is not handed but falls, at the Second Collision."
+    },
+    {
+      "name": "writ.fallen",
+      "type": "bool",
+      "default": false,
+      "description": "The Second Collision (s-second-collision): in the mirror gallery he cannot stop, hits her again, and the writ falls out between them. She leaves with it."
+    },
+    {
+      "name": "cabin.tagged",
+      "type": "bool",
+      "default": false,
+      "description": "The Inventory (s-the-inventory): the clerks have tagged the cabin walls as the surety's security. The fourteen objects keep their tags to the end of the run."
+    },
+    {
+      "name": "has_photograph",
+      "type": "bool",
+      "default": false,
+      "description": "The Oars (s-the-oars): the king gives back the one untagged thing, the dinghy's oars, and the photograph of a young man at an oar beside Alexi."
+    },
+    {
+      "name": "cup_choice",
+      "type": "enum",
+      "default": "none",
+      "values": [
+        "none",
+        "board",
+        "salary"
+      ],
+      "description": "The Cup (s-the-cup): the Lord of Tea pours the blend from the jar in Alexi's own cabinet and offers a salary, Harbourmaster-General, tides to a timetable. 'salary' takes it and skips the final match (The Lord's Peace); 'board' sits down to play."
+    },
+    {
+      "name": "meta.runs",
+      "type": "counter",
+      "default": 0,
+      "description": "Finished runs, kept across new games (the only flag that is). From 1 the second playthrough's changes apply: the bottle may be shown to her in chapter 1, and the future scholars footnote the pages."
+    },
+    {
+      "name": "meta.last_ending",
+      "type": "enum",
+      "default": "none",
+      "values": [
+        "none",
+        "the-charter",
+        "paid-in-kind",
+        "no-lord",
+        "the-wild-sea",
+        "the-lords-peace"
+      ],
+      "description": "The ending of the last finished run, kept across new games: the future scholars' footnotes disagree about it."
+    }
+  ]
+}

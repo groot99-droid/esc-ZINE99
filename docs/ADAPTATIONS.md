@@ -1,5 +1,7 @@
 # Ten Game Adaptations
 
+> **Status, 2026-11-19:** Historical record, kept as written on 2026-11-12. Current state: each game here was developed into its own design, `games/<slug>/DESIGN.md`, with its data in `games/<slug>/data/`, and then by the accepted development of 2026-11-15 (`docs/DEEP_DIVE.md`). Names, endings and scope have changed since (every game now has five endings, Missing Campsites six). Superseded by the ten `DESIGN.md` files; its "Added" lists stay for the author to approve or strike.
+
 
 Ten of your works built out as games, each with a story, a gameplay design and a world script, so you can judge them side by side. Lines in quotation marks are verbatim from your text. Anything listed under "Added" is my proposal for the game, not your prose, and nothing here changes the originals.
 

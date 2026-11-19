@@ -1,0 +1,128 @@
+{
+  "endings": [
+    {
+      "id": "the-charter",
+      "name": "The Charter",
+      "as_written": false,
+      "priority": 1,
+      "when": {
+        "all": [
+          {
+            "is": "tea.final_result",
+            "eq": "draw"
+          },
+          {
+            "is": "chart.balanced_regions",
+            "gte": 3
+          },
+          {
+            "is": "devotion",
+            "gte": 50
+          },
+          {
+            "is": "princess.trust",
+            "gte": 60
+          }
+        ]
+      },
+      "summary": "The final match is signed at 4-4. Alexi and the princess write terms between a god and the people who sail: lanes kept calm, wild water left wild. Cost: the tab becomes a schedule of the terms, every pledge in it a clause he keeps for good, and the toll is read out on the terms' last page as the reason for the lanes.",
+      "final_scenes": [
+        "s-tideline-final",
+        "s-end-charter"
+      ]
+    },
+    {
+      "id": "paid-in-kind",
+      "name": "Paid in Kind",
+      "as_written": false,
+      "priority": 2,
+      "when": {
+        "all": [
+          {
+            "is": "tea.final_result",
+            "eq": "win"
+          },
+          {
+            "is": "final_choice",
+            "eq": "pay"
+          },
+          {
+            "is": "pay_open",
+            "eq": true
+          },
+          {
+            "is": "tab.matched",
+            "gte": 8
+          }
+        ]
+      },
+      "summary": "After a win, with all eight chits pinned to what they bought, he unsigns them at the tideline: eight counter-clockwise stirs, each taking a tier off the rose ring for good. The Company's claim on the sea is gone; what it built and pays for stays. He is a god who owes nothing and can raise a ripple. Cost: he can never dive for anyone again, the wild regions stay as wild as the player left them, and the toll is entered as “outstanding, for ever”.",
+      "final_scenes": [
+        "s-tideline-final",
+        "s-end-paid-in-kind"
+      ]
+    },
+    {
+      "id": "no-lord",
+      "name": "No Lord",
+      "as_written": false,
+      "priority": 3,
+      "when": {
+        "all": [
+          {
+            "is": "tea.final_result",
+            "eq": "win"
+          },
+          {
+            "is": "final_choice",
+            "eq": "relinquish"
+          }
+        ]
+      },
+      "summary": "Alexi beats the Lord of Tea and gives up the sea, which was not meant to be owned by anyone. He becomes a mortal sailor; the Company's charters and its lights fall. Cost: the debtor ceases to exist, so the debt dies with him, and so does anyone who could answer for the drowned; the epilogue lists, region by region, where wrecks will now come back with no one to answer to.",
+      "final_scenes": [
+        "s-tideline-final",
+        "s-end-no-lord"
+      ]
+    },
+    {
+      "id": "the-wild-sea",
+      "name": "The Wild Sea",
+      "as_written": false,
+      "priority": 4,
+      "when": {
+        "all": [
+          {
+            "is": "tea.final_result",
+            "eq": "win"
+          },
+          {
+            "is": "final_choice",
+            "eq": "keep"
+          },
+          {
+            "is": "chart.wild_regions",
+            "gte": 5
+          }
+        ]
+      },
+      "summary": "Alexi beats the Lord of Tea and keeps the sea, and repudiates the tab. He is the god again; the hymns come back, and so do the wrecks. Cost: the surety is called, and the princess leaves the boat to go ashore and face it for her father's house; the toll is sung to the hymn's tune, by name.",
+      "final_scenes": [
+        "s-tideline-final",
+        "s-end-wild-sea"
+      ]
+    },
+    {
+      "id": "the-lords-peace",
+      "name": "The Lord's Peace",
+      "as_written": false,
+      "priority": 5,
+      "when": true,
+      "summary": "The Lord of Tea owns every ship that sails. The sea is safe, and Alexi is a man on an old boat whose tide no longer answers. Cost: he took the salary, or lost the board; the last bottle is Company issue; the Wreck Book closes, and so does every hymn.",
+      "final_scenes": [
+        "s-tideline-final",
+        "s-end-lords-peace"
+      ]
+    }
+  ]
+}

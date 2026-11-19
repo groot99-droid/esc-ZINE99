@@ -1,0 +1,731 @@
+{
+  "game": "missing-campsites",
+  "location": "stairwell",
+  "name": "Agnes's stairwell and door",
+  "reference": "assets/locations/stairwell.jpg",
+  "bounds_m": [
+    4,
+    6,
+    9
+  ],
+  "origin": "foot of the stairs; the first flight climbs +y on the west side to the mid landing, the second climbs -y on the east side to Agnes's landing at 6 m, her door in the -y wall",
+  "materials": {
+    "plaster": {
+      "color": [
+        0.78,
+        0.72,
+        0.66
+      ],
+      "roughness": 0.95
+    },
+    "stone-step": {
+      "color": [
+        0.55,
+        0.53,
+        0.5
+      ],
+      "roughness": 0.9
+    },
+    "door-olive": {
+      "color": [
+        0.42,
+        0.42,
+        0.32
+      ],
+      "roughness": 0.7
+    },
+    "rail": {
+      "color": [
+        0.2,
+        0.14,
+        0.1
+      ],
+      "roughness": 0.5
+    },
+    "dusk-window": {
+      "color": [
+        0.35,
+        0.35,
+        0.55
+      ],
+      "roughness": 0.1,
+      "emission": 0.3
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        4,
+        6,
+        0.1
+      ],
+      "location": [
+        0,
+        0,
+        -0.05
+      ],
+      "material": "stone-step"
+    },
+    {
+      "id": "wall-west",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        6,
+        9
+      ],
+      "location": [
+        -2,
+        0,
+        4.5
+      ],
+      "material": "plaster"
+    },
+    {
+      "id": "wall-east",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        6,
+        9
+      ],
+      "location": [
+        2,
+        0,
+        4.5
+      ],
+      "material": "plaster"
+    },
+    {
+      "id": "wall-north",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        4,
+        0.15,
+        9
+      ],
+      "location": [
+        0,
+        3,
+        4.5
+      ],
+      "material": "plaster"
+    },
+    {
+      "id": "wall-south",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        4,
+        0.15,
+        9
+      ],
+      "location": [
+        0,
+        -3,
+        4.5
+      ],
+      "material": "plaster"
+    },
+    {
+      "id": "ceiling",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        4,
+        6,
+        0.1
+      ],
+      "location": [
+        0,
+        0,
+        9.05
+      ],
+      "material": "plaster"
+    },
+    {
+      "id": "landing-mid",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        4,
+        1.6,
+        0.2
+      ],
+      "location": [
+        0,
+        2.2,
+        2.9
+      ],
+      "material": "stone-step"
+    },
+    {
+      "id": "landing-top",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        4,
+        1.6,
+        0.2
+      ],
+      "location": [
+        0,
+        -2.2,
+        5.9
+      ],
+      "material": "stone-step"
+    },
+    {
+      "id": "door-agnes",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        1.0,
+        0.08,
+        2.1
+      ],
+      "location": [
+        -0.8,
+        -2.94,
+        7.05
+      ],
+      "material": "door-olive",
+      "collide": false
+    },
+    {
+      "id": "window-mid",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        0.9,
+        0.05,
+        0.9
+      ],
+      "location": [
+        1.0,
+        2.94,
+        4.4
+      ],
+      "material": "dusk-window",
+      "collide": false
+    },
+    {
+      "id": "rail-a",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.06,
+        3.6,
+        0.06
+      ],
+      "location": [
+        -0.05,
+        -0.2,
+        2.4
+      ],
+      "material": "rail",
+      "rotation_deg": [
+        39.8,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "rail-b",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.06,
+        3.6,
+        0.06
+      ],
+      "location": [
+        0.05,
+        -0.2,
+        5.4
+      ],
+      "material": "rail",
+      "rotation_deg": [
+        -39.8,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "step-a1",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.9,
+        0.3,
+        0.3
+      ],
+      "location": [
+        -1.0,
+        -1.25,
+        0.15
+      ],
+      "material": "stone-step"
+    },
+    {
+      "id": "step-a2",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.9,
+        0.3,
+        0.6
+      ],
+      "location": [
+        -1.0,
+        -0.95,
+        0.3
+      ],
+      "material": "stone-step"
+    },
+    {
+      "id": "step-a3",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.9,
+        0.3,
+        0.9
+      ],
+      "location": [
+        -1.0,
+        -0.65,
+        0.45
+      ],
+      "material": "stone-step"
+    },
+    {
+      "id": "step-a4",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.9,
+        0.3,
+        1.2
+      ],
+      "location": [
+        -1.0,
+        -0.35,
+        0.6
+      ],
+      "material": "stone-step"
+    },
+    {
+      "id": "step-a5",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.9,
+        0.3,
+        1.5
+      ],
+      "location": [
+        -1.0,
+        -0.05,
+        0.75
+      ],
+      "material": "stone-step"
+    },
+    {
+      "id": "step-a6",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.9,
+        0.3,
+        1.8
+      ],
+      "location": [
+        -1.0,
+        0.25,
+        0.9
+      ],
+      "material": "stone-step"
+    },
+    {
+      "id": "step-a7",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.9,
+        0.3,
+        2.1
+      ],
+      "location": [
+        -1.0,
+        0.55,
+        1.05
+      ],
+      "material": "stone-step"
+    },
+    {
+      "id": "step-a8",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.9,
+        0.3,
+        2.4
+      ],
+      "location": [
+        -1.0,
+        0.85,
+        1.2
+      ],
+      "material": "stone-step"
+    },
+    {
+      "id": "step-a9",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.9,
+        0.3,
+        2.7
+      ],
+      "location": [
+        -1.0,
+        1.15,
+        1.35
+      ],
+      "material": "stone-step"
+    },
+    {
+      "id": "step-a10",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.9,
+        0.3,
+        3.0
+      ],
+      "location": [
+        -1.0,
+        1.45,
+        1.5
+      ],
+      "material": "stone-step"
+    },
+    {
+      "id": "step-b1",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.9,
+        0.3,
+        0.3
+      ],
+      "location": [
+        1.0,
+        1.25,
+        3.15
+      ],
+      "material": "stone-step"
+    },
+    {
+      "id": "step-b2",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.9,
+        0.3,
+        0.3
+      ],
+      "location": [
+        1.0,
+        0.95,
+        3.45
+      ],
+      "material": "stone-step"
+    },
+    {
+      "id": "step-b3",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.9,
+        0.3,
+        0.3
+      ],
+      "location": [
+        1.0,
+        0.65,
+        3.75
+      ],
+      "material": "stone-step"
+    },
+    {
+      "id": "step-b4",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.9,
+        0.3,
+        0.3
+      ],
+      "location": [
+        1.0,
+        0.35,
+        4.05
+      ],
+      "material": "stone-step"
+    },
+    {
+      "id": "step-b5",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.9,
+        0.3,
+        0.3
+      ],
+      "location": [
+        1.0,
+        0.05,
+        4.35
+      ],
+      "material": "stone-step"
+    },
+    {
+      "id": "step-b6",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.9,
+        0.3,
+        0.3
+      ],
+      "location": [
+        1.0,
+        -0.25,
+        4.65
+      ],
+      "material": "stone-step"
+    },
+    {
+      "id": "step-b7",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.9,
+        0.3,
+        0.3
+      ],
+      "location": [
+        1.0,
+        -0.55,
+        4.95
+      ],
+      "material": "stone-step"
+    },
+    {
+      "id": "step-b8",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.9,
+        0.3,
+        0.3
+      ],
+      "location": [
+        1.0,
+        -0.85,
+        5.25
+      ],
+      "material": "stone-step"
+    },
+    {
+      "id": "step-b9",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.9,
+        0.3,
+        0.3
+      ],
+      "location": [
+        1.0,
+        -1.15,
+        5.55
+      ],
+      "material": "stone-step"
+    },
+    {
+      "id": "step-b10",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.9,
+        0.3,
+        0.3
+      ],
+      "location": [
+        1.0,
+        -1.45,
+        5.85
+      ],
+      "material": "stone-step"
+    }
+  ],
+  "props": [
+    {
+      "id": "postcard",
+      "object": "postcard",
+      "location": [
+        -1.85,
+        -2.0,
+        7.2
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        270
+      ],
+      "ground": false,
+      "height_m": 0.1
+    },
+    {
+      "id": "notebook",
+      "object": "notebook",
+      "location": [
+        -1.2,
+        -2.2,
+        6.0
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "height_m": 0.02
+    }
+  ],
+  "scenes": {
+    "mothers_door": {
+      "note": "Held. Evening; a warm bulb on each landing. Agnes's door. If Tam kept her line: 'Site 21. The split boulder. You slept in the crack of it.' Agnes: 'That sounds like a lovely place.'",
+      "world": {
+        "color": [
+          0.1,
+          0.09,
+          0.12
+        ],
+        "strength": 0.2
+      },
+      "lights": [
+        {
+          "name": "bulb-ground",
+          "type": "POINT",
+          "location": [
+            0.5,
+            -1.0,
+            2.7
+          ],
+          "energy": 40,
+          "size": 0.08,
+          "color": [
+            1.0,
+            0.8,
+            0.55
+          ]
+        },
+        {
+          "name": "bulb-mid",
+          "type": "POINT",
+          "location": [
+            1.0,
+            2.0,
+            5.6
+          ],
+          "energy": 40,
+          "size": 0.08,
+          "color": [
+            1.0,
+            0.8,
+            0.55
+          ]
+        },
+        {
+          "name": "bulb-top",
+          "type": "POINT",
+          "location": [
+            0.5,
+            -2.0,
+            8.6
+          ],
+          "energy": 40,
+          "size": 0.08,
+          "color": [
+            1.0,
+            0.8,
+            0.55
+          ]
+        },
+        {
+          "name": "window-dusk",
+          "type": "AREA",
+          "location": [
+            1.0,
+            2.8,
+            4.4
+          ],
+          "energy": 15,
+          "size": 0.9,
+          "color": [
+            0.5,
+            0.5,
+            0.8
+          ],
+          "look_at": [
+            0,
+            0,
+            4
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.2,
+          -1.8,
+          7.65
+        ],
+        "look_at": [
+          -0.8,
+          -2.9,
+          7.2
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0.2,
+          -1.8,
+          6.0
+        ],
+        "facing_deg": 137.7
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "postcard",
+          "verb": "Read her line aloud"
+        },
+        {
+          "prop": "notebook",
+          "verb": "Read from the notebook"
+        }
+      ]
+    }
+  }
+}

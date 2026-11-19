@@ -1,0 +1,541 @@
+{
+  "game": "endless-temple",
+  "location": "xandri-hut",
+  "name": "Xandri's hut by night",
+  "reference": "assets/locations/xandri-hut.jpg",
+  "bounds_m": [
+    4,
+    4,
+    3
+  ],
+  "origin": "floor centre; +y toward the back of the hut (pitcher and bowl); the low door on the -y side; the mirror hangs on the north-east pole, the pack against the east wall",
+  "materials": {
+    "earth": {
+      "color": [
+        0.62,
+        0.45,
+        0.28
+      ],
+      "roughness": 0.95
+    },
+    "thatch": {
+      "color": [
+        0.4,
+        0.32,
+        0.22
+      ],
+      "roughness": 0.95
+    },
+    "pole-wood": {
+      "color": [
+        0.38,
+        0.26,
+        0.16
+      ],
+      "roughness": 0.85
+    },
+    "bedroll": {
+      "color": [
+        0.55,
+        0.45,
+        0.32
+      ],
+      "roughness": 0.95
+    },
+    "clay": {
+      "color": [
+        0.6,
+        0.35,
+        0.2
+      ],
+      "roughness": 0.8
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor",
+      "shape": "cylinder",
+      "role": "floor",
+      "size_m": [
+        3.8,
+        3.8,
+        0.1
+      ],
+      "location": [
+        0.0,
+        0.0,
+        -0.05
+      ],
+      "material": "earth"
+    },
+    {
+      "id": "wall-1",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.533,
+        0.2,
+        1.3
+      ],
+      "location": [
+        1.85,
+        0.0,
+        0.65
+      ],
+      "material": "earth",
+      "rotation_deg": [
+        0.0,
+        0.0,
+        90.0
+      ]
+    },
+    {
+      "id": "wall-2",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.533,
+        0.2,
+        1.3
+      ],
+      "location": [
+        1.308,
+        1.308,
+        0.65
+      ],
+      "material": "earth",
+      "rotation_deg": [
+        0.0,
+        0.0,
+        135.0
+      ]
+    },
+    {
+      "id": "wall-3",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.533,
+        0.2,
+        1.3
+      ],
+      "location": [
+        0.0,
+        1.85,
+        0.65
+      ],
+      "material": "earth",
+      "rotation_deg": [
+        0.0,
+        0.0,
+        180.0
+      ]
+    },
+    {
+      "id": "wall-4",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.533,
+        0.2,
+        1.3
+      ],
+      "location": [
+        -1.308,
+        1.308,
+        0.65
+      ],
+      "material": "earth",
+      "rotation_deg": [
+        0.0,
+        0.0,
+        225.0
+      ]
+    },
+    {
+      "id": "wall-5",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.533,
+        0.2,
+        1.3
+      ],
+      "location": [
+        -1.85,
+        0.0,
+        0.65
+      ],
+      "material": "earth",
+      "rotation_deg": [
+        0.0,
+        0.0,
+        270.0
+      ]
+    },
+    {
+      "id": "wall-6",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.533,
+        0.2,
+        1.3
+      ],
+      "location": [
+        -1.308,
+        -1.308,
+        0.65
+      ],
+      "material": "earth",
+      "rotation_deg": [
+        0.0,
+        0.0,
+        315.0
+      ]
+    },
+    {
+      "id": "wall-8",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.533,
+        0.2,
+        1.3
+      ],
+      "location": [
+        1.308,
+        -1.308,
+        0.65
+      ],
+      "material": "earth",
+      "rotation_deg": [
+        0.0,
+        0.0,
+        405.0
+      ]
+    },
+    {
+      "id": "door-jamb-west",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.366,
+        0.2,
+        1.3
+      ],
+      "location": [
+        -0.583,
+        -1.85,
+        0.65
+      ],
+      "material": "earth"
+    },
+    {
+      "id": "door-jamb-east",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.366,
+        0.2,
+        1.3
+      ],
+      "location": [
+        0.583,
+        -1.85,
+        0.65
+      ],
+      "material": "earth"
+    },
+    {
+      "id": "dome",
+      "shape": "sphere",
+      "role": "ceiling",
+      "size_m": [
+        3.9,
+        3.9,
+        3.4
+      ],
+      "location": [
+        0.0,
+        0.0,
+        1.3
+      ],
+      "material": "thatch",
+      "collide": false
+    },
+    {
+      "id": "pole-1",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.1,
+        0.1,
+        2.2
+      ],
+      "location": [
+        1.49,
+        0.86,
+        1.1
+      ],
+      "material": "pole-wood"
+    },
+    {
+      "id": "pole-2",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.1,
+        0.1,
+        2.2
+      ],
+      "location": [
+        0.445,
+        1.661,
+        1.1
+      ],
+      "material": "pole-wood"
+    },
+    {
+      "id": "pole-3",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.1,
+        0.1,
+        2.2
+      ],
+      "location": [
+        -0.445,
+        1.661,
+        1.1
+      ],
+      "material": "pole-wood"
+    },
+    {
+      "id": "pole-4",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.1,
+        0.1,
+        2.2
+      ],
+      "location": [
+        -1.49,
+        0.86,
+        1.1
+      ],
+      "material": "pole-wood"
+    },
+    {
+      "id": "bedroll",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.8,
+        0.6,
+        0.12
+      ],
+      "location": [
+        -0.6,
+        0.3,
+        0.06
+      ],
+      "material": "bedroll",
+      "rotation_deg": [
+        0.0,
+        0.0,
+        20.0
+      ]
+    },
+    {
+      "id": "stool",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.4,
+        0.3,
+        0.3
+      ],
+      "location": [
+        0.25,
+        -0.3,
+        0.15
+      ],
+      "material": "pole-wood"
+    },
+    {
+      "id": "pitcher",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.2,
+        0.2,
+        0.3
+      ],
+      "location": [
+        -0.35,
+        1.1,
+        0.15
+      ],
+      "material": "clay"
+    },
+    {
+      "id": "wash-bowl",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.35,
+        0.35,
+        0.12
+      ],
+      "location": [
+        0.0,
+        1.0,
+        0.06
+      ],
+      "material": "clay"
+    }
+  ],
+  "props": [
+    {
+      "id": "mirror",
+      "object": "hut-mirror",
+      "location": [
+        1.41,
+        0.81,
+        1.5
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        -60.0
+      ],
+      "ground": false
+    },
+    {
+      "id": "pack",
+      "object": "travel-pack",
+      "location": [
+        1.35,
+        -0.4,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        -90.0
+      ]
+    },
+    {
+      "id": "waterskin",
+      "object": "waterskin",
+      "location": [
+        1.3,
+        -0.95,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        -106.7
+      ]
+    }
+  ],
+  "scenes": {
+    "s3_hut_night": {
+      "note": "c2: \"Later that night, Xandri lay awake in his room.\" Moonlight in shafts through holes in the roof, deep blue night. Wash at the mirror (his scaled face, first seen), pack three of six items; leaf-cord and waterskin appear only if the shrine-store tablet gave them. The tea fades to third person here.",
+      "world": {
+        "color": [
+          0.04,
+          0.06,
+          0.15
+        ],
+        "strength": 0.25
+      },
+      "lights": [
+        {
+          "name": "moon-shaft-a",
+          "type": "SPOT",
+          "location": [
+            0.6,
+            0.4,
+            4.5
+          ],
+          "look_at": [
+            0.45,
+            0.15,
+            0.0
+          ],
+          "energy": 160,
+          "size": 0.1,
+          "color": [
+            0.6,
+            0.7,
+            1.0
+          ]
+        },
+        {
+          "name": "moon-shaft-b",
+          "type": "SPOT",
+          "location": [
+            -0.8,
+            0.8,
+            4.5
+          ],
+          "look_at": [
+            -0.7,
+            0.45,
+            0.0
+          ],
+          "energy": 110,
+          "size": 0.1,
+          "color": [
+            0.6,
+            0.7,
+            1.0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -0.3,
+          -1.7,
+          2.1
+        ],
+        "look_at": [
+          0.7,
+          0.5,
+          0.8
+        ],
+        "lens_mm": 24,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          0.0,
+          -1.1,
+          0.0
+        ],
+        "facing_deg": -23.6
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "mirror",
+          "verb": "Wash at the mirror"
+        },
+        {
+          "prop": "waterskin",
+          "verb": "Take the waterskin"
+        },
+        {
+          "prop": "pack",
+          "verb": "Pack three of the six things",
+          "leads_to": "s3_moonlit_dunes"
+        }
+      ]
+    }
+  }
+}

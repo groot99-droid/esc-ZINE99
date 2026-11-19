@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="deck-spades-10-t deck-spades-10-d">
+<title id="deck-spades-10-t">Deco deck: 10 of spades</title>
+<desc id="deck-spades-10-d">The 10 of spades from the office's deco deck: 10 pips over a faint gold fan ground in a stepped frame, the house key in two corners.</desc>
+<defs><radialGradient id="deck-spades-10-rg1" cx="0.5" cy="0.5" r="0.8"><stop offset="0%" stop-color="#fff" stop-opacity="0.3"/><stop offset="70%" stop-color="#fff" stop-opacity="0"/><stop offset="100%" stop-color="#8a6a28" stop-opacity="0.2"/></radialGradient></defs>
+<rect x="0" y="0" width="300" height="420" rx="18" fill="#f3ead2" stroke="#7a6630" stroke-width="2"/>
+<rect x="0" y="0" width="300" height="420" rx="18" fill="url(#deck-spades-10-rg1)"/>
+<polygon points="50,22 250,22 250,36 264,36 264,50 278,50 278,370 264,370 264,384 250,384 250,398 50,398 50,384 36,384 36,370 22,370 22,50 36,50 36,36 50,36" fill="none" stroke="#d4ad57" stroke-width="2.2"/>
+<rect x="30" y="30" width="240" height="360" fill="none" stroke="#d4ad57" stroke-width="0.8" opacity="0.7"/>
+<path d="M150,250L46.1,190M150,250L60.8,169.7M150,250L79.5,152.9M150,250L101.2,140.4M150,250L125.1,132.6M150,250L150,130M150,250L174.9,132.6M150,250L198.8,140.4M150,250L220.5,152.9M150,250L239.2,169.7M150,250L253.9,190" fill="none" stroke="#d4ad57" stroke-width="1" opacity="0.5"/>
+<path d="M113.6,229 A42,42 0 0,1 186.4,229" fill="none" stroke="#d4ad57" stroke-width="1.2" opacity="0.5"/>
+<path d="M87.6,214 A72,72 0 0,1 212.4,214" fill="none" stroke="#d4ad57" stroke-width="1.2" opacity="0.5"/>
+<path d="M61.7,199 A102,102 0 0,1 238.3,199" fill="none" stroke="#d4ad57" stroke-width="1.2" opacity="0.5"/>
+<path d="M150,170L253.9,230M150,170L239.2,250.3M150,170L220.5,267.1M150,170L198.8,279.6M150,170L174.9,287.4M150,170L150,290M150,170L125.1,287.4M150,170L101.2,279.6M150,170L79.5,267.1M150,170L60.8,250.3M150,170L46.1,230" fill="none" stroke="#d4ad57" stroke-width="1" opacity="0.5"/>
+<path d="M100,77 C121,92 118,107 100,98 C82,107 79,92 100,77Z M100,95 L106,110 L94,110Z" fill="#13140f"/>
+<path d="M200,77 C221,92 218,107 200,98 C182,107 179,92 200,77Z M200,95 L206,110 L194,110Z" fill="#13140f"/>
+<path d="M150,116.3 C171,131.3 168,146.3 150,137.3 C132,146.3 129,131.3 150,116.3Z M150,134.3 L156,149.3 L144,149.3Z" fill="#13140f"/>
+<path d="M100,155.7 C121,170.7 118,185.7 100,176.7 C82,185.7 79,170.7 100,155.7Z M100,173.7 L106,188.7 L94,188.7Z" fill="#13140f"/>
+<path d="M200,155.7 C221,170.7 218,185.7 200,176.7 C182,185.7 179,170.7 200,155.7Z M200,173.7 L206,188.7 L194,188.7Z" fill="#13140f"/>
+<path d="M100,234.3 C121,249.3 118,264.3 100,255.3 C82,264.3 79,249.3 100,234.3Z M100,252.3 L106,267.3 L94,267.3Z" fill="#13140f" transform="rotate(180 100 249.3)"/>
+<path d="M200,234.3 C221,249.3 218,264.3 200,255.3 C182,264.3 179,249.3 200,234.3Z M200,252.3 L206,267.3 L194,267.3Z" fill="#13140f" transform="rotate(180 200 249.3)"/>
+<path d="M150,273.7 C171,288.7 168,303.7 150,294.7 C132,303.7 129,288.7 150,273.7Z M150,291.7 L156,306.7 L144,306.7Z" fill="#13140f" transform="rotate(180 150 288.7)"/>
+<path d="M100,313 C121,328 118,343 100,334 C82,343 79,328 100,313Z M100,331 L106,346 L94,346Z" fill="#13140f" transform="rotate(180 100 328)"/>
+<path d="M200,313 C221,328 218,343 200,334 C182,343 179,328 200,313Z M200,331 L206,346 L194,346Z" fill="#13140f" transform="rotate(180 200 328)"/>
+<g >
+<rect x="30" y="30" width="46" height="92" fill="#f3ead2"/>
+<g fill="none" stroke="#13140f" stroke-width="0.150" stroke-linecap="round" stroke-linejoin="round">
+<path d="M0,.2 L.24,0 V1" transform="translate(36.3 40) scale(34)"/>
+<path d="M.28,0 A.28,.5 0 1 0 .28,1 A.28,.5 0 1 0 .28,0" transform="translate(50.6 40) scale(34)"/>
+</g>
+<path d="M53,89 C68.4,100 66.2,111 53,104.4 C39.8,111 37.6,100 53,89Z M53,102.2 L57.4,113.2 L48.6,113.2Z" fill="#13140f"/>
+</g>
+<g transform="rotate(180 150 210)">
+<rect x="30" y="30" width="46" height="92" fill="#f3ead2"/>
+<g fill="none" stroke="#13140f" stroke-width="0.150" stroke-linecap="round" stroke-linejoin="round">
+<path d="M0,.2 L.24,0 V1" transform="translate(36.3 40) scale(34)"/>
+<path d="M.28,0 A.28,.5 0 1 0 .28,1 A.28,.5 0 1 0 .28,0" transform="translate(50.6 40) scale(34)"/>
+</g>
+<path d="M53,89 C68.4,100 66.2,111 53,104.4 C39.8,111 37.6,100 53,89Z M53,102.2 L57.4,113.2 L48.6,113.2Z" fill="#13140f"/>
+</g>
+<circle cx="247" cy="51.8" r="4.5" fill="none" stroke="#d4ad57" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="247" cy="51.8" r="1.8" fill="none" stroke="#d4ad57" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M247,56.2 V72.8 M247,66.8 h4.2 M247,70.2 h3 M247,72.8 h4.5" fill="none" stroke="#d4ad57" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="53" cy="351.8" r="4.5" fill="none" stroke="#d4ad57" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="53" cy="351.8" r="1.8" fill="none" stroke="#d4ad57" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M53,356.2 V372.8 M53,366.8 h4.2 M53,370.2 h3 M53,372.8 h4.5" fill="none" stroke="#d4ad57" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

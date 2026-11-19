@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-labelledby="glyph-floor-went-first-t glyph-floor-went-first-d">
+<title id="glyph-floor-went-first-t">Chronicle glyph: The floor went first</title>
+<desc id="glyph-floor-went-first-d">A new chronicle glyph, printed letterpress in brown over an off-register tint. Underhollow as Sorrel's grandmother told it: dwellings standing on a broken line, the floor under them gone to dots.</desc>
+<defs><filter id="glyph-floor-went-first-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="438"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><filter id="glyph-floor-went-first-rough2"><feTurbulence type="turbulence" baseFrequency="0.1" numOctaves="2" seed="877" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="1.8"/></filter></defs>
+<rect x="0" y="0" width="240" height="240" fill="#f1e7d0"/>
+<rect x="0" y="0" width="240" height="240" filter="url(#glyph-floor-went-first-grain1)"/>
+<rect x="14" y="14" width="212" height="212" fill="none" stroke="#2b1810" stroke-width="2"/>
+<rect x="22" y="22" width="196" height="196" fill="none" stroke="#2b1810" stroke-width="0.8"/>
+<circle cx="124" cy="101" r="62" fill="#d9902a" opacity="0.6"/>
+<g filter="url(#glyph-floor-went-first-rough2)">
+<circle cx="120" cy="104" r="62" fill="none" stroke="#5a3424" stroke-width="2.5"/>
+<path d="M78,98 h84" fill="none" stroke="#2b1810" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="15 15"/>
+<path d="M93,92 v-18 a12,12 0 0,1 24,0 v18 M129,92 v-12 a9,9 0 0,1 18,0 v12" fill="none" stroke="#2b1810" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="90" cy="128" r="5.4" fill="#2b1810"/>
+<circle cx="111" cy="128" r="5.4" fill="#2b1810"/>
+<circle cx="132" cy="128" r="5.4" fill="#2b1810"/>
+<circle cx="153" cy="128" r="5.4" fill="#2b1810"/>
+</g>
+<text x="120" y="204" font-size="11.5" font-family="serif" fill="#2b1810" text-anchor="middle" letter-spacing="1.2" font-weight="bold">THE FLOOR WENT FIRST</text>
+<polygon points="19.7,19.7 14,17 8.3,19.7 11,14 8.3,8.3 14,11 19.7,8.3 17,14" fill="#d9902a" stroke="#2b1810" stroke-width="1"/>
+<polygon points="231.7,19.7 226,17 220.3,19.7 223,14 220.3,8.3 226,11 231.7,8.3 229,14" fill="#d9902a" stroke="#2b1810" stroke-width="1"/>
+<polygon points="19.7,231.7 14,229 8.3,231.7 11,226 8.3,220.3 14,223 19.7,220.3 17,226" fill="#d9902a" stroke="#2b1810" stroke-width="1"/>
+<polygon points="231.7,231.7 226,229 220.3,231.7 223,226 220.3,220.3 226,223 231.7,220.3 229,226" fill="#d9902a" stroke="#2b1810" stroke-width="1"/>
+</svg>

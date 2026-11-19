@@ -1,0 +1,911 @@
+{
+  "game": "stuffed-ones",
+  "location": "cabin-kitchen",
+  "name": "The cabin kitchen",
+  "reference": "assets/locations/cabin-kitchen.jpg",
+  "bounds_m": [
+    5.0,
+    4.0,
+    2.4
+  ],
+  "origin": "floor centre; +y toward the sink wall and its window, the doorway to the living room in the +x wall",
+  "materials": {
+    "cedar-plank": {
+      "color": [
+        0.42,
+        0.259,
+        0.149
+      ],
+      "roughness": 0.9
+    },
+    "worn-pine": {
+      "color": [
+        0.722,
+        0.58,
+        0.416
+      ],
+      "roughness": 0.85
+    },
+    "cabinet-cream": {
+      "color": [
+        0.902,
+        0.863,
+        0.761
+      ],
+      "roughness": 0.7
+    },
+    "plaster": {
+      "color": [
+        0.788,
+        0.725,
+        0.604
+      ],
+      "roughness": 0.95
+    },
+    "window-glass": {
+      "color": [
+        0.85,
+        0.87,
+        0.88
+      ],
+      "roughness": 0.1,
+      "emission": 0.5
+    },
+    "bulb": {
+      "color": [
+        1.0,
+        0.85,
+        0.6
+      ],
+      "roughness": 0.3,
+      "emission": 4.0
+    },
+    "shade": {
+      "color": [
+        0.929,
+        0.91,
+        0.847
+      ],
+      "roughness": 0.8,
+      "emission": 0.8
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        5.0,
+        4.0,
+        0.1
+      ],
+      "location": [
+        0,
+        0,
+        -0.05
+      ],
+      "material": "worn-pine"
+    },
+    {
+      "id": "ceiling",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        5.0,
+        4.0,
+        0.1
+      ],
+      "location": [
+        0,
+        0,
+        2.45
+      ],
+      "material": "plaster"
+    },
+    {
+      "id": "wall-north-0",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        1.8,
+        0.15,
+        2.4
+      ],
+      "location": [
+        -1.6,
+        2.075,
+        1.2
+      ],
+      "material": "cedar-plank"
+    },
+    {
+      "id": "wall-north-1-sill",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.8,
+        0.15,
+        1.05
+      ],
+      "location": [
+        -0.3,
+        2.075,
+        0.525
+      ],
+      "material": "cedar-plank"
+    },
+    {
+      "id": "wall-north-2-head",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.8,
+        0.15,
+        0.55
+      ],
+      "location": [
+        -0.3,
+        2.075,
+        2.125
+      ],
+      "material": "cedar-plank"
+    },
+    {
+      "id": "wall-north-3-glass",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        0.8,
+        0.03,
+        0.8
+      ],
+      "location": [
+        -0.3,
+        2.075,
+        1.45
+      ],
+      "material": "window-glass",
+      "collide": false
+    },
+    {
+      "id": "wall-north-4",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        2.4,
+        0.15,
+        2.4
+      ],
+      "location": [
+        1.3,
+        2.075,
+        1.2
+      ],
+      "material": "cedar-plank"
+    },
+    {
+      "id": "wall-east-0",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        0.5,
+        2.4
+      ],
+      "location": [
+        2.575,
+        -1.75,
+        1.2
+      ],
+      "material": "cedar-plank"
+    },
+    {
+      "id": "wall-east-1-head",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        1.0,
+        0.3
+      ],
+      "location": [
+        2.575,
+        -1.0,
+        2.25
+      ],
+      "material": "cedar-plank"
+    },
+    {
+      "id": "wall-east-2",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        2.5,
+        2.4
+      ],
+      "location": [
+        2.575,
+        0.75,
+        1.2
+      ],
+      "material": "cedar-plank"
+    },
+    {
+      "id": "wall-west",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.15,
+        4.0,
+        2.4
+      ],
+      "location": [
+        -2.575,
+        0,
+        1.2
+      ],
+      "material": "cedar-plank"
+    },
+    {
+      "id": "wall-south",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        5.0,
+        0.15,
+        2.4
+      ],
+      "location": [
+        0,
+        -2.075,
+        1.2
+      ],
+      "material": "cedar-plank"
+    },
+    {
+      "id": "counter",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        2.9,
+        0.6,
+        0.9
+      ],
+      "location": [
+        -0.45,
+        1.7,
+        0.45
+      ],
+      "material": "cabinet-cream"
+    },
+    {
+      "id": "fridge",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.7,
+        0.7,
+        1.5
+      ],
+      "location": [
+        -2.15,
+        1.6,
+        0.75
+      ],
+      "material": "cabinet-cream"
+    },
+    {
+      "id": "wall-shelf-left",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.9,
+        0.2,
+        0.04
+      ],
+      "location": [
+        -1.4,
+        1.9,
+        1.6
+      ],
+      "material": "cabinet-cream"
+    },
+    {
+      "id": "wall-shelf-right",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.9,
+        0.2,
+        0.04
+      ],
+      "location": [
+        0.8,
+        1.9,
+        1.6
+      ],
+      "material": "cabinet-cream"
+    },
+    {
+      "id": "bare-bulb",
+      "shape": "sphere",
+      "role": "trim",
+      "size_m": [
+        0.08,
+        0.08,
+        0.1
+      ],
+      "location": [
+        -1.6,
+        1.92,
+        1.9
+      ],
+      "material": "bulb",
+      "collide": false
+    },
+    {
+      "id": "pendant-shade",
+      "shape": "cone",
+      "role": "trim",
+      "size_m": [
+        0.5,
+        0.5,
+        0.25
+      ],
+      "location": [
+        1.2,
+        -0.4,
+        1.55
+      ],
+      "material": "shade",
+      "collide": false
+    },
+    {
+      "id": "pendant-cord",
+      "shape": "cylinder",
+      "role": "trim",
+      "size_m": [
+        0.01,
+        0.01,
+        0.75
+      ],
+      "location": [
+        1.2,
+        -0.4,
+        2.02
+      ],
+      "material": "plaster",
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "table",
+      "object": "dining-table",
+      "location": [
+        1.2,
+        -0.4,
+        0
+      ]
+    },
+    {
+      "id": "chair-n1",
+      "object": "ladder-back-chair",
+      "location": [
+        0.5,
+        0.25,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "chair-n2",
+      "object": "ladder-back-chair",
+      "location": [
+        1.2,
+        0.25,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "chair-n3",
+      "object": "ladder-back-chair",
+      "location": [
+        1.9,
+        0.25,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "chair-s1",
+      "object": "ladder-back-chair",
+      "location": [
+        0.8,
+        -1.05,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ]
+    },
+    {
+      "id": "chair-s2",
+      "object": "ladder-back-chair",
+      "location": [
+        1.6,
+        -1.05,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ]
+    },
+    {
+      "id": "chair-apart",
+      "object": "ladder-back-chair",
+      "location": [
+        -1.3,
+        -1.2,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "bowl-1",
+      "object": "chili-bowl",
+      "location": [
+        0.5,
+        -0.1,
+        0.76
+      ]
+    },
+    {
+      "id": "mug-1",
+      "object": "coffee-mug",
+      "location": [
+        0.65,
+        -0.1,
+        0.76
+      ]
+    },
+    {
+      "id": "bowl-2",
+      "object": "chili-bowl",
+      "location": [
+        1.2,
+        -0.1,
+        0.76
+      ]
+    },
+    {
+      "id": "mug-2",
+      "object": "coffee-mug",
+      "location": [
+        1.35,
+        -0.1,
+        0.76
+      ]
+    },
+    {
+      "id": "bowl-3",
+      "object": "chili-bowl",
+      "location": [
+        1.9,
+        -0.1,
+        0.76
+      ]
+    },
+    {
+      "id": "mug-3",
+      "object": "coffee-mug",
+      "location": [
+        2.05,
+        -0.1,
+        0.76
+      ]
+    },
+    {
+      "id": "bowl-4",
+      "object": "chili-bowl",
+      "location": [
+        0.8,
+        -0.7,
+        0.76
+      ]
+    },
+    {
+      "id": "mug-4",
+      "object": "coffee-mug",
+      "location": [
+        0.95,
+        -0.7,
+        0.76
+      ]
+    },
+    {
+      "id": "bowl-5",
+      "object": "chili-bowl",
+      "location": [
+        1.6,
+        -0.7,
+        0.76
+      ]
+    },
+    {
+      "id": "mug-5",
+      "object": "coffee-mug",
+      "location": [
+        1.75,
+        -0.7,
+        0.76
+      ]
+    },
+    {
+      "id": "mug-counter",
+      "object": "coffee-mug",
+      "location": [
+        0.6,
+        1.7,
+        0.9
+      ]
+    }
+  ],
+  "scenes": {
+    "a1_dinner": {
+      "note": "First dinner, lamps and fire, 3200 K. Dani serves chili. After, the four play the counting game; you sit apart to mend Marcus's strap (push-in to Stitchwork).",
+      "world": {
+        "color": [
+          0.3,
+          0.22,
+          0.15
+        ],
+        "strength": 0.35
+      },
+      "lights": [
+        {
+          "name": "pendant",
+          "type": "POINT",
+          "location": [
+            1.2,
+            -0.4,
+            1.45
+          ],
+          "energy": 90,
+          "size": 0.2,
+          "color": [
+            1.0,
+            0.72,
+            0.45
+          ]
+        },
+        {
+          "name": "bulb",
+          "type": "POINT",
+          "location": [
+            -1.6,
+            1.85,
+            1.9
+          ],
+          "energy": 30,
+          "size": 0.05,
+          "color": [
+            1.0,
+            0.72,
+            0.45
+          ]
+        },
+        {
+          "name": "fire-spill",
+          "type": "AREA",
+          "location": [
+            2.4,
+            -1.0,
+            1.2
+          ],
+          "energy": 50,
+          "size": 1.0,
+          "color": [
+            1.0,
+            0.55,
+            0.25
+          ],
+          "look_at": [
+            0,
+            -1.0,
+            0.5
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          1.2,
+          -1.05,
+          1.2
+        ],
+        "look_at": [
+          1.2,
+          0.3,
+          0.8
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          1.6,
+          -1.05,
+          0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [
+        "mug-1",
+        "mug-2",
+        "mug-3",
+        "mug-4",
+        "mug-5"
+      ],
+      "interactions": [
+        {
+          "prop": "bowl-5",
+          "verb": "Eat the chili"
+        },
+        {
+          "prop": "table",
+          "verb": "Watch the counting game"
+        },
+        {
+          "prop": "chair-apart",
+          "verb": "Sit apart and mend the strap",
+          "leads_to": "a1_stitch_strap"
+        }
+      ]
+    },
+    "a2_breakfast": {
+      "note": "Flat grey morning. Coffee; quiet talk. Jamie: 'Did anyone else hear\u2026 like\u2026 footsteps last night?' Everyone had; nobody says so.",
+      "world": {
+        "color": [
+          0.62,
+          0.65,
+          0.68
+        ],
+        "strength": 0.45
+      },
+      "lights": [
+        {
+          "name": "window-grey",
+          "type": "AREA",
+          "location": [
+            -0.3,
+            1.9,
+            1.45
+          ],
+          "energy": 160,
+          "size": 0.9,
+          "color": [
+            0.85,
+            0.88,
+            0.92
+          ],
+          "look_at": [
+            0.5,
+            -0.5,
+            0.6
+          ]
+        },
+        {
+          "name": "room-fill",
+          "type": "AREA",
+          "location": [
+            0,
+            0,
+            2.3
+          ],
+          "energy": 40,
+          "size": 3.0,
+          "color": [
+            0.85,
+            0.88,
+            0.92
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.8,
+          -1.05,
+          1.2
+        ],
+        "look_at": [
+          1.4,
+          0.3,
+          0.8
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          0.8,
+          -1.05,
+          0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [
+        "bowl-1",
+        "bowl-2",
+        "bowl-3",
+        "bowl-4",
+        "bowl-5"
+      ],
+      "interactions": [
+        {
+          "prop": "mug-4",
+          "verb": "Drink the coffee"
+        },
+        {
+          "prop": "table",
+          "verb": "Answer Jamie"
+        }
+      ]
+    },
+    "a5_kitchen_bear": {
+      "note": "The third night, one bare bulb. The bear stands on the counter beside a shape in the counter's shadow. 'The bear turned its head toward us.' Input locks after 20 s; I9 cannot be shelved.",
+      "world": {
+        "color": [
+          0.12,
+          0.09,
+          0.07
+        ],
+        "strength": 0.2
+      },
+      "lights": [
+        {
+          "name": "bare-bulb",
+          "type": "POINT",
+          "location": [
+            -1.6,
+            1.85,
+            1.9
+          ],
+          "energy": 45,
+          "size": 0.05,
+          "color": [
+            1.0,
+            0.78,
+            0.5
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          1.8,
+          -1.4,
+          1.65
+        ],
+        "look_at": [
+          -0.6,
+          1.7,
+          1.0
+        ],
+        "lens_mm": 24,
+        "mode": "first-person"
+      },
+      "player_start": {
+        "location": [
+          1.8,
+          -1.4,
+          0
+        ],
+        "facing_deg": 145
+      },
+      "hide": [
+        "bowl-1",
+        "bowl-2",
+        "bowl-3",
+        "bowl-4",
+        "bowl-5",
+        "mug-1",
+        "mug-2",
+        "mug-3",
+        "mug-4",
+        "mug-5"
+      ],
+      "interactions": []
+    },
+    "e_warning_unpick": {
+      "note": "The Warning: on the kitchen table under a flat lamp, at shelf height. Scissors and thread; you are unpicked for keeping enough to choose.",
+      "world": {
+        "color": [
+          0.2,
+          0.18,
+          0.16
+        ],
+        "strength": 0.25
+      },
+      "lights": [
+        {
+          "name": "pendant",
+          "type": "POINT",
+          "location": [
+            1.2,
+            -0.4,
+            1.45
+          ],
+          "energy": 70,
+          "size": 0.2,
+          "color": [
+            1.0,
+            0.72,
+            0.45
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          1.6,
+          -0.4,
+          1.04
+        ],
+        "look_at": [
+          0.5,
+          -0.2,
+          0.9
+        ],
+        "lens_mm": 26,
+        "mode": "fixed"
+      },
+      "player_start": {
+        "location": [
+          1.6,
+          -0.4,
+          0.76
+        ],
+        "facing_deg": 90
+      },
+      "hide": [
+        "bowl-1",
+        "bowl-2",
+        "bowl-3",
+        "bowl-4",
+        "bowl-5",
+        "mug-1",
+        "mug-2",
+        "mug-3",
+        "mug-4",
+        "mug-5"
+      ],
+      "interactions": []
+    }
+  }
+}

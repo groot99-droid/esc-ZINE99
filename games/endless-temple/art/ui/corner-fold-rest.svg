@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-labelledby="corner-fold-rest-t corner-fold-rest-d">
+<title id="corner-fold-rest-t">Corner fold: at rest</title>
+<desc id="corner-fold-rest-d">The Leave corner of a full-page game: a small dog-ear at the top right of a page.</desc>
+<defs><filter id="corner-fold-rest-blur1" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="4"/></filter><clipPath id="corner-fold-rest-clip2"><path d="M0,14 H180 L226,60 V240 H0Z"/></clipPath><filter id="corner-fold-rest-gr3" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="380"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.2 0"/></filter><filter id="corner-fold-rest-blur4" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3"/></filter><linearGradient id="corner-fold-rest-lg5" x1="1" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#D8C9A4"/><stop offset="100%" stop-color="#F7F0DC"/></linearGradient></defs>
+<rect x="0" y="0" width="240" height="240" fill="#3B2617"/>
+<path d="M0,8C80,14 160,2 240,8M0,22C80,28 160,16 240,22M0,36C80,42 160,30 240,36M0,50C80,56 160,44 240,50M0,64C80,70 160,58 240,64M0,78C80,84 160,72 240,78M0,92C80,98 160,86 240,92M0,106C80,112 160,100 240,106M0,120C80,126 160,114 240,120M0,134C80,140 160,128 240,134M0,148C80,154 160,142 240,148M0,162C80,168 160,156 240,162M0,176C80,182 160,170 240,176M0,190C80,196 160,184 240,190M0,204C80,210 160,198 240,204M0,218C80,224 160,212 240,218M0,232C80,238 160,226 240,232" stroke="#22150B" stroke-width="1.2" fill="none" opacity="0.7"/>
+<path d="M0,14 H180 L226,60 V240 H0Z" fill="#000" opacity="0.3" transform="translate(5 6)" filter="url(#corner-fold-rest-blur1)"/>
+<path d="M0,14 H180 L226,60 V240 H0Z" fill="#F3EAD2" stroke="#5A4230" stroke-width="1.2"/>
+<rect x="0" y="0" width="240" height="240" filter="url(#corner-fold-rest-gr3)" clip-path="url(#corner-fold-rest-clip2)"/>
+<path d="M20,70 H150 M20,100 H190 M20,130 H190 M20,160 H170 M20,190 H190" stroke="#CDBB93" stroke-width="3" stroke-linecap="round"/>
+<path d="M180,14 L226,60 L180,60Z" fill="#000" opacity="0.3" transform="translate(-4 5)" filter="url(#corner-fold-rest-blur4)"/>
+<path d="M180,14 L226,60 L180,60Z" fill="url(#corner-fold-rest-lg5)" stroke="#33241A" stroke-width="1.6" stroke-linejoin="round"/>
+<path d="M179.8,14.2 L180.7,16.7 L182.7,19 L185.5,21.4 L188.4,24.3 L191.7,27.3 L195.2,30.6 L198.6,34.2 L202.3,37.7 L205.5,41.6 L209,45.2 L212.3,48.6 L215.3,52 L218.5,54.7 L221.1,57.2 L223.7,58.9 L225.8,60.2 L226.2,59.8 L224.9,57.7 L223.2,55.1 L220.7,52.5 L218,49.3 L214.6,46.3 L211.2,43 L207.6,39.5 L203.7,36.3 L200.2,32.6 L196.6,29.2 L193.3,25.7 L190.3,22.4 L187.4,19.5 L185,16.7 L182.7,14.7 L180.2,13.8Z" fill="#33241A"/>
+</svg>

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "heartstone.json (WrymWretch)",
+  "description": "Heartstone chords and shard trays for its three pages (DESIGN.md section 11).",
+  "type": "object",
+  "required": ["wheel_steps", "rules", "pages"],
+  "$defs": {
+    "pitch": {"type": "integer", "minimum": 0, "maximum": 11},
+    "shard": {"type": "object", "required": ["id", "pitch", "cracks"], "properties": {
+      "id": {"type": "string"}, "pitch": {"$ref": "#/$defs/pitch"}, "realm": {"type": "string"}, "cracks": {"type": "integer", "minimum": 0, "maximum": 2}}},
+    "chord": {"type": "array", "items": {"$ref": "#/$defs/pitch"}}
+  },
+  "properties": {
+    "wheel_steps": {"const": 12},
+    "rules": {"type": "object", "required": ["cracks_to_shatter"]},
+    "pages": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object", "required": ["scene", "slots", "strikes", "fuse"],
+      "properties": {
+        "scene": {"type": "string"}, "slots": {"type": "integer", "minimum": 3, "maximum": 5}, "strikes": {"type": "integer", "minimum": 1},
+        "fuse": {"type": "boolean"},
+        "tray": {"type": "array", "items": {"$ref": "#/$defs/shard"}},
+        "choices": {"type": "array", "items": {"type": "object", "required": ["memory", "chord"], "properties": {
+          "memory": {"type": "string"}, "chord": {"$ref": "#/$defs/chord"}}}},
+        "chord": {"$ref": "#/$defs/chord"},
+        "realm_sets": {"type": "array", "items": {"type": "object", "required": ["realm", "qualifies_if", "shards"], "properties": {
+          "realm": {"type": "string"}, "qualifies_if": {"type": "object", "required": ["memory_gte", "or_trust"]},
+          "shards": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/shard"}}}}},
+        "min_sets": {"type": "integer"}
+      }}}
+  }
+}

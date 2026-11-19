@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="label-lamp-ash-t label-lamp-ash-d">
+<title id="label-lamp-ash-t">Jar label: Lamp-Ash</title>
+<desc id="label-lamp-ash-d">The apothecary label on the lamp-ash jar: the herb drawn in a round window between whiplash stems, its name, and its marks for depth 0, length 2 and binding -1.</desc>
+<defs><clipPath id="label-lamp-ash-clip1"><path d="M22,402 V120 C22,52 80,22 150,22 C220,22 278,52 278,120 V402 Q150,418 22,402Z"/></clipPath><filter id="label-lamp-ash-gr2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="418"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.2 0"/></filter><radialGradient id="label-lamp-ash-rg3" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#E0782A" stop-opacity="0.8"/><stop offset="50%" stop-color="#E0782A" stop-opacity="0.3"/><stop offset="100%" stop-color="#E0782A" stop-opacity="0"/></radialGradient><linearGradient id="label-lamp-ash-lg4" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#ffffff"/><stop offset="20%" stop-color="#ffffff"/><stop offset="100%" stop-color="#3A2A1A"/></linearGradient></defs>
+<rect x="0" y="0" width="300" height="420" fill="#DCE5DC"/>
+<rect x="0" y="0" width="40" height="420" fill="#fff" opacity="0.3"/>
+<rect x="270" y="0" width="30" height="420" fill="#7A8A80" opacity="0.2"/>
+<path d="M22,402 V120 C22,52 80,22 150,22 C220,22 278,52 278,120 V402 Q150,418 22,402Z" fill="#F5ECD4" stroke="#4A3220" stroke-width="3.4" stroke-linejoin="round"/>
+<rect x="0" y="0" width="300" height="420" filter="url(#label-lamp-ash-gr2)" clip-path="url(#label-lamp-ash-clip1)"/>
+<path d="M36,394 V122 C36,66 86,38 150,38 C214,38 264,66 264,122 V394" fill="none" stroke="#9A6F1E" stroke-width="1.6"/>
+<path d="M36.3,392.1 L40.1,384 L44.4,372 L48.9,358.1 L52.1,343.5 L53.3,329.9 L51.6,317.3 L46.6,304.9 L40.7,293 L36.3,281.3 L34.6,270 L37.2,258.9 L42.6,247.5 L48.5,235.2 L53.7,222.8 L56,210.1 L54.2,197.5 L49.7,185.1 L44.2,173.1 L40,161.4 L38.7,150.1 L42,138.2 L48,125.7 L55.3,113.8 L61.9,103.5 L66.2,96.1 L65.8,95.9 L61,103 L54.1,113.1 L46.8,125.1 L40.5,137.7 L37.3,149.9 L38,161.8 L41.9,174 L46.7,186.3 L50.9,198.3 L52,209.9 L49.1,221.2 L43.4,232.8 L36.6,244.5 L31.5,257.1 L29.4,270 L31.5,282.6 L36.7,294.8 L42.6,306.8 L47.6,318.5 L50.7,330.1 L49.5,343 L45.9,357.2 L41.5,371.1 L37.4,383.1 L35.7,391.9Z" fill="#5F7A5E"/>
+<path d="M52,330 C51.6,319 61.4,312.6 73.1,314.8 C72.4,326.4 62.6,332.9 52,330Z" fill="#8E8A82" stroke="#33241A" stroke-width="1.1" stroke-linejoin="round"/>
+<line x1="54" y1="328.4" x2="69.3" y2="316.3" stroke="#33241A" stroke-width="0.7" opacity="0.7"/>
+<path d="M32,270 C42.5,266.7 51.3,274.4 52.3,286.3 C40.9,288.7 32.1,281 32,270Z" fill="#8E8A82" stroke="#33241A" stroke-width="1.1" stroke-linejoin="round"/>
+<line x1="34.1" y1="271.5" x2="49.9" y2="283" stroke="#33241A" stroke-width="0.7" opacity="0.7"/>
+<path d="M54,210 C53.6,199 63.4,192.6 75.1,194.8 C74.4,206.4 64.6,212.9 54,210Z" fill="#8E8A82" stroke="#33241A" stroke-width="1.1" stroke-linejoin="round"/>
+<line x1="56" y1="208.4" x2="71.3" y2="196.3" stroke="#33241A" stroke-width="0.7" opacity="0.7"/>
+<path d="M38,150 C48.5,146.7 57.3,154.4 58.3,166.3 C46.9,168.7 38.1,161 38,150Z" fill="#8E8A82" stroke="#33241A" stroke-width="1.1" stroke-linejoin="round"/>
+<line x1="40.1" y1="151.5" x2="55.9" y2="163" stroke="#33241A" stroke-width="0.7" opacity="0.7"/>
+<path d="M66,96 q16,-16 6,-28 q-10,-6 -10,6 q2,8 8,5" fill="none" stroke="#5F7A5E" stroke-width="2.4" stroke-linecap="round"/>
+<path d="M264.4,391.9 L263.4,382.8 L259.7,370.7 L255.1,356.9 L252.1,342.8 L250.7,330.1 L253,318.7 L257.8,306.9 L263.9,295.1 L268.2,282.5 L269.7,270 L267.5,257.4 L261.8,245.3 L255.7,233.2 L249.8,221.6 L247.4,209.9 L249.1,198.3 L253.3,186.3 L258.5,174.2 L262.6,162 L263.3,149.9 L260.2,137.4 L253.7,124.8 L246.2,112.9 L239.1,102.9 L234.3,95.8 L233.7,96.2 L237.9,103.6 L244.4,114 L251.5,126 L257.4,138.5 L260.7,150.1 L259.4,161.3 L255.4,173 L250.3,185.1 L245.9,197.5 L244.6,210.1 L247.5,222.4 L252.5,234.8 L259,246.7 L263.9,258.6 L266.3,270 L264.1,281.4 L258.7,292.7 L253,304.8 L247.8,317.1 L245.3,329.9 L246.2,343.8 L250.1,358.3 L254.3,372.5 L259.1,384.3 L263.6,392.1Z" fill="#5F7A5E"/>
+<path d="M248,330 C237.4,332.9 228.9,324.8 228.4,312.9 C239.9,310.9 248.4,319 248,330Z" fill="#8E8A82" stroke="#33241A" stroke-width="1.1" stroke-linejoin="round"/>
+<line x1="246" y1="328.4" x2="230.7" y2="316.3" stroke="#33241A" stroke-width="0.7" opacity="0.7"/>
+<path d="M268,270 C267.9,281 257.9,287 246.2,284.3 C247.5,272.7 257.5,266.7 268,270Z" fill="#8E8A82" stroke="#33241A" stroke-width="1.1" stroke-linejoin="round"/>
+<line x1="265.9" y1="271.5" x2="250.1" y2="283" stroke="#33241A" stroke-width="0.7" opacity="0.7"/>
+<path d="M246,210 C235.4,212.9 226.9,204.8 226.4,192.9 C237.9,190.9 246.4,199 246,210Z" fill="#8E8A82" stroke="#33241A" stroke-width="1.1" stroke-linejoin="round"/>
+<line x1="244" y1="208.4" x2="228.7" y2="196.3" stroke="#33241A" stroke-width="0.7" opacity="0.7"/>
+<path d="M262,150 C261.9,161 251.9,167 240.2,164.3 C241.5,152.7 251.5,146.7 262,150Z" fill="#8E8A82" stroke="#33241A" stroke-width="1.1" stroke-linejoin="round"/>
+<line x1="259.9" y1="151.5" x2="244.1" y2="163" stroke="#33241A" stroke-width="0.7" opacity="0.7"/>
+<path d="M234,96 q-16,-16 -6,-28 q10,-6 10,6 q2,8 8,5" fill="none" stroke="#5F7A5E" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="150" cy="168" r="84" fill="#FBF5E4" stroke="#4A3220" stroke-width="2.2"/>
+<circle cx="150" cy="168" r="92" fill="none" stroke="#9A6F1E" stroke-width="1.2"/>
+<path d="M213.6,172 C213.9,181.6 207.5,193.9 200.7,201.3 C193.9,208.8 182.6,212.9 172.8,216.8 C162.9,220.8 152.5,225.2 141.5,225.3 C130.4,225.3 115.7,223.3 106.4,217.3 C97.1,211.2 88.5,199.3 85.5,189 C82.5,178.8 85,166.2 88.3,155.7 C91.7,145.2 96.5,130.8 105.6,125.8 C114.6,120.8 131.1,126.1 142.6,125.7 C154.1,125.3 165.2,120.4 174.7,123.4 C184.1,126.4 192.8,135.4 199.3,143.5 C205.8,151.6 213.4,162.4 213.6,172Z" fill="#8E8A82" opacity="0.2"/>
+<path d="M213.6,172 C213.9,181.6 207.5,193.9 200.7,201.3 C193.9,208.8 182.6,212.9 172.8,216.8 C162.9,220.8 152.5,225.2 141.5,225.3 C130.4,225.3 115.7,223.3 106.4,217.3 C97.1,211.2 88.5,199.3 85.5,189 C82.5,178.8 85,166.2 88.3,155.7 C91.7,145.2 96.5,130.8 105.6,125.8 C114.6,120.8 131.1,126.1 142.6,125.7 C154.1,125.3 165.2,120.4 174.7,123.4 C184.1,126.4 192.8,135.4 199.3,143.5 C205.8,151.6 213.4,162.4 213.6,172Z" fill="none" stroke="#8E8A82" stroke-width="2" opacity="0.4"/>
+<g transform="translate(150 168) scale(1.1)">
+<path d="M-34,-30 h36 l-5,52 h-26Z" fill="#D9D2C2" stroke="#33241A" stroke-width="1.8"/>
+<path d="M-28,-30 q12,-22 24,0 M-16,-44 v-10 M-38,22 h44" stroke="#33241A" stroke-width="2" fill="none" stroke-linecap="round"/>
+<circle cx="-16" cy="-6" r="26" fill="url(#label-lamp-ash-rg3)"/>
+<path d="M-16,8 C-22,0 -16,-4 -16,-12 C-10,-4 -8,2 -16,8Z" fill="#E0782A" stroke="#33241A" stroke-width="1"/>
+<path d="M-50,50 Q-20,22 20,36 Q44,26 56,50Z" fill="#8E8A82" stroke="#33241A" stroke-width="1.5"/>
+<path d="M-28,30h0M-2,46h0M-10,36h0M-39,33h0M-39,48h0M-29,39h0M-6,30h0M-8,50h0M-37,50h0M49,35h0M-23,32h0M49,47h0M43,34h0M-25,36h0M27,43h0M-35,34h0M-25,39h0M-6,40h0M-24,49h0M-17,30h0M4,48h0M11,45h0M39,47h0M-39,38h0M-5,45h0M35,31h0M-12,44h0" fill="none" stroke="#3E3A36" stroke-width="1.4" stroke-linecap="round" opacity="0.8"/>
+<path d="M11,44h0M-16,31h0M-26,41h0M12,49h0M-15,44h0M-36,41h0M-16,36h0M7,37h0M22,49h0M27,31h0M23,43h0M-14,38h0M-43,44h0M25,38h0M-15,43h0M-34,39h0" fill="none" stroke="#3E3A36" stroke-width="2.4" stroke-linecap="round" opacity="0.8"/>
+<path d="M-4,39h0M21,40h0M-6,33h0M-25,40h0M-6,35h0M26,47h0M-34,36h0" fill="none" stroke="#3E3A36" stroke-width="3.4" stroke-linecap="round" opacity="0.8"/>
+<path d="M22,-20 L44,22" stroke="#8D6A26" stroke-width="4" stroke-linecap="round"/>
+<path d="M40,16 l10,18 l-12,-6Z" fill="#9AA4AA" stroke="#33241A" stroke-width="1"/>
+</g>
+<path d="M40,268 Q150,248 260,268 V312 Q150,330 40,312Z" fill="#4A3220"/>
+<path d="M46,273 Q150,254 254,273 M46,307 Q150,325 254,307" fill="none" stroke="#D4A23A" stroke-width="1"/>
+<text x="150" y="298.8" font-size="26" font-family="serif" fill="#F5ECD4" text-anchor="middle" letter-spacing="2" font-weight="bold">LAMP-ASH</text>
+<path d="M30,336 h72 v34 q-36,12 -72,0Z" fill="#F8F0DA" stroke="#4A3220" stroke-width="1.4"/>
+<text x="42" y="364" font-size="22" font-family="serif" fill="#4A3220" font-weight="bold">D</text>
+<line x1="64" y1="357" x2="88" y2="357" stroke="#4A3220" stroke-width="1.2" stroke-dasharray="2 4" opacity="0.7"/>
+<path d="M114,336 h72 v34 q-36,12 -72,0Z" fill="#F8F0DA" stroke="#4A3220" stroke-width="1.4"/>
+<text x="126" y="364" font-size="22" font-family="serif" fill="#4A3220" font-weight="bold">L</text>
+<rect x="146" y="344" width="7" height="22" rx="1.5" fill="#4A3220"/>
+<rect x="157" y="344" width="7" height="22" rx="1.5" fill="#4A3220"/>
+<path d="M198,336 h72 v34 q-36,12 -72,0Z" fill="#F8F0DA" stroke="#4A3220" stroke-width="1.4"/>
+<text x="210" y="364" font-size="22" font-family="serif" fill="#4A3220" font-weight="bold">B</text>
+<circle cx="235" cy="356" r="4.6" fill="none" stroke="#A0412B" stroke-width="2.2"/>
+<rect x="0" y="0" width="300" height="420" fill="url(#label-lamp-ash-lg4)" opacity="0.1"/>
+</svg>

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="reply-who-watches-t reply-who-watches-d">
+<title id="reply-who-watches-t">Reply card: Who watches the watcher?</title>
+<desc id="reply-who-watches-d">A reply card: a hotel card with the green and gold head of The Crossing, and one question in soft pencil, "Who watches the watcher?", left on the spike for Fenn.</desc>
+<defs><radialGradient id="reply-who-watches-rg1" cx="0.5" cy="0.5" r="0.8"><stop offset="0%" stop-color="#fff" stop-opacity="0.4"/><stop offset="100%" stop-color="#b8ab8a" stop-opacity="0.3"/></radialGradient></defs>
+<rect x="0" y="0" width="300" height="420" rx="10" fill="#f4efe2" stroke="#b8ab8a" stroke-width="1.6"/>
+<rect x="0" y="0" width="300" height="420" rx="10" fill="url(#reply-who-watches-rg1)"/>
+<rect x="0" y="0" width="300" height="74" rx="10" fill="#1f3a2e"/>
+<rect x="0" y="40" width="300" height="34" fill="#1f3a2e"/>
+<line x1="0" y1="74" x2="300" y2="74" stroke="#d4ad57" stroke-width="2.4"/>
+<line x1="0" y1="80" x2="300" y2="80" stroke="#d4ad57" stroke-width="0.8"/>
+<g fill="none" stroke="#d4ad57" stroke-width="0.130" stroke-linecap="round" stroke-linejoin="round">
+<path d="M0,0 H.6 M.3,0 V1" transform="translate(35.8 26) scale(22)"/>
+<path d="M0,0 V1 M.62,0 V1 M0,.48 H.62" transform="translate(56.5 26) scale(22)"/>
+<path d="M.5,0 H0 V1 H.5 M0,.48 H.38" transform="translate(77.6 26) scale(22)"/>
+<path d="M.64,.2 A.36,.5 0 1 0 .64,.8" transform="translate(111.5 26) scale(22)"/>
+<path d="M0,1 V0 H.28 A.26,.26 0 0 1 .28,.52 H0 M.26,.52 L.6,1" transform="translate(133.9 26) scale(22)"/>
+<path d="M.38,0 A.38,.5 0 1 0 .38,1 A.38,.5 0 1 0 .38,0" transform="translate(154.6 26) scale(22)"/>
+<path d="M.52,.2 C.5,-.06 .02,-.06 .04,.26 C.06,.5 .52,.46 .54,.74 C.56,1.06 .04,1.06 .02,.8" transform="translate(178.8 26) scale(22)"/>
+<path d="M.52,.2 C.5,-.06 .02,-.06 .04,.26 C.06,.5 .52,.46 .54,.74 C.56,1.06 .04,1.06 .02,.8" transform="translate(198.6 26) scale(22)"/>
+<path d="M.02,0 V1 h.004" transform="translate(218.4 26) scale(22)"/>
+<path d="M0,1 V0 L.64,1 V0" transform="translate(226.8 26) scale(22)"/>
+<path d="M.64,.2 A.36,.5 0 1 0 .71,.6 H.42" transform="translate(248.3 26) scale(22)"/>
+</g>
+<text x="150" y="66" font-size="10" font-family="sans-serif" fill="#d4ad57" text-anchor="middle" letter-spacing="5">FOURTH FLOOR</text>
+<line x1="34" y1="138" x2="266" y2="138" stroke="#a9b4b6" stroke-width="0.8"/>
+<line x1="34" y1="174" x2="266" y2="174" stroke="#a9b4b6" stroke-width="0.8"/>
+<line x1="34" y1="210" x2="266" y2="210" stroke="#a9b4b6" stroke-width="0.8"/>
+<line x1="34" y1="246" x2="266" y2="246" stroke="#a9b4b6" stroke-width="0.8"/>
+<line x1="34" y1="282" x2="266" y2="282" stroke="#a9b4b6" stroke-width="0.8"/>
+<line x1="34" y1="318" x2="266" y2="318" stroke="#a9b4b6" stroke-width="0.8"/>
+<line x1="34" y1="354" x2="266" y2="354" stroke="#a9b4b6" stroke-width="0.8"/>
+<rect x="110" y="392" width="80" height="4" fill="#d4ad57" opacity="0.8"/>
+<rect x="121" y="385" width="58" height="4" fill="#d4ad57" opacity="0.8"/>
+<rect x="132" y="378" width="36" height="4" fill="#d4ad57" opacity="0.8"/>
+<text x="150" y="164" font-size="30" font-family="cursive" fill="#4a4a4a" font-style="italic" text-anchor="middle" transform="rotate(1.9 150 164)">Who watches</text>
+<text x="150" y="200" font-size="30" font-family="cursive" fill="#4a4a4a" font-style="italic" text-anchor="middle" transform="rotate(-2.1 150 200)">the watcher?</text>
+<path d="M95.3,250.6 L110.8,250.7 L126.1,249.9 L143,250.3 L158.4,251.7 L172.5,250.9 L189.3,251.8 L203.6,251.3" stroke="#4a4a4a" stroke-width="1.4" opacity="0.7" fill="none"/>
+<path d="M200.4,145.8a0.9,0.9 0 1,0 1.9,0a0.9,0.9 0 1,0 -1.9,0M72.6,208.8a0.7,0.7 0 1,0 1.4,0a0.7,0.7 0 1,0 -1.4,0M148.1,204a1,1 0 1,0 1.9,0a1,1 0 1,0 -1.9,0M237,182.2a0.6,0.6 0 1,0 1.1,0a0.6,0.6 0 1,0 -1.1,0M97.3,147.8a0.7,0.7 0 1,0 1.3,0a0.7,0.7 0 1,0 -1.3,0M224,248.1a0.4,0.4 0 1,0 0.9,0a0.4,0.4 0 1,0 -0.9,0M105.6,191.3a0.8,0.8 0 1,0 1.7,0a0.8,0.8 0 1,0 -1.7,0M200.6,139.4a0.9,0.9 0 1,0 1.8,0a0.9,0.9 0 1,0 -1.8,0M195.7,238.5a0.5,0.5 0 1,0 1,0a0.5,0.5 0 1,0 -1,0M171.8,226.3a0.9,0.9 0 1,0 1.8,0a0.9,0.9 0 1,0 -1.8,0M138.7,138.5a0.8,0.8 0 1,0 1.7,0a0.8,0.8 0 1,0 -1.7,0M134.4,228.6a0.6,0.6 0 1,0 1.3,0a0.6,0.6 0 1,0 -1.3,0M173.5,153.6a0.7,0.7 0 1,0 1.4,0a0.7,0.7 0 1,0 -1.4,0M194.1,190.1a0.4,0.4 0 1,0 0.8,0a0.4,0.4 0 1,0 -0.8,0M171.9,211.9a0.6,0.6 0 1,0 1.2,0a0.6,0.6 0 1,0 -1.2,0M172.2,158.9a0.9,0.9 0 1,0 1.8,0a0.9,0.9 0 1,0 -1.8,0M224.8,192.6a0.9,0.9 0 1,0 1.9,0a0.9,0.9 0 1,0 -1.9,0M173.2,216.2a0.5,0.5 0 1,0 0.9,0a0.5,0.5 0 1,0 -0.9,0M140.3,229.5a0.6,0.6 0 1,0 1.2,0a0.6,0.6 0 1,0 -1.2,0M98,203.3a0.8,0.8 0 1,0 1.7,0a0.8,0.8 0 1,0 -1.7,0M190,146.9a0.6,0.6 0 1,0 1.2,0a0.6,0.6 0 1,0 -1.2,0M238.2,215.9a0.4,0.4 0 1,0 0.8,0a0.4,0.4 0 1,0 -0.8,0M176,190.2a0.6,0.6 0 1,0 1.1,0a0.6,0.6 0 1,0 -1.1,0M159.5,145.2a0.7,0.7 0 1,0 1.4,0a0.7,0.7 0 1,0 -1.4,0M162.3,143.7a0.7,0.7 0 1,0 1.4,0a0.7,0.7 0 1,0 -1.4,0M155.3,199.5a0.5,0.5 0 1,0 0.9,0a0.5,0.5 0 1,0 -0.9,0M67.9,184.1a1,1 0 1,0 2,0a1,1 0 1,0 -2,0M219,172.3a0.8,0.8 0 1,0 1.7,0a0.8,0.8 0 1,0 -1.7,0M218.6,219.8a0.6,0.6 0 1,0 1.2,0a0.6,0.6 0 1,0 -1.2,0M80.4,173.2a0.9,0.9 0 1,0 1.8,0a0.9,0.9 0 1,0 -1.8,0M87.4,206.3a1,1 0 1,0 1.9,0a1,1 0 1,0 -1.9,0M92.9,183.8a0.4,0.4 0 1,0 0.8,0a0.4,0.4 0 1,0 -0.8,0M200.5,144.2a0.8,0.8 0 1,0 1.6,0a0.8,0.8 0 1,0 -1.6,0M83.9,165.9a0.6,0.6 0 1,0 1.2,0a0.6,0.6 0 1,0 -1.2,0M236.7,229.8a0.8,0.8 0 1,0 1.6,0a0.8,0.8 0 1,0 -1.6,0M62.8,196.7a0.7,0.7 0 1,0 1.4,0a0.7,0.7 0 1,0 -1.4,0M179.5,229.3a1,1 0 1,0 2,0a1,1 0 1,0 -2,0M159.9,184.4a0.9,0.9 0 1,0 1.8,0a0.9,0.9 0 1,0 -1.8,0M99.5,152.2a0.8,0.8 0 1,0 1.6,0a0.8,0.8 0 1,0 -1.6,0M182.8,237.6a0.8,0.8 0 1,0 1.6,0a0.8,0.8 0 1,0 -1.6,0M98.1,166.1a0.4,0.4 0 1,0 0.8,0a0.4,0.4 0 1,0 -0.8,0M199.4,233.5a0.8,0.8 0 1,0 1.6,0a0.8,0.8 0 1,0 -1.6,0M151.8,175a0.4,0.4 0 1,0 0.8,0a0.4,0.4 0 1,0 -0.8,0M63.2,230.8a0.5,0.5 0 1,0 1,0a0.5,0.5 0 1,0 -1,0M148.8,207.6a0.4,0.4 0 1,0 0.9,0a0.4,0.4 0 1,0 -0.9,0M193.7,173.8a0.5,0.5 0 1,0 0.9,0a0.5,0.5 0 1,0 -0.9,0M168.2,172a0.8,0.8 0 1,0 1.6,0a0.8,0.8 0 1,0 -1.6,0M153.9,131.4a0.5,0.5 0 1,0 1,0a0.5,0.5 0 1,0 -1,0M145.3,241.4a0.6,0.6 0 1,0 1.2,0a0.6,0.6 0 1,0 -1.2,0M138,145.8a0.8,0.8 0 1,0 1.6,0a0.8,0.8 0 1,0 -1.6,0M237.8,198a0.5,0.5 0 1,0 1.1,0a0.5,0.5 0 1,0 -1.1,0M60.8,169.2a0.9,0.9 0 1,0 1.9,0a0.9,0.9 0 1,0 -1.9,0M208,243.6a0.8,0.8 0 1,0 1.6,0a0.8,0.8 0 1,0 -1.6,0M144.6,225.9a0.7,0.7 0 1,0 1.4,0a0.7,0.7 0 1,0 -1.4,0M186.9,179.8a0.6,0.6 0 1,0 1.3,0a0.6,0.6 0 1,0 -1.3,0M85.5,174a0.5,0.5 0 1,0 1,0a0.5,0.5 0 1,0 -1,0M79.4,226.6a0.5,0.5 0 1,0 1,0a0.5,0.5 0 1,0 -1,0M225.1,228.3a0.6,0.6 0 1,0 1.1,0a0.6,0.6 0 1,0 -1.1,0M84.5,150.2a0.7,0.7 0 1,0 1.5,0a0.7,0.7 0 1,0 -1.5,0M63.5,147a0.8,0.8 0 1,0 1.5,0a0.8,0.8 0 1,0 -1.5,0" fill="#4a4a4a" opacity="0.3"/>
+<circle cx="150" cy="104" r="4.5" fill="#3a3a3a"/>
+</svg>

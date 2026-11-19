@@ -1,0 +1,1374 @@
+{
+ "game": "missing-campsites",
+ "count": 171,
+ "assets": [
+  {
+   "id": "ending-lettering-brought-along",
+   "group": "title",
+   "title": "Ending lettering: Brought Along",
+   "w": 1600,
+   "h": 320,
+   "row": "Ending cards"
+  },
+  {
+   "id": "ending-lettering-held",
+   "group": "title",
+   "title": "Ending lettering: Held",
+   "w": 1600,
+   "h": 320,
+   "row": "Ending cards"
+  },
+  {
+   "id": "ending-lettering-nothing-missing",
+   "group": "title",
+   "title": "Ending lettering: Nothing Missing",
+   "w": 1600,
+   "h": 320,
+   "row": "Ending cards"
+  },
+  {
+   "id": "ending-lettering-one-who-left",
+   "group": "title",
+   "title": "Ending lettering: The One Who Left",
+   "w": 1600,
+   "h": 320,
+   "row": "Ending cards"
+  },
+  {
+   "id": "ending-lettering-slipped-through",
+   "group": "title",
+   "title": "Ending lettering: Slipped Through",
+   "w": 1600,
+   "h": 320,
+   "row": "Ending cards"
+  },
+  {
+   "id": "ending-lettering-unlisted",
+   "group": "title",
+   "title": "Ending lettering: Unlisted",
+   "w": 1600,
+   "h": 320,
+   "row": "Ending cards"
+  },
+  {
+   "id": "title-gone",
+   "group": "title",
+   "title": "Title lettering, 16 letters gone",
+   "w": 1600,
+   "h": 500,
+   "row": "Title lettering, whole and losing letters"
+  },
+  {
+   "id": "title-lost-12",
+   "group": "title",
+   "title": "Title lettering, 12 letters gone",
+   "w": 1600,
+   "h": 500,
+   "row": "Title lettering, whole and losing letters"
+  },
+  {
+   "id": "title-lost-3",
+   "group": "title",
+   "title": "Title lettering, 3 letters gone",
+   "w": 1600,
+   "h": 500,
+   "row": "Title lettering, whole and losing letters"
+  },
+  {
+   "id": "title-lost-6",
+   "group": "title",
+   "title": "Title lettering, 6 letters gone",
+   "w": 1600,
+   "h": 500,
+   "row": "Title lettering, whole and losing letters"
+  },
+  {
+   "id": "title-lost-9",
+   "group": "title",
+   "title": "Title lettering, 9 letters gone",
+   "w": 1600,
+   "h": 500,
+   "row": "Title lettering, whole and losing letters"
+  },
+  {
+   "id": "title-whole",
+   "group": "title",
+   "title": "Title lettering, 0 letters gone",
+   "w": 1600,
+   "h": 500,
+   "row": "Title lettering, whole and losing letters"
+  },
+  {
+   "id": "outline-abel",
+   "group": "figures",
+   "title": "Portrait outline: Abel Strand",
+   "w": 480,
+   "h": 600,
+   "row": "Portrait outlines: each sitter as an empty contour"
+  },
+  {
+   "id": "outline-agnes",
+   "group": "figures",
+   "title": "Portrait outline: Agnes Halloran",
+   "w": 480,
+   "h": 600,
+   "row": "Portrait outlines: each sitter as an empty contour"
+  },
+  {
+   "id": "outline-ashbys",
+   "group": "figures",
+   "title": "Portrait outline: Corinne and Dev Ashby",
+   "w": 480,
+   "h": 600,
+   "row": "Portrait outlines: each sitter as an empty contour"
+  },
+  {
+   "id": "outline-dell",
+   "group": "figures",
+   "title": "Portrait outline: Dell",
+   "w": 480,
+   "h": 600,
+   "row": "Portrait outlines: each sitter as an empty contour"
+  },
+  {
+   "id": "outline-ines",
+   "group": "figures",
+   "title": "Portrait outline: In\u00e9s",
+   "w": 480,
+   "h": 600,
+   "row": "Portrait outlines: each sitter as an empty contour"
+  },
+  {
+   "id": "outline-june",
+   "group": "figures",
+   "title": "Portrait outline: June",
+   "w": 480,
+   "h": 600,
+   "row": "Portrait outlines: each sitter as an empty contour"
+  },
+  {
+   "id": "outline-lottie",
+   "group": "figures",
+   "title": "Portrait outline: Lottie",
+   "w": 480,
+   "h": 600,
+   "row": "Portrait outlines: each sitter as an empty contour"
+  },
+  {
+   "id": "outline-marisol",
+   "group": "figures",
+   "title": "Portrait outline: Marisol Teague",
+   "w": 480,
+   "h": 600,
+   "row": "Portrait outlines: each sitter as an empty contour"
+  },
+  {
+   "id": "outline-rafe",
+   "group": "figures",
+   "title": "Portrait outline: Rafe",
+   "w": 480,
+   "h": 600,
+   "row": "Portrait outlines: each sitter as an empty contour"
+  },
+  {
+   "id": "outline-ruth",
+   "group": "figures",
+   "title": "Portrait outline: Ruth Teague",
+   "w": 480,
+   "h": 600,
+   "row": "Portrait outlines: each sitter as an empty contour"
+  },
+  {
+   "id": "sprite-june-lantern",
+   "group": "figures",
+   "title": "Sprite: June from above, with a lantern",
+   "w": 240,
+   "h": 240,
+   "row": "Top-down sprites, no ground (accepted 2026-11-15)"
+  },
+  {
+   "id": "sprite-post",
+   "group": "figures",
+   "title": "Sprite: a site post from above",
+   "w": 240,
+   "h": 240,
+   "row": "Top-down sprites, no ground (accepted 2026-11-15)"
+  },
+  {
+   "id": "sprite-tam-carry-one",
+   "group": "figures",
+   "title": "Sprite: Tam from above, one post",
+   "w": 240,
+   "h": 240,
+   "row": "Top-down sprites, no ground (accepted 2026-11-15)"
+  },
+  {
+   "id": "sprite-tam-carry-two",
+   "group": "figures",
+   "title": "Sprite: Tam from above, two posts",
+   "w": 240,
+   "h": 240,
+   "row": "Top-down sprites, no ground (accepted 2026-11-15)"
+  },
+  {
+   "id": "sprite-tam-walk",
+   "group": "figures",
+   "title": "Sprite: Tam from above, walking",
+   "w": 240,
+   "h": 240,
+   "row": "Top-down sprites, no ground (accepted 2026-11-15)"
+  },
+  {
+   "id": "sprite-van",
+   "group": "figures",
+   "title": "Sprite: the van from above",
+   "w": 240,
+   "h": 240,
+   "row": "Top-down sprites, no ground (accepted 2026-11-15)"
+  },
+  {
+   "id": "topdown-friend-lantern",
+   "group": "figures",
+   "title": "A friend from above, holding a lantern at a post",
+   "w": 400,
+   "h": 400,
+   "row": "Top-down figures: Tam (3), two lantern carriers, van, Ruth's car"
+  },
+  {
+   "id": "topdown-june-lantern",
+   "group": "figures",
+   "title": "June from above, with a lantern",
+   "w": 400,
+   "h": 400,
+   "row": "Top-down figures: Tam (3), two lantern carriers, van, Ruth's car"
+  },
+  {
+   "id": "topdown-ruths-car",
+   "group": "figures",
+   "title": "Ruth's car from above",
+   "w": 400,
+   "h": 400,
+   "row": "Top-down figures: Tam (3), two lantern carriers, van, Ruth's car"
+  },
+  {
+   "id": "topdown-tam-carry-one",
+   "group": "figures",
+   "title": "Tam from above, carrying one post",
+   "w": 400,
+   "h": 400,
+   "row": "Top-down figures: Tam (3), two lantern carriers, van, Ruth's car"
+  },
+  {
+   "id": "topdown-tam-carry-two",
+   "group": "figures",
+   "title": "Tam from above, carrying two posts",
+   "w": 400,
+   "h": 400,
+   "row": "Top-down figures: Tam (3), two lantern carriers, van, Ruth's car"
+  },
+  {
+   "id": "topdown-tam-walk",
+   "group": "figures",
+   "title": "Tam from above, walking with the torch",
+   "w": 400,
+   "h": 400,
+   "row": "Top-down figures: Tam (3), two lantern carriers, van, Ruth's car"
+  },
+  {
+   "id": "topdown-van",
+   "group": "figures",
+   "title": "The van from above",
+   "w": 400,
+   "h": 400,
+   "row": "Top-down figures: Tam (3), two lantern carriers, van, Ruth's car"
+  },
+  {
+   "id": "glyph-decoy",
+   "group": "backdrops",
+   "title": "Glyph kit: decoy pad",
+   "w": 480,
+   "h": 480,
+   "row": "Glyph kit: 8 modules, 6 detail saplings"
+  },
+  {
+   "id": "glyph-pad",
+   "group": "backdrops",
+   "title": "Glyph kit: tent pad",
+   "w": 480,
+   "h": 480,
+   "row": "Glyph kit: 8 modules, 6 detail saplings"
+  },
+  {
+   "id": "glyph-path",
+   "group": "backdrops",
+   "title": "Glyph kit: path",
+   "w": 480,
+   "h": 480,
+   "row": "Glyph kit: 8 modules, 6 detail saplings"
+  },
+  {
+   "id": "glyph-persons",
+   "group": "backdrops",
+   "title": "Glyph kit: persons",
+   "w": 480,
+   "h": 480,
+   "row": "Glyph kit: 8 modules, 6 detail saplings"
+  },
+  {
+   "id": "glyph-post",
+   "group": "backdrops",
+   "title": "Glyph kit: post",
+   "w": 480,
+   "h": 480,
+   "row": "Glyph kit: 8 modules, 6 detail saplings"
+  },
+  {
+   "id": "glyph-ring",
+   "group": "backdrops",
+   "title": "Glyph kit: fire ring",
+   "w": 480,
+   "h": 480,
+   "row": "Glyph kit: 8 modules, 6 detail saplings"
+  },
+  {
+   "id": "glyph-table",
+   "group": "backdrops",
+   "title": "Glyph kit: table",
+   "w": 480,
+   "h": 480,
+   "row": "Glyph kit: 8 modules, 6 detail saplings"
+  },
+  {
+   "id": "glyph-whole",
+   "group": "backdrops",
+   "title": "Glyph kit: glyph",
+   "w": 480,
+   "h": 480,
+   "row": "Glyph kit: 8 modules, 6 detail saplings"
+  },
+  {
+   "id": "sapling-cedar",
+   "group": "backdrops",
+   "title": "Detail saplings: tall cedar",
+   "w": 480,
+   "h": 480,
+   "row": "Glyph kit: 8 modules, 6 detail saplings"
+  },
+  {
+   "id": "sapling-crooked-pad",
+   "group": "backdrops",
+   "title": "Detail saplings: crooked pad",
+   "w": 480,
+   "h": 480,
+   "row": "Glyph kit: 8 modules, 6 detail saplings"
+  },
+  {
+   "id": "sapling-kettle",
+   "group": "backdrops",
+   "title": "Detail saplings: kettle",
+   "w": 480,
+   "h": 480,
+   "row": "Glyph kit: 8 modules, 6 detail saplings"
+  },
+  {
+   "id": "sapling-owl-box",
+   "group": "backdrops",
+   "title": "Detail saplings: owl box",
+   "w": 480,
+   "h": 480,
+   "row": "Glyph kit: 8 modules, 6 detail saplings"
+  },
+  {
+   "id": "sapling-pool",
+   "group": "backdrops",
+   "title": "Detail saplings: shallow pool",
+   "w": 480,
+   "h": 480,
+   "row": "Glyph kit: 8 modules, 6 detail saplings"
+  },
+  {
+   "id": "sapling-wheel",
+   "group": "backdrops",
+   "title": "Detail saplings: wheel",
+   "w": 480,
+   "h": 480,
+   "row": "Glyph kit: 8 modules, 6 detail saplings"
+  },
+  {
+   "id": "ingredient-butter-pats",
+   "group": "pieces",
+   "title": "Foil Supper tile: butter pats",
+   "w": 220,
+   "h": 220,
+   "row": "Ingredient tiles (14), recipe card states (3)"
+  },
+  {
+   "id": "ingredient-garden-onions",
+   "group": "pieces",
+   "title": "Foil Supper tile: garden onions",
+   "w": 220,
+   "h": 220,
+   "row": "Ingredient tiles (14), recipe card states (3)"
+  },
+  {
+   "id": "ingredient-grey-apples",
+   "group": "pieces",
+   "title": "Foil Supper tile: grey apples",
+   "w": 220,
+   "h": 220,
+   "row": "Ingredient tiles (14), recipe card states (3)"
+  },
+  {
+   "id": "ingredient-lentil-cakes",
+   "group": "pieces",
+   "title": "Foil Supper tile: lentil cakes",
+   "w": 220,
+   "h": 220,
+   "row": "Ingredient tiles (14), recipe card states (3)"
+  },
+  {
+   "id": "ingredient-nothing-salt",
+   "group": "pieces",
+   "title": "Foil Supper tile: salt that tastes of nothing",
+   "w": 220,
+   "h": 220,
+   "row": "Ingredient tiles (14), recipe card states (3)"
+  },
+  {
+   "id": "ingredient-olive-oil",
+   "group": "pieces",
+   "title": "Foil Supper tile: olive oil",
+   "w": 220,
+   "h": 220,
+   "row": "Ingredient tiles (14), recipe card states (3)"
+  },
+  {
+   "id": "ingredient-packet",
+   "group": "pieces",
+   "title": "Foil Supper tile: a packet",
+   "w": 220,
+   "h": 220,
+   "row": "Ingredient tiles (14), recipe card states (3)"
+  },
+  {
+   "id": "ingredient-pepper",
+   "group": "pieces",
+   "title": "Foil Supper tile: pepper",
+   "w": 220,
+   "h": 220,
+   "row": "Ingredient tiles (14), recipe card states (3)"
+  },
+  {
+   "id": "ingredient-potatoes",
+   "group": "pieces",
+   "title": "Foil Supper tile: potatoes",
+   "w": 220,
+   "h": 220,
+   "row": "Ingredient tiles (14), recipe card states (3)"
+  },
+  {
+   "id": "ingredient-salt",
+   "group": "pieces",
+   "title": "Foil Supper tile: salt",
+   "w": 220,
+   "h": 220,
+   "row": "Ingredient tiles (14), recipe card states (3)"
+  },
+  {
+   "id": "ingredient-sausages",
+   "group": "pieces",
+   "title": "Foil Supper tile: sausages",
+   "w": 220,
+   "h": 220,
+   "row": "Ingredient tiles (14), recipe card states (3)"
+  },
+  {
+   "id": "ingredient-spare-sheet",
+   "group": "pieces",
+   "title": "Foil Supper tile: the spare sheet",
+   "w": 220,
+   "h": 220,
+   "row": "Ingredient tiles (14), recipe card states (3)"
+  },
+  {
+   "id": "ingredient-store-corn",
+   "group": "pieces",
+   "title": "Foil Supper tile: store corn",
+   "w": 220,
+   "h": 220,
+   "row": "Ingredient tiles (14), recipe card states (3)"
+  },
+  {
+   "id": "ingredient-wild-ramps",
+   "group": "pieces",
+   "title": "Foil Supper tile: wild ramps",
+   "w": 220,
+   "h": 220,
+   "row": "Ingredient tiles (14), recipe card states (3)"
+  },
+  {
+   "id": "item-blanket",
+   "group": "pieces",
+   "title": "Pack List tile: a blanket",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "item-book",
+   "group": "pieces",
+   "title": "Pack List tile: a book",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "item-boots",
+   "group": "pieces",
+   "title": "Pack List tile: boots",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "item-bottle",
+   "group": "pieces",
+   "title": "Pack List tile: a water bottle",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "item-camera",
+   "group": "pieces",
+   "title": "Pack List tile: a camera",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "item-cards",
+   "group": "pieces",
+   "title": "Pack List tile: playing cards",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "item-compass",
+   "group": "pieces",
+   "title": "Pack List tile: a compass",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "item-cooler",
+   "group": "pieces",
+   "title": "Pack List tile: the cooler",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "item-cup",
+   "group": "pieces",
+   "title": "Pack List tile: a tin cup",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "item-firewood",
+   "group": "pieces",
+   "title": "Pack List tile: firewood",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "item-foil",
+   "group": "pieces",
+   "title": "Pack List tile: foil",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "item-hat",
+   "group": "pieces",
+   "title": "Pack List tile: a sun hat",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "item-heron-sign",
+   "group": "pieces",
+   "title": "Pack List tile: a heron sign",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "item-kettle",
+   "group": "pieces",
+   "title": "Pack List tile: a blue enamel kettle",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "item-kettle-said",
+   "group": "pieces",
+   "title": "Pack List tile, as said: a blue enamel kettle",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19) (accepted 2026-11-15)"
+  },
+  {
+   "id": "item-keys",
+   "group": "pieces",
+   "title": "Pack List tile: the van keys",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "item-knife",
+   "group": "pieces",
+   "title": "Pack List tile: a pocket knife",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "item-lantern",
+   "group": "pieces",
+   "title": "Pack List tile: a lantern",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "item-mallet",
+   "group": "pieces",
+   "title": "Pack List tile: a mallet",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "item-map",
+   "group": "pieces",
+   "title": "Pack List tile: the map",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "item-marshmallows",
+   "group": "pieces",
+   "title": "Pack List tile: marshmallows",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "item-matches",
+   "group": "pieces",
+   "title": "Pack List tile: matches",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "item-notebook",
+   "group": "pieces",
+   "title": "Pack List tile: a notebook",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "item-number",
+   "group": "pieces",
+   "title": "Pack List tile: Nell's telephone number",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "item-pan",
+   "group": "pieces",
+   "title": "Pack List tile: a frying pan",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "item-pegs",
+   "group": "pieces",
+   "title": "Pack List tile: tent pegs",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "item-puddle",
+   "group": "pieces",
+   "title": "Pack List tile: Puddle the bicycle",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "item-rope",
+   "group": "pieces",
+   "title": "Pack List tile: rope",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "item-rucksack",
+   "group": "pieces",
+   "title": "Pack List tile: a rucksack",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "item-sleeping-bag",
+   "group": "pieces",
+   "title": "Pack List tile: a sixth sleeping bag",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "item-socks",
+   "group": "pieces",
+   "title": "Pack List tile: dry socks",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "item-tarp",
+   "group": "pieces",
+   "title": "Pack List tile: a tarp",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "item-tent",
+   "group": "pieces",
+   "title": "Pack List tile: a tent",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "item-thermos",
+   "group": "pieces",
+   "title": "Pack List tile: a thermos",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "item-toothbrush",
+   "group": "pieces",
+   "title": "Pack List tile: a toothbrush",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "item-torch",
+   "group": "pieces",
+   "title": "Pack List tile: the torch",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "item-walkie",
+   "group": "pieces",
+   "title": "Pack List tile: a walkie-talkie",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "list-01",
+   "group": "pieces",
+   "title": "The List, 1: a washing line",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "list-02",
+   "group": "pieces",
+   "title": "The List, 2: a camp chair",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "list-03",
+   "group": "pieces",
+   "title": "The List, 3: a hammock",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "list-04",
+   "group": "pieces",
+   "title": "The List, 4: a dog's bowl",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "list-05",
+   "group": "pieces",
+   "title": "The List, 5: a blue enamel kettle",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "list-06",
+   "group": "pieces",
+   "title": "The List, 6: a fishing rod",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "list-07",
+   "group": "pieces",
+   "title": "The List, 7: the owl box",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "list-08",
+   "group": "pieces",
+   "title": "The List, 8: a kite",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "list-09",
+   "group": "pieces",
+   "title": "The List, 9: the shallow pool",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "list-10",
+   "group": "pieces",
+   "title": "The List, 10: a guitar",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "list-11",
+   "group": "pieces",
+   "title": "The List, 11: a paddle",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "list-12",
+   "group": "pieces",
+   "title": "The List, 12: milk in the creek",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "list-13",
+   "group": "pieces",
+   "title": "The List, 13: a windbreak",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "list-14",
+   "group": "pieces",
+   "title": "The List, 14: a red wagon",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "list-15",
+   "group": "pieces",
+   "title": "The List, 15: a radio",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "list-16",
+   "group": "pieces",
+   "title": "The List, 16: the tall cedar",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "list-17",
+   "group": "pieces",
+   "title": "The List, 17: Puddle",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "list-18",
+   "group": "pieces",
+   "title": "The List, 18: a tyre swing",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "list-19",
+   "group": "pieces",
+   "title": "The List, 19: a lantern on a pole",
+   "w": 220,
+   "h": 220,
+   "row": "Item tiles (36) and List tiles (19)"
+  },
+  {
+   "id": "notebook-on-fire",
+   "group": "pieces",
+   "title": "The notebook on the fire",
+   "w": 480,
+   "h": 480,
+   "row": "Phase 3: the notebook on the fire"
+  },
+  {
+   "id": "chapter-1",
+   "group": "chapters",
+   "title": "Chapter 1: Hollin Creek",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter cards (7), night cards (2): the legend box, a row shorter each time"
+  },
+  {
+   "id": "chapter-2",
+   "group": "chapters",
+   "title": "Chapter 2: Torchlight",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter cards (7), night cards (2): the legend box, a row shorter each time"
+  },
+  {
+   "id": "chapter-3",
+   "group": "chapters",
+   "title": "Chapter 3: The Second Morning",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter cards (7), night cards (2): the legend box, a row shorter each time"
+  },
+  {
+   "id": "chapter-4",
+   "group": "chapters",
+   "title": "Chapter 4: Carrying",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter cards (7), night cards (2): the legend box, a row shorter each time"
+  },
+  {
+   "id": "chapter-5",
+   "group": "chapters",
+   "title": "Chapter 5: Five Fixed Points",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter cards (7), night cards (2): the legend box, a row shorter each time"
+  },
+  {
+   "id": "chapter-6",
+   "group": "chapters",
+   "title": "Chapter 6: The Final Morning",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter cards (7), night cards (2): the legend box, a row shorter each time"
+  },
+  {
+   "id": "chapter-7",
+   "group": "chapters",
+   "title": "Chapter 7: The Other Side",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter cards (7), night cards (2): the legend box, a row shorter each time"
+  },
+  {
+   "id": "night-1",
+   "group": "chapters",
+   "title": "Night 1: Sleep",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter cards (7), night cards (2): the legend box, a row shorter each time"
+  },
+  {
+   "id": "night-2",
+   "group": "chapters",
+   "title": "Night 2: The Crossing",
+   "w": 1600,
+   "h": 900,
+   "row": "Chapter cards (7), night cards (2): the legend box, a row shorter each time"
+  },
+  {
+   "id": "compass-rose",
+   "group": "ui",
+   "title": "The map lens's compass rose",
+   "w": 400,
+   "h": 400,
+   "row": "UI ornaments: stamps, tick, compass rose, slot chalk, seam notch, tabs, walkie dial"
+  },
+  {
+   "id": "loop-strip",
+   "group": "ui",
+   "title": "The pencil loop strip",
+   "w": 1200,
+   "h": 180,
+   "row": "UI ornaments: stamps, tick, compass rose, slot chalk, seam notch, tabs, walkie dial"
+  },
+  {
+   "id": "notebook-tabs",
+   "group": "ui",
+   "title": "The notebook's tabs",
+   "w": 900,
+   "h": 220,
+   "row": "UI ornaments: stamps, tick, compass rose, slot chalk, seam notch, tabs, walkie dial"
+  },
+  {
+   "id": "seam-notch",
+   "group": "ui",
+   "title": "The seam notch",
+   "w": 240,
+   "h": 240,
+   "row": "UI ornaments: stamps, tick, compass rose, slot chalk, seam notch, tabs, walkie dial"
+  },
+  {
+   "id": "slot-chalk",
+   "group": "ui",
+   "title": "Dell's slot chalk",
+   "w": 300,
+   "h": 300,
+   "row": "UI ornaments: stamps, tick, compass rose, slot chalk, seam notch, tabs, walkie dial"
+  },
+  {
+   "id": "stamp-gone",
+   "group": "ui",
+   "title": "Stamp: NOT HERE",
+   "w": 300,
+   "h": 300,
+   "row": "UI ornaments: stamps, tick, compass rose, slot chalk, seam notch, tabs, walkie dial"
+  },
+  {
+   "id": "stamp-here",
+   "group": "ui",
+   "title": "Stamp: HERE",
+   "w": 300,
+   "h": 300,
+   "row": "UI ornaments: stamps, tick, compass rose, slot chalk, seam notch, tabs, walkie dial"
+  },
+  {
+   "id": "stamp-not-walked",
+   "group": "ui",
+   "title": "Stamp: NOT WALKED",
+   "w": 300,
+   "h": 300,
+   "row": "UI ornaments: stamps, tick, compass rose, slot chalk, seam notch, tabs, walkie dial"
+  },
+  {
+   "id": "stamp-sure",
+   "group": "ui",
+   "title": "Stamp: SURE",
+   "w": 300,
+   "h": 300,
+   "row": "UI ornaments: stamps, tick, compass rose, slot chalk, seam notch, tabs, walkie dial"
+  },
+  {
+   "id": "tick",
+   "group": "ui",
+   "title": "The pencil tick",
+   "w": 240,
+   "h": 240,
+   "row": "UI ornaments: stamps, tick, compass rose, slot chalk, seam notch, tabs, walkie dial"
+  },
+  {
+   "id": "time-units",
+   "group": "ui",
+   "title": "The time-unit circles",
+   "w": 700,
+   "h": 180,
+   "row": "UI ornaments: stamps, tick, compass rose, slot chalk, seam notch, tabs, walkie dial"
+  },
+  {
+   "id": "walkie-dial",
+   "group": "ui",
+   "title": "The walkie dial",
+   "w": 400,
+   "h": 400,
+   "row": "UI ornaments: stamps, tick, compass rose, slot chalk, seam notch, tabs, walkie dial"
+  },
+  {
+   "id": "june-arm-list",
+   "group": "documents",
+   "title": "June's forearm: the List in biro",
+   "w": 1200,
+   "h": 520,
+   "row": "Phase 3: June's arm"
+  },
+  {
+   "id": "lens-front-page",
+   "group": "documents",
+   "title": "The logbook's front page through the map lens, upside down",
+   "w": 600,
+   "h": 600,
+   "row": "Phase 3: second-run documents"
+  },
+  {
+   "id": "logbook-1",
+   "group": "documents",
+   "title": "The Ranger's Book 1: one day, three rows closed up",
+   "w": 1600,
+   "h": 1000,
+   "row": "Logbook spreads, with the first page"
+  },
+  {
+   "id": "logbook-2",
+   "group": "documents",
+   "title": "The Ranger's Book 2: two days, a refund and the envelope stubs",
+   "w": 1600,
+   "h": 1000,
+   "row": "Logbook spreads, with the first page"
+  },
+  {
+   "id": "logbook-3",
+   "group": "documents",
+   "title": "The Ranger's Book 3: only the counts are left",
+   "w": 1600,
+   "h": 1000,
+   "row": "Logbook spreads, with the first page"
+  },
+  {
+   "id": "logbook-first-page",
+   "group": "documents",
+   "title": "The Ranger's Book: the first page",
+   "w": 1600,
+   "h": 1000,
+   "row": "Logbook spreads, with the first page"
+  },
+  {
+   "id": "logbook-first-page-unread",
+   "group": "documents",
+   "title": "The Ranger's Book: the first page, before Tam reads it",
+   "w": 1600,
+   "h": 1000,
+   "row": "Logbook spreads, with the first page (accepted 2026-11-15)"
+  },
+  {
+   "id": "postcard-after-dusk",
+   "group": "documents",
+   "title": "Agnes's postcard, after dusk",
+   "w": 900,
+   "h": 600,
+   "row": "Postcard states"
+  },
+  {
+   "id": "postcard-after-night-1",
+   "group": "documents",
+   "title": "Agnes's postcard, after night 1",
+   "w": 900,
+   "h": 600,
+   "row": "Postcard states"
+  },
+  {
+   "id": "postcard-after-noon",
+   "group": "documents",
+   "title": "Agnes's postcard, after noon",
+   "w": 900,
+   "h": 600,
+   "row": "Postcard states"
+  },
+  {
+   "id": "postcard-picture-side",
+   "group": "documents",
+   "title": "Agnes's postcard, the picture side",
+   "w": 900,
+   "h": 600,
+   "row": "Postcard states"
+  },
+  {
+   "id": "postcard-sign-carried",
+   "group": "documents",
+   "title": "Agnes's postcard, sign carried",
+   "w": 900,
+   "h": 600,
+   "row": "Postcard states"
+  },
+  {
+   "id": "postcard-under-torch",
+   "group": "documents",
+   "title": "Agnes's postcard, held low under the torch",
+   "w": 900,
+   "h": 600,
+   "row": "Postcard states"
+  },
+  {
+   "id": "postcard-whole",
+   "group": "documents",
+   "title": "Agnes's postcard, whole",
+   "w": 900,
+   "h": 600,
+   "row": "Postcard states"
+  },
+  {
+   "id": "recipe-blank",
+   "group": "documents",
+   "title": "Bea's recipe card, blank",
+   "w": 600,
+   "h": 800,
+   "row": "Ingredient tiles (14), recipe card states (3)"
+  },
+  {
+   "id": "recipe-copied",
+   "group": "documents",
+   "title": "Bea's recipe card, copied",
+   "w": 600,
+   "h": 800,
+   "row": "Ingredient tiles (14), recipe card states (3)"
+  },
+  {
+   "id": "recipe-legible",
+   "group": "documents",
+   "title": "Bea's recipe card, legible",
+   "w": 600,
+   "h": 800,
+   "row": "Ingredient tiles (14), recipe card states (3)"
+  },
+  {
+   "id": "legend-13",
+   "group": "maps",
+   "title": "Legend strip, step 3: entries 12 to 24",
+   "w": 1100,
+   "h": 340,
+   "row": "Map sheets (5) and legend strips (6)"
+  },
+  {
+   "id": "legend-18",
+   "group": "maps",
+   "title": "Legend strip, step 2: entries 7 to 24",
+   "w": 1100,
+   "h": 340,
+   "row": "Map sheets (5) and legend strips (6)"
+  },
+  {
+   "id": "legend-21",
+   "group": "maps",
+   "title": "Legend strip, step 1: entries 4 to 24",
+   "w": 1100,
+   "h": 340,
+   "row": "Map sheets (5) and legend strips (6)"
+  },
+  {
+   "id": "legend-24",
+   "group": "maps",
+   "title": "Legend strip, step 0: entries 1 to 24",
+   "w": 1100,
+   "h": 340,
+   "row": "Map sheets (5) and legend strips (6)"
+  },
+  {
+   "id": "legend-5",
+   "group": "maps",
+   "title": "Legend strip, step 4: entries 20 to 24",
+   "w": 1100,
+   "h": 340,
+   "row": "Map sheets (5) and legend strips (6)"
+  },
+  {
+   "id": "legend-far-side",
+   "group": "maps",
+   "title": "Legend strip, step 5: entries 20 to 24",
+   "w": 1100,
+   "h": 340,
+   "row": "Map sheets (5) and legend strips (6)"
+  },
+  {
+   "id": "map-all",
+   "group": "maps",
+   "title": "Map sheet, printing sites 1 to 24",
+   "w": 1100,
+   "h": 800,
+   "row": "Map sheets (5) and legend strips (6)"
+  },
+  {
+   "id": "map-from-12",
+   "group": "maps",
+   "title": "Map sheet, printing sites 12 to 24",
+   "w": 1100,
+   "h": 800,
+   "row": "Map sheets (5) and legend strips (6)"
+  },
+  {
+   "id": "map-from-16",
+   "group": "maps",
+   "title": "Map sheet, printing sites 16 to 24",
+   "w": 1100,
+   "h": 800,
+   "row": "Map sheets (5) and legend strips (6)"
+  },
+  {
+   "id": "map-from-7",
+   "group": "maps",
+   "title": "Map sheet, printing sites 7 to 24",
+   "w": 1100,
+   "h": 800,
+   "row": "Map sheets (5) and legend strips (6)"
+  },
+  {
+   "id": "map-the-five",
+   "group": "maps",
+   "title": "Map sheet, printing sites 20 to 24",
+   "w": 1100,
+   "h": 800,
+   "row": "Map sheets (5) and legend strips (6)"
+  },
+  {
+   "id": "thread-guest",
+   "group": "thread",
+   "title": "An envelope stamped HOLD",
+   "w": 480,
+   "h": 480,
+   "row": "thread"
+  },
+  {
+   "id": "thread-own",
+   "group": "thread",
+   "title": "The line through the window",
+   "w": 480,
+   "h": 480,
+   "row": "thread"
+  }
+ ]
+}

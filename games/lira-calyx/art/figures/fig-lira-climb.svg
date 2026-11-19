@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 320" width="240" height="320" role="img" aria-labelledby="fig-lira-climb-t fig-lira-climb-d">
+<title id="fig-lira-climb-t">Lira: climbing</title>
+<desc id="fig-lira-climb-d">Lira hauling herself up a rock face, both hands over the lip of the ledge above, one boot finding a hold.</desc>
+<defs><filter id="fig-lira-climb-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="771"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter><pattern id="fig-lira-climb-pat2" width="46" height="20" patternUnits="userSpaceOnUse"><path d="M0,2.5H46M0,7.5H46M0,12.5H46M0,17.5H46" stroke="#3b2618" stroke-width="0.5" opacity="0.07"/><path d="M23,0V20" stroke="#3b2618" stroke-width="0.8" opacity="0.06"/></pattern><radialGradient id="fig-lira-climb-vig3" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#7a5a2e" stop-opacity="0"/><stop offset="100%" stop-color="#7a5a2e" stop-opacity="0.2"/></radialGradient><clipPath id="fig-lira-climb-clip4"><polygon points="150,60 234,60 234,300 168,300 160,200 150,110"/></clipPath></defs>
+<rect x="0" y="0" width="240" height="320" fill="#f1e8d2"/>
+<rect x="0" y="0" width="240" height="320" filter="url(#fig-lira-climb-grain1)"/>
+<rect x="0" y="0" width="240" height="320" fill="url(#fig-lira-climb-pat2)"/>
+<rect x="0" y="0" width="240" height="320" fill="url(#fig-lira-climb-vig3)"/>
+<text x="16" y="26" font-size="12" font-family="monospace" fill="#7d7a74" letter-spacing="1">LIRA  GRAB</text>
+<rect x="6" y="6" width="228" height="308" fill="none" stroke="#3b2618" stroke-width="1" opacity="0.5"/>
+<polygon points="150,60 234,60 234,300 168,300 160,200 150,110" fill="#56606a" opacity="0.3"/>
+<g clip-path="url(#fig-lira-climb-clip4)">
+<path d="M251.3,-4.1 L379.1,236.3 M244.2,-0.4 L372.1,240.1 M237.2,3.4 L365,243.8 M230.1,7.1 L358,247.6 M223,10.9 L350.9,251.3 M216,14.6 L343.8,255.1 M208.9,18.4 L336.8,258.8 M201.9,22.1 L329.7,262.6 M194.8,25.9 L322.6,266.3 M187.7,29.7 L315.6,270.1 M180.7,33.4 L308.5,273.9 M173.6,37.2 L301.4,277.6 M166.5,40.9 L294.4,281.4 M159.5,44.7 L287.3,285.1 M152.4,48.4 L280.3,288.9 M145.3,52.2 L273.2,292.6 M138.3,55.9 L266.1,296.4 M131.2,59.7 L259.1,300.1 M124.2,63.5 L252,303.9 M117.1,67.2 L244.9,307.7 M110,71 L237.9,311.4 M103,74.7 L230.8,315.2 M95.9,78.5 L223.7,318.9 M88.8,82.2 L216.7,322.7 M81.8,86 L209.6,326.4 M74.7,89.7 L202.6,330.2 M67.6,93.5 L195.5,333.9 M60.6,97.3 L188.4,337.7 M53.5,101 L181.4,341.5 M46.5,104.8 L174.3,345.2 M39.4,108.5 L167.2,349 M32.3,112.3 L160.2,352.7 M25.3,116 L153.1,356.5 M18.2,119.8 L146,360.2 M11.1,123.6 L139,364" fill="none" stroke="#3b2618" stroke-width="1" opacity="0.6"/>
+</g>
+<path d="M120.6,61.6 L149.1,59.8 L150.2,77.6 L150.7,95.3 L152.5,112.1 L152.7,129.5 L154.8,147.8 L156.5,165.7 L158.3,181.5 L159.8,201 L161.2,216.4 L162.1,232.8 L163.3,250.7 L165.2,266 L167.7,283.8 L168.2,299.3" stroke-width="3" stroke="#3b2618" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="M114.2,128 L131.2,98.6 L132.4,64.6" fill="none" stroke="#3b2618" stroke-width="13.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M114.2,128 L131.2,98.6 L132.4,64.6" fill="none" stroke="#6f5c4a" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M112,190 L135,229.8 L119.3,273.1" fill="none" stroke="#3b2618" stroke-width="15.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M112,190 L135,229.8 L119.3,273.1" fill="none" stroke="#6f5c4a" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M119.3,273.1 L131.3,274.1" fill="none" stroke="#3b2618" stroke-width="12.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M119.3,273.1 L131.3,274.1" fill="none" stroke="#3a2c22" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="119.2" y="126.7" width="28" height="44" fill="#c8913a" stroke="#3b2618" stroke-width="2.4" rx="7" transform="rotate(2 134.2 128.7)"/>
+<line x1="121.2" y1="142.7" x2="145.2" y2="142.7" stroke="#3b2618" stroke-width="1.4" transform="rotate(2 134.2 128.7)"/>
+<path d="M112,190 L152.6,211.6 L133.9,253.6" fill="none" stroke="#3b2618" stroke-width="16.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M112,190 L152.6,211.6 L133.9,253.6" fill="none" stroke="#5b4a3a" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M133.9,253.6 L146.9,254.6" fill="none" stroke="#3b2618" stroke-width="13.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M133.9,253.6 L146.9,254.6" fill="none" stroke="#3a2c22" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M112,190 L114.2,128" fill="none" stroke="#3b2618" stroke-width="30.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M112,190 L114.2,128" fill="none" stroke="#3f5a2c" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M97,192 l-4,14 l34,2 l-2,-16Z" fill="#3f5a2c" stroke="#3b2618" stroke-width="2.2" stroke-linejoin="round"/>
+<line x1="99" y1="188" x2="125" y2="186" stroke="#3b2618" stroke-width="2.4"/>
+<path d="M114.2,128 L121.2,94.8 L126,61.1" fill="none" stroke="#3b2618" stroke-width="13.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M114.2,128 L121.2,94.8 L126,61.1" fill="none" stroke="#3f5a2c" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="126" cy="61.1" r="5" fill="#d2a47c" stroke="#3b2618" stroke-width="1.8"/>
+<circle cx="107.4" cy="107.1" r="14.5" fill="#d2a47c" stroke="#3b2618" stroke-width="2.4"/>
+<path d="M93.4,110.1 A14.5,14.5 0 0,1 117.4,96.1 Q107.4,102.1 103.4,111.1Z" fill="#3b2618"/>
+<path d="M94.4,105.1 C92.5,106.4 84.9,109.1 83.4,113.1 C81.9,117.1 85,126.4 85.4,129.1" stroke-width="5" stroke="#3b2618" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="114.4" cy="106.1" r="1.6" fill="#3b2618"/>
+</svg>

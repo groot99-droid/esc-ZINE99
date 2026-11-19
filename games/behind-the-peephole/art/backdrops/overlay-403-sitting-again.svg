@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" width="640" height="480" role="img" aria-labelledby="overlay-403-sitting-again-t overlay-403-sitting-again-d">
+<title id="overlay-403-sitting-again-t">Plate overlay, 403: the picture that faces the rose, a second shift</title>
+<desc id="overlay-403-sitting-again-d">Gouache overlay for The Sitting on a second shift: the same picture of the valet door pinned facing the lens, and her pencil line changed: You came back. I count too.</desc>
+<defs><filter id="overlay-403-sitting-again-rough1"><feTurbulence type="turbulence" baseFrequency="0.1" numOctaves="2" seed="603" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="5"/></filter><filter id="overlay-403-sitting-again-rough2"><feTurbulence type="turbulence" baseFrequency="0.1" numOctaves="2" seed="54" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.2"/></filter><clipPath id="overlay-403-sitting-again-clip3"><path d="M606.5,240 C607.2,272.1 604.5,312.6 603.6,336.9 C602.7,361.2 605,371.7 601.2,385.6 C597.5,399.6 592.1,412.1 581.2,420.4 C570.3,428.7 552.6,431.8 535.9,435.4 C519.2,439.1 501.2,438.2 480.9,442.5 C460.6,446.8 457,457.2 414.1,461.4 C371.1,465.7 267.5,468.9 223.1,468 C178.8,467.2 169.7,460.2 148.1,456.3 C126.6,452.4 108.1,451.2 93.8,444.7 C79.6,438.3 73,427 62.8,417.6 C52.7,408.3 39.7,401.3 33,388.6 C26.3,375.9 25.5,366.3 22.8,341.6 C20.1,316.8 17.7,274.2 16.7,240 C15.7,205.8 12.5,160.4 16.7,136.4 C20.9,112.3 35.6,109.3 41.7,95.9 C47.8,82.5 43.3,64.7 53.4,55.9 C63.5,47 86.2,47.9 102.2,42.9 C118.3,37.8 128.9,29.4 149.6,25.6 C170.3,21.7 183,19.5 226.5,19.8 C269.9,20.1 366.7,26 410.2,27.5 C453.7,29.1 467.3,25.7 487.4,29.3 C507.6,32.9 515,44.2 530.9,49.1 C546.7,54 571.7,50.6 582.7,58.6 C593.7,66.5 594.1,82.3 596.9,96.6 C599.7,110.9 597.8,120.6 599.4,144.5 C601,168.4 605.8,207.9 606.5,240Z"/></clipPath><pattern id="overlay-403-sitting-again-wp4" width="46" height="8" patternUnits="userSpaceOnUse"><rect width="14" height="8" fill="#2f5a40" opacity="0.5"/><rect x="24" width="3" height="8" fill="#3d6b4c" opacity="0.5"/><path d="M0,2H46M0,6H46" stroke="#0c1a12" stroke-width="0.6" opacity="0.35"/></pattern><radialGradient id="overlay-403-sitting-again-rg5" cx="0.5" cy="0.45" r="0.7"><stop offset="0%" stop-color="#dfe6d6" stop-opacity="0.6"/><stop offset="50%" stop-color="#dfe6d6" stop-opacity="0.2"/><stop offset="100%" stop-color="#dfe6d6" stop-opacity="0"/></radialGradient><filter id="overlay-403-sitting-again-blur6" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="1.6"/></filter><radialGradient id="overlay-403-sitting-again-rg7" cx="0.5" cy="0.5" r="0.72"><stop offset="0%" stop-color="#000" stop-opacity="0"/><stop offset="60%" stop-color="#000" stop-opacity="0.1"/><stop offset="100%" stop-color="#000" stop-opacity="0.5"/></radialGradient></defs>
+<g clip-path="url(#overlay-403-sitting-again-clip3)">
+<rect x="0" y="0" width="640" height="480" fill="#1f3a2e"/>
+<rect x="0" y="0" width="640" height="480" fill="url(#overlay-403-sitting-again-wp4)"/>
+<rect x="0" y="466" width="640" height="14" fill="#3a2716"/>
+<rect x="0" y="480" width="640" height="0" fill="#5a3a1e"/>
+<rect x="0" y="0" width="640" height="480" fill="url(#overlay-403-sitting-again-rg5)"/>
+<g transform="rotate(-2 320 205)">
+<rect x="154" y="45" width="340" height="330" fill="#000" opacity="0.3"/>
+<rect x="150" y="40" width="340" height="330" fill="#f4efe2"/>
+<rect x="173.8" y="66.4" width="292.4" height="237.6" fill="#35503f" filter="url(#overlay-403-sitting-again-blur6)"/>
+<rect x="261.5" y="85.4" width="117" height="218.6" fill="#5a3e26" filter="url(#overlay-403-sitting-again-blur6)"/>
+<rect x="279.1" y="104.4" width="81.9" height="71.3" fill="#4a3120" filter="url(#overlay-403-sitting-again-blur6)"/>
+<circle cx="320" cy="204.2" r="9.5" fill="#0a0806"/>
+<circle cx="456" cy="337" r="9.5" fill="#b8913f" stroke="#b8913f" stroke-width="1.2"/>
+<circle cx="320" cy="47" r="4" fill="#c9c2b0" stroke="#555" stroke-width="0.6"/>
+</g>
+<g transform="rotate(-2 320 205)">
+<text x="320" y="335" font-size="21" font-family="cursive" fill="#4a4a4a" font-style="italic" text-anchor="middle" transform="rotate(0.8 320 335)">You came back. I count too.</text>
+<text x="320" y="361" font-size="21" font-family="cursive" fill="#4a4a4a" font-style="italic" text-anchor="middle" transform="rotate(-0.2 320 361)">Don't stop.</text>
+</g>
+<polygon points="470,480 452,410 484,380 530,392 560,480" fill="#f1ede2" filter="url(#overlay-403-sitting-again-rough2)"/>
+<line x1="448" y1="372" x2="520" y2="440" stroke="#c9a23a" stroke-width="7" stroke-linecap="round"/>
+<line x1="444" y1="368" x2="450" y2="374" stroke="#2a2a2a" stroke-width="4" stroke-linecap="round"/>
+<rect x="0" y="0" width="640" height="480" fill="url(#overlay-403-sitting-again-rg7)"/>
+</g>
+</svg>

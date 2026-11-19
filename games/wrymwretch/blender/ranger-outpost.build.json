@@ -1,0 +1,654 @@
+{
+  "game": "wrymwretch",
+  "location": "ranger-outpost",
+  "name": "The ranger outpost",
+  "reference": "assets/locations/ranger-outpost.jpg",
+  "bounds_m": [
+    30,
+    30,
+    12
+  ],
+  "origin": "floor centre in the yard; +y toward the timber double gate in the north palisade; the watch tower in the north-east corner, the longhouse on the east side, the crystal on its stand in the yard",
+  "materials": {
+    "bone": {
+      "color": [
+        0.902,
+        0.863,
+        0.769
+      ],
+      "roughness": 0.75
+    },
+    "bone-dark": {
+      "color": [
+        0.496,
+        0.475,
+        0.423
+      ],
+      "roughness": 0.85
+    },
+    "silver": {
+      "color": [
+        0.541,
+        0.557,
+        0.549
+      ],
+      "roughness": 0.45,
+      "metallic": 0.8
+    },
+    "void": {
+      "color": [
+        0.051,
+        0.055,
+        0.078
+      ],
+      "roughness": 1.0
+    },
+    "cedar-log": {
+      "color": [
+        0.722,
+        0.682,
+        0.596
+      ],
+      "roughness": 0.9
+    },
+    "yard": {
+      "color": [
+        0.13,
+        0.12,
+        0.1
+      ],
+      "roughness": 1.0
+    },
+    "moss-roof": {
+      "color": [
+        0.361,
+        0.549,
+        0.251
+      ],
+      "roughness": 0.95
+    },
+    "torch-amber": {
+      "color": [
+        0.941,
+        0.627,
+        0.251
+      ],
+      "roughness": 0.3,
+      "emission": 3.0
+    }
+  },
+  "blockout": [
+    {
+      "id": "yard",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        30,
+        30,
+        0.2
+      ],
+      "location": [
+        0,
+        0,
+        -0.1
+      ],
+      "material": "yard"
+    },
+    {
+      "id": "palisade-north-w",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        12.5,
+        0.8,
+        7
+      ],
+      "location": [
+        -8.75,
+        15,
+        3.5
+      ],
+      "material": "cedar-log"
+    },
+    {
+      "id": "palisade-north-e",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        12.5,
+        0.8,
+        7
+      ],
+      "location": [
+        8.75,
+        15,
+        3.5
+      ],
+      "material": "cedar-log"
+    },
+    {
+      "id": "gate-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        5,
+        0.8,
+        1.2
+      ],
+      "location": [
+        0,
+        15,
+        5.9
+      ],
+      "material": "cedar-log"
+    },
+    {
+      "id": "palisade-south",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        30,
+        0.8,
+        7
+      ],
+      "location": [
+        0,
+        -15,
+        3.5
+      ],
+      "material": "cedar-log"
+    },
+    {
+      "id": "palisade-west",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.8,
+        30,
+        7
+      ],
+      "location": [
+        -15,
+        0,
+        3.5
+      ],
+      "material": "cedar-log"
+    },
+    {
+      "id": "palisade-east",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.8,
+        30,
+        7
+      ],
+      "location": [
+        15,
+        0,
+        3.5
+      ],
+      "material": "cedar-log"
+    },
+    {
+      "id": "watch-post-1",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        0.5,
+        9
+      ],
+      "location": [
+        9,
+        11,
+        4.5
+      ],
+      "material": "cedar-log"
+    },
+    {
+      "id": "watch-post-2",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        0.5,
+        9
+      ],
+      "location": [
+        12,
+        11,
+        4.5
+      ],
+      "material": "cedar-log"
+    },
+    {
+      "id": "watch-post-3",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        0.5,
+        9
+      ],
+      "location": [
+        9,
+        14,
+        4.5
+      ],
+      "material": "cedar-log"
+    },
+    {
+      "id": "watch-post-4",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.5,
+        0.5,
+        9
+      ],
+      "location": [
+        12,
+        14,
+        4.5
+      ],
+      "material": "cedar-log"
+    },
+    {
+      "id": "watch-platform",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        4,
+        4,
+        0.3
+      ],
+      "location": [
+        10.5,
+        12.5,
+        8.5
+      ],
+      "material": "cedar-log"
+    },
+    {
+      "id": "ladder-rung-1",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.0,
+        0.6,
+        0.15
+      ],
+      "location": [
+        10.5,
+        9.9,
+        1.5
+      ],
+      "material": "cedar-log"
+    },
+    {
+      "id": "ladder-rung-2",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.0,
+        0.6,
+        0.15
+      ],
+      "location": [
+        10.5,
+        9.9,
+        3.5
+      ],
+      "material": "cedar-log"
+    },
+    {
+      "id": "ladder-rung-3",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.0,
+        0.6,
+        0.15
+      ],
+      "location": [
+        10.5,
+        9.9,
+        5.5
+      ],
+      "material": "cedar-log"
+    },
+    {
+      "id": "ladder-rung-4",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.0,
+        0.6,
+        0.15
+      ],
+      "location": [
+        10.5,
+        9.9,
+        7.5
+      ],
+      "material": "cedar-log"
+    },
+    {
+      "id": "longhouse",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        6,
+        11,
+        3.2
+      ],
+      "location": [
+        10.5,
+        -1,
+        1.6
+      ],
+      "material": "cedar-log"
+    },
+    {
+      "id": "longhouse-roof",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        7,
+        12,
+        0.6
+      ],
+      "location": [
+        10.5,
+        -1,
+        3.6
+      ],
+      "material": "moss-roof",
+      "rotation_deg": [
+        0,
+        8,
+        0
+      ]
+    },
+    {
+      "id": "weapon-rack",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        3,
+        0.4,
+        1.8
+      ],
+      "location": [
+        -12,
+        8,
+        0.9
+      ],
+      "material": "silver"
+    },
+    {
+      "id": "log-bench-1",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        7,
+        0.9,
+        0.9
+      ],
+      "location": [
+        -5,
+        4.5,
+        0.45
+      ],
+      "material": "cedar-log"
+    },
+    {
+      "id": "log-bench-2",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        7,
+        0.9,
+        0.9
+      ],
+      "location": [
+        3,
+        5.5,
+        0.45
+      ],
+      "material": "cedar-log"
+    },
+    {
+      "id": "crystal-stand",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        1.4,
+        1.0
+      ],
+      "location": [
+        -5,
+        2.5,
+        0.5
+      ],
+      "material": "bone"
+    },
+    {
+      "id": "rock-west",
+      "shape": "sphere",
+      "role": "terrain",
+      "size_m": [
+        5,
+        4,
+        3
+      ],
+      "location": [
+        -12,
+        -10,
+        0.5
+      ],
+      "material": "bone-dark"
+    }
+  ],
+  "props": [
+    {
+      "id": "gate",
+      "object": "outpost-gate",
+      "location": [
+        0,
+        14.6,
+        0
+      ]
+    },
+    {
+      "id": "torch-gate-w",
+      "object": "torch-sconce",
+      "location": [
+        -2.9,
+        14.4,
+        2.6
+      ],
+      "ground": false
+    },
+    {
+      "id": "torch-gate-e",
+      "object": "torch-sconce",
+      "location": [
+        2.9,
+        14.4,
+        2.6
+      ],
+      "ground": false
+    },
+    {
+      "id": "torch-longhouse",
+      "object": "torch-sconce",
+      "location": [
+        7.4,
+        -1,
+        2.2
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        -90
+      ],
+      "ground": false
+    },
+    {
+      "id": "torch-yard",
+      "object": "torch-sconce",
+      "location": [
+        -9,
+        -4,
+        1.6
+      ],
+      "ground": false
+    },
+    {
+      "id": "crystal-outpost",
+      "object": "memory-crystal",
+      "location": [
+        -5,
+        2.5,
+        1.0
+      ]
+    }
+  ],
+  "scenes": {
+    "s_cedar_outpost": {
+      "note": "Torchlit dusk: Thalen's line, the rangers' uneasy glances, the captain's request; the first memory crystal and the Record tutorial (up to 4 entries).",
+      "world": {
+        "color": [
+          0.102,
+          0.094,
+          0.125
+        ],
+        "strength": 0.18
+      },
+      "lights": [
+        {
+          "name": "torch-gate-w",
+          "type": "POINT",
+          "location": [
+            -2.9,
+            14.0,
+            3.0
+          ],
+          "energy": 220,
+          "size": 0.3,
+          "color": [
+            0.941,
+            0.627,
+            0.251
+          ]
+        },
+        {
+          "name": "torch-gate-e",
+          "type": "POINT",
+          "location": [
+            2.9,
+            14.0,
+            3.0
+          ],
+          "energy": 220,
+          "size": 0.3,
+          "color": [
+            0.941,
+            0.627,
+            0.251
+          ]
+        },
+        {
+          "name": "torch-longhouse",
+          "type": "POINT",
+          "location": [
+            7.0,
+            -1,
+            2.6
+          ],
+          "energy": 180,
+          "size": 0.3,
+          "color": [
+            0.941,
+            0.627,
+            0.251
+          ]
+        },
+        {
+          "name": "crystal-glow",
+          "type": "POINT",
+          "location": [
+            -5,
+            2.5,
+            2.0
+          ],
+          "energy": 150,
+          "size": 0.5,
+          "color": [
+            0.361,
+            0.549,
+            0.251
+          ]
+        },
+        {
+          "name": "dusk-rim",
+          "type": "SUN",
+          "location": [
+            0,
+            30,
+            20
+          ],
+          "energy": 0.4,
+          "size": 1,
+          "color": [
+            0.749,
+            0.816,
+            0.949
+          ],
+          "rotation_deg": [
+            -60,
+            0,
+            180
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.0,
+          15.5,
+          3.5
+        ],
+        "look_at": [
+          -0.0,
+          5.0,
+          1.2
+        ],
+        "lens_mm": 31,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          11,
+          0.0
+        ],
+        "facing_deg": 180
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "gate",
+          "verb": "Look back at the forest"
+        },
+        {
+          "prop": "crystal-outpost",
+          "verb": "Open the Record",
+          "leads_to": "s_elder_tree"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,603 @@
+{
+  "game": "people-of-the-bark",
+  "location": "splinterwatch",
+  "name": "Splinterwatch's battlements",
+  "reference": "assets/locations/splinterwatch.jpg",
+  "bounds_m": [
+    0.12,
+    0.1,
+    0.12
+  ],
+  "origin": "floor centre at the foot of the bark; the bark is a vertical wall whose face is the plane y = 0.03, with its relief toward -y and the open air in front of it. Gravity runs -z, down the screen. The god camera hovers in the air at -y and looks along +y straight at the bark, so 'top-down' here means straight onto the bark, which is the ground of the view. Real metres at human scale: the people are 2 mm tall. The raised splinter stands out from the bark; its top edge (z 0.055) is the battlement walk with six slots along its front.",
+  "materials": {
+    "bark-umber": {
+      "color": [
+        0.353,
+        0.243,
+        0.169
+      ],
+      "roughness": 0.95
+    },
+    "bark-grey": {
+      "color": [
+        0.431,
+        0.388,
+        0.341
+      ],
+      "roughness": 0.95
+    },
+    "crack-dark": {
+      "color": [
+        0.141,
+        0.094,
+        0.059
+      ],
+      "roughness": 1.0
+    },
+    "lichen-sage": {
+      "color": [
+        0.612,
+        0.686,
+        0.533
+      ],
+      "roughness": 1.0
+    },
+    "lichen-lime": {
+      "color": [
+        0.71,
+        0.784,
+        0.29
+      ],
+      "roughness": 1.0
+    },
+    "splinter-pale": {
+      "color": [
+        0.749,
+        0.655,
+        0.506
+      ],
+      "roughness": 0.9
+    },
+    "dust": {
+      "color": [
+        0.784,
+        0.659,
+        0.455
+      ],
+      "roughness": 1.0
+    }
+  },
+  "blockout": [
+    {
+      "id": "bark-slab",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.12,
+        0.02,
+        0.12
+      ],
+      "location": [
+        0,
+        0.04,
+        0.06
+      ],
+      "material": "bark-grey"
+    },
+    {
+      "id": "bark-ridge-1",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.026,
+        0.003,
+        0.12
+      ],
+      "location": [
+        -0.045,
+        0.0285,
+        0.06
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "bark-ridge-2",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.026,
+        0.003,
+        0.12
+      ],
+      "location": [
+        -0.015,
+        0.0285,
+        0.06
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "bark-ridge-3",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.026,
+        0.003,
+        0.12
+      ],
+      "location": [
+        0.015,
+        0.0285,
+        0.06
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "bark-ridge-4",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.026,
+        0.003,
+        0.12
+      ],
+      "location": [
+        0.045,
+        0.0285,
+        0.06
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "splinter-body",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.11,
+        0.016,
+        0.05
+      ],
+      "location": [
+        0,
+        0.022,
+        0.03
+      ],
+      "material": "splinter-pale"
+    },
+    {
+      "id": "battlement-walk",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        0.11,
+        0.016,
+        0.002
+      ],
+      "location": [
+        0,
+        0.022,
+        0.054
+      ],
+      "material": "dust"
+    },
+    {
+      "id": "splinter-tip",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        0.014,
+        0.008,
+        0.05
+      ],
+      "location": [
+        0,
+        0.02,
+        0.08
+      ],
+      "material": "splinter-pale",
+      "rotation_deg": [
+        0,
+        6,
+        0
+      ]
+    },
+    {
+      "id": "palisade",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.11,
+        0.002,
+        0.014
+      ],
+      "location": [
+        0,
+        0.013,
+        0.045
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "upper-ledge",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.034,
+        0.01,
+        0.003
+      ],
+      "location": [
+        -0.03,
+        0.025,
+        0.0835
+      ],
+      "material": "bark-umber"
+    },
+    {
+      "id": "ladder-west",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.003,
+        0.001,
+        0.03
+      ],
+      "location": [
+        -0.058,
+        0.024,
+        0.07
+      ],
+      "material": "bark-umber",
+      "rotation_deg": [
+        0,
+        -12,
+        0
+      ],
+      "collide": false
+    },
+    {
+      "id": "ladder-east",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.003,
+        0.001,
+        0.03
+      ],
+      "location": [
+        0.058,
+        0.024,
+        0.07
+      ],
+      "material": "bark-umber",
+      "rotation_deg": [
+        0,
+        12,
+        0
+      ],
+      "collide": false
+    },
+    {
+      "id": "groove-below",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        0.11,
+        0.004,
+        0.004
+      ],
+      "location": [
+        0,
+        0.012,
+        0.006
+      ],
+      "material": "crack-dark"
+    }
+  ],
+  "props": [
+    {
+      "id": "slot-1",
+      "object": "battlement-slot",
+      "location": [
+        -0.04,
+        0.016,
+        0.055
+      ]
+    },
+    {
+      "id": "slot-2",
+      "object": "battlement-slot",
+      "location": [
+        -0.028,
+        0.016,
+        0.055
+      ]
+    },
+    {
+      "id": "slot-3",
+      "object": "battlement-slot",
+      "location": [
+        -0.016,
+        0.016,
+        0.055
+      ]
+    },
+    {
+      "id": "slot-4",
+      "object": "battlement-slot",
+      "location": [
+        0.016,
+        0.016,
+        0.055
+      ]
+    },
+    {
+      "id": "slot-5",
+      "object": "battlement-slot",
+      "location": [
+        0.028,
+        0.016,
+        0.055
+      ]
+    },
+    {
+      "id": "slot-6",
+      "object": "battlement-slot",
+      "location": [
+        0.04,
+        0.016,
+        0.055
+      ]
+    },
+    {
+      "id": "tower-1",
+      "object": "watchtower",
+      "location": [
+        -0.052,
+        0.025,
+        0.055
+      ]
+    },
+    {
+      "id": "tower-2",
+      "object": "watchtower",
+      "location": [
+        -0.011,
+        0.025,
+        0.055
+      ]
+    },
+    {
+      "id": "tower-3",
+      "object": "watchtower",
+      "location": [
+        0.011,
+        0.025,
+        0.055
+      ]
+    },
+    {
+      "id": "tower-4",
+      "object": "watchtower",
+      "location": [
+        0.052,
+        0.025,
+        0.055
+      ]
+    },
+    {
+      "id": "rack-west",
+      "object": "spear-rack",
+      "location": [
+        -0.034,
+        0.021,
+        0.055
+      ]
+    },
+    {
+      "id": "rack-east",
+      "object": "spear-rack",
+      "location": [
+        0.034,
+        0.021,
+        0.055
+      ]
+    },
+    {
+      "id": "war-hall",
+      "object": "war-hall",
+      "location": [
+        -0.03,
+        0.025,
+        0.085
+      ]
+    }
+  ],
+  "scenes": {
+    "c1_battlements": {
+      "note": "Splinterwatch in the Tremor: place six warriors on the slots before the second shake at 1:30; dust knocks unplaced warriors flat. At 2:00 the pull-back prompt shows the squirrel scratching.",
+      "world": {
+        "color": [
+          0.55,
+          0.45,
+          0.3
+        ],
+        "strength": 0.6
+      },
+      "lights": [
+        {
+          "name": "dust-sun",
+          "type": "SUN",
+          "location": [
+            0.2,
+            -0.3,
+            0.3
+          ],
+          "energy": 3.0,
+          "color": [
+            1.0,
+            0.78,
+            0.45
+          ],
+          "look_at": [
+            0,
+            0.03,
+            0.05
+          ]
+        },
+        {
+          "name": "dust-haze",
+          "type": "AREA",
+          "location": [
+            0,
+            -0.02,
+            0.11
+          ],
+          "energy": 1.0,
+          "color": [
+            0.85,
+            0.7,
+            0.45
+          ],
+          "look_at": [
+            0,
+            0.03,
+            0.05
+          ],
+          "size": 0.1
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          -0.03,
+          0.065
+        ],
+        "look_at": [
+          0,
+          0.03,
+          0.055
+        ],
+        "lens_mm": 30,
+        "mode": "top-down"
+      },
+      "player_start": {
+        "location": [
+          0,
+          0.022,
+          0.055
+        ],
+        "facing_deg": 0
+      },
+      "interactions": [
+        {
+          "prop": "slot-1",
+          "verb": "Place a warrior on the slot"
+        },
+        {
+          "prop": "slot-2",
+          "verb": "Place a warrior on the slot"
+        },
+        {
+          "prop": "slot-3",
+          "verb": "Place a warrior on the slot"
+        },
+        {
+          "prop": "slot-4",
+          "verb": "Place a warrior on the slot"
+        },
+        {
+          "prop": "slot-5",
+          "verb": "Place a warrior on the slot"
+        },
+        {
+          "prop": "slot-6",
+          "verb": "Place a warrior on the slot"
+        },
+        {
+          "prop": "war-hall",
+          "verb": "Stand down after the shake",
+          "leads_to": "c1_omen"
+        }
+      ]
+    },
+    "c3_wind": {
+      "note": "The windstorm: three gusts sweep the bark in visible bands over 2:30; lash the four towers and pull the twelve people outside into grooves. Pull-back: a swing creaking in the yard.",
+      "world": {
+        "color": [
+          0.8,
+          0.82,
+          0.85
+        ],
+        "strength": 0.8
+      },
+      "lights": [
+        {
+          "name": "bleached-sun",
+          "type": "SUN",
+          "location": [
+            0.3,
+            -0.3,
+            0.5
+          ],
+          "energy": 6.0,
+          "color": [
+            1.0,
+            0.98,
+            0.92
+          ],
+          "look_at": [
+            0,
+            0.03,
+            0.05
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0,
+          -0.05,
+          0.06
+        ],
+        "look_at": [
+          0,
+          0.03,
+          0.06
+        ],
+        "lens_mm": 24,
+        "mode": "top-down"
+      },
+      "player_start": {
+        "location": [
+          0,
+          0.022,
+          0.055
+        ],
+        "facing_deg": 0
+      },
+      "interactions": [
+        {
+          "prop": "tower-1",
+          "verb": "Lash the tower"
+        },
+        {
+          "prop": "tower-2",
+          "verb": "Lash the tower"
+        },
+        {
+          "prop": "tower-3",
+          "verb": "Lash the tower"
+        },
+        {
+          "prop": "tower-4",
+          "verb": "Lash the tower"
+        },
+        {
+          "prop": "war-hall",
+          "verb": "Count the damage",
+          "leads_to": "c3_omen_wind"
+        }
+      ]
+    }
+  }
+}

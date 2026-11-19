@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160" role="img" aria-labelledby="ui-icon-sap-t ui-icon-sap-d">
+<title id="ui-icon-sap-t">Sap jar</title>
+<desc id="ui-icon-sap-d">The sap jar: a round-bellied clay jar two-thirds full of glowing amber sap, one drop on its lip.</desc>
+<defs><radialGradient id="ui-icon-sap-rg1" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#d9902a" stop-opacity="0.6"/><stop offset="35%" stop-color="#d9902a" stop-opacity="0.2"/><stop offset="100%" stop-color="#d9902a" stop-opacity="0"/></radialGradient><clipPath id="ui-icon-sap-clip2"><path d="M60,50 q-34,16 -34,52 q0,36 54,36 q54,0 54,-36 q0,-36 -34,-52Z"/></clipPath><linearGradient id="ui-icon-sap-lg3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f0c050"/><stop offset="100%" stop-color="#d9902a"/></linearGradient></defs>
+<circle cx="80" cy="96" r="76" fill="url(#ui-icon-sap-rg1)"/>
+<path d="M56,34 h48 v14 q34,16 34,54 q0,40 -58,40 q-58,0 -58,-40 q0,-38 34,-54Z" fill="#5a3d2b" stroke="#1b120c" stroke-width="4" stroke-linejoin="round"/>
+<rect x="20" y="84" width="120" height="70" fill="url(#ui-icon-sap-lg3)" clip-path="url(#ui-icon-sap-clip2)"/>
+<ellipse cx="80" cy="84" rx="50" ry="7" fill="#ffe9a8" opacity="0.8" clip-path="url(#ui-icon-sap-clip2)"/>
+<path d="M40,98 q-4,18 6,30" fill="none" stroke="#fff6dc" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
+<rect x="52" y="28" width="56" height="12" rx="5" fill="#7d6c5a" stroke="#1b120c" stroke-width="3"/>
+<path d="M110,42.5 Q121.7,59.6 110,66.8 Q98.3,59.6 110,42.5Z" fill="#d9902a"/>
+</svg>

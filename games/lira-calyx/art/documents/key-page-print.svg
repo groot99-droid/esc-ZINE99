@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1100" width="800" height="1100" role="img" aria-labelledby="key-page-print-t key-page-print-d">
+<title id="key-page-print-t">The Key: the printed page</title>
+<desc id="key-page-print-d">A page of the printed dichotomous key: numbered couplets in serif type, each with the small block that marks a printed hand, the first couplet on glow period legible, species names at the ends of dotted leaders, a branching diagram of the key and an engraved Aether-Vine sprig.</desc>
+<defs><filter id="key-page-print-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="272"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter><pattern id="key-page-print-pat2" width="46" height="20" patternUnits="userSpaceOnUse"><path d="M0,2.5H46M0,7.5H46M0,12.5H46M0,17.5H46" stroke="#3b2618" stroke-width="0.5" opacity="0.07"/><path d="M23,0V20" stroke="#3b2618" stroke-width="0.8" opacity="0.06"/></pattern><radialGradient id="key-page-print-vig3" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#7a5a2e" stop-opacity="0"/><stop offset="100%" stop-color="#7a5a2e" stop-opacity="0.2"/></radialGradient></defs>
+<rect x="0" y="0" width="800" height="1100" fill="#f1e8d2"/>
+<rect x="0" y="0" width="800" height="1100" filter="url(#key-page-print-grain1)"/>
+<rect x="0" y="0" width="800" height="1100" fill="url(#key-page-print-pat2)"/>
+<rect x="0" y="0" width="800" height="1100" fill="url(#key-page-print-vig3)"/>
+<rect x="60" y="56" width="680" height="988" fill="none" stroke="#3b2618" stroke-width="1.2"/>
+<rect x="66" y="62" width="668" height="976" fill="none" stroke="#3b2618" stroke-width="0.6"/>
+<text x="400" y="122" font-size="34" font-family="serif" fill="#3b2618" text-anchor="middle" letter-spacing="6">DICHOTOMOUS KEY</text>
+<text x="400" y="152" font-size="18" font-family="serif" font-style="italic" fill="#3b2618" text-anchor="middle">Mid-Slopes</text>
+<path d="M250,170 H550 M390,176 l10,8 l10,-8" stroke="#3b2618" stroke-width="1.2" fill="none"/>
+<rect x="83" y="219" width="10" height="10" fill="#3b2618"/>
+<text x="110" y="230" font-size="20" font-family="serif" font-weight="bold" fill="#3b2618">1a.</text>
+<text x="154" y="230" font-size="20" font-family="serif" fill="#3b2618">Glow period under 4 s, go to 2.</text>
+<rect x="83" y="251" width="10" height="10" fill="#3b2618"/>
+<text x="110" y="262" font-size="20" font-family="serif" font-weight="bold" fill="#3b2618">1b.</text>
+<text x="154" y="262" font-size="20" font-family="serif" fill="#3b2618">Glow period 4 s or more, go to 5.</text>
+<rect x="83" y="307" width="10" height="10" fill="#3b2618"/>
+<text x="110" y="318" font-size="20" font-family="serif" font-weight="bold" fill="#3b2618">2a.</text>
+<path d="M154,313.2h31.5M193.1,313.2h48.2M249,313.2h48.2M304.8,313.2h36.9M349.3,313.2h46.3M403.3,313.2h25.3" stroke="#3b2618" stroke-width="7.1" fill="none" opacity="0.8" stroke-dasharray="8.5 1.5"/>
+<line x1="526" y1="314" x2="520" y2="314" stroke="#3b2618" stroke-width="1.6" stroke-dasharray="1 7" stroke-linecap="round"/>
+<text x="670" y="318" font-size="20" font-family="serif" font-style="italic" fill="#3b2618" text-anchor="end">Ember Wolf</text>
+<rect x="83" y="339" width="10" height="10" fill="#3b2618"/>
+<text x="110" y="350" font-size="20" font-family="serif" font-weight="bold" fill="#3b2618">2b.</text>
+<path d="M154,345.2h57.3M218.9,345.2h18M244.6,345.2h14M266.2,345.2h36.9M310.8,345.2h32M350.4,345.2h56M414.1,345.2h29.1M450.9,345.2h20.5M479.1,345.2h15.8" stroke="#3b2618" stroke-width="7.1" fill="none" opacity="0.8" stroke-dasharray="8.5 1.5"/>
+<line x1="606" y1="346" x2="636" y2="346" stroke="#3b2618" stroke-width="1.6" stroke-dasharray="1 7" stroke-linecap="round"/>
+<text x="670" y="350" font-size="20" font-family="serif" fill="#3b2618" text-anchor="end">3</text>
+<rect x="83" y="393" width="10" height="10" fill="#3b2618"/>
+<text x="110" y="404" font-size="20" font-family="serif" font-weight="bold" fill="#3b2618">3a.</text>
+<path d="M154,399.2h22.6M184.2,399.2h17.6M209.4,399.2h38.2M255.3,399.2h49M311.9,399.2h46.7M366.3,399.2h39.3M413.3,399.2h16.5" stroke="#3b2618" stroke-width="7.1" fill="none" opacity="0.8" stroke-dasharray="8.5 1.5"/>
+<line x1="526" y1="400" x2="520" y2="400" stroke="#3b2618" stroke-width="1.6" stroke-dasharray="1 7" stroke-linecap="round"/>
+<text x="670" y="404" font-size="20" font-family="serif" font-style="italic" fill="#3b2618" text-anchor="end">Ridgeback Strider</text>
+<rect x="83" y="425" width="10" height="10" fill="#3b2618"/>
+<text x="110" y="436" font-size="20" font-family="serif" font-weight="bold" fill="#3b2618">3b.</text>
+<path d="M154,431.2h51.3M212.9,431.2h22.9M243.5,431.2h13.8M265,431.2h50.7M323.4,431.2h24.6M355.7,431.2h23.9M387.2,431.2h54.4M449.3,431.2h20.7" stroke="#3b2618" stroke-width="7.1" fill="none" opacity="0.8" stroke-dasharray="8.5 1.5"/>
+<line x1="606" y1="432" x2="636" y2="432" stroke="#3b2618" stroke-width="1.6" stroke-dasharray="1 7" stroke-linecap="round"/>
+<text x="670" y="436" font-size="20" font-family="serif" fill="#3b2618" text-anchor="end">4</text>
+<rect x="83" y="479" width="10" height="10" fill="#3b2618"/>
+<text x="110" y="490" font-size="20" font-family="serif" font-weight="bold" fill="#3b2618">4a.</text>
+<path d="M154,485.2h28.8M190.5,485.2h15.1M213.2,485.2h18.5M239.4,485.2h44.5M291.6,485.2h43.4M342.7,485.2h50.3M400.6,485.2h32" stroke="#3b2618" stroke-width="7.1" fill="none" opacity="0.8" stroke-dasharray="8.5 1.5"/>
+<line x1="526" y1="486" x2="520" y2="486" stroke="#3b2618" stroke-width="1.6" stroke-dasharray="1 7" stroke-linecap="round"/>
+<text x="670" y="490" font-size="20" font-family="serif" font-style="italic" fill="#3b2618" text-anchor="end">Spore-Weaver</text>
+<rect x="83" y="511" width="10" height="10" fill="#3b2618"/>
+<text x="110" y="522" font-size="20" font-family="serif" font-weight="bold" fill="#3b2618">4b.</text>
+<path d="M154,517.2h50.8M212.4,517.2h17.9M238,517.2h44.7M290.3,517.2h41.7M339.7,517.2h25M372.4,517.2h45M425,517.2h56.3M489,517.2h14.3" stroke="#3b2618" stroke-width="7.1" fill="none" opacity="0.8" stroke-dasharray="8.5 1.5"/>
+<line x1="606" y1="518" x2="636" y2="518" stroke="#3b2618" stroke-width="1.6" stroke-dasharray="1 7" stroke-linecap="round"/>
+<text x="670" y="522" font-size="20" font-family="serif" fill="#3b2618" text-anchor="end">6</text>
+<rect x="83" y="565" width="10" height="10" fill="#3b2618"/>
+<text x="110" y="576" font-size="20" font-family="serif" font-weight="bold" fill="#3b2618">5a.</text>
+<path d="M154,571.2h55.4M217,571.2h33.3M258,571.2h38.3M303.9,571.2h24.1M335.7,571.2h49.7M393,571.2h53M453.7,571.2h32.7" stroke="#3b2618" stroke-width="7.1" fill="none" opacity="0.8" stroke-dasharray="8.5 1.5"/>
+<line x1="526" y1="572" x2="520" y2="572" stroke="#3b2618" stroke-width="1.6" stroke-dasharray="1 7" stroke-linecap="round"/>
+<text x="670" y="576" font-size="20" font-family="serif" font-style="italic" fill="#3b2618" text-anchor="end">Aether-Vine</text>
+<rect x="83" y="597" width="10" height="10" fill="#3b2618"/>
+<text x="110" y="608" font-size="20" font-family="serif" font-weight="bold" fill="#3b2618">5b.</text>
+<path d="M154,603.2h33.2M194.8,603.2h53.1M255.6,603.2h37.6M300.8,603.2h53.1M361.6,603.2h23.6M392.9,603.2h45.8M446.3,603.2h20.7M474.7,603.2h52.3M534.6,603.2h28.8" stroke="#3b2618" stroke-width="7.1" fill="none" opacity="0.8" stroke-dasharray="8.5 1.5"/>
+<line x1="606" y1="604" x2="636" y2="604" stroke="#3b2618" stroke-width="1.6" stroke-dasharray="1 7" stroke-linecap="round"/>
+<text x="670" y="608" font-size="20" font-family="serif" fill="#3b2618" text-anchor="end">6</text>
+<rect x="83" y="651" width="10" height="10" fill="#3b2618"/>
+<text x="110" y="662" font-size="20" font-family="serif" font-weight="bold" fill="#3b2618">6a.</text>
+<path d="M154,657.2h29.8M191.4,657.2h53.4M252.5,657.2h43.3M303.4,657.2h33.1M344.2,657.2h37.1M388.9,657.2h29M425.6,657.2h32.9M466.2,657.2h24.2M498,657.2h22.5" stroke="#3b2618" stroke-width="7.1" fill="none" opacity="0.8" stroke-dasharray="8.5 1.5"/>
+<line x1="606" y1="658" x2="636" y2="658" stroke="#3b2618" stroke-width="1.6" stroke-dasharray="1 7" stroke-linecap="round"/>
+<text x="670" y="662" font-size="20" font-family="serif" fill="#3b2618" text-anchor="end">7</text>
+<rect x="83" y="683" width="10" height="10" fill="#3b2618"/>
+<text x="110" y="694" font-size="20" font-family="serif" font-weight="bold" fill="#3b2618">6b.</text>
+<path d="M154,689.2h19.8M181.5,689.2h57.6M246.7,689.2h51.5M305.9,689.2h31.9M345.5,689.2h25.6M378.8,689.2h43.3M429.7,689.2h46.9M484.3,689.2h38.4M530.4,689.2h14.6M552.6,689.2h13.1" stroke="#3b2618" stroke-width="7.1" fill="none" opacity="0.8" stroke-dasharray="8.5 1.5"/>
+<line x1="606" y1="690" x2="636" y2="690" stroke="#3b2618" stroke-width="1.6" stroke-dasharray="1 7" stroke-linecap="round"/>
+<text x="670" y="694" font-size="20" font-family="serif" fill="#3b2618" text-anchor="end">8</text>
+<text x="130" y="774" font-size="16" font-family="serif" font-style="italic" fill="#3b2618">Fig. 1</text>
+<path d="M130,890 h60 M190,830 v120 M190,830 h70 M190,950 h70 M260,800 v60 M260,920 v60 M260,800 h70 M260,860 h70 M260,920 h70 M260,980 h70 M330,845 v30 M330,845 h60 M330,875 h60" stroke="#3b2618" stroke-width="2" fill="none" stroke-linejoin="round"/>
+<circle cx="174" cy="890" r="11" fill="#f1e8d2" stroke="#3b2618" stroke-width="1.4"/>
+<text x="174" y="896" font-size="15" font-family="serif" fill="#3b2618" text-anchor="middle">1</text>
+<circle cx="242" cy="830" r="11" fill="#f1e8d2" stroke="#3b2618" stroke-width="1.4"/>
+<text x="242" y="836" font-size="15" font-family="serif" fill="#3b2618" text-anchor="middle">2</text>
+<circle cx="242" cy="950" r="11" fill="#f1e8d2" stroke="#3b2618" stroke-width="1.4"/>
+<text x="242" y="956" font-size="15" font-family="serif" fill="#3b2618" text-anchor="middle">5</text>
+<circle cx="312" cy="860" r="11" fill="#f1e8d2" stroke="#3b2618" stroke-width="1.4"/>
+<text x="312" y="866" font-size="15" font-family="serif" fill="#3b2618" text-anchor="middle">3</text>
+<path d="M340,802.1h15.8M362.1,802.1h36" stroke="#3b2618" stroke-width="5.9" fill="none" opacity="0.8" stroke-dasharray="7 1.3"/>
+<path d="M400,847.1h38.5M444.8,847.1h14.2" stroke="#3b2618" stroke-width="5.9" fill="none" opacity="0.8" stroke-dasharray="7 1.3"/>
+<path d="M400,877.1h32.4M438.7,877.1h12.1M457.1,877.1h12.9" stroke="#3b2618" stroke-width="5.9" fill="none" opacity="0.8" stroke-dasharray="7 1.3"/>
+<path d="M340,922.1h31.3M377.6,922.1h32.4" stroke="#3b2618" stroke-width="5.9" fill="none" opacity="0.8" stroke-dasharray="7 1.3"/>
+<path d="M340,982.1h19.1M365.4,982.1h41.9" stroke="#3b2618" stroke-width="5.9" fill="none" opacity="0.8" stroke-dasharray="7 1.3"/>
+<path d="M500,1000 C504.2,987.5 512.5,950 525,925 C537.5,900 554.2,870.8 575,850 C595.8,829.2 637.5,808.3 650,800" stroke-width="2.6" stroke="#3b2618" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M510,965 C508.6,959.3 522.8,940.7 532,937.5 C541.2,934.3 563.6,940.1 565,945.8 C566.4,951.4 549.4,968.4 540.2,971.6 C531.1,974.8 511.4,970.7 510,965Z" fill="#3f5a2c" fill-opacity="0.2" stroke="#3f5a2c" stroke-opacity="0.4" stroke-width="1" stroke-linejoin="round"/>
+<path d="M510,965 C508.6,959.3 522.8,940.7 532,937.5 C541.2,934.3 563.6,940.1 565,945.8 C566.4,951.4 549.4,968.4 540.2,971.6 C531.1,974.8 511.4,970.7 510,965Z" fill="none" stroke="#3b2618" stroke-width="1.8" stroke-linejoin="round"/>
+<line x1="510" y1="965" x2="565" y2="945.8" stroke="#3b2618" stroke-width="1"/>
+<path d="M510,965 C508.6,968.1 522.8,973.8 532,980.1 C541.2,986.5 563.6,1006.2 565,1003.1 C566.4,1000 549.4,967.7 540.2,961.4 C531.1,955 511.4,961.9 510,965Z" fill="#3f5a2c" fill-opacity="0.2" stroke="#3f5a2c" stroke-opacity="0.4" stroke-width="1" stroke-linejoin="round"/>
+<path d="M510,965 C508.6,968.1 522.8,973.8 532,980.1 C541.2,986.5 563.6,1006.2 565,1003.1 C566.4,1000 549.4,967.7 540.2,961.4 C531.1,955 511.4,961.9 510,965Z" fill="none" stroke="#3b2618" stroke-width="1.8" stroke-linejoin="round"/>
+<line x1="510" y1="965" x2="565" y2="1003.1" stroke="#3b2618" stroke-width="1"/>
+<path d="M532.5,912.5 C531.3,907.5 543.9,891 552,888.1 C560.1,885.3 580,890.4 581.2,895.4 C582.5,900.5 567.4,915.5 559.3,918.4 C551.2,921.2 533.7,917.5 532.5,912.5Z" fill="#3f5a2c" fill-opacity="0.2" stroke="#3f5a2c" stroke-opacity="0.4" stroke-width="1" stroke-linejoin="round"/>
+<path d="M532.5,912.5 C531.3,907.5 543.9,891 552,888.1 C560.1,885.3 580,890.4 581.2,895.4 C582.5,900.5 567.4,915.5 559.3,918.4 C551.2,921.2 533.7,917.5 532.5,912.5Z" fill="none" stroke="#3b2618" stroke-width="1.8" stroke-linejoin="round"/>
+<line x1="532.5" y1="912.5" x2="581.2" y2="895.4" stroke="#3b2618" stroke-width="1"/>
+<path d="M532.5,912.5 C531.3,915.3 543.9,920.3 552,925.9 C560.1,931.5 580,949 581.2,946.3 C582.5,943.5 567.4,914.9 559.3,909.3 C551.2,903.7 533.7,909.7 532.5,912.5Z" fill="#3f5a2c" fill-opacity="0.2" stroke="#3f5a2c" stroke-opacity="0.4" stroke-width="1" stroke-linejoin="round"/>
+<path d="M532.5,912.5 C531.3,915.3 543.9,920.3 552,925.9 C560.1,931.5 580,949 581.2,946.3 C582.5,943.5 567.4,914.9 559.3,909.3 C551.2,903.7 533.7,909.7 532.5,912.5Z" fill="none" stroke="#3b2618" stroke-width="1.8" stroke-linejoin="round"/>
+<line x1="532.5" y1="912.5" x2="581.2" y2="946.3" stroke="#3b2618" stroke-width="1"/>
+<path d="M557.5,870 C556.4,865.6 567.4,851.2 574.5,848.8 C581.6,846.3 598.9,850.7 600,855.1 C601.1,859.5 588,872.6 580.9,875.1 C573.8,877.6 558.6,874.4 557.5,870Z" fill="#3f5a2c" fill-opacity="0.2" stroke="#3f5a2c" stroke-opacity="0.4" stroke-width="1" stroke-linejoin="round"/>
+<path d="M557.5,870 C556.4,865.6 567.4,851.2 574.5,848.8 C581.6,846.3 598.9,850.7 600,855.1 C601.1,859.5 588,872.6 580.9,875.1 C573.8,877.6 558.6,874.4 557.5,870Z" fill="none" stroke="#3b2618" stroke-width="1.8" stroke-linejoin="round"/>
+<line x1="557.5" y1="870" x2="600" y2="855.1" stroke="#3b2618" stroke-width="1"/>
+<path d="M557.5,870 C556.4,872.4 567.4,876.8 574.5,881.7 C581.6,886.6 598.9,901.8 600,899.4 C601.1,897 588,872.1 580.9,867.2 C573.8,862.3 558.6,867.6 557.5,870Z" fill="#3f5a2c" fill-opacity="0.2" stroke="#3f5a2c" stroke-opacity="0.4" stroke-width="1" stroke-linejoin="round"/>
+<path d="M557.5,870 C556.4,872.4 567.4,876.8 574.5,881.7 C581.6,886.6 598.9,901.8 600,899.4 C601.1,897 588,872.1 580.9,867.2 C573.8,862.3 558.6,867.6 557.5,870Z" fill="none" stroke="#3b2618" stroke-width="1.8" stroke-linejoin="round"/>
+<line x1="557.5" y1="870" x2="600" y2="899.4" stroke="#3b2618" stroke-width="1"/>
+<path d="M597.5,830 C596.6,826.3 606,814 612,811.9 C618,809.8 632.8,813.6 633.8,817.3 C634.7,821.1 623.5,832.2 617.4,834.4 C611.4,836.5 598.4,833.7 597.5,830Z" fill="#3f5a2c" fill-opacity="0.2" stroke="#3f5a2c" stroke-opacity="0.4" stroke-width="1" stroke-linejoin="round"/>
+<path d="M597.5,830 C596.6,826.3 606,814 612,811.9 C618,809.8 632.8,813.6 633.8,817.3 C634.7,821.1 623.5,832.2 617.4,834.4 C611.4,836.5 598.4,833.7 597.5,830Z" fill="none" stroke="#3b2618" stroke-width="1.8" stroke-linejoin="round"/>
+<line x1="597.5" y1="830" x2="633.8" y2="817.3" stroke="#3b2618" stroke-width="1"/>
+<path d="M597.5,830 C596.6,832.1 606,835.8 612,840 C618,844.2 632.8,857.2 633.8,855.1 C634.7,853 623.5,831.8 617.4,827.6 C611.4,823.4 598.4,827.9 597.5,830Z" fill="#3f5a2c" fill-opacity="0.2" stroke="#3f5a2c" stroke-opacity="0.4" stroke-width="1" stroke-linejoin="round"/>
+<path d="M597.5,830 C596.6,832.1 606,835.8 612,840 C618,844.2 632.8,857.2 633.8,855.1 C634.7,853 623.5,831.8 617.4,827.6 C611.4,823.4 598.4,827.9 597.5,830Z" fill="none" stroke="#3b2618" stroke-width="1.8" stroke-linejoin="round"/>
+<line x1="597.5" y1="830" x2="633.8" y2="855.1" stroke="#3b2618" stroke-width="1"/>
+<circle cx="650" cy="800" r="6.2" fill="#3fc4d0" stroke="#3b2618" stroke-width="1.4"/>
+<text x="690" y="1010" font-size="16" font-family="serif" font-style="italic" fill="#3b2618" text-anchor="end">Pl. IV</text>
+<text x="400" y="1070" font-size="16" font-family="serif" fill="#3b2618" text-anchor="middle">12</text>
+</svg>

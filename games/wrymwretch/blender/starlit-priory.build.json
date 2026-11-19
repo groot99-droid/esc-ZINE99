@@ -1,0 +1,773 @@
+{
+  "game": "wrymwretch",
+  "location": "starlit-priory",
+  "name": "The star-lit Priory and the crystalline forest",
+  "reference": "assets/locations/starlit-priory.jpg",
+  "bounds_m": [
+    60,
+    100,
+    25
+  ],
+  "origin": "floor centre at the foot of the forest hill; +y toward the crystalline forest; the Priory hall (40 x 20 m) runs south of it (-y) under its star dome, with gold doors at its north end opening onto the forest (60 x 60 m); bounds deepened to 100 m",
+  "materials": {
+    "bone": {
+      "color": [
+        0.902,
+        0.863,
+        0.769
+      ],
+      "roughness": 0.75
+    },
+    "bone-dark": {
+      "color": [
+        0.496,
+        0.475,
+        0.423
+      ],
+      "roughness": 0.85
+    },
+    "silver": {
+      "color": [
+        0.541,
+        0.557,
+        0.549
+      ],
+      "roughness": 0.45,
+      "metallic": 0.8
+    },
+    "void": {
+      "color": [
+        0.051,
+        0.055,
+        0.078
+      ],
+      "roughness": 1.0
+    },
+    "marble": {
+      "color": [
+        0.91,
+        0.902,
+        0.878
+      ],
+      "roughness": 0.4
+    },
+    "gold-leaf": {
+      "color": [
+        0.91,
+        0.753,
+        0.376
+      ],
+      "roughness": 0.3,
+      "metallic": 0.9
+    },
+    "star-glass": {
+      "color": [
+        0.102,
+        0.125,
+        0.282
+      ],
+      "roughness": 0.05,
+      "emission": 0.8
+    },
+    "hill": {
+      "color": [
+        0.173,
+        0.188,
+        0.251
+      ],
+      "roughness": 0.9
+    },
+    "door-light": {
+      "color": [
+        0.957,
+        0.965,
+        1.0
+      ],
+      "roughness": 0.3,
+      "emission": 2.0
+    },
+    "cosmic-dust": {
+      "color": [
+        0.227,
+        0.188,
+        0.376
+      ],
+      "roughness": 0.3,
+      "emission": 0.6
+    }
+  },
+  "blockout": [
+    {
+      "id": "hall-floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        20,
+        40,
+        0.4
+      ],
+      "location": [
+        0,
+        -30,
+        -0.2
+      ],
+      "material": "marble"
+    },
+    {
+      "id": "hall-west",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.8,
+        40,
+        12
+      ],
+      "location": [
+        -10,
+        -30,
+        6
+      ],
+      "material": "marble"
+    },
+    {
+      "id": "hall-east",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.8,
+        40,
+        12
+      ],
+      "location": [
+        10,
+        -30,
+        6
+      ],
+      "material": "marble"
+    },
+    {
+      "id": "hall-south",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        20,
+        0.8,
+        12
+      ],
+      "location": [
+        0,
+        -50,
+        6
+      ],
+      "material": "marble"
+    },
+    {
+      "id": "front-wall-w",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        8,
+        0.8,
+        12
+      ],
+      "location": [
+        -6,
+        -10,
+        6
+      ],
+      "material": "marble"
+    },
+    {
+      "id": "front-wall-e",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        8,
+        0.8,
+        12
+      ],
+      "location": [
+        6,
+        -10,
+        6
+      ],
+      "material": "marble"
+    },
+    {
+      "id": "front-lintel",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        4,
+        0.8,
+        5
+      ],
+      "location": [
+        0,
+        -10,
+        9.5
+      ],
+      "material": "marble"
+    },
+    {
+      "id": "doors-frame",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        4.4,
+        1.0,
+        7.4
+      ],
+      "location": [
+        0,
+        -10,
+        3.5
+      ],
+      "material": "gold-leaf",
+      "collide": false
+    },
+    {
+      "id": "doors-light",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        3.6,
+        0.2,
+        7
+      ],
+      "location": [
+        0,
+        -9.8,
+        3.5
+      ],
+      "material": "door-light",
+      "collide": false
+    },
+    {
+      "id": "star-dome",
+      "shape": "sphere",
+      "role": "ceiling",
+      "size_m": [
+        20,
+        40,
+        12
+      ],
+      "location": [
+        0,
+        -30,
+        18
+      ],
+      "material": "star-glass"
+    },
+    {
+      "id": "forest-hill",
+      "shape": "sphere",
+      "role": "terrain",
+      "size_m": [
+        60,
+        60,
+        12
+      ],
+      "location": [
+        0,
+        20,
+        0
+      ],
+      "material": "hill"
+    },
+    {
+      "id": "forest-floor",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        60,
+        60,
+        0.4
+      ],
+      "location": [
+        0,
+        20,
+        -0.2
+      ],
+      "material": "hill"
+    },
+    {
+      "id": "cosmic-dust",
+      "shape": "box",
+      "role": "sky",
+      "size_m": [
+        300,
+        4,
+        150
+      ],
+      "location": [
+        0,
+        160,
+        60
+      ],
+      "material": "cosmic-dust",
+      "collide": false
+    },
+    {
+      "id": "column-w1",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.0,
+        1.0,
+        12
+      ],
+      "location": [
+        -7.5,
+        -44,
+        6
+      ],
+      "material": "marble"
+    },
+    {
+      "id": "column-e1",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.0,
+        1.0,
+        12
+      ],
+      "location": [
+        7.5,
+        -44,
+        6
+      ],
+      "material": "marble"
+    },
+    {
+      "id": "column-w2",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.0,
+        1.0,
+        12
+      ],
+      "location": [
+        -7.5,
+        -36,
+        6
+      ],
+      "material": "marble"
+    },
+    {
+      "id": "column-e2",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.0,
+        1.0,
+        12
+      ],
+      "location": [
+        7.5,
+        -36,
+        6
+      ],
+      "material": "marble"
+    },
+    {
+      "id": "column-w3",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.0,
+        1.0,
+        12
+      ],
+      "location": [
+        -7.5,
+        -28,
+        6
+      ],
+      "material": "marble"
+    },
+    {
+      "id": "column-e3",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.0,
+        1.0,
+        12
+      ],
+      "location": [
+        7.5,
+        -28,
+        6
+      ],
+      "material": "marble"
+    },
+    {
+      "id": "column-w4",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.0,
+        1.0,
+        12
+      ],
+      "location": [
+        -7.5,
+        -20,
+        6
+      ],
+      "material": "marble"
+    },
+    {
+      "id": "column-e4",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.0,
+        1.0,
+        12
+      ],
+      "location": [
+        7.5,
+        -20,
+        6
+      ],
+      "material": "marble"
+    }
+  ],
+  "props": [
+    {
+      "id": "sky-watch-w",
+      "object": "sky-watch-telescope",
+      "location": [
+        -4,
+        -40,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        -30
+      ]
+    },
+    {
+      "id": "sky-watch-e",
+      "object": "sky-watch-telescope",
+      "location": [
+        4,
+        -40,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        30
+      ]
+    },
+    {
+      "id": "crystal-priory",
+      "object": "memory-crystal",
+      "location": [
+        5,
+        -14,
+        0
+      ]
+    },
+    {
+      "id": "crystal-tree-1",
+      "object": "crystalline-tree",
+      "location": [
+        -14,
+        6,
+        4.51
+      ]
+    },
+    {
+      "id": "crystal-tree-2",
+      "object": "crystalline-tree",
+      "location": [
+        12,
+        8,
+        4.95
+      ]
+    },
+    {
+      "id": "crystal-tree-3",
+      "object": "crystalline-tree",
+      "location": [
+        -6,
+        18,
+        5.87
+      ]
+    },
+    {
+      "id": "crystal-tree-4",
+      "object": "crystalline-tree",
+      "location": [
+        16,
+        22,
+        5.06
+      ]
+    },
+    {
+      "id": "crystal-tree-5",
+      "object": "crystalline-tree",
+      "location": [
+        -18,
+        26,
+        4.65
+      ]
+    },
+    {
+      "id": "crystal-tree-6",
+      "object": "crystalline-tree",
+      "location": [
+        0,
+        30,
+        5.66
+      ]
+    }
+  ],
+  "scenes": {
+    "s_priory_halls": {
+      "note": "Star-lit halls: flickering starlight through the dome, constellations dimming 'like dying embers', chimes losing notes; the elders; the star dome.",
+      "world": {
+        "color": [
+          0.031,
+          0.039,
+          0.086
+        ],
+        "strength": 0.15
+      },
+      "lights": [
+        {
+          "name": "dome-starlight",
+          "type": "AREA",
+          "location": [
+            0,
+            -30,
+            18
+          ],
+          "energy": 3000,
+          "size": 14,
+          "color": [
+            0.957,
+            0.965,
+            1.0
+          ],
+          "look_at": [
+            0,
+            -30,
+            0
+          ]
+        },
+        {
+          "name": "gold-west",
+          "type": "POINT",
+          "location": [
+            -6,
+            -36,
+            4
+          ],
+          "energy": 200,
+          "size": 0.5,
+          "color": [
+            0.91,
+            0.753,
+            0.376
+          ]
+        },
+        {
+          "name": "gold-east",
+          "type": "POINT",
+          "location": [
+            6,
+            -36,
+            4
+          ],
+          "energy": 200,
+          "size": 0.5,
+          "color": [
+            0.91,
+            0.753,
+            0.376
+          ]
+        },
+        {
+          "name": "rim",
+          "type": "SPOT",
+          "location": [
+            0,
+            -12,
+            10
+          ],
+          "energy": 1200,
+          "size": 0.5,
+          "color": [
+            0.749,
+            0.816,
+            0.949
+          ],
+          "look_at": [
+            0,
+            -40,
+            1
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.0,
+          -50.5,
+          3.5
+        ],
+        "look_at": [
+          0.0,
+          -40.0,
+          1.2
+        ],
+        "lens_mm": 31,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -46,
+          0.0
+        ],
+        "facing_deg": 0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "crystal-priory",
+          "verb": "Record"
+        },
+        {
+          "prop": "sky-watch-w",
+          "verb": "Reach up to the star dome",
+          "leads_to": "s_chart_priory"
+        }
+      ]
+    },
+    "s_crystal_forest": {
+      "note": "The luminous crystalline forest, iridescent glow and cosmic dust, warm hum, light gravity: Seraphyne staggers, the beam, Astraia; Blank-Scribes and Luminae attack.",
+      "world": {
+        "color": [
+          0.063,
+          0.055,
+          0.11
+        ],
+        "strength": 0.22
+      },
+      "lights": [
+        {
+          "name": "tree-glow-1",
+          "type": "POINT",
+          "location": [
+            -14,
+            6,
+            4
+          ],
+          "energy": 900,
+          "size": 1,
+          "color": [
+            0.957,
+            0.965,
+            1.0
+          ]
+        },
+        {
+          "name": "tree-glow-2",
+          "type": "POINT",
+          "location": [
+            12,
+            8,
+            5
+          ],
+          "energy": 900,
+          "size": 1,
+          "color": [
+            0.91,
+            0.753,
+            0.376
+          ]
+        },
+        {
+          "name": "beam",
+          "type": "SPOT",
+          "location": [
+            0,
+            30,
+            24
+          ],
+          "energy": 6000,
+          "size": 1,
+          "color": [
+            0.957,
+            0.965,
+            1.0
+          ],
+          "look_at": [
+            0,
+            30,
+            5
+          ]
+        },
+        {
+          "name": "dust",
+          "type": "SUN",
+          "location": [
+            0,
+            60,
+            40
+          ],
+          "energy": 0.3,
+          "size": 1,
+          "color": [
+            0.784,
+            0.722,
+            0.941
+          ],
+          "rotation_deg": [
+            -50,
+            0,
+            180
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          0.0,
+          -10.5,
+          6.49
+        ],
+        "look_at": [
+          0.0,
+          0.0,
+          4.19
+        ],
+        "lens_mm": 31,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          0,
+          -6,
+          2.99
+        ],
+        "facing_deg": 0
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "crystal-tree-6",
+          "verb": "Lay a hand on the crystalline tree",
+          "leads_to": "s_flight_astraia"
+        }
+      ]
+    }
+  }
+}

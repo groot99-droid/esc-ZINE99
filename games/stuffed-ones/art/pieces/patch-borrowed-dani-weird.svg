@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-labelledby="patch-borrowed-dani-weird-t patch-borrowed-dani-weird-d">
+<title id="patch-borrowed-dani-weird-t">Borrowed patch: Don't make it weird.</title>
+<desc id="patch-borrowed-dani-weird-d">A square patch that is not yours: "Don't make it weird.", a friend's memory come down the pulse on an amber thread, stitched in that friend's own thread colour.</desc>
+<defs><filter id="patch-borrowed-dani-weird-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.4" numOctaves="2" seed="753"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><radialGradient id="patch-borrowed-dani-weird-rg2" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#D9CBB0" stop-opacity="0.3"/><stop offset="60%" stop-color="#D9CBB0" stop-opacity="0.1"/><stop offset="100%" stop-color="#D9CBB0" stop-opacity="0"/></radialGradient><filter id="patch-borrowed-dani-weird-felt3" x="-15%" y="-15%" width="130%" height="130%"><feGaussianBlur in="SourceAlpha" stdDeviation="2.2"/><feOffset dx="1.8" dy="3"/><feComponentTransfer result="s"><feFuncA type="linear" slope="0.3"/></feComponentTransfer><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="63" result="n"/><feColorMatrix in="n" values="0 0 0 0 1  0 0 0 0 0.96  0 0 0 0 0.88  0 0 0 -1.2 0.45"/><feComposite in2="SourceAlpha" operator="in" result="l"/><feColorMatrix in="n" values="0 0 0 0 0.1  0 0 0 0 0.06  0 0 0 0 0.03  0 0 0 1.3 -0.74"/><feComposite in2="SourceAlpha" operator="in" result="d"/><feMerge><feMergeNode in="s"/><feMergeNode in="SourceGraphic"/><feMergeNode in="l"/><feMergeNode in="d"/></feMerge></filter><pattern id="patch-borrowed-dani-weird-sat4" width="3" height="3" patternUnits="userSpaceOnUse" patternTransform="rotate(135)"><path d="M0,0H3" stroke="#2b1e15" stroke-width="1" opacity="0.3"/></pattern><radialGradient id="patch-borrowed-dani-weird-vig5" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#1a0f08" stop-opacity="0"/><stop offset="100%" stop-color="#1a0f08" stop-opacity="0.3"/></radialGradient></defs>
+<rect x="0" y="0" width="240" height="240" fill="#452d1d"/>
+<rect x="0" y="0" width="240" height="240" filter="url(#patch-borrowed-dani-weird-grain1)"/>
+<circle cx="110" cy="50" r="230" fill="url(#patch-borrowed-dani-weird-rg2)"/>
+<path d="M155.6,-6 C160.6,-0.7 198.2,20 185.6,26 C173,32 90.9,24.7 80,30 C69.1,35.3 113.3,53.3 120,58" fill="none" stroke="#1a0f08" stroke-width="2.4" stroke-dasharray="9 4" stroke-linecap="round" opacity="0.3" transform="translate(0.8 1.4)"/>
+<path d="M155.6,-6 C160.6,-0.7 198.2,20 185.6,26 C173,32 90.9,24.7 80,30 C69.1,35.3 113.3,53.3 120,58" fill="none" stroke="#E0902A" stroke-width="2.4" stroke-dasharray="9 4" stroke-linecap="round"/>
+<g transform="rotate(5.7 120 104)">
+<path d="M42.7,27.9 L52.7,27.9 L61.7,27.4 L68.9,28.1 L80.4,25.7 L89.2,25.4 L95,25.4 L107.9,24.6 L117.2,26.5 L126.8,26 L133.2,26.2 L144.7,24.8 L150.2,25.4 L162.9,27.8 L171.3,27.3 L180.2,27.3 L190.6,26.3 L198.1,25.8 L196.8,34.7 L197.8,45 L198,52 L196.6,62.2 L196.6,69.8 L199.5,79.5 L196.6,90 L197.4,98.1 L197,106.8 L197.6,119.3 L197.5,128.8 L196.9,136.1 L199,144.8 L199.1,152.5 L196.1,164.1 L199.4,174.7 L197.4,183.6 L189.8,183 L179,183.9 L168.3,181.9 L162.8,182.6 L152.7,182.2 L142.4,180 L134.2,182.9 L126.2,181.6 L116,182 L106.2,182.1 L97.6,180.6 L87.6,180.3 L79.1,181.3 L71.3,184.1 L62,180.2 L51.7,180.2 L43.6,181.8 L42.5,173.9 L41.9,161.5 L43,155 L44.2,145.4 L41,137.6 L41.8,127.7 L40.3,116.8 L40.3,107.8 L40.7,101.2 L40.8,88.6 L43.6,82.7 L43.9,72.8 L40.7,64.8 L42.8,54.5 L42.8,43.1 L41.5,36.7 L43.1,26.7Z" fill="#dfd3bb" filter="url(#patch-borrowed-dani-weird-felt3)"/>
+<path d="M54,34h132a4,4 0 0,1 4,4v132a4,4 0 0,1 -4,4h-132a4,4 0 0,1 -4,-4v-132a4,4 0 0,1 4,-4z" fill="none" stroke="#7a5e47" stroke-width="11" stroke-dasharray="2.6 5"/>
+<path d="M54,34h132a4,4 0 0,1 4,4v132a4,4 0 0,1 -4,4h-132a4,4 0 0,1 -4,-4v-132a4,4 0 0,1 4,-4z" fill="none" stroke="#7a5e47" stroke-width="2.1" stroke-dasharray="6.1 1.5" opacity="0.9"/>
+<path d="M65,46h110a3,3 0 0,1 3,3v110a3,3 0 0,1 -3,3h-110a3,3 0 0,1 -3,-3v-110a3,3 0 0,1 3,-3z" fill="none" stroke="#7a5e47" stroke-width="1.6" stroke-dasharray="2 5" stroke-linecap="round"/>
+<g transform="translate(72 54) scale(1)">
+<path d="M14,86a32,5 0 1,0 64,0a32,5 0 1,0 -64,0z" fill="#b6a492"/>
+<path d="M14,86a32,5 0 1,0 64,0a32,5 0 1,0 -64,0z" fill="url(#patch-borrowed-dani-weird-sat4)"/>
+<path d="M20,34h52v22a26,26 0 0,1 -52,0z" fill="#7a5e47"/>
+<path d="M20,34h52v22a26,26 0 0,1 -52,0z" fill="url(#patch-borrowed-dani-weird-sat4)"/>
+<path d="M72,40q20,0 17,13q-3,10 -19,8" fill="none" stroke="#523e2e" stroke-width="8.8" stroke-linecap="round" opacity="0.5" transform="translate(1 1.6)"/>
+<path d="M72,40q20,0 17,13q-3,10 -19,8" fill="none" stroke="#7a5e47" stroke-width="7.5" stroke-linecap="round"/>
+<path d="M72,40q20,0 17,13q-3,10 -19,8" fill="none" stroke="#b6a492" stroke-width="1.7" stroke-dasharray="2 5" stroke-linecap="round"/>
+<path d="M36,26q-7,-8 0,-16M54,26q-7,-8 0,-16" fill="none" stroke="#4b3829" stroke-width="3.4" stroke-dasharray="5 4" stroke-linecap="round"/>
+</g>
+</g>
+<g transform="rotate(0.1813120210740795 120 204)">
+<path d="M23,189L217,189L209,204L217,219L23,219L31,204z" fill="#7a5e47" filter="url(#patch-borrowed-dani-weird-felt3)"/>
+<path d="M37,194H203M37,214H203" fill="none" stroke="#aa9683" stroke-width="1.1" stroke-dasharray="4 3" stroke-linecap="round"/>
+<text x="120" y="209.5" font-size="16" font-family="serif" fill="#F2EBDD" text-anchor="middle" font-style="italic">Don't make it weird.</text>
+</g>
+<rect x="0" y="0" width="240" height="240" fill="url(#patch-borrowed-dani-weird-vig5)"/>
+</svg>

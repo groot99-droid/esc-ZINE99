@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="omen-war-note-t omen-war-note-d">
+<title id="omen-war-note-t">Omen card: The War Note</title>
+<desc id="omen-war-note-d">Omen card The War Note: Captain Burr's herald sounding a curled horn beside a red pennant, one loud note leaping out. Suit Song (prophecy), the spear sigil, weight 1, with Pell's notches down the left edge.</desc>
+<defs><clipPath id="omen-war-note-clip1"><rect x="1" y="1" width="298" height="418" rx="16"/></clipPath><filter id="omen-war-note-grain2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="2" seed="4"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><radialGradient id="omen-war-note-vig3" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#6b4a20" stop-opacity="0"/><stop offset="100%" stop-color="#6b4a20" stop-opacity="0.3"/></radialGradient><clipPath id="omen-war-note-clip4"><rect x="0" y="0" width="244" height="236"/></clipPath><linearGradient id="omen-war-note-lg5" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fff6dc"/><stop offset="100%" stop-color="#f3dfa2"/></linearGradient></defs>
+<g clip-path="url(#omen-war-note-clip1)">
+<rect x="0" y="0" width="300" height="420" fill="#efe2c4"/>
+<rect x="0" y="0" width="300" height="420" filter="url(#omen-war-note-grain2)"/>
+<rect x="0" y="0" width="300" height="420" fill="url(#omen-war-note-vig3)"/>
+<rect x="14" y="14" width="272" height="392" rx="10" fill="none" stroke="#a8321e" stroke-width="1.4"/>
+<rect x="19" y="19" width="262" height="382" rx="5" fill="none" stroke="#2b1d14" stroke-width="1"/>
+<circle cx="40" cy="40" r="17" fill="#f3dfa2" stroke="#2b1d14" stroke-width="1.4"/>
+<ellipse cx="36.4" cy="47.5" rx="4.7" ry="3.6" fill="#f0c050" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M40.7,47.5 v-15.8 q7.2,1.4 7.2,7.9" fill="none" stroke="#2b1d14" stroke-width="1.3" stroke-linecap="round"/>
+<circle cx="264" cy="40" r="7" fill="#f0c050" stroke="#2b1d14" stroke-width="1.2"/>
+<circle cx="262" cy="38" r="2" fill="#fff6dc" opacity="0.8"/>
+<text x="150" y="45" font-size="11" font-family="serif" fill="#a8321e" text-anchor="middle" letter-spacing="3">PROPHECY</text>
+<g transform="translate(28 60)">
+<g clip-path="url(#omen-war-note-clip4)">
+<rect x="0" y="0" width="244" height="236" fill="#f3dfa2"/>
+<rect x="0" y="0" width="244" height="236" fill="url(#omen-war-note-lg5)" opacity="0.6"/>
+<path d="M0,203.4 C5.1,203.3 20.3,202.8 30.5,202.9 C40.7,203 50.8,203.5 61,204 C71.2,204.5 81.3,206.2 91.5,206 C101.7,205.8 111.8,203 122,202.7 C132.2,202.3 142.3,203.7 152.5,203.9 C162.7,204.1 172.8,203.9 183,204 C193.2,204 203.3,204.3 213.5,204.1 C223.7,203.9 238.9,202.8 244,202.6 L244,264 L0,264Z" fill="#c9a877" stroke="#2b1d14" stroke-width="1.6"/>
+<path d="M134.3,226.6 l9.3,2.4M122.7,228.9 l8.5,2.7M131.7,233.4 l9.4,1.9M51,226.3 l15.7,3.4M79.6,217.9 l13.5,3.9M60.8,229.1 l8.2,2M61.6,226.6 l13.9,3M20.9,214.7 l9.3,1.3M164.2,215.7 l10.2,1.3M67.8,225.4 l14.2,2.8M34.4,212.3 l15.5,2.3M94.2,228.5 l14.4,1.1M144.4,233.9 l15.6,1.4M74.6,219.2 l14.7,2.1M156,212.8 l13.9,1.4M18.9,224.9 l14.8,1.6" stroke="#2b1d14" stroke-width="1" fill="none" opacity="0.6"/>
+<g transform="translate(80 206) rotate(-6) scale(1.4 1.4)">
+<path d="M-8,-64 L-14,-48 L-14,-40" fill="none" stroke="#2b1d14" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="-14" cy="-40" r="2.2" fill="#d9b88a" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M-4,-40 L-6.8,-20 L-9,0 l-5,0" fill="none" stroke="#2b1d14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4,-40 L5.6,-20 L9,0 l5,0" fill="none" stroke="#2b1d14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-9,-69 L9,-69 L11,-38 Q0,-34 -11,-38Z" fill="#9a7a52" stroke="#2b1d14" stroke-width="1.4" stroke-linejoin="round"/>
+<path d="M-10,-58 L10,-58 M-10.5,-48 L10.5,-48" fill="none" stroke="#2b1d14" stroke-width="1.2"/>
+<path d="M-13,-70 l8,-2 l0,7 l-8,2Z M13,-70 l-8,-2 l0,7 l8,2Z" fill="#c09866" stroke="#2b1d14" stroke-width="1"/>
+<circle cx="0" cy="-84" r="14" fill="#d9b88a" stroke="#2b1d14" stroke-width="1.4"/>
+<path d="M-14.5,-85 A14.5,14.5 0 0,1 14.5,-85 L15,-81 L-15,-81Z" fill="#5a3d2b" stroke="#2b1d14" stroke-width="1.2"/>
+<path d="M-6,-98 Q4,-120 22,-110 Q10,-108 6,-97Z" fill="#e8742a" stroke="#2b1d14" stroke-width="1.2"/>
+<circle cx="6" cy="-85" r="1.7" fill="#2b1d14"/>
+<path d="M8,-64 L16,-66 L18,-76" fill="none" stroke="#2b1d14" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="18" cy="-76" r="2.2" fill="#d9b88a" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M14,-80 Q40,-84 56,-104 Q70,-120 64,-136 L84,-128 Q84,-100 62,-84 Q40,-68 16,-72Z" fill="#f0c050" stroke="#2b1d14" stroke-width="1.3"/>
+<path d="M40,-88 q6,6 4,12 M54,-102 q8,4 8,12" fill="none" stroke="#2b1d14" stroke-width="0.9"/>
+</g>
+<ellipse cx="204" cy="40" rx="11.4" ry="8.7" fill="#a8321e" stroke="#2b1d14" stroke-width="1" transform="rotate(-20 204 40)"/>
+<path d="M214.3,39 v-38 q17.1,3.8 15.2,20.9" fill="none" stroke="#2b1d14" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M176,78 q10,-8 20,0" fill="none" stroke="#a8321e" stroke-width="2" stroke-linecap="round"/>
+<path d="M214,96 q10,-8 20,0" fill="none" stroke="#a8321e" stroke-width="2" stroke-linecap="round"/>
+<path d="M190,120 q10,-8 20,0" fill="none" stroke="#a8321e" stroke-width="2" stroke-linecap="round"/>
+<path d="M30,206 L30,90 M30,92 q26,6 46,-4 q-12,16 -46,24Z" fill="#a8321e" stroke="#2b1d14" stroke-width="1.4"/>
+</g>
+<rect x="0" y="0" width="244" height="236" fill="none" stroke="#2b1d14" stroke-width="1.8"/>
+<rect x="-3" y="-3" width="250" height="242" fill="none" stroke="#a8321e" stroke-width="0.9"/>
+</g>
+<text x="150" y="327" font-size="23" font-family="serif" fill="#2b1d14" text-anchor="middle" font-style="italic">The War Note</text>
+<path d="M70,338 Q150,346 230,338" fill="none" stroke="#a8321e" stroke-width="1"/>
+<circle cx="150" cy="374" r="22" fill="#efe2c4" stroke="#2b1d14" stroke-width="1.4"/>
+<line x1="150" y1="389.9" x2="150" y2="366.3" stroke="#a8321e" stroke-width="2.9" stroke-linecap="round"/>
+<polygon points="150,357.6 145,367.6 155,367.6" fill="#a8321e"/>
+<line x1="144.4" y1="378.7" x2="155.6" y2="378.7" stroke="#a8321e" stroke-width="1.9" stroke-linecap="round"/>
+<path d="M126,374 C121.3,373 107.3,367 98,368 C88.7,369 79,379.3 70,380 C61,380.7 48.3,373.3 44,372" fill="none" stroke="#2b1d14" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M98,368 L108.3,368.7 L103.7,371.6 L99.2,370.6 L97,367.2 L97.6,363.2 L100.5,360.5 L103.9,359.9 L106.5,360.9" fill="none" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M98,368 Q88,363.8 81.9,375.2 Q91,377.8 98,368Z" fill="#a8321e" stroke="#2b1d14" stroke-width="0.9"/>
+<path d="M70,380 L59.7,368.1 L64.3,365.2 L68.8,366.2 L71,369.6 L70.4,373.6 L67.5,376.3 L64.1,376.9 L61.5,375.9" fill="none" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M70,380 Q80,375.8 86.1,387.2 Q77,389.8 70,380Z" fill="#2f4f8a" stroke="#2b1d14" stroke-width="0.9"/>
+<path d="M174,374 C178.7,373 192.7,367 202,368 C211.3,369 221,379.3 230,380 C239,380.7 251.7,373.3 256,372" fill="none" stroke="#2b1d14" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M202,368 L212.3,368.7 L207.7,371.6 L203.2,370.6 L201,367.2 L201.6,363.2 L204.5,360.5 L207.9,359.9 L210.5,360.9" fill="none" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M202,368 Q192,363.8 185.9,375.2 Q195,377.8 202,368Z" fill="#5f7a3e" stroke="#2b1d14" stroke-width="0.9"/>
+<path d="M230,380 L219.7,368.1 L224.3,365.2 L228.8,366.2 L231,369.6 L230.4,373.6 L227.5,376.3 L224.1,376.9 L221.5,375.9" fill="none" stroke="#2b1d14" stroke-width="0.8"/>
+<path d="M230,380 Q240,375.8 246.1,387.2 Q237,389.8 230,380Z" fill="#2f4f8a" stroke="#2b1d14" stroke-width="0.9"/>
+<polygon points="0,64 9,70 0,76" fill="#1b120c"/>
+<path d="M9,70 L0,76" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,80 9,86 0,92" fill="#1b120c"/>
+<path d="M9,86 L0,92" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,96 9,102 0,108" fill="#1b120c"/>
+<path d="M9,102 L0,108" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,138 9,144 0,150" fill="#1b120c"/>
+<path d="M9,144 L0,150" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,180 9,186 0,192" fill="#1b120c"/>
+<path d="M9,186 L0,192" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+<polygon points="0,196 9,202 0,208" fill="#1b120c"/>
+<path d="M9,202 L0,208" stroke="#fff6dc" stroke-width="1" opacity="0.6"/>
+</g>
+<rect x="1" y="1" width="298" height="418" rx="16" fill="none" stroke="#2b1d14" stroke-width="2"/>
+</svg>

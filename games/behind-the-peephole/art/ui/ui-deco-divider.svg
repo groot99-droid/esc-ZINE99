@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 120" width="720" height="120" role="img" aria-labelledby="ui-deco-divider-t ui-deco-divider-d">
+<title id="ui-deco-divider-t">Deco divider: stepped fans and a rose</title>
+<desc id="ui-deco-divider-d">A gold deco divider on deep green: a small brass rose between two stepped fans, with double rules running out to diamond ends.</desc>
+<defs><radialGradient id="ui-deco-divider-rg1" cx="0.5" cy="0.5" r="0.7"><stop offset="0%" stop-color="#f1c77c" stop-opacity="0.1"/><stop offset="100%" stop-color="#000" stop-opacity="0.4"/></radialGradient><radialGradient id="ui-deco-divider-rg2" cx="0.4" cy="0.35" r="0.65"><stop offset="0%" stop-color="#e3c47a" stop-opacity="1"/><stop offset="70%" stop-color="#b8913f" stop-opacity="1"/><stop offset="100%" stop-color="#5d4518" stop-opacity="1"/></radialGradient></defs>
+<rect x="0" y="0" width="720" height="120" fill="#0f2a1e"/>
+<rect x="0" y="0" width="720" height="120" fill="url(#ui-deco-divider-rg1)"/>
+<path d="M314,60L269,113.6M314,60L258.5,102.6M314,60L250.6,89.6M314,60L245.7,75.2M314,60L244,60M314,60L245.7,44.8M314,60L250.6,30.4M314,60L258.5,17.4M314,60L269,6.4" fill="none" stroke="#d4ad57" stroke-width="1.1" opacity="0.9"/>
+<path d="M296,81.4 A28,28 0 0,1 296,38.6" fill="none" stroke="#d4ad57" stroke-width="1.3" opacity="0.9"/>
+<path d="M282.5,97.5 A49,49 0 0,1 282.5,22.5" fill="none" stroke="#d4ad57" stroke-width="1.3" opacity="0.9"/>
+<path d="M269,113.6 A70,70 0 0,1 269,6.4" fill="none" stroke="#d4ad57" stroke-width="1.3" opacity="0.9"/>
+<line x1="234" y1="56" x2="30" y2="56" stroke="#d4ad57" stroke-width="1.8"/>
+<line x1="234" y1="64" x2="70" y2="64" stroke="#d4ad57" stroke-width="0.8"/>
+<polygon points="16,56 24,48 32,56 24,64" fill="#d4ad57"/>
+<path d="M406,60L451,6.4M406,60L461.5,17.4M406,60L469.4,30.4M406,60L474.3,44.8M406,60L476,60M406,60L474.3,75.2M406,60L469.4,89.6M406,60L461.5,102.6M406,60L451,113.6" fill="none" stroke="#d4ad57" stroke-width="1.1" opacity="0.9"/>
+<path d="M424,38.6 A28,28 0 0,1 424,81.4" fill="none" stroke="#d4ad57" stroke-width="1.3" opacity="0.9"/>
+<path d="M437.5,22.5 A49,49 0 0,1 437.5,97.5" fill="none" stroke="#d4ad57" stroke-width="1.3" opacity="0.9"/>
+<path d="M451,6.4 A70,70 0 0,1 451,113.6" fill="none" stroke="#d4ad57" stroke-width="1.3" opacity="0.9"/>
+<line x1="486" y1="56" x2="690" y2="56" stroke="#d4ad57" stroke-width="1.8"/>
+<line x1="486" y1="64" x2="650" y2="64" stroke="#d4ad57" stroke-width="0.8"/>
+<polygon points="688,56 696,48 704,56 696,64" fill="#d4ad57"/>
+<path d="M349.2,41.4a10.8,10.8 0 1,0 21.6,0a10.8,10.8 0 1,0 -21.6,0M362.4,46.8a10.8,10.8 0 1,0 21.6,0a10.8,10.8 0 1,0 -21.6,0M367.8,60a10.8,10.8 0 1,0 21.6,0a10.8,10.8 0 1,0 -21.6,0M362.4,73.2a10.8,10.8 0 1,0 21.6,0a10.8,10.8 0 1,0 -21.6,0M349.2,78.6a10.8,10.8 0 1,0 21.6,0a10.8,10.8 0 1,0 -21.6,0M336,73.2a10.8,10.8 0 1,0 21.6,0a10.8,10.8 0 1,0 -21.6,0M330.6,60a10.8,10.8 0 1,0 21.6,0a10.8,10.8 0 1,0 -21.6,0M336,46.8a10.8,10.8 0 1,0 21.6,0a10.8,10.8 0 1,0 -21.6,0" fill="url(#ui-deco-divider-rg2)" stroke="#5d4518" stroke-width="0.9"/>
+<circle cx="360" cy="60" r="18.6" fill="url(#ui-deco-divider-rg2)" stroke="#5d4518" stroke-width="0.9"/>
+<circle cx="360" cy="60" r="13.2" fill="none" stroke="#5d4518" stroke-width="0.8" opacity="0.7"/>
+<path d="M345,57 A15.6,15.6 0 0,1 363,44.4" fill="none" stroke="#fff3c8" stroke-width="1.5" opacity="0.6" stroke-linecap="round"/>
+<circle cx="360" cy="60" r="7.8" fill="#0a0806"/>
+<circle cx="357.9" cy="57.6" r="1.8" fill="#59636a" opacity="0.7"/>
+</svg>

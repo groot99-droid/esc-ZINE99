@@ -1,0 +1,574 @@
+{
+  "game": "lira-calyx",
+  "location": "scorched-biome",
+  "name": "The Scorched Biome",
+  "reference": "assets/locations/scorched-biome.jpg",
+  "bounds_m": [
+    300,
+    150,
+    40
+  ],
+  "origin": "crust centre; +y toward the stepped crust and the termite mound (back left); the radiation pocket is the basin at (0, -25); distant mesas are sky pieces",
+  "materials": {
+    "crust": {
+      "color": [
+        0.549,
+        0.251,
+        0.125
+      ],
+      "roughness": 1.0
+    },
+    "ochre": {
+      "color": [
+        0.753,
+        0.518,
+        0.22
+      ],
+      "roughness": 1.0
+    },
+    "bone": {
+      "color": [
+        0.878,
+        0.847,
+        0.753
+      ],
+      "roughness": 0.9
+    },
+    "mound": {
+      "color": [
+        0.627,
+        0.353,
+        0.157
+      ],
+      "roughness": 1.0
+    },
+    "cavity": {
+      "color": [
+        0.165,
+        0.102,
+        0.063
+      ],
+      "roughness": 1.0
+    },
+    "shimmer": {
+      "color": [
+        0.941,
+        0.91,
+        0.816
+      ],
+      "roughness": 0.1,
+      "emission": 0.8
+    },
+    "fungal-mat": {
+      "color": [
+        0.753,
+        0.627,
+        0.376
+      ],
+      "roughness": 1.0,
+      "emission": 0.2
+    },
+    "mesa": {
+      "color": [
+        0.722,
+        0.533,
+        0.345
+      ],
+      "roughness": 1.0
+    }
+  },
+  "blockout": [
+    {
+      "id": "crust",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        300,
+        150,
+        0.5
+      ],
+      "location": [
+        0,
+        0,
+        -0.25
+      ],
+      "material": "crust"
+    },
+    {
+      "id": "crust-step-1",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        300,
+        30,
+        1.2
+      ],
+      "location": [
+        0,
+        30,
+        0.6
+      ],
+      "material": "ochre"
+    },
+    {
+      "id": "crust-step-2",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        300,
+        30,
+        2.4
+      ],
+      "location": [
+        0,
+        58,
+        1.2
+      ],
+      "material": "ochre"
+    },
+    {
+      "id": "termite-mound",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        40,
+        40,
+        30
+      ],
+      "location": [
+        -110,
+        50,
+        15
+      ],
+      "material": "mound"
+    },
+    {
+      "id": "mound-cavity",
+      "shape": "sphere",
+      "role": "trim",
+      "size_m": [
+        8,
+        4,
+        6
+      ],
+      "location": [
+        -108,
+        38,
+        18
+      ],
+      "material": "cavity",
+      "collide": false
+    },
+    {
+      "id": "pocket-floor",
+      "shape": "cylinder",
+      "role": "terrain",
+      "size_m": [
+        22,
+        22,
+        0.12
+      ],
+      "location": [
+        0,
+        -25,
+        0.06
+      ],
+      "material": "shimmer"
+    },
+    {
+      "id": "pocket-rim-1",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        9.5,
+        2.2,
+        0.6
+      ],
+      "location": [
+        12.0,
+        -25.0,
+        0.3
+      ],
+      "material": "bone",
+      "rotation_deg": [
+        0,
+        0,
+        90
+      ]
+    },
+    {
+      "id": "pocket-rim-2",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        9.5,
+        2.2,
+        0.6
+      ],
+      "location": [
+        8.485,
+        -16.515,
+        0.3
+      ],
+      "material": "bone",
+      "rotation_deg": [
+        0,
+        0,
+        135
+      ]
+    },
+    {
+      "id": "pocket-rim-3",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        9.5,
+        2.2,
+        0.6
+      ],
+      "location": [
+        0.0,
+        -13.0,
+        0.3
+      ],
+      "material": "bone",
+      "rotation_deg": [
+        0,
+        0,
+        180
+      ]
+    },
+    {
+      "id": "pocket-rim-4",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        9.5,
+        2.2,
+        0.6
+      ],
+      "location": [
+        -8.485,
+        -16.515,
+        0.3
+      ],
+      "material": "bone",
+      "rotation_deg": [
+        0,
+        0,
+        225
+      ]
+    },
+    {
+      "id": "pocket-rim-5",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        9.5,
+        2.2,
+        0.6
+      ],
+      "location": [
+        -12.0,
+        -25.0,
+        0.3
+      ],
+      "material": "bone",
+      "rotation_deg": [
+        0,
+        0,
+        270
+      ]
+    },
+    {
+      "id": "pocket-rim-6",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        9.5,
+        2.2,
+        0.6
+      ],
+      "location": [
+        -8.485,
+        -33.485,
+        0.3
+      ],
+      "material": "bone",
+      "rotation_deg": [
+        0,
+        0,
+        315
+      ]
+    },
+    {
+      "id": "pocket-rim-7",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        9.5,
+        2.2,
+        0.6
+      ],
+      "location": [
+        -0.0,
+        -37.0,
+        0.3
+      ],
+      "material": "bone",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "pocket-rim-8",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        9.5,
+        2.2,
+        0.6
+      ],
+      "location": [
+        8.485,
+        -33.485,
+        0.3
+      ],
+      "material": "bone",
+      "rotation_deg": [
+        0,
+        0,
+        45
+      ]
+    },
+    {
+      "id": "fungal-mat-1",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        30,
+        18,
+        0.15
+      ],
+      "location": [
+        -50,
+        -10,
+        0.07
+      ],
+      "material": "fungal-mat"
+    },
+    {
+      "id": "fungal-mat-2",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        24,
+        14,
+        0.15
+      ],
+      "location": [
+        45,
+        -45,
+        0.07
+      ],
+      "material": "fungal-mat"
+    },
+    {
+      "id": "fungal-mat-3",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        40,
+        12,
+        0.15
+      ],
+      "location": [
+        60,
+        8,
+        0.07
+      ],
+      "material": "fungal-mat"
+    },
+    {
+      "id": "mesa-far-1",
+      "shape": "box",
+      "role": "sky",
+      "size_m": [
+        120,
+        30,
+        25
+      ],
+      "location": [
+        -60,
+        260,
+        12
+      ],
+      "material": "mesa"
+    },
+    {
+      "id": "mesa-far-2",
+      "shape": "box",
+      "role": "sky",
+      "size_m": [
+        160,
+        30,
+        18
+      ],
+      "location": [
+        140,
+        300,
+        9
+      ],
+      "material": "mesa"
+    }
+  ],
+  "props": [
+    {
+      "id": "probe",
+      "object": "flux-probe",
+      "location": [
+        2,
+        -24,
+        0.12
+      ]
+    },
+    {
+      "id": "relay",
+      "object": "relay-beacon",
+      "location": [
+        17,
+        -20,
+        0
+      ]
+    },
+    {
+      "id": "crystals-1",
+      "object": "crystal-cluster",
+      "location": [
+        -14,
+        -22,
+        0
+      ]
+    },
+    {
+      "id": "crystals-2",
+      "object": "crystal-cluster",
+      "location": [
+        -6,
+        -38,
+        0
+      ]
+    },
+    {
+      "id": "crystals-3",
+      "object": "crystal-cluster",
+      "location": [
+        10,
+        -12,
+        0
+      ]
+    },
+    {
+      "id": "crystals-4",
+      "object": "crystal-cluster",
+      "location": [
+        30,
+        -60,
+        0
+      ]
+    }
+  ],
+  "scenes": {
+    "b2-lowlands": {
+      "world": {
+        "color": [
+          0.847,
+          0.894,
+          0.941
+        ],
+        "strength": 0.8
+      },
+      "lights": [
+        {
+          "name": "hard-sun",
+          "type": "SUN",
+          "location": [
+            0,
+            -40,
+            60
+          ],
+          "energy": 6.0,
+          "size": 1,
+          "color": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "pocket-shimmer",
+          "type": "AREA",
+          "location": [
+            0,
+            -25,
+            3
+          ],
+          "energy": 1500,
+          "size": 20,
+          "color": [
+            1.0,
+            0.957,
+            0.847
+          ],
+          "look_at": [
+            0,
+            -25,
+            0
+          ]
+        }
+      ],
+      "note": "Book II. Kade guides Lira across the fungal mats under a hard white sun. Node N4's reading sits inside the shimmering radiation pocket: three flux-probe depths within the 45 s dose clock ('Count to forty in there. Not forty-one.'), or the relay at the rim.",
+      "camera": {
+        "location": [
+          22.475,
+          -47.475,
+          2.65
+        ],
+        "look_at": [
+          17.172,
+          -42.172,
+          1.4
+        ],
+        "lens_mm": 31,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          20,
+          -45,
+          0
+        ],
+        "facing_deg": 45
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "relay",
+          "verb": "Take the relay reading"
+        },
+        {
+          "prop": "probe",
+          "verb": "Read the flux probe at three depths",
+          "leads_to": "b2-archive"
+        }
+      ]
+    }
+  }
+}

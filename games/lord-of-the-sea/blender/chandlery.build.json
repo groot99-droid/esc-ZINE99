@@ -1,0 +1,464 @@
+{
+  "game": "lord-of-the-sea",
+  "location": "chandlery",
+  "name": "Mother Halse's chandlery",
+  "reference": "assets/locations/chandlery.jpg",
+  "bounds_m": [
+    7.0,
+    5.0,
+    2.8
+  ],
+  "origin": "floor centre; +y toward the shelf wall behind the counter; the door to the quay in the east (+x) wall, the half-shuttered window in the south (-y) wall",
+  "materials": {
+    "flagstone": {
+      "color": [
+        0.42,
+        0.41,
+        0.39
+      ],
+      "roughness": 0.9
+    },
+    "tarred-wood": {
+      "color": [
+        0.227,
+        0.165,
+        0.11
+      ],
+      "roughness": 0.85
+    },
+    "plank": {
+      "color": [
+        0.353,
+        0.255,
+        0.157
+      ],
+      "roughness": 0.9
+    },
+    "company-blue": {
+      "color": [
+        0.122,
+        0.18,
+        0.29
+      ],
+      "roughness": 0.6
+    },
+    "slate": {
+      "color": [
+        0.12,
+        0.13,
+        0.14
+      ],
+      "roughness": 0.6
+    },
+    "quay-light": {
+      "color": [
+        0.957,
+        0.945,
+        0.91
+      ],
+      "roughness": 0.3,
+      "emission": 1.2
+    }
+  },
+  "blockout": [
+    {
+      "id": "floor",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        7.0,
+        5.0,
+        0.1
+      ],
+      "location": [
+        0,
+        0,
+        -0.05
+      ],
+      "material": "flagstone"
+    },
+    {
+      "id": "ceiling",
+      "shape": "box",
+      "role": "ceiling",
+      "size_m": [
+        7.0,
+        5.0,
+        0.1
+      ],
+      "location": [
+        0,
+        0,
+        2.85
+      ],
+      "material": "tarred-wood"
+    },
+    {
+      "id": "wall-north",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        7.0,
+        0.2,
+        2.8
+      ],
+      "location": [
+        0,
+        2.6,
+        1.4
+      ],
+      "material": "plank"
+    },
+    {
+      "id": "wall-south",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        7.0,
+        0.2,
+        2.8
+      ],
+      "location": [
+        0,
+        -2.6,
+        1.4
+      ],
+      "material": "plank"
+    },
+    {
+      "id": "wall-west",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.2,
+        5.0,
+        2.8
+      ],
+      "location": [
+        -3.6,
+        0,
+        1.4
+      ],
+      "material": "plank"
+    },
+    {
+      "id": "wall-east",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.2,
+        5.0,
+        2.8
+      ],
+      "location": [
+        3.6,
+        0,
+        1.4
+      ],
+      "material": "plank"
+    },
+    {
+      "id": "door-quay",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        0.1,
+        1.1,
+        2.1
+      ],
+      "location": [
+        3.48,
+        -1.2,
+        1.05
+      ],
+      "material": "quay-light",
+      "collide": false
+    },
+    {
+      "id": "window",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        1.4,
+        0.1,
+        0.5
+      ],
+      "location": [
+        -0.6,
+        -2.48,
+        1.15
+      ],
+      "material": "quay-light",
+      "collide": false
+    },
+    {
+      "id": "shutter",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        1.5,
+        0.08,
+        0.7
+      ],
+      "location": [
+        -0.6,
+        -2.44,
+        1.75
+      ],
+      "material": "company-blue"
+    },
+    {
+      "id": "counter",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        3.4,
+        0.8,
+        0.95
+      ],
+      "location": [
+        -0.6,
+        0.6,
+        0.475
+      ],
+      "material": "tarred-wood"
+    },
+    {
+      "id": "shelves",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        5.0,
+        0.4,
+        2.4
+      ],
+      "location": [
+        -0.8,
+        2.3,
+        1.2
+      ],
+      "material": "plank"
+    },
+    {
+      "id": "the-slate",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.2,
+        0.04,
+        0.7
+      ],
+      "location": [
+        -0.9,
+        0.5,
+        0.98
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        6
+      ],
+      "material": "slate"
+    },
+    {
+      "id": "beams",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.18,
+        5.0,
+        0.18
+      ],
+      "location": [
+        0,
+        0,
+        2.71
+      ],
+      "material": "tarred-wood"
+    }
+  ],
+  "props": [
+    {
+      "id": "bottle-asked-for",
+      "object": "rum-bottle",
+      "location": [
+        -1.9,
+        2.2,
+        1.45
+      ]
+    },
+    {
+      "id": "bottle-shelf",
+      "object": "rum-bottle",
+      "location": [
+        -1.5,
+        2.2,
+        1.45
+      ]
+    },
+    {
+      "id": "tea-caddy",
+      "object": "tea-caddy",
+      "location": [
+        0.2,
+        2.2,
+        1.45
+      ]
+    },
+    {
+      "id": "account-book",
+      "object": "ledger",
+      "location": [
+        0.5,
+        0.6,
+        0.95
+      ],
+      "rotation_deg": [
+        90,
+        0,
+        -12
+      ]
+    },
+    {
+      "id": "lantern-counter",
+      "object": "ship-lantern",
+      "location": [
+        0.9,
+        0.7,
+        0.95
+      ]
+    },
+    {
+      "id": "rope-coil",
+      "object": "rope-coil",
+      "location": [
+        -3.0,
+        -1.6,
+        0
+      ]
+    },
+    {
+      "id": "lobster-pot",
+      "object": "lobster-pot",
+      "location": [
+        2.6,
+        1.9,
+        0
+      ]
+    }
+  ],
+  "scenes": {
+    "s-chandlery": {
+      "note": "The Slate: Alexi asks for a bottle; Mother Halse turns the slate round on the counter (forty years of one account, every line ending 'pays next tide'), shuts the shop and follows him to the taproom. Sets met.halse.",
+      "world": {
+        "color": [
+          0.3,
+          0.22,
+          0.15
+        ],
+        "strength": 0.2
+      },
+      "lights": [
+        {
+          "name": "shutter-band",
+          "type": "AREA",
+          "location": [
+            -0.6,
+            -2.3,
+            1.2
+          ],
+          "energy": 160,
+          "size": 1.2,
+          "color": [
+            0.957,
+            0.945,
+            0.91
+          ],
+          "look_at": [
+            -0.6,
+            0.6,
+            0.9
+          ]
+        },
+        {
+          "name": "door-quay",
+          "type": "AREA",
+          "location": [
+            3.3,
+            -1.2,
+            1.2
+          ],
+          "energy": 120,
+          "size": 1.0,
+          "color": [
+            0.957,
+            0.945,
+            0.91
+          ],
+          "look_at": [
+            0.5,
+            -1.0,
+            0
+          ]
+        },
+        {
+          "name": "counter-lantern",
+          "type": "POINT",
+          "location": [
+            0.9,
+            0.7,
+            1.3
+          ],
+          "energy": 25,
+          "size": 0.1,
+          "color": [
+            0.906,
+            0.663,
+            0.231
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          2.6,
+          -1.9,
+          1.6
+        ],
+        "look_at": [
+          -0.8,
+          0.8,
+          1.0
+        ],
+        "lens_mm": 22,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          2.9,
+          -1.2,
+          0
+        ],
+        "facing_deg": 290
+      },
+      "interactions": [
+        {
+          "prop": "bottle-asked-for",
+          "verb": "Ask for a bottle (she turns the slate round)"
+        },
+        {
+          "prop": "account-book",
+          "verb": "Look"
+        },
+        {
+          "prop": "tea-caddy",
+          "verb": "Look"
+        },
+        {
+          "prop": "lantern-counter",
+          "verb": "Follow her to the taproom",
+          "leads_to": "g-liars-tidewater"
+        }
+      ]
+    }
+  }
+}

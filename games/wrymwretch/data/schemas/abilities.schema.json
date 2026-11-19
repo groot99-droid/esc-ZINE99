@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "abilities.json (WrymWretch)",
+  "description": "The six pairs, their thirty abilities, the battle commands and statuses, and the fifteen Concords (DESIGN.md section 12, Battles).",
+  "type": "object",
+  "required": ["bond", "actions_per_round", "pairs", "abilities", "commands", "statuses", "concord_rule", "concords"],
+  "properties": {
+    "bond": {"type": "object", "required": ["max", "per_round", "same_target_bonus"], "properties": {
+      "max": {"type": "integer"}, "per_round": {"type": "integer"}, "same_target_bonus": {"type": "integer"}}},
+    "actions_per_round": {"type": "integer"},
+    "pairs": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "object",
+      "required": ["id", "elf", "dragon", "realm", "tribe", "trust_flag", "memory_meter", "life", "elf_skills", "dragon_gifts", "joined", "final_battle_aid"],
+      "properties": {
+        "id": {"type": "string", "description": "A keeper_pair value from flags.json"},
+        "elf": {"type": "string"}, "dragon": {"type": "string"},
+        "realm": {"enum": ["west", "north", "south", "east", "below", "above"]},
+        "tribe": {"enum": ["wood", "sky", "earth", "water", "dark", "celestial"]},
+        "trust_flag": {"type": "string"}, "memory_meter": {"type": "string"},
+        "life": {"type": "integer", "minimum": 1},
+        "elf_skills": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "string"}},
+        "dragon_gifts": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "string"}},
+        "joined": {"type": "string"},
+        "final_battle_aid": {"type": "object", "required": ["round", "effect"], "properties": {
+          "round": {"type": "integer", "minimum": 1}, "effect": {"type": "string"}}}
+      }}},
+    "abilities": {"type": "array", "minItems": 30, "maxItems": 30, "items": {"type": "object",
+      "required": ["id", "pair", "slot", "name", "effect", "actions", "numbers"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[a-z_]+$"}, "pair": {"type": "string"},
+        "slot": {"enum": ["elf", "dragon", "joined"]}, "name": {"type": "string"}, "effect": {"type": "string"},
+        "actions": {"type": "integer", "minimum": 1, "maximum": 2}, "numbers": {"type": "object"}
+      }}},
+    "commands": {"type": "array", "items": {"type": "object", "required": ["id", "name", "actions", "echo_cost", "requires", "effect"],
+      "properties": {"id": {"type": "string"}, "name": {"type": "string"}, "actions": {"type": "integer"}, "echo_cost": {"type": "integer"},
+        "requires": {"type": ["string", "null"]}, "effect": {"type": "string"}}}},
+    "statuses": {"type": "array", "items": {"type": "object", "required": ["id", "name", "effect"],
+      "properties": {"id": {"type": "string"}, "name": {"type": "string"}, "effect": {"type": "string"}, "rounds": {"type": "integer"}, "power": {"type": "number"}}}},
+    "concord_rule": {"type": "object", "required": ["bond_min", "bond_cost", "uses_both_pairs_actions", "requires_named"], "properties": {
+      "bond_min": {"type": "integer"}, "bond_cost": {"type": "integer"}, "uses_both_pairs_actions": {"type": "boolean"}, "requires_named": {"type": "string"}}},
+    "concords": {"type": "array", "minItems": 15, "maxItems": 15, "items": {"type": "object", "required": ["id", "name", "dragons", "effect"],
+      "properties": {"id": {"type": "string", "pattern": "^[a-z_]+$"}, "name": {"type": "string"},
+        "dragons": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "string"}}, "effect": {"type": "string"}}}}
+  }
+}

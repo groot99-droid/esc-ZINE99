@@ -1,0 +1,1374 @@
+{
+ "game": "endless-temple",
+ "count": 171,
+ "assets": [
+  {
+   "id": "ending-title-named-book",
+   "group": "title",
+   "title": "Ending lettering: The Named Book",
+   "w": 1600,
+   "h": 300,
+   "row": "Ending-card lettering, gold-tooled (5)"
+  },
+  {
+   "id": "ending-title-reader-who-stayed",
+   "group": "title",
+   "title": "Ending lettering: The Reader Who Stayed",
+   "w": 1600,
+   "h": 300,
+   "row": "Ending-card lettering, gold-tooled (5)"
+  },
+  {
+   "id": "ending-title-son-returns",
+   "group": "title",
+   "title": "Ending lettering: The Son Returns",
+   "w": 1600,
+   "h": 300,
+   "row": "Ending-card lettering, gold-tooled (5)"
+  },
+  {
+   "id": "ending-title-the-rider",
+   "group": "title",
+   "title": "Ending lettering: The Rider",
+   "w": 1600,
+   "h": 300,
+   "row": "Ending-card lettering, gold-tooled (5)"
+  },
+  {
+   "id": "ending-title-unread-page",
+   "group": "title",
+   "title": "Ending lettering: The Unread Page",
+   "w": 1600,
+   "h": 300,
+   "row": "Ending-card lettering, gold-tooled (5)"
+  },
+  {
+   "id": "heading-c1",
+   "group": "title",
+   "title": "Chapter heading I: The Waking",
+   "w": 1600,
+   "h": 300,
+   "row": "Title lockup and nine chapter headings, gold-tooled"
+  },
+  {
+   "id": "heading-c2",
+   "group": "title",
+   "title": "Chapter heading II: The Storyteller's Circle",
+   "w": 1600,
+   "h": 300,
+   "row": "Title lockup and nine chapter headings, gold-tooled"
+  },
+  {
+   "id": "heading-c3",
+   "group": "title",
+   "title": "Chapter heading III: The Keeper's Rounds",
+   "w": 1600,
+   "h": 300,
+   "row": "Title lockup and nine chapter headings, gold-tooled"
+  },
+  {
+   "id": "heading-c4",
+   "group": "title",
+   "title": "Chapter heading IV: The Silver Dunes",
+   "w": 1600,
+   "h": 300,
+   "row": "Title lockup and nine chapter headings, gold-tooled"
+  },
+  {
+   "id": "heading-c5",
+   "group": "title",
+   "title": "Chapter heading V: The Weather-Clerk of Hollin",
+   "w": 1600,
+   "h": 300,
+   "row": "Title lockup and nine chapter headings, gold-tooled"
+  },
+  {
+   "id": "heading-c6",
+   "group": "title",
+   "title": "Chapter heading VI: The Father's Mark",
+   "w": 1600,
+   "h": 300,
+   "row": "Title lockup and nine chapter headings, gold-tooled"
+  },
+  {
+   "id": "heading-c7",
+   "group": "title",
+   "title": "Chapter heading VII: The Long Procession",
+   "w": 1600,
+   "h": 300,
+   "row": "Title lockup and nine chapter headings, gold-tooled"
+  },
+  {
+   "id": "heading-c8",
+   "group": "title",
+   "title": "Chapter heading VIII: The Unlit Shelf",
+   "w": 1600,
+   "h": 300,
+   "row": "Title lockup and nine chapter headings, gold-tooled"
+  },
+  {
+   "id": "heading-c9",
+   "group": "title",
+   "title": "Chapter heading IX: The End of the Sand",
+   "w": 1600,
+   "h": 300,
+   "row": "Title lockup and nine chapter headings, gold-tooled"
+  },
+  {
+   "id": "title-lockup",
+   "group": "title",
+   "title": "The Endless Temple: title lockup",
+   "w": 1600,
+   "h": 500,
+   "row": "Title lockup and nine chapter headings, gold-tooled"
+  },
+  {
+   "id": "figure-elaris",
+   "group": "figures",
+   "title": "Elaris side-on",
+   "w": 480,
+   "h": 600,
+   "row": "2D figures: Xandri on leaf shoes, Pell, Oda, Elaris side-on"
+  },
+  {
+   "id": "figure-oda",
+   "group": "figures",
+   "title": "Oda on the wet ink stroke",
+   "w": 480,
+   "h": 600,
+   "row": "2D figures: Xandri on leaf shoes, Pell, Oda, Elaris side-on"
+  },
+  {
+   "id": "figure-pell",
+   "group": "figures",
+   "title": "Pell under the Clerk's umbrella",
+   "w": 480,
+   "h": 600,
+   "row": "2D figures: Xandri on leaf shoes, Pell, Oda, Elaris side-on"
+  },
+  {
+   "id": "figure-xandri",
+   "group": "figures",
+   "title": "Xandri on leaf shoes",
+   "w": 480,
+   "h": 600,
+   "row": "2D figures: Xandri on leaf shoes, Pell, Oda, Elaris side-on"
+  },
+  {
+   "id": "hand-elaris",
+   "group": "figures",
+   "title": "The hand that brings the cup: Elaris",
+   "w": 600,
+   "h": 300,
+   "row": "Play sprites and the two hands (added for the modes, 2026-11-15)"
+  },
+  {
+   "id": "hand-ringed",
+   "group": "figures",
+   "title": "The other hand: older, with a brass ring",
+   "w": 600,
+   "h": 300,
+   "row": "Play sprites and the two hands (added for the modes, 2026-11-15)"
+  },
+  {
+   "id": "sprite-elaris",
+   "group": "figures",
+   "title": "Sprite: Elaris side-on, no ground",
+   "w": 480,
+   "h": 600,
+   "row": "Play sprites and the two hands (added for the modes, 2026-11-15)"
+  },
+  {
+   "id": "sprite-xandri",
+   "group": "figures",
+   "title": "Sprite: Xandri on leaf shoes, no ground",
+   "w": 480,
+   "h": 600,
+   "row": "Play sprites and the two hands (added for the modes, 2026-11-15)"
+  },
+  {
+   "id": "watcher-c2",
+   "group": "figures",
+   "title": "Watcher shadow: the head shaman at the well-post",
+   "w": 400,
+   "h": 700,
+   "row": "Clay tablets (5) and watcher shadows (4)"
+  },
+  {
+   "id": "watcher-c5",
+   "group": "figures",
+   "title": "Watcher shadow: a townsman of Hollin",
+   "w": 400,
+   "h": 700,
+   "row": "Clay tablets (5) and watcher shadows (4)"
+  },
+  {
+   "id": "watcher-c6",
+   "group": "figures",
+   "title": "Watcher shadow: a shaman with a stylus",
+   "w": 400,
+   "h": 700,
+   "row": "Clay tablets (5) and watcher shadows (4)"
+  },
+  {
+   "id": "watcher-c7",
+   "group": "figures",
+   "title": "Watcher shadow: a masked pilgrim",
+   "w": 400,
+   "h": 700,
+   "row": "Clay tablets (5) and watcher shadows (4)"
+  },
+  {
+   "id": "stacks-arch",
+   "group": "backdrops",
+   "title": "Stacks tile: Junction: aisle on",
+   "w": 400,
+   "h": 400,
+   "row": "Stacks tile set (12) and mote sprites (4)"
+  },
+  {
+   "id": "stacks-calling",
+   "group": "backdrops",
+   "title": "Stacks tile: The calling book",
+   "w": 400,
+   "h": 400,
+   "row": "Stacks tile set (12) and mote sprites (4)"
+  },
+  {
+   "id": "stacks-ceiling",
+   "group": "backdrops",
+   "title": "Stacks tile: Shelves on the ceiling",
+   "w": 400,
+   "h": 400,
+   "row": "Stacks tile set (12) and mote sprites (4)"
+  },
+  {
+   "id": "stacks-chair",
+   "group": "backdrops",
+   "title": "Stacks tile: Passing the reading chair",
+   "w": 400,
+   "h": 400,
+   "row": "Stacks tile set (12) and mote sprites (4)"
+  },
+  {
+   "id": "stacks-frost",
+   "group": "backdrops",
+   "title": "Stacks tile: Frost on the shelf edges",
+   "w": 400,
+   "h": 400,
+   "row": "Stacks tile set (12) and mote sprites (4)"
+  },
+  {
+   "id": "stacks-ladder-down",
+   "group": "backdrops",
+   "title": "Stacks tile: Junction: ladder down",
+   "w": 400,
+   "h": 400,
+   "row": "Stacks tile set (12) and mote sprites (4)"
+  },
+  {
+   "id": "stacks-ladder-up",
+   "group": "backdrops",
+   "title": "Stacks tile: Junction: ladder up",
+   "w": 400,
+   "h": 400,
+   "row": "Stacks tile set (12) and mote sprites (4)"
+  },
+  {
+   "id": "stacks-lamp",
+   "group": "backdrops",
+   "title": "Stacks tile: A reading lamp, lit",
+   "w": 400,
+   "h": 400,
+   "row": "Stacks tile set (12) and mote sprites (4)"
+  },
+  {
+   "id": "stacks-plain",
+   "group": "backdrops",
+   "title": "Stacks tile: A plain bay",
+   "w": 400,
+   "h": 400,
+   "row": "Stacks tile set (12) and mote sprites (4)"
+  },
+  {
+   "id": "stacks-ribbon",
+   "group": "backdrops",
+   "title": "Stacks tile: Maudric's ribbon",
+   "w": 400,
+   "h": 400,
+   "row": "Stacks tile set (12) and mote sprites (4)"
+  },
+  {
+   "id": "stacks-rolling-ladder",
+   "group": "backdrops",
+   "title": "Stacks tile: The rolling ladder",
+   "w": 400,
+   "h": 400,
+   "row": "Stacks tile set (12) and mote sprites (4)"
+  },
+  {
+   "id": "stacks-sand-drift",
+   "group": "backdrops",
+   "title": "Stacks tile: A sand drift",
+   "w": 400,
+   "h": 400,
+   "row": "Stacks tile set (12) and mote sprites (4)"
+  },
+  {
+   "id": "cartouche-c1",
+   "group": "pieces",
+   "title": "Cartouche: yesterday's book",
+   "w": 1200,
+   "h": 420,
+   "row": "Tooling stamps (24) and cartouches (4)"
+  },
+  {
+   "id": "cartouche-c5",
+   "group": "pieces",
+   "title": "Cartouche: the Hollin book",
+   "w": 1200,
+   "h": 420,
+   "row": "Tooling stamps (24) and cartouches (4)"
+  },
+  {
+   "id": "cartouche-c7",
+   "group": "pieces",
+   "title": "Cartouche: the Procession's book",
+   "w": 1200,
+   "h": 420,
+   "row": "Tooling stamps (24) and cartouches (4)"
+  },
+  {
+   "id": "cartouche-c9",
+   "group": "pieces",
+   "title": "Cartouche: the sand book, with the scraped title",
+   "w": 1200,
+   "h": 420,
+   "row": "Tooling stamps (24) and cartouches (4)"
+  },
+  {
+   "id": "cup-ring-1-clear",
+   "group": "pieces",
+   "title": "Cup ring, state 1 (steep 0 to 19)",
+   "w": 320,
+   "h": 320,
+   "row": "Jar labels (nine herbs) and cup-ring states (5)"
+  },
+  {
+   "id": "cup-ring-2-faint",
+   "group": "pieces",
+   "title": "Cup ring, state 2 (steep 20 to 39)",
+   "w": 320,
+   "h": 320,
+   "row": "Jar labels (nine herbs) and cup-ring states (5)"
+  },
+  {
+   "id": "cup-ring-3-set",
+   "group": "pieces",
+   "title": "Cup ring, state 3 (steep 40 to 59)",
+   "w": 320,
+   "h": 320,
+   "row": "Jar labels (nine herbs) and cup-ring states (5)"
+  },
+  {
+   "id": "cup-ring-4-wide",
+   "group": "pieces",
+   "title": "Cup ring, state 4 (steep 60 to 79)",
+   "w": 320,
+   "h": 320,
+   "row": "Jar labels (nine herbs) and cup-ring states (5)"
+  },
+  {
+   "id": "cup-ring-5-stained",
+   "group": "pieces",
+   "title": "Cup ring, state 5 (steep 80 and over)",
+   "w": 320,
+   "h": 320,
+   "row": "Jar labels (nine herbs) and cup-ring states (5)"
+  },
+  {
+   "id": "label-clove-bark",
+   "group": "pieces",
+   "title": "Jar label: Clove-Bark",
+   "w": 300,
+   "h": 420,
+   "row": "Jar labels (nine herbs) and cup-ring states (5)"
+  },
+  {
+   "id": "label-dune-vine-pith",
+   "group": "pieces",
+   "title": "Jar label: Dune-Vine Pith",
+   "w": 300,
+   "h": 420,
+   "row": "Jar labels (nine herbs) and cup-ring states (5)"
+  },
+  {
+   "id": "label-ember-root",
+   "group": "pieces",
+   "title": "Jar label: Ember Root",
+   "w": 300,
+   "h": 420,
+   "row": "Jar labels (nine herbs) and cup-ring states (5)"
+  },
+  {
+   "id": "label-gutter-sand",
+   "group": "pieces",
+   "title": "Jar label: Gutter Sand",
+   "w": 300,
+   "h": 420,
+   "row": "Jar labels (nine herbs) and cup-ring states (5)"
+  },
+  {
+   "id": "label-honeymoss",
+   "group": "pieces",
+   "title": "Jar label: Honeymoss",
+   "w": 300,
+   "h": 420,
+   "row": "Jar labels (nine herbs) and cup-ring states (5)"
+  },
+  {
+   "id": "label-lamp-ash",
+   "group": "pieces",
+   "title": "Jar label: Lamp-Ash",
+   "w": 300,
+   "h": 420,
+   "row": "Jar labels (nine herbs) and cup-ring states (5)"
+  },
+  {
+   "id": "label-mint",
+   "group": "pieces",
+   "title": "Jar label: Mint",
+   "w": 300,
+   "h": 420,
+   "row": "Jar labels (nine herbs) and cup-ring states (5)"
+  },
+  {
+   "id": "label-seers-sprig",
+   "group": "pieces",
+   "title": "Jar label: Seer'S Sprig",
+   "w": 300,
+   "h": 420,
+   "row": "Jar labels (nine herbs) and cup-ring states (5)"
+  },
+  {
+   "id": "label-stormcress",
+   "group": "pieces",
+   "title": "Jar label: Stormcress",
+   "w": 300,
+   "h": 420,
+   "row": "Jar labels (nine herbs) and cup-ring states (5)"
+  },
+  {
+   "id": "mote-frost",
+   "group": "pieces",
+   "title": "Frost, where nothing calls",
+   "w": 160,
+   "h": 160,
+   "row": "Stacks tile set (12) and mote sprites (4)"
+  },
+  {
+   "id": "mote-ink",
+   "group": "pieces",
+   "title": "Ink flecks",
+   "w": 160,
+   "h": 160,
+   "row": "Stacks tile set (12) and mote sprites (4)"
+  },
+  {
+   "id": "mote-rain",
+   "group": "pieces",
+   "title": "Raindrop motes",
+   "w": 160,
+   "h": 160,
+   "row": "Stacks tile set (12) and mote sprites (4)"
+  },
+  {
+   "id": "mote-sand",
+   "group": "pieces",
+   "title": "Sand motes",
+   "w": 160,
+   "h": 160,
+   "row": "Stacks tile set (12) and mote sprites (4)"
+  },
+  {
+   "id": "stamp-answer",
+   "group": "pieces",
+   "title": "Tooling stamp: Answer (want)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
+   "id": "stamp-bakers",
+   "group": "pieces",
+   "title": "Tooling stamp: Bakers (person)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
+   "id": "stamp-bell-loft",
+   "group": "pieces",
+   "title": "Tooling stamp: Bell-Loft (place)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
+   "id": "stamp-bell-ringer",
+   "group": "pieces",
+   "title": "Tooling stamp: Bell-Ringer (person)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
+   "id": "stamp-city",
+   "group": "pieces",
+   "title": "Tooling stamp: City (want)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
+   "id": "stamp-clerk",
+   "group": "pieces",
+   "title": "Tooling stamp: Clerk (person)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
+   "id": "stamp-desert",
+   "group": "pieces",
+   "title": "Tooling stamp: Desert (place)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps (24) and cartouches (4)"
+  },
+  {
+   "id": "stamp-dunes",
+   "group": "pieces",
+   "title": "Tooling stamp: Dunes (place)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps (24) and cartouches (4)"
+  },
+  {
+   "id": "stamp-dusk",
+   "group": "pieces",
+   "title": "Tooling stamp: Dusk (place)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
+   "id": "stamp-edge",
+   "group": "pieces",
+   "title": "Tooling stamp: Edge (want)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
+   "id": "stamp-end",
+   "group": "pieces",
+   "title": "Tooling stamp: End (want)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps (24) and cartouches (4)"
+  },
+  {
+   "id": "stamp-ending",
+   "group": "pieces",
+   "title": "Tooling stamp: Ending (want)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
+   "id": "stamp-eternity",
+   "group": "pieces",
+   "title": "Tooling stamp: Eternity (place)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps (24) and cartouches (4)"
+  },
+  {
+   "id": "stamp-explorer",
+   "group": "pieces",
+   "title": "Tooling stamp: Explorer (person)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps (24) and cartouches (4)"
+  },
+  {
+   "id": "stamp-fair-weather",
+   "group": "pieces",
+   "title": "Tooling stamp: Fair Weather (want)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
+   "id": "stamp-father",
+   "group": "pieces",
+   "title": "Tooling stamp: Father (person)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps (24) and cartouches (4)"
+  },
+  {
+   "id": "stamp-further",
+   "group": "pieces",
+   "title": "Tooling stamp: Further (want)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps (24) and cartouches (4)"
+  },
+  {
+   "id": "stamp-grey-grass",
+   "group": "pieces",
+   "title": "Tooling stamp: Grey Grass (place)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
+   "id": "stamp-hill",
+   "group": "pieces",
+   "title": "Tooling stamp: Hill (place)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
+   "id": "stamp-hollin",
+   "group": "pieces",
+   "title": "Tooling stamp: Hollin (place)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
+   "id": "stamp-leaf",
+   "group": "pieces",
+   "title": "Tooling stamp: Leaf (want)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps (24) and cartouches (4)"
+  },
+  {
+   "id": "stamp-lizard",
+   "group": "pieces",
+   "title": "Tooling stamp: Lizard (person)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps (24) and cartouches (4)"
+  },
+  {
+   "id": "stamp-mark",
+   "group": "pieces",
+   "title": "Tooling stamp: Mark (want)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps (24) and cartouches (4)"
+  },
+  {
+   "id": "stamp-masks",
+   "group": "pieces",
+   "title": "Tooling stamp: Masks (person)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
+   "id": "stamp-moon",
+   "group": "pieces",
+   "title": "Tooling stamp: Moon (place)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps (24) and cartouches (4)"
+  },
+  {
+   "id": "stamp-never-ending",
+   "group": "pieces",
+   "title": "Tooling stamp: Never-Ending (place)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
+   "id": "stamp-oda",
+   "group": "pieces",
+   "title": "Tooling stamp: Oda (person)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
+   "id": "stamp-past-the-mark",
+   "group": "pieces",
+   "title": "Tooling stamp: Past The Mark (want)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
+   "id": "stamp-pell",
+   "group": "pieces",
+   "title": "Tooling stamp: Pell (person)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
+   "id": "stamp-pilgrims",
+   "group": "pieces",
+   "title": "Tooling stamp: Pilgrims (person)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
+   "id": "stamp-plain",
+   "group": "pieces",
+   "title": "Tooling stamp: Plain (place)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
+   "id": "stamp-proof",
+   "group": "pieces",
+   "title": "Tooling stamp: Proof (want)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps (24) and cartouches (4)"
+  },
+  {
+   "id": "stamp-road",
+   "group": "pieces",
+   "title": "Tooling stamp: Road (place)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
+   "id": "stamp-sand-sea",
+   "group": "pieces",
+   "title": "Tooling stamp: Sand Sea (place)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps (24) and cartouches (4)"
+  },
+  {
+   "id": "stamp-scribe",
+   "group": "pieces",
+   "title": "Tooling stamp: Scribe (person)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
+   "id": "stamp-shaman",
+   "group": "pieces",
+   "title": "Tooling stamp: Shaman (person)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps (24) and cartouches (4)"
+  },
+  {
+   "id": "stamp-silver",
+   "group": "pieces",
+   "title": "Tooling stamp: Silver (place)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps (24) and cartouches (4)"
+  },
+  {
+   "id": "stamp-sky",
+   "group": "pieces",
+   "title": "Tooling stamp: Sky (place)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
+   "id": "stamp-son",
+   "group": "pieces",
+   "title": "Tooling stamp: Son (person)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps (24) and cartouches (4)"
+  },
+  {
+   "id": "stamp-storyteller",
+   "group": "pieces",
+   "title": "Tooling stamp: Storyteller (person)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps (24) and cartouches (4)"
+  },
+  {
+   "id": "stamp-tomorrow",
+   "group": "pieces",
+   "title": "Tooling stamp: Tomorrow (want)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
+   "id": "stamp-vines",
+   "group": "pieces",
+   "title": "Tooling stamp: Vines (place)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps (24) and cartouches (4)"
+  },
+  {
+   "id": "stamp-wake",
+   "group": "pieces",
+   "title": "Tooling stamp: Wake (want)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps (24) and cartouches (4)"
+  },
+  {
+   "id": "stamp-waves",
+   "group": "pieces",
+   "title": "Tooling stamp: Waves (place)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps (24) and cartouches (4)"
+  },
+  {
+   "id": "stamp-windows",
+   "group": "pieces",
+   "title": "Tooling stamp: Windows (want)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
+   "id": "stamp-wondering",
+   "group": "pieces",
+   "title": "Tooling stamp: Wondering (person)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps (24) and cartouches (4)"
+  },
+  {
+   "id": "stamp-xadra",
+   "group": "pieces",
+   "title": "Tooling stamp: Xadra (person)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps (24) and cartouches (4)"
+  },
+  {
+   "id": "stamp-xandri",
+   "group": "pieces",
+   "title": "Tooling stamp: Xandri (person)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps (24) and cartouches (4)"
+  },
+  {
+   "id": "stamp-xandrixes",
+   "group": "pieces",
+   "title": "Tooling stamp: Xandrixes (person)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps (24) and cartouches (4)"
+  },
+  {
+   "id": "stamp-zorlop",
+   "group": "pieces",
+   "title": "Tooling stamp: Zorlop (person)",
+   "w": 200,
+   "h": 200,
+   "row": "Tooling stamps for the other books' tiles (26, added 2026-11-15)"
+  },
+  {
+   "id": "frontis-c1",
+   "group": "chapters",
+   "title": "Frontispiece I: The Waking",
+   "w": 800,
+   "h": 1100,
+   "row": "Chapter frontispieces: illuminated initial with a margin vine that gains sand"
+  },
+  {
+   "id": "frontis-c2",
+   "group": "chapters",
+   "title": "Frontispiece II: The Storyteller's Circle",
+   "w": 800,
+   "h": 1100,
+   "row": "Chapter frontispieces: illuminated initial with a margin vine that gains sand"
+  },
+  {
+   "id": "frontis-c3",
+   "group": "chapters",
+   "title": "Frontispiece III: The Keeper's Rounds",
+   "w": 800,
+   "h": 1100,
+   "row": "Chapter frontispieces: illuminated initial with a margin vine that gains sand"
+  },
+  {
+   "id": "frontis-c4",
+   "group": "chapters",
+   "title": "Frontispiece IV: The Silver Dunes",
+   "w": 800,
+   "h": 1100,
+   "row": "Chapter frontispieces: illuminated initial with a margin vine that gains sand"
+  },
+  {
+   "id": "frontis-c5",
+   "group": "chapters",
+   "title": "Frontispiece V: The Weather-Clerk of Hollin",
+   "w": 800,
+   "h": 1100,
+   "row": "Chapter frontispieces: illuminated initial with a margin vine that gains sand"
+  },
+  {
+   "id": "frontis-c6",
+   "group": "chapters",
+   "title": "Frontispiece VI: The Father's Mark",
+   "w": 800,
+   "h": 1100,
+   "row": "Chapter frontispieces: illuminated initial with a margin vine that gains sand"
+  },
+  {
+   "id": "frontis-c7",
+   "group": "chapters",
+   "title": "Frontispiece VII: The Long Procession",
+   "w": 800,
+   "h": 1100,
+   "row": "Chapter frontispieces: illuminated initial with a margin vine that gains sand"
+  },
+  {
+   "id": "frontis-c8",
+   "group": "chapters",
+   "title": "Frontispiece VIII: The Unlit Shelf",
+   "w": 800,
+   "h": 1100,
+   "row": "Chapter frontispieces: illuminated initial with a margin vine that gains sand"
+  },
+  {
+   "id": "frontis-c9",
+   "group": "chapters",
+   "title": "Frontispiece IX: The End of the Sand",
+   "w": 800,
+   "h": 1100,
+   "row": "Chapter frontispieces: illuminated initial with a margin vine that gains sand"
+  },
+  {
+   "id": "corner-fold-lifted",
+   "group": "ui",
+   "title": "Corner fold: lifted",
+   "w": 240,
+   "h": 240,
+   "row": "UI ornaments: ink-glyph prompts, fleurons, corner folds, ribbon, cup vignette"
+  },
+  {
+   "id": "corner-fold-pinned",
+   "group": "ui",
+   "title": "Corner fold: pinned",
+   "w": 240,
+   "h": 240,
+   "row": "UI ornaments: ink-glyph prompts, fleurons, corner folds, ribbon, cup vignette"
+  },
+  {
+   "id": "corner-fold-rest",
+   "group": "ui",
+   "title": "Corner fold: at rest",
+   "w": 240,
+   "h": 240,
+   "row": "UI ornaments: ink-glyph prompts, fleurons, corner folds, ribbon, cup vignette"
+  },
+  {
+   "id": "corner-fold-turned",
+   "group": "ui",
+   "title": "Corner fold: turned",
+   "w": 240,
+   "h": 240,
+   "row": "UI ornaments: ink-glyph prompts, fleurons, corner folds, ribbon, cup vignette"
+  },
+  {
+   "id": "cup-vignette-1-full",
+   "group": "ui",
+   "title": "Cup vignette: full",
+   "w": 240,
+   "h": 240,
+   "row": "UI ornaments: ink-glyph prompts, fleurons, corner folds, ribbon, cup vignette"
+  },
+  {
+   "id": "cup-vignette-2-three-quarters",
+   "group": "ui",
+   "title": "Cup vignette: three quarters",
+   "w": 240,
+   "h": 240,
+   "row": "UI ornaments: ink-glyph prompts, fleurons, corner folds, ribbon, cup vignette"
+  },
+  {
+   "id": "cup-vignette-3-half",
+   "group": "ui",
+   "title": "Cup vignette: half",
+   "w": 240,
+   "h": 240,
+   "row": "UI ornaments: ink-glyph prompts, fleurons, corner folds, ribbon, cup vignette"
+  },
+  {
+   "id": "cup-vignette-4-quarter",
+   "group": "ui",
+   "title": "Cup vignette: quarter",
+   "w": 240,
+   "h": 240,
+   "row": "UI ornaments: ink-glyph prompts, fleurons, corner folds, ribbon, cup vignette"
+  },
+  {
+   "id": "cup-vignette-5-dregs",
+   "group": "ui",
+   "title": "Cup vignette: dregs",
+   "w": 240,
+   "h": 240,
+   "row": "UI ornaments: ink-glyph prompts, fleurons, corner folds, ribbon, cup vignette"
+  },
+  {
+   "id": "cup-vignette-6-empty",
+   "group": "ui",
+   "title": "Cup vignette: empty",
+   "w": 240,
+   "h": 240,
+   "row": "UI ornaments: ink-glyph prompts, fleurons, corner folds, ribbon, cup vignette"
+  },
+  {
+   "id": "fleuron-cup",
+   "group": "ui",
+   "title": "Fleuron: cup",
+   "w": 600,
+   "h": 120,
+   "row": "UI ornaments: ink-glyph prompts, fleurons, corner folds, ribbon, cup vignette"
+  },
+  {
+   "id": "fleuron-leaf",
+   "group": "ui",
+   "title": "Fleuron: leaf",
+   "w": 600,
+   "h": 120,
+   "row": "UI ornaments: ink-glyph prompts, fleurons, corner folds, ribbon, cup vignette"
+  },
+  {
+   "id": "fleuron-moon",
+   "group": "ui",
+   "title": "Fleuron: moon",
+   "w": 600,
+   "h": 120,
+   "row": "UI ornaments: ink-glyph prompts, fleurons, corner folds, ribbon, cup vignette"
+  },
+  {
+   "id": "fleuron-sand",
+   "group": "ui",
+   "title": "Fleuron: sandglass",
+   "w": 600,
+   "h": 120,
+   "row": "UI ornaments: ink-glyph prompts, fleurons, corner folds, ribbon, cup vignette"
+  },
+  {
+   "id": "fleuron-vine",
+   "group": "ui",
+   "title": "Fleuron: dune-vine",
+   "w": 600,
+   "h": 120,
+   "row": "UI ornaments: ink-glyph prompts, fleurons, corner folds, ribbon, cup vignette"
+  },
+  {
+   "id": "fleuron-wave",
+   "group": "ui",
+   "title": "Fleuron: sand waves",
+   "w": 600,
+   "h": 120,
+   "row": "UI ornaments: ink-glyph prompts, fleurons, corner folds, ribbon, cup vignette"
+  },
+  {
+   "id": "glyph-climb",
+   "group": "ui",
+   "title": "Ink glyph: Climb",
+   "w": 160,
+   "h": 160,
+   "row": "UI ornaments: ink-glyph prompts, fleurons, corner folds, ribbon, cup vignette"
+  },
+  {
+   "id": "glyph-light",
+   "group": "ui",
+   "title": "Ink glyph: Light a lamp",
+   "w": 160,
+   "h": 160,
+   "row": "UI ornaments: ink-glyph prompts, fleurons, corner folds, ribbon, cup vignette"
+  },
+  {
+   "id": "glyph-look-away",
+   "group": "ui",
+   "title": "Ink glyph: Look away",
+   "w": 160,
+   "h": 160,
+   "row": "UI ornaments: ink-glyph prompts, fleurons, corner folds, ribbon, cup vignette"
+  },
+  {
+   "id": "glyph-one-more-page",
+   "group": "ui",
+   "title": "Ink glyph: One more page",
+   "w": 160,
+   "h": 160,
+   "row": "UI ornaments: ink-glyph prompts, fleurons, corner folds, ribbon, cup vignette"
+  },
+  {
+   "id": "glyph-read",
+   "group": "ui",
+   "title": "Ink glyph: Read",
+   "w": 160,
+   "h": 160,
+   "row": "UI ornaments: ink-glyph prompts, fleurons, corner folds, ribbon, cup vignette"
+  },
+  {
+   "id": "glyph-set-down",
+   "group": "ui",
+   "title": "Ink glyph: Set the cup down",
+   "w": 160,
+   "h": 160,
+   "row": "UI ornaments: ink-glyph prompts, fleurons, corner folds, ribbon, cup vignette"
+  },
+  {
+   "id": "glyph-sip",
+   "group": "ui",
+   "title": "Ink glyph: Sip",
+   "w": 160,
+   "h": 160,
+   "row": "UI ornaments: ink-glyph prompts, fleurons, corner folds, ribbon, cup vignette"
+  },
+  {
+   "id": "glyph-sweep",
+   "group": "ui",
+   "title": "Ink glyph: Sweep",
+   "w": 160,
+   "h": 160,
+   "row": "UI ornaments: ink-glyph prompts, fleurons, corner folds, ribbon, cup vignette"
+  },
+  {
+   "id": "glyph-take",
+   "group": "ui",
+   "title": "Ink glyph: Take",
+   "w": 160,
+   "h": 160,
+   "row": "UI ornaments: ink-glyph prompts, fleurons, corner folds, ribbon, cup vignette"
+  },
+  {
+   "id": "glyph-wind",
+   "group": "ui",
+   "title": "Ink glyph: Wind the clock",
+   "w": 160,
+   "h": 160,
+   "row": "UI ornaments: ink-glyph prompts, fleurons, corner folds, ribbon, cup vignette"
+  },
+  {
+   "id": "notebook-pieces",
+   "group": "ui",
+   "title": "Elaris's notebook: the mounts for the pieces",
+   "w": 900,
+   "h": 560,
+   "row": "UI ornaments: ink-glyph prompts, fleurons, corner folds, ribbon, cup vignette"
+  },
+  {
+   "id": "ribbon-empty",
+   "group": "ui",
+   "title": "Bookmark ribbon: an empty length",
+   "w": 600,
+   "h": 120,
+   "row": "UI ornaments: ink-glyph prompts, fleurons, corner folds, ribbon, cup vignette"
+  },
+  {
+   "id": "ribbon-end",
+   "group": "ui",
+   "title": "Bookmark ribbon: the leading end",
+   "w": 600,
+   "h": 120,
+   "row": "UI ornaments: ink-glyph prompts, fleurons, corner folds, ribbon, cup vignette"
+  },
+  {
+   "id": "ribbon-grown",
+   "group": "ui",
+   "title": "Bookmark ribbon: a grown length",
+   "w": 600,
+   "h": 120,
+   "row": "UI ornaments: ink-glyph prompts, fleurons, corner folds, ribbon, cup vignette"
+  },
+  {
+   "id": "ribbon-maudric",
+   "group": "ui",
+   "title": "Bookmark ribbon: Maudric's ribbon",
+   "w": 600,
+   "h": 120,
+   "row": "UI ornaments: ink-glyph prompts, fleurons, corner folds, ribbon, cup vignette"
+  },
+  {
+   "id": "ledger-back-1-days",
+   "group": "documents",
+   "title": "Ledger, back: the day count begins",
+   "w": 800,
+   "h": 1100,
+   "row": "Ledger pages, front and back, with Maudric's hand"
+  },
+  {
+   "id": "ledger-back-2-thirty-one",
+   "group": "documents",
+   "title": "Ledger, back: day thirty-one",
+   "w": 800,
+   "h": 1100,
+   "row": "Ledger pages, front and back, with Maudric's hand"
+  },
+  {
+   "id": "ledger-back-3-forty",
+   "group": "documents",
+   "title": "Ledger, back: forty, against the journal",
+   "w": 800,
+   "h": 1100,
+   "row": "Ledger pages, front and back, with Maudric's hand"
+  },
+  {
+   "id": "ledger-back-4-elaris",
+   "group": "documents",
+   "title": "Ledger, back: the page in Elaris's hand",
+   "w": 800,
+   "h": 1100,
+   "row": "Ledger pages, front and back, with Maudric's hand"
+  },
+  {
+   "id": "ledger-front-1-jars",
+   "group": "documents",
+   "title": "Ledger, front: the jars kept",
+   "w": 800,
+   "h": 1100,
+   "row": "Ledger pages, front and back, with Maudric's hand"
+  },
+  {
+   "id": "ledger-front-2-recipes",
+   "group": "documents",
+   "title": "Ledger, front: what opens a book",
+   "w": 800,
+   "h": 1100,
+   "row": "Ledger pages, front and back, with Maudric's hand"
+  },
+  {
+   "id": "ledger-front-3-unfinished",
+   "group": "documents",
+   "title": "Ledger, front: the unfinished recipe",
+   "w": 800,
+   "h": 1100,
+   "row": "Ledger pages, front and back, with Maudric's hand"
+  },
+  {
+   "id": "clasp-c3a-sliding-bolt",
+   "group": "maps",
+   "title": "Clasp: Sliding bolt",
+   "w": 1000,
+   "h": 750,
+   "row": "Clasp mechanisms, including the closing clasp"
+  },
+  {
+   "id": "clasp-c3b-lever-bank",
+   "group": "maps",
+   "title": "Clasp: Lever bank",
+   "w": 1000,
+   "h": 750,
+   "row": "Clasp mechanisms, including the closing clasp"
+  },
+  {
+   "id": "clasp-c5-strap-fold",
+   "group": "maps",
+   "title": "Clasp: Strap fold",
+   "w": 1000,
+   "h": 750,
+   "row": "Clasp mechanisms, including the closing clasp"
+  },
+  {
+   "id": "clasp-c7-gear-train",
+   "group": "maps",
+   "title": "Clasp: Gear train",
+   "w": 1000,
+   "h": 750,
+   "row": "Clasp mechanisms, including the closing clasp"
+  },
+  {
+   "id": "clasp-c8-black-book",
+   "group": "maps",
+   "title": "Clasp: The black book's compound clasp",
+   "w": 1000,
+   "h": 750,
+   "row": "Clasp mechanisms, including the closing clasp"
+  },
+  {
+   "id": "clasp-closing-clasp",
+   "group": "maps",
+   "title": "Clasp: The closing clasp",
+   "w": 1000,
+   "h": 750,
+   "row": "Clasp mechanisms, including the closing clasp"
+  },
+  {
+   "id": "tablet-c2-shrine-store",
+   "group": "maps",
+   "title": "Rule tablet: The shrine-store",
+   "w": 800,
+   "h": 1000,
+   "row": "Clay tablets (5) and watcher shadows (4)"
+  },
+  {
+   "id": "tablet-c5-clerks-charter",
+   "group": "maps",
+   "title": "Rule tablet: The Clerk's Charter",
+   "w": 800,
+   "h": 1000,
+   "row": "Clay tablets (5) and watcher shadows (4)"
+  },
+  {
+   "id": "tablet-c6-gods-rules",
+   "group": "maps",
+   "title": "Rule tablet: The gods' rules",
+   "w": 800,
+   "h": 1000,
+   "row": "Clay tablets (5) and watcher shadows (4)"
+  },
+  {
+   "id": "tablet-c7-procession-vows",
+   "group": "maps",
+   "title": "Rule tablet: The Procession's vows",
+   "w": 800,
+   "h": 1000,
+   "row": "Clay tablets (5) and watcher shadows (4)"
+  },
+  {
+   "id": "tablet-c8-keepers-binding",
+   "group": "maps",
+   "title": "Rule tablet: The Keeper's Binding",
+   "w": 800,
+   "h": 1000,
+   "row": "Clay tablets (5) and watcher shadows (4)"
+  },
+  {
+   "id": "thread-guest",
+   "group": "thread",
+   "title": "A stopped clock at 2:14",
+   "w": 480,
+   "h": 480,
+   "row": "Thread"
+  },
+  {
+   "id": "thread-own",
+   "group": "thread",
+   "title": "The ring a cup leaves on a table",
+   "w": 480,
+   "h": 480,
+   "row": "Thread"
+  }
+ ]
+}

@@ -1,0 +1,493 @@
+{
+  "game": "people-of-the-bark",
+  "location": "backyard",
+  "name": "The backyard",
+  "reference": "assets/locations/backyard.jpg",
+  "bounds_m": [
+    25,
+    25,
+    12
+  ],
+  "origin": "lawn centre; +y toward the back picket fence, the house and its back door on the -x side, the tree in the middle of the lawn at y = 4 with the people's world on its east (+x) face. Human scale; bounds raised to 12 m for the tree's crown.",
+  "materials": {
+    "grass": {
+      "color": [
+        0.369,
+        0.561,
+        0.227
+      ],
+      "roughness": 1.0
+    },
+    "tree-bark": {
+      "color": [
+        0.42,
+        0.384,
+        0.345
+      ],
+      "roughness": 0.95
+    },
+    "leaf-green": {
+      "color": [
+        0.31,
+        0.42,
+        0.184
+      ],
+      "roughness": 1.0
+    },
+    "house-grey": {
+      "color": [
+        0.769,
+        0.784,
+        0.8
+      ],
+      "roughness": 0.8
+    },
+    "roof": {
+      "color": [
+        0.29,
+        0.251,
+        0.22
+      ],
+      "roughness": 0.9
+    },
+    "door-dark": {
+      "color": [
+        0.169,
+        0.169,
+        0.18
+      ],
+      "roughness": 0.6
+    },
+    "fence-wood": {
+      "color": [
+        0.541,
+        0.353,
+        0.227
+      ],
+      "roughness": 0.9
+    },
+    "fence-grey": {
+      "color": [
+        0.655,
+        0.663,
+        0.651
+      ],
+      "roughness": 0.9
+    },
+    "path": {
+      "color": [
+        0.604,
+        0.604,
+        0.588
+      ],
+      "roughness": 0.95
+    },
+    "far-green": {
+      "color": [
+        0.247,
+        0.353,
+        0.165
+      ],
+      "roughness": 1.0
+    }
+  },
+  "blockout": [
+    {
+      "id": "lawn",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        25,
+        25,
+        0.1
+      ],
+      "location": [
+        0,
+        0,
+        -0.05
+      ],
+      "material": "grass"
+    },
+    {
+      "id": "tree-trunk",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.9,
+        0.9,
+        5.0
+      ],
+      "location": [
+        0,
+        4,
+        2.5
+      ],
+      "material": "tree-bark"
+    },
+    {
+      "id": "tree-crown",
+      "shape": "sphere",
+      "role": "structure",
+      "size_m": [
+        10,
+        9,
+        7
+      ],
+      "location": [
+        0,
+        4,
+        8.5
+      ],
+      "material": "leaf-green",
+      "collide": false
+    },
+    {
+      "id": "swing-branch",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.25,
+        0.25,
+        3.6
+      ],
+      "location": [
+        2.25,
+        4,
+        2.4
+      ],
+      "material": "tree-bark",
+      "rotation_deg": [
+        0,
+        90,
+        0
+      ]
+    },
+    {
+      "id": "bark-world-patch",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.03,
+        0.5,
+        1.5
+      ],
+      "location": [
+        0.46,
+        4,
+        1.4
+      ],
+      "material": "tree-bark",
+      "collide": false
+    },
+    {
+      "id": "house-body",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        5,
+        10,
+        3
+      ],
+      "location": [
+        -10.5,
+        -3,
+        1.5
+      ],
+      "material": "house-grey"
+    },
+    {
+      "id": "house-roof",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        5.8,
+        10.8,
+        0.4
+      ],
+      "location": [
+        -10.5,
+        -3,
+        3.2
+      ],
+      "material": "roof"
+    },
+    {
+      "id": "house-roof-ridge",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        3,
+        9,
+        0.8
+      ],
+      "location": [
+        -10.5,
+        -3,
+        3.8
+      ],
+      "material": "roof"
+    },
+    {
+      "id": "back-door",
+      "shape": "box",
+      "role": "opening",
+      "size_m": [
+        0.06,
+        1.0,
+        2.1
+      ],
+      "location": [
+        -7.97,
+        -1.5,
+        1.05
+      ],
+      "material": "door-dark",
+      "collide": false
+    },
+    {
+      "id": "house-path",
+      "shape": "box",
+      "role": "floor",
+      "size_m": [
+        1.2,
+        10,
+        0.03
+      ],
+      "location": [
+        -7.4,
+        -3,
+        0.015
+      ],
+      "material": "path"
+    },
+    {
+      "id": "fence-east",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.08,
+        25,
+        1.8
+      ],
+      "location": [
+        12.5,
+        0,
+        0.9
+      ],
+      "material": "fence-wood"
+    },
+    {
+      "id": "fence-west",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        0.08,
+        12,
+        1.8
+      ],
+      "location": [
+        -12.5,
+        6.5,
+        0.9
+      ],
+      "material": "fence-grey"
+    },
+    {
+      "id": "fence-back-west",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        9,
+        0.08,
+        1.8
+      ],
+      "location": [
+        -8,
+        12.5,
+        0.9
+      ],
+      "material": "fence-grey"
+    },
+    {
+      "id": "fence-back-east",
+      "shape": "box",
+      "role": "wall",
+      "size_m": [
+        5.5,
+        0.08,
+        1.8
+      ],
+      "location": [
+        9.75,
+        12.5,
+        0.9
+      ],
+      "material": "fence-wood"
+    },
+    {
+      "id": "neighbour-trees",
+      "shape": "sphere",
+      "role": "sky",
+      "size_m": [
+        14,
+        6,
+        8
+      ],
+      "location": [
+        6,
+        18,
+        5
+      ],
+      "material": "far-green",
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "swing",
+      "object": "garden-swing",
+      "location": [
+        3.4,
+        4,
+        1.4
+      ],
+      "ground": false
+    },
+    {
+      "id": "washing-line",
+      "object": "washing-line",
+      "location": [
+        -5,
+        -1,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        20
+      ]
+    },
+    {
+      "id": "shed",
+      "object": "garden-shed",
+      "location": [
+        -5.5,
+        9.5,
+        0
+      ]
+    },
+    {
+      "id": "picket-1",
+      "object": "fence-panel",
+      "location": [
+        -3.6,
+        10.5,
+        0
+      ]
+    },
+    {
+      "id": "picket-2",
+      "object": "fence-panel",
+      "location": [
+        -1.8,
+        10.5,
+        0
+      ]
+    },
+    {
+      "id": "picket-3",
+      "object": "fence-panel",
+      "location": [
+        0.0,
+        10.5,
+        0
+      ]
+    },
+    {
+      "id": "picket-4",
+      "object": "fence-panel",
+      "location": [
+        1.8,
+        10.5,
+        0
+      ]
+    },
+    {
+      "id": "picket-5",
+      "object": "fence-panel",
+      "location": [
+        3.6,
+        10.5,
+        0
+      ]
+    },
+    {
+      "id": "picket-6",
+      "object": "fence-panel",
+      "location": [
+        5.4,
+        10.5,
+        0
+      ]
+    },
+    {
+      "id": "picket-7",
+      "object": "fence-panel",
+      "location": [
+        7.2,
+        10.5,
+        0
+      ]
+    }
+  ],
+  "scenes": {
+    "c7_backyard": {
+      "note": "The pull-back: the camera rises out of the bark (the patch on the trunk's east side), past the tree, over the yard, and holds on the ending's still image; the Roll is read over the rise if anyone was lost. Camera given at its hold.",
+      "world": {
+        "color": [
+          0.55,
+          0.7,
+          0.95
+        ],
+        "strength": 1.0
+      },
+      "lights": [
+        {
+          "name": "afternoon-sun",
+          "type": "SUN",
+          "location": [
+            10,
+            -8,
+            12
+          ],
+          "energy": 4.0,
+          "color": [
+            1.0,
+            0.96,
+            0.88
+          ],
+          "look_at": [
+            0,
+            4,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          7,
+          -14,
+          7
+        ],
+        "look_at": [
+          0,
+          4,
+          3.5
+        ],
+        "lens_mm": 28,
+        "mode": "fixed"
+      },
+      "interactions": []
+    }
+  }
+}

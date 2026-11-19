@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="slip-02-t slip-02-d">
+<title id="slip-02-t">Slipped card 2 (night 2)</title>
+<desc id="slip-02-d">Slipped card 2, found on night 2: the 8 of diamonds from another, river-grey deck, its face written across in blue-black ink: "The bell gives you less time than you think. Run." A small ink drawing sits under the words.</desc>
+<defs><radialGradient id="slip-02-rg1" cx="0.5" cy="0.5" r="0.8"><stop offset="0%" stop-color="#fff" stop-opacity="0.3"/><stop offset="100%" stop-color="#6f7c80" stop-opacity="0.2"/></radialGradient></defs>
+<rect x="0" y="0" width="300" height="420" rx="18" fill="#f7f2e6" stroke="#6f7c80" stroke-width="2.4"/>
+<rect x="16" y="16" width="268" height="388" rx="8" fill="none" stroke="#6f7c80" stroke-width="1"/>
+<rect x="0" y="0" width="300" height="420" rx="18" fill="url(#slip-02-rg1)"/>
+<g opacity="0.8">
+<text x="40" y="58" font-size="34" font-family="serif" fill="#6f7c80" text-anchor="middle">8</text>
+<path d="M40,68.1 L47.2,78 L40,87.9 L32.8,78Z" fill="#6f7c80"/>
+</g>
+<g transform="rotate(180 150 210)" opacity="0.8">
+<text x="40" y="58" font-size="34" font-family="serif" fill="#6f7c80" text-anchor="middle">8</text>
+<path d="M40,68.1 L47.2,78 L40,87.9 L32.8,78Z" fill="#6f7c80"/>
+</g>
+<path d="M150,131.5 L210,214 L150,296.5 L90,214Z" fill="#a9b4b6" opacity="0.2"/>
+<text x="152" y="136.5" font-size="27" font-family="cursive" fill="#1a2a5a" font-style="italic" text-anchor="middle" transform="rotate(0.2 152 136.5)">The bell gives</text>
+<text x="152" y="171.1" font-size="27" font-family="cursive" fill="#1a2a5a" font-style="italic" text-anchor="middle" transform="rotate(0.5 152 171.1)">you less time</text>
+<text x="152" y="205.6" font-size="27" font-family="cursive" fill="#1a2a5a" font-style="italic" text-anchor="middle" transform="rotate(0.8 152 205.6)">than you think.</text>
+<text x="152" y="240.2" font-size="27" font-family="cursive" fill="#1a2a5a" font-style="italic" text-anchor="middle" transform="rotate(-2.1 152 240.2)">Run.</text>
+<path d="M135,351.5 Q135,323 150,321.5 Q165,323 165,351.5 Q150,356.6 135,351.5Z" fill="none" stroke="#1a2a5a" stroke-width="1"/>
+<circle cx="150" cy="356.6" r="3" fill="#1a2a5a"/>
+<rect x="147.6" y="317" width="4.8" height="5.4" fill="#1a2a5a"/>
+<path d="M124,332 q-6,8 0,16 M176,332 q6,8 0,16" fill="none" stroke="#1a2a5a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+<circle cx="54" cy="370" r="13" fill="none" stroke="#8a826e" stroke-width="1"/>
+<text x="54" y="375" font-size="14" font-family="cursive" fill="#6b6456" text-anchor="middle">2</text>
+<circle cx="150" cy="30" r="4.5" fill="#3a3a3a"/>
+<circle cx="150" cy="30" r="7" fill="none" stroke="#8a826e" stroke-width="0.8"/>
+</svg>

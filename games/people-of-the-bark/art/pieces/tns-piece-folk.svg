@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-labelledby="tns-piece-folk-t tns-piece-folk-d">
+<title id="tns-piece-folk-t">Trunk and Shadow piece: Folk</title>
+<desc id="tns-piece-folk-d">A Folk: a lime counter with a small dark figure on it, one of the player's four.</desc>
+<defs><filter id="tns-piece-folk-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.5" numOctaves="2" seed="286"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.2 0"/></filter><radialGradient id="tns-piece-folk-rg2" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#5a3d2b" stop-opacity="0.9"/><stop offset="100%" stop-color="#5a3d2b" stop-opacity="0"/></radialGradient></defs>
+<rect x="0" y="0" width="200" height="200" fill="#24170f"/>
+<rect x="0" y="0" width="200" height="200" fill="#2e1f15"/>
+<rect x="0" y="0" width="200" height="200" filter="url(#tns-piece-folk-grain1)"/>
+<circle cx="100" cy="100" r="92" fill="url(#tns-piece-folk-rg2)"/>
+<circle cx="100" cy="109" r="64" fill="#000" opacity="0.5"/>
+<circle cx="100" cy="100" r="64" fill="#c4d65a" stroke="#140d08" stroke-width="8.3"/>
+<circle cx="100" cy="100" r="52.5" fill="none" stroke="#140d08" stroke-width="2.6" stroke-dasharray="2 4"/>
+<circle cx="100" cy="78.2" r="19.2" fill="#2e1f15"/>
+<path d="M77,138.4 q23,-70.4 46.1,0 Z" fill="#2e1f15"/>
+<ellipse cx="77" cy="68" rx="12.8" ry="7" fill="#fff" opacity="0.3" transform="rotate(-30 77 68)"/>
+</svg>

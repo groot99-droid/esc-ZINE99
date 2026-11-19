@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-labelledby="ending-the-open-hand-t ending-the-open-hand-d">
+<title id="ending-the-open-hand-t">Ending: The Open Hand</title>
+<desc id="ending-the-open-hand-d">The ending card for The Open Hand: one open red hand, palm up, in gold light, three small figures on a raft far behind it reaching, cut as a block print, beside the ending's name and its lines.</desc>
+<defs><filter id="ending-the-open-hand-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="659"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><filter id="ending-the-open-hand-rough2"><feTurbulence type="turbulence" baseFrequency="0" numOctaves="2" seed="56" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3"/></filter><clipPath id="ending-the-open-hand-clip3"><rect x="22" y="22" width="1556" height="856"/></clipPath><radialGradient id="ending-the-open-hand-rg4" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#fff6da" stop-opacity="0.9"/><stop offset="50%" stop-color="#F2B544" stop-opacity="0.6"/><stop offset="100%" stop-color="#F2B544" stop-opacity="0"/></radialGradient></defs>
+<rect x="0" y="0" width="1600" height="900" fill="#f0e6cf"/>
+<rect x="0" y="0" width="1600" height="900" filter="url(#ending-the-open-hand-grain1)"/>
+<g filter="url(#ending-the-open-hand-rough2)">
+<rect x="22" y="22" width="1556" height="856" fill="#17110f"/>
+<g clip-path="url(#ending-the-open-hand-clip3)">
+<rect x="22" y="22" width="800" height="856" fill="#7a2a14"/>
+<path d="M422,400 L1010,397 L1009.8,414.9ZM422,400 L1023,469.6 L1017.3,507.8ZM422,400 L1176.4,586.4 L1168.7,615.2ZM422,400 L927,610.4 L915.4,636.2ZM422,400 L979.5,740.6 L954.5,778.5ZM422,400 L897.9,780.2 L873.3,809.1ZM422,400 L792.4,829.2 L773,845.2ZM422,400 L873.2,1021.3 L817.4,1058.2ZM422,400 L649.5,873.8 L607,891.9ZM422,400 L677.5,1261.5 L648.7,1269.5ZM422,400 L547.4,1030.4 L498.2,1038.2ZM422,400 L463.9,1200.4 L413.3,1201.4ZM422,400 L350.6,1093.3 L321.3,1089.7ZM422,400 L179.8,1263.5 L116.9,1243.3ZM422,400 L99.1,1125.6 L52,1102.7ZM422,400 L144.7,832 L126.4,819.7ZM422,400 L-11.8,909 L-49,874.8ZM422,400 L-177.2,935.1 L-217.2,886.6ZM422,400 L-34.6,703.4 L-46.6,684.5ZM422,400 L-212,725 L-221.9,705ZM422,400 L-423.7,675.2 L-444.7,599.2ZM422,400 L-84.2,493.4 L-89.7,455.9ZM422,400 L-414.1,430.8 L-414.6,387.3ZM422,400 L-385.7,284.4 L-380.6,253.1ZM422,400 L-266.6,209.7 L-260,187ZM422,400 L-337.8,69.6 L-313.9,19.3ZM422,400 L-189,29.8 L-174.2,6.4ZM422,400 L-136.9,-90.6 L-116.4,-113.1ZM422,400 L-197.6,-244 L-142.4,-292.9ZM422,400 L99.5,-39.2 L139.8,-66ZM422,400 L56.1,-349.7 L102.8,-370.8ZM422,400 L244.1,-171.7 L290,-184ZM422,400 L307.5,-442.5 L343.4,-446.6ZM422,400 L415.2,-166.3 L455.1,-165.4ZM422,400 L520.9,-485.4 L599.1,-473.2ZM422,400 L617.2,-285.9 L662,-271.5ZM422,400 L674.1,-230.6 L704.7,-217.5ZM422,400 L691.3,-41.7 L704.9,-33.1ZM422,400 L889.2,-143.7 L907.8,-127.1ZM422,400 L1007.9,-155.1 L1040.1,-119ZM422,400 L1112.5,-97.8 L1150.8,-40ZM422,400 L1199.7,14.5 L1228.4,78.9ZM422,400 L1225,104.2 L1247.6,174.6ZM422,400 L1039,293 L1042.5,315.4Z" fill="#F2B544" opacity="0.8"/>
+<circle cx="422" cy="400" r="230" fill="url(#ending-the-open-hand-rg4)"/>
+<path d="M560,244 C575.2,282 719.6,286 750,242 L740,228 L570,228Z" fill="#E8DCC4" stroke="#17110f" stroke-width="4" stroke-linejoin="round"/>
+<line x1="593" y1="232" x2="599" y2="264" stroke="#c9b48e" stroke-width="2.4"/>
+<line x1="634.3" y1="232" x2="640.3" y2="264" stroke="#c9b48e" stroke-width="2.4"/>
+<line x1="675.7" y1="232" x2="681.7" y2="264" stroke="#c9b48e" stroke-width="2.4"/>
+<line x1="717" y1="232" x2="723" y2="264" stroke="#c9b48e" stroke-width="2.4"/>
+<path d="M601.7,230 L604.9,190.3 L615.8,190.3 L619,230Z" fill="#8a3a4a" stroke="#17110f" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="610.6" cy="178.8" r="10.2" fill="#8a3a4a" stroke="#17110f" stroke-width="3"/>
+<line x1="613.8" y1="195.4" x2="635.6" y2="175" stroke="#17110f" stroke-width="6.6" stroke-linecap="round"/>
+<line x1="613.8" y1="195.4" x2="635.6" y2="175" stroke="#8a3a4a" stroke-width="3.3" stroke-linecap="round"/>
+<circle cx="635.6" cy="175" r="5.4" fill="#8a3a4a" stroke="#17110f" stroke-width="2.4"/>
+<line x1="606.8" y1="195.4" x2="594.6" y2="212.1" stroke="#17110f" stroke-width="6.6" stroke-linecap="round"/>
+<line x1="606.8" y1="195.4" x2="594.6" y2="212.1" stroke="#8a3a4a" stroke-width="3.3" stroke-linecap="round"/>
+<circle cx="594.6" cy="212.1" r="5.4" fill="#8a3a4a" stroke="#17110f" stroke-width="2.4"/>
+<path d="M651.7,230 L654.9,190.3 L665.8,190.3 L669,230Z" fill="#8a3a4a" stroke="#17110f" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="660.6" cy="178.8" r="10.2" fill="#8a3a4a" stroke="#17110f" stroke-width="3"/>
+<line x1="663.8" y1="195.4" x2="685.6" y2="175" stroke="#17110f" stroke-width="6.6" stroke-linecap="round"/>
+<line x1="663.8" y1="195.4" x2="685.6" y2="175" stroke="#8a3a4a" stroke-width="3.3" stroke-linecap="round"/>
+<circle cx="685.6" cy="175" r="5.4" fill="#8a3a4a" stroke="#17110f" stroke-width="2.4"/>
+<line x1="656.8" y1="195.4" x2="644.6" y2="212.1" stroke="#17110f" stroke-width="6.6" stroke-linecap="round"/>
+<line x1="656.8" y1="195.4" x2="644.6" y2="212.1" stroke="#8a3a4a" stroke-width="3.3" stroke-linecap="round"/>
+<circle cx="644.6" cy="212.1" r="5.4" fill="#8a3a4a" stroke="#17110f" stroke-width="2.4"/>
+<path d="M701.7,230 L704.9,190.3 L715.8,190.3 L719,230Z" fill="#8a3a4a" stroke="#17110f" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="710.6" cy="178.8" r="10.2" fill="#8a3a4a" stroke="#17110f" stroke-width="3"/>
+<line x1="713.8" y1="195.4" x2="735.6" y2="175" stroke="#17110f" stroke-width="6.6" stroke-linecap="round"/>
+<line x1="713.8" y1="195.4" x2="735.6" y2="175" stroke="#8a3a4a" stroke-width="3.3" stroke-linecap="round"/>
+<circle cx="735.6" cy="175" r="5.4" fill="#8a3a4a" stroke="#17110f" stroke-width="2.4"/>
+<line x1="706.8" y1="195.4" x2="694.6" y2="212.1" stroke="#17110f" stroke-width="6.6" stroke-linecap="round"/>
+<line x1="706.8" y1="195.4" x2="694.6" y2="212.1" stroke="#8a3a4a" stroke-width="3.3" stroke-linecap="round"/>
+<circle cx="694.6" cy="212.1" r="5.4" fill="#8a3a4a" stroke="#17110f" stroke-width="2.4"/>
+<path d="M330,878 L350,700 L500,700 L520,878Z" fill="#c8352e" stroke="#17110f" stroke-width="9"/>
+<path d="M515.6,588.8 L511,622.2 L497.7,652.3 L477,676.2 L450.9,691.5 L422,696.8 L393.1,691.5 L367,676.2 L346.3,652.3 L333,622.2 L328.4,588.8 L333,555.4 L346.3,525.3 L367,501.4 L393.1,486.1 L422,480.8 L450.9,486.1 L477,501.4 L497.7,525.3 L511,555.4Z M357.9,566.1 L231.3,428.2 L198.9,426.8 L197.5,459.2 L324.1,597.1Z M413.2,510.5 L352.9,258.4 L320.4,238.4 L300.4,271 L360.6,523.1Z M461.1,517.8 L470.7,244.4 L443.3,215 L414,242.4 L404.5,515.8Z M500.7,523.7 L566.9,288 L549.1,256.4 L517.5,274.2 L451.3,509.9Z M530.6,600 L653,524.2 L660,494.4 L630.3,487.4 L507.8,563.2Z" fill="#17110f" stroke="#17110f" stroke-width="11" stroke-linejoin="round"/>
+<path d="M515.6,588.8 L511,622.2 L497.7,652.3 L477,676.2 L450.9,691.5 L422,696.8 L393.1,691.5 L367,676.2 L346.3,652.3 L333,622.2 L328.4,588.8 L333,555.4 L346.3,525.3 L367,501.4 L393.1,486.1 L422,480.8 L450.9,486.1 L477,501.4 L497.7,525.3 L511,555.4Z M357.9,566.1 L231.3,428.2 L198.9,426.8 L197.5,459.2 L324.1,597.1Z M413.2,510.5 L352.9,258.4 L320.4,238.4 L300.4,271 L360.6,523.1Z M461.1,517.8 L470.7,244.4 L443.3,215 L414,242.4 L404.5,515.8Z M500.7,523.7 L566.9,288 L549.1,256.4 L517.5,274.2 L451.3,509.9Z M530.6,600 L653,524.2 L660,494.4 L630.3,487.4 L507.8,563.2Z" fill="#c8352e"/>
+<path d="M360,560 q60,-30 120,-6" fill="none" stroke="#7A1020" stroke-width="5" stroke-linecap="round"/>
+<path d="M370,594 q60,-22 120,-2" fill="none" stroke="#7A1020" stroke-width="5" stroke-linecap="round"/>
+<path d="M380,628 q60,-14 120,2" fill="none" stroke="#7A1020" stroke-width="5" stroke-linecap="round"/>
+<rect x="822" y="22" width="756" height="856" fill="#17110f"/>
+<line x1="822" y1="22" x2="822" y2="878" stroke="#f0e6cf" stroke-width="5"/>
+<path d="M1551.7,817.4l-13.8,11.6M875.6,192.7l13.2,8M1055.5,856.6l-16.8,4.2M1290.8,791.7l16.4,7.2M862.2,269.7l-11.5,2.1M1562.5,301.3l-13.1,13.8M1301.9,829.3l-15.8,5.6M1506.9,307.7l-5.5,12.4M840,220.6l3.7,12M1129.3,841.1l-5.6,13.3M1420.2,53.9l11.8,13.9M1446,92.2l0,14.8M1498.2,800.9l-8.9,13.2M1161.7,782.3l0.4,13.3M1529,727.1l11.9,10.3M1257.7,88.1l8.1,7.1M1500.6,578.7l11.2,2.2M877.6,861.8l7.4,6M841.7,453.7l-0.9,13.2M1046.4,49.3l10.3,6.1M1047.3,862.8l-4.5,21.4M994.7,836.7l-15.9,11.9M1512.1,832.4l-18.4,10.3M911.6,110.8l10.7,2.3M1160.5,837.8l-18,1.2M879.3,67.9l-11.2,2.5M1240.2,835.9l-5.1,14.4M859.7,239l8.9,2.5M1506.1,43.9l11.3,1.7M1098.2,788.8l-13.5,6.5M1536.6,194.8l-10.4,6M1384.9,110.4l5.7,10.2M1518.1,462.5l11.8,17.7M1503.4,218.1l3.8,10.4M1537.6,388.2l-7.1,6.7M1078,859.8l1.7,9.3" fill="none" stroke="#7A1020" stroke-width="3" stroke-linecap="round"/>
+<text x="1200" y="301" font-size="24" font-family="sans-serif" fill="#F2B544" text-anchor="middle" letter-spacing="14">AN ENDING</text>
+<text x="1200" y="401" font-size="70" font-family="serif" fill="#f0e6cf" text-anchor="middle" letter-spacing="4" stroke="#7A1020" stroke-width="7" stroke-linejoin="round" paint-order="stroke" font-weight="bold">THE OPEN HAND</text>
+<path d="M1010,457 h150 l8,-16 l12,32 l12,-32 l8,16 h150" fill="none" stroke="#B3202E" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1200" y="537" font-size="38" font-family="serif" fill="#f0e6cf" text-anchor="middle" font-style="italic">His hand opens.</text>
+<text x="1200" y="593" font-size="38" font-family="serif" fill="#f0e6cf" text-anchor="middle" font-style="italic">The river has not asked him yet.</text>
+</g>
+</g>
+</svg>

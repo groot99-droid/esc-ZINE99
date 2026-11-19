@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-labelledby="stamp-mark-t stamp-mark-d">
+<title id="stamp-mark-t">Tooling stamp: Mark (want)</title>
+<desc id="stamp-mark-d">A leather tile from the Want tray, stamped in gold: A pole in a ring of stones. Below it, the word MARK.</desc>
+<defs><clipPath id="stamp-mark-clip1"><rect x="0" y="0" width="200" height="200" rx="10"/></clipPath><filter id="stamp-mark-gr2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="2" seed="575"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.4 0"/></filter><filter id="stamp-mark-gr3" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="762"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><radialGradient id="stamp-mark-rg4" cx="0.5" cy="0.5" r="0.75"><stop offset="0%" stop-color="#000" stop-opacity="0"/><stop offset="60%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#140904" stop-opacity="0.5"/></radialGradient><linearGradient id="stamp-mark-gold5" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="120" y2="84" spreadMethod="reflect"><stop offset="0" stop-color="#F0D488"/><stop offset="0.45" stop-color="#D4A23A"/><stop offset="0.75" stop-color="#9A6F1E"/><stop offset="1" stop-color="#D4A23A"/></linearGradient><filter id="stamp-mark-gr6" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="248"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter></defs>
+<rect x="0" y="0" width="200" height="200" fill="#3F4A36" rx="10"/>
+<rect x="0" y="0" width="200" height="200" filter="url(#stamp-mark-gr2)" clip-path="url(#stamp-mark-clip1)"/>
+<rect x="0" y="0" width="200" height="200" filter="url(#stamp-mark-gr3)" clip-path="url(#stamp-mark-clip1)"/>
+<rect x="0" y="0" width="200" height="200" fill="url(#stamp-mark-rg4)" rx="10"/>
+<path d="M16,150 V56 Q16,16 100.0,16 Q184,16 184,56 V150Z" fill="#2B3425" opacity="0.8"/>
+<path d="M16,150 V56 Q16,16 100.0,16 Q184,16 184,56 V150Z" fill="none" stroke="#140904" stroke-width="5" opacity="0.5" transform="translate(1.5 2)"/>
+<path d="M16,150 V56 Q16,16 100.0,16 Q184,16 184,56 V150Z" fill="none" stroke="url(#stamp-mark-gold5)" stroke-width="3"/>
+<path d="M23,143 V63 Q23,23 100.0,23 Q177,23 177,63 V143Z" fill="none" stroke="url(#stamp-mark-gold5)" stroke-width="0.9"/>
+<g transform="translate(101.6 86.2) scale(1.06)" opacity="0.7">
+<path d="M0,26 V-40" fill="none" stroke="#140904" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M0,-40 C10,-36 14,-30 24,-32 C16,-26 10,-22 0,-24Z" fill="#140904"/>
+<ellipse cx="33.3" cy="30.2" rx="6.5" ry="4" fill="#140904"/>
+<ellipse cx="21.2" cy="36.6" rx="6.5" ry="4" fill="#140904"/>
+<ellipse cx="-0.9" cy="39" rx="6.5" ry="4" fill="#140904"/>
+<ellipse cx="-22.5" cy="36.2" rx="6.5" ry="4" fill="#140904"/>
+<ellipse cx="-33.6" cy="29.6" rx="6.5" ry="4" fill="#140904"/>
+<ellipse cx="-29" cy="22.3" rx="6.5" ry="4" fill="#140904"/>
+<ellipse cx="-10.8" cy="17.6" rx="6.5" ry="4" fill="#140904"/>
+<ellipse cx="12.4" cy="17.8" rx="6.5" ry="4" fill="#140904"/>
+<ellipse cx="29.9" cy="22.7" rx="6.5" ry="4" fill="#140904"/>
+<path d="M-4,-6 h8 M-4,2 h8" fill="none" stroke="#140904" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g transform="translate(100 84) scale(1.06)" opacity="1">
+<path d="M0,26 V-40" fill="none" stroke="url(#stamp-mark-gold5)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M0,-40 C10,-36 14,-30 24,-32 C16,-26 10,-22 0,-24Z" fill="url(#stamp-mark-gold5)"/>
+<ellipse cx="33.3" cy="30.2" rx="6.5" ry="4" fill="url(#stamp-mark-gold5)"/>
+<ellipse cx="21.2" cy="36.6" rx="6.5" ry="4" fill="url(#stamp-mark-gold5)"/>
+<ellipse cx="-0.9" cy="39" rx="6.5" ry="4" fill="url(#stamp-mark-gold5)"/>
+<ellipse cx="-22.5" cy="36.2" rx="6.5" ry="4" fill="url(#stamp-mark-gold5)"/>
+<ellipse cx="-33.6" cy="29.6" rx="6.5" ry="4" fill="url(#stamp-mark-gold5)"/>
+<ellipse cx="-29" cy="22.3" rx="6.5" ry="4" fill="url(#stamp-mark-gold5)"/>
+<ellipse cx="-10.8" cy="17.6" rx="6.5" ry="4" fill="url(#stamp-mark-gold5)"/>
+<ellipse cx="12.4" cy="17.8" rx="6.5" ry="4" fill="url(#stamp-mark-gold5)"/>
+<ellipse cx="29.9" cy="22.7" rx="6.5" ry="4" fill="url(#stamp-mark-gold5)"/>
+<path d="M-4,-6 h8 M-4,2 h8" fill="none" stroke="url(#stamp-mark-gold5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<text x="100.7" y="180.9" font-size="19" font-family="serif" fill="#1A0B05" opacity="0.8" text-anchor="middle" letter-spacing="2.4" font-weight="bold">MARK</text>
+<text x="100" y="180" font-size="19" font-family="serif" fill="url(#stamp-mark-gold5)" text-anchor="middle" letter-spacing="2.4" font-weight="bold">MARK</text>
+<text x="99.8" y="179.7" font-size="19" font-family="serif" fill="none" stroke="#F0D488" stroke-width="0.4" opacity="0.6" text-anchor="middle" letter-spacing="2.4" font-weight="bold">MARK</text>
+<path d="M30,160 H170" stroke="url(#stamp-mark-gold5)" stroke-width="0.8" fill="none"/>
+<path d="M22,160 l4,-4 l4,4 l-4,4Z" fill="url(#stamp-mark-gold5)"/>
+<path d="M178,160 l-4,-4 l-4,4 l4,4Z" fill="url(#stamp-mark-gold5)"/>
+<rect x="0" y="0" width="200" height="200" filter="url(#stamp-mark-gr6)"/>
+</svg>

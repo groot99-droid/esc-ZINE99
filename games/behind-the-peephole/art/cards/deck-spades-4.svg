@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420" role="img" aria-labelledby="deck-spades-4-t deck-spades-4-d">
+<title id="deck-spades-4-t">Deco deck: 4 of spades</title>
+<desc id="deck-spades-4-d">The 4 of spades from the office's deco deck: 4 pips over a faint gold fan ground in a stepped frame, the house key in two corners.</desc>
+<defs><radialGradient id="deck-spades-4-rg1" cx="0.5" cy="0.5" r="0.8"><stop offset="0%" stop-color="#fff" stop-opacity="0.3"/><stop offset="70%" stop-color="#fff" stop-opacity="0"/><stop offset="100%" stop-color="#8a6a28" stop-opacity="0.2"/></radialGradient></defs>
+<rect x="0" y="0" width="300" height="420" rx="18" fill="#f3ead2" stroke="#7a6630" stroke-width="2"/>
+<rect x="0" y="0" width="300" height="420" rx="18" fill="url(#deck-spades-4-rg1)"/>
+<polygon points="50,22 250,22 250,36 264,36 264,50 278,50 278,370 264,370 264,384 250,384 250,398 50,398 50,384 36,384 36,370 22,370 22,50 36,50 36,36 50,36" fill="none" stroke="#d4ad57" stroke-width="2.2"/>
+<rect x="30" y="30" width="240" height="360" fill="none" stroke="#d4ad57" stroke-width="0.8" opacity="0.7"/>
+<path d="M150,250L46.1,190M150,250L60.8,169.7M150,250L79.5,152.9M150,250L101.2,140.4M150,250L125.1,132.6M150,250L150,130M150,250L174.9,132.6M150,250L198.8,140.4M150,250L220.5,152.9M150,250L239.2,169.7M150,250L253.9,190" fill="none" stroke="#d4ad57" stroke-width="1" opacity="0.5"/>
+<path d="M113.6,229 A42,42 0 0,1 186.4,229" fill="none" stroke="#d4ad57" stroke-width="1.2" opacity="0.5"/>
+<path d="M87.6,214 A72,72 0 0,1 212.4,214" fill="none" stroke="#d4ad57" stroke-width="1.2" opacity="0.5"/>
+<path d="M61.7,199 A102,102 0 0,1 238.3,199" fill="none" stroke="#d4ad57" stroke-width="1.2" opacity="0.5"/>
+<path d="M150,170L253.9,230M150,170L239.2,250.3M150,170L220.5,267.1M150,170L198.8,279.6M150,170L174.9,287.4M150,170L150,290M150,170L125.1,287.4M150,170L101.2,279.6M150,170L79.5,267.1M150,170L60.8,250.3M150,170L46.1,230" fill="none" stroke="#d4ad57" stroke-width="1" opacity="0.5"/>
+<path d="M100,75 C123.8,92 120.4,109 100,98.8 C79.6,109 76.2,92 100,75Z M100,95.4 L106.8,112.4 L93.2,112.4Z" fill="#13140f"/>
+<path d="M200,75 C223.8,92 220.4,109 200,98.8 C179.6,109 176.2,92 200,75Z M200,95.4 L206.8,112.4 L193.2,112.4Z" fill="#13140f"/>
+<path d="M100,311 C123.8,328 120.4,345 100,334.8 C79.6,345 76.2,328 100,311Z M100,331.4 L106.8,348.4 L93.2,348.4Z" fill="#13140f" transform="rotate(180 100 328)"/>
+<path d="M200,311 C223.8,328 220.4,345 200,334.8 C179.6,345 176.2,328 200,311Z M200,331.4 L206.8,348.4 L193.2,348.4Z" fill="#13140f" transform="rotate(180 200 328)"/>
+<g >
+<rect x="30" y="30" width="46" height="92" fill="#f3ead2"/>
+<g fill="none" stroke="#13140f" stroke-width="0.150" stroke-linecap="round" stroke-linejoin="round">
+<path d="M.42,1 V0 L0,.68 H.58" transform="translate(43.1 40) scale(34)"/>
+</g>
+<path d="M53,89 C68.4,100 66.2,111 53,104.4 C39.8,111 37.6,100 53,89Z M53,102.2 L57.4,113.2 L48.6,113.2Z" fill="#13140f"/>
+</g>
+<g transform="rotate(180 150 210)">
+<rect x="30" y="30" width="46" height="92" fill="#f3ead2"/>
+<g fill="none" stroke="#13140f" stroke-width="0.150" stroke-linecap="round" stroke-linejoin="round">
+<path d="M.42,1 V0 L0,.68 H.58" transform="translate(43.1 40) scale(34)"/>
+</g>
+<path d="M53,89 C68.4,100 66.2,111 53,104.4 C39.8,111 37.6,100 53,89Z M53,102.2 L57.4,113.2 L48.6,113.2Z" fill="#13140f"/>
+</g>
+<circle cx="247" cy="51.8" r="4.5" fill="none" stroke="#d4ad57" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="247" cy="51.8" r="1.8" fill="none" stroke="#d4ad57" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M247,56.2 V72.8 M247,66.8 h4.2 M247,70.2 h3 M247,72.8 h4.5" fill="none" stroke="#d4ad57" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="53" cy="351.8" r="4.5" fill="none" stroke="#d4ad57" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="53" cy="351.8" r="1.8" fill="none" stroke="#d4ad57" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M53,356.2 V372.8 M53,366.8 h4.2 M53,370.2 h3 M53,372.8 h4.5" fill="none" stroke="#d4ad57" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

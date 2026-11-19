@@ -47,3 +47,9 @@ that does not apply says so in one line rather than being left out.
 20. **Risks and open questions**: risks with mitigations; questions only the author can answer.
 21. **Added for the game**: every element not in the author's text, so the author can approve or
     strike it.
+
+**Since 2026-11-15** every design also has an **Accepted development (2026-11-15)** section, between
+"Risks and open questions" and "Added for the game". It records the development the author accepted
+from the game's `DEEP_DIVE.md`, what each of the three phases built, and what is still not built.
+Its number differs from game to game (21, 20A, 20a, or none), so in six designs "Added for the game"
+is section 22. "Added for the game" stays the last section.

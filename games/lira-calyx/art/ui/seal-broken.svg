@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300" role="img" aria-labelledby="seal-broken-t seal-broken-d">
+<title id="seal-broken-t">Seal: broken</title>
+<desc id="seal-broken-d">A wax seal snapped across a letter's fold, the two halves a finger's width apart, crumbs of red on the paper between them.</desc>
+<defs><filter id="seal-broken-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="447"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter><pattern id="seal-broken-pat2" width="46" height="20" patternUnits="userSpaceOnUse"><path d="M0,2.5H46M0,7.5H46M0,12.5H46M0,17.5H46" stroke="#3b2618" stroke-width="0.5" opacity="0.07"/><path d="M23,0V20" stroke="#3b2618" stroke-width="0.8" opacity="0.06"/></pattern><radialGradient id="seal-broken-vig3" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#7a5a2e" stop-opacity="0"/><stop offset="100%" stop-color="#7a5a2e" stop-opacity="0.2"/></radialGradient><clipPath id="seal-broken-clip4"><rect x="0" y="0" width="150" height="300"/></clipPath><filter id="seal-broken-blur5" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="5"/></filter><radialGradient id="seal-broken-rg6" cx="0.4" cy="0.35" r="0.75"><stop offset="0%" stop-color="#d2434b" stop-opacity="1"/><stop offset="65%" stop-color="#b3212b" stop-opacity="1"/><stop offset="100%" stop-color="#6e1017" stop-opacity="1"/></radialGradient><clipPath id="seal-broken-clip7"><rect x="150" y="0" width="150" height="300"/></clipPath><filter id="seal-broken-blur8" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="5"/></filter><radialGradient id="seal-broken-rg9" cx="0.4" cy="0.35" r="0.75"><stop offset="0%" stop-color="#d2434b" stop-opacity="1"/><stop offset="65%" stop-color="#b3212b" stop-opacity="1"/><stop offset="100%" stop-color="#6e1017" stop-opacity="1"/></radialGradient></defs>
+<rect x="0" y="0" width="300" height="300" fill="#f1e8d2"/>
+<rect x="0" y="0" width="300" height="300" filter="url(#seal-broken-grain1)"/>
+<rect x="0" y="0" width="300" height="300" fill="url(#seal-broken-pat2)"/>
+<rect x="0" y="0" width="300" height="300" fill="url(#seal-broken-vig3)"/>
+<polygon points="0,120 300,168 300,300 0,300" fill="#e6dabd"/>
+<line x1="0" y1="120" x2="300" y2="168" stroke="#3b2618" stroke-width="1.2" opacity="0.6"/>
+<g transform="translate(-14 -6) rotate(-6 150 150)">
+<g clip-path="url(#seal-broken-clip4)">
+<circle cx="155" cy="157" r="96" fill="#000" opacity="0.2" filter="url(#seal-broken-blur5)"/>
+<circle cx="150" cy="150" r="96" fill="url(#seal-broken-rg6)"/>
+<circle cx="150" cy="150" r="70" fill="none" stroke="#5c0c12" stroke-width="2.5"/>
+<polygon points="123,167.7 150,120.9 177,167.7" fill="none" stroke="#5c0c12" stroke-width="4" stroke-linejoin="round"/>
+<circle cx="150" cy="154.2" r="10.4" fill="none" stroke="#5c0c12" stroke-width="4"/>
+<circle cx="150" cy="154.2" r="3.6" fill="#5c0c12"/>
+<circle cx="150" cy="108.4" r="2.6" fill="#5c0c12"/>
+<circle cx="170.8" cy="114" r="2.6" fill="#5c0c12"/>
+<circle cx="186" cy="129.2" r="2.6" fill="#5c0c12"/>
+<circle cx="191.6" cy="150" r="2.6" fill="#5c0c12"/>
+<circle cx="186" cy="170.8" r="2.6" fill="#5c0c12"/>
+<circle cx="170.8" cy="186" r="2.6" fill="#5c0c12"/>
+<circle cx="150" cy="191.6" r="2.6" fill="#5c0c12"/>
+<circle cx="129.2" cy="186" r="2.6" fill="#5c0c12"/>
+<circle cx="114" cy="170.8" r="2.6" fill="#5c0c12"/>
+<circle cx="108.4" cy="150" r="2.6" fill="#5c0c12"/>
+<circle cx="114" cy="129.2" r="2.6" fill="#5c0c12"/>
+<circle cx="129.2" cy="114" r="2.6" fill="#5c0c12"/>
+</g>
+<path d="M150,52 L156.4,70 L154.3,88 L152.1,106 L143.8,124 L147.7,142 L156.8,160 L150.9,178 L145,196 L154,214 L152.4,232 L150,248" stroke="#f0a0a6" stroke-width="3" fill="none"/>
+</g>
+<g transform="translate(16 6) rotate(5 150 150)">
+<g clip-path="url(#seal-broken-clip7)">
+<circle cx="155" cy="157" r="96" fill="#000" opacity="0.2" filter="url(#seal-broken-blur8)"/>
+<circle cx="150" cy="150" r="96" fill="url(#seal-broken-rg9)"/>
+<circle cx="150" cy="150" r="70" fill="none" stroke="#5c0c12" stroke-width="2.5"/>
+<polygon points="123,167.7 150,120.9 177,167.7" fill="none" stroke="#5c0c12" stroke-width="4" stroke-linejoin="round"/>
+<circle cx="150" cy="154.2" r="10.4" fill="none" stroke="#5c0c12" stroke-width="4"/>
+<circle cx="150" cy="154.2" r="3.6" fill="#5c0c12"/>
+<circle cx="150" cy="108.4" r="2.6" fill="#5c0c12"/>
+<circle cx="170.8" cy="114" r="2.6" fill="#5c0c12"/>
+<circle cx="186" cy="129.2" r="2.6" fill="#5c0c12"/>
+<circle cx="191.6" cy="150" r="2.6" fill="#5c0c12"/>
+<circle cx="186" cy="170.8" r="2.6" fill="#5c0c12"/>
+<circle cx="170.8" cy="186" r="2.6" fill="#5c0c12"/>
+<circle cx="150" cy="191.6" r="2.6" fill="#5c0c12"/>
+<circle cx="129.2" cy="186" r="2.6" fill="#5c0c12"/>
+<circle cx="114" cy="170.8" r="2.6" fill="#5c0c12"/>
+<circle cx="108.4" cy="150" r="2.6" fill="#5c0c12"/>
+<circle cx="114" cy="129.2" r="2.6" fill="#5c0c12"/>
+<circle cx="129.2" cy="114" r="2.6" fill="#5c0c12"/>
+</g>
+<path d="M150,52 L153.7,70 L156.1,88 L150.2,106 L150.7,124 L149.5,142 L154.3,160 L156.3,178 L150.5,196 L155,214 L152,232 L150,248" stroke="#4a080d" stroke-width="3" fill="none"/>
+</g>
+<circle cx="166.1" cy="102.5" r="3.4" fill="#b3212b"/>
+<circle cx="159.5" cy="198.8" r="2" fill="#b3212b"/>
+<circle cx="153.8" cy="123.3" r="3.1" fill="#b3212b"/>
+<circle cx="146.7" cy="92.4" r="2" fill="#b3212b"/>
+<circle cx="136.1" cy="221.2" r="1.9" fill="#b3212b"/>
+<circle cx="148" cy="192" r="2.5" fill="#b3212b"/>
+<circle cx="140.5" cy="196.4" r="1.3" fill="#b3212b"/>
+<circle cx="160.4" cy="82.1" r="2.6" fill="#b3212b"/>
+<circle cx="156.6" cy="227.9" r="2.4" fill="#b3212b"/>
+<circle cx="154.5" cy="172.3" r="3.4" fill="#b3212b"/>
+<circle cx="163.5" cy="103.3" r="2.6" fill="#b3212b"/>
+<circle cx="141.6" cy="179.2" r="1.4" fill="#b3212b"/>
+<circle cx="136.4" cy="177.5" r="1.7" fill="#b3212b"/>
+<circle cx="161.3" cy="80.5" r="2.3" fill="#b3212b"/>
+</svg>

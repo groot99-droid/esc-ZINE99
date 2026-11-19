@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 600" width="480" height="600" role="img" aria-labelledby="seat-dreams-blue-t seat-dreams-blue-d">
+<title id="seat-dreams-blue-t">The one who dreams (blue)</title>
+<desc id="seat-dreams-blue-d">Seat portrait of the one who dreams, still blue, in the marrow lights: a linocut head and shoulders, chin lifted, eyes on something above, a hand reaching up after it, his seat stripe on the shoulder.</desc>
+<defs><filter id="seat-dreams-blue-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="146"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><filter id="seat-dreams-blue-rough2"><feTurbulence type="turbulence" baseFrequency="0" numOctaves="2" seed="889" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.2"/></filter><clipPath id="seat-dreams-blue-clip3"><rect x="22" y="22" width="436" height="556"/></clipPath><radialGradient id="seat-dreams-blue-rg4" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#F2B544" stop-opacity="0.9"/><stop offset="100%" stop-color="#F2B544" stop-opacity="0"/></radialGradient><radialGradient id="seat-dreams-blue-rg5" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#F2B544" stop-opacity="0.9"/><stop offset="100%" stop-color="#F2B544" stop-opacity="0"/></radialGradient><radialGradient id="seat-dreams-blue-rg6" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#F2B544" stop-opacity="0.9"/><stop offset="100%" stop-color="#F2B544" stop-opacity="0"/></radialGradient><radialGradient id="seat-dreams-blue-rg7" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#F2B544" stop-opacity="0.9"/><stop offset="100%" stop-color="#F2B544" stop-opacity="0"/></radialGradient><radialGradient id="seat-dreams-blue-rg8" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#F2B544" stop-opacity="0.9"/><stop offset="100%" stop-color="#F2B544" stop-opacity="0"/></radialGradient><linearGradient id="seat-dreams-blue-skin9" gradientUnits="userSpaceOnUse" x1="0" y1="560" x2="0" y2="110"><stop offset="0" stop-color="#2F5D8C"/><stop offset="1" stop-color="#3f73a8"/></linearGradient><clipPath id="seat-dreams-blue-clip10"><path d="M148,240 C144,140 190,120 240,120 C290,120 336,140 332,240 C328,320 280,372 240,374 C200,372 152,320 148,240Z"/></clipPath><clipPath id="seat-dreams-blue-clip11"><rect x="140" y="115" width="62" height="270"/></clipPath><clipPath id="seat-dreams-blue-clip12"><rect x="292" y="115" width="50" height="270"/></clipPath></defs>
+<rect x="0" y="0" width="480" height="600" fill="#f0e6cf"/>
+<rect x="0" y="0" width="480" height="600" filter="url(#seat-dreams-blue-grain1)"/>
+<g filter="url(#seat-dreams-blue-rough2)">
+<rect x="22" y="22" width="436" height="556" fill="#17110f"/>
+<g clip-path="url(#seat-dreams-blue-clip3)">
+<path d="M338.6,478.8l7.3,14.7M414.4,428l13.1,15.8M411.8,170.8l15.9,-9M449,513.3l9.8,12.2M288.5,446.6l2.7,9.7M46.6,60.3l-6.3,-6.1M53.1,273.6l-17.1,1.4M162.9,467.2l-3.7,10M437.2,42.6l6.5,-5.6M268,33.7l0.5,-15.9M27.2,70.1l-13.1,-10.2M43.4,427.7l-15.3,12.2M65.6,63.3l-13,-11M383.5,473.5l6.9,14.4M36.1,312.5l-11,4.9M449,466.9l13.2,16.8M384.1,26.1l11.8,-16.8M47.7,67.4l-13.8,-13.4M243.6,474.4l-0.1,10.1M438,50.6l13.7,-13.6M381.2,165.9l13.5,-5.8M108,445.4l-10.8,17.9M122.8,416.2l-7.3,13.6M71.3,270.9l-18.6,0.8M449,276.8l18.6,0M418.3,516.6l11.9,16.4M407.8,77l13.7,-12.5M447.6,463.3l9.2,10.7M69.9,140.2l-17.1,-10.1M396.5,299.1l11.1,4.6M136.6,41.5l-5.2,-10.9M416.4,108.8l13.4,-9.6M60.8,496.5l-8.8,12.8M399.8,24.9l5.7,-6.4M456.4,42.6l7.8,-6.4M301.9,478.4l2.8,19.6M448.8,226l8.3,-1.3M200.8,491.3l-1.8,10.8M91.2,465.7l-7.5,8.9M353.5,123.4l10.5,-10.9M29.8,105.1l-15.4,-10.7M48,482.1l-9.9,12.7M452.5,31.7l9.5,-10.1M171.1,470.8l-6.6,16.3M439.3,340.4l16.8,8.8M102.6,448.1l-11.2,15.7M138.3,456.9l-3.5,8.9M445.1,97.2l15.1,-13.1M450.2,71.6l17.3,-12.1M54.3,513.2l-6.2,7.5M381.7,513l4.2,9.1M87.2,444l-5.9,6.2M32.8,220.9l-11.2,-2.1M398.8,451.3l10.2,15.8M353.9,61.6l8.3,-11.2M362.2,521.7l7.6,13.8M30.7,139.3l-8.4,-4.8M417.5,67.4l5.8,-6.5M129.9,92.9l-7.6,-9.1M43.9,317.9l-8.5,3.9M74.8,87l-5,-6.3M276.8,512.6l5.4,21.3M59.3,33.3l-9.6,-15.2M404.4,133.6l8.6,-7.5M49.7,247.3l-20.5,-0.9M99.7,498.4l-9.1,15.7M402.5,308.5l9.8,5M287.2,432.7l3.2,11.5M102.3,370.4l-12.8,9.6M51.3,76.3l-10,-10.8M47.7,444.4l-11.4,9.1M337.7,468.1l9.8,16.9M93.7,436.5l-11,11.5M88.3,381.9l-10.6,9.1M450.6,426.5l16.7,14M281.6,417.5l2.3,14.7M37.8,153.8l-18.6,-9.2M328.7,453.2l6.4,19.6M397.6,474.7l10.5,15.2M37.5,90.2l-18.8,-11.2M58.3,270.8l-19.4,0.4M340.2,58.4l7,-17.4M419.8,180l9.4,-2.6M68.4,487.3l-11.6,18M49.3,142.3l-8.2,-3.8M154.7,501.4l-3,8.8M244.8,47l1.1,-15.6M323.4,517.3l5.8,19.8M45.7,267.6l-15.6,-0.2M25.2,520l-7.9,8.9M144.4,33.7l-9.2,-19.9M218,64.2l-3.2,-15.8M177.6,426.4l-3,10.4M94.4,121.6l-11.3,-7.8M451.3,256.6l20.1,-1.5M173.7,41.4l-8.6,-19.2M23.6,115.1l-17.9,-10.3M55.9,75.6l-9.6,-10.9M45,161.8l-14.6,-5.4M432.2,25.6l15.4,-14.5M436.3,337.8l20,6.3M191.6,66.8l-1.9,-9.4M47.5,275.4l-21.1,3.9M451.5,509.9l8.8,11.2M409.3,79l15.2,-12.5M404.7,97.7l9.3,-6.7M401.9,477.7l5.1,9.3" fill="none" stroke="#7FB2E0" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+<circle cx="65.5" cy="75.5" r="15" fill="url(#seat-dreams-blue-rg4)"/>
+<circle cx="65.5" cy="75.5" r="4" fill="#F2B544"/>
+<circle cx="141.5" cy="56.3" r="15" fill="url(#seat-dreams-blue-rg5)"/>
+<circle cx="141.5" cy="56.3" r="4" fill="#F2B544"/>
+<circle cx="230.6" cy="54.6" r="15" fill="url(#seat-dreams-blue-rg6)"/>
+<circle cx="230.6" cy="54.6" r="4" fill="#F2B544"/>
+<circle cx="326.6" cy="56.8" r="15" fill="url(#seat-dreams-blue-rg7)"/>
+<circle cx="326.6" cy="56.8" r="4" fill="#F2B544"/>
+<circle cx="424.6" cy="56" r="15" fill="url(#seat-dreams-blue-rg8)"/>
+<circle cx="424.6" cy="56" r="4" fill="#F2B544"/>
+<path d="M30,570 C56,452 140,424 206,416 L274,416 C340,424 424,452 450,570Z" fill="url(#seat-dreams-blue-skin9)" stroke="#17110f" stroke-width="6" stroke-linejoin="round"/>
+<path d="M210,346 L204,424 L276,424 L270,346Z" fill="url(#seat-dreams-blue-skin9)" stroke="#17110f" stroke-width="6"/>
+<path d="M137.8,441.8l26.5,8.8M267.8,484.6l30.2,7.2M322.3,499.4l18.9,6.4M211.3,482.9l32.5,4.4M174.7,497.7l15.6,-0.5M346.5,496.8l28.1,8.4M198.5,484.7l25,6.2M198.9,466l30,0M193.6,448.6l23.7,8.4M157.5,460.8l24.6,-1.2M305.6,494.2l27.8,8.9M215.1,463.5l24.3,1M186.7,492.4l23.7,-0.7M152.2,462.9l28.7,-0.1M336.4,465.3l13.3,4.3M261.5,463.1l23.1,1.3M252.1,493.5l28.1,7.6M166.3,461.4l18.1,-0.1M165.7,453.7l14.3,0.4M343.7,495.1l15.1,2.6M240.2,500.7l28.4,3.8M190.1,460.1l14.8,5.2M152.2,486.1l29.8,3.8M244.1,474.4l19.2,3.2M197,463.6l23.8,8.1M232.1,442.9l24.2,4.6" fill="none" stroke="#7FB2E0" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+<path d="M70,498.0 L150,452.0 L166,480.0 L78,530.0Z" fill="#7FB2E0" stroke="#17110f" stroke-width="4"/>
+<polygon points="106,490 116,480 126,490 116,500" fill="#17110f"/>
+<g transform="rotate(-4 240 310)">
+<ellipse cx="146" cy="258" rx="13" ry="26" fill="url(#seat-dreams-blue-skin9)" stroke="#17110f" stroke-width="6" stroke-linejoin="round"/>
+<ellipse cx="334" cy="258" rx="13" ry="26" fill="url(#seat-dreams-blue-skin9)" stroke="#17110f" stroke-width="6" stroke-linejoin="round"/>
+<path d="M148,240 C144,140 190,120 240,120 C290,120 336,140 332,240 C328,320 280,372 240,374 C200,372 152,320 148,240Z" fill="url(#seat-dreams-blue-skin9)" stroke="#17110f" stroke-width="6" stroke-linejoin="round"/>
+<g clip-path="url(#seat-dreams-blue-clip10)">
+<g clip-path="url(#seat-dreams-blue-clip11)">
+<path d="M-20.9,176.7 L243.3,59.1 M-16,187.7 L248.2,70.1 M-11.1,198.7 L253,81 M-6.2,209.6 L257.9,92 M-1.4,220.6 L262.8,103 M3.5,231.5 L267.7,113.9 M8.4,242.5 L272.6,124.9 M13.3,253.5 L277.4,135.9 M18.2,264.4 L282.3,146.8 M23,275.4 L287.2,157.8 M27.9,286.4 L292.1,168.7 M32.8,297.3 L297,179.7 M37.7,308.3 L301.8,190.7 M42.6,319.2 L306.7,201.6 M47.5,330.2 L311.6,212.6 M52.3,341.2 L316.5,223.6 M57.2,352.1 L321.4,234.5 M62.1,363.1 L326.2,245.5 M67,374.1 L331.1,256.4 M71.9,385 L336,267.4 M76.7,396 L340.9,278.4 M81.6,406.9 L345.8,289.3 M86.5,417.9 L350.7,300.3 M91.4,428.9 L355.5,311.3 M96.3,439.8 L360.4,322.2" fill="none" stroke="#17110f" stroke-width="5"/>
+</g>
+<g clip-path="url(#seat-dreams-blue-clip12)">
+<path d="M121.8,177.7 L382.3,61.8 M125.8,186.9 L386.3,70.9 M129.9,196 L390.4,80 M134,205.1 L394.5,89.2 M138,214.3 L398.5,98.3 M142.1,223.4 L402.6,107.4 M146.2,232.6 L406.7,116.6 M150.2,241.7 L410.7,125.7 M154.3,250.8 L414.8,134.8 M158.4,260 L418.9,144 M162.4,269.1 L422.9,153.1 M166.5,278.2 L427,162.3 M170.6,287.4 L431.1,171.4 M174.6,296.5 L435.1,180.5 M178.7,305.6 L439.2,189.7 M182.8,314.8 L443.3,198.8 M186.8,323.9 L447.3,207.9 M190.9,333 L451.4,217.1 M195,342.2 L455.5,226.2 M199,351.3 L459.5,235.3 M203.1,360.5 L463.6,244.5 M207.2,369.6 L467.7,253.6 M211.2,378.7 L471.7,262.7 M215.3,387.9 L475.8,271.9 M219.4,397 L479.9,281 M223.4,406.1 L483.9,290.1 M227.5,415.3 L488,299.3 M231.6,424.4 L492.1,308.4 M235.6,433.5 L496.1,317.6" fill="none" stroke="#7FB2E0" stroke-width="3" opacity="0.9"/>
+</g>
+</g>
+<path d="M238,230 L229,276 q10,11 24,2" fill="none" stroke="#17110f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M178,224 Q200,202 222,224 Q200,234 178,224Z" fill="#7FB2E0" stroke="#17110f" stroke-width="5"/>
+<circle cx="203" cy="217" r="6.5" fill="#17110f"/>
+<path d="M174,190 q26,-14 52,0" fill="none" stroke="#17110f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M258,224 Q280,202 302,224 Q280,234 258,224Z" fill="#7FB2E0" stroke="#17110f" stroke-width="5"/>
+<circle cx="283" cy="217" r="6.5" fill="#17110f"/>
+<path d="M254,190 q26,-14 52,0" fill="none" stroke="#17110f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M218,304 q22,12 44,0" fill="none" stroke="#17110f" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M232,326 h16" fill="none" stroke="#17110f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M145,234 C138,128 190,110 240,110 C290,110 342,128 335,234 C312,172 270,158 240,158 C210,158 168,172 145,234Z" fill="#17110f" stroke="#7FB2E0" stroke-width="3"/>
+<path d="M318,150 C390,190 350,290 390,360 C412,410 380,450 408,482 C360,460 352,400 348,350 C344,290 336,230 318,150Z" fill="#17110f" stroke="#7FB2E0" stroke-width="3" stroke-linejoin="round"/>
+<path d="M340,190 C368,240 352,310 374,380" fill="none" stroke="#7FB2E0" stroke-width="2.4" stroke-linecap="round"/>
+<path d="M346,204 C372,240 357,310 378,394" fill="none" stroke="#7FB2E0" stroke-width="2.4" stroke-linecap="round"/>
+<path d="M352,218 C376,240 362,310 382,408" fill="none" stroke="#7FB2E0" stroke-width="2.4" stroke-linecap="round"/>
+<path d="M358,232 C380,240 367,310 386,422" fill="none" stroke="#7FB2E0" stroke-width="2.4" stroke-linecap="round"/>
+<path d="M222.8,116.5l19.1,10M269,136.3l16.6,6.2M231.3,144.7l19.4,5.1M305.2,129.2l17,3.3M211.8,137.5l13.7,5.7M211.9,131.3l15.3,1M251.1,129.5l21.7,-3.1M276.5,139.2l24.6,-2M225.6,132.2l19.9,3.2M251.2,128.7l20.4,-3.2M200.8,132.1l12.4,5.5M187.8,140.1l11.7,5.7M294.2,125.2l20.7,4.2M233.9,131.7l19.7,1.1" fill="none" stroke="#7FB2E0" stroke-width="2.4" stroke-linecap="round"/>
+</g>
+<path d="M80.2,147.6 L14.9,426 L53.1,434 L103.8,152.4Z" fill="url(#seat-dreams-blue-skin9)" stroke="#17110f" stroke-width="6" stroke-linejoin="round"/>
+<line x1="67.9" y1="203.4" x2="92.9" y2="208.6" stroke="#E0603A" stroke-width="5"/>
+<path d="M120.4,114.2 L121,122.6 L119.3,130.6 L115.5,137.5 L109.9,142.7 L103.1,145.5 L95.8,145.7 L88.6,143.3 L82.3,138.5 L77.5,131.8 L74.6,123.9 L74,115.5 L75.7,107.5 L79.5,100.5 L85.1,95.4 L91.9,92.6 L99.2,92.4 L106.4,94.8 L112.7,99.6 L117.5,106.3Z M81.3,117.4 L47.5,85 L39.4,85.1 L39.6,93.2 L73.3,125.6Z M91.4,100.6 L66.3,40.9 L57.4,37.3 L53.8,46.1 L78.9,105.9Z M103.4,99.6 L91.5,32.3 L83.3,26.5 L77.5,34.7 L89.4,102.1Z M113.4,98.7 L114,37.5 L107.7,31 L101.2,37.4 L100.5,98.6Z M125.3,115.3 L145.9,85.8 L144.5,78.2 L137,79.6 L116.5,109.1Z" fill="#17110f" stroke="#17110f" stroke-width="7" stroke-linejoin="round"/>
+<path d="M120.4,114.2 L121,122.6 L119.3,130.6 L115.5,137.5 L109.9,142.7 L103.1,145.5 L95.8,145.7 L88.6,143.3 L82.3,138.5 L77.5,131.8 L74.6,123.9 L74,115.5 L75.7,107.5 L79.5,100.5 L85.1,95.4 L91.9,92.6 L99.2,92.4 L106.4,94.8 L112.7,99.6 L117.5,106.3Z M81.3,117.4 L47.5,85 L39.4,85.1 L39.6,93.2 L73.3,125.6Z M91.4,100.6 L66.3,40.9 L57.4,37.3 L53.8,46.1 L78.9,105.9Z M103.4,99.6 L91.5,32.3 L83.3,26.5 L77.5,34.7 L89.4,102.1Z M113.4,98.7 L114,37.5 L107.7,31 L101.2,37.4 L100.5,98.6Z M125.3,115.3 L145.9,85.8 L144.5,78.2 L137,79.6 L116.5,109.1Z" fill="url(#seat-dreams-blue-skin9)"/>
+<rect x="22" y="520" width="436" height="58" fill="#17110f"/>
+<line x1="40" y1="524" x2="440" y2="524" stroke="#7FB2E0" stroke-width="3" stroke-dasharray="14 6" opacity="0.9"/>
+<path d="M56.2,550.7 Q66,567.6 75.8,550.7 Q66,559.1 56.2,550.7Z" fill="none" stroke="#7FB2E0" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="66" cy="544.2" r="3.1" fill="#7FB2E0"/>
+<text x="262" y="559" font-size="23" font-family="serif" fill="#f0e6cf" text-anchor="middle" letter-spacing="3.5" font-weight="bold">THE ONE WHO DREAMS</text>
+</g>
+</g>
+</svg>

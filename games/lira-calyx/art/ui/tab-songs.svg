@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 110" width="260" height="110" role="img" aria-labelledby="tab-songs-t tab-songs-d">
+<title id="tab-songs-t">Journal tab: Songs</title>
+<desc id="tab-songs-d">A journal tab cut from laid paper with a band of wash along its top edge, lettered Songs in Lira's hand beside a small ink sign for that section.</desc>
+<defs><clipPath id="tab-songs-clip1"><path d="M8,104 L10.1,26 L22,12 L236,10.4 L250,24 L252,104Z"/></clipPath><filter id="tab-songs-blur2" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3"/></filter><filter id="tab-songs-grain3" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="174"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter><pattern id="tab-songs-pat4" width="46" height="20" patternUnits="userSpaceOnUse"><path d="M0,2.5H46M0,7.5H46M0,12.5H46M0,17.5H46" stroke="#3b2618" stroke-width="0.5" opacity="0.07"/><path d="M23,0V20" stroke="#3b2618" stroke-width="0.8" opacity="0.06"/></pattern><radialGradient id="tab-songs-vig5" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#7a5a2e" stop-opacity="0"/><stop offset="100%" stop-color="#7a5a2e" stop-opacity="0.2"/></radialGradient></defs>
+<path d="M8,104 L10.1,26 L22,12 L236,10.4 L250,24 L252,104Z" fill="#000" opacity="0.2" transform="translate(3,3)" filter="url(#tab-songs-blur2)"/>
+<g clip-path="url(#tab-songs-clip1)">
+<rect x="0" y="0" width="260" height="110" fill="#f1e8d2"/>
+<rect x="0" y="0" width="260" height="110" filter="url(#tab-songs-grain3)"/>
+<rect x="0" y="0" width="260" height="110" fill="url(#tab-songs-pat4)"/>
+<rect x="0" y="0" width="260" height="110" fill="url(#tab-songs-vig5)"/>
+<rect x="0" y="0" width="260" height="26" fill="#5a3f7a" opacity="0.5"/>
+<rect x="0" y="24" width="260" height="4" fill="#5a3f7a" opacity="0.5"/>
+<rect x="0" y="92" width="260" height="20" fill="#7a5a2e" opacity="0.2"/>
+</g>
+<path d="M7.6,104.5 L8.9,84 L9.2,65.5 L8.9,44.9 L10,25.5 L21.6,11.4 L38.2,11.3 L54.5,11.1 L71.8,11.3 L88.4,11.3 L104.5,10.9 L121.3,10.8 L137.6,10.9 L153.1,11.2 L170.3,11 L186.4,10.2 L202.9,10.8 L219.5,10.7 L236.1,9.9 L249.6,23.5 L250.6,40.3 L250.4,56.4 L251.4,72.6 L251.8,88.5 L252.6,103.6" stroke-width="2.4" stroke="#3b2618" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<line x1="26" y1="50" x2="66" y2="50" stroke="#a8281e" stroke-width="1.2"/>
+<line x1="26" y1="58" x2="66" y2="58" stroke="#a8281e" stroke-width="1.2"/>
+<line x1="26" y1="66" x2="66" y2="66" stroke="#a8281e" stroke-width="1.2"/>
+<line x1="26" y1="74" x2="66" y2="74" stroke="#a8281e" stroke-width="1.2"/>
+<rect x="34" y="60" width="9" height="9" fill="#3b2618"/>
+<rect x="48" y="52" width="9" height="9" fill="#3b2618"/>
+<line x1="57" y1="52" x2="57" y2="70" stroke="#3b2618" stroke-width="1.6"/>
+<text x="82" y="72" font-size="28" font-family="serif" font-style="italic" fill="#3b2618" transform="rotate(0 82 72)">Songs</text>
+<text x="216" y="22" font-size="12" font-family="monospace" fill="#3b2618" letter-spacing="1">4</text>
+</svg>

@@ -1,0 +1,839 @@
+{
+  "game": "lord-of-the-sea",
+  "location": "salt-steps",
+  "name": "The Salt Steps",
+  "reference": "assets/locations/salt-steps.jpg",
+  "bounds_m": [
+    400,
+    300,
+    60
+  ],
+  "origin": "sea level at the centre of the salt pans' front; +y inland, from the sea and the reef (y -150..-90) over the 3 m sea wall and pans to the huts and the terraced salt hills; slipways at x 20 and 45",
+  "materials": {
+    "turquoise-sea": {
+      "color": [
+        0.247,
+        0.655,
+        0.659
+      ],
+      "roughness": 0.1
+    },
+    "reef": {
+      "color": [
+        0.227,
+        0.29,
+        0.267
+      ],
+      "roughness": 0.9
+    },
+    "sea-wall": {
+      "color": [
+        0.29,
+        0.275,
+        0.251
+      ],
+      "roughness": 0.9
+    },
+    "salt": {
+      "color": [
+        0.949,
+        0.937,
+        0.91
+      ],
+      "roughness": 0.6
+    },
+    "salt-hill": {
+      "color": [
+        0.902,
+        0.878,
+        0.831
+      ],
+      "roughness": 0.95
+    },
+    "pan-wall": {
+      "color": [
+        0.612,
+        0.557,
+        0.471
+      ],
+      "roughness": 0.9
+    },
+    "hut": {
+      "color": [
+        0.722,
+        0.635,
+        0.494
+      ],
+      "roughness": 0.9
+    },
+    "thatch": {
+      "color": [
+        0.42,
+        0.29,
+        0.169
+      ],
+      "roughness": 0.95
+    },
+    "skiff": {
+      "color": [
+        0.353,
+        0.255,
+        0.157
+      ],
+      "roughness": 0.85
+    }
+  },
+  "blockout": [
+    {
+      "id": "sea",
+      "shape": "box",
+      "role": "water",
+      "size_m": [
+        400,
+        60,
+        0
+      ],
+      "location": [
+        0,
+        -120,
+        0
+      ],
+      "material": "turquoise-sea"
+    },
+    {
+      "id": "reef",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        160,
+        14,
+        0.4
+      ],
+      "location": [
+        -30,
+        -128,
+        -0.15
+      ],
+      "material": "reef"
+    },
+    {
+      "id": "sea-wall",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        400,
+        10,
+        3.0
+      ],
+      "location": [
+        0,
+        -95,
+        1.5
+      ],
+      "material": "sea-wall"
+    },
+    {
+      "id": "salt-pans",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        400,
+        150,
+        3.0
+      ],
+      "location": [
+        0,
+        -15,
+        1.5
+      ],
+      "material": "salt"
+    },
+    {
+      "id": "village-ground",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        400,
+        40,
+        3.0
+      ],
+      "location": [
+        0,
+        80,
+        1.5
+      ],
+      "material": "salt"
+    },
+    {
+      "id": "pan-wall-1",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.6,
+        150,
+        0.4
+      ],
+      "location": [
+        -150,
+        -15,
+        3.2
+      ],
+      "material": "pan-wall"
+    },
+    {
+      "id": "pan-wall-2",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.6,
+        150,
+        0.4
+      ],
+      "location": [
+        -75,
+        -15,
+        3.2
+      ],
+      "material": "pan-wall"
+    },
+    {
+      "id": "pan-wall-3",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.6,
+        150,
+        0.4
+      ],
+      "location": [
+        0,
+        -15,
+        3.2
+      ],
+      "material": "pan-wall"
+    },
+    {
+      "id": "pan-wall-4",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.6,
+        150,
+        0.4
+      ],
+      "location": [
+        75,
+        -15,
+        3.2
+      ],
+      "material": "pan-wall"
+    },
+    {
+      "id": "pan-wall-5",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.6,
+        150,
+        0.4
+      ],
+      "location": [
+        150,
+        -15,
+        3.2
+      ],
+      "material": "pan-wall"
+    },
+    {
+      "id": "pan-wall-cross-1",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        400,
+        0.6,
+        0.4
+      ],
+      "location": [
+        0,
+        -50,
+        3.2
+      ],
+      "material": "pan-wall"
+    },
+    {
+      "id": "pan-wall-cross-2",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        400,
+        0.6,
+        0.4
+      ],
+      "location": [
+        0,
+        10,
+        3.2
+      ],
+      "material": "pan-wall"
+    },
+    {
+      "id": "slip-1-step-1",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        3,
+        3,
+        3.0
+      ],
+      "location": [
+        20,
+        -101.5,
+        1.5
+      ],
+      "material": "sea-wall"
+    },
+    {
+      "id": "slip-1-step-2",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        3,
+        3,
+        2.0
+      ],
+      "location": [
+        20,
+        -104.5,
+        1.0
+      ],
+      "material": "sea-wall"
+    },
+    {
+      "id": "slip-1-step-3",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        3,
+        3,
+        1.0
+      ],
+      "location": [
+        20,
+        -107.5,
+        0.5
+      ],
+      "material": "sea-wall"
+    },
+    {
+      "id": "slip-2-step-1",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        3,
+        3,
+        3.0
+      ],
+      "location": [
+        45,
+        -101.5,
+        1.5
+      ],
+      "material": "sea-wall"
+    },
+    {
+      "id": "slip-2-step-2",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        3,
+        3,
+        2.0
+      ],
+      "location": [
+        45,
+        -104.5,
+        1.0
+      ],
+      "material": "sea-wall"
+    },
+    {
+      "id": "slip-2-step-3",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        3,
+        3,
+        1.0
+      ],
+      "location": [
+        45,
+        -107.5,
+        0.5
+      ],
+      "material": "sea-wall"
+    },
+    {
+      "id": "hut-1",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        8,
+        6,
+        4
+      ],
+      "location": [
+        -160,
+        78,
+        5.0
+      ],
+      "material": "hut"
+    },
+    {
+      "id": "hut-2",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        8,
+        6,
+        4
+      ],
+      "location": [
+        -120,
+        78,
+        5.0
+      ],
+      "material": "hut"
+    },
+    {
+      "id": "hut-3",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        8,
+        6,
+        4
+      ],
+      "location": [
+        -80,
+        78,
+        5.0
+      ],
+      "material": "hut"
+    },
+    {
+      "id": "hut-4",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        8,
+        6,
+        4
+      ],
+      "location": [
+        -40,
+        78,
+        5.0
+      ],
+      "material": "hut"
+    },
+    {
+      "id": "hut-5",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        8,
+        6,
+        4
+      ],
+      "location": [
+        0,
+        78,
+        5.0
+      ],
+      "material": "hut"
+    },
+    {
+      "id": "hut-6",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        8,
+        6,
+        4
+      ],
+      "location": [
+        40,
+        78,
+        5.0
+      ],
+      "material": "hut"
+    },
+    {
+      "id": "hut-7",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        8,
+        6,
+        4
+      ],
+      "location": [
+        80,
+        78,
+        5.0
+      ],
+      "material": "hut"
+    },
+    {
+      "id": "hut-8",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        8,
+        6,
+        4
+      ],
+      "location": [
+        120,
+        78,
+        5.0
+      ],
+      "material": "hut"
+    },
+    {
+      "id": "hut-9",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        8,
+        6,
+        4
+      ],
+      "location": [
+        160,
+        78,
+        5.0
+      ],
+      "material": "hut"
+    },
+    {
+      "id": "terrace-1",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        400,
+        14,
+        12
+      ],
+      "location": [
+        0,
+        108,
+        6.0
+      ],
+      "material": "salt-hill"
+    },
+    {
+      "id": "terrace-2",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        400,
+        14,
+        24
+      ],
+      "location": [
+        0,
+        122,
+        12.0
+      ],
+      "material": "salt-hill"
+    },
+    {
+      "id": "terrace-3",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        400,
+        14,
+        38
+      ],
+      "location": [
+        0,
+        136,
+        19.0
+      ],
+      "material": "salt-hill"
+    },
+    {
+      "id": "terrace-4",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        400,
+        14,
+        52
+      ],
+      "location": [
+        0,
+        148,
+        26.0
+      ],
+      "material": "salt-hill"
+    },
+    {
+      "id": "tally-hut-roof",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        4,
+        3,
+        0.3
+      ],
+      "location": [
+        62,
+        -82,
+        5.6
+      ],
+      "material": "thatch"
+    },
+    {
+      "id": "tally-hut-post-w",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.2,
+        0.2,
+        2.5
+      ],
+      "location": [
+        60.3,
+        -82,
+        4.25
+      ],
+      "material": "skiff"
+    },
+    {
+      "id": "tally-hut-post-e",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        0.2,
+        0.2,
+        2.5
+      ],
+      "location": [
+        63.7,
+        -82,
+        4.25
+      ],
+      "material": "skiff"
+    },
+    {
+      "id": "kettle-skiff-1",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        5,
+        0.6
+      ],
+      "location": [
+        -50,
+        -126,
+        0.3
+      ],
+      "material": "skiff",
+      "rotation_deg": [
+        0,
+        8,
+        30
+      ]
+    },
+    {
+      "id": "kettle-skiff-2",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        5,
+        0.6
+      ],
+      "location": [
+        -10,
+        -130,
+        0.3
+      ],
+      "material": "skiff",
+      "rotation_deg": [
+        0,
+        -6,
+        -20
+      ]
+    },
+    {
+      "id": "net-frame",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        6,
+        0.1,
+        2
+      ],
+      "location": [
+        40,
+        -80,
+        4.0
+      ],
+      "material": "skiff",
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "tideline-stone",
+      "object": "tideline-stone",
+      "location": [
+        75,
+        -82,
+        3.0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        -20
+      ]
+    },
+    {
+      "id": "tally-chest",
+      "object": "tea-chest",
+      "location": [
+        62,
+        -82,
+        3.0
+      ]
+    },
+    {
+      "id": "lobster-pot-hut",
+      "object": "lobster-pot",
+      "location": [
+        58,
+        -79,
+        3.0
+      ]
+    },
+    {
+      "id": "lobster-pot-reef",
+      "object": "lobster-pot",
+      "location": [
+        -30,
+        -127,
+        0.05
+      ]
+    },
+    {
+      "id": "rope-nets",
+      "object": "rope-coil",
+      "location": [
+        42,
+        -78,
+        3.0
+      ]
+    }
+  ],
+  "scenes": {
+    "s-salt-steps": {
+      "note": "Hot noon, salt-white glare; nets, gulls, a crew rehearsing badly. Meet the grandchildren on the reef (met.salt), dice with the tallyman for the fishing licence, then the stone and the reef tide.",
+      "world": {
+        "color": [
+          0.95,
+          0.95,
+          0.92
+        ],
+        "strength": 1.0
+      },
+      "lights": [
+        {
+          "name": "sun-noon",
+          "type": "SUN",
+          "location": [
+            20,
+            -40,
+            400
+          ],
+          "energy": 8.0,
+          "size": 0.01,
+          "color": [
+            1.0,
+            0.99,
+            0.95
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "salt-bounce",
+          "type": "AREA",
+          "location": [
+            0,
+            -20,
+            30
+          ],
+          "energy": 20000,
+          "size": 200,
+          "color": [
+            0.957,
+            0.945,
+            0.91
+          ],
+          "look_at": [
+            0,
+            -20,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          20,
+          -89.5,
+          4.6
+        ],
+        "look_at": [
+          40,
+          -60,
+          3.0
+        ],
+        "lens_mm": 28,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          20,
+          -86,
+          3.0
+        ],
+        "facing_deg": -20
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "lobster-pot-reef",
+          "verb": "Wade out to the grandchildren on the reef"
+        },
+        {
+          "prop": "tally-chest",
+          "verb": "Dice with the tallyman",
+          "leads_to": "g-liars-salt"
+        },
+        {
+          "prop": "tideline-stone",
+          "verb": "Stir the stone: raise the reef tide",
+          "leads_to": "e-salt-reef"
+        }
+      ]
+    }
+  }
+}

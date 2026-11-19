@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-labelledby="stamp-tomorrow-t stamp-tomorrow-d">
+<title id="stamp-tomorrow-t">Tooling stamp: Tomorrow (want)</title>
+<desc id="stamp-tomorrow-d">A leather tile from the Want tray, stamped in gold: A sun not yet over the horizon, and an arrow toward it. Below it, the word TOMORROW.</desc>
+<defs><clipPath id="stamp-tomorrow-clip1"><rect x="0" y="0" width="200" height="200" rx="10"/></clipPath><filter id="stamp-tomorrow-gr2" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="2" seed="888"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.4 0"/></filter><filter id="stamp-tomorrow-gr3" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="491"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><radialGradient id="stamp-tomorrow-rg4" cx="0.5" cy="0.5" r="0.75"><stop offset="0%" stop-color="#000" stop-opacity="0"/><stop offset="60%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#140904" stop-opacity="0.5"/></radialGradient><linearGradient id="stamp-tomorrow-gold5" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="120" y2="84" spreadMethod="reflect"><stop offset="0" stop-color="#F0D488"/><stop offset="0.45" stop-color="#D4A23A"/><stop offset="0.75" stop-color="#9A6F1E"/><stop offset="1" stop-color="#D4A23A"/></linearGradient><filter id="stamp-tomorrow-gr6" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="496"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.1 0"/></filter></defs>
+<rect x="0" y="0" width="200" height="200" fill="#3F4A36" rx="10"/>
+<rect x="0" y="0" width="200" height="200" filter="url(#stamp-tomorrow-gr2)" clip-path="url(#stamp-tomorrow-clip1)"/>
+<rect x="0" y="0" width="200" height="200" filter="url(#stamp-tomorrow-gr3)" clip-path="url(#stamp-tomorrow-clip1)"/>
+<rect x="0" y="0" width="200" height="200" fill="url(#stamp-tomorrow-rg4)" rx="10"/>
+<path d="M16,150 V56 Q16,16 100.0,16 Q184,16 184,56 V150Z" fill="#2B3425" opacity="0.8"/>
+<path d="M16,150 V56 Q16,16 100.0,16 Q184,16 184,56 V150Z" fill="none" stroke="#140904" stroke-width="5" opacity="0.5" transform="translate(1.5 2)"/>
+<path d="M16,150 V56 Q16,16 100.0,16 Q184,16 184,56 V150Z" fill="none" stroke="url(#stamp-tomorrow-gold5)" stroke-width="3"/>
+<path d="M23,143 V63 Q23,23 100.0,23 Q177,23 177,63 V143Z" fill="none" stroke="url(#stamp-tomorrow-gold5)" stroke-width="0.9"/>
+<g transform="translate(101.6 86.2) scale(1.06)" opacity="0.7">
+<path d="M-46,10 H46" fill="none" stroke="#140904" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4,10 A18,18 0 0,1 40,10Z" fill="#140904"/>
+<line x1="-0.8" y1="2.6" x2="-8.4" y2="0.1" fill="none" stroke="#140904" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="7.9" y1="-9.4" x2="3.2" y2="-15.9" fill="none" stroke="#140904" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="22" y1="-14" x2="22" y2="-22" fill="none" stroke="#140904" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="36.1" y1="-9.4" x2="40.8" y2="-15.9" fill="none" stroke="#140904" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="44.8" y1="2.6" x2="52.4" y2="0.1" fill="none" stroke="#140904" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-42,30 H-6 M-16,22 L-6,30 L-16,38" fill="none" stroke="#140904" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g transform="translate(100 84) scale(1.06)" opacity="1">
+<path d="M-46,10 H46" fill="none" stroke="url(#stamp-tomorrow-gold5)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4,10 A18,18 0 0,1 40,10Z" fill="url(#stamp-tomorrow-gold5)"/>
+<line x1="-0.8" y1="2.6" x2="-8.4" y2="0.1" fill="none" stroke="url(#stamp-tomorrow-gold5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="7.9" y1="-9.4" x2="3.2" y2="-15.9" fill="none" stroke="url(#stamp-tomorrow-gold5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="22" y1="-14" x2="22" y2="-22" fill="none" stroke="url(#stamp-tomorrow-gold5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="36.1" y1="-9.4" x2="40.8" y2="-15.9" fill="none" stroke="url(#stamp-tomorrow-gold5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="44.8" y1="2.6" x2="52.4" y2="0.1" fill="none" stroke="url(#stamp-tomorrow-gold5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-42,30 H-6 M-16,22 L-6,30 L-16,38" fill="none" stroke="url(#stamp-tomorrow-gold5)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<text x="100.6" y="180.8" font-size="16" font-family="serif" fill="#1A0B05" opacity="0.8" text-anchor="middle" letter-spacing="2.4" font-weight="bold">TOMORROW</text>
+<text x="100" y="180" font-size="16" font-family="serif" fill="url(#stamp-tomorrow-gold5)" text-anchor="middle" letter-spacing="2.4" font-weight="bold">TOMORROW</text>
+<text x="99.8" y="179.7" font-size="16" font-family="serif" fill="none" stroke="#F0D488" stroke-width="0.4" opacity="0.6" text-anchor="middle" letter-spacing="2.4" font-weight="bold">TOMORROW</text>
+<path d="M30,160 H170" stroke="url(#stamp-tomorrow-gold5)" stroke-width="0.8" fill="none"/>
+<path d="M22,160 l4,-4 l4,4 l-4,4Z" fill="url(#stamp-tomorrow-gold5)"/>
+<path d="M178,160 l-4,-4 l-4,4 l4,4Z" fill="url(#stamp-tomorrow-gold5)"/>
+<rect x="0" y="0" width="200" height="200" filter="url(#stamp-tomorrow-gr6)"/>
+</svg>

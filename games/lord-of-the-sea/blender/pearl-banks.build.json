@@ -1,0 +1,621 @@
+{
+  "game": "lord-of-the-sea",
+  "location": "pearl-banks",
+  "name": "The Pearl Banks",
+  "reference": "assets/locations/pearl-banks.jpg",
+  "bounds_m": [
+    400,
+    400,
+    30
+  ],
+  "origin": "sea level at the centre of the shallows; +x toward the trench (its edge at x 120, the far wall at 195), +y toward the stilt village on the sandbars",
+  "materials": {
+    "shallows": {
+      "color": [
+        0.184,
+        0.71,
+        0.69
+      ],
+      "roughness": 0.08
+    },
+    "trench": {
+      "color": [
+        0.047,
+        0.122,
+        0.165
+      ],
+      "roughness": 0.2
+    },
+    "sand": {
+      "color": [
+        0.91,
+        0.863,
+        0.753
+      ],
+      "roughness": 0.95
+    },
+    "cliff": {
+      "color": [
+        0.165,
+        0.204,
+        0.188
+      ],
+      "roughness": 0.95
+    },
+    "stilt-wood": {
+      "color": [
+        0.42,
+        0.29,
+        0.169
+      ],
+      "roughness": 0.9
+    },
+    "thatch": {
+      "color": [
+        0.541,
+        0.416,
+        0.243
+      ],
+      "roughness": 0.95
+    },
+    "rock": {
+      "color": [
+        0.306,
+        0.353,
+        0.282
+      ],
+      "roughness": 0.9
+    },
+    "rope": {
+      "color": [
+        0.541,
+        0.455,
+        0.329
+      ],
+      "roughness": 0.9
+    }
+  },
+  "blockout": [
+    {
+      "id": "shallows",
+      "shape": "box",
+      "role": "water",
+      "size_m": [
+        320,
+        400,
+        0
+      ],
+      "location": [
+        -40,
+        0,
+        0
+      ],
+      "material": "shallows"
+    },
+    {
+      "id": "trench-water",
+      "shape": "box",
+      "role": "water",
+      "size_m": [
+        80,
+        400,
+        0
+      ],
+      "location": [
+        160,
+        0,
+        -0.5
+      ],
+      "material": "trench"
+    },
+    {
+      "id": "trench-edge",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        4,
+        400,
+        0.6
+      ],
+      "location": [
+        120,
+        0,
+        -0.2
+      ],
+      "material": "cliff"
+    },
+    {
+      "id": "trench-far-wall",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        20,
+        400,
+        14
+      ],
+      "location": [
+        195,
+        0,
+        7
+      ],
+      "material": "cliff"
+    },
+    {
+      "id": "sandbar-west",
+      "shape": "cylinder",
+      "role": "terrain",
+      "size_m": [
+        90,
+        60,
+        1.0
+      ],
+      "location": [
+        -130,
+        40,
+        0
+      ],
+      "material": "sand"
+    },
+    {
+      "id": "sandbar-mid",
+      "shape": "cylinder",
+      "role": "terrain",
+      "size_m": [
+        60,
+        40,
+        1.0
+      ],
+      "location": [
+        40,
+        70,
+        0
+      ],
+      "material": "sand"
+    },
+    {
+      "id": "house-1-stilts",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        8,
+        8,
+        5
+      ],
+      "location": [
+        -140,
+        50,
+        2.5
+      ],
+      "material": "stilt-wood"
+    },
+    {
+      "id": "house-1-floor",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        9,
+        9,
+        0.4
+      ],
+      "location": [
+        -140,
+        50,
+        5.2
+      ],
+      "material": "stilt-wood"
+    },
+    {
+      "id": "house-1-roof",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        11,
+        11,
+        6
+      ],
+      "location": [
+        -140,
+        50,
+        8.4
+      ],
+      "material": "thatch",
+      "rotation_deg": [
+        0,
+        0,
+        45
+      ]
+    },
+    {
+      "id": "house-2-stilts",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        8,
+        8,
+        5
+      ],
+      "location": [
+        -110,
+        110,
+        2.5
+      ],
+      "material": "stilt-wood"
+    },
+    {
+      "id": "house-2-floor",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        9,
+        9,
+        0.4
+      ],
+      "location": [
+        -110,
+        110,
+        5.2
+      ],
+      "material": "stilt-wood"
+    },
+    {
+      "id": "house-2-roof",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        11,
+        11,
+        6
+      ],
+      "location": [
+        -110,
+        110,
+        8.4
+      ],
+      "material": "thatch",
+      "rotation_deg": [
+        0,
+        0,
+        45
+      ]
+    },
+    {
+      "id": "house-3-stilts",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        8,
+        8,
+        5
+      ],
+      "location": [
+        -80,
+        150,
+        2.5
+      ],
+      "material": "stilt-wood"
+    },
+    {
+      "id": "house-3-floor",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        9,
+        9,
+        0.4
+      ],
+      "location": [
+        -80,
+        150,
+        5.2
+      ],
+      "material": "stilt-wood"
+    },
+    {
+      "id": "house-3-roof",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        11,
+        11,
+        6
+      ],
+      "location": [
+        -80,
+        150,
+        8.4
+      ],
+      "material": "thatch",
+      "rotation_deg": [
+        0,
+        0,
+        45
+      ]
+    },
+    {
+      "id": "house-4-stilts",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        8,
+        8,
+        5
+      ],
+      "location": [
+        40,
+        75,
+        2.5
+      ],
+      "material": "stilt-wood"
+    },
+    {
+      "id": "house-4-floor",
+      "shape": "box",
+      "role": "structure",
+      "size_m": [
+        9,
+        9,
+        0.4
+      ],
+      "location": [
+        40,
+        75,
+        5.2
+      ],
+      "material": "stilt-wood"
+    },
+    {
+      "id": "house-4-roof",
+      "shape": "cone",
+      "role": "structure",
+      "size_m": [
+        11,
+        11,
+        6
+      ],
+      "location": [
+        40,
+        75,
+        8.4
+      ],
+      "material": "thatch",
+      "rotation_deg": [
+        0,
+        0,
+        45
+      ]
+    },
+    {
+      "id": "rope-walk-1",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        0.6,
+        70,
+        0.2
+      ],
+      "location": [
+        -125,
+        80,
+        5.0
+      ],
+      "material": "rope",
+      "rotation_deg": [
+        0,
+        0,
+        26
+      ]
+    },
+    {
+      "id": "rope-walk-2",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        130,
+        0.6,
+        0.2
+      ],
+      "location": [
+        -45,
+        62,
+        5.0
+      ],
+      "material": "rope",
+      "rotation_deg": [
+        0,
+        0,
+        6
+      ]
+    },
+    {
+      "id": "rock-1",
+      "shape": "sphere",
+      "role": "terrain",
+      "size_m": [
+        6,
+        6,
+        3.0
+      ],
+      "location": [
+        60,
+        -60,
+        0
+      ],
+      "material": "rock"
+    },
+    {
+      "id": "rock-2",
+      "shape": "sphere",
+      "role": "terrain",
+      "size_m": [
+        7,
+        7,
+        3.5
+      ],
+      "location": [
+        100,
+        -110,
+        0
+      ],
+      "material": "rock"
+    },
+    {
+      "id": "rock-3",
+      "shape": "sphere",
+      "role": "terrain",
+      "size_m": [
+        5,
+        5,
+        2.5
+      ],
+      "location": [
+        30,
+        -150,
+        0
+      ],
+      "material": "rock"
+    }
+  ],
+  "props": [
+    {
+      "id": "diving-boat",
+      "object": "diving-boat",
+      "location": [
+        -10,
+        -40,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        70
+      ]
+    },
+    {
+      "id": "tideline-stone",
+      "object": "tideline-stone",
+      "location": [
+        62,
+        70,
+        0.5
+      ]
+    },
+    {
+      "id": "lobster-pot-1",
+      "object": "lobster-pot",
+      "location": [
+        -138,
+        42,
+        0.5
+      ]
+    },
+    {
+      "id": "lobster-pot-2",
+      "object": "lobster-pot",
+      "location": [
+        114,
+        20,
+        0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        40
+      ]
+    }
+  ],
+  "scenes": {
+    "s-pearl-banks": {
+      "note": "Bright turquoise shallows, a dark line where the trench starts; water under stilts, the divers' breathing chant. A shallow dive with Ide (met.pearl), then over the trench edge she will not pass.",
+      "world": {
+        "color": [
+          0.7,
+          0.85,
+          0.95
+        ],
+        "strength": 0.8
+      },
+      "lights": [
+        {
+          "name": "sun-bright",
+          "type": "SUN",
+          "location": [
+            -100,
+            -200,
+            300
+          ],
+          "energy": 7.0,
+          "size": 0.01,
+          "color": [
+            1.0,
+            0.98,
+            0.9
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "shallows-bounce",
+          "type": "AREA",
+          "location": [
+            -40,
+            0,
+            20
+          ],
+          "energy": 30000,
+          "size": 200,
+          "color": [
+            0.498,
+            0.878,
+            0.839
+          ],
+          "look_at": [
+            -40,
+            0,
+            0
+          ]
+        }
+      ],
+      "camera": {
+        "location": [
+          -40,
+          -132,
+          6
+        ],
+        "look_at": [
+          0,
+          -40,
+          1
+        ],
+        "lens_mm": 28,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          -40,
+          -120,
+          0
+        ],
+        "facing_deg": 20
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "diving-boat",
+          "verb": "Dive the shallows with Ide"
+        },
+        {
+          "prop": "tideline-stone",
+          "verb": "Stir the stone"
+        },
+        {
+          "prop": "lobster-pot-2",
+          "verb": "Go over the trench edge where Ide's marker pot sits",
+          "leads_to": "d-pearl-dive"
+        }
+      ]
+    }
+  }
+}

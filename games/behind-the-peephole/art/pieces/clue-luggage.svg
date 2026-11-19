@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160" role="img" aria-labelledby="clue-luggage-t clue-luggage-d">
+<title id="clue-luggage-t">Clue kind: Luggage</title>
+<desc id="clue-luggage-d">Clue-kind icon in technical pen inside a brass ring: a suitcase that was not there yesterday, for luggage.</desc>
+<defs><radialGradient id="clue-luggage-rg1" cx="0.5" cy="0.5" r="0.75"><stop offset="0%" stop-color="#fff" stop-opacity="0.5"/><stop offset="100%" stop-color="#b8ab8a" stop-opacity="0.5"/></radialGradient><clipPath id="clue-luggage-clip2"><circle cx="80" cy="70" r="50"/></clipPath><clipPath id="clue-luggage-clip3"><rect x="42" y="54" width="14" height="52"/></clipPath></defs>
+<rect x="0" y="0" width="160" height="160" rx="10" fill="#f1ecdf"/>
+<rect x="0" y="0" width="160" height="160" rx="10" fill="url(#clue-luggage-rg1)"/>
+<circle cx="80" cy="70" r="56" fill="#f7f3e8" stroke="#b8913f" stroke-width="4"/>
+<circle cx="80" cy="70" r="51" fill="none" stroke="#5d4518" stroke-width="0.8"/>
+<g clip-path="url(#clue-luggage-clip2)">
+<rect x="42" y="54" width="76" height="52" rx="4" fill="none" stroke="#1c1a17" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M66,54 V42 H94 V54 M56,54 V106 M104,54 V106" fill="none" stroke="#1c1a17" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<g clip-path="url(#clue-luggage-clip3)">
+<path d="M49,36.3 L92.7,80 M46.2,39.1 L89.9,82.8 M43.3,41.9 L87.1,85.7 M40.5,44.7 L84.3,88.5 M37.7,47.6 L81.4,91.3 M34.9,50.4 L78.6,94.1 M32,53.2 L75.8,97 M29.2,56.1 L72.9,99.8 M26.4,58.9 L70.1,102.6 M23.5,61.7 L67.3,105.5 M20.7,64.5 L64.5,108.3 M17.9,67.4 L61.6,111.1 M15.1,70.2 L58.8,113.9 M12.2,73 L56,116.8 M9.4,75.9 L53.1,119.6 M6.6,78.7 L50.3,122.4" fill="none" stroke="#1c1a17" stroke-width="0.5"/>
+</g>
+<ellipse cx="80" cy="112" rx="44" ry="4" fill="#1c1a17" opacity="0.2"/>
+<path d="M128,44 l-10,10 M122,38 v8 M132,50 h-8" fill="none" stroke="#1c1a17" stroke-width="1.4"/>
+</g>
+<text x="80" y="148" font-size="13" font-family="monospace" fill="#2a3a8c" text-anchor="middle" letter-spacing="2" font-weight="bold">LUGGAGE</text>
+</svg>

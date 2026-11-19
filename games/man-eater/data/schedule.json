@@ -1,0 +1,137 @@
+{
+  "note": "The Schedule (DESIGN.md section 11.3, rules 6 and 7, and 'Accepted development (2026-11-15)'). Fixed content, not state: the lines typed on Fisk's sheet, the night each torn strip is found, and the list entry each strip is laid against. Everything here is invented for the game; nothing is the author's text except the quoted response on day 1 (source line 29). The 22:00 box is on every line and is empty; no row describes it.",
+  "source": "03_Stories/07_Project_-_Man_Eater.md",
+  "game": "the_chart",
+  "read_in": "n4_office",
+  "requires": "schedule_read",
+  "declined_by": "cabinet_declined",
+  "header": {
+    "subject": "FISK",
+    "line": "Results required: 1",
+    "footer": "Typed one day ahead."
+  },
+  "empty_slot": {
+    "time": "22:00",
+    "status": "pending_consultant",
+    "rule": "Drawn empty on every line. No page, line or caption refers to it until the cultural consultant has seen it (DESIGN.md section 20: M0, M6, M9)."
+  },
+  "lines": [
+    {
+      "day": 1,
+      "time": "06:00",
+      "issued": [
+        "Intake. Rules read."
+      ],
+      "response": "\"Sir yes Sir.\"",
+      "response_quote": {
+        "text": "Sir yes Sir",
+        "line": 29
+      },
+      "strip_found": "in the folder, night 4",
+      "laid_against": null
+    },
+    {
+      "day": 2,
+      "time": "14:00",
+      "issued": [
+        "False statement issued (transfer).",
+        "Companion (uninformed)."
+      ],
+      "response": "curiosity. Retained.",
+      "strip_found": "n2_halls",
+      "laid_against": "L8"
+    },
+    {
+      "day": 3,
+      "time": "19:00",
+      "issued": [
+        "Card table.",
+        "Loss to witness."
+      ],
+      "response": "",
+      "strip_found": "n3_snow",
+      "laid_against": "L10"
+    },
+    {
+      "day": 4,
+      "time": "23:00",
+      "issued": [
+        "Cabinet left unlocked.",
+        "Officers' wing left unwatched."
+      ],
+      "response": "",
+      "strip_found": "n4_office",
+      "laid_against": "L15"
+    },
+    {
+      "day": 5,
+      "time": "08:00",
+      "issued": [
+        "On schedule."
+      ],
+      "response": "",
+      "strip_found": "d5_chart",
+      "laid_against": "L9"
+    },
+    {
+      "day": 6,
+      "time": "09:00",
+      "issued": [
+        "Subject will report companion.",
+        "Subject will follow."
+      ],
+      "response": "",
+      "strip_found": "phase 2",
+      "laid_against": null
+    },
+    {
+      "day": 7,
+      "time": "22:00",
+      "issued": [
+        "STAY: retained.",
+        "FOLLOW: see previous.",
+        "FENCE: photographed, not followed."
+      ],
+      "response": "",
+      "strip_found": "d7_chart",
+      "laid_against": null
+    }
+  ],
+  "issued_entries": [
+    {
+      "id": "L15",
+      "day": 4,
+      "added_in": "n4_office",
+      "incident": "My file has tomorrow in it. Typed.",
+      "explanations": [],
+      "broken_by": []
+    }
+  ],
+  "retries_per_strip": 1,
+  "last_line": {
+    "scene": "d7_chart",
+    "typed": [
+      {
+        "way": "stay",
+        "outcome": "retained"
+      },
+      {
+        "way": "follow",
+        "outcome": "see previous"
+      },
+      {
+        "way": "fence",
+        "outcome": "photographed, not followed"
+      }
+    ],
+    "untyped": {
+      "pencil": "Carry Jax over. Walk back.",
+      "orderly_writes": "carried him",
+      "built_in": "phase 3"
+    }
+  },
+  "fisk_lines": [
+    "My file has tomorrow in it. Typed.",
+    "New Mexico killed the ones who complained about the heat. I didn't complain. Lucky."
+  ]
+}

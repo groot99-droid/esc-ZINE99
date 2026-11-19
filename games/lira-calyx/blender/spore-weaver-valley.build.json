@@ -1,0 +1,766 @@
+{
+  "game": "lira-calyx",
+  "location": "spore-weaver-valley",
+  "name": "The Spore-Weaver valley",
+  "reference": "assets/locations/spore-weaver-valley.jpg",
+  "bounds_m": [
+    400,
+    200,
+    60
+  ],
+  "origin": "valley floor centre; the valley runs along x (+x up-valley), its slopes rise at +y and -y; nine post sockets 45 m apart down the middle",
+  "materials": {
+    "grass": {
+      "color": [
+        0.122,
+        0.2,
+        0.098
+      ],
+      "roughness": 1.0
+    },
+    "slope": {
+      "color": [
+        0.184,
+        0.29,
+        0.149
+      ],
+      "roughness": 1.0
+    },
+    "rock": {
+      "color": [
+        0.329,
+        0.361,
+        0.376
+      ],
+      "roughness": 0.95
+    },
+    "socket-stone": {
+      "color": [
+        0.416,
+        0.416,
+        0.384
+      ],
+      "roughness": 0.95
+    },
+    "web-bark": {
+      "color": [
+        0.604,
+        0.847,
+        0.847
+      ],
+      "roughness": 0.4,
+      "emission": 0.6
+    },
+    "web": {
+      "color": [
+        0.22,
+        0.878,
+        0.847
+      ],
+      "roughness": 0.3,
+      "emission": 3.0
+    },
+    "river": {
+      "color": [
+        0.11,
+        0.424,
+        0.471
+      ],
+      "roughness": 0.15,
+      "emission": 0.3
+    }
+  },
+  "blockout": [
+    {
+      "id": "valley-floor",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        400,
+        200,
+        1
+      ],
+      "location": [
+        0,
+        0,
+        -0.5
+      ],
+      "material": "grass"
+    },
+    {
+      "id": "slope-north",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        400,
+        70,
+        10
+      ],
+      "location": [
+        0,
+        92,
+        20
+      ],
+      "material": "slope",
+      "rotation_deg": [
+        30,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "slope-south",
+      "shape": "box",
+      "role": "terrain",
+      "size_m": [
+        400,
+        70,
+        10
+      ],
+      "location": [
+        0,
+        -92,
+        20
+      ],
+      "material": "slope",
+      "rotation_deg": [
+        -30,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "river",
+      "shape": "box",
+      "role": "water",
+      "size_m": [
+        400,
+        10,
+        0.2
+      ],
+      "location": [
+        0,
+        42,
+        0.1
+      ],
+      "material": "river"
+    },
+    {
+      "id": "outcrop-1",
+      "shape": "sphere",
+      "role": "terrain",
+      "size_m": [
+        30,
+        18,
+        24
+      ],
+      "location": [
+        -60,
+        66,
+        4
+      ],
+      "material": "rock"
+    },
+    {
+      "id": "outcrop-2",
+      "shape": "sphere",
+      "role": "terrain",
+      "size_m": [
+        26,
+        16,
+        20
+      ],
+      "location": [
+        90,
+        -66,
+        4
+      ],
+      "material": "rock"
+    },
+    {
+      "id": "socket-1",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        3,
+        3,
+        0.4
+      ],
+      "location": [
+        -180,
+        15,
+        0.2
+      ],
+      "material": "socket-stone"
+    },
+    {
+      "id": "socket-2",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        3,
+        3,
+        0.4
+      ],
+      "location": [
+        -135,
+        -15,
+        0.2
+      ],
+      "material": "socket-stone"
+    },
+    {
+      "id": "socket-3",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        3,
+        3,
+        0.4
+      ],
+      "location": [
+        -90,
+        15,
+        0.2
+      ],
+      "material": "socket-stone"
+    },
+    {
+      "id": "socket-4",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        3,
+        3,
+        0.4
+      ],
+      "location": [
+        -45,
+        -15,
+        0.2
+      ],
+      "material": "socket-stone"
+    },
+    {
+      "id": "socket-5",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        3,
+        3,
+        0.4
+      ],
+      "location": [
+        0,
+        15,
+        0.2
+      ],
+      "material": "socket-stone"
+    },
+    {
+      "id": "socket-6",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        3,
+        3,
+        0.4
+      ],
+      "location": [
+        45,
+        -15,
+        0.2
+      ],
+      "material": "socket-stone"
+    },
+    {
+      "id": "socket-7",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        3,
+        3,
+        0.4
+      ],
+      "location": [
+        90,
+        15,
+        0.2
+      ],
+      "material": "socket-stone"
+    },
+    {
+      "id": "socket-8",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        3,
+        3,
+        0.4
+      ],
+      "location": [
+        135,
+        -15,
+        0.2
+      ],
+      "material": "socket-stone"
+    },
+    {
+      "id": "socket-9",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        3,
+        3,
+        0.4
+      ],
+      "location": [
+        180,
+        15,
+        0.2
+      ],
+      "material": "socket-stone"
+    },
+    {
+      "id": "web-tree-1",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        1.4,
+        22
+      ],
+      "location": [
+        -150,
+        60,
+        11
+      ],
+      "material": "web-bark"
+    },
+    {
+      "id": "web-tree-2",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        1.4,
+        22
+      ],
+      "location": [
+        -100,
+        -55,
+        11
+      ],
+      "material": "web-bark"
+    },
+    {
+      "id": "web-tree-3",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        1.4,
+        22
+      ],
+      "location": [
+        -40,
+        58,
+        11
+      ],
+      "material": "web-bark"
+    },
+    {
+      "id": "web-tree-4",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        1.4,
+        22
+      ],
+      "location": [
+        10,
+        -60,
+        11
+      ],
+      "material": "web-bark"
+    },
+    {
+      "id": "web-tree-5",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        1.4,
+        22
+      ],
+      "location": [
+        60,
+        55,
+        11
+      ],
+      "material": "web-bark"
+    },
+    {
+      "id": "web-tree-6",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        1.4,
+        22
+      ],
+      "location": [
+        110,
+        -52,
+        11
+      ],
+      "material": "web-bark"
+    },
+    {
+      "id": "web-tree-7",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        1.4,
+        22
+      ],
+      "location": [
+        160,
+        58,
+        11
+      ],
+      "material": "web-bark"
+    },
+    {
+      "id": "web-tree-8",
+      "shape": "cylinder",
+      "role": "structure",
+      "size_m": [
+        1.4,
+        1.4,
+        22
+      ],
+      "location": [
+        -190,
+        -50,
+        11
+      ],
+      "material": "web-bark"
+    },
+    {
+      "id": "web-1",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        50,
+        0.05,
+        12
+      ],
+      "location": [
+        -125,
+        50,
+        12
+      ],
+      "material": "web",
+      "rotation_deg": [
+        0,
+        0,
+        3
+      ],
+      "collide": false
+    },
+    {
+      "id": "web-2",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        50,
+        0.05,
+        12
+      ],
+      "location": [
+        -15,
+        52,
+        12
+      ],
+      "material": "web",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "collide": false
+    },
+    {
+      "id": "web-3",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        50,
+        0.05,
+        12
+      ],
+      "location": [
+        85,
+        50,
+        12
+      ],
+      "material": "web",
+      "rotation_deg": [
+        0,
+        0,
+        2
+      ],
+      "collide": false
+    },
+    {
+      "id": "web-4",
+      "shape": "box",
+      "role": "trim",
+      "size_m": [
+        50,
+        0.05,
+        12
+      ],
+      "location": [
+        135,
+        -48,
+        12
+      ],
+      "material": "web",
+      "rotation_deg": [
+        0,
+        0,
+        -1
+      ],
+      "collide": false
+    }
+  ],
+  "props": [
+    {
+      "id": "post-1",
+      "object": "photodiode-post",
+      "location": [
+        -180,
+        15,
+        0.4
+      ]
+    },
+    {
+      "id": "post-2",
+      "object": "photodiode-post",
+      "location": [
+        0,
+        15,
+        0.4
+      ]
+    },
+    {
+      "id": "post-3",
+      "object": "photodiode-post",
+      "location": [
+        135,
+        -15,
+        0.4
+      ]
+    },
+    {
+      "id": "dial",
+      "object": "sampling-dial",
+      "location": [
+        -168,
+        -3,
+        0
+      ]
+    },
+    {
+      "id": "relay",
+      "object": "relay-beacon",
+      "location": [
+        -172,
+        8,
+        0
+      ]
+    }
+  ],
+  "scenes": {
+    "b1-valley": {
+      "world": {
+        "color": [
+          0.016,
+          0.031,
+          0.047
+        ],
+        "strength": 0.05
+      },
+      "lights": [
+        {
+          "name": "night-sky",
+          "type": "SUN",
+          "location": [
+            0,
+            0,
+            60
+          ],
+          "energy": 0.05,
+          "size": 1.0,
+          "color": [
+            0.314,
+            0.439,
+            0.627
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "web-glow-1",
+          "type": "POINT",
+          "location": [
+            -150,
+            48.0,
+            14
+          ],
+          "energy": 30000,
+          "size": 4,
+          "color": [
+            0.22,
+            0.878,
+            0.847
+          ]
+        },
+        {
+          "name": "web-glow-2",
+          "type": "POINT",
+          "location": [
+            -100,
+            -44.0,
+            14
+          ],
+          "energy": 30000,
+          "size": 4,
+          "color": [
+            0.22,
+            0.878,
+            0.847
+          ]
+        },
+        {
+          "name": "web-glow-3",
+          "type": "POINT",
+          "location": [
+            -40,
+            46.4,
+            14
+          ],
+          "energy": 30000,
+          "size": 4,
+          "color": [
+            0.22,
+            0.878,
+            0.847
+          ]
+        },
+        {
+          "name": "web-glow-4",
+          "type": "POINT",
+          "location": [
+            10,
+            -48.0,
+            14
+          ],
+          "energy": 30000,
+          "size": 4,
+          "color": [
+            0.22,
+            0.878,
+            0.847
+          ]
+        },
+        {
+          "name": "web-glow-5",
+          "type": "POINT",
+          "location": [
+            60,
+            44.0,
+            14
+          ],
+          "energy": 30000,
+          "size": 4,
+          "color": [
+            0.22,
+            0.878,
+            0.847
+          ]
+        },
+        {
+          "name": "web-glow-6",
+          "type": "POINT",
+          "location": [
+            110,
+            -41.6,
+            14
+          ],
+          "energy": 30000,
+          "size": 4,
+          "color": [
+            0.22,
+            0.878,
+            0.847
+          ]
+        }
+      ],
+      "note": "Book I, the third night. Set three photodiode posts in the sockets (at least 300 m apart for a true reading), set the sampling dial (2 s, 1 s, 0.5 s) and watch the cyan pulse cross the valley: node N1, pattern alpha; then margin note 1 on page 47.",
+      "camera": {
+        "location": [
+          -173.5,
+          -5.0,
+          2.65
+        ],
+        "look_at": [
+          -166.0,
+          -5.0,
+          1.4
+        ],
+        "lens_mm": 31,
+        "mode": "third-person"
+      },
+      "player_start": {
+        "location": [
+          -170,
+          -5,
+          0
+        ],
+        "facing_deg": 270
+      },
+      "hide": [],
+      "interactions": [
+        {
+          "prop": "post-1",
+          "verb": "Place the post"
+        },
+        {
+          "prop": "post-2",
+          "verb": "Place the post"
+        },
+        {
+          "prop": "post-3",
+          "verb": "Place the post"
+        },
+        {
+          "prop": "relay",
+          "verb": "Take the relay reading"
+        },
+        {
+          "prop": "dial",
+          "verb": "Set the dial and watch the pulse",
+          "leads_to": "b1-climb"
+        }
+      ]
+    }
+  }
+}
