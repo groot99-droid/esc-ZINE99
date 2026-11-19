@@ -1,0 +1,140 @@
+{
+  "game": "dr-tox-fall",
+  "style": "Vintage grainy 35mm film still in the bible's colour grammar: desaturated cold gray-teal world, amber for the cage that holds, rust and ochre for Rostova's spores, sickly green only for the toxin loose and never at equal weight with amber; heavy film grain, practical haze, no lens flare, no stylization. Dr. Tox's face from the author's character sheet (reference jobs 15439340, 3e0abdae). No gore; children only from behind or at a distance; none of the four endings is as_written.",
+  "generated": "2026-11-19, nano_banana_2 at 2k; Dr. Tox images use the character sheet's front and three-quarter headshots as reference media; kit described from bible Part VI section 11.",
+  "images": [
+    {
+      "id": "key-art-wide",
+      "kind": "key-art",
+      "title": "Dr. Tox: Fall",
+      "aspect_ratio": "16:9",
+      "prompt": "Vintage grainy 35mm film still, desaturated cold gray-teal, heavy grain, haze, no lens flare, no gore. Same man as the reference images, identical face: very pale near-bloodless white man in his early thirties, deep-set pale gray-blue eyes, prominent dark eyebrows, thin unsmiling mouth, sharp angular jaw, short dark buzzcut with slight widow's peak, tall lean sinewy build, heavy scarring on the right forearm. He wears a weathered charcoal shroud over the matte black field kit, crossed leaf-bladed throwing knives and four forearm syringe barrels showing at its edges. He stands in the right half of the frame, thighs up, in a ragged concrete breach of the Snakehead cavern at cold dusk, face half lit, looking at the camera. At his boots a worn ring scuffed into the ground; far beyond it a line of tiny people waiting in haze, no faces, one amber lamp among them. Hard falloff into black. The left half is calm empty dark concrete and haze for a title. 50mm, no text, no lettering, no watermark, no logo",
+      "model": "nano_banana_2",
+      "reference_job_ids": [
+        "15439340-7c21-402d-9930-29a16d8d79e9",
+        "3e0abdae-9c38-41b8-9ee7-a85bd04fc356"
+      ],
+      "job_id": "b03a2197-900a-48ff-8a4e-0987a397cb70",
+      "image": "keyart/key-art-wide.jpg"
+    },
+    {
+      "id": "key-art-tall",
+      "kind": "key-art",
+      "title": "Dr. Tox: Fall",
+      "aspect_ratio": "2:3",
+      "prompt": "Vintage grainy 35mm film still, desaturated cold gray-teal, heavy grain, haze, no lens flare, no gore. Same man as the reference images, identical face: very pale near-bloodless white man in his early thirties, deep-set pale gray-blue eyes, prominent dark eyebrows, thin unsmiling mouth, sharp angular jaw, short dark buzzcut with slight widow's peak, tall lean sinewy build, heavy scarring on the right forearm. He wears a weathered charcoal shroud over the matte black field kit, crossed leaf-bladed throwing knives and four forearm syringe barrels showing at its edges. Tall frame, knees up, in the lower two thirds, in a ragged concrete breach of the Snakehead cavern at cold dusk, face half lit, looking at the camera. At his boots a worn ring scuffed into the ground; far beyond it a line of tiny people waiting in haze, no faces, one amber lamp among them. Hard falloff into black. The upper third is calm empty dark concrete and haze for a title. 50mm, no text, no lettering, no watermark, no logo",
+      "model": "nano_banana_2",
+      "reference_job_ids": [
+        "15439340-7c21-402d-9930-29a16d8d79e9",
+        "3e0abdae-9c38-41b8-9ee7-a85bd04fc356"
+      ],
+      "job_id": "879f90c7-bbaf-4ed8-b937-2b34f37c5203",
+      "image": "keyart/key-art-tall.jpg",
+      "needs_review": "Knives are held crossed in his hands rather than worn on the chest rig; shroud reads as a hooded cloak."
+    },
+    {
+      "id": "ending-first-word",
+      "kind": "ending",
+      "title": "First Word",
+      "aspect_ratio": "16:9",
+      "prompt": "Vintage grainy 35mm film still, desaturated cold gray-teal, heavy grain, haze, no lens flare, no gore. Inside a bare grey State recall transport, amber interior light the only warm thing, a young man in his early twenties with short brown hair and an open earnest face, taller and dense through the shoulders but lean, never bulky, faint warm amber luminescence under the skin at the wrists, fine deliberate surgical scars threading up both forearms, in a plain fitted pale grey program uniform with a small blank round metal insignia on the chest, sits upright on a bench, head slightly bowed, his lips just parted on one word nobody can hear. Beside him two empty seats, a folded white kitchen jacket on each, left behind. A small barred window shows blurred dark road. No other person, no weapons, no wounds. Quiet, recalibrated, a cost carried. The lower quarter is calm dark empty floor. Static 35mm, no text, no lettering, no watermark, no logo",
+      "model": "nano_banana_2",
+      "job_id": "6dd52d6c-4718-4da2-bc72-6f5e76923730",
+      "image": "keyart/ending-first-word.jpg",
+      "ending": "first_word"
+    },
+    {
+      "id": "ending-bond-held",
+      "kind": "ending",
+      "title": "Bond Held",
+      "aspect_ratio": "16:9",
+      "prompt": "Vintage grainy 35mm film still, desaturated cold gray-teal, heavy grain, haze, no lens flare, no gore. A dim Spire monitoring annex. At the right a handler's screen glows cold blue, its log lines too small and blurred to read, the last line marked by a single steady amber bar. In the dark glass of the screen, faint, a pale young woman with long dark hair seen only from behind, her reflection stopping short at the shoulders like a crack in the image. On the desk a small pale grey program tunic folded square beside an empty cup. Nobody else in the room. Orderly, closed, nothing mended. The lower quarter is calm dark empty desk and floor. Static locked-off 35mm, no text, no lettering, no watermark, no logo",
+      "model": "nano_banana_2",
+      "job_id": "0e012d5f-dc06-4424-ad11-51ba365b271e",
+      "image": "keyart/ending-bond-held.jpg",
+      "ending": "bond_held",
+      "needs_review": "Screen log lines are blurred glyph-like marks, not legible; the 'CALIBRATION COMPLETE' line is not shown. The reflection of Cally is on the screen, not a window."
+    },
+    {
+      "id": "ending-the-clinic",
+      "kind": "ending",
+      "title": "The Clinic",
+      "aspect_ratio": "16:9",
+      "prompt": "Vintage grainy 35mm film still, desaturated cold gray-teal, heavy grain, haze, no lens flare, no gore. Under a concrete freeway months later, a salvage settlement emptied: sagging tarp shelters with their flaps open and nobody inside, plastic water drums crusted with rust-ochre spore dust, a scatter of tin cups, a swept cold fire ring. Rust and ochre haze drifts between the pillars in thin daylight. On one drum a single amber work lamp left burning, the only warm light, hard falloff into black. Far back, one small figure from behind walks away along the road. Cost, silence. The lower quarter is calm dark empty ground. Static wide 28mm, no text, no lettering, no watermark, no logo",
+      "model": "nano_banana_2",
+      "job_id": "5590b503-d3f4-4ffe-9783-a2ccd27c889b",
+      "image": "keyart/ending-the-clinic.jpg",
+      "ending": "the_clinic"
+    },
+    {
+      "id": "ending-the-following",
+      "kind": "ending",
+      "title": "The Following",
+      "aspect_ratio": "16:9",
+      "prompt": "Vintage grainy 35mm film still, desaturated cold gray-teal, heavy grain, haze, no lens flare, no gore. A wide underground cavern hall lit by one amber work lamp. In the foreground a cloth spread on the floor with hollowed throwing knives laid out in a neat row. At the centre a tall figure seen from behind in a charcoal shroud, hood up, kneels with his scarred right forearm turned toward the lamp. Facing him in rows, adults only, thin and seated close, forty or more waiting with open hands held out, faces dim and turned toward him, some already holding crude blades. Dependence, devotion, no violence, no blood. The lower quarter is calm dark empty floor. Static 24mm, no text, no lettering, no watermark, no logo",
+      "model": "nano_banana_2",
+      "job_id": "a552d520-d7d3-4c37-ad29-61468ba4f5c9",
+      "image": "keyart/ending-the-following.jpg",
+      "ending": "the_following"
+    },
+    {
+      "id": "cast-dr-tox",
+      "kind": "character",
+      "title": "Dr. Tox (wasteland)",
+      "aspect_ratio": "2:3",
+      "prompt": "Vintage grainy 35mm film still, desaturated cold gray-teal, heavy grain, haze, no lens flare, no gore. Same man as the reference images, identical face: very pale near-bloodless white man in his early thirties, deep-set pale gray-blue eyes, prominent dark eyebrows, thin unsmiling mouth, sharp angular jaw, short dark buzzcut with slight widow's peak, tall lean sinewy build, heavy scarring on the right forearm. Full body, standing alone in a salvage settlement under a concrete freeway in rust-ochre haze, his hood up, a weathered charcoal shroud over the matte black field kit, crossed leaf-bladed throwing knives and four forearm syringe barrels showing at its edges, black gloves, utility belt, cargo trousers, combat boots. He looks just past the camera, cold and evaluating, one scarred hand held low and open. Flat overcast light, cold gray-teal concrete behind, a single amber lamp switched on far behind him. Narrow vertical contained silhouette. 85mm, static, cinematic, no text, no lettering, no watermark, no logo",
+      "model": "nano_banana_2",
+      "reference_job_ids": [
+        "15439340-7c21-402d-9930-29a16d8d79e9",
+        "3e0abdae-9c38-41b8-9ee7-a85bd04fc356"
+      ],
+      "job_id": "6f952eef-cbea-4e49-9e6d-5a1ef845474f",
+      "image": "keyart/cast-dr-tox.jpg",
+      "needs_review": "Syringe tips carry a faint green cast on the forearm gauntlet (green is reserved for the toxin loose); shroud rather than full hood-up kit view."
+    },
+    {
+      "id": "cast-rostova",
+      "kind": "character",
+      "title": "Elena Rostova (at a distance)",
+      "aspect_ratio": "2:3",
+      "prompt": "Vintage grainy 35mm film still, desaturated cold gray-teal, heavy grain, haze, no lens flare, no gore. At a great distance, tiny in the frame, a slender woman in a long dark coat stands at the rail of a rooftop, seen as a silhouette only, no face, her hair lifted by the wind. A rust-and-ochre cloud of spores and biomass drifts across the rooftops and the street below. A small camera drone hovers beside her, a cold light on its lens. Nobody else on the roof. Dread from distance, the haze doing the talking, no body horror. Narrow vertical contained composition. Static locked-off 85mm, cinematic, no text, no lettering, no watermark, no logo",
+      "model": "nano_banana_2",
+      "job_id": "94399f30-23ed-4d86-90e4-2ec3cc3e675e",
+      "image": "keyart/cast-rostova.jpg",
+      "needs_review": "Design holds her to silhouette and colour and says her key art waits for her design system; this is a distant silhouette with a camera drone, not a portrait. Her profile is faintly visible."
+    },
+    {
+      "id": "cast-cally",
+      "kind": "character",
+      "title": "Cally (from behind)",
+      "aspect_ratio": "2:3",
+      "prompt": "Vintage grainy 35mm film still, desaturated cold gray-teal, heavy grain, haze, no lens flare, no gore. Seen only from behind, a woman in her mid twenties with long dark hair, in a plain loose pale grey long-sleeved clinical uniform and trousers, stands in a quiet monitoring annex facing a tall dark pane of glass, one hand lightly at her side, her faint reflection in the glass slightly blurred and stopping short, as if it were not quite hers. She is small in the frame. Cold blue emergency light, a single dim screen far behind her. No face visible. Still, watchful, alone. Narrow vertical composition. Static locked-off 35mm, cinematic, no text, no lettering, no watermark, no logo",
+      "model": "nano_banana_2",
+      "job_id": "938b00d5-481c-4660-bc98-22859bfba8f9",
+      "image": "keyart/cast-cally.jpg",
+      "needs_review": "Retried once (first pass flagged by the safety filter); the clinical bodysuit became a loose pale grey uniform."
+    },
+    {
+      "id": "cast-reese-aegis",
+      "kind": "character",
+      "title": "Reese / Aegis",
+      "aspect_ratio": "2:3",
+      "prompt": "Vintage grainy 35mm film still, desaturated cold gray-teal, heavy grain, haze, no lens flare, no gore. Half-length portrait of a young man in his early twenties with short brown hair and an open earnest face, lean through the shoulders, faint warm amber glow under the skin at the wrists, in a plain fitted pale grey program uniform with a small blank round metal insignia on the chest. He stands in a quiet service corridor beside an open door, looking toward the camera with careful uncertainty and a trace of doubt, one hand open at his side. Light calibrated warm and gold-edged on him; the corridor around him cold gray-teal concrete. A good kid who wants to be worthy. 85mm, shallow focus, cinematic, no text, no lettering, no watermark, no logo",
+      "model": "nano_banana_2",
+      "job_id": "3c2681c1-37a7-400e-9f5b-52fb605880c2",
+      "image": "keyart/cast-reese-aegis.jpg",
+      "needs_review": "Retried once (first pass flagged by the safety filter). The amber glow at the wrists is faint and the warm light is weaker than asked; a service corridor replaces the gala door."
+    },
+    {
+      "id": "cast-observers",
+      "kind": "character",
+      "title": "The Observers of the Whole",
+      "aspect_ratio": "16:9",
+      "prompt": "Vintage grainy 35mm film still, desaturated cold gray-teal, heavy grain, haze, no lens flare, no gore. A quiet group portrait in an underground concrete cavern hall with neatly made cots, a family of failed experiments, victims first, gentle and wary: exactly five figures and one tank, nobody else in the room, all adults. At the left a figure whose left half of face and body is mottled damp olive toad skin with one wide golden toad eye, the right half human, crouched and coiled. Beside him a stooped figure covered in pulsating translucent boils, wrapped in a grey blanket. At the right two thin adult twins in their thirties with enlarged pale throat sacs, holding each other upright. At the centre a tall glass tank of perfectly clear water, a human figure floating inside almost invisible, only the faint shimmering outline of a man's shoulders and head, like heat haze. Single amber work lamp and cold fluorescent fill, dignified, sad, no violence. 35mm, static, cinematic, no text, no lettering, no watermark, no logo",
+      "model": "nano_banana_2",
+      "job_id": "74aef61f-6349-4f6d-8565-46555588ea3b",
+      "image": "keyart/cast-observers.jpg",
+      "needs_review": "Retried twice (first pass drew the twins as children facing the camera; second was flagged). Final: adult twins. The toad-skinned figure reads partly bare-chested; the Observers are five adults in a cot hall, the Ghost is the tank."
+    }
+  ]
+}
