@@ -85,7 +85,7 @@ Everything in this section is verbatim from `02_Novels/02_WrymWretch.md`.
 
 ### The author's ending
 
-None. The text stops at line 357. All four endings in section 13 are proposals and none is marked
+None. The text stops at line 357. All five endings in section 13 are proposals and none is marked
 as written.
 
 ## 4. Investment
@@ -1399,9 +1399,9 @@ words:
 | File | Holds |
 | --- | --- |
 | `game.json` | Slug, title, source path, target 160–180, one player, verb "stir", eight chapters adding to 174 |
-| `scenes.json` | Two 2D modes (`engraved`, `deep`), four 1D games (`liars-tide`, `charter`, `tea-board`, `reckoning`), and 50 scenes with reads, writes, transitions and next scenes |
+| `scenes.json` | Two 2D modes (`engraved`, `deep`), four 1D games (`liars-tide`, `charter`, `tea-board`, `reckoning`), and 55 scenes (28 3D, 10 2D, 17 1D) with reads, writes, transitions and next scenes; three added in phase 2 (`s-chandlery`, `g-reckon-backplot`, `g-charter-tab`) and five in phase 3 (`s-second-collision`, `s-the-inventory`, `s-the-oars`, `s-the-cup`, `s-end-paid-in-kind`) |
 | `flags.json` | 8 Wild meters, devotion, trust, notice; port enums; lane bools; counters for crews, clauses, ports freed, the tally; ledgers `toll`, `stirs`, `news`; `tea.final_result`, `final_choice`. Phase 2 (2026-11-16) adds the bools `crew.wenna`, `crew.gullwife`, `crew.kettle` and `backplot.good`, the ledger `bells`, and the counters `debts.answered` and `tea.cracked`. Phase 1 adds the ledger `chits`, the counter `tab.matched` and the bools `met.halse`, `tab.known`, `reckoning.countersigned`, `pay_open` |
-| `endings.json` | The four endings in section 13 |
+| `endings.json` | The five endings in section 13 (Paid in Kind added in phase 3) |
 
 Two conventions beyond the schemas: region names in flags use the region ids of section 5
 (`lanes` is Tidewater's region); and the tally counters are written once, by `s-cabin-tally`, so an
@@ -1415,7 +1415,7 @@ ending never reads a stale count.
 | M2 Vertical slice (6 weeks) | Chapters 0 to 3 in greybox, with one finished region look (the beach and cabin), `e-first-squall` and `d-first-dive` playable, Liar's Tide and Dead Reckoning complete, the first Tide Reckoning |
 | M3 1D games complete (5 weeks) | The Charter with all five documents; the Tea Board with AI at three depths and the campaign seed; Sign |
 | M4 The open chart (6 weeks) | Chapter 4's four regions in any order, lanes, all three Tide Reckonings, rescue dives |
-| M5 Endgame (4 weeks) | Chapters 5 to 7, all four endings reachable, the debug panel explaining each |
+| M5 Endgame (4 weeks) | Chapters 5 to 7, all five endings reachable, the debug panel explaining each |
 | M6 Art and audio pass (8 weeks) | Engraved 2D style, painted 3D, the hymn recorded in seven arrangements, voice |
 | M7 Balance and accessibility (4 weeks) | Playtests to 174 ± 10 minutes; each ending reached on purpose by testers told only its row in section 13 |
 

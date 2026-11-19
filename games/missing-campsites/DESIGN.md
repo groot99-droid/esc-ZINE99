@@ -1239,7 +1239,7 @@ last line of Slipped Through. Subtitles for every line.
 | File | Holds |
 | --- | --- |
 | `data/game.json` | Slug, title, source, target 75–100, one player, core verb "compare", the seven chapters of the as-written path with minutes summing to 92. |
-| `data/scenes.json` | The two 2D modes (`torchlight_loop`, `pattern_walk`), the four 1D games (`reconcile`, `pack_list`, `foil_supper`, `rangers_book`), and all 40 scene entries (`past_the_window` added in phase 3), including every branch scene, with reads, writes, transitions and next. Branch scenes sit in the chapter whose slot they fill. |
+| `data/scenes.json` | The two 2D modes (`torchlight_loop`, `pattern_walk`), the four 1D games (`reconcile`, `pack_list`, `foil_supper`, `rangers_book`), and all 42 scene entries (24 3D, 6 2D, 12 1D; two added in phase 2 and `past_the_window` in phase 3), including every branch scene, with reads, writes, transitions and next. Branch scenes sit in the chapter whose slot they fill. |
 | `data/flags.json` | Every flag, meter, counter and ledger in sections 8–13, phase 1's four (`list_items`, `first_page_read`, `backwards_lap_clean`, `recited`; section 20a), phase 2's, and phase 3's three (`notebook_burned`, `seat_fed`, `list_said`). The `anchors` ledger has fields item, weight, site, chapter. |
 | `data/endings.json` | The six endings with the conditions and costs in section 13 (Unlisted added in phase 3). |
 

@@ -815,8 +815,9 @@ dark dot with a breath plume. **His footprints stay.** Patrols follow fresh prin
 | Treading back (night 7) | Alone, 1.9 m/s (1.14 m/s treading). A print trodden on the way back turns its toes for home. The call pulls Fisk toward the wire in a straight line whenever he stands still |
 | "Frame 112" (night 7) | The frame is read when Fisk is back inside the wire. At least 85% of the out-prints trodden and no more than 6 prints beside the line: one line, caption "No crossing." Otherwise: "Crossing. One carried." Only a gap marked on Floor Plan (`fence_gap_marked`) is in the frame |
 
-The web prototype plays the carry and Frame 112 as night 7's set piece. The ending they lead to
-(One Set of Prints) is phase 3 and is not in `data/endings.json` yet.
+The web prototype plays the carry and Frame 112 as night 7's set piece. The ending they lead to,
+One Set of Prints, was added in phase 3 (2026-11-16) and is `one_set_of_prints` in
+`data/endings.json`.
 
 **Hazards:** patrols, the searchlight, deep drifts (half speed, deep prints that last twice as
 long), the open strip beyond the wire with nothing to hide in.
@@ -1627,7 +1628,9 @@ Total spoken lines are counted in section 17.
 
 - `game.json`: nine chapters, 112 minutes, target 90 to 120.
 - `scenes.json`: two 2D modes (`silhouette_halls`, `snow_line`), four 1D games (`short_rations`,
-  `the_tray`, `the_chart`, `floor_plan`), and 63 scenes: 34 in 3D, 7 in 2D, 22 1D appearances.
+  `the_tray`, `the_chart`, `floor_plan`), and 68 scenes: 38 in 3D, 8 in 2D, 22 1D appearances
+  (`n3_glovebox` and `d6_next_week` added in phase 2; `n7_set_down`, `n7_snow_back` and
+  `e_prints_bunk` in phase 3).
   Each scene lists what it reads and writes.
 - `flags.json`: every meter, counter, flag, enum and ledger in section 12, including five ledgers
   (`meals`, `rules_broken`, `the_list`, `taken`, and `schedule_strips`), and the two flags of the
@@ -1726,7 +1729,7 @@ institution that exploits the legend:
 | Feeding crew to move the call is read as a rescue | It only moves the call; every chair still empties by night 5; the ledger records who Fisk fed |
 | Graphic content creeps in through art | Art bible rule: no close-ups of bodies; the figure backlit; the cave table under a sheet; review at M6 |
 | The as-written ending as the catch-all feels like a punishment | Each of the other three endings is announced by play (the offer, the fence, the bread) well before night 7 |
-| Scope: 34 3D scenes | Most share the hall kit and the bunk room; 15 environment sets cover them |
+| Scope: 38 3D scenes | Most share the hall kit and the bunk room; 15 environment sets cover them |
 
 **Answered** (by Claude at the author's request, 2026-11-12, from the source text; the author can overrule any of them).
 

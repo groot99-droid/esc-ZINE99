@@ -76,7 +76,7 @@ Two details shape the game. The father and the son share a name: the storyteller
 "Xandri", and Xadra calls the boy "Xandri". And the chapter's title is "The Never-Ending Dunes and
 The Wondering Xandrixes", which the Naming can rebuild (section 11).
 
-**The author's ending.** There is none. The source stops on the dunes. All four endings are
+**The author's ending.** There is none. The source stops on the dunes. All five endings are
 proposals, and none is marked as written.
 
 ## 4. Investment
@@ -1242,7 +1242,7 @@ repository. `python tools/validate.py endless-temple` runs it.
 | M1 Greybox hub (3 weeks) | Temple in grey boxes; the chair; push-in and pull-out transitions; tea_hold and pov switching on a test book |
 | M2 Vertical slice (6 weeks) | c1 and c2 complete with final art for the halls, pantry and circle: the dream, the Naming tutorial, Tea Blending (two appearances), the shrine-store tablet, the first fade to "he", the first mark. This proves the core idea: reading as a control system. |
 | M3 Book One greybox (5 weeks) | c4, c6, c9: all four living illustration sequences for Xandri; the herd; the father's walk; the gods' tablet; all three fates |
-| M4 Hub systems (4 weeks) | Stacks (4 sequences), Clasps (5), steep and sand leak, the past pack loader, the last cup, the resolver and debug panel; all four endings reachable in greybox |
+| M4 Hub systems (4 weeks) | Stacks (4 sequences), Clasps (5), steep and sand leak, the past pack loader, the last cup, the resolver and debug panel; all five endings reachable in greybox |
 | M5 Books Two and Three (5 weeks) | Hollin and the Procession complete in greybox, then art |
 | M6 Art and audio (8 weeks) | Final art, music, voice; captions in both voices |
 | M7 Polish and test (4 weeks) | Playwright walk-throughs for each ending; accessibility pass; timing tests against the chapter minutes |
@@ -1438,14 +1438,14 @@ reads does.
 | --- | --- | --- | --- | --- | --- |
 | 1 | The Edge | Source | `s3_abyss_dream` | The abyss, in "I" | Existing |
 | 2 | The Hand That Shot Up | Source | `s3_circle` | The game records whether the player raised it or let "instinct" do it (`hand_was`) | 2 |
-| 3 | The Well-Post | New | Scene to add (c2, on a linger) | Xadra lets him go | 2 |
+| 3 | The Well-Post | New | `s3_well_post` (c2, on a linger; added in phase 2) | Xadra lets him go | 2 |
 | 4 | One More Dune | New | A beat on the existing marks (sections 7 and 12) | After a linger, Xandri wakes 200 m from where he lay down, feet raw | 2 |
 | 5 | The Clerk's Chair | Existing | `s3_hollin_choice` | A post held for life, chosen for someone else | Existing |
 | 6 | **The Other Hand** (midpoint reversal) | New | A beat in the existing `s3_father_walk` | The ringed hand. The helper was the first offender, and the player has been doing what he did | First appearance in 1; played out in 2 |
-| 7 | The Ledger Turned Over | New | Scene to add (c6, the pantry after the father's walk) | The back pages are a day count that matches the father's journal, stopping at forty. New verb: **Look away** | The ledger's two sides in 1; the scene and the standing verb in 2 |
+| 7 | The Ledger Turned Over | New | `s3_ledger_turned` (c6, the pantry after the father's walk; added in phase 2) | The back pages are a day count that matches the father's journal, stopping at forty. New verb: **Look away** | The ledger's two sides in 1; the scene and the standing verb in 2 |
 | 8 | The Scribe's Shake | Existing | `s3_scribe_wagon`, `s2_li_c7` | Played knowing what a second hand on a pen does | Existing |
 | 9 | Wenna Counts | New | A beat in the existing `s3_abyss_return` | The past stops being a file and becomes a person asking | 2 |
-| 10 | **Xandri Does Not Get Up** (darkest moment) | New | Scene to add (c9, at the father's ring of stones) | The boy lies down. His strength is what the player's lingers and sips left him (`walked`). One prompt appears on the page: "One more page." It works. He rises without input and walks | 2 |
+| 10 | **Xandri Does Not Get Up** (darkest moment) | New | `s3_ring_of_stones` (c9, at the father's ring of stones; added in phase 2) | The boy lies down. His strength is what the player's lingers and sips left him (`walked`). One prompt appears on the page: "One more page." It works. He rises without input and walks | 2 |
 | 11 | The Herd at the Mark | Existing, plus one new choice | `s3_herd_final` | Climb, follow, turn back, or Look away and do not look back (`unseen`) | 3 (built 2026-11-16) |
 | 12 | The Last Cup | Existing | `s3_last_cup` | Set it down or drink | Existing; the Parting Cup in 1 |
 

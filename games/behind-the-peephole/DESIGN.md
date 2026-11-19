@@ -1469,7 +1469,7 @@ consistent and cited, not that the grids are unique.
 | 3. The Statement and a solver | The grid page; signing and stamping; a solver that proves each grid is unique from the full beats and solvable from office clues plus any 60 % of beats (run in CI). | 3 weeks |
 | 4. **Vertical slice: night one and night two** | Arrival to the second morning, in final art for 402, 403 and the passage; Lockwork's drawer; Night Patience with cards 1–2; the Mosaic's first links. About 40 minutes. | 6 weeks |
 | 5. Nights three to five | The back stair; the gap; the wafer lock; the blackout; names. | 6 weeks |
-| 6. Nights six and seven, and the endings | The safe and the stranger's walk; the Account; the knock; the slide run; four endings; the file page. | 5 weeks |
+| 6. Nights six and seven, and the endings | The safe and the stranger's walk; the Account; the knock; the slide run; five endings; the file page. | 5 weeks |
 | 7. Content pass | All 24 room plates, all cut-outs, all clue sketches, voice. | 8 weeks |
 | 8. Tuning | Beat windows and suspicion rates from playtests (target: a first run catches 45–60 % of beats and gets 20–28 rows right); patience deals proven winnable; accessibility pass. | 4 weeks |
 | 9. Second shift and polish | Carbon cards; the debug panel; Playwright walk-throughs of each ending. | 3 weeks |

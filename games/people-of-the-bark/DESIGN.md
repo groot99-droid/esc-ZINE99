@@ -489,14 +489,13 @@ Each chapter lists its scenes in order with scene ids from `data/scenes.json`.
      open.
   8. `c4_door` (1D The Ring Door, 3 min). The Deep Knot door: four rings. Its third ring shows
      the Great Flake.
-- **Scene to add (accepted 2026-11-15, phase 1; not yet in `data/scenes.json`):** `c4_omen_pulse`
-  (1D Omen Spread, 3 min), after `c4_scroll` and before `c4_ants`. One autumn night a small steady
+- **Added scene (accepted 2026-11-15; in `data/scenes.json` since phase 2, 2026-11-16, at 2 min; section 21):** `c4_omen_pulse`
+  (1D Omen Spread), after `c4_scroll` and before `c4_ants`. One autumn night a small steady
   tapping wakes Highridge. It comes from no face of the Trunk. The Knot calls it the Trunk's Pulse
   and lays a spread. The player holds Tab, as always: the camera rises over a dark yard and a lit
   window, nothing moving, and the Backyard card turns over **blank**. This is the midpoint: for
-  the first time the player knows no more than Pell does (section 11.1, The Pulse). Its 3 minutes
-  come out of chapter 4's 32 when the scene joins the data; `c4_scroll` gains the faceless row
-  (section 11.5) in the same pass.
+  the first time the player knows no more than Pell does (section 11.1, The Pulse). Its 2 minutes
+  are inside chapter 4's 35 (section 21); `c4_scroll` gains the faceless row (section 11.5).
 - **What the player learns:** The Fit rule; that something is coming at the year's turn; and,
   from the Pulse, that not every cause can be looked up.
 - **Flags set:** `prophecy.suit`, `expedition.heard`, `ant_reading`, `recipes_found`.
@@ -765,7 +764,7 @@ it."). A "Lay the reading" button seals it.
   Policy names the heir of the deck: Eye → Chanter Hollow (`pell.heir = hollow`, Knot +8);
   Spear → Captain Burr (`burr`, Battlements +8); Quill → Fenn (`fenn`, Scroll House +8); balanced →
   Twig (`twig`, each +3). Meaning has no effect here.
-- **The Pulse** (`c4_omen_pulse`, a scene to add; accepted 2026-11-15, phase 1). The event card
+- **The Pulse** (`c4_omen_pulse`, accepted 2026-11-15, added in phase 2). The event card
   is the Pulse: no suit, so the Meaning comes from the three placed cards alone (ties still go to
   Root). There is no Clear and no Bold. The Backyard card is there, because the player looked up,
   and it turns over blank: no cause and no fit suit, so no Fit can be had and the preview says
@@ -820,7 +819,7 @@ Clear, Bold and Fit.
 | 4 | `c3_omen_beetle` | 4–5 | The reading decides god or monster: lives at stake |
 | 5 | `c4_omen_leaf` | 4–6 | Also decides the ants, later this season; Pell reads his own death in it |
 | 6 | `c4_omen_song` | 4–6 | The Crown card becomes the prophecy |
-| 6a | `c4_omen_pulse` (to add) | 4–6 | The Pulse: no suit, and a blank Backyard card |
+| 6a | `c4_omen_pulse` (added in phase 2) | 4–6 | The Pulse: no suit, and a blank Backyard card |
 | 7 | `c5_omen_pell` | 6 | The heir |
 | 8 | `c6_omen` | 4–7 | The Shadow; the Year deck; the first honest deal |
 
@@ -1184,7 +1183,7 @@ A reading whose Meaning is the fit suit pays off in practice. The people never l
 | The Beetle | `c3_omen_beetle` | A shape as big as a city climbs from the Under | A ground beetle, wandering | Mandible | Read as god: no losses; read as monster: −1 line of will to drain |
 | The Leaf | `c4_omen_leaf` | A country-sized leaf falls past | Autumn | Leaf | Food +15 (they store against the dark) |
 | The Birdsong | `c4_omen_song` | A singer above, five phrases | A small bird before it migrates | Song | Food +10, and the prophecy line names "the seventh day" |
-| The Pulse (accepted 2026-11-15) | `c4_omen_pulse` (to add) | A small steady tapping in the night, from no face of the Trunk | None is shown: the Backyard card is blank | — | — |
+| The Pulse (accepted 2026-11-15) | `c4_omen_pulse` (added in phase 2) | A small steady tapping in the night, from no face of the Trunk | None is shown: the Backyard card is blank | — | — |
 | The Year | `c5_omen_pell` | Pell's last reading | — | — | — |
 | The Shadow | `c6_omen` | The world goes dark | A hand, checking for termites | — | — |
 
@@ -1487,7 +1486,7 @@ speaks, in any ending.
 | File | Holds |
 | --- | --- |
 | `game.json` | Title, source, 150–180 minutes, one player, core verb "interpret", the seven chapters with minutes (total 179) and layers |
-| `scenes.json` | Two 2D modes (`crack_runner`, `crack_defence`, both `scroll`); five 1D games; 53 scenes, every 3D scene, 2D sequence and 1D appearance in this document, with chapter, reads, writes, transitions, next and minutes. `c6_stand`, `c6_war`, `c6_edge` and `c6_offering` are alternatives: a run plays one, so chapter 6's minutes count one of them |
+| `scenes.json` | Two 2D modes (`crack_runner`, `crack_defence`, both `scroll`); five 1D games; 54 scenes (23 3D, 8 2D, 23 1D; five added in phase 2 and `c6_ring` in phase 3), every 3D scene, 2D sequence and 1D appearance in this document, with chapter, reads, writes, transitions, next and minutes. `c6_stand`, `c6_war`, `c6_edge` and `c6_offering` are alternatives: a run plays one, so chapter 6's minutes count one of them |
 | `flags.json` | Every flag, meter, counter and ledger used: the three standings, `year.leading`, `shadow_reading`, the economy meters, forecasts, readings, councils, the Roll, the cast flags |
 | `endings.json` | The five endings with their conditions and costs as in section 13 (The Ring added in phase 3); `shadow_passes` is `as_written` and the catch-all |
 
@@ -1544,7 +1543,7 @@ place.
 | M1 Vertical slice | Chapter 1 complete (`c1_city_dawn` to `c1_city_year`) at final art quality: the Tremor, the pull-back to the squirrel, Omen Spread and Tremor Scroll | 6 weeks |
 | M2 The year's systems | Council, economy, building, all five 1D games in first form, both 2D modes in greybox | 8 weeks |
 | M3 Spring and summer | Chapters 2 and 3 playable start to end with placeholder art | 6 weeks |
-| M4 Autumn, winter, Shadow | Chapters 4 to 7, all four endings reachable; debug panel for the resolver | 8 weeks |
+| M4 Autumn, winter, Shadow | Chapters 4 to 7, all five endings reachable; debug panel for the resolver | 8 weeks |
 | M5 Art and audio | Final art for all scenes; music; voices | 10 weeks |
 | M6 Tuning and access | Playtests for minutes per chapter (target ±10%); accessibility pass; ending reachability tests in Playwright (one scripted run per ending) | 5 weeks |
 

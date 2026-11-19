@@ -1566,7 +1566,7 @@ selectable prologue order; the remaining new mode elements; chapter cards and or
 list as Ysolde's hand), the framing of Guests of Honour, and scene 12. They are marked "Later"
 above; The Empty Saddle's fourth answer depends on them.
 
-**Scenes to add later:** the ending scene of The Empty Saddle (phase 3). Phase 1 added none; `data/scenes.json` keeps its scenes; only `reads` and `writes`
+**Scenes to add later:** the ending scene of The Empty Saddle (phase 3; added 2026-11-16 as `s_end_saddle`). Phase 1 added none; `data/scenes.json` keeps its scenes; only `reads` and `writes`
 changed.
 
 ### What phase 2 built (2026-11-16)

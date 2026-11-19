@@ -138,7 +138,7 @@ words. The source says it at the very end, and the players learn it with their h
 | The shaft | "a vertical tunnel lined with soft, living tissue" | `s3_shaft`, `s2_climb_1`, `s2_climb_2` |
 | The Bloodstream | "A vast, winding, crimson waterway that coils through the body like the Amazon." | `s3_river`, `s2_river_1`, `s2_river_2` |
 | The delta | Branching vessels "like river deltas"; narrower, faster | `s3_delta`, `s2_river_3` |
-| The backwater | A still side pool off the delta with no current, its water dull grey-rose; an old grey raft is moored in it (accepted 2026-11-15) | Scene to add: `s3_backwater`; reached on `s1_chart_2` by the Fourth Branch |
+| The backwater | A still side pool off the delta with no current, its water dull grey-rose; an old grey raft is moored in it (accepted 2026-11-15) | `s3_backwater` (added 2026-11-16, phase 2); reached on `s1_chart_2` by the Fourth Branch |
 | The heart | "A massive, thundering structure of muscle and light, beating with ancient purpose." | `s3_heart` |
 | The narrow vessel | Where each brother rides alone at the end | `s3_vessel`, `s3_vessel_two` |
 | The hold | The translucent inside of an immune beast | `s3_hold`, `s3_hold_turn` |
@@ -405,7 +405,7 @@ moves two later, chapter 3 runs 11 minutes, and the whole runs 65.
   beasts in the narrows.
 - **The darkest moment (accepted 2026-11-15).** The last junction of `s1_chart_2` has a fourth
   branch in another hand's ink. It leads to the backwater and the Finished Board (`s3_backwater`,
-  scene to add), and back to the fork with less time. Flag: `run.saw_finished_board`.
+  added in phase 2), and back to the fork with less time. Flag: `run.saw_finished_board`.
 - **Flags.** As chapter 6, plus `run.song_last_beat`, `self.taught_pulse`, `run.saw_finished_board`.
 - **Ends.** The vessel opens out into a red light, and the sound of the heart fills everything.
 
@@ -466,7 +466,7 @@ phase 1; phase 2 (2026-11-16) added the five scenes listed under the table below
 | `s3_river` | Boarding: the patch on the raft's flank and its mark (look, or lay a hand on it); writes `self.saw_raft_mark`. Card: "The raft is warm where you sit. It was waiting before you were born." |
 | `s3_vessel` | Carried Away: he turns the gift over and finds the Underside, if one was cut, before the last three lines. Reads `self.underside_held` |
 | `s3_vessel_two` | Two Together: after the 3 minutes a valve opens between the two, without struggle or prompt, and each rides on alone |
-| `s3_lamps` | The One Who Stayed: one more image after the lamps (below, scene to add) |
+| `s3_lamps` | The One Who Stayed: one more image after the lamps (below, `s3_bank_years_on`, added in phase 2) |
 | `s3_hold` | Taken by the River: his gift begins to sink into the Warden's skin among the others; holding it means he cannot knock. Writes `self.hold_kept_gift` |
 
 **Scenes added in phase 2 (accepted 2026-11-15, built 2026-11-16).** Five scenes are now in
@@ -770,7 +770,7 @@ pulsing on the beat. Text size and colour settings apply. Every timed page can b
     so it loses every tie, and no companion votes for it by temperament. Listening to it gives
     neither answer: no pulse at all, not even the heart's. Once a brother has listened to it, the one
     who dreams sets his piece on it; with one more piece it carries the vote. It leads to the
-    backwater and the Finished Board (`s3_backwater`, scene to add). The raft then comes back to the
+    backwater and the Finished Board (`s3_backwater`, added in phase 2). The raft then comes back to the
     same fork with the fourth branch gone and 12 seconds on the timer. No new rule is used: Listen,
     Vote, and the tie-break as written.
 - **What branches change.**
@@ -1126,7 +1126,7 @@ finished it, humming the group's song if he kept time with the child. The unfini
 left is in the hall with the others. The cost: he lost their voices the moment the shaft sealed,
 with no goodbye, and felt each of them go at the heart as a skipped beat in the wall.
 
-Accepted 2026-11-15: a last image after the lamps (`s3_bank_years_on`, scene to add). Old, he
+Accepted 2026-11-15: a last image after the lamps (`s3_bank_years_on`, added in phase 2). Old, he
 climbs the shaft alone. A raft waits at the bank with his mark in its flank, and four small figures
 come out of the bone. He carries others to the parting he refused.
 
@@ -1288,14 +1288,15 @@ collection (`docs/COLLECTION.md` section 7). Pictographs: `pictographs/<key>.svg
 
 - `game.json`: the nine chapters, their minutes (65 total) and layers.
 - `scenes.json`: two 2D modes (`m2_river`, `m2_climb`), four 1D games (`g1_carving`, `g1_song`,
-  `g1_counters`, `g1_chart`), and 35 scenes: 18 3D, 7 2D and 10 1D appearances.
+  `g1_counters`, `g1_chart`), and 37 scenes: 20 3D, 7 2D and 10 1D appearances (`s3_backwater`
+  and `s3_bank_years_on` added in phase 2).
 - `flags.json`: every flag, meter, counter and ledger. Names that begin with `self.` are per-player
   state: each client's store holds its own player's values under them, and the host keeps every
   seat's copy. Names that begin with `run.` are shared and replicated by the host. The schema allows
   the dot; the scoping is this game's convention, carried by the networking layer, not the resolver
   (section 13). `run.separations` makes each separation at the heart shared, so that a client never
   needs another seat's `self.` values.
-- `endings.json`: the four endings above, priorities 1 to 4, Carried Away last with `when: true`
+- `endings.json`: the five endings above, priorities 1 to 5 (The Open Hand added in phase 3), Carried Away last with `when: true`
   and `as_written: true`. It uses only the schema's keys.
 
 Phase 1 of the accepted development (2026-11-15) adds six names to `flags.json` and one field to a

@@ -874,7 +874,7 @@ The check confirms that every flag whose description starts with "PROFILE" is a 
 | M1 Vertical slice (8 weeks) | Chapters 9 and 10 finished: Group B arrives, the shelf day, Sound in the dollhouse, Stuffing at dawn. Proves the second half stays tense, the main risk |
 | M2 Act 1 (8 weeks) | Chapters 1–5 in greybox with all incidents, Shelve and Keep, tokens, Stitchwork 1, the book |
 | M3 Act 2 (4 weeks) | Chapters 6–8, the hunt group's first night, the door |
-| M4 Act 3 complete (8 weeks) | Chapters 11–14, Parlour, Scent, Proximity, the labyrinth from above; all four endings |
+| M4 Act 3 complete (8 weeks) | Chapters 11–14, Parlour, Scent, Proximity, the labyrinth from above; all five endings |
 | M5 The loop (3 weeks) | The profile, Group C, elders, run-2 changes |
 | M6 Art and audio (10 weeks, overlapping M3–M5) | Final textiles, voice, music |
 | M7 Balance and accessibility (4 weeks) | Memory economy tuned so a first, un-optimised run ends in the Cycle with 0–3 memories; Warning reachable on purpose in about one of three deliberate attempts |
