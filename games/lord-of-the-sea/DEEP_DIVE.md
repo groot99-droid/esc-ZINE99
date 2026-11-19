@@ -1,5 +1,7 @@
 # The Lord of the Sea: deep dive
 
+> **Status, 2026-11-19:** Historical record, kept as written on 2026-11-14. Current state: the author accepted this plan on 2026-11-15, and its three phases were built on 2026-11-15 and 2026-11-16 into `DESIGN.md` (section 21, which also lists what is still not built), `data/` (the new ending, Paid in Kind (`paid-in-kind`), is in `data/endings.json`) and `web/games/lord-of-the-sea/`; the code-drawn art is in `art/` and the key art and ending cards in `keyart/`. Superseded by `DESIGN.md`; the additions register below stays for the author to approve or strike.
+
 Everything marked NEW is a proposal for the author to approve or strike (section 6). The source is
 `02_Novels/02_WrymWretch.md`, lines 270–357, quoted verbatim and never changed. It has no ending,
 so every ending here is a proposal.

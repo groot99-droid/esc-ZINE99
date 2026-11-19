@@ -1,5 +1,7 @@
 # Behind the Peephole: storyboard additions (phase 2, 2026-11-16)
 
+> **Status, 2026-11-19:** Historical record, kept as written on 2026-11-16. Current state: every row here was merged into `docs/STORYBOARDS.md` section 2 on 2026-11-16, where `python tools/check_storyboards.py` checks it. Superseded by `docs/STORYBOARDS.md`.
+
 Rows to merge into section 2 of `docs/STORYBOARDS.md`, in that section's column format. The
 section's numbered panels end at 13; these continue it. By story order they belong after panel 7
 (14), after panel 8 (15 to 17). No new stills.

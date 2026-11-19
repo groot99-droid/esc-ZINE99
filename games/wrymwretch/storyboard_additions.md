@@ -1,5 +1,7 @@
 # WrymWretch: storyboard additions (phase 2, built 2026-11-16)
 
+> **Status, 2026-11-19:** Historical record, kept as written on 2026-11-16. Current state: every row here was merged into `docs/STORYBOARDS.md` section 5 on 2026-11-16, where `python tools/check_storyboards.py` checks it. Superseded by `docs/STORYBOARDS.md`.
+
 Rows for the scenes phase 2 added, in the column format of section 5 of `docs/STORYBOARDS.md`,
 numbered to continue it (the section's last numbered row is 13). In story order row 14 falls after
 the tuning of the Bone Choir (`s_heart_choir`) and before the seal, and row 15 after Forgetting run IV

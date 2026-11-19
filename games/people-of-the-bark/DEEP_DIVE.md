@@ -1,5 +1,7 @@
 # People of the Bark — Deep Dive
 
+> **Status, 2026-11-19:** Historical record, kept as written on 2026-11-14. Current state: the author accepted this plan on 2026-11-15, and its three phases were built on 2026-11-15 and 2026-11-16 into `DESIGN.md` (section 21, which also lists what is still not built), `data/` (the new ending, The Ring (`the_ring`), is in `data/endings.json`) and `web/games/people-of-the-bark/`; the code-drawn art is in `art/` and the key art and ending cards in `keyart/`. Superseded by `DESIGN.md`; the additions register below stays for the author to approve or strike.
+
 Everything invented here is an **addition**, listed in section 6 for the author to approve or
 strike. The source, `creative-writing/vault/05_Worldbuilding/01_People_of_the_Bark.md`, is quoted
 verbatim and never changed. The as-written ending, The Shadow Passes, stays as it is.

@@ -1,5 +1,7 @@
 # The Stuffed Ones: deep dive
 
+> **Status, 2026-11-19:** Historical record, kept as written on 2026-11-14. Current state: the author accepted this plan on 2026-11-15, and its three phases were built on 2026-11-15 and 2026-11-16 into `DESIGN.md` (section 21, which also lists what is still not built), `data/` (the new ending, The Page (`the_page`), is in `data/endings.json`) and `web/games/stuffed-ones/`; the code-drawn art is in `art/` and the key art and ending cards in `keyart/`. Superseded by `DESIGN.md`; the additions register below stays for the author to approve or strike.
+
 Everything marked **NEW** is my invention and is listed again in section 6. Quotations are verbatim
 from `02_Novels/01_The_Stuffed_Ones.md` in the vault, cited by chapter. The source and the
 `as_written` ending are untouched.

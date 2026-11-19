@@ -1,5 +1,7 @@
 # Missing Campsites: deep dive
 
+> **Status, 2026-11-19:** Historical record, kept as written on 2026-11-14. Current state: the author accepted this plan on 2026-11-15, and its three phases were built on 2026-11-15 and 2026-11-16 into `DESIGN.md` (section 20a, which also lists what is still not built), `data/` (the new ending, Unlisted (`unlisted`), is in `data/endings.json`) and `web/games/missing-campsites/`; the code-drawn art is in `art/` and the key art and ending cards in `keyart/`. Superseded by `DESIGN.md`; the additions register below stays for the author to approve or strike.
+
 A design document with a point of view. Everything proposed here is an addition unless it is marked
 as the source's or as already in `DESIGN.md`; section 6 lists every invention on one line each. The
 source is `04_Book_Concepts/02_Missing_Campsites.md` in the vault and is not touched.

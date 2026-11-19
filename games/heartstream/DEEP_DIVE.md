@@ -1,5 +1,7 @@
 # A Journey Into the Heartstream: deep dive
 
+> **Status, 2026-11-19:** Historical record, kept as written on 2026-11-14. Current state: the author accepted this plan on 2026-11-15, and its three phases were built on 2026-11-15 and 2026-11-16 into `DESIGN.md` (section 20A, which also lists what is still not built), `data/` (the new ending, The Open Hand (`open_hand`), is in `data/endings.json`) and `web/games/heartstream/`; the code-drawn art is in `art/` and the key art and ending cards in `keyart/`. Superseded by `DESIGN.md`; the additions register below stays for the author to approve or strike.
+
 Source: `creative-writing/vault/03_Stories/02_A_Journey_Into_the_Heartstream_-_The_Rite_of_the_Blue-Born.md`,
 quoted verbatim, never edited. Everything marked NEW or listed in section 6 is a proposal. Carried
 Away, the as-written ending, keeps its condition and its last three lines.

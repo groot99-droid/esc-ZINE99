@@ -1,5 +1,7 @@
 # Project: Man Eater — storyboard additions (phase 2, 2026-11-16)
 
+> **Status, 2026-11-19:** Historical record, kept as written on 2026-11-16. Current state: every row here was merged into `docs/STORYBOARDS.md` section 6 on 2026-11-16, where `python tools/check_storyboards.py` checks it. Superseded by `docs/STORYBOARDS.md`.
+
 Rows to merge into section 6 of `docs/STORYBOARDS.md`, in that section's column format, numbered to
 continue it (the section ends at panel 13 before its E rows). Both scenes were accepted on
 2026-11-15 and added to `data/scenes.json` on 2026-11-16. In story order, 14 follows panel 8

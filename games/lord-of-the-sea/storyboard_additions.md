@@ -1,5 +1,7 @@
 # The Lord of the Sea: storyboard additions (phase 2, 2026-11-16)
 
+> **Status, 2026-11-19:** Historical record, kept as written on 2026-11-16. Current state: every row here was merged into `docs/STORYBOARDS.md` section 10 on 2026-11-16, where `python tools/check_storyboards.py` checks it. Superseded by `docs/STORYBOARDS.md`. Its still links are written relative to `docs/`, where the rows now sit.
+
 Rows for `docs/STORYBOARDS.md`, section 10, in that section's columns, numbered to continue it (the
 board ends at 13, then the E rows). All three scenes are accepted additions (2026-11-15), not the
 author's text. In play order they fall after rows 5, 8 and 9: the chandlery before the Tidewater dice

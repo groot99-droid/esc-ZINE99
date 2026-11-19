@@ -1,5 +1,7 @@
 # The Endless Temple: storyboard additions (phase 2)
 
+> **Status, 2026-11-19:** Historical record, kept as written on 2026-11-16. Current state: every row here was merged into `docs/STORYBOARDS.md` section 9 on 2026-11-16, where `python tools/check_storyboards.py` checks it. Superseded by `docs/STORYBOARDS.md`.
+
 Three 3D scenes added to `data/scenes.json` on 2026-11-16 (accepted 2026-11-15, built 2026-11-16).
 The rows below continue section 9 of `docs/STORYBOARDS.md` in its own column format, so they can be
 merged in afterwards. In play order they fall after panel 4 (`s3_well_post`), after panel 8

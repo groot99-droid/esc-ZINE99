@@ -1,5 +1,7 @@
 # The Stuffed Ones: storyboard additions (phase 2, 2026-11-16)
 
+> **Status, 2026-11-19:** Historical record, kept as written on 2026-11-16. Current state: every row here was merged into `docs/STORYBOARDS.md` section 1 on 2026-11-16, where `python tools/check_storyboards.py` checks it. Superseded by `docs/STORYBOARDS.md`.
+
 Rows for the four scenes added in phase 2, in the column format of section 1 of
 `docs/STORYBOARDS.md` and numbered to continue it (the section ends at panel 13). In story order,
 14 and then 15 fall between panels 2 and 3, and 16 and then 17 between panels 11 and 12. None has

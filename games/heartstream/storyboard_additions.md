@@ -1,5 +1,7 @@
 # A Journey Into the Heartstream: storyboard additions (phase 2, 2026-11-16)
 
+> **Status, 2026-11-19:** Historical record, kept as written on 2026-11-16. Current state: every row here was merged into `docs/STORYBOARDS.md` section 7 on 2026-11-16, where `python tools/check_storyboards.py` checks it. Superseded by `docs/STORYBOARDS.md`.
+
 Rows for the five scenes added to `data/scenes.json` in phase 2, in the column format of section 7
 of `docs/STORYBOARDS.md`, numbered to continue it (its last numbered panel is 13). To merge: paste
 the numbered rows after panel 13 and the `E` row after the section's other `E` rows. In play order

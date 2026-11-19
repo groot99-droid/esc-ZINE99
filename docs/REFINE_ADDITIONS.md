@@ -1,5 +1,7 @@
 # Lines added in the refine pass — for the author to keep or strike
 
+> **Status, 2026-11-19:** Historical record, kept as written on 2026-11-13. Current state: the web modes it lists (`web/games/<slug>/`) were reworked in the three phases of the accepted development (2026-11-15 and 2026-11-16), so some of these lines have since been rewritten or dropped (about two thirds of the quoted lines were still in the modes on this date). The live record of what was added for each game is the "Added for the game" section of its `DESIGN.md`; the lines below stay for the author to keep or strike.
+
 Written 2026-11-13. Every line below was written for the games and is not the author's text, except where marked as a verbatim quote already in DESIGN.md. New rules and retuned numbers are listed too.
 
 ---

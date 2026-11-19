@@ -1,5 +1,7 @@
 # Missing Campsites: storyboard additions (phase 2, 2026-11-16)
 
+> **Status, 2026-11-19:** Historical record, kept as written on 2026-11-16. Current state: every row here was merged into `docs/STORYBOARDS.md` section 3 on 2026-11-16, where `python tools/check_storyboards.py` checks it. Superseded by `docs/STORYBOARDS.md`.
+
 Two rows to merge into section 3 of `docs/STORYBOARDS.md`, after panel 12 and before the ending
 rows. They are numbered to continue the section; in play order `channel_two` falls between panels 5
 and 6, and `supper_for_two` between panels 7 and 8. Neither has a reference still yet.

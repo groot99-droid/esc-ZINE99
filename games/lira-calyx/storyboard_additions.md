@@ -1,5 +1,7 @@
 # Storyboard additions: The Redacted Testament of Lira Calyx (phase 2, 2026-11-16)
 
+> **Status, 2026-11-19:** Historical record, kept as written on 2026-11-16. Current state: every row here was merged into `docs/STORYBOARDS.md` section 4 on 2026-11-16, where `python tools/check_storyboards.py` checks it. Superseded by `docs/STORYBOARDS.md`.
+
 Rows to merge into section 4 of `docs/STORYBOARDS.md`, in that section's column format, numbered to continue it (the section ends at panel 15). In play order they fall after `b2-cipher-1`, after `b3-hiding`, and after `b3-three-nights`. Accepted 2026-11-15, built 2026-11-16.
 
 | # | Layer | Scene | Shot | Beat | Into next | Still |

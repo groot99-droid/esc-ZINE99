@@ -1,5 +1,7 @@
 # Project: Man Eater — deep dive
 
+> **Status, 2026-11-19:** Historical record, kept as written on 2026-11-14. Current state: the author accepted this plan on 2026-11-15, and its three phases were built on 2026-11-15 and 2026-11-16 into `DESIGN.md` (the section "Accepted development (2026-11-15)", which also lists what is still not built), `data/` (the new ending, One Set of Prints (`one_set_of_prints`), is in `data/endings.json`) and `web/games/man-eater/`; the code-drawn art is in `art/` and the key art and ending cards in `keyart/`. The 22:00 slot and the figure's replacement still wait on the cultural consultant (`CONSULTATION_BRIEF.md`). Superseded by `DESIGN.md`; the additions register below stays for the author to approve or strike.
+
 Source: `03_Stories/07_Project_-_Man_Eater.md` in `creative-writing/vault/` (cited below by line).
 Nothing here edits the source or `DESIGN.md`. Everything marked NEW, and everything in section 6, is
 a proposal for the author to approve or strike. The Zoo stays `as_written`. The figure stays a

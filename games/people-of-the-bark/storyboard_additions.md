@@ -1,5 +1,7 @@
 # People of the Bark: storyboard additions (phase 2, 2026-11-16)
 
+> **Status, 2026-11-19:** Historical record, kept as written on 2026-11-16. Current state: every row here was merged into `docs/STORYBOARDS.md` section 8 on 2026-11-16, where `python tools/check_storyboards.py` checks it. Superseded by `docs/STORYBOARDS.md`.
+
 Rows to merge into section 8 of `docs/STORYBOARDS.md`, in that section's columns, numbered to
 continue it (its last numbered row is 13). In play order they fall after rows 3, 5, 5, 5 and
 before row 6: `c2_sorrel_wall` follows `c2_run`; `c3_thumb` precedes `c3_tns`; `c4_omen_pulse`

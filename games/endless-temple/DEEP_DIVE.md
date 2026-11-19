@@ -1,5 +1,7 @@
 # The Endless Temple: deep dive
 
+> **Status, 2026-11-19:** Historical record, kept as written on 2026-11-14. Current state: the author accepted this plan on 2026-11-15, and its three phases were built on 2026-11-15 and 2026-11-16 into `DESIGN.md` (section 20A, which also lists what is still not built), `data/` (the new ending, The Unread Page (`unread_page`), is in `data/endings.json`) and `web/games/endless-temple/`; the code-drawn art is in `art/` and the key art and ending cards in `keyart/`. Superseded by `DESIGN.md`; the additions register below stays for the author to approve or strike.
+
 Everything proposed here is an addition for the author to approve or strike (listed in section 6).
 The source is `creative-writing/vault/02_Novels/05_The_Endless_Temple_-_Elaris_Sel_Marden.md`. It
 has no ending, so every ending here is a proposal.

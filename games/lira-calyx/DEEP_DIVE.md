@@ -1,5 +1,7 @@
 # The Redacted Testament of Lira Calyx: deep dive
 
+> **Status, 2026-11-19:** Historical record, kept as written on 2026-11-14. Current state: the author accepted this plan on 2026-11-15, and its three phases were built on 2026-11-15 and 2026-11-16 into `DESIGN.md` (section 21, which also lists what is still not built), `data/` (the new ending, Errata (`errata`), is in `data/endings.json`) and `web/games/lira-calyx/`; the code-drawn art is in `art/` and the key art and ending cards in `keyart/`. Superseded by `DESIGN.md`; the additions register below stays for the author to approve or strike.
+
 Source: `05_Worldbuilding/02_The_Redacted_Testament_of_Lira_Calyx.md` in the `Pipelines-Plugin` vault (`creative-writing/vault/`). Lines quoted from the source are verbatim from that file; lines quoted from `DESIGN.md` are named as such. Everything new in sections 2 to 4 is a proposal, and section 6 lists each invention.
 
 ## 1. Where it stands

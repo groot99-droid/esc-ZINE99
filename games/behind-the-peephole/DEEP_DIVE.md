@@ -1,5 +1,7 @@
 # Behind the Peephole: deep dive
 
+> **Status, 2026-11-19:** Historical record, kept as written on 2026-11-14. Current state: the author accepted this plan on 2026-11-15, and its three phases were built on 2026-11-15 and 2026-11-16 into `DESIGN.md` (section 21, which also lists what is still not built), `data/` (the new ending, The Sitter (`the_sitter`), is in `data/endings.json`) and `web/games/behind-the-peephole/`; the code-drawn art is in `art/` and the key art and ending cards in `keyart/`. Superseded by `DESIGN.md`; the additions register below stays for the author to approve or strike.
+
 A proposal: nothing here is in `DESIGN.md` or `data/` yet, and the source is untouched.
 Everything marked NEW is my invention, listed again in section 6 for the author to approve or
 strike. Source quotations are verbatim from `04_Book_Concepts/01_Behind_the_Peephole.md`.

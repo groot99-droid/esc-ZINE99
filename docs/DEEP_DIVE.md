@@ -1,5 +1,7 @@
 # The deep dive: making the ten games better
 
+> **Status, 2026-11-19:** Historical record, kept as written on 2026-11-14 (the acceptance note added 2026-11-15). Current state: the author accepted it on 2026-11-15, and its three phases were built on 2026-11-15 and 2026-11-16 into each game's `DESIGN.md` (section "Accepted development (2026-11-15)"), `data/` and `web/games/<slug>/`: the new endings are in each `data/endings.json`, the collection thread and the eleventh page are on the hub (`web/lib/app.js`, `tools/web/build.py`), the code-drawn art is in `games/<slug>/art/` and the key art and ending cards in `games/<slug>/keyart/`. The Blender renders are not made. Superseded by each game's `DESIGN.md`.
+
 Written 2026-11-14 at the author's request: "perform a deep dive on how to make these games better and
 more interesting. plan to make art for each game, add better obstacles puzzles and more. really lean
 into your own development of the story."
