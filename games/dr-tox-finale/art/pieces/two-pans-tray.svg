@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 130" width="560" height="130" role="img" aria-labelledby="two-pans-tray-t two-pans-tray-d">
+<title id="two-pans-tray-t">Two Pans: the token tray</title>
+<desc id="two-pans-tray-d">The token tray along the bottom of the page: a solid black tray with six red-rimmed wells for the tokens and TOKENS lettered in red at the left.</desc>
+<rect x="4" y="14" width="552" height="112" rx="10" fill="#1a1a1a"/>
+<circle cx="170" cy="70" r="28" fill="#2a2a2a" stroke="#C8202A" stroke-width="3"/>
+<circle cx="234" cy="70" r="28" fill="#2a2a2a" stroke="#C8202A" stroke-width="3"/>
+<circle cx="298" cy="70" r="28" fill="#2a2a2a" stroke="#C8202A" stroke-width="3"/>
+<circle cx="362" cy="70" r="28" fill="#2a2a2a" stroke="#C8202A" stroke-width="3"/>
+<circle cx="426" cy="70" r="28" fill="#2a2a2a" stroke="#C8202A" stroke-width="3"/>
+<circle cx="490" cy="70" r="28" fill="#2a2a2a" stroke="#C8202A" stroke-width="3"/>
+<text x="22" y="78" font-size="20" font-family="sans-serif" fill="#C8202A" text-anchor="start" font-weight="bold" letter-spacing="2">TOKENS</text>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width="320" height="200" role="img" aria-labelledby="airway-room-exposed-t airway-room-exposed-d">
+<title id="airway-room-exposed-t">Airway: an exposed room (people leaving, coughing)</title>
+<desc id="airway-room-exposed-d">The same room after the plume passed over its grille: the box is inked now, a grey wash has come down through the slots, the door at the right is open and three small figures are going out of it with cough marks over them. Nobody is shown harmed; the names are kept on the record.</desc>
+<path d="M9.7,20.5 L39.8,19.1 L70.3,19.5 L99.6,19.9 L129.4,19.5 L159.9,19.6 L190.4,19.3 L220.6,20.6 L249.4,20.9 L279.4,20.5 L309.3,19.2 L310.5,53.2 L310.9,88 L309.7,122.3 L310.2,156.9 L309,189.7 L280.8,189.2 L250.1,190.2 L219.7,190.5 L190.3,190 L160.7,189.8 L129.8,190.4 L99.6,191 L69.5,189.9 L40.4,189.5 L10.1,189.3 L9,155.8 L9.4,121.9 L10.6,87.4 L9.7,53.8 L9.1,19.6Z" fill="none" stroke="#141414" stroke-width="4"/>
+<line x1="90" y1="14" x2="90" y2="26" stroke="#141414" stroke-width="4"/>
+<line x1="108" y1="14" x2="108" y2="26" stroke="#141414" stroke-width="4"/>
+<line x1="126" y1="14" x2="126" y2="26" stroke="#141414" stroke-width="4"/>
+<line x1="144" y1="14" x2="144" y2="26" stroke="#141414" stroke-width="4"/>
+<line x1="162" y1="14" x2="162" y2="26" stroke="#141414" stroke-width="4"/>
+<line x1="180" y1="14" x2="180" y2="26" stroke="#141414" stroke-width="4"/>
+<line x1="198" y1="14" x2="198" y2="26" stroke="#141414" stroke-width="4"/>
+<line x1="216" y1="14" x2="216" y2="26" stroke="#141414" stroke-width="4"/>
+<path d="M100,26 C120,70 180,80 220,60" fill="none" stroke="#9aa3a3" stroke-width="46" opacity="0.2" stroke-linecap="round"/>
+<rect x="272" y="90" width="34" height="100" fill="#f7f5ef" stroke="#141414" stroke-width="3"/>
+<path d="M200.4,111.6 L200,109.1 L211.6,111.6 L212.8,124 L209.7,129 L218.5,136.4 L213.6,161.2 L208.7,186 L201.9,186 L200,163.7 L198.1,186 L191.3,186 L186.4,161.2 L188.7,136.4 L202.3,129 L199.2,124Z" fill="#141414"/>
+<path d="M194,108 q-6,-6 0,-12 M202,104 q-6,-6 0,-12" fill="none" stroke="#141414" stroke-width="1.6"/>
+<path d="M236.4,111.6 L236,109.1 L247.6,111.6 L248.8,124 L245.7,129 L254.5,136.4 L249.6,161.2 L244.7,186 L237.9,186 L236,163.7 L234.1,186 L227.3,186 L222.4,161.2 L224.7,136.4 L238.3,129 L235.2,124Z" fill="#141414"/>
+<path d="M230,106 q-6,-6 0,-12 M238,102 q-6,-6 0,-12" fill="none" stroke="#141414" stroke-width="1.6"/>
+<path d="M268.4,111.6 L268,109.1 L279.6,111.6 L280.8,124 L277.7,129 L286.5,136.4 L281.6,161.2 L276.7,186 L269.9,186 L268,163.7 L266.1,186 L259.3,186 L254.4,161.2 L256.7,136.4 L270.3,129 L267.2,124Z" fill="#141414"/>
+<path d="M262,104 q-6,-6 0,-12 M270,100 q-6,-6 0,-12" fill="none" stroke="#141414" stroke-width="1.6"/>
+</svg>

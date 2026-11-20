@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-labelledby="chapter-10-t chapter-10-d">
+<title id="chapter-10-t">Chapter X: The Reset</title>
+<desc id="chapter-10-d">Chapter card 10, The Reset: a dated caption box (2240.) over near black with no margin line at all, as the core has only the lamp, the chapter's name in capitals and one object drawn large.</desc>
+<defs><filter id="chapter-10-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="728"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.4 0"/></filter><radialGradient id="chapter-10-vig2" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity="0.7"/></radialGradient><radialGradient id="chapter-10-rg3" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#F2C14E" stop-opacity="0.8"/><stop offset="50%" stop-color="#D99A2B" stop-opacity="0.3"/><stop offset="100%" stop-color="#D99A2B" stop-opacity="0"/></radialGradient></defs>
+<rect x="0" y="0" width="1280" height="720" fill="#050505"/>
+<rect x="0" y="0" width="1280" height="720" filter="url(#chapter-10-grain1)"/>
+<rect x="0" y="0" width="1280" height="720" fill="url(#chapter-10-vig2)"/>
+<rect x="650" y="170" width="500" height="320" fill="#070606" stroke="#141414" stroke-width="5" stroke-linejoin="round"/>
+<circle cx="900" cy="280" r="230" fill="url(#chapter-10-rg3)"/>
+<path d="M846,230 L954,230 L932.4,185 L867.6,185Z" fill="#262626" stroke="#141414" stroke-width="5" stroke-linejoin="round"/>
+<line x1="900" y1="185" x2="900" y2="170" stroke="#262626" stroke-width="6"/>
+<rect x="894" y="310" width="12" height="160" fill="#2a2a2a"/>
+<rect x="830" y="460" width="140" height="14" fill="#2a2a2a"/>
+<rect x="750" y="304" width="300" height="10" fill="#2a2a2a"/>
+<line x1="760" y1="310" x2="726" y2="380" stroke="#2a2a2a" stroke-width="3"/>
+<line x1="760" y1="310" x2="794" y2="380" stroke="#2a2a2a" stroke-width="3"/>
+<path d="M710,380 Q760,410 810,380Z" fill="#2a2a2a"/>
+<line x1="1040" y1="310" x2="1006" y2="380" stroke="#2a2a2a" stroke-width="3"/>
+<line x1="1040" y1="310" x2="1074" y2="380" stroke="#2a2a2a" stroke-width="3"/>
+<path d="M990,380 Q1040,410 1090,380Z" fill="#2a2a2a"/>
+<rect x="75" y="75" width="440" height="56" fill="#000" opacity="0.5"/>
+<rect x="70" y="70" width="440" height="56" fill="#f3eedf" stroke="#141414" stroke-width="3"/>
+<text x="86" y="106.6" font-size="24" font-family="sans-serif" fill="#141414" text-anchor="start" font-weight="bold" letter-spacing="1.4">2240.</text>
+<text x="72" y="560" font-size="26" font-family="sans-serif" fill="#F2C14E" text-anchor="start" letter-spacing="6">CHAPTER X</text>
+<text x="70" y="630" font-size="58" font-family="sans-serif" fill="#E9ECEA" text-anchor="start" font-weight="bold" letter-spacing="2">THE RESET</text>
+</svg>

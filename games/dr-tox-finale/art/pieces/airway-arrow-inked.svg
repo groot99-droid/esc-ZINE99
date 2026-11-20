@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" width="160" height="120" role="img" aria-labelledby="airway-arrow-inked-t airway-arrow-inked-d">
+<title id="airway-arrow-inked-t">Airway: arrow (inked)</title>
+<desc id="airway-arrow-inked-d">Airway piece: two airflow arrows pointing downstream, inked in black brush with a light hatch: the path behind him.</desc>
+<path d="M10,40 L130,40" fill="none" stroke="#141414" stroke-width="4" stroke-linecap="round"/>
+<polygon points="130,31 150,40 130,49" fill="#141414"/>
+<path d="M10,80 L130,80" fill="none" stroke="#141414" stroke-width="4" stroke-linecap="round"/>
+<polygon points="130,71 150,80 130,89" fill="#141414"/>
+<path d="M40,60 L100,60" fill="none" stroke="#141414" stroke-width="2" opacity="0.5"/>
+</svg>

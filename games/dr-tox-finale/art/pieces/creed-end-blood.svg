@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" width="120" height="140" role="img" aria-labelledby="creed-end-blood-t creed-end-blood-d">
+<title id="creed-end-blood-t">Creed: tile end, BLOOD</title>
+<desc id="creed-end-blood-d">Creed tile end: one half-panel of a domino tile printed in the tract's plain line, a small cartoon for the word BLOOD and the word in a box at the foot in the second ink, red. Two ends make a tile.</desc>
+<rect x="3" y="3" width="114" height="134" rx="6" fill="#ffffff" stroke="#1a1a1a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="10" y="10" width="100" height="86" fill="none" stroke="#1a1a1a" stroke-width="1" opacity="0.3"/>
+<circle cx="16" cy="16" r="1.5" fill="#1a1a1a"/>
+<path d="M60,30 q20,28 0,46 q-20,-18 0,-46Z" fill="#C8202A" stroke="#C8202A" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="10" y="100" width="100" height="28" fill="#C8202A" stroke="#C8202A" stroke-width="2"/>
+<text x="60" y="121" font-size="20" font-family="sans-serif" fill="#ffffff" text-anchor="middle" font-weight="bold" letter-spacing="1">BLOOD</text>
+</svg>

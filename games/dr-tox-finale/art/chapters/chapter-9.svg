@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-labelledby="chapter-9-t chapter-9-d">
+<title id="chapter-9-t">Chapter IX: The Light Bringer</title>
+<desc id="chapter-9-d">Chapter card 9, The Light Bringer: a dated caption box (2240. REESE.) over HOPE's warm amber light with no margin line, the mark of a Reese chapter, the chapter's name in capitals and one object drawn large.</desc>
+<defs><filter id="chapter-9-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="326"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><radialGradient id="chapter-9-vig2" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity="0.5"/></radialGradient><radialGradient id="chapter-9-rg3" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#F2C14E" stop-opacity="0.3"/><stop offset="100%" stop-color="#F2C14E" stop-opacity="0"/></radialGradient></defs>
+<rect x="0" y="0" width="1280" height="720" fill="#3a2a16"/>
+<rect x="0" y="0" width="1280" height="720" filter="url(#chapter-9-grain1)"/>
+<rect x="0" y="0" width="1280" height="720" fill="url(#chapter-9-vig2)"/>
+<circle cx="640" cy="120" r="640" fill="url(#chapter-9-rg3)"/>
+<rect x="650" y="170" width="500" height="320" fill="#1a1612" stroke="#141414" stroke-width="5" stroke-linejoin="round"/>
+<ellipse cx="900" cy="440" rx="200" ry="40" fill="#2a2620" stroke="#141414" stroke-width="4"/>
+<rect x="700" y="220" width="400" height="220" fill="#E9ECEA" opacity="0.1"/>
+<ellipse cx="900" cy="220" rx="200" ry="40" fill="none" stroke="#c4cdcb" stroke-width="4"/>
+<polygon points="720,420 760,250 774,420" fill="#F6E7B8" opacity="0.8" stroke="#ffffff" stroke-width="2"/>
+<polygon points="780,420 820,250 834,420" fill="#F6E7B8" opacity="0.8" stroke="#ffffff" stroke-width="2"/>
+<polygon points="840,420 880,250 894,420" fill="#F6E7B8" opacity="0.8" stroke="#ffffff" stroke-width="2"/>
+<polygon points="900,420 940,250 954,420" fill="#F6E7B8" opacity="0.8" stroke="#ffffff" stroke-width="2"/>
+<polygon points="960,420 1000,250 1014,420" fill="#F6E7B8" opacity="0.8" stroke="#ffffff" stroke-width="2"/>
+<polygon points="1020,420 1060,250 1074,420" fill="#F6E7B8" opacity="0.8" stroke="#ffffff" stroke-width="2"/>
+<polygon points="1080,420 1120,250 1134,420" fill="#F6E7B8" opacity="0.8" stroke="#ffffff" stroke-width="2"/>
+<rect x="894" y="270" width="12" height="150" fill="#1a1612"/>
+<rect x="75" y="75" width="440" height="56" fill="#000" opacity="0.5"/>
+<rect x="70" y="70" width="440" height="56" fill="#f3eedf" stroke="#141414" stroke-width="3"/>
+<text x="86" y="106.6" font-size="24" font-family="sans-serif" fill="#141414" text-anchor="start" font-weight="bold" letter-spacing="1.4">2240. REESE.</text>
+<text x="72" y="560" font-size="26" font-family="sans-serif" fill="#F2C14E" text-anchor="start" letter-spacing="6">CHAPTER IX</text>
+<text x="70" y="630" font-size="48" font-family="sans-serif" fill="#E9ECEA" text-anchor="start" font-weight="bold" letter-spacing="2" textLength="560" lengthAdjust="spacingAndGlyphs">THE LIGHT BRINGER</text>
+</svg>

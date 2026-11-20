@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 90" width="260" height="90" role="img" aria-labelledby="two-pans-confirm-t two-pans-confirm-d">
+<title id="two-pans-confirm-t">Two Pans: REST IT (confirm)</title>
+<desc id="two-pans-confirm-d">The confirm button as a pulp cover's banner: REST IT in pulp-paper capitals on a black slab with a red underline; usable only when the pointer rests.</desc>
+<rect x="10" y="12" width="246" height="74" fill="#C8202A"/>
+<rect x="4" y="4" width="246" height="74" fill="#1a1a1a"/>
+<text x="127" y="54" font-size="34" font-family="serif" fill="#e8dcc2" text-anchor="middle" font-weight="bold" letter-spacing="4">REST IT</text>
+<line x1="40" y1="66" x2="214" y2="66" stroke="#C8202A" stroke-width="3"/>
+<circle cx="22" cy="41" r="4" fill="#C8202A"/>
+<circle cx="232" cy="41" r="4" fill="#C8202A"/>
+</svg>

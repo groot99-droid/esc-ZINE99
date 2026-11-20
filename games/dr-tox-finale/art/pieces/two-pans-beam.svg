@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 60" width="720" height="60" role="img" aria-labelledby="two-pans-beam-t two-pans-beam-d">
+<title id="two-pans-beam-t">Two Pans: the beam (rotates about its centre)</title>
+<desc id="two-pans-beam-d">The beam: a long black bar tapering to hooks at both ends, its centre (360, 30) bored for the pivot; rotate it about the centre.</desc>
+<path d="M20,22 L340,14 L380,14 L700,22 L700,38 L380,46 L340,46 L20,38Z" fill="#1a1a1a"/>
+<circle cx="360" cy="30" r="18" fill="#e8dcc2" stroke="#1a1a1a" stroke-width="5"/>
+<circle cx="20" cy="30" r="12" fill="none" stroke="#1a1a1a" stroke-width="5"/>
+<circle cx="700" cy="30" r="12" fill="none" stroke="#1a1a1a" stroke-width="5"/>
+<line x1="60" y1="24" x2="320" y2="20" stroke="#e8dcc2" stroke-width="2" opacity="0.4"/>
+</svg>

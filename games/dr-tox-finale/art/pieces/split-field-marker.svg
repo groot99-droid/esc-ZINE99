@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-labelledby="split-field-marker-t split-field-marker-d">
+<title id="split-field-marker-t">Split Field: a mark's number badge (open)</title>
+<desc id="split-field-marker-d">An open number badge: a white disc in a heavy ink ring with a short leader tick, the number laid in at run time.</desc>
+<circle cx="32" cy="32" r="26" fill="#ffffff" stroke="#141414" stroke-width="4"/>
+<circle cx="32" cy="32" r="20" fill="none" stroke="#141414" stroke-width="1" opacity="0.4"/>
+<line x1="32" y1="2" x2="32" y2="8" stroke="#141414" stroke-width="2"/>
+<line x1="32" y1="56" x2="32" y2="62" stroke="#141414" stroke-width="2"/>
+<line x1="2" y1="32" x2="8" y2="32" stroke="#141414" stroke-width="2"/>
+<line x1="56" y1="32" x2="62" y2="32" stroke="#141414" stroke-width="2"/>
+</svg>

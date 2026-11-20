@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 186 101" width="186" height="101" role="img" aria-labelledby="panes-keystone-t panes-keystone-d">
+<title id="panes-keystone-t">Panes: the keystone (sets only on HOPE)</title>
+<desc id="panes-keystone-d">The keystone: the medium triangle of the set (same size, 1 unit legs) drawn brighter than the rest, solid hard-light gold with a stronger foil and a small HOPE seal at its heart. It sets only on the word HOPE; held in Reese's hand it is room.</desc>
+<defs><linearGradient id="panes-keystone-lg1" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#f6b3c8"/><stop offset="20%" stop-color="#F6E7B8"/><stop offset="40%" stop-color="#a8e6cf"/><stop offset="60%" stop-color="#9fc6f2"/><stop offset="80%" stop-color="#d4b0f2"/><stop offset="100%" stop-color="#f6b3c8"/></linearGradient></defs>
+<path d="M8,93 L178,93 L93,8Z" fill="url(#panes-keystone-lg1)"/>
+<path d="M8,93 L178,93 L93,8Z" fill="#F6E7B8" opacity="0.6"/>
+<path d="M8,93 L178,93 L93,8Z" fill="none" stroke="#ffffff" stroke-width="4"/>
+<line x1="93" y1="66" x2="8" y2="93" stroke="#ffffff" stroke-width="2" opacity="0.7"/>
+<line x1="93" y1="66" x2="178" y2="93" stroke="#ffffff" stroke-width="2" opacity="0.7"/>
+<line x1="93" y1="66" x2="93" y2="8" stroke="#ffffff" stroke-width="2" opacity="0.7"/>
+<circle cx="93" cy="68" r="18" fill="#2a1e0c" stroke="#F2C14E" stroke-width="2"/>
+<text x="93" y="72" font-size="11" font-family="sans-serif" fill="#F2C14E" text-anchor="middle" font-weight="bold" letter-spacing="1">HOPE</text>
+</svg>

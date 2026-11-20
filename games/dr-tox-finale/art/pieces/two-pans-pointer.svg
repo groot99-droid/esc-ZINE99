@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 260" width="40" height="260" role="img" aria-labelledby="two-pans-pointer-t two-pans-pointer-d">
+<title id="two-pans-pointer-t">Two Pans: the pointer (pivot at the bottom)</title>
+<desc id="two-pans-pointer-d">The pointer: a long black needle with a red tip, pointing straight up from a pivot at (20, 240); rotate it to read the share of BLACK.</desc>
+<path d="M20,6 L28,230 L12,230Z" fill="#1a1a1a"/>
+<path d="M20,6 L25,60 L15,60Z" fill="#C8202A"/>
+<circle cx="20" cy="240" r="16" fill="#1a1a1a"/>
+<circle cx="20" cy="240" r="5" fill="#C8202A"/>
+<line x1="20" y1="70" x2="20" y2="220" stroke="#e8dcc2" stroke-width="1" opacity="0.4"/>
+</svg>

@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 780" width="560" height="780" role="img" aria-labelledby="panes-card-hub-t panes-card-hub-d">
+<title id="panes-card-hub-t">Panes: the card for the hub (Panes 2)</title>
+<desc id="panes-card-hub-d">The trading card for Panes 2: the same foil and frame, and in the art window the hub's curved glass drum lit white from inside with the square breach in it; through the breach, on the gallery side, a narrow hooded silhouette stands still and waits. The stat box below.</desc>
+<defs><linearGradient id="panes-card-hub-lg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f6b3c8"/><stop offset="20%" stop-color="#F6E7B8"/><stop offset="40%" stop-color="#a8e6cf"/><stop offset="60%" stop-color="#9fc6f2"/><stop offset="80%" stop-color="#d4b0f2"/><stop offset="100%" stop-color="#f6b3c8"/></linearGradient><clipPath id="panes-card-hub-clip2"><rect x="20" y="20" width="520" height="740" rx="18"/></clipPath><radialGradient id="panes-card-hub-rg3" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/><stop offset="100%" stop-color="#F6E7B8" stop-opacity="0.3"/></radialGradient><clipPath id="panes-card-hub-clip4"><rect x="160" y="204" width="240" height="240"/></clipPath></defs>
+<rect x="6" y="6" width="548" height="768" rx="26" fill="#d9d4c4" stroke="#8c8672" stroke-width="6"/>
+<rect x="20" y="20" width="520" height="740" rx="18" fill="url(#panes-card-hub-lg1)"/>
+<g clip-path="url(#panes-card-hub-clip2)">
+<polygon points="-720,20 -690,20 -246,760 -276,760" fill="#ffffff" opacity="0.1"/>
+<polygon points="-594,20 -564,20 -120,760 -150,760" fill="#ffffff" opacity="0.1"/>
+<polygon points="-468,20 -438,20 6,760 -24,760" fill="#ffffff" opacity="0.1"/>
+<polygon points="-342,20 -312,20 132,760 102,760" fill="#ffffff" opacity="0.1"/>
+<polygon points="-216,20 -186,20 258,760 228,760" fill="#ffffff" opacity="0.1"/>
+<polygon points="-90,20 -60,20 384,760 354,760" fill="#ffffff" opacity="0.1"/>
+<polygon points="36,20 66,20 510,760 480,760" fill="#ffffff" opacity="0.1"/>
+<polygon points="162,20 192,20 636,760 606,760" fill="#ffffff" opacity="0.1"/>
+<polygon points="288,20 318,20 762,760 732,760" fill="#ffffff" opacity="0.1"/>
+<polygon points="414,20 444,20 888,760 858,760" fill="#ffffff" opacity="0.1"/>
+</g>
+<rect x="20" y="20" width="520" height="740" rx="18" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.7"/>
+<rect x="26" y="26" width="508" height="728" rx="14" fill="none" stroke="#8c8672" stroke-width="1.5" opacity="0.6"/>
+<rect x="44" y="36" width="472" height="52" rx="8" fill="#f4f0e2" stroke="#2a2a2a" stroke-width="3"/>
+<text x="60" y="74" font-size="36" font-family="sans-serif" fill="#2a2a2a" text-anchor="start" font-weight="bold" letter-spacing="6">AEGIS</text>
+<text x="500" y="72" font-size="14" font-family="sans-serif" fill="#6a6450" text-anchor="end" font-weight="bold" letter-spacing="2">HARD LIGHT</text>
+<rect x="44" y="104" width="472" height="440" fill="#e9ecea" stroke="#2a2a2a" stroke-width="4"/>
+<rect x="44" y="104" width="472" height="440" fill="url(#panes-card-hub-rg3)"/>
+<path d="M60,104 Q70,324 60,544" fill="none" stroke="#c4cdcb" stroke-width="2"/>
+<path d="M106,104 Q116,324 106,544" fill="none" stroke="#c4cdcb" stroke-width="2"/>
+<path d="M152,104 Q162,324 152,544" fill="none" stroke="#c4cdcb" stroke-width="2"/>
+<path d="M198,104 Q208,324 198,544" fill="none" stroke="#c4cdcb" stroke-width="2"/>
+<path d="M244,104 Q254,324 244,544" fill="none" stroke="#c4cdcb" stroke-width="2"/>
+<path d="M290,104 Q300,324 290,544" fill="none" stroke="#c4cdcb" stroke-width="2"/>
+<path d="M336,104 Q346,324 336,544" fill="none" stroke="#c4cdcb" stroke-width="2"/>
+<path d="M382,104 Q392,324 382,544" fill="none" stroke="#c4cdcb" stroke-width="2"/>
+<path d="M428,104 Q438,324 428,544" fill="none" stroke="#c4cdcb" stroke-width="2"/>
+<path d="M474,104 Q484,324 474,544" fill="none" stroke="#c4cdcb" stroke-width="2"/>
+<rect x="160" y="204" width="240" height="240" fill="#1d2526" stroke="#F6E7B8" stroke-width="3" stroke-dasharray="10 6"/>
+<line x1="160" y1="204" x2="120" y2="174" stroke="#ffffff" stroke-width="2" opacity="0.8"/>
+<line x1="400" y1="204" x2="450" y2="164" stroke="#ffffff" stroke-width="2" opacity="0.8"/>
+<line x1="400" y1="444" x2="460" y2="474" stroke="#ffffff" stroke-width="2" opacity="0.8"/>
+<line x1="160" y1="444" x2="110" y2="484" stroke="#ffffff" stroke-width="2" opacity="0.8"/>
+<line x1="280" y1="204" x2="290" y2="144" stroke="#ffffff" stroke-width="2" opacity="0.8"/>
+<line x1="160" y1="324" x2="90" y2="324" stroke="#ffffff" stroke-width="2" opacity="0.8"/>
+<line x1="400" y1="324" x2="470" y2="334" stroke="#ffffff" stroke-width="2" opacity="0.8"/>
+<path d="M267.5,240 L292.5,240 L300,272.5 L305,295 L312.5,427.5 L317.5,440 L242.5,440 L247.5,427.5 L255,295 L260,272.5Z" fill="#5F6F5A" stroke="#0d1112" stroke-width="2" clip-path="url(#panes-card-hub-clip4)"/>
+<rect x="44" y="566" width="472" height="170" rx="8" fill="#f4f0e2" stroke="#2a2a2a" stroke-width="4"/>
+<text x="64" y="612" font-size="26" font-family="sans-serif" fill="#2a2a2a" text-anchor="start" font-weight="bold">LOAD</text>
+<rect x="160" y="590" width="332" height="28" fill="#ffffff" stroke="#2a2a2a" stroke-width="2"/>
+<line x1="193.2" y1="590" x2="193.2" y2="618" stroke="#2a2a2a" stroke-width="1" opacity="0.3"/>
+<line x1="226.4" y1="590" x2="226.4" y2="618" stroke="#2a2a2a" stroke-width="1" opacity="0.3"/>
+<line x1="259.6" y1="590" x2="259.6" y2="618" stroke="#2a2a2a" stroke-width="1" opacity="0.3"/>
+<line x1="292.8" y1="590" x2="292.8" y2="618" stroke="#2a2a2a" stroke-width="1" opacity="0.3"/>
+<line x1="326" y1="590" x2="326" y2="618" stroke="#2a2a2a" stroke-width="1" opacity="0.3"/>
+<line x1="359.2" y1="590" x2="359.2" y2="618" stroke="#2a2a2a" stroke-width="1" opacity="0.3"/>
+<line x1="392.4" y1="590" x2="392.4" y2="618" stroke="#2a2a2a" stroke-width="1" opacity="0.3"/>
+<line x1="425.6" y1="590" x2="425.6" y2="618" stroke="#2a2a2a" stroke-width="1" opacity="0.3"/>
+<line x1="458.8" y1="590" x2="458.8" y2="618" stroke="#2a2a2a" stroke-width="1" opacity="0.3"/>
+<text x="64" y="666" font-size="26" font-family="sans-serif" fill="#2a2a2a" text-anchor="start" font-weight="bold">PANES</text>
+<rect x="174" y="644" width="26" height="26" fill="none" stroke="#2a2a2a" stroke-width="2" transform="rotate(45 187 657)"/>
+<rect x="210" y="644" width="26" height="26" fill="none" stroke="#2a2a2a" stroke-width="2" transform="rotate(45 223 657)"/>
+<rect x="246" y="644" width="26" height="26" fill="none" stroke="#2a2a2a" stroke-width="2" transform="rotate(45 259 657)"/>
+<rect x="282" y="644" width="26" height="26" fill="none" stroke="#2a2a2a" stroke-width="2" transform="rotate(45 295 657)"/>
+<rect x="318" y="644" width="26" height="26" fill="none" stroke="#2a2a2a" stroke-width="2" transform="rotate(45 331 657)"/>
+<rect x="354" y="644" width="26" height="26" fill="none" stroke="#2a2a2a" stroke-width="2" transform="rotate(45 367 657)"/>
+<rect x="390" y="644" width="26" height="26" fill="none" stroke="#2a2a2a" stroke-width="2" transform="rotate(45 403 657)"/>
+<text x="64" y="722" font-size="14" font-family="sans-serif" fill="#6a6450" text-anchor="start" letter-spacing="3">SERIES 2240 · PROJECT HOPE</text>
+</svg>

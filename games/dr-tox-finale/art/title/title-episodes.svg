@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 180" width="1200" height="180" role="img" aria-labelledby="title-episodes-t title-episodes-d">
+<title id="title-episodes-t">Episode strip: Rise and Fall done, Finale open, Altrulan shut</title>
+<desc id="title-episodes-d">Four episode tabs side by side: RISE and FALL played, their tabs dimmed with a small stamped PLAYED mark; FINALE lit amber and open; ALTRULAN in cold gray-teal behind a closed bar.</desc>
+<defs><filter id="title-episodes-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="119"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><radialGradient id="title-episodes-vig2" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity="0.3"/></radialGradient></defs>
+<rect x="0" y="0" width="1200" height="180" fill="#0d1112"/>
+<rect x="0" y="0" width="1200" height="180" filter="url(#title-episodes-grain1)"/>
+<rect x="0" y="0" width="1200" height="180" fill="url(#title-episodes-vig2)"/>
+<rect x="30" y="30" width="270" height="120" rx="6" fill="#211c14" stroke="#7a5a24" stroke-width="2"/>
+<text x="165" y="84" font-size="16" font-family="sans-serif" fill="#a8844a" text-anchor="middle" letter-spacing="4">EPISODE 1</text>
+<text x="165" y="126" font-size="34" font-family="sans-serif" fill="#a8844a" text-anchor="middle" font-weight="bold" letter-spacing="3">RISE</text>
+<g transform="rotate(-8 263 48)">
+<rect x="234" y="38" width="60" height="20" fill="none" stroke="#a8844a" stroke-width="2"/>
+<text x="264" y="53" font-size="11" font-family="sans-serif" fill="#a8844a" text-anchor="middle" font-weight="bold" letter-spacing="1">PLAYED</text>
+</g>
+<rect x="320" y="30" width="270" height="120" rx="6" fill="#211c14" stroke="#7a5a24" stroke-width="2"/>
+<text x="455" y="84" font-size="16" font-family="sans-serif" fill="#a8844a" text-anchor="middle" letter-spacing="4">EPISODE 2</text>
+<text x="455" y="126" font-size="34" font-family="sans-serif" fill="#a8844a" text-anchor="middle" font-weight="bold" letter-spacing="3">FALL</text>
+<g transform="rotate(-8 553 48)">
+<rect x="524" y="38" width="60" height="20" fill="none" stroke="#a8844a" stroke-width="2"/>
+<text x="554" y="53" font-size="11" font-family="sans-serif" fill="#a8844a" text-anchor="middle" font-weight="bold" letter-spacing="1">PLAYED</text>
+</g>
+<rect x="610" y="30" width="270" height="120" rx="6" fill="#2a1e0c" stroke="#D99A2B" stroke-width="4"/>
+<text x="745" y="84" font-size="16" font-family="sans-serif" fill="#F2C14E" text-anchor="middle" letter-spacing="4">EPISODE 3</text>
+<text x="745" y="126" font-size="34" font-family="sans-serif" fill="#F2C14E" text-anchor="middle" font-weight="bold" letter-spacing="3">FINALE</text>
+<rect x="900" y="30" width="270" height="120" rx="6" fill="#1d2526" stroke="#5E7375" stroke-width="2"/>
+<text x="1035" y="84" font-size="16" font-family="sans-serif" fill="#C4CDCB" text-anchor="middle" letter-spacing="4">EPISODE 4</text>
+<text x="1035" y="126" font-size="30" font-family="sans-serif" fill="#8A9A99" text-anchor="middle" font-weight="bold" letter-spacing="3">ALTRULAN</text>
+<rect x="920" y="136" width="230" height="6" fill="#5E7375"/>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" role="img" aria-labelledby="hud-pulse-edge-t hud-pulse-edge-d">
+<title id="hud-pulse-edge-t">HUD icon: Pulse near the line (green spike)</title>
+<desc id="hud-pulse-edge-d">The Pulse icon near the trigger line: an amber line with a pale dashed Self line above it and one taller green spike reaching it, more amber than green.</desc>
+<rect x="4" y="4" width="88" height="88" rx="14" fill="#0b0e0e" stroke="#2f3a3b" stroke-width="3"/>
+<circle cx="14" cy="14" r="2" fill="#2f3a3b"/>
+<circle cx="82" cy="14" r="2" fill="#2f3a3b"/>
+<circle cx="14" cy="82" r="2" fill="#2f3a3b"/>
+<circle cx="82" cy="82" r="2" fill="#2f3a3b"/>
+<line x1="12" y1="26" x2="84" y2="26" stroke="#E9ECEA" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.7"/>
+<path d="M10,60 L27.1,60 L29,38 L31.3,68.8 L33.6,60 L48,60 L65.1,60 L67,38 L69.3,68.8 L71.6,60 L86,60" fill="none" stroke="#D99A2B" stroke-width="4" stroke-linejoin="round"/>
+<path d="M70,60 L74,26 L78,68 L82,60" fill="none" stroke="#7FD957" stroke-width="3" stroke-linejoin="round"/>
+</svg>

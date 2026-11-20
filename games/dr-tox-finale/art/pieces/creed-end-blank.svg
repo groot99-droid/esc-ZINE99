@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" width="120" height="140" role="img" aria-labelledby="creed-end-blank-t creed-end-blank-d">
+<title id="creed-end-blank-t">Creed: tile end, BLANK</title>
+<desc id="creed-end-blank-d">Creed tile end: one half-panel of a domino tile printed in the tract's plain line, a small cartoon for the word BLANK and the word in a box at the foot. Two ends make a tile.</desc>
+<rect x="3" y="3" width="114" height="134" rx="6" fill="#ffffff" stroke="#1a1a1a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="10" y="10" width="100" height="86" fill="none" stroke="#1a1a1a" stroke-width="1" opacity="0.3"/>
+<circle cx="16" cy="16" r="1.5" fill="#1a1a1a"/>
+<line x1="36" y1="58" x2="84" y2="58" stroke="#1a1a1a" stroke-width="1.5" opacity="0.4"/>
+<rect x="10" y="100" width="100" height="28" fill="none" stroke="#1a1a1a" stroke-width="1" stroke-dasharray="3 3"/>
+</svg>

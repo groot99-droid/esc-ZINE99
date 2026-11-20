@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 660" width="480" height="660" role="img" aria-labelledby="creed-tract-cover-t creed-tract-cover-d">
+<title id="creed-tract-cover-t">Creed: the tract's cover</title>
+<desc id="creed-tract-cover-d">The pocket tract's cover: a heavy red title band reading HIS WORDS, a plain-line cartoon panel of a ring of small people round an empty space, two staples at the spine, and a ruled line at the foot for the doctrine. Printed on thin paper, two inks.</desc>
+<rect x="0" y="0" width="480" height="660" fill="#f5f1e6" stroke="#9a9384" stroke-width="2"/>
+<rect x="0" y="0" width="480" height="660" fill="#000" opacity="0"/>
+<rect x="6" y="160" width="4" height="26" fill="#8a8a88"/>
+<rect x="6" y="500" width="4" height="26" fill="#8a8a88"/>
+<rect x="30" y="40" width="420" height="120" fill="#C8202A"/>
+<text x="240" y="124" font-size="64" font-family="serif" fill="#ffffff" text-anchor="middle" font-weight="bold" letter-spacing="2">HIS WORDS</text>
+<rect x="60" y="200" width="360" height="320" fill="#ffffff" stroke="#1a1a1a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="240" cy="360" r="60" fill="none" stroke="#1a1a1a" stroke-width="3" stroke-dasharray="8 6"/>
+<path d="M356.8,336.8 L360,335.4 L363.2,336.8 L364,344 L362.2,346.9 L368.6,351.2 L367.9,365.6 L365,380 L361.1,380 L360,367 L358.9,380 L355,380 L352.1,365.6 L351.4,351.2 L357.8,346.9 L356,344Z" fill="none" stroke="#1a1a1a" stroke-width="2.5"/>
+<path d="M333.8,389.7 L337.1,388.3 L340.3,389.7 L341,396.9 L339.2,399.8 L345.7,404.1 L345,418.5 L342.1,432.9 L338.2,432.9 L337.1,419.9 L336,432.9 L332,432.9 L329.2,418.5 L328.4,404.1 L334.9,399.8 L333.1,396.9Z" fill="none" stroke="#1a1a1a" stroke-width="2.5"/>
+<path d="M273.8,422.4 L277.1,421 L280.3,422.4 L281,429.6 L279.2,432.5 L285.7,436.8 L285,451.2 L282.1,465.6 L278.2,465.6 L277.1,452.6 L276,465.6 L272,465.6 L269.2,451.2 L268.4,436.8 L274.9,432.5 L273.1,429.6Z" fill="none" stroke="#1a1a1a" stroke-width="2.5"/>
+<path d="M199.7,422.4 L202.9,421 L206.2,422.4 L206.9,429.6 L205.1,432.5 L211.6,436.8 L210.8,451.2 L208,465.6 L204,465.6 L202.9,452.6 L201.8,465.6 L197.9,465.6 L195,451.2 L194.3,436.8 L200.8,432.5 L199,429.6Z" fill="none" stroke="#1a1a1a" stroke-width="2.5"/>
+<path d="M139.7,389.7 L142.9,388.3 L146.2,389.7 L146.9,396.9 L145.1,399.8 L151.6,404.1 L150.8,418.5 L148,432.9 L144,432.9 L142.9,419.9 L141.8,432.9 L137.9,432.9 L135,418.5 L134.3,404.1 L140.8,399.8 L139,396.9Z" fill="none" stroke="#1a1a1a" stroke-width="2.5"/>
+<path d="M116.8,336.8 L120,335.4 L123.2,336.8 L124,344 L122.2,346.9 L128.6,351.2 L127.9,365.6 L125,380 L121.1,380 L120,367 L118.9,380 L115,380 L112.1,365.6 L111.4,351.2 L117.8,346.9 L116,344Z" fill="none" stroke="#1a1a1a" stroke-width="2.5"/>
+<path d="M139.7,283.9 L142.9,282.5 L146.2,283.9 L146.9,291.1 L145.1,294 L151.6,298.3 L150.8,312.7 L148,327.1 L144,327.1 L142.9,314.1 L141.8,327.1 L137.9,327.1 L135,312.7 L134.3,298.3 L140.8,294 L139,291.1Z" fill="none" stroke="#1a1a1a" stroke-width="2.5"/>
+<path d="M199.7,251.2 L202.9,249.8 L206.1,251.2 L206.9,258.4 L205.1,261.3 L211.5,265.6 L210.8,280 L207.9,294.4 L204,294.4 L202.9,281.4 L201.8,294.4 L197.9,294.4 L195,280 L194.3,265.6 L200.7,261.3 L198.9,258.4Z" fill="none" stroke="#1a1a1a" stroke-width="2.5"/>
+<path d="M273.8,251.2 L277.1,249.8 L280.3,251.2 L281,258.4 L279.2,261.3 L285.7,265.6 L285,280 L282.1,294.4 L278.1,294.4 L277.1,281.4 L276,294.4 L272,294.4 L269.1,280 L268.4,265.6 L274.9,261.3 L273.1,258.4Z" fill="none" stroke="#1a1a1a" stroke-width="2.5"/>
+<path d="M333.8,283.9 L337.1,282.4 L340.3,283.9 L341,291.1 L339.2,294 L345.7,298.3 L345,312.7 L342.1,327.1 L338.2,327.1 L337.1,314.1 L336,327.1 L332,327.1 L329.2,312.7 L328.4,298.3 L334.9,294 L333.1,291.1Z" fill="none" stroke="#1a1a1a" stroke-width="2.5"/>
+<line x1="60" y1="590" x2="420" y2="590" stroke="#1a1a1a" stroke-width="1"/>
+<text x="240" y="620" font-size="18" font-family="serif" fill="#1a1a1a" text-anchor="middle" font-style="italic">printed at the camp · pass it on</text>
+</svg>

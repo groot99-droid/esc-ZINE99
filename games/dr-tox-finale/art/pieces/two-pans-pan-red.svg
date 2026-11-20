@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 290" width="260" height="290" role="img" aria-labelledby="two-pans-pan-red-t two-pans-pan-red-d">
+<title id="two-pans-pan-red-t">Two Pans: the RED pan</title>
+<desc id="two-pans-pan-red-d">Two Pans: the RED pan hanging from its hook on three chains, a deep dish filled flat red, its name lettered on the dish. Hook at the top centre; tokens sit along the rim.</desc>
+<circle cx="130" cy="10" r="8" fill="none" stroke="#1a1a1a" stroke-width="4"/>
+<line x1="130" y1="18" x2="30" y2="190" stroke="#1a1a1a" stroke-width="4"/>
+<line x1="130" y1="18" x2="230" y2="190" stroke="#1a1a1a" stroke-width="4"/>
+<line x1="130" y1="18" x2="130" y2="190" stroke="#1a1a1a" stroke-width="2"/>
+<path d="M10,190 Q130,290 250,190Z" fill="#C8202A" stroke="#1a1a1a" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M10,190 L250,190" stroke="#1a1a1a" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M40,206 Q130,250 220,206" fill="none" stroke="#1a1a1a" stroke-width="2" opacity="0.5"/>
+<text x="130" y="226" font-size="22" font-family="sans-serif" fill="#1a1a1a" text-anchor="middle" font-weight="bold" letter-spacing="3">RED</text>
+</svg>

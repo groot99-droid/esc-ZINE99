@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-labelledby="creed-spread-t creed-spread-d">
+<title id="creed-spread-t">Creed: the tract open across the page</title>
+<desc id="creed-spread-d">The pocket tract opened flat across the page on a plain table: thin paper, a stapled gutter, a heavy red title band WHAT HE SAID on the left page and and what it means in black italic on the right, the middle left open for the chain, and an empty verse band at the foot of the spread.</desc>
+<rect x="0" y="0" width="1280" height="720" fill="#d9d4c8"/>
+<rect x="70" y="30" width="1140" height="580" fill="#000" opacity="0.1"/>
+<rect x="60" y="20" width="1140" height="580" fill="#f5f1e6" stroke="#9a9384" stroke-width="2"/>
+<line x1="630" y1="20" x2="630" y2="600" stroke="#b9b2a2" stroke-width="3"/>
+<rect x="626" y="180" width="8" height="22" fill="#8a8a88"/>
+<rect x="626" y="440" width="8" height="22" fill="#8a8a88"/>
+<rect x="80" y="40" width="520" height="72" fill="#C8202A"/>
+<text x="100" y="92" font-size="44" font-family="serif" fill="#ffffff" text-anchor="start" font-weight="bold" letter-spacing="2">WHAT HE SAID</text>
+<text x="650" y="90" font-size="32" font-family="serif" fill="#1a1a1a" text-anchor="start" font-style="italic">and what it means</text>
+<rect x="80" y="480" width="1100" height="100" fill="#e9e2d0"/>
+<line x1="80" y1="480" x2="1180" y2="480" stroke="#1a1a1a" stroke-width="1.5"/>
+<text x="96" y="572" font-size="14" font-family="sans-serif" fill="#1a1a1a" text-anchor="start" letter-spacing="4" opacity="0.6">VERSE</text>
+<text x="110" y="456" font-size="26" font-family="sans-serif" fill="#1a1a1a" text-anchor="middle">·</text>
+<text x="1150" y="456" font-size="26" font-family="sans-serif" fill="#1a1a1a" text-anchor="middle">·</text>
+<text x="345" y="594" font-size="14" font-family="serif" fill="#1a1a1a" text-anchor="middle" opacity="0.6">2</text>
+<text x="915" y="594" font-size="14" font-family="serif" fill="#1a1a1a" text-anchor="middle" opacity="0.6">3</text>
+<rect x="0" y="620" width="1280" height="100" fill="#2b2a27"/>
+</svg>

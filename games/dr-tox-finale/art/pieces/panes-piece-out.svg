@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 186 101" width="186" height="101" role="img" aria-labelledby="panes-piece-out-t panes-piece-out-d">
+<title id="panes-piece-out-t">Panes: a pane gone out (the flinch)</title>
+<desc id="panes-piece-out-d">A pane gone out for a second when the leash fires: the same triangle as a cold gray-teal outline, dashed, the foil gone; laid over every set pane while it lasts.</desc>
+<path d="M8,93 L178,93 L93,8Z" fill="#5E7375" opacity="0.3"/>
+<path d="M8,93 L178,93 L93,8Z" fill="none" stroke="#8A9A99" stroke-width="3" stroke-dasharray="10 6"/>
+<line x1="40" y1="80" x2="146" y2="80" stroke="#C4CDCB" stroke-width="1" opacity="0.6"/>
+<line x1="66" y1="54" x2="120" y2="54" stroke="#C4CDCB" stroke-width="1" opacity="0.4"/>
+<circle cx="93" cy="68" r="4" fill="#8A9A99"/>
+</svg>

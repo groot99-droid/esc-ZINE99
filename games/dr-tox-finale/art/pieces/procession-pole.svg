@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 360" width="160" height="360" role="img" aria-labelledby="procession-pole-t procession-pole-d">
+<title id="procession-pole-t">Procession: a banner pole planted in the road</title>
+<desc id="procession-pole-d">A banner pole stuck upright in a bucket of stones with a photocopied cut-out on top: a ring of names; it blocks the walk.</desc>
+<path d="M40,356 L120,356 L112,300 L48,300Z" fill="#ffffff" stroke="#ffffff" stroke-width="6" stroke-linejoin="round"/>
+<path d="M40,356 L120,356 L112,300 L48,300Z" fill="#1C1C1A"/>
+<line x1="80" y1="300" x2="80" y2="60" stroke="#ffffff" stroke-width="12"/>
+<line x1="80" y1="300" x2="80" y2="60" stroke="#1C1C1A" stroke-width="6"/>
+<circle cx="80" cy="70" r="56" fill="#ffffff" stroke="#1C1C1A" stroke-width="3"/>
+<text x="118" y="74" font-size="11" font-family="monospace" fill="#1C1C1A" text-anchor="middle" font-weight="bold" transform="rotate(90 118 70)">A.</text>
+<text x="112.9" y="93" font-size="11" font-family="monospace" fill="#1C1C1A" text-anchor="middle" font-weight="bold" transform="rotate(120 112.9 89)">B.</text>
+<text x="99" y="106.9" font-size="11" font-family="monospace" fill="#1C1C1A" text-anchor="middle" font-weight="bold" transform="rotate(150 99 102.9)">C.</text>
+<text x="80" y="112" font-size="11" font-family="monospace" fill="#1C1C1A" text-anchor="middle" font-weight="bold" transform="rotate(180 80 108)">D.</text>
+<text x="61" y="106.9" font-size="11" font-family="monospace" fill="#1C1C1A" text-anchor="middle" font-weight="bold" transform="rotate(210 61 102.9)">E.</text>
+<text x="47.1" y="93" font-size="11" font-family="monospace" fill="#1C1C1A" text-anchor="middle" font-weight="bold" transform="rotate(240 47.1 89)">F.</text>
+<text x="42" y="74" font-size="11" font-family="monospace" fill="#1C1C1A" text-anchor="middle" font-weight="bold" transform="rotate(270 42 70)">G.</text>
+<text x="47.1" y="55" font-size="11" font-family="monospace" fill="#1C1C1A" text-anchor="middle" font-weight="bold" transform="rotate(300 47.1 51)">H.</text>
+<text x="61" y="41.1" font-size="11" font-family="monospace" fill="#1C1C1A" text-anchor="middle" font-weight="bold" transform="rotate(330 61 37.1)">J.</text>
+<text x="80" y="36" font-size="11" font-family="monospace" fill="#1C1C1A" text-anchor="middle" font-weight="bold" transform="rotate(360 80 32)">K.</text>
+<text x="99" y="41.1" font-size="11" font-family="monospace" fill="#1C1C1A" text-anchor="middle" font-weight="bold" transform="rotate(390 99 37.1)">L.</text>
+<text x="112.9" y="55" font-size="11" font-family="monospace" fill="#1C1C1A" text-anchor="middle" font-weight="bold" transform="rotate(420 112.9 51)">M.</text>
+<circle cx="80" cy="70" r="22" fill="none" stroke="#1C1C1A" stroke-width="2"/>
+<rect x="66" y="18" width="30" height="4" fill="#8a8a88" transform="rotate(4 81 20)"/>
+<rect x="66" y="22" width="30" height="1.5" fill="#5a5a58" transform="rotate(4 81 20)"/>
+</svg>

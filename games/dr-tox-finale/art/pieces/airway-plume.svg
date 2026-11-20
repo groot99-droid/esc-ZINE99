@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 120" width="420" height="120" role="img" aria-labelledby="airway-plume-t airway-plume-d">
+<title id="airway-plume-t">Airway: his breath plume (grey wash)</title>
+<desc id="airway-plume-d">His breath going downstream as a soft grey watercolour wash, wide at his end on the left and thinning to the right; the only tone on the page that is neither pencil nor ink.</desc>
+<path d="M20,60 C100,44 180,74 260,58 C320,48 370,64 410,58" fill="none" stroke="#9aa3a3" stroke-width="70" opacity="0.2" stroke-linecap="round"/>
+<path d="M20,60 C100,44 180,74 260,58 C320,48 370,64 410,58" fill="none" stroke="#9aa3a3" stroke-width="48" opacity="0.3" stroke-linecap="round"/>
+<path d="M20,60 C100,44 180,74 260,58 C320,48 370,64 410,58" fill="none" stroke="#9aa3a3" stroke-width="28" opacity="0.4" stroke-linecap="round"/>
+<ellipse cx="40" cy="60" rx="30" ry="34" fill="#9aa3a3" opacity="0.2"/>
+<path d="M30,60 C120,52 200,68 300,60" fill="none" stroke="#9aa3a3" stroke-width="4" opacity="0.2"/>
+</svg>

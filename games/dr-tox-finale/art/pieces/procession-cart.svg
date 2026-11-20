@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 260" width="360" height="260" role="img" aria-labelledby="procession-cart-t procession-cart-d">
+<title id="procession-cart-t">Procession: Dov's copier on its handcart</title>
+<desc id="procession-cart-d">The salvaged copier strapped to a two-wheeled handcart, cut out in toner with a white edge, a stack of tract pages blowing off the top: it blocks the road and drops pages.</desc>
+<path d="M30,190 L330,190 L330,210 L30,210Z" fill="#ffffff" stroke="#ffffff" stroke-width="6" stroke-linejoin="round"/>
+<path d="M30,190 L330,190 L330,210 L30,210Z" fill="#1C1C1A"/>
+<path d="M80,190 L290,190 L290,80 L80,80Z" fill="#ffffff" stroke="#ffffff" stroke-width="6" stroke-linejoin="round"/>
+<path d="M80,190 L290,190 L290,80 L80,80Z" fill="#1C1C1A"/>
+<rect x="100" y="96" width="170" height="20" fill="#d6d1c4"/>
+<rect x="110" y="130" width="40" height="12" fill="#ffffff"/>
+<circle cx="90" cy="220" r="30" fill="#ffffff"/>
+<circle cx="90" cy="220" r="26" fill="#1C1C1A"/>
+<circle cx="90" cy="220" r="8" fill="#d6d1c4"/>
+<circle cx="280" cy="220" r="30" fill="#ffffff"/>
+<circle cx="280" cy="220" r="26" fill="#1C1C1A"/>
+<circle cx="280" cy="220" r="8" fill="#d6d1c4"/>
+<line x1="330" y1="200" x2="354" y2="150" stroke="#1C1C1A" stroke-width="8"/>
+<rect x="150" y="50" width="40" height="28" fill="#ffffff" stroke="#1C1C1A" stroke-width="1.5" transform="rotate(-10 170 64)"/>
+<rect x="184" y="38" width="40" height="28" fill="#ffffff" stroke="#1C1C1A" stroke-width="1.5" transform="rotate(4 204 52)"/>
+<rect x="218" y="26" width="40" height="28" fill="#ffffff" stroke="#1C1C1A" stroke-width="1.5" transform="rotate(18 238 40)"/>
+<rect x="252" y="14" width="40" height="28" fill="#ffffff" stroke="#1C1C1A" stroke-width="1.5" transform="rotate(32 272 28)"/>
+<line x1="80" y1="150" x2="290" y2="120" stroke="#1C1C1A" stroke-width="4"/>
+</svg>

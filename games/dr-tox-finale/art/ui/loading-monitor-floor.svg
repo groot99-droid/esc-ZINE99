@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 140" width="1200" height="140" role="img" aria-labelledby="loading-monitor-floor-t loading-monitor-floor-d">
+<title id="loading-monitor-floor-t">Loading monitor line, the Self line lowered to the floor</title>
+<desc id="loading-monitor-floor-d">The strip as the bar fills: the dashed SELF line has come down close to a solid gray-teal line marked FLOOR 40, the Finale's rule that under it the man is no longer enough to choose; the amber trace slow and low beneath both. No green: the loading screen never shows the State winning.</desc>
+<rect x="0" y="0" width="1200" height="140" fill="#060807"/>
+<path d="M0,0V140M28,0V140M56,0V140M84,0V140M112,0V140M140,0V140M168,0V140M196,0V140M224,0V140M252,0V140M280,0V140M308,0V140M336,0V140M364,0V140M392,0V140M420,0V140M448,0V140M476,0V140M504,0V140M532,0V140M560,0V140M588,0V140M616,0V140M644,0V140M672,0V140M700,0V140M728,0V140M756,0V140M784,0V140M812,0V140M840,0V140M868,0V140M896,0V140M924,0V140M952,0V140M980,0V140M1008,0V140M1036,0V140M1064,0V140M1092,0V140M1120,0V140M1148,0V140M1176,0V140M0,0H1200M0,28H1200M0,56H1200M0,84H1200M0,112H1200M0,140H1200" fill="none" stroke="#1a1a10" stroke-width="1"/>
+<line x1="0" y1="44" x2="1200" y2="44" stroke="#E9ECEA" stroke-width="2" stroke-dasharray="10 8" opacity="0.8"/>
+<text x="1180" y="38" font-size="13" font-family="monospace" fill="#E9ECEA" text-anchor="end" opacity="0.8">SELF</text>
+<line x1="0" y1="58" x2="1200" y2="58" stroke="#C4CDCB" stroke-width="3" opacity="0.9"/>
+<text x="1180" y="74" font-size="13" font-family="monospace" fill="#C4CDCB" text-anchor="end">FLOOR 40</text>
+<path d="M20,118 L124.4,118 L136,94 L149.9,127.6 L163.8,118 L252,118 L356.4,118 L368,94 L381.9,127.6 L395.8,118 L484,118 L588.4,118 L600,94 L613.9,127.6 L627.8,118 L716,118 L820.4,118 L832,94 L845.9,127.6 L859.8,118 L948,118 L1052.4,118 L1064,94 L1077.9,127.6 L1091.8,118 L1180,118" fill="none" stroke="#D99A2B" stroke-width="4" stroke-linejoin="round"/>
+<text x="20" y="28" font-size="16" font-family="monospace" fill="#D99A2B" text-anchor="start" letter-spacing="3">PULSE</text>
+<text x="260" y="28" font-size="13" font-family="monospace" fill="#D99A2B" text-anchor="start" opacity="0.6">II   HR   mm/s 25</text>
+</svg>

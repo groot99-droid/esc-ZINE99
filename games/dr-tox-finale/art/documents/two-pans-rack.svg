@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 220" width="420" height="220" role="img" aria-labelledby="two-pans-rack-t two-pans-rack-d">
+<title id="two-pans-rack-t">Two Pans: RCC's rack of vials (Two Pans 2)</title>
+<desc id="two-pans-rack-d">The suite's rack as a pulp would print it: a black steel rack with twelve vials, nine filled black and three red, a stamped RCC plate on the front. It sits in the window, and always did; it carries no other label.</desc>
+<rect x="14" y="200" width="400" height="14" fill="#1a1a1a" opacity="0.6"/>
+<rect x="10" y="60" width="400" height="140" fill="#e8dcc2" stroke="#1a1a1a" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M31,87.6 L35,82 L35,75 L45,75 L45,82 L49,87.6 L49,139.6 Q49,145 40,145 Q31,145 31,139.6Z" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="2"/>
+<path d="M61,87.6 L65,82 L65,75 L75,75 L75,82 L79,87.6 L79,139.6 Q79,145 70,145 Q61,145 61,139.6Z" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="2"/>
+<path d="M91,87.6 L95,82 L95,75 L105,75 L105,82 L109,87.6 L109,139.6 Q109,145 100,145 Q91,145 91,139.6Z" fill="#C8202A" stroke="#1a1a1a" stroke-width="2"/>
+<path d="M121,87.6 L125,82 L125,75 L134.9,75 L134.9,82 L139,87.6 L139,139.6 Q139,145 130,145 Q121,145 121,139.6Z" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="2"/>
+<path d="M151,87.6 L155.1,82 L155.1,75 L164.9,75 L164.9,82 L169,87.6 L169,139.6 Q169,145 160,145 Q151,145 151,139.6Z" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="2"/>
+<path d="M181,87.6 L185.1,82 L185.1,75 L194.9,75 L194.9,82 L199,87.6 L199,139.6 Q199,145 190,145 Q181,145 181,139.6Z" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="2"/>
+<path d="M211,87.6 L215.1,82 L215.1,75 L224.9,75 L224.9,82 L229,87.6 L229,139.6 Q229,145 220,145 Q211,145 211,139.6Z" fill="#C8202A" stroke="#1a1a1a" stroke-width="2"/>
+<path d="M241,87.6 L245.1,82 L245.1,75 L254.9,75 L254.9,82 L259,87.6 L259,139.6 Q259,145 250,145 Q241,145 241,139.6Z" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="2"/>
+<path d="M271,87.6 L275.1,82 L275.1,75 L284.9,75 L284.9,82 L289,87.6 L289,139.6 Q289,145 280,145 Q271,145 271,139.6Z" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="2"/>
+<path d="M301,87.6 L305.1,82 L305.1,75 L314.9,75 L314.9,82 L319,87.6 L319,139.6 Q319,145 310,145 Q301,145 301,139.6Z" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="2"/>
+<path d="M331,87.6 L335.1,82 L335.1,75 L344.9,75 L344.9,82 L349,87.6 L349,139.6 Q349,145 340,145 Q331,145 331,139.6Z" fill="#C8202A" stroke="#1a1a1a" stroke-width="2"/>
+<path d="M361,87.6 L365.1,82 L365.1,75 L374.9,75 L374.9,82 L379,87.6 L379,139.6 Q379,145 370,145 Q361,145 361,139.6Z" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="2"/>
+<rect x="10" y="150" width="400" height="12" fill="#1a1a1a"/>
+<rect x="160" y="166" width="100" height="28" fill="#1a1a1a"/>
+<text x="210" y="187" font-size="20" font-family="sans-serif" fill="#e8dcc2" text-anchor="middle" font-weight="bold" letter-spacing="4">RCC</text>
+</svg>

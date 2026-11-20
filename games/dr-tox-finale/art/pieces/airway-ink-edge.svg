@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 240" width="120" height="240" role="img" aria-labelledby="airway-ink-edge-t airway-ink-edge-d">
+<title id="airway-ink-edge-t">Airway: the inked edge, in progress</title>
+<desc id="airway-ink-edge-d">The front of the inking: the brush stroke on each wall tapering out, a little dry-brush break and one drip, where the blue rough begins. Laid at his position over the duct.</desc>
+<path d="M0,36 L60,37 C80,38 96,40 116,40 C96,41 80,43 60,44 L0,44Z" fill="#141414"/>
+<line x1="70" y1="38" x2="90" y2="39" stroke="#f7f5ef" stroke-width="1"/>
+<line x1="82" y1="39" x2="100" y2="40" stroke="#f7f5ef" stroke-width="1"/>
+<line x1="94" y1="40" x2="110" y2="41" stroke="#f7f5ef" stroke-width="1"/>
+<path d="M0,196 L60,197 C80,198 96,200 116,200 C96,201 80,203 60,204 L0,204Z" fill="#141414"/>
+<line x1="70" y1="198" x2="90" y2="199" stroke="#f7f5ef" stroke-width="1"/>
+<line x1="82" y1="199" x2="100" y2="200" stroke="#f7f5ef" stroke-width="1"/>
+<line x1="94" y1="200" x2="110" y2="201" stroke="#f7f5ef" stroke-width="1"/>
+<ellipse cx="40" cy="214" rx="3" ry="6" fill="#141414"/>
+<path d="M60,40 L120,40 M60,200 L120,200" fill="none" stroke="#8EC5E8" stroke-width="1.6" stroke-linecap="round" opacity="0.9"/>
+</svg>

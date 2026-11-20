@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 110" width="360" height="110" role="img" aria-labelledby="two-pans-caption-refuse-t two-pans-caption-refuse-d">
+<title id="two-pans-caption-refuse-t">Two Pans: caption, IT WILL NOT REST THERE.</title>
+<desc id="two-pans-caption-refuse-d">Two Pans caption box: shown when too much RED knocks the beam and the tokens jump out of the pan, lettered in heavy capitals in a pulp caption box with a black drop shadow.</desc>
+<rect x="10" y="10" width="346" height="96" fill="#1a1a1a"/>
+<rect x="4" y="4" width="346" height="96" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="4"/>
+<line x1="22" y1="88" x2="320" y2="88" stroke="#e8dcc2" stroke-width="1.5" opacity="0.5"/>
+<text x="22" y="44" font-size="26" font-family="sans-serif" fill="#e8dcc2" text-anchor="start" font-weight="bold" letter-spacing="1">IT WILL NOT REST</text>
+<text x="22" y="78" font-size="26" font-family="sans-serif" fill="#e8dcc2" text-anchor="start" font-weight="bold" letter-spacing="1">THERE.</text>
+</svg>

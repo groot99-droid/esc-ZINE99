@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 64" width="480" height="64" role="img" aria-labelledby="hud-self-floor-t hud-self-floor-d">
+<title id="hud-self-floor-t">Self gauge with the floor at 40 marked</title>
+<desc id="hud-self-floor-d">A Self gauge for the pause screen and the episode menu, never with a number: a long typed caption strip from 0 to 100 with a heavy gray-teal bar at 40 marked FLOOR, and the space under it shaded; the fill is laid over it at run time and never comes back up.</desc>
+<defs><clipPath id="hud-self-floor-clip1"><rect x="80" y="18" width="153.6" height="28"/></clipPath></defs>
+<rect x="2" y="2" width="476" height="60" rx="6" fill="#0b0e0e" stroke="#2f3a3b" stroke-width="2"/>
+<text x="16" y="38" font-size="16" font-family="sans-serif" fill="#C4CDCB" text-anchor="start" font-weight="bold" letter-spacing="3">SELF</text>
+<rect x="80" y="18" width="384" height="28" fill="#f3eedf" stroke="#141414" stroke-width="2"/>
+<g clip-path="url(#hud-self-floor-clip1)">
+<path d="M156.8,-86.9 L275.7,32 M152.6,-82.6 L271.4,36.2 M148.3,-78.4 L267.2,40.5 M144.1,-74.2 L263,44.7 M139.8,-69.9 L258.7,49 M135.6,-65.7 L254.5,53.2 M131.3,-61.4 L250.2,57.5 M127.1,-57.2 L246,61.7 M122.9,-52.9 L241.7,65.9 M118.6,-48.7 L237.5,70.2 M114.4,-44.5 L233.3,74.4 M110.1,-40.2 L229,78.7 M105.9,-36 L224.8,82.9 M101.6,-31.7 L220.5,87.2 M97.4,-27.5 L216.3,91.4 M93.2,-23.2 L212,95.6 M88.9,-19 L207.8,99.9 M84.7,-14.8 L203.6,104.1 M80.4,-10.5 L199.3,108.4 M76.2,-6.3 L195.1,112.6 M71.9,-2 L190.8,116.9 M67.7,2.2 L186.6,121.1 M63.5,6.5 L182.3,125.3 M59.2,10.7 L178.1,129.6 M55,14.9 L173.9,133.8 M50.7,19.2 L169.6,138.1 M46.5,23.4 L165.4,142.3 M42.2,27.7 L161.1,146.6 M38,31.9 L156.9,150.8" fill="none" stroke="#5E7375" stroke-width="1.5"/>
+</g>
+<rect x="230.6" y="10" width="6" height="44" fill="#5E7375"/>
+<text x="241.6" y="14" font-size="11" font-family="sans-serif" fill="#C4CDCB" text-anchor="start" font-weight="bold" letter-spacing="1">FLOOR 40</text>
+<line x1="118.4" y1="40" x2="118.4" y2="46" stroke="#141414" stroke-width="1"/>
+<line x1="156.8" y1="40" x2="156.8" y2="46" stroke="#141414" stroke-width="1"/>
+<line x1="195.2" y1="40" x2="195.2" y2="46" stroke="#141414" stroke-width="1"/>
+<line x1="233.6" y1="40" x2="233.6" y2="46" stroke="#141414" stroke-width="1"/>
+<line x1="272" y1="40" x2="272" y2="46" stroke="#141414" stroke-width="1"/>
+<line x1="310.4" y1="40" x2="310.4" y2="46" stroke="#141414" stroke-width="1"/>
+<line x1="348.8" y1="40" x2="348.8" y2="46" stroke="#141414" stroke-width="1"/>
+<line x1="387.2" y1="40" x2="387.2" y2="46" stroke="#141414" stroke-width="1"/>
+<line x1="425.6" y1="40" x2="425.6" y2="46" stroke="#141414" stroke-width="1"/>
+</svg>

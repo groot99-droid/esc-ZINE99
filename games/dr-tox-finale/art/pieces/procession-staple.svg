@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 24" width="48" height="24" role="img" aria-labelledby="procession-staple-t procession-staple-d">
+<title id="procession-staple-t">Procession: a staple (ornament)</title>
+<desc id="procession-staple-d">One office staple, seen flat, with its shadow, for pinning things to the page.</desc>
+<rect x="6" y="10" width="36" height="5" fill="#8a8a88"/>
+<rect x="6" y="15" width="36" height="2" fill="#5a5a58"/>
+<rect x="4" y="9" width="3" height="8" fill="#7a7a78"/>
+<rect x="41" y="9" width="3" height="8" fill="#7a7a78"/>
+<rect x="8" y="18" width="32" height="2" fill="#1C1C1A" opacity="0.2"/>
+<line x1="8" y1="11" x2="40" y2="11" stroke="#c8c8c6" stroke-width="1"/>
+<circle cx="6" cy="13" r="1" fill="#5a5a58"/>
+</svg>

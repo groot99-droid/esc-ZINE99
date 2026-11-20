@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="1200" height="420" role="img" aria-labelledby="title-finale-t title-finale-d">
+<title id="title-finale-t">Title lettering: Dr. Tox: Finale</title>
+<desc id="title-finale-d">The title, DR. TOX in tall pale capitals over FINALE in amber, on graded concrete with film grain; under it the amber monitor line runs on and its beats grow slower and further apart until the line is long and level at the right, quiet rather than stopped, and a small line names the series and the episode.</desc>
+<defs><filter id="title-finale-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="65"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.4 0"/></filter><radialGradient id="title-finale-vig2" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity="0.5"/></radialGradient></defs>
+<rect x="0" y="0" width="1200" height="420" fill="#0d1112"/>
+<rect x="0" y="0" width="1200" height="420" filter="url(#title-finale-grain1)"/>
+<rect x="0" y="0" width="1200" height="420" fill="url(#title-finale-vig2)"/>
+<rect x="0" y="0" width="1200" height="420" fill="#5E7375" opacity="0.1"/>
+<text x="600" y="196" font-size="168" font-family="sans-serif" fill="#000" text-anchor="middle" font-weight="bold" letter-spacing="10" opacity="0.6" transform="translate(6,8)">DR. TOX</text>
+<text x="600" y="196" font-size="168" font-family="sans-serif" fill="#E9ECEA" text-anchor="middle" font-weight="bold" letter-spacing="10">DR. TOX</text>
+<path d="M120,252 L170,252 L176,222 L182,262.5 L188,252 L258,252 L264,226 L270,261.1 L276,252 L372,252 L378,232 L384,259 L390,252 L520,252 L526,238 L532,256.9 L538,252 L708,252 L714,244 L720,254.8 L726,252 L1080,252" fill="none" stroke="#D99A2B" stroke-width="4" stroke-linejoin="round"/>
+<text x="600" y="352" font-size="76" font-family="serif" fill="#D99A2B" text-anchor="middle" letter-spacing="14">F I N A L E</text>
+<text x="600" y="400" font-size="20" font-family="sans-serif" fill="#C4CDCB" text-anchor="middle" letter-spacing="5">EPISODE 3 OF 4  ·  AGE OF GLASS &amp; GREED</text>
+</svg>

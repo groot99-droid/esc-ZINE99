@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" width="120" height="140" role="img" aria-labelledby="creed-end-need-t creed-end-need-d">
+<title id="creed-end-need-t">Creed: tile end, NEED</title>
+<desc id="creed-end-need-d">Creed tile end: one half-panel of a domino tile printed in the tract's plain line, a small cartoon for the word NEED and the word in a box at the foot. Two ends make a tile.</desc>
+<rect x="3" y="3" width="114" height="134" rx="6" fill="#ffffff" stroke="#1a1a1a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="10" y="10" width="100" height="86" fill="none" stroke="#1a1a1a" stroke-width="1" opacity="0.3"/>
+<circle cx="16" cy="16" r="1.5" fill="#1a1a1a"/>
+<path d="M26,68 q18,-26 34,-4 q16,-22 34,4" fill="none" stroke="#1a1a1a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M30,84 l60,0" fill="none" stroke="#1a1a1a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="60" cy="36" r="6" fill="#1a1a1a"/>
+<rect x="10" y="100" width="100" height="28" fill="#ffffff" stroke="#1a1a1a" stroke-width="2"/>
+<text x="60" y="121" font-size="20" font-family="sans-serif" fill="#1a1a1a" text-anchor="middle" font-weight="bold" letter-spacing="1">NEED</text>
+</svg>

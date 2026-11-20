@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 520" width="300" height="520" role="img" aria-labelledby="two-pans-stand-t two-pans-stand-d">
+<title id="two-pans-stand-t">Two Pans: the stand and pivot</title>
+<desc id="two-pans-stand-d">The balance's stand: a heavy black column on a stepped foot with a red pivot boss at the top (centre 150, 40), a slab of black shadow falling right.</desc>
+<polygon points="150,500 296,500 250,470 150,470" fill="#1a1a1a" opacity="0.5"/>
+<rect x="132" y="40" width="36" height="430" fill="#1a1a1a"/>
+<rect x="140" y="60" width="6" height="400" fill="#e8dcc2" opacity="0.3"/>
+<rect x="40" y="470" width="220" height="26" fill="#1a1a1a"/>
+<rect x="70" y="450" width="160" height="24" fill="#1a1a1a"/>
+<circle cx="150" cy="40" r="30" fill="#C8202A" stroke="#1a1a1a" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="150" cy="40" r="8" fill="#1a1a1a"/>
+</svg>

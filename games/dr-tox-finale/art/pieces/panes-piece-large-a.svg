@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 136" width="256" height="136" role="img" aria-labelledby="panes-piece-large-a-t panes-piece-large-a-d">
+<title id="panes-piece-large-a-t">Panes: piece, large a</title>
+<desc id="panes-piece-large-a-d">Panes piece, the large a of the tangram set: a hard-light pane as a foil facet, pale gold over rainbow foil with diagonal sheen bands and facet lines to its corners, a white edge. Drawn at 120 px to the tangram unit; drag, rotate and flip it into the breach.</desc>
+<defs><linearGradient id="panes-piece-large-a-lg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f6b3c8"/><stop offset="20%" stop-color="#F6E7B8"/><stop offset="40%" stop-color="#a8e6cf"/><stop offset="60%" stop-color="#9fc6f2"/><stop offset="80%" stop-color="#d4b0f2"/><stop offset="100%" stop-color="#f6b3c8"/></linearGradient><clipPath id="panes-piece-large-a-clip2"><path d="M8,8 L248,8 L128,128Z"/></clipPath></defs>
+<path d="M8,8 L248,8 L128,128Z" fill="url(#panes-piece-large-a-lg1)"/>
+<path d="M8,8 L248,8 L128,128Z" fill="#F6E7B8" opacity="0.3"/>
+<g clip-path="url(#panes-piece-large-a-clip2)">
+<line x1="128" y1="48" x2="8" y2="8" stroke="#ffffff" stroke-width="2" opacity="0.6"/>
+<line x1="128" y1="48" x2="248" y2="8" stroke="#ffffff" stroke-width="2" opacity="0.6"/>
+<line x1="128" y1="48" x2="128" y2="128" stroke="#ffffff" stroke-width="2" opacity="0.6"/>
+<polygon points="-40,0 -24,0 96,136 80,136" fill="#ffffff" opacity="0.2"/>
+<polygon points="13.3,0 29.3,0 149.3,136 133.3,136" fill="#ffffff" opacity="0.2"/>
+<polygon points="66.7,0 82.7,0 202.7,136 186.7,136" fill="#ffffff" opacity="0.2"/>
+<polygon points="120,0 136,0 256,136 240,136" fill="#ffffff" opacity="0.2"/>
+<polygon points="173.3,0 189.3,0 309.3,136 293.3,136" fill="#ffffff" opacity="0.2"/>
+<polygon points="226.7,0 242.7,0 362.7,136 346.7,136" fill="#ffffff" opacity="0.2"/>
+</g>
+<path d="M8,8 L248,8 L128,128Z" fill="none" stroke="#ffffff" stroke-width="3" stroke-linejoin="round"/>
+</svg>

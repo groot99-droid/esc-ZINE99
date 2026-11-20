@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220" width="360" height="220" role="img" aria-labelledby="creed-dealer-hands-t creed-dealer-hands-d">
+<title id="creed-dealer-hands-t">Creed: the dealer's hands (Cally, dealing)</title>
+<desc id="creed-dealer-hands-d">Only the dealer's hands, in plain line: two bare hands sliding a face-down tile across the table from the far side, a dark cuff at each wrist. Never her face.</desc>
+<rect x="110" y="120" width="140" height="90" rx="6" fill="#e9e2d0" stroke="#1a1a1a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="180" cy="165" r="16" fill="none" stroke="#C8202A" stroke-width="2"/>
+<path d="M60,0 L90,0 L110,100 L70,110Z" fill="#1a1a1a"/>
+<path d="M66,104 C90,96 130,120 140,140 L130,150 C100,150 70,140 60,124Z" fill="#ffffff" stroke="#1a1a1a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="116" y1="136" x2="130" y2="150" stroke="#1a1a1a" stroke-width="1.5"/>
+<line x1="123" y1="140" x2="136" y2="153" stroke="#1a1a1a" stroke-width="1.5"/>
+<line x1="130" y1="144" x2="142" y2="156" stroke="#1a1a1a" stroke-width="1.5"/>
+<path d="M300,0 L270,0 L250,100 L290,110Z" fill="#1a1a1a"/>
+<path d="M294,104 C270,96 230,120 220,140 L230,150 C260,150 290,140 300,124Z" fill="#ffffff" stroke="#1a1a1a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="244" y1="136" x2="230" y2="150" stroke="#1a1a1a" stroke-width="1.5"/>
+<line x1="237" y1="140" x2="224" y2="153" stroke="#1a1a1a" stroke-width="1.5"/>
+<line x1="230" y1="144" x2="218" y2="156" stroke="#1a1a1a" stroke-width="1.5"/>
+</svg>

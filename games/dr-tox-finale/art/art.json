@@ -1,0 +1,1598 @@
+{
+ "game": "dr-tox-finale",
+ "count": 199,
+ "assets": [
+  {
+   "id": "title-episodes",
+   "group": "title",
+   "title": "Episode strip: Rise and Fall done, Finale open, Altrulan shut",
+   "w": 1200,
+   "h": 180,
+   "row": "loading | Episode menu strip"
+  },
+  {
+   "id": "title-finale",
+   "group": "title",
+   "title": "Title lettering: Dr. Tox: Finale",
+   "w": 1200,
+   "h": 420,
+   "row": "loading | Title lettering"
+  },
+  {
+   "id": "airway-tox",
+   "group": "figures",
+   "title": "Airway: Dr. Tox (move)",
+   "w": 160,
+   "h": 200,
+   "row": "airway | Figures: Dr. Tox"
+  },
+  {
+   "id": "airway-tox-breath",
+   "group": "figures",
+   "title": "Airway: Dr. Tox (breath)",
+   "w": 160,
+   "h": 200,
+   "row": "airway | Figures: Dr. Tox"
+  },
+  {
+   "id": "airway-tox-grip",
+   "group": "figures",
+   "title": "Airway: Dr. Tox (grip)",
+   "w": 160,
+   "h": 200,
+   "row": "airway | Figures: Dr. Tox"
+  },
+  {
+   "id": "airway-tox-shroud",
+   "group": "figures",
+   "title": "Airway: Dr. Tox (shroud)",
+   "w": 160,
+   "h": 200,
+   "row": "airway | Figures: Dr. Tox"
+  },
+  {
+   "id": "creed-dealer-hands",
+   "group": "figures",
+   "title": "Creed: the dealer's hands (Cally, dealing)",
+   "w": 360,
+   "h": 220,
+   "row": "creed | Figures: the lector, the dealer, his hand"
+  },
+  {
+   "id": "creed-lector",
+   "group": "figures",
+   "title": "Creed: the lector at the drum (Mercy, reading)",
+   "w": 320,
+   "h": 420,
+   "row": "creed | Figures: the lector, the dealer, his hand"
+  },
+  {
+   "id": "creed-tox-hand",
+   "group": "figures",
+   "title": "Creed: his gloved hand laying a tile",
+   "w": 300,
+   "h": 220,
+   "row": "creed | Figures: the lector, the dealer, his hand"
+  },
+  {
+   "id": "procession-marcher-banner",
+   "group": "figures",
+   "title": "Procession: marcher (banner)",
+   "w": 200,
+   "h": 320,
+   "row": "procession | Figures: the march (cut-outs)"
+  },
+  {
+   "id": "procession-marcher-home",
+   "group": "figures",
+   "title": "Procession: marcher (home)",
+   "w": 200,
+   "h": 320,
+   "row": "procession | Figures: the march (cut-outs)"
+  },
+  {
+   "id": "procession-marcher-jerrican",
+   "group": "figures",
+   "title": "Procession: marcher (jerrican)",
+   "w": 200,
+   "h": 320,
+   "row": "procession | Figures: the march (cut-outs)"
+  },
+  {
+   "id": "procession-marcher-reach",
+   "group": "figures",
+   "title": "Procession: marcher (reach)",
+   "w": 200,
+   "h": 320,
+   "row": "procession | Figures: the march (cut-outs)"
+  },
+  {
+   "id": "procession-marcher-stopped",
+   "group": "figures",
+   "title": "Procession: marcher (stopped)",
+   "w": 200,
+   "h": 320,
+   "row": "procession | Figures: the march (cut-outs)"
+  },
+  {
+   "id": "procession-marcher-walk-a",
+   "group": "figures",
+   "title": "Procession: marcher (walk-a)",
+   "w": 200,
+   "h": 320,
+   "row": "procession | Figures: the march (cut-outs)"
+  },
+  {
+   "id": "procession-marcher-walk-b",
+   "group": "figures",
+   "title": "Procession: marcher (walk-b)",
+   "w": 200,
+   "h": 320,
+   "row": "procession | Figures: the march (cut-outs)"
+  },
+  {
+   "id": "procession-shield",
+   "group": "figures",
+   "title": "Procession: the shield line (State security)",
+   "w": 200,
+   "h": 320,
+   "row": "procession | Figures: the shield line (Procession 2)"
+  },
+  {
+   "id": "procession-tox",
+   "group": "figures",
+   "title": "Procession: Dr. Tox, shroud closed (walking)",
+   "w": 200,
+   "h": 320,
+   "row": "procession | Figures: Dr. Tox"
+  },
+  {
+   "id": "procession-tox-dart",
+   "group": "figures",
+   "title": "Procession: Dr. Tox, darting (Procession 2)",
+   "w": 200,
+   "h": 320,
+   "row": "procession | Figures: Dr. Tox"
+  },
+  {
+   "id": "procession-tox-hand",
+   "group": "figures",
+   "title": "Procession: Dr. Tox, a hand raised (Stop.)",
+   "w": 200,
+   "h": 320,
+   "row": "procession | Figures: Dr. Tox"
+  },
+  {
+   "id": "procession-tox-open",
+   "group": "figures",
+   "title": "Procession: Dr. Tox, shroud open",
+   "w": 200,
+   "h": 320,
+   "row": "procession | Figures: Dr. Tox"
+  },
+  {
+   "id": "airway-stack-far",
+   "group": "backdrops",
+   "title": "Airway: the exhaust stack from the plinth (Airway 1) (far layer)",
+   "w": 1920,
+   "h": 540,
+   "row": "airway | Parallax backdrops, two layers per run"
+  },
+  {
+   "id": "airway-stack-mid",
+   "group": "backdrops",
+   "title": "Airway: the exhaust stack from the plinth (Airway 1) (mid layer)",
+   "w": 1920,
+   "h": 540,
+   "row": "airway | Parallax backdrops, two layers per run"
+  },
+  {
+   "id": "airway-supply-far",
+   "group": "backdrops",
+   "title": "Airway: the supply duct over the clinical suite (Airway 2) (far layer)",
+   "w": 1920,
+   "h": 540,
+   "row": "airway | Parallax backdrops, two layers per run"
+  },
+  {
+   "id": "airway-supply-mid",
+   "group": "backdrops",
+   "title": "Airway: the supply duct over the clinical suite (Airway 2) (mid layer)",
+   "w": 1920,
+   "h": 540,
+   "row": "airway | Parallax backdrops, two layers per run"
+  },
+  {
+   "id": "creed-spread",
+   "group": "backdrops",
+   "title": "Creed: the tract open across the page",
+   "w": 1280,
+   "h": 720,
+   "row": "creed | The page: the open tract"
+  },
+  {
+   "id": "loading-plain",
+   "group": "backdrops",
+   "title": "Loading backdrop: the last city over the plain, 2240",
+   "w": 1600,
+   "h": 900,
+   "row": "loading | Loading screen backdrop"
+  },
+  {
+   "id": "panes-card-atrium",
+   "group": "backdrops",
+   "title": "Panes: the card for the atrium (Panes 1)",
+   "w": 560,
+   "h": 780,
+   "row": "panes | Cards: front and back"
+  },
+  {
+   "id": "panes-card-back",
+   "group": "backdrops",
+   "title": "Panes: the card's back (names at the crack)",
+   "w": 560,
+   "h": 780,
+   "row": "panes | Cards: front and back"
+  },
+  {
+   "id": "panes-card-hub",
+   "group": "backdrops",
+   "title": "Panes: the card for the hub (Panes 2)",
+   "w": 560,
+   "h": 780,
+   "row": "panes | Cards: front and back"
+  },
+  {
+   "id": "procession-perimeter-far",
+   "group": "backdrops",
+   "title": "Procession: the floodlit perimeter (Procession 2) (far layer)",
+   "w": 1920,
+   "h": 540,
+   "row": "procession | Parallax backdrops, three layers per run"
+  },
+  {
+   "id": "procession-perimeter-mid",
+   "group": "backdrops",
+   "title": "Procession: the floodlit perimeter (Procession 2) (mid layer)",
+   "w": 1920,
+   "h": 540,
+   "row": "procession | Parallax backdrops, three layers per run"
+  },
+  {
+   "id": "procession-perimeter-near",
+   "group": "backdrops",
+   "title": "Procession: the floodlit perimeter (Procession 2) (near layer)",
+   "w": 1920,
+   "h": 540,
+   "row": "procession | Parallax backdrops, three layers per run"
+  },
+  {
+   "id": "procession-road-far",
+   "group": "backdrops",
+   "title": "Procession: the plain road at dawn (Procession 1) (far layer)",
+   "w": 1920,
+   "h": 540,
+   "row": "procession | Parallax backdrops, three layers per run"
+  },
+  {
+   "id": "procession-road-mid",
+   "group": "backdrops",
+   "title": "Procession: the plain road at dawn (Procession 1) (mid layer)",
+   "w": 1920,
+   "h": 540,
+   "row": "procession | Parallax backdrops, three layers per run"
+  },
+  {
+   "id": "procession-road-near",
+   "group": "backdrops",
+   "title": "Procession: the plain road at dawn (Procession 1) (near layer)",
+   "w": 1920,
+   "h": 540,
+   "row": "procession | Parallax backdrops, three layers per run"
+  },
+  {
+   "id": "split-field-perimeter",
+   "group": "backdrops",
+   "title": "Split Field: the perimeter after (Split Field 2)",
+   "w": 1280,
+   "h": 720,
+   "row": "split-field | Boards: the place after"
+  },
+  {
+   "id": "split-field-station",
+   "group": "backdrops",
+   "title": "Split Field: the water station after (Split Field 1)",
+   "w": 1280,
+   "h": 720,
+   "row": "split-field | Boards: the place after"
+  },
+  {
+   "id": "switchboard-page-1",
+   "group": "backdrops",
+   "title": "Switchboard: page 1 (4 districts)",
+   "w": 1280,
+   "h": 720,
+   "row": "switchboard | Pages: districts as pencilled panels"
+  },
+  {
+   "id": "switchboard-page-2",
+   "group": "backdrops",
+   "title": "Switchboard: page 2 (5 districts)",
+   "w": 1280,
+   "h": 720,
+   "row": "switchboard | Pages: districts as pencilled panels"
+  },
+  {
+   "id": "two-pans-cover-bench",
+   "group": "backdrops",
+   "title": "Two Pans: cover (bench)",
+   "w": 1280,
+   "h": 720,
+   "row": "two-pans | Covers: one per appearance"
+  },
+  {
+   "id": "two-pans-cover-core",
+   "group": "backdrops",
+   "title": "Two Pans: cover (core)",
+   "w": 1280,
+   "h": 720,
+   "row": "two-pans | Covers: one per appearance"
+  },
+  {
+   "id": "two-pans-cover-suite",
+   "group": "backdrops",
+   "title": "Two Pans: cover (suite)",
+   "w": 1280,
+   "h": 720,
+   "row": "two-pans | Covers: one per appearance"
+  },
+  {
+   "id": "airway-arrow-blue",
+   "group": "pieces",
+   "title": "Airway: arrow (blue rough)",
+   "w": 160,
+   "h": 120,
+   "row": "airway | Airflow arrows"
+  },
+  {
+   "id": "airway-arrow-inked",
+   "group": "pieces",
+   "title": "Airway: arrow (inked)",
+   "w": 160,
+   "h": 120,
+   "row": "airway | Airflow arrows"
+  },
+  {
+   "id": "airway-branch-blue",
+   "group": "pieces",
+   "title": "Airway: branch (blue rough)",
+   "w": 480,
+   "h": 240,
+   "row": "airway | Duct pieces (blue ahead, inked behind)"
+  },
+  {
+   "id": "airway-branch-inked",
+   "group": "pieces",
+   "title": "Airway: branch (inked)",
+   "w": 480,
+   "h": 240,
+   "row": "airway | Duct pieces (blue ahead, inked behind)"
+  },
+  {
+   "id": "airway-damper-open",
+   "group": "pieces",
+   "title": "Airway: a louvred damper, open",
+   "w": 180,
+   "h": 220,
+   "row": "airway | Dampers (cycle open and shut)"
+  },
+  {
+   "id": "airway-damper-shut",
+   "group": "pieces",
+   "title": "Airway: a louvred damper, shut",
+   "w": 180,
+   "h": 220,
+   "row": "airway | Dampers (cycle open and shut)"
+  },
+  {
+   "id": "airway-duct-blue",
+   "group": "pieces",
+   "title": "Airway: duct (blue rough)",
+   "w": 480,
+   "h": 240,
+   "row": "airway | Duct pieces (blue ahead, inked behind)"
+  },
+  {
+   "id": "airway-duct-inked",
+   "group": "pieces",
+   "title": "Airway: duct (inked)",
+   "w": 480,
+   "h": 240,
+   "row": "airway | Duct pieces (blue ahead, inked behind)"
+  },
+  {
+   "id": "airway-fan-blue",
+   "group": "pieces",
+   "title": "Airway: fan (blue rough)",
+   "w": 480,
+   "h": 240,
+   "row": "airway | Fans"
+  },
+  {
+   "id": "airway-fan-inked",
+   "group": "pieces",
+   "title": "Airway: fan (inked)",
+   "w": 480,
+   "h": 240,
+   "row": "airway | Fans"
+  },
+  {
+   "id": "airway-grille-blue",
+   "group": "pieces",
+   "title": "Airway: grille (blue rough)",
+   "w": 480,
+   "h": 240,
+   "row": "airway | Grilles over rooms"
+  },
+  {
+   "id": "airway-grille-inked",
+   "group": "pieces",
+   "title": "Airway: grille (inked)",
+   "w": 480,
+   "h": 240,
+   "row": "airway | Grilles over rooms"
+  },
+  {
+   "id": "airway-ink-edge",
+   "group": "pieces",
+   "title": "Airway: the inked edge, in progress",
+   "w": 120,
+   "h": 240,
+   "row": "airway | Duct pieces (blue ahead, inked behind)"
+  },
+  {
+   "id": "airway-plume",
+   "group": "pieces",
+   "title": "Airway: his breath plume (grey wash)",
+   "w": 420,
+   "h": 120,
+   "row": "airway | The breath plume"
+  },
+  {
+   "id": "creed-end-amber",
+   "group": "pieces",
+   "title": "Creed: tile end, AMBER",
+   "w": 120,
+   "h": 140,
+   "row": "creed | Tile ends (seven words)"
+  },
+  {
+   "id": "creed-end-blank",
+   "group": "pieces",
+   "title": "Creed: tile end, BLANK",
+   "w": 120,
+   "h": 140,
+   "row": "creed | Tile ends (seven words)"
+  },
+  {
+   "id": "creed-end-blood",
+   "group": "pieces",
+   "title": "Creed: tile end, BLOOD",
+   "w": 120,
+   "h": 140,
+   "row": "creed | Tile ends (seven words)"
+  },
+  {
+   "id": "creed-end-mark",
+   "group": "pieces",
+   "title": "Creed: tile end, MARK",
+   "w": 120,
+   "h": 140,
+   "row": "creed | Tile ends (seven words)"
+  },
+  {
+   "id": "creed-end-need",
+   "group": "pieces",
+   "title": "Creed: tile end, NEED",
+   "w": 120,
+   "h": 140,
+   "row": "creed | Tile ends (seven words)"
+  },
+  {
+   "id": "creed-end-rcc",
+   "group": "pieces",
+   "title": "Creed: tile end, RCC",
+   "w": 120,
+   "h": 140,
+   "row": "creed | Tile ends (seven words)"
+  },
+  {
+   "id": "creed-end-ring",
+   "group": "pieces",
+   "title": "Creed: tile end, RING",
+   "w": 120,
+   "h": 140,
+   "row": "creed | Tile ends (seven words)"
+  },
+  {
+   "id": "creed-tile-back",
+   "group": "pieces",
+   "title": "Creed: tile face down",
+   "w": 260,
+   "h": 180,
+   "row": "creed | Tiles"
+  },
+  {
+   "id": "creed-tile-frame",
+   "group": "pieces",
+   "title": "Creed: tile frame (two ends and a line of his)",
+   "w": 260,
+   "h": 180,
+   "row": "creed | Tiles"
+  },
+  {
+   "id": "creed-tile-naming",
+   "group": "pieces",
+   "title": "Creed: the naming tile (Creed 2)",
+   "w": 260,
+   "h": 180,
+   "row": "creed | Tiles: the naming tile"
+  },
+  {
+   "id": "creed-tile-sky",
+   "group": "pieces",
+   "title": "Creed: the sky tile (dealt to him)",
+   "w": 260,
+   "h": 180,
+   "row": "creed | Tiles: the dealer's"
+  },
+  {
+   "id": "creed-tile-string",
+   "group": "pieces",
+   "title": "Creed: the string tile (dealt to him)",
+   "w": 260,
+   "h": 180,
+   "row": "creed | Tiles: the dealer's"
+  },
+  {
+   "id": "panes-keystone",
+   "group": "pieces",
+   "title": "Panes: the keystone (sets only on HOPE)",
+   "w": 186,
+   "h": 101,
+   "row": "panes | The keystone"
+  },
+  {
+   "id": "panes-piece-large-a",
+   "group": "pieces",
+   "title": "Panes: piece, large a",
+   "w": 256,
+   "h": 136,
+   "row": "panes | The seven pieces (tangram)"
+  },
+  {
+   "id": "panes-piece-large-b",
+   "group": "pieces",
+   "title": "Panes: piece, large b",
+   "w": 136,
+   "h": 256,
+   "row": "panes | The seven pieces (tangram)"
+  },
+  {
+   "id": "panes-piece-medium",
+   "group": "pieces",
+   "title": "Panes: piece, medium",
+   "w": 136,
+   "h": 136,
+   "row": "panes | The seven pieces (tangram)"
+  },
+  {
+   "id": "panes-piece-out",
+   "group": "pieces",
+   "title": "Panes: a pane gone out (the flinch)",
+   "w": 186,
+   "h": 101,
+   "row": "panes | The keystone"
+  },
+  {
+   "id": "panes-piece-parallelogram",
+   "group": "pieces",
+   "title": "Panes: piece, parallelogram",
+   "w": 196,
+   "h": 76,
+   "row": "panes | The seven pieces (tangram)"
+  },
+  {
+   "id": "panes-piece-small-a",
+   "group": "pieces",
+   "title": "Panes: piece, small a",
+   "w": 76,
+   "h": 136,
+   "row": "panes | The seven pieces (tangram)"
+  },
+  {
+   "id": "panes-piece-small-b",
+   "group": "pieces",
+   "title": "Panes: piece, small b",
+   "w": 136,
+   "h": 76,
+   "row": "panes | The seven pieces (tangram)"
+  },
+  {
+   "id": "panes-piece-square",
+   "group": "pieces",
+   "title": "Panes: piece, square",
+   "w": 136,
+   "h": 136,
+   "row": "panes | The seven pieces (tangram)"
+  },
+  {
+   "id": "procession-arrow",
+   "group": "pieces",
+   "title": "Procession: the red tape arrow (him, to the front)",
+   "w": 300,
+   "h": 80,
+   "row": "procession | Progress: the red tape arrow"
+  },
+  {
+   "id": "procession-cart",
+   "group": "pieces",
+   "title": "Procession: Dov's copier on its handcart",
+   "w": 360,
+   "h": 260,
+   "row": "procession | Obstacles: carts, poles and tracts"
+  },
+  {
+   "id": "procession-front-banner",
+   "group": "pieces",
+   "title": "Procession: the banner at the head of the march",
+   "w": 560,
+   "h": 200,
+   "row": "procession | The front"
+  },
+  {
+   "id": "procession-mast-dark",
+   "group": "pieces",
+   "title": "Procession: a floodlight mast, blacked out",
+   "w": 240,
+   "h": 480,
+   "row": "procession | Floodlight masts (Procession 2)"
+  },
+  {
+   "id": "procession-mast-lit",
+   "group": "pieces",
+   "title": "Procession: a floodlight mast, lit",
+   "w": 240,
+   "h": 480,
+   "row": "procession | Floodlight masts (Procession 2)"
+  },
+  {
+   "id": "procession-pole",
+   "group": "pieces",
+   "title": "Procession: a banner pole planted in the road",
+   "w": 160,
+   "h": 360,
+   "row": "procession | Obstacles: carts, poles and tracts"
+  },
+  {
+   "id": "procession-ring",
+   "group": "pieces",
+   "title": "Procession: the breath ring (torn white circle)",
+   "w": 400,
+   "h": 140,
+   "row": "procession | The breath ring"
+  },
+  {
+   "id": "procession-staple",
+   "group": "pieces",
+   "title": "Procession: a staple (ornament)",
+   "w": 48,
+   "h": 24,
+   "row": "procession | Ornaments: tape and staples"
+  },
+  {
+   "id": "procession-tape",
+   "group": "pieces",
+   "title": "Procession: a strip of tape (ornament)",
+   "w": 160,
+   "h": 48,
+   "row": "procession | Ornaments: tape and staples"
+  },
+  {
+   "id": "procession-tract",
+   "group": "pieces",
+   "title": "Procession: a tract page dropped on the road",
+   "w": 120,
+   "h": 90,
+   "row": "procession | Obstacles: carts, poles and tracts"
+  },
+  {
+   "id": "split-field-circle",
+   "group": "pieces",
+   "title": "Split Field: the comparison circle (frame and hairline)",
+   "w": 440,
+   "h": 480,
+   "row": "split-field | The split-field circle"
+  },
+  {
+   "id": "split-field-marker",
+   "group": "pieces",
+   "title": "Split Field: a mark's number badge (open)",
+   "w": 64,
+   "h": 64,
+   "row": "split-field | Marks: number badges"
+  },
+  {
+   "id": "split-field-marker-locked",
+   "group": "pieces",
+   "title": "Split Field: a mark's number badge (attributed)",
+   "w": 64,
+   "h": 64,
+   "row": "split-field | Marks: number badges"
+  },
+  {
+   "id": "split-field-striae-bloom",
+   "group": "pieces",
+   "title": "Split Field: striae, bloom",
+   "w": 420,
+   "h": 420,
+   "row": "split-field | Striae: references and false traces"
+  },
+  {
+   "id": "split-field-striae-his",
+   "group": "pieces",
+   "title": "Split Field: striae, his",
+   "w": 420,
+   "h": 420,
+   "row": "split-field | Striae: references and false traces"
+  },
+  {
+   "id": "split-field-striae-old-resin",
+   "group": "pieces",
+   "title": "Split Field: striae, old-resin",
+   "w": 420,
+   "h": 420,
+   "row": "split-field | Striae: references and false traces"
+  },
+  {
+   "id": "split-field-striae-rust",
+   "group": "pieces",
+   "title": "Split Field: striae, rust",
+   "w": 420,
+   "h": 420,
+   "row": "split-field | Striae: references and false traces"
+  },
+  {
+   "id": "split-field-striae-state-baton",
+   "group": "pieces",
+   "title": "Split Field: striae, state-baton",
+   "w": 420,
+   "h": 420,
+   "row": "split-field | Striae: references and false traces"
+  },
+  {
+   "id": "split-field-striae-state-rim",
+   "group": "pieces",
+   "title": "Split Field: striae, state-rim",
+   "w": 420,
+   "h": 420,
+   "row": "split-field | Striae: references and false traces"
+  },
+  {
+   "id": "split-field-striae-state-round",
+   "group": "pieces",
+   "title": "Split Field: striae, state-round",
+   "w": 420,
+   "h": 420,
+   "row": "split-field | Striae: references and false traces"
+  },
+  {
+   "id": "split-field-striae-theirs",
+   "group": "pieces",
+   "title": "Split Field: striae, theirs",
+   "w": 420,
+   "h": 420,
+   "row": "split-field | Striae: references and false traces"
+  },
+  {
+   "id": "split-field-tray-his",
+   "group": "pieces",
+   "title": "Split Field: reference tray, HIS",
+   "w": 320,
+   "h": 140,
+   "row": "split-field | Reference trays"
+  },
+  {
+   "id": "split-field-tray-state",
+   "group": "pieces",
+   "title": "Split Field: reference tray, STATE",
+   "w": 320,
+   "h": 140,
+   "row": "split-field | Reference trays"
+  },
+  {
+   "id": "split-field-tray-theirs",
+   "group": "pieces",
+   "title": "Split Field: reference tray, THEIRS",
+   "w": 320,
+   "h": 140,
+   "row": "split-field | Reference trays"
+  },
+  {
+   "id": "switchboard-balloon-air-1",
+   "group": "pieces",
+   "title": "Switchboard: balloon, AIR 1",
+   "w": 220,
+   "h": 120,
+   "row": "switchboard | Balloons: the circuits"
+  },
+  {
+   "id": "switchboard-balloon-air-2",
+   "group": "pieces",
+   "title": "Switchboard: balloon, AIR 2",
+   "w": 220,
+   "h": 120,
+   "row": "switchboard | Balloons: the circuits"
+  },
+  {
+   "id": "switchboard-balloon-air-3",
+   "group": "pieces",
+   "title": "Switchboard: balloon, AIR 3",
+   "w": 220,
+   "h": 120,
+   "row": "switchboard | Balloons: the circuits"
+  },
+  {
+   "id": "switchboard-balloon-air-4",
+   "group": "pieces",
+   "title": "Switchboard: balloon, AIR 4",
+   "w": 220,
+   "h": 120,
+   "row": "switchboard | Balloons: the circuits"
+  },
+  {
+   "id": "switchboard-balloon-air-5",
+   "group": "pieces",
+   "title": "Switchboard: balloon, AIR 5",
+   "w": 220,
+   "h": 120,
+   "row": "switchboard | Balloons: the circuits"
+  },
+  {
+   "id": "switchboard-balloon-air-6",
+   "group": "pieces",
+   "title": "Switchboard: balloon, AIR 6",
+   "w": 220,
+   "h": 120,
+   "row": "switchboard | Balloons: the circuits"
+  },
+  {
+   "id": "switchboard-balloon-assist",
+   "group": "pieces",
+   "title": "Switchboard: balloon, ASSIST",
+   "w": 220,
+   "h": 120,
+   "row": "switchboard | Balloons: the circuits"
+  },
+  {
+   "id": "switchboard-balloon-dead",
+   "group": "pieces",
+   "title": "Switchboard: balloon, AIR",
+   "w": 220,
+   "h": 120,
+   "row": "switchboard | Balloons: the circuits"
+  },
+  {
+   "id": "switchboard-balloon-hub",
+   "group": "pieces",
+   "title": "Switchboard: balloon, HUB",
+   "w": 300,
+   "h": 150,
+   "row": "switchboard | Balloons: the circuits"
+  },
+  {
+   "id": "switchboard-balloon-lock",
+   "group": "pieces",
+   "title": "Switchboard: balloon, LOCK",
+   "w": 220,
+   "h": 120,
+   "row": "switchboard | Balloons: the circuits"
+  },
+  {
+   "id": "switchboard-jack",
+   "group": "pieces",
+   "title": "Switchboard: a cord's jack (the tail's end)",
+   "w": 40,
+   "h": 80,
+   "row": "switchboard | Cords: jacks and sockets"
+  },
+  {
+   "id": "switchboard-socket",
+   "group": "pieces",
+   "title": "Switchboard: a panel socket (empty)",
+   "w": 48,
+   "h": 48,
+   "row": "switchboard | Cords: jacks and sockets"
+  },
+  {
+   "id": "switchboard-socket-live",
+   "group": "pieces",
+   "title": "Switchboard: a panel socket (live)",
+   "w": 48,
+   "h": 48,
+   "row": "switchboard | Cords: jacks and sockets"
+  },
+  {
+   "id": "two-pans-beam",
+   "group": "pieces",
+   "title": "Two Pans: the beam (rotates about its centre)",
+   "w": 720,
+   "h": 60,
+   "row": "two-pans | The balance"
+  },
+  {
+   "id": "two-pans-dial",
+   "group": "pieces",
+   "title": "Two Pans: the dial with the window",
+   "w": 560,
+   "h": 300,
+   "row": "two-pans | The dial and pointer"
+  },
+  {
+   "id": "two-pans-dial-heart",
+   "group": "pieces",
+   "title": "Two Pans: the dial with the window and the heart band",
+   "w": 560,
+   "h": 300,
+   "row": "two-pans | The dial and pointer"
+  },
+  {
+   "id": "two-pans-pan-black",
+   "group": "pieces",
+   "title": "Two Pans: the BLACK pan",
+   "w": 260,
+   "h": 290,
+   "row": "two-pans | The balance"
+  },
+  {
+   "id": "two-pans-pan-red",
+   "group": "pieces",
+   "title": "Two Pans: the RED pan",
+   "w": 260,
+   "h": 290,
+   "row": "two-pans | The balance"
+  },
+  {
+   "id": "two-pans-pointer",
+   "group": "pieces",
+   "title": "Two Pans: the pointer (pivot at the bottom)",
+   "w": 40,
+   "h": 260,
+   "row": "two-pans | The dial and pointer"
+  },
+  {
+   "id": "two-pans-stand",
+   "group": "pieces",
+   "title": "Two Pans: the stand and pivot",
+   "w": 300,
+   "h": 520,
+   "row": "two-pans | The balance"
+  },
+  {
+   "id": "two-pans-token-1",
+   "group": "pieces",
+   "title": "Two Pans: pip token, 1",
+   "w": 80,
+   "h": 80,
+   "row": "two-pans | Pip tokens (1 to 6)"
+  },
+  {
+   "id": "two-pans-token-2",
+   "group": "pieces",
+   "title": "Two Pans: pip token, 2",
+   "w": 80,
+   "h": 80,
+   "row": "two-pans | Pip tokens (1 to 6)"
+  },
+  {
+   "id": "two-pans-token-3",
+   "group": "pieces",
+   "title": "Two Pans: pip token, 3",
+   "w": 80,
+   "h": 80,
+   "row": "two-pans | Pip tokens (1 to 6)"
+  },
+  {
+   "id": "two-pans-token-4",
+   "group": "pieces",
+   "title": "Two Pans: pip token, 4",
+   "w": 80,
+   "h": 80,
+   "row": "two-pans | Pip tokens (1 to 6)"
+  },
+  {
+   "id": "two-pans-token-5",
+   "group": "pieces",
+   "title": "Two Pans: pip token, 5",
+   "w": 80,
+   "h": 80,
+   "row": "two-pans | Pip tokens (1 to 6)"
+  },
+  {
+   "id": "two-pans-token-6",
+   "group": "pieces",
+   "title": "Two Pans: pip token, 6",
+   "w": 80,
+   "h": 80,
+   "row": "two-pans | Pip tokens (1 to 6)"
+  },
+  {
+   "id": "two-pans-tray",
+   "group": "pieces",
+   "title": "Two Pans: the token tray",
+   "w": 560,
+   "h": 130,
+   "row": "two-pans | Pip tokens (1 to 6)"
+  },
+  {
+   "id": "ending-green-wins",
+   "group": "endings",
+   "title": "Ending: Green Wins",
+   "w": 1200,
+   "h": 675,
+   "row": "loading | Ending lettering plates (menu spoilers)"
+  },
+  {
+   "id": "ending-the-cage-holds",
+   "group": "endings",
+   "title": "Ending: The Cage Holds",
+   "w": 1200,
+   "h": 675,
+   "row": "loading | Ending lettering plates (menu spoilers)"
+  },
+  {
+   "id": "ending-the-first-word",
+   "group": "endings",
+   "title": "Ending: The First Word",
+   "w": 1200,
+   "h": 675,
+   "row": "loading | Ending lettering plates (menu spoilers)"
+  },
+  {
+   "id": "ending-the-light-bringers-wall",
+   "group": "endings",
+   "title": "Ending: The Light Bringer's Wall",
+   "w": 1200,
+   "h": 675,
+   "row": "loading | Ending lettering plates (menu spoilers)"
+  },
+  {
+   "id": "ending-the-reset",
+   "group": "endings",
+   "title": "Ending: The Reset",
+   "w": 1200,
+   "h": 675,
+   "row": "loading | Ending lettering plates (menu spoilers)"
+  },
+  {
+   "id": "chapter-1",
+   "group": "chapters",
+   "title": "Chapter I: Overrun",
+   "w": 1280,
+   "h": 720,
+   "row": "shared | Chapter card (c1_overrun)"
+  },
+  {
+   "id": "chapter-10",
+   "group": "chapters",
+   "title": "Chapter X: The Reset",
+   "w": 1280,
+   "h": 720,
+   "row": "shared | Chapter card (c10_reset)"
+  },
+  {
+   "id": "chapter-2",
+   "group": "chapters",
+   "title": "Chapter II: The Station",
+   "w": 1280,
+   "h": 720,
+   "row": "shared | Chapter card (c2_station)"
+  },
+  {
+   "id": "chapter-3",
+   "group": "chapters",
+   "title": "Chapter III: The Bench",
+   "w": 1280,
+   "h": 720,
+   "row": "shared | Chapter card (c3_bench)"
+  },
+  {
+   "id": "chapter-4",
+   "group": "chapters",
+   "title": "Chapter IV: The Last City",
+   "w": 1280,
+   "h": 720,
+   "row": "shared | Chapter card (c4_last_city)"
+  },
+  {
+   "id": "chapter-5",
+   "group": "chapters",
+   "title": "Chapter V: Procession",
+   "w": 1280,
+   "h": 720,
+   "row": "shared | Chapter card (c5_procession)"
+  },
+  {
+   "id": "chapter-6",
+   "group": "chapters",
+   "title": "Chapter VI: The Perimeter",
+   "w": 1280,
+   "h": 720,
+   "row": "shared | Chapter card (c6_perimeter)"
+  },
+  {
+   "id": "chapter-7",
+   "group": "chapters",
+   "title": "Chapter VII: The Airway",
+   "w": 1280,
+   "h": 720,
+   "row": "shared | Chapter card (c7_airway)"
+  },
+  {
+   "id": "chapter-8",
+   "group": "chapters",
+   "title": "Chapter VIII: The Clinical Suite",
+   "w": 1280,
+   "h": 720,
+   "row": "shared | Chapter card (c8_suite)"
+  },
+  {
+   "id": "chapter-9",
+   "group": "chapters",
+   "title": "Chapter IX: The Light Bringer",
+   "w": 1280,
+   "h": 720,
+   "row": "shared | Chapter card (c9_light)"
+  },
+  {
+   "id": "airway-note-hold",
+   "group": "ui",
+   "title": "Airway: margin note, HOLD BREATH",
+   "w": 300,
+   "h": 60,
+   "row": "airway | Pencil notes"
+  },
+  {
+   "id": "airway-note-not-taken",
+   "group": "ui",
+   "title": "Airway: margin note, not taken",
+   "w": 240,
+   "h": 60,
+   "row": "airway | Pencil notes"
+  },
+  {
+   "id": "creed-boneyard",
+   "group": "ui",
+   "title": "Creed: the boneyard (a stack of folded tracts)",
+   "w": 200,
+   "h": 240,
+   "row": "creed | Boneyard and hand"
+  },
+  {
+   "id": "creed-cover-line",
+   "group": "ui",
+   "title": "Creed: the doctrine line on the cover (blank)",
+   "w": 640,
+   "h": 60,
+   "row": "creed | Doctrine: the cover line"
+  },
+  {
+   "id": "creed-hand-tray",
+   "group": "ui",
+   "title": "Creed: his hand (strip along the bottom)",
+   "w": 1280,
+   "h": 180,
+   "row": "creed | Boneyard and hand"
+  },
+  {
+   "id": "creed-hint",
+   "group": "ui",
+   "title": "Creed: hint, an open end the lector can match with BLOOD",
+   "w": 140,
+   "h": 160,
+   "row": "creed | Hint"
+  },
+  {
+   "id": "hud-amber",
+   "group": "ui",
+   "title": "HUD icon: Amber (a dose on hand)",
+   "w": 96,
+   "h": 96,
+   "row": "shared | HUD: Amber"
+  },
+  {
+   "id": "hud-amber-empty",
+   "group": "ui",
+   "title": "HUD icon: Amber (an empty slot)",
+   "w": 96,
+   "h": 96,
+   "row": "shared | HUD: Amber"
+  },
+  {
+   "id": "hud-breath",
+   "group": "ui",
+   "title": "HUD icon: the breath radius (a ring on the floor)",
+   "w": 96,
+   "h": 96,
+   "row": "shared | HUD: the breath radius"
+  },
+  {
+   "id": "hud-caption",
+   "group": "ui",
+   "title": "Caption box (blank, for dated captions)",
+   "w": 600,
+   "h": 96,
+   "row": "shared | Typed caption box"
+  },
+  {
+   "id": "hud-hold",
+   "group": "ui",
+   "title": "The core's only prompt: HOLD",
+   "w": 360,
+   "h": 120,
+   "row": "shared | HUD: Hold (the core)"
+  },
+  {
+   "id": "hud-load",
+   "group": "ui",
+   "title": "Load gauge (Aegis, pale gold)",
+   "w": 480,
+   "h": 48,
+   "row": "shared | HUD: Load"
+  },
+  {
+   "id": "hud-margin-calm",
+   "group": "ui",
+   "title": "Pulse margin line: calm (amber)",
+   "w": 1200,
+   "h": 32,
+   "row": "shared | HUD: Pulse margin strip"
+  },
+  {
+   "id": "hud-margin-edge",
+   "group": "ui",
+   "title": "Pulse margin line: near the Self line (green spikes)",
+   "w": 1200,
+   "h": 32,
+   "row": "shared | HUD: Pulse margin strip"
+  },
+  {
+   "id": "hud-margin-green",
+   "group": "ui",
+   "title": "Pulse margin line: at the line (green from the corners)",
+   "w": 1200,
+   "h": 32,
+   "row": "shared | HUD: Pulse margin strip"
+  },
+  {
+   "id": "hud-pulse",
+   "group": "ui",
+   "title": "HUD icon: Pulse (calm)",
+   "w": 96,
+   "h": 96,
+   "row": "shared | HUD: Pulse"
+  },
+  {
+   "id": "hud-pulse-edge",
+   "group": "ui",
+   "title": "HUD icon: Pulse near the line (green spike)",
+   "w": 96,
+   "h": 96,
+   "row": "shared | HUD: Pulse"
+  },
+  {
+   "id": "hud-self",
+   "group": "ui",
+   "title": "HUD icon: Self (a struck word)",
+   "w": 96,
+   "h": 96,
+   "row": "shared | HUD: Self"
+  },
+  {
+   "id": "hud-self-floor",
+   "group": "ui",
+   "title": "Self gauge with the floor at 40 marked",
+   "w": 480,
+   "h": 64,
+   "row": "shared | HUD: Self and its floor"
+  },
+  {
+   "id": "hud-self-low",
+   "group": "ui",
+   "title": "Menu stamp: Self is low",
+   "w": 240,
+   "h": 72,
+   "row": "shared | HUD: Self and its floor"
+  },
+  {
+   "id": "hud-shroud-closed",
+   "group": "ui",
+   "title": "HUD icon: shroud closed",
+   "w": 96,
+   "h": 96,
+   "row": "shared | HUD: the shroud"
+  },
+  {
+   "id": "hud-shroud-open",
+   "group": "ui",
+   "title": "HUD icon: shroud open",
+   "w": 96,
+   "h": 96,
+   "row": "shared | HUD: the shroud"
+  },
+  {
+   "id": "hud-word-him",
+   "group": "ui",
+   "title": "The cult's word: HIM (the tract's)",
+   "w": 240,
+   "h": 96,
+   "row": "shared | HUD: the Word (Terminology Rule)"
+  },
+  {
+   "id": "hud-word-hope",
+   "group": "ui",
+   "title": "Terminology Rule: HOPE (the insignia)",
+   "w": 240,
+   "h": 96,
+   "row": "shared | HUD: the Word (Terminology Rule)"
+  },
+  {
+   "id": "hud-word-rcc",
+   "group": "ui",
+   "title": "Terminology Rule: RCC (the plate)",
+   "w": 240,
+   "h": 96,
+   "row": "shared | HUD: the Word (Terminology Rule)"
+  },
+  {
+   "id": "hud-word-silence",
+   "group": "ui",
+   "title": "Terminology Rule: nothing (the held breath)",
+   "w": 240,
+   "h": 96,
+   "row": "shared | HUD: the Word (Terminology Rule)"
+  },
+  {
+   "id": "loading-monitor-amber",
+   "group": "ui",
+   "title": "Loading monitor line, amber (held)",
+   "w": 1200,
+   "h": 140,
+   "row": "loading | Animated element: the monitor line, first state"
+  },
+  {
+   "id": "loading-monitor-floor",
+   "group": "ui",
+   "title": "Loading monitor line, the Self line lowered to the floor",
+   "w": 1200,
+   "h": 140,
+   "row": "loading | Animated element: the monitor line, last state"
+  },
+  {
+   "id": "loading-monitor-trigger",
+   "group": "ui",
+   "title": "Loading monitor line, amber under the Self line",
+   "w": 1200,
+   "h": 140,
+   "row": "loading | Animated element: the monitor line, second state"
+  },
+  {
+   "id": "panes-fumes",
+   "group": "ui",
+   "title": "Panes: fumes through a gap",
+   "w": 140,
+   "h": 140,
+   "row": "panes | Fumes and the seal"
+  },
+  {
+   "id": "panes-hope-seal",
+   "group": "ui",
+   "title": "Panes: the HOPE seal (the Word said)",
+   "w": 140,
+   "h": 140,
+   "row": "panes | Fumes and the seal"
+  },
+  {
+   "id": "panes-sticker",
+   "group": "ui",
+   "title": "Panes: a name sticker (blank)",
+   "w": 200,
+   "h": 64,
+   "row": "panes | Names at the crack"
+  },
+  {
+   "id": "procession-go-home",
+   "group": "ui",
+   "title": "Procession: GO HOME. (ransom letters)",
+   "w": 480,
+   "h": 110,
+   "row": "procession | Words: the raised hand and the front"
+  },
+  {
+   "id": "procession-name-tag",
+   "group": "ui",
+   "title": "Procession: a name tag (blank, for name, want and word)",
+   "w": 260,
+   "h": 96,
+   "row": "procession | Labels over followers"
+  },
+  {
+   "id": "procession-stop",
+   "group": "ui",
+   "title": "Procession: STOP. (ransom letters, red)",
+   "w": 300,
+   "h": 110,
+   "row": "procession | Words: the raised hand and the front"
+  },
+  {
+   "id": "procession-strip",
+   "group": "ui",
+   "title": "Procession: the column strip (the march from above)",
+   "w": 1200,
+   "h": 80,
+   "row": "procession | Progress strip: the march as cut-out heads"
+  },
+  {
+   "id": "split-field-stamp-aside",
+   "group": "ui",
+   "title": "Split Field: stamp, NOT OF THIS DAY",
+   "w": 360,
+   "h": 80,
+   "row": "split-field | Stamps and the pin"
+  },
+  {
+   "id": "split-field-stamp-pin",
+   "group": "ui",
+   "title": "Split Field: stamp, PIN THE BOARD",
+   "w": 300,
+   "h": 80,
+   "row": "split-field | Stamps and the pin"
+  },
+  {
+   "id": "split-field-stamp-reconstructed",
+   "group": "ui",
+   "title": "Split Field: stamp, RECONSTRUCTED",
+   "w": 360,
+   "h": 80,
+   "row": "split-field | Stamps and the pin"
+  },
+  {
+   "id": "switchboard-confirm",
+   "group": "ui",
+   "title": "Switchboard: confirm (OK TO PRINT)",
+   "w": 280,
+   "h": 90,
+   "row": "switchboard | Margin notes"
+  },
+  {
+   "id": "switchboard-lock-note",
+   "group": "ui",
+   "title": "Switchboard: the interlock's note (red)",
+   "w": 520,
+   "h": 110,
+   "row": "switchboard | Margin notes"
+  },
+  {
+   "id": "switchboard-note",
+   "group": "ui",
+   "title": "Switchboard: the letterer's margin note (blank)",
+   "w": 520,
+   "h": 70,
+   "row": "switchboard | Margin notes"
+  },
+  {
+   "id": "two-pans-caption-heart",
+   "group": "ui",
+   "title": "Two Pans: caption, HERE, HIS HEART WOULD HOLD.",
+   "w": 360,
+   "h": 110,
+   "row": "two-pans | Captions and plates"
+  },
+  {
+   "id": "two-pans-caption-refuse",
+   "group": "ui",
+   "title": "Two Pans: caption, IT WILL NOT REST THERE.",
+   "w": 360,
+   "h": 110,
+   "row": "two-pans | Captions and plates"
+  },
+  {
+   "id": "two-pans-confirm",
+   "group": "ui",
+   "title": "Two Pans: REST IT (confirm)",
+   "w": 260,
+   "h": 90,
+   "row": "two-pans | Captions and plates"
+  },
+  {
+   "id": "two-pans-load",
+   "group": "ui",
+   "title": "Two Pans: the load plate (number laid in)",
+   "w": 300,
+   "h": 90,
+   "row": "two-pans | Captions and plates"
+  },
+  {
+   "id": "airway-room",
+   "group": "documents",
+   "title": "Airway: a room under a grille (pencilled, names blank)",
+   "w": 320,
+   "h": 200,
+   "row": "airway | Rooms below the grilles"
+  },
+  {
+   "id": "airway-room-exposed",
+   "group": "documents",
+   "title": "Airway: an exposed room (people leaving, coughing)",
+   "w": 320,
+   "h": 200,
+   "row": "airway | Rooms below the grilles"
+  },
+  {
+   "id": "creed-tract-cover",
+   "group": "documents",
+   "title": "Creed: the tract's cover",
+   "w": 480,
+   "h": 660,
+   "row": "creed | The tract's cover"
+  },
+  {
+   "id": "creed-verse-blood",
+   "group": "documents",
+   "title": "Creed: verse, ALL OF IT IS HIS BLOOD.",
+   "w": 1100,
+   "h": 100,
+   "row": "creed | Verses printed from the joints"
+  },
+  {
+   "id": "creed-verse-ring",
+   "group": "documents",
+   "title": "Creed: verse, THE RING IS HOLY.",
+   "w": 1100,
+   "h": 100,
+   "row": "creed | Verses printed from the joints"
+  },
+  {
+   "id": "split-field-record",
+   "group": "documents",
+   "title": "Split Field: the record strip (blank)",
+   "w": 320,
+   "h": 600,
+   "row": "split-field | The record of the hurt"
+  },
+  {
+   "id": "split-field-record-line",
+   "group": "documents",
+   "title": "Split Field: one record entry (filled tone band)",
+   "w": 300,
+   "h": 100,
+   "row": "split-field | The record of the hurt"
+  },
+  {
+   "id": "two-pans-jar",
+   "group": "documents",
+   "title": "Two Pans: a rite jar (Two Pans 1)",
+   "w": 160,
+   "h": 200,
+   "row": "two-pans | What is weighed: jars and the rack"
+  },
+  {
+   "id": "two-pans-rack",
+   "group": "documents",
+   "title": "Two Pans: RCC's rack of vials (Two Pans 2)",
+   "w": 420,
+   "h": 220,
+   "row": "two-pans | What is weighed: jars and the rack"
+  }
+ ]
+}

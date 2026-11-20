@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-labelledby="split-field-marker-locked-t split-field-marker-locked-d">
+<title id="split-field-marker-locked-t">Split Field: a mark's number badge (attributed)</title>
+<desc id="split-field-marker-locked-d">The badge once its mark is attributed: the disc filled with crosshatch tone and a heavy check of ink beside it; the number stays legible on a white centre.</desc>
+<defs><clipPath id="split-field-marker-locked-clip1"><circle cx="32" cy="32" r="24"/></clipPath><clipPath id="split-field-marker-locked-clip2"><circle cx="32" cy="32" r="24"/></clipPath></defs>
+<circle cx="32" cy="32" r="26" fill="#ffffff" stroke="#141414" stroke-width="4"/>
+<g clip-path="url(#split-field-marker-locked-clip1)">
+<path d="M32,-27.1 L91.1,32 M28.5,-23.5 L87.5,35.5 M24.9,-20 L84,39.1 M21.4,-16.5 L80.5,42.6 M17.9,-12.9 L76.9,46.1 M14.3,-9.4 L73.4,49.7 M10.8,-5.9 L69.9,53.2 M7.3,-2.3 L66.3,56.7 M3.7,1.2 L62.8,60.3 M0.2,4.7 L59.3,63.8 M-3.4,8.3 L55.7,67.4 M-6.9,11.8 L52.2,70.9 M-10.4,15.4 L48.6,74.4 M-14,18.9 L45.1,78 M-17.5,22.4 L41.6,81.5 M-21,26 L38,85 M-24.6,29.5 L34.5,88.6" fill="none" stroke="#5a5a5a" stroke-width="1.2"/>
+</g>
+<g clip-path="url(#split-field-marker-locked-clip2)">
+<path d="M-27.1,32 L32,-27.1 M-23.5,35.5 L35.5,-23.5 M-20,39.1 L39.1,-20 M-16.5,42.6 L42.6,-16.5 M-12.9,46.1 L46.1,-12.9 M-9.4,49.7 L49.7,-9.4 M-5.9,53.2 L53.2,-5.9 M-2.3,56.7 L56.7,-2.3 M1.2,60.3 L60.3,1.2 M4.7,63.8 L63.8,4.7 M8.3,67.4 L67.4,8.3 M11.8,70.9 L70.9,11.8 M15.4,74.4 L74.4,15.4 M18.9,78 L78,18.9 M22.4,81.5 L81.5,22.4 M26,85 L85,26 M29.5,88.6 L88.6,29.5" fill="none" stroke="#5a5a5a" stroke-width="1.2"/>
+</g>
+<circle cx="32" cy="32" r="13" fill="#ffffff" stroke="#141414" stroke-width="2"/>
+<path d="M42,48 L48,56 L60,38" fill="none" stroke="#141414" stroke-width="4" stroke-linecap="round"/>
+</svg>

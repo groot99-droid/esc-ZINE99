@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 110" width="360" height="110" role="img" aria-labelledby="two-pans-caption-heart-t two-pans-caption-heart-d">
+<title id="two-pans-caption-heart-t">Two Pans: caption, HERE, HIS HEART WOULD HOLD.</title>
+<desc id="two-pans-caption-heart-d">Two Pans caption box: the red caption over the heart band, the only words the page says about it, lettered in heavy capitals in a pulp caption box with a black drop shadow.</desc>
+<rect x="10" y="10" width="346" height="96" fill="#1a1a1a"/>
+<rect x="4" y="4" width="346" height="96" fill="#ffffff" stroke="#1a1a1a" stroke-width="4"/>
+<line x1="22" y1="88" x2="320" y2="88" stroke="#C8202A" stroke-width="1.5" opacity="0.5"/>
+<text x="22" y="44" font-size="26" font-family="sans-serif" fill="#C8202A" text-anchor="start" font-weight="bold" letter-spacing="1">HERE, HIS HEART</text>
+<text x="22" y="78" font-size="26" font-family="sans-serif" fill="#C8202A" text-anchor="start" font-weight="bold" letter-spacing="1">WOULD HOLD.</text>
+</svg>

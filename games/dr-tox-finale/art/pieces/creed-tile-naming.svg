@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 180" width="260" height="180" role="img" aria-labelledby="creed-tile-naming-t creed-tile-naming-d">
+<title id="creed-tile-naming-t">Creed: the naming tile (Creed 2)</title>
+<desc id="creed-tile-naming-d">The extra tile he holds in Creed 2 if the station's marks were shown to be the cult's: blank on both ends, and across its face a typed strip where the station keeper's name is lettered at run time. Laid on a BLOOD end it closes it.</desc>
+<rect x="3" y="3" width="254" height="174" rx="8" fill="#ffffff" stroke="#1a1a1a" stroke-width="4"/>
+<line x1="130" y1="8" x2="130" y2="172" stroke="#1a1a1a" stroke-width="3"/>
+<line x1="42" y1="120" x2="90" y2="120" stroke="#1a1a1a" stroke-width="1.5" opacity="0.4"/>
+<line x1="170" y1="120" x2="218" y2="120" stroke="#1a1a1a" stroke-width="1.5" opacity="0.4"/>
+<rect x="20" y="60" width="220" height="40" fill="#f5f1e6" stroke="#1a1a1a" stroke-width="2"/>
+<line x1="30" y1="90" x2="230" y2="90" stroke="#1a1a1a" stroke-width="0.6" opacity="0.4"/>
+<rect x="92" y="36" width="76" height="22" fill="#ffffff"/>
+<text x="130" y="52" font-size="14" font-family="sans-serif" fill="#C8202A" text-anchor="middle" font-weight="bold" letter-spacing="4">NAMED</text>
+</svg>

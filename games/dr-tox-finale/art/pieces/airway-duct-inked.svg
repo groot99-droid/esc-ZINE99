@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 240" width="480" height="240" role="img" aria-labelledby="airway-duct-inked-t airway-duct-inked-d">
+<title id="airway-duct-inked-t">Airway: duct (inked)</title>
+<desc id="airway-duct-inked-d">Airway piece: a straight duct section, two walls and a flange joint, inked in black brush with a light hatch: the path behind him.</desc>
+<defs><clipPath id="airway-duct-inked-clip1"><rect x="0" y="40" width="480" height="160"/></clipPath></defs>
+<path d="M0.2,40.9 L23.4,39.6 L46.3,39.3 L68.3,39.1 L90.6,39.1 L115.3,41.2 L138.2,40.7 L160.2,41.2 L183.4,41 L206.1,40.1 L229.5,40.3 L250.2,40.4 L273.4,39 L297.7,40.5 L319.8,39.9 L342.4,40.2 L365.8,40.2 L387.9,40.1 L411.8,39.8 L435.2,40 L457.2,40.8 L480.9,40.4" fill="none" stroke="#141414" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M0.5,200.6 L22.7,199.1 L45.4,200.5 L69.2,199.8 L91.6,201.1 L113.3,201.2 L137.3,199.6 L160.9,200.1 L183.6,200.9 L206.8,199 L228,199.7 L251.6,200.4 L274.2,201.1 L296.7,199.6 L320.3,200.4 L343.6,201 L364.6,199.3 L389.5,200.4 L410.4,200.4 L433.7,199.8 L458.1,199 L479.8,199.8" fill="none" stroke="#141414" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M161,28.9 L159.5,49.5" fill="none" stroke="#141414" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M161.1,191.1 L160.7,209.3" fill="none" stroke="#141414" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<g clip-path="url(#airway-duct-inked-clip1)">
+<path d="M340.7,-255.6 L615.6,220.7 M321.6,-244.6 L596.6,231.7 M302.5,-233.6 L577.5,242.7 M283.5,-222.6 L558.5,253.7 M264.4,-211.6 L539.4,264.7 M245.4,-200.6 L520.4,275.7 M226.3,-189.6 L501.3,286.7 M207.3,-178.6 L482.3,297.7 M188.2,-167.6 L463.2,308.7 M169.2,-156.6 L444.2,319.7 M150.1,-145.6 L425.1,330.7 M131.1,-134.6 L406.1,341.7 M112,-123.6 L387,352.7 M93,-112.6 L367.9,363.7 M73.9,-101.6 L348.9,374.7 M54.9,-90.6 L329.8,385.7 M35.8,-79.6 L310.8,396.7 M16.8,-68.6 L291.7,407.7 M-2.3,-57.6 L272.7,418.7 M-21.3,-46.6 L253.6,429.7 M-40.4,-35.6 L234.6,440.7 M-59.5,-24.6 L215.5,451.7 M-78.5,-13.6 L196.5,462.7 M-97.6,-2.6 L177.4,473.7 M-116.6,8.4 L158.4,484.7" fill="none" stroke="#141414" stroke-width="1.2" opacity="0.2"/>
+</g>
+</svg>

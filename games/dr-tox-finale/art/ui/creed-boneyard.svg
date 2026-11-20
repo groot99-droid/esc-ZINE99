@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="200" height="240" role="img" aria-labelledby="creed-boneyard-t creed-boneyard-d">
+<title id="creed-boneyard-t">Creed: the boneyard (a stack of folded tracts)</title>
+<desc id="creed-boneyard-d">The boneyard as a short stack of folded tracts, slightly askew, the top one showing its red cover band; tap it to draw.</desc>
+<rect x="20" y="170" width="160" height="34" fill="#f5f1e6" stroke="#1a1a1a" stroke-width="2" transform="rotate(-3 100 187)"/>
+<rect x="20" y="148" width="160" height="34" fill="#f5f1e6" stroke="#1a1a1a" stroke-width="2" transform="rotate(2 100 165)"/>
+<rect x="20" y="126" width="160" height="34" fill="#f5f1e6" stroke="#1a1a1a" stroke-width="2" transform="rotate(-1 100 143)"/>
+<rect x="20" y="104" width="160" height="34" fill="#f5f1e6" stroke="#1a1a1a" stroke-width="2" transform="rotate(3 100 121)"/>
+<rect x="20" y="82" width="160" height="34" fill="#f5f1e6" stroke="#1a1a1a" stroke-width="2" transform="rotate(-2 100 99)"/>
+<rect x="20" y="60" width="160" height="34" fill="#ffffff" stroke="#1a1a1a" stroke-width="2" transform="rotate(1 100 77)"/>
+<rect x="30" y="66" width="140" height="18" fill="#C8202A" transform="rotate(1 100 75)"/>
+<text x="100" y="80" font-size="14" font-family="sans-serif" fill="#ffffff" text-anchor="middle" font-weight="bold" letter-spacing="3" transform="rotate(1 100 75)">DRAW</text>
+<rect x="96" y="92" width="8" height="4" fill="#8a8a88"/>
+</svg>

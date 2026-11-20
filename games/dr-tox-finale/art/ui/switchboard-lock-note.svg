@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 110" width="520" height="110" role="img" aria-labelledby="switchboard-lock-note-t switchboard-lock-note-d">
+<title id="switchboard-lock-note-t">Switchboard: the interlock's note (red)</title>
+<desc id="switchboard-lock-note-d">What a red LOCK balloon says when it is tapped, as a red correction note boxed in the margin: THE PLINTH BREATHES ONLY WHAT THE TOWERS EXHALE, with a red arrow to the plinth's tail.</desc>
+<rect x="6" y="6" width="508" height="98" fill="#fbfaf6" stroke="#C8202A" stroke-width="3"/>
+<line x1="20" y1="46" x2="440" y2="46" stroke="#8EC5E8" stroke-width="1"/>
+<text x="22" y="42" font-size="26" font-family="sans-serif" fill="#C8202A" text-anchor="start" font-weight="bold" letter-spacing="1" textLength="410" lengthAdjust="spacingAndGlyphs">THE PLINTH BREATHES ONLY</text>
+<line x1="20" y1="82" x2="440" y2="82" stroke="#8EC5E8" stroke-width="1"/>
+<text x="22" y="78" font-size="26" font-family="sans-serif" fill="#C8202A" text-anchor="start" font-weight="bold" letter-spacing="1">WHAT THE TOWERS EXHALE.</text>
+<path d="M460,40 C490,50 494,70 480,90 M480,90 l2,-14 M480,90 l-12,-6" fill="none" stroke="#C8202A" stroke-width="3"/>
+</svg>

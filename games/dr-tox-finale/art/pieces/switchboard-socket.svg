@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-labelledby="switchboard-socket-t switchboard-socket-d">
+<title id="switchboard-socket-t">Switchboard: a panel socket (empty)</title>
+<desc id="switchboard-socket-d">A panel's socket at the top edge of a district: pencilled and empty, waiting for a tail.</desc>
+<circle cx="24" cy="24" r="20" fill="#fbfaf6" stroke="#9a9a9a" stroke-width="4"/>
+<circle cx="24" cy="24" r="9" fill="#fbfaf6" stroke="#9a9a9a" stroke-width="2"/>
+<circle cx="6" cy="6" r="2" fill="#9a9a9a"/>
+<circle cx="42" cy="6" r="2" fill="#9a9a9a"/>
+<circle cx="6" cy="42" r="2" fill="#9a9a9a"/>
+<circle cx="42" cy="42" r="2" fill="#9a9a9a"/>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 120" width="220" height="120" role="img" aria-labelledby="switchboard-balloon-air-5-t switchboard-balloon-air-5-d">
+<title id="switchboard-balloon-air-5-t">Switchboard: balloon, AIR 5</title>
+<desc id="switchboard-balloon-air-5-d">Switchboard balloon AIR 5: air circuit 5. An inked speech balloon with hand-lettered capitals on blue guidelines; its tail point at the bottom centre is where the patch cord leaves for a panel.</desc>
+<path d="M96.0,90.0 L110.0,116 L124.0,90.0" fill="#fbfaf6" stroke="#141414" stroke-width="4" stroke-linejoin="round"/>
+<ellipse cx="110" cy="50" rx="102" ry="44" fill="#fbfaf6" stroke="#141414" stroke-width="4"/>
+<rect x="98" y="88" width="24" height="8" fill="#fbfaf6"/>
+<line x1="34" y1="33.2" x2="186" y2="33.2" stroke="#8EC5E8" stroke-width="1.2"/>
+<line x1="34" y1="64.4" x2="186" y2="64.4" stroke="#8EC5E8" stroke-width="1.2"/>
+<text x="110" y="63.6" font-size="40" font-family="sans-serif" fill="#141414" text-anchor="middle" font-weight="bold" letter-spacing="2">AIR 5</text>
+<circle cx="110" cy="114" r="5" fill="#141414"/>
+</svg>

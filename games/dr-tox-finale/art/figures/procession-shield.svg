@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 320" width="200" height="320" role="img" aria-labelledby="procession-shield-t procession-shield-d">
+<title id="procession-shield-t">Procession: the shield line (State security)</title>
+<desc id="procession-shield-d">A State security shield bearer cut from a photocopy: a helmeted outline behind a tall riot shield stamped RCC, the shield's face pasted on in grey paper; used in a row.</desc>
+<defs><clipPath id="procession-shield-clip1"><path d="M80,310 L170,310 L176,84 L86,78Z"/></clipPath></defs>
+<path d="M70.2,50 L90,41.2 L109.8,50 L114.2,94 L103.2,111.6 L158.6,138 L152.9,226 L120.8,314 L96.6,314 L90,234.8 L83.4,314 L59.2,314 L27.1,226 L21.4,138 L76.8,111.6 L65.8,94Z" fill="#ffffff" stroke="#ffffff" stroke-width="8" stroke-linejoin="round"/>
+<path d="M70.2,50 L90,41.2 L109.8,50 L114.2,94 L103.2,111.6 L158.6,138 L152.9,226 L120.8,314 L96.6,314 L90,234.8 L83.4,314 L59.2,314 L27.1,226 L21.4,138 L76.8,111.6 L65.8,94Z" fill="#1C1C1A"/>
+<path d="M66.0,46 C66.0,18 114.0,18 114.0,46Z" fill="#1C1C1A"/>
+<path d="M80,310 L170,310 L176,84 L86,78Z" fill="#ffffff" stroke="#ffffff" stroke-width="8" stroke-linejoin="round"/>
+<path d="M80,310 L170,310 L176,84 L86,78Z" fill="#d6d1c4"/>
+<path d="M80,310 L170,310 L176,84 L86,78Z" fill="none" stroke="#1C1C1A" stroke-width="4"/>
+<rect x="106" y="114" width="48" height="30" fill="#1C1C1A"/>
+<text x="130" y="136" font-size="18" font-family="sans-serif" fill="#ffffff" text-anchor="middle" font-weight="bold" letter-spacing="2">RCC</text>
+<g clip-path="url(#procession-shield-clip1)">
+<path d="M205.9,117.7 L239.3,306.9 M199,119 L232.4,308.1 M192.1,120.2 L225.5,309.3 M185.2,121.4 L218.6,310.6 M178.3,122.6 L211.7,311.8 M171.4,123.8 L204.8,313 M164.5,125 L197.9,314.2 M157.7,126.2 L191,315.4 M150.8,127.5 L184.1,316.6 M143.9,128.7 L177.2,317.8 M137,129.9 L170.3,319.1 M130.1,131.1 L163.4,320.3 M123.2,132.3 L156.5,321.5 M116.3,133.5 L149.6,322.7 M109.4,134.8 L142.8,323.9 M102.5,136 L135.9,325.1 M95.6,137.2 L129,326.4 M88.7,138.4 L122.1,327.6 M81.8,139.6 L115.2,328.8 M74.9,140.8 L108.3,330 M68,142 L101.4,331.2 M61.1,143.3 L94.5,332.4 M54.2,144.5 L87.6,333.6 M47.4,145.7 L80.7,334.9 M40.5,146.9 L73.8,336.1 M33.6,148.1 L66.9,337.3 M26.7,149.3 L60,338.5 M19.8,150.6 L53.1,339.7" fill="none" stroke="#1C1C1A" stroke-width="1" opacity="0.3"/>
+</g>
+</svg>

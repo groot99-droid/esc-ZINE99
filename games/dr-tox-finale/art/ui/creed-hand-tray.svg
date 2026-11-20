@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 180" width="1280" height="180" role="img" aria-labelledby="creed-hand-tray-t creed-hand-tray-d">
+<title id="creed-hand-tray-t">Creed: his hand (strip along the bottom)</title>
+<desc id="creed-hand-tray-d">The strip at the bottom of the page where his hand lies: a dark table edge with seven faint printed slots for tiles, and HIS HAND in small capitals at the left.</desc>
+<rect x="0" y="0" width="1280" height="180" fill="#2b2a27"/>
+<line x1="0" y1="2" x2="1280" y2="2" stroke="#55524a" stroke-width="3"/>
+<rect x="120" y="26" width="140" height="130" rx="8" fill="none" stroke="#55524a" stroke-width="2" stroke-dasharray="6 5"/>
+<rect x="280" y="26" width="140" height="130" rx="8" fill="none" stroke="#55524a" stroke-width="2" stroke-dasharray="6 5"/>
+<rect x="440" y="26" width="140" height="130" rx="8" fill="none" stroke="#55524a" stroke-width="2" stroke-dasharray="6 5"/>
+<rect x="600" y="26" width="140" height="130" rx="8" fill="none" stroke="#55524a" stroke-width="2" stroke-dasharray="6 5"/>
+<rect x="760" y="26" width="140" height="130" rx="8" fill="none" stroke="#55524a" stroke-width="2" stroke-dasharray="6 5"/>
+<rect x="920" y="26" width="140" height="130" rx="8" fill="none" stroke="#55524a" stroke-width="2" stroke-dasharray="6 5"/>
+<rect x="1080" y="26" width="140" height="130" rx="8" fill="none" stroke="#55524a" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="20" y="96" font-size="16" font-family="sans-serif" fill="#cfcac0" text-anchor="start" font-weight="bold" letter-spacing="3">HIS</text>
+<text x="20" y="116" font-size="16" font-family="sans-serif" fill="#cfcac0" text-anchor="start" font-weight="bold" letter-spacing="3">HAND</text>
+</svg>

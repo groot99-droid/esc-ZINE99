@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-labelledby="chapter-3-t chapter-3-d">
+<title id="chapter-3-t">Chapter III: The Bench</title>
+<desc id="chapter-3-d">Chapter card 3, The Bench: a dated caption box (2237. DR. TOX.) over concrete with an amber Pulse margin line, the mark of a Dr. Tox chapter, the chapter's name in capitals and one object drawn large.</desc>
+<defs><filter id="chapter-3-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="398"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.4 0"/></filter><radialGradient id="chapter-3-vig2" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity="0.6"/></radialGradient><radialGradient id="chapter-3-rg3" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#F2C14E" stop-opacity="0.6"/><stop offset="50%" stop-color="#D99A2B" stop-opacity="0.2"/><stop offset="100%" stop-color="#D99A2B" stop-opacity="0"/></radialGradient></defs>
+<rect x="0" y="0" width="1280" height="720" fill="#2b3536"/>
+<rect x="0" y="0" width="1280" height="720" filter="url(#chapter-3-grain1)"/>
+<rect x="0" y="0" width="1280" height="720" fill="url(#chapter-3-vig2)"/>
+<circle cx="900" cy="270" r="260" fill="url(#chapter-3-rg3)"/>
+<path d="M840,220 L960,220 L936,170 L864,170Z" fill="#2a2a2a" stroke="#141414" stroke-width="5" stroke-linejoin="round"/>
+<line x1="900" y1="170" x2="900" y2="120" stroke="#2a2a2a" stroke-width="6"/>
+<rect x="660" y="420" width="480" height="26" fill="#3a3020" stroke="#141414" stroke-width="5" stroke-linejoin="round"/>
+<path d="M723.4,310 L776.6,310 L776.6,325.4 Q785,332 785,347.4 L785,411.6 Q785,420 775.2,420 L724.8,420 Q715,420 715,411.6 L715,347.4 Q715,332 723.4,325.4Z" fill="#5a4a30" stroke="#141414" stroke-width="5" stroke-linejoin="round"/>
+<path d="M813.4,330 L866.6,330 L866.6,342.6 Q875,348 875,360.6 L875,411.6 Q875,420 865.2,420 L814.8,420 Q805,420 805,411.6 L805,360.6 Q805,348 813.4,342.6Z" fill="#4a3a26" stroke="#141414" stroke-width="5" stroke-linejoin="round"/>
+<path d="M913.4,300 L966.6,300 L966.6,316.8 Q975,324 975,340.8 L975,411.6 Q975,420 965.2,420 L914.8,420 Q905,420 905,411.6 L905,340.8 Q905,324 913.4,316.8Z" fill="#5a4a30" stroke="#141414" stroke-width="5" stroke-linejoin="round"/>
+<path d="M1013.4,340 L1066.6,340 L1066.6,351.2 Q1075,356 1075,367.2 L1075,411.6 Q1075,420 1065.2,420 L1014.8,420 Q1005,420 1005,411.6 L1005,367.2 Q1005,356 1013.4,351.2Z" fill="#4a3a26" stroke="#141414" stroke-width="5" stroke-linejoin="round"/>
+<path d="M1099,366.8 L1104,362 L1104,356 L1116,356 L1116,362 L1121,366.8 L1121,409.4 Q1121,416 1110,416 Q1099,416 1099,409.4Z" fill="#D99A2B" stroke="#141414" stroke-width="3"/>
+<rect x="75" y="75" width="440" height="56" fill="#000" opacity="0.5"/>
+<rect x="70" y="70" width="440" height="56" fill="#f3eedf" stroke="#141414" stroke-width="3"/>
+<text x="86" y="106.6" font-size="24" font-family="sans-serif" fill="#141414" text-anchor="start" font-weight="bold" letter-spacing="1.4">2237. DR. TOX.</text>
+<text x="72" y="560" font-size="26" font-family="sans-serif" fill="#F2C14E" text-anchor="start" letter-spacing="6">CHAPTER III</text>
+<text x="70" y="630" font-size="58" font-family="sans-serif" fill="#E9ECEA" text-anchor="start" font-weight="bold" letter-spacing="2">THE BENCH</text>
+<rect x="0" y="676" width="1280" height="44" fill="#050606"/>
+<path d="M20,704 L75.8,704 L82,688 L89.4,710.4 L96.9,704 L144,704 L199.8,704 L206,688 L213.4,710.4 L220.9,704 L268,704 L323.8,704 L330,688 L337.4,710.4 L344.9,704 L392,704 L447.8,704 L454,688 L461.4,710.4 L468.9,704 L516,704 L571.8,704 L578,688 L585.4,710.4 L592.9,704 L640,704 L695.8,704 L702,688 L709.4,710.4 L716.9,704 L764,704 L819.8,704 L826,688 L833.4,710.4 L840.9,704 L888,704 L943.8,704 L950,688 L957.4,710.4 L964.9,704 L1012,704 L1067.8,704 L1074,688 L1081.4,710.4 L1088.9,704 L1136,704 L1191.8,704 L1198,688 L1205.4,710.4 L1212.9,704 L1260,704" fill="none" stroke="#D99A2B" stroke-width="3"/>
+</svg>

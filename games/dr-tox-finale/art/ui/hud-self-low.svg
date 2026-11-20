@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 72" width="240" height="72" role="img" aria-labelledby="hud-self-low-t hud-self-low-d">
+<title id="hud-self-low-t">Menu stamp: Self is low</title>
+<desc id="hud-self-low-d">The stamp the episode menu puts on a save whose Self is at or under 40: SELF IS LOW in typed gray-teal capitals in a ruled box, cold and plain, no warning colour.</desc>
+<rect x="6" y="8" width="228" height="56" fill="#1d2526" stroke="#C4CDCB" stroke-width="2"/>
+<rect x="12" y="14" width="216" height="44" fill="none" stroke="#5E7375" stroke-width="1"/>
+<text x="120" y="44" font-size="22" font-family="sans-serif" fill="#C4CDCB" text-anchor="middle" font-weight="bold" letter-spacing="3">SELF IS LOW</text>
+<circle cx="12" cy="14" r="2" fill="#C4CDCB"/>
+<circle cx="228" cy="14" r="2" fill="#C4CDCB"/>
+<circle cx="12" cy="58" r="2" fill="#C4CDCB"/>
+<circle cx="228" cy="58" r="2" fill="#C4CDCB"/>
+</svg>

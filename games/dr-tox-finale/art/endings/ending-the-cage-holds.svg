@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="ending-the-cage-holds-t ending-the-cage-holds-d">
+<title id="ending-the-cage-holds-t">Ending: The Cage Holds</title>
+<desc id="ending-the-cage-holds-d">Ending lettering plate for The Cage Holds: the ending's last image small and still on the left; on the right its name in pale capitals, the cost first, then one line for each lead's state (Dr. Tox, Reese, Cally).</desc>
+<defs><filter id="ending-the-cage-holds-grain1" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="900"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/></filter><radialGradient id="ending-the-cage-holds-rg2" cx="0.1" cy="0.4" r="0.8"><stop offset="0%" stop-color="#C4CDCB" stop-opacity="0.2"/><stop offset="100%" stop-color="#C4CDCB" stop-opacity="0"/></radialGradient><radialGradient id="ending-the-cage-holds-rg3" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#F2C14E" stop-opacity="0.5"/><stop offset="100%" stop-color="#D99A2B" stop-opacity="0"/></radialGradient></defs>
+<rect x="0" y="0" width="1200" height="675" fill="#0b0d0d"/>
+<rect x="0" y="0" width="1200" height="675" filter="url(#ending-the-cage-holds-grain1)"/>
+<rect x="40" y="40" width="520" height="595" fill="#060505"/>
+<rect x="330" y="120" width="190" height="340" fill="#151a1a" stroke="#2b3536" stroke-width="3"/>
+<rect x="80" y="150" width="200" height="150" rx="14" fill="#1b1f20" stroke="#2b3536" stroke-width="4"/>
+<rect x="96" y="166" width="168" height="118" rx="8" fill="#C4CDCB" opacity="0.5"/>
+<rect x="330" y="120" width="190" height="340" fill="url(#ending-the-cage-holds-rg2)"/>
+<circle cx="300" cy="470" r="160" fill="url(#ending-the-cage-holds-rg3)"/>
+<path d="M306,417.6 L311.4,412 L311.4,405 L324.6,405 L324.6,412 L330,417.6 L330,467.8 Q330,475 318,475 Q306,475 306,467.8Z" fill="#D99A2B" stroke="#141414" stroke-width="3"/>
+<path d="M120,635 L150,520 C160,500 190,492 220,494 L250,496 L250,560 L200,635Z" fill="#0e0e0e"/>
+<rect x="252" y="452" width="92" height="74" rx="24" fill="#141414" stroke="#262626" stroke-width="2"/>
+<line x1="262" y1="470" x2="334" y2="470" stroke="#262626" stroke-width="2"/>
+<line x1="262" y1="488" x2="334" y2="488" stroke="#262626" stroke-width="2"/>
+<line x1="262" y1="506" x2="334" y2="506" stroke="#262626" stroke-width="2"/>
+<path d="M252,470 C236,470 230,488 240,500 L262,504Z" fill="#141414" stroke="#262626" stroke-width="2"/>
+<rect x="40" y="40" width="520" height="595" fill="none" stroke="#2f3a3b" stroke-width="3"/>
+<text x="610" y="92" font-size="22" font-family="sans-serif" fill="#C4CDCB" text-anchor="start" letter-spacing="8">ENDING</text>
+<text x="606" y="164" font-size="60" font-family="sans-serif" fill="#E9ECEA" text-anchor="start" font-weight="bold" letter-spacing="2" textLength="550" lengthAdjust="spacingAndGlyphs">THE CAGE HOLDS</text>
+<text x="608" y="232" font-size="16" font-family="sans-serif" fill="#8A9A99" text-anchor="start" letter-spacing="5">THE COST</text>
+<text x="608" y="266" font-size="24" font-family="serif" fill="#E9ECEA" text-anchor="start">He lives; the cult's own resin attack.</text>
+<line x1="608" y1="302" x2="1150" y2="302" stroke="#2f3a3b" stroke-width="2"/>
+<text x="608" y="330" font-size="15" font-family="sans-serif" fill="#F2C14E" text-anchor="start" font-weight="bold" letter-spacing="3">DR. TOX</text>
+<text x="712" y="330" font-size="20" font-family="serif" fill="#C4CDCB" text-anchor="start">lives; doses under the lamp.</text>
+<text x="608" y="368" font-size="15" font-family="sans-serif" fill="#F2C14E" text-anchor="start" font-weight="bold" letter-spacing="3">REESE</text>
+<text x="712" y="368" font-size="20" font-family="serif" fill="#C4CDCB" text-anchor="start">held a wall nobody came through.</text>
+<text x="608" y="406" font-size="15" font-family="sans-serif" fill="#F2C14E" text-anchor="start" font-weight="bold" letter-spacing="3">CALLY</text>
+<text x="712" y="406" font-size="20" font-family="serif" fill="#C4CDCB" text-anchor="start">kept the key.</text>
+</svg>

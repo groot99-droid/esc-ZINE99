@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 100" width="1100" height="100" role="img" aria-labelledby="creed-verse-blood-t creed-verse-blood-d">
+<title id="creed-verse-blood-t">Creed: verse, ALL OF IT IS HIS BLOOD.</title>
+<desc id="creed-verse-blood-d">A verse printed at the foot of the tract in the second ink, heavy red serif capitals: ALL OF IT IS HIS BLOOD. with a small italic note under it. Fits the spread's verse band.</desc>
+<rect x="0" y="0" width="1100" height="100" fill="#e9e2d0"/>
+<line x1="0" y1="1" x2="1100" y2="1" stroke="#1a1a1a" stroke-width="1.5"/>
+<text x="30" y="62" font-size="46" font-family="serif" fill="#C8202A" text-anchor="start" font-weight="bold">ALL OF IT IS HIS BLOOD.</text>
+<text x="32" y="90" font-size="16" font-family="serif" fill="#1a1a1a" text-anchor="start" font-style="italic">printed from the joints: NOT MY BLOOD. NOT ALL OF IT.</text>
+<circle cx="1060" cy="50" r="14" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+<circle cx="1060" cy="50" r="4" fill="#C8202A"/>
+</svg>

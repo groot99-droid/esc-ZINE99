@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 120" width="360" height="120" role="img" aria-labelledby="hud-hold-t hud-hold-d">
+<title id="hud-hold-t">The core's only prompt: HOLD</title>
+<desc id="hud-hold-d">The word HOLD in the bible's amber and nothing else: no box, no meter, no key glyph. It is the only thing on the screen in the core besides the lamp.</desc>
+<text x="180" y="82" font-size="72" font-family="sans-serif" fill="#D99A2B" text-anchor="middle" font-weight="bold" letter-spacing="16">HOLD</text>
+<line x1="70" y1="100" x2="290" y2="100" stroke="#D99A2B" stroke-width="1" opacity="0.3"/>
+<circle cx="60" cy="60" r="1.5" fill="#D99A2B" opacity="0.5"/>
+<circle cx="300" cy="60" r="1.5" fill="#D99A2B" opacity="0.5"/>
+<circle cx="180" cy="108" r="1.5" fill="#D99A2B" opacity="0.5"/>
+</svg>

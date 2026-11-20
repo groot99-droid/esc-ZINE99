@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 240" width="480" height="240" role="img" aria-labelledby="airway-fan-inked-t airway-fan-inked-d">
+<title id="airway-fan-inked-t">Airway: fan (inked)</title>
+<desc id="airway-fan-inked-d">Airway piece: a duct section with an axial fan in it, five blades, inked in black brush with a light hatch: the path behind him.</desc>
+<defs><clipPath id="airway-fan-inked-clip1"><rect x="0" y="40" width="480" height="160"/></clipPath></defs>
+<path d="M0.6,39.5 L21.7,38.9 L45.6,40.3 L68.1,41 L90.5,40.4 L114.3,39.6 L136.9,41.2 L159.5,41.1 L183.3,40.5 L205.3,39.8 L229,38.9 L250.7,39 L274.5,40.4 L296.6,40.8 L320.9,40.3 L342.1,40.2 L365.2,41.1 L388.4,40.6 L411.2,39.3 L433.7,39.4 L457.4,40.9 L480.1,40.7" fill="none" stroke="#141414" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-0.2,200 L23.2,199.8 L44.8,200.5 L68.7,199.9 L91.7,200.7 L115.2,198.9 L136,199.9 L159.4,200.5 L182.1,199.9 L206.2,200.8 L227.6,200.1 L251,200.1 L273.2,200.2 L296.5,200.9 L320.4,200.4 L343.3,198.9 L366.9,200.3 L389.4,200 L410.4,200.7 L434.2,200.9 L456.2,199.9 L479.4,199.2" fill="none" stroke="#141414" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M160.1,28.8 L159.4,50.7" fill="none" stroke="#141414" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M159.1,189.3 L159.5,210.7" fill="none" stroke="#141414" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<g clip-path="url(#airway-fan-inked-clip1)">
+<path d="M340.7,-255.6 L615.6,220.7 M321.6,-244.6 L596.6,231.7 M302.5,-233.6 L577.5,242.7 M283.5,-222.6 L558.5,253.7 M264.4,-211.6 L539.4,264.7 M245.4,-200.6 L520.4,275.7 M226.3,-189.6 L501.3,286.7 M207.3,-178.6 L482.3,297.7 M188.2,-167.6 L463.2,308.7 M169.2,-156.6 L444.2,319.7 M150.1,-145.6 L425.1,330.7 M131.1,-134.6 L406.1,341.7 M112,-123.6 L387,352.7 M93,-112.6 L367.9,363.7 M73.9,-101.6 L348.9,374.7 M54.9,-90.6 L329.8,385.7 M35.8,-79.6 L310.8,396.7 M16.8,-68.6 L291.7,407.7 M-2.3,-57.6 L272.7,418.7 M-21.3,-46.6 L253.6,429.7 M-40.4,-35.6 L234.6,440.7 M-59.5,-24.6 L215.5,451.7 M-78.5,-13.6 L196.5,462.7 M-97.6,-2.6 L177.4,473.7 M-116.6,8.4 L158.4,484.7" fill="none" stroke="#141414" stroke-width="1.2" opacity="0.2"/>
+</g>
+<circle cx="240" cy="120" r="66" fill="none" stroke="#141414" stroke-width="6"/>
+<path d="M240,120 Q283.9,144 298,120" fill="none" stroke="#141414" stroke-width="8" stroke-linecap="round"/>
+<path d="M240,120 Q230.8,169.1 257.9,175.2" fill="none" stroke="#141414" stroke-width="8" stroke-linecap="round"/>
+<path d="M240,120 Q190.4,126.4 193.1,154.1" fill="none" stroke="#141414" stroke-width="8" stroke-linecap="round"/>
+<path d="M240,120 Q218.6,74.8 193.1,85.9" fill="none" stroke="#141414" stroke-width="8" stroke-linecap="round"/>
+<path d="M240,120 Q276.4,85.7 257.9,64.8" fill="none" stroke="#141414" stroke-width="8" stroke-linecap="round"/>
+<circle cx="240" cy="120" r="10" fill="#141414"/>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" width="120" height="140" role="img" aria-labelledby="creed-end-rcc-t creed-end-rcc-d">
+<title id="creed-end-rcc-t">Creed: tile end, RCC</title>
+<desc id="creed-end-rcc-d">Creed tile end: one half-panel of a domino tile printed in the tract's plain line, a small cartoon for the word RCC and the word in a box at the foot. Two ends make a tile.</desc>
+<rect x="3" y="3" width="114" height="134" rx="6" fill="#ffffff" stroke="#1a1a1a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="10" y="10" width="100" height="86" fill="none" stroke="#1a1a1a" stroke-width="1" opacity="0.3"/>
+<circle cx="16" cy="16" r="1.5" fill="#1a1a1a"/>
+<rect x="26" y="42" width="68" height="32" fill="none" stroke="#1a1a1a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="60" y="66" font-size="20" font-family="sans-serif" fill="#1a1a1a" text-anchor="middle" font-weight="bold">RCC</text>
+<circle cx="30" cy="46" r="1.6" fill="#1a1a1a"/>
+<circle cx="90" cy="46" r="1.6" fill="#1a1a1a"/>
+<rect x="10" y="100" width="100" height="28" fill="#ffffff" stroke="#1a1a1a" stroke-width="2"/>
+<text x="60" y="121" font-size="20" font-family="sans-serif" fill="#1a1a1a" text-anchor="middle" font-weight="bold" letter-spacing="1">RCC</text>
+</svg>

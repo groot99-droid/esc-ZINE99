@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 96" width="240" height="96" role="img" aria-labelledby="hud-word-hope-t hud-word-hope-d">
+<title id="hud-word-hope-t">Terminology Rule: HOPE (the insignia)</title>
+<desc id="hud-word-hope-d">The word HOPE as the program wears it: a small shield insignia with a half sun rising over a bar, beside the word in warm capitals; the half sun is pale hard-light gold, the Finale's turn of it.</desc>
+<rect x="6" y="10" width="228" height="76" rx="38" fill="#2a1e0c" stroke="#D99A2B" stroke-width="3"/>
+<path d="M30,26 L70,26 L70,52 C70,70 50,80 50,80 C50,80 30,70 30,52Z" fill="#f4ead2" stroke="#141414" stroke-width="3"/>
+<path d="M36,56 A14,14 0 0,1 64,56Z" fill="#D99A2B"/>
+<line x1="34" y1="56" x2="66" y2="56" stroke="#141414" stroke-width="3"/>
+<text x="146" y="62" font-size="38" font-family="sans-serif" fill="#F2C14E" text-anchor="middle" font-weight="bold" letter-spacing="5">HOPE</text>
+</svg>

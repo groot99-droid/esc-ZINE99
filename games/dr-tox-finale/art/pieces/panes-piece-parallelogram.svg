@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 196 76" width="196" height="76" role="img" aria-labelledby="panes-piece-parallelogram-t panes-piece-parallelogram-d">
+<title id="panes-piece-parallelogram-t">Panes: piece, parallelogram</title>
+<desc id="panes-piece-parallelogram-d">Panes piece, the parallelogram of the tangram set: a hard-light pane as a foil facet, pale gold over rainbow foil with diagonal sheen bands and facet lines to its corners, a white edge. Drawn at 120 px to the tangram unit; drag, rotate and flip it into the breach.</desc>
+<defs><linearGradient id="panes-piece-parallelogram-lg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f6b3c8"/><stop offset="20%" stop-color="#F6E7B8"/><stop offset="40%" stop-color="#a8e6cf"/><stop offset="60%" stop-color="#9fc6f2"/><stop offset="80%" stop-color="#d4b0f2"/><stop offset="100%" stop-color="#f6b3c8"/></linearGradient><clipPath id="panes-piece-parallelogram-clip2"><path d="M8,68 L68,8 L188,8 L128,68Z"/></clipPath></defs>
+<path d="M8,68 L68,8 L188,8 L128,68Z" fill="url(#panes-piece-parallelogram-lg1)"/>
+<path d="M8,68 L68,8 L188,8 L128,68Z" fill="#F6E7B8" opacity="0.3"/>
+<g clip-path="url(#panes-piece-parallelogram-clip2)">
+<line x1="98" y1="38" x2="8" y2="68" stroke="#ffffff" stroke-width="2" opacity="0.6"/>
+<line x1="98" y1="38" x2="68" y2="8" stroke="#ffffff" stroke-width="2" opacity="0.6"/>
+<line x1="98" y1="38" x2="188" y2="8" stroke="#ffffff" stroke-width="2" opacity="0.6"/>
+<line x1="98" y1="38" x2="128" y2="68" stroke="#ffffff" stroke-width="2" opacity="0.6"/>
+<polygon points="-40,0 -24,0 36,76 20,76" fill="#ffffff" opacity="0.2"/>
+<polygon points="3.3,0 19.3,0 79.3,76 63.3,76" fill="#ffffff" opacity="0.2"/>
+<polygon points="46.7,0 62.7,0 122.7,76 106.7,76" fill="#ffffff" opacity="0.2"/>
+<polygon points="90,0 106,0 166,76 150,76" fill="#ffffff" opacity="0.2"/>
+<polygon points="133.3,0 149.3,0 209.3,76 193.3,76" fill="#ffffff" opacity="0.2"/>
+<polygon points="176.7,0 192.7,0 252.7,76 236.7,76" fill="#ffffff" opacity="0.2"/>
+</g>
+<path d="M8,68 L68,8 L188,8 L128,68Z" fill="none" stroke="#ffffff" stroke-width="3" stroke-linejoin="round"/>
+</svg>

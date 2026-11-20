@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 32" width="1200" height="32" role="img" aria-labelledby="hud-margin-edge-t hud-margin-edge-d">
+<title id="hud-margin-edge-t">Pulse margin line: near the Self line (green spikes)</title>
+<desc id="hud-margin-edge-d">The margin line close to the trigger line: a pale dashed Self line along the top edge, amber below it, three green spikes reaching for it, never more green than amber.</desc>
+<rect x="0" y="0" width="1200" height="32" fill="#050606"/>
+<line x1="0" y1="5" x2="1200" y2="5" stroke="#E9ECEA" stroke-width="1.5" stroke-dasharray="8 6" opacity="0.7"/>
+<path d="M8,20 L46.1,20 L50.3,9 L55.4,24.4 L60.4,20 L92.6,20 L130.6,20 L134.9,9 L139.9,24.4 L145,20 L177.1,20 L215.2,20 L219.4,9 L224.5,24.4 L229.6,20 L261.7,20 L299.8,20 L304,9 L309.1,24.4 L314.1,20 L346.3,20 L384.3,20 L388.6,9 L393.6,24.4 L398.7,20 L430.9,20 L468.9,20 L473.1,9 L478.2,24.4 L483.3,20 L515.4,20 L553.5,20 L557.7,9 L562.8,24.4 L567.9,20 L600,20 L638.1,20 L642.3,9 L647.4,24.4 L652.4,20 L684.6,20 L722.6,20 L726.9,9 L731.9,24.4 L737,20 L769.1,20 L807.2,20 L811.4,9 L816.5,24.4 L821.6,20 L853.7,20 L891.8,20 L896,9 L901.1,24.4 L906.1,20 L938.3,20 L976.3,20 L980.6,9 L985.6,24.4 L990.7,20 L1022.9,20 L1060.9,20 L1065.1,9 L1070.2,24.4 L1075.3,20 L1107.4,20 L1145.5,20 L1149.7,9 L1154.8,24.4 L1159.9,20 L1192,20" fill="none" stroke="#D99A2B" stroke-width="2.5" stroke-linejoin="round"/>
+<path d="M224,20 L230,5 L235,30 L240,20" fill="none" stroke="#7FD957" stroke-width="2.5"/>
+<path d="M634,20 L640,5 L645,30 L650,20" fill="none" stroke="#7FD957" stroke-width="2.5"/>
+<path d="M1004,20 L1010,5 L1015,30 L1020,20" fill="none" stroke="#7FD957" stroke-width="2.5"/>
+</svg>

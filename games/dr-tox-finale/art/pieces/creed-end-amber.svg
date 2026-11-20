@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" width="120" height="140" role="img" aria-labelledby="creed-end-amber-t creed-end-amber-d">
+<title id="creed-end-amber-t">Creed: tile end, AMBER</title>
+<desc id="creed-end-amber-d">Creed tile end: one half-panel of a domino tile printed in the tract's plain line, a small cartoon for the word AMBER and the word in a box at the foot. Two ends make a tile.</desc>
+<rect x="3" y="3" width="114" height="134" rx="6" fill="#ffffff" stroke="#1a1a1a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="10" y="10" width="100" height="86" fill="none" stroke="#1a1a1a" stroke-width="1" opacity="0.3"/>
+<circle cx="16" cy="16" r="1.5" fill="#1a1a1a"/>
+<path d="M49,40.1 L54,35.6 L54,30 L66,30 L66,35.6 L71,40.1 L71,79.4 Q71,86 60,86 Q49,86 49,79.4Z" fill="none" stroke="#1a1a1a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M53,55.1 L56.1,52.4 L56.1,49 L63.9,49 L63.9,52.4 L67,55.1 L67,78.8 Q67,83 60,83 Q53,83 53,78.8Z" fill="#1a1a1a" opacity="0.2"/>
+<rect x="10" y="100" width="100" height="28" fill="#ffffff" stroke="#1a1a1a" stroke-width="2"/>
+<text x="60" y="121" font-size="20" font-family="sans-serif" fill="#1a1a1a" text-anchor="middle" font-weight="bold" letter-spacing="1">AMBER</text>
+</svg>

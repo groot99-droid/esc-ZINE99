@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" width="120" height="140" role="img" aria-labelledby="creed-end-ring-t creed-end-ring-d">
+<title id="creed-end-ring-t">Creed: tile end, RING</title>
+<desc id="creed-end-ring-d">Creed tile end: one half-panel of a domino tile printed in the tract's plain line, a small cartoon for the word RING and the word in a box at the foot. Two ends make a tile.</desc>
+<rect x="3" y="3" width="114" height="134" rx="6" fill="#ffffff" stroke="#1a1a1a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="10" y="10" width="100" height="86" fill="none" stroke="#1a1a1a" stroke-width="1" opacity="0.3"/>
+<circle cx="16" cy="16" r="1.5" fill="#1a1a1a"/>
+<circle cx="60" cy="50" r="22" fill="none" stroke="#1a1a1a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M24.5,71.6 L26,70.9 L27.5,71.6 L27.9,75 L27,76.4 L30.1,78.4 L29.7,85.2 L28.4,92 L26.5,92 L26,85.9 L25.5,92 L23.6,92 L22.3,85.2 L21.9,78.4 L25,76.4 L24.1,75Z" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M58.5,71.6 L60,70.9 L61.5,71.6 L61.9,75 L61,76.4 L64.1,78.4 L63.7,85.2 L62.4,92 L60.5,92 L60,85.9 L59.5,92 L57.6,92 L56.3,85.2 L55.9,78.4 L59,76.4 L58.1,75Z" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M92.5,71.6 L94,70.9 L95.5,71.6 L95.9,75 L95,76.4 L98.1,78.4 L97.7,85.2 L96.4,92 L94.5,92 L94,85.9 L93.5,92 L91.6,92 L90.3,85.2 L89.9,78.4 L93,76.4 L92.1,75Z" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="10" y="100" width="100" height="28" fill="#ffffff" stroke="#1a1a1a" stroke-width="2"/>
+<text x="60" y="121" font-size="20" font-family="sans-serif" fill="#1a1a1a" text-anchor="middle" font-weight="bold" letter-spacing="1">RING</text>
+</svg>

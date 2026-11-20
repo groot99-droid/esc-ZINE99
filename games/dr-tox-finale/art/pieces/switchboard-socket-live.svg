@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-labelledby="switchboard-socket-live-t switchboard-socket-live-d">
+<title id="switchboard-socket-live-t">Switchboard: a panel socket (live)</title>
+<desc id="switchboard-socket-live-d">A panel's socket at the top edge of a district: inked and filled, a live tail seated in it.</desc>
+<circle cx="24" cy="24" r="20" fill="#fbfaf6" stroke="#141414" stroke-width="4"/>
+<circle cx="24" cy="24" r="9" fill="#141414" stroke="#141414" stroke-width="2"/>
+<circle cx="6" cy="6" r="2" fill="#9a9a9a"/>
+<circle cx="42" cy="6" r="2" fill="#9a9a9a"/>
+<circle cx="6" cy="42" r="2" fill="#9a9a9a"/>
+<circle cx="42" cy="42" r="2" fill="#9a9a9a"/>
+<line x1="4" y1="24" x2="44" y2="24" stroke="#8EC5E8" stroke-width="1"/>
+</svg>

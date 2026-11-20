@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" width="240" height="60" role="img" aria-labelledby="airway-note-not-taken-t airway-note-not-taken-d">
+<title id="airway-note-not-taken-t">Airway: margin note, not taken</title>
+<desc id="airway-note-not-taken-d">The words not taken in blue pencil italic with a loose arrow, the note left on a branch he passed. In the last panel it fades with the branch.</desc>
+<text x="14" y="40" font-size="26" font-family="sans-serif" fill="#8EC5E8" font-style="italic">not taken</text>
+<path d="M140,32 C170,20 200,22 226,30 M226,30 l-12,-8 M226,30 l-12,6" fill="none" stroke="#8EC5E8" stroke-width="2" stroke-linecap="round" opacity="0.9"/>
+<path d="M10,47.5 L29.9,47.4 L50,49.1 L69.1,48 L89.1,48.3 L109.2,50.5 L130,50.8" fill="none" stroke="#8EC5E8" stroke-width="1.2" stroke-linecap="round" opacity="0.9"/>
+<path d="M14.5,51.5 L34.4,51.9 L56,53.3 L77.2,53.1 L98.8,53.8 L121,54.6" fill="none" stroke="#8EC5E8" stroke-width="0.8" stroke-linecap="round" opacity="0.5"/>
+<circle cx="8" cy="34" r="1.5" fill="#8EC5E8"/>
+</svg>

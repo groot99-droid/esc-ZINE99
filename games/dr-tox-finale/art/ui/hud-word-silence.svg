@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 96" width="240" height="96" role="img" aria-labelledby="hud-word-silence-t hud-word-silence-d">
+<title id="hud-word-silence-t">Terminology Rule: nothing (the held breath)</title>
+<desc id="hud-word-silence-d">The third answer at the hub, saying nothing: an empty plate with a long dash where the word would be, in cold gray-teal between the warm insignia and the stamped plate.</desc>
+<rect x="6" y="10" width="228" height="76" rx="8" fill="#1d2526" stroke="#5E7375" stroke-width="3"/>
+<line x1="70" y1="50" x2="170" y2="50" stroke="#C4CDCB" stroke-width="5" stroke-linecap="round"/>
+<circle cx="14" cy="18" r="2.5" fill="#5E7375"/>
+<circle cx="226" cy="18" r="2.5" fill="#5E7375"/>
+<circle cx="14" cy="78" r="2.5" fill="#5E7375"/>
+<circle cx="226" cy="78" r="2.5" fill="#5E7375"/>
+</svg>

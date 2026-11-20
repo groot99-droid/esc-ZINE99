@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 180" width="260" height="180" role="img" aria-labelledby="creed-tile-back-t creed-tile-back-d">
+<title id="creed-tile-back-t">Creed: tile face down</title>
+<desc id="creed-tile-back-d">A tile turned face down: the back of a tract page, a red rule round it and a small printed ring in the middle, the same for every tile.</desc>
+<rect x="3" y="3" width="254" height="174" rx="8" fill="#e9e2d0" stroke="#1a1a1a" stroke-width="4"/>
+<rect x="14" y="14" width="232" height="152" rx="4" fill="none" stroke="#C8202A" stroke-width="3"/>
+<circle cx="130" cy="90" r="30" fill="none" stroke="#1a1a1a" stroke-width="3"/>
+<circle cx="130" cy="90" r="18" fill="none" stroke="#C8202A" stroke-width="2"/>
+<circle cx="24" cy="24" r="3" fill="#C8202A"/>
+<circle cx="236" cy="24" r="3" fill="#C8202A"/>
+<circle cx="24" cy="156" r="3" fill="#C8202A"/>
+<circle cx="236" cy="156" r="3" fill="#C8202A"/>
+</svg>

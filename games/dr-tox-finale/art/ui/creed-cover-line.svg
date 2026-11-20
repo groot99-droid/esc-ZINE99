@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 60" width="640" height="60" role="img" aria-labelledby="creed-cover-line-t creed-cover-line-d">
+<title id="creed-cover-line-t">Creed: the doctrine line on the cover (blank)</title>
+<desc id="creed-cover-line-d">A ruled line of type on the tract's cover, DOCTRINE: and then empty ruled space; words are typed onto it at run time as the doctrine grows. Never a number.</desc>
+<rect x="2" y="2" width="636" height="56" fill="#f5f1e6" stroke="#1a1a1a" stroke-width="2"/>
+<text x="16" y="38" font-size="20" font-family="serif" fill="#C8202A" text-anchor="start" font-weight="bold" letter-spacing="2">DOCTRINE:</text>
+<line x1="150" y1="44" x2="624" y2="44" stroke="#1a1a1a" stroke-width="1" opacity="0.5"/>
+<line x1="150" y1="20" x2="624" y2="20" stroke="#1a1a1a" stroke-width="0.6" opacity="0.2"/>
+<circle cx="140" cy="32" r="2" fill="#C8202A"/>
+</svg>

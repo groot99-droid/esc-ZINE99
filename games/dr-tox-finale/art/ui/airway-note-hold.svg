@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 60" width="300" height="60" role="img" aria-labelledby="airway-note-hold-t airway-note-hold-d">
+<title id="airway-note-hold-t">Airway: margin note, HOLD BREATH</title>
+<desc id="airway-note-hold-d">HOLD BREATH lettered in black ink capitals over a blue pencil guideline, the prompt over a grille.</desc>
+<path d="M10,44 L290,44" fill="none" stroke="#8EC5E8" stroke-width="1.2" stroke-linecap="round" opacity="0.9"/>
+<path d="M10,14 L290,14" fill="none" stroke="#8EC5E8" stroke-width="1.2" stroke-linecap="round" opacity="0.9"/>
+<text x="150" y="40" font-size="28" font-family="sans-serif" fill="#141414" text-anchor="middle" font-weight="bold" letter-spacing="2">HOLD BREATH</text>
+<circle cx="14" cy="30" r="2" fill="#8EC5E8"/>
+<circle cx="286" cy="30" r="2" fill="#8EC5E8"/>
+</svg>
