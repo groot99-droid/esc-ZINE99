@@ -1,0 +1,633 @@
+{
+ "game": "dr-tox-altrulan",
+ "location": "metabolic-city",
+ "name": "The breathing city",
+ "reference": "assets/locations/metabolic-city.jpg",
+ "bounds_m": [
+  80,
+  60,
+  30
+ ],
+ "origin": "centre of the old atrium's floor; +y toward the lobby wall and the market mezzanine; the gate arch at -y; the night lodging in the +x/-x corners; +z up",
+ "materials": {
+  "stone": {
+   "color": [
+    0.6,
+    0.58,
+    0.52
+   ],
+   "roughness": 0.9
+  },
+  "glass": {
+   "color": [
+    0.55,
+    0.66,
+    0.6
+   ],
+   "roughness": 0.1,
+   "metallic": 0.1
+  },
+  "vine": {
+   "color": [
+    0.37,
+    0.42,
+    0.23
+   ],
+   "roughness": 0.8
+  },
+  "fungus": {
+   "color": [
+    0.81,
+    0.9,
+    0.92
+   ],
+   "roughness": 0.6,
+   "emission": 1.5
+  }
+ },
+ "blockout": [
+  {
+   "id": "floor",
+   "shape": "box",
+   "role": "floor",
+   "size_m": [
+    80,
+    60,
+    0.3
+   ],
+   "location": [
+    0,
+    0,
+    -0.15
+   ],
+   "material": "stone"
+  },
+  {
+   "id": "wall-n",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    80,
+    1,
+    30
+   ],
+   "location": [
+    0,
+    30,
+    15
+   ],
+   "material": "glass"
+  },
+  {
+   "id": "wall-s",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    80,
+    1,
+    30
+   ],
+   "location": [
+    0,
+    -30,
+    15
+   ],
+   "material": "glass"
+  },
+  {
+   "id": "wall-e",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    1,
+    60,
+    30
+   ],
+   "location": [
+    40,
+    0,
+    15
+   ],
+   "material": "glass"
+  },
+  {
+   "id": "wall-w",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    1,
+    60,
+    30
+   ],
+   "location": [
+    -40,
+    0,
+    15
+   ],
+   "material": "glass"
+  },
+  {
+   "id": "roof",
+   "shape": "box",
+   "role": "ceiling",
+   "size_m": [
+    80,
+    60,
+    0.5
+   ],
+   "location": [
+    0,
+    0,
+    30.25
+   ],
+   "material": "glass"
+  },
+  {
+   "id": "gate",
+   "shape": "box",
+   "role": "opening",
+   "size_m": [
+    10,
+    2,
+    9
+   ],
+   "location": [
+    0,
+    -30,
+    4.5
+   ],
+   "material": "stone"
+  },
+  {
+   "id": "mezzanine",
+   "shape": "box",
+   "role": "structure",
+   "size_m": [
+    60,
+    12,
+    0.6
+   ],
+   "location": [
+    0,
+    22,
+    6
+   ],
+   "material": "stone"
+  },
+  {
+   "id": "vine-rib-1",
+   "shape": "cylinder",
+   "role": "structure",
+   "size_m": [
+    2.4,
+    2.4,
+    30
+   ],
+   "location": [
+    -30,
+    -10,
+    15
+   ],
+   "material": "vine"
+  },
+  {
+   "id": "vine-rib-2",
+   "shape": "cylinder",
+   "role": "structure",
+   "size_m": [
+    2.4,
+    2.4,
+    30
+   ],
+   "location": [
+    30,
+    -10,
+    15
+   ],
+   "material": "vine"
+  },
+  {
+   "id": "vine-rib-3",
+   "shape": "cylinder",
+   "role": "structure",
+   "size_m": [
+    2.4,
+    2.4,
+    30
+   ],
+   "location": [
+    -30,
+    14,
+    15
+   ],
+   "material": "vine"
+  },
+  {
+   "id": "vine-rib-4",
+   "shape": "cylinder",
+   "role": "structure",
+   "size_m": [
+    2.4,
+    2.4,
+    30
+   ],
+   "location": [
+    30,
+    14,
+    15
+   ],
+   "material": "vine"
+  },
+  {
+   "id": "fungus-shelf",
+   "shape": "box",
+   "role": "trim",
+   "size_m": [
+    20,
+    0.6,
+    1.2
+   ],
+   "location": [
+    -20,
+    29.3,
+    4
+   ],
+   "material": "fungus"
+  }
+ ],
+ "props": [
+  {
+   "id": "lamp-1",
+   "object": "fungus-lamp",
+   "location": [
+    -6,
+    -20,
+    0
+   ]
+  },
+  {
+   "id": "lamp-2",
+   "object": "fungus-lamp",
+   "location": [
+    6,
+    -20,
+    0
+   ]
+  },
+  {
+   "id": "lamp-3",
+   "object": "fungus-lamp",
+   "location": [
+    -22,
+    18,
+    0
+   ]
+  },
+  {
+   "id": "lamp-4",
+   "object": "fungus-lamp",
+   "location": [
+    22,
+    18,
+    0
+   ]
+  },
+  {
+   "id": "stall-1",
+   "object": "market-stall",
+   "location": [
+    -10,
+    18,
+    0
+   ]
+  },
+  {
+   "id": "stall-2",
+   "object": "market-stall",
+   "location": [
+    10,
+    18,
+    0
+   ]
+  },
+  {
+   "id": "brass",
+   "object": "memorial-brass",
+   "location": [
+    0,
+    27.5,
+    0
+   ]
+  },
+  {
+   "id": "node-1",
+   "object": "vine-node",
+   "location": [
+    -16,
+    -18,
+    0
+   ]
+  },
+  {
+   "id": "node-2",
+   "object": "vine-node",
+   "location": [
+    16,
+    -18,
+    0
+   ]
+  },
+  {
+   "id": "board",
+   "object": "morris-bench",
+   "location": [
+    -30,
+    20,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    90
+   ]
+  },
+  {
+   "id": "bowl",
+   "object": "water-bowl",
+   "location": [
+    -28,
+    22.5,
+    0
+   ]
+  },
+  {
+   "id": "mat-1",
+   "object": "sleeping-mat",
+   "location": [
+    -34,
+    16,
+    0
+   ]
+  },
+  {
+   "id": "mat-2",
+   "object": "sleeping-mat",
+   "location": [
+    -34,
+    24,
+    0
+   ]
+  }
+ ],
+ "scenes": {
+  "s3_city_gate": {
+   "note": "Chapter 3: the old atrium as the city's gate; walls breathing; vines over the glass; fungus light.",
+   "world": {
+    "color": [
+     0.4,
+     0.48,
+     0.45
+    ],
+    "strength": 0.4
+   },
+   "lights": [
+    {
+     "name": "daylight",
+     "type": "AREA",
+     "location": [
+      0,
+      0,
+      29
+     ],
+     "energy": 2000,
+     "size": 40,
+     "look_at": [
+      0,
+      0,
+      0
+     ],
+     "color": [
+      0.85,
+      0.9,
+      0.75
+     ]
+    },
+    {
+     "name": "fungus",
+     "type": "POINT",
+     "location": [
+      0,
+      -20,
+      1.2
+     ],
+     "energy": 80,
+     "size": 1.0,
+     "color": [
+      0.81,
+      0.9,
+      0.92
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     0,
+     -27,
+     1.7
+    ],
+    "look_at": [
+     0,
+     0,
+     6
+    ],
+    "lens_mm": 28,
+    "mode": "third-person"
+   },
+   "player_start": {
+    "location": [
+     0,
+     -26,
+     0
+    ],
+    "facing_deg": 0
+   },
+   "interactions": [
+    {
+     "prop": "node-1",
+     "verb": "Feel it breathe"
+    },
+    {
+     "prop": "node-2",
+     "verb": "Lead them up the vines",
+     "leads_to": "s2_rootway_1"
+    }
+   ]
+  },
+  "s3_city_market": {
+   "note": "Chapter 3: the fungus-light market in the lobby; the memorial brass of the Twelve; the child's request.",
+   "world": {
+    "color": [
+     0.3,
+     0.36,
+     0.36
+    ],
+    "strength": 0.3
+   },
+   "lights": [
+    {
+     "name": "fungus-wall",
+     "type": "AREA",
+     "location": [
+      -20,
+      27,
+      4
+     ],
+     "energy": 300,
+     "size": 8,
+     "look_at": [
+      0,
+      20,
+      1
+     ],
+     "color": [
+      0.81,
+      0.9,
+      0.92
+     ]
+    },
+    {
+     "name": "daylight",
+     "type": "AREA",
+     "location": [
+      0,
+      10,
+      29
+     ],
+     "energy": 1200,
+     "size": 30,
+     "look_at": [
+      0,
+      20,
+      0
+     ],
+     "color": [
+      0.85,
+      0.9,
+      0.75
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     4,
+     14,
+     1.7
+    ],
+    "look_at": [
+     0,
+     27.5,
+     1.2
+    ],
+    "lens_mm": 35,
+    "mode": "third-person"
+   },
+   "player_start": {
+    "location": [
+     3,
+     15,
+     0
+    ],
+    "facing_deg": 350
+   },
+   "interactions": [
+    {
+     "prop": "stall-1",
+     "verb": "Trade for paper"
+    },
+    {
+     "prop": "brass",
+     "verb": "Lay the paper on the brass",
+     "leads_to": "s1_rubbing_1"
+    }
+   ]
+  },
+  "s3_city_night": {
+   "note": "Chapter 3: night in the breathing tower; the band asleep; the Ghost's bowl; the morris board in the bench.",
+   "world": {
+    "color": [
+     0.02,
+     0.03,
+     0.04
+    ],
+    "strength": 0.08
+   },
+   "lights": [
+    {
+     "name": "fungus",
+     "type": "POINT",
+     "location": [
+      -22,
+      18,
+      1.2
+     ],
+     "energy": 90,
+     "size": 1.0,
+     "color": [
+      0.81,
+      0.9,
+      0.92
+     ]
+    },
+    {
+     "name": "oil-lamp",
+     "type": "POINT",
+     "location": [
+      -29.5,
+      19,
+      1.0
+     ],
+     "energy": 30,
+     "size": 0.2,
+     "color": [
+      0.95,
+      0.72,
+      0.4
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     -25,
+     17,
+     1.4
+    ],
+    "look_at": [
+     -30,
+     20.5,
+     0.5
+    ],
+    "lens_mm": 35,
+    "mode": "third-person"
+   },
+   "player_start": {
+    "location": [
+     -25.5,
+     17.5,
+     0
+    ],
+    "facing_deg": 300
+   },
+   "interactions": [
+    {
+     "prop": "bowl",
+     "verb": "Fill his bowl"
+    },
+    {
+     "prop": "board",
+     "verb": "Set out the pieces",
+     "leads_to": "s1_mill_1"
+    }
+   ]
+  }
+ }
+}

@@ -272,3 +272,10 @@ Made after the author accepted section 8. Nothing under `games/`, `web/` or `too
   Phase 3 stage A: its reconstruction page is **Split Field**, reconstruction by attribution (toolmark
   comparison), styled as Craftint Doubletone shading board; the Finale's seven rows are in
   `graphic_styles.json` and its modes and games in COLLECTION's tables.)
+- **Altrulan (2026-11-20, Phase 4 stage A)**: its six rows (Root-way and Fresco walk; Rubbing, The
+  Measure, The Mill and The Peal, in the styles of §4) are in `graphic_styles.json`, and its modes and
+  games in COLLECTION's tables; `games/dr-tox-altrulan/` holds its design, data, storyboard, asset
+  manifest, build files and pictographs. The Aftermath ruling binds the trilogy only: Altrulan has no
+  reconstruction page. It plays from the Finale's The Reset and The First Word; whether it follows The
+  Cage Holds and The Light Bringer's Wall stays the author's question (`games/dr-tox-altrulan/DESIGN.md`
+  section 20).

@@ -1,0 +1,333 @@
+{
+ "scope_note": "Altrulan's lead is the pilgrim-keeper (added), with the Ghost; nobody from the earlier episodes is played or appears except as the scripture remembers them. The thirteen names in game.json carry_in come from the Finale and are read as myth, never as a changed premise; their defaults are a typical Reset run. Numbers are design values for the prototype. Every unit on every page is invented (lulls in terracotta vessels, bells and rows, brass reliefs, morris pieces): no page describes a real procedure, dose or route, and no child is ever given the measure. The substances the bible names appear only in the design's quotations, never in play: the scripture calls the sacrament the measure and its jars the Toads.",
+ "state": [
+  {
+   "name": "self",
+   "type": "meter",
+   "default": 65,
+   "description": "What was left of the man when the Finale ended, carried in (default 65, a typical Reset run). Altrulan never changes it. It sets how the scripture remembers the Caged's voice: 70 or more, the Speaking Caged, whose verses quote his lines; under 70, the Few-Worded, whose verses are struck through with silence.",
+   "range": [
+    0,
+    100
+   ]
+  },
+  {
+   "name": "hub.held_back",
+   "type": "bool",
+   "default": false,
+   "description": "Carried in. True only after the Finale's The Cage Holds: no Reset was made in 2240. Altrulan as designed does not open from such a save (DESIGN.md section 20, the author's open question)."
+  },
+  {
+   "name": "panes.sealed",
+   "type": "bool",
+   "default": false,
+   "description": "Carried in. True only after the Finale's The Light Bringer's Wall: the Reset reached the plinth and the road and not the towers. Altrulan as designed does not open from such a save (DESIGN.md section 20, the author's open question)."
+  },
+  {
+   "name": "reese.hub_word",
+   "type": "enum",
+   "default": "silent",
+   "description": "Carried in: what Reese said at the hub's glass. In scripture: hope, 'Aleglethan said Hope and set his light aside', and pilgrims greet each other with 'Hope'; silent, 'Aleglethan kept silence and held the light'; rcc, 'Aleglethan spoke the Name, and his halo went out and came again'.",
+   "values": [
+    "hope",
+    "rcc",
+    "silent"
+   ]
+  },
+  {
+   "name": "reese.said_rcc",
+   "type": "bool",
+   "default": false,
+   "description": "Carried in. If Reese ever said 'RCC', the scripture holds the Name as a holy word of three sounds that nobody says."
+  },
+  {
+   "name": "cally.said_rcc",
+   "type": "bool",
+   "default": false,
+   "description": "Carried in: true after the Finale's The First Word. Then the scripture has the Sky-Daughter, who spoke the Name and opened the Door and went into the Breath with the Caged; otherwise the Door has a warden who kept the key and said Hope."
+  },
+  {
+   "name": "switchboard.plinth",
+   "type": "bool",
+   "default": true,
+   "description": "Carried in (default true: the Finale's default run patched the plinth). True: the scripture says the Breath came down the Mountain to the Low, and the plinth-born sing the same hymn as the tower-born. False: the Low breathed it after, from the road, and the plinth-born sing one verse differently."
+  },
+  {
+   "name": "switchboard.reach",
+   "type": "counter",
+   "default": 5,
+   "description": "Carried in (default 5): districts the Breath reached, 0 to 5. That many of the five Glass Mountains on the Root-way breathe and swell; the rest are Still Mountains, dead glass with dry vines, crossed by the long way round inside."
+  },
+  {
+   "name": "cult.doctrine",
+   "type": "meter",
+   "default": 60,
+   "description": "Carried in (default 60). The tract became the liturgy. 60 or more: the frescoes carry the Blood Hymn (ALL OF IT IS HIS BLOOD); under 60, the Ring Hymn (STAY OUTSIDE THE RING), his clinic's words kept.",
+   "range": [
+    0,
+    100
+   ]
+  },
+  {
+   "name": "following",
+   "type": "meter",
+   "default": 60,
+   "description": "Carried in (default 60): how many came to need him. Sets the faithful at the shrine (shrine.crowd) with the second peal.",
+   "range": [
+    0,
+    100
+   ]
+  },
+  {
+   "name": "observers_choice",
+   "type": "enum",
+   "default": "with_them",
+   "description": "Carried in from Rise through the Finale. with_them: the scripture's Four Watchers, and the Ghost came out of the plinth's cistern after the Breath. left_them: the Four Taken, and the Ghost came out of an RCC tank in the Biosynth floor after it. He is the companion either way.",
+   "values": [
+    "undecided",
+    "with_them",
+    "left_them"
+   ]
+  },
+  {
+   "name": "two_pans.final",
+   "type": "enum",
+   "default": "window",
+   "description": "Carried in: where the last pans rested. window: the Scales on the altar are set level and the scripture says 'he weighed the peace and it was even'. heart only occurs with hub.held_back.",
+   "values": [
+    "window",
+    "heart"
+   ]
+  },
+  {
+   "name": "toxin_events",
+   "type": "ledger",
+   "default": [],
+   "description": "Carried in, never appended: every Toxin State event of the series. Each becomes one of the Caged's Many Shapes, a carved niche and a fresco panel, its form from the ledger, never the same twice (bible Part VI, Dr. Tox section 3). An empty ledger leaves the niches blank under the verse 'his shapes were many and no two alike'.",
+   "fields": [
+    "episode",
+    "chapter",
+    "scene",
+    "trigger",
+    "form",
+    "reconstructed"
+   ]
+  },
+  {
+   "name": "ghost.flask_true",
+   "type": "bool",
+   "default": false,
+   "description": "The Measure 1: the Ghost's flask was filled exactly to its glaze line (bible Part VI, The Ghost / The Flaw: 'the water must be chemically pure'). Above the line the water takes up the clay; below it he runs short. True: he breathes easy on the road, and each of his mills in The Mill gives +5 to readings.balance instead of +4."
+  },
+  {
+   "name": "readings.balance",
+   "type": "meter",
+   "default": 10,
+   "description": "How much of the Ghost's plain reading of the Age the keeper holds beside her own scripture, 0 to 60, starting at 10. It never passes 60: her memory is the bible's, 'they genuinely remember it that way now' (Part III), so his reading can come level with hers and never above it. Up: +3 per crack looked into in the Fresco walk; +4 per Ghost mill (+5 with ghost.flask_true); +6 for the brass's reverse, +4 for the plate in Rubbing; +5 per pilgrim who keeps a crack. Down: -3 per crack mended; -2 per keeper's mill. 40 or more opens 'write both' at the Book.",
+   "range": [
+    0,
+    60
+   ]
+  },
+  {
+   "name": "readings.signs",
+   "type": "counter",
+   "default": 0,
+   "description": "Plain memories the Ghost has signed to her across the Mill (one per Ghost mill)."
+  },
+  {
+   "name": "readings.verses",
+   "type": "counter",
+   "default": 0,
+   "description": "Verses the keeper has recited across the Mill (one per keeper's mill)."
+  },
+  {
+   "name": "fresco.mended",
+   "type": "counter",
+   "default": 0,
+   "description": "Cracks the keeper patched with fresh plaster and repainted while wet, across both Fresco walks. Each -3 readings.balance."
+  },
+  {
+   "name": "fresco.looked",
+   "type": "counter",
+   "default": 0,
+   "description": "Cracks the keeper leaned into to see the Age beneath, across both Fresco walks. Each +3 readings.balance."
+  },
+  {
+   "name": "fresco.seen",
+   "type": "ledger",
+   "default": [],
+   "description": "What was under each crack she looked into: a painted line of his, a name from the ring of the 999, an RCC sign, a pane of the hub's glass.",
+   "fields": [
+    "what",
+    "wall"
+   ]
+  },
+  {
+   "name": "peal.true_1",
+   "type": "enum",
+   "default": "unrung",
+   "description": "The first peal on four bells: extent (all 24 changes of plain bob minimus, true, back to rounds), course (the plain course of 8, true), or false (a row repeated).",
+   "values": [
+    "unrung",
+    "false",
+    "course",
+    "extent"
+   ]
+  },
+  {
+   "name": "pilgrims.called",
+   "type": "counter",
+   "default": 0,
+   "description": "Extra adult pilgrims the first peal called, 0 to 3: 3 for a true extent, 1 for a true plain course, 0 if rung false. In order: Pim Vos, Linnet Corrie, Mateus Lune."
+  },
+  {
+   "name": "pilgrims.adults",
+   "type": "counter",
+   "default": 5,
+   "description": "Adult pilgrims in the band: 5 (Agathe Rowe, Bram Ilves, Lucan Hale, Zora Ilunga, Iskra Dahl) plus pilgrims.called. Tove Ilves, nine, walks with her father and is never given the measure (the keeper's rule); she is given a rubbing."
+  },
+  {
+   "name": "pilgrims.heard",
+   "type": "ledger",
+   "default": [],
+   "description": "Pilgrims whose crack the keeper heard at a rest on the Root-way (what surfaces in them from the Age, grief with the label torn off). Only a pilgrim whose crack she has heard can be asked, at the altar, whether they want to keep it.",
+   "fields": [
+    "name",
+    "crack"
+   ]
+  },
+  {
+   "name": "pilgrims.kept_cracks",
+   "type": "ledger",
+   "default": [],
+   "description": "Pilgrims who chose at the altar to keep their crack and go up without the measure. Each +5 readings.balance; each saves four lulls.",
+   "fields": [
+    "name",
+    "crack"
+   ]
+  },
+  {
+   "name": "pilgrims.unmeasured",
+   "type": "ledger",
+   "default": [],
+   "description": "Pilgrims sent up without the measure because the open store ran short and the keeper would not break the Last Toad's seal.",
+   "fields": [
+    "name",
+    "want"
+   ]
+  },
+  {
+   "name": "agathe.own_feet",
+   "type": "bool",
+   "default": false,
+   "description": "Root-way 2: the keeper braced every swell Agathe Rowe crossed, and she reached the crown on her own feet, which is all she wanted. Otherwise Bram carries her the last stretch; nobody falls."
+  },
+  {
+   "name": "sacrament",
+   "type": "meter",
+   "default": 32,
+   "description": "The sacrament left in the world, in lulls, an invented unit (never a real amount): 26 in the open Toads and 6 under the Last Toad's seal. Only the Caged could make it, and he is gone. Four lulls is a pilgrim's measure. Spent by measures given, Zora's offering, and waste. At 0, The Last Toad.",
+   "range": [
+    0,
+    32
+   ]
+  },
+  {
+   "name": "last_toad.opened",
+   "type": "bool",
+   "default": false,
+   "description": "The keeper broke the Last Toad's seal at the altar, when the open store could not fill the next measure."
+  },
+  {
+   "name": "measure.waste",
+   "type": "counter",
+   "default": 0,
+   "description": "Lulls poured to the earth in The Measure 2 ('nothing returns to the Toad'): each one taken from sacrament."
+  },
+  {
+   "name": "measure.given",
+   "type": "ledger",
+   "default": [],
+   "description": "Each pilgrim given the measure at the altar, by name and want.",
+   "fields": [
+    "name",
+    "want"
+   ]
+  },
+  {
+   "name": "zora.offering",
+   "type": "bool",
+   "default": false,
+   "description": "Zora Ilunga asked for her brother's measure, to pour into the altar's basin for him, and the keeper gave it: four lulls."
+  },
+  {
+   "name": "rubbing.sheets",
+   "type": "ledger",
+   "default": [],
+   "description": "Rubbings made, for whom and of what: the Twelve for Tove; the halos or the plate at the shrine.",
+   "fields": [
+    "for",
+    "subject"
+   ]
+  },
+  {
+   "name": "rubbing.reverse_read",
+   "type": "bool",
+   "default": false,
+   "description": "Rubbing 1: the keeper turned the brass of the Twelve on its pins and rubbed its other face, an RCC dedication plate with the Board's names. +6 readings.balance."
+  },
+  {
+   "name": "rubbing.plate_revealed",
+   "type": "bool",
+   "default": false,
+   "description": "Rubbing 2: the plate under the halos was rubbed until its three letters stood out. Opens 'read the plate aloud' at the Book. +4 readings.balance."
+  },
+  {
+   "name": "mill.ghost_mills",
+   "type": "counter",
+   "default": 0,
+   "description": "Mills the Ghost made across both games of The Mill (each a sign)."
+  },
+  {
+   "name": "mill.keeper_mills",
+   "type": "counter",
+   "default": 0,
+   "description": "Mills the keeper made across both games of The Mill (each a verse)."
+  },
+  {
+   "name": "peal.true_2",
+   "type": "bool",
+   "default": false,
+   "description": "The second peal, plain hunt on six bells, rung true: the shrine's hour, heard across the city."
+  },
+  {
+   "name": "shrine.crowd",
+   "type": "counter",
+   "default": 0,
+   "description": "The faithful at the shrine door: following / 2 + 20 if the second peal rang true, following / 4 if not. Sets how many hear the plate read in The Stamp, and how many sit in the still light in Scripture Kept."
+  },
+  {
+   "name": "keeper.book",
+   "type": "enum",
+   "default": "scripture",
+   "description": "What the keeper writes in the Book at the lectern: scripture (the default) or both (her scripture and the Ghost's reading in two columns; offered only when readings.balance is 40 or more).",
+   "values": [
+    "scripture",
+    "both"
+   ]
+  },
+  {
+   "name": "stamp.read_aloud",
+   "type": "bool",
+   "default": false,
+   "description": "At the lectern she read the plate under the halos aloud, its three letters, to the crowd at the door. Offered only if rubbing.plate_revealed. Decides The Stamp."
+  },
+  {
+   "name": "peal.muffled",
+   "type": "bool",
+   "default": false,
+   "description": "The closing peal rang half-muffled: the tenor's clapper leathered, as for a death. Set when sacrament is 0."
+  }
+ ]
+}

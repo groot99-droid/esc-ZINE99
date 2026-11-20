@@ -1,0 +1,698 @@
+{
+ "game": "dr-tox-altrulan",
+ "status": "Nothing generated yet (2026-11-20). Each entry holds the prompt and the planned model; job_id is null until the image is generated and approved, and check_assets.py reports every image as missing until then. Generation is priced in credits first (dr-tox/SCOPE.md section 6).",
+ "style": "Sculptural, textured, non-comic illustration (bible Part I: 'Sculptural, textured, non-comic illustration style'). Architecture as the bible gives the Epic of Altrulan: 'deeply metabolic. Vines, bioluminescent fungi, and living systems have fused with the old glass towers; the buildings breathe and regulate themselves. Synthetic ruin fused with organic overgrowth.' (Part III, Architecture, by phase). Palette (DESIGN.md section 15): limestone and lime plaster (#E8E0CF, #CFC4AE), terracotta and slip (#B5653A, #8E4A2C, #E9D9BC), bronze and brass (#A07A3C, #6B5530), matte verdigris (#5E8A80), gold leaf (#D9B45A), vine and moss (#5F6B3A, #8C8F55), fungus light pale blue-white (#CFE6EA), the sacrament's amber (#D99A2B), and the Age's cold gray-teal (#5E7375) only where the old world shows through. No luminous green anywhere. No characters, no animals, no text other than the stamped letters RCC on the one plate where it is named.",
+ "locations": [
+  {
+   "id": "snakehead-holy-site",
+   "name": "Snakehead, the holy cave",
+   "scenes": [
+    "s3_cave_tank",
+    "s3_cave_corridor",
+    "s3_cave_store",
+    "s3_end_two_readings",
+    "s3_end_last_toad"
+   ],
+   "dimensions_m": [
+    48,
+    36,
+    8
+   ],
+   "lighting": "Before dawn: one amber lamp kept lit at the old bench as a votive, hard falloff into black (bible Part VI, Dr. Tox section 9, The bunker), and a cold pale light off the water in the Ghost's tank; by day a shaft of grey light from the breach; along the corridor, oil lamps on the scaffold.",
+   "objects": [
+    "ghost-tank",
+    "spring-basin",
+    "measure-vessels",
+    "bench-altar",
+    "votive-lamp",
+    "store-shelf",
+    "toad-jar",
+    "last-toad-jar",
+    "scaffold-plank",
+    "lime-tub",
+    "keeper-lectern",
+    "keeper-pallet"
+   ],
+   "prompt": "Sculptural, textured, non-comic illustration (bible Part I, the Epic of Altrulan): a scene painted as if carved in relief and then coloured, heavy matter and surface, chisel and brush texture, soft raking light, never comic line, never photographic gloss. A reinforced concrete bunker grown into a natural cavern and kept as a holy place: a raw corridor whose walls are plastered and painted in sections like a long sacred frieze, a trestle scaffold and a tub of lime beside it, opening into a cavern hall under a broken ceiling with a shaft of grey light; on one side four old cell doors standing open and a tall glass tank of perfectly clear water lit cold and pale; at the far end a steel workbench turned into an altar with one amber lamp on it and a shelf of sealed terracotta jars, one set apart. Cold gray-teal concrete under warm lime plaster, terracotta, a single amber light. Wide establishing view of the empty set, eye level, the whole space and its layout readable, no people, no characters, no animals, no text, no letters, no logos.",
+   "model": "nano_banana_2",
+   "job_id": null,
+   "image": "assets/locations/snakehead-holy-site.jpg"
+  },
+  {
+   "id": "glass-mountains",
+   "name": "The Glass Mountains",
+   "scenes": [
+    "s3_mountains_foot",
+    "s3_pilgrims_gather",
+    "s3_mountains_climb",
+    "s3_summit_night",
+    "s3_mountains_summit"
+   ],
+   "dimensions_m": [
+    160,
+    120,
+    110
+   ],
+   "lighting": "Foot: overcast plain daylight on dust, the towers' glass catching it high up; the crown: dawn low and gold through broken glass, then night with oil lamps under the bell frame and the breathing city glowing pale blue-white below.",
+   "objects": [
+    "trellis-mast",
+    "pilgrim-handcart",
+    "way-stone",
+    "bell-frame",
+    "morris-bench"
+   ],
+   "prompt": "Sculptural, textured, non-comic illustration (bible Part I, the Epic of Altrulan): a scene painted as if carved in relief and then coloured, heavy matter and surface, chisel and brush texture, soft raking light, never comic line, never photographic gloss. The bible's 'Skyscrapers become the Glass Mountains': three enormous old glass-and-steel towers on a dust plain, their faces streaked and furred with vines and moss like the strata of a cliff, roots hanging in curtains, the glass between them catching the light like ice. At their foot the end of a long road, old floodlight masts overgrown into living trellises, a carved way-stone. High on the nearest tower its broken crown, where a heavy timber bell frame hangs a ring of cast bells against the sky. Wide establishing view of the empty set, eye level, the whole space and its layout readable, no people, no characters, no animals, no text, no letters, no logos.",
+   "model": "nano_banana_2",
+   "job_id": null,
+   "image": "assets/locations/glass-mountains.jpg"
+  },
+  {
+   "id": "metabolic-city",
+   "name": "The breathing city",
+   "scenes": [
+    "s3_city_gate",
+    "s3_city_market",
+    "s3_city_night"
+   ],
+   "dimensions_m": [
+    80,
+    60,
+    30
+   ],
+   "lighting": "Pale blue-white fungus light from domes and walls, breathing slowly brighter and dimmer; daylight green-gold through vine-covered glass; at night only the fungus and small oil lamps.",
+   "objects": [
+    "fungus-lamp",
+    "market-stall",
+    "memorial-brass",
+    "vine-node",
+    "morris-bench",
+    "water-bowl",
+    "sleeping-mat"
+   ],
+   "prompt": "Sculptural, textured, non-comic illustration (bible Part I, the Epic of Altrulan): a scene painted as if carved in relief and then coloured, heavy matter and surface, chisel and brush texture, soft raking light, never comic line, never photographic gloss. Inside an old corporate atrium that has become a living building: tall glass walls overgrown with thick vines whose trunks swell like ribs, bioluminescent fungus in shelves and domes glowing pale blue-white, a floor of cracked stone with roots through it, a mezzanine turned into a market of cloth stalls, a broad entrance arch like a city gate, and on the lobby wall a large engraved brass memorial plate on a stand. Synthetic ruin fused with organic overgrowth (bible Part III, Architecture, by phase), the air visibly moving. Wide establishing view of the empty set, eye level, the whole space and its layout readable, no people, no characters, no animals, no text, no letters, no logos.",
+   "model": "nano_banana_2",
+   "job_id": null,
+   "image": "assets/locations/metabolic-city.jpg"
+  },
+  {
+   "id": "light-bringers-shrine",
+   "name": "The Light Bringer's shrine",
+   "scenes": [
+    "s3_shrine_door",
+    "s3_shrine_drum",
+    "s3_shrine_altar",
+    "s3_shrine_book",
+    "s3_end_kept",
+    "s3_end_stamp"
+   ],
+   "dimensions_m": [
+    50,
+    50,
+    24
+   ],
+   "lighting": "Daylight through the old glass drum, warm and even; the halos in gold leaf over the door catching it; inside, the plaster ring of scripture lit by oil lamps, the altar under a soft shaft from the cap; at the ending, a still, even light with no source.",
+   "objects": [
+    "halo-relief",
+    "plate-door",
+    "altar-stone",
+    "scales-relic",
+    "altar-basin",
+    "shrine-lectern",
+    "kneeling-cushion",
+    "bell-frame"
+   ],
+   "prompt": "Sculptural, textured, non-comic illustration (bible Part I, the Epic of Altrulan): a scene painted as if carved in relief and then coloured, heavy matter and surface, chisel and brush texture, soft raking light, never comic line, never photographic gloss. A tall drum of old glass at the heart of an overgrown city, now a shrine: around its base inside, a ring wall of lime plaster painted as a continuous sacred fresco; above an old heavy steel door on the outside, a great relief of a standing figure whose head and hands are ringed by concentric gilded halos; a stone altar at the centre with an old brass beam balance on it and a stone basin beside, a carved lectern, kneeling cushions, a stair to the drum's cap where a ring of bells hangs. Gold leaf, limestone, bronze, glass furred with vines. Wide establishing view of the empty set, eye level, the whole space and its layout readable, no people, no characters, no animals, no text, no letters, no logos.",
+   "model": "nano_banana_2",
+   "job_id": null,
+   "image": "assets/locations/light-bringers-shrine.jpg"
+  }
+ ],
+ "objects": [
+  {
+   "id": "ghost-tank",
+   "name": "The Ghost's tank",
+   "role": "hero",
+   "scenes": [
+    "s3_cave_tank",
+    "s3_end_two_readings"
+   ],
+   "size_m": [
+    2.4,
+    1.2,
+    1.8
+   ],
+   "material": "Old laboratory glass tank, steel frame, perfectly clear water",
+   "prompt": "Sculptural textured 3D game prop, hand-made and worn, matte surfaces, carved or cast, no chrome, no gloss. A tall old laboratory water tank: thick glass panels in a scuffed steel frame, filled to the brim with perfectly clear still water, a steel step at one side, the frame wrapped with votive cloth strips, a ring of small terracotta cups along its base. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people, no animals. Reference image for 3D modelling.",
+   "model": "gpt_image_2_6",
+   "job_id": null,
+   "image": "assets/objects/ghost-tank.jpg"
+  },
+  {
+   "id": "spring-basin",
+   "name": "Spring basin",
+   "role": "interact",
+   "scenes": [
+    "s3_cave_tank"
+   ],
+   "size_m": [
+    1.2,
+    0.8,
+    0.9
+   ],
+   "material": "Carved limestone basin fed by a pipe",
+   "prompt": "Sculptural textured 3D game prop, hand-made and worn, matte surfaces, carved or cast, no chrome, no gloss. A carved limestone basin on a squat pedestal with a worn spout, a thin steady stream of clear water falling into it, moss in the joints, an old steel pipe let into the rock above it. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people, no animals. Reference image for 3D modelling.",
+   "model": "gpt_image_2_6",
+   "job_id": null,
+   "image": "assets/objects/spring-basin.jpg"
+  },
+  {
+   "id": "measure-vessels",
+   "name": "The keeper's measure vessels",
+   "role": "interact",
+   "scenes": [
+    "s3_cave_tank",
+    "s3_cave_store"
+   ],
+   "size_m": [
+    0.9,
+    0.45,
+    0.55
+   ],
+   "material": "Three slip-glazed terracotta vessels on a wooden tray",
+   "prompt": "Sculptural textured 3D game prop, hand-made and worn, matte surfaces, carved or cast, no chrome, no gloss. Three unmarked terracotta vessels of different sizes, the smallest a cup, the middle a jug, the largest a tall jar, all dipped in cream slip with the raw red clay showing at the foot, standing on a worn wooden tray, plus one white-slipped flask with a thin glaze line round its inside rim. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people, no animals. Reference image for 3D modelling.",
+   "model": "gpt_image_2_6",
+   "job_id": null,
+   "image": "assets/objects/measure-vessels.jpg"
+  },
+  {
+   "id": "bench-altar",
+   "name": "The old bench as altar",
+   "role": "interact",
+   "scenes": [
+    "s3_cave_store",
+    "s3_end_last_toad"
+   ],
+   "size_m": [
+    2.2,
+    0.8,
+    0.95
+   ],
+   "material": "Steel workbench draped with woven cloth",
+   "prompt": "Sculptural textured 3D game prop, hand-made and worn, matte surfaces, carved or cast, no chrome, no gloss. A heavy old steel laboratory workbench, its top scarred and stained, now draped with a long woven altar cloth, small terracotta offering cups and folded paper rubbings laid along it. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people, no animals. Reference image for 3D modelling.",
+   "model": "gpt_image_2_6",
+   "job_id": null,
+   "image": "assets/objects/bench-altar.jpg"
+  },
+  {
+   "id": "votive-lamp",
+   "name": "The amber lamp, kept lit",
+   "role": "hero",
+   "scenes": [
+    "s3_cave_tank",
+    "s3_cave_store",
+    "s3_end_last_toad"
+   ],
+   "size_m": [
+    0.4,
+    0.4,
+    0.6
+   ],
+   "material": "Steel clamp lamp with an amber lens, garlanded",
+   "prompt": "Sculptural textured 3D game prop, hand-made and worn, matte surfaces, carved or cast, no chrome, no gloss. A heavy old steel clamp work lamp with an amber-tinted glass lens glowing warm amber, its stand wound with dried vine and cloth like a votive object, wax drips at its foot. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people, no animals. Reference image for 3D modelling.",
+   "model": "gpt_image_2_6",
+   "job_id": null,
+   "image": "assets/objects/votive-lamp.jpg"
+  },
+  {
+   "id": "store-shelf",
+   "name": "The shelf of the Toads",
+   "role": "fill",
+   "scenes": [
+    "s3_cave_store",
+    "s3_end_last_toad"
+   ],
+   "size_m": [
+    2.4,
+    0.5,
+    1.8
+   ],
+   "material": "Concrete and timber shelf",
+   "prompt": "Sculptural textured 3D game prop, hand-made and worn, matte surfaces, carved or cast, no chrome, no gloss. A low wide shelf built of salvaged timber planks on concrete blocks, its edge carved with a simple repeating wave pattern, rings worn into the planks where jars have stood for years. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people, no animals. Reference image for 3D modelling.",
+   "model": "gpt_image_2_6",
+   "job_id": null,
+   "image": "assets/objects/store-shelf.jpg"
+  },
+  {
+   "id": "toad-jar",
+   "name": "A Toad (sacrament jar)",
+   "role": "interact",
+   "scenes": [
+    "s3_cave_store"
+   ],
+   "size_m": [
+    0.45,
+    0.45,
+    0.7
+   ],
+   "material": "Amber-glazed terracotta jar sealed with clay",
+   "prompt": "Sculptural textured 3D game prop, hand-made and worn, matte surfaces, carved or cast, no chrome, no gloss. A squat terracotta storage jar glazed deep amber over cream slip, a cloth tied over its mouth and sealed with a disc of grey clay pressed with a small round seal showing a stylised toad. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people, no animals. Reference image for 3D modelling.",
+   "model": "gpt_image_2_6",
+   "job_id": null,
+   "image": "assets/objects/toad-jar.jpg"
+  },
+  {
+   "id": "last-toad-jar",
+   "name": "The Last Toad",
+   "role": "hero",
+   "scenes": [
+    "s3_cave_store",
+    "s3_end_last_toad"
+   ],
+   "size_m": [
+    0.4,
+    0.4,
+    0.6
+   ],
+   "material": "Amber-glazed terracotta jar, heavier seal",
+   "prompt": "Sculptural textured 3D game prop, hand-made and worn, matte surfaces, carved or cast, no chrome, no gloss. A small terracotta jar glazed deep amber, older and darker than the others, its mouth sealed with a thick disc of clay bound with cord, the seal pressed with a stylised toad, set apart on a carved stone stand. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people, no animals. Reference image for 3D modelling.",
+   "model": "gpt_image_2_6",
+   "job_id": null,
+   "image": "assets/objects/last-toad-jar.jpg"
+  },
+  {
+   "id": "scaffold-plank",
+   "name": "Fresco scaffold",
+   "role": "interact",
+   "scenes": [
+    "s3_cave_corridor"
+   ],
+   "size_m": [
+    3.0,
+    0.7,
+    1.5
+   ],
+   "material": "Timber trestles and a plank",
+   "prompt": "Sculptural textured 3D game prop, hand-made and worn, matte surfaces, carved or cast, no chrome, no gloss. A painter's scaffold: two timber trestles and a long scuffed plank across them, a bucket, brushes in a jar and a trowel lying on the plank, plaster splashes everywhere. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people, no animals. Reference image for 3D modelling.",
+   "model": "gpt_image_2_6",
+   "job_id": null,
+   "image": "assets/objects/scaffold-plank.jpg"
+  },
+  {
+   "id": "lime-tub",
+   "name": "Lime tub",
+   "role": "fill",
+   "scenes": [
+    "s3_cave_corridor"
+   ],
+   "size_m": [
+    0.7,
+    0.7,
+    0.5
+   ],
+   "material": "Wooden tub of slaked lime",
+   "prompt": "Sculptural textured 3D game prop, hand-made and worn, matte surfaces, carved or cast, no chrome, no gloss. A round wooden tub bound with iron hoops, full of wet white slaked lime putty under a damp cloth, a wooden paddle across it. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people, no animals. Reference image for 3D modelling.",
+   "model": "gpt_image_2_6",
+   "job_id": null,
+   "image": "assets/objects/lime-tub.jpg"
+  },
+  {
+   "id": "keeper-lectern",
+   "name": "The keeper's lectern and the Book",
+   "role": "interact",
+   "scenes": [
+    "s3_cave_tank",
+    "s3_end_two_readings"
+   ],
+   "size_m": [
+    0.6,
+    0.5,
+    1.2
+   ],
+   "material": "Carved timber lectern with a closed book",
+   "prompt": "Sculptural textured 3D game prop, hand-made and worn, matte surfaces, carved or cast, no chrome, no gloss. A simple carved timber lectern with a slanted top, a large hand-bound book closed on it, its cover worn leather with a pressed sun-ring motif, a ribbon marker hanging. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people, no animals. Reference image for 3D modelling.",
+   "model": "gpt_image_2_6",
+   "job_id": null,
+   "image": "assets/objects/keeper-lectern.jpg"
+  },
+  {
+   "id": "keeper-pallet",
+   "name": "The keeper's pallet",
+   "role": "fill",
+   "scenes": [
+    "s3_cave_tank"
+   ],
+   "size_m": [
+    2.0,
+    0.9,
+    0.35
+   ],
+   "material": "Timber pallet with woollen blankets",
+   "prompt": "Sculptural textured 3D game prop, hand-made and worn, matte surfaces, carved or cast, no chrome, no gloss. A low sleeping pallet of salvaged timber with folded woollen blankets and a rolled pack, a pair of worn sandals beside it. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people, no animals. Reference image for 3D modelling.",
+   "model": "gpt_image_2_6",
+   "job_id": null,
+   "image": "assets/objects/keeper-pallet.jpg"
+  },
+  {
+   "id": "trellis-mast",
+   "name": "Floodlight mast, overgrown",
+   "role": "fill",
+   "scenes": [
+    "s3_mountains_foot",
+    "s3_pilgrims_gather"
+   ],
+   "size_m": [
+    1.6,
+    1.6,
+    18.0
+   ],
+   "material": "Steel lattice mast wound with vines",
+   "prompt": "Sculptural textured 3D game prop, hand-made and worn, matte surfaces, carved or cast, no chrome, no gloss. A tall old steel lattice floodlight mast, its lamp heads long dead and hanging with vines, the whole mast wound thick with living climbing plants and hung with small bells and cloth strips. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people, no animals. Reference image for 3D modelling.",
+   "model": "gpt_image_2_6",
+   "job_id": null,
+   "image": "assets/objects/trellis-mast.jpg"
+  },
+  {
+   "id": "pilgrim-handcart",
+   "name": "Pilgrims' handcart",
+   "role": "fill",
+   "scenes": [
+    "s3_mountains_foot",
+    "s3_pilgrims_gather"
+   ],
+   "size_m": [
+    2.0,
+    1.2,
+    1.2
+   ],
+   "material": "Timber two-wheeled cart with bundles",
+   "prompt": "Sculptural textured 3D game prop, hand-made and worn, matte surfaces, carved or cast, no chrome, no gloss. A two-wheeled timber handcart with long shafts, loaded with rolled blankets, water skins and a few terracotta jars tied in rope nets. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people, no animals. Reference image for 3D modelling.",
+   "model": "gpt_image_2_6",
+   "job_id": null,
+   "image": "assets/objects/pilgrim-handcart.jpg"
+  },
+  {
+   "id": "way-stone",
+   "name": "Way-stone",
+   "role": "interact",
+   "scenes": [
+    "s3_mountains_foot",
+    "s3_pilgrims_gather"
+   ],
+   "size_m": [
+    1.0,
+    0.6,
+    1.4
+   ],
+   "material": "Carved limestone marker",
+   "prompt": "Sculptural textured 3D game prop, hand-made and worn, matte surfaces, carved or cast, no chrome, no gloss. A waist-high limestone marker stone, its face carved in low relief with a tall rectangle and a ring above it (a mountain and a halo), its top worn smooth by hands. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people, no animals. Reference image for 3D modelling.",
+   "model": "gpt_image_2_6",
+   "job_id": null,
+   "image": "assets/objects/way-stone.jpg"
+  },
+  {
+   "id": "bell-frame",
+   "name": "Bell frame with its ring of bells",
+   "role": "interact",
+   "scenes": [
+    "s3_summit_night",
+    "s3_mountains_summit",
+    "s3_shrine_drum",
+    "s3_end_kept"
+   ],
+   "size_m": [
+    4.0,
+    4.0,
+    3.0
+   ],
+   "material": "Oak frame, cast bronze bells on wheels",
+   "prompt": "Sculptural textured 3D game prop, hand-made and worn, matte surfaces, carved or cast, no chrome, no gloss. A heavy oak bell frame holding a ring of six cast bronze bells of graded sizes, each hung on a wooden wheel with a rope and a striped woollen sally, the bells' shoulders cast with simple bands of relief. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people, no animals. Reference image for 3D modelling.",
+   "model": "gpt_image_2_6",
+   "job_id": null,
+   "image": "assets/objects/bell-frame.jpg"
+  },
+  {
+   "id": "morris-bench",
+   "name": "Stone bench with a morris board",
+   "role": "interact",
+   "scenes": [
+    "s3_city_night",
+    "s3_summit_night"
+   ],
+   "size_m": [
+    1.8,
+    0.6,
+    0.5
+   ],
+   "material": "Limestone bench, board cut in its top, bronze pieces",
+   "prompt": "Sculptural textured 3D game prop, hand-made and worn, matte surfaces, carved or cast, no chrome, no gloss. A long limestone bench whose top is cut with a nine men's morris board of three nested squares joined at their midpoints, a handful of small cast bronze playing pieces on it, some bright and some dark with patina. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people, no animals. Reference image for 3D modelling.",
+   "model": "gpt_image_2_6",
+   "job_id": null,
+   "image": "assets/objects/morris-bench.jpg"
+  },
+  {
+   "id": "fungus-lamp",
+   "name": "Fungus lamp",
+   "role": "fill",
+   "scenes": [
+    "s3_city_gate",
+    "s3_city_market",
+    "s3_city_night"
+   ],
+   "size_m": [
+    0.5,
+    0.5,
+    0.7
+   ],
+   "material": "Glass dome over glowing fungus",
+   "prompt": "Sculptural textured 3D game prop, hand-made and worn, matte surfaces, carved or cast, no chrome, no gloss. A bell-shaped old glass dome on a terracotta base, inside it a cluster of shelf fungus glowing a soft pale blue-white. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people, no animals. Reference image for 3D modelling.",
+   "model": "gpt_image_2_6",
+   "job_id": null,
+   "image": "assets/objects/fungus-lamp.jpg"
+  },
+  {
+   "id": "market-stall",
+   "name": "Market stall",
+   "role": "fill",
+   "scenes": [
+    "s3_city_market"
+   ],
+   "size_m": [
+    2.5,
+    1.5,
+    2.4
+   ],
+   "material": "Timber and cloth stall",
+   "prompt": "Sculptural textured 3D game prop, hand-made and worn, matte surfaces, carved or cast, no chrome, no gloss. A market stall of lashed timber poles and woven cloth awning, its counter laid with terracotta bowls, bundles of dried fungus and coils of rope. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people, no animals. Reference image for 3D modelling.",
+   "model": "gpt_image_2_6",
+   "job_id": null,
+   "image": "assets/objects/market-stall.jpg"
+  },
+  {
+   "id": "memorial-brass",
+   "name": "The brass of the Twelve",
+   "role": "interact",
+   "scenes": [
+    "s3_city_market"
+   ],
+   "size_m": [
+    1.2,
+    0.3,
+    2.0
+   ],
+   "material": "Engraved brass plate on a pivoting stand",
+   "prompt": "Sculptural textured 3D game prop, hand-made and worn, matte surfaces, carved or cast, no chrome, no gloss. A large flat brass plate engraved in shallow line with twelve standing figures in two rows, the tallest ringed with halos, held upright in a timber stand on two iron pins so it can turn; worn bright where hands touch it. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people, no animals. Reference image for 3D modelling.",
+   "model": "gpt_image_2_6",
+   "job_id": null,
+   "image": "assets/objects/memorial-brass.jpg"
+  },
+  {
+   "id": "vine-node",
+   "name": "Breathing vine node",
+   "role": "fill",
+   "scenes": [
+    "s3_city_gate",
+    "s3_city_market"
+   ],
+   "size_m": [
+    1.2,
+    1.2,
+    1.5
+   ],
+   "material": "Swollen vine trunk junction",
+   "prompt": "Sculptural textured 3D game prop, hand-made and worn, matte surfaces, carved or cast, no chrome, no gloss. A knot where several thick vine trunks meet and swell into a ribbed bulb taller than a person, bark smooth and taut, small pale fungus along its seams. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people, no animals. Reference image for 3D modelling.",
+   "model": "gpt_image_2_6",
+   "job_id": null,
+   "image": "assets/objects/vine-node.jpg"
+  },
+  {
+   "id": "water-bowl",
+   "name": "The Ghost's bowl",
+   "role": "interact",
+   "scenes": [
+    "s3_city_night"
+   ],
+   "size_m": [
+    0.6,
+    0.6,
+    0.25
+   ],
+   "material": "White-slipped terracotta bowl of clear water",
+   "prompt": "Sculptural textured 3D game prop, hand-made and worn, matte surfaces, carved or cast, no chrome, no gloss. A wide shallow terracotta bowl slipped white inside, full of perfectly clear water, a folded cloth beside it. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people, no animals. Reference image for 3D modelling.",
+   "model": "gpt_image_2_6",
+   "job_id": null,
+   "image": "assets/objects/water-bowl.jpg"
+  },
+  {
+   "id": "sleeping-mat",
+   "name": "Sleeping mat",
+   "role": "fill",
+   "scenes": [
+    "s3_city_night"
+   ],
+   "size_m": [
+    2.0,
+    0.9,
+    0.1
+   ],
+   "material": "Woven reed mat and blanket",
+   "prompt": "Sculptural textured 3D game prop, hand-made and worn, matte surfaces, carved or cast, no chrome, no gloss. A woven reed sleeping mat with a rough woollen blanket and a rolled pack as a pillow. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people, no animals. Reference image for 3D modelling.",
+   "model": "gpt_image_2_6",
+   "job_id": null,
+   "image": "assets/objects/sleeping-mat.jpg"
+  },
+  {
+   "id": "halo-relief",
+   "name": "The relief of Aleglethan",
+   "role": "hero",
+   "scenes": [
+    "s3_shrine_door",
+    "s3_end_stamp"
+   ],
+   "size_m": [
+    4.0,
+    0.6,
+    5.0
+   ],
+   "material": "Carved stone relief with gilded halos",
+   "prompt": "Sculptural textured 3D game prop, hand-made and worn, matte surfaces, carved or cast, no chrome, no gloss. A large carved limestone relief of a standing figure seen from the front, arms lowered and open, its features calm and simplified, ringed at the head and the hands by concentric raised halos covered in gold leaf, the stone around it chiselled with fine rays. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people, no animals. Reference image for 3D modelling.",
+   "model": "gpt_image_2_6",
+   "job_id": null,
+   "image": "assets/objects/halo-relief.jpg"
+  },
+  {
+   "id": "plate-door",
+   "name": "The old door and its plate",
+   "role": "interact",
+   "scenes": [
+    "s3_shrine_door",
+    "s3_shrine_book",
+    "s3_end_stamp"
+   ],
+   "size_m": [
+    2.4,
+    0.4,
+    3.2
+   ],
+   "material": "Heavy steel door with a small stamped plate",
+   "prompt": "Sculptural textured 3D game prop, hand-made and worn, matte surfaces, carved or cast, no chrome, no gloss. A heavy old steel blast door in its frame, painted and repainted with faded sacred patterns, vines over its hinges, and at its centre a small rectangular steel plate stamped with the raised letters RCC, half hidden by garlands. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people, no animals. Reference image for 3D modelling.",
+   "model": "gpt_image_2_6",
+   "job_id": null,
+   "image": "assets/objects/plate-door.jpg"
+  },
+  {
+   "id": "altar-stone",
+   "name": "Altar",
+   "role": "fill",
+   "scenes": [
+    "s3_shrine_altar",
+    "s3_end_kept"
+   ],
+   "size_m": [
+    2.0,
+    1.2,
+    1.0
+   ],
+   "material": "Limestone block altar",
+   "prompt": "Sculptural textured 3D game prop, hand-made and worn, matte surfaces, carved or cast, no chrome, no gloss. A plain heavy limestone altar block with softened edges, a woven cloth runner across it. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people, no animals. Reference image for 3D modelling.",
+   "model": "gpt_image_2_6",
+   "job_id": null,
+   "image": "assets/objects/altar-stone.jpg"
+  },
+  {
+   "id": "scales-relic",
+   "name": "The Scales",
+   "role": "hero",
+   "scenes": [
+    "s3_shrine_drum",
+    "s3_shrine_altar",
+    "s3_end_kept"
+   ],
+   "size_m": [
+    1.2,
+    0.5,
+    1.6
+   ],
+   "material": "Old brass beam balance on a steel stand",
+   "prompt": "Sculptural textured 3D game prop, hand-made and worn, matte surfaces, carved or cast, no chrome, no gloss. An old brass beam balance on a plain steel stand, two shallow pans hanging level, its beam engraved with fine sacred patterns added later, small brass tokens heaped in a bowl at its foot. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people, no animals. Reference image for 3D modelling.",
+   "model": "gpt_image_2_6",
+   "job_id": null,
+   "image": "assets/objects/scales-relic.jpg"
+  },
+  {
+   "id": "altar-basin",
+   "name": "Altar basin",
+   "role": "interact",
+   "scenes": [
+    "s3_shrine_altar"
+   ],
+   "size_m": [
+    1.0,
+    1.0,
+    0.8
+   ],
+   "material": "Carved stone basin",
+   "prompt": "Sculptural textured 3D game prop, hand-made and worn, matte surfaces, carved or cast, no chrome, no gloss. A round carved limestone basin on a short column, its bowl stained amber at the bottom. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people, no animals. Reference image for 3D modelling.",
+   "model": "gpt_image_2_6",
+   "job_id": null,
+   "image": "assets/objects/altar-basin.jpg"
+  },
+  {
+   "id": "shrine-lectern",
+   "name": "The shrine's lectern",
+   "role": "interact",
+   "scenes": [
+    "s3_shrine_book",
+    "s3_end_stamp"
+   ],
+   "size_m": [
+    0.7,
+    0.6,
+    1.3
+   ],
+   "material": "Carved stone lectern with an open book",
+   "prompt": "Sculptural textured 3D game prop, hand-made and worn, matte surfaces, carved or cast, no chrome, no gloss. A carved limestone lectern with a slanted top, a very large hand-written book lying open on it, two oil lamps at its corners. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people, no animals. Reference image for 3D modelling.",
+   "model": "gpt_image_2_6",
+   "job_id": null,
+   "image": "assets/objects/shrine-lectern.jpg"
+  },
+  {
+   "id": "kneeling-cushion",
+   "name": "Kneeling cushion",
+   "role": "fill",
+   "scenes": [
+    "s3_shrine_altar",
+    "s3_end_kept"
+   ],
+   "size_m": [
+    0.6,
+    0.6,
+    0.15
+   ],
+   "material": "Woven wool cushion",
+   "prompt": "Sculptural textured 3D game prop, hand-made and worn, matte surfaces, carved or cast, no chrome, no gloss. A square woven wool kneeling cushion in ochre and cream with a simple ring pattern. Single object only, centred, the whole object in frame with margin, three-quarter view from slightly above, plain pure white background, soft even studio light, no cast shadow, no text or lettering, no other objects, no hands, no people, no animals. Reference image for 3D modelling.",
+   "model": "gpt_image_2_6",
+   "job_id": null,
+   "image": "assets/objects/kneeling-cushion.jpg"
+  }
+ ]
+}

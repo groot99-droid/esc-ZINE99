@@ -1,0 +1,725 @@
+{
+ "game": "dr-tox-altrulan",
+ "location": "light-bringers-shrine",
+ "name": "The Light Bringer's shrine",
+ "reference": "assets/locations/light-bringers-shrine.jpg",
+ "bounds_m": [
+  50,
+  50,
+  24
+ ],
+ "origin": "centre of the old hub's glass drum (the altar); the drum has a radius of 14 m with the plaster scripture ring inside its base; the gallery rings it outside; the old steel door and the relief at -y; the stair to the cap at +x; +z up",
+ "materials": {
+  "stone": {
+   "color": [
+    0.81,
+    0.77,
+    0.68
+   ],
+   "roughness": 0.85
+  },
+  "plaster": {
+   "color": [
+    0.91,
+    0.88,
+    0.81
+   ],
+   "roughness": 0.85
+  },
+  "glass": {
+   "color": [
+    0.66,
+    0.75,
+    0.74
+   ],
+   "roughness": 0.06,
+   "metallic": 0.1
+  },
+  "steel": {
+   "color": [
+    0.36,
+    0.39,
+    0.4
+   ],
+   "roughness": 0.6,
+   "metallic": 0.6
+  },
+  "vine": {
+   "color": [
+    0.37,
+    0.42,
+    0.23
+   ],
+   "roughness": 0.8
+  }
+ },
+ "blockout": [
+  {
+   "id": "core-floor",
+   "shape": "cylinder",
+   "role": "floor",
+   "size_m": [
+    28,
+    28,
+    0.3
+   ],
+   "location": [
+    0,
+    0,
+    -0.15
+   ],
+   "material": "stone"
+  },
+  {
+   "id": "gallery-floor",
+   "shape": "cylinder",
+   "role": "floor",
+   "size_m": [
+    44,
+    44,
+    0.2
+   ],
+   "location": [
+    0,
+    0,
+    -0.3
+   ],
+   "material": "steel"
+  },
+  {
+   "id": "drum",
+   "shape": "cylinder",
+   "role": "wall",
+   "size_m": [
+    28.4,
+    28.4,
+    22
+   ],
+   "location": [
+    0,
+    0,
+    11
+   ],
+   "material": "glass"
+  },
+  {
+   "id": "scripture-ring",
+   "shape": "cylinder",
+   "role": "wall",
+   "size_m": [
+    27.4,
+    27.4,
+    4
+   ],
+   "location": [
+    0,
+    0,
+    2
+   ],
+   "material": "plaster"
+  },
+  {
+   "id": "drum-cap",
+   "shape": "cylinder",
+   "role": "floor",
+   "size_m": [
+    30,
+    30,
+    0.6
+   ],
+   "location": [
+    0,
+    0,
+    22.3
+   ],
+   "material": "steel"
+  },
+  {
+   "id": "outer-wall",
+   "shape": "cylinder",
+   "role": "wall",
+   "size_m": [
+    48,
+    48,
+    24
+   ],
+   "location": [
+    0,
+    0,
+    12
+   ],
+   "material": "vine"
+  },
+  {
+   "id": "door-way",
+   "shape": "box",
+   "role": "opening",
+   "size_m": [
+    3,
+    1.2,
+    3.4
+   ],
+   "location": [
+    0,
+    -14,
+    1.7
+   ],
+   "material": "steel"
+  },
+  {
+   "id": "cap-stair",
+   "shape": "box",
+   "role": "structure",
+   "size_m": [
+    2.4,
+    2.4,
+    22
+   ],
+   "location": [
+    11,
+    0,
+    11
+   ],
+   "material": "steel"
+  }
+ ],
+ "props": [
+  {
+   "id": "relief",
+   "object": "halo-relief",
+   "location": [
+    0,
+    -15.2,
+    6.2
+   ],
+   "ground": false
+  },
+  {
+   "id": "door",
+   "object": "plate-door",
+   "location": [
+    0,
+    -14.6,
+    0
+   ]
+  },
+  {
+   "id": "altar",
+   "object": "altar-stone",
+   "location": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "scales",
+   "object": "scales-relic",
+   "location": [
+    0,
+    0,
+    1.8
+   ],
+   "ground": false
+  },
+  {
+   "id": "basin",
+   "object": "altar-basin",
+   "location": [
+    2.2,
+    1.2,
+    0
+   ]
+  },
+  {
+   "id": "lectern",
+   "object": "shrine-lectern",
+   "location": [
+    -3,
+    2.5,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    200
+   ]
+  },
+  {
+   "id": "cushion-1",
+   "object": "kneeling-cushion",
+   "location": [
+    -1.6,
+    -2.2,
+    0
+   ]
+  },
+  {
+   "id": "cushion-2",
+   "object": "kneeling-cushion",
+   "location": [
+    0,
+    -2.4,
+    0
+   ]
+  },
+  {
+   "id": "cushion-3",
+   "object": "kneeling-cushion",
+   "location": [
+    1.6,
+    -2.2,
+    0
+   ]
+  },
+  {
+   "id": "cushion-4",
+   "object": "kneeling-cushion",
+   "location": [
+    0,
+    -3.6,
+    0
+   ]
+  },
+  {
+   "id": "bells",
+   "object": "bell-frame",
+   "location": [
+    0,
+    4,
+    22.6
+   ]
+  }
+ ],
+ "scenes": {
+  "s3_shrine_door": {
+   "note": "Chapter 5: the gallery outside the drum; Aleglethan's gilded halos over the old steel door; the plate under them; the crowd on the stair.",
+   "world": {
+    "color": [
+     0.5,
+     0.5,
+     0.48
+    ],
+    "strength": 0.4
+   },
+   "lights": [
+    {
+     "name": "daylight",
+     "type": "AREA",
+     "location": [
+      0,
+      -22,
+      20
+     ],
+     "energy": 1500,
+     "size": 20,
+     "look_at": [
+      0,
+      -15,
+      4
+     ],
+     "color": [
+      0.95,
+      0.93,
+      0.86
+     ]
+    },
+    {
+     "name": "halo-catch",
+     "type": "SPOT",
+     "location": [
+      6,
+      -20,
+      8
+     ],
+     "energy": 300,
+     "size": 1,
+     "look_at": [
+      0,
+      -15.2,
+      6.2
+     ],
+     "color": [
+      0.98,
+      0.85,
+      0.55
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     3,
+     -21,
+     1.7
+    ],
+    "look_at": [
+     0,
+     -15,
+     4.5
+    ],
+    "lens_mm": 35,
+    "mode": "third-person"
+   },
+   "player_start": {
+    "location": [
+     3,
+     -20.5,
+     0
+    ],
+    "facing_deg": 350
+   },
+   "interactions": [
+    {
+     "prop": "relief",
+     "verb": "Look up at the halos"
+    },
+    {
+     "prop": "door",
+     "verb": "Lay the paper on the plate",
+     "leads_to": "s1_rubbing_2"
+    }
+   ]
+  },
+  "s3_shrine_drum": {
+   "note": "Chapter 5: inside the drum; the scripture ring round the glass; the Scales on the altar; the cap above.",
+   "world": {
+    "color": [
+     0.45,
+     0.45,
+     0.42
+    ],
+    "strength": 0.35
+   },
+   "lights": [
+    {
+     "name": "drum-day",
+     "type": "AREA",
+     "location": [
+      0,
+      0,
+      21
+     ],
+     "energy": 2500,
+     "size": 24,
+     "look_at": [
+      0,
+      0,
+      0
+     ],
+     "color": [
+      0.95,
+      0.93,
+      0.86
+     ]
+    },
+    {
+     "name": "ring-lamps",
+     "type": "POINT",
+     "location": [
+      0,
+      -12,
+      2.4
+     ],
+     "energy": 120,
+     "size": 0.5,
+     "color": [
+      0.95,
+      0.72,
+      0.4
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     0,
+     -11,
+     1.7
+    ],
+    "look_at": [
+     -10,
+     -5,
+     2
+    ],
+    "lens_mm": 28,
+    "mode": "third-person"
+   },
+   "player_start": {
+    "location": [
+     0,
+     -11.5,
+     0
+    ],
+    "facing_deg": 300
+   },
+   "interactions": [
+    {
+     "prop": "scales",
+     "verb": "Look at the Scales"
+    },
+    {
+     "prop": "altar",
+     "verb": "Walk the ring",
+     "leads_to": "s2_fresco_2"
+    }
+   ]
+  },
+  "s3_shrine_altar": {
+   "note": "Chapter 6: the altar under the cap; the Scales; the pilgrims kneeling; the crowd in the doorway.",
+   "world": {
+    "color": [
+     0.45,
+     0.45,
+     0.42
+    ],
+    "strength": 0.3
+   },
+   "lights": [
+    {
+     "name": "cap-shaft",
+     "type": "SPOT",
+     "location": [
+      0,
+      0,
+      21
+     ],
+     "energy": 2000,
+     "size": 3,
+     "look_at": [
+      0,
+      0,
+      1
+     ],
+     "color": [
+      0.98,
+      0.94,
+      0.82
+     ]
+    },
+    {
+     "name": "ring-lamps",
+     "type": "POINT",
+     "location": [
+      0,
+      -12,
+      2.4
+     ],
+     "energy": 100,
+     "size": 0.5,
+     "color": [
+      0.95,
+      0.72,
+      0.4
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     3.5,
+     -6,
+     1.7
+    ],
+    "look_at": [
+     0,
+     0,
+     1.2
+    ],
+    "lens_mm": 35,
+    "mode": "third-person"
+   },
+   "player_start": {
+    "location": [
+     3,
+     -5.5,
+     0
+    ],
+    "facing_deg": 330
+   },
+   "interactions": [
+    {
+     "prop": "basin",
+     "verb": "Set out the vessels",
+     "leads_to": "s1_measure_2"
+    }
+   ]
+  },
+  "s3_shrine_book": {
+   "note": "Chapter 6: the lectern and the Book; what she writes; whether she reads the plate aloud through the open door.",
+   "world": {
+    "color": [
+     0.4,
+     0.4,
+     0.38
+    ],
+    "strength": 0.3
+   },
+   "lights": [
+    {
+     "name": "lectern-lamps",
+     "type": "POINT",
+     "location": [
+      -3,
+      2.5,
+      1.8
+     ],
+     "energy": 60,
+     "size": 0.3,
+     "color": [
+      0.95,
+      0.72,
+      0.4
+     ]
+    },
+    {
+     "name": "door-day",
+     "type": "AREA",
+     "location": [
+      0,
+      -15,
+      3
+     ],
+     "energy": 400,
+     "size": 3,
+     "look_at": [
+      -3,
+      2.5,
+      1.2
+     ],
+     "color": [
+      0.95,
+      0.93,
+      0.86
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     -4.5,
+     0.2,
+     1.7
+    ],
+    "look_at": [
+     -3,
+     2.5,
+     1.2
+    ],
+    "lens_mm": 50,
+    "mode": "third-person"
+   },
+   "player_start": {
+    "location": [
+     -4.2,
+     0.6,
+     0
+    ],
+    "facing_deg": 30
+   },
+   "interactions": [
+    {
+     "prop": "lectern",
+     "verb": "Write"
+    },
+    {
+     "prop": "door",
+     "verb": "Read the plate aloud",
+     "leads_to": "s1_peal_3"
+    }
+   ]
+  },
+  "s3_end_kept": {
+   "note": "Ending, Scripture Kept: the pilgrims on the cap in still, even light; the plaster smooth; the crowd on the stair.",
+   "world": {
+    "color": [
+     0.85,
+     0.82,
+     0.74
+    ],
+    "strength": 0.8
+   },
+   "lights": [
+    {
+     "name": "even",
+     "type": "AREA",
+     "location": [
+      0,
+      0,
+      23.5
+     ],
+     "energy": 1800,
+     "size": 30,
+     "look_at": [
+      0,
+      0,
+      22.6
+     ],
+     "color": [
+      0.98,
+      0.95,
+      0.86
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     0,
+     -18,
+     26
+    ],
+    "look_at": [
+     0,
+     0,
+     22.6
+    ],
+    "lens_mm": 35,
+    "mode": "fixed"
+   }
+  },
+  "s3_end_stamp": {
+   "note": "Ending, The Stamp: the old door open, the plate bare, three letters said; the crowd thinning on the stair.",
+   "world": {
+    "color": [
+     0.45,
+     0.45,
+     0.44
+    ],
+    "strength": 0.35
+   },
+   "lights": [
+    {
+     "name": "daylight",
+     "type": "AREA",
+     "location": [
+      0,
+      -22,
+      20
+     ],
+     "energy": 1200,
+     "size": 20,
+     "look_at": [
+      0,
+      -15,
+      2
+     ],
+     "color": [
+      0.85,
+      0.87,
+      0.85
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     0,
+     -22,
+     1.6
+    ],
+    "look_at": [
+     0,
+     -14.6,
+     1.6
+    ],
+    "lens_mm": 35,
+    "mode": "fixed"
+   }
+  }
+ }
+}

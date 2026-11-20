@@ -1,0 +1,617 @@
+{
+ "game": "dr-tox-altrulan",
+ "location": "glass-mountains",
+ "name": "The Glass Mountains",
+ "reference": "assets/locations/glass-mountains.jpg",
+ "bounds_m": [
+  160,
+  120,
+  110
+ ],
+ "origin": "centre of the plaza at the towers' foot where the plain road ends; +y toward the nearest tower's face; the road runs out along -y; the tower's crown, with the bell frame, is its top at z 100; +z up",
+ "materials": {
+  "dust": {
+   "color": [
+    0.62,
+    0.57,
+    0.48
+   ],
+   "roughness": 0.95
+  },
+  "road": {
+   "color": [
+    0.5,
+    0.48,
+    0.44
+   ],
+   "roughness": 0.9
+  },
+  "glass": {
+   "color": [
+    0.62,
+    0.72,
+    0.74
+   ],
+   "roughness": 0.08,
+   "metallic": 0.1
+  },
+  "vine": {
+   "color": [
+    0.37,
+    0.42,
+    0.23
+   ],
+   "roughness": 0.8
+  },
+  "stone": {
+   "color": [
+    0.81,
+    0.77,
+    0.68
+   ],
+   "roughness": 0.85
+  }
+ },
+ "blockout": [
+  {
+   "id": "plain",
+   "shape": "box",
+   "role": "terrain",
+   "size_m": [
+    160,
+    120,
+    0.3
+   ],
+   "location": [
+    0,
+    0,
+    -0.15
+   ],
+   "material": "dust"
+  },
+  {
+   "id": "road",
+   "shape": "box",
+   "role": "floor",
+   "size_m": [
+    8,
+    56,
+    0.1
+   ],
+   "location": [
+    0,
+    -32,
+    0.05
+   ],
+   "material": "road"
+  },
+  {
+   "id": "plaza",
+   "shape": "cylinder",
+   "role": "floor",
+   "size_m": [
+    30,
+    30,
+    0.12
+   ],
+   "location": [
+    0,
+    0,
+    0.06
+   ],
+   "material": "stone"
+  },
+  {
+   "id": "tower-1",
+   "shape": "box",
+   "role": "structure",
+   "size_m": [
+    40,
+    30,
+    100
+   ],
+   "location": [
+    0,
+    40,
+    50
+   ],
+   "material": "glass"
+  },
+  {
+   "id": "tower-2",
+   "shape": "box",
+   "role": "structure",
+   "size_m": [
+    30,
+    30,
+    80
+   ],
+   "location": [
+    -52,
+    46,
+    40
+   ],
+   "material": "glass"
+  },
+  {
+   "id": "tower-3",
+   "shape": "box",
+   "role": "structure",
+   "size_m": [
+    30,
+    30,
+    90
+   ],
+   "location": [
+    52,
+    46,
+    45
+   ],
+   "material": "glass"
+  },
+  {
+   "id": "vine-face",
+   "shape": "box",
+   "role": "structure",
+   "size_m": [
+    36,
+    0.8,
+    98
+   ],
+   "location": [
+    0,
+    24.6,
+    49
+   ],
+   "material": "vine"
+  },
+  {
+   "id": "crown-floor",
+   "shape": "box",
+   "role": "floor",
+   "size_m": [
+    30,
+    22,
+    0.6
+   ],
+   "location": [
+    0,
+    40,
+    100.3
+   ],
+   "material": "stone"
+  },
+  {
+   "id": "crown-arch",
+   "shape": "box",
+   "role": "structure",
+   "size_m": [
+    30,
+    1,
+    8
+   ],
+   "location": [
+    0,
+    51,
+    104.6
+   ],
+   "material": "glass"
+  }
+ ],
+ "props": [
+  {
+   "id": "mast-1",
+   "object": "trellis-mast",
+   "location": [
+    -12,
+    -6,
+    0
+   ]
+  },
+  {
+   "id": "mast-2",
+   "object": "trellis-mast",
+   "location": [
+    12,
+    -6,
+    0
+   ]
+  },
+  {
+   "id": "mast-3",
+   "object": "trellis-mast",
+   "location": [
+    -14,
+    10,
+    0
+   ]
+  },
+  {
+   "id": "cart",
+   "object": "pilgrim-handcart",
+   "location": [
+    4,
+    -10,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   "id": "stone",
+   "object": "way-stone",
+   "location": [
+    0,
+    -14,
+    0
+   ]
+  },
+  {
+   "id": "bells",
+   "object": "bell-frame",
+   "location": [
+    0,
+    42,
+    100.6
+   ]
+  },
+  {
+   "id": "board",
+   "object": "morris-bench",
+   "location": [
+    6,
+    36,
+    100.6
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    90
+   ]
+  }
+ ],
+ "scenes": {
+  "s3_mountains_foot": {
+   "note": "Chapter 2: the plain road ends at the Glass Mountains; masts grown into trellises; the bell crown high on the nearest tower.",
+   "world": {
+    "color": [
+     0.75,
+     0.74,
+     0.7
+    ],
+    "strength": 0.6
+   },
+   "lights": [
+    {
+     "name": "sun",
+     "type": "SUN",
+     "location": [
+      40,
+      -60,
+      80
+     ],
+     "energy": 3.0,
+     "size": 1,
+     "look_at": [
+      0,
+      0,
+      0
+     ],
+     "color": [
+      0.95,
+      0.93,
+      0.86
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     0,
+     -40,
+     1.7
+    ],
+    "look_at": [
+     0,
+     30,
+     40
+    ],
+    "lens_mm": 28,
+    "mode": "third-person"
+   },
+   "player_start": {
+    "location": [
+     0,
+     -38,
+     0
+    ],
+    "facing_deg": 0
+   },
+   "interactions": [
+    {
+     "prop": "stone",
+     "verb": "Lay a hand on the way-stone"
+    },
+    {
+     "prop": "mast-1",
+     "verb": "Climb to the bells",
+     "leads_to": "s1_peal_1"
+    }
+   ]
+  },
+  "s3_pilgrims_gather": {
+   "note": "Chapter 2: the band gathers at the foot; each pilgrim's want; the child asks for a picture.",
+   "world": {
+    "color": [
+     0.75,
+     0.74,
+     0.7
+    ],
+    "strength": 0.6
+   },
+   "lights": [
+    {
+     "name": "sun",
+     "type": "SUN",
+     "location": [
+      40,
+      -60,
+      70
+     ],
+     "energy": 2.6,
+     "size": 1,
+     "look_at": [
+      0,
+      0,
+      0
+     ],
+     "color": [
+      0.97,
+      0.9,
+      0.78
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     6,
+     -20,
+     1.7
+    ],
+    "look_at": [
+     0,
+     -8,
+     1.2
+    ],
+    "lens_mm": 35,
+    "mode": "third-person"
+   },
+   "player_start": {
+    "location": [
+     5,
+     -18,
+     0
+    ],
+    "facing_deg": 340
+   },
+   "interactions": [
+    {
+     "prop": "cart",
+     "verb": "Load the cart"
+    },
+    {
+     "prop": "stone",
+     "verb": "Set out",
+     "leads_to": "s3_city_gate"
+    }
+   ]
+  },
+  "s3_mountains_climb": {
+   "note": "Chapter 4: the face of the Glass Mountain, glass under vines, the ladder of roots going up.",
+   "world": {
+    "color": [
+     0.7,
+     0.72,
+     0.72
+    ],
+    "strength": 0.55
+   },
+   "lights": [
+    {
+     "name": "sun",
+     "type": "SUN",
+     "location": [
+      -60,
+      -40,
+      90
+     ],
+     "energy": 2.4,
+     "size": 1,
+     "look_at": [
+      0,
+      24,
+      40
+     ],
+     "color": [
+      0.95,
+      0.93,
+      0.86
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     0,
+     8,
+     1.8
+    ],
+    "look_at": [
+     0,
+     24,
+     30
+    ],
+    "lens_mm": 24,
+    "mode": "third-person"
+   },
+   "player_start": {
+    "location": [
+     0,
+     12,
+     0
+    ],
+    "facing_deg": 0
+   },
+   "interactions": [
+    {
+     "prop": "mast-3",
+     "verb": "Take the root-way up",
+     "leads_to": "s2_rootway_2"
+    }
+   ]
+  },
+  "s3_summit_night": {
+   "note": "Chapter 4: night in the Mountain's crown; the bell frame; the band asleep; the morris board.",
+   "world": {
+    "color": [
+     0.03,
+     0.04,
+     0.06
+    ],
+    "strength": 0.12
+   },
+   "lights": [
+    {
+     "name": "oil-lamp",
+     "type": "POINT",
+     "location": [
+      5,
+      35,
+      101.6
+     ],
+     "energy": 60,
+     "size": 0.3,
+     "color": [
+      0.95,
+      0.72,
+      0.4
+     ]
+    },
+    {
+     "name": "city-glow",
+     "type": "AREA",
+     "location": [
+      0,
+      20,
+      95
+     ],
+     "energy": 300,
+     "size": 30,
+     "look_at": [
+      0,
+      40,
+      101
+     ],
+     "color": [
+      0.81,
+      0.9,
+      0.92
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     10,
+     31,
+     102.4
+    ],
+    "look_at": [
+     6,
+     36,
+     101
+    ],
+    "lens_mm": 35,
+    "mode": "third-person"
+   },
+   "player_start": {
+    "location": [
+     9,
+     32,
+     100.6
+    ],
+    "facing_deg": 315
+   },
+   "interactions": [
+    {
+     "prop": "board",
+     "verb": "Set out the pieces",
+     "leads_to": "s1_mill_2"
+    }
+   ]
+  },
+  "s3_mountains_summit": {
+   "note": "Chapter 4: dawn in the crown; six bells; the breathing city below.",
+   "world": {
+    "color": [
+     0.85,
+     0.75,
+     0.6
+    ],
+    "strength": 0.5
+   },
+   "lights": [
+    {
+     "name": "dawn",
+     "type": "SUN",
+     "location": [
+      -80,
+      10,
+      105
+     ],
+     "energy": 3.2,
+     "size": 1,
+     "look_at": [
+      0,
+      42,
+      101
+     ],
+     "color": [
+      0.98,
+      0.85,
+      0.55
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     -8,
+     33,
+     102
+    ],
+    "look_at": [
+     0,
+     42,
+     102.5
+    ],
+    "lens_mm": 35,
+    "mode": "third-person"
+   },
+   "player_start": {
+    "location": [
+     -7,
+     34,
+     100.6
+    ],
+    "facing_deg": 45
+   },
+   "interactions": [
+    {
+     "prop": "bells",
+     "verb": "Take a rope",
+     "leads_to": "s1_peal_2"
+    }
+   ]
+  }
+ }
+}

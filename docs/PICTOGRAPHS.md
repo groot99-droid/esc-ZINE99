@@ -366,3 +366,29 @@ Rebuild with `python tools/pictographs/build.py`; each game's drawing code is in
 ### Split Field (1D): Craftint Doubletone shading board
 
 ![Split Field](../games/dr-tox-finale/pictographs/split-field.svg)
+
+## Dr. Tox: Altrulan
+
+### Root-way (2D): Carved stone frieze
+
+![Root-way](../games/dr-tox-altrulan/pictographs/rootway.svg)
+
+### Fresco walk (2D): Buon fresco on cracked plaster
+
+![Fresco walk](../games/dr-tox-altrulan/pictographs/fresco.svg)
+
+### Rubbing (1D): Heelball brass rubbing
+
+![Rubbing](../games/dr-tox-altrulan/pictographs/rubbing.svg)
+
+### The Measure (1D): Slip-glazed terracotta
+
+![The Measure](../games/dr-tox-altrulan/pictographs/measure.svg)
+
+### The Mill (1D): Cast bronze with patina
+
+![The Mill](../games/dr-tox-altrulan/pictographs/mill.svg)
+
+### The Peal (1D): Repoussé gold
+
+![The Peal](../games/dr-tox-altrulan/pictographs/peal.svg)

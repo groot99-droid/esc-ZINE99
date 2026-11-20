@@ -1,0 +1,77 @@
+{
+ "endings": [
+  {
+   "id": "the_stamp",
+   "name": "The Stamp",
+   "as_written": false,
+   "priority": 1,
+   "when": {
+    "is": "stamp.read_aloud",
+    "eq": true
+   },
+   "summary": "The keeper rubbed the plate under Aleglethan's halos until its three letters stood out, and at the lectern she read them aloud to the crowd at the door. The scripture does not break: every pilgrim still remembers the Breath as she taught it, because that is how they remember it. But the plinth-born know the three letters in their mouths before they know why, and a name now sits under the Suit-Demons that nobody can place. Some kneel; some go down the stair and do not come back to the shrine. The bible's irony is spent: 'the truth is stamped on the equipment, and no one inside the program reads it' (Part III), and someone read it.",
+   "cost": "Truth; the peace cracks. The scripture stands, but a name the plinth-born know in their mouths now sits under it, and as many of the crowd go home unsettled as heard it.",
+   "final_scenes": [
+    "s3_shrine_book",
+    "s1_peal_3",
+    "s3_end_stamp"
+   ]
+  },
+  {
+   "id": "the_last_toad",
+   "name": "The Last Toad",
+   "as_written": false,
+   "priority": 2,
+   "when": {
+    "is": "sacrament",
+    "lte": 0
+   },
+   "summary": "Every lull is gone: the open Toads, and the Last Toad under its broken seal. Every pilgrim this year who wanted the measure was given it, and went up into the drum's cap in still light. The closing peal rings half-muffled. A year later the bells call from the Glass Mountains and the pilgrims come, and the keeper meets them at Snakehead in front of an empty shelf. Only the Caged could make it, as he alone could make his cage (bible Part VI, Dr. Tox section 2), and he is in the scripture.",
+   "cost": "Every pilgrim this year ascended; no pilgrim ascends again.",
+   "final_scenes": [
+    "s1_measure_2",
+    "s1_peal_3",
+    "s3_end_last_toad"
+   ]
+  },
+  {
+   "id": "two_readings",
+   "name": "Two Readings",
+   "as_written": false,
+   "priority": 3,
+   "when": {
+    "all": [
+     {
+      "is": "keeper.book",
+      "eq": "both"
+     },
+     {
+      "is": "readings.balance",
+      "gte": 40
+     }
+    ]
+   },
+   "summary": "She held the Ghost's plain reading level with her own scripture and wrote both into the Book: the Breath on the left in the shrine's hand, and on the right, in hers, what two hands signed to her over a morris board. Neither column is a lie. The pilgrims went up as the scripture says; nobody else reads the right-hand column. At Snakehead, by the tank, the Ghost's hands sign one more thing and go still in the water.",
+   "cost": "The keeper carries both alone; she can say neither to anyone without the other.",
+   "final_scenes": [
+    "s3_shrine_book",
+    "s1_peal_3",
+    "s3_end_two_readings"
+   ]
+  },
+  {
+   "id": "scripture_kept",
+   "name": "Scripture Kept",
+   "as_written": false,
+   "priority": 4,
+   "when": true,
+   "summary": "The plate unread, the store not spent, the Book kept as scripture. Every pilgrim who asked was given the measure (except any the keeper sent up without it rather than break the Last Toad's seal, and their names are on the ending card), and they sit on the drum's cap in a still, even light while the crowd sits on the stair below. The cracks the keeper mended are smooth. The bible's rule is kept to the letter: 'they aren't lying, they genuinely remember it that way now' (Part III).",
+   "cost": "Peace; the Age only as myth: the names under the plaster stay under it, and the dead are gods and demons only.",
+   "final_scenes": [
+    "s1_measure_2",
+    "s1_peal_3",
+    "s3_end_kept"
+   ]
+  }
+ ]
+}

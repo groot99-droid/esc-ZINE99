@@ -1,0 +1,593 @@
+{
+ "modes_2d": [
+  {
+   "id": "m2_rootway",
+   "name": "Root-way",
+   "movement": "scroll"
+  },
+  {
+   "id": "m2_fresco",
+   "name": "Fresco walk",
+   "movement": "scroll"
+  }
+ ],
+ "games_1d": [
+  {
+   "id": "g1_rubbing",
+   "name": "Rubbing",
+   "family": "Relief reveal by rubbing"
+  },
+  {
+   "id": "g1_measure",
+   "name": "The Measure",
+   "family": "Exact amounts with fixed vessels"
+  },
+  {
+   "id": "g1_mill",
+   "name": "The Mill",
+   "family": "Board game, alignment (morris family)"
+  },
+  {
+   "id": "g1_peal",
+   "name": "The Peal",
+   "family": "Change ringing"
+  }
+ ],
+ "scenes": [
+  {
+   "id": "s3_cave_tank",
+   "layer": "3d",
+   "name": "Snakehead, the holy cave, before dawn: water stirring in the Ghost's old tank, and two hands signing in it",
+   "chapter": "c1_cave",
+   "reads": [
+    "observers_choice"
+   ],
+   "enter": "fade",
+   "exit": "push-in",
+   "next": [
+    "s1_measure_1"
+   ]
+  },
+  {
+   "id": "s1_measure_1",
+   "layer": "1d",
+   "name": "The Measure at the spring: the Ghost's flask filled to its glaze line with fixed vessels",
+   "chapter": "c1_cave",
+   "game": "g1_measure",
+   "writes": [
+    "ghost.flask_true"
+   ],
+   "enter": "push-in",
+   "exit": "pull-out",
+   "next": [
+    "s3_cave_corridor"
+   ]
+  },
+  {
+   "id": "s3_cave_corridor",
+   "layer": "3d",
+   "name": "The corridor down from the breach, plastered and painted as scripture; a scaffold plank and a tub of lime",
+   "chapter": "c1_cave",
+   "reads": [
+    "cult.doctrine",
+    "toxin_events"
+   ],
+   "enter": "pull-out",
+   "exit": "flatten",
+   "next": [
+    "s2_fresco_1"
+   ]
+  },
+  {
+   "id": "s2_fresco_1",
+   "layer": "2d",
+   "name": "Fresco walk along the corridor: the day's plaster to the store, cracks showing the Age beneath",
+   "chapter": "c1_cave",
+   "mode": "m2_fresco",
+   "reads": [
+    "cult.doctrine",
+    "toxin_events",
+    "self",
+    "observers_choice"
+   ],
+   "writes": [
+    "readings.balance",
+    "fresco.mended",
+    "fresco.looked",
+    "fresco.seen"
+   ],
+   "enter": "flatten",
+   "exit": "cut",
+   "next": [
+    "s3_cave_store"
+   ]
+  },
+  {
+   "id": "s3_cave_store",
+   "layer": "3d",
+   "name": "The store at the old bench: the Toads on their shelf, the Last Toad under its seal, the amber lamp kept lit",
+   "chapter": "c1_cave",
+   "reads": [
+    "sacrament",
+    "fresco.looked"
+   ],
+   "enter": "cut",
+   "exit": "cut",
+   "next": [
+    "s3_mountains_foot"
+   ]
+  },
+  {
+   "id": "s3_mountains_foot",
+   "layer": "3d",
+   "name": "The plain road ends at the Glass Mountains: floodlight masts grown into trellises, a bell crown in the nearest tower",
+   "chapter": "c2_bells",
+   "reads": [
+    "switchboard.reach",
+    "switchboard.plinth"
+   ],
+   "enter": "cut",
+   "exit": "push-in",
+   "next": [
+    "s1_peal_1"
+   ]
+  },
+  {
+   "id": "s1_peal_1",
+   "layer": "1d",
+   "name": "The Peal on four bells: the call to the pilgrims, rung true or not",
+   "chapter": "c2_bells",
+   "game": "g1_peal",
+   "writes": [
+    "peal.true_1",
+    "pilgrims.called"
+   ],
+   "enter": "push-in",
+   "exit": "pull-out",
+   "next": [
+    "s3_pilgrims_gather"
+   ]
+  },
+  {
+   "id": "s3_pilgrims_gather",
+   "layer": "3d",
+   "name": "The band gathers at the foot of the Mountains, each with a want, and a child who asks for a picture",
+   "chapter": "c2_bells",
+   "reads": [
+    "pilgrims.called",
+    "following",
+    "switchboard.plinth"
+   ],
+   "writes": [
+    "pilgrims.adults"
+   ],
+   "enter": "pull-out",
+   "exit": "cut",
+   "next": [
+    "s3_city_gate"
+   ]
+  },
+  {
+   "id": "s3_city_gate",
+   "layer": "3d",
+   "name": "The old atrium as the city's gate: walls that breathe, vines over the glass, fungus light",
+   "chapter": "c3_city",
+   "reads": [
+    "switchboard.reach"
+   ],
+   "enter": "cut",
+   "exit": "flatten",
+   "next": [
+    "s2_rootway_1"
+   ]
+  },
+  {
+   "id": "s2_rootway_1",
+   "layer": "2d",
+   "name": "Root-way between the towers: vines that swell on the city's breath, the band crossing behind her",
+   "chapter": "c3_city",
+   "mode": "m2_rootway",
+   "reads": [
+    "pilgrims.adults",
+    "switchboard.reach",
+    "peal.true_1"
+   ],
+   "writes": [
+    "pilgrims.heard"
+   ],
+   "enter": "flatten",
+   "exit": "cut",
+   "next": [
+    "s3_city_market"
+   ]
+  },
+  {
+   "id": "s3_city_market",
+   "layer": "3d",
+   "name": "The fungus-light market in a tower's lobby, and on its wall the memorial brass of the Twelve",
+   "chapter": "c3_city",
+   "reads": [
+    "observers_choice",
+    "reese.hub_word"
+   ],
+   "enter": "cut",
+   "exit": "push-in",
+   "next": [
+    "s1_rubbing_1"
+   ]
+  },
+  {
+   "id": "s1_rubbing_1",
+   "layer": "1d",
+   "name": "Rubbing the brass of the Twelve for the child; and the brass's other face",
+   "chapter": "c3_city",
+   "game": "g1_rubbing",
+   "reads": [
+    "observers_choice"
+   ],
+   "writes": [
+    "rubbing.sheets",
+    "rubbing.reverse_read",
+    "readings.balance"
+   ],
+   "enter": "push-in",
+   "exit": "pull-out",
+   "next": [
+    "s3_city_night"
+   ]
+  },
+  {
+   "id": "s3_city_night",
+   "layer": "3d",
+   "name": "Night in a breathing tower: the band asleep, the Ghost's bowl, a morris board cut into the bench",
+   "chapter": "c3_city",
+   "enter": "pull-out",
+   "exit": "push-in",
+   "next": [
+    "s1_mill_1"
+   ]
+  },
+  {
+   "id": "s1_mill_1",
+   "layer": "1d",
+   "name": "The Mill with the Ghost: six men's morris; his mills are signs, hers are verses",
+   "chapter": "c3_city",
+   "game": "g1_mill",
+   "reads": [
+    "ghost.flask_true",
+    "readings.balance"
+   ],
+   "writes": [
+    "mill.ghost_mills",
+    "mill.keeper_mills",
+    "readings.balance",
+    "readings.signs",
+    "readings.verses"
+   ],
+   "enter": "push-in",
+   "exit": "cut",
+   "next": [
+    "s3_mountains_climb"
+   ]
+  },
+  {
+   "id": "s3_mountains_climb",
+   "layer": "3d",
+   "name": "The face of the Glass Mountain: glass under vines, a ladder of roots going up into cloud",
+   "chapter": "c4_mountain",
+   "reads": [
+    "switchboard.reach"
+   ],
+   "enter": "cut",
+   "exit": "flatten",
+   "next": [
+    "s2_rootway_2"
+   ]
+  },
+  {
+   "id": "s2_rootway_2",
+   "layer": "2d",
+   "name": "Root-way up the Mountain's face to its crown, Agathe on her own feet or carried",
+   "chapter": "c4_mountain",
+   "mode": "m2_rootway",
+   "reads": [
+    "pilgrims.adults",
+    "switchboard.reach"
+   ],
+   "writes": [
+    "agathe.own_feet",
+    "pilgrims.heard"
+   ],
+   "enter": "flatten",
+   "exit": "cut",
+   "next": [
+    "s3_summit_night"
+   ]
+  },
+  {
+   "id": "s3_summit_night",
+   "layer": "3d",
+   "name": "Night in the Mountain's crown: the bell frame, the band asleep under it, the board again",
+   "chapter": "c4_mountain",
+   "reads": [
+    "agathe.own_feet"
+   ],
+   "enter": "cut",
+   "exit": "push-in",
+   "next": [
+    "s1_mill_2"
+   ]
+  },
+  {
+   "id": "s1_mill_2",
+   "layer": "1d",
+   "name": "The Mill with the Ghost again: nine men's morris, and he plays to tell her",
+   "chapter": "c4_mountain",
+   "game": "g1_mill",
+   "reads": [
+    "ghost.flask_true",
+    "readings.balance",
+    "mill.ghost_mills"
+   ],
+   "writes": [
+    "mill.ghost_mills",
+    "mill.keeper_mills",
+    "readings.balance",
+    "readings.signs",
+    "readings.verses"
+   ],
+   "enter": "push-in",
+   "exit": "pull-out",
+   "next": [
+    "s3_mountains_summit"
+   ]
+  },
+  {
+   "id": "s3_mountains_summit",
+   "layer": "3d",
+   "name": "Dawn in the crown: six bells, and the breathing city below",
+   "chapter": "c4_mountain",
+   "reads": [
+    "following"
+   ],
+   "enter": "pull-out",
+   "exit": "push-in",
+   "next": [
+    "s1_peal_2"
+   ]
+  },
+  {
+   "id": "s1_peal_2",
+   "layer": "1d",
+   "name": "The Peal on six bells: the shrine's hour, and the city coming to it",
+   "chapter": "c4_mountain",
+   "game": "g1_peal",
+   "reads": [
+    "following"
+   ],
+   "writes": [
+    "peal.true_2",
+    "shrine.crowd"
+   ],
+   "enter": "push-in",
+   "exit": "cut",
+   "next": [
+    "s3_shrine_door"
+   ]
+  },
+  {
+   "id": "s3_shrine_door",
+   "layer": "3d",
+   "name": "The Light Bringer's shrine: Aleglethan's halos in relief over an old steel door, and a small plate under them",
+   "chapter": "c5_shrine",
+   "reads": [
+    "reese.hub_word",
+    "reese.said_rcc",
+    "cally.said_rcc",
+    "shrine.crowd"
+   ],
+   "enter": "cut",
+   "exit": "push-in",
+   "next": [
+    "s1_rubbing_2"
+   ]
+  },
+  {
+   "id": "s1_rubbing_2",
+   "layer": "1d",
+   "name": "Rubbing at the shrine door: the halos, or the plate beneath them",
+   "chapter": "c5_shrine",
+   "game": "g1_rubbing",
+   "reads": [
+    "cally.said_rcc",
+    "reese.said_rcc"
+   ],
+   "writes": [
+    "rubbing.plate_revealed",
+    "rubbing.sheets",
+    "readings.balance"
+   ],
+   "enter": "push-in",
+   "exit": "pull-out",
+   "next": [
+    "s3_shrine_drum"
+   ]
+  },
+  {
+   "id": "s3_shrine_drum",
+   "layer": "3d",
+   "name": "Inside the drum: the scripture wall round the old glass, the Scales on the altar, the cap above",
+   "chapter": "c5_shrine",
+   "reads": [
+    "two_pans.final"
+   ],
+   "enter": "pull-out",
+   "exit": "flatten",
+   "next": [
+    "s2_fresco_2"
+   ]
+  },
+  {
+   "id": "s2_fresco_2",
+   "layer": "2d",
+   "name": "Fresco walk round the drum: the Breath as scripture; cracks showing glass, plates and the Many Shapes",
+   "chapter": "c5_shrine",
+   "mode": "m2_fresco",
+   "reads": [
+    "toxin_events",
+    "cally.said_rcc",
+    "reese.hub_word",
+    "switchboard.plinth",
+    "self",
+    "cult.doctrine"
+   ],
+   "writes": [
+    "readings.balance",
+    "fresco.mended",
+    "fresco.looked",
+    "fresco.seen"
+   ],
+   "enter": "flatten",
+   "exit": "cut",
+   "next": [
+    "s3_shrine_altar"
+   ]
+  },
+  {
+   "id": "s3_shrine_altar",
+   "layer": "3d",
+   "name": "The altar under the drum's cap: the Scales, the pilgrims kneeling, the crowd at the door",
+   "chapter": "c6_ascent",
+   "reads": [
+    "shrine.crowd",
+    "two_pans.final",
+    "pilgrims.adults"
+   ],
+   "enter": "cut",
+   "exit": "push-in",
+   "next": [
+    "s1_measure_2"
+   ]
+  },
+  {
+   "id": "s1_measure_2",
+   "layer": "1d",
+   "name": "The Measure at the altar: four lulls for each pilgrim with fixed vessels; the Last Toad's seal",
+   "chapter": "c6_ascent",
+   "game": "g1_measure",
+   "reads": [
+    "pilgrims.adults",
+    "pilgrims.heard",
+    "sacrament"
+   ],
+   "writes": [
+    "sacrament",
+    "measure.waste",
+    "measure.given",
+    "last_toad.opened",
+    "pilgrims.kept_cracks",
+    "pilgrims.unmeasured",
+    "zora.offering",
+    "readings.balance"
+   ],
+   "enter": "push-in",
+   "exit": "pull-out",
+   "next": [
+    "s3_shrine_book"
+   ]
+  },
+  {
+   "id": "s3_shrine_book",
+   "layer": "3d",
+   "name": "The lectern and the Book: what the keeper writes, and whether she reads the plate aloud",
+   "chapter": "c6_ascent",
+   "reads": [
+    "readings.balance",
+    "rubbing.plate_revealed",
+    "cally.said_rcc",
+    "pilgrims.kept_cracks"
+   ],
+   "writes": [
+    "keeper.book",
+    "stamp.read_aloud"
+   ],
+   "enter": "pull-out",
+   "exit": "push-in",
+   "next": [
+    "s1_peal_3"
+   ]
+  },
+  {
+   "id": "s1_peal_3",
+   "layer": "1d",
+   "name": "The Peal at the shrine: the closing touch, open or half-muffled",
+   "chapter": "c6_ascent",
+   "game": "g1_peal",
+   "reads": [
+    "sacrament",
+    "stamp.read_aloud"
+   ],
+   "writes": [
+    "peal.muffled"
+   ],
+   "enter": "push-in",
+   "exit": "pull-out",
+   "next": [
+    "s3_end_stamp",
+    "s3_end_last_toad",
+    "s3_end_two_readings",
+    "s3_end_kept"
+   ]
+  },
+  {
+   "id": "s3_end_kept",
+   "layer": "3d",
+   "name": "Scripture Kept: the pilgrims on the drum's cap in still light, and the plaster smooth",
+   "chapter": "c6_ascent",
+   "reads": [
+    "measure.given",
+    "pilgrims.unmeasured",
+    "shrine.crowd"
+   ],
+   "enter": "pull-out",
+   "exit": "fade"
+  },
+  {
+   "id": "s3_end_stamp",
+   "layer": "3d",
+   "name": "The Stamp: three letters said aloud at the door, and the crowd thinning on the stair",
+   "chapter": "c6_ascent",
+   "reads": [
+    "shrine.crowd",
+    "cally.said_rcc",
+    "switchboard.plinth"
+   ],
+   "enter": "pull-out",
+   "exit": "fade"
+  },
+  {
+   "id": "s3_end_two_readings",
+   "layer": "3d",
+   "name": "Two Readings: Snakehead, the tank, the Book open on two columns in one hand",
+   "chapter": "c6_ascent",
+   "reads": [
+    "readings.signs",
+    "pilgrims.kept_cracks"
+   ],
+   "enter": "cut",
+   "exit": "fade"
+  },
+  {
+   "id": "s3_end_last_toad",
+   "layer": "3d",
+   "name": "The Last Toad: Snakehead's empty shelf, the broken seal, and next year's bells",
+   "chapter": "c6_ascent",
+   "reads": [
+    "measure.given",
+    "peal.muffled"
+   ],
+   "enter": "cut",
+   "exit": "fade"
+  }
+ ]
+}

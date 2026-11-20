@@ -545,3 +545,52 @@ Episode 3 of four (`dr-tox-finale`), from the author's bible `dr-tox/source/Dr_T
 ![Panel 14](../games/dr-tox-finale/reference/14-the-front.jpg)
 
 ![Panel 23](../games/dr-tox-finale/reference/23-the-clinical-suite.jpg)
+
+## 14. Dr. Tox: Altrulan
+
+Episode 4 of four (`dr-tox-altrulan`), from the author's bible `dr-tox/source/Dr_Tox_Compiled_Bible_Obsidian.md`, not the vault; the bible gives the Epic of Altrulan one paragraph of myth and one of architecture and no story, so most of this board is added (`games/dr-tox-altrulan/DESIGN.md` section 21). One pilgrimage in the seventh year of the Breath, led by a new keeper, Hesper Quaye, with the Ghost beside her, unseen except for his hands. Each 3D room hands off to a page by push-in: a spring's vessels, a brass, a board cut in a bench, a bell rope, an altar's basin. The city's vines flatten into a carved frieze, and the scripture's walls into the fresco they are painted as; where the plaster cracks, the Age shows through in its own grey. Nobody from the earlier episodes is on screen except as the scripture remembers them. This board follows the default first run, which ends in Scripture Kept; the other three endings are the E rows, and none of the four is the author's. The five stills are the author's own catalogued thumbnails (`dr-tox/art_catalogue.md`: `29e53fb4`, `c8c8d1f7`, `49a3a381`, `27630ced`, `f392a762`), the Age under Altrulan rather than Altrulan itself, converted to JPEG at their 320-pixel width; the full-size originals are on Higgsfield, and new stills in Altrulan's own register are not generated yet.
+
+| # | Layer | Scene | Shot | Beat | Into next | Still |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | 3D | `s3_cave_tank` | A cave before dawn; far off an amber lamp on a draped steel bench; close by a tall tank of clear water lit cold | The seventh year of the Breath. The water moves with nobody in it; two hands appear and sign: *pilgrims. bells.* | Push-in on the vessels |  |
+| 2 | 1D | `s1_measure_1` | The Measure: three unmarked slip-glazed vessels, a spring, a white flask with a glaze line inside | His flask to its line exactly: above it the water takes up the clay, below it he runs short | Pull-out |  |
+| 3 | 3D | `s3_cave_corridor` | The corridor up from the hall, plastered and painted floor to ceiling; a trestle scaffold, a tub of lime | The day's plaster laid at dawn; she takes up the trowel | Flatten |  |
+| 4 | 2D | `s2_fresco_1` | Fresco walk: earth pigments in wet lime, day patches, a band of light moving along the wall | The Suit-Demons on their Mountains, the Caged with amber in his arm; a crack: STAY OUTSIDE THE RING on grey concrete. Mend it while it's wet, or look | Cut |  |
+| 5 | 3D | `s3_cave_store` | The old bench as altar under the amber lamp; a shelf of amber-glazed jars sealed with clay; one jar apart under a corded seal | The Toads, and the Last Toad. Nobody can make more. She lifts the year's store into her pack | Cut | [05-the-store](../games/dr-tox-altrulan/reference/05-the-store.jpg) |
+| 6 | 3D | `s3_mountains_foot` | The end of the plain road under three vast towers furred with vines; old floodlight masts grown into trellises | The Glass Mountains; a way-stone carved with a mountain and a halo; the bell loft in the nearest tower | Push-in on the ropes | [06-the-foot-of-the-mountains](../games/dr-tox-altrulan/reference/06-the-foot-of-the-mountains.jpg) |
+| 7 | 1D | `s1_peal_1` | The Peal: a gold sheet in repoussé, four bells as domed bosses, the rows chased in | Rounds, then plain hunt; ring on into the extent and more pilgrims hear it | Pull-out |  |
+| 8 | 3D | `s3_pilgrims_gather` | The plaza at the towers' foot; a handcart; people coming up the road in ones and twos | The band: Agathe, Bram and Tove, Lucan, Zora, Iskra, and any the bells called; each says what they want. Tove asks for a picture of the halos | Cut |  |
+| 9 | 3D | `s3_city_gate` | An old atrium as a city gate: glass walls under vines that swell like ribs, fungus light in domes | The breathing city: the walls move | Flatten | [09-the-city-gate](../games/dr-tox-altrulan/reference/09-the-city-gate.jpg) |
+| 10 | 2D | `s2_rootway_1` | Root-way: a limestone frieze, towers as pillars, vines as carved ropes swelling into bridges | The band in file on the city's breath; brace a span for the slow; at a rest, sit with one pilgrim and hear their crack | Cut |  |
+| 11 | 3D | `s3_city_market` | A fungus-light market in a tower's lobby; on the wall a great brass plate of twelve standing figures | The brass of the Twelve; Tove's picture | Push-in on the brass |  |
+| 12 | 1D | `s1_rubbing_1` | Rubbing: white paper weighted on the brass, black heelball coming up in a field with white lines | The Twelve for Tove, the tallest haloed; the brass turns on its pins, and its other face is an RCC plate with the Board's names | Pull-out |  |
+| 13 | 3D | `s3_city_night` | Night in a breathing tower: sleepers on reed mats, a white bowl of clear water, a morris board cut in a stone bench | She fills his bowl; the water stirs | Push-in on the board |  |
+| 14 | 1D | `s1_mill_1` | The Mill: a bronze plaque, her pieces bright, his dark with patina, two bronze hands at the edge | Six men's morris. His mills are signs: *offices. people at desks.* Hers are verses | Cut |  |
+| 15 | 3D | `s3_mountains_climb` | The face of the Glass Mountain: glass under moss and vines, a ladder of roots into cloud | The climb to the crown | Flatten |  |
+| 16 | 2D | `s2_rootway_2` | Root-way again, climbing: ledges up the face, longer spans | Brace every swell Agathe crosses, and she reaches the crown on her own feet | Cut |  |
+| 17 | 3D | `s3_summit_night` | The broken crown at night under a timber bell frame, the city glowing pale below | The band asleep; the board again | Push-in on the board |  |
+| 18 | 1D | `s1_mill_2` | The Mill: nine men's morris on the bronze | He plays to tell her: *a boy in a suit. he held the glass shut. then he didn't.* | Pull-out |  |
+| 19 | 3D | `s3_mountains_summit` | Dawn in the crown through broken glass; six bells | The shrine's hour | Push-in on a rope |  |
+| 20 | 1D | `s1_peal_2` | The Peal on six bells, faster | Plain hunt on six rung true; the city comes to the shrine | Cut |  |
+| 21 | 3D | `s3_shrine_door` | The gallery round a glass drum; a stone relief of a calm figure ringed with gilded halos over an old steel door; a small plate under garlands | Aleglethan the Light Bringer; the crowd on the stair | Push-in on the door |  |
+| 22 | 1D | `s1_rubbing_2` | Rubbing at the door: the halos above, garlands lifted, a small plate below | She rubs the halos for the shrine and leaves the plate under its garlands | Pull-out |  |
+| 23 | 3D | `s3_shrine_drum` | Inside the drum: a ring of painted plaster round the old glass, oil lamps, a brass balance level on a stone altar | The Scales: "he weighed the peace and it was even" | Flatten |  |
+| 24 | 2D | `s2_fresco_2` | Fresco walk round the drum, both planks, the light moving faster | The Breath as scripture; cracks with glass, a vent grille and an emitter stamped RCC under them, and under the Many Shapes, black lacquered plate | Cut | [24-under-the-plaster](../games/dr-tox-altrulan/reference/24-under-the-plaster.jpg) |
+| 25 | 3D | `s3_shrine_altar` | The altar under a shaft from the cap; pilgrims kneeling on wool cushions; the crowd in the doorway | The rite | Push-in on the basin |  |
+| 26 | 1D | `s1_measure_2` | The Measure at the altar: vessels, the open Toad, the Last Toad apart, a pilgrim's bowl | Four lulls for each, nothing back to the Toad; Lucan and Zora keep their cracks; the seal stays whole | Pull-out |  |
+| 27 | 3D | `s3_shrine_book` | A carved lectern with a very large open book; the steel door open behind, the plate under its garlands | She writes the year's ascent as scripture; a second column is ruled only if she has held the Ghost's reading level with hers | Push-in on the cap | [27-the-other-column](../games/dr-tox-altrulan/reference/27-the-other-column.jpg) |
+| 28 | 1D | `s1_peal_3` | The Peal at the shrine's cap: call changes on the gold | The closing touch, rounds to queens and home | Pull-out |  |
+| 29 | 3D | `s3_end_kept` | The drum's cap from above in a still, even light; small figures sitting; the city breathing round it | Scripture Kept: "they genuinely remember it that way now"; the cracks she mended are smooth | Fade |  |
+| E | 3D | `s3_end_stamp` | Grey daylight on the old door, wax on the plate's letters, the stair emptying | The Stamp: she read three letters aloud; nobody calls the scripture a lie, and nobody can hear it now without them | Fade |  |
+| E | 3D | `s3_end_two_readings` | Snakehead, the tank's cold light, the Book open on two columns in one hand | Two Readings: his hands sign once more and go still in the water | Fade |  |
+| E | 3D | `s3_end_last_toad` | Snakehead a year later: an empty shelf under the amber lamp, a broken seal in her hand | The Last Toad: every pilgrim ascended; no pilgrim ascends again; bells far off | Fade |  |
+
+![Panel 5](../games/dr-tox-altrulan/reference/05-the-store.jpg)
+
+![Panel 6](../games/dr-tox-altrulan/reference/06-the-foot-of-the-mountains.jpg)
+
+![Panel 9](../games/dr-tox-altrulan/reference/09-the-city-gate.jpg)
+
+![Panel 24](../games/dr-tox-altrulan/reference/24-under-the-plaster.jpg)
+
+![Panel 27](../games/dr-tox-altrulan/reference/27-the-other-column.jpg)

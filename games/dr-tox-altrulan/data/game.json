@@ -1,0 +1,100 @@
+{
+  "slug": "dr-tox-altrulan",
+  "title": "Dr. Tox: Altrulan",
+  "series": "Dr. Tox: Age of Glass & Greed, episode 4 of 4 (dr-tox-rise, dr-tox-fall, dr-tox-finale, dr-tox-altrulan)",
+  "sources": [
+    "dr-tox/source/Dr_Tox_Compiled_Bible_Obsidian.md (not in the vault; cited by part and section)"
+  ],
+  "target_minutes": {
+    "min": 60,
+    "max": 90
+  },
+  "players": {
+    "min": 1,
+    "max": 1
+  },
+  "core_verb": "Dose",
+  "structure": "The Epic of Altrulan, the bible's second phase (Part I): one pilgrimage in the seventh year of the Breath, from Snakehead, the holy cave, by the Glass Mountains and the breathing city to the Light Bringer's shrine. A new lead, the pilgrim-keeper Hesper Quaye, with the Ghost as companion. People of the earlier episodes appear only as the scripture remembers them. It plays from the Finale's Reset and First Word; the Finale's last flags arrive as myth (who is remembered as what), never as a changed premise. Green Wins closes the save: no Altrulan follows it. Whether it follows The Cage Holds and The Light Bringer's Wall is the author's open question (DESIGN.md section 20).",
+  "carry_in": [
+    "self",
+    "hub.held_back",
+    "panes.sealed",
+    "reese.hub_word",
+    "reese.said_rcc",
+    "cally.said_rcc",
+    "switchboard.plinth",
+    "switchboard.reach",
+    "cult.doctrine",
+    "following",
+    "observers_choice",
+    "two_pans.final",
+    "toxin_events"
+  ],
+  "carry_over": [],
+  "chapters": [
+    {
+      "id": "c1_cave",
+      "title": "The Cave",
+      "minutes": 12,
+      "layers": [
+        "3d",
+        "1d",
+        "2d"
+      ],
+      "lead": "Hesper Quaye, the keeper, with the Ghost"
+    },
+    {
+      "id": "c2_bells",
+      "title": "The Bells",
+      "minutes": 12,
+      "layers": [
+        "3d",
+        "1d"
+      ],
+      "lead": "Hesper Quaye, the keeper, with the Ghost"
+    },
+    {
+      "id": "c3_city",
+      "title": "The Breathing City",
+      "minutes": 16,
+      "layers": [
+        "3d",
+        "2d",
+        "1d"
+      ],
+      "lead": "Hesper Quaye, the keeper, with the Ghost"
+    },
+    {
+      "id": "c4_mountain",
+      "title": "The Mountain",
+      "minutes": 14,
+      "layers": [
+        "3d",
+        "2d",
+        "1d"
+      ],
+      "lead": "Hesper Quaye, the keeper, with the Ghost"
+    },
+    {
+      "id": "c5_shrine",
+      "title": "The Shrine",
+      "minutes": 12,
+      "layers": [
+        "3d",
+        "1d",
+        "2d"
+      ],
+      "lead": "Hesper Quaye, the keeper, with the Ghost"
+    },
+    {
+      "id": "c6_ascent",
+      "title": "The Ascent",
+      "minutes": 16,
+      "layers": [
+        "3d",
+        "1d"
+      ],
+      "lead": "Hesper Quaye, the keeper, with the Ghost"
+    }
+  ]
+}

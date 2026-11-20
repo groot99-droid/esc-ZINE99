@@ -1,0 +1,776 @@
+{
+ "game": "dr-tox-altrulan",
+ "location": "snakehead-holy-site",
+ "name": "Snakehead, the holy cave",
+ "reference": "assets/locations/snakehead-holy-site.jpg",
+ "bounds_m": [
+  48,
+  36,
+  8
+ ],
+ "origin": "centre of the cavern hall's floor; +y toward the old bench and the store; the breach and the plastered corridor at -y; the cells and the Ghost's tank at +x; +z up",
+ "materials": {
+  "rock": {
+   "color": [
+    0.33,
+    0.34,
+    0.33
+   ],
+   "roughness": 0.95
+  },
+  "concrete": {
+   "color": [
+    0.37,
+    0.45,
+    0.46
+   ],
+   "roughness": 0.9
+  },
+  "plaster": {
+   "color": [
+    0.91,
+    0.88,
+    0.81
+   ],
+   "roughness": 0.85
+  },
+  "floor": {
+   "color": [
+    0.3,
+    0.31,
+    0.3
+   ],
+   "roughness": 0.9
+  },
+  "water": {
+   "color": [
+    0.8,
+    0.9,
+    0.92
+   ],
+   "roughness": 0.05
+  }
+ },
+ "blockout": [
+  {
+   "id": "hall-floor",
+   "shape": "box",
+   "role": "floor",
+   "size_m": [
+    48,
+    36,
+    0.3
+   ],
+   "location": [
+    0,
+    0,
+    -0.15
+   ],
+   "material": "floor"
+  },
+  {
+   "id": "wall-n",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    48,
+    1,
+    8
+   ],
+   "location": [
+    0,
+    18,
+    4
+   ],
+   "material": "rock"
+  },
+  {
+   "id": "wall-s",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    48,
+    1,
+    8
+   ],
+   "location": [
+    0,
+    -18,
+    4
+   ],
+   "material": "rock"
+  },
+  {
+   "id": "wall-e",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    1,
+    36,
+    8
+   ],
+   "location": [
+    24,
+    0,
+    4
+   ],
+   "material": "rock"
+  },
+  {
+   "id": "wall-w",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    1,
+    36,
+    8
+   ],
+   "location": [
+    -24,
+    0,
+    4
+   ],
+   "material": "rock"
+  },
+  {
+   "id": "ceiling",
+   "shape": "box",
+   "role": "ceiling",
+   "size_m": [
+    48,
+    36,
+    0.6
+   ],
+   "location": [
+    0,
+    0,
+    8.3
+   ],
+   "material": "rock"
+  },
+  {
+   "id": "breach",
+   "shape": "box",
+   "role": "opening",
+   "size_m": [
+    5,
+    2,
+    3
+   ],
+   "location": [
+    -18,
+    -18,
+    5.5
+   ],
+   "material": "rock"
+  },
+  {
+   "id": "corridor-wall-in",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    22,
+    0.4,
+    3.6
+   ],
+   "location": [
+    -11,
+    -11.5,
+    1.8
+   ],
+   "material": "plaster"
+  },
+  {
+   "id": "corridor-wall-out",
+   "shape": "box",
+   "role": "wall",
+   "size_m": [
+    22,
+    0.4,
+    3.6
+   ],
+   "location": [
+    -11,
+    -15.5,
+    1.8
+   ],
+   "material": "plaster"
+  },
+  {
+   "id": "corridor-ceiling",
+   "shape": "box",
+   "role": "ceiling",
+   "size_m": [
+    22,
+    4.4,
+    0.3
+   ],
+   "location": [
+    -11,
+    -13.5,
+    3.75
+   ],
+   "material": "concrete"
+  },
+  {
+   "id": "cell-row",
+   "shape": "box",
+   "role": "structure",
+   "size_m": [
+    0.4,
+    14,
+    3
+   ],
+   "location": [
+    21.5,
+    4,
+    1.5
+   ],
+   "material": "concrete"
+  },
+  {
+   "id": "spring-pool",
+   "shape": "cylinder",
+   "role": "water",
+   "size_m": [
+    2.4,
+    2.4,
+    0.1
+   ],
+   "location": [
+    14,
+    14,
+    0.05
+   ],
+   "material": "water"
+  }
+ ],
+ "props": [
+  {
+   "id": "tank",
+   "object": "ghost-tank",
+   "location": [
+    18.5,
+    9,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    90
+   ]
+  },
+  {
+   "id": "spring",
+   "object": "spring-basin",
+   "location": [
+    14,
+    12,
+    0
+   ]
+  },
+  {
+   "id": "vessels",
+   "object": "measure-vessels",
+   "location": [
+    12.5,
+    11,
+    0
+   ]
+  },
+  {
+   "id": "bench",
+   "object": "bench-altar",
+   "location": [
+    0,
+    15.5,
+    0
+   ]
+  },
+  {
+   "id": "lamp",
+   "object": "votive-lamp",
+   "location": [
+    0.6,
+    15.5,
+    1.25
+   ],
+   "ground": false
+  },
+  {
+   "id": "shelf",
+   "object": "store-shelf",
+   "location": [
+    -5,
+    16.6,
+    0
+   ]
+  },
+  {
+   "id": "toad-1",
+   "object": "toad-jar",
+   "location": [
+    -5.9,
+    16.6,
+    1.15
+   ],
+   "ground": false
+  },
+  {
+   "id": "toad-2",
+   "object": "toad-jar",
+   "location": [
+    -5.3,
+    16.6,
+    1.15
+   ],
+   "ground": false
+  },
+  {
+   "id": "toad-3",
+   "object": "toad-jar",
+   "location": [
+    -4.7,
+    16.6,
+    1.15
+   ],
+   "ground": false
+  },
+  {
+   "id": "toad-4",
+   "object": "toad-jar",
+   "location": [
+    -4.1,
+    16.6,
+    1.15
+   ],
+   "ground": false
+  },
+  {
+   "id": "last-toad",
+   "object": "last-toad-jar",
+   "location": [
+    -2.6,
+    16.6,
+    0
+   ]
+  },
+  {
+   "id": "scaffold",
+   "object": "scaffold-plank",
+   "location": [
+    -12,
+    -12.6,
+    0
+   ]
+  },
+  {
+   "id": "lime",
+   "object": "lime-tub",
+   "location": [
+    -7,
+    -13.8,
+    0
+   ]
+  },
+  {
+   "id": "lectern",
+   "object": "keeper-lectern",
+   "location": [
+    16,
+    5.5,
+    0
+   ],
+   "rotation_deg": [
+    0,
+    0,
+    180
+   ]
+  },
+  {
+   "id": "pallet",
+   "object": "keeper-pallet",
+   "location": [
+    19,
+    3,
+    0
+   ]
+  }
+ ],
+ "scenes": {
+  "s3_cave_tank": {
+   "note": "Chapter 1, the hook: before dawn; the votive lamp far off at the bench; water stirring in the Ghost's tank; two hands signing; the spring and the vessels.",
+   "world": {
+    "color": [
+     0.03,
+     0.035,
+     0.04
+    ],
+    "strength": 0.08
+   },
+   "lights": [
+    {
+     "name": "tank-glow",
+     "type": "AREA",
+     "location": [
+      18.5,
+      7.5,
+      3
+     ],
+     "energy": 120,
+     "size": 2.5,
+     "look_at": [
+      18.5,
+      9,
+      0.8
+     ],
+     "color": [
+      0.81,
+      0.9,
+      0.92
+     ]
+    },
+    {
+     "name": "votive",
+     "type": "POINT",
+     "location": [
+      0.6,
+      15.5,
+      1.6
+     ],
+     "energy": 60,
+     "size": 0.3,
+     "color": [
+      0.85,
+      0.6,
+      0.17
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     15.5,
+     4.5,
+     1.7
+    ],
+    "look_at": [
+     18.5,
+     9,
+     1.0
+    ],
+    "lens_mm": 50,
+    "mode": "third-person"
+   },
+   "player_start": {
+    "location": [
+     17,
+     4.5,
+     0
+    ],
+    "facing_deg": 30
+   },
+   "interactions": [
+    {
+     "prop": "tank",
+     "verb": "Watch his hands"
+    },
+    {
+     "prop": "vessels",
+     "verb": "Fill his flask",
+     "leads_to": "s1_measure_1"
+    }
+   ]
+  },
+  "s3_cave_corridor": {
+   "note": "Chapter 1: the plastered corridor up from the hall, the scaffold and the lime; the day's plaster laid at dawn.",
+   "world": {
+    "color": [
+     0.05,
+     0.05,
+     0.05
+    ],
+    "strength": 0.15
+   },
+   "lights": [
+    {
+     "name": "scaffold-lamps",
+     "type": "POINT",
+     "location": [
+      -12,
+      -13.2,
+      2.4
+     ],
+     "energy": 80,
+     "size": 0.4,
+     "color": [
+      0.95,
+      0.75,
+      0.45
+     ]
+    },
+    {
+     "name": "breach-day",
+     "type": "SPOT",
+     "location": [
+      -18,
+      -17,
+      6.5
+     ],
+     "energy": 400,
+     "size": 1.5,
+     "look_at": [
+      -12,
+      -13.5,
+      1
+     ],
+     "color": [
+      0.95,
+      0.93,
+      0.86
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     -3,
+     -13.5,
+     1.7
+    ],
+    "look_at": [
+     -14,
+     -13.5,
+     1.5
+    ],
+    "lens_mm": 35,
+    "mode": "third-person"
+   },
+   "player_start": {
+    "location": [
+     -3.5,
+     -13.5,
+     0
+    ],
+    "facing_deg": 270
+   },
+   "interactions": [
+    {
+     "prop": "scaffold",
+     "verb": "Take up the trowel",
+     "leads_to": "s2_fresco_1"
+    },
+    {
+     "prop": "lime",
+     "verb": "Stir the lime"
+    }
+   ]
+  },
+  "s3_cave_store": {
+   "note": "Chapter 1: the store at the old bench; the Toads on the shelf, the Last Toad sealed and set apart; she lifts the year's store into her pack.",
+   "world": {
+    "color": [
+     0.04,
+     0.035,
+     0.03
+    ],
+    "strength": 0.1
+   },
+   "lights": [
+    {
+     "name": "votive",
+     "type": "POINT",
+     "location": [
+      0.6,
+      15.5,
+      1.6
+     ],
+     "energy": 90,
+     "size": 0.3,
+     "color": [
+      0.85,
+      0.6,
+      0.17
+     ]
+    },
+    {
+     "name": "breach-day",
+     "type": "SPOT",
+     "location": [
+      -18,
+      -17,
+      6.5
+     ],
+     "energy": 250,
+     "size": 1.5,
+     "look_at": [
+      -3,
+      15,
+      1
+     ],
+     "color": [
+      0.95,
+      0.93,
+      0.86
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     -1,
+     9,
+     1.7
+    ],
+    "look_at": [
+     -4,
+     16.5,
+     1.1
+    ],
+    "lens_mm": 50,
+    "mode": "third-person"
+   },
+   "player_start": {
+    "location": [
+     -1,
+     10,
+     0
+    ],
+    "facing_deg": 340
+   },
+   "interactions": [
+    {
+     "prop": "toad-1",
+     "verb": "Lift the store",
+     "leads_to": "s3_mountains_foot"
+    },
+    {
+     "prop": "last-toad",
+     "verb": "Touch the seal"
+    }
+   ]
+  },
+  "s3_end_two_readings": {
+   "note": "Ending, Two Readings: back at the tank; the Book open on two columns; the Ghost's hands sign once more and go still.",
+   "world": {
+    "color": [
+     0.04,
+     0.04,
+     0.045
+    ],
+    "strength": 0.1
+   },
+   "lights": [
+    {
+     "name": "tank-glow",
+     "type": "AREA",
+     "location": [
+      18.5,
+      7.5,
+      3
+     ],
+     "energy": 140,
+     "size": 2.5,
+     "look_at": [
+      18.5,
+      9,
+      0.8
+     ],
+     "color": [
+      0.81,
+      0.9,
+      0.92
+     ]
+    },
+    {
+     "name": "lectern-lamp",
+     "type": "POINT",
+     "location": [
+      16.4,
+      5.4,
+      1.8
+     ],
+     "energy": 40,
+     "size": 0.2,
+     "color": [
+      0.85,
+      0.6,
+      0.17
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     13.5,
+     2.5,
+     1.6
+    ],
+    "look_at": [
+     17,
+     7,
+     1.0
+    ],
+    "lens_mm": 50,
+    "mode": "fixed"
+   },
+   "interactions": [
+    {
+     "prop": "lectern",
+     "verb": "Close the Book"
+    }
+   ]
+  },
+  "s3_end_last_toad": {
+   "note": "Ending, The Last Toad: a year later; the shelf empty, the Last Toad's seal broken; the bells calling from far off.",
+   "world": {
+    "color": [
+     0.04,
+     0.035,
+     0.03
+    ],
+    "strength": 0.1
+   },
+   "lights": [
+    {
+     "name": "votive",
+     "type": "POINT",
+     "location": [
+      0.6,
+      15.5,
+      1.6
+     ],
+     "energy": 70,
+     "size": 0.3,
+     "color": [
+      0.85,
+      0.6,
+      0.17
+     ]
+    }
+   ],
+   "camera": {
+    "location": [
+     -1,
+     10,
+     1.6
+    ],
+    "look_at": [
+     -4,
+     16.5,
+     1.0
+    ],
+    "lens_mm": 50,
+    "mode": "fixed"
+   },
+   "hide": [
+    "toad-1",
+    "toad-2",
+    "toad-3",
+    "toad-4"
+   ],
+   "interactions": [
+    {
+     "prop": "last-toad",
+     "verb": "Hold the broken seal"
+    }
+   ]
+  }
+ }
+}
