@@ -1,0 +1,133 @@
+{
+  "game": "dr-tox-finale",
+  "style": "Vintage grainy 35mm film still in the bible's colour grammar: desaturated cold gray-teal world, amber for the cage that holds, sickly green only for the toxin loose (Green Wins alone, with nothing amber), pale gold for Aegis's panes; heavy film grain, practical haze, no lens flare, no stylization. Dr. Tox's face from the author's character sheet (reference jobs 15439340, 3e0abdae). No gore; no child on screen; the Reset is as_written and shows only what the bible's Finale text gives (the central hub, his heart failing, the peace after).",
+  "generated": "2026-11-20, nano_banana_2 at 2k; images showing Dr. Tox's face use the character sheet's front and three-quarter headshots as reference media (the first passes of the Wall and the Reset did not; their retries do); kit described as in Fall from bible Part VI section 11. Cast: only Mercy Abiodun and Sela Mor, the named people the Finale adds a face to that Fall did not portray; no new key art of Rostova or Aegis (DESIGN.md section 15). 14 jobs, 5 retries.",
+  "images": [
+    {
+      "id": "key-art-wide",
+      "kind": "key-art",
+      "title": "Dr. Tox: Finale",
+      "aspect_ratio": "16:9",
+      "prompt": "Vintage grainy 35mm film still, desaturated cold gray-teal, heavy grain, haze, no lens flare, no gore. Same man as the reference images, identical face: very pale near-bloodless white man in his early thirties, deep-set pale gray-blue eyes, prominent dark eyebrows, thin unsmiling mouth, sharp angular jaw, short dark buzzcut with slight widow's peak, tall lean sinewy build, heavy scarring on the right forearm. He wears a weathered charcoal shroud over the matte black field kit, crossed leaf-bladed throwing knives and four forearm syringe barrels showing at its edges, hands empty. He stands in the right half of the frame, thighs up, face half lit, looking at the camera. Dark steel gallery outside an arcology's tall glass hub drum; inside, white plant light and one far amber work lamp. Far below, the dusty plain at dusk, a column of tiny marching adults with pale banners, no faces. The left half is calm empty dark glass and haze for a title. 50mm, no text, no lettering, no watermark, no logo",
+      "model": "nano_banana_2",
+      "reference_job_ids": [
+        "15439340-7c21-402d-9930-29a16d8d79e9",
+        "3e0abdae-9c38-41b8-9ee7-a85bd04fc356"
+      ],
+      "job_id": "5e77d666-6e08-4b15-8329-cc8f51530feb",
+      "image": "keyart/key-art-wide.jpg",
+      "needs_review": "Syringe barrels sit on his left forearm as a cuff; the hub drum and its amber lamp read only as a far amber ceiling light, and the marching column is seen through the window rather than far below."
+    },
+    {
+      "id": "key-art-tall",
+      "kind": "key-art",
+      "title": "Dr. Tox: Finale",
+      "aspect_ratio": "2:3",
+      "prompt": "Vintage grainy 35mm film still, desaturated cold gray-teal, heavy grain, haze, no lens flare, no gore. Same man as the reference images, identical face: very pale near-bloodless white man in his early thirties, deep-set pale gray-blue eyes, prominent dark eyebrows, thin unsmiling mouth, sharp angular jaw, short dark buzzcut with slight widow's peak, tall lean sinewy build, heavy scarring on the right forearm. He wears a weathered charcoal shroud over the matte black field kit, crossed leaf-bladed throwing knives and four forearm syringe barrels showing at its edges, hands empty. Tall frame, knees up, in the lower two thirds, face half lit, looking at the camera. Dark steel gallery outside an arcology's tall glass hub drum; inside, white plant light and one far amber work lamp. Far below, the dusty plain at dusk, a column of tiny marching adults with pale banners, no faces. The upper third is calm empty dark glass and haze for a title. 50mm, no text, no lettering, no watermark, no logo",
+      "model": "nano_banana_2",
+      "reference_job_ids": [
+        "15439340-7c21-402d-9930-29a16d8d79e9",
+        "3e0abdae-9c38-41b8-9ee7-a85bd04fc356"
+      ],
+      "job_id": "1eda59bb-d6d9-4a35-9090-348d5ccfbed2",
+      "image": "keyart/key-art-tall.jpg",
+      "needs_review": "He kneels with hands on his knees rather than standing; the hub drum behind reads as a lit greenhouse-like room."
+    },
+    {
+      "id": "ending-light-bringers-wall",
+      "kind": "ending",
+      "title": "The Light Bringer's Wall",
+      "aspect_ratio": "16:9",
+      "prompt": "Vintage grainy 35mm film still, desaturated cold gray-teal, heavy grain, haze, no lens flare, no gore. Same man as the reference images, identical face: very pale near-bloodless white man in his early thirties, deep-set pale gray-blue eyes, prominent dark eyebrows, thin unsmiling mouth, sharp angular jaw, short dark buzzcut with slight widow's peak, tall lean sinewy build, heavy scarring on the right forearm. In a weathered charcoal shroud, he sits slumped against a tall curved wall of interlocking flat panes of pale-gold hard light, whole and lit from inside, head bowed, eyes closed, still on a dark steel gallery, no wound. Inside the glass, blurred and faceless, a young man with short brown hair in a plain fitted pale grey program uniform stands turned toward him, not looking away. Far right, windows show shanty roofs under faint amber haze; cold towers above, unchanged. Weight and grief, nothing triumphant. The lower quarter is calm dark empty gallery floor. Static 35mm, no text, no lettering, no watermark, no logo",
+      "model": "nano_banana_2",
+      "reference_job_ids": [
+        "15439340-7c21-402d-9930-29a16d8d79e9",
+        "3e0abdae-9c38-41b8-9ee7-a85bd04fc356"
+      ],
+      "job_id": "4b0d768c-9755-470e-82dc-aeac21174c27",
+      "first_job_id": "a3c7d274-16fb-42e5-b19b-b0c377067292",
+      "image": "keyart/ending-light-bringers-wall.jpg",
+      "ending": "light_bringers_wall",
+      "needs_review": "Retried once (first pass: wrong face, man wrapped in a blanket, Reese turned away). Kept the retry: the panes read as frosted warm glass rather than interlocking hard-light panes; the shroud reads as a loose dark jacket; no amber haze over the shanties."
+    },
+    {
+      "id": "ending-green-wins",
+      "kind": "ending",
+      "title": "Green Wins",
+      "aspect_ratio": "16:9",
+      "prompt": "Vintage grainy 35mm film still, desaturated cold gray-teal, heavy grain, haze, no lens flare, no gore. Low wide unstable angle inside the tall glass drum of an arcology's air plant: sickly luminous green light spills across curved glass panels, steel ducts and haze, and fills the whole frame. Nothing amber anywhere; a work lamp lies on its side, dark and dead. No figure, no creature, no body, no form, only green light on glass. At the edge of the floor an empty weathered charcoal shroud lies crumpled where someone stood. Wrong, cold and terminal, containment failed, no triumph, no peace. The lower quarter is calm dark empty floor. 20mm, no text, no lettering, no watermark, no logo",
+      "model": "nano_banana_2",
+      "job_id": "2784808c-a15b-4910-8f22-9cfccc9dbc30",
+      "image": "keyart/ending-green-wins.jpg",
+      "ending": "green_wins"
+    },
+    {
+      "id": "ending-the-cage-holds",
+      "kind": "ending",
+      "title": "The Cage Holds",
+      "aspect_ratio": "16:9",
+      "prompt": "Vintage grainy 35mm film still, desaturated cold gray-teal, heavy grain, haze, no lens flare, no gore. Months later, a bare concrete bunker bay lit by one amber work lamp with hard falloff into black. In the foreground a single very pale scarred right forearm rests on a steel table, a small metal shunt port set in the inner forearm with a clear feed line, the bare hand loosely holding one small amber vial; the man himself out of frame. Beyond, on a battered steel locker, an old CRT glows cold blue with a soft blurred broadcast: a raw concrete plinth below glass towers, water drums streaked with black lacquer, tiny distant people helping one another away, nobody readable, no blood. He lives; the cult went on without him. The lower quarter is calm dark empty floor. Static 50mm, no text, no lettering, no watermark, no logo",
+      "model": "nano_banana_2",
+      "job_id": "77f27805-7517-4ccf-8a30-15c111159bf4",
+      "first_job_id": "76e831cc-e930-4ad0-9c6d-b0caa94b0e28",
+      "image": "keyart/ending-the-cage-holds.jpg",
+      "ending": "the_cage_holds",
+      "needs_review": "Retried once (first pass: drums on the CRT streaked red like blood, a dark wound-like port). Kept the retry: the broadcast shows a blurred street with a few figures, not the plinth's water; a blurred lower-third bar on the CRT; the man wears a grey T-shirt sleeve, not the kit."
+    },
+    {
+      "id": "ending-the-first-word",
+      "kind": "ending",
+      "title": "The First Word",
+      "aspect_ratio": "16:9",
+      "prompt": "Vintage grainy 35mm film still, desaturated cold gray-teal, heavy grain, haze, no lens flare, no gore. The core of an arcology's central hub, one amber work lamp on the floor with hard falloff into black, the plant's white light soft and dim behind glass. Beside a plain steel balance with two pans, two people sit close in the lamp's light, both still. A very pale man in his early thirties with a short dark buzzcut, in a weathered charcoal shroud, leans back against the balance's base, eyes closed. Beside him a pale young woman with long dark hair in a plain loose pale grey long-sleeved uniform sits with her hand resting on the balance beam, eyes closed, at peace, having said her one word. No wound, no blood, no violence; quiet and heavy. The lower quarter is calm dark empty floor. Static 50mm, no text, no lettering, no watermark, no logo",
+      "model": "nano_banana_2",
+      "reference_job_ids": [
+        "15439340-7c21-402d-9930-29a16d8d79e9",
+        "3e0abdae-9c38-41b8-9ee7-a85bd04fc356"
+      ],
+      "job_id": "bb6250a8-f6a0-48de-89e0-417bf333132d",
+      "image": "keyart/ending-the-first-word.jpg",
+      "ending": "the_first_word",
+      "needs_review": "His shroud reads as a loose grey tunic; she is barefoot; the plant behind the glass reads as greenery."
+    },
+    {
+      "id": "ending-the-reset",
+      "kind": "ending",
+      "title": "The Reset",
+      "aspect_ratio": "16:9",
+      "prompt": "Vintage grainy 35mm film still, desaturated cold gray-teal, heavy grain, haze, no lens flare, no gore. Same man as the reference images, identical face: very pale near-bloodless white man in his early thirties, deep-set pale gray-blue eyes, prominent dark eyebrows, thin unsmiling mouth, sharp angular jaw, short dark buzzcut with slight widow's peak, tall lean sinewy build, heavy scarring on the right forearm. The last arcology's central hub, its life-support plant: steel ducts, their white lights going soft. One amber work lamp on the floor, hard falloff into black; the frame rests on the lamp. At the edge of its light, small in the frame, he sits against a duct in a weathered charcoal shroud, head bowed, eyes closed, still, at rest, no wound. High glass shows the first grey-gold of dawn over a quiet city, no fire, nothing green. His sacrifice and the peace after, never spectacle. The lower quarter is calm dark empty floor. Static locked-off 50mm, no text, no lettering, no watermark, no logo",
+      "model": "nano_banana_2",
+      "reference_job_ids": [
+        "15439340-7c21-402d-9930-29a16d8d79e9",
+        "3e0abdae-9c38-41b8-9ee7-a85bd04fc356"
+      ],
+      "job_id": "6bbc6128-9592-4ab3-a5e2-dbb1ddf238e8",
+      "first_job_id": "4c548d65-5266-426f-bb01-92faa5a3e811",
+      "image": "keyart/ending-the-reset.jpg",
+      "ending": "the_reset",
+      "needs_review": "Retried once (first pass gave him long hair, not his face). Kept the retry: the shroud reads as a blanket wrapped round him; the city through the glass is ordinary towers."
+    },
+    {
+      "id": "cast-mercy-abiodun",
+      "kind": "character",
+      "title": "Mercy Abiodun (the lector)",
+      "aspect_ratio": "2:3",
+      "prompt": "Vintage grainy 35mm film still, desaturated cold gray-teal, heavy grain, haze, no lens flare, no gore. Half-length portrait of a Black woman in her fifties, close-cropped grey hair, tired kind eyes, a worn patched work jacket over a grey sweater, reading aloud from a small stapled photocopied booklet held low in her hands at a lectern made from a steel water drum in an underground concrete cavern hall. No microphone. Small amber lanterns hang behind her; a shaft of grey day falls from a breach. Behind her, out of focus, seated adults listening. The concrete walls are bare and unmarked. Her face is earnest, certain and a little afraid, a woman who wants her settlement never to be afraid again. Narrow vertical composition. 85mm, shallow focus, cinematic, no text, no lettering, no watermark, no logo",
+      "model": "nano_banana_2",
+      "job_id": "71d03cbf-09be-4800-be37-e871f52153ac",
+      "first_job_id": "98ca9768-a4b1-4bd6-88c6-72a02a0f4bb8",
+      "image": "keyart/cast-mercy-abiodun.jpg"
+    },
+    {
+      "id": "cast-sela-mor",
+      "kind": "character",
+      "title": "Sela Mor (the suite's technician)",
+      "aspect_ratio": "2:3",
+      "prompt": "Vintage grainy 35mm film still, desaturated cold gray-teal, heavy grain, haze, no lens flare, no gore. Half-length portrait of a woman in her early forties, dark hair pinned up, a plain clinical white technician's uniform and thin gloves, standing at a stainless-steel counter in a clean white clinical suite with glass to the floor, a rack of small amber vials in front of her. She has just looked up from her work toward the camera, startled, still, unhurt, her hands lifted a little from the rack. Warm amber from the vials against cold grey steel. Clipped to the counter's edge, a small photograph turned face-down, only its white back showing. A tired woman who wants to finish her shift and go home upstairs. Narrow vertical composition. 85mm, shallow focus, cinematic, no text, no lettering, no watermark, no logo",
+      "model": "nano_banana_2",
+      "job_id": "8cdafec9-52e4-4800-b1fc-1d7806b6c4a2",
+      "first_job_id": "9a46eb53-4eeb-4cc5-bfe0-56174b064890",
+      "image": "keyart/cast-sela-mor.jpg"
+    }
+  ]
+}
