@@ -1392,3 +1392,5 @@ Everything here is not in the bible. The author can approve or strike each.
 - The two added palette rows (photocopy black, hard-light pale gold).
 - The seven graphic styles' "look" lines (`docs/graphic_styles.json`) and the Split Field style itself.
 - Every prompt in `assets/assets.json`.
+
+**Author decisions, 2026-11-20.** (1) The Reset stays the as_written ending although it comes from a section the bible marks "(stub)". (2) In The First Word, Cally dies in the hub, shown with weight and without violence. (3) The Self floor rule stays: a Self carried in at or under 40 forces Green Wins at the hub unless Reese seals it. The other open questions in section 20 (the heart band in Two Pans, whether Altrulan follows The Cage Holds and The Light Bringer's Wall, and the rest) are still open.
