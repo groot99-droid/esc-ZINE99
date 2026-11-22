@@ -258,5 +258,41 @@
   "channel_two": {
     "status": "found by the driver, fixed at render time + proposed diff",
     "what": "with the real split-boulder model the camera stands inside the rock; camera moved 0.8 m away from the boulder. Build-file diff proposed."
+  },
+  "b2-lab": {
+    "status": "fixed at render time + proposed diff",
+    "what": "the camera [-20, -6, 2.65] stands on the face of the wall-west-lintel (a 0.3 m wall piece from z 2.4 to 8) at the lab's door; the render-time camera override moves it 0.4 m into the lab to x -19.6. Build-file diff proposed in REFINEMENT_NOTES.md."
+  },
+  "b4-collapse": {
+    "status": "fixed at render time + proposed diff",
+    "what": "the camera [29.5, 0, 2.65] is inside the rubble-seal piece (x 27 to 30) and the still was a white wall; the camera override moves it to x 26.6, in front of the seal. Build-file diff proposed."
+  },
+  "ep-tunnel": {
+    "status": "fixed at render time + proposed diff",
+    "what": "the camera [-30, 0, 2.35] has no clearance from the end-west piece (x -30.6 to -30.0), which the driver's ray test counts as standing between camera and target; the camera override moves it to x -29.5. Build-file diff proposed."
+  },
+  "b2-hearing": {
+    "status": "found by the driver: fixed at render time + proposed diff",
+    "what": "the strain gauge at [12, 4.6, 2.6] sits inside the outcrop sphere (not a first-pass flag); a prop override puts it on the outcrop's surface at y 3.95. Build-file diff proposed."
+  },
+  "co-tunnel": {
+    "status": "found by the driver: fixed at render time + proposed diff",
+    "what": "the field journal at [25.6, 0.4, 0] is inside rubble-heap-3 (not a first-pass flag; same prop in ep-tunnel); a location-level prop override moves it to x 26.4 on the floor beside the heap. Build-file diff proposed."
+  },
+  "s3_river": {
+    "status": "found by the driver: fixed at render time + proposed diff",
+    "what": "boulder-1 and boulder-2 stand with their base at z 0 inside the 1 m thick bank-landing piece (18 of 27 sample points inside; also in s3_bank_years_on); a location-level prop override lifts them to the landing top, z 1.0. Build-file diff proposed."
+  },
+  "s3_recognition": {
+    "status": "found by the driver: fixed at render time + proposed diff",
+    "what": "lamp-west at [-14.4, -6, 0] is inside the rib-2-west piece (27 of 27 points; the east lamp stands at y -4, so the west lamp's y is probably a slip); a prop override puts it at y -4. Build-file diff proposed."
+  },
+  "s3_gallery": {
+    "status": "fixed at render time + proposed diff",
+    "what": "prop blank-8 at [-6, 10.8, 3.5] is inside ledge2-north-left (the first-pass flag); a prop override moves it to y 10.1, on the first ledge in front of the second tier's face. Build-file diff proposed."
+  },
+  "s3_bank_years_on": {
+    "status": "found by the driver: fixed at render time + proposed diff",
+    "what": "boulder-1 and boulder-2 stand with their base at z 0 inside the 1 m thick bank-landing piece (18 of 27 sample points inside; also in s3_bank_years_on); a location-level prop override lifts them to the landing top, z 1.0. Build-file diff proposed."
   }
 }

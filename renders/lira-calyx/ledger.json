@@ -1,0 +1,4175 @@
+{
+ "game": "lira-calyx",
+ "tiers": {
+  "hero": "2560x1440, 256 samples",
+  "standard": "1920x1080, 128 samples",
+  "overview": "1920x1080, 128 samples"
+ },
+ "renderer": "Cycles (OptiX), OpenImageDenoise, Blender 5.2.1",
+ "scenes": [
+  {
+   "scene": "b2-archive",
+   "location": "cinder-reach-archive",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 16.8
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 16.6
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 6.6
+    }
+   ],
+   "props": [
+    {
+     "id": "drawers-1",
+     "object": "patent-drawer-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "drawers-2",
+     "object": "patent-drawer-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "drawers-3",
+     "object": "patent-drawer-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "drawers-4",
+     "object": "patent-drawer-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "drawers-5",
+     "object": "patent-drawer-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "drawers-6",
+     "object": "patent-drawer-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "drawers-7",
+     "object": "patent-drawer-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "drawers-8",
+     "object": "patent-drawer-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "drawers-9",
+     "object": "patent-drawer-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "drawers-10",
+     "object": "patent-drawer-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "drawers-11",
+     "object": "patent-drawer-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "drawers-12",
+     "object": "patent-drawer-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "light-table",
+     "object": "light-table",
+     "source": "box-proxy"
+    },
+    {
+     "id": "fragment",
+     "object": "fused-glass-fragment",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "b3-outpost",
+   "location": "continuum-outpost",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 9.5
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 9.5
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 4.7
+    }
+   ],
+   "props": [
+    {
+     "id": "cabinet-1",
+     "object": "log-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cabinet-2",
+     "object": "log-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cabinet-3",
+     "object": "log-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "relay",
+     "object": "relay-beacon",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "b2-lab",
+   "location": "corporate-lab",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 18.5
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 18.8
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 7.4
+    }
+   ],
+   "props": [
+    {
+     "id": "rig-1",
+     "object": "pulse-rig",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rig-2",
+     "object": "pulse-rig",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rig-3",
+     "object": "pulse-rig",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rig-4",
+     "object": "pulse-rig",
+     "source": "box-proxy"
+    },
+    {
+     "id": "logs-1",
+     "object": "log-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "logs-2",
+     "object": "log-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "logs-3",
+     "object": "log-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "logs-4",
+     "object": "log-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "console",
+     "object": "lab-console",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [
+    "camera [-20.0, -6.0, 2.65] is inside blockout piece 'wall-west-lintel' (wall)"
+   ],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "camera"
+   ],
+   "flag_status": {
+    "status": "fixed at render time + proposed diff",
+    "what": "the camera [-20, -6, 2.65] stands on the face of the wall-west-lintel (a 0.3 m wall piece from z 2.4 to 8) at the lab's door; the render-time camera override moves it 0.4 m into the lab to x -19.6. Build-file diff proposed in REFINEMENT_NOTES.md."
+   }
+  },
+  {
+   "scene": "b3-midlander",
+   "location": "harvest-terrace",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.1
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 7.8
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 4.6
+    }
+   ],
+   "props": [
+    {
+     "id": "table",
+     "object": "folding-field-table",
+     "source": "model:folding-field-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.008,
+       0.704,
+       0.898
+      ],
+      "box_m": [
+       1.0,
+       0.6,
+       0.75
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.89,
+      "worst_side_ratio": 1.11
+     }
+    },
+    {
+     "id": "journal",
+     "object": "field-journal",
+     "source": "box-proxy"
+    },
+    {
+     "id": "recorder",
+     "object": "field-recorder",
+     "source": "model:field-recorder.glb",
+     "fit": {
+      "model_dims_m": [
+       0.25,
+       0.237,
+       0.104
+      ],
+      "box_m": [
+       0.25,
+       0.12,
+       0.18
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.958,
+      "worst_side_ratio": 1.89
+     }
+    },
+    {
+     "id": "sluice-log",
+     "object": "field-journal",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "b2-hearing",
+   "location": "harvester-ridge",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.0
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.2
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 4.6
+    }
+   ],
+   "props": [
+    {
+     "id": "harvester",
+     "object": "prototype-harvester",
+     "source": "model:prototype-harvester.glb",
+     "fit": {
+      "model_dims_m": [
+       8.918,
+       7.167,
+       9.093
+      ],
+      "box_m": [
+       6.0,
+       6.0,
+       9.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.99,
+      "worst_side_ratio": 1.47
+     }
+    },
+    {
+     "id": "gauge",
+     "object": "strain-gauge",
+     "source": "box-proxy"
+    },
+    {
+     "id": "exhibits",
+     "object": "specimen-shelf",
+     "source": "model:specimen-shelf.glb",
+     "fit": {
+      "model_dims_m": [
+       1.229,
+       0.571,
+       1.607
+      ],
+      "box_m": [
+       1.2,
+       0.35,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.996,
+      "worst_side_ratio": 1.63
+     }
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "props"
+   ],
+   "flag_status": {
+    "status": "found by the driver: fixed at render time + proposed diff",
+    "what": "the strain gauge at [12, 4.6, 2.6] sits inside the outcrop sphere (not a first-pass flag); a prop override puts it on the outcrop's surface at y 3.95. Build-file diff proposed."
+   }
+  },
+  {
+   "scene": "b1-terrace",
+   "location": "hollin-terrace",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 9.8
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 9.6
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 4.7
+    }
+   ],
+   "props": [
+    {
+     "id": "table",
+     "object": "folding-field-table",
+     "source": "model:folding-field-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.008,
+       0.704,
+       0.898
+      ],
+      "box_m": [
+       1.0,
+       0.6,
+       0.75
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.89,
+      "worst_side_ratio": 1.11
+     }
+    },
+    {
+     "id": "journal",
+     "object": "field-journal",
+     "source": "box-proxy"
+    },
+    {
+     "id": "clicker",
+     "object": "strider-clicker",
+     "source": "model:strider-clicker.glb",
+     "fit": {
+      "model_dims_m": [
+       0.074,
+       0.083,
+       0.08
+      ],
+      "box_m": [
+       0.06,
+       0.03,
+       0.08
+      ],
+      "fit_rotation_deg": [
+       90,
+       0,
+       90
+      ],
+      "scale": 0.963,
+      "worst_side_ratio": 2.37
+     }
+    },
+    {
+     "id": "glow-meter",
+     "object": "river-glow-meter",
+     "source": "model:river-glow-meter.glb",
+     "fit": {
+      "model_dims_m": [
+       0.574,
+       0.449,
+       1.201
+      ],
+      "box_m": [
+       0.25,
+       0.2,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 2.29
+     }
+    },
+    {
+     "id": "siren",
+     "object": "flood-siren",
+     "source": "model:flood-siren.glb",
+     "fit": {
+      "model_dims_m": [
+       1.635,
+       1.262,
+       2.215
+      ],
+      "box_m": [
+       0.6,
+       0.5,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.993,
+      "worst_side_ratio": 2.71
+     }
+    },
+    {
+     "id": "relay",
+     "object": "relay-beacon",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf",
+     "object": "specimen-shelf",
+     "source": "model:specimen-shelf.glb",
+     "fit": {
+      "model_dims_m": [
+       1.229,
+       0.571,
+       1.607
+      ],
+      "box_m": [
+       1.2,
+       0.35,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.996,
+      "worst_side_ratio": 1.63
+     }
+    },
+    {
+     "id": "crystals-1",
+     "object": "crystal-cluster",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystals-2",
+     "object": "crystal-cluster",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystals-3",
+     "object": "crystal-cluster",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "shelf",
+      "piece": "bench-hut-body",
+      "samples": "3/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "b1-terrace-night",
+   "location": "hollin-terrace",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.4
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.2
+    }
+   ],
+   "props": [
+    {
+     "id": "table",
+     "object": "folding-field-table",
+     "source": "model:folding-field-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.008,
+       0.704,
+       0.898
+      ],
+      "box_m": [
+       1.0,
+       0.6,
+       0.75
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.89,
+      "worst_side_ratio": 1.11
+     }
+    },
+    {
+     "id": "journal",
+     "object": "field-journal",
+     "source": "box-proxy"
+    },
+    {
+     "id": "glow-meter",
+     "object": "river-glow-meter",
+     "source": "model:river-glow-meter.glb",
+     "fit": {
+      "model_dims_m": [
+       0.574,
+       0.449,
+       1.201
+      ],
+      "box_m": [
+       0.25,
+       0.2,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 2.29
+     }
+    },
+    {
+     "id": "siren",
+     "object": "flood-siren",
+     "source": "model:flood-siren.glb",
+     "fit": {
+      "model_dims_m": [
+       1.635,
+       1.262,
+       2.215
+      ],
+      "box_m": [
+       0.6,
+       0.5,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.993,
+      "worst_side_ratio": 2.71
+     }
+    },
+    {
+     "id": "relay",
+     "object": "relay-beacon",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf",
+     "object": "specimen-shelf",
+     "source": "model:specimen-shelf.glb",
+     "fit": {
+      "model_dims_m": [
+       1.229,
+       0.571,
+       1.607
+      ],
+      "box_m": [
+       1.2,
+       0.35,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.996,
+      "worst_side_ratio": 1.63
+     }
+    },
+    {
+     "id": "packet",
+     "object": "threat-packet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystals-1",
+     "object": "crystal-cluster",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystals-2",
+     "object": "crystal-cluster",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystals-3",
+     "object": "crystal-cluster",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "shelf",
+      "piece": "bench-hut-body",
+      "samples": "3/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "b4-terraces",
+   "location": "hollin-terrace",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.3
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.0
+    }
+   ],
+   "props": [
+    {
+     "id": "table",
+     "object": "folding-field-table",
+     "source": "model:folding-field-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.008,
+       0.704,
+       0.898
+      ],
+      "box_m": [
+       1.0,
+       0.6,
+       0.75
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.89,
+      "worst_side_ratio": 1.11
+     }
+    },
+    {
+     "id": "journal",
+     "object": "field-journal",
+     "source": "box-proxy"
+    },
+    {
+     "id": "glow-meter",
+     "object": "river-glow-meter",
+     "source": "model:river-glow-meter.glb",
+     "fit": {
+      "model_dims_m": [
+       0.574,
+       0.449,
+       1.201
+      ],
+      "box_m": [
+       0.25,
+       0.2,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 2.29
+     }
+    },
+    {
+     "id": "siren",
+     "object": "flood-siren",
+     "source": "model:flood-siren.glb",
+     "fit": {
+      "model_dims_m": [
+       1.635,
+       1.262,
+       2.215
+      ],
+      "box_m": [
+       0.6,
+       0.5,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.993,
+      "worst_side_ratio": 2.71
+     }
+    },
+    {
+     "id": "relay",
+     "object": "relay-beacon",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf",
+     "object": "specimen-shelf",
+     "source": "model:specimen-shelf.glb",
+     "fit": {
+      "model_dims_m": [
+       1.229,
+       0.571,
+       1.607
+      ],
+      "box_m": [
+       1.2,
+       0.35,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.996,
+      "worst_side_ratio": 1.63
+     }
+    },
+    {
+     "id": "emitter-1",
+     "object": "aetheric-emitter",
+     "source": "model:aetheric-emitter.glb",
+     "fit": {
+      "model_dims_m": [
+       1.005,
+       1.108,
+       1.604
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.998,
+      "worst_side_ratio": 1.38
+     }
+    },
+    {
+     "id": "emitter-2",
+     "object": "aetheric-emitter",
+     "source": "model:aetheric-emitter.glb",
+     "fit": {
+      "model_dims_m": [
+       1.005,
+       1.108,
+       1.604
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.998,
+      "worst_side_ratio": 1.38
+     }
+    },
+    {
+     "id": "crystals-1",
+     "object": "crystal-cluster",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystals-2",
+     "object": "crystal-cluster",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystals-3",
+     "object": "crystal-cluster",
+     "source": "box-proxy"
+    },
+    {
+     "id": "pell-book",
+     "object": "field-journal",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "shelf",
+      "piece": "bench-hut-body",
+      "samples": "3/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "end-fire",
+   "location": "hollin-terrace",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.4
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.3
+    }
+   ],
+   "props": [
+    {
+     "id": "table",
+     "object": "folding-field-table",
+     "source": "model:folding-field-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.008,
+       0.704,
+       0.898
+      ],
+      "box_m": [
+       1.0,
+       0.6,
+       0.75
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.89,
+      "worst_side_ratio": 1.11
+     }
+    },
+    {
+     "id": "glow-meter",
+     "object": "river-glow-meter",
+     "source": "model:river-glow-meter.glb",
+     "fit": {
+      "model_dims_m": [
+       0.574,
+       0.449,
+       1.201
+      ],
+      "box_m": [
+       0.25,
+       0.2,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 2.29
+     }
+    },
+    {
+     "id": "siren",
+     "object": "flood-siren",
+     "source": "model:flood-siren.glb",
+     "fit": {
+      "model_dims_m": [
+       1.635,
+       1.262,
+       2.215
+      ],
+      "box_m": [
+       0.6,
+       0.5,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.993,
+      "worst_side_ratio": 2.71
+     }
+    },
+    {
+     "id": "shelf",
+     "object": "specimen-shelf",
+     "source": "model:specimen-shelf.glb",
+     "fit": {
+      "model_dims_m": [
+       1.229,
+       0.571,
+       1.607
+      ],
+      "box_m": [
+       1.2,
+       0.35,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.996,
+      "worst_side_ratio": 1.63
+     }
+    },
+    {
+     "id": "crystals-1",
+     "object": "crystal-cluster",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystals-2",
+     "object": "crystal-cluster",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystals-3",
+     "object": "crystal-cluster",
+     "source": "box-proxy"
+    },
+    {
+     "id": "books-rubble",
+     "object": "field-journal",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "shelf",
+      "piece": "bench-hut-body",
+      "samples": "3/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "end-errata",
+   "location": "hollin-terrace",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.6
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.9
+    }
+   ],
+   "props": [
+    {
+     "id": "table",
+     "object": "folding-field-table",
+     "source": "model:folding-field-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.008,
+       0.704,
+       0.898
+      ],
+      "box_m": [
+       1.0,
+       0.6,
+       0.75
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.89,
+      "worst_side_ratio": 1.11
+     }
+    },
+    {
+     "id": "glow-meter",
+     "object": "river-glow-meter",
+     "source": "model:river-glow-meter.glb",
+     "fit": {
+      "model_dims_m": [
+       0.574,
+       0.449,
+       1.201
+      ],
+      "box_m": [
+       0.25,
+       0.2,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 2.29
+     }
+    },
+    {
+     "id": "siren",
+     "object": "flood-siren",
+     "source": "model:flood-siren.glb",
+     "fit": {
+      "model_dims_m": [
+       1.635,
+       1.262,
+       2.215
+      ],
+      "box_m": [
+       0.6,
+       0.5,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.993,
+      "worst_side_ratio": 2.71
+     }
+    },
+    {
+     "id": "relay",
+     "object": "relay-beacon",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf",
+     "object": "specimen-shelf",
+     "source": "model:specimen-shelf.glb",
+     "fit": {
+      "model_dims_m": [
+       1.229,
+       0.571,
+       1.607
+      ],
+      "box_m": [
+       1.2,
+       0.35,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.996,
+      "worst_side_ratio": 1.63
+     }
+    },
+    {
+     "id": "crystals-1",
+     "object": "crystal-cluster",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystals-2",
+     "object": "crystal-cluster",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystals-3",
+     "object": "crystal-cluster",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "shelf",
+      "piece": "bench-hut-body",
+      "samples": "3/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "b4-core",
+   "location": "peak-core",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.2
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.5
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 6.4
+    }
+   ],
+   "props": [
+    {
+     "id": "emitter-1",
+     "object": "aetheric-emitter",
+     "source": "model:aetheric-emitter.glb",
+     "fit": {
+      "model_dims_m": [
+       1.005,
+       1.108,
+       1.604
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.998,
+      "worst_side_ratio": 1.38
+     }
+    },
+    {
+     "id": "emitter-2",
+     "object": "aetheric-emitter",
+     "source": "model:aetheric-emitter.glb",
+     "fit": {
+      "model_dims_m": [
+       1.005,
+       1.108,
+       1.604
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.998,
+      "worst_side_ratio": 1.38
+     }
+    },
+    {
+     "id": "emitter-3",
+     "object": "aetheric-emitter",
+     "source": "model:aetheric-emitter.glb",
+     "fit": {
+      "model_dims_m": [
+       1.005,
+       1.108,
+       1.604
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.998,
+      "worst_side_ratio": 1.38
+     }
+    },
+    {
+     "id": "emitter-4",
+     "object": "aetheric-emitter",
+     "source": "model:aetheric-emitter.glb",
+     "fit": {
+      "model_dims_m": [
+       1.005,
+       1.108,
+       1.604
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.998,
+      "worst_side_ratio": 1.38
+     }
+    },
+    {
+     "id": "emitter-5",
+     "object": "aetheric-emitter",
+     "source": "model:aetheric-emitter.glb",
+     "fit": {
+      "model_dims_m": [
+       1.005,
+       1.108,
+       1.604
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.998,
+      "worst_side_ratio": 1.38
+     }
+    },
+    {
+     "id": "emitter-6",
+     "object": "aetheric-emitter",
+     "source": "model:aetheric-emitter.glb",
+     "fit": {
+      "model_dims_m": [
+       1.005,
+       1.108,
+       1.604
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.998,
+      "worst_side_ratio": 1.38
+     }
+    },
+    {
+     "id": "board-table",
+     "object": "board-table",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystals-1",
+     "object": "crystal-cluster",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystals-2",
+     "object": "crystal-cluster",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystals-3",
+     "object": "crystal-cluster",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystals-4",
+     "object": "crystal-cluster",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "b2-lowlands",
+   "location": "scorched-biome",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.0
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.0
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 4.5
+    }
+   ],
+   "props": [
+    {
+     "id": "probe",
+     "object": "flux-probe",
+     "source": "model:flux-probe.glb",
+     "fit": {
+      "model_dims_m": [
+       0.236,
+       0.21,
+       1.1
+      ],
+      "box_m": [
+       0.12,
+       0.12,
+       1.1
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.97
+     }
+    },
+    {
+     "id": "relay",
+     "object": "relay-beacon",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystals-1",
+     "object": "crystal-cluster",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystals-2",
+     "object": "crystal-cluster",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystals-3",
+     "object": "crystal-cluster",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystals-4",
+     "object": "crystal-cluster",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "co-tunnel",
+   "location": "shear-tunnel",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 12.6
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 11.1
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 8.1
+    }
+   ],
+   "props": [
+    {
+     "id": "journal",
+     "object": "field-journal",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp-fallen-1",
+     "object": "hand-lamp",
+     "source": "model:hand-lamp.glb",
+     "fit": {
+      "model_dims_m": [
+       0.167,
+       0.141,
+       0.321
+      ],
+      "box_m": [
+       0.14,
+       0.14,
+       0.32
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.19
+     }
+    },
+    {
+     "id": "lamp-fallen-2",
+     "object": "hand-lamp",
+     "source": "model:hand-lamp.glb",
+     "fit": {
+      "model_dims_m": [
+       0.167,
+       0.141,
+       0.321
+      ],
+      "box_m": [
+       0.14,
+       0.14,
+       0.32
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.19
+     }
+    },
+    {
+     "id": "lamp-fallen-3",
+     "object": "hand-lamp",
+     "source": "model:hand-lamp.glb",
+     "fit": {
+      "model_dims_m": [
+       0.167,
+       0.141,
+       0.321
+      ],
+      "box_m": [
+       0.14,
+       0.14,
+       0.32
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.19
+     }
+    },
+    {
+     "id": "crystals-west",
+     "object": "crystal-cluster",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystals-mid",
+     "object": "crystal-cluster",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystals-east",
+     "object": "crystal-cluster",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "crystals-mid",
+      "piece": "pipe-low",
+      "samples": "3/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "props"
+   ],
+   "flag_status": {
+    "status": "found by the driver: fixed at render time + proposed diff",
+    "what": "the field journal at [25.6, 0.4, 0] is inside rubble-heap-3 (not a first-pass flag; same prop in ep-tunnel); a location-level prop override moves it to x 26.4 on the floor beside the heap. Build-file diff proposed."
+   }
+  },
+  {
+   "scene": "b4-collapse",
+   "location": "shear-tunnel",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 17.5
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 16.4
+    }
+   ],
+   "props": [
+    {
+     "id": "lamp-lira",
+     "object": "hand-lamp",
+     "source": "model:hand-lamp.glb",
+     "fit": {
+      "model_dims_m": [
+       0.167,
+       0.141,
+       0.321
+      ],
+      "box_m": [
+       0.14,
+       0.14,
+       0.32
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.19
+     }
+    },
+    {
+     "id": "crystals-west",
+     "object": "crystal-cluster",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystals-mid",
+     "object": "crystal-cluster",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystals-east",
+     "object": "crystal-cluster",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [
+    "camera [29.5, -0.0, 2.65] is inside blockout piece 'rubble-seal' (structure)"
+   ],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "crystals-mid",
+      "piece": "pipe-low",
+      "samples": "3/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "camera",
+    "props"
+   ],
+   "flag_status": {
+    "status": "fixed at render time + proposed diff",
+    "what": "the camera [29.5, 0, 2.65] is inside the rubble-seal piece (x 27 to 30) and the still was a white wall; the camera override moves it to x 26.6, in front of the seal. Build-file diff proposed."
+   }
+  },
+  {
+   "scene": "ep-tunnel",
+   "location": "shear-tunnel",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 14.4
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.7
+    }
+   ],
+   "props": [
+    {
+     "id": "journal",
+     "object": "field-journal",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp-fallen-1",
+     "object": "hand-lamp",
+     "source": "model:hand-lamp.glb",
+     "fit": {
+      "model_dims_m": [
+       0.167,
+       0.141,
+       0.321
+      ],
+      "box_m": [
+       0.14,
+       0.14,
+       0.32
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.19
+     }
+    },
+    {
+     "id": "lamp-fallen-2",
+     "object": "hand-lamp",
+     "source": "model:hand-lamp.glb",
+     "fit": {
+      "model_dims_m": [
+       0.167,
+       0.141,
+       0.321
+      ],
+      "box_m": [
+       0.14,
+       0.14,
+       0.32
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.19
+     }
+    },
+    {
+     "id": "lamp-fallen-3",
+     "object": "hand-lamp",
+     "source": "model:hand-lamp.glb",
+     "fit": {
+      "model_dims_m": [
+       0.167,
+       0.141,
+       0.321
+      ],
+      "box_m": [
+       0.14,
+       0.14,
+       0.32
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.19
+     }
+    },
+    {
+     "id": "lamp-lira",
+     "object": "hand-lamp",
+     "source": "model:hand-lamp.glb",
+     "fit": {
+      "model_dims_m": [
+       0.167,
+       0.141,
+       0.321
+      ],
+      "box_m": [
+       0.14,
+       0.14,
+       0.32
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.19
+     }
+    },
+    {
+     "id": "crystals-west",
+     "object": "crystal-cluster",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystals-mid",
+     "object": "crystal-cluster",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystals-east",
+     "object": "crystal-cluster",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [
+    "blockout piece 'end-west' (wall) stands between the camera and its look_at"
+   ],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "crystals-mid",
+      "piece": "pipe-low",
+      "samples": "3/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "camera",
+    "props"
+   ],
+   "flag_status": {
+    "status": "fixed at render time + proposed diff",
+    "what": "the camera [-30, 0, 2.35] has no clearance from the end-west piece (x -30.6 to -30.0), which the driver's ray test counts as standing between camera and target; the camera override moves it to x -29.5. Build-file diff proposed."
+   }
+  },
+  {
+   "scene": "b3-hiding",
+   "location": "small-room",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 14.9
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 16.1
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 7.2
+    }
+   ],
+   "props": [
+    {
+     "id": "transmitter",
+     "object": "transmitter",
+     "source": "box-proxy"
+    },
+    {
+     "id": "journal",
+     "object": "field-journal",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "end-written",
+   "location": "small-room",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 12.7
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 12.9
+    }
+   ],
+   "props": [
+    {
+     "id": "journal",
+     "object": "field-journal",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp",
+     "object": "hand-lamp",
+     "source": "model:hand-lamp.glb",
+     "fit": {
+      "model_dims_m": [
+       0.167,
+       0.141,
+       0.321
+      ],
+      "box_m": [
+       0.14,
+       0.14,
+       0.32
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.19
+     }
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "end-in-time",
+   "location": "small-room",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.6
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 16.0
+    }
+   ],
+   "props": [
+    {
+     "id": "journal",
+     "object": "field-journal",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp",
+     "object": "hand-lamp",
+     "source": "model:hand-lamp.glb",
+     "fit": {
+      "model_dims_m": [
+       0.167,
+       0.141,
+       0.321
+      ],
+      "box_m": [
+       0.14,
+       0.14,
+       0.32
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.19
+     }
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "b1-valley",
+   "location": "spore-weaver-valley",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 11.9
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 10.9
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 5.6
+    }
+   ],
+   "props": [
+    {
+     "id": "post-1",
+     "object": "photodiode-post",
+     "source": "model:photodiode-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.269,
+       0.347,
+       1.3
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.31
+     }
+    },
+    {
+     "id": "post-2",
+     "object": "photodiode-post",
+     "source": "model:photodiode-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.269,
+       0.347,
+       1.3
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.31
+     }
+    },
+    {
+     "id": "post-3",
+     "object": "photodiode-post",
+     "source": "model:photodiode-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.269,
+       0.347,
+       1.3
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.31
+     }
+    },
+    {
+     "id": "dial",
+     "object": "sampling-dial",
+     "source": "model:sampling-dial.glb",
+     "fit": {
+      "model_dims_m": [
+       0.201,
+       0.166,
+       0.195
+      ],
+      "box_m": [
+       0.2,
+       0.12,
+       0.15
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.821,
+      "worst_side_ratio": 1.21
+     }
+    },
+    {
+     "id": "relay",
+     "object": "relay-beacon",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "b1-outpost",
+   "location": "storm-outpost",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 11.1
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 11.2
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 5.6
+    }
+   ],
+   "props": [
+    {
+     "id": "gravimeter",
+     "object": "gravimeter",
+     "source": "box-proxy"
+    },
+    {
+     "id": "fragment",
+     "object": "fused-glass-fragment",
+     "source": "box-proxy"
+    },
+    {
+     "id": "relay",
+     "object": "relay-beacon",
+     "source": "box-proxy"
+    },
+    {
+     "id": "table",
+     "object": "folding-field-table",
+     "source": "model:folding-field-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.008,
+       0.704,
+       0.898
+      ],
+      "box_m": [
+       1.0,
+       0.6,
+       0.75
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.89,
+      "worst_side_ratio": 1.11
+     }
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "b3-peakborn",
+   "location": "storm-singing-ledge",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 10.2
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 9.1
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 5.1
+    }
+   ],
+   "props": [
+    {
+     "id": "afu-meter",
+     "object": "afu-meter",
+     "source": "model:afu-meter.glb",
+     "fit": {
+      "model_dims_m": [
+       0.2,
+       0.135,
+       0.2
+      ],
+      "box_m": [
+       0.15,
+       0.08,
+       0.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.69
+     }
+    },
+    {
+     "id": "recorder",
+     "object": "field-recorder",
+     "source": "model:field-recorder.glb",
+     "fit": {
+      "model_dims_m": [
+       0.25,
+       0.237,
+       0.104
+      ],
+      "box_m": [
+       0.25,
+       0.12,
+       0.18
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.958,
+      "worst_side_ratio": 1.89
+     }
+    },
+    {
+     "id": "crystals-1",
+     "object": "crystal-cluster",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystals-2",
+     "object": "crystal-cluster",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystals-3",
+     "object": "crystal-cluster",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "b3-city",
+   "location": "subterranean-city",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.8
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.4
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 7.1
+    }
+   ],
+   "props": [
+    {
+     "id": "card",
+     "object": "coordinate-card",
+     "source": "box-proxy"
+    },
+    {
+     "id": "logs-1",
+     "object": "log-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "logs-2",
+     "object": "log-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "logs-3",
+     "object": "log-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "emitter-1",
+     "object": "aetheric-emitter",
+     "source": "model:aetheric-emitter.glb",
+     "fit": {
+      "model_dims_m": [
+       1.005,
+       1.108,
+       1.604
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.998,
+      "worst_side_ratio": 1.38
+     }
+    },
+    {
+     "id": "emitter-2",
+     "object": "aetheric-emitter",
+     "source": "model:aetheric-emitter.glb",
+     "fit": {
+      "model_dims_m": [
+       1.005,
+       1.108,
+       1.604
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.998,
+      "worst_side_ratio": 1.38
+     }
+    },
+    {
+     "id": "case-1",
+     "object": "journal-case",
+     "source": "box-proxy"
+    },
+    {
+     "id": "case-2",
+     "object": "journal-case",
+     "source": "box-proxy"
+    },
+    {
+     "id": "case-3",
+     "object": "journal-case",
+     "source": "box-proxy"
+    },
+    {
+     "id": "seal-press",
+     "object": "seal-press",
+     "source": "model:seal-press.glb",
+     "fit": {
+      "model_dims_m": [
+       0.439,
+       0.2,
+       0.402
+      ],
+      "box_m": [
+       0.3,
+       0.25,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.994,
+      "worst_side_ratio": 1.46
+     }
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "ep-vault",
+   "location": "subterranean-city",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 11.9
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 11.6
+    }
+   ],
+   "props": [
+    {
+     "id": "logs-1",
+     "object": "log-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "logs-2",
+     "object": "log-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "logs-3",
+     "object": "log-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "emitter-1",
+     "object": "aetheric-emitter",
+     "source": "model:aetheric-emitter.glb",
+     "fit": {
+      "model_dims_m": [
+       1.005,
+       1.108,
+       1.604
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.998,
+      "worst_side_ratio": 1.38
+     }
+    },
+    {
+     "id": "emitter-2",
+     "object": "aetheric-emitter",
+     "source": "model:aetheric-emitter.glb",
+     "fit": {
+      "model_dims_m": [
+       1.005,
+       1.108,
+       1.604
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.998,
+      "worst_side_ratio": 1.38
+     }
+    },
+    {
+     "id": "case-1",
+     "object": "journal-case",
+     "source": "box-proxy"
+    },
+    {
+     "id": "case-2",
+     "object": "journal-case",
+     "source": "box-proxy"
+    },
+    {
+     "id": "case-3",
+     "object": "journal-case",
+     "source": "box-proxy"
+    },
+    {
+     "id": "seal-press",
+     "object": "seal-press",
+     "source": "model:seal-press.glb",
+     "fit": {
+      "model_dims_m": [
+       0.439,
+       0.2,
+       0.402
+      ],
+      "box_m": [
+       0.3,
+       0.25,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.994,
+      "worst_side_ratio": 1.46
+     }
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "end-resilience",
+   "location": "subterranean-city",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.4
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.6
+    }
+   ],
+   "props": [
+    {
+     "id": "logs-1",
+     "object": "log-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "logs-2",
+     "object": "log-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "logs-3",
+     "object": "log-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "emitter-1",
+     "object": "aetheric-emitter",
+     "source": "model:aetheric-emitter.glb",
+     "fit": {
+      "model_dims_m": [
+       1.005,
+       1.108,
+       1.604
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.998,
+      "worst_side_ratio": 1.38
+     }
+    },
+    {
+     "id": "emitter-2",
+     "object": "aetheric-emitter",
+     "source": "model:aetheric-emitter.glb",
+     "fit": {
+      "model_dims_m": [
+       1.005,
+       1.108,
+       1.604
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.998,
+      "worst_side_ratio": 1.38
+     }
+    },
+    {
+     "id": "seal-press",
+     "object": "seal-press",
+     "source": "model:seal-press.glb",
+     "fit": {
+      "model_dims_m": [
+       0.439,
+       0.2,
+       0.402
+      ],
+      "box_m": [
+       0.3,
+       0.25,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.994,
+      "worst_side_ratio": 1.46
+     }
+    },
+    {
+     "id": "catalogue-case",
+     "object": "journal-case",
+     "source": "box-proxy"
+    },
+    {
+     "id": "catalogue-seal",
+     "object": "seal-press",
+     "source": "model:seal-press.glb",
+     "fit": {
+      "model_dims_m": [
+       0.439,
+       0.2,
+       0.402
+      ],
+      "box_m": [
+       0.3,
+       0.25,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.994,
+      "worst_side_ratio": 1.46
+     }
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  }
+ ],
+ "overviews": [
+  {
+   "location": "cinder-reach-archive",
+   "reference": "games/lira-calyx/assets/locations/cinder-reach-archive.jpg",
+   "location_scene_count": 1,
+   "scene_lighting": "b2-archive",
+   "camera": {
+    "location": [
+     -3,
+     -14.5,
+     1.7
+    ],
+    "look_at": [
+     0,
+     6,
+     1.8
+    ],
+    "lens_mm": 18
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": 0.5,
+    "facing": "ccw",
+    "scenes": {
+     "b2-archive": {
+      "exposure_ev": -0.9
+     }
+    }
+   }
+  },
+  {
+   "location": "continuum-outpost",
+   "reference": "games/lira-calyx/assets/locations/continuum-outpost.jpg",
+   "location_scene_count": 1,
+   "scene_lighting": "b3-outpost",
+   "camera": {
+    "location": [
+     -8,
+     -27,
+     2.0
+    ],
+    "look_at": [
+     4,
+     0,
+     6
+    ],
+    "lens_mm": 20
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+     "b3-outpost": {
+      "exposure_ev": 2.1
+     }
+    }
+   }
+  },
+  {
+   "location": "corporate-lab",
+   "reference": "games/lira-calyx/assets/locations/corporate-lab.jpg",
+   "location_scene_count": 1,
+   "scene_lighting": "b2-lab",
+   "camera": {
+    "location": [
+     -17,
+     -11,
+     2.0
+    ],
+    "look_at": [
+     6,
+     6,
+     2.5
+    ],
+    "lens_mm": 18
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+     "b2-lab": {
+      "exposure_ev": -3.5
+     }
+    }
+   }
+  },
+  {
+   "location": "harvest-terrace",
+   "reference": "games/lira-calyx/assets/locations/harvest-terrace.jpg",
+   "location_scene_count": 1,
+   "scene_lighting": "b3-midlander",
+   "camera": {
+    "location": [
+     -30,
+     -20,
+     30
+    ],
+    "look_at": [
+     5,
+     0,
+     14
+    ],
+    "lens_mm": 22
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+     "b3-midlander": {
+      "exposure_ev": -2.1
+     }
+    }
+   }
+  },
+  {
+   "location": "harvester-ridge",
+   "reference": "games/lira-calyx/assets/locations/harvester-ridge.jpg",
+   "location_scene_count": 1,
+   "scene_lighting": "b2-hearing",
+   "camera": {
+    "location": [
+     -20,
+     -30,
+     7
+    ],
+    "look_at": [
+     14,
+     18,
+     8
+    ],
+    "lens_mm": 22
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": 1.0,
+    "facing": "ccw",
+    "scenes": {
+     "b2-hearing": {
+      "exposure_ev": -2.9
+     }
+    }
+   }
+  },
+  {
+   "location": "hollin-terrace",
+   "reference": "games/lira-calyx/assets/locations/hollin-terrace.jpg",
+   "location_scene_count": 5,
+   "scene_lighting": "b1-terrace",
+   "camera": {
+    "location": [
+     30,
+     -24,
+     16
+    ],
+    "look_at": [
+     -25,
+     -4,
+     8
+    ],
+    "lens_mm": 26
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+     "b1-terrace-night": {
+      "exposure_ev": 2.5
+     },
+     "b1-terrace": {
+      "exposure_ev": -2.7
+     },
+     "b4-terraces": {
+      "exposure_ev": -2.4
+     },
+     "end-errata": {
+      "exposure_ev": 0.0
+     },
+     "end-fire": {
+      "exposure_ev": -1.0
+     }
+    }
+   }
+  },
+  {
+   "location": "peak-core",
+   "reference": "games/lira-calyx/assets/locations/peak-core.jpg",
+   "location_scene_count": 1,
+   "scene_lighting": "b4-core",
+   "camera": {
+    "location": [
+     -44,
+     -3,
+     2.5
+    ],
+    "look_at": [
+     0,
+     0,
+     10
+    ],
+    "lens_mm": 22
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": 0.5,
+    "facing": "ccw",
+    "scenes": {
+     "b4-core": {
+      "exposure_ev": -1.7
+     }
+    }
+   }
+  },
+  {
+   "location": "scorched-biome",
+   "reference": "games/lira-calyx/assets/locations/scorched-biome.jpg",
+   "location_scene_count": 1,
+   "scene_lighting": "b2-lowlands",
+   "camera": {
+    "location": [
+     25,
+     -50,
+     5
+    ],
+    "look_at": [
+     0,
+     -5,
+     1.5
+    ],
+    "lens_mm": 22
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+     "b2-lowlands": {
+      "exposure_ev": -3.5
+     }
+    }
+   }
+  },
+  {
+   "location": "shear-tunnel",
+   "reference": "games/lira-calyx/assets/locations/shear-tunnel.jpg",
+   "location_scene_count": 3,
+   "scene_lighting": "co-tunnel",
+   "camera": {
+    "location": [
+     -29,
+     0.5,
+     2.2
+    ],
+    "look_at": [
+     0,
+     0,
+     2.0
+    ],
+    "lens_mm": 20
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": 1.5,
+    "facing": "ccw",
+    "scenes": {
+     "b4-collapse": {
+      "exposure_ev": -0.5
+     },
+     "co-tunnel": {
+      "exposure_ev": 1.4
+     },
+     "ep-tunnel": {
+      "exposure_ev": 1.2
+     }
+    }
+   }
+  },
+  {
+   "location": "small-room",
+   "reference": "games/lira-calyx/assets/locations/small-room.jpg",
+   "location_scene_count": 3,
+   "scene_lighting": "b3-hiding",
+   "camera": {
+    "location": [
+     3.6,
+     -2.6,
+     1.6
+    ],
+    "look_at": [
+     -1,
+     2,
+     1.2
+    ],
+    "lens_mm": 16
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+     "b3-hiding": {
+      "exposure_ev": 0.8
+     },
+     "end-in-time": {
+      "exposure_ev": 3.5
+     },
+     "end-written": {
+      "exposure_ev": 0.9
+     }
+    }
+   }
+  },
+  {
+   "location": "spore-weaver-valley",
+   "reference": "left out (text card)",
+   "location_scene_count": 1,
+   "scene_lighting": "b1-valley",
+   "camera": {
+    "location": [
+     -175,
+     -20,
+     2.5
+    ],
+    "look_at": [
+     -110,
+     0,
+     10
+    ],
+    "lens_mm": 22
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": 1.0,
+    "facing": "ccw",
+    "reference_card": "The reference image shows several small standing human figures on the valley floor, so it is left out (no figures in any frame or sheet). Described scene: a wide green valley under a dark sky, forked cyan lightning-like glow running through the dead trees, a river and boulders in the foreground.",
+    "scenes": {
+     "b1-valley": {
+      "exposure_ev": 0.9
+     }
+    }
+   }
+  },
+  {
+   "location": "storm-outpost",
+   "reference": "games/lira-calyx/assets/locations/storm-outpost.jpg",
+   "location_scene_count": 1,
+   "scene_lighting": "b1-outpost",
+   "camera": {
+    "location": [
+     -10,
+     -19,
+     6
+    ],
+    "look_at": [
+     2,
+     4,
+     2
+    ],
+    "lens_mm": 24
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": 0.5,
+    "facing": "ccw",
+    "scenes": {
+     "b1-outpost": {
+      "exposure_ev": -3.5
+     }
+    }
+   }
+  },
+  {
+   "location": "storm-singing-ledge",
+   "reference": "games/lira-calyx/assets/locations/storm-singing-ledge.jpg",
+   "location_scene_count": 1,
+   "scene_lighting": "b3-peakborn",
+   "camera": {
+    "location": [
+     0,
+     -20,
+     3
+    ],
+    "look_at": [
+     0,
+     0,
+     1.2
+    ],
+    "lens_mm": 20
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": 0.5,
+    "facing": "ccw",
+    "scenes": {
+     "b3-peakborn": {
+      "exposure_ev": -1.2
+     }
+    }
+   }
+  },
+  {
+   "location": "subterranean-city",
+   "reference": "games/lira-calyx/assets/locations/subterranean-city.jpg",
+   "location_scene_count": 3,
+   "scene_lighting": "b3-city",
+   "camera": {
+    "location": [
+     -62,
+     -4,
+     4
+    ],
+    "look_at": [
+     10,
+     2,
+     6
+    ],
+    "lens_mm": 20
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": 2.5,
+    "facing": "ccw",
+    "scenes": {
+     "b3-city": {
+      "exposure_ev": 0.6
+     },
+     "end-resilience": {
+      "exposure_ev": -3.5
+     },
+     "ep-vault": {
+      "exposure_ev": 3.5
+     }
+    }
+   }
+  }
+ ],
+ "objects": {
+  "aetheric-emitter": {
+   "source": "model",
+   "model": "aetheric-emitter.glb",
+   "props": 14,
+   "fit": {
+    "model_dims_m": [
+     1.005,
+     1.108,
+     1.604
+    ],
+    "box_m": [
+     0.8,
+     0.8,
+     1.6
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.998,
+    "worst_side_ratio": 1.38
+   },
+   "note": null
+  },
+  "afu-meter": {
+   "source": "model",
+   "model": "afu-meter.glb",
+   "props": 1,
+   "fit": {
+    "model_dims_m": [
+     0.2,
+     0.135,
+     0.2
+    ],
+    "box_m": [
+     0.15,
+     0.08,
+     0.2
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.0,
+    "worst_side_ratio": 1.69
+   },
+   "note": null
+  },
+  "board-table": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 1,
+   "fit": null,
+   "note": null
+  },
+  "coordinate-card": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 1,
+   "fit": null,
+   "note": null
+  },
+  "crystal-cluster": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 35,
+   "fit": null,
+   "note": null
+  },
+  "field-journal": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 12,
+   "fit": null,
+   "note": null
+  },
+  "field-recorder": {
+   "source": "model",
+   "model": "field-recorder.glb",
+   "props": 2,
+   "fit": {
+    "model_dims_m": [
+     0.25,
+     0.237,
+     0.104
+    ],
+    "box_m": [
+     0.25,
+     0.12,
+     0.18
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.958,
+    "worst_side_ratio": 1.89
+   },
+   "note": null
+  },
+  "flood-siren": {
+   "source": "model",
+   "model": "flood-siren.glb",
+   "props": 5,
+   "fit": {
+    "model_dims_m": [
+     1.635,
+     1.262,
+     2.215
+    ],
+    "box_m": [
+     0.6,
+     0.5,
+     2.2
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.993,
+    "worst_side_ratio": 2.71
+   },
+   "note": null
+  },
+  "flux-probe": {
+   "source": "model",
+   "model": "flux-probe.glb",
+   "props": 1,
+   "fit": {
+    "model_dims_m": [
+     0.236,
+     0.21,
+     1.1
+    ],
+    "box_m": [
+     0.12,
+     0.12,
+     1.1
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.0,
+    "worst_side_ratio": 1.97
+   },
+   "note": null
+  },
+  "folding-field-table": {
+   "source": "model",
+   "model": "folding-field-table.glb",
+   "props": 7,
+   "fit": {
+    "model_dims_m": [
+     1.008,
+     0.704,
+     0.898
+    ],
+    "box_m": [
+     1.0,
+     0.6,
+     0.75
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.89,
+    "worst_side_ratio": 1.11
+   },
+   "note": null
+  },
+  "fused-glass-fragment": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 2,
+   "fit": null,
+   "note": null
+  },
+  "gravimeter": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 1,
+   "fit": null,
+   "note": null
+  },
+  "hand-lamp": {
+   "source": "model",
+   "model": "hand-lamp.glb",
+   "props": 10,
+   "fit": {
+    "model_dims_m": [
+     0.167,
+     0.141,
+     0.321
+    ],
+    "box_m": [
+     0.14,
+     0.14,
+     0.32
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.997,
+    "worst_side_ratio": 1.19
+   },
+   "note": null
+  },
+  "journal-case": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 7,
+   "fit": null,
+   "note": null
+  },
+  "lab-console": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 1,
+   "fit": null,
+   "note": null
+  },
+  "light-table": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 1,
+   "fit": null,
+   "note": null
+  },
+  "log-cabinet": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 16,
+   "fit": null,
+   "note": null
+  },
+  "patent-drawer-cabinet": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 12,
+   "fit": null,
+   "note": null
+  },
+  "photodiode-post": {
+   "source": "model",
+   "model": "photodiode-post.glb",
+   "props": 3,
+   "fit": {
+    "model_dims_m": [
+     0.269,
+     0.347,
+     1.3
+    ],
+    "box_m": [
+     0.15,
+     0.15,
+     1.3
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.0,
+    "worst_side_ratio": 2.31
+   },
+   "note": null
+  },
+  "prototype-harvester": {
+   "source": "model",
+   "model": "prototype-harvester.glb",
+   "props": 1,
+   "fit": {
+    "model_dims_m": [
+     8.918,
+     7.167,
+     9.093
+    ],
+    "box_m": [
+     6.0,
+     6.0,
+     9.0
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.99,
+    "worst_side_ratio": 1.47
+   },
+   "note": null
+  },
+  "pulse-rig": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 4,
+   "fit": null,
+   "note": null
+  },
+  "relay-beacon": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 8,
+   "fit": null,
+   "note": null
+  },
+  "river-glow-meter": {
+   "source": "model",
+   "model": "river-glow-meter.glb",
+   "props": 5,
+   "fit": {
+    "model_dims_m": [
+     0.574,
+     0.449,
+     1.201
+    ],
+    "box_m": [
+     0.25,
+     0.2,
+     1.2
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.999,
+    "worst_side_ratio": 2.29
+   },
+   "note": null
+  },
+  "sampling-dial": {
+   "source": "model",
+   "model": "sampling-dial.glb",
+   "props": 1,
+   "fit": {
+    "model_dims_m": [
+     0.201,
+     0.166,
+     0.195
+    ],
+    "box_m": [
+     0.2,
+     0.12,
+     0.15
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.821,
+    "worst_side_ratio": 1.21
+   },
+   "note": null
+  },
+  "seal-press": {
+   "source": "model",
+   "model": "seal-press.glb",
+   "props": 4,
+   "fit": {
+    "model_dims_m": [
+     0.439,
+     0.2,
+     0.402
+    ],
+    "box_m": [
+     0.3,
+     0.25,
+     0.4
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.994,
+    "worst_side_ratio": 1.46
+   },
+   "note": null
+  },
+  "specimen-shelf": {
+   "source": "model",
+   "model": "specimen-shelf.glb",
+   "props": 6,
+   "fit": {
+    "model_dims_m": [
+     1.229,
+     0.571,
+     1.607
+    ],
+    "box_m": [
+     1.2,
+     0.35,
+     1.6
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.996,
+    "worst_side_ratio": 1.63
+   },
+   "note": null
+  },
+  "strain-gauge": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 1,
+   "fit": null,
+   "note": null
+  },
+  "strider-clicker": {
+   "source": "model",
+   "model": "strider-clicker.glb",
+   "props": 1,
+   "fit": {
+    "model_dims_m": [
+     0.074,
+     0.083,
+     0.08
+    ],
+    "box_m": [
+     0.06,
+     0.03,
+     0.08
+    ],
+    "fit_rotation_deg": [
+     90,
+     0,
+     90
+    ],
+    "scale": 0.963,
+    "worst_side_ratio": 2.37
+   },
+   "note": null
+  },
+  "threat-packet": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 1,
+   "fit": null,
+   "note": null
+  },
+  "transmitter": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 1,
+   "fit": null,
+   "note": null
+  }
+ }
+}

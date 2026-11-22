@@ -78,6 +78,14 @@ recorded render-time overrides differ.
   Models used here are lite copies (about 12k triangles, 512 px JPEG textures) of the ComfyUI session's glbs, made only because the
   render box's upload link ran at about 50 KB/s; the originals are never copied into the repo.
 
+- Added for batch 7 (lira-calyx, heartstream): no driver change. `rig.json` and `overrides.json` hold the 28 locations (namespaced `<game>/<location>`):
+  `facing: "ccw"` for both games, per-scene `exposure_ev` from a look pass (capped at -3.5 and +3.5), `overview_ev`, the overview camera, and for
+  lira-calyx/spore-weaver-valley a `reference_card` (the reference shows small standing figures). Overrides: three `camera` nudges, `props` patches
+  (a location-level patch for a prop a scene hides is skipped, as before) for props found inside a blockout piece. The models were lite copies again
+  (12k triangles, 512 px); the oar of heartstream is the one model the fit rejects (its glb is slanted at 45 degrees). The remote render box went offline
+  once mid-session; the packs and models stayed on its disk, so a run only had to be started again. Run the look passes with `--stills overview --only
+  <loc>/<scene>,...` (about 20 s for 14 locations) to set the overview cameras.
+
 ## Remote run
 
 Used on a rented RTX 4090: upload `render_scenes.py` and `pack.tgz`, run Blender 5.2.1 as above with `--device OPTIX`, fetch the

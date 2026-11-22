@@ -2730,5 +2730,726 @@
         "exposure_ev": -2.2
       }
     }
+  },
+  "lira-calyx/cinder-reach-archive": {
+    "overview_scene": "b2-archive",
+    "overview": {
+      "location": [
+        -3,
+        -14.5,
+        1.7
+      ],
+      "look_at": [
+        0,
+        6,
+        1.8
+      ],
+      "lens_mm": 18
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 0.5,
+    "facing": "ccw",
+    "scenes": {
+      "b2-archive": {
+        "exposure_ev": -0.9
+      }
+    }
+  },
+  "lira-calyx/continuum-outpost": {
+    "overview_scene": "b3-outpost",
+    "overview": {
+      "location": [
+        -8,
+        -27,
+        2.0
+      ],
+      "look_at": [
+        4,
+        0,
+        6
+      ],
+      "lens_mm": 20
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+      "b3-outpost": {
+        "exposure_ev": 2.1
+      }
+    }
+  },
+  "lira-calyx/corporate-lab": {
+    "overview_scene": "b2-lab",
+    "overview": {
+      "location": [
+        -17,
+        -11,
+        2.0
+      ],
+      "look_at": [
+        6,
+        6,
+        2.5
+      ],
+      "lens_mm": 18
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+      "b2-lab": {
+        "exposure_ev": -3.5
+      }
+    }
+  },
+  "lira-calyx/harvest-terrace": {
+    "overview_scene": "b3-midlander",
+    "overview": {
+      "location": [
+        -30,
+        -20,
+        30
+      ],
+      "look_at": [
+        5,
+        0,
+        14
+      ],
+      "lens_mm": 22
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+      "b3-midlander": {
+        "exposure_ev": -2.1
+      }
+    }
+  },
+  "lira-calyx/harvester-ridge": {
+    "overview_scene": "b2-hearing",
+    "overview": {
+      "location": [
+        -20,
+        -30,
+        7
+      ],
+      "look_at": [
+        14,
+        18,
+        8
+      ],
+      "lens_mm": 22
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 1.0,
+    "facing": "ccw",
+    "scenes": {
+      "b2-hearing": {
+        "exposure_ev": -2.9
+      }
+    }
+  },
+  "lira-calyx/hollin-terrace": {
+    "overview_scene": "b1-terrace",
+    "overview": {
+      "location": [
+        30,
+        -24,
+        16
+      ],
+      "look_at": [
+        -25,
+        -4,
+        8
+      ],
+      "lens_mm": 26
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+      "b1-terrace-night": {
+        "exposure_ev": 2.5
+      },
+      "b1-terrace": {
+        "exposure_ev": -2.7
+      },
+      "b4-terraces": {
+        "exposure_ev": -2.4
+      },
+      "end-errata": {
+        "exposure_ev": 0.0
+      },
+      "end-fire": {
+        "exposure_ev": -1.0
+      }
+    }
+  },
+  "lira-calyx/peak-core": {
+    "overview_scene": "b4-core",
+    "overview": {
+      "location": [
+        -44,
+        -3,
+        2.5
+      ],
+      "look_at": [
+        0,
+        0,
+        10
+      ],
+      "lens_mm": 22
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 0.5,
+    "facing": "ccw",
+    "scenes": {
+      "b4-core": {
+        "exposure_ev": -1.7
+      }
+    }
+  },
+  "lira-calyx/scorched-biome": {
+    "overview_scene": "b2-lowlands",
+    "overview": {
+      "location": [
+        25,
+        -50,
+        5
+      ],
+      "look_at": [
+        0,
+        -5,
+        1.5
+      ],
+      "lens_mm": 22
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+      "b2-lowlands": {
+        "exposure_ev": -3.5
+      }
+    }
+  },
+  "lira-calyx/shear-tunnel": {
+    "overview_scene": "co-tunnel",
+    "overview": {
+      "location": [
+        -29,
+        0.5,
+        2.2
+      ],
+      "look_at": [
+        0,
+        0,
+        2.0
+      ],
+      "lens_mm": 20
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 1.5,
+    "facing": "ccw",
+    "scenes": {
+      "b4-collapse": {
+        "exposure_ev": -0.5
+      },
+      "co-tunnel": {
+        "exposure_ev": 1.4
+      },
+      "ep-tunnel": {
+        "exposure_ev": 1.2
+      }
+    }
+  },
+  "lira-calyx/small-room": {
+    "overview_scene": "b3-hiding",
+    "overview": {
+      "location": [
+        3.6,
+        -2.6,
+        1.6
+      ],
+      "look_at": [
+        -1,
+        2,
+        1.2
+      ],
+      "lens_mm": 16
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+      "b3-hiding": {
+        "exposure_ev": 0.8
+      },
+      "end-in-time": {
+        "exposure_ev": 3.5
+      },
+      "end-written": {
+        "exposure_ev": 0.9
+      }
+    }
+  },
+  "lira-calyx/spore-weaver-valley": {
+    "overview_scene": "b1-valley",
+    "overview": {
+      "location": [
+        -175,
+        -20,
+        2.5
+      ],
+      "look_at": [
+        -110,
+        0,
+        10
+      ],
+      "lens_mm": 22
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 1.0,
+    "facing": "ccw",
+    "reference_card": "The reference image shows several small standing human figures on the valley floor, so it is left out (no figures in any frame or sheet). Described scene: a wide green valley under a dark sky, forked cyan lightning-like glow running through the dead trees, a river and boulders in the foreground.",
+    "scenes": {
+      "b1-valley": {
+        "exposure_ev": 0.9
+      }
+    }
+  },
+  "lira-calyx/storm-outpost": {
+    "overview_scene": "b1-outpost",
+    "overview": {
+      "location": [
+        -10,
+        -19,
+        6
+      ],
+      "look_at": [
+        2,
+        4,
+        2
+      ],
+      "lens_mm": 24
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 0.5,
+    "facing": "ccw",
+    "scenes": {
+      "b1-outpost": {
+        "exposure_ev": -3.5
+      }
+    }
+  },
+  "lira-calyx/storm-singing-ledge": {
+    "overview_scene": "b3-peakborn",
+    "overview": {
+      "location": [
+        0,
+        -20,
+        3
+      ],
+      "look_at": [
+        0,
+        0,
+        1.2
+      ],
+      "lens_mm": 20
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 0.5,
+    "facing": "ccw",
+    "scenes": {
+      "b3-peakborn": {
+        "exposure_ev": -1.2
+      }
+    }
+  },
+  "lira-calyx/subterranean-city": {
+    "overview_scene": "b3-city",
+    "overview": {
+      "location": [
+        -62,
+        -4,
+        4
+      ],
+      "look_at": [
+        10,
+        2,
+        6
+      ],
+      "lens_mm": 20
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 2.5,
+    "facing": "ccw",
+    "scenes": {
+      "b3-city": {
+        "exposure_ev": 0.6
+      },
+      "end-resilience": {
+        "exposure_ev": -3.5
+      },
+      "ep-vault": {
+        "exposure_ev": 3.5
+      }
+    }
+  },
+  "heartstream/backwater": {
+    "overview_scene": "s3_backwater",
+    "overview": {
+      "location": [
+        4,
+        -4,
+        4
+      ],
+      "look_at": [
+        -12,
+        -24,
+        1
+      ],
+      "lens_mm": 20
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+      "s3_backwater": {
+        "exposure_ev": -1.8
+      }
+    }
+  },
+  "heartstream/beast-hold": {
+    "overview_scene": "s3_hold",
+    "overview": {
+      "location": [
+        0,
+        -7,
+        1.5
+      ],
+      "look_at": [
+        0,
+        3,
+        7
+      ],
+      "lens_mm": 20
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": -1.5,
+    "facing": "ccw",
+    "scenes": {
+      "s3_hold": {
+        "exposure_ev": -3.5
+      },
+      "s3_hold_turn": {
+        "exposure_ev": -3.5
+      }
+    }
+  },
+  "heartstream/bloodstream": {
+    "overview_scene": "s3_river",
+    "overview": {
+      "location": [
+        -500,
+        -55,
+        2
+      ],
+      "look_at": [
+        -470,
+        -30,
+        5
+      ],
+      "lens_mm": 24
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+      "s3_bank_years_on": {
+        "exposure_ev": 0.0
+      },
+      "s3_river": {
+        "exposure_ev": -1.1
+      }
+    }
+  },
+  "heartstream/delta": {
+    "overview_scene": "s3_delta",
+    "overview": {
+      "location": [
+        -215,
+        5,
+        18
+      ],
+      "look_at": [
+        -150,
+        0,
+        2
+      ],
+      "lens_mm": 24
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+      "s3_delta": {
+        "exposure_ev": -2.3
+      }
+    }
+  },
+  "heartstream/elders-cavern": {
+    "overview_scene": "s3_recognition",
+    "overview": {
+      "location": [
+        8,
+        -15,
+        1.8
+      ],
+      "look_at": [
+        -2,
+        5,
+        3
+      ],
+      "lens_mm": 20
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+      "s3_recognition": {
+        "exposure_ev": -3.5
+      }
+    }
+  },
+  "heartstream/heart-atrium": {
+    "overview_scene": "s3_heart",
+    "overview": {
+      "location": [
+        -12,
+        0,
+        1.8
+      ],
+      "look_at": [
+        10,
+        0,
+        10
+      ],
+      "lens_mm": 20
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+      "s3_heart": {
+        "exposure_ev": -3.5
+      }
+    }
+  },
+  "heartstream/marrow-caverns": {
+    "overview_scene": "s3_marrow",
+    "overview": {
+      "location": [
+        0,
+        -19,
+        2.2
+      ],
+      "look_at": [
+        0,
+        8,
+        4
+      ],
+      "lens_mm": 20
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+      "s3_lamps": {
+        "exposure_ev": -3.0
+      },
+      "s3_marrow": {
+        "exposure_ev": -3.5
+      },
+      "s3_marrow_after": {
+        "exposure_ev": -3.3
+      }
+    }
+  },
+  "heartstream/narrow-vessel": {
+    "overview_scene": "s3_vessel",
+    "overview": {
+      "location": [
+        0.3,
+        -19.5,
+        1.8
+      ],
+      "look_at": [
+        0.3,
+        10,
+        2
+      ],
+      "lens_mm": 20
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+      "s3_vessel": {
+        "exposure_ev": -3.5
+      },
+      "s3_vessel_open": {
+        "exposure_ev": -3.5
+      }
+    }
+  },
+  "heartstream/pulse-wall-chamber": {
+    "overview_scene": "s3_marrow_pulse",
+    "overview": {
+      "location": [
+        -1,
+        -4.5,
+        2
+      ],
+      "look_at": [
+        0,
+        5,
+        3
+      ],
+      "lens_mm": 18
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+      "s3_marrow_pulse": {
+        "exposure_ev": -1.8
+      },
+      "s3_wall_at_night": {
+        "exposure_ev": -1.8
+      }
+    }
+  },
+  "heartstream/shaft-foot": {
+    "overview_scene": "s3_shaft",
+    "overview": {
+      "location": [
+        0,
+        -3.5,
+        1.8
+      ],
+      "look_at": [
+        0,
+        3,
+        6
+      ],
+      "lens_mm": 18
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+      "s3_shaft": {
+        "exposure_ev": -1.0
+      }
+    }
+  },
+  "heartstream/shared-chamber": {
+    "overview_scene": "s3_vessel_two",
+    "overview": {
+      "location": [
+        -3.6,
+        -1.5,
+        2.5
+      ],
+      "look_at": [
+        1,
+        0,
+        1.5
+      ],
+      "lens_mm": 18
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+      "s3_vessel_two": {
+        "exposure_ev": -3.5
+      }
+    }
+  },
+  "heartstream/shedding-gallery": {
+    "overview_scene": "s3_gallery",
+    "overview": {
+      "location": [
+        0,
+        -12.5,
+        2.2
+      ],
+      "look_at": [
+        0,
+        6,
+        5
+      ],
+      "lens_mm": 20
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": -1.0,
+    "facing": "ccw",
+    "scenes": {
+      "s3_gallery": {
+        "exposure_ev": -3.5
+      }
+    }
+  },
+  "heartstream/singing-hollow": {
+    "overview_scene": "s3_hollow",
+    "overview": {
+      "location": [
+        0,
+        -9.3,
+        3
+      ],
+      "look_at": [
+        0,
+        0,
+        2.5
+      ],
+      "lens_mm": 24
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 1.5,
+    "facing": "ccw",
+    "scenes": {
+      "s3_hollow": {
+        "exposure_ev": -3.2
+      }
+    }
+  },
+  "heartstream/stencil-gallery": {
+    "overview_scene": "s3_stencil_gallery",
+    "overview": {
+      "location": [
+        -12,
+        -1,
+        1.8
+      ],
+      "look_at": [
+        10,
+        2,
+        2.5
+      ],
+      "lens_mm": 20
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+      "s3_stencil_gallery": {
+        "exposure_ev": -3.5
+      }
+    }
   }
 }
