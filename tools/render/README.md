@@ -62,6 +62,22 @@ recorded render-time overrides differ.
   `reference_card` (a location whose reference image is replaced by a text card on its sheet; `finish.py` draws it). Man Eater has no
   figure imagery, so both are used there. No model ledger exists for man-eater, so nothing was swapped.
 
+- Added for batch 6 (stuffed-ones, missing-campsites): **the first batch with real models** (phase C ran for the first time).
+  `--models <json>` takes `{"models": [{"object": id, "glb": path[, "skip": reason]}]}`; `skip` keeps the box proxy and records the
+  reason (used for a model that shows a creature). A model is imported once per scene and copied for further props that use it,
+  then **fitted to the prop's box** (`fit_model`): it keeps its own orientation unless that fits worse than a factor of 3
+  (thin sides: 9), in which case the six axis permutations are tried; the scale is uniform (the height ratio for an upright prop, i.e. box height at least 0.8 of its largest side, when the footprint then stays within x3 of the box; otherwise the geometric mean over the box's
+  non-thin sides) and the fit is rejected (the box proxy stays) when a side is still off by more than that. Each prop's
+  `fit` record (model dims, box dims, rotation, scale, worst side ratio, or the rejection) goes in the per-scene json and in
+  the ledger (`props[].fit`, and a per-object summary under `objects`). The checks look through a model's root empty to its meshes.
+  Rig and override keys may be namespaced `<game>/<location>` (and `<game>/<location>/<scene>`): both games have a `creek-trail`.
+  Rig keys `facing` (`compass`, the default, or `ccw`: facing_deg is a rotation about Z, so 90 faces -x; the cameras of both
+  games agree with `ccw`: 33 of 41 and 23 of 24 scenes, against 23 and 10 for compass) and `min_eye_m` (lowest eye height of the
+  player-start still; 0.2 for the toy-floor scenes). A location-level `props` or `prop_alpha` override for a prop the scene hides
+  is skipped (it used to raise). `reference_card` now also covers a reference that shows a creature drawn as a pictogram.
+  Models used here are lite copies (about 12k triangles, 512 px JPEG textures) of the ComfyUI session's glbs, made only because the
+  render box's upload link ran at about 50 KB/s; the originals are never copied into the repo.
+
 ## Remote run
 
 Used on a rented RTX 4090: upload `render_scenes.py` and `pack.tgz`, run Blender 5.2.1 as above with `--device OPTIX`, fetch the

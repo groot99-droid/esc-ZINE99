@@ -91,6 +91,9 @@ def main(argv):
     ledger = {"game": slug, "tiers": {"hero": "2560x1440, 256 samples", "standard": "1920x1080, 128 samples",
                                       "overview": "1920x1080, 128 samples"},
               "renderer": "Cycles (OptiX), OpenImageDenoise, Blender 5.2.1", "scenes": [], "overviews": []}
+    def lrig(loc):  # rig.json keys may be namespaced "<game>/<location>" (creek-trail exists in two games)
+        return rig.get(f"{slug}/{loc}", rig.get(loc, {}))
+
     locs = []
     for e in plans:
         if e["location"] not in locs:
@@ -100,7 +103,7 @@ def main(argv):
         tiles = []
         ov = run / loc / "_overview" / "overview.png"
         rp = ROOT / "games" / slug / "assets" / "locations" / f"{loc}.jpg"
-        card = rig.get(loc, {}).get("reference_card")
+        card = lrig(loc).get("reference_card")
         if card:
             ref = text_card("REFERENCE LEFT OUT", [card])
         else:
@@ -119,7 +122,8 @@ def main(argv):
                 "resolution": cam["resolution"], "samples": cam["samples"],
                 "stills": [{"still": s["still"], "resolution": s["resolution"], "samples": s["samples"],
                             "render_seconds": s["seconds"]} for s in rec["stills"]],
-                "props": [{"id": k, "object": v["object"], "source": v["source"], **({"name": v["name"]} if v.get("name", k) != k else {})}
+                "props": [{"id": k, "object": v["object"], "source": v["source"], **({"name": v["name"]} if v.get("name", k) != k else {}),
+                           **({"fit": v["fit"]} if v.get("fit") else {})}
                           for k, v in rec["props"].items()],
                 "flagged_in_first_pass": e["flagged_in_first_pass"],
                 "geometry_checks": rec["checks"],
@@ -127,8 +131,8 @@ def main(argv):
                 "flag_status": flags.get(e["scene"], {"status": "not flagged"}),
             })
         ledger["overviews"].append({"location": loc, "reference": (f"games/{slug}/assets/locations/{loc}.jpg" if rp.exists() else None) if not card else "left out (text card)",
-                                    "location_scene_count": len([p for p in plans if p["location"] == loc]), "scene_lighting": rig[loc]["overview_scene"],
-                                    "camera": rig[loc]["overview"], "rig": {k: v for k, v in rig[loc].items()
+                                    "location_scene_count": len([p for p in plans if p["location"] == loc]), "scene_lighting": lrig(loc)["overview_scene"],
+                                    "camera": lrig(loc)["overview"], "rig": {k: v for k, v in lrig(loc).items()
                                                                           if k not in ("overview", "overview_scene")}})
         rows = (len(tiles) + 1) // 2
         sheet = Image.new("RGB", (1280, rows * 394), (22, 22, 22))
@@ -136,6 +140,20 @@ def main(argv):
             sheet.paste(t, ((i % 2) * 640, (i // 2) * 394))
         sheet.save(outdir / f"{loc}.jpg", quality=84, optimize=True)
         print("sheet", loc, sheet.size)
+    objs = {}  # per object id: how it was drawn (a model fitted to its box, or a named box proxy and why)
+    for sc in ledger["scenes"]:
+        for pr in sc["props"]:
+            o = objs.setdefault(pr["object"], {"source": pr["source"].split(":")[0], "model": None, "props": 0, "fit": None, "note": None})
+            o["props"] += 1
+            if pr["source"].startswith("model:"):
+                o["model"] = pr["source"][6:]
+            if pr.get("fit"):
+                o["fit"] = o["fit"] or pr["fit"]
+                if pr["fit"].get("rejected"):
+                    o["note"] = pr["fit"]["rejected"]
+                if pr["fit"].get("model_skipped"):
+                    o["note"] = "model skipped: " + pr["fit"]["model_skipped"]
+    ledger["objects"] = dict(sorted(objs.items()))
     (outdir / "ledger.json").write_text(json.dumps(ledger, indent=1) + "\n", encoding="utf-8")
     if before:  # flagged-before-after.jpg: each scene in the "before" run (--no-overrides, quick) beside its final still
         pairs = []

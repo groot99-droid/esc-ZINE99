@@ -1,0 +1,9672 @@
+{
+ "game": "missing-campsites",
+ "tiers": {
+  "hero": "2560x1440, 256 samples",
+  "standard": "1920x1080, 128 samples",
+  "overview": "1920x1080, 128 samples"
+ },
+ "renderer": "Cycles (OptiX), OpenImageDenoise, Blender 5.2.1",
+ "scenes": [
+  {
+   "scene": "creek_trail",
+   "location": "creek-trail",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 10.8
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.7
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 6.7
+    }
+   ],
+   "props": [
+    {
+     "id": "tent-abel",
+     "object": "tent",
+     "source": "model:tent.glb",
+     "fit": {
+      "model_dims_m": [
+       2.2,
+       1.798,
+       1.243
+      ],
+      "box_m": [
+       1.862,
+       1.692,
+       1.1
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.89,
+      "worst_side_ratio": 1.06
+     }
+    },
+    {
+     "id": "hiking-pack",
+     "object": "hiking-pack",
+     "source": "box-proxy"
+    },
+    {
+     "id": "notebook",
+     "object": "notebook",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "props"
+   ],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "booth_day1",
+   "location": "entrance-booth",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 20.3
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 11.2
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 8.1
+    }
+   ],
+   "props": [
+    {
+     "id": "heron-sign",
+     "object": "heron-sign",
+     "source": "box-proxy",
+     "name": "sign-board",
+     "fit": {
+      "model_skipped": "the model shows a heron painted on the sign (a creature): no creature imagery, so the proxy stays"
+     }
+    },
+    {
+     "id": "payphone",
+     "object": "payphone",
+     "source": "model:payphone.glb",
+     "fit": {
+      "model_dims_m": [
+       0.673,
+       1.043,
+       2.005
+      ],
+      "box_m": [
+       0.35,
+       0.3,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.53,
+      "worst_side_ratio": 1.88
+     }
+    },
+    {
+     "id": "master-map",
+     "object": "master-map",
+     "source": "model:master-map.glb",
+     "fit": {
+      "model_dims_m": [
+       0.91,
+       0.089,
+       0.699
+      ],
+      "box_m": [
+       0.9,
+       0.04,
+       0.65
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.959,
+      "worst_side_ratio": 1.46
+     }
+    },
+    {
+     "id": "booth-radio",
+     "object": "booth-radio",
+     "source": "model:booth-radio.glb",
+     "fit": {
+      "model_dims_m": [
+       0.252,
+       0.109,
+       0.237
+      ],
+      "box_m": [
+       0.25,
+       0.12,
+       0.18
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.941,
+      "worst_side_ratio": 1.24
+     }
+    },
+    {
+     "id": "paper-map",
+     "object": "paper-map",
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       0.601,
+       0.601,
+       0.122
+      ],
+      "box_m": [
+       0.6,
+       0.01,
+       0.45
+      ],
+      "fit_rotation_deg": [
+       90,
+       0,
+       0
+      ],
+      "scale": 0.864,
+      "worst_side_ratio": 3.25,
+      "rejected": "proportions: a side is off by x3.3 after the best fit"
+     }
+    },
+    {
+     "id": "logbook",
+     "object": "logbook",
+     "source": "model:logbook.glb",
+     "fit": {
+      "model_dims_m": [
+       1.823,
+       1.236,
+       0.432
+      ],
+      "box_m": [
+       0.32,
+       0.05,
+       0.42
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.23,
+      "worst_side_ratio": 1.41
+     }
+    },
+    {
+     "id": "firewood",
+     "object": "firewood-bundle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "firewood-2",
+     "object": "firewood-bundle",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "payphone",
+      "piece": "phone-post",
+      "samples": "3/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "hide_props",
+    "props"
+   ],
+   "flag_status": {
+    "status": "found by the driver, fixed at render time + proposed diff",
+    "what": "the camera stands inside the van prop (not flagged in the first pass); the van is left out of this scene by a render-time override. Proposed `/scenes/booth_day1/hide` add `van`."
+   }
+  },
+  {
+   "scene": "payphone_night1",
+   "location": "entrance-booth",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 9.3
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 10.3
+    }
+   ],
+   "props": [
+    {
+     "id": "heron-sign",
+     "object": "heron-sign",
+     "source": "box-proxy",
+     "name": "sign-board",
+     "fit": {
+      "model_skipped": "the model shows a heron painted on the sign (a creature): no creature imagery, so the proxy stays"
+     }
+    },
+    {
+     "id": "payphone",
+     "object": "payphone",
+     "source": "model:payphone.glb",
+     "fit": {
+      "model_dims_m": [
+       0.673,
+       1.043,
+       2.005
+      ],
+      "box_m": [
+       0.35,
+       0.3,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.53,
+      "worst_side_ratio": 1.88
+     }
+    },
+    {
+     "id": "master-map",
+     "object": "master-map",
+     "source": "model:master-map.glb",
+     "fit": {
+      "model_dims_m": [
+       0.91,
+       0.089,
+       0.699
+      ],
+      "box_m": [
+       0.9,
+       0.04,
+       0.65
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.959,
+      "worst_side_ratio": 1.46
+     }
+    },
+    {
+     "id": "booth-radio",
+     "object": "booth-radio",
+     "source": "model:booth-radio.glb",
+     "fit": {
+      "model_dims_m": [
+       0.252,
+       0.109,
+       0.237
+      ],
+      "box_m": [
+       0.25,
+       0.12,
+       0.18
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.941,
+      "worst_side_ratio": 1.24
+     }
+    },
+    {
+     "id": "firewood",
+     "object": "firewood-bundle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "firewood-2",
+     "object": "firewood-bundle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-4",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "payphone",
+      "piece": "phone-post",
+      "samples": "3/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "props"
+   ],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "booth_day2",
+   "location": "entrance-booth",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 26.3
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 26.3
+    }
+   ],
+   "props": [
+    {
+     "id": "heron-sign",
+     "object": "heron-sign",
+     "source": "box-proxy",
+     "name": "sign-board",
+     "fit": {
+      "model_skipped": "the model shows a heron painted on the sign (a creature): no creature imagery, so the proxy stays"
+     }
+    },
+    {
+     "id": "payphone",
+     "object": "payphone",
+     "source": "model:payphone.glb",
+     "fit": {
+      "model_dims_m": [
+       0.673,
+       1.043,
+       2.005
+      ],
+      "box_m": [
+       0.35,
+       0.3,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.53,
+      "worst_side_ratio": 1.88
+     }
+    },
+    {
+     "id": "master-map",
+     "object": "master-map",
+     "source": "model:master-map.glb",
+     "fit": {
+      "model_dims_m": [
+       0.91,
+       0.089,
+       0.699
+      ],
+      "box_m": [
+       0.9,
+       0.04,
+       0.65
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.959,
+      "worst_side_ratio": 1.46
+     }
+    },
+    {
+     "id": "booth-radio",
+     "object": "booth-radio",
+     "source": "model:booth-radio.glb",
+     "fit": {
+      "model_dims_m": [
+       0.252,
+       0.109,
+       0.237
+      ],
+      "box_m": [
+       0.25,
+       0.12,
+       0.18
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.941,
+      "worst_side_ratio": 1.24
+     }
+    },
+    {
+     "id": "logbook",
+     "object": "logbook",
+     "source": "model:logbook.glb",
+     "fit": {
+      "model_dims_m": [
+       1.823,
+       1.236,
+       0.432
+      ],
+      "box_m": [
+       0.32,
+       0.05,
+       0.42
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.23,
+      "worst_side_ratio": 1.41
+     }
+    },
+    {
+     "id": "firewood",
+     "object": "firewood-bundle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "firewood-2",
+     "object": "firewood-bundle",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [
+    "blockout piece 'booth-window' (opening) stands between the camera and its look_at"
+   ],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "payphone",
+      "piece": "phone-post",
+      "samples": "3/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "props"
+   ],
+   "flag_status": {
+    "status": "fixed at render time",
+    "what": "the booth window is an opening piece with an opaque glass material; the rig draws the material 12% opaque in this location (the piece does not collide). No build-file change needed."
+   }
+  },
+  {
+   "scene": "supper_for_two",
+   "location": "entrance-booth",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 20.0
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 23.3
+    }
+   ],
+   "props": [
+    {
+     "id": "heron-sign",
+     "object": "heron-sign",
+     "source": "box-proxy",
+     "name": "sign-board",
+     "fit": {
+      "model_skipped": "the model shows a heron painted on the sign (a creature): no creature imagery, so the proxy stays"
+     }
+    },
+    {
+     "id": "payphone",
+     "object": "payphone",
+     "source": "model:payphone.glb",
+     "fit": {
+      "model_dims_m": [
+       0.673,
+       1.043,
+       2.005
+      ],
+      "box_m": [
+       0.35,
+       0.3,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.53,
+      "worst_side_ratio": 1.88
+     }
+    },
+    {
+     "id": "master-map",
+     "object": "master-map",
+     "source": "model:master-map.glb",
+     "fit": {
+      "model_dims_m": [
+       0.91,
+       0.089,
+       0.699
+      ],
+      "box_m": [
+       0.9,
+       0.04,
+       0.65
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.959,
+      "worst_side_ratio": 1.46
+     }
+    },
+    {
+     "id": "booth-radio",
+     "object": "booth-radio",
+     "source": "model:booth-radio.glb",
+     "fit": {
+      "model_dims_m": [
+       0.252,
+       0.109,
+       0.237
+      ],
+      "box_m": [
+       0.25,
+       0.12,
+       0.18
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.941,
+      "worst_side_ratio": 1.24
+     }
+    },
+    {
+     "id": "logbook",
+     "object": "logbook",
+     "source": "model:logbook.glb",
+     "fit": {
+      "model_dims_m": [
+       1.823,
+       1.236,
+       0.432
+      ],
+      "box_m": [
+       0.32,
+       0.05,
+       0.42
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.23,
+      "worst_side_ratio": 1.41
+     }
+    },
+    {
+     "id": "firewood",
+     "object": "firewood-bundle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "firewood-2",
+     "object": "firewood-bundle",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [
+    "blockout piece 'booth-window' (opening) stands between the camera and its look_at"
+   ],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "payphone",
+      "piece": "phone-post",
+      "samples": "3/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "props"
+   ],
+   "flag_status": {
+    "status": "fixed at render time",
+    "what": "the booth window is an opening piece with an opaque glass material; the rig draws the material 12% opaque in this location (the piece does not collide). No build-file change needed."
+   }
+  },
+  {
+   "scene": "campfire_night1",
+   "location": "fire-ring",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 19.5
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.5
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 6.5
+    }
+   ],
+   "props": [
+    {
+     "id": "fire-ring",
+     "object": "fire-ring",
+     "source": "box-proxy"
+    },
+    {
+     "id": "chair-1",
+     "object": "camp-chair",
+     "source": "model:camp-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       0.714,
+       0.669,
+       0.853
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.85
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.19
+     }
+    },
+    {
+     "id": "chair-2",
+     "object": "camp-chair",
+     "source": "model:camp-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       0.714,
+       0.669,
+       0.853
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.85
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.19
+     }
+    },
+    {
+     "id": "chair-3",
+     "object": "camp-chair",
+     "source": "model:camp-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       0.714,
+       0.669,
+       0.853
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.85
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.19
+     }
+    },
+    {
+     "id": "chair-4",
+     "object": "camp-chair",
+     "source": "model:camp-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       0.714,
+       0.669,
+       0.853
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.85
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.19
+     }
+    },
+    {
+     "id": "chair-5",
+     "object": "camp-chair",
+     "source": "model:camp-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       0.714,
+       0.669,
+       0.853
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.85
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.19
+     }
+    },
+    {
+     "id": "cooler",
+     "object": "cooler",
+     "source": "box-proxy"
+    },
+    {
+     "id": "firewood",
+     "object": "firewood-bundle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lantern",
+     "object": "camp-lantern",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [
+    "prop 'cooler' base [4.2, -0.2, 0] is inside blockout piece 'table-legs'"
+   ],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "chair-1",
+      "piece": "log-west",
+      "samples": "3/27"
+     },
+     {
+      "prop": "chair-5",
+      "piece": "log-east",
+      "samples": "3/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "props"
+   ],
+   "flag_status": {
+    "status": "fixed at render time + proposed diff",
+    "what": "the cooler stood inside the solid table-legs block; moved to [5.5, -0.2, 0] beside the table by a render-time override. Build-file diff proposed."
+   }
+  },
+  {
+   "scene": "campfire_night2",
+   "location": "fire-ring",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 10.4
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.3
+    }
+   ],
+   "props": [
+    {
+     "id": "fire-ring",
+     "object": "fire-ring",
+     "source": "box-proxy"
+    },
+    {
+     "id": "chair-1",
+     "object": "camp-chair",
+     "source": "model:camp-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       0.714,
+       0.669,
+       0.853
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.85
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.19
+     }
+    },
+    {
+     "id": "chair-2",
+     "object": "camp-chair",
+     "source": "model:camp-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       0.714,
+       0.669,
+       0.853
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.85
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.19
+     }
+    },
+    {
+     "id": "chair-3",
+     "object": "camp-chair",
+     "source": "model:camp-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       0.714,
+       0.669,
+       0.853
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.85
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.19
+     }
+    },
+    {
+     "id": "chair-4",
+     "object": "camp-chair",
+     "source": "model:camp-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       0.714,
+       0.669,
+       0.853
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.85
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.19
+     }
+    },
+    {
+     "id": "chair-5",
+     "object": "camp-chair",
+     "source": "model:camp-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       0.714,
+       0.669,
+       0.853
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.85
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.19
+     }
+    },
+    {
+     "id": "chair-guest",
+     "object": "camp-chair",
+     "source": "model:camp-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       0.714,
+       0.669,
+       0.853
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.85
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.19
+     }
+    },
+    {
+     "id": "cooler",
+     "object": "cooler",
+     "source": "box-proxy"
+    },
+    {
+     "id": "firewood",
+     "object": "firewood-bundle",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [
+    "prop 'cooler' base [4.2, -0.2, 0] is inside blockout piece 'table-legs'"
+   ],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "chair-1",
+      "piece": "log-west",
+      "samples": "3/27"
+     },
+     {
+      "prop": "chair-5",
+      "piece": "log-east",
+      "samples": "3/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "props"
+   ],
+   "flag_status": {
+    "status": "fixed at render time + proposed diff",
+    "what": "the cooler stood inside the solid table-legs block; moved to [5.5, -0.2, 0] beside the table by a render-time override. Build-file diff proposed."
+   }
+  },
+  {
+   "scene": "fixed_sites_day1",
+   "location": "five-sites",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 9.3
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 20.7
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 7.1
+    }
+   ],
+   "props": [
+    {
+     "id": "post-20",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "table-20",
+     "object": "picnic-table",
+     "source": "model:picnic-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.814,
+       1.373,
+       0.815
+      ],
+      "box_m": [
+       1.8,
+       1.6,
+       0.75
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.021,
+      "worst_side_ratio": 1.14
+     }
+    },
+    {
+     "id": "ring-20",
+     "object": "fire-ring",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tent-20",
+     "object": "tent",
+     "source": "model:tent.glb",
+     "fit": {
+      "model_dims_m": [
+       2.2,
+       1.798,
+       1.243
+      ],
+      "box_m": [
+       2.2,
+       2.0,
+       1.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.052,
+      "worst_side_ratio": 1.06
+     }
+    },
+    {
+     "id": "post-21",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "table-21",
+     "object": "picnic-table",
+     "source": "model:picnic-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.814,
+       1.373,
+       0.815
+      ],
+      "box_m": [
+       1.8,
+       1.6,
+       0.75
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.021,
+      "worst_side_ratio": 1.14
+     }
+    },
+    {
+     "id": "ring-21",
+     "object": "fire-ring",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tent-21",
+     "object": "tent",
+     "source": "model:tent.glb",
+     "fit": {
+      "model_dims_m": [
+       2.2,
+       1.798,
+       1.243
+      ],
+      "box_m": [
+       2.2,
+       2.0,
+       1.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.052,
+      "worst_side_ratio": 1.06
+     }
+    },
+    {
+     "id": "post-22",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "table-22",
+     "object": "picnic-table",
+     "source": "model:picnic-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.814,
+       1.373,
+       0.815
+      ],
+      "box_m": [
+       1.8,
+       1.6,
+       0.75
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.021,
+      "worst_side_ratio": 1.14
+     }
+    },
+    {
+     "id": "ring-22",
+     "object": "fire-ring",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tent-22",
+     "object": "tent",
+     "source": "model:tent.glb",
+     "fit": {
+      "model_dims_m": [
+       2.2,
+       1.798,
+       1.243
+      ],
+      "box_m": [
+       2.2,
+       2.0,
+       1.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.052,
+      "worst_side_ratio": 1.06
+     }
+    },
+    {
+     "id": "post-23",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "table-23",
+     "object": "picnic-table",
+     "source": "model:picnic-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.814,
+       1.373,
+       0.815
+      ],
+      "box_m": [
+       1.8,
+       1.6,
+       0.75
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.021,
+      "worst_side_ratio": 1.14
+     }
+    },
+    {
+     "id": "ring-23",
+     "object": "fire-ring",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tent-23",
+     "object": "tent",
+     "source": "model:tent.glb",
+     "fit": {
+      "model_dims_m": [
+       2.2,
+       1.798,
+       1.243
+      ],
+      "box_m": [
+       2.2,
+       2.0,
+       1.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.052,
+      "worst_side_ratio": 1.06
+     }
+    },
+    {
+     "id": "post-24",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "table-24",
+     "object": "picnic-table",
+     "source": "model:picnic-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.814,
+       1.373,
+       0.815
+      ],
+      "box_m": [
+       1.8,
+       1.6,
+       0.75
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.021,
+      "worst_side_ratio": 1.14
+     }
+    },
+    {
+     "id": "ring-24",
+     "object": "fire-ring",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tent-24",
+     "object": "tent",
+     "source": "model:tent.glb",
+     "fit": {
+      "model_dims_m": [
+       2.2,
+       1.798,
+       1.243
+      ],
+      "box_m": [
+       2.2,
+       2.0,
+       1.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.052,
+      "worst_side_ratio": 1.06
+     }
+    },
+    {
+     "id": "split-boulder",
+     "object": "split-boulder",
+     "source": "model:split-boulder.glb",
+     "fit": {
+      "model_dims_m": [
+       4.026,
+       3.094,
+       1.44
+      ],
+      "box_m": [
+       4.0,
+       3.0,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.137,
+      "worst_side_ratio": 1.34
+     }
+    },
+    {
+     "id": "chalkboard",
+     "object": "chalkboard",
+     "source": "model:chalkboard.glb",
+     "fit": {
+      "model_dims_m": [
+       0.708,
+       0.693,
+       1.006
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       1.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.994,
+      "worst_side_ratio": 1.72
+     }
+    },
+    {
+     "id": "chair-1",
+     "object": "camp-chair",
+     "source": "model:camp-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       0.714,
+       0.669,
+       0.853
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.85
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.19
+     }
+    },
+    {
+     "id": "chair-2",
+     "object": "camp-chair",
+     "source": "model:camp-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       0.714,
+       0.669,
+       0.853
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.85
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.19
+     }
+    },
+    {
+     "id": "chair-3",
+     "object": "camp-chair",
+     "source": "model:camp-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       0.714,
+       0.669,
+       0.853
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.85
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.19
+     }
+    },
+    {
+     "id": "notebook",
+     "object": "notebook",
+     "source": "box-proxy"
+    },
+    {
+     "id": "postcard",
+     "object": "postcard",
+     "source": "box-proxy"
+    },
+    {
+     "id": "van",
+     "object": "camper-van",
+     "source": "model:camper-van.glb",
+     "fit": {
+      "model_dims_m": [
+       2.184,
+       4.812,
+       2.896
+      ],
+      "box_m": [
+       2.0,
+       4.8,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.885,
+      "worst_side_ratio": 1.17
+     }
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "ring-20",
+      "piece": "pad-20",
+      "samples": "9/27"
+     },
+     {
+      "prop": "ring-21",
+      "piece": "pad-21",
+      "samples": "9/27"
+     },
+     {
+      "prop": "ring-22",
+      "piece": "pad-22",
+      "samples": "9/27"
+     },
+     {
+      "prop": "ring-23",
+      "piece": "pad-23",
+      "samples": "9/27"
+     },
+     {
+      "prop": "ring-24",
+      "piece": "pad-24",
+      "samples": "9/27"
+     }
+    ],
+    "prop_off_floor": [
+     {
+      "prop": "post-20",
+      "support": "verge",
+      "gap_m": -0.08
+     },
+     {
+      "prop": "table-20",
+      "support": "pad-20",
+      "gap_m": -0.06
+     },
+     {
+      "prop": "tent-20",
+      "support": "pad-20",
+      "gap_m": -0.06
+     },
+     {
+      "prop": "post-21",
+      "support": "verge",
+      "gap_m": -0.08
+     },
+     {
+      "prop": "table-21",
+      "support": "pad-21",
+      "gap_m": -0.06
+     },
+     {
+      "prop": "tent-21",
+      "support": "pad-21",
+      "gap_m": -0.06
+     },
+     {
+      "prop": "post-22",
+      "support": "verge",
+      "gap_m": -0.08
+     },
+     {
+      "prop": "table-22",
+      "support": "pad-22",
+      "gap_m": -0.06
+     },
+     {
+      "prop": "tent-22",
+      "support": "pad-22",
+      "gap_m": -0.06
+     },
+     {
+      "prop": "post-23",
+      "support": "verge",
+      "gap_m": -0.08
+     },
+     {
+      "prop": "table-23",
+      "support": "pad-23",
+      "gap_m": -0.06
+     },
+     {
+      "prop": "tent-23",
+      "support": "pad-23",
+      "gap_m": -0.06
+     },
+     {
+      "prop": "post-24",
+      "support": "verge",
+      "gap_m": -0.08
+     },
+     {
+      "prop": "table-24",
+      "support": "pad-24",
+      "gap_m": -0.06
+     },
+     {
+      "prop": "tent-24",
+      "support": "pad-24",
+      "gap_m": -0.06
+     },
+     {
+      "prop": "split-boulder",
+      "support": "pad-21",
+      "gap_m": -0.06
+     }
+    ]
+   },
+   "render_time_overrides": [
+    "props"
+   ],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "channel_two",
+   "location": "five-sites",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 19.2
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 11.7
+    }
+   ],
+   "props": [
+    {
+     "id": "post-20",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "table-20",
+     "object": "picnic-table",
+     "source": "model:picnic-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.814,
+       1.373,
+       0.815
+      ],
+      "box_m": [
+       1.8,
+       1.6,
+       0.75
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.021,
+      "worst_side_ratio": 1.14
+     }
+    },
+    {
+     "id": "ring-20",
+     "object": "fire-ring",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tent-20",
+     "object": "tent",
+     "source": "model:tent.glb",
+     "fit": {
+      "model_dims_m": [
+       2.2,
+       1.798,
+       1.243
+      ],
+      "box_m": [
+       2.2,
+       2.0,
+       1.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.052,
+      "worst_side_ratio": 1.06
+     }
+    },
+    {
+     "id": "post-21",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "table-21",
+     "object": "picnic-table",
+     "source": "model:picnic-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.814,
+       1.373,
+       0.815
+      ],
+      "box_m": [
+       1.8,
+       1.6,
+       0.75
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.021,
+      "worst_side_ratio": 1.14
+     }
+    },
+    {
+     "id": "ring-21",
+     "object": "fire-ring",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tent-21",
+     "object": "tent",
+     "source": "model:tent.glb",
+     "fit": {
+      "model_dims_m": [
+       2.2,
+       1.798,
+       1.243
+      ],
+      "box_m": [
+       2.2,
+       2.0,
+       1.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.052,
+      "worst_side_ratio": 1.06
+     }
+    },
+    {
+     "id": "post-22",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "table-22",
+     "object": "picnic-table",
+     "source": "model:picnic-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.814,
+       1.373,
+       0.815
+      ],
+      "box_m": [
+       1.8,
+       1.6,
+       0.75
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.021,
+      "worst_side_ratio": 1.14
+     }
+    },
+    {
+     "id": "ring-22",
+     "object": "fire-ring",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tent-22",
+     "object": "tent",
+     "source": "model:tent.glb",
+     "fit": {
+      "model_dims_m": [
+       2.2,
+       1.798,
+       1.243
+      ],
+      "box_m": [
+       2.2,
+       2.0,
+       1.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.052,
+      "worst_side_ratio": 1.06
+     }
+    },
+    {
+     "id": "post-23",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "table-23",
+     "object": "picnic-table",
+     "source": "model:picnic-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.814,
+       1.373,
+       0.815
+      ],
+      "box_m": [
+       1.8,
+       1.6,
+       0.75
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.021,
+      "worst_side_ratio": 1.14
+     }
+    },
+    {
+     "id": "ring-23",
+     "object": "fire-ring",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tent-23",
+     "object": "tent",
+     "source": "model:tent.glb",
+     "fit": {
+      "model_dims_m": [
+       2.2,
+       1.798,
+       1.243
+      ],
+      "box_m": [
+       2.2,
+       2.0,
+       1.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.052,
+      "worst_side_ratio": 1.06
+     }
+    },
+    {
+     "id": "post-24",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "table-24",
+     "object": "picnic-table",
+     "source": "model:picnic-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.814,
+       1.373,
+       0.815
+      ],
+      "box_m": [
+       1.8,
+       1.6,
+       0.75
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.021,
+      "worst_side_ratio": 1.14
+     }
+    },
+    {
+     "id": "ring-24",
+     "object": "fire-ring",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tent-24",
+     "object": "tent",
+     "source": "model:tent.glb",
+     "fit": {
+      "model_dims_m": [
+       2.2,
+       1.798,
+       1.243
+      ],
+      "box_m": [
+       2.2,
+       2.0,
+       1.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.052,
+      "worst_side_ratio": 1.06
+     }
+    },
+    {
+     "id": "split-boulder",
+     "object": "split-boulder",
+     "source": "model:split-boulder.glb",
+     "fit": {
+      "model_dims_m": [
+       4.026,
+       3.094,
+       1.44
+      ],
+      "box_m": [
+       4.0,
+       3.0,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.137,
+      "worst_side_ratio": 1.34
+     }
+    },
+    {
+     "id": "chalkboard",
+     "object": "chalkboard",
+     "source": "model:chalkboard.glb",
+     "fit": {
+      "model_dims_m": [
+       0.708,
+       0.693,
+       1.006
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       1.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.994,
+      "worst_side_ratio": 1.72
+     }
+    },
+    {
+     "id": "chair-1",
+     "object": "camp-chair",
+     "source": "model:camp-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       0.714,
+       0.669,
+       0.853
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.85
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.19
+     }
+    },
+    {
+     "id": "chair-2",
+     "object": "camp-chair",
+     "source": "model:camp-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       0.714,
+       0.669,
+       0.853
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.85
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.19
+     }
+    },
+    {
+     "id": "chair-3",
+     "object": "camp-chair",
+     "source": "model:camp-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       0.714,
+       0.669,
+       0.853
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.85
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.19
+     }
+    },
+    {
+     "id": "notebook",
+     "object": "notebook",
+     "source": "box-proxy"
+    },
+    {
+     "id": "postcard",
+     "object": "postcard",
+     "source": "box-proxy"
+    },
+    {
+     "id": "van",
+     "object": "camper-van",
+     "source": "model:camper-van.glb",
+     "fit": {
+      "model_dims_m": [
+       2.184,
+       4.812,
+       2.896
+      ],
+      "box_m": [
+       2.0,
+       4.8,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.885,
+      "worst_side_ratio": 1.17
+     }
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "ring-20",
+      "piece": "pad-20",
+      "samples": "9/27"
+     },
+     {
+      "prop": "ring-21",
+      "piece": "pad-21",
+      "samples": "9/27"
+     },
+     {
+      "prop": "ring-22",
+      "piece": "pad-22",
+      "samples": "9/27"
+     },
+     {
+      "prop": "ring-23",
+      "piece": "pad-23",
+      "samples": "9/27"
+     },
+     {
+      "prop": "ring-24",
+      "piece": "pad-24",
+      "samples": "9/27"
+     }
+    ],
+    "prop_off_floor": [
+     {
+      "prop": "post-20",
+      "support": "verge",
+      "gap_m": -0.08
+     },
+     {
+      "prop": "table-20",
+      "support": "pad-20",
+      "gap_m": -0.06
+     },
+     {
+      "prop": "tent-20",
+      "support": "pad-20",
+      "gap_m": -0.06
+     },
+     {
+      "prop": "post-21",
+      "support": "verge",
+      "gap_m": -0.08
+     },
+     {
+      "prop": "table-21",
+      "support": "pad-21",
+      "gap_m": -0.06
+     },
+     {
+      "prop": "tent-21",
+      "support": "pad-21",
+      "gap_m": -0.06
+     },
+     {
+      "prop": "post-22",
+      "support": "verge",
+      "gap_m": -0.08
+     },
+     {
+      "prop": "table-22",
+      "support": "pad-22",
+      "gap_m": -0.06
+     },
+     {
+      "prop": "tent-22",
+      "support": "pad-22",
+      "gap_m": -0.06
+     },
+     {
+      "prop": "post-23",
+      "support": "verge",
+      "gap_m": -0.08
+     },
+     {
+      "prop": "table-23",
+      "support": "pad-23",
+      "gap_m": -0.06
+     },
+     {
+      "prop": "tent-23",
+      "support": "pad-23",
+      "gap_m": -0.06
+     },
+     {
+      "prop": "post-24",
+      "support": "verge",
+      "gap_m": -0.08
+     },
+     {
+      "prop": "table-24",
+      "support": "pad-24",
+      "gap_m": -0.06
+     },
+     {
+      "prop": "tent-24",
+      "support": "pad-24",
+      "gap_m": -0.06
+     },
+     {
+      "prop": "split-boulder",
+      "support": "pad-21",
+      "gap_m": -0.06
+     }
+    ]
+   },
+   "render_time_overrides": [
+    "camera",
+    "player_start",
+    "props"
+   ],
+   "flag_status": {
+    "status": "found by the driver, fixed at render time + proposed diff",
+    "what": "with the real split-boulder model the camera stands inside the rock; camera moved 0.8 m away from the boulder. Build-file diff proposed."
+   }
+  },
+  {
+   "scene": "fixed_sites_day2",
+   "location": "five-sites",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.4
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 18.8
+    }
+   ],
+   "props": [
+    {
+     "id": "post-20",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "table-20",
+     "object": "picnic-table",
+     "source": "model:picnic-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.814,
+       1.373,
+       0.815
+      ],
+      "box_m": [
+       1.8,
+       1.6,
+       0.75
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.021,
+      "worst_side_ratio": 1.14
+     }
+    },
+    {
+     "id": "ring-20",
+     "object": "fire-ring",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tent-20",
+     "object": "tent",
+     "source": "model:tent.glb",
+     "fit": {
+      "model_dims_m": [
+       2.2,
+       1.798,
+       1.243
+      ],
+      "box_m": [
+       2.2,
+       2.0,
+       1.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.052,
+      "worst_side_ratio": 1.06
+     }
+    },
+    {
+     "id": "post-21",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "table-21",
+     "object": "picnic-table",
+     "source": "model:picnic-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.814,
+       1.373,
+       0.815
+      ],
+      "box_m": [
+       1.8,
+       1.6,
+       0.75
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.021,
+      "worst_side_ratio": 1.14
+     }
+    },
+    {
+     "id": "ring-21",
+     "object": "fire-ring",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tent-21",
+     "object": "tent",
+     "source": "model:tent.glb",
+     "fit": {
+      "model_dims_m": [
+       2.2,
+       1.798,
+       1.243
+      ],
+      "box_m": [
+       2.2,
+       2.0,
+       1.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.052,
+      "worst_side_ratio": 1.06
+     }
+    },
+    {
+     "id": "post-22",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "table-22",
+     "object": "picnic-table",
+     "source": "model:picnic-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.814,
+       1.373,
+       0.815
+      ],
+      "box_m": [
+       1.8,
+       1.6,
+       0.75
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.021,
+      "worst_side_ratio": 1.14
+     }
+    },
+    {
+     "id": "ring-22",
+     "object": "fire-ring",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tent-22",
+     "object": "tent",
+     "source": "model:tent.glb",
+     "fit": {
+      "model_dims_m": [
+       2.2,
+       1.798,
+       1.243
+      ],
+      "box_m": [
+       2.2,
+       2.0,
+       1.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.052,
+      "worst_side_ratio": 1.06
+     }
+    },
+    {
+     "id": "post-23",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "table-23",
+     "object": "picnic-table",
+     "source": "model:picnic-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.814,
+       1.373,
+       0.815
+      ],
+      "box_m": [
+       1.8,
+       1.6,
+       0.75
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.021,
+      "worst_side_ratio": 1.14
+     }
+    },
+    {
+     "id": "ring-23",
+     "object": "fire-ring",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tent-23",
+     "object": "tent",
+     "source": "model:tent.glb",
+     "fit": {
+      "model_dims_m": [
+       2.2,
+       1.798,
+       1.243
+      ],
+      "box_m": [
+       2.2,
+       2.0,
+       1.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.052,
+      "worst_side_ratio": 1.06
+     }
+    },
+    {
+     "id": "post-24",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "table-24",
+     "object": "picnic-table",
+     "source": "model:picnic-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.814,
+       1.373,
+       0.815
+      ],
+      "box_m": [
+       1.8,
+       1.6,
+       0.75
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.021,
+      "worst_side_ratio": 1.14
+     }
+    },
+    {
+     "id": "ring-24",
+     "object": "fire-ring",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tent-24",
+     "object": "tent",
+     "source": "model:tent.glb",
+     "fit": {
+      "model_dims_m": [
+       2.2,
+       1.798,
+       1.243
+      ],
+      "box_m": [
+       2.2,
+       2.0,
+       1.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.052,
+      "worst_side_ratio": 1.06
+     }
+    },
+    {
+     "id": "split-boulder",
+     "object": "split-boulder",
+     "source": "model:split-boulder.glb",
+     "fit": {
+      "model_dims_m": [
+       4.026,
+       3.094,
+       1.44
+      ],
+      "box_m": [
+       4.0,
+       3.0,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.137,
+      "worst_side_ratio": 1.34
+     }
+    },
+    {
+     "id": "chalkboard",
+     "object": "chalkboard",
+     "source": "model:chalkboard.glb",
+     "fit": {
+      "model_dims_m": [
+       0.708,
+       0.693,
+       1.006
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       1.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.994,
+      "worst_side_ratio": 1.72
+     }
+    },
+    {
+     "id": "chair-1",
+     "object": "camp-chair",
+     "source": "model:camp-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       0.714,
+       0.669,
+       0.853
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.85
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.19
+     }
+    },
+    {
+     "id": "chair-2",
+     "object": "camp-chair",
+     "source": "model:camp-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       0.714,
+       0.669,
+       0.853
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.85
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.19
+     }
+    },
+    {
+     "id": "chair-3",
+     "object": "camp-chair",
+     "source": "model:camp-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       0.714,
+       0.669,
+       0.853
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.85
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.19
+     }
+    },
+    {
+     "id": "cooler",
+     "object": "cooler",
+     "source": "box-proxy"
+    },
+    {
+     "id": "notebook",
+     "object": "notebook",
+     "source": "box-proxy"
+    },
+    {
+     "id": "postcard",
+     "object": "postcard",
+     "source": "box-proxy"
+    },
+    {
+     "id": "camera",
+     "object": "camera",
+     "source": "model:camera.glb",
+     "fit": {
+      "model_dims_m": [
+       0.141,
+       0.117,
+       0.08
+      ],
+      "box_m": [
+       0.14,
+       0.08,
+       0.09
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.915,
+      "worst_side_ratio": 1.34
+     }
+    },
+    {
+     "id": "bicycle",
+     "object": "bicycle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "van",
+     "object": "camper-van",
+     "source": "model:camper-van.glb",
+     "fit": {
+      "model_dims_m": [
+       2.184,
+       4.812,
+       2.896
+      ],
+      "box_m": [
+       2.0,
+       4.8,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.885,
+      "worst_side_ratio": 1.17
+     }
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "ring-20",
+      "piece": "pad-20",
+      "samples": "9/27"
+     },
+     {
+      "prop": "ring-21",
+      "piece": "pad-21",
+      "samples": "9/27"
+     },
+     {
+      "prop": "ring-22",
+      "piece": "pad-22",
+      "samples": "9/27"
+     },
+     {
+      "prop": "ring-23",
+      "piece": "pad-23",
+      "samples": "9/27"
+     },
+     {
+      "prop": "ring-24",
+      "piece": "pad-24",
+      "samples": "9/27"
+     },
+     {
+      "prop": "cooler",
+      "piece": "pad-22",
+      "samples": "9/27"
+     }
+    ],
+    "prop_off_floor": [
+     {
+      "prop": "post-20",
+      "support": "verge",
+      "gap_m": -0.08
+     },
+     {
+      "prop": "table-20",
+      "support": "pad-20",
+      "gap_m": -0.06
+     },
+     {
+      "prop": "tent-20",
+      "support": "pad-20",
+      "gap_m": -0.06
+     },
+     {
+      "prop": "post-21",
+      "support": "verge",
+      "gap_m": -0.08
+     },
+     {
+      "prop": "table-21",
+      "support": "pad-21",
+      "gap_m": -0.06
+     },
+     {
+      "prop": "tent-21",
+      "support": "pad-21",
+      "gap_m": -0.06
+     },
+     {
+      "prop": "post-22",
+      "support": "verge",
+      "gap_m": -0.08
+     },
+     {
+      "prop": "table-22",
+      "support": "pad-22",
+      "gap_m": -0.06
+     },
+     {
+      "prop": "tent-22",
+      "support": "pad-22",
+      "gap_m": -0.06
+     },
+     {
+      "prop": "post-23",
+      "support": "verge",
+      "gap_m": -0.08
+     },
+     {
+      "prop": "table-23",
+      "support": "pad-23",
+      "gap_m": -0.06
+     },
+     {
+      "prop": "tent-23",
+      "support": "pad-23",
+      "gap_m": -0.06
+     },
+     {
+      "prop": "post-24",
+      "support": "verge",
+      "gap_m": -0.08
+     },
+     {
+      "prop": "table-24",
+      "support": "pad-24",
+      "gap_m": -0.06
+     },
+     {
+      "prop": "tent-24",
+      "support": "pad-24",
+      "gap_m": -0.06
+     },
+     {
+      "prop": "split-boulder",
+      "support": "pad-21",
+      "gap_m": -0.06
+     }
+    ]
+   },
+   "render_time_overrides": [
+    "props"
+   ],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "dusk_choice",
+   "location": "five-sites",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 14.8
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 11.6
+    }
+   ],
+   "props": [
+    {
+     "id": "post-20",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "table-20",
+     "object": "picnic-table",
+     "source": "model:picnic-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.814,
+       1.373,
+       0.815
+      ],
+      "box_m": [
+       1.8,
+       1.6,
+       0.75
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.021,
+      "worst_side_ratio": 1.14
+     }
+    },
+    {
+     "id": "ring-20",
+     "object": "fire-ring",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tent-20",
+     "object": "tent",
+     "source": "model:tent.glb",
+     "fit": {
+      "model_dims_m": [
+       2.2,
+       1.798,
+       1.243
+      ],
+      "box_m": [
+       2.2,
+       2.0,
+       1.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.052,
+      "worst_side_ratio": 1.06
+     }
+    },
+    {
+     "id": "post-21",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "table-21",
+     "object": "picnic-table",
+     "source": "model:picnic-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.814,
+       1.373,
+       0.815
+      ],
+      "box_m": [
+       1.8,
+       1.6,
+       0.75
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.021,
+      "worst_side_ratio": 1.14
+     }
+    },
+    {
+     "id": "ring-21",
+     "object": "fire-ring",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tent-21",
+     "object": "tent",
+     "source": "model:tent.glb",
+     "fit": {
+      "model_dims_m": [
+       2.2,
+       1.798,
+       1.243
+      ],
+      "box_m": [
+       2.2,
+       2.0,
+       1.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.052,
+      "worst_side_ratio": 1.06
+     }
+    },
+    {
+     "id": "post-22",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "table-22",
+     "object": "picnic-table",
+     "source": "model:picnic-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.814,
+       1.373,
+       0.815
+      ],
+      "box_m": [
+       1.8,
+       1.6,
+       0.75
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.021,
+      "worst_side_ratio": 1.14
+     }
+    },
+    {
+     "id": "ring-22",
+     "object": "fire-ring",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tent-22",
+     "object": "tent",
+     "source": "model:tent.glb",
+     "fit": {
+      "model_dims_m": [
+       2.2,
+       1.798,
+       1.243
+      ],
+      "box_m": [
+       2.2,
+       2.0,
+       1.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.052,
+      "worst_side_ratio": 1.06
+     }
+    },
+    {
+     "id": "post-23",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "table-23",
+     "object": "picnic-table",
+     "source": "model:picnic-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.814,
+       1.373,
+       0.815
+      ],
+      "box_m": [
+       1.8,
+       1.6,
+       0.75
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.021,
+      "worst_side_ratio": 1.14
+     }
+    },
+    {
+     "id": "ring-23",
+     "object": "fire-ring",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tent-23",
+     "object": "tent",
+     "source": "model:tent.glb",
+     "fit": {
+      "model_dims_m": [
+       2.2,
+       1.798,
+       1.243
+      ],
+      "box_m": [
+       2.2,
+       2.0,
+       1.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.052,
+      "worst_side_ratio": 1.06
+     }
+    },
+    {
+     "id": "post-24",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "table-24",
+     "object": "picnic-table",
+     "source": "model:picnic-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.814,
+       1.373,
+       0.815
+      ],
+      "box_m": [
+       1.8,
+       1.6,
+       0.75
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.021,
+      "worst_side_ratio": 1.14
+     }
+    },
+    {
+     "id": "ring-24",
+     "object": "fire-ring",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tent-24",
+     "object": "tent",
+     "source": "model:tent.glb",
+     "fit": {
+      "model_dims_m": [
+       2.2,
+       1.798,
+       1.243
+      ],
+      "box_m": [
+       2.2,
+       2.0,
+       1.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.052,
+      "worst_side_ratio": 1.06
+     }
+    },
+    {
+     "id": "split-boulder",
+     "object": "split-boulder",
+     "source": "model:split-boulder.glb",
+     "fit": {
+      "model_dims_m": [
+       4.026,
+       3.094,
+       1.44
+      ],
+      "box_m": [
+       4.0,
+       3.0,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.137,
+      "worst_side_ratio": 1.34
+     }
+    },
+    {
+     "id": "chair-1",
+     "object": "camp-chair",
+     "source": "model:camp-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       0.714,
+       0.669,
+       0.853
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.85
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.19
+     }
+    },
+    {
+     "id": "chair-2",
+     "object": "camp-chair",
+     "source": "model:camp-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       0.714,
+       0.669,
+       0.853
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.85
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.19
+     }
+    },
+    {
+     "id": "chair-3",
+     "object": "camp-chair",
+     "source": "model:camp-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       0.714,
+       0.669,
+       0.853
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.85
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.19
+     }
+    },
+    {
+     "id": "cooler",
+     "object": "cooler",
+     "source": "box-proxy"
+    },
+    {
+     "id": "notebook",
+     "object": "notebook",
+     "source": "box-proxy"
+    },
+    {
+     "id": "postcard",
+     "object": "postcard",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bicycle",
+     "object": "bicycle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "van",
+     "object": "camper-van",
+     "source": "model:camper-van.glb",
+     "fit": {
+      "model_dims_m": [
+       2.184,
+       4.812,
+       2.896
+      ],
+      "box_m": [
+       2.0,
+       4.8,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.885,
+      "worst_side_ratio": 1.17
+     }
+    },
+    {
+     "id": "van-keys",
+     "object": "van-keys",
+     "source": "model:van-keys.glb",
+     "fit": {
+      "model_dims_m": [
+       0.175,
+       0.162,
+       0.121
+      ],
+      "box_m": [
+       0.08,
+       0.02,
+       0.12
+      ],
+      "fit_rotation_deg": [
+       90,
+       0,
+       0
+      ],
+      "scale": 0.383,
+      "worst_side_ratio": 2.31
+     }
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "ring-20",
+      "piece": "pad-20",
+      "samples": "9/27"
+     },
+     {
+      "prop": "ring-21",
+      "piece": "pad-21",
+      "samples": "9/27"
+     },
+     {
+      "prop": "ring-22",
+      "piece": "pad-22",
+      "samples": "9/27"
+     },
+     {
+      "prop": "ring-23",
+      "piece": "pad-23",
+      "samples": "9/27"
+     },
+     {
+      "prop": "ring-24",
+      "piece": "pad-24",
+      "samples": "9/27"
+     },
+     {
+      "prop": "cooler",
+      "piece": "pad-22",
+      "samples": "9/27"
+     }
+    ],
+    "prop_off_floor": [
+     {
+      "prop": "post-20",
+      "support": "verge",
+      "gap_m": -0.08
+     },
+     {
+      "prop": "table-20",
+      "support": "pad-20",
+      "gap_m": -0.06
+     },
+     {
+      "prop": "tent-20",
+      "support": "pad-20",
+      "gap_m": -0.06
+     },
+     {
+      "prop": "post-21",
+      "support": "verge",
+      "gap_m": -0.08
+     },
+     {
+      "prop": "table-21",
+      "support": "pad-21",
+      "gap_m": -0.06
+     },
+     {
+      "prop": "tent-21",
+      "support": "pad-21",
+      "gap_m": -0.06
+     },
+     {
+      "prop": "post-22",
+      "support": "verge",
+      "gap_m": -0.08
+     },
+     {
+      "prop": "table-22",
+      "support": "pad-22",
+      "gap_m": -0.06
+     },
+     {
+      "prop": "tent-22",
+      "support": "pad-22",
+      "gap_m": -0.06
+     },
+     {
+      "prop": "post-23",
+      "support": "verge",
+      "gap_m": -0.08
+     },
+     {
+      "prop": "table-23",
+      "support": "pad-23",
+      "gap_m": -0.06
+     },
+     {
+      "prop": "tent-23",
+      "support": "pad-23",
+      "gap_m": -0.06
+     },
+     {
+      "prop": "post-24",
+      "support": "verge",
+      "gap_m": -0.08
+     },
+     {
+      "prop": "table-24",
+      "support": "pad-24",
+      "gap_m": -0.06
+     },
+     {
+      "prop": "tent-24",
+      "support": "pad-24",
+      "gap_m": -0.06
+     },
+     {
+      "prop": "split-boulder",
+      "support": "pad-21",
+      "gap_m": -0.06
+     }
+    ]
+   },
+   "render_time_overrides": [
+    "props"
+   ],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "gravel_morning",
+   "location": "gravel-clearing",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.1
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.4
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 11.1
+    }
+   ],
+   "props": [
+    {
+     "id": "tent-a",
+     "object": "tent",
+     "source": "model:tent.glb",
+     "fit": {
+      "model_dims_m": [
+       2.2,
+       1.798,
+       1.243
+      ],
+      "box_m": [
+       2.2,
+       2.0,
+       1.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.052,
+      "worst_side_ratio": 1.06
+     }
+    },
+    {
+     "id": "tent-b",
+     "object": "tent",
+     "source": "model:tent.glb",
+     "fit": {
+      "model_dims_m": [
+       2.2,
+       1.798,
+       1.243
+      ],
+      "box_m": [
+       2.2,
+       2.0,
+       1.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.052,
+      "worst_side_ratio": 1.06
+     }
+    },
+    {
+     "id": "tent-c",
+     "object": "tent",
+     "source": "model:tent.glb",
+     "fit": {
+      "model_dims_m": [
+       2.2,
+       1.798,
+       1.243
+      ],
+      "box_m": [
+       2.2,
+       2.0,
+       1.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.052,
+      "worst_side_ratio": 1.06
+     }
+    },
+    {
+     "id": "table-a",
+     "object": "picnic-table",
+     "source": "model:picnic-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.814,
+       1.373,
+       0.815
+      ],
+      "box_m": [
+       1.8,
+       1.6,
+       0.75
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.021,
+      "worst_side_ratio": 1.14
+     }
+    },
+    {
+     "id": "table-b",
+     "object": "picnic-table",
+     "source": "model:picnic-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.814,
+       1.373,
+       0.815
+      ],
+      "box_m": [
+       1.8,
+       1.6,
+       0.75
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.021,
+      "worst_side_ratio": 1.14
+     }
+    },
+    {
+     "id": "table-c",
+     "object": "picnic-table",
+     "source": "model:picnic-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.814,
+       1.373,
+       0.815
+      ],
+      "box_m": [
+       1.8,
+       1.6,
+       0.75
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.021,
+      "worst_side_ratio": 1.14
+     }
+    },
+    {
+     "id": "fire-ring",
+     "object": "fire-ring",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-20",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-22",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-24",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "heron-sign",
+     "object": "heron-sign",
+     "source": "box-proxy",
+     "name": "sign-board",
+     "fit": {
+      "model_skipped": "the model shows a heron painted on the sign (a creature): no creature imagery, so the proxy stays"
+     }
+    },
+    {
+     "id": "van",
+     "object": "camper-van",
+     "source": "model:camper-van.glb",
+     "fit": {
+      "model_dims_m": [
+       2.184,
+       4.812,
+       2.896
+      ],
+      "box_m": [
+       2.0,
+       4.8,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.885,
+      "worst_side_ratio": 1.17
+     }
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "table-a",
+      "piece": "clearing",
+      "samples": "9/27"
+     },
+     {
+      "prop": "table-b",
+      "piece": "clearing",
+      "samples": "9/27"
+     },
+     {
+      "prop": "table-c",
+      "piece": "clearing",
+      "samples": "9/27"
+     },
+     {
+      "prop": "fire-ring",
+      "piece": "clearing",
+      "samples": "9/27"
+     }
+    ],
+    "prop_off_floor": [
+     {
+      "prop": "tent-a",
+      "support": "clearing",
+      "gap_m": -0.08
+     },
+     {
+      "prop": "tent-b",
+      "support": "clearing",
+      "gap_m": -0.08
+     },
+     {
+      "prop": "tent-c",
+      "support": "clearing",
+      "gap_m": -0.08
+     },
+     {
+      "prop": "table-a",
+      "support": "clearing",
+      "gap_m": -0.08
+     },
+     {
+      "prop": "table-b",
+      "support": "clearing",
+      "gap_m": -0.08
+     },
+     {
+      "prop": "table-c",
+      "support": "clearing",
+      "gap_m": -0.08
+     },
+     {
+      "prop": "post-20",
+      "support": "clearing",
+      "gap_m": -0.08
+     },
+     {
+      "prop": "post-22",
+      "support": "clearing",
+      "gap_m": -0.08
+     },
+     {
+      "prop": "post-24",
+      "support": "clearing",
+      "gap_m": -0.08
+     },
+     {
+      "prop": "heron-sign",
+      "support": "clearing",
+      "gap_m": -0.08
+     }
+    ]
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "loop_day1",
+   "location": "loop-road",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 14.9
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.9
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 11.4
+    }
+   ],
+   "props": [
+    {
+     "id": "post-4",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-5",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-6",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-7",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-8",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-9",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-10",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-11",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-12",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-13",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-14",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-15",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-16",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-17",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-18",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-19",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-20",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-21",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-22",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-23",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-24",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "table-5",
+     "object": "picnic-table",
+     "source": "model:picnic-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.814,
+       1.373,
+       0.815
+      ],
+      "box_m": [
+       1.8,
+       1.6,
+       0.75
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.021,
+      "worst_side_ratio": 1.14
+     }
+    },
+    {
+     "id": "kettle",
+     "object": "blue-kettle",
+     "source": "model:blue-kettle.glb",
+     "fit": {
+      "model_dims_m": [
+       0.252,
+       0.292,
+       0.331
+      ],
+      "box_m": [
+       0.25,
+       0.2,
+       0.22
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.664,
+      "worst_side_ratio": 1.49
+     }
+    },
+    {
+     "id": "ring-5",
+     "object": "fire-ring",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ring-7",
+     "object": "fire-ring",
+     "source": "box-proxy"
+    },
+    {
+     "id": "owl-box",
+     "object": "owl-box",
+     "source": "model:owl-box.glb",
+     "fit": {
+      "model_dims_m": [
+       0.295,
+       0.355,
+       0.604
+      ],
+      "box_m": [
+       0.35,
+       0.35,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.993,
+      "worst_side_ratio": 1.2
+     }
+    },
+    {
+     "id": "register-box",
+     "object": "register-box",
+     "source": "model:register-box.glb",
+     "fit": {
+      "model_dims_m": [
+       0.549,
+       0.521,
+       1.402
+      ],
+      "box_m": [
+       0.4,
+       0.3,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.998,
+      "worst_side_ratio": 1.73
+     }
+    },
+    {
+     "id": "table-17",
+     "object": "picnic-table",
+     "source": "model:picnic-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.814,
+       1.373,
+       0.815
+      ],
+      "box_m": [
+       1.8,
+       1.6,
+       0.75
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.021,
+      "worst_side_ratio": 1.14
+     }
+    },
+    {
+     "id": "ring-17",
+     "object": "fire-ring",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tent-17",
+     "object": "tent",
+     "source": "model:tent.glb",
+     "fit": {
+      "model_dims_m": [
+       2.2,
+       1.798,
+       1.243
+      ],
+      "box_m": [
+       2.2,
+       2.0,
+       1.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.052,
+      "worst_side_ratio": 1.06
+     }
+    },
+    {
+     "id": "lantern-17",
+     "object": "camp-lantern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bicycle",
+     "object": "bicycle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "table-22",
+     "object": "picnic-table",
+     "source": "model:picnic-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.814,
+       1.373,
+       0.815
+      ],
+      "box_m": [
+       1.8,
+       1.6,
+       0.75
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.021,
+      "worst_side_ratio": 1.14
+     }
+    },
+    {
+     "id": "ring-22",
+     "object": "fire-ring",
+     "source": "box-proxy"
+    },
+    {
+     "id": "chalkboard",
+     "object": "chalkboard",
+     "source": "model:chalkboard.glb",
+     "fit": {
+      "model_dims_m": [
+       0.708,
+       0.693,
+       1.006
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       1.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.994,
+      "worst_side_ratio": 1.72
+     }
+    },
+    {
+     "id": "quiet-hours-board",
+     "object": "quiet-hours-board",
+     "source": "model:quiet-hours-board.glb",
+     "fit": {
+      "model_dims_m": [
+       0.606,
+       0.104,
+       0.398
+      ],
+      "box_m": [
+       0.6,
+       0.03,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.86
+     }
+    }
+   ],
+   "flagged_in_first_pass": [
+    "prop 'tent-17' base [-26.0, 48, 0] is inside blockout piece 'inner-forest'"
+   ],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "ring-5",
+      "piece": "pads-west",
+      "samples": "3/27"
+     },
+     {
+      "prop": "ring-7",
+      "piece": "pads-west",
+      "samples": "3/27"
+     },
+     {
+      "prop": "owl-box",
+      "piece": "pine-3-trunk",
+      "samples": "9/27"
+     },
+     {
+      "prop": "ring-17",
+      "piece": "pads-east",
+      "samples": "3/27"
+     },
+     {
+      "prop": "ring-22",
+      "piece": "pads-east",
+      "samples": "3/27"
+     },
+     {
+      "prop": "quiet-hours-board",
+      "piece": "quiet-post",
+      "samples": "3/27"
+     }
+    ],
+    "prop_off_floor": [
+     {
+      "prop": "post-4",
+      "support": "pads-west",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-6",
+      "support": "pads-west",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-7",
+      "support": "pads-west",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-8",
+      "support": "pads-west",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-9",
+      "support": "pads-west",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-10",
+      "support": "pads-west",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-13",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-14",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-15",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-16",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-17",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-18",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-19",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-20",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-21",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-22",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "tent-17",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "bicycle",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "chalkboard",
+      "support": "pads-east",
+      "gap_m": -0.05
+     }
+    ]
+   },
+   "render_time_overrides": [
+    "props"
+   ],
+   "flag_status": {
+    "status": "fixed at render time + proposed diff",
+    "what": "tent-17 stood inside the inner-forest block (y 48); moved onto the east pads at [-26, 62, 0]. Build-file diff proposed."
+   }
+  },
+  {
+   "scene": "loop_day2am",
+   "location": "loop-road",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 14.6
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 19.4
+    }
+   ],
+   "props": [
+    {
+     "id": "post-12",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-13",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-14",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-15",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-16",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-17",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-18",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-19",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-20",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-21",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-22",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-23",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-24",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "register-box",
+     "object": "register-box",
+     "source": "model:register-box.glb",
+     "fit": {
+      "model_dims_m": [
+       0.549,
+       0.521,
+       1.402
+      ],
+      "box_m": [
+       0.4,
+       0.3,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.998,
+      "worst_side_ratio": 1.73
+     }
+    },
+    {
+     "id": "table-17",
+     "object": "picnic-table",
+     "source": "model:picnic-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.814,
+       1.373,
+       0.815
+      ],
+      "box_m": [
+       1.8,
+       1.6,
+       0.75
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.021,
+      "worst_side_ratio": 1.14
+     }
+    },
+    {
+     "id": "ring-17",
+     "object": "fire-ring",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tent-17",
+     "object": "tent",
+     "source": "model:tent.glb",
+     "fit": {
+      "model_dims_m": [
+       2.2,
+       1.798,
+       1.243
+      ],
+      "box_m": [
+       2.2,
+       2.0,
+       1.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.052,
+      "worst_side_ratio": 1.06
+     }
+    },
+    {
+     "id": "lantern-17",
+     "object": "camp-lantern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bicycle",
+     "object": "bicycle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "table-22",
+     "object": "picnic-table",
+     "source": "model:picnic-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.814,
+       1.373,
+       0.815
+      ],
+      "box_m": [
+       1.8,
+       1.6,
+       0.75
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.021,
+      "worst_side_ratio": 1.14
+     }
+    },
+    {
+     "id": "ring-22",
+     "object": "fire-ring",
+     "source": "box-proxy"
+    },
+    {
+     "id": "chalkboard",
+     "object": "chalkboard",
+     "source": "model:chalkboard.glb",
+     "fit": {
+      "model_dims_m": [
+       0.708,
+       0.693,
+       1.006
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       1.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.994,
+      "worst_side_ratio": 1.72
+     }
+    },
+    {
+     "id": "quiet-hours-board",
+     "object": "quiet-hours-board",
+     "source": "model:quiet-hours-board.glb",
+     "fit": {
+      "model_dims_m": [
+       0.606,
+       0.104,
+       0.398
+      ],
+      "box_m": [
+       0.6,
+       0.03,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.86
+     }
+    }
+   ],
+   "flagged_in_first_pass": [
+    "prop 'tent-17' base [-26.0, 48, 0] is inside blockout piece 'inner-forest'"
+   ],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "ring-17",
+      "piece": "pads-east",
+      "samples": "3/27"
+     },
+     {
+      "prop": "ring-22",
+      "piece": "pads-east",
+      "samples": "3/27"
+     },
+     {
+      "prop": "quiet-hours-board",
+      "piece": "quiet-post",
+      "samples": "3/27"
+     }
+    ],
+    "prop_off_floor": [
+     {
+      "prop": "post-13",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-14",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-15",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-16",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-17",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-18",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-19",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-20",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-21",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-22",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "tent-17",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "bicycle",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "chalkboard",
+      "support": "pads-east",
+      "gap_m": -0.05
+     }
+    ]
+   },
+   "render_time_overrides": [
+    "props"
+   ],
+   "flag_status": {
+    "status": "fixed at render time + proposed diff",
+    "what": "tent-17 stood inside the inner-forest block (y 48); moved onto the east pads at [-26, 62, 0]. Build-file diff proposed."
+   }
+  },
+  {
+   "scene": "loop_day2pm",
+   "location": "loop-road",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 19.5
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 10.6
+    }
+   ],
+   "props": [
+    {
+     "id": "post-16",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-17",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-18",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-19",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-20",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-21",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-22",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-23",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-24",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "table-17",
+     "object": "picnic-table",
+     "source": "model:picnic-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.814,
+       1.373,
+       0.815
+      ],
+      "box_m": [
+       1.8,
+       1.6,
+       0.75
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.021,
+      "worst_side_ratio": 1.14
+     }
+    },
+    {
+     "id": "ring-17",
+     "object": "fire-ring",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tent-17",
+     "object": "tent",
+     "source": "model:tent.glb",
+     "fit": {
+      "model_dims_m": [
+       2.2,
+       1.798,
+       1.243
+      ],
+      "box_m": [
+       2.2,
+       2.0,
+       1.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.052,
+      "worst_side_ratio": 1.06
+     }
+    },
+    {
+     "id": "lantern-17",
+     "object": "camp-lantern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bicycle",
+     "object": "bicycle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "table-22",
+     "object": "picnic-table",
+     "source": "model:picnic-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.814,
+       1.373,
+       0.815
+      ],
+      "box_m": [
+       1.8,
+       1.6,
+       0.75
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.021,
+      "worst_side_ratio": 1.14
+     }
+    },
+    {
+     "id": "ring-22",
+     "object": "fire-ring",
+     "source": "box-proxy"
+    },
+    {
+     "id": "chalkboard",
+     "object": "chalkboard",
+     "source": "model:chalkboard.glb",
+     "fit": {
+      "model_dims_m": [
+       0.708,
+       0.693,
+       1.006
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       1.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.994,
+      "worst_side_ratio": 1.72
+     }
+    },
+    {
+     "id": "quiet-hours-board",
+     "object": "quiet-hours-board",
+     "source": "model:quiet-hours-board.glb",
+     "fit": {
+      "model_dims_m": [
+       0.606,
+       0.104,
+       0.398
+      ],
+      "box_m": [
+       0.6,
+       0.03,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.86
+     }
+    }
+   ],
+   "flagged_in_first_pass": [
+    "prop 'tent-17' base [-26.0, 48, 0] is inside blockout piece 'inner-forest'"
+   ],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "ring-17",
+      "piece": "pads-east",
+      "samples": "3/27"
+     },
+     {
+      "prop": "ring-22",
+      "piece": "pads-east",
+      "samples": "3/27"
+     },
+     {
+      "prop": "quiet-hours-board",
+      "piece": "quiet-post",
+      "samples": "3/27"
+     }
+    ],
+    "prop_off_floor": [
+     {
+      "prop": "post-16",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-17",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-18",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-19",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-20",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-21",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-22",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "tent-17",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "bicycle",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "chalkboard",
+      "support": "pads-east",
+      "gap_m": -0.05
+     }
+    ]
+   },
+   "render_time_overrides": [
+    "props"
+   ],
+   "flag_status": {
+    "status": "fixed at render time + proposed diff",
+    "what": "tent-17 stood inside the inner-forest block (y 48); moved onto the east pads at [-26, 62, 0]. Build-file diff proposed."
+   }
+  },
+  {
+   "scene": "ordinary_morning",
+   "location": "loop-road",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 16.1
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 18.8
+    }
+   ],
+   "props": [
+    {
+     "id": "post-4",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-5",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-6",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-7",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-8",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-9",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-10",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-11",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-12",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-13",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-14",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-15",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-16",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-17",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-18",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-19",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-20",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-21",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-22",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-23",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "post-24",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "table-5",
+     "object": "picnic-table",
+     "source": "model:picnic-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.814,
+       1.373,
+       0.815
+      ],
+      "box_m": [
+       1.8,
+       1.6,
+       0.75
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.021,
+      "worst_side_ratio": 1.14
+     }
+    },
+    {
+     "id": "kettle",
+     "object": "blue-kettle",
+     "source": "model:blue-kettle.glb",
+     "fit": {
+      "model_dims_m": [
+       0.252,
+       0.292,
+       0.331
+      ],
+      "box_m": [
+       0.25,
+       0.2,
+       0.22
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.664,
+      "worst_side_ratio": 1.49
+     }
+    },
+    {
+     "id": "ring-5",
+     "object": "fire-ring",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ring-7",
+     "object": "fire-ring",
+     "source": "box-proxy"
+    },
+    {
+     "id": "owl-box",
+     "object": "owl-box",
+     "source": "model:owl-box.glb",
+     "fit": {
+      "model_dims_m": [
+       0.295,
+       0.355,
+       0.604
+      ],
+      "box_m": [
+       0.35,
+       0.35,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.993,
+      "worst_side_ratio": 1.2
+     }
+    },
+    {
+     "id": "register-box",
+     "object": "register-box",
+     "source": "model:register-box.glb",
+     "fit": {
+      "model_dims_m": [
+       0.549,
+       0.521,
+       1.402
+      ],
+      "box_m": [
+       0.4,
+       0.3,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.998,
+      "worst_side_ratio": 1.73
+     }
+    },
+    {
+     "id": "table-17",
+     "object": "picnic-table",
+     "source": "model:picnic-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.814,
+       1.373,
+       0.815
+      ],
+      "box_m": [
+       1.8,
+       1.6,
+       0.75
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.021,
+      "worst_side_ratio": 1.14
+     }
+    },
+    {
+     "id": "ring-17",
+     "object": "fire-ring",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tent-17",
+     "object": "tent",
+     "source": "model:tent.glb",
+     "fit": {
+      "model_dims_m": [
+       2.2,
+       1.798,
+       1.243
+      ],
+      "box_m": [
+       2.2,
+       2.0,
+       1.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.052,
+      "worst_side_ratio": 1.06
+     }
+    },
+    {
+     "id": "lantern-17",
+     "object": "camp-lantern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bicycle",
+     "object": "bicycle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "table-22",
+     "object": "picnic-table",
+     "source": "model:picnic-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.814,
+       1.373,
+       0.815
+      ],
+      "box_m": [
+       1.8,
+       1.6,
+       0.75
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.021,
+      "worst_side_ratio": 1.14
+     }
+    },
+    {
+     "id": "ring-22",
+     "object": "fire-ring",
+     "source": "box-proxy"
+    },
+    {
+     "id": "chalkboard",
+     "object": "chalkboard",
+     "source": "model:chalkboard.glb",
+     "fit": {
+      "model_dims_m": [
+       0.708,
+       0.693,
+       1.006
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       1.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.994,
+      "worst_side_ratio": 1.72
+     }
+    },
+    {
+     "id": "quiet-hours-board",
+     "object": "quiet-hours-board",
+     "source": "model:quiet-hours-board.glb",
+     "fit": {
+      "model_dims_m": [
+       0.606,
+       0.104,
+       0.398
+      ],
+      "box_m": [
+       0.6,
+       0.03,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.86
+     }
+    },
+    {
+     "id": "cooler-22",
+     "object": "cooler",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [
+    "prop 'tent-17' base [-26.0, 48, 0] is inside blockout piece 'inner-forest'"
+   ],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "ring-5",
+      "piece": "pads-west",
+      "samples": "3/27"
+     },
+     {
+      "prop": "ring-7",
+      "piece": "pads-west",
+      "samples": "3/27"
+     },
+     {
+      "prop": "owl-box",
+      "piece": "pine-3-trunk",
+      "samples": "9/27"
+     },
+     {
+      "prop": "ring-17",
+      "piece": "pads-east",
+      "samples": "3/27"
+     },
+     {
+      "prop": "ring-22",
+      "piece": "pads-east",
+      "samples": "3/27"
+     },
+     {
+      "prop": "quiet-hours-board",
+      "piece": "quiet-post",
+      "samples": "3/27"
+     },
+     {
+      "prop": "cooler-22",
+      "piece": "pads-east",
+      "samples": "3/27"
+     }
+    ],
+    "prop_off_floor": [
+     {
+      "prop": "post-4",
+      "support": "pads-west",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-6",
+      "support": "pads-west",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-7",
+      "support": "pads-west",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-8",
+      "support": "pads-west",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-9",
+      "support": "pads-west",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-10",
+      "support": "pads-west",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-13",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-14",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-15",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-16",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-17",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-18",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-19",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-20",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-21",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "post-22",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "tent-17",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "bicycle",
+      "support": "pads-east",
+      "gap_m": -0.05
+     },
+     {
+      "prop": "chalkboard",
+      "support": "pads-east",
+      "gap_m": -0.05
+     }
+    ]
+   },
+   "render_time_overrides": [
+    "props"
+   ],
+   "flag_status": {
+    "status": "fixed at render time + proposed diff",
+    "what": "tent-17 stood inside the inner-forest block (y 48); moved onto the east pads at [-26, 62, 0]. Build-file diff proposed."
+   }
+  },
+  {
+   "scene": "other_entrance",
+   "location": "other-entrance",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.3
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 19.3
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 6.1
+    }
+   ],
+   "props": [
+    {
+     "id": "heron-panel",
+     "object": "heron-sign",
+     "source": "box-proxy",
+     "name": "sign-panel",
+     "fit": {
+      "model_skipped": "the model shows a heron painted on the sign (a creature): no creature imagery, so the proxy stays"
+     }
+    },
+    {
+     "id": "map-1",
+     "object": "paper-map",
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       0.601,
+       0.601,
+       0.122
+      ],
+      "box_m": [
+       0.6,
+       0.01,
+       0.45
+      ],
+      "fit_rotation_deg": [
+       90,
+       0,
+       0
+      ],
+      "scale": 0.864,
+      "worst_side_ratio": 3.25,
+      "rejected": "proportions: a side is off by x3.3 after the best fit"
+     }
+    },
+    {
+     "id": "map-2",
+     "object": "paper-map",
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       0.601,
+       0.601,
+       0.122
+      ],
+      "box_m": [
+       0.6,
+       0.01,
+       0.45
+      ],
+      "fit_rotation_deg": [
+       90,
+       0,
+       0
+      ],
+      "scale": 0.864,
+      "worst_side_ratio": 3.25,
+      "rejected": "proportions: a side is off by x3.3 after the best fit"
+     }
+    },
+    {
+     "id": "post-24",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    }
+   ],
+   "flagged_in_first_pass": [
+    "blockout piece 'booth-back' (wall) stands between the camera and its look_at"
+   ],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [
+     {
+      "prop": "map-1",
+      "piece": "map-rack",
+      "samples": "6/27"
+     }
+    ],
+    "prop_overlap": [
+     {
+      "prop": "heron-panel",
+      "piece": "booth-front-lower",
+      "samples": "9/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "camera",
+    "player_start"
+   ],
+   "flag_status": {
+    "status": "fixed at render time + proposed diff",
+    "what": "the camera stands inside the booth and looks +y through its solid back wall; moved to [1.4, -5.6, 1.7] (just outside the booth's front corner, on the road) with the same look_at. Build-file diff proposed."
+   }
+  },
+  {
+   "scene": "past_the_window",
+   "location": "other-entrance",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.7
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.4
+    }
+   ],
+   "props": [
+    {
+     "id": "heron-panel",
+     "object": "heron-sign",
+     "source": "box-proxy",
+     "name": "sign-panel",
+     "fit": {
+      "model_skipped": "the model shows a heron painted on the sign (a creature): no creature imagery, so the proxy stays"
+     }
+    },
+    {
+     "id": "map-1",
+     "object": "paper-map",
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       0.601,
+       0.601,
+       0.122
+      ],
+      "box_m": [
+       0.6,
+       0.01,
+       0.45
+      ],
+      "fit_rotation_deg": [
+       90,
+       0,
+       0
+      ],
+      "scale": 0.864,
+      "worst_side_ratio": 3.25,
+      "rejected": "proportions: a side is off by x3.3 after the best fit"
+     }
+    },
+    {
+     "id": "map-2",
+     "object": "paper-map",
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       0.601,
+       0.601,
+       0.122
+      ],
+      "box_m": [
+       0.6,
+       0.01,
+       0.45
+      ],
+      "fit_rotation_deg": [
+       90,
+       0,
+       0
+      ],
+      "scale": 0.864,
+      "worst_side_ratio": 3.25,
+      "rejected": "proportions: a side is off by x3.3 after the best fit"
+     }
+    },
+    {
+     "id": "post-24",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [
+     {
+      "prop": "map-1",
+      "piece": "map-rack",
+      "samples": "6/27"
+     }
+    ],
+    "prop_overlap": [
+     {
+      "prop": "heron-panel",
+      "piece": "booth-front-lower",
+      "samples": "9/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "wrong_forest",
+   "location": "other-side-sites",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 21.5
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 16.8
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 8.7
+    }
+   ],
+   "props": [
+    {
+     "id": "tent-20",
+     "object": "tent",
+     "source": "model:tent.glb",
+     "fit": {
+      "model_dims_m": [
+       2.2,
+       1.798,
+       1.243
+      ],
+      "box_m": [
+       2.2,
+       2.0,
+       1.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.052,
+      "worst_side_ratio": 1.06
+     }
+    },
+    {
+     "id": "post-20",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "tent-21",
+     "object": "tent",
+     "source": "model:tent.glb",
+     "fit": {
+      "model_dims_m": [
+       2.2,
+       1.798,
+       1.243
+      ],
+      "box_m": [
+       2.2,
+       2.0,
+       1.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.052,
+      "worst_side_ratio": 1.06
+     }
+    },
+    {
+     "id": "post-21",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "tent-22",
+     "object": "tent",
+     "source": "model:tent.glb",
+     "fit": {
+      "model_dims_m": [
+       2.2,
+       1.798,
+       1.243
+      ],
+      "box_m": [
+       2.2,
+       2.0,
+       1.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.052,
+      "worst_side_ratio": 1.06
+     }
+    },
+    {
+     "id": "post-22",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "tent-23",
+     "object": "tent",
+     "source": "model:tent.glb",
+     "fit": {
+      "model_dims_m": [
+       2.2,
+       1.798,
+       1.243
+      ],
+      "box_m": [
+       2.2,
+       2.0,
+       1.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.052,
+      "worst_side_ratio": 1.06
+     }
+    },
+    {
+     "id": "post-23",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "tent-24",
+     "object": "tent",
+     "source": "model:tent.glb",
+     "fit": {
+      "model_dims_m": [
+       2.2,
+       1.798,
+       1.243
+      ],
+      "box_m": [
+       2.2,
+       2.0,
+       1.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.052,
+      "worst_side_ratio": 1.06
+     }
+    },
+    {
+     "id": "post-24",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    },
+    {
+     "id": "table",
+     "object": "picnic-table",
+     "source": "model:picnic-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.814,
+       1.373,
+       0.815
+      ],
+      "box_m": [
+       1.8,
+       1.6,
+       0.75
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.021,
+      "worst_side_ratio": 1.14
+     }
+    },
+    {
+     "id": "fire-ring",
+     "object": "fire-ring",
+     "source": "box-proxy"
+    },
+    {
+     "id": "split-boulder",
+     "object": "split-boulder",
+     "source": "model:split-boulder.glb",
+     "fit": {
+      "model_dims_m": [
+       4.026,
+       3.094,
+       1.44
+      ],
+      "box_m": [
+       4.0,
+       3.0,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.137,
+      "worst_side_ratio": 1.34
+     }
+    },
+    {
+     "id": "cooler",
+     "object": "cooler",
+     "source": "box-proxy"
+    },
+    {
+     "id": "phone-1",
+     "object": "smartphone",
+     "source": "model:smartphone.glb",
+     "fit": {
+      "model_dims_m": [
+       1.753,
+       0.866,
+       0.162
+      ],
+      "box_m": [
+       0.075,
+       0.01,
+       0.15
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.086,
+      "worst_side_ratio": 1.18
+     }
+    },
+    {
+     "id": "phone-2",
+     "object": "smartphone",
+     "source": "model:smartphone.glb",
+     "fit": {
+      "model_dims_m": [
+       1.753,
+       0.866,
+       0.162
+      ],
+      "box_m": [
+       0.075,
+       0.01,
+       0.15
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.086,
+      "worst_side_ratio": 1.18
+     }
+    },
+    {
+     "id": "heron-sign",
+     "object": "heron-sign",
+     "source": "box-proxy",
+     "name": "sign-board",
+     "fit": {
+      "model_skipped": "the model shows a heron painted on the sign (a creature): no creature imagery, so the proxy stays"
+     }
+    },
+    {
+     "id": "quiet-hours-board",
+     "object": "quiet-hours-board",
+     "source": "model:quiet-hours-board.glb",
+     "fit": {
+      "model_dims_m": [
+       0.606,
+       0.104,
+       0.398
+      ],
+      "box_m": [
+       0.6,
+       0.03,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.86
+     }
+    },
+    {
+     "id": "master-map",
+     "object": "master-map",
+     "source": "model:master-map.glb",
+     "fit": {
+      "model_dims_m": [
+       0.91,
+       0.089,
+       0.699
+      ],
+      "box_m": [
+       0.9,
+       0.04,
+       0.65
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.959,
+      "worst_side_ratio": 1.46
+     }
+    },
+    {
+     "id": "logbook",
+     "object": "logbook",
+     "source": "model:logbook.glb",
+     "fit": {
+      "model_dims_m": [
+       1.823,
+       1.236,
+       0.432
+      ],
+      "box_m": [
+       0.32,
+       0.05,
+       0.42
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.23,
+      "worst_side_ratio": 1.41
+     }
+    },
+    {
+     "id": "firewood",
+     "object": "firewood-bundle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bicycle",
+     "object": "bicycle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "anchor-post-19",
+     "object": "site-post",
+     "source": "model:site-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.297,
+       0.285,
+       1.202
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.98
+     }
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [
+     "glyph-a6"
+    ],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "props"
+   ],
+   "flag_status": {
+    "status": "found by the driver, proposed diff only",
+    "what": "the look_at [0, 12, 4] lies inside the trunk glyph-a6, which stands dead centre in the frame. Rendered as built; proposed look_at [8, 12, 4] (the gap between glyph-a6 and glyph-a7)."
+   }
+  },
+  {
+   "scene": "recital",
+   "location": "school-hall",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 22.7
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 20.5
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 10.4
+    }
+   ],
+   "props": [
+    {
+     "id": "upright-piano",
+     "object": "upright-piano",
+     "source": "box-proxy"
+    },
+    {
+     "id": "programme",
+     "object": "programme",
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       0.241,
+       0.155,
+       0.213
+      ],
+      "box_m": [
+       0.15,
+       0.002,
+       0.21
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       0
+      ],
+      "scale": 0.784,
+      "worst_side_ratio": 7.8,
+      "rejected": "proportions: a side is off by x7.8 after the best fit"
+     }
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "props"
+   ],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "mothers_door",
+   "location": "stairwell",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 27.6
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 26.5
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 10.4
+    }
+   ],
+   "props": [
+    {
+     "id": "postcard",
+     "object": "postcard",
+     "source": "box-proxy"
+    },
+    {
+     "id": "notebook",
+     "object": "notebook",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "props"
+   ],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "home_apartment",
+   "location": "tam-flat",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 26.1
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 27.6
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 9.9
+    }
+   ],
+   "props": [
+    {
+     "id": "notebook",
+     "object": "notebook",
+     "source": "box-proxy"
+    },
+    {
+     "id": "smartphone",
+     "object": "smartphone",
+     "source": "model:smartphone.glb",
+     "fit": {
+      "model_dims_m": [
+       1.753,
+       0.866,
+       0.162
+      ],
+      "box_m": [
+       0.075,
+       0.01,
+       0.15
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.086,
+      "worst_side_ratio": 1.18
+     }
+    }
+   ],
+   "flagged_in_first_pass": [
+    "blockout piece 'part-b' (wall) stands between the camera and its look_at"
+   ],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "camera",
+    "player_start",
+    "props"
+   ],
+   "flag_status": {
+    "status": "fixed at render time + proposed diff",
+    "what": "the sight line to the study doorway crosses the solid partition piece part-b; camera moved 2.2 m west to [-1.4, -3.8, 1.65] so the line passes the doorway. Build-file diff proposed."
+   }
+  },
+  {
+   "scene": "the_clearing",
+   "location": "the-clearing",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.0
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 9.0
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 7.9
+    }
+   ],
+   "props": [
+    {
+     "id": "register-box",
+     "object": "register-box",
+     "source": "model:register-box.glb",
+     "fit": {
+      "model_dims_m": [
+       0.549,
+       0.521,
+       1.402
+      ],
+      "box_m": [
+       0.4,
+       0.3,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.998,
+      "worst_side_ratio": 1.73
+     }
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "drive_home",
+   "location": "van-interior",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 25.0
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 22.3
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 11.2
+    }
+   ],
+   "props": [
+    {
+     "id": "notebook",
+     "object": "notebook",
+     "source": "box-proxy"
+    },
+    {
+     "id": "van-keys",
+     "object": "van-keys",
+     "source": "model:van-keys.glb",
+     "fit": {
+      "model_dims_m": [
+       0.175,
+       0.162,
+       0.121
+      ],
+      "box_m": [
+       0.08,
+       0.02,
+       0.12
+      ],
+      "fit_rotation_deg": [
+       90,
+       0,
+       0
+      ],
+      "scale": 0.383,
+      "worst_side_ratio": 2.31
+     }
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "van-keys",
+      "piece": "dashboard",
+      "samples": "9/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "props"
+   ],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  }
+ ],
+ "overviews": [
+  {
+   "location": "creek-trail",
+   "reference": "games/missing-campsites/assets/locations/creek-trail.jpg",
+   "location_scene_count": 1,
+   "scene_lighting": "creek_trail",
+   "camera": {
+    "location": [
+     -100,
+     8,
+     1.7
+    ],
+    "look_at": [
+     -60,
+     -4,
+     0.6
+    ],
+    "lens_mm": 20
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": -0.7,
+    "facing": "ccw",
+    "scenes": {
+     "creek_trail": {
+      "exposure_ev": -1.1
+     }
+    }
+   }
+  },
+  {
+   "location": "entrance-booth",
+   "reference": "left out (text card)",
+   "location_scene_count": 4,
+   "scene_lighting": "booth_day1",
+   "camera": {
+    "location": [
+     0,
+     -10,
+     1.7
+    ],
+    "look_at": [
+     0,
+     6,
+     1.8
+    ],
+    "lens_mm": 20
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": -2.0,
+    "facing": "ccw",
+    "piece_alpha": {
+     "glass": 0.12
+    },
+    "reference_card": "The reference image for this location shows a heron on the entrance sign (a creature drawn as a pictogram). No creature imagery is kept on the sheets, so the reference is left out; the owner can restore it.",
+    "neutral_names": {
+     "by_object": {
+      "heron-sign": "sign-board"
+     },
+     "by_id": {
+      "heron-panel": "sign-panel"
+     }
+    },
+    "scenes": {
+     "booth_day1": {
+      "exposure_ev": 1.0
+     },
+     "booth_day2": {
+      "exposure_ev": -1.0
+     },
+     "payphone_night1": {
+      "exposure_ev": 1.0
+     },
+     "supper_for_two": {
+      "exposure_ev": -1.3
+     }
+    }
+   }
+  },
+  {
+   "location": "fire-ring",
+   "reference": "games/missing-campsites/assets/locations/fire-ring.jpg",
+   "location_scene_count": 2,
+   "scene_lighting": "campfire_night1",
+   "camera": {
+    "location": [
+     0,
+     -5,
+     1.5
+    ],
+    "look_at": [
+     0,
+     3,
+     1.0
+    ],
+    "lens_mm": 22
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": 2.4,
+    "facing": "ccw",
+    "scenes": {
+     "campfire_night1": {
+      "exposure_ev": 0.0
+     },
+     "campfire_night2": {
+      "exposure_ev": 0.0
+     }
+    }
+   }
+  },
+  {
+   "location": "five-sites",
+   "reference": "games/missing-campsites/assets/locations/five-sites.jpg",
+   "location_scene_count": 4,
+   "scene_lighting": "fixed_sites_day1",
+   "camera": {
+    "location": [
+     -85,
+     -22,
+     1.7
+    ],
+    "look_at": [
+     -40,
+     5,
+     1.5
+    ],
+    "lens_mm": 22
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": -1.4,
+    "facing": "ccw",
+    "scenes": {
+     "channel_two": {
+      "exposure_ev": 0.0
+     },
+     "dusk_choice": {
+      "exposure_ev": 0.0
+     },
+     "fixed_sites_day1": {
+      "exposure_ev": -1.5
+     },
+     "fixed_sites_day2": {
+      "exposure_ev": -2.1
+     }
+    }
+   }
+  },
+  {
+   "location": "gravel-clearing",
+   "reference": "left out (text card)",
+   "location_scene_count": 1,
+   "scene_lighting": "gravel_morning",
+   "camera": {
+    "location": [
+     6,
+     -790,
+     1.7
+    ],
+    "look_at": [
+     0,
+     -640,
+     3
+    ],
+    "lens_mm": 24
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": -1.7,
+    "facing": "ccw",
+    "reference_card": "The reference image for this location shows a heron on the entrance sign (a creature drawn as a pictogram). No creature imagery is kept on the sheets, so the reference is left out; the owner can restore it.",
+    "neutral_names": {
+     "by_object": {
+      "heron-sign": "sign-board"
+     },
+     "by_id": {
+      "heron-panel": "sign-panel"
+     }
+    },
+    "scenes": {
+     "gravel_morning": {
+      "exposure_ev": -2.0
+     }
+    }
+   }
+  },
+  {
+   "location": "loop-road",
+   "reference": "games/missing-campsites/assets/locations/loop-road.jpg",
+   "location_scene_count": 4,
+   "scene_lighting": "loop_day1",
+   "camera": {
+    "location": [
+     20,
+     58,
+     1.7
+    ],
+    "look_at": [
+     62,
+     62,
+     1.0
+    ],
+    "lens_mm": 22
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": -1.1,
+    "facing": "ccw",
+    "scenes": {
+     "loop_day1": {
+      "exposure_ev": -2.1
+     },
+     "loop_day2am": {
+      "exposure_ev": -1.8
+     },
+     "loop_day2pm": {
+      "exposure_ev": 0.0
+     },
+     "ordinary_morning": {
+      "exposure_ev": -1.8
+     }
+    }
+   }
+  },
+  {
+   "location": "other-entrance",
+   "reference": "left out (text card)",
+   "location_scene_count": 2,
+   "scene_lighting": "other_entrance",
+   "camera": {
+    "location": [
+     -3,
+     -11,
+     1.7
+    ],
+    "look_at": [
+     3.5,
+     -4,
+     1.4
+    ],
+    "lens_mm": 28
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": -2.2,
+    "facing": "ccw",
+    "piece_alpha": {
+     "glass": 0.12
+    },
+    "reference_card": "The reference image for this location shows a heron on the entrance sign (a creature drawn as a pictogram). No creature imagery is kept on the sheets, so the reference is left out; the owner can restore it.",
+    "neutral_names": {
+     "by_object": {
+      "heron-sign": "sign-board"
+     },
+     "by_id": {
+      "heron-panel": "sign-panel"
+     }
+    },
+    "scenes": {
+     "other_entrance": {
+      "exposure_ev": -2.6
+     },
+     "past_the_window": {
+      "exposure_ev": -2.6
+     }
+    }
+   }
+  },
+  {
+   "location": "other-side-sites",
+   "reference": "games/missing-campsites/assets/locations/other-side-sites.jpg",
+   "location_scene_count": 1,
+   "scene_lighting": "wrong_forest",
+   "camera": {
+    "location": [
+     0,
+     -16,
+     1.7
+    ],
+    "look_at": [
+     0,
+     4,
+     2
+    ],
+    "lens_mm": 28
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": -1.5,
+    "facing": "ccw",
+    "neutral_names": {
+     "by_object": {
+      "heron-sign": "sign-board"
+     },
+     "by_id": {
+      "heron-panel": "sign-panel"
+     }
+    },
+    "scenes": {
+     "wrong_forest": {
+      "exposure_ev": -1.7
+     }
+    }
+   }
+  },
+  {
+   "location": "school-hall",
+   "reference": "games/missing-campsites/assets/locations/school-hall.jpg",
+   "location_scene_count": 1,
+   "scene_lighting": "recital",
+   "camera": {
+    "location": [
+     0,
+     -8.5,
+     1.7
+    ],
+    "look_at": [
+     0,
+     8,
+     1.8
+    ],
+    "lens_mm": 24
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": 1.4,
+    "facing": "ccw",
+    "scenes": {
+     "recital": {
+      "exposure_ev": -1.4
+     }
+    }
+   }
+  },
+  {
+   "location": "stairwell",
+   "reference": "games/missing-campsites/assets/locations/stairwell.jpg",
+   "location_scene_count": 1,
+   "scene_lighting": "mothers_door",
+   "camera": {
+    "location": [
+     1.5,
+     -2.6,
+     1.7
+    ],
+    "look_at": [
+     -0.8,
+     2,
+     2.5
+    ],
+    "lens_mm": 20
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": -1.2,
+    "facing": "ccw",
+    "scenes": {
+     "mothers_door": {
+      "exposure_ev": -1.9
+     }
+    }
+   }
+  },
+  {
+   "location": "tam-flat",
+   "reference": "games/missing-campsites/assets/locations/tam-flat.jpg",
+   "location_scene_count": 1,
+   "scene_lighting": "home_apartment",
+   "camera": {
+    "location": [
+     4,
+     -3.5,
+     1.6
+    ],
+    "look_at": [
+     -2,
+     2,
+     1.3
+    ],
+    "lens_mm": 20
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": -2.4,
+    "facing": "ccw",
+    "scenes": {
+     "home_apartment": {
+      "exposure_ev": -2.7
+     }
+    }
+   }
+  },
+  {
+   "location": "the-clearing",
+   "reference": "games/missing-campsites/assets/locations/the-clearing.jpg",
+   "location_scene_count": 1,
+   "scene_lighting": "the_clearing",
+   "camera": {
+    "location": [
+     1.5,
+     -16.6,
+     1.1
+    ],
+    "look_at": [
+     0,
+     0,
+     1.2
+    ],
+    "lens_mm": 28
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": -2.5,
+    "facing": "ccw",
+    "scenes": {
+     "the_clearing": {
+      "exposure_ev": -2.7
+     }
+    }
+   }
+  },
+  {
+   "location": "van-interior",
+   "reference": "games/missing-campsites/assets/locations/van-interior.jpg",
+   "location_scene_count": 1,
+   "scene_lighting": "drive_home",
+   "camera": {
+    "location": [
+     0.5,
+     -1.9,
+     1.2
+    ],
+    "look_at": [
+     0,
+     2,
+     1.1
+    ],
+    "lens_mm": 20
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": -1.9,
+    "facing": "ccw",
+    "scenes": {
+     "drive_home": {
+      "exposure_ev": -2.2
+     }
+    }
+   }
+  }
+ ],
+ "objects": {
+  "bicycle": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 7,
+   "fit": null,
+   "note": null
+  },
+  "blue-kettle": {
+   "source": "model",
+   "model": "blue-kettle.glb",
+   "props": 2,
+   "fit": {
+    "model_dims_m": [
+     0.252,
+     0.292,
+     0.331
+    ],
+    "box_m": [
+     0.25,
+     0.2,
+     0.22
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.664,
+    "worst_side_ratio": 1.49
+   },
+   "note": null
+  },
+  "booth-radio": {
+   "source": "model",
+   "model": "booth-radio.glb",
+   "props": 4,
+   "fit": {
+    "model_dims_m": [
+     0.252,
+     0.109,
+     0.237
+    ],
+    "box_m": [
+     0.25,
+     0.12,
+     0.18
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.941,
+    "worst_side_ratio": 1.24
+   },
+   "note": null
+  },
+  "camera": {
+   "source": "model",
+   "model": "camera.glb",
+   "props": 1,
+   "fit": {
+    "model_dims_m": [
+     0.141,
+     0.117,
+     0.08
+    ],
+    "box_m": [
+     0.14,
+     0.08,
+     0.09
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.915,
+    "worst_side_ratio": 1.34
+   },
+   "note": null
+  },
+  "camp-chair": {
+   "source": "model",
+   "model": "camp-chair.glb",
+   "props": 23,
+   "fit": {
+    "model_dims_m": [
+     0.714,
+     0.669,
+     0.853
+    ],
+    "box_m": [
+     0.6,
+     0.6,
+     0.85
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.997,
+    "worst_side_ratio": 1.19
+   },
+   "note": null
+  },
+  "camp-lantern": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 5,
+   "fit": null,
+   "note": null
+  },
+  "camper-van": {
+   "source": "model",
+   "model": "camper-van.glb",
+   "props": 5,
+   "fit": {
+    "model_dims_m": [
+     2.184,
+     4.812,
+     2.896
+    ],
+    "box_m": [
+     2.0,
+     4.8,
+     2.2
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.885,
+    "worst_side_ratio": 1.17
+   },
+   "note": null
+  },
+  "chalkboard": {
+   "source": "model",
+   "model": "chalkboard.glb",
+   "props": 7,
+   "fit": {
+    "model_dims_m": [
+     0.708,
+     0.693,
+     1.006
+    ],
+    "box_m": [
+     0.6,
+     0.4,
+     1.0
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.994,
+    "worst_side_ratio": 1.72
+   },
+   "note": null
+  },
+  "cooler": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 6,
+   "fit": null,
+   "note": null
+  },
+  "fire-ring": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 36,
+   "fit": null,
+   "note": null
+  },
+  "firewood-bundle": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 11,
+   "fit": null,
+   "note": null
+  },
+  "heron-sign": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 8,
+   "fit": {
+    "model_skipped": "the model shows a heron painted on the sign (a creature): no creature imagery, so the proxy stays"
+   },
+   "note": "model skipped: the model shows a heron painted on the sign (a creature): no creature imagery, so the proxy stays"
+  },
+  "hiking-pack": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 1,
+   "fit": null,
+   "note": null
+  },
+  "logbook": {
+   "source": "model",
+   "model": "logbook.glb",
+   "props": 4,
+   "fit": {
+    "model_dims_m": [
+     1.823,
+     1.236,
+     0.432
+    ],
+    "box_m": [
+     0.32,
+     0.05,
+     0.42
+    ],
+    "fit_rotation_deg": [
+     0,
+     90,
+     90
+    ],
+    "scale": 0.23,
+    "worst_side_ratio": 1.41
+   },
+   "note": null
+  },
+  "master-map": {
+   "source": "model",
+   "model": "master-map.glb",
+   "props": 5,
+   "fit": {
+    "model_dims_m": [
+     0.91,
+     0.089,
+     0.699
+    ],
+    "box_m": [
+     0.9,
+     0.04,
+     0.65
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.959,
+    "worst_side_ratio": 1.46
+   },
+   "note": null
+  },
+  "notebook": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 8,
+   "fit": null,
+   "note": null
+  },
+  "owl-box": {
+   "source": "model",
+   "model": "owl-box.glb",
+   "props": 2,
+   "fit": {
+    "model_dims_m": [
+     0.295,
+     0.355,
+     0.604
+    ],
+    "box_m": [
+     0.35,
+     0.35,
+     0.6
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.993,
+    "worst_side_ratio": 1.2
+   },
+   "note": null
+  },
+  "paper-map": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 5,
+   "fit": {
+    "model_dims_m": [
+     0.601,
+     0.601,
+     0.122
+    ],
+    "box_m": [
+     0.6,
+     0.01,
+     0.45
+    ],
+    "fit_rotation_deg": [
+     90,
+     0,
+     0
+    ],
+    "scale": 0.864,
+    "worst_side_ratio": 3.25,
+    "rejected": "proportions: a side is off by x3.3 after the best fit"
+   },
+   "note": "proportions: a side is off by x3.3 after the best fit"
+  },
+  "payphone": {
+   "source": "model",
+   "model": "payphone.glb",
+   "props": 4,
+   "fit": {
+    "model_dims_m": [
+     0.673,
+     1.043,
+     2.005
+    ],
+    "box_m": [
+     0.35,
+     0.3,
+     2.0
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.53,
+    "worst_side_ratio": 1.88
+   },
+   "note": null
+  },
+  "picnic-table": {
+   "source": "model",
+   "model": "picnic-table.glb",
+   "props": 34,
+   "fit": {
+    "model_dims_m": [
+     1.814,
+     1.373,
+     0.815
+    ],
+    "box_m": [
+     1.8,
+     1.6,
+     0.75
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.021,
+    "worst_side_ratio": 1.14
+   },
+   "note": null
+  },
+  "postcard": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 5,
+   "fit": null,
+   "note": null
+  },
+  "programme": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 1,
+   "fit": {
+    "model_dims_m": [
+     0.241,
+     0.155,
+     0.213
+    ],
+    "box_m": [
+     0.15,
+     0.002,
+     0.21
+    ],
+    "fit_rotation_deg": [
+     0,
+     90,
+     0
+    ],
+    "scale": 0.784,
+    "worst_side_ratio": 7.8,
+    "rejected": "proportions: a side is off by x7.8 after the best fit"
+   },
+   "note": "proportions: a side is off by x7.8 after the best fit"
+  },
+  "quiet-hours-board": {
+   "source": "model",
+   "model": "quiet-hours-board.glb",
+   "props": 5,
+   "fit": {
+    "model_dims_m": [
+     0.606,
+     0.104,
+     0.398
+    ],
+    "box_m": [
+     0.6,
+     0.03,
+     0.4
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.997,
+    "worst_side_ratio": 1.86
+   },
+   "note": null
+  },
+  "register-box": {
+   "source": "model",
+   "model": "register-box.glb",
+   "props": 4,
+   "fit": {
+    "model_dims_m": [
+     0.549,
+     0.521,
+     1.402
+    ],
+    "box_m": [
+     0.4,
+     0.3,
+     1.4
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.998,
+    "worst_side_ratio": 1.73
+   },
+   "note": null
+  },
+  "site-post": {
+   "source": "model",
+   "model": "site-post.glb",
+   "props": 96,
+   "fit": {
+    "model_dims_m": [
+     0.297,
+     0.285,
+     1.202
+    ],
+    "box_m": [
+     0.15,
+     0.15,
+     1.2
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.999,
+    "worst_side_ratio": 1.98
+   },
+   "note": null
+  },
+  "smartphone": {
+   "source": "model",
+   "model": "smartphone.glb",
+   "props": 3,
+   "fit": {
+    "model_dims_m": [
+     1.753,
+     0.866,
+     0.162
+    ],
+    "box_m": [
+     0.075,
+     0.01,
+     0.15
+    ],
+    "fit_rotation_deg": [
+     0,
+     90,
+     90
+    ],
+    "scale": 0.086,
+    "worst_side_ratio": 1.18
+   },
+   "note": null
+  },
+  "split-boulder": {
+   "source": "model",
+   "model": "split-boulder.glb",
+   "props": 5,
+   "fit": {
+    "model_dims_m": [
+     4.026,
+     3.094,
+     1.44
+    ],
+    "box_m": [
+     4.0,
+     3.0,
+     2.2
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.137,
+    "worst_side_ratio": 1.34
+   },
+   "note": null
+  },
+  "tent": {
+   "source": "model",
+   "model": "tent.glb",
+   "props": 33,
+   "fit": {
+    "model_dims_m": [
+     2.2,
+     1.798,
+     1.243
+    ],
+    "box_m": [
+     1.862,
+     1.692,
+     1.1
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.89,
+    "worst_side_ratio": 1.06
+   },
+   "note": null
+  },
+  "upright-piano": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 1,
+   "fit": null,
+   "note": null
+  },
+  "van-keys": {
+   "source": "model",
+   "model": "van-keys.glb",
+   "props": 2,
+   "fit": {
+    "model_dims_m": [
+     0.175,
+     0.162,
+     0.121
+    ],
+    "box_m": [
+     0.08,
+     0.02,
+     0.12
+    ],
+    "fit_rotation_deg": [
+     90,
+     0,
+     0
+    ],
+    "scale": 0.383,
+    "worst_side_ratio": 2.31
+   },
+   "note": null
+  }
+ }
+}

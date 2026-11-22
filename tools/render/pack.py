@@ -61,7 +61,7 @@ def main(argv):
             plan = plans[(loc, sid)]
             tier = "hero" if plan["hero"] else "standard"
             res, samples = TIERS[tier]
-            lrig = rig.get(loc, {})
+            lrig = rig.get(f"{slug}/{loc}", rig.get(loc, {}))  # a key may be namespaced "<game>/<location>"
             manifest["scenes"].append({
                 "location": loc, "scene": sid, "tier": tier, "resolution": res, "samples": samples,
                 "camera_mode": sc["camera"]["mode"], "player_start": sc.get("player_start"),

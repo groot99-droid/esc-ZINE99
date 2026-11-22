@@ -1982,5 +1982,753 @@
         "exposure_ev": -1.1
       }
     }
+  },
+  "stuffed-ones/cabin-kitchen": {
+    "overview_scene": "a1_dinner",
+    "overview": {
+      "location": [
+        2.2,
+        -1.7,
+        1.5
+      ],
+      "look_at": [
+        -1.0,
+        1.8,
+        1.2
+      ],
+      "lens_mm": 20
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 1.2,
+    "facing": "ccw",
+    "scenes": {
+      "a1_dinner": {
+        "exposure_ev": -0.9
+      },
+      "a2_breakfast": {
+        "exposure_ev": -2.3
+      },
+      "a5_kitchen_bear": {
+        "exposure_ev": 0.0
+      },
+      "e_warning_unpick": {
+        "exposure_ev": 1.0
+      }
+    }
+  },
+  "stuffed-ones/cabin-living-room": {
+    "overview_scene": "a1_cabin_arrival",
+    "overview": {
+      "location": [
+        -4.2,
+        -3.5,
+        1.65
+      ],
+      "look_at": [
+        2.0,
+        2.0,
+        1.1
+      ],
+      "lens_mm": 18
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": -1.2,
+    "facing": "ccw",
+    "min_eye_m": 0.2,
+    "scenes": {
+      "a1_cabin_arrival": {
+        "exposure_ev": -3.3
+      },
+      "a3_smell": {
+        "exposure_ev": -3.5
+      },
+      "a4_wrong_places": {
+        "exposure_ev": -2.5
+      },
+      "a5_cabin_turns": {
+        "exposure_ev": -0.8
+      },
+      "b6_keepers_visit": {
+        "exposure_ev": -3.5
+      },
+      "b6_waking": {
+        "exposure_ev": -2.1
+      },
+      "b7_arrivals": {
+        "exposure_ev": -3.5
+      },
+      "b7_jamie_falls": {
+        "exposure_ev": -0.6
+      },
+      "b8_breaking_point": {
+        "exposure_ev": -0.5
+      },
+      "c10_hold_shelf": {
+        "exposure_ev": -1.4
+      },
+      "c11_hold_shelf": {
+        "exposure_ev": -3.5
+      },
+      "c11_toy_floor": {
+        "exposure_ev": -3.5
+      },
+      "c12_hold_shelf": {
+        "exposure_ev": -1.1
+      },
+      "c13_flight": {
+        "exposure_ev": -2.9
+      },
+      "c13_seal": {
+        "exposure_ev": -3.5
+      },
+      "c14_chase_cabin": {
+        "exposure_ev": -1.7
+      },
+      "c14_hold_shelf": {
+        "exposure_ev": -2.0
+      },
+      "c9_new_guests": {
+        "exposure_ev": -3.5
+      },
+      "e_cycle_shelf": {
+        "exposure_ev": -3.3
+      },
+      "e_empty_toy": {
+        "exposure_ev": -1.8
+      }
+    }
+  },
+  "stuffed-ones/car-interior": {
+    "overview_scene": "a1_car",
+    "overview": {
+      "location": [
+        0,
+        -0.55,
+        1.0
+      ],
+      "look_at": [
+        0,
+        2.0,
+        0.85
+      ],
+      "lens_mm": 16
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": -0.7,
+    "facing": "ccw",
+    "scenes": {
+      "a1_car": {
+        "exposure_ev": -3.5
+      }
+    }
+  },
+  "stuffed-ones/creek-trail": {
+    "overview_scene": "a3_trail_creek",
+    "overview": {
+      "location": [
+        -1.5,
+        100,
+        1.7
+      ],
+      "look_at": [
+        4.5,
+        122,
+        0.4
+      ],
+      "lens_mm": 24
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+      "a3_trail_creek": {
+        "exposure_ev": -3.0
+      }
+    }
+  },
+  "stuffed-ones/labyrinth": {
+    "overview_scene": "a5_labyrinth",
+    "overview": {
+      "location": [
+        -3.4,
+        -3.4,
+        1.65
+      ],
+      "look_at": [
+        3,
+        3,
+        1.2
+      ],
+      "lens_mm": 18
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 1.2,
+    "facing": "ccw",
+    "scenes": {
+      "a5_labyrinth": {
+        "exposure_ev": 1.0
+      }
+    }
+  },
+  "stuffed-ones/lilas-room": {
+    "overview_scene": "a3_warmth",
+    "overview": {
+      "location": [
+        -1.7,
+        -1.5,
+        1.6
+      ],
+      "look_at": [
+        0.8,
+        1.0,
+        1.0
+      ],
+      "lens_mm": 18
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": -0.5,
+    "facing": "ccw",
+    "scenes": {
+      "a3_warmth": {
+        "exposure_ev": -3.2
+      }
+    }
+  },
+  "stuffed-ones/overlook-trail": {
+    "overview_scene": "a1_trail_overlook",
+    "overview": {
+      "location": [
+        0.5,
+        158,
+        13.7
+      ],
+      "look_at": [
+        5,
+        185,
+        12.8
+      ],
+      "lens_mm": 24
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+      "a1_trail_overlook": {
+        "exposure_ev": -2.8
+      }
+    }
+  },
+  "stuffed-ones/porch-clearing": {
+    "overview_scene": "a3_dog",
+    "overview": {
+      "location": [
+        -12,
+        2,
+        1.7
+      ],
+      "look_at": [
+        8,
+        -9,
+        1.5
+      ],
+      "lens_mm": 24
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "neutral_names": {
+      "by_id": {
+        "tarp-dog": "tarp-b"
+      }
+    },
+    "scenes": {
+      "a3_dog": {
+        "exposure_ev": -1.3
+      },
+      "e_keeper_porch": {
+        "exposure_ev": -2.4
+      }
+    }
+  },
+  "stuffed-ones/ridge-path": {
+    "overview_scene": "a4_silent_forest",
+    "overview": {
+      "location": [
+        4.5,
+        -100,
+        11.2
+      ],
+      "look_at": [
+        -4,
+        -60,
+        8.5
+      ],
+      "lens_mm": 24
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": -0.5,
+    "facing": "ccw",
+    "scenes": {
+      "a4_silent_forest": {
+        "exposure_ev": -3.2
+      }
+    }
+  },
+  "stuffed-ones/ritual-room": {
+    "overview_scene": "a5_ritual_room",
+    "overview": {
+      "location": [
+        -1.6,
+        -2.8,
+        1.65
+      ],
+      "look_at": [
+        0.5,
+        1.0,
+        1.2
+      ],
+      "lens_mm": 18
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 0.5,
+    "facing": "ccw",
+    "min_eye_m": 0.2,
+    "scenes": {
+      "a5_last_thing": {
+        "exposure_ev": 0.9
+      },
+      "a5_ritual_room": {
+        "exposure_ev": -0.5
+      },
+      "e_page_circle": {
+        "exposure_ev": 1.0
+      }
+    }
+  },
+  "stuffed-ones/upstairs-hall": {
+    "overview_scene": "a2_night_hall",
+    "overview": {
+      "location": [
+        -5.7,
+        0.1,
+        1.6
+      ],
+      "look_at": [
+        5,
+        0.0,
+        1.5
+      ],
+      "lens_mm": 22
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 2.0,
+    "facing": "ccw",
+    "min_eye_m": 0.2,
+    "scenes": {
+      "a2_gerald": {
+        "exposure_ev": 0.8
+      },
+      "a2_night_hall": {
+        "exposure_ev": 0.9
+      },
+      "a4_night_sounds": {
+        "exposure_ev": 1.0
+      },
+      "a4_sixty_knots": {
+        "exposure_ev": 0.0
+      },
+      "b8_the_door": {
+        "exposure_ev": 1.0
+      },
+      "c11_cupboard_shut": {
+        "exposure_ev": -3.1
+      }
+    }
+  },
+  "missing-campsites/creek-trail": {
+    "overview_scene": "creek_trail",
+    "overview": {
+      "location": [
+        -100,
+        8,
+        1.7
+      ],
+      "look_at": [
+        -60,
+        -4,
+        0.6
+      ],
+      "lens_mm": 20
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": -0.7,
+    "facing": "ccw",
+    "scenes": {
+      "creek_trail": {
+        "exposure_ev": -1.1
+      }
+    }
+  },
+  "missing-campsites/entrance-booth": {
+    "overview_scene": "booth_day1",
+    "overview": {
+      "location": [
+        0,
+        -10,
+        1.7
+      ],
+      "look_at": [
+        0,
+        6,
+        1.8
+      ],
+      "lens_mm": 20
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": -2.0,
+    "facing": "ccw",
+    "piece_alpha": {
+      "glass": 0.12
+    },
+    "reference_card": "The reference image for this location shows a heron on the entrance sign (a creature drawn as a pictogram). No creature imagery is kept on the sheets, so the reference is left out; the owner can restore it.",
+    "neutral_names": {
+      "by_object": {
+        "heron-sign": "sign-board"
+      },
+      "by_id": {
+        "heron-panel": "sign-panel"
+      }
+    },
+    "scenes": {
+      "booth_day1": {
+        "exposure_ev": 1.0
+      },
+      "booth_day2": {
+        "exposure_ev": -1.0
+      },
+      "payphone_night1": {
+        "exposure_ev": 1.0
+      },
+      "supper_for_two": {
+        "exposure_ev": -1.3
+      }
+    }
+  },
+  "missing-campsites/fire-ring": {
+    "overview_scene": "campfire_night1",
+    "overview": {
+      "location": [
+        0,
+        -5,
+        1.5
+      ],
+      "look_at": [
+        0,
+        3,
+        1.0
+      ],
+      "lens_mm": 22
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 2.4,
+    "facing": "ccw",
+    "scenes": {
+      "campfire_night1": {
+        "exposure_ev": 0.0
+      },
+      "campfire_night2": {
+        "exposure_ev": 0.0
+      }
+    }
+  },
+  "missing-campsites/five-sites": {
+    "overview_scene": "fixed_sites_day1",
+    "overview": {
+      "location": [
+        -85,
+        -22,
+        1.7
+      ],
+      "look_at": [
+        -40,
+        5,
+        1.5
+      ],
+      "lens_mm": 22
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": -1.4,
+    "facing": "ccw",
+    "scenes": {
+      "channel_two": {
+        "exposure_ev": 0.0
+      },
+      "dusk_choice": {
+        "exposure_ev": 0.0
+      },
+      "fixed_sites_day1": {
+        "exposure_ev": -1.5
+      },
+      "fixed_sites_day2": {
+        "exposure_ev": -2.1
+      }
+    }
+  },
+  "missing-campsites/gravel-clearing": {
+    "overview_scene": "gravel_morning",
+    "overview": {
+      "location": [
+        6,
+        -790,
+        1.7
+      ],
+      "look_at": [
+        0,
+        -640,
+        3
+      ],
+      "lens_mm": 24
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": -1.7,
+    "facing": "ccw",
+    "reference_card": "The reference image for this location shows a heron on the entrance sign (a creature drawn as a pictogram). No creature imagery is kept on the sheets, so the reference is left out; the owner can restore it.",
+    "neutral_names": {
+      "by_object": {
+        "heron-sign": "sign-board"
+      },
+      "by_id": {
+        "heron-panel": "sign-panel"
+      }
+    },
+    "scenes": {
+      "gravel_morning": {
+        "exposure_ev": -2.0
+      }
+    }
+  },
+  "missing-campsites/loop-road": {
+    "overview_scene": "loop_day1",
+    "overview": {
+      "location": [
+        20,
+        58,
+        1.7
+      ],
+      "look_at": [
+        62,
+        62,
+        1.0
+      ],
+      "lens_mm": 22
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": -1.1,
+    "facing": "ccw",
+    "scenes": {
+      "loop_day1": {
+        "exposure_ev": -2.1
+      },
+      "loop_day2am": {
+        "exposure_ev": -1.8
+      },
+      "loop_day2pm": {
+        "exposure_ev": 0.0
+      },
+      "ordinary_morning": {
+        "exposure_ev": -1.8
+      }
+    }
+  },
+  "missing-campsites/other-entrance": {
+    "overview_scene": "other_entrance",
+    "overview": {
+      "location": [
+        -3,
+        -11,
+        1.7
+      ],
+      "look_at": [
+        3.5,
+        -4,
+        1.4
+      ],
+      "lens_mm": 28
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": -2.2,
+    "facing": "ccw",
+    "piece_alpha": {
+      "glass": 0.12
+    },
+    "reference_card": "The reference image for this location shows a heron on the entrance sign (a creature drawn as a pictogram). No creature imagery is kept on the sheets, so the reference is left out; the owner can restore it.",
+    "neutral_names": {
+      "by_object": {
+        "heron-sign": "sign-board"
+      },
+      "by_id": {
+        "heron-panel": "sign-panel"
+      }
+    },
+    "scenes": {
+      "other_entrance": {
+        "exposure_ev": -2.6
+      },
+      "past_the_window": {
+        "exposure_ev": -2.6
+      }
+    }
+  },
+  "missing-campsites/other-side-sites": {
+    "overview_scene": "wrong_forest",
+    "overview": {
+      "location": [
+        0,
+        -16,
+        1.7
+      ],
+      "look_at": [
+        0,
+        4,
+        2
+      ],
+      "lens_mm": 28
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": -1.5,
+    "facing": "ccw",
+    "neutral_names": {
+      "by_object": {
+        "heron-sign": "sign-board"
+      },
+      "by_id": {
+        "heron-panel": "sign-panel"
+      }
+    },
+    "scenes": {
+      "wrong_forest": {
+        "exposure_ev": -1.7
+      }
+    }
+  },
+  "missing-campsites/school-hall": {
+    "overview_scene": "recital",
+    "overview": {
+      "location": [
+        0,
+        -8.5,
+        1.7
+      ],
+      "look_at": [
+        0,
+        8,
+        1.8
+      ],
+      "lens_mm": 24
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 1.4,
+    "facing": "ccw",
+    "scenes": {
+      "recital": {
+        "exposure_ev": -1.4
+      }
+    }
+  },
+  "missing-campsites/stairwell": {
+    "overview_scene": "mothers_door",
+    "overview": {
+      "location": [
+        1.5,
+        -2.6,
+        1.7
+      ],
+      "look_at": [
+        -0.8,
+        2,
+        2.5
+      ],
+      "lens_mm": 20
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": -1.2,
+    "facing": "ccw",
+    "scenes": {
+      "mothers_door": {
+        "exposure_ev": -1.9
+      }
+    }
+  },
+  "missing-campsites/tam-flat": {
+    "overview_scene": "home_apartment",
+    "overview": {
+      "location": [
+        4,
+        -3.5,
+        1.6
+      ],
+      "look_at": [
+        -2,
+        2,
+        1.3
+      ],
+      "lens_mm": 20
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": -2.4,
+    "facing": "ccw",
+    "scenes": {
+      "home_apartment": {
+        "exposure_ev": -2.7
+      }
+    }
+  },
+  "missing-campsites/the-clearing": {
+    "overview_scene": "the_clearing",
+    "overview": {
+      "location": [
+        1.5,
+        -16.6,
+        1.1
+      ],
+      "look_at": [
+        0,
+        0,
+        1.2
+      ],
+      "lens_mm": 28
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": -2.5,
+    "facing": "ccw",
+    "scenes": {
+      "the_clearing": {
+        "exposure_ev": -2.7
+      }
+    }
+  },
+  "missing-campsites/van-interior": {
+    "overview_scene": "drive_home",
+    "overview": {
+      "location": [
+        0.5,
+        -1.9,
+        1.2
+      ],
+      "look_at": [
+        0,
+        2,
+        1.1
+      ],
+      "lens_mm": 20
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": -1.9,
+    "facing": "ccw",
+    "scenes": {
+      "drive_home": {
+        "exposure_ev": -2.2
+      }
+    }
   }
 }

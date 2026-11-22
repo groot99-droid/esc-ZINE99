@@ -45,7 +45,34 @@ def jload(p):
 
 
 # ---------------------------------------------------------------- scene building
+_GLB_CACHE = {}  # glb path -> the objects imported from it in this scene (templates for the later props that use the same model)
+
+
+def import_glb(sc, glb, fitroot):
+    """Import a glb once per scene; later props with the same model get linked copies (shared mesh and materials)."""
+    tmpl = _GLB_CACHE.get(glb)
+    if tmpl is None:
+        before = set(bpy.data.objects)
+        bpy.ops.import_scene.gltf(filepath=glb)
+        new = [o for o in bpy.data.objects if o not in before]
+        for o in new:
+            if o.parent is None:
+                o.parent = fitroot
+        _GLB_CACHE[glb] = list(new)
+        return new
+    mp = {}
+    for o in tmpl:
+        c = o.copy()
+        sc.collection.objects.link(c)
+        mp[o] = c
+    for o, c in mp.items():
+        c.parent = mp.get(o.parent, fitroot)
+        c.matrix_parent_inverse = o.matrix_parent_inverse.copy()
+    return list(mp.values())
+
+
 def new_scene():
+    _GLB_CACHE.clear()
     bpy.ops.wm.read_factory_settings(use_empty=True)
     return bpy.context.scene
 
@@ -119,37 +146,106 @@ def world_bbox(objs):
     return lo, hi
 
 
+def geom_of(o):
+    """The mesh objects of a prop: the box proxy itself, or every mesh under a real model's root empty."""
+    if o.type == "MESH":
+        return [o]
+    out, stack = [], list(o.children)
+    while stack:
+        c = stack.pop()
+        if c.type == "MESH":
+            out.append(c)
+        stack.extend(c.children)
+    return out
+
+
 def neutral_name(rig, pr):
     nn = rig.get("neutral_names") or {}
     return nn.get("by_id", {}).get(pr["id"]) or nn.get("by_object", {}).get(pr["object"])
 
 
-def make_prop(sc, pr, rig, models):
-    """A named box proxy, or the real model when the ledger has one. Returns (object, source)."""
+FIT_CANDIDATES = [(0, 0, 0), (0, 0, 90), (90, 0, 0), (90, 0, 90), (0, 90, 0), (0, 90, 90)]  # model-local axis permutations tried
+
+
+def fit_model(sc, pr, glb):
+    """Import a real model and fit it to the prop's box (the box proxy's size in the prop's own frame, before the build
+    file's rotation): the model's axes are permuted only when the box fits them clearly better (the ledger's models for
+    flat things come out lying down), the scale is uniform (the height ratio for an upright prop whose footprint then stays within x3 of the box, else the
+    geometric mean of the side ratios of the box's non-thin sides), and the result is rejected (None, why) when a side is still off by more than a factor of 3 (thin sides:
+    9). Returns (root, fit record)."""
+    sx, sy, sz = pr["size_m"]
+    s = pr["target_height_m"] / sz
+    box = [sx * s, sy * s, sz * s]
+    fitroot = bpy.data.objects.new(pr["id"] + "-fit", None)
+    root = bpy.data.objects.new(pr["id"], None)
+    sc.collection.objects.link(fitroot)
+    sc.collection.objects.link(root)
+    fitroot.parent = root
+    new = import_glb(sc, glb, fitroot)
+
+    def dims(rot):
+        fitroot.rotation_euler = [math.radians(a) for a in rot]
+        bpy.context.view_layer.update()
+        lo, hi = world_bbox(new)
+        return [hi.x - lo.x, hi.y - lo.y, hi.z - lo.z]
+
+    thin = [b < 0.15 * max(box) and b < 0.1 for b in box]  # a sheet or a book's thickness: its ratio counts for less
+
+    def fit(d):
+        nt = [i for i in range(3) if not thin[i]] or [0, 1, 2]
+        k = math.exp(sum(math.log(max(box[i], 1e-6) / max(d[i], 1e-6)) for i in nt) / len(nt))
+        if box[2] >= 0.8 * max(box) and not thin[2]:  # an upright prop (post, lamp, phone, chair): its height is what the build file fixes
+            kh = box[2] / max(d[2], 1e-6)
+            if max(d[0] * kh / max(box[0], 1e-6), d[1] * kh / max(box[1], 1e-6)) <= 3.0:
+                k = kh
+        err = max(abs(math.log(k * max(d[i], 1e-6) / max(box[i], 1e-6))) / (2.0 if thin[i] else 1.0) for i in range(3))
+        return k, err
+
+    best = None
+    for rot in FIT_CANDIDATES:
+        d = dims(rot)
+        k, err = fit(d)
+        if best is None or err < best[2]:
+            best = (rot, k, err, d)
+        if rot == (0, 0, 0) and err <= 1.0:
+            best = (rot, k, err, d)  # the model's own orientation is accepted (axes are permuted only to rescue a bad fit)
+            break
+    rot, k, err, d = best
+    rec = {"model_dims_m": [round(x, 3) for x in dims((0, 0, 0))], "box_m": [round(x, 3) for x in box],
+           "fit_rotation_deg": list(rot), "scale": round(k, 3), "worst_side_ratio": round(math.exp(err), 2)}
+    for o in new:
+        o.hide_render = err > 1.1  # a rejected fit stays in the file hidden (its objects are templates for later copies)
+    if err > 1.1:
+        root.name = pr["id"] + "-rejected"
+        rec["rejected"] = "proportions: a side is off by x%.1f after the best fit" % math.exp(err)
+        return None, rec
+    fitroot.rotation_euler = [math.radians(a) for a in rot]
+    root.scale = (k, k, k)
+    root.rotation_euler = [math.radians(a) for a in pr.get("rotation_deg", [0, 0, 0])]
+    bpy.context.view_layer.update()
+    lo, hi = world_bbox(new)
+    loc = Vector(pr["location"])
+    cx, cy, cz = (lo.x + hi.x) / 2, (lo.y + hi.y) / 2, (lo.z + hi.z) / 2
+    root.location = (loc.x - cx, loc.y - cy, (loc.z - lo.z) if pr.get("ground", True) else (loc.z - cz))
+    bpy.context.view_layer.update()
+    return root, rec
+
+
+def make_prop(sc, pr, rig, models, skipped=None):
+    """A named box proxy, or the real model when the ledger has one (fitted to the prop's box, see fit_model).
+    Returns (object, source, fit record or None)."""
     sx, sy, sz = pr["size_m"]
     s = pr["target_height_m"] / sz
     rot = [math.radians(a) for a in pr.get("rotation_deg", [0, 0, 0])]
     loc = Vector(pr["location"])
     glb = models.get(pr["object"])
+    fitrec = None
     if glb:
-        before = set(bpy.data.objects)
-        bpy.ops.import_scene.gltf(filepath=glb)
-        new = [o for o in bpy.data.objects if o not in before]
-        root = bpy.data.objects.new(pr["id"], None)
-        sc.collection.objects.link(root)
-        for o in new:
-            if o.parent is None:
-                o.parent = root
-        bpy.context.view_layer.update()
-        lo, hi = world_bbox(new)
-        k = pr["target_height_m"] / max(hi.z - lo.z, 1e-6)
-        root.scale = (k, k, k)
-        root.rotation_euler = rot
-        bpy.context.view_layer.update()
-        lo, hi = world_bbox(new)
-        cx, cy, cz = (lo.x + hi.x) / 2, (lo.y + hi.y) / 2, (lo.z + hi.z) / 2
-        root.location = (loc.x - cx, loc.y - cy, (loc.z - lo.z) if pr.get("ground", True) else (loc.z - cz))
-        return root, "model:" + os.path.basename(glb)
+        root, fitrec = fit_model(sc, pr, glb)
+        if root is not None:
+            return root, "model:" + os.path.basename(glb), fitrec
+    elif skipped and pr["object"] in skipped:
+        fitrec = {"model_skipped": skipped[pr["object"]]}
     bpy.ops.mesh.primitive_cube_add(size=1)
     o = bpy.context.active_object
     o.name = neutral_name(rig, pr) or pr["id"]  # rig "neutral_names": a plain name where the prop id or object reads as a figure
@@ -168,7 +264,7 @@ def make_prop(sc, pr, rig, models):
     for c in list(o.users_collection):
         c.objects.unlink(o)
     sc.collection.objects.link(o)
-    return o, "box-proxy"
+    return o, "box-proxy", fitrec
 
 
 # ---------------------------------------------------------------- checks
@@ -196,8 +292,8 @@ def run_checks(sc, cam_loc, lookat, props, pieces):
         if piece_inside(o, cam):
             res["camera_inside"].append(o.name[3:])
     for pr, o in props:  # camera inside a prop's proxy (a bounding-box test, so a rotated box is approximate)
-        if o.type == "MESH" and pr.get("alpha", 1.0) >= 1.0:
-            lo, hi = world_bbox([o])
+        if geom_of(o) and pr.get("alpha", 1.0) >= 1.0:
+            lo, hi = world_bbox(geom_of(o))
             if lo.x < cam.x < hi.x and lo.y < cam.y < hi.y and lo.z < cam.z < hi.z:
                 res["camera_inside_prop"].append(pr["id"])
     tgt = Vector(lookat)
@@ -217,9 +313,9 @@ def run_checks(sc, cam_loc, lookat, props, pieces):
             res["between_camera_and_target"].append(obj.name[3:])
         origin = loc + dn * 0.01
     for pr, o in props:
-        if o.type != "MESH":
+        if not geom_of(o):
             continue
-        lo, hi = world_bbox([o])
+        lo, hi = world_bbox(geom_of(o))
         ctr = (lo + hi) / 2
         for pc in solid:
             n = tot = 0
@@ -308,7 +404,7 @@ def main():
     sys.path.insert(0, os.path.join(pack, "blender_tools"))
     import blockout as bo  # the repo's own blockout code, unchanged
 
-    models = {}
+    models, skipped = {}, {}
     if o["models"]:
         ml = jload(o["models"])
         items = ml.get("models", ml) if isinstance(ml, dict) else ml
@@ -317,7 +413,9 @@ def main():
         for it in items:
             g = it.get("glb") or it.get("path") or it.get("file")
             oid = it.get("object") or it.get("id")
-            if g and oid and os.path.exists(g):
+            if it.get("skip"):  # a ledger entry the author left out (a figure, a bad model): the proxy stays, the reason is recorded
+                skipped[oid] = it["skip"]
+            elif g and oid and os.path.exists(g):
                 models[oid] = g
     wanted = set(o["only"].split(",")) if o["only"] else None
     stills = set(o["stills"].split(","))
@@ -332,9 +430,12 @@ def main():
         asm = jload(os.path.join(base, "assembly.json"))
         blk = jload(os.path.join(base, "blockout.json"))
         props = jload(os.path.join(base, "props.json"))
-        rig = merge(rigs["default"], rigs.get(entry["location"], {}))
+        # rig and override keys may be namespaced "<game>/<location>" (two games share the location id creek-trail)
+        gl = man["game"] + "/" + entry["location"]
+        rig = merge(rigs["default"], rigs.get(gl, rigs.get(entry["location"], {})))
         srig = rig.get("scenes", {}).get(entry["scene"], {})
-        ov = merge(overrides.get(entry["location"] + "/*", {}), overrides.get(key, {}))
+        ov = merge(merge(overrides.get(entry["location"] + "/*", {}), overrides.get(gl + "/*", {})),
+                   merge(overrides.get(key, {}), overrides.get(man["game"] + "/" + key, {})))
         ev = rig.get("exposure_ev", 0.0) + srig.get("exposure_ev", 0.0)
         wgain = rig.get("world_gain", 1.0) * srig.get("world_gain", 1.0)
         lgain = rig.get("light_gain", 1.0) * srig.get("light_gain", 1.0)
@@ -351,11 +452,13 @@ def main():
         blk["pieces"] = pieces
         pdict = {p["id"]: p for p in props}
         for pid, patch in ov.get("props", {}).items():
-            pdict[pid].update(patch)
+            if pid in pdict:  # a location-level patch for a prop the scene hides is skipped
+                pdict[pid].update(patch)
         for pid in ov.get("hide_props", []):
             pdict.pop(pid, None)
         for pid, a in ov.get("prop_alpha", {}).items():  # a proxy drawn translucent (the player rides inside it)
-            pdict[pid]["alpha"] = a
+            if pid in pdict:
+                pdict[pid]["alpha"] = a
         props = list(pdict.values())
         cam_spec = merge(asm["camera"], ov.get("camera"))
         pstart = merge(entry.get("player_start"), ov.get("player_start")) if entry.get("player_start") else None
@@ -364,9 +467,11 @@ def main():
         build_world(sc, asm["world"], rig, wgain)
         made, sources = [], {}
         for pr in props:
-            obj, src = make_prop(sc, pr, rig, models)
+            obj, src, frec = make_prop(sc, pr, rig, models, skipped)
             made.append((pr, obj))
             sources[pr["id"]] = {"object": pr["object"], "source": src, "name": neutral_name(rig, pr) or pr["id"]}
+            if frec:
+                sources[pr["id"]]["fit"] = frec
         for li in asm["lights"]:
             make_light(sc, li, lgain * per_light.get(li["name"], 1.0), rig)
         fills = [f for f in rig.get("fills", []) if not f.get("scenes") or entry["scene"] in f["scenes"]]
@@ -408,10 +513,13 @@ def main():
             shoot("camera", cam_spec["location"], cam_spec["look_at"], cam_spec.get("lens_mm", 35), (W, H), S)
         ps = pstart
         if "player" in stills and ps:
-            f = math.radians(ps["facing_deg"])  # compass: 0 faces +y, 90 faces +x
+            # rig "facing": "compass" (default; 0 faces +y, 90 faces +x) or "ccw" (a rotation about Z: 0 faces +y, 90 faces -x),
+            # which is what most cameras of stuffed-ones and missing-campsites agree with
+            fdeg = ps["facing_deg"] * (-1 if rig.get("facing", "compass") == "ccw" else 1)
+            f = math.radians(fdeg)
             eye = ps["location"][2] + 1.6
             if ps["location"][2] == 0:
-                eye = min(max(cam_spec["location"][2], 0.8), 2.0)  # the scene camera's own eye height
+                eye = min(max(cam_spec["location"][2], rig.get("min_eye_m", 0.8)), 2.0)  # the scene camera's own eye height
             loc = [ps["location"][0], ps["location"][1], eye]
             shoot("player", loc, [loc[0] + math.sin(f) * 5, loc[1] + math.cos(f) * 5, eye - 0.1],
                   cam_spec.get("lens_mm", 35), (W, H), S)

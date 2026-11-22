@@ -529,5 +529,163 @@
         1.5
       ]
     }
+  },
+  "missing-campsites/creek-trail/*": {
+    "props": {
+      "notebook": {
+        "target_height_m": 0.21
+      }
+    }
+  },
+  "missing-campsites/entrance-booth/*": {
+    "props": {
+      "paper-map": {
+        "target_height_m": 0.45
+      },
+      "logbook": {
+        "target_height_m": 0.42
+      }
+    }
+  },
+  "missing-campsites/five-sites/*": {
+    "props": {
+      "notebook": {
+        "target_height_m": 0.21
+      },
+      "postcard": {
+        "target_height_m": 0.1
+      }
+    }
+  },
+  "missing-campsites/other-side-sites/*": {
+    "props": {
+      "phone-1": {
+        "target_height_m": 0.15
+      },
+      "phone-2": {
+        "target_height_m": 0.15
+      },
+      "logbook": {
+        "target_height_m": 0.42
+      }
+    }
+  },
+  "missing-campsites/school-hall/*": {
+    "props": {
+      "programme": {
+        "target_height_m": 0.21
+      }
+    }
+  },
+  "missing-campsites/stairwell/*": {
+    "props": {
+      "notebook": {
+        "target_height_m": 0.21
+      }
+    }
+  },
+  "missing-campsites/tam-flat/*": {
+    "props": {
+      "notebook": {
+        "target_height_m": 0.21
+      },
+      "smartphone": {
+        "target_height_m": 0.15
+      }
+    }
+  },
+  "missing-campsites/van-interior/*": {
+    "props": {
+      "notebook": {
+        "target_height_m": 0.21
+      }
+    }
+  },
+  "missing-campsites/fire-ring/*": {
+    "props": {
+      "cooler": {
+        "location": [
+          5.5,
+          -0.2,
+          0
+        ]
+      }
+    }
+  },
+  "missing-campsites/loop-road/*": {
+    "props": {
+      "tent-17": {
+        "location": [
+          -26.0,
+          62.0,
+          0
+        ]
+      }
+    }
+  },
+  "missing-campsites/other-entrance/other_entrance": {
+    "camera": {
+      "location": [
+        1.4,
+        -5.6,
+        1.7
+      ]
+    },
+    "player_start": {
+      "location": [
+        1.4,
+        -5.6,
+        0.15
+      ]
+    }
+  },
+  "missing-campsites/tam-flat/home_apartment": {
+    "camera": {
+      "location": [
+        -1.4,
+        -3.8,
+        1.65
+      ]
+    },
+    "player_start": {
+      "location": [
+        -1.4,
+        -3.8,
+        0
+      ]
+    }
+  },
+  "stuffed-ones/labyrinth/a5_labyrinth": {
+    "camera": {
+      "look_at": [
+        -14,
+        -21.45,
+        1.2
+      ]
+    },
+    "player_start": {
+      "facing_deg": 90
+    }
+  },
+  "missing-campsites/entrance-booth/booth_day1": {
+    "hide_props": [
+      "van"
+    ]
+  },
+  "missing-campsites/five-sites/channel_two": {
+    "camera": {
+      "location": [
+        -37.67,
+        -7.54,
+        1.15
+      ]
+    },
+    "player_start": {
+      "location": [
+        -37.67,
+        -7.54,
+        0
+      ]
+    }
   }
 }
