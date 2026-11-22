@@ -1,0 +1,80 @@
+{
+  "tool": "ComfyUI 0.46.2, core Trellis 2 nodes",
+  "models": [
+    {
+      "id": "cuckoo-clock",
+      "name": "The cuckoo clock",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/endless-temple/assets/objects/cuckoo-clock.jpg",
+      "image_sha256": "68741991d539056ca544518c7fff17b0235633cb2e1fa5b835adfd98dafcf9e3",
+      "output": "build/models/endless-temple/cuckoo-clock.glb",
+      "status": "failed",
+      "problems": [
+        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8189: [WinError 10061] No connection could be made because the target machine actively refused it. Start ComfyUI, or set COMFY_URL."
+      ]
+    },
+    {
+      "id": "kettle",
+      "name": "The kettle",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/endless-temple/assets/objects/kettle.jpg",
+      "image_sha256": "ec00508bbc80cc56dad333d3e7bba1cb25857ee4b3274066404392269455f7c7",
+      "output": "build/models/endless-temple/kettle.glb",
+      "status": "failed",
+      "problems": [
+        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8189: [WinError 10061] No connection could be made because the target machine actively refused it. Start ComfyUI, or set COMFY_URL."
+      ]
+    },
+    {
+      "id": "lizard-plate",
+      "name": "Plate of roast sea lizard",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/endless-temple/assets/objects/lizard-plate.jpg",
+      "image_sha256": "81745555eab8f8814a85ae5d1b9294bc8d4443b1430b7ffe45d5f29be5279dc8",
+      "output": "build/models/endless-temple/lizard-plate.glb",
+      "status": "failed",
+      "problems": [
+        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8189: [WinError 10061] No connection could be made because the target machine actively refused it. Start ComfyUI, or set COMFY_URL."
+      ]
+    },
+    {
+      "id": "sand-book",
+      "name": "The sand book",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/endless-temple/assets/objects/sand-book.jpg",
+      "image_sha256": "ff3c51ccb599d16d27b38c511b24d2dc014dfc2285f2ff89379854a148b0413d",
+      "output": "build/models/endless-temple/sand-book.glb",
+      "status": "failed",
+      "problems": [
+        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8189: [WinError 10054] An existing connection was forcibly closed by the remote host. Start ComfyUI, or set COMFY_URL."
+      ]
+    },
+    {
+      "id": "travel-pack",
+      "name": "Xandri's pack",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/endless-temple/assets/objects/travel-pack.jpg",
+      "image_sha256": "ceab86abe0938720711bcb6718bed3bfb76e82b81dd6ab9d97d7d52dde6347ee",
+      "output": "build/models/endless-temple/travel-pack.glb",
+      "status": "failed",
+      "problems": [
+        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8189: [WinError 10061] No connection could be made because the target machine actively refused it. Start ComfyUI, or set COMFY_URL."
+      ]
+    }
+  ]
+}

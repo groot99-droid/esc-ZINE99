@@ -1,0 +1,801 @@
+{
+  "tool": "ComfyUI 0.46.2, core Trellis 2 nodes",
+  "models": [
+    {
+      "id": "army-truck",
+      "name": "Transport truck",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/man-eater/assets/objects/army-truck.jpg",
+      "image_sha256": "8db9abd306c4fc9a15b427f52e8c459c3d072727feea218009fa563c179747b2",
+      "output": "build/models/man-eater/army-truck.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699940,
+      "size_m_requested": [
+        2.5,
+        7.0,
+        3.0
+      ],
+      "dimensions_m": [
+        3.036,
+        7.0,
+        3.83
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 799
+    },
+    {
+      "id": "boiler",
+      "name": "Boiler",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/man-eater/assets/objects/boiler.jpg",
+      "image_sha256": "e057db935c4e7c862a080f934d1c942e0575b47d30c3d9087ad3f85f929d6e06",
+      "output": "build/models/man-eater/boiler.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699508,
+      "size_m_requested": [
+        2.0,
+        3.5,
+        2.8
+      ],
+      "dimensions_m": [
+        2.133,
+        3.5,
+        2.93
+      ],
+      "problems": [
+        "rotated 90 deg about Z so its long side matches size_m",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 763
+    },
+    {
+      "id": "bread-loaf",
+      "name": "Bread loaf",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/man-eater/assets/objects/bread-loaf.jpg",
+      "image_sha256": "82e88e48fc41e50aed74ddf946a0983025d943ee6bbaf26867ef06030c397a5a",
+      "output": "build/models/man-eater/bread-loaf.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699117,
+      "size_m_requested": [
+        0.25,
+        0.12,
+        0.1
+      ],
+      "dimensions_m": [
+        0.25,
+        0.156,
+        0.153
+      ],
+      "problems": [
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 1.00, 0.77, 0.65); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 658
+    },
+    {
+      "id": "bunk-bed",
+      "name": "Bunk bed",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/man-eater/assets/objects/bunk-bed.jpg",
+      "image_sha256": "c4e68507a8691fb2d62e250c58adf56f4a61d9abe7eee89cbbd47819b53d4bd0",
+      "output": "build/models/man-eater/bunk-bed.glb",
+      "status": "failed",
+      "problems": [
+        "comfy: request   trellis2, seeds [1, 2, 3, 4], background removed, image sha256 c4e68507a8691fb2, server 127.0.0.1:8188\nqueued    prompt be124ba1-18d7-4a53-9496-ae5f1b8c1d16\nREFUSED   ComfyUI_00061.glb: got 3571077 bytes of 53937128. The prompt be124ba1-18d7-4a53-9496-ae5f1b8c1d16 is done on the server; run `status be124ba1-18d7-4a53-9496-ae5f1b8c1d16` and download again."
+      ]
+    },
+    {
+      "id": "card-deck",
+      "name": "Deck of cards",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/man-eater/assets/objects/card-deck.jpg",
+      "image_sha256": "2c553a61c1ef57349718d35ce6a3fd8e3a69c083fa9c661eeffe67e04ea10b63",
+      "output": "build/models/man-eater/card-deck.glb",
+      "status": "failed",
+      "problems": [
+        "comfy:  4], background removed, image sha256 2c553a61c1ef5734, server 127.0.0.1:8190\nqueued    prompt 8902d812-ec30-48ff-98a2-c0b76d87f9fc\nREFUSED   the workflow failed on the server: VaeDecodeShapeTrellis: Allocation on device 0 would exceed allowed memory. (out of memory)\nCurrently allocated     : 11.76 GiB\nRequested               : 16.82 GiB\nDevice limit            : 31.36 GiB\nFree (according to CUDA)"
+      ]
+    },
+    {
+      "id": "door-log-clipboard",
+      "name": "Door log clipboard",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/man-eater/assets/objects/door-log-clipboard.jpg",
+      "image_sha256": "e550c8b2400d39627cb19e817d179170bc9cb55fb519ec635578e5d9c4138c30",
+      "output": "build/models/man-eater/door-log-clipboard.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699797,
+      "size_m_requested": [
+        0.23,
+        0.02,
+        0.32
+      ],
+      "dimensions_m": [
+        1.683,
+        1.166,
+        0.32
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.14, 0.02, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 340
+    },
+    {
+      "id": "fence-post",
+      "name": "Fence post",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/man-eater/assets/objects/fence-post.jpg",
+      "image_sha256": "b46ab423503bf3fcb14437cd06f0af3d1ccb53521863af3f5e4803408ead1fb5",
+      "output": "build/models/man-eater/fence-post.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 699974,
+      "size_m_requested": [
+        0.2,
+        0.2,
+        3.0
+      ],
+      "dimensions_m": [
+        0.677,
+        0.655,
+        3.0
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.30, 0.31, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 391
+    },
+    {
+      "id": "file-folder",
+      "name": "File folder",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/man-eater/assets/objects/file-folder.jpg",
+      "image_sha256": "45bed98f68b65a8afe32339d87f83f27bb6128371df8190d7b913d1edaee359f",
+      "output": "build/models/man-eater/file-folder.glb",
+      "status": "failed",
+      "problems": [
+        "comfy: eeds [1, 2, 3, 4], background removed, image sha256 45bed98f68b65a8a, server 127.0.0.1:8189\nqueued    prompt 9444e60f-6738-4658-9427-3b7e65d0afe0\nREFUSED   the workflow failed on the server: KSampler: Allocation on device 0 would exceed allowed memory. (out of memory)\nCurrently allocated     : 3.03 GiB\nRequested               : 3.51 GiB\nDevice limit            : 31.36 GiB\nFree (according to CUDA):"
+      ]
+    },
+    {
+      "id": "filing-cabinet",
+      "name": "Filing cabinet",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/man-eater/assets/objects/filing-cabinet.jpg",
+      "image_sha256": "298850fce84fd25a3892270b439ed0790c3563ca8454f4801aa791d4e94ec079",
+      "output": "build/models/man-eater/filing-cabinet.glb",
+      "status": "failed",
+      "problems": [
+        "comfy: , 4], background removed, image sha256 298850fce84fd25a, server 127.0.0.1:8188\nqueued    prompt ccde5508-d740-41e9-aa03-7e0a79d6db20\nREFUSED   the workflow failed on the server: VaeDecodeShapeTrellis: Allocation on device 0 would exceed allowed memory. (out of memory)\nCurrently allocated     : 6.68 GiB\nRequested               : 7.82 GiB\nDevice limit            : 31.36 GiB\nFree (according to CUDA):"
+      ]
+    },
+    {
+      "id": "floor-drain",
+      "name": "Floor drain",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/man-eater/assets/objects/floor-drain.jpg",
+      "image_sha256": "c25fcb855ac41e98f5b93d3d4c3e9ed0acf57beedb199616043fb182c3da78d2",
+      "output": "build/models/man-eater/floor-drain.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699312,
+      "size_m_requested": [
+        0.4,
+        0.4,
+        0.08
+      ],
+      "dimensions_m": [
+        0.4,
+        0.403,
+        0.09
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 544
+    },
+    {
+      "id": "key-ring",
+      "name": "Key ring",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/man-eater/assets/objects/key-ring.jpg",
+      "image_sha256": "1565e93008f59f9b57bc1f263b8996ea148d7d85d5e420ce2fa91fbebfa8a624",
+      "output": "build/models/man-eater/key-ring.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699928,
+      "size_m_requested": [
+        0.08,
+        0.02,
+        0.12
+      ],
+      "dimensions_m": [
+        0.782,
+        0.517,
+        0.12
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.10, 0.04, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 315
+    },
+    {
+      "id": "kit-bag",
+      "name": "Kit bag",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/man-eater/assets/objects/kit-bag.jpg",
+      "image_sha256": "8fd4ac4e3b4923634d9f1fbbd68988aaaf3e97a251a5f444baae94821eb1c132",
+      "output": "build/models/man-eater/kit-bag.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699248,
+      "size_m_requested": [
+        0.35,
+        0.35,
+        0.8
+      ],
+      "dimensions_m": [
+        0.49,
+        0.538,
+        0.8
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.71, 0.65, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 788
+    },
+    {
+      "id": "laced-boots",
+      "name": "The first bunkmate's boots",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/man-eater/assets/objects/laced-boots.jpg",
+      "image_sha256": "b55b5e2c845bc99cc9a90b0fcdee46c864a699d940a2bdffaad6b24d5f87235d",
+      "output": "build/models/man-eater/laced-boots.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699214,
+      "size_m_requested": [
+        0.3,
+        0.32,
+        0.3
+      ],
+      "dimensions_m": [
+        0.267,
+        0.32,
+        0.304
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1128
+    },
+    {
+      "id": "ladder",
+      "name": "Ladder",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/man-eater/assets/objects/ladder.jpg",
+      "image_sha256": "b0eaf15ad6199597f2e0546dcce9b07a6bffc382e11e53106b08ae3f22280b28",
+      "output": "build/models/man-eater/ladder.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 450206,
+      "size_m_requested": [
+        0.5,
+        0.15,
+        4.0
+      ],
+      "dimensions_m": [
+        0.76,
+        0.153,
+        4.0
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.66, 0.98, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 293
+    },
+    {
+      "id": "mail-sack",
+      "name": "Mail sack",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/man-eater/assets/objects/mail-sack.jpg",
+      "image_sha256": "c7f2710b2f4ba4fafad296db8d82cfed495ce71582d3882b8cc3bcd2b1b7e4ef",
+      "output": "build/models/man-eater/mail-sack.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699214,
+      "size_m_requested": [
+        0.6,
+        0.4,
+        0.9
+      ],
+      "dimensions_m": [
+        0.723,
+        0.592,
+        0.9
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.83, 0.68, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 750
+    },
+    {
+      "id": "meal-tray",
+      "name": "Meal tray",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/man-eater/assets/objects/meal-tray.jpg",
+      "image_sha256": "c47e5615919c8de81023cdf8f779c30a26fe88c71599c4f22c538e975053e15d",
+      "output": "build/models/man-eater/meal-tray.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699310,
+      "size_m_requested": [
+        0.45,
+        0.33,
+        0.03
+      ],
+      "dimensions_m": [
+        0.45,
+        0.402,
+        0.045
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.82, 0.66); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 605
+    },
+    {
+      "id": "paint-tin",
+      "name": "Paint tin",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/man-eater/assets/objects/paint-tin.jpg",
+      "image_sha256": "c5fdb3f227552b232e40c3f9adce35309004aa84404b863a998484a6c406d72b",
+      "output": "build/models/man-eater/paint-tin.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 698873,
+      "size_m_requested": [
+        0.2,
+        0.2,
+        0.2
+      ],
+      "dimensions_m": [
+        0.2,
+        0.214,
+        0.216
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1001
+    },
+    {
+      "id": "round-table",
+      "name": "Card table",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/man-eater/assets/objects/round-table.jpg",
+      "image_sha256": "becbe9399b5252091b509b4d8755de38c7bb5083379711df576d722523e1ddde",
+      "output": "build/models/man-eater/round-table.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 698885,
+      "size_m_requested": [
+        1.2,
+        1.2,
+        0.75
+      ],
+      "dimensions_m": [
+        1.2,
+        1.201,
+        0.872
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 710
+    },
+    {
+      "id": "rules-card",
+      "name": "Rules card",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/man-eater/assets/objects/rules-card.jpg",
+      "image_sha256": "31a3c0401a2979d4f801d6c932101e9ba56415d43e3665453eb34543e88cf8d8",
+      "output": "build/models/man-eater/rules-card.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699802,
+      "size_m_requested": [
+        0.3,
+        0.01,
+        0.4
+      ],
+      "dimensions_m": [
+        0.692,
+        0.082,
+        0.4
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.43, 0.12, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 682
+    },
+    {
+      "id": "sheet-covered-table",
+      "name": "Sheet-covered table",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/man-eater/assets/objects/sheet-covered-table.jpg",
+      "image_sha256": "b36a0332dd4c4bf8619aa906685880960f35a74d0f31ca82a653b2b5939ad0ac",
+      "output": "build/models/man-eater/sheet-covered-table.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699363,
+      "size_m_requested": [
+        0.8,
+        2.0,
+        0.9
+      ],
+      "dimensions_m": [
+        0.916,
+        2.0,
+        1.024
+      ],
+      "problems": [
+        "rotated 90 deg about Z so its long side matches size_m",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 498
+    },
+    {
+      "id": "sleeping-bag",
+      "name": "Sleeping bag",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/man-eater/assets/objects/sleeping-bag.jpg",
+      "image_sha256": "c4d53a54b0d64bdcab1d533aa6645f4496bda6d731f215917efbca5213b7d207",
+      "output": "build/models/man-eater/sleeping-bag.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699717,
+      "size_m_requested": [
+        0.8,
+        2.0,
+        0.15
+      ],
+      "dimensions_m": [
+        0.788,
+        2.0,
+        0.547
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.01, 1.00, 0.27); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 384
+    },
+    {
+      "id": "snow-shovel",
+      "name": "Snow shovel",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/man-eater/assets/objects/snow-shovel.jpg",
+      "image_sha256": "d0a01394452a2fdcd112207a7eddef958947d285fe35ed5cf32955b36dddfccb",
+      "output": "build/models/man-eater/snow-shovel.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699747,
+      "size_m_requested": [
+        0.45,
+        0.2,
+        1.4
+      ],
+      "dimensions_m": [
+        1.91,
+        1.099,
+        1.4
+      ],
+      "problems": [
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 0.24, 0.18, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 422
+    },
+    {
+      "id": "supply-crate",
+      "name": "Supply crate",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/man-eater/assets/objects/supply-crate.jpg",
+      "image_sha256": "035a56be6c4de5d7c92fd150db19639dc6f1a3359c4321cd8988e11ef63e97b4",
+      "output": "build/models/man-eater/supply-crate.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699240,
+      "size_m_requested": [
+        0.6,
+        0.4,
+        0.4
+      ],
+      "dimensions_m": [
+        0.6,
+        0.277,
+        0.256
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 1.44, 1.56); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 428
+    },
+    {
+      "id": "tube-stand",
+      "name": "Tube stand",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/man-eater/assets/objects/tube-stand.jpg",
+      "image_sha256": "75d151bc71a6c76477519e6df4b19bd50c947d1f8079760ad09285da0ce17e58",
+      "output": "build/models/man-eater/tube-stand.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 500805,
+      "size_m_requested": [
+        0.5,
+        0.5,
+        1.9
+      ],
+      "dimensions_m": [
+        0.725,
+        0.606,
+        1.9
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.69, 0.83, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 407
+    },
+    {
+      "id": "two-handle-door",
+      "name": "Two-handle door",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/man-eater/assets/objects/two-handle-door.jpg",
+      "image_sha256": "c67ea99b9e01de45d5ac3b00e7c5b4b2371807dbe4d7fc446484f7a006118deb",
+      "output": "build/models/man-eater/two-handle-door.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699998,
+      "size_m_requested": [
+        1.1,
+        0.08,
+        4.2
+      ],
+      "dimensions_m": [
+        1.214,
+        0.725,
+        4.2
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.91, 0.11, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 229
+    },
+    {
+      "id": "uniform",
+      "name": "Taken-in uniform trousers",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/man-eater/assets/objects/uniform.jpg",
+      "image_sha256": "197c669898052e76f7a18eb4ad74e0da1e931fc2f65e55e9c7ad6be290b26aae",
+      "output": "build/models/man-eater/uniform.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699986,
+      "size_m_requested": [
+        0.5,
+        0.1,
+        1.5
+      ],
+      "dimensions_m": [
+        0.614,
+        0.249,
+        1.5
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.81, 0.40, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 375
+    },
+    {
+      "id": "wall-clock",
+      "name": "Wall clock",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/man-eater/assets/objects/wall-clock.jpg",
+      "image_sha256": "944c6c2564de6a8643a74b97e85367f88ac723dd32cd461acf1e5f49b9958afb",
+      "output": "build/models/man-eater/wall-clock.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 698856,
+      "size_m_requested": [
+        0.3,
+        0.06,
+        0.3
+      ],
+      "dimensions_m": [
+        0.3,
+        0.045,
+        0.301
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 480
+    },
+    {
+      "id": "wood-stove",
+      "name": "Wood stove",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/man-eater/assets/objects/wood-stove.jpg",
+      "image_sha256": "acc8a58d87e29a12c22a635fef36aab59521dbb190cb37f927366099d652cb3a",
+      "output": "build/models/man-eater/wood-stove.glb",
+      "status": "failed",
+      "problems": [
+        "comfy: , 4], background removed, image sha256 acc8a58d87e29a12, server 127.0.0.1:8189\nqueued    prompt 1c8c12ca-b5a4-4258-8a3b-fbb9a2c5443f\nREFUSED   the workflow failed on the server: BakeTextureFromVoxel: Allocation on device 0 would exceed allowed memory. (out of memory)\nCurrently allocated     : 2.27 GiB\nRequested               : 271.85 MiB\nDevice limit            : 31.36 GiB\nFree (according to CUDA)"
+      ]
+    },
+    {
+      "id": "work-lamp",
+      "name": "Work lamp on stand",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/man-eater/assets/objects/work-lamp.jpg",
+      "image_sha256": "6cdf965b500da3cb5709437fee2b5dcc909a99bdf17170d80ee34e3282514e75",
+      "output": "build/models/man-eater/work-lamp.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699735,
+      "size_m_requested": [
+        0.8,
+        0.8,
+        2.0
+      ],
+      "dimensions_m": [
+        1.169,
+        1.214,
+        2.0
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.68, 0.66, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 478
+    },
+    {
+      "id": "yard-lamp",
+      "name": "Yard lamp post",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/man-eater/assets/objects/yard-lamp.jpg",
+      "image_sha256": "c205e026358827cc3eeb35f0abc4f80a71fc627730dfd4c6f9f54874efd579a5",
+      "output": "build/models/man-eater/yard-lamp.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 645074,
+      "size_m_requested": [
+        0.4,
+        0.4,
+        5.0
+      ],
+      "dimensions_m": [
+        2.198,
+        1.086,
+        5.0
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.18, 0.37, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 194
+    }
+  ]
+}

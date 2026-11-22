@@ -1,0 +1,715 @@
+{
+  "tool": "ComfyUI 0.46.2, core Trellis 2 nodes",
+  "models": [
+    {
+      "id": "bicycle",
+      "name": "Lottie's bicycle",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/missing-campsites/assets/objects/bicycle.jpg",
+      "image_sha256": "01f8924af4b24855f4d512c060259c1839252fb60c22101615b1c93adcf36de7",
+      "output": "build/models/missing-campsites/bicycle.glb",
+      "status": "failed",
+      "problems": [
+        "comfy: request   trellis2, seeds [1, 2, 3, 4], background removed, image sha256 01f8924af4b24855, server 127.0.0.1:8188\nqueued    prompt dee4d412-bb1f-43eb-821c-e340c240f5de\nREFUSED   ComfyUI_00090.glb: got 50102272 bytes of 64144228. The prompt dee4d412-bb1f-43eb-821c-e340c240f5de is done on the server; run `status dee4d412-bb1f-43eb-821c-e340c240f5de` and download again."
+      ]
+    },
+    {
+      "id": "blue-kettle",
+      "name": "Blue enamel kettle",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/missing-campsites/assets/objects/blue-kettle.jpg",
+      "image_sha256": "19e9fd36a9aeae0e805aaec75195590459e0206a8dfc010c73303a100ddbbfbe",
+      "output": "build/models/missing-campsites/blue-kettle.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 698561,
+      "size_m_requested": [
+        0.25,
+        0.2,
+        0.22
+      ],
+      "dimensions_m": [
+        0.25,
+        0.292,
+        0.326
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.69, 0.67); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1069
+    },
+    {
+      "id": "booth-radio",
+      "name": "Booth radio",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/missing-campsites/assets/objects/booth-radio.jpg",
+      "image_sha256": "0263332933029682bcfca154fbc503504862b319e55ae4627502f0606ee254f2",
+      "output": "build/models/missing-campsites/booth-radio.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699029,
+      "size_m_requested": [
+        0.25,
+        0.12,
+        0.18
+      ],
+      "dimensions_m": [
+        0.25,
+        0.107,
+        0.236
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 1.12, 0.76); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 524
+    },
+    {
+      "id": "camera",
+      "name": "In\u00e9s's camera",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/missing-campsites/assets/objects/camera.jpg",
+      "image_sha256": "9a4bc407c6ec566b6a089eea3df278f15431e77fadd392d4f75606b5d9d7d509",
+      "output": "build/models/missing-campsites/camera.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699145,
+      "size_m_requested": [
+        0.14,
+        0.08,
+        0.09
+      ],
+      "dimensions_m": [
+        0.14,
+        0.116,
+        0.079
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.69, 1.13); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 791
+    },
+    {
+      "id": "camp-chair",
+      "name": "Folding camp chair",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/missing-campsites/assets/objects/camp-chair.jpg",
+      "image_sha256": "b588899847d18ae32ba202b89a92e3456e38f4063b3ea763b2325b1c2d8c0732",
+      "output": "build/models/missing-campsites/camp-chair.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699634,
+      "size_m_requested": [
+        0.6,
+        0.6,
+        0.85
+      ],
+      "dimensions_m": [
+        0.712,
+        0.662,
+        0.85
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 831
+    },
+    {
+      "id": "camper-van",
+      "name": "The van",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/missing-campsites/assets/objects/camper-van.jpg",
+      "image_sha256": "f3f0b2b6c4de1b694fa7ef44062f9545b9c7f5c164b384bfe41c6117275ea931",
+      "output": "build/models/missing-campsites/camper-van.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699552,
+      "size_m_requested": [
+        2.0,
+        4.8,
+        2.2
+      ],
+      "dimensions_m": [
+        2.167,
+        4.8,
+        2.893
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 891
+    },
+    {
+      "id": "chalkboard",
+      "name": "Dell's chalkboard",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/missing-campsites/assets/objects/chalkboard.jpg",
+      "image_sha256": "7401a6b89d4272babe24f406bbf0f95b272b24667dfea2c1c333fd6db44f7afb",
+      "output": "build/models/missing-campsites/chalkboard.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699672,
+      "size_m_requested": [
+        0.6,
+        0.4,
+        1.0
+      ],
+      "dimensions_m": [
+        0.707,
+        0.69,
+        1.0
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.85, 0.58, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1000
+    },
+    {
+      "id": "cooler",
+      "name": "The cooler",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/missing-campsites/assets/objects/cooler.jpg",
+      "image_sha256": "f5159ff998a0007eadcd04132b5cef4d2b1b18323a144d5639a58833ec7d903b",
+      "output": "build/models/missing-campsites/cooler.glb",
+      "status": "failed",
+      "problems": [
+        "comfy: eds [1, 2, 3, 4], background removed, image sha256 f5159ff998a0007e, server 127.0.0.1:8190\nqueued    prompt 3259b153-db62-46e9-b141-6c9312cc08bf\nREFUSED   the workflow failed on the server: KSampler: Allocation on device 0 would exceed allowed memory. (out of memory)\nCurrently allocated     : 4.47 GiB\nRequested               : 899.78 MiB\nDevice limit            : 31.36 GiB\nFree (according to CUDA)"
+      ]
+    },
+    {
+      "id": "firewood-bundle",
+      "name": "Firewood bundle",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/missing-campsites/assets/objects/firewood-bundle.jpg",
+      "image_sha256": "cbeed2d6719c7c3c92dc1b0af4a59930483e74e69fd344a5526634ef25c1f3b2",
+      "output": "build/models/missing-campsites/firewood-bundle.glb",
+      "status": "failed",
+      "problems": [
+        "comfy: eeds [1, 2, 3, 4], background removed, image sha256 cbeed2d6719c7c3c, server 127.0.0.1:8190\nqueued    prompt 63e96166-8f2a-4d9c-9640-ab0436163cbb\nREFUSED   the workflow failed on the server: KSampler: Allocation on device 0 would exceed allowed memory. (out of memory)\nCurrently allocated     : 3.41 GiB\nRequested               : 4.10 GiB\nDevice limit            : 31.36 GiB\nFree (according to CUDA):"
+      ]
+    },
+    {
+      "id": "heron-sign",
+      "name": "Heron entrance sign",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/missing-campsites/assets/objects/heron-sign.jpg",
+      "image_sha256": "ecc081011654bf511f533dd63bc7215055e64ae02941bed21fe186e14409a875",
+      "output": "build/models/missing-campsites/heron-sign.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699553,
+      "size_m_requested": [
+        2.4,
+        0.15,
+        2.2
+      ],
+      "dimensions_m": [
+        2.4,
+        0.4,
+        2.185
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.37, 1.01); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 515
+    },
+    {
+      "id": "hiking-pack",
+      "name": "Abel's pack",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/missing-campsites/assets/objects/hiking-pack.jpg",
+      "image_sha256": "039f4e6adfb1076b26a3c6bc2e5c8a82dc2f575c7885ff82c9c3db7ff3f9e6a3",
+      "output": "build/models/missing-campsites/hiking-pack.glb",
+      "status": "failed",
+      "problems": [
+        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8190: [WinError 10061] No connection could be made because the target machine actively refused it. Start ComfyUI, or set COMFY_URL."
+      ]
+    },
+    {
+      "id": "logbook",
+      "name": "The ranger's logbook",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/missing-campsites/assets/objects/logbook.jpg",
+      "image_sha256": "ab28a33f84556c1d17fdd6e86383c50fff487ce08cf956d499f03b053fdf0890",
+      "output": "build/models/missing-campsites/logbook.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699443,
+      "size_m_requested": [
+        0.32,
+        0.05,
+        0.42
+      ],
+      "dimensions_m": [
+        1.821,
+        1.227,
+        0.42
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.18, 0.04, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 802
+    },
+    {
+      "id": "master-map",
+      "name": "Master map in its frame",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/missing-campsites/assets/objects/master-map.jpg",
+      "image_sha256": "c5635865b2ffabab792fbf30628f187ab63b50767fd8fb4758d42cf9b13638ae",
+      "output": "build/models/missing-campsites/master-map.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699718,
+      "size_m_requested": [
+        0.9,
+        0.04,
+        0.65
+      ],
+      "dimensions_m": [
+        0.9,
+        0.071,
+        0.686
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.57, 0.95); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 498
+    },
+    {
+      "id": "notebook",
+      "name": "Tam's notebook",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/missing-campsites/assets/objects/notebook.jpg",
+      "image_sha256": "8f8fbfd7b8f42cbbb2e627474e4f748f63c7bb429d57020c556b9aa5249b46dd",
+      "output": "build/models/missing-campsites/notebook.glb",
+      "status": "failed",
+      "problems": [
+        "comfy: , 4], background removed, image sha256 8f8fbfd7b8f42cbb, server 127.0.0.1:8190\nqueued    prompt 275b582e-81be-4069-8ea6-0570d8a3d391\nREFUSED   the workflow failed on the server: VaeDecodeShapeTrellis: Allocation on device 0 would exceed allowed memory. (out of memory)\nCurrently allocated     : 3.31 GiB\nRequested               : 3.86 GiB\nDevice limit            : 31.36 GiB\nFree (according to CUDA):"
+      ]
+    },
+    {
+      "id": "owl-box",
+      "name": "The owl box",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/missing-campsites/assets/objects/owl-box.jpg",
+      "image_sha256": "f57cb305048dc5126c50b6354268845c7a11ab11ce1589acf40efaf2a246f3e1",
+      "output": "build/models/missing-campsites/owl-box.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699275,
+      "size_m_requested": [
+        0.35,
+        0.35,
+        0.6
+      ],
+      "dimensions_m": [
+        0.289,
+        0.353,
+        0.6
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1342
+    },
+    {
+      "id": "paper-map",
+      "name": "Paper campground map",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/missing-campsites/assets/objects/paper-map.jpg",
+      "image_sha256": "440e116b16811bb16797a1a80bca01a86635dad5bf2cefa0b1f254b10a6b8901",
+      "output": "build/models/missing-campsites/paper-map.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699902,
+      "size_m_requested": [
+        0.6,
+        0.01,
+        0.45
+      ],
+      "dimensions_m": [
+        0.6,
+        0.599,
+        0.122
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.02, 3.69); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 756
+    },
+    {
+      "id": "payphone",
+      "name": "The payphone",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/missing-campsites/assets/objects/payphone.jpg",
+      "image_sha256": "54dc6a3368b5dbb8cd7202390d7dcd1689d40be73ff8d40449239c39dfab0938",
+      "output": "build/models/missing-campsites/payphone.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699599,
+      "size_m_requested": [
+        0.35,
+        0.3,
+        2.0
+      ],
+      "dimensions_m": [
+        0.666,
+        1.033,
+        2.0
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.53, 0.29, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1208
+    },
+    {
+      "id": "picnic-table",
+      "name": "Picnic table",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/missing-campsites/assets/objects/picnic-table.jpg",
+      "image_sha256": "c42f2adcd960b88eb88862d980981396dc6c38ab25d3afbe62c71ee6d02f9166",
+      "output": "build/models/missing-campsites/picnic-table.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699504,
+      "size_m_requested": [
+        1.8,
+        1.6,
+        0.75
+      ],
+      "dimensions_m": [
+        1.8,
+        1.35,
+        0.788
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 683
+    },
+    {
+      "id": "postcard",
+      "name": "Agnes's postcard",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/missing-campsites/assets/objects/postcard.jpg",
+      "image_sha256": "94cf946dd167d39dbb12d511ed6444c4d6e1796e6b8a33d6a6a15d036100738e",
+      "output": "build/models/missing-campsites/postcard.glb",
+      "status": "failed",
+      "problems": [
+        "comfy: request   trellis2, seeds [1, 2, 3, 4], background removed, image sha256 94cf946dd167d39d, server 127.0.0.1:8188\nqueued    prompt 0fbcaf01-ce72-4f9d-8468-387f06f06bdf\nREFUSED   ComfyUI_00087.glb: got 49381376 bytes of 49387256. The prompt 0fbcaf01-ce72-4f9d-8468-387f06f06bdf is done on the server; run `status 0fbcaf01-ce72-4f9d-8468-387f06f06bdf` and download again."
+      ]
+    },
+    {
+      "id": "programme",
+      "name": "Recital programme",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/missing-campsites/assets/objects/programme.jpg",
+      "image_sha256": "dc41cfc49985f1691c976bdf928219b40a19a83f6a2d824dc21b4fc0696dceb3",
+      "output": "build/models/missing-campsites/programme.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 698923,
+      "size_m_requested": [
+        0.15,
+        0.002,
+        0.21
+      ],
+      "dimensions_m": [
+        0.239,
+        0.153,
+        0.21
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.63, 0.01, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 622
+    },
+    {
+      "id": "quiet-hours-board",
+      "name": "Quiet-hours board",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/missing-campsites/assets/objects/quiet-hours-board.jpg",
+      "image_sha256": "74474b0978277db7e9bb3daab2ed17d3a8f73930e380c1a5719a55a37a8c8919",
+      "output": "build/models/missing-campsites/quiet-hours-board.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699587,
+      "size_m_requested": [
+        0.6,
+        0.03,
+        0.4
+      ],
+      "dimensions_m": [
+        0.6,
+        0.1,
+        0.394
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.30, 1.01); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1061
+    },
+    {
+      "id": "register-box",
+      "name": "Trail register box",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/missing-campsites/assets/objects/register-box.jpg",
+      "image_sha256": "69d9d776a9b6a1ace819114b0dc09a6dd1fcbc8e73772c56c6bd8e0fda406612",
+      "output": "build/models/missing-campsites/register-box.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699872,
+      "size_m_requested": [
+        0.4,
+        0.3,
+        1.4
+      ],
+      "dimensions_m": [
+        0.548,
+        0.518,
+        1.4
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.73, 0.58, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 482
+    },
+    {
+      "id": "site-post",
+      "name": "Numbered site post",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/missing-campsites/assets/objects/site-post.jpg",
+      "image_sha256": "46936212ea84391edd9c5d38cb85ab48700784ace15fd9b59667655a2be329ba",
+      "output": "build/models/missing-campsites/site-post.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 699947,
+      "size_m_requested": [
+        0.15,
+        0.15,
+        1.2
+      ],
+      "dimensions_m": [
+        0.296,
+        0.285,
+        1.2
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.51, 0.53, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 392
+    },
+    {
+      "id": "smartphone",
+      "name": "A phone",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/missing-campsites/assets/objects/smartphone.jpg",
+      "image_sha256": "b3388dea75e1b71f622dcdbc7e69ca961d509354036d19c2163567c25e270b0b",
+      "output": "build/models/missing-campsites/smartphone.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699836,
+      "size_m_requested": [
+        0.075,
+        0.01,
+        0.15
+      ],
+      "dimensions_m": [
+        1.736,
+        0.859,
+        0.15
+      ],
+      "problems": [
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 0.04, 0.01, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 419
+    },
+    {
+      "id": "split-boulder",
+      "name": "The split boulder",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/missing-campsites/assets/objects/split-boulder.jpg",
+      "image_sha256": "e2b024241dd7cd514e12be0c56ee2b2524954e27cb326912195757fb694a5108",
+      "output": "build/models/missing-campsites/split-boulder.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699394,
+      "size_m_requested": [
+        4.0,
+        3.0,
+        2.2
+      ],
+      "dimensions_m": [
+        4.0,
+        3.085,
+        1.429
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.97, 1.54); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1195
+    },
+    {
+      "id": "tent",
+      "name": "Dome tent",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/missing-campsites/assets/objects/tent.jpg",
+      "image_sha256": "a3cbb018484e3b7382f764c05150ceacaec8c1adfbefe71086b9a094586ce3b7",
+      "output": "build/models/missing-campsites/tent.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699444,
+      "size_m_requested": [
+        2.2,
+        2.0,
+        1.3
+      ],
+      "dimensions_m": [
+        2.2,
+        1.801,
+        1.226
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 710
+    },
+    {
+      "id": "upright-piano",
+      "name": "Upright piano",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/missing-campsites/assets/objects/upright-piano.jpg",
+      "image_sha256": "a3f285191d8f32edbed710ed7e8996b2a0d796831abb6fdccb1a99e27ad40e8b",
+      "output": "build/models/missing-campsites/upright-piano.glb",
+      "status": "failed",
+      "problems": [
+        "comfy: request   trellis2, seeds [1, 2, 3, 4], background removed, image sha256 a3f285191d8f32ed, server 127.0.0.1:8190\nqueued    prompt 1e605d8e-0ec2-4342-8500-f7517fbb9d7f\nREFUSED   ComfyUI_00057.glb: got 25133056 bytes of 63230164. The prompt 1e605d8e-0ec2-4342-8500-f7517fbb9d7f is done on the server; run `status 1e605d8e-0ec2-4342-8500-f7517fbb9d7f` and download again."
+      ]
+    },
+    {
+      "id": "van-keys",
+      "name": "Rafe's van keys",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/missing-campsites/assets/objects/van-keys.jpg",
+      "image_sha256": "cf6476a4a0517b9c0e627c02c7d2666a2cfb85805b425f5654990276080555de",
+      "output": "build/models/missing-campsites/van-keys.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699050,
+      "size_m_requested": [
+        0.08,
+        0.02,
+        0.12
+      ],
+      "dimensions_m": [
+        0.175,
+        0.162,
+        0.12
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.46, 0.12, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 736
+    }
+  ]
+}

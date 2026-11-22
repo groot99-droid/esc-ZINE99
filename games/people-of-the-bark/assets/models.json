@@ -1,0 +1,255 @@
+{
+  "tool": "ComfyUI 0.46.2, core Trellis 2 nodes",
+  "models": [
+    {
+      "id": "battlement-slot",
+      "name": "Battlement slot",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/people-of-the-bark/assets/objects/battlement-slot.jpg",
+      "image_sha256": "6075f28ccf2d71c127555b5853053a7b66640dd873e72fd708358444c91db256",
+      "output": "build/models/people-of-the-bark/battlement-slot.glb",
+      "status": "failed",
+      "problems": [
+        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8189: [WinError 10061] No connection could be made because the target machine actively refused it. Start ComfyUI, or set COMFY_URL."
+      ]
+    },
+    {
+      "id": "chant-drum",
+      "name": "Chant drum",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/people-of-the-bark/assets/objects/chant-drum.jpg",
+      "image_sha256": "ff816a49a3ad1490c073296822b8d2eeb54b65430db10809a026feb1f36e3210",
+      "output": "build/models/people-of-the-bark/chant-drum.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699414,
+      "size_m_requested": [
+        0.004,
+        0.004,
+        0.004
+      ],
+      "dimensions_m": [
+        0.004,
+        0.004,
+        0.005
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1589
+    },
+    {
+      "id": "dwelling",
+      "name": "Dwelling",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/people-of-the-bark/assets/objects/dwelling.jpg",
+      "image_sha256": "c4fda40bc743025b3e932467e61a0ee0048be7cf8933deb83590b727e93a18fa",
+      "output": "build/models/people-of-the-bark/dwelling.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699982,
+      "size_m_requested": [
+        0.006,
+        0.004,
+        0.007
+      ],
+      "dimensions_m": [
+        0.008,
+        0.008,
+        0.007
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.80, 0.52, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1413
+    },
+    {
+      "id": "edge-stake",
+      "name": "Edge stake",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/people-of-the-bark/assets/objects/edge-stake.jpg",
+      "image_sha256": "e331af885035c01e717244dd023834a864823b5f7c7001a6a486727c076adee1",
+      "output": "build/models/people-of-the-bark/edge-stake.glb",
+      "status": "failed",
+      "problems": [
+        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8189: [WinError 10061] No connection could be made because the target machine actively refused it. Start ComfyUI, or set COMFY_URL."
+      ]
+    },
+    {
+      "id": "rain-bead",
+      "name": "Rain bead",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/people-of-the-bark/assets/objects/rain-bead.jpg",
+      "image_sha256": "4c78600c1802b46abb060b3fd76361e4c37776fb1cd598a603b1c25d8b9f218a",
+      "output": "build/models/people-of-the-bark/rain-bead.glb",
+      "status": "failed",
+      "problems": [
+        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8189: [WinError 10061] No connection could be made because the target machine actively refused it. Start ComfyUI, or set COMFY_URL."
+      ]
+    },
+    {
+      "id": "record-hall",
+      "name": "Record Hall",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/people-of-the-bark/assets/objects/record-hall.jpg",
+      "image_sha256": "1e24ce887f82874d6cc47393045a81415ae482b068dad84bd7af8c4de86702e7",
+      "output": "build/models/people-of-the-bark/record-hall.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699976,
+      "size_m_requested": [
+        0.014,
+        0.008,
+        0.012
+      ],
+      "dimensions_m": [
+        0.014,
+        0.007,
+        0.007
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 1.23, 1.69); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 808
+    },
+    {
+      "id": "roll-of-the-bark",
+      "name": "The Roll of the Bark",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/people-of-the-bark/assets/objects/roll-of-the-bark.jpg",
+      "image_sha256": "a44c3af3a8dcb29580413928fdbe4f514e1c3d5575b54b725c6d1ba0c74d14bb",
+      "output": "build/models/people-of-the-bark/roll-of-the-bark.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699498,
+      "size_m_requested": [
+        0.008,
+        0.003,
+        0.006
+      ],
+      "dimensions_m": [
+        0.008,
+        0.007,
+        0.008
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.40, 0.75); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1298
+    },
+    {
+      "id": "sap-cup",
+      "name": "Sap cup",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/people-of-the-bark/assets/objects/sap-cup.jpg",
+      "image_sha256": "6904e61a9eb46a4cdf9bcae235f9884cc702fe25e871d4821e0ba70b5adc20cb",
+      "output": "build/models/people-of-the-bark/sap-cup.glb",
+      "status": "failed",
+      "problems": [
+        "comfy: , 4], background removed, image sha256 6904e61a9eb46a4c, server 127.0.0.1:8190\nqueued    prompt 0bba5b6c-7a75-471a-82d4-91cc83bce1a0\nREFUSED   the workflow failed on the server: BakeTextureFromVoxel: Allocation on device 0 would exceed allowed memory. (out of memory)\nCurrently allocated     : 9.11 GiB\nRequested               : 272.93 MiB\nDevice limit            : 31.36 GiB\nFree (according to CUDA)"
+      ]
+    },
+    {
+      "id": "sap-tap",
+      "name": "Sap tap",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/people-of-the-bark/assets/objects/sap-tap.jpg",
+      "image_sha256": "87f4c2de305e4a3a8fba780e90f927f02fd4548cd662de0985119b748fd38518",
+      "output": "build/models/people-of-the-bark/sap-tap.glb",
+      "status": "failed",
+      "problems": [
+        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8189: [WinError 10061] No connection could be made because the target machine actively refused it. Start ComfyUI, or set COMFY_URL."
+      ]
+    },
+    {
+      "id": "silk-anchor",
+      "name": "Silk anchor point",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/people-of-the-bark/assets/objects/silk-anchor.jpg",
+      "image_sha256": "868787f4684046eb7d4b5f5a133fee02d804b28e74f74972c68a128d8012bf3a",
+      "output": "build/models/people-of-the-bark/silk-anchor.glb",
+      "status": "failed",
+      "problems": [
+        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8189: [WinError 10061] No connection could be made because the target machine actively refused it. Start ComfyUI, or set COMFY_URL."
+      ]
+    },
+    {
+      "id": "war-hall",
+      "name": "War Hall",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/people-of-the-bark/assets/objects/war-hall.jpg",
+      "image_sha256": "b3715f600e8e6952dec1aea00233402cf74f479aba5d7fc367bf2e5b74e9970d",
+      "output": "build/models/people-of-the-bark/war-hall.glb",
+      "status": "failed",
+      "problems": [
+        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8189: [WinError 10061] No connection could be made because the target machine actively refused it. Start ComfyUI, or set COMFY_URL."
+      ]
+    },
+    {
+      "id": "washing-line",
+      "name": "Washing line",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/people-of-the-bark/assets/objects/washing-line.jpg",
+      "image_sha256": "3e139b727c6808d9fcb4ca75f1dbfa70928a32840e361ca99706254322ee022e",
+      "output": "build/models/people-of-the-bark/washing-line.glb",
+      "status": "failed",
+      "problems": [
+        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8189: timed out. Start ComfyUI, or set COMFY_URL."
+      ]
+    },
+    {
+      "id": "window-shutter",
+      "name": "Bark-chip shutter",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/people-of-the-bark/assets/objects/window-shutter.jpg",
+      "image_sha256": "126bef903204df2e9b9618688bd3c1ea52824b19436818b0586aedfbd2649f8b",
+      "output": "build/models/people-of-the-bark/window-shutter.glb",
+      "status": "failed",
+      "problems": [
+        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8190: [WinError 10061] No connection could be made because the target machine actively refused it. Start ComfyUI, or set COMFY_URL."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,890 @@
+{
+  "tool": "ComfyUI 0.46.2, core Trellis 2 nodes",
+  "models": [
+    {
+      "id": "air-handler",
+      "name": "Air handler",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-finale/assets/objects/air-handler.jpg",
+      "image_sha256": "ef58af8cc6909c9fcf23b2354503b84cb0484a5fcd237092c70279cc0dfb2096",
+      "output": "build/models/dr-tox-finale/air-handler.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 698422,
+      "size_m_requested": [
+        4.0,
+        4.0,
+        6.0
+      ],
+      "dimensions_m": [
+        6.401,
+        4.467,
+        6.0
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.62, 0.90, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1182
+    },
+    {
+      "id": "atrium-glass-panel",
+      "name": "Atrium glass panel",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-finale/assets/objects/atrium-glass-panel.jpg",
+      "image_sha256": "952d93cc438f322c613fc1da18c66e9a86d9b7ccb1f9135a99021955fd519e6f",
+      "output": "build/models/dr-tox-finale/atrium-glass-panel.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699300,
+      "size_m_requested": [
+        6.0,
+        0.4,
+        10.0
+      ],
+      "dimensions_m": [
+        8.276,
+        3.14,
+        10.0
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.73, 0.13, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 251
+    },
+    {
+      "id": "balance-scale",
+      "name": "Two-pan balance",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-finale/assets/objects/balance-scale.jpg",
+      "image_sha256": "620aba0234b36113d19bc2719a1272aee1c30923a77e240cc1f74ea77dd3edf0",
+      "output": "build/models/dr-tox-finale/balance-scale.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699474,
+      "size_m_requested": [
+        0.9,
+        0.4,
+        0.9
+      ],
+      "dimensions_m": [
+        0.9,
+        0.612,
+        0.774
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.65, 1.16); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 959
+    },
+    {
+      "id": "banner-pole",
+      "name": "March banner",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-finale/assets/objects/banner-pole.jpg",
+      "image_sha256": "a75f87e510cd0cb88d7ae02794c1a9d4887899b2ef5d9e941ae4452edc661768",
+      "output": "build/models/dr-tox-finale/banner-pole.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699947,
+      "size_m_requested": [
+        2.4,
+        0.2,
+        3.6
+      ],
+      "dimensions_m": [
+        1.866,
+        0.295,
+        3.6
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.29, 0.68, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 485
+    },
+    {
+      "id": "batch-bench",
+      "name": "Batch bench",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-finale/assets/objects/batch-bench.jpg",
+      "image_sha256": "89579ec577fc770b5a618b77b77cff862c254e06d384fea39d7511d39b9a1a34",
+      "output": "build/models/dr-tox-finale/batch-bench.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699749,
+      "size_m_requested": [
+        1.8,
+        0.7,
+        1.6
+      ],
+      "dimensions_m": [
+        1.8,
+        0.638,
+        1.197
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 541
+    },
+    {
+      "id": "blade-crate",
+      "name": "Blade crate",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-finale/assets/objects/blade-crate.jpg",
+      "image_sha256": "e4013dcf42d0674f8d1f8b5c1a9227aa1db53a516ff80bdf0a51d51269a96df2",
+      "output": "build/models/dr-tox-finale/blade-crate.glb",
+      "status": "failed",
+      "problems": [
+        "comfy: ], background removed, image sha256 e4013dcf42d0674f, server 127.0.0.1:8190\nqueued    prompt aead0950-fc89-410e-bded-a94be70cfa50\nREFUSED   the workflow failed on the server: VaeDecodeTextureTrellis: Allocation on device 0 would exceed allowed memory. (out of memory)\nCurrently allocated     : 15.88 GiB\nRequested               : 2.16 GiB\nDevice limit            : 31.36 GiB\nFree (according to CUDA):"
+      ]
+    },
+    {
+      "id": "calibration-booth",
+      "name": "Calibration booth",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-finale/assets/objects/calibration-booth.jpg",
+      "image_sha256": "b20a78a387da264f0ab57a50a40accc6685d62ecf89c04521f2a05c6649c1fe7",
+      "output": "build/models/dr-tox-finale/calibration-booth.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699860,
+      "size_m_requested": [
+        2.4,
+        2.4,
+        2.6
+      ],
+      "dimensions_m": [
+        2.029,
+        1.611,
+        2.6
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.18, 1.49, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 863
+    },
+    {
+      "id": "cistern-tank",
+      "name": "Cistern",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-finale/assets/objects/cistern-tank.jpg",
+      "image_sha256": "350ab2dcccc03810197ca5b9e429172bd8ce71383fac36cfe4e81c438f7613a5",
+      "output": "build/models/dr-tox-finale/cistern-tank.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 698851,
+      "size_m_requested": [
+        3.0,
+        3.0,
+        1.6
+      ],
+      "dimensions_m": [
+        3.0,
+        3.2,
+        2.106
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 457
+    },
+    {
+      "id": "copier-cart",
+      "name": "Copier cart",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-finale/assets/objects/copier-cart.jpg",
+      "image_sha256": "0004510a9078be8ca7388d8cd9a32ddfd26a1f198e869edf2b53057da7633e6b",
+      "output": "build/models/dr-tox-finale/copier-cart.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699828,
+      "size_m_requested": [
+        1.4,
+        0.9,
+        1.4
+      ],
+      "dimensions_m": [
+        1.4,
+        0.762,
+        0.92
+      ],
+      "problems": [
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 1.00, 1.18, 1.52); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 530
+    },
+    {
+      "id": "core-lamp",
+      "name": "Core work lamp",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-finale/assets/objects/core-lamp.jpg",
+      "image_sha256": "1bccbbac89bd0572cb4a0168321156fb14d88258c94ff608ca99f7a6fe9669b2",
+      "output": "build/models/dr-tox-finale/core-lamp.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 699201,
+      "size_m_requested": [
+        0.4,
+        0.4,
+        0.7
+      ],
+      "dimensions_m": [
+        0.511,
+        0.366,
+        0.7
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.78, 1.09, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 911
+    },
+    {
+      "id": "drum-lectern",
+      "name": "Steel-drum lectern",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-finale/assets/objects/drum-lectern.jpg",
+      "image_sha256": "bec51b5feaa3da1e53d1b20f27d954ee7ca74f723ba6e0f3ca0666b967c6bfae",
+      "output": "build/models/dr-tox-finale/drum-lectern.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699192,
+      "size_m_requested": [
+        0.7,
+        0.7,
+        1.2
+      ],
+      "dimensions_m": [
+        0.763,
+        0.706,
+        1.2
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 514
+    },
+    {
+      "id": "duct-hatch",
+      "name": "Supply-duct hatch",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-finale/assets/objects/duct-hatch.jpg",
+      "image_sha256": "6434668caf481b611b33c37063dc863c6518d7aeea5328d98bb4c83e5a1bb4e7",
+      "output": "build/models/dr-tox-finale/duct-hatch.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699615,
+      "size_m_requested": [
+        1.2,
+        0.6,
+        1.2
+      ],
+      "dimensions_m": [
+        1.2,
+        0.747,
+        0.731
+      ],
+      "problems": [
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 1.00, 0.80, 1.64); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 909
+    },
+    {
+      "id": "exhaust-vent",
+      "name": "Exhaust vent",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-finale/assets/objects/exhaust-vent.jpg",
+      "image_sha256": "be0e222ea628d02952c933e61af94dfcc35597ba9e2b50ce36f8bcd77f520a09",
+      "output": "build/models/dr-tox-finale/exhaust-vent.glb",
+      "status": "failed",
+      "problems": [
+        "comfy: , 4], background removed, image sha256 be0e222ea628d029, server 127.0.0.1:8188\nqueued    prompt 12e5ea15-4827-4955-bc5e-bfb459200116\nREFUSED   the workflow failed on the server: BakeTextureFromVoxel: Allocation on device 0 would exceed allowed memory. (out of memory)\nCurrently allocated     : 11.13 GiB\nRequested               : 322.86 MiB\nDevice limit            : 31.36 GiB\nFree (according to CUDA"
+      ]
+    },
+    {
+      "id": "floodlight-mast",
+      "name": "Floodlight mast",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-finale/assets/objects/floodlight-mast.jpg",
+      "image_sha256": "e9d70a5cf0242cbcbdc0982ec1c5d7255d01ec325c504ddc150bb08d9f5202c5",
+      "output": "build/models/dr-tox-finale/floodlight-mast.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699687,
+      "size_m_requested": [
+        1.6,
+        1.6,
+        9.0
+      ],
+      "dimensions_m": [
+        3.711,
+        2.669,
+        9.0
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.43, 0.60, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 834
+    },
+    {
+      "id": "folding-cot",
+      "name": "Folding cot",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-finale/assets/objects/folding-cot.jpg",
+      "image_sha256": "5bc24838114543a91569740b7fa82cfa11f7244fd03ce584d0ee622dab061dba",
+      "output": "build/models/dr-tox-finale/folding-cot.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699828,
+      "size_m_requested": [
+        0.8,
+        1.9,
+        0.5
+      ],
+      "dimensions_m": [
+        0.808,
+        1.9,
+        0.703
+      ],
+      "problems": [
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 0.99, 1.00, 0.71); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 367
+    },
+    {
+      "id": "gallery-rail",
+      "name": "Gallery railing",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-finale/assets/objects/gallery-rail.jpg",
+      "image_sha256": "2853c3e6cc9b5c66358762d6beea922db3ac75879aca747b267ffb006dd4715e",
+      "output": "build/models/dr-tox-finale/gallery-rail.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699676,
+      "size_m_requested": [
+        6.0,
+        0.2,
+        1.1
+      ],
+      "dimensions_m": [
+        6.0,
+        1.358,
+        3.37
+      ],
+      "problems": [
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 1.00, 0.15, 0.33); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 345
+    },
+    {
+      "id": "hardlight-emitter",
+      "name": "Hard-light emitter",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-finale/assets/objects/hardlight-emitter.jpg",
+      "image_sha256": "5e2d23e7a6809d28f5c8894f231251798602727fbf41270a9e1f742bb87b26fe",
+      "output": "build/models/dr-tox-finale/hardlight-emitter.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699970,
+      "size_m_requested": [
+        0.6,
+        0.6,
+        1.8
+      ],
+      "dimensions_m": [
+        0.434,
+        0.415,
+        1.8
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.38, 1.44, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 270
+    },
+    {
+      "id": "hub-door",
+      "name": "Inner door",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-finale/assets/objects/hub-door.jpg",
+      "image_sha256": "72272b9de9b219eea625f0204c13fc6e9b04ccc9ff3b9e43070682291bb8a532",
+      "output": "build/models/dr-tox-finale/hub-door.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699242,
+      "size_m_requested": [
+        2.0,
+        0.6,
+        3.0
+      ],
+      "dimensions_m": [
+        2.209,
+        0.914,
+        3.0
+      ],
+      "problems": [
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 0.91, 0.66, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 418
+    },
+    {
+      "id": "icon-lightbox",
+      "name": "Icon light box",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-finale/assets/objects/icon-lightbox.jpg",
+      "image_sha256": "28ce94a9100be9269164d8b538b6d49cdf1aab8b75e5832dbc86fcb34b23ed11",
+      "output": "build/models/dr-tox-finale/icon-lightbox.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699247,
+      "size_m_requested": [
+        1.2,
+        0.2,
+        1.6
+      ],
+      "dimensions_m": [
+        1.647,
+        0.473,
+        1.6
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.73, 0.42, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 448
+    },
+    {
+      "id": "iv-stand",
+      "name": "IV stand",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-finale/assets/objects/iv-stand.jpg",
+      "image_sha256": "85541a96001b2347018c0a2ce9f42b18ff2a16ac1b051b92a5d7ec34f80102fb",
+      "output": "build/models/dr-tox-finale/iv-stand.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699955,
+      "size_m_requested": [
+        0.5,
+        0.5,
+        1.9
+      ],
+      "dimensions_m": [
+        0.958,
+        1.005,
+        1.9
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.52, 0.50, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 754
+    },
+    {
+      "id": "march-handcart",
+      "name": "Handcart",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-finale/assets/objects/march-handcart.jpg",
+      "image_sha256": "ff160856abb924d9f4be620aa96de00b6079ecc4277bf9ca25b98894c9520179",
+      "output": "build/models/dr-tox-finale/march-handcart.glb",
+      "status": "failed",
+      "problems": [
+        "comfy: , 4], background removed, image sha256 ff160856abb924d9, server 127.0.0.1:8189\nqueued    prompt c67cda95-de24-4e02-9679-d3d7bbaa0b20\nREFUSED   the workflow failed on the server: BakeTextureFromVoxel: Allocation on device 0 would exceed allowed memory. (out of memory)\nCurrently allocated     : 14.58 GiB\nRequested               : 424.02 MiB\nDevice limit            : 31.36 GiB\nFree (according to CUDA"
+      ]
+    },
+    {
+      "id": "printer-column",
+      "name": "Printer column",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-finale/assets/objects/printer-column.jpg",
+      "image_sha256": "6593a2ac0d0247b454a26bf361511dc0179cb2090d81f7ef7ecf812b0890402a",
+      "output": "build/models/dr-tox-finale/printer-column.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699680,
+      "size_m_requested": [
+        1.6,
+        1.6,
+        4.0
+      ],
+      "dimensions_m": [
+        1.3,
+        1.294,
+        4.0
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 761
+    },
+    {
+      "id": "rite-jar-rack",
+      "name": "Rite jars",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-finale/assets/objects/rite-jar-rack.jpg",
+      "image_sha256": "98c387487b537742f0e443f9dd5eb0509ab00d6bb039e0b2b2568c33bf4de207",
+      "output": "build/models/dr-tox-finale/rite-jar-rack.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699752,
+      "size_m_requested": [
+        1.0,
+        0.4,
+        1.2
+      ],
+      "dimensions_m": [
+        1.163,
+        0.493,
+        1.2
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 771
+    },
+    {
+      "id": "shanty-shelter",
+      "name": "Shanty shelter",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-finale/assets/objects/shanty-shelter.jpg",
+      "image_sha256": "0edcf848c45dc383fb16a2f5425f124690863bfd94222fdea94569d1e5071adc",
+      "output": "build/models/dr-tox-finale/shanty-shelter.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699548,
+      "size_m_requested": [
+        3.0,
+        2.5,
+        2.4
+      ],
+      "dimensions_m": [
+        3.0,
+        2.731,
+        2.48
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1092
+    },
+    {
+      "id": "shield-barricade",
+      "name": "Shield barricade",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-finale/assets/objects/shield-barricade.jpg",
+      "image_sha256": "0d489ff4e1c046b304e54ff0503492b98a2f16fd6420a5957dde56c5b218474c",
+      "output": "build/models/dr-tox-finale/shield-barricade.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699697,
+      "size_m_requested": [
+        3.0,
+        0.8,
+        1.6
+      ],
+      "dimensions_m": [
+        3.0,
+        1.124,
+        2.007
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.71, 0.80); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 390
+    },
+    {
+      "id": "shielded-locker",
+      "name": "Lead-lined medication locker",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-finale/assets/objects/shielded-locker.jpg",
+      "image_sha256": "7a094eba7b9ab709398ebfddfdb30a36803155694c64bb704b8bb95e9dca54e7",
+      "output": "build/models/dr-tox-finale/shielded-locker.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699367,
+      "size_m_requested": [
+        0.8,
+        0.6,
+        2.0
+      ],
+      "dimensions_m": [
+        0.887,
+        0.77,
+        2.0
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 628
+    },
+    {
+      "id": "switchboard-console",
+      "name": "Life-support switchboard",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-finale/assets/objects/switchboard-console.jpg",
+      "image_sha256": "89975c30b46e88631a85a590489c42411ae8f59c42dffd5b805c4efa9fe26d3f",
+      "output": "build/models/dr-tox-finale/switchboard-console.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699300,
+      "size_m_requested": [
+        3.0,
+        0.8,
+        2.2
+      ],
+      "dimensions_m": [
+        3.0,
+        2.137,
+        5.227
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.37, 0.42); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 821
+    },
+    {
+      "id": "treatment-chair",
+      "name": "Treatment chair",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-finale/assets/objects/treatment-chair.jpg",
+      "image_sha256": "2cbf3af0f9ac69d74fb59d426a69a742faca31c47388360876e71981aea13544",
+      "output": "build/models/dr-tox-finale/treatment-chair.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699443,
+      "size_m_requested": [
+        0.9,
+        1.8,
+        1.2
+      ],
+      "dimensions_m": [
+        1.413,
+        1.8,
+        2.125
+      ],
+      "problems": [
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 0.64, 1.00, 0.56); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 952
+    },
+    {
+      "id": "vial-rack",
+      "name": "Vial rack",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-finale/assets/objects/vial-rack.jpg",
+      "image_sha256": "6b8d1480f134465347b0f63b8c9f49c2c02105d2f062bd166d8e391d4e1c3cd4",
+      "output": "build/models/dr-tox-finale/vial-rack.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699906,
+      "size_m_requested": [
+        1.2,
+        0.4,
+        1.6
+      ],
+      "dimensions_m": [
+        1.189,
+        0.545,
+        1.6
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.01, 0.73, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1106
+    },
+    {
+      "id": "water-kiosk",
+      "name": "Water kiosk",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-finale/assets/objects/water-kiosk.jpg",
+      "image_sha256": "352cca07df00eb6af08f57a063a76bd43ac617c52f0a6c39c43b3252108316d1",
+      "output": "build/models/dr-tox-finale/water-kiosk.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 698986,
+      "size_m_requested": [
+        2.4,
+        2.0,
+        2.6
+      ],
+      "dimensions_m": [
+        1.735,
+        1.779,
+        2.6
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.38, 1.12, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 587
+    },
+    {
+      "id": "water-tower",
+      "name": "RCC water tower",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-finale/assets/objects/water-tower.jpg",
+      "image_sha256": "1daaa4af6607c1f0f56aa5fe6f8181d65fb8092cdae7285404ef1274c50a281e",
+      "output": "build/models/dr-tox-finale/water-tower.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699678,
+      "size_m_requested": [
+        4.0,
+        4.0,
+        12.0
+      ],
+      "dimensions_m": [
+        6.546,
+        6.104,
+        12.0
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.61, 0.66, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 518
+    },
+    {
+      "id": "work-lamp",
+      "name": "Amber work lamp",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-finale/assets/objects/work-lamp.jpg",
+      "image_sha256": "e8c233d127415803e37ad591c6c4c077f542abf52b224298a8c5607787fa07ca",
+      "output": "build/models/dr-tox-finale/work-lamp.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699190,
+      "size_m_requested": [
+        0.4,
+        0.4,
+        0.6
+      ],
+      "dimensions_m": [
+        0.315,
+        0.605,
+        0.6
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.27, 0.66, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 519
+    }
+  ]
+}

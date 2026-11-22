@@ -1,0 +1,418 @@
+{
+  "tool": "ComfyUI 0.46.2, core Trellis 2 nodes",
+  "models": [
+    {
+      "id": "aetheric-emitter",
+      "name": "Aetheric emitter",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/aetheric-emitter.jpg",
+      "image_sha256": "3917c9eaef7f8f7fa7799ced0efdaf1aab69fae0fd9fefce225353127cfd1e3e",
+      "output": "build/models/lira-calyx/aetheric-emitter.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699661,
+      "size_m_requested": [
+        0.8,
+        0.8,
+        1.6
+      ],
+      "dimensions_m": [
+        1.004,
+        1.107,
+        1.6
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.80, 0.72, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 817
+    },
+    {
+      "id": "afu-meter",
+      "name": "AFU meter",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/afu-meter.jpg",
+      "image_sha256": "7c8fd44389d43d1ade6a38f55b8d641dfca73a6261a6c8f41c1255e6488237e9",
+      "output": "build/models/lira-calyx/afu-meter.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699374,
+      "size_m_requested": [
+        0.15,
+        0.08,
+        0.2
+      ],
+      "dimensions_m": [
+        0.199,
+        0.134,
+        0.2
+      ],
+      "problems": [
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 0.75, 0.60, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 592
+    },
+    {
+      "id": "board-table",
+      "name": "Board table",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/board-table.jpg",
+      "image_sha256": "61cb850016c77f9d581fdc3556485220237b87bd995eab34b99599661bd06798",
+      "output": "build/models/lira-calyx/board-table.glb",
+      "status": "failed",
+      "problems": [
+        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8190: [WinError 10061] No connection could be made because the target machine actively refused it. Start ComfyUI, or set COMFY_URL."
+      ]
+    },
+    {
+      "id": "coordinate-card",
+      "name": "Misfiled coordinate card",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/coordinate-card.jpg",
+      "image_sha256": "19d8770dadcca935cde20aef5fb8ab94800b139bd4e3efa608b0478c7c1b82c6",
+      "output": "build/models/lira-calyx/coordinate-card.glb",
+      "status": "failed",
+      "problems": [
+        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8190: [WinError 10061] No connection could be made because the target machine actively refused it. Start ComfyUI, or set COMFY_URL."
+      ]
+    },
+    {
+      "id": "crystal-cluster",
+      "name": "Crystal grass cluster",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/crystal-cluster.jpg",
+      "image_sha256": "d2d4219267d9a93588c88f340fb5bf5dff4a8b9bc4a89b344b5a22e63a5fb58b",
+      "output": "build/models/lira-calyx/crystal-cluster.glb",
+      "status": "failed",
+      "problems": [
+        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8190: [WinError 10061] No connection could be made because the target machine actively refused it. Start ComfyUI, or set COMFY_URL."
+      ]
+    },
+    {
+      "id": "flood-siren",
+      "name": "Flood siren with dial",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/flood-siren.jpg",
+      "image_sha256": "4bfa2a30fe9bc3996c532c3bcf719afbf16621389fc5767fa0995faa1ff1a4f8",
+      "output": "build/models/lira-calyx/flood-siren.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699543,
+      "size_m_requested": [
+        0.6,
+        0.5,
+        2.2
+      ],
+      "dimensions_m": [
+        1.628,
+        1.258,
+        2.2
+      ],
+      "problems": [
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 0.37, 0.40, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 787
+    },
+    {
+      "id": "flux-probe",
+      "name": "Flux probe",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/flux-probe.jpg",
+      "image_sha256": "0ee205afaa254faa46212196d5a4ab8f8808ab0b2201de97886631738946766e",
+      "output": "build/models/lira-calyx/flux-probe.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 383164,
+      "size_m_requested": [
+        0.12,
+        0.12,
+        1.1
+      ],
+      "dimensions_m": [
+        0.236,
+        0.21,
+        1.1
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.51, 0.57, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 324
+    },
+    {
+      "id": "folding-field-table",
+      "name": "Folding field table",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/folding-field-table.jpg",
+      "image_sha256": "fa064686d7dec91a0f891e4a0ba62abc85b94f2e77ea2649e4b690543492c4d8",
+      "output": "build/models/lira-calyx/folding-field-table.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 698634,
+      "size_m_requested": [
+        1.0,
+        0.6,
+        0.75
+      ],
+      "dimensions_m": [
+        1.0,
+        0.698,
+        0.886
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 781
+    },
+    {
+      "id": "gravimeter",
+      "name": "Gravimeter on tripod",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/gravimeter.jpg",
+      "image_sha256": "5cbaf6b664e481203510f274b1c5ca81df5c5c2dd17746c36ae962aac88152cc",
+      "output": "build/models/lira-calyx/gravimeter.glb",
+      "status": "failed",
+      "problems": [
+        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8190: [WinError 10061] No connection could be made because the target machine actively refused it. Start ComfyUI, or set COMFY_URL."
+      ]
+    },
+    {
+      "id": "hand-lamp",
+      "name": "Hand lamp",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/hand-lamp.jpg",
+      "image_sha256": "b0194623cf645978abc301edf095d3dbf195bde253abb2383a3a62f263136277",
+      "output": "build/models/lira-calyx/hand-lamp.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 699490,
+      "size_m_requested": [
+        0.14,
+        0.14,
+        0.32
+      ],
+      "dimensions_m": [
+        0.166,
+        0.139,
+        0.32
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 611
+    },
+    {
+      "id": "journal-case",
+      "name": "Journal case",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/journal-case.jpg",
+      "image_sha256": "7477973bf5bd8d01c124bf0fa875a3843de5b280472681c50e5a23e49bed22de",
+      "output": "build/models/lira-calyx/journal-case.glb",
+      "status": "failed",
+      "problems": [
+        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8190: [WinError 10061] No connection could be made because the target machine actively refused it. Start ComfyUI, or set COMFY_URL."
+      ]
+    },
+    {
+      "id": "lab-console",
+      "name": "Lab console",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/lab-console.jpg",
+      "image_sha256": "c49289f07db7605893c5c4357889c2a26085b1cbcf78a907478dd619af22f19a",
+      "output": "build/models/lira-calyx/lab-console.glb",
+      "status": "failed",
+      "problems": [
+        "comfy: , 4], background removed, image sha256 c49289f07db76058, server 127.0.0.1:8189\nqueued    prompt f1c2f27a-88fd-4202-bda4-c9023d92d52a\nREFUSED   the workflow failed on the server: BakeTextureFromVoxel: Allocation on device 0 would exceed allowed memory. (out of memory)\nCurrently allocated     : 11.24 GiB\nRequested               : 448.77 MiB\nDevice limit            : 31.36 GiB\nFree (according to CUDA"
+      ]
+    },
+    {
+      "id": "light-table",
+      "name": "Light table",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/light-table.jpg",
+      "image_sha256": "d4ddc66310782aca47c8dc6d9314aad6142ecd67cbada711205ec597b2f653e6",
+      "output": "build/models/lira-calyx/light-table.glb",
+      "status": "failed",
+      "problems": [
+        "comfy: 4], background removed, image sha256 d4ddc66310782aca, server 127.0.0.1:8189\nqueued    prompt e1141228-ab76-4887-80ba-c1acf32e5fd1\nREFUSED   the workflow failed on the server: VaeDecodeTextureTrellis: Allocation on device 0 would exceed allowed memory. (out of memory)\nCurrently allocated     : 3.47 GiB\nRequested               : 2.93 GiB\nDevice limit            : 31.36 GiB\nFree (according to CUDA):"
+      ]
+    },
+    {
+      "id": "log-cabinet",
+      "name": "Log cabinet",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/log-cabinet.jpg",
+      "image_sha256": "9dd2afd0f5b565585628862f7f45958d4b6dca8b117bb8a9c6f3e1f6e13b0bdf",
+      "output": "build/models/lira-calyx/log-cabinet.glb",
+      "status": "failed",
+      "problems": [
+        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8190: [WinError 10061] No connection could be made because the target machine actively refused it. Start ComfyUI, or set COMFY_URL."
+      ]
+    },
+    {
+      "id": "relay-beacon",
+      "name": "Relay beacon",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/relay-beacon.jpg",
+      "image_sha256": "7d469784aff5ec4a78fb882f9cf72a2fb108b18a2ab73ff2c8b7d39a679a2fb1",
+      "output": "build/models/lira-calyx/relay-beacon.glb",
+      "status": "failed",
+      "problems": [
+        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8190: [WinError 10061] No connection could be made because the target machine actively refused it. Start ComfyUI, or set COMFY_URL."
+      ]
+    },
+    {
+      "id": "sampling-dial",
+      "name": "Sampling dial",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/sampling-dial.jpg",
+      "image_sha256": "33919acfadcbd8a8ff55552804f5017e8f3b2b2c428b25caae229b97070a68f1",
+      "output": "build/models/lira-calyx/sampling-dial.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 698187,
+      "size_m_requested": [
+        0.2,
+        0.12,
+        0.15
+      ],
+      "dimensions_m": [
+        0.2,
+        0.164,
+        0.193
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.73, 0.78); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1201
+    },
+    {
+      "id": "seal-press",
+      "name": "Seal press",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/seal-press.jpg",
+      "image_sha256": "f623e364679dd3c2babd541808338cfe3474fe72d752ac63752c98dc4883ce6b",
+      "output": "build/models/lira-calyx/seal-press.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699001,
+      "size_m_requested": [
+        0.3,
+        0.25,
+        0.4
+      ],
+      "dimensions_m": [
+        0.436,
+        0.194,
+        0.4
+      ],
+      "problems": [
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 0.69, 1.29, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 867
+    },
+    {
+      "id": "strain-gauge",
+      "name": "Strain gauge clamp",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/strain-gauge.jpg",
+      "image_sha256": "f4f3995a6a1e00a16a82fff22fd1f4753635b3d2ef6da0800a5c23f2fc590848",
+      "output": "build/models/lira-calyx/strain-gauge.glb",
+      "status": "failed",
+      "problems": [
+        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8190: [WinError 10061] No connection could be made because the target machine actively refused it. Start ComfyUI, or set COMFY_URL."
+      ]
+    },
+    {
+      "id": "strider-clicker",
+      "name": "Strider tally clicker",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/strider-clicker.jpg",
+      "image_sha256": "102e535897ee3e07168d603e1a7ff5506fbc1eaf1754530fd5ef222ec5edbb90",
+      "output": "build/models/lira-calyx/strider-clicker.glb",
+      "status": "failed",
+      "problems": [
+        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8190: [WinError 10061] No connection could be made because the target machine actively refused it. Start ComfyUI, or set COMFY_URL."
+      ]
+    },
+    {
+      "id": "threat-packet",
+      "name": "Sealed packet",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/threat-packet.jpg",
+      "image_sha256": "c957f669680d55785610b2df6cf36e0ffc714295328cf41c82451d16ee92519a",
+      "output": "build/models/lira-calyx/threat-packet.glb",
+      "status": "failed",
+      "problems": [
+        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8190: [WinError 10061] No connection could be made because the target machine actively refused it. Start ComfyUI, or set COMFY_URL."
+      ]
+    }
+  ]
+}

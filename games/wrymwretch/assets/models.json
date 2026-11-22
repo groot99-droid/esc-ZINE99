@@ -1,0 +1,526 @@
+{
+  "tool": "ComfyUI 0.46.2, core Trellis 2 nodes",
+  "models": [
+    {
+      "id": "candle-stand",
+      "name": "Candle stand",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/wrymwretch/assets/objects/candle-stand.jpg",
+      "image_sha256": "de21a69a2ab57a6a62937b064f7468bf1e0a59ee157847fca96e4975d226b39c",
+      "output": "build/models/wrymwretch/candle-stand.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699924,
+      "size_m_requested": [
+        0.4,
+        0.4,
+        1.3
+      ],
+      "dimensions_m": [
+        0.562,
+        0.515,
+        1.3
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.71, 0.78, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 497
+    },
+    {
+      "id": "crystalline-tree",
+      "name": "Crystalline tree",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/wrymwretch/assets/objects/crystalline-tree.jpg",
+      "image_sha256": "40d4bc50f50a460e6ed72519c5724529e86298a0e71b7518b7cbe55401e9bfa6",
+      "output": "build/models/wrymwretch/crystalline-tree.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699964,
+      "size_m_requested": [
+        4,
+        4,
+        7
+      ],
+      "dimensions_m": [
+        6.933,
+        7.039,
+        7.0
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.58, 0.57, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 824
+    },
+    {
+      "id": "forbidden-door",
+      "name": "Forbidden chamber door",
+      "date": "2026-11-21",
+      "status": "skipped",
+      "problems": [
+        "already has a Meshy model from the studio asset-3d run"
+      ]
+    },
+    {
+      "id": "game-table",
+      "name": "Six Realms game table",
+      "date": "2026-11-21",
+      "status": "skipped",
+      "problems": [
+        "already has a Meshy model from the studio asset-3d run"
+      ]
+    },
+    {
+      "id": "heartstone",
+      "name": "The Heartstone",
+      "date": "2026-11-21",
+      "status": "skipped",
+      "problems": [
+        "already has a Meshy model from the studio asset-3d run"
+      ]
+    },
+    {
+      "id": "kill-list-slate",
+      "name": "Kill-list slate",
+      "date": "2026-11-21",
+      "status": "skipped",
+      "problems": [
+        "already has a Meshy model from the studio asset-3d run"
+      ]
+    },
+    {
+      "id": "king-statue",
+      "name": "Statue of the King of Dragons",
+      "date": "2026-11-21",
+      "status": "skipped",
+      "problems": [
+        "already has a Meshy model from the studio asset-3d run"
+      ]
+    },
+    {
+      "id": "lantern-crystal",
+      "name": "Lantern-crystal",
+      "date": "2026-11-21",
+      "status": "skipped",
+      "problems": [
+        "already has a Meshy model from the studio asset-3d run"
+      ]
+    },
+    {
+      "id": "living-shard",
+      "name": "Living shard",
+      "date": "2026-11-21",
+      "status": "skipped",
+      "problems": [
+        "already has a Meshy model from the studio asset-3d run"
+      ]
+    },
+    {
+      "id": "memory-crystal",
+      "name": "Memory crystal",
+      "date": "2026-11-21",
+      "status": "skipped",
+      "problems": [
+        "already has a Meshy model from the studio asset-3d run"
+      ]
+    },
+    {
+      "id": "memory-platform",
+      "name": "Memory platform",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/wrymwretch/assets/objects/memory-platform.jpg",
+      "image_sha256": "4e3ba6b6f793a6457fa7c2b744455b7d8b009f9f0c6c6cad54ce3746b9ed702d",
+      "output": "build/models/wrymwretch/memory-platform.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 699873,
+      "size_m_requested": [
+        8,
+        8,
+        4
+      ],
+      "dimensions_m": [
+        8.0,
+        7.918,
+        9.131
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 1.01, 0.44); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 673
+    },
+    {
+      "id": "monolith",
+      "name": "The monolith",
+      "date": "2026-11-21",
+      "status": "skipped",
+      "problems": [
+        "already has a Meshy model from the studio asset-3d run"
+      ]
+    },
+    {
+      "id": "moot-fire",
+      "name": "Ilvarra's fire",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/wrymwretch/assets/objects/moot-fire.jpg",
+      "image_sha256": "efe5a6b1779562b37a6d9d2ac2fbb1e5178b987016bfe8e787a320da96a7144f",
+      "output": "build/models/wrymwretch/moot-fire.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699576,
+      "size_m_requested": [
+        2.2,
+        2.2,
+        1
+      ],
+      "dimensions_m": [
+        2.2,
+        2.198,
+        1.88
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 1.00, 0.53); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 862
+    },
+    {
+      "id": "mossy-boulder",
+      "name": "Mossy boulder",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/wrymwretch/assets/objects/mossy-boulder.jpg",
+      "image_sha256": "440e943e1ff8e1d13c52fc5da7d35d643ffa68fd382b03b2fe9e07c7052f225b",
+      "output": "build/models/wrymwretch/mossy-boulder.glb",
+      "status": "failed",
+      "problems": [
+        "comfy:  4], background removed, image sha256 440e943e1ff8e1d1, server 127.0.0.1:8190\nqueued    prompt 3fdd8ba1-7ba1-4c39-91f9-d861ea93641b\nREFUSED   the workflow failed on the server: VaeDecodeShapeTrellis: Allocation on device 0 would exceed allowed memory. (out of memory)\nCurrently allocated     : 11.22 GiB\nRequested               : 16.20 GiB\nDevice limit            : 31.36 GiB\nFree (according to CUDA)"
+      ]
+    },
+    {
+      "id": "outpost-gate",
+      "name": "Outpost gate",
+      "date": "2026-11-21",
+      "status": "skipped",
+      "problems": [
+        "already has a Meshy model from the studio asset-3d run"
+      ]
+    },
+    {
+      "id": "prophecy-pedestal",
+      "name": "Prophecy pedestal",
+      "date": "2026-11-21",
+      "status": "skipped",
+      "problems": [
+        "already has a Meshy model from the studio asset-3d run"
+      ]
+    },
+    {
+      "id": "prophecy-tome",
+      "name": "Prophecy tome",
+      "date": "2026-11-21",
+      "status": "skipped",
+      "problems": [
+        "already has a Meshy model from the studio asset-3d run"
+      ]
+    },
+    {
+      "id": "queen-statue",
+      "name": "Statue of the Queen of Elves",
+      "date": "2026-11-21",
+      "status": "skipped",
+      "problems": [
+        "already has a Meshy model from the studio asset-3d run"
+      ]
+    },
+    {
+      "id": "remembering-water-flask",
+      "name": "Flask of water that remembers",
+      "date": "2026-11-21",
+      "status": "skipped",
+      "problems": [
+        "already has a Meshy model from the studio asset-3d run"
+      ]
+    },
+    {
+      "id": "remnant-mask",
+      "name": "Remnant mask",
+      "date": "2026-11-21",
+      "status": "skipped",
+      "problems": [
+        "already has a Meshy model from the studio asset-3d run"
+      ]
+    },
+    {
+      "id": "sky-watch-telescope",
+      "name": "Sky-watch telescope",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/wrymwretch/assets/objects/sky-watch-telescope.jpg",
+      "image_sha256": "3aac34f941186845e4dc514738ad32540cd2ad081affcf60ffc88b31658c23ae",
+      "output": "build/models/wrymwretch/sky-watch-telescope.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699720,
+      "size_m_requested": [
+        1,
+        1.5,
+        1.8
+      ],
+      "dimensions_m": [
+        1.542,
+        1.473,
+        1.8
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.65, 1.02, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 469
+    },
+    {
+      "id": "split-tree",
+      "name": "The split tree",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/wrymwretch/assets/objects/split-tree.jpg",
+      "image_sha256": "c7f70b0e32c5cfe03bef27471f83f8caa76b43e94e630b20745729cea0944c33",
+      "output": "build/models/wrymwretch/split-tree.glb",
+      "status": "failed",
+      "problems": [
+        "comfy:  4], background removed, image sha256 c7f70b0e32c5cfe0, server 127.0.0.1:8188\nqueued    prompt 8025d42b-dfa0-4a8b-92d4-49997b7b3cfa\nREFUSED   the workflow failed on the server: VaeDecodeShapeTrellis: Allocation on device 0 would exceed allowed memory. (out of memory)\nCurrently allocated     : 8.67 GiB\nRequested               : 10.89 GiB\nDevice limit            : 31.36 GiB\nFree (according to CUDA):"
+      ]
+    },
+    {
+      "id": "storm-crystal-pillar",
+      "name": "Storm crystal pillar",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/wrymwretch/assets/objects/storm-crystal-pillar.jpg",
+      "image_sha256": "f21cccf67c83379378b39743b01728aa8d17924da229a7f59f2ca2b58a4098d0",
+      "output": "build/models/wrymwretch/storm-crystal-pillar.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699663,
+      "size_m_requested": [
+        1,
+        1,
+        5
+      ],
+      "dimensions_m": [
+        2.447,
+        2.452,
+        5.0
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.41, 0.41, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 858
+    },
+    {
+      "id": "tide-shrine-stone",
+      "name": "Tide shrine stone",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/wrymwretch/assets/objects/tide-shrine-stone.jpg",
+      "image_sha256": "e2297931f6acad6069636e4c400be19f576df497e5cbf9b2a27cf81f7deaa388",
+      "output": "build/models/wrymwretch/tide-shrine-stone.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699674,
+      "size_m_requested": [
+        0.8,
+        0.6,
+        2
+      ],
+      "dimensions_m": [
+        1.211,
+        0.906,
+        2.0
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.66, 0.66, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 537
+    },
+    {
+      "id": "torch-sconce",
+      "name": "Torch sconce",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/wrymwretch/assets/objects/torch-sconce.jpg",
+      "image_sha256": "08681950759c4bf6153975c85d5ae2f41ae08d0a9a36c5028292492ebd919558",
+      "output": "build/models/wrymwretch/torch-sconce.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699502,
+      "size_m_requested": [
+        0.3,
+        0.4,
+        0.8
+      ],
+      "dimensions_m": [
+        0.402,
+        0.519,
+        0.8
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 656
+    },
+    {
+      "id": "tribe-banner",
+      "name": "Tribe banner",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/wrymwretch/assets/objects/tribe-banner.jpg",
+      "image_sha256": "1c40bc44c3466edb3612957992653fb2b50c0a4852208b67799d70ecc9aef649",
+      "output": "build/models/wrymwretch/tribe-banner.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699961,
+      "size_m_requested": [
+        1,
+        0.3,
+        3.5
+      ],
+      "dimensions_m": [
+        1.789,
+        0.364,
+        3.5
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.56, 0.82, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 337
+    },
+    {
+      "id": "ward-cot",
+      "name": "Healers' ward cot",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/wrymwretch/assets/objects/ward-cot.jpg",
+      "image_sha256": "518376045dfb1b42230fdaa2e9d3ad925c4bbe0d26df487fe1cffed9d97443d4",
+      "output": "build/models/wrymwretch/ward-cot.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699490,
+      "size_m_requested": [
+        0.9,
+        2,
+        0.6
+      ],
+      "dimensions_m": [
+        1.127,
+        2.0,
+        1.427
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.80, 1.00, 0.42); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 431
+    },
+    {
+      "id": "witness-tent",
+      "name": "Witness tent",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/wrymwretch/assets/objects/witness-tent.jpg",
+      "image_sha256": "bbd00c893940a6874ff4410650d9cb3682be2c31ceaa640af643d0d1597b4240",
+      "output": "build/models/wrymwretch/witness-tent.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699236,
+      "size_m_requested": [
+        4,
+        4,
+        3.5
+      ],
+      "dimensions_m": [
+        4.0,
+        3.837,
+        3.511
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1033
+    },
+    {
+      "id": "wyrm-rib",
+      "name": "Wyrm rib",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/wrymwretch/assets/objects/wyrm-rib.jpg",
+      "image_sha256": "37cb65c6fa88a1d11a16f0e97d6c4d9e27f6c19dd7d088a613497fbb6d6cd548",
+      "output": "build/models/wrymwretch/wyrm-rib.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699389,
+      "size_m_requested": [
+        1,
+        4,
+        8
+      ],
+      "dimensions_m": [
+        3.995,
+        6.326,
+        8.0
+      ],
+      "problems": [
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 0.25, 0.63, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 976
+    },
+    {
+      "id": "wyrm-skull",
+      "name": "Wyrm skull",
+      "date": "2026-11-21",
+      "status": "skipped",
+      "problems": [
+        "already has a Meshy model from the studio asset-3d run"
+      ]
+    }
+  ]
+}
