@@ -1,0 +1,5 @@
+{
+  "s3_hospital_2217": {"status": "fixed at render time + proposed diff", "what": "observation glass moved to the far (+y) wall by a render-time blockout override; bench proxy drawn translucent so the vial and syringe inside it show; the 85 mm push-in on the bench is kept (design). Build-file diff proposed in REFINEMENT_NOTES.md."},
+  "s3_injection_first": {"status": "fixed at render time + proposed diff", "what": "the vial and the syringe stand inside the solid bench-rig box proxy, which filled the frame; the bench proxy is drawn translucent. Build-file diff proposed."},
+  "s3_river_night": {"status": "fixed at render time + proposed diff", "what": "the fence blockout piece (100 m x 1.8 m, solid) stood between camera and pipe; a 8 m gate gap is cut in it by a render-time blockout override. Build-file diff proposed."}
+}

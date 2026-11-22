@@ -1,0 +1,2514 @@
+{
+ "game": "dr-tox-rise",
+ "tiers": {
+  "hero": "2560x1440, 256 samples",
+  "standard": "1920x1080, 128 samples",
+  "overview": "1920x1080, 128 samples"
+ },
+ "renderer": "Cycles (OptiX), OpenImageDenoise, Blender 5.2.1",
+ "scenes": [
+  {
+   "scene": "s3_hospital_2217",
+   "location": "hospital-room",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 28.3
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 29.5
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 9.6
+    }
+   ],
+   "props": [
+    {
+     "id": "bed",
+     "object": "isolation-bed",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bench",
+     "object": "bench-rig",
+     "source": "box-proxy"
+    },
+    {
+     "id": "vial",
+     "object": "amber-vial",
+     "source": "box-proxy"
+    },
+    {
+     "id": "syringe",
+     "object": "lead-shielded-syringe",
+     "source": "box-proxy"
+    },
+    {
+     "id": "iv",
+     "object": "iv-pole",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [
+    "first-person 85 mm camera frames only the bench; the reference shows the observation glass on the far wall by the bed, but the build file puts it in the -y wall behind the camera"
+   ],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "blockout_replace"
+   ],
+   "flag_status": {
+    "status": "fixed at render time + proposed diff",
+    "what": "observation glass moved to the far (+y) wall by a render-time blockout override; bench proxy drawn translucent so the vial and syringe inside it show; the 85 mm push-in on the bench is kept (design). Build-file diff proposed in REFINEMENT_NOTES.md."
+   }
+  },
+  {
+   "scene": "s3_injection_first",
+   "location": "hospital-room",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 26.2
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 27.6
+    }
+   ],
+   "props": [
+    {
+     "id": "bed",
+     "object": "isolation-bed",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bench",
+     "object": "bench-rig",
+     "source": "box-proxy"
+    },
+    {
+     "id": "vial",
+     "object": "amber-vial",
+     "source": "box-proxy"
+    },
+    {
+     "id": "syringe",
+     "object": "lead-shielded-syringe",
+     "source": "box-proxy"
+    },
+    {
+     "id": "iv",
+     "object": "iv-pole",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [
+    "nearly all one box"
+   ],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "blockout_replace"
+   ],
+   "flag_status": {
+    "status": "fixed at render time + proposed diff",
+    "what": "the vial and the syringe stand inside the solid bench-rig box proxy, which filled the frame; the bench proxy is drawn translucent. Build-file diff proposed."
+   }
+  },
+  {
+   "scene": "s3_hospital_walkout",
+   "location": "hospital-room",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 22.8
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 25.2
+    }
+   ],
+   "props": [
+    {
+     "id": "bed",
+     "object": "isolation-bed",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bench",
+     "object": "bench-rig",
+     "source": "box-proxy"
+    },
+    {
+     "id": "vial",
+     "object": "amber-vial",
+     "source": "box-proxy"
+    },
+    {
+     "id": "syringe",
+     "object": "lead-shielded-syringe",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "blockout_replace"
+   ],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_river_town",
+   "location": "idaho-river-town",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 12.1
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 12.0
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 6.7
+    }
+   ],
+   "props": [
+    {
+     "id": "pipe",
+     "object": "outflow-pipe",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bike-dale",
+     "object": "child-bicycle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bike-two",
+     "object": "child-bicycle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sawhorse-store",
+     "object": "quarantine-sawhorse",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sawhorse-bank",
+     "object": "quarantine-sawhorse",
+     "source": "box-proxy"
+    },
+    {
+     "id": "notice-post",
+     "object": "town-notice-post",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "pipe",
+      "piece": "far-bank",
+      "samples": "3/27"
+     },
+     {
+      "prop": "pipe",
+      "piece": "headwall",
+      "samples": "9/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_river_night",
+   "location": "idaho-river-town",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 11.0
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 11.2
+    }
+   ],
+   "props": [
+    {
+     "id": "pipe",
+     "object": "outflow-pipe",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bike-dale",
+     "object": "child-bicycle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sawhorse-store",
+     "object": "quarantine-sawhorse",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sawhorse-bank",
+     "object": "quarantine-sawhorse",
+     "source": "box-proxy"
+    },
+    {
+     "id": "notice-post",
+     "object": "town-notice-post",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [
+    "blockout piece 'fence' (structure) stands between the camera and its look_at"
+   ],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "pipe",
+      "piece": "far-bank",
+      "samples": "3/27"
+     },
+     {
+      "prop": "pipe",
+      "piece": "headwall",
+      "samples": "9/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "blockout_replace"
+   ],
+   "flag_status": {
+    "status": "fixed at render time + proposed diff",
+    "what": "the fence blockout piece (100 m x 1.8 m, solid) stood between camera and pipe; a 8 m gate gap is cut in it by a render-time blockout override. Build-file diff proposed."
+   }
+  },
+  {
+   "scene": "s3_lower_ring",
+   "location": "lower-ring-corridor",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 24.0
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 20.1
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 10.4
+    }
+   ],
+   "props": [
+    {
+     "id": "transport",
+     "object": "armoured-transport",
+     "source": "box-proxy"
+    },
+    {
+     "id": "emitter-1",
+     "object": "barrier-emitter",
+     "source": "box-proxy"
+    },
+    {
+     "id": "emitter-2",
+     "object": "barrier-emitter",
+     "source": "box-proxy"
+    },
+    {
+     "id": "emitter-3",
+     "object": "barrier-emitter",
+     "source": "box-proxy"
+    },
+    {
+     "id": "scaffold",
+     "object": "collapsed-scaffold",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crate-1",
+     "object": "supply-crate",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crate-2",
+     "object": "supply-crate",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "scaffold",
+      "piece": "shopfront-row",
+      "samples": "6/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_lower_ring_after",
+   "location": "lower-ring-corridor",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 24.9
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 21.9
+    }
+   ],
+   "props": [
+    {
+     "id": "transport",
+     "object": "armoured-transport",
+     "source": "box-proxy"
+    },
+    {
+     "id": "emitter-1",
+     "object": "barrier-emitter",
+     "source": "box-proxy"
+    },
+    {
+     "id": "emitter-2",
+     "object": "barrier-emitter",
+     "source": "box-proxy"
+    },
+    {
+     "id": "emitter-3",
+     "object": "barrier-emitter",
+     "source": "box-proxy"
+    },
+    {
+     "id": "scaffold",
+     "object": "collapsed-scaffold",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crate-1",
+     "object": "supply-crate",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crate-2",
+     "object": "supply-crate",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "scaffold",
+      "piece": "shopfront-row",
+      "samples": "6/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_printer_room",
+   "location": "printer-room",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 28.1
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 29.1
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 11.3
+    }
+   ],
+   "props": [
+    {
+     "id": "column",
+     "object": "printer-column",
+     "source": "box-proxy"
+    },
+    {
+     "id": "terminal",
+     "object": "rcc-terminal",
+     "source": "box-proxy"
+    },
+    {
+     "id": "vat-0",
+     "object": "vat-unit",
+     "source": "box-proxy"
+    },
+    {
+     "id": "vat-1",
+     "object": "vat-unit",
+     "source": "box-proxy"
+    },
+    {
+     "id": "vat-2",
+     "object": "vat-unit",
+     "source": "box-proxy"
+    },
+    {
+     "id": "vat-3",
+     "object": "vat-unit",
+     "source": "box-proxy"
+    },
+    {
+     "id": "vat-e0",
+     "object": "vat-unit",
+     "source": "box-proxy"
+    },
+    {
+     "id": "vat-e1",
+     "object": "vat-unit",
+     "source": "box-proxy"
+    },
+    {
+     "id": "vat-e2",
+     "object": "vat-unit",
+     "source": "box-proxy"
+    },
+    {
+     "id": "vat-e3",
+     "object": "vat-unit",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "blockout_replace"
+   ],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_printer_room_after",
+   "location": "printer-room",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 23.2
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 22.5
+    }
+   ],
+   "props": [
+    {
+     "id": "terminal",
+     "object": "rcc-terminal",
+     "source": "box-proxy"
+    },
+    {
+     "id": "vat-0",
+     "object": "vat-unit",
+     "source": "box-proxy"
+    },
+    {
+     "id": "vat-1",
+     "object": "vat-unit",
+     "source": "box-proxy"
+    },
+    {
+     "id": "vat-2",
+     "object": "vat-unit",
+     "source": "box-proxy"
+    },
+    {
+     "id": "vat-3",
+     "object": "vat-unit",
+     "source": "box-proxy"
+    },
+    {
+     "id": "vat-e0",
+     "object": "vat-unit",
+     "source": "box-proxy"
+    },
+    {
+     "id": "vat-e1",
+     "object": "vat-unit",
+     "source": "box-proxy"
+    },
+    {
+     "id": "vat-e2",
+     "object": "vat-unit",
+     "source": "box-proxy"
+    },
+    {
+     "id": "vat-e3",
+     "object": "vat-unit",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "blockout_replace"
+   ],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_skyroom_small",
+   "location": "sky-room",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 14.8
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.4
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 7.9
+    }
+   ],
+   "props": [
+    {
+     "id": "bunk-0",
+     "object": "child-bunk",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bunk-1",
+     "object": "child-bunk",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bunk-2",
+     "object": "child-bunk",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bunk-3",
+     "object": "child-bunk",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bunk-4",
+     "object": "child-bunk",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bunk-5",
+     "object": "child-bunk",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mat",
+     "object": "play-mat",
+     "source": "box-proxy"
+    },
+    {
+     "id": "speaker",
+     "object": "wall-speaker",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crate",
+     "object": "toy-crate",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "mat",
+      "piece": "drain",
+      "samples": "1/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_skyroom_evening",
+   "location": "sky-room",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 10.9
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 11.8
+    }
+   ],
+   "props": [
+    {
+     "id": "bunk-0",
+     "object": "child-bunk",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bunk-1",
+     "object": "child-bunk",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bunk-2",
+     "object": "child-bunk",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bunk-3",
+     "object": "child-bunk",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bunk-4",
+     "object": "child-bunk",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bunk-5",
+     "object": "child-bunk",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mat",
+     "object": "play-mat",
+     "source": "box-proxy"
+    },
+    {
+     "id": "speaker",
+     "object": "wall-speaker",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crate",
+     "object": "toy-crate",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "mat",
+      "piece": "drain",
+      "samples": "1/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_archive_fall",
+   "location": "snakehead-archive",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 11.9
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.4
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 6.2
+    }
+   ],
+   "props": [
+    {
+     "id": "cab-0-0",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-0-1",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-0-2",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-0-3",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-0-4",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-0-5",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-1-0",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-1-1",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-1-2",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-1-3",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-1-4",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-1-5",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-2-0",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-2-1",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-2-2",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-2-3",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-2-4",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-2-5",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "reader",
+     "object": "fiche-reader",
+     "source": "box-proxy"
+    },
+    {
+     "id": "pins",
+     "object": "pin-board",
+     "source": "box-proxy"
+    },
+    {
+     "id": "locker",
+     "object": "shielded-locker",
+     "source": "box-proxy"
+    },
+    {
+     "id": "chair",
+     "object": "bay-chair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tank",
+     "object": "clean-water-tank",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_archive_alarm",
+   "location": "snakehead-archive",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 12.0
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 12.3
+    }
+   ],
+   "props": [
+    {
+     "id": "cab-0-0",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-0-1",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-0-2",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-0-3",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-0-4",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-0-5",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-1-0",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-1-1",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-1-2",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-1-3",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-1-4",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-1-5",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-2-0",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-2-1",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-2-2",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-2-3",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-2-4",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-2-5",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "reader",
+     "object": "fiche-reader",
+     "source": "box-proxy"
+    },
+    {
+     "id": "pins",
+     "object": "pin-board",
+     "source": "box-proxy"
+    },
+    {
+     "id": "locker",
+     "object": "shielded-locker",
+     "source": "box-proxy"
+    },
+    {
+     "id": "chair",
+     "object": "bay-chair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tank",
+     "object": "clean-water-tank",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_archive_claimed",
+   "location": "snakehead-archive",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 11.7
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 10.5
+    }
+   ],
+   "props": [
+    {
+     "id": "cab-0-0",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-0-1",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-0-2",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-0-3",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-0-4",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-0-5",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-1-0",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-1-1",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-1-2",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-1-3",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-1-4",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-1-5",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-2-0",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-2-1",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-2-2",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-2-3",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-2-4",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-2-5",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "reader",
+     "object": "fiche-reader",
+     "source": "box-proxy"
+    },
+    {
+     "id": "pins",
+     "object": "pin-board",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp",
+     "object": "amber-work-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "locker",
+     "object": "shielded-locker",
+     "source": "box-proxy"
+    },
+    {
+     "id": "chair",
+     "object": "bay-chair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tank",
+     "object": "clean-water-tank",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bay-vial",
+     "object": "amber-vial",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bay-syringe",
+     "object": "lead-shielded-syringe",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_archive_empty",
+   "location": "snakehead-archive",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 11.0
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 11.4
+    }
+   ],
+   "props": [
+    {
+     "id": "cab-0-0",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-0-1",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-0-2",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-0-3",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-0-4",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-0-5",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-1-0",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-1-1",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-1-2",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-1-3",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-1-4",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-1-5",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-2-0",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-2-1",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-2-2",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-2-3",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-2-4",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-2-5",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "reader",
+     "object": "fiche-reader",
+     "source": "box-proxy"
+    },
+    {
+     "id": "pins",
+     "object": "pin-board",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp",
+     "object": "amber-work-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "locker",
+     "object": "shielded-locker",
+     "source": "box-proxy"
+    },
+    {
+     "id": "chair",
+     "object": "bay-chair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tank",
+     "object": "clean-water-tank",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bay-vial",
+     "object": "amber-vial",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bay-syringe",
+     "object": "lead-shielded-syringe",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_archive_green",
+   "location": "snakehead-archive",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 10.3
+    }
+   ],
+   "props": [
+    {
+     "id": "cab-0-0",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-0-1",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-0-2",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-0-3",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-0-4",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-0-5",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-1-0",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-1-1",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-1-2",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-1-3",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-1-4",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-1-5",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-2-0",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-2-1",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-2-2",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-2-3",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-2-4",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-2-5",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "reader",
+     "object": "fiche-reader",
+     "source": "box-proxy"
+    },
+    {
+     "id": "pins",
+     "object": "pin-board",
+     "source": "box-proxy"
+    },
+    {
+     "id": "locker",
+     "object": "shielded-locker",
+     "source": "box-proxy"
+    },
+    {
+     "id": "chair",
+     "object": "bay-chair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tank",
+     "object": "clean-water-tank",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bay-vial",
+     "object": "amber-vial",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bay-syringe",
+     "object": "lead-shielded-syringe",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_bunker_injection",
+   "location": "snakehead-archive",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 11.8
+    }
+   ],
+   "props": [
+    {
+     "id": "cab-0-0",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-0-1",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-0-2",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-0-3",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-0-4",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-0-5",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-1-0",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-1-1",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-1-2",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-1-3",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-1-4",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-1-5",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-2-0",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-2-1",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-2-2",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-2-3",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-2-4",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cab-2-5",
+     "object": "archive-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "reader",
+     "object": "fiche-reader",
+     "source": "box-proxy"
+    },
+    {
+     "id": "pins",
+     "object": "pin-board",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp",
+     "object": "amber-work-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "locker",
+     "object": "shielded-locker",
+     "source": "box-proxy"
+    },
+    {
+     "id": "chair",
+     "object": "bay-chair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tank",
+     "object": "clean-water-tank",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bay-vial",
+     "object": "amber-vial",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bay-syringe",
+     "object": "lead-shielded-syringe",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_spire_mirror",
+   "location": "spire-plaza",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.9
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.8
+    }
+   ],
+   "props": [
+    {
+     "id": "mirror",
+     "object": "dressing-mirror",
+     "source": "box-proxy"
+    },
+    {
+     "id": "insignia",
+     "object": "insignia-case",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lectern",
+     "object": "ceremony-lectern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "screen-west",
+     "object": "broadcast-screen",
+     "source": "box-proxy"
+    },
+    {
+     "id": "screen-east",
+     "object": "broadcast-screen",
+     "source": "box-proxy"
+    },
+    {
+     "id": "screen-south",
+     "object": "broadcast-screen",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_spire_ceremony",
+   "location": "spire-plaza",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.3
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.5
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 4.9
+    }
+   ],
+   "props": [
+    {
+     "id": "mirror",
+     "object": "dressing-mirror",
+     "source": "box-proxy"
+    },
+    {
+     "id": "insignia",
+     "object": "insignia-case",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lectern",
+     "object": "ceremony-lectern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "screen-west",
+     "object": "broadcast-screen",
+     "source": "box-proxy"
+    },
+    {
+     "id": "screen-east",
+     "object": "broadcast-screen",
+     "source": "box-proxy"
+    },
+    {
+     "id": "screen-south",
+     "object": "broadcast-screen",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_arena",
+   "location": "trial-53-arena",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 10.7
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 10.5
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 5.8
+    }
+   ],
+   "props": [
+    {
+     "id": "rack",
+     "object": "training-blade-rack",
+     "source": "box-proxy"
+    },
+    {
+     "id": "blade-reese",
+     "object": "training-blade",
+     "source": "box-proxy"
+    },
+    {
+     "id": "blade-cally",
+     "object": "training-blade",
+     "source": "box-proxy"
+    },
+    {
+     "id": "speaker-north",
+     "object": "wall-speaker",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "props"
+   ],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_arena_after",
+   "location": "trial-53-arena",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 10.6
+    }
+   ],
+   "props": [
+    {
+     "id": "rack",
+     "object": "training-blade-rack",
+     "source": "box-proxy"
+    },
+    {
+     "id": "blade-reese",
+     "object": "training-blade",
+     "source": "box-proxy"
+    },
+    {
+     "id": "blade-cally",
+     "object": "training-blade",
+     "source": "box-proxy"
+    },
+    {
+     "id": "speaker-north",
+     "object": "wall-speaker",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "props"
+   ],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  }
+ ],
+ "overviews": [
+  {
+   "location": "hospital-room",
+   "scene_lighting": "s3_hospital_2217",
+   "camera": {
+    "location": [
+     3.6,
+     -2.6,
+     1.7
+    ],
+    "look_at": [
+     -1.0,
+     3.0,
+     1.3
+    ],
+    "lens_mm": 24
+   },
+   "rig": {
+    "exposure_ev": -2.6,
+    "grade_gain": [
+     0.86,
+     0.98,
+     1.1
+    ]
+   }
+  },
+  {
+   "location": "idaho-river-town",
+   "scene_lighting": "s3_river_town",
+   "camera": {
+    "location": [
+     40,
+     -22,
+     1.7
+    ],
+    "look_at": [
+     -30,
+     6,
+     3.0
+    ],
+    "lens_mm": 24
+   },
+   "rig": {
+    "exposure_ev": -1.5,
+    "grade_gain": [
+     0.95,
+     1.0,
+     1.0
+    ],
+    "scenes": {
+     "s3_river_night": {
+      "exposure_ev": 3.5
+     }
+    }
+   }
+  },
+  {
+   "location": "lower-ring-corridor",
+   "scene_lighting": "s3_lower_ring",
+   "camera": {
+    "location": [
+     -22,
+     -2,
+     1.7
+    ],
+    "look_at": [
+     25,
+     1,
+     2.0
+    ],
+    "lens_mm": 24
+   },
+   "rig": {
+    "exposure_ev": 0.8,
+    "fog": {
+     "density": 0.012,
+     "color": [
+      0.7,
+      0.8,
+      0.82
+     ],
+     "anisotropy": 0.5
+    },
+    "scenes": {
+     "s3_lower_ring_after": {
+      "exposure_ev": -1.5
+     }
+    }
+   }
+  },
+  {
+   "location": "printer-room",
+   "scene_lighting": "s3_printer_room",
+   "camera": {
+    "location": [
+     -5.5,
+     -5,
+     1.7
+    ],
+    "look_at": [
+     0.5,
+     2.5,
+     2.0
+    ],
+    "lens_mm": 24
+   },
+   "rig": {
+    "exposure_ev": -3.0,
+    "fog": {
+     "density": 0.02,
+     "color": [
+      0.4,
+      0.55,
+      0.8
+     ],
+     "anisotropy": 0.3
+    },
+    "grade_gain": [
+     0.85,
+     0.97,
+     1.12
+    ],
+    "scenes": {
+     "s3_printer_room_after": {
+      "exposure_ev": 1.0
+     }
+    }
+   }
+  },
+  {
+   "location": "sky-room",
+   "scene_lighting": "s3_skyroom_small",
+   "camera": {
+    "location": [
+     8,
+     -6.2,
+     1.6
+    ],
+    "look_at": [
+     -2,
+     4,
+     1.3
+    ],
+    "lens_mm": 24
+   },
+   "rig": {
+    "exposure_ev": -2.0,
+    "scenes": {
+     "s3_skyroom_evening": {
+      "exposure_ev": 1.5
+     }
+    }
+   }
+  },
+  {
+   "location": "snakehead-archive",
+   "scene_lighting": "s3_archive_fall",
+   "camera": {
+    "location": [
+     -17,
+     -12,
+     1.7
+    ],
+    "look_at": [
+     8,
+     6,
+     1.6
+    ],
+    "lens_mm": 24
+   },
+   "rig": {
+    "exposure_ev": 2.3,
+    "grade_gain": [
+     0.88,
+     1.0,
+     1.06
+    ],
+    "scenes": {
+     "s3_archive_empty": {
+      "exposure_ev": 2.0
+     },
+     "s3_archive_fall": {
+      "exposure_ev": 1.0
+     }
+    }
+   }
+  },
+  {
+   "location": "spire-plaza",
+   "scene_lighting": "s3_spire_ceremony",
+   "camera": {
+    "location": [
+     35,
+     38,
+     1.7
+    ],
+    "look_at": [
+     -10,
+     64,
+     5.0
+    ],
+    "lens_mm": 20
+   },
+   "rig": {
+    "exposure_ev": -3.2
+   }
+  },
+  {
+   "location": "trial-53-arena",
+   "scene_lighting": "s3_arena",
+   "camera": {
+    "location": [
+     0,
+     -14,
+     1.7
+    ],
+    "look_at": [
+     0,
+     8,
+     3.0
+    ],
+    "lens_mm": 20
+   },
+   "rig": {
+    "exposure_ev": 0.8,
+    "grade_gain": [
+     0.9,
+     1.0,
+     1.05
+    ],
+    "scenes": {
+     "s3_arena_after": {
+      "exposure_ev": 3.0
+     }
+    }
+   }
+  }
+ ]
+}

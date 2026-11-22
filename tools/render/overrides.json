@@ -1,0 +1,103 @@
+{
+  "_doc": "Render-time overrides, applied by the driver only (never to a build file); each is written up as a proposed diff in renders/<game>/REFINEMENT_NOTES.md.",
+  "trial-53-arena/*": {
+    "props": {
+      "blade-reese": {
+        "rotation_deg": [
+          0,
+          0,
+          30
+        ]
+      },
+      "blade-cally": {
+        "rotation_deg": [
+          0,
+          0,
+          140
+        ]
+      }
+    }
+  },
+  "idaho-river-town/s3_river_night": {
+    "blockout_replace": {
+      "fence": [
+        {
+          "id": "fence-west",
+          "shape": "box",
+          "role": "structure",
+          "size_m": [
+            52,
+            0.1,
+            1.8
+          ],
+          "location": [
+            -24,
+            16,
+            0.9
+          ],
+          "material": "steel"
+        },
+        {
+          "id": "fence-east",
+          "shape": "box",
+          "role": "structure",
+          "size_m": [
+            40,
+            0.1,
+            1.8
+          ],
+          "location": [
+            30,
+            16,
+            0.9
+          ],
+          "material": "steel"
+        }
+      ]
+    }
+  },
+  "hospital-room/*": {
+    "blockout_replace": {
+      "observation-glass": [
+        {
+          "id": "observation-glass",
+          "shape": "box",
+          "role": "opening",
+          "size_m": [
+            3.2,
+            0.1,
+            1.4
+          ],
+          "location": [
+            0.2,
+            2.95,
+            1.6
+          ],
+          "material": "glass"
+        }
+      ]
+    }
+  },
+  "printer-room/*": {
+    "blockout_replace": {
+      "vapour": [
+        {
+          "id": "vapour",
+          "shape": "box",
+          "role": "trim",
+          "size_m": [
+            6,
+            6,
+            0.04
+          ],
+          "location": [
+            0,
+            0,
+            0.02
+          ],
+          "material": "blue-emergency"
+        }
+      ]
+    }
+  }
+}

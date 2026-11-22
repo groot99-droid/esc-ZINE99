@@ -1,0 +1,242 @@
+{
+  "_doc": "The driver's rig, per location (see README.md). exposure_ev, world_gain and light_gain scale only what the scene's own lights and world already say; fills are extra lights (named in the notes); overview is the wide still's own camera; overview_scene names the scene whose lighting the overview uses.",
+  "default": {
+    "exposure_ev": 0.0,
+    "world_gain": 1.0,
+    "light_gain": 1.0,
+    "spot_deg": 70,
+    "spot_blend": 0.5,
+    "proxy_colors": {
+      "interact": [
+        0.55,
+        0.43,
+        0.32
+      ],
+      "hero": [
+        0.42,
+        0.44,
+        0.48
+      ],
+      "fill": [
+        0.38,
+        0.38,
+        0.4
+      ]
+    },
+    "proxy_alpha": {
+      "bench-rig": 0.35
+    }
+  },
+  "hospital-room": {
+    "overview_scene": "s3_hospital_2217",
+    "overview": {
+      "location": [
+        3.6,
+        -2.6,
+        1.7
+      ],
+      "look_at": [
+        -1.0,
+        3.0,
+        1.3
+      ],
+      "lens_mm": 24
+    },
+    "exposure_ev": -2.6,
+    "grade_gain": [
+      0.86,
+      0.98,
+      1.1
+    ]
+  },
+  "idaho-river-town": {
+    "overview_scene": "s3_river_town",
+    "overview": {
+      "location": [
+        40,
+        -22,
+        1.7
+      ],
+      "look_at": [
+        -30,
+        6,
+        3.0
+      ],
+      "lens_mm": 24
+    },
+    "exposure_ev": -1.5,
+    "grade_gain": [
+      0.95,
+      1.0,
+      1.0
+    ],
+    "scenes": {
+      "s3_river_night": {
+        "exposure_ev": 3.5
+      }
+    }
+  },
+  "lower-ring-corridor": {
+    "overview_scene": "s3_lower_ring",
+    "overview": {
+      "location": [
+        -22,
+        -2,
+        1.7
+      ],
+      "look_at": [
+        25,
+        1,
+        2.0
+      ],
+      "lens_mm": 24
+    },
+    "exposure_ev": 0.8,
+    "fog": {
+      "density": 0.012,
+      "color": [
+        0.7,
+        0.8,
+        0.82
+      ],
+      "anisotropy": 0.5
+    },
+    "scenes": {
+      "s3_lower_ring_after": {
+        "exposure_ev": -1.5
+      }
+    }
+  },
+  "printer-room": {
+    "overview_scene": "s3_printer_room",
+    "overview": {
+      "location": [
+        -5.5,
+        -5,
+        1.7
+      ],
+      "look_at": [
+        0.5,
+        2.5,
+        2.0
+      ],
+      "lens_mm": 24
+    },
+    "exposure_ev": -3.0,
+    "fog": {
+      "density": 0.02,
+      "color": [
+        0.4,
+        0.55,
+        0.8
+      ],
+      "anisotropy": 0.3
+    },
+    "grade_gain": [
+      0.85,
+      0.97,
+      1.12
+    ],
+    "scenes": {
+      "s3_printer_room_after": {
+        "exposure_ev": 1.0
+      }
+    }
+  },
+  "sky-room": {
+    "overview_scene": "s3_skyroom_small",
+    "overview": {
+      "location": [
+        8,
+        -6.2,
+        1.6
+      ],
+      "look_at": [
+        -2,
+        4,
+        1.3
+      ],
+      "lens_mm": 24
+    },
+    "exposure_ev": -2.0,
+    "scenes": {
+      "s3_skyroom_evening": {
+        "exposure_ev": 1.5
+      }
+    }
+  },
+  "snakehead-archive": {
+    "overview_scene": "s3_archive_fall",
+    "overview": {
+      "location": [
+        -17,
+        -12,
+        1.7
+      ],
+      "look_at": [
+        8,
+        6,
+        1.6
+      ],
+      "lens_mm": 24
+    },
+    "exposure_ev": 2.3,
+    "grade_gain": [
+      0.88,
+      1.0,
+      1.06
+    ],
+    "scenes": {
+      "s3_archive_empty": {
+        "exposure_ev": 2.0
+      },
+      "s3_archive_fall": {
+        "exposure_ev": 1.0
+      }
+    }
+  },
+  "spire-plaza": {
+    "overview_scene": "s3_spire_ceremony",
+    "overview": {
+      "location": [
+        35,
+        38,
+        1.7
+      ],
+      "look_at": [
+        -10,
+        64,
+        5.0
+      ],
+      "lens_mm": 20
+    },
+    "exposure_ev": -3.2
+  },
+  "trial-53-arena": {
+    "overview_scene": "s3_arena",
+    "overview": {
+      "location": [
+        0,
+        -14,
+        1.7
+      ],
+      "look_at": [
+        0,
+        8,
+        3.0
+      ],
+      "lens_mm": 20
+    },
+    "exposure_ev": 0.8,
+    "grade_gain": [
+      0.9,
+      1.0,
+      1.05
+    ],
+    "scenes": {
+      "s3_arena_after": {
+        "exposure_ev": 3.0
+      }
+    }
+  }
+}
