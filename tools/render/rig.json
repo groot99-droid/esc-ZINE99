@@ -3451,5 +3451,733 @@
         "exposure_ev": -3.5
       }
     }
+  },
+  "people-of-the-bark/backyard": {
+    "overview_scene": "c7_backyard",
+    "overview": {
+      "location": [
+        3,
+        -12,
+        1.5
+      ],
+      "look_at": [
+        0,
+        4,
+        3.5
+      ],
+      "lens_mm": 22
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+      "c7_backyard": {
+        "exposure_ev": -3.4
+      }
+    }
+  },
+  "people-of-the-bark/bark-face": {
+    "overview_scene": "c6_stand",
+    "overview": {
+      "location": [
+        0,
+        -0.05,
+        0.06
+      ],
+      "look_at": [
+        0,
+        0.03,
+        0.06
+      ],
+      "lens_mm": 28
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": -1.0,
+    "facing": "ccw",
+    "scenes": {
+      "c6_ring": {
+        "exposure_ev": -3.8
+      },
+      "c6_shadow": {
+        "exposure_ev": -2.6
+      },
+      "c6_stand": {
+        "exposure_ev": 0.0
+      },
+      "c6_touch": {
+        "exposure_ev": -0.8
+      }
+    }
+  },
+  "people-of-the-bark/first-ring-temple": {
+    "overview_scene": "c2_temple",
+    "overview": {
+      "location": [
+        0,
+        -0.0138,
+        0.008
+      ],
+      "look_at": [
+        0,
+        0.002,
+        0.0045
+      ],
+      "lens_mm": 28
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": -0.5,
+    "facing": "ccw",
+    "scenes": {
+      "c2_temple": {
+        "exposure_ev": -5.1
+      }
+    }
+  },
+  "people-of-the-bark/highridge-square": {
+    "overview_scene": "c5_count",
+    "overview": {
+      "location": [
+        0,
+        -0.032,
+        0.034
+      ],
+      "look_at": [
+        0,
+        0.0,
+        0.02
+      ],
+      "lens_mm": 28
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+      "c3_thumb": {
+        "exposure_ev": -2.5
+      },
+      "c5_count": {
+        "exposure_ev": -1.9
+      }
+    }
+  },
+  "people-of-the-bark/highridge": {
+    "overview_scene": "c1_city_dawn",
+    "overview": {
+      "location": [
+        0,
+        -0.05,
+        0.19
+      ],
+      "look_at": [
+        0,
+        0.03,
+        0.19
+      ],
+      "lens_mm": 28
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": -0.7,
+    "facing": "ccw",
+    "reference_card": "The reference image shows the bark city's dwellings with carved face-like knots, which read as small heads; by the no-figures rule its sheet carries a text card",
+    "scenes": {
+      "c1_city_dawn": {
+        "exposure_ev": -1.6
+      },
+      "c1_city_year": {
+        "exposure_ev": -2.0
+      },
+      "c2_city": {
+        "exposure_ev": -2.0
+      },
+      "c2_rain": {
+        "exposure_ev": -3.6
+      },
+      "c3_city": {
+        "exposure_ev": -2.9
+      },
+      "c4_city": {
+        "exposure_ev": -1.9
+      },
+      "c4_faceless": {
+        "exposure_ev": -1.7
+      },
+      "c5_city": {
+        "exposure_ev": -2.0
+      }
+    }
+  },
+  "people-of-the-bark/knotholm-walk": {
+    "overview_scene": "c5_temple",
+    "overview": {
+      "location": [
+        -0.025,
+        -0.03,
+        0.02
+      ],
+      "look_at": [
+        0.01,
+        0,
+        0.012
+      ],
+      "lens_mm": 24
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+      "c5_temple": {
+        "exposure_ev": -2.6
+      }
+    }
+  },
+  "people-of-the-bark/lowridge": {
+    "overview_scene": "c5_lowridge",
+    "overview": {
+      "location": [
+        0,
+        -0.04,
+        0.03
+      ],
+      "look_at": [
+        0,
+        0.01,
+        0.025
+      ],
+      "lens_mm": 28
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": -0.5,
+    "facing": "ccw",
+    "scenes": {
+      "c2_sorrel_wall": {
+        "exposure_ev": -3.3
+      },
+      "c5_lowridge": {
+        "exposure_ev": -0.9
+      }
+    }
+  },
+  "people-of-the-bark/shadow-edge": {
+    "overview_scene": "c6_edge",
+    "overview": {
+      "location": [
+        0.04,
+        -0.06,
+        0.1
+      ],
+      "look_at": [
+        0.04,
+        0.03,
+        0.1
+      ],
+      "lens_mm": 30
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": -0.7,
+    "facing": "ccw",
+    "scenes": {
+      "c6_edge": {
+        "exposure_ev": -1.0
+      }
+    }
+  },
+  "people-of-the-bark/splinterwatch": {
+    "overview_scene": "c1_battlements",
+    "overview": {
+      "location": [
+        0,
+        -0.05,
+        0.06
+      ],
+      "look_at": [
+        0,
+        0.03,
+        0.06
+      ],
+      "lens_mm": 28
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+      "c1_battlements": {
+        "exposure_ev": -4.8
+      },
+      "c3_wind": {
+        "exposure_ev": -3.0
+      }
+    }
+  },
+  "people-of-the-bark/the-branch": {
+    "overview_scene": "c4_branch",
+    "overview": {
+      "location": [
+        -0.12,
+        -0.035,
+        0.035
+      ],
+      "look_at": [
+        0,
+        0,
+        0.035
+      ],
+      "lens_mm": 35
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+      "c4_branch": {
+        "exposure_ev": -4.0
+      }
+    }
+  },
+  "endless-temple/abyss-edge": {
+    "overview_scene": "s3_abyss_dream",
+    "overview": {
+      "location": [
+        0,
+        -2,
+        1.7
+      ],
+      "look_at": [
+        0,
+        6,
+        2.5
+      ],
+      "lens_mm": 24
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 1.5,
+    "facing": "ccw",
+    "scenes": {
+      "s3_abyss_dream": {
+        "exposure_ev": 1.9
+      },
+      "s3_abyss_return": {
+        "exposure_ev": 1.9
+      }
+    }
+  },
+  "endless-temple/clerk-office": {
+    "overview_scene": "s3_clerk_office",
+    "overview": {
+      "location": [
+        -3.2,
+        -2.5,
+        1.8
+      ],
+      "look_at": [
+        1,
+        2.5,
+        2.5
+      ],
+      "lens_mm": 18
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+      "s3_clerk_office": {
+        "exposure_ev": 0.6
+      },
+      "s3_hollin_choice": {
+        "exposure_ev": -3.5
+      }
+    }
+  },
+  "endless-temple/deep-desert": {
+    "overview_scene": "s3_deep_desert",
+    "overview": {
+      "location": [
+        0,
+        -240,
+        1.5
+      ],
+      "look_at": [
+        0,
+        0,
+        3
+      ],
+      "lens_mm": 28
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+      "s3_deep_desert": {
+        "exposure_ev": -4.7
+      },
+      "s3_herd_sighting": {
+        "exposure_ev": -3.1
+      },
+      "s3_xandrix_back": {
+        "exposure_ev": -4.3
+      }
+    }
+  },
+  "endless-temple/elaris-room": {
+    "overview_scene": "s3_room_morning",
+    "overview": {
+      "location": [
+        0,
+        -2.2,
+        1.5
+      ],
+      "look_at": [
+        0,
+        2.5,
+        1.2
+      ],
+      "lens_mm": 20
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+      "s3_room_morning": {
+        "exposure_ev": -1.5
+      }
+    }
+  },
+  "endless-temple/father-camp": {
+    "overview_scene": "s3_father_camp",
+    "overview": {
+      "location": [
+        5,
+        -8,
+        2.2
+      ],
+      "look_at": [
+        -1,
+        2,
+        1.5
+      ],
+      "lens_mm": 28
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+      "s3_camp_mark_c6": {
+        "exposure_ev": -0.5
+      },
+      "s3_father_camp": {
+        "exposure_ev": -1.8
+      },
+      "s3_father_walk": {
+        "exposure_ev": -2.5
+      },
+      "s3_herd_final": {
+        "exposure_ev": -1.8
+      },
+      "s3_ring_of_stones": {
+        "exposure_ev": 0.0
+      }
+    }
+  },
+  "endless-temple/hollin-streets": {
+    "overview_scene": "s3_hollin_streets",
+    "overview": {
+      "location": [
+        -55,
+        0,
+        1.6
+      ],
+      "look_at": [
+        40,
+        0,
+        5
+      ],
+      "lens_mm": 24
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+      "s3_hollin_streets": {
+        "exposure_ev": 0.0
+      }
+    }
+  },
+  "endless-temple/pantry": {
+    "overview_scene": "s3_pantry_c1",
+    "overview": {
+      "location": [
+        0,
+        -1.6,
+        1.7
+      ],
+      "look_at": [
+        0,
+        2,
+        1.6
+      ],
+      "lens_mm": 18
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+      "s3_ledger_turned": {
+        "exposure_ev": 0.0
+      },
+      "s3_pantry_c1": {
+        "exposure_ev": 0.0
+      },
+      "s3_pantry_c3": {
+        "exposure_ev": 0.0
+      },
+      "s3_pantry_c8": {
+        "exposure_ev": 1.0
+      }
+    }
+  },
+  "endless-temple/procession-road": {
+    "overview_scene": "s3_procession_road",
+    "overview": {
+      "location": [
+        -200,
+        -8,
+        2.5
+      ],
+      "look_at": [
+        -60,
+        0,
+        2
+      ],
+      "lens_mm": 28
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+      "s3_procession_choice": {
+        "exposure_ev": -1.1
+      },
+      "s3_procession_road": {
+        "exposure_ev": -1.8
+      },
+      "s3_scribe_wagon": {
+        "exposure_ev": 0.0
+      }
+    }
+  },
+  "endless-temple/silver-dunes": {
+    "overview_scene": "s3_moonlit_dunes",
+    "overview": {
+      "location": [
+        0,
+        -140,
+        3.5
+      ],
+      "look_at": [
+        0,
+        -60,
+        12
+      ],
+      "lens_mm": 24
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+      "s3_cairns": {
+        "exposure_ev": -4.7
+      },
+      "s3_dunes_day": {
+        "exposure_ev": -4.7
+      },
+      "s3_dunes_night": {
+        "exposure_ev": 0.7
+      },
+      "s3_evening_camp": {
+        "exposure_ev": -1.1
+      },
+      "s3_moonlit_dunes": {
+        "exposure_ev": -0.9
+      }
+    }
+  },
+  "endless-temple/storyteller-hut": {
+    "overview_scene": "s3_circle",
+    "overview": {
+      "location": [
+        0,
+        4.3,
+        1.8
+      ],
+      "look_at": [
+        0,
+        -3,
+        1.3
+      ],
+      "lens_mm": 20
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+      "e_returned": {
+        "exposure_ev": -1.5
+      },
+      "s3_circle": {
+        "exposure_ev": -1.5
+      },
+      "s3_village_return": {
+        "exposure_ev": -1.6
+      }
+    }
+  },
+  "endless-temple/temple-halls": {
+    "overview_scene": "s3_halls_c1",
+    "overview": {
+      "location": [
+        -18,
+        -6,
+        1.8
+      ],
+      "look_at": [
+        8,
+        2,
+        3
+      ],
+      "lens_mm": 20
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+      "e_named": {
+        "exposure_ev": 0.0
+      },
+      "e_rider": {
+        "exposure_ev": -1.3
+      },
+      "e_stayed": {
+        "exposure_ev": -1.3
+      },
+      "e_unread": {
+        "exposure_ev": -1.4
+      },
+      "s3_halls_c1": {
+        "exposure_ev": -1.4
+      },
+      "s3_halls_c3": {
+        "exposure_ev": -1.2
+      },
+      "s3_halls_c5": {
+        "exposure_ev": -0.9
+      },
+      "s3_halls_c6": {
+        "exposure_ev": -1.5
+      },
+      "s3_halls_c7": {
+        "exposure_ev": 0.0
+      },
+      "s3_halls_c8": {
+        "exposure_ev": 0.0
+      },
+      "s3_last_cup": {
+        "exposure_ev": -1.5
+      }
+    }
+  },
+  "endless-temple/unlit-gallery": {
+    "overview_scene": "s3_unlit_gallery",
+    "overview": {
+      "location": [
+        -9.5,
+        0.3,
+        2.2
+      ],
+      "look_at": [
+        9,
+        1.5,
+        2
+      ],
+      "lens_mm": 20
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 1.0,
+    "facing": "ccw",
+    "scenes": {
+      "s3_unlit_gallery": {
+        "exposure_ev": 3.5
+      }
+    }
+  },
+  "endless-temple/village-well": {
+    "overview_scene": "s3_well_post",
+    "overview": {
+      "location": [
+        -7,
+        -5,
+        1.6
+      ],
+      "look_at": [
+        2,
+        2,
+        2.5
+      ],
+      "lens_mm": 24
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+      "s3_well_post": {
+        "exposure_ev": 0.6
+      }
+    }
+  },
+  "endless-temple/walled-yard": {
+    "overview_scene": "s3_seclusion",
+    "overview": {
+      "location": [
+        0,
+        -3.2,
+        1.3
+      ],
+      "look_at": [
+        0,
+        3,
+        1.5
+      ],
+      "lens_mm": 20
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "reference_card": "The reference image shows a painted figure on the back wall (a lizard-like figure drawn in ochre); by the no-creatures rule its sheet carries a text card",
+    "scenes": {
+      "s3_seclusion": {
+        "exposure_ev": -1.6
+      }
+    }
+  },
+  "endless-temple/xandri-hut": {
+    "overview_scene": "s3_hut_night",
+    "overview": {
+      "location": [
+        -0.3,
+        -1.8,
+        1.5
+      ],
+      "look_at": [
+        0.2,
+        1.5,
+        1
+      ],
+      "lens_mm": 20
+    },
+    "exposure_ev": 0.0,
+    "overview_ev": 2.0,
+    "facing": "ccw",
+    "scenes": {
+      "s3_hut_night": {
+        "exposure_ev": -1.5
+      }
+    }
   }
 }

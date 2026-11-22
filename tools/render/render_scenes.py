@@ -463,6 +463,23 @@ def main():
         cam_spec = merge(asm["camera"], ov.get("camera"))
         pstart = merge(entry.get("player_start"), ov.get("player_start")) if entry.get("player_start") else None
 
+        # scene scale (batch 8, people-of-the-bark): a set built in millimetres (extent under 2 m) is scaled up by K (default 1000) as a whole
+        # (pieces, props, lights, cameras, overview) so Cycles, the clip planes and the checks' absolute tolerances work; light power
+        # goes by K^2 (area light radiance and a point light's irradiance at the scaled distance stay the same), so the image is the same.
+        ext = max([max(abs(p["location"][i]) + p["size_m"][i] / 2 for i in range(3)) for p in blk["pieces"]] or [1.0])
+        K = float(rig.get("scene_scale", 1000.0 if ext < 2.0 else 1.0))
+        UNIT = 1.0 / K
+        if K != 1.0:
+            sv = lambda v: [x * K for x in v]
+            blk["pieces"] = [dict(p, size_m=sv(p["size_m"]), location=sv(p["location"])) for p in blk["pieces"]]
+            props = [dict(p, size_m=sv(p["size_m"]), location=sv(p["location"]), target_height_m=p["target_height_m"] * K) for p in props]
+            asm = dict(asm, lights=[dict(l, location=sv(l["location"]), energy=l["energy"] * K * K if l["type"] != "SUN" else l["energy"],
+                                         **({"look_at": sv(l["look_at"])} if "look_at" in l else {}), **({"size": l["size"] * K} if "size" in l else {}))
+                                    for l in asm["lights"]])
+            cam_spec = dict(cam_spec, location=sv(cam_spec["location"]), look_at=sv(cam_spec["look_at"]))
+            if pstart:
+                pstart = dict(pstart, location=sv(pstart["location"]))
+
         sc = new_scene()
         build_world(sc, asm["world"], rig, wgain)
         made, sources = [], {}
@@ -493,7 +510,7 @@ def main():
         rec = {"location": entry["location"], "scene": entry["scene"], "tier": entry["tier"],
                "rig": {"exposure_ev": ev, "world_gain": wgain, "light_gain": lgain, "light_gains": per_light,
                        "fog": rig.get("fog"), "grade_gain": rig.get("grade_gain"), "fills": [f["name"] for f in fills]},
-               "overrides": ov, "props": sources, "checks": checks, "stills": []}
+               "scene_scale": K, "overrides": ov, "props": sources, "checks": checks, "stills": []}
 
         def shoot(name, loc, look, lens, res, samples, ev_extra=0.0):
             setup_render(sc, res, samples, o["device"], ev + ev_extra, rig.get("grade_gain"))
@@ -519,12 +536,14 @@ def main():
             f = math.radians(fdeg)
             eye = ps["location"][2] + 1.6
             if ps["location"][2] == 0:
-                eye = min(max(cam_spec["location"][2], rig.get("min_eye_m", 0.8)), 2.0)  # the scene camera's own eye height
+                eye = min(max(cam_spec["location"][2], rig.get("min_eye_m", 0.8)), 2.0)
             loc = [ps["location"][0], ps["location"][1], eye]
             shoot("player", loc, [loc[0] + math.sin(f) * 5, loc[1] + math.cos(f) * 5, eye - 0.1],
                   cam_spec.get("lens_mm", 35), (W, H), S)
         if "overview" in stills and entry.get("overview") is not None:
             ovw = merge(entry["overview"], rig.get("overview", {}))
+            if K != 1.0:
+                ovw = dict(ovw, location=[x * K for x in ovw["location"]], look_at=[x * K for x in ovw["look_at"]])
             shoot("overview", ovw["location"], ovw["look_at"], ovw.get("lens_mm", 28),
                   (int(1920 * o["res_scale"]), int(1080 * o["res_scale"])), max(4, int(128 * o["samples_scale"])),
                   rig.get("overview_ev", 0.0))

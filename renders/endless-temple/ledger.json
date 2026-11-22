@@ -1,0 +1,4532 @@
+{
+ "game": "endless-temple",
+ "tiers": {
+  "hero": "2560x1440, 256 samples",
+  "standard": "1920x1080, 128 samples",
+  "overview": "1920x1080, 128 samples"
+ },
+ "renderer": "Cycles (OptiX), OpenImageDenoise, Blender 5.2.1",
+ "scenes": [
+  {
+   "scene": "s3_abyss_dream",
+   "location": "abyss-edge",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 7.8
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 7.2
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 4.4
+    }
+   ],
+   "props": [
+    {
+     "id": "cairn-flat-stones",
+     "object": "stone-cairn",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_abyss_return",
+   "location": "abyss-edge",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 7.4
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 7.3
+    }
+   ],
+   "props": [
+    {
+     "id": "cairn-flat-stones",
+     "object": "stone-cairn",
+     "source": "box-proxy"
+    },
+    {
+     "id": "black-book",
+     "object": "black-book",
+     "source": "box-proxy"
+    },
+    {
+     "id": "candle",
+     "object": "candlestick",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_clerk_office",
+   "location": "clerk-office",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.9
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.1
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 7.3
+    }
+   ],
+   "props": [
+    {
+     "id": "day-book",
+     "object": "day-book",
+     "source": "box-proxy"
+    },
+    {
+     "id": "quill",
+     "object": "quill-pen",
+     "source": "box-proxy"
+    },
+    {
+     "id": "clerks-chair",
+     "object": "clerks-chair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "loft-bell",
+     "object": "loft-bell",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "blockout_replace"
+   ],
+   "flag_status": {
+    "status": "found by the driver: fixed at render time + proposed diff",
+    "what": "the opaque loft-slats and rain-window pieces (role opening) shut out the lightning and window lights (s3_hollin_choice rendered black); a blockout replacement leaves them out. Build-file diff proposed."
+   }
+  },
+  {
+   "scene": "s3_hollin_choice",
+   "location": "clerk-office",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.8
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.5
+    }
+   ],
+   "props": [
+    {
+     "id": "loft-bell",
+     "object": "loft-bell",
+     "source": "box-proxy"
+    },
+    {
+     "id": "chair-loft",
+     "object": "clerks-chair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "day-book-loft",
+     "object": "day-book",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "blockout_replace"
+   ],
+   "flag_status": {
+    "status": "found by the driver: fixed at render time + proposed diff",
+    "what": "the opaque loft-slats and rain-window pieces (role opening) shut out the lightning and window lights (s3_hollin_choice rendered black); a blockout replacement leaves them out. Build-file diff proposed."
+   }
+  },
+  {
+   "scene": "s3_deep_desert",
+   "location": "deep-desert",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 7.6
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 7.7
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 4.6
+    }
+   ],
+   "props": [
+    {
+     "id": "bone-a",
+     "object": "giant-bone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bone-b",
+     "object": "giant-bone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bone-c",
+     "object": "giant-bone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bone-crest",
+     "object": "giant-bone",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "bone-crest",
+      "piece": "crest",
+      "samples": "6/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_herd_sighting",
+   "location": "deep-desert",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 12.0
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 11.8
+    }
+   ],
+   "props": [
+    {
+     "id": "bone-a",
+     "object": "giant-bone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bone-b",
+     "object": "giant-bone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bone-c",
+     "object": "giant-bone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bone-crest",
+     "object": "giant-bone",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "bone-crest",
+      "piece": "crest",
+      "samples": "6/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "camera"
+   ],
+   "flag_status": {
+    "status": "found by the driver: fixed at render time + proposed diff",
+    "what": "the crest ellipsoid blocks the ray to the look_at: the camera at y 163 is lower than the crest's top at y 170 (z 11), so the line to the horizon (z 3) meets it; a camera override aims the look_at at z 10.5. Build-file diff proposed."
+   }
+  },
+  {
+   "scene": "s3_xandrix_back",
+   "location": "deep-desert",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 7.3
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 7.3
+    }
+   ],
+   "props": [
+    {
+     "id": "bone-a",
+     "object": "giant-bone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bone-b",
+     "object": "giant-bone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bone-c",
+     "object": "giant-bone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bone-crest",
+     "object": "giant-bone",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "bone-crest",
+      "piece": "crest",
+      "samples": "6/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_room_morning",
+   "location": "elaris-room",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 14.7
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 14.0
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 7.2
+    }
+   ],
+   "props": [
+    {
+     "id": "bookshelf",
+     "object": "bookshelf",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_father_camp",
+   "location": "father-camp",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 7.7
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 7.9
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 4.7
+    }
+   ],
+   "props": [
+    {
+     "id": "marker-pole",
+     "object": "marker-pole",
+     "source": "box-proxy"
+    },
+    {
+     "id": "journal",
+     "object": "father-journal",
+     "source": "box-proxy"
+    },
+    {
+     "id": "camp-fire",
+     "object": "campfire-ring",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cairn-camp",
+     "object": "stone-cairn",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cairn-home",
+     "object": "stone-cairn",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "props"
+   ],
+   "flag_status": {
+    "status": "found by the driver: fixed at render time + proposed diff",
+    "what": "journal at z 0 is inside flat-stone (top z 0.18); a prop override lifts it to z 0.18 (on the stone). Build-file diff proposed."
+   }
+  },
+  {
+   "scene": "s3_father_walk",
+   "location": "father-camp",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 11.6
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 7.8
+    }
+   ],
+   "props": [
+    {
+     "id": "marker-pole",
+     "object": "marker-pole",
+     "source": "box-proxy"
+    },
+    {
+     "id": "camp-fire",
+     "object": "campfire-ring",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cairn-camp",
+     "object": "stone-cairn",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "camera"
+   ],
+   "flag_status": {
+    "status": "found by the driver: fixed at render time + proposed diff",
+    "what": "the camera at [-4, 2.5, 1.65] looks into dune-back (9 m away, 4 m high); a camera override stands on the dune's crest, [-4, 15, 5.65] looking at [-4, 40, 5]. Build-file diff proposed."
+   }
+  },
+  {
+   "scene": "s3_camp_mark_c6",
+   "location": "father-camp",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.6
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.2
+    }
+   ],
+   "props": [
+    {
+     "id": "marker-pole",
+     "object": "marker-pole",
+     "source": "box-proxy"
+    },
+    {
+     "id": "camp-fire",
+     "object": "campfire-ring",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cairn-camp",
+     "object": "stone-cairn",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cairn-home",
+     "object": "stone-cairn",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "props"
+   ],
+   "flag_status": {
+    "status": "found by the driver: fixed at render time + proposed diff",
+    "what": "journal at z 0 is inside flat-stone (top z 0.18); a prop override lifts it to z 0.18 (on the stone). Build-file diff proposed."
+   }
+  },
+  {
+   "scene": "s3_ring_of_stones",
+   "location": "father-camp",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 12.7
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 7.8
+    }
+   ],
+   "props": [
+    {
+     "id": "marker-pole",
+     "object": "marker-pole",
+     "source": "box-proxy"
+    },
+    {
+     "id": "camp-fire",
+     "object": "campfire-ring",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cairn-camp",
+     "object": "stone-cairn",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cairn-home",
+     "object": "stone-cairn",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_herd_final",
+   "location": "father-camp",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 7.8
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 7.8
+    }
+   ],
+   "props": [
+    {
+     "id": "marker-pole",
+     "object": "marker-pole",
+     "source": "box-proxy"
+    },
+    {
+     "id": "camp-fire",
+     "object": "campfire-ring",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cairn-camp",
+     "object": "stone-cairn",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cairn-home",
+     "object": "stone-cairn",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_hollin_streets",
+   "location": "hollin-streets",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 12.6
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 12.7
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 6.0
+    }
+   ],
+   "props": [
+    {
+     "id": "umbrella",
+     "object": "clerk-umbrella",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_pantry_c1",
+   "location": "pantry",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.6
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.6
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 6.5
+    }
+   ],
+   "props": [
+    {
+     "id": "jar-goblins-eyes",
+     "object": "specimen-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "jar-ogers-tongue",
+     "object": "specimen-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "jar-north-3",
+     "object": "specimen-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "jar-north-4",
+     "object": "specimen-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "jar-east-1",
+     "object": "specimen-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "jar-east-2",
+     "object": "specimen-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "jar-west-1",
+     "object": "specimen-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tin-mint",
+     "object": "tea-tin",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tin-sprig",
+     "object": "tea-tin",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tin-last",
+     "object": "tea-tin",
+     "source": "box-proxy"
+    },
+    {
+     "id": "kettle",
+     "object": "kettle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "teacup",
+     "object": "teacup",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ledger",
+     "object": "day-book",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_pantry_c3",
+   "location": "pantry",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.5
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.6
+    }
+   ],
+   "props": [
+    {
+     "id": "jar-goblins-eyes",
+     "object": "specimen-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "jar-ogers-tongue",
+     "object": "specimen-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "jar-north-3",
+     "object": "specimen-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "jar-north-4",
+     "object": "specimen-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "jar-east-1",
+     "object": "specimen-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "jar-east-2",
+     "object": "specimen-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "jar-west-1",
+     "object": "specimen-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tin-mint",
+     "object": "tea-tin",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tin-sprig",
+     "object": "tea-tin",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tin-last",
+     "object": "tea-tin",
+     "source": "box-proxy"
+    },
+    {
+     "id": "kettle",
+     "object": "kettle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ledger",
+     "object": "day-book",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_ledger_turned",
+   "location": "pantry",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 12.9
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 12.0
+    }
+   ],
+   "props": [
+    {
+     "id": "jar-goblins-eyes",
+     "object": "specimen-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "jar-ogers-tongue",
+     "object": "specimen-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "jar-north-3",
+     "object": "specimen-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "jar-north-4",
+     "object": "specimen-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "jar-east-1",
+     "object": "specimen-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "jar-east-2",
+     "object": "specimen-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "jar-west-1",
+     "object": "specimen-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tin-mint",
+     "object": "tea-tin",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tin-sprig",
+     "object": "tea-tin",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tin-last",
+     "object": "tea-tin",
+     "source": "box-proxy"
+    },
+    {
+     "id": "kettle",
+     "object": "kettle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "teacup",
+     "object": "teacup",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ledger",
+     "object": "day-book",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_pantry_c8",
+   "location": "pantry",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 12.7
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.3
+    }
+   ],
+   "props": [
+    {
+     "id": "jar-goblins-eyes",
+     "object": "specimen-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "jar-ogers-tongue",
+     "object": "specimen-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "jar-north-3",
+     "object": "specimen-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "jar-north-4",
+     "object": "specimen-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "jar-east-1",
+     "object": "specimen-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "jar-east-2",
+     "object": "specimen-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "jar-west-1",
+     "object": "specimen-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tin-mint",
+     "object": "tea-tin",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tin-sprig",
+     "object": "tea-tin",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tin-last",
+     "object": "tea-tin",
+     "source": "box-proxy"
+    },
+    {
+     "id": "kettle",
+     "object": "kettle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "candle",
+     "object": "candlestick",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ledger",
+     "object": "day-book",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_procession_road",
+   "location": "procession-road",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 7.6
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.0
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 4.7
+    }
+   ],
+   "props": [
+    {
+     "id": "lantern-1",
+     "object": "pilgrim-lantern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lantern-2",
+     "object": "pilgrim-lantern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lantern-3",
+     "object": "pilgrim-lantern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lantern-4",
+     "object": "pilgrim-lantern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lantern-5",
+     "object": "pilgrim-lantern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lantern-6",
+     "object": "pilgrim-lantern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lantern-7",
+     "object": "pilgrim-lantern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lantern-wagon",
+     "object": "pilgrim-lantern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "scroll",
+     "object": "scribe-scroll",
+     "source": "box-proxy"
+    },
+    {
+     "id": "quill",
+     "object": "quill-pen",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "lantern-1",
+      "piece": "lantern-post-1",
+      "samples": "1/27"
+     },
+     {
+      "prop": "lantern-2",
+      "piece": "lantern-post-2",
+      "samples": "1/27"
+     },
+     {
+      "prop": "lantern-3",
+      "piece": "lantern-post-3",
+      "samples": "1/27"
+     },
+     {
+      "prop": "lantern-4",
+      "piece": "lantern-post-4",
+      "samples": "1/27"
+     },
+     {
+      "prop": "lantern-5",
+      "piece": "lantern-post-5",
+      "samples": "1/27"
+     },
+     {
+      "prop": "lantern-6",
+      "piece": "lantern-post-6",
+      "samples": "1/27"
+     },
+     {
+      "prop": "lantern-7",
+      "piece": "lantern-post-7",
+      "samples": "1/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "blockout_replace"
+   ],
+   "flag_status": {
+    "status": "found by the driver: fixed at render time + proposed diff",
+    "what": "scroll (and quill) stand inside the solid wagon-canopy sphere; the same canopy replacement."
+   }
+  },
+  {
+   "scene": "s3_scribe_wagon",
+   "location": "procession-road",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 9.4
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 9.3
+    }
+   ],
+   "props": [
+    {
+     "id": "lantern-1",
+     "object": "pilgrim-lantern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lantern-2",
+     "object": "pilgrim-lantern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lantern-3",
+     "object": "pilgrim-lantern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lantern-4",
+     "object": "pilgrim-lantern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lantern-5",
+     "object": "pilgrim-lantern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lantern-6",
+     "object": "pilgrim-lantern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lantern-7",
+     "object": "pilgrim-lantern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lantern-wagon",
+     "object": "pilgrim-lantern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "scroll",
+     "object": "scribe-scroll",
+     "source": "box-proxy"
+    },
+    {
+     "id": "quill",
+     "object": "quill-pen",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [
+    "blockout piece 'wagon-body' (structure) stands between the camera and its look_at"
+   ],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "lantern-1",
+      "piece": "lantern-post-1",
+      "samples": "1/27"
+     },
+     {
+      "prop": "lantern-2",
+      "piece": "lantern-post-2",
+      "samples": "1/27"
+     },
+     {
+      "prop": "lantern-3",
+      "piece": "lantern-post-3",
+      "samples": "1/27"
+     },
+     {
+      "prop": "lantern-4",
+      "piece": "lantern-post-4",
+      "samples": "1/27"
+     },
+     {
+      "prop": "lantern-5",
+      "piece": "lantern-post-5",
+      "samples": "1/27"
+     },
+     {
+      "prop": "lantern-6",
+      "piece": "lantern-post-6",
+      "samples": "1/27"
+     },
+     {
+      "prop": "lantern-7",
+      "piece": "lantern-post-7",
+      "samples": "1/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "blockout_replace",
+    "camera"
+   ],
+   "flag_status": {
+    "status": "first-pass flag: fixed at render time + proposed diff",
+    "what": "wagon-body and wagon-canopy stand between the camera and its look_at, and scroll and quill stand inside the solid canopy sphere. A location-level blockout replacement turns the canopy into a roof, two posts and a back panel (open at the front); a camera override raises the eye to z 1.8 to clear the wagon bed. Build-file diff proposed."
+   }
+  },
+  {
+   "scene": "s3_procession_choice",
+   "location": "procession-road",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 7.8
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 7.6
+    }
+   ],
+   "props": [
+    {
+     "id": "lantern-1",
+     "object": "pilgrim-lantern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lantern-2",
+     "object": "pilgrim-lantern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lantern-3",
+     "object": "pilgrim-lantern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lantern-4",
+     "object": "pilgrim-lantern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lantern-5",
+     "object": "pilgrim-lantern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lantern-6",
+     "object": "pilgrim-lantern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lantern-7",
+     "object": "pilgrim-lantern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lantern-wagon",
+     "object": "pilgrim-lantern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "scroll",
+     "object": "scribe-scroll",
+     "source": "box-proxy"
+    },
+    {
+     "id": "last-sheet",
+     "object": "scribe-scroll",
+     "source": "box-proxy"
+    },
+    {
+     "id": "quill-cliff",
+     "object": "quill-pen",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "lantern-1",
+      "piece": "lantern-post-1",
+      "samples": "1/27"
+     },
+     {
+      "prop": "lantern-2",
+      "piece": "lantern-post-2",
+      "samples": "1/27"
+     },
+     {
+      "prop": "lantern-3",
+      "piece": "lantern-post-3",
+      "samples": "1/27"
+     },
+     {
+      "prop": "lantern-4",
+      "piece": "lantern-post-4",
+      "samples": "1/27"
+     },
+     {
+      "prop": "lantern-5",
+      "piece": "lantern-post-5",
+      "samples": "1/27"
+     },
+     {
+      "prop": "lantern-6",
+      "piece": "lantern-post-6",
+      "samples": "1/27"
+     },
+     {
+      "prop": "lantern-7",
+      "piece": "lantern-post-7",
+      "samples": "1/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "blockout_replace"
+   ],
+   "flag_status": {
+    "status": "found by the driver: fixed at render time + proposed diff",
+    "what": "scroll (and quill) stand inside the solid wagon-canopy sphere; the same canopy replacement."
+   }
+  },
+  {
+   "scene": "s3_moonlit_dunes",
+   "location": "silver-dunes",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.1
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.0
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 4.8
+    }
+   ],
+   "props": [
+    {
+     "id": "cairn-mark",
+     "object": "stone-cairn",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cairn-2",
+     "object": "stone-cairn",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cairn-3",
+     "object": "stone-cairn",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cairn-4",
+     "object": "stone-cairn",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cairn-5",
+     "object": "stone-cairn",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_dunes_night",
+   "location": "silver-dunes",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 12.7
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 12.6
+    }
+   ],
+   "props": [
+    {
+     "id": "cairn-mark",
+     "object": "stone-cairn",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cairn-2",
+     "object": "stone-cairn",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cairn-3",
+     "object": "stone-cairn",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cairn-4",
+     "object": "stone-cairn",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cairn-5",
+     "object": "stone-cairn",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_dunes_day",
+   "location": "silver-dunes",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.1
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.1
+    }
+   ],
+   "props": [
+    {
+     "id": "cairn-mark",
+     "object": "stone-cairn",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cairn-2",
+     "object": "stone-cairn",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cairn-3",
+     "object": "stone-cairn",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cairn-4",
+     "object": "stone-cairn",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cairn-5",
+     "object": "stone-cairn",
+     "source": "box-proxy"
+    },
+    {
+     "id": "leaf-shoes",
+     "object": "zorlop-leaf-shoes",
+     "source": "box-proxy"
+    },
+    {
+     "id": "pack",
+     "object": "travel-pack",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_cairns",
+   "location": "silver-dunes",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.1
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.1
+    }
+   ],
+   "props": [
+    {
+     "id": "cairn-mark",
+     "object": "stone-cairn",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cairn-2",
+     "object": "stone-cairn",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cairn-3",
+     "object": "stone-cairn",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cairn-4",
+     "object": "stone-cairn",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cairn-5",
+     "object": "stone-cairn",
+     "source": "box-proxy"
+    },
+    {
+     "id": "pack",
+     "object": "travel-pack",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_evening_camp",
+   "location": "silver-dunes",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.7
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 10.0
+    }
+   ],
+   "props": [
+    {
+     "id": "cairn-mark",
+     "object": "stone-cairn",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cairn-2",
+     "object": "stone-cairn",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cairn-3",
+     "object": "stone-cairn",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cairn-4",
+     "object": "stone-cairn",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cairn-5",
+     "object": "stone-cairn",
+     "source": "box-proxy"
+    },
+    {
+     "id": "pack",
+     "object": "travel-pack",
+     "source": "box-proxy"
+    },
+    {
+     "id": "camp-fire",
+     "object": "campfire-ring",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_circle",
+   "location": "storyteller-hut",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 16.2
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 16.1
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 6.8
+    }
+   ],
+   "props": [
+    {
+     "id": "firepit",
+     "object": "campfire-ring",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [
+     "storyteller-seat"
+    ],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "driver check: informational, no change",
+    "what": "storyteller-seat stands between the camera and its look_at: the look_at is the seat (the subject)."
+   }
+  },
+  {
+   "scene": "s3_village_return",
+   "location": "storyteller-hut",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.4
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.2
+    }
+   ],
+   "props": [
+    {
+     "id": "firepit",
+     "object": "campfire-ring",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "e_returned",
+   "location": "storyteller-hut",
+   "tier": "standard",
+   "resolution": [
+    1920,
+    1080
+   ],
+   "samples": 128,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 6.8
+    }
+   ],
+   "props": [
+    {
+     "id": "firepit",
+     "object": "campfire-ring",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [
+     "storyteller-seat"
+    ],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "driver check: informational, no change",
+    "what": "storyteller-seat stands between the camera and its look_at: the look_at is the seat (the subject)."
+   }
+  },
+  {
+   "scene": "s3_halls_c1",
+   "location": "temple-halls",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 16.5
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 16.2
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 6.9
+    }
+   ],
+   "props": [
+    {
+     "id": "reading-chair",
+     "object": "reading-chair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sand-book",
+     "object": "sand-book",
+     "source": "box-proxy"
+    },
+    {
+     "id": "yesterdays-book",
+     "object": "yesterdays-book",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lizard-plate",
+     "object": "lizard-plate",
+     "source": "box-proxy"
+    },
+    {
+     "id": "teacup",
+     "object": "teacup",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cuckoo-clock",
+     "object": "cuckoo-clock",
+     "source": "box-proxy"
+    },
+    {
+     "id": "broom",
+     "object": "broom",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf-aisle-a",
+     "object": "bookshelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf-aisle-b",
+     "object": "bookshelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf-aisle-c",
+     "object": "bookshelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ladder-north",
+     "object": "library-ladder",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ladder-south",
+     "object": "library-ladder",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ladder-gallery",
+     "object": "library-ladder",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_halls_c3",
+   "location": "temple-halls",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 16.5
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 16.4
+    }
+   ],
+   "props": [
+    {
+     "id": "reading-chair",
+     "object": "reading-chair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sand-book",
+     "object": "sand-book",
+     "source": "box-proxy"
+    },
+    {
+     "id": "teacup",
+     "object": "teacup",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cuckoo-clock",
+     "object": "cuckoo-clock",
+     "source": "box-proxy"
+    },
+    {
+     "id": "broom",
+     "object": "broom",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf-aisle-a",
+     "object": "bookshelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf-aisle-b",
+     "object": "bookshelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf-aisle-c",
+     "object": "bookshelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ladder-north",
+     "object": "library-ladder",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ladder-south",
+     "object": "library-ladder",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ladder-gallery",
+     "object": "library-ladder",
+     "source": "box-proxy"
+    },
+    {
+     "id": "yesterdays-book-shelved",
+     "object": "yesterdays-book",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_halls_c5",
+   "location": "temple-halls",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.7
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.7
+    }
+   ],
+   "props": [
+    {
+     "id": "reading-chair",
+     "object": "reading-chair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sand-book",
+     "object": "sand-book",
+     "source": "box-proxy"
+    },
+    {
+     "id": "teacup",
+     "object": "teacup",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cuckoo-clock",
+     "object": "cuckoo-clock",
+     "source": "box-proxy"
+    },
+    {
+     "id": "broom",
+     "object": "broom",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf-aisle-a",
+     "object": "bookshelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf-aisle-b",
+     "object": "bookshelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf-aisle-c",
+     "object": "bookshelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ladder-north",
+     "object": "library-ladder",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ladder-south",
+     "object": "library-ladder",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ladder-gallery",
+     "object": "library-ladder",
+     "source": "box-proxy"
+    },
+    {
+     "id": "yesterdays-book-shelved",
+     "object": "yesterdays-book",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_halls_c6",
+   "location": "temple-halls",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 16.5
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 16.5
+    }
+   ],
+   "props": [
+    {
+     "id": "reading-chair",
+     "object": "reading-chair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sand-book",
+     "object": "sand-book",
+     "source": "box-proxy"
+    },
+    {
+     "id": "teacup",
+     "object": "teacup",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cuckoo-clock",
+     "object": "cuckoo-clock",
+     "source": "box-proxy"
+    },
+    {
+     "id": "broom",
+     "object": "broom",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf-aisle-a",
+     "object": "bookshelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf-aisle-b",
+     "object": "bookshelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf-aisle-c",
+     "object": "bookshelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ladder-north",
+     "object": "library-ladder",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ladder-south",
+     "object": "library-ladder",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ladder-gallery",
+     "object": "library-ladder",
+     "source": "box-proxy"
+    },
+    {
+     "id": "yesterdays-book-shelved",
+     "object": "yesterdays-book",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_halls_c7",
+   "location": "temple-halls",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.2
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.1
+    }
+   ],
+   "props": [
+    {
+     "id": "reading-chair",
+     "object": "reading-chair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sand-book",
+     "object": "sand-book",
+     "source": "box-proxy"
+    },
+    {
+     "id": "teacup",
+     "object": "teacup",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cuckoo-clock",
+     "object": "cuckoo-clock",
+     "source": "box-proxy"
+    },
+    {
+     "id": "broom",
+     "object": "broom",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf-aisle-a",
+     "object": "bookshelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf-aisle-b",
+     "object": "bookshelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf-aisle-c",
+     "object": "bookshelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ladder-north",
+     "object": "library-ladder",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ladder-south",
+     "object": "library-ladder",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ladder-gallery",
+     "object": "library-ladder",
+     "source": "box-proxy"
+    },
+    {
+     "id": "yesterdays-book-shelved",
+     "object": "yesterdays-book",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_halls_c8",
+   "location": "temple-halls",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 14.5
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 14.7
+    }
+   ],
+   "props": [
+    {
+     "id": "reading-chair",
+     "object": "reading-chair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sand-book",
+     "object": "sand-book",
+     "source": "box-proxy"
+    },
+    {
+     "id": "teacup",
+     "object": "teacup",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cuckoo-clock",
+     "object": "cuckoo-clock",
+     "source": "box-proxy"
+    },
+    {
+     "id": "broom",
+     "object": "broom",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf-aisle-a",
+     "object": "bookshelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf-aisle-b",
+     "object": "bookshelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf-aisle-c",
+     "object": "bookshelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ladder-north",
+     "object": "library-ladder",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ladder-south",
+     "object": "library-ladder",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ladder-gallery",
+     "object": "library-ladder",
+     "source": "box-proxy"
+    },
+    {
+     "id": "yesterdays-book-shelved",
+     "object": "yesterdays-book",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_last_cup",
+   "location": "temple-halls",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 16.7
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 16.2
+    }
+   ],
+   "props": [
+    {
+     "id": "reading-chair",
+     "object": "reading-chair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sand-book",
+     "object": "sand-book",
+     "source": "box-proxy"
+    },
+    {
+     "id": "teacup",
+     "object": "teacup",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cuckoo-clock",
+     "object": "cuckoo-clock",
+     "source": "box-proxy"
+    },
+    {
+     "id": "broom",
+     "object": "broom",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf-aisle-a",
+     "object": "bookshelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf-aisle-b",
+     "object": "bookshelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf-aisle-c",
+     "object": "bookshelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ladder-north",
+     "object": "library-ladder",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ladder-south",
+     "object": "library-ladder",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ladder-gallery",
+     "object": "library-ladder",
+     "source": "box-proxy"
+    },
+    {
+     "id": "yesterdays-book-shelved",
+     "object": "yesterdays-book",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "e_stayed",
+   "location": "temple-halls",
+   "tier": "standard",
+   "resolution": [
+    1920,
+    1080
+   ],
+   "samples": 128,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 7.0
+    }
+   ],
+   "props": [
+    {
+     "id": "reading-chair",
+     "object": "reading-chair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sand-book",
+     "object": "sand-book",
+     "source": "box-proxy"
+    },
+    {
+     "id": "teacup",
+     "object": "teacup",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cuckoo-clock",
+     "object": "cuckoo-clock",
+     "source": "box-proxy"
+    },
+    {
+     "id": "broom",
+     "object": "broom",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf-aisle-a",
+     "object": "bookshelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf-aisle-b",
+     "object": "bookshelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf-aisle-c",
+     "object": "bookshelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ladder-north",
+     "object": "library-ladder",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ladder-south",
+     "object": "library-ladder",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ladder-gallery",
+     "object": "library-ladder",
+     "source": "box-proxy"
+    },
+    {
+     "id": "yesterdays-book-shelved",
+     "object": "yesterdays-book",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "e_rider",
+   "location": "temple-halls",
+   "tier": "standard",
+   "resolution": [
+    1920,
+    1080
+   ],
+   "samples": 128,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 7.0
+    }
+   ],
+   "props": [
+    {
+     "id": "reading-chair",
+     "object": "reading-chair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sand-book",
+     "object": "sand-book",
+     "source": "box-proxy"
+    },
+    {
+     "id": "teacup",
+     "object": "teacup",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cuckoo-clock",
+     "object": "cuckoo-clock",
+     "source": "box-proxy"
+    },
+    {
+     "id": "broom",
+     "object": "broom",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf-aisle-a",
+     "object": "bookshelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf-aisle-b",
+     "object": "bookshelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf-aisle-c",
+     "object": "bookshelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ladder-north",
+     "object": "library-ladder",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ladder-south",
+     "object": "library-ladder",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ladder-gallery",
+     "object": "library-ladder",
+     "source": "box-proxy"
+    },
+    {
+     "id": "yesterdays-book-shelved",
+     "object": "yesterdays-book",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "e_named",
+   "location": "temple-halls",
+   "tier": "standard",
+   "resolution": [
+    1920,
+    1080
+   ],
+   "samples": 128,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 7.0
+    }
+   ],
+   "props": [
+    {
+     "id": "reading-chair",
+     "object": "reading-chair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "teacup",
+     "object": "teacup",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cuckoo-clock",
+     "object": "cuckoo-clock",
+     "source": "box-proxy"
+    },
+    {
+     "id": "broom",
+     "object": "broom",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf-aisle-a",
+     "object": "bookshelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf-aisle-b",
+     "object": "bookshelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf-aisle-c",
+     "object": "bookshelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ladder-north",
+     "object": "library-ladder",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ladder-south",
+     "object": "library-ladder",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ladder-gallery",
+     "object": "library-ladder",
+     "source": "box-proxy"
+    },
+    {
+     "id": "yesterdays-book-shelved",
+     "object": "yesterdays-book",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sand-book-shelved",
+     "object": "sand-book",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "e_unread",
+   "location": "temple-halls",
+   "tier": "standard",
+   "resolution": [
+    1920,
+    1080
+   ],
+   "samples": 128,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 6.9
+    }
+   ],
+   "props": [
+    {
+     "id": "reading-chair",
+     "object": "reading-chair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sand-book",
+     "object": "sand-book",
+     "source": "box-proxy"
+    },
+    {
+     "id": "teacup",
+     "object": "teacup",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cuckoo-clock",
+     "object": "cuckoo-clock",
+     "source": "box-proxy"
+    },
+    {
+     "id": "broom",
+     "object": "broom",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf-aisle-a",
+     "object": "bookshelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf-aisle-b",
+     "object": "bookshelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf-aisle-c",
+     "object": "bookshelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ladder-north",
+     "object": "library-ladder",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ladder-south",
+     "object": "library-ladder",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ladder-gallery",
+     "object": "library-ladder",
+     "source": "box-proxy"
+    },
+    {
+     "id": "yesterdays-book-shelved",
+     "object": "yesterdays-book",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_unlit_gallery",
+   "location": "unlit-gallery",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.3
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.6
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 5.2
+    }
+   ],
+   "props": [
+    {
+     "id": "shelf-1",
+     "object": "bookshelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf-2",
+     "object": "bookshelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf-3",
+     "object": "bookshelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf-4",
+     "object": "bookshelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf-5",
+     "object": "bookshelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf-6",
+     "object": "bookshelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf-7",
+     "object": "bookshelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf-8",
+     "object": "bookshelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf-9",
+     "object": "bookshelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "black-book",
+     "object": "black-book",
+     "source": "box-proxy"
+    },
+    {
+     "id": "candle",
+     "object": "candlestick",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_well_post",
+   "location": "village-well",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 9.3
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.0
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 5.2
+    }
+   ],
+   "props": [
+    {
+     "id": "fathers-waterskin",
+     "object": "waterskin",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [
+     "store-roof"
+    ],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "driver check: informational, no change",
+    "what": "store-roof (a cone, role ceiling) stands between the camera and its look_at: the look_at is the roof-gap on the store roof (the subject)."
+   }
+  },
+  {
+   "scene": "s3_seclusion",
+   "location": "walled-yard",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 14.1
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 14.7
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 6.6
+    }
+   ],
+   "props": [
+    {
+     "id": "shrine-heap",
+     "object": "stone-cairn",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_hut_night",
+   "location": "xandri-hut",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 9.6
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 7.8
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 5.1
+    }
+   ],
+   "props": [
+    {
+     "id": "mirror",
+     "object": "hut-mirror",
+     "source": "box-proxy"
+    },
+    {
+     "id": "pack",
+     "object": "travel-pack",
+     "source": "box-proxy"
+    },
+    {
+     "id": "waterskin",
+     "object": "waterskin",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "blockout_replace",
+    "props"
+   ],
+   "flag_status": {
+    "status": "found by the driver: fixed at render time + proposed diff",
+    "what": "the scene rendered black: the solid dome ceiling shuts out both moon-shaft spots (the build file's roof holes are not built); a blockout replacement leaves the dome out so the shafts reach the floor. Also pack at [1.35, -0.4, 0] stood 0.136 m into the hut wall; a prop override moves it to x 1.0. Build-file diff proposed."
+   }
+  }
+ ],
+ "overviews": [
+  {
+   "location": "abyss-edge",
+   "reference": "games/endless-temple/assets/locations/abyss-edge.jpg",
+   "location_scene_count": 2,
+   "scene_lighting": "s3_abyss_dream",
+   "camera": {
+    "location": [
+     0,
+     -2,
+     1.7
+    ],
+    "look_at": [
+     0,
+     6,
+     2.5
+    ],
+    "lens_mm": 24
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": 1.5,
+    "facing": "ccw",
+    "scenes": {
+     "s3_abyss_dream": {
+      "exposure_ev": 1.9
+     },
+     "s3_abyss_return": {
+      "exposure_ev": 1.9
+     }
+    }
+   }
+  },
+  {
+   "location": "clerk-office",
+   "reference": "games/endless-temple/assets/locations/clerk-office.jpg",
+   "location_scene_count": 2,
+   "scene_lighting": "s3_clerk_office",
+   "camera": {
+    "location": [
+     -3.2,
+     -2.5,
+     1.8
+    ],
+    "look_at": [
+     1,
+     2.5,
+     2.5
+    ],
+    "lens_mm": 18
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+     "s3_clerk_office": {
+      "exposure_ev": 0.6
+     },
+     "s3_hollin_choice": {
+      "exposure_ev": -3.5
+     }
+    }
+   }
+  },
+  {
+   "location": "deep-desert",
+   "reference": "games/endless-temple/assets/locations/deep-desert.jpg",
+   "location_scene_count": 3,
+   "scene_lighting": "s3_deep_desert",
+   "camera": {
+    "location": [
+     0,
+     -240,
+     1.5
+    ],
+    "look_at": [
+     0,
+     0,
+     3
+    ],
+    "lens_mm": 28
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+     "s3_deep_desert": {
+      "exposure_ev": -4.7
+     },
+     "s3_herd_sighting": {
+      "exposure_ev": -3.1
+     },
+     "s3_xandrix_back": {
+      "exposure_ev": -4.3
+     }
+    }
+   }
+  },
+  {
+   "location": "elaris-room",
+   "reference": "games/endless-temple/assets/locations/elaris-room.jpg",
+   "location_scene_count": 1,
+   "scene_lighting": "s3_room_morning",
+   "camera": {
+    "location": [
+     0,
+     -2.2,
+     1.5
+    ],
+    "look_at": [
+     0,
+     2.5,
+     1.2
+    ],
+    "lens_mm": 20
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+     "s3_room_morning": {
+      "exposure_ev": -1.5
+     }
+    }
+   }
+  },
+  {
+   "location": "father-camp",
+   "reference": "games/endless-temple/assets/locations/father-camp.jpg",
+   "location_scene_count": 5,
+   "scene_lighting": "s3_father_camp",
+   "camera": {
+    "location": [
+     5,
+     -8,
+     2.2
+    ],
+    "look_at": [
+     -1,
+     2,
+     1.5
+    ],
+    "lens_mm": 28
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+     "s3_camp_mark_c6": {
+      "exposure_ev": -0.5
+     },
+     "s3_father_camp": {
+      "exposure_ev": -1.8
+     },
+     "s3_father_walk": {
+      "exposure_ev": -2.5
+     },
+     "s3_herd_final": {
+      "exposure_ev": -1.8
+     },
+     "s3_ring_of_stones": {
+      "exposure_ev": 0.0
+     }
+    }
+   }
+  },
+  {
+   "location": "hollin-streets",
+   "reference": "games/endless-temple/assets/locations/hollin-streets.jpg",
+   "location_scene_count": 1,
+   "scene_lighting": "s3_hollin_streets",
+   "camera": {
+    "location": [
+     -55,
+     0,
+     1.6
+    ],
+    "look_at": [
+     40,
+     0,
+     5
+    ],
+    "lens_mm": 24
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+     "s3_hollin_streets": {
+      "exposure_ev": 0.0
+     }
+    }
+   }
+  },
+  {
+   "location": "pantry",
+   "reference": "games/endless-temple/assets/locations/pantry.jpg",
+   "location_scene_count": 4,
+   "scene_lighting": "s3_pantry_c1",
+   "camera": {
+    "location": [
+     0,
+     -1.6,
+     1.7
+    ],
+    "look_at": [
+     0,
+     2,
+     1.6
+    ],
+    "lens_mm": 18
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+     "s3_ledger_turned": {
+      "exposure_ev": 0.0
+     },
+     "s3_pantry_c1": {
+      "exposure_ev": 0.0
+     },
+     "s3_pantry_c3": {
+      "exposure_ev": 0.0
+     },
+     "s3_pantry_c8": {
+      "exposure_ev": 1.0
+     }
+    }
+   }
+  },
+  {
+   "location": "procession-road",
+   "reference": "games/endless-temple/assets/locations/procession-road.jpg",
+   "location_scene_count": 3,
+   "scene_lighting": "s3_procession_road",
+   "camera": {
+    "location": [
+     -200,
+     -8,
+     2.5
+    ],
+    "look_at": [
+     -60,
+     0,
+     2
+    ],
+    "lens_mm": 28
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+     "s3_procession_choice": {
+      "exposure_ev": -1.1
+     },
+     "s3_procession_road": {
+      "exposure_ev": -1.8
+     },
+     "s3_scribe_wagon": {
+      "exposure_ev": 0.0
+     }
+    }
+   }
+  },
+  {
+   "location": "silver-dunes",
+   "reference": "games/endless-temple/assets/locations/silver-dunes.jpg",
+   "location_scene_count": 5,
+   "scene_lighting": "s3_moonlit_dunes",
+   "camera": {
+    "location": [
+     0,
+     -140,
+     3.5
+    ],
+    "look_at": [
+     0,
+     -60,
+     12
+    ],
+    "lens_mm": 24
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+     "s3_cairns": {
+      "exposure_ev": -4.7
+     },
+     "s3_dunes_day": {
+      "exposure_ev": -4.7
+     },
+     "s3_dunes_night": {
+      "exposure_ev": 0.7
+     },
+     "s3_evening_camp": {
+      "exposure_ev": -1.1
+     },
+     "s3_moonlit_dunes": {
+      "exposure_ev": -0.9
+     }
+    }
+   }
+  },
+  {
+   "location": "storyteller-hut",
+   "reference": "games/endless-temple/assets/locations/storyteller-hut.jpg",
+   "location_scene_count": 3,
+   "scene_lighting": "s3_circle",
+   "camera": {
+    "location": [
+     0,
+     4.3,
+     1.8
+    ],
+    "look_at": [
+     0,
+     -3,
+     1.3
+    ],
+    "lens_mm": 20
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+     "e_returned": {
+      "exposure_ev": -1.5
+     },
+     "s3_circle": {
+      "exposure_ev": -1.5
+     },
+     "s3_village_return": {
+      "exposure_ev": -1.6
+     }
+    }
+   }
+  },
+  {
+   "location": "temple-halls",
+   "reference": "games/endless-temple/assets/locations/temple-halls.jpg",
+   "location_scene_count": 11,
+   "scene_lighting": "s3_halls_c1",
+   "camera": {
+    "location": [
+     -18,
+     -6,
+     1.8
+    ],
+    "look_at": [
+     8,
+     2,
+     3
+    ],
+    "lens_mm": 20
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+     "e_named": {
+      "exposure_ev": 0.0
+     },
+     "e_rider": {
+      "exposure_ev": -1.3
+     },
+     "e_stayed": {
+      "exposure_ev": -1.3
+     },
+     "e_unread": {
+      "exposure_ev": -1.4
+     },
+     "s3_halls_c1": {
+      "exposure_ev": -1.4
+     },
+     "s3_halls_c3": {
+      "exposure_ev": -1.2
+     },
+     "s3_halls_c5": {
+      "exposure_ev": -0.9
+     },
+     "s3_halls_c6": {
+      "exposure_ev": -1.5
+     },
+     "s3_halls_c7": {
+      "exposure_ev": 0.0
+     },
+     "s3_halls_c8": {
+      "exposure_ev": 0.0
+     },
+     "s3_last_cup": {
+      "exposure_ev": -1.5
+     }
+    }
+   }
+  },
+  {
+   "location": "unlit-gallery",
+   "reference": "games/endless-temple/assets/locations/unlit-gallery.jpg",
+   "location_scene_count": 1,
+   "scene_lighting": "s3_unlit_gallery",
+   "camera": {
+    "location": [
+     -9.5,
+     0.3,
+     2.2
+    ],
+    "look_at": [
+     9,
+     1.5,
+     2
+    ],
+    "lens_mm": 20
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": 1.0,
+    "facing": "ccw",
+    "scenes": {
+     "s3_unlit_gallery": {
+      "exposure_ev": 3.5
+     }
+    }
+   }
+  },
+  {
+   "location": "village-well",
+   "reference": "games/endless-temple/assets/locations/village-well.jpg",
+   "location_scene_count": 1,
+   "scene_lighting": "s3_well_post",
+   "camera": {
+    "location": [
+     -7,
+     -5,
+     1.6
+    ],
+    "look_at": [
+     2,
+     2,
+     2.5
+    ],
+    "lens_mm": 24
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "scenes": {
+     "s3_well_post": {
+      "exposure_ev": 0.6
+     }
+    }
+   }
+  },
+  {
+   "location": "walled-yard",
+   "reference": "left out (text card)",
+   "location_scene_count": 1,
+   "scene_lighting": "s3_seclusion",
+   "camera": {
+    "location": [
+     0,
+     -3.2,
+     1.3
+    ],
+    "look_at": [
+     0,
+     3,
+     1.5
+    ],
+    "lens_mm": 20
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": 0.0,
+    "facing": "ccw",
+    "reference_card": "The reference image shows a painted figure on the back wall (a lizard-like figure drawn in ochre); by the no-creatures rule its sheet carries a text card",
+    "scenes": {
+     "s3_seclusion": {
+      "exposure_ev": -1.6
+     }
+    }
+   }
+  },
+  {
+   "location": "xandri-hut",
+   "reference": "games/endless-temple/assets/locations/xandri-hut.jpg",
+   "location_scene_count": 1,
+   "scene_lighting": "s3_hut_night",
+   "camera": {
+    "location": [
+     -0.3,
+     -1.8,
+     1.5
+    ],
+    "look_at": [
+     0.2,
+     1.5,
+     1
+    ],
+    "lens_mm": 20
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": 2.0,
+    "facing": "ccw",
+    "scenes": {
+     "s3_hut_night": {
+      "exposure_ev": -1.5
+     }
+    }
+   }
+  }
+ ],
+ "objects": {
+  "black-book": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 2,
+   "fit": null,
+   "note": null
+  },
+  "bookshelf": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 43,
+   "fit": null,
+   "note": null
+  },
+  "broom": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 11,
+   "fit": null,
+   "note": null
+  },
+  "campfire-ring": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 9,
+   "fit": null,
+   "note": null
+  },
+  "candlestick": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 3,
+   "fit": null,
+   "note": null
+  },
+  "clerk-umbrella": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 1,
+   "fit": null,
+   "note": null
+  },
+  "clerks-chair": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 2,
+   "fit": null,
+   "note": null
+  },
+  "cuckoo-clock": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 11,
+   "fit": null,
+   "note": null
+  },
+  "day-book": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 6,
+   "fit": null,
+   "note": null
+  },
+  "father-journal": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 1,
+   "fit": null,
+   "note": null
+  },
+  "giant-bone": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 12,
+   "fit": null,
+   "note": null
+  },
+  "hut-mirror": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 1,
+   "fit": null,
+   "note": null
+  },
+  "kettle": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 4,
+   "fit": null,
+   "note": null
+  },
+  "library-ladder": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 33,
+   "fit": null,
+   "note": null
+  },
+  "lizard-plate": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 1,
+   "fit": null,
+   "note": null
+  },
+  "loft-bell": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 2,
+   "fit": null,
+   "note": null
+  },
+  "marker-pole": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 5,
+   "fit": null,
+   "note": null
+  },
+  "pilgrim-lantern": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 24,
+   "fit": null,
+   "note": null
+  },
+  "quill-pen": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 4,
+   "fit": null,
+   "note": null
+  },
+  "reading-chair": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 11,
+   "fit": null,
+   "note": null
+  },
+  "sand-book": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 11,
+   "fit": null,
+   "note": null
+  },
+  "scribe-scroll": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 4,
+   "fit": null,
+   "note": null
+  },
+  "specimen-jar": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 28,
+   "fit": null,
+   "note": null
+  },
+  "stone-cairn": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 37,
+   "fit": null,
+   "note": null
+  },
+  "tea-tin": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 12,
+   "fit": null,
+   "note": null
+  },
+  "teacup": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 13,
+   "fit": null,
+   "note": null
+  },
+  "travel-pack": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 4,
+   "fit": null,
+   "note": null
+  },
+  "waterskin": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 2,
+   "fit": null,
+   "note": null
+  },
+  "yesterdays-book": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 11,
+   "fit": null,
+   "note": null
+  },
+  "zorlop-leaf-shoes": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 1,
+   "fit": null,
+   "note": null
+  }
+ }
+}

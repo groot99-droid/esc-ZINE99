@@ -86,6 +86,19 @@ recorded render-time overrides differ.
   once mid-session; the packs and models stayed on its disk, so a run only had to be started again. Run the look passes with `--stills overview --only
   <loc>/<scene>,...` (about 20 s for 14 locations) to set the overview cameras.
 
+- Added for batch 8 (people-of-the-bark, endless-temple): **scene scale.** A set whose pieces span under 2 m (the nine bark-world locations are built in
+  millimetres: `bounds_m` 0.12 x 0.1 x 0.12, props 0.004 to 0.03 m) is scaled up as a whole by `K` (default 1000, rig key `scene_scale`) just before it is
+  built: blockout pieces, props, lights, cameras and the overview; light power goes by `K` squared for AREA, POINT and SPOT (a SUN is unchanged), so area
+  light radiance and a point light's irradiance at the scaled distance stay the same and the image is what the build file gives at that scale. Without it
+  the 0.05 m clip plane, Cycles' ray offsets and the checks' absolute tolerances (0.15, 0.05) are wrong at 12 cm. Overrides stay in the build file's own
+  units (they are applied before the scaling); a per-scene json records `scene_scale`. The first pass rendered these sets unscaled (black cut-outs from
+  the clip plane in highridge), so its mm-scale flags are not trustworthy. Models are scaled with the set, so fit ratios are the build file's.
+  The first-pass flags of lowridge's tap were not reproduced at scale. A blockout piece of role `opening` is an opaque box: where it fills a wall gap
+  that lights shine through (clerk-office loft-slats and rain-window), the override replaces it by an empty list (an open gap). `rig.json` and
+  `overrides.json` hold the 25 locations (namespaced `<game>/<location>`), `facing: "ccw"` for both games, per-scene `exposure_ev` from look passes
+  (capped at -5.5 and +3.5), `overview_ev`, the overview camera, and `reference_card` for highridge (face-like knots) and walled-yard (a painted figure).
+  No model ledger entry is built for endless-temple, so nothing was swapped there; bark used lite copies (12k triangles, 512 px) of 15 built models.
+
 ## Remote run
 
 Used on a rented RTX 4090: upload `render_scenes.py` and `pack.tgz`, run Blender 5.2.1 as above with `--device OPTIX`, fetch the

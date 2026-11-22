@@ -1,298 +1,430 @@
 {
-  "s3_hospital_2217": {
-    "status": "fixed at render time + proposed diff",
-    "what": "observation glass moved to the far (+y) wall by a render-time blockout override; bench proxy drawn translucent so the vial and syringe inside it show; the 85 mm push-in on the bench is kept (design). Build-file diff proposed in REFINEMENT_NOTES.md."
-  },
-  "s3_injection_first": {
-    "status": "fixed at render time + proposed diff",
-    "what": "the vial and the syringe stand inside the solid bench-rig box proxy, which filled the frame; the bench proxy is drawn translucent. Build-file diff proposed."
-  },
-  "s3_river_night": {
-    "status": "fixed at render time + proposed diff",
-    "what": "the fence blockout piece (100 m x 1.8 m, solid) stood between camera and pipe; a 8 m gate gap is cut in it by a render-time blockout override. Build-file diff proposed."
-  },
-  "s3_settlement_day": {
-    "status": "fixed at render time + proposed diff",
-    "what": "the camera (and player start) stood inside the embankment piece; moved to x -45.5, just east of its face, by a render-time override. Build-file diff proposed."
-  },
-  "s3_fortress_following": {
-    "status": "fixed at render time + proposed diff",
-    "what": "the end of archive-row-3 grazed the sight line to the hall; camera moved 2 m west (x -19) by a render-time override. Build-file diff proposed."
-  },
-  "s3_gala_balcony": {
-    "status": "fixed at render time + proposed diff",
-    "what": "the camera at y 16 faces the balcony through the solid glass-north wall; a 12 m doorway (x -6 to 6) is cut in glass-north by a render-time blockout override. Build-file diff proposed."
-  },
-  "s3_gala_leash": {
-    "status": "fixed at render time + proposed diff",
-    "what": "the camera at y 18 faces the balcony through the solid glass-north wall; a 12 m doorway (x -6 to 6) is cut in glass-north by a render-time blockout override. Build-file diff proposed."
-  },
-  "s3_gala_bond": {
-    "status": "fixed at render time + proposed diff",
-    "what": "the camera on the balcony looks back into the hall through the solid glass-north wall; a 12 m doorway (x -6 to 6) is cut in glass-north by a render-time blockout override. Build-file diff proposed."
-  },
-  "s3_overrun_hall": {
-    "status": "fixed at render time + proposed diff",
-    "what": "cavern-wall-s (a solid 48 m wall at y -15.5) shut the archive corridor's mouth, so the 50 mm still saw only rock; the wall is split by a 3 m opening at the corridor (x -1.5 to 1.5) by a render-time blockout override. Build-file diff proposed."
-  },
-  "s3_end_kept": {
-    "status": "found by the driver (not flagged in the first pass); fixed at render time + proposed diff",
-    "what": "the camera at z 26 stands above outer-wall, a closed cylinder whose lid at z 24 hid the drum cap and bell frame; outer-wall is omitted in this scene by a render-time blockout override. Build-file diff proposed."
-  },
-  "s3_mountains_foot": {
-    "status": "checked: false positive, no change",
-    "what": "the look_at [0, 30, 40] lies 5 m inside tower-1 behind vine-face, so the sight line ends in the wall by design; the view shows the three towers. A look_at on the face is proposed."
-  },
-  "s3_hub_gallery": {
-    "status": "checked: false positive, no change",
-    "what": "the look_at [0, -14, 1.6] lies 0.2 m inside the drum's glass, just past the driver's 0.15 m tolerance; the breach and the glass read as intended."
-  },
-  "s3_overrun_after": {
-    "status": "found by the driver; proposed diff only",
-    "what": "the look_at [0, 15, 3] lies inside breach-stair, so the frame is the stair box; a look_at at the breach [0, 15, 6] is proposed. Not applied: it changes the composition."
-  },
-  "s_duskbane_halls": {
-    "status": "fixed at render time + proposed diff",
-    "what": "the camera at y -21.5 stood behind south-wall (y -20.8 to -20.0), outside the hall, so the wall filled the frame; moved to y -19.6 (0.4 m inside) by a render-time camera override. Build-file diff proposed."
-  },
-  "s_underworld_tunnels": {
-    "status": "fixed at render time + proposed diff",
-    "what": "the camera at y -20.5 stood inside south-wall; moved to y -19.6 (inside the west tunnel) by a render-time camera override. Build-file diff proposed."
-  },
-  "s_priory_halls": {
-    "status": "fixed at render time + proposed diff",
-    "what": "the camera at y -50.5 stood behind hall-south (y -50.4 to -49.6); moved to y -49.2. Also star-dome (a solid ellipsoid) enclosed the dome-starlight area light at z 18, leaving the hall black: it is replaced by a thin lid at z 23.7 in this location by a render-time blockout override. Build-file diffs proposed."
-  },
-  "s_crystal_forest": {
-    "status": "fixed at render time + proposed diff",
-    "what": "doors-frame is a solid 4.4 x 1.0 x 7.4 m box that plugs the doorway the camera (y -10.5) looks through, and doors-light is an opaque emissive plane; the frame is replaced by two jambs and a head, doors-light is drawn 88% translucent (rig), and look_at z 4.19 (0.28 m inside forest-hill) is raised to 4.6. Build-file diffs proposed."
-  },
-  "s_storm_chamber": {
-    "status": "fixed at render time + proposed diff",
-    "what": "door-opening, an opaque black 'void' plane, filled the doorway the camera looks through from the stair; omitted by a render-time blockout override. Build-file diff proposed."
-  },
-  "s_cloud_platform": {
-    "status": "found by the driver (prop inside a piece); fixed at render time + proposed diff",
-    "what": "platform-underside is a cone rotated 180 degrees centred at z -0.5 (10 m tall), so its flat top stands 4.5 m above the platform and swallows the crystal-platform prop; centre z -5.0 puts the top at z 0. Applied by a render-time blockout override. Build-file diff proposed."
-  },
-  "s_cedar_outpost": {
-    "status": "found by looking (not flagged); fixed at render time + proposed diff",
-    "what": "the camera at y 15.5 stands outside the north palisade and the gate proxy (y 14.6) fills the frame; moved to y 13.8 inside the yard by a render-time camera override."
-  },
-  "s_chasm_seal1": {
-    "status": "found by the driver; fixed at render time + proposed diff",
-    "what": "look_at [-10, 40, 0] lies inside far-cliff (face at y 38); moved to the face, [-10, 37.9, 2]."
-  },
-  "s_end_dormant": {
-    "status": "found by the driver; proposed diff only",
-    "what": "look_at [0, 40, 0] lies below the realm slabs (tops z 3); the view reads as intended from 140 m up. A look_at [0, 40, 3] is proposed. Not applied."
-  },
-  "s_deep_core": {
-    "status": "found by the driver; proposed diff only",
-    "what": "the living-shard prop (z 3.5) stands inside the cone wall-crystals-3 (a 4 x 3 x 6 m cone at [10, -42, 3]); it is not in frame. Proposed: move the shard to [10, -40.4, 3.5]."
-  },
-  "n3_stairwell": {
-    "status": "fixed at render time + proposed diff",
-    "what": "look_at [0.75, -10, 12.8] lies inside flight-4b-low (top z 13.125), so the first-person view ended in the stair box; look_at raised to [0.75, -10.0, 13.3]. Build-file diff proposed."
-  },
-  "n6_stairwell": {
-    "status": "fixed at render time + proposed diff",
-    "what": "same camera as n3_stairwell (flight-4b-low holds the look_at); same fix."
-  },
-  "end_wrong_picture": {
-    "status": "checked: false positive, no change",
-    "what": "look_at [-9, -1, 1.6] lies inside the revolving-door piece, so the sight line ends in the door by design; the frame shows the door as intended."
-  },
-  "c1_truck_gate": {
-    "status": "found by the driver (not flagged in the first pass); fixed at render time + proposed diff",
-    "what": "the camera [0,-18.2,2.96] stands inside the box proxy of the truck prop 'truck-gate' (2.5 x 7 x 3 m at y -23 to -16), so the still was black; the proxy is drawn 20% opaque in this scene. Proposed diff in REFINEMENT_NOTES.md."
-  },
-  "e_transfer_truck": {
-    "status": "found by the driver (not flagged in the first pass); fixed at render time + proposed diff",
-    "what": "same camera and cause as c1_truck_gate (camera [0,-18.2,2.7] inside 'truck-gate'); proxy drawn 20% opaque."
-  },
-  "n3_glovebox": {
-    "status": "found by the driver (not flagged in the first pass); fixed at render time + proposed diff",
-    "what": "two causes: the truck prop's box proxy (2.5 x 7 x 3 m) encloses the cab blockout pieces and its flat side filled the frame; and look_at [1.7, 2.62, 1.5] lies inside the glovebox piece. Proxy trimmed to the load body (y -4 to 1.2), look_at moved to [1.7, 2.40, 1.5] in front of the glovebox door."
-  },
-  "d3_duty_shovel": {
-    "status": "driver finding, no still change",
-    "what": "'truck-buried' stood inside barracks-a (8 of 27 sample points); moved to [9, -3, -0.4] at render time (proposed diff). Not in this scene's frame."
-  },
-  "e_new_recruit": {
-    "status": "driver finding, no still change",
-    "what": "same as d3_duty_shovel ('truck-buried' inside barracks-a)."
-  },
-  "a1_cabin_arrival": {
-    "status": "checked, no change needed",
-    "what": "the rag rug lies on the floor under the low game table (3 of 27 sample points of the rug fall inside the table's solid box): intended, the rug shows around the table; no render-time change, no diff proposed."
-  },
-  "a3_smell": {
-    "status": "checked, no change needed",
-    "what": "the rag rug lies on the floor under the low game table (3 of 27 sample points of the rug fall inside the table's solid box): intended, the rug shows around the table; no render-time change, no diff proposed."
-  },
-  "a4_wrong_places": {
-    "status": "checked, no change needed",
-    "what": "the rag rug lies on the floor under the low game table (3 of 27 sample points of the rug fall inside the table's solid box): intended, the rug shows around the table; no render-time change, no diff proposed."
-  },
-  "a5_cabin_turns": {
-    "status": "checked, no change needed",
-    "what": "the rag rug lies on the floor under the low game table (3 of 27 sample points of the rug fall inside the table's solid box): intended, the rug shows around the table; no render-time change, no diff proposed."
-  },
-  "b6_waking": {
-    "status": "checked, no change needed",
-    "what": "the rag rug lies on the floor under the low game table (3 of 27 sample points of the rug fall inside the table's solid box): intended, the rug shows around the table; no render-time change, no diff proposed."
-  },
-  "b6_keepers_visit": {
-    "status": "checked, no change needed",
-    "what": "the rag rug lies on the floor under the low game table (3 of 27 sample points of the rug fall inside the table's solid box): intended, the rug shows around the table; no render-time change, no diff proposed."
-  },
-  "b7_arrivals": {
-    "status": "checked, no change needed",
-    "what": "the rag rug lies on the floor under the low game table (3 of 27 sample points of the rug fall inside the table's solid box): intended, the rug shows around the table; no render-time change, no diff proposed."
-  },
-  "b7_jamie_falls": {
-    "status": "checked, no change needed",
-    "what": "the rag rug lies on the floor under the low game table (3 of 27 sample points of the rug fall inside the table's solid box): intended, the rug shows around the table; no render-time change, no diff proposed."
-  },
-  "b8_breaking_point": {
-    "status": "checked, no change needed",
-    "what": "the rag rug lies on the floor under the low game table (3 of 27 sample points of the rug fall inside the table's solid box): intended, the rug shows around the table; no render-time change, no diff proposed."
-  },
-  "c9_new_guests": {
-    "status": "checked, no change needed",
-    "what": "the rag rug lies on the floor under the low game table (3 of 27 sample points of the rug fall inside the table's solid box): intended, the rug shows around the table; no render-time change, no diff proposed."
-  },
-  "c10_hold_shelf": {
-    "status": "checked, no change needed",
-    "what": "the rag rug lies on the floor under the low game table (3 of 27 sample points of the rug fall inside the table's solid box): intended, the rug shows around the table; no render-time change, no diff proposed."
-  },
-  "c11_toy_floor": {
-    "status": "checked, no change needed",
-    "what": "the rag rug lies on the floor under the low game table (3 of 27 sample points of the rug fall inside the table's solid box): intended, the rug shows around the table; no render-time change, no diff proposed."
-  },
-  "c11_hold_shelf": {
-    "status": "checked, no change needed",
-    "what": "the rag rug lies on the floor under the low game table (3 of 27 sample points of the rug fall inside the table's solid box): intended, the rug shows around the table; no render-time change, no diff proposed."
-  },
-  "c12_hold_shelf": {
-    "status": "checked, no change needed",
-    "what": "the rag rug lies on the floor under the low game table (3 of 27 sample points of the rug fall inside the table's solid box): intended, the rug shows around the table; no render-time change, no diff proposed."
-  },
-  "c13_flight": {
-    "status": "checked, no change needed",
-    "what": "the rag rug lies on the floor under the low game table (3 of 27 sample points of the rug fall inside the table's solid box): intended, the rug shows around the table; no render-time change, no diff proposed."
-  },
-  "c13_seal": {
-    "status": "checked, no change needed",
-    "what": "the rag rug lies on the floor under the low game table (3 of 27 sample points of the rug fall inside the table's solid box): intended, the rug shows around the table; no render-time change, no diff proposed."
-  },
-  "c14_hold_shelf": {
-    "status": "checked, no change needed",
-    "what": "the rag rug lies on the floor under the low game table (3 of 27 sample points of the rug fall inside the table's solid box): intended, the rug shows around the table; no render-time change, no diff proposed."
-  },
-  "c14_chase_cabin": {
-    "status": "checked, no change needed",
-    "what": "the rag rug lies on the floor under the low game table (3 of 27 sample points of the rug fall inside the table's solid box): intended, the rug shows around the table; no render-time change, no diff proposed."
-  },
-  "e_cycle_shelf": {
-    "status": "checked, no change needed",
-    "what": "the rag rug lies on the floor under the low game table (3 of 27 sample points of the rug fall inside the table's solid box): intended, the rug shows around the table; no render-time change, no diff proposed."
-  },
-  "e_empty_toy": {
-    "status": "checked, no change needed",
-    "what": "the rag rug lies on the floor under the low game table (3 of 27 sample points of the rug fall inside the table's solid box): intended, the rug shows around the table; no render-time change, no diff proposed."
-  },
-  "a5_labyrinth": {
-    "status": "fixed at render time + proposed diff",
-    "what": "the camera stands in the 1.1 m outer corridor and looks +y through three solid walls; look_at moved to [-14, -21.45, 1.2] (down the corridor, west) and the player start turned to face it. Build-file diff proposed."
-  },
-  "booth_day2": {
-    "status": "fixed at render time",
-    "what": "the booth window is an opening piece with an opaque glass material; the rig draws the material 12% opaque in this location (the piece does not collide). No build-file change needed."
-  },
-  "supper_for_two": {
-    "status": "fixed at render time",
-    "what": "the booth window is an opening piece with an opaque glass material; the rig draws the material 12% opaque in this location (the piece does not collide). No build-file change needed."
-  },
-  "campfire_night1": {
-    "status": "fixed at render time + proposed diff",
-    "what": "the cooler stood inside the solid table-legs block; moved to [5.5, -0.2, 0] beside the table by a render-time override. Build-file diff proposed."
-  },
-  "campfire_night2": {
-    "status": "fixed at render time + proposed diff",
-    "what": "the cooler stood inside the solid table-legs block; moved to [5.5, -0.2, 0] beside the table by a render-time override. Build-file diff proposed."
-  },
-  "loop_day1": {
-    "status": "fixed at render time + proposed diff",
-    "what": "tent-17 stood inside the inner-forest block (y 48); moved onto the east pads at [-26, 62, 0]. Build-file diff proposed."
-  },
-  "loop_day2am": {
-    "status": "fixed at render time + proposed diff",
-    "what": "tent-17 stood inside the inner-forest block (y 48); moved onto the east pads at [-26, 62, 0]. Build-file diff proposed."
-  },
-  "loop_day2pm": {
-    "status": "fixed at render time + proposed diff",
-    "what": "tent-17 stood inside the inner-forest block (y 48); moved onto the east pads at [-26, 62, 0]. Build-file diff proposed."
-  },
-  "ordinary_morning": {
-    "status": "fixed at render time + proposed diff",
-    "what": "tent-17 stood inside the inner-forest block (y 48); moved onto the east pads at [-26, 62, 0]. Build-file diff proposed."
-  },
-  "other_entrance": {
-    "status": "fixed at render time + proposed diff",
-    "what": "the camera stands inside the booth and looks +y through its solid back wall; moved to [1.4, -5.6, 1.7] (just outside the booth's front corner, on the road) with the same look_at. Build-file diff proposed."
-  },
-  "home_apartment": {
-    "status": "fixed at render time + proposed diff",
-    "what": "the sight line to the study doorway crosses the solid partition piece part-b; camera moved 2.2 m west to [-1.4, -3.8, 1.65] so the line passes the doorway. Build-file diff proposed."
-  },
-  "wrong_forest": {
-    "status": "found by the driver, proposed diff only",
-    "what": "the look_at [0, 12, 4] lies inside the trunk glyph-a6, which stands dead centre in the frame. Rendered as built; proposed look_at [8, 12, 4] (the gap between glyph-a6 and glyph-a7)."
-  },
-  "booth_day1": {
-    "status": "found by the driver, fixed at render time + proposed diff",
-    "what": "the camera stands inside the van prop (not flagged in the first pass); the van is left out of this scene by a render-time override. Proposed `/scenes/booth_day1/hide` add `van`."
-  },
-  "channel_two": {
-    "status": "found by the driver, fixed at render time + proposed diff",
-    "what": "with the real split-boulder model the camera stands inside the rock; camera moved 0.8 m away from the boulder. Build-file diff proposed."
-  },
-  "b2-lab": {
-    "status": "fixed at render time + proposed diff",
-    "what": "the camera [-20, -6, 2.65] stands on the face of the wall-west-lintel (a 0.3 m wall piece from z 2.4 to 8) at the lab's door; the render-time camera override moves it 0.4 m into the lab to x -19.6. Build-file diff proposed in REFINEMENT_NOTES.md."
-  },
-  "b4-collapse": {
-    "status": "fixed at render time + proposed diff",
-    "what": "the camera [29.5, 0, 2.65] is inside the rubble-seal piece (x 27 to 30) and the still was a white wall; the camera override moves it to x 26.6, in front of the seal. Build-file diff proposed."
-  },
-  "ep-tunnel": {
-    "status": "fixed at render time + proposed diff",
-    "what": "the camera [-30, 0, 2.35] has no clearance from the end-west piece (x -30.6 to -30.0), which the driver's ray test counts as standing between camera and target; the camera override moves it to x -29.5. Build-file diff proposed."
-  },
-  "b2-hearing": {
-    "status": "found by the driver: fixed at render time + proposed diff",
-    "what": "the strain gauge at [12, 4.6, 2.6] sits inside the outcrop sphere (not a first-pass flag); a prop override puts it on the outcrop's surface at y 3.95. Build-file diff proposed."
-  },
-  "co-tunnel": {
-    "status": "found by the driver: fixed at render time + proposed diff",
-    "what": "the field journal at [25.6, 0.4, 0] is inside rubble-heap-3 (not a first-pass flag; same prop in ep-tunnel); a location-level prop override moves it to x 26.4 on the floor beside the heap. Build-file diff proposed."
-  },
-  "s3_river": {
-    "status": "found by the driver: fixed at render time + proposed diff",
-    "what": "boulder-1 and boulder-2 stand with their base at z 0 inside the 1 m thick bank-landing piece (18 of 27 sample points inside; also in s3_bank_years_on); a location-level prop override lifts them to the landing top, z 1.0. Build-file diff proposed."
-  },
-  "s3_recognition": {
-    "status": "found by the driver: fixed at render time + proposed diff",
-    "what": "lamp-west at [-14.4, -6, 0] is inside the rib-2-west piece (27 of 27 points; the east lamp stands at y -4, so the west lamp's y is probably a slip); a prop override puts it at y -4. Build-file diff proposed."
-  },
-  "s3_gallery": {
-    "status": "fixed at render time + proposed diff",
-    "what": "prop blank-8 at [-6, 10.8, 3.5] is inside ledge2-north-left (the first-pass flag); a prop override moves it to y 10.1, on the first ledge in front of the second tier's face. Build-file diff proposed."
-  },
-  "s3_bank_years_on": {
-    "status": "found by the driver: fixed at render time + proposed diff",
-    "what": "boulder-1 and boulder-2 stand with their base at z 0 inside the 1 m thick bank-landing piece (18 of 27 sample points inside; also in s3_bank_years_on); a location-level prop override lifts them to the landing top, z 1.0. Build-file diff proposed."
-  }
+ "s3_hospital_2217": {
+  "status": "fixed at render time + proposed diff",
+  "what": "observation glass moved to the far (+y) wall by a render-time blockout override; bench proxy drawn translucent so the vial and syringe inside it show; the 85 mm push-in on the bench is kept (design). Build-file diff proposed in REFINEMENT_NOTES.md."
+ },
+ "s3_injection_first": {
+  "status": "fixed at render time + proposed diff",
+  "what": "the vial and the syringe stand inside the solid bench-rig box proxy, which filled the frame; the bench proxy is drawn translucent. Build-file diff proposed."
+ },
+ "s3_river_night": {
+  "status": "fixed at render time + proposed diff",
+  "what": "the fence blockout piece (100 m x 1.8 m, solid) stood between camera and pipe; a 8 m gate gap is cut in it by a render-time blockout override. Build-file diff proposed."
+ },
+ "s3_settlement_day": {
+  "status": "fixed at render time + proposed diff",
+  "what": "the camera (and player start) stood inside the embankment piece; moved to x -45.5, just east of its face, by a render-time override. Build-file diff proposed."
+ },
+ "s3_fortress_following": {
+  "status": "fixed at render time + proposed diff",
+  "what": "the end of archive-row-3 grazed the sight line to the hall; camera moved 2 m west (x -19) by a render-time override. Build-file diff proposed."
+ },
+ "s3_gala_balcony": {
+  "status": "fixed at render time + proposed diff",
+  "what": "the camera at y 16 faces the balcony through the solid glass-north wall; a 12 m doorway (x -6 to 6) is cut in glass-north by a render-time blockout override. Build-file diff proposed."
+ },
+ "s3_gala_leash": {
+  "status": "fixed at render time + proposed diff",
+  "what": "the camera at y 18 faces the balcony through the solid glass-north wall; a 12 m doorway (x -6 to 6) is cut in glass-north by a render-time blockout override. Build-file diff proposed."
+ },
+ "s3_gala_bond": {
+  "status": "fixed at render time + proposed diff",
+  "what": "the camera on the balcony looks back into the hall through the solid glass-north wall; a 12 m doorway (x -6 to 6) is cut in glass-north by a render-time blockout override. Build-file diff proposed."
+ },
+ "s3_overrun_hall": {
+  "status": "fixed at render time + proposed diff",
+  "what": "cavern-wall-s (a solid 48 m wall at y -15.5) shut the archive corridor's mouth, so the 50 mm still saw only rock; the wall is split by a 3 m opening at the corridor (x -1.5 to 1.5) by a render-time blockout override. Build-file diff proposed."
+ },
+ "s3_end_kept": {
+  "status": "found by the driver (not flagged in the first pass); fixed at render time + proposed diff",
+  "what": "the camera at z 26 stands above outer-wall, a closed cylinder whose lid at z 24 hid the drum cap and bell frame; outer-wall is omitted in this scene by a render-time blockout override. Build-file diff proposed."
+ },
+ "s3_mountains_foot": {
+  "status": "checked: false positive, no change",
+  "what": "the look_at [0, 30, 40] lies 5 m inside tower-1 behind vine-face, so the sight line ends in the wall by design; the view shows the three towers. A look_at on the face is proposed."
+ },
+ "s3_hub_gallery": {
+  "status": "checked: false positive, no change",
+  "what": "the look_at [0, -14, 1.6] lies 0.2 m inside the drum's glass, just past the driver's 0.15 m tolerance; the breach and the glass read as intended."
+ },
+ "s3_overrun_after": {
+  "status": "found by the driver; proposed diff only",
+  "what": "the look_at [0, 15, 3] lies inside breach-stair, so the frame is the stair box; a look_at at the breach [0, 15, 6] is proposed. Not applied: it changes the composition."
+ },
+ "s_duskbane_halls": {
+  "status": "fixed at render time + proposed diff",
+  "what": "the camera at y -21.5 stood behind south-wall (y -20.8 to -20.0), outside the hall, so the wall filled the frame; moved to y -19.6 (0.4 m inside) by a render-time camera override. Build-file diff proposed."
+ },
+ "s_underworld_tunnels": {
+  "status": "fixed at render time + proposed diff",
+  "what": "the camera at y -20.5 stood inside south-wall; moved to y -19.6 (inside the west tunnel) by a render-time camera override. Build-file diff proposed."
+ },
+ "s_priory_halls": {
+  "status": "fixed at render time + proposed diff",
+  "what": "the camera at y -50.5 stood behind hall-south (y -50.4 to -49.6); moved to y -49.2. Also star-dome (a solid ellipsoid) enclosed the dome-starlight area light at z 18, leaving the hall black: it is replaced by a thin lid at z 23.7 in this location by a render-time blockout override. Build-file diffs proposed."
+ },
+ "s_crystal_forest": {
+  "status": "fixed at render time + proposed diff",
+  "what": "doors-frame is a solid 4.4 x 1.0 x 7.4 m box that plugs the doorway the camera (y -10.5) looks through, and doors-light is an opaque emissive plane; the frame is replaced by two jambs and a head, doors-light is drawn 88% translucent (rig), and look_at z 4.19 (0.28 m inside forest-hill) is raised to 4.6. Build-file diffs proposed."
+ },
+ "s_storm_chamber": {
+  "status": "fixed at render time + proposed diff",
+  "what": "door-opening, an opaque black 'void' plane, filled the doorway the camera looks through from the stair; omitted by a render-time blockout override. Build-file diff proposed."
+ },
+ "s_cloud_platform": {
+  "status": "found by the driver (prop inside a piece); fixed at render time + proposed diff",
+  "what": "platform-underside is a cone rotated 180 degrees centred at z -0.5 (10 m tall), so its flat top stands 4.5 m above the platform and swallows the crystal-platform prop; centre z -5.0 puts the top at z 0. Applied by a render-time blockout override. Build-file diff proposed."
+ },
+ "s_cedar_outpost": {
+  "status": "found by looking (not flagged); fixed at render time + proposed diff",
+  "what": "the camera at y 15.5 stands outside the north palisade and the gate proxy (y 14.6) fills the frame; moved to y 13.8 inside the yard by a render-time camera override."
+ },
+ "s_chasm_seal1": {
+  "status": "found by the driver; fixed at render time + proposed diff",
+  "what": "look_at [-10, 40, 0] lies inside far-cliff (face at y 38); moved to the face, [-10, 37.9, 2]."
+ },
+ "s_end_dormant": {
+  "status": "found by the driver; proposed diff only",
+  "what": "look_at [0, 40, 0] lies below the realm slabs (tops z 3); the view reads as intended from 140 m up. A look_at [0, 40, 3] is proposed. Not applied."
+ },
+ "s_deep_core": {
+  "status": "found by the driver; proposed diff only",
+  "what": "the living-shard prop (z 3.5) stands inside the cone wall-crystals-3 (a 4 x 3 x 6 m cone at [10, -42, 3]); it is not in frame. Proposed: move the shard to [10, -40.4, 3.5]."
+ },
+ "n3_stairwell": {
+  "status": "fixed at render time + proposed diff",
+  "what": "look_at [0.75, -10, 12.8] lies inside flight-4b-low (top z 13.125), so the first-person view ended in the stair box; look_at raised to [0.75, -10.0, 13.3]. Build-file diff proposed."
+ },
+ "n6_stairwell": {
+  "status": "fixed at render time + proposed diff",
+  "what": "same camera as n3_stairwell (flight-4b-low holds the look_at); same fix."
+ },
+ "end_wrong_picture": {
+  "status": "checked: false positive, no change",
+  "what": "look_at [-9, -1, 1.6] lies inside the revolving-door piece, so the sight line ends in the door by design; the frame shows the door as intended."
+ },
+ "c1_truck_gate": {
+  "status": "found by the driver (not flagged in the first pass); fixed at render time + proposed diff",
+  "what": "the camera [0,-18.2,2.96] stands inside the box proxy of the truck prop 'truck-gate' (2.5 x 7 x 3 m at y -23 to -16), so the still was black; the proxy is drawn 20% opaque in this scene. Proposed diff in REFINEMENT_NOTES.md."
+ },
+ "e_transfer_truck": {
+  "status": "found by the driver (not flagged in the first pass); fixed at render time + proposed diff",
+  "what": "same camera and cause as c1_truck_gate (camera [0,-18.2,2.7] inside 'truck-gate'); proxy drawn 20% opaque."
+ },
+ "n3_glovebox": {
+  "status": "found by the driver (not flagged in the first pass); fixed at render time + proposed diff",
+  "what": "two causes: the truck prop's box proxy (2.5 x 7 x 3 m) encloses the cab blockout pieces and its flat side filled the frame; and look_at [1.7, 2.62, 1.5] lies inside the glovebox piece. Proxy trimmed to the load body (y -4 to 1.2), look_at moved to [1.7, 2.40, 1.5] in front of the glovebox door."
+ },
+ "d3_duty_shovel": {
+  "status": "driver finding, no still change",
+  "what": "'truck-buried' stood inside barracks-a (8 of 27 sample points); moved to [9, -3, -0.4] at render time (proposed diff). Not in this scene's frame."
+ },
+ "e_new_recruit": {
+  "status": "driver finding, no still change",
+  "what": "same as d3_duty_shovel ('truck-buried' inside barracks-a)."
+ },
+ "a1_cabin_arrival": {
+  "status": "checked, no change needed",
+  "what": "the rag rug lies on the floor under the low game table (3 of 27 sample points of the rug fall inside the table's solid box): intended, the rug shows around the table; no render-time change, no diff proposed."
+ },
+ "a3_smell": {
+  "status": "checked, no change needed",
+  "what": "the rag rug lies on the floor under the low game table (3 of 27 sample points of the rug fall inside the table's solid box): intended, the rug shows around the table; no render-time change, no diff proposed."
+ },
+ "a4_wrong_places": {
+  "status": "checked, no change needed",
+  "what": "the rag rug lies on the floor under the low game table (3 of 27 sample points of the rug fall inside the table's solid box): intended, the rug shows around the table; no render-time change, no diff proposed."
+ },
+ "a5_cabin_turns": {
+  "status": "checked, no change needed",
+  "what": "the rag rug lies on the floor under the low game table (3 of 27 sample points of the rug fall inside the table's solid box): intended, the rug shows around the table; no render-time change, no diff proposed."
+ },
+ "b6_waking": {
+  "status": "checked, no change needed",
+  "what": "the rag rug lies on the floor under the low game table (3 of 27 sample points of the rug fall inside the table's solid box): intended, the rug shows around the table; no render-time change, no diff proposed."
+ },
+ "b6_keepers_visit": {
+  "status": "checked, no change needed",
+  "what": "the rag rug lies on the floor under the low game table (3 of 27 sample points of the rug fall inside the table's solid box): intended, the rug shows around the table; no render-time change, no diff proposed."
+ },
+ "b7_arrivals": {
+  "status": "checked, no change needed",
+  "what": "the rag rug lies on the floor under the low game table (3 of 27 sample points of the rug fall inside the table's solid box): intended, the rug shows around the table; no render-time change, no diff proposed."
+ },
+ "b7_jamie_falls": {
+  "status": "checked, no change needed",
+  "what": "the rag rug lies on the floor under the low game table (3 of 27 sample points of the rug fall inside the table's solid box): intended, the rug shows around the table; no render-time change, no diff proposed."
+ },
+ "b8_breaking_point": {
+  "status": "checked, no change needed",
+  "what": "the rag rug lies on the floor under the low game table (3 of 27 sample points of the rug fall inside the table's solid box): intended, the rug shows around the table; no render-time change, no diff proposed."
+ },
+ "c9_new_guests": {
+  "status": "checked, no change needed",
+  "what": "the rag rug lies on the floor under the low game table (3 of 27 sample points of the rug fall inside the table's solid box): intended, the rug shows around the table; no render-time change, no diff proposed."
+ },
+ "c10_hold_shelf": {
+  "status": "checked, no change needed",
+  "what": "the rag rug lies on the floor under the low game table (3 of 27 sample points of the rug fall inside the table's solid box): intended, the rug shows around the table; no render-time change, no diff proposed."
+ },
+ "c11_toy_floor": {
+  "status": "checked, no change needed",
+  "what": "the rag rug lies on the floor under the low game table (3 of 27 sample points of the rug fall inside the table's solid box): intended, the rug shows around the table; no render-time change, no diff proposed."
+ },
+ "c11_hold_shelf": {
+  "status": "checked, no change needed",
+  "what": "the rag rug lies on the floor under the low game table (3 of 27 sample points of the rug fall inside the table's solid box): intended, the rug shows around the table; no render-time change, no diff proposed."
+ },
+ "c12_hold_shelf": {
+  "status": "checked, no change needed",
+  "what": "the rag rug lies on the floor under the low game table (3 of 27 sample points of the rug fall inside the table's solid box): intended, the rug shows around the table; no render-time change, no diff proposed."
+ },
+ "c13_flight": {
+  "status": "checked, no change needed",
+  "what": "the rag rug lies on the floor under the low game table (3 of 27 sample points of the rug fall inside the table's solid box): intended, the rug shows around the table; no render-time change, no diff proposed."
+ },
+ "c13_seal": {
+  "status": "checked, no change needed",
+  "what": "the rag rug lies on the floor under the low game table (3 of 27 sample points of the rug fall inside the table's solid box): intended, the rug shows around the table; no render-time change, no diff proposed."
+ },
+ "c14_hold_shelf": {
+  "status": "checked, no change needed",
+  "what": "the rag rug lies on the floor under the low game table (3 of 27 sample points of the rug fall inside the table's solid box): intended, the rug shows around the table; no render-time change, no diff proposed."
+ },
+ "c14_chase_cabin": {
+  "status": "checked, no change needed",
+  "what": "the rag rug lies on the floor under the low game table (3 of 27 sample points of the rug fall inside the table's solid box): intended, the rug shows around the table; no render-time change, no diff proposed."
+ },
+ "e_cycle_shelf": {
+  "status": "checked, no change needed",
+  "what": "the rag rug lies on the floor under the low game table (3 of 27 sample points of the rug fall inside the table's solid box): intended, the rug shows around the table; no render-time change, no diff proposed."
+ },
+ "e_empty_toy": {
+  "status": "checked, no change needed",
+  "what": "the rag rug lies on the floor under the low game table (3 of 27 sample points of the rug fall inside the table's solid box): intended, the rug shows around the table; no render-time change, no diff proposed."
+ },
+ "a5_labyrinth": {
+  "status": "fixed at render time + proposed diff",
+  "what": "the camera stands in the 1.1 m outer corridor and looks +y through three solid walls; look_at moved to [-14, -21.45, 1.2] (down the corridor, west) and the player start turned to face it. Build-file diff proposed."
+ },
+ "booth_day2": {
+  "status": "fixed at render time",
+  "what": "the booth window is an opening piece with an opaque glass material; the rig draws the material 12% opaque in this location (the piece does not collide). No build-file change needed."
+ },
+ "supper_for_two": {
+  "status": "fixed at render time",
+  "what": "the booth window is an opening piece with an opaque glass material; the rig draws the material 12% opaque in this location (the piece does not collide). No build-file change needed."
+ },
+ "campfire_night1": {
+  "status": "fixed at render time + proposed diff",
+  "what": "the cooler stood inside the solid table-legs block; moved to [5.5, -0.2, 0] beside the table by a render-time override. Build-file diff proposed."
+ },
+ "campfire_night2": {
+  "status": "fixed at render time + proposed diff",
+  "what": "the cooler stood inside the solid table-legs block; moved to [5.5, -0.2, 0] beside the table by a render-time override. Build-file diff proposed."
+ },
+ "loop_day1": {
+  "status": "fixed at render time + proposed diff",
+  "what": "tent-17 stood inside the inner-forest block (y 48); moved onto the east pads at [-26, 62, 0]. Build-file diff proposed."
+ },
+ "loop_day2am": {
+  "status": "fixed at render time + proposed diff",
+  "what": "tent-17 stood inside the inner-forest block (y 48); moved onto the east pads at [-26, 62, 0]. Build-file diff proposed."
+ },
+ "loop_day2pm": {
+  "status": "fixed at render time + proposed diff",
+  "what": "tent-17 stood inside the inner-forest block (y 48); moved onto the east pads at [-26, 62, 0]. Build-file diff proposed."
+ },
+ "ordinary_morning": {
+  "status": "fixed at render time + proposed diff",
+  "what": "tent-17 stood inside the inner-forest block (y 48); moved onto the east pads at [-26, 62, 0]. Build-file diff proposed."
+ },
+ "other_entrance": {
+  "status": "fixed at render time + proposed diff",
+  "what": "the camera stands inside the booth and looks +y through its solid back wall; moved to [1.4, -5.6, 1.7] (just outside the booth's front corner, on the road) with the same look_at. Build-file diff proposed."
+ },
+ "home_apartment": {
+  "status": "fixed at render time + proposed diff",
+  "what": "the sight line to the study doorway crosses the solid partition piece part-b; camera moved 2.2 m west to [-1.4, -3.8, 1.65] so the line passes the doorway. Build-file diff proposed."
+ },
+ "wrong_forest": {
+  "status": "found by the driver, proposed diff only",
+  "what": "the look_at [0, 12, 4] lies inside the trunk glyph-a6, which stands dead centre in the frame. Rendered as built; proposed look_at [8, 12, 4] (the gap between glyph-a6 and glyph-a7)."
+ },
+ "booth_day1": {
+  "status": "found by the driver, fixed at render time + proposed diff",
+  "what": "the camera stands inside the van prop (not flagged in the first pass); the van is left out of this scene by a render-time override. Proposed `/scenes/booth_day1/hide` add `van`."
+ },
+ "channel_two": {
+  "status": "found by the driver, fixed at render time + proposed diff",
+  "what": "with the real split-boulder model the camera stands inside the rock; camera moved 0.8 m away from the boulder. Build-file diff proposed."
+ },
+ "b2-lab": {
+  "status": "fixed at render time + proposed diff",
+  "what": "the camera [-20, -6, 2.65] stands on the face of the wall-west-lintel (a 0.3 m wall piece from z 2.4 to 8) at the lab's door; the render-time camera override moves it 0.4 m into the lab to x -19.6. Build-file diff proposed in REFINEMENT_NOTES.md."
+ },
+ "b4-collapse": {
+  "status": "fixed at render time + proposed diff",
+  "what": "the camera [29.5, 0, 2.65] is inside the rubble-seal piece (x 27 to 30) and the still was a white wall; the camera override moves it to x 26.6, in front of the seal. Build-file diff proposed."
+ },
+ "ep-tunnel": {
+  "status": "fixed at render time + proposed diff",
+  "what": "the camera [-30, 0, 2.35] has no clearance from the end-west piece (x -30.6 to -30.0), which the driver's ray test counts as standing between camera and target; the camera override moves it to x -29.5. Build-file diff proposed."
+ },
+ "b2-hearing": {
+  "status": "found by the driver: fixed at render time + proposed diff",
+  "what": "the strain gauge at [12, 4.6, 2.6] sits inside the outcrop sphere (not a first-pass flag); a prop override puts it on the outcrop's surface at y 3.95. Build-file diff proposed."
+ },
+ "co-tunnel": {
+  "status": "found by the driver: fixed at render time + proposed diff",
+  "what": "the field journal at [25.6, 0.4, 0] is inside rubble-heap-3 (not a first-pass flag; same prop in ep-tunnel); a location-level prop override moves it to x 26.4 on the floor beside the heap. Build-file diff proposed."
+ },
+ "s3_river": {
+  "status": "found by the driver: fixed at render time + proposed diff",
+  "what": "boulder-1 and boulder-2 stand with their base at z 0 inside the 1 m thick bank-landing piece (18 of 27 sample points inside; also in s3_bank_years_on); a location-level prop override lifts them to the landing top, z 1.0. Build-file diff proposed."
+ },
+ "s3_recognition": {
+  "status": "found by the driver: fixed at render time + proposed diff",
+  "what": "lamp-west at [-14.4, -6, 0] is inside the rib-2-west piece (27 of 27 points; the east lamp stands at y -4, so the west lamp's y is probably a slip); a prop override puts it at y -4. Build-file diff proposed."
+ },
+ "s3_gallery": {
+  "status": "fixed at render time + proposed diff",
+  "what": "prop blank-8 at [-6, 10.8, 3.5] is inside ledge2-north-left (the first-pass flag); a prop override moves it to y 10.1, on the first ledge in front of the second tier's face. Build-file diff proposed."
+ },
+ "s3_bank_years_on": {
+  "status": "found by the driver: fixed at render time + proposed diff",
+  "what": "boulder-1 and boulder-2 stand with their base at z 0 inside the 1 m thick bank-landing piece (18 of 27 sample points inside; also in s3_bank_years_on); a location-level prop override lifts them to the landing top, z 1.0. Build-file diff proposed."
+ },
+ "c1_city_dawn": {
+  "status": "first-pass flag: fixed at render time + proposed diff",
+  "what": "prop lantern-row1-e at [0.052, 0.024, 0.19] overlaps hall-splinter (x 0.038 to 0.052; 9 of 27 points); a prop override moves it to x 0.0545, beside the hall. Build-file diff proposed."
+ },
+ "c1_city_year": {
+  "status": "first-pass flag: fixed at render time + proposed diff",
+  "what": "prop lantern-row1-e at [0.052, 0.024, 0.19] overlaps hall-splinter (x 0.038 to 0.052; 9 of 27 points); a prop override moves it to x 0.0545, beside the hall. Build-file diff proposed."
+ },
+ "c2_city": {
+  "status": "first-pass flag: fixed at render time + proposed diff",
+  "what": "prop lantern-row1-e at [0.052, 0.024, 0.19] overlaps hall-splinter (x 0.038 to 0.052; 9 of 27 points); a prop override moves it to x 0.0545, beside the hall. Build-file diff proposed."
+ },
+ "c2_rain": {
+  "status": "first-pass flag: fixed at render time + proposed diff",
+  "what": "prop lantern-row1-e at [0.052, 0.024, 0.19] overlaps hall-splinter (x 0.038 to 0.052; 9 of 27 points); a prop override moves it to x 0.0545, beside the hall. Build-file diff proposed. The ray to the look_at grazes ridge-3 (the target lies on the bark face): informational."
+ },
+ "c3_city": {
+  "status": "first-pass flag: fixed at render time + proposed diff",
+  "what": "prop lantern-row1-e at [0.052, 0.024, 0.19] overlaps hall-splinter (x 0.038 to 0.052; 9 of 27 points); a prop override moves it to x 0.0545, beside the hall. Build-file diff proposed."
+ },
+ "c4_city": {
+  "status": "first-pass flag: fixed at render time + proposed diff",
+  "what": "prop lantern-row1-e at [0.052, 0.024, 0.19] overlaps hall-splinter (x 0.038 to 0.052; 9 of 27 points); a prop override moves it to x 0.0545, beside the hall. Build-file diff proposed. Also: the camera is inside the leaf's box (the leaf model was rejected by the fit, so its proxy stood as a flat wall in front of the lens); the proxy is drawn at 25% opacity in this scene (prop_alpha). No build-file change proposed. The ray to the look_at also grazes terrace-row-2 (the target lies on the bark face): informational."
+ },
+ "c5_city": {
+  "status": "first-pass flag: fixed at render time + proposed diff",
+  "what": "prop lantern-row1-e at [0.052, 0.024, 0.19] overlaps hall-splinter (x 0.038 to 0.052; 9 of 27 points); a prop override moves it to x 0.0545, beside the hall. Build-file diff proposed."
+ },
+ "c4_faceless": {
+  "status": "first-pass flag: fixed at render time + proposed diff",
+  "what": "prop lantern-row1-e at [0.052, 0.024, 0.19] overlaps hall-splinter (x 0.038 to 0.052; 9 of 27 points); a prop override moves it to x 0.0545, beside the hall. Build-file diff proposed. Also: the camera is inside the leaf's box (the leaf model was rejected by the fit, so its proxy stood as a flat wall in front of the lens); the proxy is drawn at 25% opacity in this scene (prop_alpha). No build-file change proposed."
+ },
+ "c2_sorrel_wall": {
+  "status": "first-pass flag not reproduced (no change)",
+  "what": "first pass said low-tap-1 at [0.002, 0.0095, 0.03] is inside upper-ledge; at the driver's scale (the set built 1000 times larger) the tap overlaps only bark-slab (9 of 27 points; the tap's back is embedded in the bark on purpose) and not the ledge. Every first-pass test on a millimetre set used absolute tolerances, which probably explains the flag. The look_at lies inside sorrels-wall (the subject, a 0.6 mm panel): informational."
+ },
+ "c5_lowridge": {
+  "status": "first-pass flag not reproduced (no change)",
+  "what": "first pass said low-tap-1 at [0.002, 0.0095, 0.03] is inside upper-ledge; at the driver's scale (the set built 1000 times larger) the tap overlaps only bark-slab (9 of 27 points; the tap's back is embedded in the bark on purpose) and not the ledge. Every first-pass test on a millimetre set used absolute tolerances, which probably explains the flag."
+ },
+ "c6_ring": {
+  "status": "found by the driver: fixed at render time + proposed diff",
+  "what": "lantern-1 to lantern-4 stand at y 0.028, inside the 3 mm thick ridge pieces (27 of 27 points); a location-level prop override moves them to y 0.0245, on the ridge face. Build-file diff proposed."
+ },
+ "c6_shadow": {
+  "status": "found by the driver: fixed at render time + proposed diff",
+  "what": "lantern-1 to lantern-4 stand at y 0.028, inside the 3 mm thick ridge pieces (27 of 27 points); a location-level prop override moves them to y 0.0245, on the ridge face. Build-file diff proposed."
+ },
+ "c6_stand": {
+  "status": "found by the driver: fixed at render time + proposed diff",
+  "what": "lantern-1 to lantern-4 stand at y 0.028, inside the 3 mm thick ridge pieces (27 of 27 points); a location-level prop override moves them to y 0.0245, on the ridge face. Build-file diff proposed."
+ },
+ "c6_touch": {
+  "status": "found by the driver: fixed at render time + proposed diff",
+  "what": "lantern-1 to lantern-4 stand at y 0.028, inside the 3 mm thick ridge pieces (27 of 27 points); a location-level prop override moves them to y 0.0245, on the ridge face. Build-file diff proposed."
+ },
+ "c3_thumb": {
+  "status": "found by the driver: fixed at render time + proposed diff",
+  "what": "lantern-west and lantern-east stand at z 0.015, inside ridge-west and ridge-east (18 of 27 points); a location-level prop override lifts them to z 0.036, the ridges' top. Build-file diff proposed."
+ },
+ "c5_count": {
+  "status": "found by the driver: fixed at render time + proposed diff",
+  "what": "lantern-west and lantern-east stand at z 0.015, inside ridge-west and ridge-east (18 of 27 points); a location-level prop override lifts them to z 0.036, the ridges' top. Build-file diff proposed."
+ },
+ "c6_edge": {
+  "status": "found by the driver: fixed at render time + proposed diff",
+  "what": "edge-stakes stake-1, -4, -5, -6, -10, -11 and -12 are inside the ridge pieces (12 to 18 of 27 points); a location-level prop override moves them to y 0.0245, in front of the ridge face. Build-file diff proposed."
+ },
+ "c1_battlements": {
+  "status": "driver check: informational, no change",
+  "what": "splinter-tip stands between the camera and its look_at: the splinter is the subject of the scene (the shard in front of the wall)."
+ },
+ "c3_wind": {
+  "status": "driver check: informational, no change",
+  "what": "splinter-tip stands between the camera and its look_at: the splinter is the subject of the scene (the shard in front of the wall)."
+ },
+ "c7_backyard": {
+  "status": "driver check: informational, no change",
+  "what": "tree-trunk stands between the camera and its look_at: the look_at is the trunk's centre (the tree is the subject)."
+ },
+ "s3_scribe_wagon": {
+  "status": "first-pass flag: fixed at render time + proposed diff",
+  "what": "wagon-body and wagon-canopy stand between the camera and its look_at, and scroll and quill stand inside the solid canopy sphere. A location-level blockout replacement turns the canopy into a roof, two posts and a back panel (open at the front); a camera override raises the eye to z 1.8 to clear the wagon bed. Build-file diff proposed."
+ },
+ "s3_procession_road": {
+  "status": "found by the driver: fixed at render time + proposed diff",
+  "what": "scroll (and quill) stand inside the solid wagon-canopy sphere; the same canopy replacement."
+ },
+ "s3_procession_choice": {
+  "status": "found by the driver: fixed at render time + proposed diff",
+  "what": "scroll (and quill) stand inside the solid wagon-canopy sphere; the same canopy replacement."
+ },
+ "s3_herd_sighting": {
+  "status": "found by the driver: fixed at render time + proposed diff",
+  "what": "the crest ellipsoid blocks the ray to the look_at: the camera at y 163 is lower than the crest's top at y 170 (z 11), so the line to the horizon (z 3) meets it; a camera override aims the look_at at z 10.5. Build-file diff proposed."
+ },
+ "s3_father_walk": {
+  "status": "found by the driver: fixed at render time + proposed diff",
+  "what": "the camera at [-4, 2.5, 1.65] looks into dune-back (9 m away, 4 m high); a camera override stands on the dune's crest, [-4, 15, 5.65] looking at [-4, 40, 5]. Build-file diff proposed."
+ },
+ "s3_father_camp": {
+  "status": "found by the driver: fixed at render time + proposed diff",
+  "what": "journal at z 0 is inside flat-stone (top z 0.18); a prop override lifts it to z 0.18 (on the stone). Build-file diff proposed."
+ },
+ "s3_camp_mark_c6": {
+  "status": "found by the driver: fixed at render time + proposed diff",
+  "what": "journal at z 0 is inside flat-stone (top z 0.18); a prop override lifts it to z 0.18 (on the stone). Build-file diff proposed."
+ },
+ "s3_circle": {
+  "status": "driver check: informational, no change",
+  "what": "storyteller-seat stands between the camera and its look_at: the look_at is the seat (the subject)."
+ },
+ "e_returned": {
+  "status": "driver check: informational, no change",
+  "what": "storyteller-seat stands between the camera and its look_at: the look_at is the seat (the subject)."
+ },
+ "s3_well_post": {
+  "status": "driver check: informational, no change",
+  "what": "store-roof (a cone, role ceiling) stands between the camera and its look_at: the look_at is the roof-gap on the store roof (the subject)."
+ },
+ "s3_hut_night": {
+  "status": "found by the driver: fixed at render time + proposed diff",
+  "what": "the scene rendered black: the solid dome ceiling shuts out both moon-shaft spots (the build file's roof holes are not built); a blockout replacement leaves the dome out so the shafts reach the floor. Also pack at [1.35, -0.4, 0] stood 0.136 m into the hut wall; a prop override moves it to x 1.0. Build-file diff proposed."
+ },
+ "s3_hollin_choice": {
+  "status": "found by the driver: fixed at render time + proposed diff",
+  "what": "the opaque loft-slats and rain-window pieces (role opening) shut out the lightning and window lights (s3_hollin_choice rendered black); a blockout replacement leaves them out. Build-file diff proposed."
+ },
+ "s3_clerk_office": {
+  "status": "found by the driver: fixed at render time + proposed diff",
+  "what": "the opaque loft-slats and rain-window pieces (role opening) shut out the lightning and window lights (s3_hollin_choice rendered black); a blockout replacement leaves them out. Build-file diff proposed."
+ }
 }
