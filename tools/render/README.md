@@ -99,6 +99,13 @@ recorded render-time overrides differ.
   (capped at -5.5 and +3.5), `overview_ev`, the overview camera, and `reference_card` for highridge (face-like knots) and walled-yard (a painted figure).
   No model ledger entry is built for endless-temple, so nothing was swapped there; bark used lite copies (12k triangles, 512 px) of 15 built models.
 
+- Added for batch 9 (lord-of-the-sea): rig key `show_sky` (list of blockout piece ids of role `sky` that stay visible; the driver otherwise hides every `sky`
+  piece): used in boat-deck (far headland and beach), company-lane (the fleet on the horizon) and home-reach-beach (anchored boat, islands, open sea, glass lane).
+  `rig.json` and `overrides.json` hold the 13 locations (namespaced `lord-of-the-sea/<location>`), `facing: "ccw"`, per-scene `exposure_ev`, `overview_ev`
+  (matched to the reference's mean tone), the overview camera, `reference_card` for spice-mouth and salt-steps (figure-like carved stones) and `neutral_names`
+  for the Gullwife boat. Overrides: one camera nudge, lamplit-strait's landing, stairs and camera moved out of the solid headland, replacements for chandlery's solid
+  shelves and spice-mouth's solid pavilion posts. Models: 2 ledger entries built (lite copies, 12k triangles, 512 px): the chart table is fitted, the oar rejected by the fit.
+
 ## Remote run
 
 Used on a rented RTX 4090: upload `render_scenes.py` and `pack.tgz`, run Blender 5.2.1 as above with `--device OPTIX`, fetch the

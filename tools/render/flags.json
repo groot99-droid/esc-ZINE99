@@ -426,5 +426,29 @@
  "s3_clerk_office": {
   "status": "found by the driver: fixed at render time + proposed diff",
   "what": "the opaque loft-slats and rain-window pieces (role opening) shut out the lightning and window lights (s3_hollin_choice rendered black); a blockout replacement leaves them out. Build-file diff proposed."
+ },
+ "s-chandlery": {
+  "status": "first-pass flag: fixed at render time + proposed diff",
+  "what": "props bottle-asked-for, bottle-shelf and tea-caddy stood inside the solid 'shelves' box (5.0 x 0.4 x 2.4 m); a blockout replacement turns it into a back panel and four shelf boards (tops at z 0.475, 0.975, 1.45, 1.975) so the props sit on a board. Build-file diff proposed."
+ },
+ "s-lamplit-strait": {
+  "status": "first-pass flag: fixed at render time + proposed diff",
+  "what": "the camera [45, -158.5, 2.6] and player start were inside the solid 'headland-east' terrain (x 40 to 250); render-time camera and player start moved to x 34 (water side), and the landing and six cliff-stair pieces and the landing lantern moved west of the cliff face. Build-file diff proposed."
+ },
+ "s-spice-mouth": {
+  "status": "first-pass flag: fixed at render time + proposed diff",
+  "what": "the solid 'pay-pavilion-posts' box (7.6 x 4.6 x 3.2 m) stood between the camera and the look_at and held the pay table; replaced by four 0.3 m posts. The two cylinders named statue-west/east are drawn as plain quay posts (stone material, renamed) so no figure-like proxy is in frame. Build-file diff proposed."
+ },
+ "s-tideline-final": {
+  "status": "found by the driver: fixed at render time + proposed diff",
+  "what": "the camera [8, 5.0, 0.9] sat inside the tideline-stone prop (stone at [8, 5, 0]); camera moved to y 4.0 (as s-home-tideline, 1 m in front of the stone). Build-file diff proposed."
+ },
+ "s-deck-dinghy": {
+  "status": "found by the driver: left as built",
+  "what": "the mast stands between the camera and the look_at; it is a thin pole in the view of the deck and the dinghy, not a defect. No change."
+ },
+ "s-salt-steps": {
+  "status": "found by the driver: left as built",
+  "what": "the tideline-stone overlaps a pan wall in 3 of 27 samples (informational). No change."
  }
 }

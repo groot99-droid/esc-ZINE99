@@ -499,8 +499,8 @@ def main():
         pieces_objs = [ob for ob in bpy.data.objects if ob.name.startswith("bo-")]
         for ob in pieces_objs:
             ob["shape"] = shape_of.get(ob.name[3:], "box")
-            if ob.get("role") == "sky":
-                ob.hide_render = True  # a lid at sky height would shut out the sun and the world
+            if ob.get("role") == "sky" and ob.name[3:] not in rig.get("show_sky", []):
+                ob.hide_render = True  # a lid at sky height would shut out the sun and the world (rig show_sky: ids of backdrop pieces kept)
         for mname, a in rig.get("piece_alpha", {}).items():  # rig: a blockout material drawn translucent (haze, glass)
             mt = bpy.data.materials.get("bo-" + mname)
             if mt is not None and mt.node_tree.nodes.get("Principled BSDF"):

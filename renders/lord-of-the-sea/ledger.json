@@ -1,0 +1,3585 @@
+{
+ "game": "lord-of-the-sea",
+ "tiers": {
+  "hero": "2560x1440, 256 samples",
+  "standard": "1920x1080, 128 samples",
+  "overview": "1920x1080, 128 samples"
+ },
+ "renderer": "Cycles (OptiX), OpenImageDenoise, Blender 5.2.1",
+ "scenes": [
+  {
+   "scene": "s-cabin-dawn",
+   "location": "boat-cabin",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 12.1
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 11.0
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 6.2
+    }
+   ],
+   "props": [
+    {
+     "id": "chart-table",
+     "object": "chart-table",
+     "source": "model:chart-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.42,
+       0.962,
+       1.389
+      ],
+      "box_m": [
+       1.4,
+       0.9,
+       0.95
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.858,
+      "worst_side_ratio": 1.25
+     }
+    },
+    {
+     "id": "dividers",
+     "object": "brass-dividers",
+     "source": "box-proxy"
+    },
+    {
+     "id": "spice-jar",
+     "object": "spice-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "spice-jar-2",
+     "object": "spice-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tea-caddy",
+     "object": "tea-caddy",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tea-caddy-2",
+     "object": "tea-caddy",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rum-bottle-1",
+     "object": "rum-bottle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rum-bottle-2",
+     "object": "rum-bottle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rum-bottle-3",
+     "object": "rum-bottle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rum-bottle-shelf",
+     "object": "rum-bottle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lantern",
+     "object": "ship-lantern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rope-coil",
+     "object": "rope-coil",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s-cabin-princess",
+   "location": "boat-cabin",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 12.9
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 12.8
+    }
+   ],
+   "props": [
+    {
+     "id": "chart-table",
+     "object": "chart-table",
+     "source": "model:chart-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.42,
+       0.962,
+       1.389
+      ],
+      "box_m": [
+       1.4,
+       0.9,
+       0.95
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.858,
+      "worst_side_ratio": 1.25
+     }
+    },
+    {
+     "id": "dividers",
+     "object": "brass-dividers",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sale-deed",
+     "object": "sale-deed",
+     "source": "box-proxy"
+    },
+    {
+     "id": "spice-jar",
+     "object": "spice-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "spice-jar-2",
+     "object": "spice-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tea-caddy",
+     "object": "tea-caddy",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tea-caddy-2",
+     "object": "tea-caddy",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rum-bottle-1",
+     "object": "rum-bottle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rum-bottle-2",
+     "object": "rum-bottle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rum-bottle-3",
+     "object": "rum-bottle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rum-bottle-shelf",
+     "object": "rum-bottle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lantern",
+     "object": "ship-lantern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rope-coil",
+     "object": "rope-coil",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s-chart-table",
+   "location": "boat-cabin",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 11.2
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 11.6
+    }
+   ],
+   "props": [
+    {
+     "id": "chart-table",
+     "object": "chart-table",
+     "source": "model:chart-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.42,
+       0.962,
+       1.389
+      ],
+      "box_m": [
+       1.4,
+       0.9,
+       0.95
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.858,
+      "worst_side_ratio": 1.25
+     }
+    },
+    {
+     "id": "dividers",
+     "object": "brass-dividers",
+     "source": "box-proxy"
+    },
+    {
+     "id": "harbour-book",
+     "object": "harbour-book",
+     "source": "box-proxy"
+    },
+    {
+     "id": "strongbox",
+     "object": "strongbox",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sale-deed",
+     "object": "sale-deed",
+     "source": "box-proxy"
+    },
+    {
+     "id": "spice-jar",
+     "object": "spice-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "spice-jar-2",
+     "object": "spice-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tea-caddy",
+     "object": "tea-caddy",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tea-caddy-2",
+     "object": "tea-caddy",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rum-bottle-1",
+     "object": "rum-bottle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rum-bottle-2",
+     "object": "rum-bottle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rum-bottle-3",
+     "object": "rum-bottle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rum-bottle-shelf",
+     "object": "rum-bottle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lantern",
+     "object": "ship-lantern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rope-coil",
+     "object": "rope-coil",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s-cabin-tally",
+   "location": "boat-cabin",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 11.0
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 11.4
+    }
+   ],
+   "props": [
+    {
+     "id": "chart-table",
+     "object": "chart-table",
+     "source": "model:chart-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.42,
+       0.962,
+       1.389
+      ],
+      "box_m": [
+       1.4,
+       0.9,
+       0.95
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.858,
+      "worst_side_ratio": 1.25
+     }
+    },
+    {
+     "id": "dividers",
+     "object": "brass-dividers",
+     "source": "box-proxy"
+    },
+    {
+     "id": "harbour-book",
+     "object": "harbour-book",
+     "source": "box-proxy"
+    },
+    {
+     "id": "strongbox",
+     "object": "strongbox",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sale-deed",
+     "object": "sale-deed",
+     "source": "box-proxy"
+    },
+    {
+     "id": "spice-jar",
+     "object": "spice-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "spice-jar-2",
+     "object": "spice-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tea-caddy",
+     "object": "tea-caddy",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tea-caddy-2",
+     "object": "tea-caddy",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rum-bottle-1",
+     "object": "rum-bottle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rum-bottle-2",
+     "object": "rum-bottle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rum-bottle-3",
+     "object": "rum-bottle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rum-bottle-shelf",
+     "object": "rum-bottle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lantern",
+     "object": "ship-lantern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rope-coil",
+     "object": "rope-coil",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s-the-inventory",
+   "location": "boat-cabin",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.0
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 12.0
+    }
+   ],
+   "props": [
+    {
+     "id": "chart-table",
+     "object": "chart-table",
+     "source": "model:chart-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.42,
+       0.962,
+       1.389
+      ],
+      "box_m": [
+       1.4,
+       0.9,
+       0.95
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.858,
+      "worst_side_ratio": 1.25
+     }
+    },
+    {
+     "id": "dividers",
+     "object": "brass-dividers",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sale-deed",
+     "object": "sale-deed",
+     "source": "box-proxy"
+    },
+    {
+     "id": "spice-jar",
+     "object": "spice-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "spice-jar-2",
+     "object": "spice-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tea-caddy",
+     "object": "tea-caddy",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tea-caddy-2",
+     "object": "tea-caddy",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rum-bottle-1",
+     "object": "rum-bottle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rum-bottle-2",
+     "object": "rum-bottle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rum-bottle-3",
+     "object": "rum-bottle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rum-bottle-shelf",
+     "object": "rum-bottle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lantern",
+     "object": "ship-lantern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rope-coil",
+     "object": "rope-coil",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s-deck-dinghy",
+   "location": "boat-deck",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.5
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.3
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 4.8
+    }
+   ],
+   "props": [
+    {
+     "id": "dinghy",
+     "object": "dinghy",
+     "source": "box-proxy"
+    },
+    {
+     "id": "oar-1",
+     "object": "oar",
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       2.223,
+       1.6,
+       2.4
+      ],
+      "box_m": [
+       0.15,
+       0.05,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       90
+      ],
+      "scale": 0.306,
+      "worst_side_ratio": 3.69,
+      "rejected": "proportions: a side is off by x3.7 after the best fit"
+     }
+    },
+    {
+     "id": "oar-2",
+     "object": "oar",
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       2.223,
+       1.6,
+       2.4
+      ],
+      "box_m": [
+       0.15,
+       0.05,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       90
+      ],
+      "scale": 0.306,
+      "worst_side_ratio": 3.69,
+      "rejected": "proportions: a side is off by x3.7 after the best fit"
+     }
+    },
+    {
+     "id": "rope-mast",
+     "object": "rope-coil",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rope-dinghy-line",
+     "object": "rope-coil",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lantern-mast",
+     "object": "ship-lantern",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [
+     "mast"
+    ],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "found by the driver: left as built",
+    "what": "the mast stands between the camera and the look_at; it is a thin pole in the view of the deck and the dinghy, not a defect. No change."
+   }
+  },
+  {
+   "scene": "s-chandlery",
+   "location": "chandlery",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.2
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.6
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 6.7
+    }
+   ],
+   "props": [
+    {
+     "id": "bottle-asked-for",
+     "object": "rum-bottle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bottle-shelf",
+     "object": "rum-bottle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tea-caddy",
+     "object": "tea-caddy",
+     "source": "box-proxy"
+    },
+    {
+     "id": "account-book",
+     "object": "ledger",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lantern-counter",
+     "object": "ship-lantern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rope-coil",
+     "object": "rope-coil",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lobster-pot",
+     "object": "lobster-pot",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [
+    "prop 'bottle-asked-for' base [-1.9, 2.2, 1.45] is inside blockout piece 'shelves'",
+    "prop 'bottle-shelf' base [-1.5, 2.2, 1.45] is inside blockout piece 'shelves'",
+    "prop 'tea-caddy' base [0.2, 2.2, 1.45] is inside blockout piece 'shelves'"
+   ],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "blockout_replace"
+   ],
+   "flag_status": {
+    "status": "first-pass flag: fixed at render time + proposed diff",
+    "what": "props bottle-asked-for, bottle-shelf and tea-caddy stood inside the solid 'shelves' box (5.0 x 0.4 x 2.4 m); a blockout replacement turns it into a back panel and four shelf boards (tops at z 0.475, 0.975, 1.45, 1.975) so the props sit on a board. Build-file diff proposed."
+   }
+  },
+  {
+   "scene": "s-company-lane",
+   "location": "company-lane",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 7.9
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.0
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 4.7
+    }
+   ],
+   "props": [
+    {
+     "id": "buoy-west-1",
+     "object": "company-buoy",
+     "source": "box-proxy"
+    },
+    {
+     "id": "buoy-west-2",
+     "object": "company-buoy",
+     "source": "box-proxy"
+    },
+    {
+     "id": "buoy-west-3",
+     "object": "company-buoy",
+     "source": "box-proxy"
+    },
+    {
+     "id": "buoy-west-4",
+     "object": "company-buoy",
+     "source": "box-proxy"
+    },
+    {
+     "id": "buoy-west-5",
+     "object": "company-buoy",
+     "source": "box-proxy"
+    },
+    {
+     "id": "buoy-west-6",
+     "object": "company-buoy",
+     "source": "box-proxy"
+    },
+    {
+     "id": "buoy-west-7",
+     "object": "company-buoy",
+     "source": "box-proxy"
+    },
+    {
+     "id": "buoy-west-8",
+     "object": "company-buoy",
+     "source": "box-proxy"
+    },
+    {
+     "id": "buoy-west-9",
+     "object": "company-buoy",
+     "source": "box-proxy"
+    },
+    {
+     "id": "buoy-east-1",
+     "object": "company-buoy",
+     "source": "box-proxy"
+    },
+    {
+     "id": "buoy-east-2",
+     "object": "company-buoy",
+     "source": "box-proxy"
+    },
+    {
+     "id": "buoy-east-3",
+     "object": "company-buoy",
+     "source": "box-proxy"
+    },
+    {
+     "id": "buoy-east-4",
+     "object": "company-buoy",
+     "source": "box-proxy"
+    },
+    {
+     "id": "buoy-east-5",
+     "object": "company-buoy",
+     "source": "box-proxy"
+    },
+    {
+     "id": "buoy-east-6",
+     "object": "company-buoy",
+     "source": "box-proxy"
+    },
+    {
+     "id": "buoy-east-7",
+     "object": "company-buoy",
+     "source": "box-proxy"
+    },
+    {
+     "id": "buoy-east-8",
+     "object": "company-buoy",
+     "source": "box-proxy"
+    },
+    {
+     "id": "buoy-east-9",
+     "object": "company-buoy",
+     "source": "box-proxy"
+    },
+    {
+     "id": "revenue-cutter",
+     "object": "revenue-cutter",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s-counting-house",
+   "location": "counting-house",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 10.7
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 10.7
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 5.8
+    }
+   ],
+   "props": [
+    {
+     "id": "tea-board",
+     "object": "tea-board",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ledger-west-1",
+     "object": "ledger",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ledger-west-2",
+     "object": "ledger",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ledger-east-1",
+     "object": "ledger",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ledger-desk",
+     "object": "ledger",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp-desk-west",
+     "object": "ship-lantern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp-desk-east",
+     "object": "ship-lantern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp-counter-east",
+     "object": "ship-lantern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp-hanging",
+     "object": "ship-lantern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tea-chest-1",
+     "object": "tea-chest",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tea-chest-2",
+     "object": "tea-chest",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s-the-cup",
+   "location": "counting-house",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 11.0
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 11.7
+    }
+   ],
+   "props": [
+    {
+     "id": "tea-board",
+     "object": "tea-board",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ledger-west-1",
+     "object": "ledger",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ledger-west-2",
+     "object": "ledger",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ledger-east-1",
+     "object": "ledger",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ledger-desk",
+     "object": "ledger",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp-desk-west",
+     "object": "ship-lantern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp-desk-east",
+     "object": "ship-lantern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp-counter-east",
+     "object": "ship-lantern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp-hanging",
+     "object": "ship-lantern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tea-chest-1",
+     "object": "tea-chest",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tea-chest-2",
+     "object": "tea-chest",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s-beach-tideline",
+   "location": "home-reach-beach",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.7
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.8
+    }
+   ],
+   "props": [
+    {
+     "id": "dinghy",
+     "object": "dinghy",
+     "source": "box-proxy"
+    },
+    {
+     "id": "oar",
+     "object": "oar",
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       2.223,
+       1.6,
+       2.4
+      ],
+      "box_m": [
+       0.15,
+       0.05,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       90
+      ],
+      "scale": 0.306,
+      "worst_side_ratio": 3.69,
+      "rejected": "proportions: a side is off by x3.7 after the best fit"
+     }
+    },
+    {
+     "id": "lobster-pot",
+     "object": "lobster-pot",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lobster-pot-2",
+     "object": "lobster-pot",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s-beach-princess",
+   "location": "home-reach-beach",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.5
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.4
+    }
+   ],
+   "props": [
+    {
+     "id": "dinghy",
+     "object": "dinghy",
+     "source": "box-proxy"
+    },
+    {
+     "id": "oar",
+     "object": "oar",
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       2.223,
+       1.6,
+       2.4
+      ],
+      "box_m": [
+       0.15,
+       0.05,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       90
+      ],
+      "scale": 0.306,
+      "worst_side_ratio": 3.69,
+      "rejected": "proportions: a side is off by x3.7 after the best fit"
+     }
+    },
+    {
+     "id": "lobster-pot",
+     "object": "lobster-pot",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lobster-pot-2",
+     "object": "lobster-pot",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s-home-tideline",
+   "location": "home-reach-beach",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.3
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.5
+    }
+   ],
+   "props": [
+    {
+     "id": "tideline-stone",
+     "object": "tideline-stone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "dinghy",
+     "object": "dinghy",
+     "source": "box-proxy"
+    },
+    {
+     "id": "oar",
+     "object": "oar",
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       2.223,
+       1.6,
+       2.4
+      ],
+      "box_m": [
+       0.15,
+       0.05,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       90
+      ],
+      "scale": 0.306,
+      "worst_side_ratio": 3.69,
+      "rejected": "proportions: a side is off by x3.7 after the best fit"
+     }
+    },
+    {
+     "id": "lobster-pot",
+     "object": "lobster-pot",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lobster-pot-2",
+     "object": "lobster-pot",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s-tideline-final",
+   "location": "home-reach-beach",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 9.1
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 9.3
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 4.8
+    }
+   ],
+   "props": [
+    {
+     "id": "tideline-stone",
+     "object": "tideline-stone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "dinghy",
+     "object": "dinghy",
+     "source": "box-proxy"
+    },
+    {
+     "id": "oar",
+     "object": "oar",
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       2.223,
+       1.6,
+       2.4
+      ],
+      "box_m": [
+       0.15,
+       0.05,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       90
+      ],
+      "scale": 0.306,
+      "worst_side_ratio": 3.69,
+      "rejected": "proportions: a side is off by x3.7 after the best fit"
+     }
+    },
+    {
+     "id": "lobster-pot",
+     "object": "lobster-pot",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lobster-pot-2",
+     "object": "lobster-pot",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "camera"
+   ],
+   "flag_status": {
+    "status": "found by the driver: fixed at render time + proposed diff",
+    "what": "the camera [8, 5.0, 0.9] sat inside the tideline-stone prop (stone at [8, 5, 0]); camera moved to y 4.0 (as s-home-tideline, 1 m in front of the stone). Build-file diff proposed."
+   }
+  },
+  {
+   "scene": "s-end-charter",
+   "location": "home-reach-beach",
+   "tier": "standard",
+   "resolution": [
+    1920,
+    1080
+   ],
+   "samples": 128,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 4.9
+    }
+   ],
+   "props": [
+    {
+     "id": "tideline-stone",
+     "object": "tideline-stone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "dinghy",
+     "object": "dinghy",
+     "source": "box-proxy"
+    },
+    {
+     "id": "oar",
+     "object": "oar",
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       2.223,
+       1.6,
+       2.4
+      ],
+      "box_m": [
+       0.15,
+       0.05,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       90
+      ],
+      "scale": 0.306,
+      "worst_side_ratio": 3.69,
+      "rejected": "proportions: a side is off by x3.7 after the best fit"
+     }
+    },
+    {
+     "id": "lobster-pot",
+     "object": "lobster-pot",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lobster-pot-2",
+     "object": "lobster-pot",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s-end-no-lord",
+   "location": "home-reach-beach",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.8
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.1
+    }
+   ],
+   "props": [
+    {
+     "id": "tideline-stone",
+     "object": "tideline-stone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "dinghy",
+     "object": "dinghy",
+     "source": "box-proxy"
+    },
+    {
+     "id": "oar",
+     "object": "oar",
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       2.223,
+       1.6,
+       2.4
+      ],
+      "box_m": [
+       0.15,
+       0.05,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       90
+      ],
+      "scale": 0.306,
+      "worst_side_ratio": 3.69,
+      "rejected": "proportions: a side is off by x3.7 after the best fit"
+     }
+    },
+    {
+     "id": "lobster-pot",
+     "object": "lobster-pot",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lobster-pot-2",
+     "object": "lobster-pot",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s-end-wild-sea",
+   "location": "home-reach-beach",
+   "tier": "standard",
+   "resolution": [
+    1920,
+    1080
+   ],
+   "samples": 128,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 4.8
+    }
+   ],
+   "props": [
+    {
+     "id": "tideline-stone",
+     "object": "tideline-stone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "dinghy",
+     "object": "dinghy",
+     "source": "box-proxy"
+    },
+    {
+     "id": "oar",
+     "object": "oar",
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       2.223,
+       1.6,
+       2.4
+      ],
+      "box_m": [
+       0.15,
+       0.05,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       90
+      ],
+      "scale": 0.306,
+      "worst_side_ratio": 3.69,
+      "rejected": "proportions: a side is off by x3.7 after the best fit"
+     }
+    },
+    {
+     "id": "lobster-pot-2",
+     "object": "lobster-pot",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s-end-lords-peace",
+   "location": "home-reach-beach",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.5
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.7
+    }
+   ],
+   "props": [
+    {
+     "id": "tideline-stone",
+     "object": "tideline-stone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "dinghy",
+     "object": "dinghy",
+     "source": "box-proxy"
+    },
+    {
+     "id": "oar",
+     "object": "oar",
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       2.223,
+       1.6,
+       2.4
+      ],
+      "box_m": [
+       0.15,
+       0.05,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       90
+      ],
+      "scale": 0.306,
+      "worst_side_ratio": 3.69,
+      "rejected": "proportions: a side is off by x3.7 after the best fit"
+     }
+    },
+    {
+     "id": "rum-bottle",
+     "object": "rum-bottle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lobster-pot",
+     "object": "lobster-pot",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lobster-pot-2",
+     "object": "lobster-pot",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s-end-paid-in-kind",
+   "location": "home-reach-beach",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 9.1
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 9.3
+    }
+   ],
+   "props": [
+    {
+     "id": "tideline-stone",
+     "object": "tideline-stone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "dinghy",
+     "object": "dinghy",
+     "source": "box-proxy"
+    },
+    {
+     "id": "oar",
+     "object": "oar",
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       2.223,
+       1.6,
+       2.4
+      ],
+      "box_m": [
+       0.15,
+       0.05,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       90
+      ],
+      "scale": 0.306,
+      "worst_side_ratio": 3.69,
+      "rejected": "proportions: a side is off by x3.7 after the best fit"
+     }
+    },
+    {
+     "id": "lobster-pot",
+     "object": "lobster-pot",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lobster-pot-2",
+     "object": "lobster-pot",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s-kings-halls",
+   "location": "kings-halls",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 11.6
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 11.9
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 7.4
+    }
+   ],
+   "props": [
+    {
+     "id": "throne",
+     "object": "throne",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mirror-west-1",
+     "object": "gallery-mirror",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mirror-west-2",
+     "object": "gallery-mirror",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mirror-west-3",
+     "object": "gallery-mirror",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mirror-west-4",
+     "object": "gallery-mirror",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mirror-west-5",
+     "object": "gallery-mirror",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mirror-west-6",
+     "object": "gallery-mirror",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mirror-west-7",
+     "object": "gallery-mirror",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mirror-east-1",
+     "object": "gallery-mirror",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mirror-east-2",
+     "object": "gallery-mirror",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mirror-east-3",
+     "object": "gallery-mirror",
+     "source": "box-proxy"
+    },
+    {
+     "id": "coin-chest",
+     "object": "coin-chest",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ledger-gallery",
+     "object": "ledger",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ledger-throne",
+     "object": "ledger",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s-second-collision",
+   "location": "kings-halls",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 19.1
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 18.9
+    }
+   ],
+   "props": [
+    {
+     "id": "throne",
+     "object": "throne",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mirror-west-1",
+     "object": "gallery-mirror",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mirror-west-2",
+     "object": "gallery-mirror",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mirror-west-3",
+     "object": "gallery-mirror",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mirror-west-4",
+     "object": "gallery-mirror",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mirror-west-5",
+     "object": "gallery-mirror",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mirror-west-6",
+     "object": "gallery-mirror",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mirror-west-7",
+     "object": "gallery-mirror",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mirror-east-1",
+     "object": "gallery-mirror",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mirror-east-2",
+     "object": "gallery-mirror",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mirror-east-3",
+     "object": "gallery-mirror",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ledger-gallery",
+     "object": "ledger",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ledger-throne",
+     "object": "ledger",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s-the-oars",
+   "location": "kings-halls",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 18.7
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 17.3
+    }
+   ],
+   "props": [
+    {
+     "id": "throne",
+     "object": "throne",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mirror-west-1",
+     "object": "gallery-mirror",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mirror-west-2",
+     "object": "gallery-mirror",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mirror-west-3",
+     "object": "gallery-mirror",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mirror-west-4",
+     "object": "gallery-mirror",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mirror-west-5",
+     "object": "gallery-mirror",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mirror-west-6",
+     "object": "gallery-mirror",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mirror-west-7",
+     "object": "gallery-mirror",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mirror-east-1",
+     "object": "gallery-mirror",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mirror-east-2",
+     "object": "gallery-mirror",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mirror-east-3",
+     "object": "gallery-mirror",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ledger-gallery",
+     "object": "ledger",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ledger-throne",
+     "object": "ledger",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s-lamplit-strait",
+   "location": "lamplit-strait",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.6
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.8
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 5.1
+    }
+   ],
+   "props": [
+    {
+     "id": "lighthouse-lamp",
+     "object": "lighthouse-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tideline-stone",
+     "object": "tideline-stone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "landing-lantern",
+     "object": "ship-lantern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp-room-lantern",
+     "object": "ship-lantern",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [
+    "camera [45, -158.5, 2.6] is inside blockout piece 'headland-east' (terrain)"
+   ],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [
+     "cliff-stair-1",
+     "cliff-stair-3",
+     "cliff-stair-5",
+     "cliff-stair-6"
+    ],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "blockout_replace",
+    "camera",
+    "player_start",
+    "props"
+   ],
+   "flag_status": {
+    "status": "first-pass flag: fixed at render time + proposed diff",
+    "what": "the camera [45, -158.5, 2.6] and player start were inside the solid 'headland-east' terrain (x 40 to 250); render-time camera and player start moved to x 34 (water side), and the landing and six cliff-stair pieces and the landing lantern moved west of the cliff face. Build-file diff proposed."
+   }
+  },
+  {
+   "scene": "s-pearl-banks",
+   "location": "pearl-banks",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.1
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.0
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 4.9
+    }
+   ],
+   "props": [
+    {
+     "id": "diving-boat",
+     "object": "diving-boat",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tideline-stone",
+     "object": "tideline-stone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lobster-pot-1",
+     "object": "lobster-pot",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lobster-pot-2",
+     "object": "lobster-pot",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s-salt-steps",
+   "location": "salt-steps",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.9
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 9.2
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 5.1
+    }
+   ],
+   "props": [
+    {
+     "id": "tideline-stone",
+     "object": "tideline-stone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tally-chest",
+     "object": "tea-chest",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lobster-pot-hut",
+     "object": "lobster-pot",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lobster-pot-reef",
+     "object": "lobster-pot",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rope-nets",
+     "object": "rope-coil",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "tideline-stone",
+      "piece": "pan-wall-4",
+      "samples": "3/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "found by the driver: left as built",
+    "what": "the tideline-stone overlaps a pan wall in 3 of 27 samples (informational). No change."
+   }
+  },
+  {
+   "scene": "s-spice-mouth",
+   "location": "spice-mouth",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.7
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.4
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 5.0
+    }
+   ],
+   "props": [
+    {
+     "id": "pay-table",
+     "object": "pay-table",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tea-chest-1",
+     "object": "tea-chest",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tea-chest-2",
+     "object": "tea-chest",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tea-chest-3",
+     "object": "tea-chest",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tea-chest-office",
+     "object": "tea-chest",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rope-stair",
+     "object": "rope-coil",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tideline-stone",
+     "object": "tideline-stone",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [
+    "blockout piece 'pay-pavilion-posts' (structure) stands between the camera and its look_at",
+    "prop 'pay-table' base [10, 5, 3.0] is inside blockout piece 'pay-pavilion-posts'"
+   ],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [
+     "pay-pavilion-post-3"
+    ],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "blockout_replace"
+   ],
+   "flag_status": {
+    "status": "first-pass flag: fixed at render time + proposed diff",
+    "what": "the solid 'pay-pavilion-posts' box (7.6 x 4.6 x 3.2 m) stood between the camera and the look_at and held the pay table; replaced by four 0.3 m posts. The two cylinders named statue-west/east are drawn as plain quay posts (stone material, renamed) so no figure-like proxy is in frame. Build-file diff proposed."
+   }
+  },
+  {
+   "scene": "s-unwritten",
+   "location": "the-unwritten",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.0
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 7.9
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 4.7
+    }
+   ],
+   "props": [
+    {
+     "id": "gullwife-boat",
+     "object": "gullwife-boat",
+     "source": "box-proxy",
+     "name": "far-boat"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s-tidewater",
+   "location": "tidewater",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.2
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.3
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 4.8
+    }
+   ],
+   "props": [
+    {
+     "id": "ferry",
+     "object": "harbour-ferry",
+     "source": "box-proxy"
+    },
+    {
+     "id": "notice-board",
+     "object": "notice-board",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tea-chest-1",
+     "object": "tea-chest",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tea-chest-2",
+     "object": "tea-chest",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tea-chest-3",
+     "object": "tea-chest",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tea-chest-tavern",
+     "object": "tea-chest",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rope-quay",
+     "object": "rope-coil",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rope-pontoon",
+     "object": "rope-coil",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rope-chandlery",
+     "object": "rope-coil",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  }
+ ],
+ "overviews": [
+  {
+   "location": "boat-cabin",
+   "reference": "games/lord-of-the-sea/assets/locations/boat-cabin.jpg",
+   "location_scene_count": 5,
+   "scene_lighting": "s-cabin-dawn",
+   "camera": {
+    "location": [
+     2.7,
+     -1.1,
+     1.5
+    ],
+    "look_at": [
+     -0.5,
+     1.3,
+     1.2
+    ],
+    "lens_mm": 16
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": -1.4,
+    "facing": "ccw",
+    "scenes": {
+     "s-cabin-dawn": {
+      "exposure_ev": 3.8
+     },
+     "s-cabin-princess": {
+      "exposure_ev": 1.9
+     },
+     "s-cabin-tally": {
+      "exposure_ev": 3.7
+     },
+     "s-chart-table": {
+      "exposure_ev": 4.3
+     },
+     "s-the-inventory": {
+      "exposure_ev": 3.1
+     }
+    }
+   }
+  },
+  {
+   "location": "boat-deck",
+   "reference": "games/lord-of-the-sea/assets/locations/boat-deck.jpg",
+   "location_scene_count": 1,
+   "scene_lighting": "s-deck-dinghy",
+   "camera": {
+    "location": [
+     5.5,
+     -1.2,
+     1.8
+    ],
+    "look_at": [
+     -1,
+     5,
+     1.6
+    ],
+    "lens_mm": 22
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": -0.7,
+    "facing": "ccw",
+    "show_sky": [
+     "headland-far",
+     "beach-far"
+    ],
+    "scenes": {
+     "s-deck-dinghy": {
+      "exposure_ev": -0.8
+     }
+    }
+   }
+  },
+  {
+   "location": "chandlery",
+   "reference": "games/lord-of-the-sea/assets/locations/chandlery.jpg",
+   "location_scene_count": 1,
+   "scene_lighting": "s-chandlery",
+   "camera": {
+    "location": [
+     -3.1,
+     -1.9,
+     1.5
+    ],
+    "look_at": [
+     3.5,
+     0.2,
+     1.2
+    ],
+    "lens_mm": 18
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": -3.2,
+    "facing": "ccw",
+    "scenes": {
+     "s-chandlery": {
+      "exposure_ev": -1.4
+     }
+    }
+   }
+  },
+  {
+   "location": "company-lane",
+   "reference": "games/lord-of-the-sea/assets/locations/company-lane.jpg",
+   "location_scene_count": 1,
+   "scene_lighting": "s-company-lane",
+   "camera": {
+    "location": [
+     -52,
+     -812,
+     1.3
+    ],
+    "look_at": [
+     -72,
+     -500,
+     3.5
+    ],
+    "lens_mm": 24
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": -0.4,
+    "facing": "ccw",
+    "show_sky": [
+     "horizon-fleet"
+    ],
+    "scenes": {
+     "s-company-lane": {
+      "exposure_ev": -1.7
+     }
+    }
+   }
+  },
+  {
+   "location": "counting-house",
+   "reference": "games/lord-of-the-sea/assets/locations/counting-house.jpg",
+   "location_scene_count": 2,
+   "scene_lighting": "s-counting-house",
+   "camera": {
+    "location": [
+     0,
+     -8.5,
+     1.7
+    ],
+    "look_at": [
+     0,
+     5,
+     2.2
+    ],
+    "lens_mm": 20
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": -2.2,
+    "facing": "ccw",
+    "scenes": {
+     "s-counting-house": {
+      "exposure_ev": 0.9
+     },
+     "s-the-cup": {
+      "exposure_ev": -1.0
+     }
+    }
+   }
+  },
+  {
+   "location": "home-reach-beach",
+   "reference": "games/lord-of-the-sea/assets/locations/home-reach-beach.jpg",
+   "location_scene_count": 9,
+   "scene_lighting": "s-tideline-final",
+   "camera": {
+    "location": [
+     3,
+     0.5,
+     1.0
+    ],
+    "look_at": [
+     25,
+     60,
+     5
+    ],
+    "lens_mm": 24
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": -2.3,
+    "facing": "ccw",
+    "show_sky": [
+     "anchored-boat",
+     "island-west",
+     "island-east",
+     "open-sea",
+     "glass-lane"
+    ],
+    "scenes": {
+     "s-beach-princess": {
+      "exposure_ev": -1.9
+     },
+     "s-beach-tideline": {
+      "exposure_ev": -1.2
+     },
+     "s-end-charter": {
+      "exposure_ev": -1.3
+     },
+     "s-end-lords-peace": {
+      "exposure_ev": -2.0
+     },
+     "s-end-no-lord": {
+      "exposure_ev": -1.0
+     },
+     "s-end-paid-in-kind": {
+      "exposure_ev": -1.0
+     },
+     "s-end-wild-sea": {
+      "exposure_ev": -1.3
+     },
+     "s-home-tideline": {
+      "exposure_ev": -0.9
+     },
+     "s-tideline-final": {
+      "exposure_ev": 2.0
+     }
+    }
+   }
+  },
+  {
+   "location": "kings-halls",
+   "reference": "games/lord-of-the-sea/assets/locations/kings-halls.jpg",
+   "location_scene_count": 3,
+   "scene_lighting": "s-kings-halls",
+   "camera": {
+    "location": [
+     -7,
+     -37,
+     1.6
+    ],
+    "look_at": [
+     2,
+     20,
+     3
+    ],
+    "lens_mm": 22
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": 2.5,
+    "facing": "ccw",
+    "scenes": {
+     "s-kings-halls": {
+      "exposure_ev": -3.7
+     },
+     "s-second-collision": {
+      "exposure_ev": -0.5
+     },
+     "s-the-oars": {
+      "exposure_ev": -1.5
+     }
+    }
+   }
+  },
+  {
+   "location": "lamplit-strait",
+   "reference": "games/lord-of-the-sea/assets/locations/lamplit-strait.jpg",
+   "location_scene_count": 1,
+   "scene_lighting": "s-lamplit-strait",
+   "camera": {
+    "location": [
+     30,
+     -150,
+     6
+    ],
+    "look_at": [
+     10,
+     80,
+     25
+    ],
+    "lens_mm": 24
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": -0.7,
+    "facing": "ccw",
+    "scenes": {
+     "s-lamplit-strait": {
+      "exposure_ev": -0.0
+     }
+    }
+   }
+  },
+  {
+   "location": "pearl-banks",
+   "reference": "games/lord-of-the-sea/assets/locations/pearl-banks.jpg",
+   "location_scene_count": 1,
+   "scene_lighting": "s-pearl-banks",
+   "camera": {
+    "location": [
+     -30,
+     -110,
+     35
+    ],
+    "look_at": [
+     10,
+     90,
+     3
+    ],
+    "lens_mm": 24
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": -0.7,
+    "facing": "ccw",
+    "scenes": {
+     "s-pearl-banks": {
+      "exposure_ev": -2.4
+     }
+    }
+   }
+  },
+  {
+   "location": "salt-steps",
+   "reference": "left out (text card)",
+   "location_scene_count": 1,
+   "scene_lighting": "s-salt-steps",
+   "camera": {
+    "location": [
+     30,
+     -125,
+     14
+    ],
+    "look_at": [
+     0,
+     60,
+     12
+    ],
+    "lens_mm": 24
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": 0.4,
+    "facing": "ccw",
+    "reference_card": "The reference painting shows a tall stooped standing shape at the edge of a salt pan that reads as a hooded figure (its prompt calls it a carved standing stone), so by the no-figures rule its sheet carries a text card. Described scene: white salt-evaporation pans stepping up a snowy-white hillside to a turquoise sea, a rocky wall and slipway in front, a small thatched tallyman's hut on the shore.",
+    "scenes": {
+     "s-salt-steps": {
+      "exposure_ev": -2.6
+     }
+    }
+   }
+  },
+  {
+   "location": "spice-mouth",
+   "reference": "left out (text card)",
+   "location_scene_count": 1,
+   "scene_lighting": "s-spice-mouth",
+   "camera": {
+    "location": [
+     -30,
+     -60,
+     4
+    ],
+    "look_at": [
+     10,
+     10,
+     6
+    ],
+    "lens_mm": 24
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": -0.2,
+    "facing": "ccw",
+    "reference_card": "The reference painting shows carved stone figures standing on the quay posts (statues), so by the no-figures rule its sheet carries a text card. The generating prompt names them a carved standing stone. Described scene: a busy brick-and-timber river-mouth port in warm afternoon light, stone quay and water stair over brown river water, sacks and chests stacked on the quay, a covered pay table under an awning.",
+    "scenes": {
+     "s-spice-mouth": {
+      "exposure_ev": -2.1
+     }
+    }
+   }
+  },
+  {
+   "location": "the-unwritten",
+   "reference": "games/lord-of-the-sea/assets/locations/the-unwritten.jpg",
+   "location_scene_count": 1,
+   "scene_lighting": "s-unwritten",
+   "camera": {
+    "location": [
+     0,
+     -268,
+     2.5
+    ],
+    "look_at": [
+     50,
+     -150,
+     5
+    ],
+    "lens_mm": 24
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": 1.6,
+    "facing": "ccw",
+    "neutral_names": {
+     "by_id": {
+      "gullwife-boat": "far-boat"
+     },
+     "by_object": {
+      "gullwife-boat": "far-boat"
+     }
+    },
+    "scenes": {
+     "s-unwritten": {
+      "exposure_ev": -2.0
+     }
+    }
+   }
+  },
+  {
+   "location": "tidewater",
+   "reference": "games/lord-of-the-sea/assets/locations/tidewater.jpg",
+   "location_scene_count": 1,
+   "scene_lighting": "s-tidewater",
+   "camera": {
+    "location": [
+     -8,
+     -95,
+     3.5
+    ],
+    "look_at": [
+     -15,
+     60,
+     6
+    ],
+    "lens_mm": 24
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "overview_ev": 0.8,
+    "facing": "ccw",
+    "scenes": {
+     "s-tidewater": {
+      "exposure_ev": -2.4
+     }
+    }
+   }
+  }
+ ],
+ "objects": {
+  "brass-dividers": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 5,
+   "fit": null,
+   "note": null
+  },
+  "chart-table": {
+   "source": "model",
+   "model": "chart-table.glb",
+   "props": 5,
+   "fit": {
+    "model_dims_m": [
+     1.42,
+     0.962,
+     1.389
+    ],
+    "box_m": [
+     1.4,
+     0.9,
+     0.95
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.858,
+    "worst_side_ratio": 1.25
+   },
+   "note": null
+  },
+  "coin-chest": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 1,
+   "fit": null,
+   "note": null
+  },
+  "company-buoy": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 18,
+   "fit": null,
+   "note": null
+  },
+  "dinghy": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 10,
+   "fit": null,
+   "note": null
+  },
+  "diving-boat": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 1,
+   "fit": null,
+   "note": null
+  },
+  "gallery-mirror": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 30,
+   "fit": null,
+   "note": null
+  },
+  "gullwife-boat": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 1,
+   "fit": null,
+   "note": null
+  },
+  "harbour-book": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 2,
+   "fit": null,
+   "note": null
+  },
+  "harbour-ferry": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 1,
+   "fit": null,
+   "note": null
+  },
+  "ledger": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 15,
+   "fit": null,
+   "note": null
+  },
+  "lighthouse-lamp": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 1,
+   "fit": null,
+   "note": null
+  },
+  "lobster-pot": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 22,
+   "fit": null,
+   "note": null
+  },
+  "notice-board": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 1,
+   "fit": null,
+   "note": null
+  },
+  "oar": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 11,
+   "fit": {
+    "model_dims_m": [
+     2.223,
+     1.6,
+     2.4
+    ],
+    "box_m": [
+     0.15,
+     0.05,
+     2.4
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     90
+    ],
+    "scale": 0.306,
+    "worst_side_ratio": 3.69,
+    "rejected": "proportions: a side is off by x3.7 after the best fit"
+   },
+   "note": "proportions: a side is off by x3.7 after the best fit"
+  },
+  "pay-table": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 1,
+   "fit": null,
+   "note": null
+  },
+  "revenue-cutter": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 1,
+   "fit": null,
+   "note": null
+  },
+  "rope-coil": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 13,
+   "fit": null,
+   "note": null
+  },
+  "rum-bottle": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 23,
+   "fit": null,
+   "note": null
+  },
+  "sale-deed": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 4,
+   "fit": null,
+   "note": null
+  },
+  "ship-lantern": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 17,
+   "fit": null,
+   "note": null
+  },
+  "spice-jar": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 10,
+   "fit": null,
+   "note": null
+  },
+  "strongbox": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 2,
+   "fit": null,
+   "note": null
+  },
+  "tea-board": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 2,
+   "fit": null,
+   "note": null
+  },
+  "tea-caddy": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 11,
+   "fit": null,
+   "note": null
+  },
+  "tea-chest": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 13,
+   "fit": null,
+   "note": null
+  },
+  "throne": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 3,
+   "fit": null,
+   "note": null
+  },
+  "tideline-stone": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 11,
+   "fit": null,
+   "note": null
+  }
+ }
+}
