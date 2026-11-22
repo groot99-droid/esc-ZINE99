@@ -170,6 +170,8 @@ def make_prop(sc, pr, rig, models):
 def piece_inside(obj, p):
     q = obj.matrix_world.inverted() @ Vector(p)
     shape = obj.get("shape", "box")
+    if shape in ("cylinder", "cone") and obj.get("role") == "wall":
+        return False  # a closed cylinder of role wall is a hollow shell (drum, outer wall): seen from inside, not solid
     if shape == "box":
         return abs(q.x) < 0.5 and abs(q.y) < 0.5 and abs(q.z) < 0.5
     if shape in ("cylinder", "cone"):
@@ -405,6 +407,7 @@ def main():
                   (int(1920 * o["res_scale"]), int(1080 * o["res_scale"])), max(4, int(128 * o["samples_scale"])),
                   rig.get("overview_ev", 0.0))
         rec["seconds"] = round(time.time() - t0, 1)
+        os.makedirs(os.path.join(out, entry["location"]), exist_ok=True)
         with open(os.path.join(out, entry["location"], entry["scene"] + ".json"), "w", encoding="utf-8") as f:
             json.dump(rec, f, indent=1)
         print("ROSW", json.dumps({"scene": key, "seconds": rec["seconds"], "checks": {k: len(v) for k, v in checks.items()}}))

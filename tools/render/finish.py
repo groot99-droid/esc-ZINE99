@@ -39,6 +39,29 @@ def tile(im, label, w=640, h=360, sub=""):
     return t
 
 
+def no_reference_card(slug, loc, w=1600, h=900):
+    """A location without a reference image (dr-tox-altrulan: assets.json holds the prompt only): a text card with the
+    location's lighting line, so the sheet says so instead of leaving a hole."""
+    import textwrap
+    a = json.loads((ROOT / "games" / slug / "assets" / "assets.json").read_text(encoding="utf-8"))
+    loc_rec = next(x for x in a["locations"] if x["id"] == loc)
+    im = Image.new("RGB", (w, h), (40, 36, 30))
+    d = ImageDraw.Draw(im)
+    d.text((60, 60), "NO REFERENCE IMAGE YET", fill=(255, 200, 120), font=font(64))
+    d.text((60, 150), "assets.json holds the prompt only. Described lighting:", fill=(200, 200, 200), font=font(36))
+    y = 220
+    for line in textwrap.wrap(loc_rec.get("lighting", ""), 62)[:14]:
+        d.text((60, y), line, fill=(235, 235, 235), font=font(36))
+        y += 48
+    return im
+
+
+def still(p):
+    """The still as rendered (png) or, when only a downsized jpg copy was fetched from the render box, that."""
+    p = Path(p)
+    return Image.open(p if p.exists() else p.with_suffix(".jpg"))
+
+
 def main(argv):
     slug, run = argv[0], Path(argv[1])
     owner = argv[argv.index("--owner") + 1] if "--owner" in argv else None
@@ -59,15 +82,16 @@ def main(argv):
     for loc in locs:
         tiles = []
         ov = run / loc / "_overview" / "overview.png"
-        ref = Image.open(ROOT / "games" / slug / "assets" / "locations" / f"{loc}.jpg")
-        tiles.append(tile(Image.open(ov), "overview", sub="1920x1080 / 128 spp"))
-        tiles.append(tile(ref, "reference image"))
-        owner_rows.append((loc, Image.open(ov), ref))
+        rp = ROOT / "games" / slug / "assets" / "locations" / f"{loc}.jpg"
+        ref = Image.open(rp) if rp.exists() else no_reference_card(slug, loc)
+        tiles.append(tile(still(ov), "overview", sub="1920x1080 / 128 spp"))
+        tiles.append(tile(ref, "reference image" if rp.exists() else "no reference image yet"))
+        owner_rows.append((loc, still(ov), ref))
         for e in [p for p in plans if p["location"] == loc]:
             rec = json.loads((run / loc / f"{e['scene']}.json").read_text(encoding="utf-8"))
             st = {s["still"]: s for s in rec["stills"]}
             cam = st["camera"]
-            tiles.append(tile(Image.open(run / cam["file"]), e["scene"],
+            tiles.append(tile(still(run / cam["file"]), e["scene"],
                               sub=f"{rec['tier']} {cam['resolution'][0]}x{cam['resolution'][1]} / {cam['samples']} spp"))
             ledger["scenes"].append({
                 "scene": e["scene"], "location": loc, "tier": rec["tier"],
@@ -80,7 +104,8 @@ def main(argv):
                 "render_time_overrides": sorted(k for k in rec["overrides"] if rec["overrides"][k]),
                 "flag_status": flags.get(e["scene"], {"status": "not flagged"}),
             })
-        ledger["overviews"].append({"location": loc, "scene_lighting": rig[loc]["overview_scene"],
+        ledger["overviews"].append({"location": loc, "reference": f"games/{slug}/assets/locations/{loc}.jpg" if rp.exists() else None,
+                                    "location_scene_count": len([p for p in plans if p["location"] == loc]), "scene_lighting": rig[loc]["overview_scene"],
                                     "camera": rig[loc]["overview"], "rig": {k: v for k, v in rig[loc].items()
                                                                           if k not in ("overview", "overview_scene")}})
         rows = (len(tiles) + 1) // 2

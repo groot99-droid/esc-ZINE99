@@ -30,5 +30,25 @@
  "s3_gala_bond": {
   "status": "fixed at render time + proposed diff",
   "what": "the camera on the balcony looks back into the hall through the solid glass-north wall; a 12 m doorway (x -6 to 6) is cut in glass-north by a render-time blockout override. Build-file diff proposed."
+ },
+ "s3_overrun_hall": {
+  "status": "fixed at render time + proposed diff",
+  "what": "cavern-wall-s (a solid 48 m wall at y -15.5) shut the archive corridor's mouth, so the 50 mm still saw only rock; the wall is split by a 3 m opening at the corridor (x -1.5 to 1.5) by a render-time blockout override. Build-file diff proposed."
+ },
+ "s3_end_kept": {
+  "status": "found by the driver (not flagged in the first pass); fixed at render time + proposed diff",
+  "what": "the camera at z 26 stands above outer-wall, a closed cylinder whose lid at z 24 hid the drum cap and bell frame; outer-wall is omitted in this scene by a render-time blockout override. Build-file diff proposed."
+ },
+ "s3_mountains_foot": {
+  "status": "checked: false positive, no change",
+  "what": "the look_at [0, 30, 40] lies 5 m inside tower-1 behind vine-face, so the sight line ends in the wall by design; the view shows the three towers. A look_at on the face is proposed."
+ },
+ "s3_hub_gallery": {
+  "status": "checked: false positive, no change",
+  "what": "the look_at [0, -14, 1.6] lies 0.2 m inside the drum's glass, just past the driver's 0.15 m tolerance; the breach and the glass read as intended."
+ },
+ "s3_overrun_after": {
+  "status": "found by the driver; proposed diff only",
+  "what": "the look_at [0, 15, 3] lies inside breach-stair, so the frame is the stair box; a look_at at the breach [0, 15, 6] is proposed. Not applied: it changes the composition."
  }
 }

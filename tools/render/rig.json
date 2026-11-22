@@ -401,5 +401,307 @@
       }
     },
     "world_gain": 4.0
+  },
+  "central-hub": {
+    "overview_scene": "s3_hub_gallery",
+    "overview": {
+      "location": [
+        -7,
+        -20,
+        1.8
+      ],
+      "look_at": [
+        2,
+        -8,
+        3.0
+      ],
+      "lens_mm": 20
+    },
+    "exposure_ev": 0.0,
+    "piece_alpha": {
+      "glass": 0.12
+    },
+    "scenes": {
+      "s3_hub_door": {
+        "exposure_ev": -0.5
+      },
+      "s3_hub_core": {
+        "exposure_ev": 0.5
+      },
+      "s3_reset_heart": {
+        "exposure_ev": 0.8
+      },
+      "s3_first_word_core": {
+        "exposure_ev": 0.8
+      },
+      "s3_green_core": {
+        "exposure_ev": -0.3
+      }
+    },
+    "overview_ev": -1.3,
+    "grade_gain": [
+      0.9,
+      1.0,
+      1.05
+    ]
+  },
+  "clinical-suite": {
+    "overview_scene": "s3_clinical_suite",
+    "overview": {
+      "location": [
+        -14,
+        -4,
+        1.5
+      ],
+      "look_at": [
+        10,
+        6,
+        2.0
+      ],
+      "lens_mm": 22
+    },
+    "exposure_ev": -1.2,
+    "piece_alpha": {
+      "glass": 0.25
+    },
+    "overview_ev": -0.9,
+    "scenes": {
+      "s3_suite_printer": {
+        "exposure_ev": 0.4
+      },
+      "s3_clinical_suite": {
+        "light_gains": {
+          "amber-room": 0.45
+        }
+      }
+    },
+    "grade_gain": [
+      0.88,
+      1.0,
+      1.1
+    ]
+  },
+  "final-arcology": {
+    "overview_scene": "s3_arcology_plinth",
+    "overview": {
+      "location": [
+        16,
+        -26,
+        1.7
+      ],
+      "look_at": [
+        -8,
+        0,
+        8
+      ],
+      "lens_mm": 18
+    },
+    "exposure_ev": -2.0,
+    "piece_alpha": {
+      "glass": 0.25
+    },
+    "scenes": {
+      "s3_arcology_plinth": {
+        "exposure_ev": 0.8
+      }
+    },
+    "overview_ev": 0.0,
+    "grade_gain": [
+      0.9,
+      1.0,
+      1.02
+    ]
+  },
+  "snakehead-overrun": {
+    "overview_scene": "s3_overrun_hall",
+    "overview": {
+      "location": [
+        0,
+        -17,
+        1.7
+      ],
+      "look_at": [
+        0,
+        10,
+        2.5
+      ],
+      "lens_mm": 24
+    },
+    "exposure_ev": 0.5,
+    "piece_alpha": {
+      "glass": 0.3
+    },
+    "scenes": {
+      "s3_overrun_after": {
+        "exposure_ev": 1.0
+      },
+      "s3_snakehead_bench": {
+        "exposure_ev": 0.0
+      },
+      "s3_snakehead_resin": {
+        "exposure_ev": 0.5
+      }
+    },
+    "overview_ev": -0.2,
+    "grade_gain": [
+      0.9,
+      1.0,
+      1.02
+    ]
+  },
+  "the-march": {
+    "overview_scene": "s3_march_camp",
+    "overview": {
+      "location": [
+        -10,
+        -2,
+        1.8
+      ],
+      "look_at": [
+        112,
+        0,
+        10
+      ],
+      "lens_mm": 24
+    },
+    "exposure_ev": -1.0,
+    "piece_alpha": {
+      "glass": 0.25
+    },
+    "scenes": {
+      "s3_march_eve": {
+        "exposure_ev": 1.0
+      },
+      "s3_march_front": {
+        "exposure_ev": 0.3
+      },
+      "s3_perimeter_breach": {
+        "exposure_ev": -0.3
+      }
+    },
+    "overview_ev": 0.0,
+    "grade_gain": [
+      0.9,
+      1.0,
+      1.05
+    ]
+  },
+  "glass-mountains": {
+    "overview_scene": "s3_mountains_foot",
+    "overview": {
+      "location": [
+        0,
+        -56,
+        2.5
+      ],
+      "look_at": [
+        0,
+        40,
+        38
+      ],
+      "lens_mm": 22
+    },
+    "exposure_ev": -1.6,
+    "piece_alpha": {
+      "glass": 0.3
+    },
+    "scenes": {
+      "s3_summit_night": {
+        "exposure_ev": 1.8
+      }
+    },
+    "overview_ev": -0.6
+  },
+  "light-bringers-shrine": {
+    "overview_scene": "s3_shrine_drum",
+    "overview": {
+      "location": [
+        6,
+        -19,
+        1.8
+      ],
+      "look_at": [
+        -2,
+        -8,
+        4.5
+      ],
+      "lens_mm": 24
+    },
+    "exposure_ev": 1.5,
+    "piece_alpha": {
+      "glass": 0.12
+    },
+    "scenes": {
+      "s3_end_kept": {
+        "exposure_ev": -2.0
+      },
+      "s3_end_stamp": {
+        "exposure_ev": -0.7
+      },
+      "s3_shrine_altar": {
+        "exposure_ev": 0.5
+      },
+      "s3_shrine_drum": {
+        "exposure_ev": 1.0
+      }
+    },
+    "overview_ev": -1.5
+  },
+  "metabolic-city": {
+    "overview_scene": "s3_city_gate",
+    "overview": {
+      "location": [
+        0,
+        -27,
+        3
+      ],
+      "look_at": [
+        0,
+        12,
+        9
+      ],
+      "lens_mm": 22
+    },
+    "exposure_ev": 0.3,
+    "piece_alpha": {
+      "glass": 0.25
+    },
+    "scenes": {
+      "s3_city_market": {
+        "exposure_ev": 0.3
+      },
+      "s3_city_night": {
+        "exposure_ev": 0.8
+      }
+    }
+  },
+  "snakehead-holy-site": {
+    "overview_scene": "s3_cave_tank",
+    "overview": {
+      "location": [
+        -2,
+        -10,
+        2.0
+      ],
+      "look_at": [
+        6,
+        14,
+        2.0
+      ],
+      "lens_mm": 24
+    },
+    "exposure_ev": 0.0,
+    "scenes": {
+      "s3_cave_store": {
+        "exposure_ev": 2.5
+      },
+      "s3_end_last_toad": {
+        "exposure_ev": 2.5
+      },
+      "s3_cave_corridor": {
+        "exposure_ev": 0.3
+      }
+    },
+    "overview_ev": 3.0
   }
 }

@@ -1,0 +1,2398 @@
+{
+ "game": "dr-tox-finale",
+ "tiers": {
+  "hero": "2560x1440, 256 samples",
+  "standard": "1920x1080, 128 samples",
+  "overview": "1920x1080, 128 samples"
+ },
+ "renderer": "Cycles (OptiX), OpenImageDenoise, Blender 5.2.1",
+ "scenes": [
+  {
+   "scene": "s3_hub_gallery",
+   "location": "central-hub",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 20.7
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 20.6
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 8.4
+    }
+   ],
+   "props": [
+    {
+     "id": "handler-1",
+     "object": "air-handler",
+     "source": "box-proxy"
+    },
+    {
+     "id": "handler-2",
+     "object": "air-handler",
+     "source": "box-proxy"
+    },
+    {
+     "id": "switchboard",
+     "object": "switchboard-console",
+     "source": "box-proxy"
+    },
+    {
+     "id": "balance",
+     "object": "balance-scale",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp",
+     "object": "core-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door",
+     "object": "hub-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rail-1",
+     "object": "gallery-rail",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rail-2",
+     "object": "gallery-rail",
+     "source": "box-proxy"
+    },
+    {
+     "id": "hatch",
+     "object": "duct-hatch",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [
+     "drum"
+    ],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "checked: false positive, no change",
+    "what": "the look_at [0, -14, 1.6] lies 0.2 m inside the drum's glass, just past the driver's 0.15 m tolerance; the breach and the glass read as intended."
+   }
+  },
+  {
+   "scene": "s3_hub_door",
+   "location": "central-hub",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 17.9
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 17.9
+    }
+   ],
+   "props": [
+    {
+     "id": "handler-1",
+     "object": "air-handler",
+     "source": "box-proxy"
+    },
+    {
+     "id": "handler-2",
+     "object": "air-handler",
+     "source": "box-proxy"
+    },
+    {
+     "id": "switchboard",
+     "object": "switchboard-console",
+     "source": "box-proxy"
+    },
+    {
+     "id": "balance",
+     "object": "balance-scale",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp",
+     "object": "core-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door",
+     "object": "hub-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rail-1",
+     "object": "gallery-rail",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rail-2",
+     "object": "gallery-rail",
+     "source": "box-proxy"
+    },
+    {
+     "id": "hatch",
+     "object": "duct-hatch",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_hub_core",
+   "location": "central-hub",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 16.1
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 16.3
+    }
+   ],
+   "props": [
+    {
+     "id": "handler-1",
+     "object": "air-handler",
+     "source": "box-proxy"
+    },
+    {
+     "id": "handler-2",
+     "object": "air-handler",
+     "source": "box-proxy"
+    },
+    {
+     "id": "switchboard",
+     "object": "switchboard-console",
+     "source": "box-proxy"
+    },
+    {
+     "id": "balance",
+     "object": "balance-scale",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp",
+     "object": "core-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door",
+     "object": "hub-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rail-1",
+     "object": "gallery-rail",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rail-2",
+     "object": "gallery-rail",
+     "source": "box-proxy"
+    },
+    {
+     "id": "hatch",
+     "object": "duct-hatch",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_reset_heart",
+   "location": "central-hub",
+   "tier": "standard",
+   "resolution": [
+    1920,
+    1080
+   ],
+   "samples": 128,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 7.2
+    }
+   ],
+   "props": [
+    {
+     "id": "handler-1",
+     "object": "air-handler",
+     "source": "box-proxy"
+    },
+    {
+     "id": "handler-2",
+     "object": "air-handler",
+     "source": "box-proxy"
+    },
+    {
+     "id": "switchboard",
+     "object": "switchboard-console",
+     "source": "box-proxy"
+    },
+    {
+     "id": "balance",
+     "object": "balance-scale",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp",
+     "object": "core-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door",
+     "object": "hub-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rail-1",
+     "object": "gallery-rail",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rail-2",
+     "object": "gallery-rail",
+     "source": "box-proxy"
+    },
+    {
+     "id": "hatch",
+     "object": "duct-hatch",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_first_word_core",
+   "location": "central-hub",
+   "tier": "standard",
+   "resolution": [
+    1920,
+    1080
+   ],
+   "samples": 128,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 7.4
+    }
+   ],
+   "props": [
+    {
+     "id": "handler-1",
+     "object": "air-handler",
+     "source": "box-proxy"
+    },
+    {
+     "id": "handler-2",
+     "object": "air-handler",
+     "source": "box-proxy"
+    },
+    {
+     "id": "switchboard",
+     "object": "switchboard-console",
+     "source": "box-proxy"
+    },
+    {
+     "id": "balance",
+     "object": "balance-scale",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp",
+     "object": "core-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door",
+     "object": "hub-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rail-1",
+     "object": "gallery-rail",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rail-2",
+     "object": "gallery-rail",
+     "source": "box-proxy"
+    },
+    {
+     "id": "hatch",
+     "object": "duct-hatch",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_green_core",
+   "location": "central-hub",
+   "tier": "standard",
+   "resolution": [
+    1920,
+    1080
+   ],
+   "samples": 128,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 7.7
+    }
+   ],
+   "props": [
+    {
+     "id": "handler-1",
+     "object": "air-handler",
+     "source": "box-proxy"
+    },
+    {
+     "id": "handler-2",
+     "object": "air-handler",
+     "source": "box-proxy"
+    },
+    {
+     "id": "switchboard",
+     "object": "switchboard-console",
+     "source": "box-proxy"
+    },
+    {
+     "id": "balance",
+     "object": "balance-scale",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door",
+     "object": "hub-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rail-1",
+     "object": "gallery-rail",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rail-2",
+     "object": "gallery-rail",
+     "source": "box-proxy"
+    },
+    {
+     "id": "hatch",
+     "object": "duct-hatch",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_wall_outside",
+   "location": "central-hub",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 20.5
+    }
+   ],
+   "props": [
+    {
+     "id": "handler-1",
+     "object": "air-handler",
+     "source": "box-proxy"
+    },
+    {
+     "id": "handler-2",
+     "object": "air-handler",
+     "source": "box-proxy"
+    },
+    {
+     "id": "switchboard",
+     "object": "switchboard-console",
+     "source": "box-proxy"
+    },
+    {
+     "id": "balance",
+     "object": "balance-scale",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp",
+     "object": "core-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door",
+     "object": "hub-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rail-1",
+     "object": "gallery-rail",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rail-2",
+     "object": "gallery-rail",
+     "source": "box-proxy"
+    },
+    {
+     "id": "hatch",
+     "object": "duct-hatch",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_clinical_suite",
+   "location": "clinical-suite",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 16.8
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 17.2
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 7.2
+    }
+   ],
+   "props": [
+    {
+     "id": "chair-1",
+     "object": "treatment-chair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "chair-2",
+     "object": "treatment-chair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "chair-3",
+     "object": "treatment-chair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "chair-4",
+     "object": "treatment-chair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "iv-1",
+     "object": "iv-stand",
+     "source": "box-proxy"
+    },
+    {
+     "id": "iv-2",
+     "object": "iv-stand",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rack",
+     "object": "vial-rack",
+     "source": "box-proxy"
+    },
+    {
+     "id": "booth",
+     "object": "calibration-booth",
+     "source": "box-proxy"
+    },
+    {
+     "id": "column",
+     "object": "printer-column",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_suite_printer",
+   "location": "clinical-suite",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 17.2
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 17.3
+    }
+   ],
+   "props": [
+    {
+     "id": "chair-1",
+     "object": "treatment-chair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "chair-2",
+     "object": "treatment-chair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "chair-3",
+     "object": "treatment-chair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "chair-4",
+     "object": "treatment-chair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "iv-1",
+     "object": "iv-stand",
+     "source": "box-proxy"
+    },
+    {
+     "id": "iv-2",
+     "object": "iv-stand",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rack",
+     "object": "vial-rack",
+     "source": "box-proxy"
+    },
+    {
+     "id": "booth",
+     "object": "calibration-booth",
+     "source": "box-proxy"
+    },
+    {
+     "id": "column",
+     "object": "printer-column",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_atrium_inside",
+   "location": "final-arcology",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 17.0
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 17.4
+    }
+   ],
+   "props": [
+    {
+     "id": "panel",
+     "object": "atrium-glass-panel",
+     "source": "box-proxy"
+    },
+    {
+     "id": "emitter-1",
+     "object": "hardlight-emitter",
+     "source": "box-proxy"
+    },
+    {
+     "id": "emitter-2",
+     "object": "hardlight-emitter",
+     "source": "box-proxy"
+    },
+    {
+     "id": "vent",
+     "object": "exhaust-vent",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cistern",
+     "object": "cistern-tank",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "vent",
+      "piece": "vent-bank",
+      "samples": "3/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_atrium_after",
+   "location": "final-arcology",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 17.1
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 17.4
+    }
+   ],
+   "props": [
+    {
+     "id": "panel",
+     "object": "atrium-glass-panel",
+     "source": "box-proxy"
+    },
+    {
+     "id": "emitter-1",
+     "object": "hardlight-emitter",
+     "source": "box-proxy"
+    },
+    {
+     "id": "emitter-2",
+     "object": "hardlight-emitter",
+     "source": "box-proxy"
+    },
+    {
+     "id": "vent",
+     "object": "exhaust-vent",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cistern",
+     "object": "cistern-tank",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "vent",
+      "piece": "vent-bank",
+      "samples": "3/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_arcology_plinth",
+   "location": "final-arcology",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.6
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 12.3
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 6.2
+    }
+   ],
+   "props": [
+    {
+     "id": "panel",
+     "object": "atrium-glass-panel",
+     "source": "box-proxy"
+    },
+    {
+     "id": "vent",
+     "object": "exhaust-vent",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cistern",
+     "object": "cistern-tank",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shanty-1",
+     "object": "shanty-shelter",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shanty-2",
+     "object": "shanty-shelter",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shanty-3",
+     "object": "shanty-shelter",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "vent",
+      "piece": "vent-bank",
+      "samples": "3/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_overrun_hall",
+   "location": "snakehead-overrun",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.0
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.0
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 6.7
+    }
+   ],
+   "props": [
+    {
+     "id": "lamp",
+     "object": "work-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "locker",
+     "object": "shielded-locker",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bench",
+     "object": "batch-bench",
+     "source": "box-proxy"
+    },
+    {
+     "id": "jars",
+     "object": "rite-jar-rack",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lectern",
+     "object": "drum-lectern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "icon",
+     "object": "icon-lightbox",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cot-1",
+     "object": "folding-cot",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cot-2",
+     "object": "folding-cot",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cot-3",
+     "object": "folding-cot",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cot-4",
+     "object": "folding-cot",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [
+    "blockout piece 'cavern-wall-s' (wall) stands between the camera and its look_at"
+   ],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "lectern",
+      "piece": "breach-stair",
+      "samples": "3/27"
+     },
+     {
+      "prop": "icon",
+      "piece": "breach-stair",
+      "samples": "9/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "blockout_replace"
+   ],
+   "flag_status": {
+    "status": "fixed at render time + proposed diff",
+    "what": "cavern-wall-s (a solid 48 m wall at y -15.5) shut the archive corridor's mouth, so the 50 mm still saw only rock; the wall is split by a 3 m opening at the corridor (x -1.5 to 1.5) by a render-time blockout override. Build-file diff proposed."
+   }
+  },
+  {
+   "scene": "s3_overrun_after",
+   "location": "snakehead-overrun",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 16.9
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 16.8
+    }
+   ],
+   "props": [
+    {
+     "id": "lamp",
+     "object": "work-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "locker",
+     "object": "shielded-locker",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bench",
+     "object": "batch-bench",
+     "source": "box-proxy"
+    },
+    {
+     "id": "jars",
+     "object": "rite-jar-rack",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lectern",
+     "object": "drum-lectern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "icon",
+     "object": "icon-lightbox",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cot-1",
+     "object": "folding-cot",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cot-2",
+     "object": "folding-cot",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cot-3",
+     "object": "folding-cot",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cot-4",
+     "object": "folding-cot",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [
+     "breach-stair"
+    ],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "lectern",
+      "piece": "breach-stair",
+      "samples": "3/27"
+     },
+     {
+      "prop": "icon",
+      "piece": "breach-stair",
+      "samples": "9/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "blockout_replace"
+   ],
+   "flag_status": {
+    "status": "found by the driver; proposed diff only",
+    "what": "the look_at [0, 15, 3] lies inside breach-stair, so the frame is the stair box; a look_at at the breach [0, 15, 6] is proposed. Not applied: it changes the composition."
+   }
+  },
+  {
+   "scene": "s3_snakehead_bench",
+   "location": "snakehead-overrun",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 17.7
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 16.4
+    }
+   ],
+   "props": [
+    {
+     "id": "lamp",
+     "object": "work-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "locker",
+     "object": "shielded-locker",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bench",
+     "object": "batch-bench",
+     "source": "box-proxy"
+    },
+    {
+     "id": "jars",
+     "object": "rite-jar-rack",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lectern",
+     "object": "drum-lectern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "icon",
+     "object": "icon-lightbox",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cot-1",
+     "object": "folding-cot",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cot-2",
+     "object": "folding-cot",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cot-3",
+     "object": "folding-cot",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cot-4",
+     "object": "folding-cot",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "lectern",
+      "piece": "breach-stair",
+      "samples": "3/27"
+     },
+     {
+      "prop": "icon",
+      "piece": "breach-stair",
+      "samples": "9/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "blockout_replace"
+   ],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_snakehead_resin",
+   "location": "snakehead-overrun",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 14.2
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.8
+    }
+   ],
+   "props": [
+    {
+     "id": "lamp",
+     "object": "work-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "locker",
+     "object": "shielded-locker",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bench",
+     "object": "batch-bench",
+     "source": "box-proxy"
+    },
+    {
+     "id": "jars",
+     "object": "rite-jar-rack",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lectern",
+     "object": "drum-lectern",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "lectern",
+      "piece": "breach-stair",
+      "samples": "3/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "blockout_replace"
+   ],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_station_attack",
+   "location": "the-march",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 9.1
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.7
+    }
+   ],
+   "props": [
+    {
+     "id": "tower",
+     "object": "water-tower",
+     "source": "box-proxy"
+    },
+    {
+     "id": "kiosk",
+     "object": "water-kiosk",
+     "source": "box-proxy"
+    },
+    {
+     "id": "barricade",
+     "object": "shield-barricade",
+     "source": "box-proxy"
+    },
+    {
+     "id": "copier",
+     "object": "copier-cart",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crate",
+     "object": "blade-crate",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cart-1",
+     "object": "march-handcart",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "cart-1",
+      "piece": "road",
+      "samples": "3/27"
+     }
+    ],
+    "prop_off_floor": [
+     {
+      "prop": "barricade",
+      "support": "road",
+      "gap_m": -0.1
+     }
+    ]
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_station_after",
+   "location": "the-march",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.4
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.1
+    }
+   ],
+   "props": [
+    {
+     "id": "tower",
+     "object": "water-tower",
+     "source": "box-proxy"
+    },
+    {
+     "id": "kiosk",
+     "object": "water-kiosk",
+     "source": "box-proxy"
+    },
+    {
+     "id": "barricade",
+     "object": "shield-barricade",
+     "source": "box-proxy"
+    },
+    {
+     "id": "copier",
+     "object": "copier-cart",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crate",
+     "object": "blade-crate",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cart-1",
+     "object": "march-handcart",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "cart-1",
+      "piece": "road",
+      "samples": "3/27"
+     }
+    ],
+    "prop_off_floor": [
+     {
+      "prop": "barricade",
+      "support": "road",
+      "gap_m": -0.1
+     }
+    ]
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_march_camp",
+   "location": "the-march",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 7.7
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 7.7
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 4.6
+    }
+   ],
+   "props": [
+    {
+     "id": "tower",
+     "object": "water-tower",
+     "source": "box-proxy"
+    },
+    {
+     "id": "kiosk",
+     "object": "water-kiosk",
+     "source": "box-proxy"
+    },
+    {
+     "id": "barricade",
+     "object": "shield-barricade",
+     "source": "box-proxy"
+    },
+    {
+     "id": "copier",
+     "object": "copier-cart",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crate",
+     "object": "blade-crate",
+     "source": "box-proxy"
+    },
+    {
+     "id": "banner-1",
+     "object": "banner-pole",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cart-1",
+     "object": "march-handcart",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "cart-1",
+      "piece": "road",
+      "samples": "3/27"
+     }
+    ],
+    "prop_off_floor": [
+     {
+      "prop": "barricade",
+      "support": "road",
+      "gap_m": -0.1
+     },
+     {
+      "prop": "banner-1",
+      "support": "road",
+      "gap_m": -0.1
+     }
+    ]
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_march_eve",
+   "location": "the-march",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.3
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 7.8
+    }
+   ],
+   "props": [
+    {
+     "id": "tower",
+     "object": "water-tower",
+     "source": "box-proxy"
+    },
+    {
+     "id": "kiosk",
+     "object": "water-kiosk",
+     "source": "box-proxy"
+    },
+    {
+     "id": "barricade",
+     "object": "shield-barricade",
+     "source": "box-proxy"
+    },
+    {
+     "id": "copier",
+     "object": "copier-cart",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crate",
+     "object": "blade-crate",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cart-1",
+     "object": "march-handcart",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "cart-1",
+      "piece": "road",
+      "samples": "3/27"
+     }
+    ],
+    "prop_off_floor": [
+     {
+      "prop": "barricade",
+      "support": "road",
+      "gap_m": -0.1
+     }
+    ]
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_march_road",
+   "location": "the-march",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.5
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 7.6
+    }
+   ],
+   "props": [
+    {
+     "id": "tower",
+     "object": "water-tower",
+     "source": "box-proxy"
+    },
+    {
+     "id": "copier",
+     "object": "copier-cart",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crate",
+     "object": "blade-crate",
+     "source": "box-proxy"
+    },
+    {
+     "id": "banner-1",
+     "object": "banner-pole",
+     "source": "box-proxy"
+    },
+    {
+     "id": "banner-2",
+     "object": "banner-pole",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cart-1",
+     "object": "march-handcart",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cart-2",
+     "object": "march-handcart",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "cart-1",
+      "piece": "road",
+      "samples": "3/27"
+     },
+     {
+      "prop": "cart-2",
+      "piece": "road",
+      "samples": "3/27"
+     }
+    ],
+    "prop_off_floor": [
+     {
+      "prop": "banner-1",
+      "support": "road",
+      "gap_m": -0.1
+     },
+     {
+      "prop": "banner-2",
+      "support": "road",
+      "gap_m": -0.1
+     },
+     {
+      "prop": "cart-2",
+      "support": "road",
+      "gap_m": -0.1
+     }
+    ]
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_march_front",
+   "location": "the-march",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 9.1
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 7.5
+    }
+   ],
+   "props": [
+    {
+     "id": "tower",
+     "object": "water-tower",
+     "source": "box-proxy"
+    },
+    {
+     "id": "banner-1",
+     "object": "banner-pole",
+     "source": "box-proxy"
+    },
+    {
+     "id": "banner-2",
+     "object": "banner-pole",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cart-2",
+     "object": "march-handcart",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mast-1",
+     "object": "floodlight-mast",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mast-2",
+     "object": "floodlight-mast",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "cart-2",
+      "piece": "road",
+      "samples": "3/27"
+     }
+    ],
+    "prop_off_floor": [
+     {
+      "prop": "banner-1",
+      "support": "road",
+      "gap_m": -0.1
+     },
+     {
+      "prop": "banner-2",
+      "support": "road",
+      "gap_m": -0.1
+     },
+     {
+      "prop": "cart-2",
+      "support": "road",
+      "gap_m": -0.1
+     }
+    ]
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_perimeter_breach",
+   "location": "the-march",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 16.7
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 9.5
+    }
+   ],
+   "props": [
+    {
+     "id": "tower",
+     "object": "water-tower",
+     "source": "box-proxy"
+    },
+    {
+     "id": "banner-2",
+     "object": "banner-pole",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cart-2",
+     "object": "march-handcart",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mast-1",
+     "object": "floodlight-mast",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mast-2",
+     "object": "floodlight-mast",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "cart-2",
+      "piece": "road",
+      "samples": "3/27"
+     }
+    ],
+    "prop_off_floor": [
+     {
+      "prop": "banner-2",
+      "support": "road",
+      "gap_m": -0.1
+     },
+     {
+      "prop": "cart-2",
+      "support": "road",
+      "gap_m": -0.1
+     }
+    ]
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_peace_plain",
+   "location": "the-march",
+   "tier": "standard",
+   "resolution": [
+    1920,
+    1080
+   ],
+   "samples": 128,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 5.1
+    }
+   ],
+   "props": [
+    {
+     "id": "banner-1",
+     "object": "banner-pole",
+     "source": "box-proxy"
+    },
+    {
+     "id": "banner-2",
+     "object": "banner-pole",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cart-1",
+     "object": "march-handcart",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cart-2",
+     "object": "march-handcart",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mast-1",
+     "object": "floodlight-mast",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mast-2",
+     "object": "floodlight-mast",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "cart-1",
+      "piece": "road",
+      "samples": "3/27"
+     },
+     {
+      "prop": "cart-2",
+      "piece": "road",
+      "samples": "3/27"
+     }
+    ],
+    "prop_off_floor": [
+     {
+      "prop": "banner-1",
+      "support": "road",
+      "gap_m": -0.1
+     },
+     {
+      "prop": "banner-2",
+      "support": "road",
+      "gap_m": -0.1
+     },
+     {
+      "prop": "cart-2",
+      "support": "road",
+      "gap_m": -0.1
+     }
+    ]
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  }
+ ],
+ "overviews": [
+  {
+   "location": "central-hub",
+   "reference": "games/dr-tox-finale/assets/locations/central-hub.jpg",
+   "location_scene_count": 7,
+   "scene_lighting": "s3_hub_gallery",
+   "camera": {
+    "location": [
+     -7,
+     -20,
+     1.8
+    ],
+    "look_at": [
+     2,
+     -8,
+     3.0
+    ],
+    "lens_mm": 20
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "piece_alpha": {
+     "glass": 0.12
+    },
+    "scenes": {
+     "s3_hub_door": {
+      "exposure_ev": -0.5
+     },
+     "s3_hub_core": {
+      "exposure_ev": 0.5
+     },
+     "s3_reset_heart": {
+      "exposure_ev": 0.8
+     },
+     "s3_first_word_core": {
+      "exposure_ev": 0.8
+     },
+     "s3_green_core": {
+      "exposure_ev": -0.3
+     }
+    },
+    "overview_ev": -1.3,
+    "grade_gain": [
+     0.9,
+     1.0,
+     1.05
+    ]
+   }
+  },
+  {
+   "location": "clinical-suite",
+   "reference": "games/dr-tox-finale/assets/locations/clinical-suite.jpg",
+   "location_scene_count": 2,
+   "scene_lighting": "s3_clinical_suite",
+   "camera": {
+    "location": [
+     -14,
+     -4,
+     1.5
+    ],
+    "look_at": [
+     10,
+     6,
+     2.0
+    ],
+    "lens_mm": 22
+   },
+   "rig": {
+    "exposure_ev": -1.2,
+    "piece_alpha": {
+     "glass": 0.25
+    },
+    "overview_ev": -0.9,
+    "scenes": {
+     "s3_suite_printer": {
+      "exposure_ev": 0.4
+     },
+     "s3_clinical_suite": {
+      "light_gains": {
+       "amber-room": 0.45
+      }
+     }
+    },
+    "grade_gain": [
+     0.88,
+     1.0,
+     1.1
+    ]
+   }
+  },
+  {
+   "location": "final-arcology",
+   "reference": "games/dr-tox-finale/assets/locations/final-arcology.jpg",
+   "location_scene_count": 3,
+   "scene_lighting": "s3_arcology_plinth",
+   "camera": {
+    "location": [
+     16,
+     -26,
+     1.7
+    ],
+    "look_at": [
+     -8,
+     0,
+     8
+    ],
+    "lens_mm": 18
+   },
+   "rig": {
+    "exposure_ev": -2.0,
+    "piece_alpha": {
+     "glass": 0.25
+    },
+    "scenes": {
+     "s3_arcology_plinth": {
+      "exposure_ev": 0.8
+     }
+    },
+    "overview_ev": 0.0,
+    "grade_gain": [
+     0.9,
+     1.0,
+     1.02
+    ]
+   }
+  },
+  {
+   "location": "snakehead-overrun",
+   "reference": "games/dr-tox-finale/assets/locations/snakehead-overrun.jpg",
+   "location_scene_count": 4,
+   "scene_lighting": "s3_overrun_hall",
+   "camera": {
+    "location": [
+     0,
+     -17,
+     1.7
+    ],
+    "look_at": [
+     0,
+     10,
+     2.5
+    ],
+    "lens_mm": 24
+   },
+   "rig": {
+    "exposure_ev": 0.5,
+    "piece_alpha": {
+     "glass": 0.3
+    },
+    "scenes": {
+     "s3_overrun_after": {
+      "exposure_ev": 1.0
+     },
+     "s3_snakehead_bench": {
+      "exposure_ev": 0.0
+     },
+     "s3_snakehead_resin": {
+      "exposure_ev": 0.5
+     }
+    },
+    "overview_ev": -0.2,
+    "grade_gain": [
+     0.9,
+     1.0,
+     1.02
+    ]
+   }
+  },
+  {
+   "location": "the-march",
+   "reference": "games/dr-tox-finale/assets/locations/the-march.jpg",
+   "location_scene_count": 8,
+   "scene_lighting": "s3_march_camp",
+   "camera": {
+    "location": [
+     -10,
+     -2,
+     1.8
+    ],
+    "look_at": [
+     112,
+     0,
+     10
+    ],
+    "lens_mm": 24
+   },
+   "rig": {
+    "exposure_ev": -1.0,
+    "piece_alpha": {
+     "glass": 0.25
+    },
+    "scenes": {
+     "s3_march_eve": {
+      "exposure_ev": 1.0
+     },
+     "s3_march_front": {
+      "exposure_ev": 0.3
+     },
+     "s3_perimeter_breach": {
+      "exposure_ev": -0.3
+     }
+    },
+    "overview_ev": 0.0,
+    "grade_gain": [
+     0.9,
+     1.0,
+     1.05
+    ]
+   }
+  }
+ ]
+}

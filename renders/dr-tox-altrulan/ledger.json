@@ -1,0 +1,2234 @@
+{
+ "game": "dr-tox-altrulan",
+ "tiers": {
+  "hero": "2560x1440, 256 samples",
+  "standard": "1920x1080, 128 samples",
+  "overview": "1920x1080, 128 samples"
+ },
+ "renderer": "Cycles (OptiX), OpenImageDenoise, Blender 5.2.1",
+ "scenes": [
+  {
+   "scene": "s3_mountains_foot",
+   "location": "glass-mountains",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.9
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.6
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 5.0
+    }
+   ],
+   "props": [
+    {
+     "id": "mast-1",
+     "object": "trellis-mast",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mast-2",
+     "object": "trellis-mast",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mast-3",
+     "object": "trellis-mast",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cart",
+     "object": "pilgrim-handcart",
+     "source": "box-proxy"
+    },
+    {
+     "id": "stone",
+     "object": "way-stone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bells",
+     "object": "bell-frame",
+     "source": "box-proxy"
+    },
+    {
+     "id": "board",
+     "object": "morris-bench",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [
+     "vine-face",
+     "tower-1"
+    ],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "cart",
+      "piece": "plaza",
+      "samples": "9/27"
+     },
+     {
+      "prop": "cart",
+      "piece": "road",
+      "samples": "3/27"
+     },
+     {
+      "prop": "stone",
+      "piece": "plaza",
+      "samples": "9/27"
+     }
+    ],
+    "prop_off_floor": [
+     {
+      "prop": "mast-1",
+      "support": "plaza",
+      "gap_m": -0.12
+     },
+     {
+      "prop": "mast-2",
+      "support": "plaza",
+      "gap_m": -0.12
+     },
+     {
+      "prop": "cart",
+      "support": "plaza",
+      "gap_m": -0.12
+     },
+     {
+      "prop": "stone",
+      "support": "plaza",
+      "gap_m": -0.12
+     }
+    ]
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "checked: false positive, no change",
+    "what": "the look_at [0, 30, 40] lies 5 m inside tower-1 behind vine-face, so the sight line ends in the wall by design; the view shows the three towers. A look_at on the face is proposed."
+   }
+  },
+  {
+   "scene": "s3_pilgrims_gather",
+   "location": "glass-mountains",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.8
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.9
+    }
+   ],
+   "props": [
+    {
+     "id": "mast-1",
+     "object": "trellis-mast",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mast-2",
+     "object": "trellis-mast",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mast-3",
+     "object": "trellis-mast",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cart",
+     "object": "pilgrim-handcart",
+     "source": "box-proxy"
+    },
+    {
+     "id": "stone",
+     "object": "way-stone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bells",
+     "object": "bell-frame",
+     "source": "box-proxy"
+    },
+    {
+     "id": "board",
+     "object": "morris-bench",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "cart",
+      "piece": "plaza",
+      "samples": "9/27"
+     },
+     {
+      "prop": "cart",
+      "piece": "road",
+      "samples": "3/27"
+     },
+     {
+      "prop": "stone",
+      "piece": "plaza",
+      "samples": "9/27"
+     }
+    ],
+    "prop_off_floor": [
+     {
+      "prop": "mast-1",
+      "support": "plaza",
+      "gap_m": -0.12
+     },
+     {
+      "prop": "mast-2",
+      "support": "plaza",
+      "gap_m": -0.12
+     },
+     {
+      "prop": "cart",
+      "support": "plaza",
+      "gap_m": -0.12
+     },
+     {
+      "prop": "stone",
+      "support": "plaza",
+      "gap_m": -0.12
+     }
+    ]
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_mountains_climb",
+   "location": "glass-mountains",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.2
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.6
+    }
+   ],
+   "props": [
+    {
+     "id": "mast-1",
+     "object": "trellis-mast",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mast-2",
+     "object": "trellis-mast",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mast-3",
+     "object": "trellis-mast",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cart",
+     "object": "pilgrim-handcart",
+     "source": "box-proxy"
+    },
+    {
+     "id": "stone",
+     "object": "way-stone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bells",
+     "object": "bell-frame",
+     "source": "box-proxy"
+    },
+    {
+     "id": "board",
+     "object": "morris-bench",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "cart",
+      "piece": "plaza",
+      "samples": "9/27"
+     },
+     {
+      "prop": "cart",
+      "piece": "road",
+      "samples": "3/27"
+     },
+     {
+      "prop": "stone",
+      "piece": "plaza",
+      "samples": "9/27"
+     }
+    ],
+    "prop_off_floor": [
+     {
+      "prop": "mast-1",
+      "support": "plaza",
+      "gap_m": -0.12
+     },
+     {
+      "prop": "mast-2",
+      "support": "plaza",
+      "gap_m": -0.12
+     },
+     {
+      "prop": "cart",
+      "support": "plaza",
+      "gap_m": -0.12
+     },
+     {
+      "prop": "stone",
+      "support": "plaza",
+      "gap_m": -0.12
+     }
+    ]
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_summit_night",
+   "location": "glass-mountains",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.4
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.4
+    }
+   ],
+   "props": [
+    {
+     "id": "mast-1",
+     "object": "trellis-mast",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mast-2",
+     "object": "trellis-mast",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mast-3",
+     "object": "trellis-mast",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cart",
+     "object": "pilgrim-handcart",
+     "source": "box-proxy"
+    },
+    {
+     "id": "stone",
+     "object": "way-stone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bells",
+     "object": "bell-frame",
+     "source": "box-proxy"
+    },
+    {
+     "id": "board",
+     "object": "morris-bench",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "cart",
+      "piece": "plaza",
+      "samples": "9/27"
+     },
+     {
+      "prop": "cart",
+      "piece": "road",
+      "samples": "3/27"
+     },
+     {
+      "prop": "stone",
+      "piece": "plaza",
+      "samples": "9/27"
+     }
+    ],
+    "prop_off_floor": [
+     {
+      "prop": "mast-1",
+      "support": "plaza",
+      "gap_m": -0.12
+     },
+     {
+      "prop": "mast-2",
+      "support": "plaza",
+      "gap_m": -0.12
+     },
+     {
+      "prop": "cart",
+      "support": "plaza",
+      "gap_m": -0.12
+     },
+     {
+      "prop": "stone",
+      "support": "plaza",
+      "gap_m": -0.12
+     }
+    ]
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_mountains_summit",
+   "location": "glass-mountains",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.4
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.3
+    }
+   ],
+   "props": [
+    {
+     "id": "mast-1",
+     "object": "trellis-mast",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mast-2",
+     "object": "trellis-mast",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mast-3",
+     "object": "trellis-mast",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cart",
+     "object": "pilgrim-handcart",
+     "source": "box-proxy"
+    },
+    {
+     "id": "stone",
+     "object": "way-stone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bells",
+     "object": "bell-frame",
+     "source": "box-proxy"
+    },
+    {
+     "id": "board",
+     "object": "morris-bench",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "cart",
+      "piece": "plaza",
+      "samples": "9/27"
+     },
+     {
+      "prop": "cart",
+      "piece": "road",
+      "samples": "3/27"
+     },
+     {
+      "prop": "stone",
+      "piece": "plaza",
+      "samples": "9/27"
+     }
+    ],
+    "prop_off_floor": [
+     {
+      "prop": "mast-1",
+      "support": "plaza",
+      "gap_m": -0.12
+     },
+     {
+      "prop": "mast-2",
+      "support": "plaza",
+      "gap_m": -0.12
+     },
+     {
+      "prop": "cart",
+      "support": "plaza",
+      "gap_m": -0.12
+     },
+     {
+      "prop": "stone",
+      "support": "plaza",
+      "gap_m": -0.12
+     }
+    ]
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_shrine_door",
+   "location": "light-bringers-shrine",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.4
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.4
+    }
+   ],
+   "props": [
+    {
+     "id": "relief",
+     "object": "halo-relief",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door",
+     "object": "plate-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "altar",
+     "object": "altar-stone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "scales",
+     "object": "scales-relic",
+     "source": "box-proxy"
+    },
+    {
+     "id": "basin",
+     "object": "altar-basin",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lectern",
+     "object": "shrine-lectern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cushion-1",
+     "object": "kneeling-cushion",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cushion-2",
+     "object": "kneeling-cushion",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cushion-3",
+     "object": "kneeling-cushion",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cushion-4",
+     "object": "kneeling-cushion",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bells",
+     "object": "bell-frame",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_shrine_drum",
+   "location": "light-bringers-shrine",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 18.6
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 18.4
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 7.2
+    }
+   ],
+   "props": [
+    {
+     "id": "relief",
+     "object": "halo-relief",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door",
+     "object": "plate-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "altar",
+     "object": "altar-stone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "scales",
+     "object": "scales-relic",
+     "source": "box-proxy"
+    },
+    {
+     "id": "basin",
+     "object": "altar-basin",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lectern",
+     "object": "shrine-lectern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cushion-1",
+     "object": "kneeling-cushion",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cushion-2",
+     "object": "kneeling-cushion",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cushion-3",
+     "object": "kneeling-cushion",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cushion-4",
+     "object": "kneeling-cushion",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bells",
+     "object": "bell-frame",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_shrine_altar",
+   "location": "light-bringers-shrine",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 16.6
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 16.8
+    }
+   ],
+   "props": [
+    {
+     "id": "relief",
+     "object": "halo-relief",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door",
+     "object": "plate-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "altar",
+     "object": "altar-stone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "scales",
+     "object": "scales-relic",
+     "source": "box-proxy"
+    },
+    {
+     "id": "basin",
+     "object": "altar-basin",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lectern",
+     "object": "shrine-lectern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cushion-1",
+     "object": "kneeling-cushion",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cushion-2",
+     "object": "kneeling-cushion",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cushion-3",
+     "object": "kneeling-cushion",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cushion-4",
+     "object": "kneeling-cushion",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bells",
+     "object": "bell-frame",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_shrine_book",
+   "location": "light-bringers-shrine",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 18.9
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 18.4
+    }
+   ],
+   "props": [
+    {
+     "id": "relief",
+     "object": "halo-relief",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door",
+     "object": "plate-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "altar",
+     "object": "altar-stone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "scales",
+     "object": "scales-relic",
+     "source": "box-proxy"
+    },
+    {
+     "id": "basin",
+     "object": "altar-basin",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lectern",
+     "object": "shrine-lectern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cushion-1",
+     "object": "kneeling-cushion",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cushion-2",
+     "object": "kneeling-cushion",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cushion-3",
+     "object": "kneeling-cushion",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cushion-4",
+     "object": "kneeling-cushion",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bells",
+     "object": "bell-frame",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_end_kept",
+   "location": "light-bringers-shrine",
+   "tier": "standard",
+   "resolution": [
+    1920,
+    1080
+   ],
+   "samples": 128,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 4.9
+    }
+   ],
+   "props": [
+    {
+     "id": "relief",
+     "object": "halo-relief",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door",
+     "object": "plate-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "altar",
+     "object": "altar-stone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "scales",
+     "object": "scales-relic",
+     "source": "box-proxy"
+    },
+    {
+     "id": "basin",
+     "object": "altar-basin",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lectern",
+     "object": "shrine-lectern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cushion-1",
+     "object": "kneeling-cushion",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cushion-2",
+     "object": "kneeling-cushion",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cushion-3",
+     "object": "kneeling-cushion",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cushion-4",
+     "object": "kneeling-cushion",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bells",
+     "object": "bell-frame",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "blockout_replace"
+   ],
+   "flag_status": {
+    "status": "found by the driver (not flagged in the first pass); fixed at render time + proposed diff",
+    "what": "the camera at z 26 stands above outer-wall, a closed cylinder whose lid at z 24 hid the drum cap and bell frame; outer-wall is omitted in this scene by a render-time blockout override. Build-file diff proposed."
+   }
+  },
+  {
+   "scene": "s3_end_stamp",
+   "location": "light-bringers-shrine",
+   "tier": "standard",
+   "resolution": [
+    1920,
+    1080
+   ],
+   "samples": 128,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 7.4
+    }
+   ],
+   "props": [
+    {
+     "id": "relief",
+     "object": "halo-relief",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door",
+     "object": "plate-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "altar",
+     "object": "altar-stone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "scales",
+     "object": "scales-relic",
+     "source": "box-proxy"
+    },
+    {
+     "id": "basin",
+     "object": "altar-basin",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lectern",
+     "object": "shrine-lectern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cushion-1",
+     "object": "kneeling-cushion",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cushion-2",
+     "object": "kneeling-cushion",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cushion-3",
+     "object": "kneeling-cushion",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cushion-4",
+     "object": "kneeling-cushion",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bells",
+     "object": "bell-frame",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_city_gate",
+   "location": "metabolic-city",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 12.8
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 14.5
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 6.7
+    }
+   ],
+   "props": [
+    {
+     "id": "lamp-1",
+     "object": "fungus-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp-2",
+     "object": "fungus-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp-3",
+     "object": "fungus-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp-4",
+     "object": "fungus-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "stall-1",
+     "object": "market-stall",
+     "source": "box-proxy"
+    },
+    {
+     "id": "stall-2",
+     "object": "market-stall",
+     "source": "box-proxy"
+    },
+    {
+     "id": "brass",
+     "object": "memorial-brass",
+     "source": "box-proxy"
+    },
+    {
+     "id": "node-1",
+     "object": "vine-node",
+     "source": "box-proxy"
+    },
+    {
+     "id": "node-2",
+     "object": "vine-node",
+     "source": "box-proxy"
+    },
+    {
+     "id": "board",
+     "object": "morris-bench",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bowl",
+     "object": "water-bowl",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mat-1",
+     "object": "sleeping-mat",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mat-2",
+     "object": "sleeping-mat",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_city_market",
+   "location": "metabolic-city",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 14.1
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.4
+    }
+   ],
+   "props": [
+    {
+     "id": "lamp-1",
+     "object": "fungus-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp-2",
+     "object": "fungus-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp-3",
+     "object": "fungus-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp-4",
+     "object": "fungus-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "stall-1",
+     "object": "market-stall",
+     "source": "box-proxy"
+    },
+    {
+     "id": "stall-2",
+     "object": "market-stall",
+     "source": "box-proxy"
+    },
+    {
+     "id": "brass",
+     "object": "memorial-brass",
+     "source": "box-proxy"
+    },
+    {
+     "id": "node-1",
+     "object": "vine-node",
+     "source": "box-proxy"
+    },
+    {
+     "id": "node-2",
+     "object": "vine-node",
+     "source": "box-proxy"
+    },
+    {
+     "id": "board",
+     "object": "morris-bench",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bowl",
+     "object": "water-bowl",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mat-1",
+     "object": "sleeping-mat",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mat-2",
+     "object": "sleeping-mat",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_city_night",
+   "location": "metabolic-city",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.5
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.5
+    }
+   ],
+   "props": [
+    {
+     "id": "lamp-1",
+     "object": "fungus-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp-2",
+     "object": "fungus-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp-3",
+     "object": "fungus-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp-4",
+     "object": "fungus-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "stall-1",
+     "object": "market-stall",
+     "source": "box-proxy"
+    },
+    {
+     "id": "stall-2",
+     "object": "market-stall",
+     "source": "box-proxy"
+    },
+    {
+     "id": "brass",
+     "object": "memorial-brass",
+     "source": "box-proxy"
+    },
+    {
+     "id": "node-1",
+     "object": "vine-node",
+     "source": "box-proxy"
+    },
+    {
+     "id": "node-2",
+     "object": "vine-node",
+     "source": "box-proxy"
+    },
+    {
+     "id": "board",
+     "object": "morris-bench",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bowl",
+     "object": "water-bowl",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mat-1",
+     "object": "sleeping-mat",
+     "source": "box-proxy"
+    },
+    {
+     "id": "mat-2",
+     "object": "sleeping-mat",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_cave_tank",
+   "location": "snakehead-holy-site",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 11.8
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 11.1
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 5.7
+    }
+   ],
+   "props": [
+    {
+     "id": "tank",
+     "object": "ghost-tank",
+     "source": "box-proxy"
+    },
+    {
+     "id": "spring",
+     "object": "spring-basin",
+     "source": "box-proxy"
+    },
+    {
+     "id": "vessels",
+     "object": "measure-vessels",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bench",
+     "object": "bench-altar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp",
+     "object": "votive-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf",
+     "object": "store-shelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "toad-1",
+     "object": "toad-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "toad-2",
+     "object": "toad-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "toad-3",
+     "object": "toad-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "toad-4",
+     "object": "toad-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "last-toad",
+     "object": "last-toad-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "scaffold",
+     "object": "scaffold-plank",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lime",
+     "object": "lime-tub",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lectern",
+     "object": "keeper-lectern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "pallet",
+     "object": "keeper-pallet",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_cave_corridor",
+   "location": "snakehead-holy-site",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.2
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.2
+    }
+   ],
+   "props": [
+    {
+     "id": "tank",
+     "object": "ghost-tank",
+     "source": "box-proxy"
+    },
+    {
+     "id": "spring",
+     "object": "spring-basin",
+     "source": "box-proxy"
+    },
+    {
+     "id": "vessels",
+     "object": "measure-vessels",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bench",
+     "object": "bench-altar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp",
+     "object": "votive-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf",
+     "object": "store-shelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "toad-1",
+     "object": "toad-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "toad-2",
+     "object": "toad-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "toad-3",
+     "object": "toad-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "toad-4",
+     "object": "toad-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "last-toad",
+     "object": "last-toad-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "scaffold",
+     "object": "scaffold-plank",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lime",
+     "object": "lime-tub",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lectern",
+     "object": "keeper-lectern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "pallet",
+     "object": "keeper-pallet",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_cave_store",
+   "location": "snakehead-holy-site",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 9.3
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 9.5
+    }
+   ],
+   "props": [
+    {
+     "id": "tank",
+     "object": "ghost-tank",
+     "source": "box-proxy"
+    },
+    {
+     "id": "spring",
+     "object": "spring-basin",
+     "source": "box-proxy"
+    },
+    {
+     "id": "vessels",
+     "object": "measure-vessels",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bench",
+     "object": "bench-altar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp",
+     "object": "votive-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf",
+     "object": "store-shelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "toad-1",
+     "object": "toad-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "toad-2",
+     "object": "toad-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "toad-3",
+     "object": "toad-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "toad-4",
+     "object": "toad-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "last-toad",
+     "object": "last-toad-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "scaffold",
+     "object": "scaffold-plank",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lime",
+     "object": "lime-tub",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lectern",
+     "object": "keeper-lectern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "pallet",
+     "object": "keeper-pallet",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_end_two_readings",
+   "location": "snakehead-holy-site",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 11.1
+    }
+   ],
+   "props": [
+    {
+     "id": "tank",
+     "object": "ghost-tank",
+     "source": "box-proxy"
+    },
+    {
+     "id": "spring",
+     "object": "spring-basin",
+     "source": "box-proxy"
+    },
+    {
+     "id": "vessels",
+     "object": "measure-vessels",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bench",
+     "object": "bench-altar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp",
+     "object": "votive-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf",
+     "object": "store-shelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "toad-1",
+     "object": "toad-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "toad-2",
+     "object": "toad-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "toad-3",
+     "object": "toad-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "toad-4",
+     "object": "toad-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "last-toad",
+     "object": "last-toad-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "scaffold",
+     "object": "scaffold-plank",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lime",
+     "object": "lime-tub",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lectern",
+     "object": "keeper-lectern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "pallet",
+     "object": "keeper-pallet",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s3_end_last_toad",
+   "location": "snakehead-holy-site",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 9.3
+    }
+   ],
+   "props": [
+    {
+     "id": "tank",
+     "object": "ghost-tank",
+     "source": "box-proxy"
+    },
+    {
+     "id": "spring",
+     "object": "spring-basin",
+     "source": "box-proxy"
+    },
+    {
+     "id": "vessels",
+     "object": "measure-vessels",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bench",
+     "object": "bench-altar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp",
+     "object": "votive-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shelf",
+     "object": "store-shelf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "last-toad",
+     "object": "last-toad-jar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "scaffold",
+     "object": "scaffold-plank",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lime",
+     "object": "lime-tub",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lectern",
+     "object": "keeper-lectern",
+     "source": "box-proxy"
+    },
+    {
+     "id": "pallet",
+     "object": "keeper-pallet",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  }
+ ],
+ "overviews": [
+  {
+   "location": "glass-mountains",
+   "reference": null,
+   "location_scene_count": 5,
+   "scene_lighting": "s3_mountains_foot",
+   "camera": {
+    "location": [
+     0,
+     -56,
+     2.5
+    ],
+    "look_at": [
+     0,
+     40,
+     38
+    ],
+    "lens_mm": 22
+   },
+   "rig": {
+    "exposure_ev": -1.6,
+    "piece_alpha": {
+     "glass": 0.3
+    },
+    "scenes": {
+     "s3_summit_night": {
+      "exposure_ev": 1.8
+     }
+    },
+    "overview_ev": -0.6
+   }
+  },
+  {
+   "location": "light-bringers-shrine",
+   "reference": null,
+   "location_scene_count": 6,
+   "scene_lighting": "s3_shrine_drum",
+   "camera": {
+    "location": [
+     6,
+     -19,
+     1.8
+    ],
+    "look_at": [
+     -2,
+     -8,
+     4.5
+    ],
+    "lens_mm": 24
+   },
+   "rig": {
+    "exposure_ev": 1.5,
+    "piece_alpha": {
+     "glass": 0.12
+    },
+    "scenes": {
+     "s3_end_kept": {
+      "exposure_ev": -2.0
+     },
+     "s3_end_stamp": {
+      "exposure_ev": -0.7
+     },
+     "s3_shrine_altar": {
+      "exposure_ev": 0.5
+     },
+     "s3_shrine_drum": {
+      "exposure_ev": 1.0
+     }
+    },
+    "overview_ev": -1.5
+   }
+  },
+  {
+   "location": "metabolic-city",
+   "reference": null,
+   "location_scene_count": 3,
+   "scene_lighting": "s3_city_gate",
+   "camera": {
+    "location": [
+     0,
+     -27,
+     3
+    ],
+    "look_at": [
+     0,
+     12,
+     9
+    ],
+    "lens_mm": 22
+   },
+   "rig": {
+    "exposure_ev": 0.3,
+    "piece_alpha": {
+     "glass": 0.25
+    },
+    "scenes": {
+     "s3_city_market": {
+      "exposure_ev": 0.3
+     },
+     "s3_city_night": {
+      "exposure_ev": 0.8
+     }
+    }
+   }
+  },
+  {
+   "location": "snakehead-holy-site",
+   "reference": null,
+   "location_scene_count": 5,
+   "scene_lighting": "s3_cave_tank",
+   "camera": {
+    "location": [
+     -2,
+     -10,
+     2.0
+    ],
+    "look_at": [
+     6,
+     14,
+     2.0
+    ],
+    "lens_mm": 24
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "scenes": {
+     "s3_cave_store": {
+      "exposure_ev": 2.5
+     },
+     "s3_end_last_toad": {
+      "exposure_ev": 2.5
+     },
+     "s3_cave_corridor": {
+      "exposure_ev": 0.3
+     }
+    },
+    "overview_ev": 3.0
+   }
+  }
+ ]
+}

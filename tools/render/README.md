@@ -36,6 +36,16 @@ recorded render-time overrides differ.
   (`prop_inside`) or that overlaps one (`prop_overlap`, informational), a ground prop off its floor.
 - Not produced: the depth and object-index passes of the plan.
 
+- Added for batch 3 (dr-tox-finale, dr-tox-altrulan): a closed cylinder of role `wall` is a hollow shell for the geometry checks (the
+  hub's drum and outer wall); the output folder per location is created even with `--stills overview`; `--no-overrides 1` renders
+  the build file as it is (the "before" pass); an override may replace a piece by an empty list (the piece is omitted in that scene).
+  `finish.py` draws a "no reference image yet" card with the location's lighting line when `assets/locations/<id>.jpg` does not exist
+  (dr-tox-altrulan) and reads a downsized `.jpg` still when the `.png` was not fetched (the render box's link was slow: the stills
+  kept locally under `build/` are 1600 px wide jpg copies; the full-size PNGs stay on the render box). The owner sheet is one per
+  game (`--owner`); batch 3's single sheet joins the two.
+  `rig.json` entries for the nine locations: `grade_gain` (per-channel gain), `piece_alpha` glass, per-scene `exposure_ev` and
+  `light_gains`, `overview_ev`. No model ledger exists for either game, so nothing was swapped.
+
 ## Remote run
 
 Used on a rented RTX 4090: upload `render_scenes.py` and `pack.tgz`, run Blender 5.2.1 as above with `--device OPTIX`, fetch the

@@ -187,5 +187,48 @@
         }
       ]
     }
+  },
+  "snakehead-overrun/*": {
+    "blockout_replace": {
+      "cavern-wall-s": [
+        {
+          "id": "cavern-wall-s-west",
+          "shape": "box",
+          "role": "wall",
+          "size_m": [
+            22.5,
+            1.0,
+            8
+          ],
+          "location": [
+            -12.75,
+            -15.5,
+            4
+          ],
+          "material": "rock"
+        },
+        {
+          "id": "cavern-wall-s-east",
+          "shape": "box",
+          "role": "wall",
+          "size_m": [
+            22.5,
+            1.0,
+            8
+          ],
+          "location": [
+            12.75,
+            -15.5,
+            4
+          ],
+          "material": "rock"
+        }
+      ]
+    }
+  },
+  "light-bringers-shrine/s3_end_kept": {
+    "blockout_replace": {
+      "outer-wall": []
+    }
   }
 }
