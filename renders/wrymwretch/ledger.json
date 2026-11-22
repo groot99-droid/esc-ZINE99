@@ -1,0 +1,4118 @@
+{
+ "game": "wrymwretch",
+ "tiers": {
+  "hero": "2560x1440, 256 samples",
+  "standard": "1920x1080, 128 samples",
+  "overview": "1920x1080, 128 samples"
+ },
+ "renderer": "Cycles (OptiX), OpenImageDenoise, Blender 5.2.1",
+ "scenes": [
+  {
+   "scene": "s_expanse",
+   "location": "astral-expanse",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.6
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 7.7
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 4.4
+    }
+   ],
+   "props": [
+    {
+     "id": "crystal-expanse",
+     "object": "memory-crystal",
+     "source": "box-proxy"
+    },
+    {
+     "id": "platform-1",
+     "object": "memory-platform",
+     "source": "box-proxy"
+    },
+    {
+     "id": "platform-2",
+     "object": "memory-platform",
+     "source": "box-proxy"
+    },
+    {
+     "id": "platform-3",
+     "object": "memory-platform",
+     "source": "box-proxy"
+    },
+    {
+     "id": "platform-sigil",
+     "object": "memory-platform",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "platform-1",
+      "piece": "island-1",
+      "samples": "3/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s_battle_unwriter",
+   "location": "astral-expanse",
+   "tier": "standard",
+   "resolution": [
+    1920,
+    1080
+   ],
+   "samples": 128,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 4.6
+    },
+    {
+     "still": "player",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 4.3
+    }
+   ],
+   "props": [
+    {
+     "id": "platform-sigil",
+     "object": "memory-platform",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s_bone_choir",
+   "location": "bone-choir",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 11.8
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 11.5
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 5.3
+    }
+   ],
+   "props": [
+    {
+     "id": "bone-w1",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bone-e1",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bone-w2",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bone-e2",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bone-w3",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bone-e3",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bone-w4",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bone-e4",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bone-w5",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bone-e5",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bone-w6",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bone-e6",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "wyrm-skull",
+     "object": "wyrm-skull",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystal-choir",
+     "object": "memory-crystal",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "bone-w1",
+      "piece": "vertebra-w1",
+      "samples": "3/27"
+     },
+     {
+      "prop": "bone-e1",
+      "piece": "vertebra-e1",
+      "samples": "3/27"
+     },
+     {
+      "prop": "bone-w2",
+      "piece": "vertebra-w2",
+      "samples": "3/27"
+     },
+     {
+      "prop": "bone-e2",
+      "piece": "vertebra-e2",
+      "samples": "3/27"
+     },
+     {
+      "prop": "bone-w3",
+      "piece": "vertebra-w3",
+      "samples": "3/27"
+     },
+     {
+      "prop": "bone-e3",
+      "piece": "vertebra-e3",
+      "samples": "3/27"
+     },
+     {
+      "prop": "bone-w4",
+      "piece": "vertebra-w4",
+      "samples": "3/27"
+     },
+     {
+      "prop": "bone-e4",
+      "piece": "vertebra-e4",
+      "samples": "3/27"
+     },
+     {
+      "prop": "bone-w5",
+      "piece": "vertebra-w5",
+      "samples": "3/27"
+     },
+     {
+      "prop": "bone-e5",
+      "piece": "vertebra-e5",
+      "samples": "3/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s_empty_saddle",
+   "location": "bone-choir",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.0
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.0
+    }
+   ],
+   "props": [
+    {
+     "id": "bone-w1",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bone-e1",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bone-w2",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bone-e2",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bone-w3",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bone-e3",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bone-w4",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bone-e4",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bone-w5",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bone-e5",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bone-w6",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bone-e6",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "wyrm-skull",
+     "object": "wyrm-skull",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystal-choir",
+     "object": "memory-crystal",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "bone-w1",
+      "piece": "vertebra-w1",
+      "samples": "3/27"
+     },
+     {
+      "prop": "bone-e1",
+      "piece": "vertebra-e1",
+      "samples": "3/27"
+     },
+     {
+      "prop": "bone-w2",
+      "piece": "vertebra-w2",
+      "samples": "3/27"
+     },
+     {
+      "prop": "bone-e2",
+      "piece": "vertebra-e2",
+      "samples": "3/27"
+     },
+     {
+      "prop": "bone-w3",
+      "piece": "vertebra-w3",
+      "samples": "3/27"
+     },
+     {
+      "prop": "bone-e3",
+      "piece": "vertebra-e3",
+      "samples": "3/27"
+     },
+     {
+      "prop": "bone-w4",
+      "piece": "vertebra-w4",
+      "samples": "3/27"
+     },
+     {
+      "prop": "bone-e4",
+      "piece": "vertebra-e4",
+      "samples": "3/27"
+     },
+     {
+      "prop": "bone-w5",
+      "piece": "vertebra-w5",
+      "samples": "3/27"
+     },
+     {
+      "prop": "bone-e5",
+      "piece": "vertebra-e5",
+      "samples": "3/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s_duskbane_halls",
+   "location": "duskbane-underworld",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 12.2
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 11.9
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 5.9
+    }
+   ],
+   "props": [
+    {
+     "id": "elder-table",
+     "object": "game-table",
+     "source": "box-proxy"
+    },
+    {
+     "id": "forbidden-door",
+     "object": "forbidden-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "prophecy-pedestal",
+     "object": "prophecy-pedestal",
+     "source": "box-proxy"
+    },
+    {
+     "id": "prophecy-tome",
+     "object": "prophecy-tome",
+     "source": "box-proxy"
+    },
+    {
+     "id": "candles-nw",
+     "object": "candle-stand",
+     "source": "box-proxy"
+    },
+    {
+     "id": "candles-ne",
+     "object": "candle-stand",
+     "source": "box-proxy"
+    },
+    {
+     "id": "candles-sw",
+     "object": "candle-stand",
+     "source": "box-proxy"
+    },
+    {
+     "id": "candles-se",
+     "object": "candle-stand",
+     "source": "box-proxy"
+    },
+    {
+     "id": "torch-hall-w1",
+     "object": "torch-sconce",
+     "source": "box-proxy"
+    },
+    {
+     "id": "torch-hall-w2",
+     "object": "torch-sconce",
+     "source": "box-proxy"
+    },
+    {
+     "id": "torch-hall-e1",
+     "object": "torch-sconce",
+     "source": "box-proxy"
+    },
+    {
+     "id": "torch-hall-e2",
+     "object": "torch-sconce",
+     "source": "box-proxy"
+    },
+    {
+     "id": "torch-tunnel-w",
+     "object": "torch-sconce",
+     "source": "box-proxy"
+    },
+    {
+     "id": "torch-tunnel-e",
+     "object": "torch-sconce",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystal-chamber",
+     "object": "memory-crystal",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [
+    "blockout piece 'south-wall' (wall) stands between the camera and its look_at"
+   ],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "camera"
+   ],
+   "flag_status": {
+    "status": "fixed at render time + proposed diff",
+    "what": "the camera at y -21.5 stood behind south-wall (y -20.8 to -20.0), outside the hall, so the wall filled the frame; moved to y -19.6 (0.4 m inside) by a render-time camera override. Build-file diff proposed."
+   }
+  },
+  {
+   "scene": "s_forbidden_chamber",
+   "location": "duskbane-underworld",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 12.0
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.5
+    }
+   ],
+   "props": [
+    {
+     "id": "elder-table",
+     "object": "game-table",
+     "source": "box-proxy"
+    },
+    {
+     "id": "forbidden-door",
+     "object": "forbidden-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "prophecy-pedestal",
+     "object": "prophecy-pedestal",
+     "source": "box-proxy"
+    },
+    {
+     "id": "prophecy-tome",
+     "object": "prophecy-tome",
+     "source": "box-proxy"
+    },
+    {
+     "id": "candles-nw",
+     "object": "candle-stand",
+     "source": "box-proxy"
+    },
+    {
+     "id": "candles-ne",
+     "object": "candle-stand",
+     "source": "box-proxy"
+    },
+    {
+     "id": "candles-sw",
+     "object": "candle-stand",
+     "source": "box-proxy"
+    },
+    {
+     "id": "candles-se",
+     "object": "candle-stand",
+     "source": "box-proxy"
+    },
+    {
+     "id": "torch-hall-w1",
+     "object": "torch-sconce",
+     "source": "box-proxy"
+    },
+    {
+     "id": "torch-hall-w2",
+     "object": "torch-sconce",
+     "source": "box-proxy"
+    },
+    {
+     "id": "torch-hall-e1",
+     "object": "torch-sconce",
+     "source": "box-proxy"
+    },
+    {
+     "id": "torch-hall-e2",
+     "object": "torch-sconce",
+     "source": "box-proxy"
+    },
+    {
+     "id": "torch-tunnel-w",
+     "object": "torch-sconce",
+     "source": "box-proxy"
+    },
+    {
+     "id": "torch-tunnel-e",
+     "object": "torch-sconce",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystal-chamber",
+     "object": "memory-crystal",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s_underworld_tunnels",
+   "location": "duskbane-underworld",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 10.2
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 10.4
+    }
+   ],
+   "props": [
+    {
+     "id": "elder-table",
+     "object": "game-table",
+     "source": "box-proxy"
+    },
+    {
+     "id": "forbidden-door",
+     "object": "forbidden-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "prophecy-pedestal",
+     "object": "prophecy-pedestal",
+     "source": "box-proxy"
+    },
+    {
+     "id": "prophecy-tome",
+     "object": "prophecy-tome",
+     "source": "box-proxy"
+    },
+    {
+     "id": "candles-nw",
+     "object": "candle-stand",
+     "source": "box-proxy"
+    },
+    {
+     "id": "candles-ne",
+     "object": "candle-stand",
+     "source": "box-proxy"
+    },
+    {
+     "id": "candles-sw",
+     "object": "candle-stand",
+     "source": "box-proxy"
+    },
+    {
+     "id": "candles-se",
+     "object": "candle-stand",
+     "source": "box-proxy"
+    },
+    {
+     "id": "torch-hall-w1",
+     "object": "torch-sconce",
+     "source": "box-proxy"
+    },
+    {
+     "id": "torch-hall-w2",
+     "object": "torch-sconce",
+     "source": "box-proxy"
+    },
+    {
+     "id": "torch-hall-e1",
+     "object": "torch-sconce",
+     "source": "box-proxy"
+    },
+    {
+     "id": "torch-hall-e2",
+     "object": "torch-sconce",
+     "source": "box-proxy"
+    },
+    {
+     "id": "torch-tunnel-w",
+     "object": "torch-sconce",
+     "source": "box-proxy"
+    },
+    {
+     "id": "torch-tunnel-e",
+     "object": "torch-sconce",
+     "source": "box-proxy"
+    },
+    {
+     "id": "remnant-mask",
+     "object": "remnant-mask",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystal-chamber",
+     "object": "memory-crystal",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [
+    "camera [-17.0, -20.5, 3.5] is inside blockout piece 'south-wall' (wall)"
+   ],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "camera"
+   ],
+   "flag_status": {
+    "status": "fixed at render time + proposed diff",
+    "what": "the camera at y -20.5 stood inside south-wall; moved to y -19.6 (inside the west tunnel) by a render-time camera override. Build-file diff proposed."
+   }
+  },
+  {
+   "scene": "s_galewing_ward",
+   "location": "galewing-sky-city",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 16.5
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 9.6
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 7.4
+    }
+   ],
+   "props": [
+    {
+     "id": "cot-n1",
+     "object": "ward-cot",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cot-s1",
+     "object": "ward-cot",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cot-n2",
+     "object": "ward-cot",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cot-s2",
+     "object": "ward-cot",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cot-n3",
+     "object": "ward-cot",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cot-s3",
+     "object": "ward-cot",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cot-n4",
+     "object": "ward-cot",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cot-s4",
+     "object": "ward-cot",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cot-n5",
+     "object": "ward-cot",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cot-s5",
+     "object": "ward-cot",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cot-n6",
+     "object": "ward-cot",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cot-s6",
+     "object": "ward-cot",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s_cloud_platform",
+   "location": "galewing-sky-city",
+   "tier": "standard",
+   "resolution": [
+    1920,
+    1080
+   ],
+   "samples": 128,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 5.1
+    },
+    {
+     "still": "player",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 5.9
+    }
+   ],
+   "props": [
+    {
+     "id": "crystal-platform",
+     "object": "memory-crystal",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "blockout_replace"
+   ],
+   "flag_status": {
+    "status": "found by the driver (prop inside a piece); fixed at render time + proposed diff",
+    "what": "platform-underside is a cone rotated 180 degrees centred at z -0.5 (10 m tall), so its flat top stands 4.5 m above the platform and swallows the crystal-platform prop; centre z -5.0 puts the top at z 0. Applied by a render-time blockout override. Build-file diff proposed."
+   }
+  },
+  {
+   "scene": "s_last_witness",
+   "location": "heart-of-wound",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 7.4
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 9.1
+    }
+   ],
+   "props": [
+    {
+     "id": "king-statue",
+     "object": "king-statue",
+     "source": "box-proxy"
+    },
+    {
+     "id": "queen-statue",
+     "object": "queen-statue",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystal-wound",
+     "object": "memory-crystal",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": [
+     {
+      "prop": "crystal-wound",
+      "support": "gold-half",
+      "gap_m": -0.1
+     }
+    ]
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s_heart_of_wound",
+   "location": "heart-of-wound",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 10.1
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 9.2
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 4.6
+    }
+   ],
+   "props": [
+    {
+     "id": "king-statue",
+     "object": "king-statue",
+     "source": "box-proxy"
+    },
+    {
+     "id": "queen-statue",
+     "object": "queen-statue",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystal-wound",
+     "object": "memory-crystal",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": [
+     {
+      "prop": "crystal-wound",
+      "support": "gold-half",
+      "gap_m": -0.1
+     }
+    ]
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s_battle_echo",
+   "location": "heart-of-wound",
+   "tier": "standard",
+   "resolution": [
+    1920,
+    1080
+   ],
+   "samples": 128,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 5.0
+    },
+    {
+     "still": "player",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 4.4
+    }
+   ],
+   "props": [
+    {
+     "id": "king-statue",
+     "object": "king-statue",
+     "source": "box-proxy"
+    },
+    {
+     "id": "queen-statue",
+     "object": "queen-statue",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystal-wound",
+     "object": "memory-crystal",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": [
+     {
+      "prop": "crystal-wound",
+      "support": "gold-half",
+      "gap_m": -0.1
+     }
+    ]
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s_choice",
+   "location": "heart-of-wound",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 7.7
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 7.2
+    }
+   ],
+   "props": [
+    {
+     "id": "king-statue",
+     "object": "king-statue",
+     "source": "box-proxy"
+    },
+    {
+     "id": "queen-statue",
+     "object": "queen-statue",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystal-wound",
+     "object": "memory-crystal",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": [
+     {
+      "prop": "crystal-wound",
+      "support": "gold-half",
+      "gap_m": -0.1
+     }
+    ]
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s_end_rememberer",
+   "location": "heart-of-wound",
+   "tier": "standard",
+   "resolution": [
+    1920,
+    1080
+   ],
+   "samples": 128,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 4.5
+    }
+   ],
+   "props": [
+    {
+     "id": "king-statue",
+     "object": "king-statue",
+     "source": "box-proxy"
+    },
+    {
+     "id": "queen-statue",
+     "object": "queen-statue",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystal-wound",
+     "object": "memory-crystal",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": [
+     {
+      "prop": "crystal-wound",
+      "support": "gold-half",
+      "gap_m": -0.1
+     }
+    ]
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s_end_whole",
+   "location": "heart-of-wound",
+   "tier": "standard",
+   "resolution": [
+    1920,
+    1080
+   ],
+   "samples": 128,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 4.5
+    }
+   ],
+   "props": [
+    {
+     "id": "king-statue",
+     "object": "king-statue",
+     "source": "box-proxy"
+    },
+    {
+     "id": "queen-statue",
+     "object": "queen-statue",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s_end_saddle",
+   "location": "heart-of-wound",
+   "tier": "standard",
+   "resolution": [
+    1920,
+    1080
+   ],
+   "samples": 128,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 4.4
+    }
+   ],
+   "props": [
+    {
+     "id": "king-statue",
+     "object": "king-statue",
+     "source": "box-proxy"
+    },
+    {
+     "id": "queen-statue",
+     "object": "queen-statue",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystal-wound",
+     "object": "memory-crystal",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": [
+     {
+      "prop": "crystal-wound",
+      "support": "gold-half",
+      "gap_m": -0.1
+     }
+    ]
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s_heartstone_hall",
+   "location": "heartstone-caverns",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.1
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.3
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 6.0
+    }
+   ],
+   "props": [
+    {
+     "id": "heartstone",
+     "object": "heartstone",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s_deep_core",
+   "location": "heartstone-caverns",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 10.3
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 10.7
+    }
+   ],
+   "props": [
+    {
+     "id": "heartstone",
+     "object": "heartstone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "living-shard",
+     "object": "living-shard",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystal-core",
+     "object": "memory-crystal",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [
+     {
+      "prop": "living-shard",
+      "piece": "wall-crystals-3",
+      "samples": "27/27"
+     }
+    ],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "found by the driver; proposed diff only",
+    "what": "the living-shard prop (z 3.5) stands inside the cone wall-crystals-3 (a 4 x 3 x 6 m cone at [10, -42, 3]); it is not in frame. Proposed: move the shard to [10, -40.4, 3.5]."
+   }
+  },
+  {
+   "scene": "s_cedar_outpost",
+   "location": "ranger-outpost",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 11.6
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 11.0
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 5.0
+    }
+   ],
+   "props": [
+    {
+     "id": "gate",
+     "object": "outpost-gate",
+     "source": "box-proxy"
+    },
+    {
+     "id": "torch-gate-w",
+     "object": "torch-sconce",
+     "source": "box-proxy"
+    },
+    {
+     "id": "torch-gate-e",
+     "object": "torch-sconce",
+     "source": "box-proxy"
+    },
+    {
+     "id": "torch-longhouse",
+     "object": "torch-sconce",
+     "source": "box-proxy"
+    },
+    {
+     "id": "torch-yard",
+     "object": "torch-sconce",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystal-outpost",
+     "object": "memory-crystal",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "torch-longhouse",
+      "piece": "longhouse",
+      "samples": "9/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "camera"
+   ],
+   "flag_status": {
+    "status": "found by looking (not flagged); fixed at render time + proposed diff",
+    "what": "the camera at y 15.5 stands outside the north palisade and the gate proxy (y 14.6) fills the frame; moved to y 13.8 inside the yard by a render-time camera override."
+   }
+  },
+  {
+   "scene": "s_rim",
+   "location": "rim-of-wrymreach",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 11.1
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 10.1
+    }
+   ],
+   "props": [
+    {
+     "id": "rib-1",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rib-2",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rib-3",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rib-4",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rib-5",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rib-6",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rib-7",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rib-8",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "great-crystal",
+     "object": "memory-crystal",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "rib-3",
+      "piece": "ledge-east",
+      "samples": "9/27"
+     },
+     {
+      "prop": "rib-4",
+      "piece": "ledge-east",
+      "samples": "9/27"
+     },
+     {
+      "prop": "rib-5",
+      "piece": "ledge-east",
+      "samples": "9/27"
+     },
+     {
+      "prop": "rib-6",
+      "piece": "ledge-east",
+      "samples": "9/27"
+     },
+     {
+      "prop": "rib-7",
+      "piece": "ledge-east",
+      "samples": "9/27"
+     },
+     {
+      "prop": "rib-8",
+      "piece": "ledge-east",
+      "samples": "9/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s_rim_ambush",
+   "location": "rim-of-wrymreach",
+   "tier": "standard",
+   "resolution": [
+    1920,
+    1080
+   ],
+   "samples": 128,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 5.2
+    },
+    {
+     "still": "player",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 5.0
+    }
+   ],
+   "props": [
+    {
+     "id": "rib-1",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rib-2",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rib-3",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rib-4",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rib-5",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rib-6",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rib-7",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rib-8",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "great-crystal",
+     "object": "memory-crystal",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "rib-3",
+      "piece": "ledge-east",
+      "samples": "9/27"
+     },
+     {
+      "prop": "rib-4",
+      "piece": "ledge-east",
+      "samples": "9/27"
+     },
+     {
+      "prop": "rib-5",
+      "piece": "ledge-east",
+      "samples": "9/27"
+     },
+     {
+      "prop": "rib-6",
+      "piece": "ledge-east",
+      "samples": "9/27"
+     },
+     {
+      "prop": "rib-7",
+      "piece": "ledge-east",
+      "samples": "9/27"
+     },
+     {
+      "prop": "rib-8",
+      "piece": "ledge-east",
+      "samples": "9/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s_moot_camp",
+   "location": "rim-of-wrymreach",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 11.6
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 10.5
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 4.7
+    }
+   ],
+   "props": [
+    {
+     "id": "rib-1",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rib-2",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rib-3",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rib-4",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rib-5",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rib-6",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rib-7",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rib-8",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tent-1",
+     "object": "witness-tent",
+     "source": "box-proxy"
+    },
+    {
+     "id": "banner-1",
+     "object": "tribe-banner",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tent-2",
+     "object": "witness-tent",
+     "source": "box-proxy"
+    },
+    {
+     "id": "banner-2",
+     "object": "tribe-banner",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tent-3",
+     "object": "witness-tent",
+     "source": "box-proxy"
+    },
+    {
+     "id": "banner-3",
+     "object": "tribe-banner",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tent-4",
+     "object": "witness-tent",
+     "source": "box-proxy"
+    },
+    {
+     "id": "banner-4",
+     "object": "tribe-banner",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tent-5",
+     "object": "witness-tent",
+     "source": "box-proxy"
+    },
+    {
+     "id": "banner-5",
+     "object": "tribe-banner",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tent-6",
+     "object": "witness-tent",
+     "source": "box-proxy"
+    },
+    {
+     "id": "banner-6",
+     "object": "tribe-banner",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tent-healers",
+     "object": "witness-tent",
+     "source": "box-proxy"
+    },
+    {
+     "id": "elder-table-1",
+     "object": "game-table",
+     "source": "box-proxy"
+    },
+    {
+     "id": "elder-table-2",
+     "object": "game-table",
+     "source": "box-proxy"
+    },
+    {
+     "id": "elder-table-3",
+     "object": "game-table",
+     "source": "box-proxy"
+    },
+    {
+     "id": "elder-table-4",
+     "object": "game-table",
+     "source": "box-proxy"
+    },
+    {
+     "id": "moot-fire",
+     "object": "moot-fire",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sky-watch",
+     "object": "sky-watch-telescope",
+     "source": "box-proxy"
+    },
+    {
+     "id": "great-crystal",
+     "object": "memory-crystal",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "rib-3",
+      "piece": "ledge-east",
+      "samples": "9/27"
+     },
+     {
+      "prop": "rib-4",
+      "piece": "ledge-east",
+      "samples": "9/27"
+     },
+     {
+      "prop": "rib-5",
+      "piece": "ledge-east",
+      "samples": "9/27"
+     },
+     {
+      "prop": "rib-6",
+      "piece": "ledge-east",
+      "samples": "9/27"
+     },
+     {
+      "prop": "rib-7",
+      "piece": "ledge-east",
+      "samples": "9/27"
+     },
+     {
+      "prop": "rib-8",
+      "piece": "ledge-east",
+      "samples": "9/27"
+     }
+    ],
+    "prop_off_floor": [
+     {
+      "prop": "tent-1",
+      "support": "camp-ground",
+      "gap_m": -0.055
+     },
+     {
+      "prop": "banner-1",
+      "support": "camp-ground",
+      "gap_m": -0.055
+     },
+     {
+      "prop": "tent-2",
+      "support": "camp-ground",
+      "gap_m": -0.055
+     },
+     {
+      "prop": "banner-2",
+      "support": "camp-ground",
+      "gap_m": -0.055
+     },
+     {
+      "prop": "tent-3",
+      "support": "camp-ground",
+      "gap_m": -0.055
+     },
+     {
+      "prop": "banner-3",
+      "support": "camp-ground",
+      "gap_m": -0.055
+     },
+     {
+      "prop": "tent-4",
+      "support": "camp-ground",
+      "gap_m": -0.055
+     },
+     {
+      "prop": "banner-4",
+      "support": "camp-ground",
+      "gap_m": -0.055
+     },
+     {
+      "prop": "tent-5",
+      "support": "camp-ground",
+      "gap_m": -0.055
+     },
+     {
+      "prop": "banner-5",
+      "support": "camp-ground",
+      "gap_m": -0.055
+     },
+     {
+      "prop": "tent-6",
+      "support": "camp-ground",
+      "gap_m": -0.055
+     },
+     {
+      "prop": "banner-6",
+      "support": "camp-ground",
+      "gap_m": -0.055
+     },
+     {
+      "prop": "tent-healers",
+      "support": "moss-filigree",
+      "gap_m": -0.055
+     },
+     {
+      "prop": "elder-table-1",
+      "support": "camp-ground",
+      "gap_m": -0.055
+     },
+     {
+      "prop": "elder-table-2",
+      "support": "camp-ground",
+      "gap_m": -0.055
+     },
+     {
+      "prop": "elder-table-3",
+      "support": "camp-ground",
+      "gap_m": -0.055
+     },
+     {
+      "prop": "elder-table-4",
+      "support": "camp-ground",
+      "gap_m": -0.055
+     }
+    ]
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s_moot_dawn",
+   "location": "rim-of-wrymreach",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 9.2
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.7
+    }
+   ],
+   "props": [
+    {
+     "id": "rib-1",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rib-2",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rib-3",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rib-4",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rib-5",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rib-6",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rib-7",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rib-8",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tent-1",
+     "object": "witness-tent",
+     "source": "box-proxy"
+    },
+    {
+     "id": "banner-1",
+     "object": "tribe-banner",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tent-2",
+     "object": "witness-tent",
+     "source": "box-proxy"
+    },
+    {
+     "id": "banner-2",
+     "object": "tribe-banner",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tent-3",
+     "object": "witness-tent",
+     "source": "box-proxy"
+    },
+    {
+     "id": "banner-3",
+     "object": "tribe-banner",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tent-4",
+     "object": "witness-tent",
+     "source": "box-proxy"
+    },
+    {
+     "id": "banner-4",
+     "object": "tribe-banner",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tent-5",
+     "object": "witness-tent",
+     "source": "box-proxy"
+    },
+    {
+     "id": "banner-5",
+     "object": "tribe-banner",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tent-6",
+     "object": "witness-tent",
+     "source": "box-proxy"
+    },
+    {
+     "id": "banner-6",
+     "object": "tribe-banner",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tent-healers",
+     "object": "witness-tent",
+     "source": "box-proxy"
+    },
+    {
+     "id": "elder-table-1",
+     "object": "game-table",
+     "source": "box-proxy"
+    },
+    {
+     "id": "elder-table-2",
+     "object": "game-table",
+     "source": "box-proxy"
+    },
+    {
+     "id": "elder-table-3",
+     "object": "game-table",
+     "source": "box-proxy"
+    },
+    {
+     "id": "elder-table-4",
+     "object": "game-table",
+     "source": "box-proxy"
+    },
+    {
+     "id": "moot-fire",
+     "object": "moot-fire",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sky-watch",
+     "object": "sky-watch-telescope",
+     "source": "box-proxy"
+    },
+    {
+     "id": "kill-list-slate",
+     "object": "kill-list-slate",
+     "source": "box-proxy"
+    },
+    {
+     "id": "great-crystal",
+     "object": "memory-crystal",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [
+     {
+      "prop": "kill-list-slate",
+      "piece": "camp-ground",
+      "samples": "18/27"
+     }
+    ],
+    "prop_overlap": [
+     {
+      "prop": "rib-3",
+      "piece": "ledge-east",
+      "samples": "9/27"
+     },
+     {
+      "prop": "rib-4",
+      "piece": "ledge-east",
+      "samples": "9/27"
+     },
+     {
+      "prop": "rib-5",
+      "piece": "ledge-east",
+      "samples": "9/27"
+     },
+     {
+      "prop": "rib-6",
+      "piece": "ledge-east",
+      "samples": "9/27"
+     },
+     {
+      "prop": "rib-7",
+      "piece": "ledge-east",
+      "samples": "9/27"
+     },
+     {
+      "prop": "rib-8",
+      "piece": "ledge-east",
+      "samples": "9/27"
+     }
+    ],
+    "prop_off_floor": [
+     {
+      "prop": "tent-1",
+      "support": "camp-ground",
+      "gap_m": -0.055
+     },
+     {
+      "prop": "banner-1",
+      "support": "camp-ground",
+      "gap_m": -0.055
+     },
+     {
+      "prop": "tent-2",
+      "support": "camp-ground",
+      "gap_m": -0.055
+     },
+     {
+      "prop": "banner-2",
+      "support": "camp-ground",
+      "gap_m": -0.055
+     },
+     {
+      "prop": "tent-3",
+      "support": "camp-ground",
+      "gap_m": -0.055
+     },
+     {
+      "prop": "banner-3",
+      "support": "camp-ground",
+      "gap_m": -0.055
+     },
+     {
+      "prop": "tent-4",
+      "support": "camp-ground",
+      "gap_m": -0.055
+     },
+     {
+      "prop": "banner-4",
+      "support": "camp-ground",
+      "gap_m": -0.055
+     },
+     {
+      "prop": "tent-5",
+      "support": "camp-ground",
+      "gap_m": -0.055
+     },
+     {
+      "prop": "banner-5",
+      "support": "camp-ground",
+      "gap_m": -0.055
+     },
+     {
+      "prop": "tent-6",
+      "support": "camp-ground",
+      "gap_m": -0.055
+     },
+     {
+      "prop": "banner-6",
+      "support": "camp-ground",
+      "gap_m": -0.055
+     },
+     {
+      "prop": "tent-healers",
+      "support": "moss-filigree",
+      "gap_m": -0.055
+     },
+     {
+      "prop": "elder-table-1",
+      "support": "camp-ground",
+      "gap_m": -0.055
+     },
+     {
+      "prop": "elder-table-2",
+      "support": "camp-ground",
+      "gap_m": -0.055
+     },
+     {
+      "prop": "elder-table-3",
+      "support": "camp-ground",
+      "gap_m": -0.055
+     },
+     {
+      "prop": "elder-table-4",
+      "support": "camp-ground",
+      "gap_m": -0.055
+     },
+     {
+      "prop": "kill-list-slate",
+      "support": "camp-ground",
+      "gap_m": -0.055
+     }
+    ]
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s_chasm_seal1",
+   "location": "rim-of-wrymreach",
+   "tier": "standard",
+   "resolution": [
+    1920,
+    1080
+   ],
+   "samples": 128,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 4.7
+    }
+   ],
+   "props": [
+    {
+     "id": "rib-1",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rib-2",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rib-3",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rib-4",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rib-5",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rib-6",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rib-7",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rib-8",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "great-crystal",
+     "object": "memory-crystal",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "rib-3",
+      "piece": "ledge-east",
+      "samples": "9/27"
+     },
+     {
+      "prop": "rib-4",
+      "piece": "ledge-east",
+      "samples": "9/27"
+     },
+     {
+      "prop": "rib-5",
+      "piece": "ledge-east",
+      "samples": "9/27"
+     },
+     {
+      "prop": "rib-6",
+      "piece": "ledge-east",
+      "samples": "9/27"
+     },
+     {
+      "prop": "rib-7",
+      "piece": "ledge-east",
+      "samples": "9/27"
+     },
+     {
+      "prop": "rib-8",
+      "piece": "ledge-east",
+      "samples": "9/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "camera"
+   ],
+   "flag_status": {
+    "status": "found by the driver; fixed at render time + proposed diff",
+    "what": "look_at [-10, 40, 0] lies inside far-cliff (face at y 38); moved to the face, [-10, 37.9, 2]."
+   }
+  },
+  {
+   "scene": "s_chasm_seal2",
+   "location": "rim-of-wrymreach",
+   "tier": "standard",
+   "resolution": [
+    1920,
+    1080
+   ],
+   "samples": 128,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 4.3
+    }
+   ],
+   "props": [
+    {
+     "id": "rib-1",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rib-2",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rib-3",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rib-4",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rib-5",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rib-6",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rib-7",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rib-8",
+     "object": "wyrm-rib",
+     "source": "box-proxy"
+    },
+    {
+     "id": "great-crystal",
+     "object": "memory-crystal",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "rib-3",
+      "piece": "ledge-east",
+      "samples": "9/27"
+     },
+     {
+      "prop": "rib-4",
+      "piece": "ledge-east",
+      "samples": "9/27"
+     },
+     {
+      "prop": "rib-5",
+      "piece": "ledge-east",
+      "samples": "9/27"
+     },
+     {
+      "prop": "rib-6",
+      "piece": "ledge-east",
+      "samples": "9/27"
+     },
+     {
+      "prop": "rib-7",
+      "piece": "ledge-east",
+      "samples": "9/27"
+     },
+     {
+      "prop": "rib-8",
+      "piece": "ledge-east",
+      "samples": "9/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s_seabed",
+   "location": "seabed",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 6.9
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 7.2
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 4.6
+    }
+   ],
+   "props": [
+    {
+     "id": "monolith",
+     "object": "monolith",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lantern-60",
+     "object": "lantern-crystal",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lantern-35",
+     "object": "lantern-crystal",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lantern-10",
+     "object": "lantern-crystal",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s_first_light",
+   "location": "sky-above-realms",
+   "tier": "standard",
+   "resolution": [
+    1920,
+    1080
+   ],
+   "samples": 128,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 4.1
+    },
+    {
+     "still": "player",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 4.1
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 4.1
+    }
+   ],
+   "props": [
+    {
+     "id": "platform-drift",
+     "object": "memory-platform",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s_end_dormant",
+   "location": "sky-above-realms",
+   "tier": "standard",
+   "resolution": [
+    1920,
+    1080
+   ],
+   "samples": 128,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 4.5
+    }
+   ],
+   "props": [
+    {
+     "id": "platform-drift",
+     "object": "memory-platform",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [
+     "cloud-border-2",
+     "realm-north"
+    ],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "found by the driver; proposed diff only",
+    "what": "look_at [0, 40, 0] lies below the realm slabs (tops z 3); the view reads as intended from 140 m up. A look_at [0, 40, 3] is proposed. Not applied."
+   }
+  },
+  {
+   "scene": "s_end_architect",
+   "location": "sky-above-realms",
+   "tier": "standard",
+   "resolution": [
+    1920,
+    1080
+   ],
+   "samples": 128,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 4.0
+    }
+   ],
+   "props": [
+    {
+     "id": "platform-viewpoint",
+     "object": "memory-platform",
+     "source": "box-proxy"
+    },
+    {
+     "id": "platform-drift",
+     "object": "memory-platform",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s_priory_halls",
+   "location": "starlit-priory",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 22.0
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 22.2
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 9.0
+    }
+   ],
+   "props": [
+    {
+     "id": "sky-watch-w",
+     "object": "sky-watch-telescope",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sky-watch-e",
+     "object": "sky-watch-telescope",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystal-priory",
+     "object": "memory-crystal",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystal-tree-1",
+     "object": "crystalline-tree",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystal-tree-2",
+     "object": "crystalline-tree",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystal-tree-3",
+     "object": "crystalline-tree",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystal-tree-4",
+     "object": "crystalline-tree",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystal-tree-5",
+     "object": "crystalline-tree",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystal-tree-6",
+     "object": "crystalline-tree",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [
+    "blockout piece 'hall-south' (wall) stands between the camera and its look_at"
+   ],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "blockout_replace",
+    "camera"
+   ],
+   "flag_status": {
+    "status": "fixed at render time + proposed diff",
+    "what": "the camera at y -50.5 stood behind hall-south (y -50.4 to -49.6); moved to y -49.2. Also star-dome (a solid ellipsoid) enclosed the dome-starlight area light at z 18, leaving the hall black: it is replaced by a thin lid at z 23.7 in this location by a render-time blockout override. Build-file diffs proposed."
+   }
+  },
+  {
+   "scene": "s_crystal_forest",
+   "location": "starlit-priory",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 12.0
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 12.0
+    }
+   ],
+   "props": [
+    {
+     "id": "sky-watch-w",
+     "object": "sky-watch-telescope",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sky-watch-e",
+     "object": "sky-watch-telescope",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystal-priory",
+     "object": "memory-crystal",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystal-tree-1",
+     "object": "crystalline-tree",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystal-tree-2",
+     "object": "crystalline-tree",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystal-tree-3",
+     "object": "crystalline-tree",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystal-tree-4",
+     "object": "crystalline-tree",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystal-tree-5",
+     "object": "crystalline-tree",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystal-tree-6",
+     "object": "crystalline-tree",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [
+    "blockout piece 'doors-frame' (trim) stands between the camera and its look_at",
+    "blockout piece 'doors-light' (opening) stands between the camera and its look_at"
+   ],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "blockout_replace",
+    "camera"
+   ],
+   "flag_status": {
+    "status": "fixed at render time + proposed diff",
+    "what": "doors-frame is a solid 4.4 x 1.0 x 7.4 m box that plugs the doorway the camera (y -10.5) looks through, and doors-light is an opaque emissive plane; the frame is replaced by two jambs and a head, doors-light is drawn 88% translucent (rig), and look_at z 4.19 (0.28 m inside forest-hill) is raised to 4.6. Build-file diffs proposed."
+   }
+  },
+  {
+   "scene": "s_storm_chamber",
+   "location": "storm-chamber",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 16.9
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 18.0
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 6.9
+    }
+   ],
+   "props": [
+    {
+     "id": "storm-pillar-1",
+     "object": "storm-crystal-pillar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "storm-pillar-2",
+     "object": "storm-crystal-pillar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "storm-pillar-3",
+     "object": "storm-crystal-pillar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "storm-pillar-4",
+     "object": "storm-crystal-pillar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "storm-pillar-5",
+     "object": "storm-crystal-pillar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "storm-pillar-6",
+     "object": "storm-crystal-pillar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "storm-pillar-7",
+     "object": "storm-crystal-pillar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "storm-pillar-8",
+     "object": "storm-crystal-pillar",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystal-storm",
+     "object": "memory-crystal",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [
+    "blockout piece 'door-opening' (opening) stands between the camera and its look_at"
+   ],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "blockout_replace"
+   ],
+   "flag_status": {
+    "status": "fixed at render time + proposed diff",
+    "what": "door-opening, an opaque black 'void' plane, filled the doorway the camera looks through from the stair; omitted by a render-time blockout override. Build-file diff proposed."
+   }
+  },
+  {
+   "scene": "s_tide_shore",
+   "location": "tidecaller-shore",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 7.7
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 7.4
+    }
+   ],
+   "props": [
+    {
+     "id": "shrine-stone-1",
+     "object": "tide-shrine-stone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shrine-stone-2",
+     "object": "tide-shrine-stone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shrine-stone-3",
+     "object": "tide-shrine-stone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shrine-stone-4",
+     "object": "tide-shrine-stone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shrine-stone-5",
+     "object": "tide-shrine-stone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shrine-stone-6",
+     "object": "tide-shrine-stone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "water-flask",
+     "object": "remembering-water-flask",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s_shore_night",
+   "location": "tidecaller-shore",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.0
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 7.9
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 4.4
+    }
+   ],
+   "props": [
+    {
+     "id": "shrine-stone-1",
+     "object": "tide-shrine-stone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shrine-stone-2",
+     "object": "tide-shrine-stone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shrine-stone-3",
+     "object": "tide-shrine-stone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shrine-stone-4",
+     "object": "tide-shrine-stone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shrine-stone-5",
+     "object": "tide-shrine-stone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shrine-stone-6",
+     "object": "tide-shrine-stone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "water-flask",
+     "object": "remembering-water-flask",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystal-shore",
+     "object": "memory-crystal",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s_cedar_grove",
+   "location": "western-groves",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 9.3
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 9.3
+    }
+   ],
+   "props": [
+    {
+     "id": "split-tree",
+     "object": "split-tree",
+     "source": "box-proxy"
+    },
+    {
+     "id": "boulder-path",
+     "object": "mossy-boulder",
+     "source": "box-proxy"
+    },
+    {
+     "id": "boulder-grey",
+     "object": "mossy-boulder",
+     "source": "box-proxy"
+    },
+    {
+     "id": "boulder-roots",
+     "object": "mossy-boulder",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "boulder-roots",
+      "piece": "elder-root-4",
+      "samples": "3/27"
+     }
+    ],
+    "prop_off_floor": [
+     {
+      "prop": "split-tree",
+      "support": "path",
+      "gap_m": -0.055
+     },
+     {
+      "prop": "boulder-grey",
+      "support": "moss-patch-greying",
+      "gap_m": -0.085
+     },
+     {
+      "prop": "boulder-roots",
+      "support": "clearing",
+      "gap_m": -0.055
+     }
+    ]
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "s_elder_tree",
+   "location": "western-groves",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.0
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.0
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 5.2
+    }
+   ],
+   "props": [
+    {
+     "id": "split-tree",
+     "object": "split-tree",
+     "source": "box-proxy"
+    },
+    {
+     "id": "boulder-path",
+     "object": "mossy-boulder",
+     "source": "box-proxy"
+    },
+    {
+     "id": "boulder-grey",
+     "object": "mossy-boulder",
+     "source": "box-proxy"
+    },
+    {
+     "id": "boulder-roots",
+     "object": "mossy-boulder",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crystal-elder",
+     "object": "memory-crystal",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [
+     {
+      "prop": "crystal-elder",
+      "piece": "elder-root-3",
+      "samples": "15/27"
+     }
+    ],
+    "prop_overlap": [
+     {
+      "prop": "boulder-roots",
+      "piece": "elder-root-4",
+      "samples": "3/27"
+     }
+    ],
+    "prop_off_floor": [
+     {
+      "prop": "split-tree",
+      "support": "path",
+      "gap_m": -0.055
+     },
+     {
+      "prop": "boulder-grey",
+      "support": "moss-patch-greying",
+      "gap_m": -0.085
+     },
+     {
+      "prop": "boulder-roots",
+      "support": "clearing",
+      "gap_m": -0.055
+     },
+     {
+      "prop": "crystal-elder",
+      "support": "clearing",
+      "gap_m": -0.055
+     }
+    ]
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  }
+ ],
+ "overviews": [
+  {
+   "location": "astral-expanse",
+   "reference": "games/wrymwretch/assets/locations/astral-expanse.jpg",
+   "location_scene_count": 2,
+   "scene_lighting": "s_expanse",
+   "camera": {
+    "location": [
+     -60,
+     -70,
+     40
+    ],
+    "look_at": [
+     0,
+     -30,
+     20
+    ],
+    "lens_mm": 26
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "scenes": {
+     "s_battle_unwriter": {
+      "exposure_ev": -4.7
+     },
+     "s_expanse": {
+      "exposure_ev": -3.5
+     }
+    },
+    "overview_ev": 0.7
+   }
+  },
+  {
+   "location": "bone-choir",
+   "reference": "games/wrymwretch/assets/locations/bone-choir.jpg",
+   "location_scene_count": 2,
+   "scene_lighting": "s_bone_choir",
+   "camera": {
+    "location": [
+     0,
+     -29,
+     2
+    ],
+    "look_at": [
+     0,
+     25,
+     9
+    ],
+    "lens_mm": 24
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "scenes": {
+     "s_bone_choir": {
+      "exposure_ev": -3.2
+     },
+     "s_empty_saddle": {
+      "exposure_ev": -0.7
+     }
+    },
+    "overview_ev": 1.6
+   }
+  },
+  {
+   "location": "duskbane-underworld",
+   "reference": "games/wrymwretch/assets/locations/duskbane-underworld.jpg",
+   "location_scene_count": 3,
+   "scene_lighting": "s_duskbane_halls",
+   "camera": {
+    "location": [
+     0,
+     -19.5,
+     2.5
+    ],
+    "look_at": [
+     0,
+     12,
+     3.5
+    ],
+    "lens_mm": 24
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "scenes": {
+     "s_duskbane_halls": {
+      "exposure_ev": 1.0
+     },
+     "s_forbidden_chamber": {
+      "exposure_ev": 3.6
+     },
+     "s_underworld_tunnels": {
+      "exposure_ev": 1.3
+     }
+    },
+    "overview_ev": 0.0
+   }
+  },
+  {
+   "location": "galewing-sky-city",
+   "reference": "games/wrymwretch/assets/locations/galewing-sky-city.jpg",
+   "location_scene_count": 2,
+   "scene_lighting": "s_galewing_ward",
+   "camera": {
+    "location": [
+     -33,
+     0,
+     1.9
+    ],
+    "look_at": [
+     0,
+     0,
+     4
+    ],
+    "lens_mm": 22
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "scenes": {
+     "s_cloud_platform": {
+      "exposure_ev": -1.5
+     },
+     "s_galewing_ward": {
+      "exposure_ev": -1.7
+     }
+    },
+    "overview_ev": 0.0
+   }
+  },
+  {
+   "location": "heart-of-wound",
+   "reference": "games/wrymwretch/assets/locations/heart-of-wound.jpg",
+   "location_scene_count": 7,
+   "scene_lighting": "s_heart_of_wound",
+   "camera": {
+    "location": [
+     0,
+     -24,
+     2.5
+    ],
+    "look_at": [
+     0,
+     0,
+     7
+    ],
+    "lens_mm": 24
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "scenes": {
+     "s_battle_echo": {
+      "exposure_ev": -1.5
+     },
+     "s_choice": {
+      "exposure_ev": 0.6
+     },
+     "s_end_rememberer": {
+      "exposure_ev": -2.7
+     },
+     "s_end_saddle": {
+      "exposure_ev": 0.0
+     },
+     "s_end_whole": {
+      "exposure_ev": -3.6
+     },
+     "s_heart_of_wound": {
+      "exposure_ev": -1.0
+     },
+     "s_last_witness": {
+      "exposure_ev": 3.5
+     }
+    },
+    "overview_ev": 2.6
+   }
+  },
+  {
+   "location": "heartstone-caverns",
+   "reference": "games/wrymwretch/assets/locations/heartstone-caverns.jpg",
+   "location_scene_count": 2,
+   "scene_lighting": "s_heartstone_hall",
+   "camera": {
+    "location": [
+     0,
+     -42,
+     14
+    ],
+    "look_at": [
+     0,
+     30,
+     10
+    ],
+    "lens_mm": 24
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "scenes": {
+     "s_deep_core": {
+      "exposure_ev": 2.6
+     },
+     "s_heartstone_hall": {
+      "exposure_ev": -0.8
+     }
+    },
+    "overview_ev": 3.7
+   }
+  },
+  {
+   "location": "ranger-outpost",
+   "reference": "games/wrymwretch/assets/locations/ranger-outpost.jpg",
+   "location_scene_count": 1,
+   "scene_lighting": "s_cedar_outpost",
+   "camera": {
+    "location": [
+     0,
+     -13,
+     2.2
+    ],
+    "look_at": [
+     0,
+     10,
+     3
+    ],
+    "lens_mm": 24
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "scenes": {
+     "s_cedar_outpost": {
+      "exposure_ev": 2.8
+     }
+    },
+    "overview_ev": -1.6
+   }
+  },
+  {
+   "location": "rim-of-wrymreach",
+   "reference": "games/wrymwretch/assets/locations/rim-of-wrymreach.jpg",
+   "location_scene_count": 6,
+   "scene_lighting": "s_moot_camp",
+   "camera": {
+    "location": [
+     0,
+     -40,
+     2
+    ],
+    "look_at": [
+     0,
+     10,
+     10
+    ],
+    "lens_mm": 22
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "scenes": {
+     "s_chasm_seal1": {
+      "exposure_ev": 0.0
+     },
+     "s_chasm_seal2": {
+      "exposure_ev": 3.1
+     },
+     "s_moot_camp": {
+      "exposure_ev": 0.0
+     },
+     "s_moot_dawn": {
+      "exposure_ev": -1.0
+     },
+     "s_rim": {
+      "exposure_ev": -0.9
+     },
+     "s_rim_ambush": {
+      "exposure_ev": -3.9
+     }
+    },
+    "overview_ev": 2.0
+   }
+  },
+  {
+   "location": "seabed",
+   "reference": "games/wrymwretch/assets/locations/seabed.jpg",
+   "location_scene_count": 1,
+   "scene_lighting": "s_seabed",
+   "camera": {
+    "location": [
+     0,
+     -14,
+     74
+    ],
+    "look_at": [
+     -13,
+     0,
+     58
+    ],
+    "lens_mm": 24
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "scenes": {
+     "s_seabed": {
+      "exposure_ev": 3.3
+     }
+    },
+    "overview_ev": 0.0
+   }
+  },
+  {
+   "location": "sky-above-realms",
+   "reference": "games/wrymwretch/assets/locations/sky-above-realms.jpg",
+   "location_scene_count": 3,
+   "scene_lighting": "s_first_light",
+   "camera": {
+    "location": [
+     0,
+     -170,
+     60
+    ],
+    "look_at": [
+     0,
+     20,
+     100
+    ],
+    "lens_mm": 24
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "scenes": {
+     "s_end_architect": {
+      "exposure_ev": 3.3
+     },
+     "s_end_dormant": {
+      "exposure_ev": -3.6
+     },
+     "s_first_light": {
+      "exposure_ev": 4.1
+     }
+    },
+    "overview_ev": 0.0
+   }
+  },
+  {
+   "location": "starlit-priory",
+   "reference": "games/wrymwretch/assets/locations/starlit-priory.jpg",
+   "location_scene_count": 2,
+   "scene_lighting": "s_priory_halls",
+   "camera": {
+    "location": [
+     0,
+     -48.5,
+     2
+    ],
+    "look_at": [
+     0,
+     -10,
+     6
+    ],
+    "lens_mm": 22
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "piece_alpha": {
+     "door-light": 0.12
+    },
+    "scenes": {
+     "s_crystal_forest": {
+      "exposure_ev": 3.0
+     },
+     "s_priory_halls": {
+      "exposure_ev": -3.8
+     }
+    },
+    "overview_ev": 0.0
+   }
+  },
+  {
+   "location": "storm-chamber",
+   "reference": "games/wrymwretch/assets/locations/storm-chamber.jpg",
+   "location_scene_count": 1,
+   "scene_lighting": "s_storm_chamber",
+   "camera": {
+    "location": [
+     0,
+     -9.4,
+     9
+    ],
+    "look_at": [
+     0,
+     2,
+     1
+    ],
+    "lens_mm": 24
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "scenes": {
+     "s_storm_chamber": {
+      "exposure_ev": -4.7
+     }
+    },
+    "overview_ev": -0.6
+   }
+  },
+  {
+   "location": "tidecaller-shore",
+   "reference": "games/wrymwretch/assets/locations/tidecaller-shore.jpg",
+   "location_scene_count": 2,
+   "scene_lighting": "s_shore_night",
+   "camera": {
+    "location": [
+     8,
+     -12,
+     1.8
+    ],
+    "look_at": [
+     -14,
+     -4,
+     3
+    ],
+    "lens_mm": 22
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "scenes": {
+     "s_shore_night": {
+      "exposure_ev": 1.8
+     },
+     "s_tide_shore": {
+      "exposure_ev": -3.1
+     }
+    },
+    "overview_ev": 0.0
+   }
+  },
+  {
+   "location": "western-groves",
+   "reference": "games/wrymwretch/assets/locations/western-groves.jpg",
+   "location_scene_count": 2,
+   "scene_lighting": "s_elder_tree",
+   "camera": {
+    "location": [
+     -6,
+     -22,
+     2.5
+    ],
+    "look_at": [
+     2,
+     34,
+     10
+    ],
+    "lens_mm": 26
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "scenes": {
+     "s_cedar_grove": {
+      "exposure_ev": -1.5
+     },
+     "s_elder_tree": {
+      "exposure_ev": -1.5
+     }
+    },
+    "overview_ev": 1.6
+   }
+  }
+ ]
+}

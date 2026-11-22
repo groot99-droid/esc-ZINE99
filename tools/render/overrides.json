@@ -230,5 +230,258 @@
     "blockout_replace": {
       "outer-wall": []
     }
+  },
+  "duskbane-underworld/s_duskbane_halls": {
+    "camera": {
+      "location": [
+        0,
+        -19.6,
+        3.5
+      ]
+    }
+  },
+  "duskbane-underworld/s_underworld_tunnels": {
+    "camera": {
+      "location": [
+        -17,
+        -19.6,
+        3.5
+      ]
+    }
+  },
+  "starlit-priory/s_priory_halls": {
+    "camera": {
+      "location": [
+        0,
+        -49.2,
+        3.5
+      ]
+    }
+  },
+  "starlit-priory/s_crystal_forest": {
+    "camera": {
+      "look_at": [
+        0,
+        0,
+        4.6
+      ]
+    },
+    "blockout_replace": {
+      "star-dome": [
+        {
+          "id": "star-dome",
+          "shape": "box",
+          "role": "ceiling",
+          "size_m": [
+            20,
+            40,
+            0.6
+          ],
+          "location": [
+            0,
+            -30,
+            23.7
+          ],
+          "material": "star-glass"
+        }
+      ],
+      "doors-frame": [
+        {
+          "id": "doors-jamb-w",
+          "shape": "box",
+          "role": "trim",
+          "size_m": [
+            0.4,
+            1.0,
+            7.4
+          ],
+          "location": [
+            -2.0,
+            -10,
+            3.5
+          ],
+          "material": "gold-leaf",
+          "collide": false
+        },
+        {
+          "id": "doors-jamb-e",
+          "shape": "box",
+          "role": "trim",
+          "size_m": [
+            0.4,
+            1.0,
+            7.4
+          ],
+          "location": [
+            2.0,
+            -10,
+            3.5
+          ],
+          "material": "gold-leaf",
+          "collide": false
+        },
+        {
+          "id": "doors-head",
+          "shape": "box",
+          "role": "trim",
+          "size_m": [
+            4.4,
+            1.0,
+            0.4
+          ],
+          "location": [
+            0,
+            -10,
+            7.0
+          ],
+          "material": "gold-leaf",
+          "collide": false
+        }
+      ],
+      "doors-light": []
+    }
+  },
+  "starlit-priory/*": {
+    "blockout_replace": {
+      "star-dome": [
+        {
+          "id": "star-dome",
+          "shape": "box",
+          "role": "ceiling",
+          "size_m": [
+            20,
+            40,
+            0.6
+          ],
+          "location": [
+            0,
+            -30,
+            23.7
+          ],
+          "material": "star-glass"
+        }
+      ],
+      "doors-frame": [
+        {
+          "id": "doors-jamb-w",
+          "shape": "box",
+          "role": "trim",
+          "size_m": [
+            0.4,
+            1.0,
+            7.4
+          ],
+          "location": [
+            -2.0,
+            -10,
+            3.5
+          ],
+          "material": "gold-leaf",
+          "collide": false
+        },
+        {
+          "id": "doors-jamb-e",
+          "shape": "box",
+          "role": "trim",
+          "size_m": [
+            0.4,
+            1.0,
+            7.4
+          ],
+          "location": [
+            2.0,
+            -10,
+            3.5
+          ],
+          "material": "gold-leaf",
+          "collide": false
+        },
+        {
+          "id": "doors-head",
+          "shape": "box",
+          "role": "trim",
+          "size_m": [
+            4.4,
+            1.0,
+            0.4
+          ],
+          "location": [
+            0,
+            -10,
+            7.0
+          ],
+          "material": "gold-leaf",
+          "collide": false
+        }
+      ]
+    }
+  },
+  "storm-chamber/*": {
+    "blockout_replace": {
+      "door-opening": []
+    }
+  },
+  "galewing-sky-city/s_cloud_platform": {
+    "blockout_replace": {
+      "platform-underside": [
+        {
+          "id": "platform-underside",
+          "shape": "cone",
+          "role": "terrain",
+          "size_m": [
+            22,
+            13,
+            10
+          ],
+          "location": [
+            21,
+            0,
+            -5.0
+          ],
+          "rotation_deg": [
+            180,
+            0,
+            0
+          ],
+          "material": "rock"
+        }
+      ]
+    }
+  },
+  "back-stair/n3_stairwell": {
+    "camera": {
+      "look_at": [
+        0.75,
+        -10.0,
+        13.3
+      ]
+    }
+  },
+  "back-stair/n6_stairwell": {
+    "camera": {
+      "look_at": [
+        0.75,
+        -10.0,
+        13.3
+      ]
+    }
+  },
+  "ranger-outpost/s_cedar_outpost": {
+    "camera": {
+      "location": [
+        0,
+        13.8,
+        3.5
+      ]
+    }
+  },
+  "rim-of-wrymreach/s_chasm_seal1": {
+    "camera": {
+      "look_at": [
+        -10,
+        37.9,
+        2
+      ]
+    }
   }
 }

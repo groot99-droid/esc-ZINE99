@@ -50,5 +50,57 @@
  "s3_overrun_after": {
   "status": "found by the driver; proposed diff only",
   "what": "the look_at [0, 15, 3] lies inside breach-stair, so the frame is the stair box; a look_at at the breach [0, 15, 6] is proposed. Not applied: it changes the composition."
+ },
+ "s_duskbane_halls": {
+  "status": "fixed at render time + proposed diff",
+  "what": "the camera at y -21.5 stood behind south-wall (y -20.8 to -20.0), outside the hall, so the wall filled the frame; moved to y -19.6 (0.4 m inside) by a render-time camera override. Build-file diff proposed."
+ },
+ "s_underworld_tunnels": {
+  "status": "fixed at render time + proposed diff",
+  "what": "the camera at y -20.5 stood inside south-wall; moved to y -19.6 (inside the west tunnel) by a render-time camera override. Build-file diff proposed."
+ },
+ "s_priory_halls": {
+  "status": "fixed at render time + proposed diff",
+  "what": "the camera at y -50.5 stood behind hall-south (y -50.4 to -49.6); moved to y -49.2. Also star-dome (a solid ellipsoid) enclosed the dome-starlight area light at z 18, leaving the hall black: it is replaced by a thin lid at z 23.7 in this location by a render-time blockout override. Build-file diffs proposed."
+ },
+ "s_crystal_forest": {
+  "status": "fixed at render time + proposed diff",
+  "what": "doors-frame is a solid 4.4 x 1.0 x 7.4 m box that plugs the doorway the camera (y -10.5) looks through, and doors-light is an opaque emissive plane; the frame is replaced by two jambs and a head, doors-light is drawn 88% translucent (rig), and look_at z 4.19 (0.28 m inside forest-hill) is raised to 4.6. Build-file diffs proposed."
+ },
+ "s_storm_chamber": {
+  "status": "fixed at render time + proposed diff",
+  "what": "door-opening, an opaque black 'void' plane, filled the doorway the camera looks through from the stair; omitted by a render-time blockout override. Build-file diff proposed."
+ },
+ "s_cloud_platform": {
+  "status": "found by the driver (prop inside a piece); fixed at render time + proposed diff",
+  "what": "platform-underside is a cone rotated 180 degrees centred at z -0.5 (10 m tall), so its flat top stands 4.5 m above the platform and swallows the crystal-platform prop; centre z -5.0 puts the top at z 0. Applied by a render-time blockout override. Build-file diff proposed."
+ },
+ "s_cedar_outpost": {
+  "status": "found by looking (not flagged); fixed at render time + proposed diff",
+  "what": "the camera at y 15.5 stands outside the north palisade and the gate proxy (y 14.6) fills the frame; moved to y 13.8 inside the yard by a render-time camera override."
+ },
+ "s_chasm_seal1": {
+  "status": "found by the driver; fixed at render time + proposed diff",
+  "what": "look_at [-10, 40, 0] lies inside far-cliff (face at y 38); moved to the face, [-10, 37.9, 2]."
+ },
+ "s_end_dormant": {
+  "status": "found by the driver; proposed diff only",
+  "what": "look_at [0, 40, 0] lies below the realm slabs (tops z 3); the view reads as intended from 140 m up. A look_at [0, 40, 3] is proposed. Not applied."
+ },
+ "s_deep_core": {
+  "status": "found by the driver; proposed diff only",
+  "what": "the living-shard prop (z 3.5) stands inside the cone wall-crystals-3 (a 4 x 3 x 6 m cone at [10, -42, 3]); it is not in frame. Proposed: move the shard to [10, -40.4, 3.5]."
+ },
+ "n3_stairwell": {
+  "status": "fixed at render time + proposed diff",
+  "what": "look_at [0.75, -10, 12.8] lies inside flight-4b-low (top z 13.125), so the first-person view ended in the stair box; look_at raised to [0.75, -10.0, 13.3]. Build-file diff proposed."
+ },
+ "n6_stairwell": {
+  "status": "fixed at render time + proposed diff",
+  "what": "same camera as n3_stairwell (flight-4b-low holds the look_at); same fix."
+ },
+ "end_wrong_picture": {
+  "status": "checked: false positive, no change",
+  "what": "look_at [-9, -1, 1.6] lies inside the revolving-door piece, so the sight line ends in the door by design; the frame shows the door as intended."
  }
 }

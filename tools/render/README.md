@@ -46,6 +46,15 @@ recorded render-time overrides differ.
   `rig.json` entries for the nine locations: `grade_gain` (per-channel gain), `piece_alpha` glass, per-scene `exposure_ev` and
   `light_gains`, `overview_ev`. No model ledger exists for either game, so nothing was swapped.
 
+- Added for batch 4 (wrymwretch, behind-the-peephole): `finish.py --before <run dir>` writes `flagged-before-after.jpg` from a quick
+  `--no-overrides 1` pass of the flagged scenes (`--only` list) next to the final stills. `rig.json` entries for the 21 locations: per-scene
+  `exposure_ev` (set from quick renders by mean brightness, then by eye), `overview_ev`, the overview camera and, for starlit-priory,
+  `piece_alpha` of the material `door-light`. `overrides.json` takes a scene-level `blockout_replace` that REPLACES the location-level
+  one for that scene (the driver merges shallowly), so a scene entry repeats the location's pieces it still needs. Beyond the first pass's
+  flags it needed no driver change: the star-dome, doors-frame, door-opening and platform-underside fixes are blockout replacements, the
+  camera fixes are `camera` overrides (`location` or `look_at`). No model ledger exists for either game, so nothing was swapped.
+  Run each remote job on its own: `run.sh` reads one shared `args.txt`/`run.txt`, so two jobs started together clobber each other.
+
 ## Remote run
 
 Used on a rented RTX 4090: upload `render_scenes.py` and `pack.tgz`, run Blender 5.2.1 as above with `--device OPTIX`, fetch the

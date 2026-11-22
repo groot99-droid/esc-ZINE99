@@ -703,5 +703,614 @@
       }
     },
     "overview_ev": 3.0
+  },
+  "astral-expanse": {
+    "overview_scene": "s_expanse",
+    "overview": {
+      "location": [
+        -60,
+        -70,
+        40
+      ],
+      "look_at": [
+        0,
+        -30,
+        20
+      ],
+      "lens_mm": 26
+    },
+    "exposure_ev": 0.0,
+    "scenes": {
+      "s_battle_unwriter": {
+        "exposure_ev": -4.7
+      },
+      "s_expanse": {
+        "exposure_ev": -3.5
+      }
+    },
+    "overview_ev": 0.7
+  },
+  "bone-choir": {
+    "overview_scene": "s_bone_choir",
+    "overview": {
+      "location": [
+        0,
+        -29,
+        2
+      ],
+      "look_at": [
+        0,
+        25,
+        9
+      ],
+      "lens_mm": 24
+    },
+    "exposure_ev": 0.0,
+    "scenes": {
+      "s_bone_choir": {
+        "exposure_ev": -3.2
+      },
+      "s_empty_saddle": {
+        "exposure_ev": -0.7
+      }
+    },
+    "overview_ev": 1.6
+  },
+  "duskbane-underworld": {
+    "overview_scene": "s_duskbane_halls",
+    "overview": {
+      "location": [
+        0,
+        -19.5,
+        2.5
+      ],
+      "look_at": [
+        0,
+        12,
+        3.5
+      ],
+      "lens_mm": 24
+    },
+    "exposure_ev": 0.0,
+    "scenes": {
+      "s_duskbane_halls": {
+        "exposure_ev": 1.0
+      },
+      "s_forbidden_chamber": {
+        "exposure_ev": 3.6
+      },
+      "s_underworld_tunnels": {
+        "exposure_ev": 1.3
+      }
+    },
+    "overview_ev": 0.0
+  },
+  "galewing-sky-city": {
+    "overview_scene": "s_galewing_ward",
+    "overview": {
+      "location": [
+        -33,
+        0,
+        1.9
+      ],
+      "look_at": [
+        0,
+        0,
+        4
+      ],
+      "lens_mm": 22
+    },
+    "exposure_ev": 0.0,
+    "scenes": {
+      "s_cloud_platform": {
+        "exposure_ev": -1.5
+      },
+      "s_galewing_ward": {
+        "exposure_ev": -1.7
+      }
+    },
+    "overview_ev": 0.0
+  },
+  "heart-of-wound": {
+    "overview_scene": "s_heart_of_wound",
+    "overview": {
+      "location": [
+        0,
+        -24,
+        2.5
+      ],
+      "look_at": [
+        0,
+        0,
+        7
+      ],
+      "lens_mm": 24
+    },
+    "exposure_ev": 0.0,
+    "scenes": {
+      "s_battle_echo": {
+        "exposure_ev": -1.5
+      },
+      "s_choice": {
+        "exposure_ev": 0.6
+      },
+      "s_end_rememberer": {
+        "exposure_ev": -2.7
+      },
+      "s_end_saddle": {
+        "exposure_ev": 0.0
+      },
+      "s_end_whole": {
+        "exposure_ev": -3.6
+      },
+      "s_heart_of_wound": {
+        "exposure_ev": -1.0
+      },
+      "s_last_witness": {
+        "exposure_ev": 3.5
+      }
+    },
+    "overview_ev": 2.6
+  },
+  "heartstone-caverns": {
+    "overview_scene": "s_heartstone_hall",
+    "overview": {
+      "location": [
+        0,
+        -42,
+        14
+      ],
+      "look_at": [
+        0,
+        30,
+        10
+      ],
+      "lens_mm": 24
+    },
+    "exposure_ev": 0.0,
+    "scenes": {
+      "s_deep_core": {
+        "exposure_ev": 2.6
+      },
+      "s_heartstone_hall": {
+        "exposure_ev": -0.8
+      }
+    },
+    "overview_ev": 3.7
+  },
+  "ranger-outpost": {
+    "overview_scene": "s_cedar_outpost",
+    "overview": {
+      "location": [
+        0,
+        -13,
+        2.2
+      ],
+      "look_at": [
+        0,
+        10,
+        3
+      ],
+      "lens_mm": 24
+    },
+    "exposure_ev": 0.0,
+    "scenes": {
+      "s_cedar_outpost": {
+        "exposure_ev": 2.8
+      }
+    },
+    "overview_ev": -1.6
+  },
+  "rim-of-wrymreach": {
+    "overview_scene": "s_moot_camp",
+    "overview": {
+      "location": [
+        0,
+        -40,
+        2
+      ],
+      "look_at": [
+        0,
+        10,
+        10
+      ],
+      "lens_mm": 22
+    },
+    "exposure_ev": 0.0,
+    "scenes": {
+      "s_chasm_seal1": {
+        "exposure_ev": 0.0
+      },
+      "s_chasm_seal2": {
+        "exposure_ev": 3.1
+      },
+      "s_moot_camp": {
+        "exposure_ev": 0.0
+      },
+      "s_moot_dawn": {
+        "exposure_ev": -1.0
+      },
+      "s_rim": {
+        "exposure_ev": -0.9
+      },
+      "s_rim_ambush": {
+        "exposure_ev": -3.9
+      }
+    },
+    "overview_ev": 2.0
+  },
+  "seabed": {
+    "overview_scene": "s_seabed",
+    "overview": {
+      "location": [
+        0,
+        -14,
+        74
+      ],
+      "look_at": [
+        -13,
+        0,
+        58
+      ],
+      "lens_mm": 24
+    },
+    "exposure_ev": 0.0,
+    "scenes": {
+      "s_seabed": {
+        "exposure_ev": 3.3
+      }
+    },
+    "overview_ev": 0.0
+  },
+  "sky-above-realms": {
+    "overview_scene": "s_first_light",
+    "overview": {
+      "location": [
+        0,
+        -170,
+        60
+      ],
+      "look_at": [
+        0,
+        20,
+        100
+      ],
+      "lens_mm": 24
+    },
+    "exposure_ev": 0.0,
+    "scenes": {
+      "s_end_architect": {
+        "exposure_ev": 3.3
+      },
+      "s_end_dormant": {
+        "exposure_ev": -3.6
+      },
+      "s_first_light": {
+        "exposure_ev": 4.1
+      }
+    },
+    "overview_ev": 0.0
+  },
+  "starlit-priory": {
+    "overview_scene": "s_priory_halls",
+    "overview": {
+      "location": [
+        0,
+        -48.5,
+        2
+      ],
+      "look_at": [
+        0,
+        -10,
+        6
+      ],
+      "lens_mm": 22
+    },
+    "exposure_ev": 0.0,
+    "piece_alpha": {
+      "door-light": 0.12
+    },
+    "scenes": {
+      "s_crystal_forest": {
+        "exposure_ev": 3.0
+      },
+      "s_priory_halls": {
+        "exposure_ev": -3.8
+      }
+    },
+    "overview_ev": 0.0
+  },
+  "storm-chamber": {
+    "overview_scene": "s_storm_chamber",
+    "overview": {
+      "location": [
+        0,
+        -9.4,
+        9
+      ],
+      "look_at": [
+        0,
+        2,
+        1
+      ],
+      "lens_mm": 24
+    },
+    "exposure_ev": 0.0,
+    "scenes": {
+      "s_storm_chamber": {
+        "exposure_ev": -4.7
+      }
+    },
+    "overview_ev": -0.6
+  },
+  "tidecaller-shore": {
+    "overview_scene": "s_shore_night",
+    "overview": {
+      "location": [
+        8,
+        -12,
+        1.8
+      ],
+      "look_at": [
+        -14,
+        -4,
+        3
+      ],
+      "lens_mm": 22
+    },
+    "exposure_ev": 0.0,
+    "scenes": {
+      "s_shore_night": {
+        "exposure_ev": 1.8
+      },
+      "s_tide_shore": {
+        "exposure_ev": -3.1
+      }
+    },
+    "overview_ev": 0.0
+  },
+  "western-groves": {
+    "overview_scene": "s_elder_tree",
+    "overview": {
+      "location": [
+        -6,
+        -22,
+        2.5
+      ],
+      "look_at": [
+        2,
+        34,
+        10
+      ],
+      "lens_mm": 26
+    },
+    "exposure_ev": 0.0,
+    "scenes": {
+      "s_cedar_grove": {
+        "exposure_ev": -1.5
+      },
+      "s_elder_tree": {
+        "exposure_ev": -1.5
+      }
+    },
+    "overview_ev": 1.6
+  },
+  "back-office": {
+    "overview_scene": "n6_back_office",
+    "overview": {
+      "location": [
+        -2.3,
+        -1.8,
+        1.6
+      ],
+      "look_at": [
+        0.5,
+        2,
+        1.3
+      ],
+      "lens_mm": 22
+    },
+    "exposure_ev": 0.0,
+    "scenes": {
+      "n6_back_office": {
+        "exposure_ev": 0.0
+      }
+    },
+    "overview_ev": -0.5
+  },
+  "back-stair": {
+    "overview_scene": "n3_stairwell",
+    "overview": {
+      "location": [
+        1.0,
+        -1.5,
+        1.7
+      ],
+      "look_at": [
+        -0.6,
+        -9,
+        2.4
+      ],
+      "lens_mm": 22
+    },
+    "exposure_ev": 0.0,
+    "scenes": {
+      "n3_stairwell": {
+        "exposure_ev": 1.6
+      },
+      "n6_stairwell": {
+        "exposure_ev": 1.6
+      }
+    },
+    "overview_ev": -1.2
+  },
+  "lobby": {
+    "overview_scene": "dawn_lobby",
+    "overview": {
+      "location": [
+        6,
+        -5,
+        1.7
+      ],
+      "look_at": [
+        -6,
+        4,
+        2.2
+      ],
+      "lens_mm": 22
+    },
+    "exposure_ev": 0.0,
+    "scenes": {
+      "dawn_lobby": {
+        "exposure_ev": -1.1
+      },
+      "end_sitter": {
+        "exposure_ev": -1.5
+      },
+      "end_wrong_picture": {
+        "exposure_ev": -1.0
+      }
+    },
+    "overview_ev": 0.0
+  },
+  "office": {
+    "overview_scene": "n1_office",
+    "overview": {
+      "location": [
+        -1.6,
+        -1.2,
+        1.5
+      ],
+      "look_at": [
+        1,
+        1.4,
+        1.1
+      ],
+      "lens_mm": 18
+    },
+    "exposure_ev": 0.0,
+    "scenes": {
+      "n1_morning": {
+        "exposure_ev": -0.8
+      },
+      "n1_office": {
+        "exposure_ev": 1.4
+      },
+      "n2_morning": {
+        "exposure_ev": -0.8
+      },
+      "n2_office": {
+        "exposure_ev": 1.4
+      },
+      "n2_seventh_bell": {
+        "exposure_ev": 0.0
+      },
+      "n3_morning": {
+        "exposure_ev": -0.8
+      },
+      "n3_office": {
+        "exposure_ev": 1.4
+      },
+      "n3_tea": {
+        "exposure_ev": 0.9
+      },
+      "n4_morning": {
+        "exposure_ev": -0.8
+      },
+      "n4_office": {
+        "exposure_ev": 1.4
+      },
+      "n5_morning": {
+        "exposure_ev": -0.8
+      },
+      "n5_office": {
+        "exposure_ev": 1.4
+      },
+      "n6_morning": {
+        "exposure_ev": -0.8
+      },
+      "n6_office": {
+        "exposure_ev": 1.4
+      },
+      "n7_office": {
+        "exposure_ev": 1.4
+      },
+      "n7_your_door": {
+        "exposure_ev": 0.6
+      }
+    },
+    "overview_ev": 0.0
+  },
+  "river-wall": {
+    "overview_scene": "end_open_door",
+    "overview": {
+      "location": [
+        -5,
+        -3.2,
+        1.7
+      ],
+      "look_at": [
+        15,
+        3,
+        4
+      ],
+      "lens_mm": 24
+    },
+    "exposure_ev": 0.0,
+    "scenes": {
+      "end_open_door": {
+        "exposure_ev": -2.5
+      }
+    },
+    "overview_ev": 0.0
+  },
+  "staff-alley": {
+    "overview_scene": "n1_arrival",
+    "overview": {
+      "location": [
+        13,
+        -3,
+        1.7
+      ],
+      "look_at": [
+        -8,
+        0.5,
+        2
+      ],
+      "lens_mm": 22
+    },
+    "exposure_ev": 0.0,
+    "scenes": {
+      "n1_arrival": {
+        "exposure_ev": 3.5
+      }
+    },
+    "overview_ev": -0.5
+  },
+  "valet-passage": {
+    "overview_scene": "n1_passage",
+    "overview": {
+      "location": [
+        31,
+        0,
+        1.6
+      ],
+      "look_at": [
+        0,
+        0,
+        1.4
+      ],
+      "lens_mm": 22
+    },
+    "exposure_ev": 0.0,
+    "scenes": {
+      "end_under_door": {
+        "exposure_ev": 10.9
+      },
+      "n1_passage": {
+        "exposure_ev": 1.3
+      }
+    },
+    "overview_ev": 0.0
   }
 }

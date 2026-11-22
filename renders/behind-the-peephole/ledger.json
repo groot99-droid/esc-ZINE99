@@ -1,0 +1,3055 @@
+{
+ "game": "behind-the-peephole",
+ "tiers": {
+  "hero": "2560x1440, 256 samples",
+  "standard": "1920x1080, 128 samples",
+  "overview": "1920x1080, 128 samples"
+ },
+ "renderer": "Cycles (OptiX), OpenImageDenoise, Blender 5.2.1",
+ "scenes": [
+  {
+   "scene": "n6_back_office",
+   "location": "back-office",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 14.1
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.8
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 6.0
+    }
+   ],
+   "props": [
+    {
+     "id": "safe",
+     "object": "safe",
+     "source": "box-proxy"
+    },
+    {
+     "id": "coat-stand",
+     "object": "coat-stand",
+     "source": "box-proxy"
+    },
+    {
+     "id": "office-chair",
+     "object": "office-chair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door",
+     "object": "staff-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "dark-lamp",
+     "object": "desk-lamp",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "door",
+      "piece": "wainscot-west",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door",
+      "piece": "wall-west-south",
+      "samples": "6/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "n3_stairwell",
+   "location": "back-stair",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 12.8
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.0
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 6.4
+    }
+   ],
+   "props": [
+    {
+     "id": "chute-box",
+     "object": "chute-box",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cart-1",
+     "object": "laundry-cart",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cart-2",
+     "object": "laundry-cart",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cart-3",
+     "object": "laundry-cart",
+     "source": "box-proxy"
+    },
+    {
+     "id": "stair-door",
+     "object": "staff-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "back-office-door",
+     "object": "staff-door",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [
+    "blockout piece 'flight-4b-high' (structure) stands between the camera and its look_at"
+   ],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "camera"
+   ],
+   "flag_status": {
+    "status": "fixed at render time + proposed diff",
+    "what": "look_at [0.75, -10, 12.8] lies inside flight-4b-low (top z 13.125), so the first-person view ended in the stair box; look_at raised to [0.75, -10.0, 13.3]. Build-file diff proposed."
+   }
+  },
+  {
+   "scene": "n6_stairwell",
+   "location": "back-stair",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 12.6
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.0
+    }
+   ],
+   "props": [
+    {
+     "id": "chute-box",
+     "object": "chute-box",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cart-1",
+     "object": "laundry-cart",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cart-2",
+     "object": "laundry-cart",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cart-3",
+     "object": "laundry-cart",
+     "source": "box-proxy"
+    },
+    {
+     "id": "stair-door",
+     "object": "staff-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "back-office-door",
+     "object": "staff-door",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [
+    "blockout piece 'flight-4b-high' (structure) stands between the camera and its look_at"
+   ],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "camera"
+   ],
+   "flag_status": {
+    "status": "fixed at render time + proposed diff",
+    "what": "same camera as n3_stairwell (flight-4b-low holds the look_at); same fix."
+   }
+  },
+  {
+   "scene": "dawn_lobby",
+   "location": "lobby",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 14.6
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.7
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 6.3
+    }
+   ],
+   "props": [
+    {
+     "id": "chandelier",
+     "object": "chandelier",
+     "source": "box-proxy"
+    },
+    {
+     "id": "reception-desk",
+     "object": "reception-desk",
+     "source": "box-proxy"
+    },
+    {
+     "id": "armchair-1",
+     "object": "lobby-armchair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "armchair-2",
+     "object": "lobby-armchair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "luggage-trolley",
+     "object": "luggage-trolley",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "end_wrong_picture",
+   "location": "lobby",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 14.6
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 14.3
+    }
+   ],
+   "props": [
+    {
+     "id": "chandelier",
+     "object": "chandelier",
+     "source": "box-proxy"
+    },
+    {
+     "id": "reception-desk",
+     "object": "reception-desk",
+     "source": "box-proxy"
+    },
+    {
+     "id": "armchair-1",
+     "object": "lobby-armchair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "armchair-2",
+     "object": "lobby-armchair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "luggage-trolley",
+     "object": "luggage-trolley",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [
+     "revolving-door"
+    ],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "checked: false positive, no change",
+    "what": "look_at [-9, -1, 1.6] lies inside the revolving-door piece, so the sight line ends in the door by design; the frame shows the door as intended."
+   }
+  },
+  {
+   "scene": "end_sitter",
+   "location": "lobby",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 14.8
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.9
+    }
+   ],
+   "props": [
+    {
+     "id": "chandelier",
+     "object": "chandelier",
+     "source": "box-proxy"
+    },
+    {
+     "id": "reception-desk",
+     "object": "reception-desk",
+     "source": "box-proxy"
+    },
+    {
+     "id": "armchair-1",
+     "object": "lobby-armchair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "armchair-2",
+     "object": "lobby-armchair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "luggage-trolley",
+     "object": "luggage-trolley",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "n1_office",
+   "location": "office",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.5
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.6
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 6.0
+    }
+   ],
+   "props": [
+    {
+     "id": "desk",
+     "object": "desk",
+     "source": "box-proxy"
+    },
+    {
+     "id": "desk-lamp",
+     "object": "desk-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "telephone",
+     "object": "telephone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "evening-paper",
+     "object": "evening-paper",
+     "source": "box-proxy"
+    },
+    {
+     "id": "office-chair",
+     "object": "office-chair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bell-board",
+     "object": "bell-board",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cork-board",
+     "object": "cork-board",
+     "source": "box-proxy"
+    },
+    {
+     "id": "chute-hatch",
+     "object": "chute-hatch",
+     "source": "box-proxy"
+    },
+    {
+     "id": "card-table",
+     "object": "card-table",
+     "source": "box-proxy"
+    },
+    {
+     "id": "kettle",
+     "object": "kettle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "coat-stand",
+     "object": "coat-stand",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "n2_office",
+   "location": "office",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.4
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.7
+    }
+   ],
+   "props": [
+    {
+     "id": "desk",
+     "object": "desk",
+     "source": "box-proxy"
+    },
+    {
+     "id": "logbook",
+     "object": "logbook",
+     "source": "box-proxy"
+    },
+    {
+     "id": "desk-lamp",
+     "object": "desk-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "telephone",
+     "object": "telephone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "evening-paper",
+     "object": "evening-paper",
+     "source": "box-proxy"
+    },
+    {
+     "id": "office-chair",
+     "object": "office-chair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bell-board",
+     "object": "bell-board",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cork-board",
+     "object": "cork-board",
+     "source": "box-proxy"
+    },
+    {
+     "id": "chute-hatch",
+     "object": "chute-hatch",
+     "source": "box-proxy"
+    },
+    {
+     "id": "card-table",
+     "object": "card-table",
+     "source": "box-proxy"
+    },
+    {
+     "id": "card-deck",
+     "object": "card-deck",
+     "source": "box-proxy"
+    },
+    {
+     "id": "kettle",
+     "object": "kettle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "coat-stand",
+     "object": "coat-stand",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "n2_seventh_bell",
+   "location": "office",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 14.1
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.9
+    }
+   ],
+   "props": [
+    {
+     "id": "desk",
+     "object": "desk",
+     "source": "box-proxy"
+    },
+    {
+     "id": "logbook",
+     "object": "logbook",
+     "source": "box-proxy"
+    },
+    {
+     "id": "desk-lamp",
+     "object": "desk-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "telephone",
+     "object": "telephone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "evening-paper",
+     "object": "evening-paper",
+     "source": "box-proxy"
+    },
+    {
+     "id": "office-chair",
+     "object": "office-chair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bell-board",
+     "object": "bell-board",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cork-board",
+     "object": "cork-board",
+     "source": "box-proxy"
+    },
+    {
+     "id": "chute-hatch",
+     "object": "chute-hatch",
+     "source": "box-proxy"
+    },
+    {
+     "id": "card-table",
+     "object": "card-table",
+     "source": "box-proxy"
+    },
+    {
+     "id": "card-deck",
+     "object": "card-deck",
+     "source": "box-proxy"
+    },
+    {
+     "id": "kettle",
+     "object": "kettle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "coat-stand",
+     "object": "coat-stand",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "n3_office",
+   "location": "office",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.6
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.7
+    }
+   ],
+   "props": [
+    {
+     "id": "desk",
+     "object": "desk",
+     "source": "box-proxy"
+    },
+    {
+     "id": "logbook",
+     "object": "logbook",
+     "source": "box-proxy"
+    },
+    {
+     "id": "desk-lamp",
+     "object": "desk-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "telephone",
+     "object": "telephone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "evening-paper",
+     "object": "evening-paper",
+     "source": "box-proxy"
+    },
+    {
+     "id": "office-chair",
+     "object": "office-chair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bell-board",
+     "object": "bell-board",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cork-board",
+     "object": "cork-board",
+     "source": "box-proxy"
+    },
+    {
+     "id": "chute-hatch",
+     "object": "chute-hatch",
+     "source": "box-proxy"
+    },
+    {
+     "id": "card-table",
+     "object": "card-table",
+     "source": "box-proxy"
+    },
+    {
+     "id": "card-deck",
+     "object": "card-deck",
+     "source": "box-proxy"
+    },
+    {
+     "id": "kettle",
+     "object": "kettle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "coat-stand",
+     "object": "coat-stand",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "n3_tea",
+   "location": "office",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.1
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.1
+    }
+   ],
+   "props": [
+    {
+     "id": "desk",
+     "object": "desk",
+     "source": "box-proxy"
+    },
+    {
+     "id": "logbook",
+     "object": "logbook",
+     "source": "box-proxy"
+    },
+    {
+     "id": "desk-lamp",
+     "object": "desk-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "telephone",
+     "object": "telephone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "evening-paper",
+     "object": "evening-paper",
+     "source": "box-proxy"
+    },
+    {
+     "id": "office-chair",
+     "object": "office-chair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bell-board",
+     "object": "bell-board",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cork-board",
+     "object": "cork-board",
+     "source": "box-proxy"
+    },
+    {
+     "id": "chute-hatch",
+     "object": "chute-hatch",
+     "source": "box-proxy"
+    },
+    {
+     "id": "card-table",
+     "object": "card-table",
+     "source": "box-proxy"
+    },
+    {
+     "id": "card-deck",
+     "object": "card-deck",
+     "source": "box-proxy"
+    },
+    {
+     "id": "kettle",
+     "object": "kettle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "coat-stand",
+     "object": "coat-stand",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "n4_office",
+   "location": "office",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.6
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.8
+    }
+   ],
+   "props": [
+    {
+     "id": "desk",
+     "object": "desk",
+     "source": "box-proxy"
+    },
+    {
+     "id": "logbook",
+     "object": "logbook",
+     "source": "box-proxy"
+    },
+    {
+     "id": "desk-lamp",
+     "object": "desk-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "telephone",
+     "object": "telephone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "evening-paper",
+     "object": "evening-paper",
+     "source": "box-proxy"
+    },
+    {
+     "id": "office-chair",
+     "object": "office-chair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bell-board",
+     "object": "bell-board",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cork-board",
+     "object": "cork-board",
+     "source": "box-proxy"
+    },
+    {
+     "id": "chute-hatch",
+     "object": "chute-hatch",
+     "source": "box-proxy"
+    },
+    {
+     "id": "card-table",
+     "object": "card-table",
+     "source": "box-proxy"
+    },
+    {
+     "id": "card-deck",
+     "object": "card-deck",
+     "source": "box-proxy"
+    },
+    {
+     "id": "kettle",
+     "object": "kettle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "coat-stand",
+     "object": "coat-stand",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "n5_office",
+   "location": "office",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.4
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.8
+    }
+   ],
+   "props": [
+    {
+     "id": "desk",
+     "object": "desk",
+     "source": "box-proxy"
+    },
+    {
+     "id": "logbook",
+     "object": "logbook",
+     "source": "box-proxy"
+    },
+    {
+     "id": "desk-lamp",
+     "object": "desk-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "telephone",
+     "object": "telephone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "evening-paper",
+     "object": "evening-paper",
+     "source": "box-proxy"
+    },
+    {
+     "id": "office-chair",
+     "object": "office-chair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bell-board",
+     "object": "bell-board",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cork-board",
+     "object": "cork-board",
+     "source": "box-proxy"
+    },
+    {
+     "id": "chute-hatch",
+     "object": "chute-hatch",
+     "source": "box-proxy"
+    },
+    {
+     "id": "card-table",
+     "object": "card-table",
+     "source": "box-proxy"
+    },
+    {
+     "id": "card-deck",
+     "object": "card-deck",
+     "source": "box-proxy"
+    },
+    {
+     "id": "kettle",
+     "object": "kettle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "coat-stand",
+     "object": "coat-stand",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "n6_office",
+   "location": "office",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.5
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.7
+    }
+   ],
+   "props": [
+    {
+     "id": "desk",
+     "object": "desk",
+     "source": "box-proxy"
+    },
+    {
+     "id": "logbook",
+     "object": "logbook",
+     "source": "box-proxy"
+    },
+    {
+     "id": "desk-lamp",
+     "object": "desk-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "telephone",
+     "object": "telephone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "evening-paper",
+     "object": "evening-paper",
+     "source": "box-proxy"
+    },
+    {
+     "id": "office-chair",
+     "object": "office-chair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bell-board",
+     "object": "bell-board",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cork-board",
+     "object": "cork-board",
+     "source": "box-proxy"
+    },
+    {
+     "id": "chute-hatch",
+     "object": "chute-hatch",
+     "source": "box-proxy"
+    },
+    {
+     "id": "card-table",
+     "object": "card-table",
+     "source": "box-proxy"
+    },
+    {
+     "id": "card-deck",
+     "object": "card-deck",
+     "source": "box-proxy"
+    },
+    {
+     "id": "kettle",
+     "object": "kettle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "coat-stand",
+     "object": "coat-stand",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "n7_office",
+   "location": "office",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.5
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.8
+    }
+   ],
+   "props": [
+    {
+     "id": "desk",
+     "object": "desk",
+     "source": "box-proxy"
+    },
+    {
+     "id": "logbook",
+     "object": "logbook",
+     "source": "box-proxy"
+    },
+    {
+     "id": "desk-lamp",
+     "object": "desk-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "telephone",
+     "object": "telephone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "evening-paper",
+     "object": "evening-paper",
+     "source": "box-proxy"
+    },
+    {
+     "id": "office-chair",
+     "object": "office-chair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bell-board",
+     "object": "bell-board",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cork-board",
+     "object": "cork-board",
+     "source": "box-proxy"
+    },
+    {
+     "id": "chute-hatch",
+     "object": "chute-hatch",
+     "source": "box-proxy"
+    },
+    {
+     "id": "card-table",
+     "object": "card-table",
+     "source": "box-proxy"
+    },
+    {
+     "id": "card-deck",
+     "object": "card-deck",
+     "source": "box-proxy"
+    },
+    {
+     "id": "kettle",
+     "object": "kettle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "coat-stand",
+     "object": "coat-stand",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "n1_morning",
+   "location": "office",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 14.1
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 14.1
+    }
+   ],
+   "props": [
+    {
+     "id": "desk",
+     "object": "desk",
+     "source": "box-proxy"
+    },
+    {
+     "id": "logbook",
+     "object": "logbook",
+     "source": "box-proxy"
+    },
+    {
+     "id": "desk-lamp",
+     "object": "desk-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "telephone",
+     "object": "telephone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "evening-paper",
+     "object": "evening-paper",
+     "source": "box-proxy"
+    },
+    {
+     "id": "office-chair",
+     "object": "office-chair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bell-board",
+     "object": "bell-board",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cork-board",
+     "object": "cork-board",
+     "source": "box-proxy"
+    },
+    {
+     "id": "chute-hatch",
+     "object": "chute-hatch",
+     "source": "box-proxy"
+    },
+    {
+     "id": "card-table",
+     "object": "card-table",
+     "source": "box-proxy"
+    },
+    {
+     "id": "card-deck",
+     "object": "card-deck",
+     "source": "box-proxy"
+    },
+    {
+     "id": "kettle",
+     "object": "kettle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "coat-stand",
+     "object": "coat-stand",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "n2_morning",
+   "location": "office",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 14.3
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 14.0
+    }
+   ],
+   "props": [
+    {
+     "id": "desk",
+     "object": "desk",
+     "source": "box-proxy"
+    },
+    {
+     "id": "logbook",
+     "object": "logbook",
+     "source": "box-proxy"
+    },
+    {
+     "id": "desk-lamp",
+     "object": "desk-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "telephone",
+     "object": "telephone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "evening-paper",
+     "object": "evening-paper",
+     "source": "box-proxy"
+    },
+    {
+     "id": "office-chair",
+     "object": "office-chair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bell-board",
+     "object": "bell-board",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cork-board",
+     "object": "cork-board",
+     "source": "box-proxy"
+    },
+    {
+     "id": "chute-hatch",
+     "object": "chute-hatch",
+     "source": "box-proxy"
+    },
+    {
+     "id": "card-table",
+     "object": "card-table",
+     "source": "box-proxy"
+    },
+    {
+     "id": "card-deck",
+     "object": "card-deck",
+     "source": "box-proxy"
+    },
+    {
+     "id": "kettle",
+     "object": "kettle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "coat-stand",
+     "object": "coat-stand",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "n3_morning",
+   "location": "office",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 14.2
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 14.1
+    }
+   ],
+   "props": [
+    {
+     "id": "desk",
+     "object": "desk",
+     "source": "box-proxy"
+    },
+    {
+     "id": "logbook",
+     "object": "logbook",
+     "source": "box-proxy"
+    },
+    {
+     "id": "desk-lamp",
+     "object": "desk-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "telephone",
+     "object": "telephone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "evening-paper",
+     "object": "evening-paper",
+     "source": "box-proxy"
+    },
+    {
+     "id": "office-chair",
+     "object": "office-chair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bell-board",
+     "object": "bell-board",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cork-board",
+     "object": "cork-board",
+     "source": "box-proxy"
+    },
+    {
+     "id": "chute-hatch",
+     "object": "chute-hatch",
+     "source": "box-proxy"
+    },
+    {
+     "id": "card-table",
+     "object": "card-table",
+     "source": "box-proxy"
+    },
+    {
+     "id": "card-deck",
+     "object": "card-deck",
+     "source": "box-proxy"
+    },
+    {
+     "id": "kettle",
+     "object": "kettle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "coat-stand",
+     "object": "coat-stand",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "n4_morning",
+   "location": "office",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 14.1
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 14.1
+    }
+   ],
+   "props": [
+    {
+     "id": "desk",
+     "object": "desk",
+     "source": "box-proxy"
+    },
+    {
+     "id": "logbook",
+     "object": "logbook",
+     "source": "box-proxy"
+    },
+    {
+     "id": "desk-lamp",
+     "object": "desk-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "telephone",
+     "object": "telephone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "evening-paper",
+     "object": "evening-paper",
+     "source": "box-proxy"
+    },
+    {
+     "id": "office-chair",
+     "object": "office-chair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bell-board",
+     "object": "bell-board",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cork-board",
+     "object": "cork-board",
+     "source": "box-proxy"
+    },
+    {
+     "id": "chute-hatch",
+     "object": "chute-hatch",
+     "source": "box-proxy"
+    },
+    {
+     "id": "card-table",
+     "object": "card-table",
+     "source": "box-proxy"
+    },
+    {
+     "id": "card-deck",
+     "object": "card-deck",
+     "source": "box-proxy"
+    },
+    {
+     "id": "kettle",
+     "object": "kettle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "coat-stand",
+     "object": "coat-stand",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "n5_morning",
+   "location": "office",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 14.2
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 14.1
+    }
+   ],
+   "props": [
+    {
+     "id": "desk",
+     "object": "desk",
+     "source": "box-proxy"
+    },
+    {
+     "id": "logbook",
+     "object": "logbook",
+     "source": "box-proxy"
+    },
+    {
+     "id": "desk-lamp",
+     "object": "desk-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "telephone",
+     "object": "telephone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "evening-paper",
+     "object": "evening-paper",
+     "source": "box-proxy"
+    },
+    {
+     "id": "office-chair",
+     "object": "office-chair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bell-board",
+     "object": "bell-board",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cork-board",
+     "object": "cork-board",
+     "source": "box-proxy"
+    },
+    {
+     "id": "chute-hatch",
+     "object": "chute-hatch",
+     "source": "box-proxy"
+    },
+    {
+     "id": "card-table",
+     "object": "card-table",
+     "source": "box-proxy"
+    },
+    {
+     "id": "card-deck",
+     "object": "card-deck",
+     "source": "box-proxy"
+    },
+    {
+     "id": "kettle",
+     "object": "kettle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "coat-stand",
+     "object": "coat-stand",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "n6_morning",
+   "location": "office",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 14.1
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 14.0
+    }
+   ],
+   "props": [
+    {
+     "id": "desk",
+     "object": "desk",
+     "source": "box-proxy"
+    },
+    {
+     "id": "logbook",
+     "object": "logbook",
+     "source": "box-proxy"
+    },
+    {
+     "id": "desk-lamp",
+     "object": "desk-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "telephone",
+     "object": "telephone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "evening-paper",
+     "object": "evening-paper",
+     "source": "box-proxy"
+    },
+    {
+     "id": "office-chair",
+     "object": "office-chair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bell-board",
+     "object": "bell-board",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cork-board",
+     "object": "cork-board",
+     "source": "box-proxy"
+    },
+    {
+     "id": "chute-hatch",
+     "object": "chute-hatch",
+     "source": "box-proxy"
+    },
+    {
+     "id": "card-table",
+     "object": "card-table",
+     "source": "box-proxy"
+    },
+    {
+     "id": "card-deck",
+     "object": "card-deck",
+     "source": "box-proxy"
+    },
+    {
+     "id": "kettle",
+     "object": "kettle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "coat-stand",
+     "object": "coat-stand",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "n7_your_door",
+   "location": "office",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 12.8
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 12.2
+    }
+   ],
+   "props": [
+    {
+     "id": "desk",
+     "object": "desk",
+     "source": "box-proxy"
+    },
+    {
+     "id": "logbook",
+     "object": "logbook",
+     "source": "box-proxy"
+    },
+    {
+     "id": "desk-lamp",
+     "object": "desk-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "telephone",
+     "object": "telephone",
+     "source": "box-proxy"
+    },
+    {
+     "id": "evening-paper",
+     "object": "evening-paper",
+     "source": "box-proxy"
+    },
+    {
+     "id": "office-chair",
+     "object": "office-chair",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bell-board",
+     "object": "bell-board",
+     "source": "box-proxy"
+    },
+    {
+     "id": "cork-board",
+     "object": "cork-board",
+     "source": "box-proxy"
+    },
+    {
+     "id": "chute-hatch",
+     "object": "chute-hatch",
+     "source": "box-proxy"
+    },
+    {
+     "id": "card-table",
+     "object": "card-table",
+     "source": "box-proxy"
+    },
+    {
+     "id": "card-deck",
+     "object": "card-deck",
+     "source": "box-proxy"
+    },
+    {
+     "id": "kettle",
+     "object": "kettle",
+     "source": "box-proxy"
+    },
+    {
+     "id": "coat-stand",
+     "object": "coat-stand",
+     "source": "box-proxy"
+    },
+    {
+     "id": "office-rose",
+     "object": "brass-rose",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "office-rose",
+      "piece": "office-door-leaf",
+      "samples": "9/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "end_open_door",
+   "location": "river-wall",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 7.0
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 7.6
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 4.5
+    }
+   ],
+   "props": [
+    {
+     "id": "bollard-1",
+     "object": "mooring-bollard",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bollard-2",
+     "object": "mooring-bollard",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bollard-3",
+     "object": "mooring-bollard",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bollard-4",
+     "object": "mooring-bollard",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp-post-1",
+     "object": "iron-lamp-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp-post-2",
+     "object": "iron-lamp-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "dustbin-1",
+     "object": "dustbin",
+     "source": "box-proxy"
+    },
+    {
+     "id": "dustbin-2",
+     "object": "dustbin",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "n1_arrival",
+   "location": "staff-alley",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 9.5
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 7.2
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 5.3
+    }
+   ],
+   "props": [
+    {
+     "id": "staff-door",
+     "object": "staff-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "noticeboard",
+     "object": "noticeboard",
+     "source": "box-proxy"
+    },
+    {
+     "id": "dustbin-1",
+     "object": "dustbin",
+     "source": "box-proxy"
+    },
+    {
+     "id": "dustbin-2",
+     "object": "dustbin",
+     "source": "box-proxy"
+    },
+    {
+     "id": "dustbin-3",
+     "object": "dustbin",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp-post",
+     "object": "iron-lamp-post",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "n1_passage",
+   "location": "valet-passage",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 11.4
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 9.2
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 5.6
+    }
+   ],
+   "props": [
+    {
+     "id": "door-401",
+     "object": "valet-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rose-401",
+     "object": "brass-rose",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-402",
+     "object": "valet-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rose-402",
+     "object": "brass-rose",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-403",
+     "object": "valet-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rose-403",
+     "object": "brass-rose",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-404",
+     "object": "valet-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rose-404",
+     "object": "brass-rose",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-405",
+     "object": "valet-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rose-405",
+     "object": "brass-rose",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-406",
+     "object": "valet-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rose-406",
+     "object": "brass-rose",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sconce-04",
+     "object": "wall-sconce",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sconce-12",
+     "object": "wall-sconce",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sconce-20",
+     "object": "wall-sconce",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sconce-28",
+     "object": "wall-sconce",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sconce-36",
+     "object": "wall-sconce",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sconce-44",
+     "object": "wall-sconce",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sconce-52",
+     "object": "wall-sconce",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sconce-60",
+     "object": "wall-sconce",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lost-property",
+     "object": "lost-property-cabinet",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "door-401",
+      "piece": "wainscot-north",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-402",
+      "piece": "wainscot-north",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-403",
+      "piece": "wainscot-north",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-404",
+      "piece": "wainscot-north",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-405",
+      "piece": "wainscot-north",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-406",
+      "piece": "wainscot-north",
+      "samples": "3/27"
+     },
+     {
+      "prop": "lost-property",
+      "piece": "wainscot-south",
+      "samples": "3/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "end_under_door",
+   "location": "valet-passage",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 9.2
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.8
+    }
+   ],
+   "props": [
+    {
+     "id": "door-401",
+     "object": "valet-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rose-401",
+     "object": "brass-rose",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-402",
+     "object": "valet-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rose-402",
+     "object": "brass-rose",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-403",
+     "object": "valet-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rose-403",
+     "object": "brass-rose",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-404",
+     "object": "valet-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rose-404",
+     "object": "brass-rose",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-405",
+     "object": "valet-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rose-405",
+     "object": "brass-rose",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-406",
+     "object": "valet-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rose-406",
+     "object": "brass-rose",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sconce-04",
+     "object": "wall-sconce",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sconce-12",
+     "object": "wall-sconce",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sconce-20",
+     "object": "wall-sconce",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sconce-28",
+     "object": "wall-sconce",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sconce-36",
+     "object": "wall-sconce",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sconce-44",
+     "object": "wall-sconce",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sconce-52",
+     "object": "wall-sconce",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sconce-60",
+     "object": "wall-sconce",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lost-property",
+     "object": "lost-property-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "maids-trolley",
+     "object": "maids-trolley",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "door-401",
+      "piece": "wainscot-north",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-402",
+      "piece": "wainscot-north",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-403",
+      "piece": "wainscot-north",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-404",
+      "piece": "wainscot-north",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-405",
+      "piece": "wainscot-north",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-406",
+      "piece": "wainscot-north",
+      "samples": "3/27"
+     },
+     {
+      "prop": "lost-property",
+      "piece": "wainscot-south",
+      "samples": "3/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  }
+ ],
+ "overviews": [
+  {
+   "location": "back-office",
+   "reference": "games/behind-the-peephole/assets/locations/back-office.jpg",
+   "location_scene_count": 1,
+   "scene_lighting": "n6_back_office",
+   "camera": {
+    "location": [
+     -2.3,
+     -1.8,
+     1.6
+    ],
+    "look_at": [
+     0.5,
+     2,
+     1.3
+    ],
+    "lens_mm": 22
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "scenes": {
+     "n6_back_office": {
+      "exposure_ev": 0.0
+     }
+    },
+    "overview_ev": -0.5
+   }
+  },
+  {
+   "location": "back-stair",
+   "reference": "games/behind-the-peephole/assets/locations/back-stair.jpg",
+   "location_scene_count": 2,
+   "scene_lighting": "n3_stairwell",
+   "camera": {
+    "location": [
+     1.0,
+     -1.5,
+     1.7
+    ],
+    "look_at": [
+     -0.6,
+     -9,
+     2.4
+    ],
+    "lens_mm": 22
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "scenes": {
+     "n3_stairwell": {
+      "exposure_ev": 1.6
+     },
+     "n6_stairwell": {
+      "exposure_ev": 1.6
+     }
+    },
+    "overview_ev": -1.2
+   }
+  },
+  {
+   "location": "lobby",
+   "reference": "games/behind-the-peephole/assets/locations/lobby.jpg",
+   "location_scene_count": 3,
+   "scene_lighting": "dawn_lobby",
+   "camera": {
+    "location": [
+     6,
+     -5,
+     1.7
+    ],
+    "look_at": [
+     -6,
+     4,
+     2.2
+    ],
+    "lens_mm": 22
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "scenes": {
+     "dawn_lobby": {
+      "exposure_ev": -1.1
+     },
+     "end_sitter": {
+      "exposure_ev": -1.5
+     },
+     "end_wrong_picture": {
+      "exposure_ev": -1.0
+     }
+    },
+    "overview_ev": 0.0
+   }
+  },
+  {
+   "location": "office",
+   "reference": "games/behind-the-peephole/assets/locations/office.jpg",
+   "location_scene_count": 16,
+   "scene_lighting": "n1_office",
+   "camera": {
+    "location": [
+     -1.6,
+     -1.2,
+     1.5
+    ],
+    "look_at": [
+     1,
+     1.4,
+     1.1
+    ],
+    "lens_mm": 18
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "scenes": {
+     "n1_morning": {
+      "exposure_ev": -0.8
+     },
+     "n1_office": {
+      "exposure_ev": 1.4
+     },
+     "n2_morning": {
+      "exposure_ev": -0.8
+     },
+     "n2_office": {
+      "exposure_ev": 1.4
+     },
+     "n2_seventh_bell": {
+      "exposure_ev": 0.0
+     },
+     "n3_morning": {
+      "exposure_ev": -0.8
+     },
+     "n3_office": {
+      "exposure_ev": 1.4
+     },
+     "n3_tea": {
+      "exposure_ev": 0.9
+     },
+     "n4_morning": {
+      "exposure_ev": -0.8
+     },
+     "n4_office": {
+      "exposure_ev": 1.4
+     },
+     "n5_morning": {
+      "exposure_ev": -0.8
+     },
+     "n5_office": {
+      "exposure_ev": 1.4
+     },
+     "n6_morning": {
+      "exposure_ev": -0.8
+     },
+     "n6_office": {
+      "exposure_ev": 1.4
+     },
+     "n7_office": {
+      "exposure_ev": 1.4
+     },
+     "n7_your_door": {
+      "exposure_ev": 0.6
+     }
+    },
+    "overview_ev": 0.0
+   }
+  },
+  {
+   "location": "river-wall",
+   "reference": "games/behind-the-peephole/assets/locations/river-wall.jpg",
+   "location_scene_count": 1,
+   "scene_lighting": "end_open_door",
+   "camera": {
+    "location": [
+     -5,
+     -3.2,
+     1.7
+    ],
+    "look_at": [
+     15,
+     3,
+     4
+    ],
+    "lens_mm": 24
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "scenes": {
+     "end_open_door": {
+      "exposure_ev": -2.5
+     }
+    },
+    "overview_ev": 0.0
+   }
+  },
+  {
+   "location": "staff-alley",
+   "reference": "games/behind-the-peephole/assets/locations/staff-alley.jpg",
+   "location_scene_count": 1,
+   "scene_lighting": "n1_arrival",
+   "camera": {
+    "location": [
+     13,
+     -3,
+     1.7
+    ],
+    "look_at": [
+     -8,
+     0.5,
+     2
+    ],
+    "lens_mm": 22
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "scenes": {
+     "n1_arrival": {
+      "exposure_ev": 3.5
+     }
+    },
+    "overview_ev": -0.5
+   }
+  },
+  {
+   "location": "valet-passage",
+   "reference": "games/behind-the-peephole/assets/locations/valet-passage.jpg",
+   "location_scene_count": 2,
+   "scene_lighting": "n1_passage",
+   "camera": {
+    "location": [
+     31,
+     0,
+     1.6
+    ],
+    "look_at": [
+     0,
+     0,
+     1.4
+    ],
+    "lens_mm": 22
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "scenes": {
+     "end_under_door": {
+      "exposure_ev": 10.9
+     },
+     "n1_passage": {
+      "exposure_ev": 1.3
+     }
+    },
+    "overview_ev": 0.0
+   }
+  }
+ ]
+}

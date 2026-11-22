@@ -65,6 +65,7 @@ def still(p):
 def main(argv):
     slug, run = argv[0], Path(argv[1])
     owner = argv[argv.index("--owner") + 1] if "--owner" in argv else None
+    before = Path(argv[argv.index("--before") + 1]) if "--before" in argv else None
     outdir = ROOT / "renders" / slug
     outdir.mkdir(parents=True, exist_ok=True)
     plans = [e for e in json.loads((ROOT / "docs/blender_plans/plans.json").read_text(encoding="utf-8"))["scenes"]
@@ -115,6 +116,19 @@ def main(argv):
         sheet.save(outdir / f"{loc}.jpg", quality=84, optimize=True)
         print("sheet", loc, sheet.size)
     (outdir / "ledger.json").write_text(json.dumps(ledger, indent=1) + "\n", encoding="utf-8")
+    if before:  # flagged-before-after.jpg: each scene in the "before" run (--no-overrides, quick) beside its final still
+        pairs = []
+        for jf in sorted(before.glob("*/*.json")):
+            rec = json.loads(jf.read_text(encoding="utf-8"))
+            b = before / rec["location"] / rec["scene"] / "camera.png"
+            a = run / rec["location"] / rec["scene"] / "camera.png"
+            pairs.append((rec["scene"], still(b), still(a)))
+        sheet = Image.new("RGB", (1280, len(pairs) * 394), (22, 22, 22))
+        for i, (sid, b, a) in enumerate(pairs):
+            sheet.paste(tile(b, sid + "  before", sub="0.4 scale, 25% spp"), (0, i * 394))
+            sheet.paste(tile(a, sid + "  after"), (640, i * 394))
+        sheet.save(outdir / "flagged-before-after.jpg", quality=84, optimize=True)
+        print("before/after", len(pairs))
     if owner:
         W = 1280
         rows = [tile(ov, loc, 640, 360).copy() for loc, ov, _r in owner_rows]
