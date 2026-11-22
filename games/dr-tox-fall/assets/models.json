@@ -1,0 +1,440 @@
+{
+  "tool": "ComfyUI 0.46.2, core Trellis 2 nodes",
+  "models": [
+    {
+      "id": "batch-bench",
+      "name": "Batch bench",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-fall/assets/objects/batch-bench.jpg",
+      "image_sha256": "7839b4e013447f01960b4b3e2bed89fd9d19a21ecaad62841bc002a65c103238",
+      "output": "build/models/dr-tox-fall/batch-bench.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699507,
+      "size_m_requested": [
+        1.8,
+        0.7,
+        1.6
+      ],
+      "dimensions_m": [
+        1.8,
+        0.82,
+        1.593
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 688
+    },
+    {
+      "id": "blade-cloth",
+      "name": "Blades on the cloth",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-fall/assets/objects/blade-cloth.jpg",
+      "image_sha256": "a5e7b38b4b8cccaccd888a9719cf77cea0a054a879c61c2b3986fda47c47ae5c",
+      "output": "build/models/dr-tox-fall/blade-cloth.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699922,
+      "size_m_requested": [
+        1.2,
+        0.8,
+        0.08
+      ],
+      "dimensions_m": [
+        1.2,
+        0.7,
+        0.087
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 299
+    },
+    {
+      "id": "clean-water-tank",
+      "name": "Clean-water tank",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-fall/assets/objects/clean-water-tank.jpg",
+      "image_sha256": "94cab9368de1604d4df36389afe36c35ce1f0c031f69360d2067b63c97055860",
+      "output": "build/models/dr-tox-fall/clean-water-tank.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699698,
+      "size_m_requested": [
+        1.6,
+        1.6,
+        2.0
+      ],
+      "dimensions_m": [
+        1.152,
+        1.403,
+        2.0
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.39, 1.14, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 498
+    },
+    {
+      "id": "crt-stack",
+      "name": "Stacked monitors",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-fall/assets/objects/crt-stack.jpg",
+      "image_sha256": "1a64c3a89b596178db0375efe383c8cc8944effd26acb2bbb14547a5fff3576b",
+      "output": "build/models/dr-tox-fall/crt-stack.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699716,
+      "size_m_requested": [
+        1.0,
+        0.6,
+        1.5
+      ],
+      "dimensions_m": [
+        1.089,
+        0.994,
+        1.5
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.92, 0.60, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 909
+    },
+    {
+      "id": "folding-cot",
+      "name": "Folding cot",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-fall/assets/objects/folding-cot.jpg",
+      "image_sha256": "35f74a22442490861c4adfaa0db2ddac9e1b0bd08a52801971dd34ad2b327447",
+      "output": "build/models/dr-tox-fall/folding-cot.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699822,
+      "size_m_requested": [
+        0.8,
+        1.9,
+        0.5
+      ],
+      "dimensions_m": [
+        0.717,
+        1.9,
+        0.752
+      ],
+      "problems": [
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 1.12, 1.00, 0.67); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 305
+    },
+    {
+      "id": "fortress-work-lamp",
+      "name": "Amber work lamp",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-fall/assets/objects/fortress-work-lamp.jpg",
+      "image_sha256": "a18cba79e9990d1e8bf7aa0b64c9a4118d1b871973f22cd72dacf5444049302a",
+      "output": "build/models/dr-tox-fall/fortress-work-lamp.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699585,
+      "size_m_requested": [
+        0.4,
+        0.4,
+        0.6
+      ],
+      "dimensions_m": [
+        0.388,
+        0.295,
+        0.6
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.03, 1.35, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 291
+    },
+    {
+      "id": "freeway-span",
+      "name": "Broken freeway span",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-fall/assets/objects/freeway-span.jpg",
+      "image_sha256": "dc7002f72da224c31ffff157fa2922914d5a0cdc27e208aab29a0d3f805e8eaf",
+      "output": "build/models/dr-tox-fall/freeway-span.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699822,
+      "size_m_requested": [
+        30.0,
+        12.0,
+        9.0
+      ],
+      "dimensions_m": [
+        30.0,
+        14.004,
+        13.645
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.86, 0.66); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 327
+    },
+    {
+      "id": "gauntlet-vise",
+      "name": "Gauntlet in the vise",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-fall/assets/objects/gauntlet-vise.jpg",
+      "image_sha256": "40856d11e2ee5f4577920455eba6b7b19794639e856ce9834e37cbab2df52b58",
+      "output": "build/models/dr-tox-fall/gauntlet-vise.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699645,
+      "size_m_requested": [
+        0.7,
+        0.5,
+        1.1
+      ],
+      "dimensions_m": [
+        1.164,
+        1.042,
+        1.1
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.60, 0.48, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 713
+    },
+    {
+      "id": "generator-cart",
+      "name": "Generator cart",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-fall/assets/objects/generator-cart.jpg",
+      "image_sha256": "e3231b19c7d2402c97cc6ce5ff6d767984b9a648ac8d3c9e0ecc53e112699ae7",
+      "output": "build/models/dr-tox-fall/generator-cart.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699972,
+      "size_m_requested": [
+        1.4,
+        0.9,
+        1.2
+      ],
+      "dimensions_m": [
+        1.4,
+        1.392,
+        1.862
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.65, 0.64); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 960
+    },
+    {
+      "id": "laundry-line",
+      "name": "Laundry line",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-fall/assets/objects/laundry-line.jpg",
+      "image_sha256": "0c14f3eb0c263f79f2b45d8c6fa63cf072215d35a485bfd25878ddecfc2da0b9",
+      "output": "build/models/dr-tox-fall/laundry-line.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699684,
+      "size_m_requested": [
+        6.0,
+        0.4,
+        2.2
+      ],
+      "dimensions_m": [
+        6.0,
+        1.064,
+        4.007
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.38, 0.55); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 598
+    },
+    {
+      "id": "names-board",
+      "name": "The names board",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-fall/assets/objects/names-board.jpg",
+      "image_sha256": "06aff2967ecd3fe09074d5cc14b621fbd982890c7847fd41cf24d8194db2150c",
+      "output": "build/models/dr-tox-fall/names-board.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699834,
+      "size_m_requested": [
+        3.2,
+        0.1,
+        1.8
+      ],
+      "dimensions_m": [
+        3.2,
+        0.209,
+        2.371
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.48, 0.76); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 423
+    },
+    {
+      "id": "ration-dispenser",
+      "name": "Ration dispenser",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-fall/assets/objects/ration-dispenser.jpg",
+      "image_sha256": "ffa624c0cd9c85071b7b6e0f38047a85a248f187d29bbd1cd2b5defcfcd02791",
+      "output": "build/models/dr-tox-fall/ration-dispenser.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699326,
+      "size_m_requested": [
+        1.2,
+        0.7,
+        2.2
+      ],
+      "dimensions_m": [
+        1.078,
+        0.892,
+        2.2
+      ],
+      "problems": [
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 1.11, 0.78, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 371
+    },
+    {
+      "id": "shielded-locker",
+      "name": "Lead-lined medication locker",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-fall/assets/objects/shielded-locker.jpg",
+      "image_sha256": "961880bb3e7c88c2cc3395a4a2a9298eb6cecca8a0c1ddbdc5d79941654b0e12",
+      "output": "build/models/dr-tox-fall/shielded-locker.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699812,
+      "size_m_requested": [
+        0.8,
+        0.6,
+        2.0
+      ],
+      "dimensions_m": [
+        1.299,
+        0.996,
+        2.0
+      ],
+      "problems": [
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 0.62, 0.60, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 420
+    },
+    {
+      "id": "shroud-stand",
+      "name": "The shroud on its stand",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-fall/assets/objects/shroud-stand.jpg",
+      "image_sha256": "ae3e7f84f952d978cc8bcdfe0bb36593d37ffafb3beaa910915597821cf87eab",
+      "output": "build/models/dr-tox-fall/shroud-stand.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699894,
+      "size_m_requested": [
+        0.8,
+        0.6,
+        1.9
+      ],
+      "dimensions_m": [
+        0.908,
+        0.928,
+        1.9
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.88, 0.65, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 633
+    },
+    {
+      "id": "water-drum",
+      "name": "Water drum",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-fall/assets/objects/water-drum.jpg",
+      "image_sha256": "5b4d2d2dda5d8062ca3b5450240fec5dfd7f75488bdf36c98fe6fb8a038ef168",
+      "output": "build/models/dr-tox-fall/water-drum.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699285,
+      "size_m_requested": [
+        0.6,
+        0.6,
+        0.9
+      ],
+      "dimensions_m": [
+        0.569,
+        0.454,
+        0.9
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 415
+    }
+  ]
+}
