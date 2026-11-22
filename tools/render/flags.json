@@ -102,5 +102,25 @@
  "end_wrong_picture": {
   "status": "checked: false positive, no change",
   "what": "look_at [-9, -1, 1.6] lies inside the revolving-door piece, so the sight line ends in the door by design; the frame shows the door as intended."
+ },
+ "c1_truck_gate": {
+  "status": "found by the driver (not flagged in the first pass); fixed at render time + proposed diff",
+  "what": "the camera [0,-18.2,2.96] stands inside the box proxy of the truck prop 'truck-gate' (2.5 x 7 x 3 m at y -23 to -16), so the still was black; the proxy is drawn 20% opaque in this scene. Proposed diff in REFINEMENT_NOTES.md."
+ },
+ "e_transfer_truck": {
+  "status": "found by the driver (not flagged in the first pass); fixed at render time + proposed diff",
+  "what": "same camera and cause as c1_truck_gate (camera [0,-18.2,2.7] inside 'truck-gate'); proxy drawn 20% opaque."
+ },
+ "n3_glovebox": {
+  "status": "found by the driver (not flagged in the first pass); fixed at render time + proposed diff",
+  "what": "two causes: the truck prop's box proxy (2.5 x 7 x 3 m) encloses the cab blockout pieces and its flat side filled the frame; and look_at [1.7, 2.62, 1.5] lies inside the glovebox piece. Proxy trimmed to the load body (y -4 to 1.2), look_at moved to [1.7, 2.40, 1.5] in front of the glovebox door."
+ },
+ "d3_duty_shovel": {
+  "status": "driver finding, no still change",
+  "what": "'truck-buried' stood inside barracks-a (8 of 27 sample points); moved to [9, -3, -0.4] at render time (proposed diff). Not in this scene's frame."
+ },
+ "e_new_recruit": {
+  "status": "driver finding, no still change",
+  "what": "same as d3_duty_shovel ('truck-buried' inside barracks-a)."
  }
 }

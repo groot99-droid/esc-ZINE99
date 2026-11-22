@@ -56,6 +56,22 @@ def no_reference_card(slug, loc, w=1600, h=900):
     return im
 
 
+def text_card(title, lines, w=1600, h=900):
+    """A plain text card standing in for a reference image (man-eater: no figure imagery, so a reference that shows or
+    can be read as a figure is replaced by this card; rig.json "reference_card" holds the reason)."""
+    import textwrap
+    im = Image.new("RGB", (w, h), (40, 36, 30))
+    d = ImageDraw.Draw(im)
+    d.text((60, 60), title, fill=(255, 200, 120), font=font(64))
+    y = 170
+    for line in lines:
+        for part in textwrap.wrap(line, 56):
+            d.text((60, y), part, fill=(235, 235, 235), font=font(38))
+            y += 50
+        y += 20
+    return im
+
+
 def still(p):
     """The still as rendered (png) or, when only a downsized jpg copy was fetched from the render box, that."""
     p = Path(p)
@@ -84,9 +100,13 @@ def main(argv):
         tiles = []
         ov = run / loc / "_overview" / "overview.png"
         rp = ROOT / "games" / slug / "assets" / "locations" / f"{loc}.jpg"
-        ref = Image.open(rp) if rp.exists() else no_reference_card(slug, loc)
+        card = rig.get(loc, {}).get("reference_card")
+        if card:
+            ref = text_card("REFERENCE LEFT OUT", [card])
+        else:
+            ref = Image.open(rp) if rp.exists() else no_reference_card(slug, loc)
         tiles.append(tile(still(ov), "overview", sub="1920x1080 / 128 spp"))
-        tiles.append(tile(ref, "reference image" if rp.exists() else "no reference image yet"))
+        tiles.append(tile(ref, "reference card (no figure imagery)" if card else "reference image" if rp.exists() else "no reference image yet"))
         owner_rows.append((loc, still(ov), ref))
         for e in [p for p in plans if p["location"] == loc]:
             rec = json.loads((run / loc / f"{e['scene']}.json").read_text(encoding="utf-8"))
@@ -99,13 +119,14 @@ def main(argv):
                 "resolution": cam["resolution"], "samples": cam["samples"],
                 "stills": [{"still": s["still"], "resolution": s["resolution"], "samples": s["samples"],
                             "render_seconds": s["seconds"]} for s in rec["stills"]],
-                "props": [{"id": k, "object": v["object"], "source": v["source"]} for k, v in rec["props"].items()],
+                "props": [{"id": k, "object": v["object"], "source": v["source"], **({"name": v["name"]} if v.get("name", k) != k else {})}
+                          for k, v in rec["props"].items()],
                 "flagged_in_first_pass": e["flagged_in_first_pass"],
                 "geometry_checks": rec["checks"],
                 "render_time_overrides": sorted(k for k in rec["overrides"] if rec["overrides"][k]),
                 "flag_status": flags.get(e["scene"], {"status": "not flagged"}),
             })
-        ledger["overviews"].append({"location": loc, "reference": f"games/{slug}/assets/locations/{loc}.jpg" if rp.exists() else None,
+        ledger["overviews"].append({"location": loc, "reference": (f"games/{slug}/assets/locations/{loc}.jpg" if rp.exists() else None) if not card else "left out (text card)",
                                     "location_scene_count": len([p for p in plans if p["location"] == loc]), "scene_lighting": rig[loc]["overview_scene"],
                                     "camera": rig[loc]["overview"], "rig": {k: v for k, v in rig[loc].items()
                                                                           if k not in ("overview", "overview_scene")}})

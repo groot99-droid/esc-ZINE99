@@ -119,6 +119,11 @@ def world_bbox(objs):
     return lo, hi
 
 
+def neutral_name(rig, pr):
+    nn = rig.get("neutral_names") or {}
+    return nn.get("by_id", {}).get(pr["id"]) or nn.get("by_object", {}).get(pr["object"])
+
+
 def make_prop(sc, pr, rig, models):
     """A named box proxy, or the real model when the ledger has one. Returns (object, source)."""
     sx, sy, sz = pr["size_m"]
@@ -147,8 +152,8 @@ def make_prop(sc, pr, rig, models):
         return root, "model:" + os.path.basename(glb)
     bpy.ops.mesh.primitive_cube_add(size=1)
     o = bpy.context.active_object
-    o.name = pr["id"]
-    o.data.name = pr["id"] + "-proxy"
+    o.name = neutral_name(rig, pr) or pr["id"]  # rig "neutral_names": a plain name where the prop id or object reads as a figure
+    o.data.name = o.name + "-proxy"
     o.scale = (sx * s, sy * s, sz * s)
     o.rotation_euler = rot
     bpy.context.view_layer.update()
@@ -157,7 +162,7 @@ def make_prop(sc, pr, rig, models):
     o.location = (loc.x, loc.y, (loc.z + (o.location.z - min(zs))) if pr.get("ground", True) else (loc.z + (o.location.z - zc)))
     colors = rig.get("proxy_colors", {})
     rgb = colors.get(pr["object"]) or colors.get(pr.get("role", "fill")) or [0.6, 0.55, 0.5]
-    alpha = rig.get("proxy_alpha", {}).get(pr["object"], 1.0)
+    alpha = pr.get("alpha", rig.get("proxy_alpha", {}).get(pr["object"], 1.0))
     o.data.materials.append(proxy_material(pr["id"], rgb, alpha))
     o["proxy_of"] = pr["object"]
     for c in list(o.users_collection):
@@ -183,13 +188,18 @@ def piece_inside(obj, p):
 
 def run_checks(sc, cam_loc, lookat, props, pieces):
     dg = bpy.context.evaluated_depsgraph_get()
-    res = {"camera_inside": [], "between_camera_and_target": [], "prop_inside": [], "prop_overlap": [],
-           "prop_off_floor": []}
+    res = {"camera_inside": [], "camera_inside_prop": [], "between_camera_and_target": [], "prop_inside": [],
+           "prop_overlap": [], "prop_off_floor": []}
     solid = [o for o in pieces if o["collide"]]
     cam = Vector(cam_loc)
     for o in solid:
         if piece_inside(o, cam):
             res["camera_inside"].append(o.name[3:])
+    for pr, o in props:  # camera inside a prop's proxy (a bounding-box test, so a rotated box is approximate)
+        if o.type == "MESH" and pr.get("alpha", 1.0) >= 1.0:
+            lo, hi = world_bbox([o])
+            if lo.x < cam.x < hi.x and lo.y < cam.y < hi.y and lo.z < cam.z < hi.z:
+                res["camera_inside_prop"].append(pr["id"])
     tgt = Vector(lookat)
     dist = (tgt - cam).length
     dn = (tgt - cam).normalized()
@@ -342,6 +352,10 @@ def main():
         pdict = {p["id"]: p for p in props}
         for pid, patch in ov.get("props", {}).items():
             pdict[pid].update(patch)
+        for pid in ov.get("hide_props", []):
+            pdict.pop(pid, None)
+        for pid, a in ov.get("prop_alpha", {}).items():  # a proxy drawn translucent (the player rides inside it)
+            pdict[pid]["alpha"] = a
         props = list(pdict.values())
         cam_spec = merge(asm["camera"], ov.get("camera"))
         pstart = merge(entry.get("player_start"), ov.get("player_start")) if entry.get("player_start") else None
@@ -352,7 +366,7 @@ def main():
         for pr in props:
             obj, src = make_prop(sc, pr, rig, models)
             made.append((pr, obj))
-            sources[pr["id"]] = {"object": pr["object"], "source": src}
+            sources[pr["id"]] = {"object": pr["object"], "source": src, "name": neutral_name(rig, pr) or pr["id"]}
         for li in asm["lights"]:
             make_light(sc, li, lgain * per_light.get(li["name"], 1.0), rig)
         fills = [f for f in rig.get("fills", []) if not f.get("scenes") or entry["scene"] in f["scenes"]]

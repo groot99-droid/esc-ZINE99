@@ -1,0 +1,4347 @@
+{
+ "game": "man-eater",
+ "tiers": {
+  "hero": "2560x1440, 256 samples",
+  "standard": "1920x1080, 128 samples",
+  "overview": "1920x1080, 128 samples"
+ },
+ "renderer": "Cycles (OptiX), OpenImageDenoise, Blender 5.2.1",
+ "scenes": [
+  {
+   "scene": "d4_duty_boiler",
+   "location": "boiler-room",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 14.5
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.5
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 6.2
+    }
+   ],
+   "props": [
+    {
+     "id": "boiler-a",
+     "object": "boiler",
+     "source": "box-proxy"
+    },
+    {
+     "id": "boiler-b",
+     "object": "boiler",
+     "source": "box-proxy"
+    },
+    {
+     "id": "drain-1",
+     "object": "floor-drain",
+     "source": "box-proxy"
+    },
+    {
+     "id": "drain-2",
+     "object": "floor-drain",
+     "source": "box-proxy"
+    },
+    {
+     "id": "drain-3",
+     "object": "floor-drain",
+     "source": "box-proxy"
+    },
+    {
+     "id": "drain-4",
+     "object": "floor-drain",
+     "source": "box-proxy"
+    },
+    {
+     "id": "drain-5",
+     "object": "floor-drain",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "c1_bunk",
+   "location": "bunk-room",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.4
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.6
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 6.8
+    }
+   ],
+   "props": [
+    {
+     "id": "bed-fisk",
+     "object": "bunk-bed",
+     "source": "box-proxy",
+     "name": "bed-a"
+    },
+    {
+     "id": "bed-mate",
+     "object": "bunk-bed",
+     "source": "box-proxy",
+     "name": "bed-b"
+    },
+    {
+     "id": "bags-fisk",
+     "object": "sleeping-bag",
+     "source": "box-proxy",
+     "name": "bedroll-slab-a"
+    },
+    {
+     "id": "bags-mate",
+     "object": "sleeping-bag",
+     "source": "box-proxy",
+     "name": "bedroll-slab-b"
+    },
+    {
+     "id": "door",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rules-card",
+     "object": "rules-card",
+     "source": "box-proxy"
+    },
+    {
+     "id": "clock",
+     "object": "wall-clock",
+     "source": "box-proxy"
+    },
+    {
+     "id": "boots-mate",
+     "object": "laced-boots",
+     "source": "box-proxy",
+     "name": "footwear-box-b"
+    },
+    {
+     "id": "kit-bag",
+     "object": "kit-bag",
+     "source": "box-proxy"
+    },
+    {
+     "id": "keys",
+     "object": "key-ring",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "n1_bunk_call",
+   "location": "bunk-room",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 14.6
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 14.8
+    }
+   ],
+   "props": [
+    {
+     "id": "bed-fisk",
+     "object": "bunk-bed",
+     "source": "box-proxy",
+     "name": "bed-a"
+    },
+    {
+     "id": "bed-mate",
+     "object": "bunk-bed",
+     "source": "box-proxy",
+     "name": "bed-b"
+    },
+    {
+     "id": "bags-fisk",
+     "object": "sleeping-bag",
+     "source": "box-proxy",
+     "name": "bedroll-slab-a"
+    },
+    {
+     "id": "bags-mate",
+     "object": "sleeping-bag",
+     "source": "box-proxy",
+     "name": "bedroll-slab-b"
+    },
+    {
+     "id": "door",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rules-card",
+     "object": "rules-card",
+     "source": "box-proxy"
+    },
+    {
+     "id": "clock",
+     "object": "wall-clock",
+     "source": "box-proxy"
+    },
+    {
+     "id": "boots-mate",
+     "object": "laced-boots",
+     "source": "box-proxy",
+     "name": "footwear-box-b"
+    },
+    {
+     "id": "kit-bag",
+     "object": "kit-bag",
+     "source": "box-proxy"
+    },
+    {
+     "id": "keys",
+     "object": "key-ring",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "d2_sam_bunk",
+   "location": "bunk-room",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.4
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 16.6
+    }
+   ],
+   "props": [
+    {
+     "id": "bed-fisk",
+     "object": "bunk-bed",
+     "source": "box-proxy",
+     "name": "bed-a"
+    },
+    {
+     "id": "bed-mate",
+     "object": "bunk-bed",
+     "source": "box-proxy",
+     "name": "bed-b"
+    },
+    {
+     "id": "bags-fisk",
+     "object": "sleeping-bag",
+     "source": "box-proxy",
+     "name": "bedroll-slab-a"
+    },
+    {
+     "id": "door",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rules-card",
+     "object": "rules-card",
+     "source": "box-proxy"
+    },
+    {
+     "id": "clock",
+     "object": "wall-clock",
+     "source": "box-proxy"
+    },
+    {
+     "id": "kit-bag",
+     "object": "kit-bag",
+     "source": "box-proxy"
+    },
+    {
+     "id": "keys",
+     "object": "key-ring",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "d5_jax_plan",
+   "location": "bunk-room",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 16.8
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 17.2
+    }
+   ],
+   "props": [
+    {
+     "id": "bed-fisk",
+     "object": "bunk-bed",
+     "source": "box-proxy",
+     "name": "bed-a"
+    },
+    {
+     "id": "bed-mate",
+     "object": "bunk-bed",
+     "source": "box-proxy",
+     "name": "bed-b"
+    },
+    {
+     "id": "bags-fisk",
+     "object": "sleeping-bag",
+     "source": "box-proxy",
+     "name": "bedroll-slab-a"
+    },
+    {
+     "id": "bags-mate",
+     "object": "sleeping-bag",
+     "source": "box-proxy",
+     "name": "bedroll-slab-b"
+    },
+    {
+     "id": "door",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rules-card",
+     "object": "rules-card",
+     "source": "box-proxy"
+    },
+    {
+     "id": "clock",
+     "object": "wall-clock",
+     "source": "box-proxy"
+    },
+    {
+     "id": "kit-bag",
+     "object": "kit-bag",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bread",
+     "object": "bread-loaf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "keys",
+     "object": "key-ring",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "d6_sam_offer",
+   "location": "bunk-room",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 18.3
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 17.6
+    }
+   ],
+   "props": [
+    {
+     "id": "bed-fisk",
+     "object": "bunk-bed",
+     "source": "box-proxy",
+     "name": "bed-a"
+    },
+    {
+     "id": "bed-mate",
+     "object": "bunk-bed",
+     "source": "box-proxy",
+     "name": "bed-b"
+    },
+    {
+     "id": "bags-fisk",
+     "object": "sleeping-bag",
+     "source": "box-proxy",
+     "name": "bedroll-slab-a"
+    },
+    {
+     "id": "bags-mate",
+     "object": "sleeping-bag",
+     "source": "box-proxy",
+     "name": "bedroll-slab-b"
+    },
+    {
+     "id": "door",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rules-card",
+     "object": "rules-card",
+     "source": "box-proxy"
+    },
+    {
+     "id": "clock",
+     "object": "wall-clock",
+     "source": "box-proxy"
+    },
+    {
+     "id": "kit-bag",
+     "object": "kit-bag",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bread",
+     "object": "bread-loaf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "keys",
+     "object": "key-ring",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "d7_bunk_evening",
+   "location": "bunk-room",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 17.4
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.9
+    }
+   ],
+   "props": [
+    {
+     "id": "bed-fisk",
+     "object": "bunk-bed",
+     "source": "box-proxy",
+     "name": "bed-a"
+    },
+    {
+     "id": "bed-mate",
+     "object": "bunk-bed",
+     "source": "box-proxy",
+     "name": "bed-b"
+    },
+    {
+     "id": "bags-fisk",
+     "object": "sleeping-bag",
+     "source": "box-proxy",
+     "name": "bedroll-slab-a"
+    },
+    {
+     "id": "bags-mate",
+     "object": "sleeping-bag",
+     "source": "box-proxy",
+     "name": "bedroll-slab-b"
+    },
+    {
+     "id": "door",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rules-card",
+     "object": "rules-card",
+     "source": "box-proxy"
+    },
+    {
+     "id": "clock",
+     "object": "wall-clock",
+     "source": "box-proxy"
+    },
+    {
+     "id": "kit-bag",
+     "object": "kit-bag",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bread",
+     "object": "bread-loaf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "keys",
+     "object": "key-ring",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "n7_bunk_stay",
+   "location": "bunk-room",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.6
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.6
+    }
+   ],
+   "props": [
+    {
+     "id": "bed-fisk",
+     "object": "bunk-bed",
+     "source": "box-proxy",
+     "name": "bed-a"
+    },
+    {
+     "id": "bed-mate",
+     "object": "bunk-bed",
+     "source": "box-proxy",
+     "name": "bed-b"
+    },
+    {
+     "id": "bags-fisk",
+     "object": "sleeping-bag",
+     "source": "box-proxy",
+     "name": "bedroll-slab-a"
+    },
+    {
+     "id": "bags-mate",
+     "object": "sleeping-bag",
+     "source": "box-proxy",
+     "name": "bedroll-slab-b"
+    },
+    {
+     "id": "door",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rules-card",
+     "object": "rules-card",
+     "source": "box-proxy"
+    },
+    {
+     "id": "clock",
+     "object": "wall-clock",
+     "source": "box-proxy"
+    },
+    {
+     "id": "kit-bag",
+     "object": "kit-bag",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bread",
+     "object": "bread-loaf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "keys",
+     "object": "key-ring",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "n2_door",
+   "location": "bunk-room",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.3
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.1
+    }
+   ],
+   "props": [
+    {
+     "id": "bed-fisk",
+     "object": "bunk-bed",
+     "source": "box-proxy",
+     "name": "bed-a"
+    },
+    {
+     "id": "bed-mate",
+     "object": "bunk-bed",
+     "source": "box-proxy",
+     "name": "bed-b"
+    },
+    {
+     "id": "bags-fisk",
+     "object": "sleeping-bag",
+     "source": "box-proxy",
+     "name": "bedroll-slab-a"
+    },
+    {
+     "id": "bags-mate",
+     "object": "sleeping-bag",
+     "source": "box-proxy",
+     "name": "bedroll-slab-b"
+    },
+    {
+     "id": "door",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rules-card",
+     "object": "rules-card",
+     "source": "box-proxy"
+    },
+    {
+     "id": "clock",
+     "object": "wall-clock",
+     "source": "box-proxy"
+    },
+    {
+     "id": "boots-mate",
+     "object": "laced-boots",
+     "source": "box-proxy",
+     "name": "footwear-box-b"
+    },
+    {
+     "id": "kit-bag",
+     "object": "kit-bag",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bread",
+     "object": "bread-loaf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "keys",
+     "object": "key-ring",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "n3_door",
+   "location": "bunk-room",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.3
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.2
+    }
+   ],
+   "props": [
+    {
+     "id": "bed-fisk",
+     "object": "bunk-bed",
+     "source": "box-proxy",
+     "name": "bed-a"
+    },
+    {
+     "id": "bed-mate",
+     "object": "bunk-bed",
+     "source": "box-proxy",
+     "name": "bed-b"
+    },
+    {
+     "id": "bags-fisk",
+     "object": "sleeping-bag",
+     "source": "box-proxy",
+     "name": "bedroll-slab-a"
+    },
+    {
+     "id": "bags-mate",
+     "object": "sleeping-bag",
+     "source": "box-proxy",
+     "name": "bedroll-slab-b"
+    },
+    {
+     "id": "door",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rules-card",
+     "object": "rules-card",
+     "source": "box-proxy"
+    },
+    {
+     "id": "clock",
+     "object": "wall-clock",
+     "source": "box-proxy"
+    },
+    {
+     "id": "kit-bag",
+     "object": "kit-bag",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bread",
+     "object": "bread-loaf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "keys",
+     "object": "key-ring",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "n4_door",
+   "location": "bunk-room",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.4
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.3
+    }
+   ],
+   "props": [
+    {
+     "id": "bed-fisk",
+     "object": "bunk-bed",
+     "source": "box-proxy",
+     "name": "bed-a"
+    },
+    {
+     "id": "bed-mate",
+     "object": "bunk-bed",
+     "source": "box-proxy",
+     "name": "bed-b"
+    },
+    {
+     "id": "bags-fisk",
+     "object": "sleeping-bag",
+     "source": "box-proxy",
+     "name": "bedroll-slab-a"
+    },
+    {
+     "id": "bags-mate",
+     "object": "sleeping-bag",
+     "source": "box-proxy",
+     "name": "bedroll-slab-b"
+    },
+    {
+     "id": "door",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rules-card",
+     "object": "rules-card",
+     "source": "box-proxy"
+    },
+    {
+     "id": "clock",
+     "object": "wall-clock",
+     "source": "box-proxy"
+    },
+    {
+     "id": "kit-bag",
+     "object": "kit-bag",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bread",
+     "object": "bread-loaf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "keys",
+     "object": "key-ring",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "n5_door",
+   "location": "bunk-room",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.3
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.5
+    }
+   ],
+   "props": [
+    {
+     "id": "bed-fisk",
+     "object": "bunk-bed",
+     "source": "box-proxy",
+     "name": "bed-a"
+    },
+    {
+     "id": "bed-mate",
+     "object": "bunk-bed",
+     "source": "box-proxy",
+     "name": "bed-b"
+    },
+    {
+     "id": "bags-fisk",
+     "object": "sleeping-bag",
+     "source": "box-proxy",
+     "name": "bedroll-slab-a"
+    },
+    {
+     "id": "bags-mate",
+     "object": "sleeping-bag",
+     "source": "box-proxy",
+     "name": "bedroll-slab-b"
+    },
+    {
+     "id": "door",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rules-card",
+     "object": "rules-card",
+     "source": "box-proxy"
+    },
+    {
+     "id": "clock",
+     "object": "wall-clock",
+     "source": "box-proxy"
+    },
+    {
+     "id": "kit-bag",
+     "object": "kit-bag",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bread",
+     "object": "bread-loaf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "keys",
+     "object": "key-ring",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "n6_door",
+   "location": "bunk-room",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.2
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.3
+    }
+   ],
+   "props": [
+    {
+     "id": "bed-fisk",
+     "object": "bunk-bed",
+     "source": "box-proxy",
+     "name": "bed-a"
+    },
+    {
+     "id": "bed-mate",
+     "object": "bunk-bed",
+     "source": "box-proxy",
+     "name": "bed-b"
+    },
+    {
+     "id": "bags-fisk",
+     "object": "sleeping-bag",
+     "source": "box-proxy",
+     "name": "bedroll-slab-a"
+    },
+    {
+     "id": "bags-mate",
+     "object": "sleeping-bag",
+     "source": "box-proxy",
+     "name": "bedroll-slab-b"
+    },
+    {
+     "id": "door",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rules-card",
+     "object": "rules-card",
+     "source": "box-proxy"
+    },
+    {
+     "id": "clock",
+     "object": "wall-clock",
+     "source": "box-proxy"
+    },
+    {
+     "id": "kit-bag",
+     "object": "kit-bag",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bread",
+     "object": "bread-loaf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "keys",
+     "object": "key-ring",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "n7_door",
+   "location": "bunk-room",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.3
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.4
+    }
+   ],
+   "props": [
+    {
+     "id": "bed-fisk",
+     "object": "bunk-bed",
+     "source": "box-proxy",
+     "name": "bed-a"
+    },
+    {
+     "id": "bed-mate",
+     "object": "bunk-bed",
+     "source": "box-proxy",
+     "name": "bed-b"
+    },
+    {
+     "id": "bags-fisk",
+     "object": "sleeping-bag",
+     "source": "box-proxy",
+     "name": "bedroll-slab-a"
+    },
+    {
+     "id": "bags-mate",
+     "object": "sleeping-bag",
+     "source": "box-proxy",
+     "name": "bedroll-slab-b"
+    },
+    {
+     "id": "door",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rules-card",
+     "object": "rules-card",
+     "source": "box-proxy"
+    },
+    {
+     "id": "clock",
+     "object": "wall-clock",
+     "source": "box-proxy"
+    },
+    {
+     "id": "kit-bag",
+     "object": "kit-bag",
+     "source": "box-proxy"
+    },
+    {
+     "id": "bread",
+     "object": "bread-loaf",
+     "source": "box-proxy"
+    },
+    {
+     "id": "keys",
+     "object": "key-ring",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "e_prints_bunk",
+   "location": "bunk-room",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.9
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 14.0
+    }
+   ],
+   "props": [
+    {
+     "id": "bed-fisk",
+     "object": "bunk-bed",
+     "source": "box-proxy",
+     "name": "bed-a"
+    },
+    {
+     "id": "bed-mate",
+     "object": "bunk-bed",
+     "source": "box-proxy",
+     "name": "bed-b"
+    },
+    {
+     "id": "bags-fisk",
+     "object": "sleeping-bag",
+     "source": "box-proxy",
+     "name": "bedroll-slab-a"
+    },
+    {
+     "id": "door",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "rules-card",
+     "object": "rules-card",
+     "source": "box-proxy"
+    },
+    {
+     "id": "clock",
+     "object": "wall-clock",
+     "source": "box-proxy"
+    },
+    {
+     "id": "kit-bag",
+     "object": "kit-bag",
+     "source": "box-proxy"
+    },
+    {
+     "id": "keys",
+     "object": "key-ring",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "d1_cafeteria",
+   "location": "cafeteria",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.0
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 14.8
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 7.1
+    }
+   ],
+   "props": [
+    {
+     "id": "tray-stack-1",
+     "object": "meal-tray",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tray-stack-2",
+     "object": "meal-tray",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tray-stack-3",
+     "object": "meal-tray",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tray-served",
+     "object": "meal-tray",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "d6_next_week",
+   "location": "cafeteria",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 16.8
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 17.4
+    }
+   ],
+   "props": [
+    {
+     "id": "tray-stack-1",
+     "object": "meal-tray",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tray-stack-2",
+     "object": "meal-tray",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tray-stack-3",
+     "object": "meal-tray",
+     "source": "box-proxy"
+    },
+    {
+     "id": "tray-served",
+     "object": "meal-tray",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "d1_duty_coldstore",
+   "location": "cold-store",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 20.0
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 18.2
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 7.3
+    }
+   ],
+   "props": [
+    {
+     "id": "crate-1",
+     "object": "supply-crate",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crate-2",
+     "object": "supply-crate",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crate-3",
+     "object": "supply-crate",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crate-4",
+     "object": "supply-crate",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crate-stack-a",
+     "object": "supply-crate",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crate-stack-b",
+     "object": "supply-crate",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crate-stack-c",
+     "object": "supply-crate",
+     "source": "box-proxy"
+    },
+    {
+     "id": "crate-delivered",
+     "object": "supply-crate",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "crate-1",
+      "piece": "bay-snow",
+      "samples": "9/27"
+     },
+     {
+      "prop": "crate-3",
+      "piece": "bay-snow",
+      "samples": "9/27"
+     },
+     {
+      "prop": "crate-stack-a",
+      "piece": "bay-snow",
+      "samples": "9/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "c1_truck_gate",
+   "location": "gate-yard",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 12.9
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 12.9
+    }
+   ],
+   "props": [
+    {
+     "id": "truck-gate",
+     "object": "army-truck",
+     "source": "box-proxy"
+    },
+    {
+     "id": "truck-buried",
+     "object": "army-truck",
+     "source": "box-proxy"
+    },
+    {
+     "id": "kit-fisk",
+     "object": "kit-bag",
+     "source": "box-proxy",
+     "name": "kit-bag-b"
+    },
+    {
+     "id": "shovel",
+     "object": "snow-shovel",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp-gate",
+     "object": "yard-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp-yard",
+     "object": "yard-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp-barracks",
+     "object": "yard-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-1",
+     "object": "fence-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-2",
+     "object": "fence-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-3",
+     "object": "fence-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-4",
+     "object": "fence-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-5",
+     "object": "fence-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-6",
+     "object": "fence-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-7",
+     "object": "fence-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-8",
+     "object": "fence-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-9",
+     "object": "fence-post",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "truck-buried",
+      "piece": "snowbank-east",
+      "samples": "1/27"
+     },
+     {
+      "prop": "truck-buried",
+      "piece": "yard-snow",
+      "samples": "9/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "prop_alpha",
+    "props"
+   ],
+   "flag_status": {
+    "status": "found by the driver (not flagged in the first pass); fixed at render time + proposed diff",
+    "what": "the camera [0,-18.2,2.96] stands inside the box proxy of the truck prop 'truck-gate' (2.5 x 7 x 3 m at y -23 to -16), so the still was black; the proxy is drawn 20% opaque in this scene. Proposed diff in REFINEMENT_NOTES.md."
+   }
+  },
+  {
+   "scene": "d3_duty_shovel",
+   "location": "gate-yard",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 9.4
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 10.4
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 4.9
+    }
+   ],
+   "props": [
+    {
+     "id": "truck-buried",
+     "object": "army-truck",
+     "source": "box-proxy"
+    },
+    {
+     "id": "shovel",
+     "object": "snow-shovel",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp-gate",
+     "object": "yard-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp-yard",
+     "object": "yard-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp-barracks",
+     "object": "yard-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-1",
+     "object": "fence-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-2",
+     "object": "fence-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-3",
+     "object": "fence-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-4",
+     "object": "fence-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-5",
+     "object": "fence-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-6",
+     "object": "fence-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-7",
+     "object": "fence-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-8",
+     "object": "fence-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-9",
+     "object": "fence-post",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "truck-buried",
+      "piece": "snowbank-east",
+      "samples": "1/27"
+     },
+     {
+      "prop": "truck-buried",
+      "piece": "yard-snow",
+      "samples": "9/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "props"
+   ],
+   "flag_status": {
+    "status": "driver finding, no still change",
+    "what": "'truck-buried' stood inside barracks-a (8 of 27 sample points); moved to [9, -3, -0.4] at render time (proposed diff). Not in this scene's frame."
+   }
+  },
+  {
+   "scene": "e_transfer_truck",
+   "location": "gate-yard",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 11.9
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 11.9
+    }
+   ],
+   "props": [
+    {
+     "id": "truck-gate",
+     "object": "army-truck",
+     "source": "box-proxy"
+    },
+    {
+     "id": "truck-buried",
+     "object": "army-truck",
+     "source": "box-proxy"
+    },
+    {
+     "id": "kit-fisk",
+     "object": "kit-bag",
+     "source": "box-proxy",
+     "name": "kit-bag-b"
+    },
+    {
+     "id": "lamp-gate",
+     "object": "yard-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp-yard",
+     "object": "yard-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp-barracks",
+     "object": "yard-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-1",
+     "object": "fence-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-2",
+     "object": "fence-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-3",
+     "object": "fence-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-4",
+     "object": "fence-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-5",
+     "object": "fence-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-6",
+     "object": "fence-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-7",
+     "object": "fence-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-8",
+     "object": "fence-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-9",
+     "object": "fence-post",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "truck-buried",
+      "piece": "snowbank-east",
+      "samples": "1/27"
+     },
+     {
+      "prop": "truck-buried",
+      "piece": "yard-snow",
+      "samples": "9/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "prop_alpha",
+    "props"
+   ],
+   "flag_status": {
+    "status": "found by the driver (not flagged in the first pass); fixed at render time + proposed diff",
+    "what": "same camera and cause as c1_truck_gate (camera [0,-18.2,2.7] inside 'truck-gate'); proxy drawn 20% opaque."
+   }
+  },
+  {
+   "scene": "e_new_recruit",
+   "location": "gate-yard",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 9.7
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 9.7
+    }
+   ],
+   "props": [
+    {
+     "id": "truck-gate",
+     "object": "army-truck",
+     "source": "box-proxy"
+    },
+    {
+     "id": "truck-buried",
+     "object": "army-truck",
+     "source": "box-proxy"
+    },
+    {
+     "id": "kit-fisk",
+     "object": "kit-bag",
+     "source": "box-proxy",
+     "name": "kit-bag-b"
+    },
+    {
+     "id": "lamp-gate",
+     "object": "yard-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp-yard",
+     "object": "yard-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp-barracks",
+     "object": "yard-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-1",
+     "object": "fence-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-2",
+     "object": "fence-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-3",
+     "object": "fence-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-4",
+     "object": "fence-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-5",
+     "object": "fence-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-6",
+     "object": "fence-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-7",
+     "object": "fence-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-8",
+     "object": "fence-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-9",
+     "object": "fence-post",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [
+     {
+      "prop": "truck-buried",
+      "piece": "snowbank-east",
+      "samples": "1/27"
+     },
+     {
+      "prop": "truck-buried",
+      "piece": "yard-snow",
+      "samples": "9/27"
+     }
+    ],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "props"
+   ],
+   "flag_status": {
+    "status": "driver finding, no still change",
+    "what": "same as d3_duty_shovel ('truck-buried' inside barracks-a)."
+   }
+  },
+  {
+   "scene": "d5_duty_laundry",
+   "location": "laundry",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 17.6
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 18.9
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 7.7
+    }
+   ],
+   "props": [
+    {
+     "id": "uniform-1",
+     "object": "uniform",
+     "source": "box-proxy",
+     "name": "hanging-panel"
+    },
+    {
+     "id": "uniform-2",
+     "object": "uniform",
+     "source": "box-proxy",
+     "name": "hanging-panel"
+    },
+    {
+     "id": "uniform-3",
+     "object": "uniform",
+     "source": "box-proxy",
+     "name": "hanging-panel"
+    },
+    {
+     "id": "uniform-4",
+     "object": "uniform",
+     "source": "box-proxy",
+     "name": "hanging-panel"
+    },
+    {
+     "id": "uniform-fisk",
+     "object": "uniform",
+     "source": "box-proxy",
+     "name": "hanging-panel-e"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "d3_mail_room",
+   "location": "mail-room",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 14.6
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.1
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 6.5
+    }
+   ],
+   "props": [
+    {
+     "id": "sack-counter-a",
+     "object": "mail-sack",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sack-counter-b",
+     "object": "mail-sack",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sack-west",
+     "object": "mail-sack",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sack-hold-full",
+     "object": "mail-sack",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sack-hold-new",
+     "object": "mail-sack",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sack-pile",
+     "object": "mail-sack",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sack-shelf-1",
+     "object": "mail-sack",
+     "source": "box-proxy"
+    },
+    {
+     "id": "sack-shelf-2",
+     "object": "mail-sack",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "n7_perimeter",
+   "location": "perimeter",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 7.5
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 7.5
+    }
+   ],
+   "props": [
+    {
+     "id": "post-1",
+     "object": "fence-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-2",
+     "object": "fence-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-3",
+     "object": "fence-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-4",
+     "object": "fence-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-5",
+     "object": "fence-post",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "e_tree_line",
+   "location": "perimeter",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.1
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 8.1
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 4.5
+    }
+   ],
+   "props": [
+    {
+     "id": "post-1",
+     "object": "fence-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-2",
+     "object": "fence-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-3",
+     "object": "fence-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-4",
+     "object": "fence-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-5",
+     "object": "fence-post",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "n7_set_down",
+   "location": "perimeter",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 7.8
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 7.8
+    }
+   ],
+   "props": [
+    {
+     "id": "post-1",
+     "object": "fence-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-2",
+     "object": "fence-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-3",
+     "object": "fence-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-4",
+     "object": "fence-post",
+     "source": "box-proxy"
+    },
+    {
+     "id": "post-5",
+     "object": "fence-post",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "d1_rec_room",
+   "location": "rec-room",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 13.8
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 7.3
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 6.7
+    }
+   ],
+   "props": [
+    {
+     "id": "table",
+     "object": "round-table",
+     "source": "box-proxy"
+    },
+    {
+     "id": "deck",
+     "object": "card-deck",
+     "source": "box-proxy"
+    },
+    {
+     "id": "stove",
+     "object": "wood-stove",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "e_zoo_wake",
+   "location": "room-below",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 20.6
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 23.0
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 9.0
+    }
+   ],
+   "props": [
+    {
+     "id": "sheet-table",
+     "object": "sheet-covered-table",
+     "source": "box-proxy",
+     "name": "table-slab"
+    },
+    {
+     "id": "drip-stand",
+     "object": "tube-stand",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "n4_office",
+   "location": "sams-office",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 18.3
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 19.9
+    }
+   ],
+   "props": [
+    {
+     "id": "cabinet",
+     "object": "filing-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "folder-roster",
+     "object": "file-folder",
+     "source": "box-proxy"
+    },
+    {
+     "id": "folder-source",
+     "object": "file-folder",
+     "source": "box-proxy"
+    },
+    {
+     "id": "clock",
+     "object": "wall-clock",
+     "source": "box-proxy"
+    },
+    {
+     "id": "staff-plate",
+     "object": "meal-tray",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "d5_sam_office",
+   "location": "sams-office",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 14.8
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 14.5
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 6.8
+    }
+   ],
+   "props": [
+    {
+     "id": "cabinet",
+     "object": "filing-cabinet",
+     "source": "box-proxy"
+    },
+    {
+     "id": "folder-source",
+     "object": "file-folder",
+     "source": "box-proxy"
+    },
+    {
+     "id": "clock",
+     "object": "wall-clock",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "c1_halls",
+   "location": "tall-halls",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 18.2
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 18.4
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 7.3
+    }
+   ],
+   "props": [
+    {
+     "id": "door-yard",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-stair",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-1",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-2",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-3",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-4",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-5",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-6",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-bunk",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-8",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-9",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-10",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-log",
+     "object": "door-log-clipboard",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "d2_duty_paint",
+   "location": "tall-halls",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 19.4
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 17.6
+    }
+   ],
+   "props": [
+    {
+     "id": "door-yard",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-stair",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-1",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-2",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-3",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-4",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-5",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-6",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-bunk",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-8",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-9",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-10",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "ladder",
+     "object": "ladder",
+     "source": "box-proxy"
+    },
+    {
+     "id": "paint-tin",
+     "object": "paint-tin",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-log",
+     "object": "door-log-clipboard",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "d7_duty_walk",
+   "location": "tall-halls",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 19.8
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 18.8
+    }
+   ],
+   "props": [
+    {
+     "id": "door-yard",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-stair",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-1",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-2",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-3",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-4",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-5",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-6",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-bunk",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-8",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-9",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-10",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-log",
+     "object": "door-log-clipboard",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "n7_windigo",
+   "location": "tall-halls",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 19.0
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 19.5
+    }
+   ],
+   "props": [
+    {
+     "id": "door-yard",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-stair",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-1",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-2",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-3",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-4",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-5",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-6",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-bunk",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-8",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-9",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    },
+    {
+     "id": "door-10",
+     "object": "two-handle-door",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "e_cave",
+   "location": "the-cave",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 10.0
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 10.0
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 6.0
+    }
+   ],
+   "props": [
+    {
+     "id": "lamp-west",
+     "object": "work-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp-south",
+     "object": "work-lamp",
+     "source": "box-proxy"
+    },
+    {
+     "id": "lamp-east",
+     "object": "work-lamp",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "n6_pens",
+   "location": "the-pens",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 15.6
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 10.0
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 7.0
+    }
+   ],
+   "props": [
+    {
+     "id": "stand-first",
+     "object": "tube-stand",
+     "source": "box-proxy"
+    },
+    {
+     "id": "pump-end",
+     "object": "tube-stand",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [],
+   "flag_status": {
+    "status": "not flagged"
+   }
+  },
+  {
+   "scene": "n3_glovebox",
+   "location": "truck-cab",
+   "tier": "hero",
+   "resolution": [
+    2560,
+    1440
+   ],
+   "samples": 256,
+   "stills": [
+    {
+     "still": "camera",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 10.5
+    },
+    {
+     "still": "player",
+     "resolution": [
+      2560,
+      1440
+     ],
+     "samples": 256,
+     "render_seconds": 12.1
+    },
+    {
+     "still": "overview",
+     "resolution": [
+      1920,
+      1080
+     ],
+     "samples": 128,
+     "render_seconds": 5.6
+    }
+   ],
+   "props": [
+    {
+     "id": "truck",
+     "object": "army-truck",
+     "source": "box-proxy"
+    }
+   ],
+   "flagged_in_first_pass": [],
+   "geometry_checks": {
+    "camera_inside": [],
+    "camera_inside_prop": [],
+    "between_camera_and_target": [],
+    "prop_inside": [],
+    "prop_overlap": [],
+    "prop_off_floor": []
+   },
+   "render_time_overrides": [
+    "camera",
+    "props"
+   ],
+   "flag_status": {
+    "status": "found by the driver (not flagged in the first pass); fixed at render time + proposed diff",
+    "what": "two causes: the truck prop's box proxy (2.5 x 7 x 3 m) encloses the cab blockout pieces and its flat side filled the frame; and look_at [1.7, 2.62, 1.5] lies inside the glovebox piece. Proxy trimmed to the load body (y -4 to 1.2), look_at moved to [1.7, 2.40, 1.5] in front of the glovebox door."
+   }
+  }
+ ],
+ "overviews": [
+  {
+   "location": "boiler-room",
+   "reference": "games/man-eater/assets/locations/boiler-room.jpg",
+   "location_scene_count": 1,
+   "scene_lighting": "d4_duty_boiler",
+   "camera": {
+    "location": [
+     -5.0,
+     -3.6,
+     2.0
+    ],
+    "look_at": [
+     2.0,
+     3.0,
+     1.5
+    ],
+    "lens_mm": 18
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "neutral_names": {
+     "by_object": {
+      "sleeping-bag": "bedroll-slab",
+      "laced-boots": "footwear-box",
+      "uniform": "hanging-panel",
+      "sheet-covered-table": "table-slab"
+     },
+     "by_id": {
+      "kit-fisk": "kit-bag-b",
+      "bed-fisk": "bed-a",
+      "bed-mate": "bed-b",
+      "bags-fisk": "bedroll-slab-a",
+      "bags-mate": "bedroll-slab-b",
+      "boots-mate": "footwear-box-b",
+      "uniform-fisk": "hanging-panel-e"
+     }
+    },
+    "overview_ev": 0.0,
+    "scenes": {
+     "d4_duty_boiler": {
+      "exposure_ev": -1.9
+     }
+    }
+   }
+  },
+  {
+   "location": "bunk-room",
+   "reference": "games/man-eater/assets/locations/bunk-room.jpg",
+   "location_scene_count": 14,
+   "scene_lighting": "c1_bunk",
+   "camera": {
+    "location": [
+     -1.7,
+     -2.2,
+     1.6
+    ],
+    "look_at": [
+     0.6,
+     2.5,
+     1.4
+    ],
+    "lens_mm": 18
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "neutral_names": {
+     "by_object": {
+      "sleeping-bag": "bedroll-slab",
+      "laced-boots": "footwear-box",
+      "uniform": "hanging-panel",
+      "sheet-covered-table": "table-slab"
+     },
+     "by_id": {
+      "kit-fisk": "kit-bag-b",
+      "bed-fisk": "bed-a",
+      "bed-mate": "bed-b",
+      "bags-fisk": "bedroll-slab-a",
+      "bags-mate": "bedroll-slab-b",
+      "boots-mate": "footwear-box-b",
+      "uniform-fisk": "hanging-panel-e"
+     }
+    },
+    "overview_ev": 0.0,
+    "scenes": {
+     "c1_bunk": {
+      "exposure_ev": -2.8
+     },
+     "d2_sam_bunk": {
+      "exposure_ev": -2.8
+     },
+     "d5_jax_plan": {
+      "exposure_ev": -0.8
+     },
+     "d6_sam_offer": {
+      "exposure_ev": -2.8
+     },
+     "d7_bunk_evening": {
+      "exposure_ev": -0.8
+     },
+     "e_prints_bunk": {
+      "exposure_ev": 0.0
+     },
+     "n1_bunk_call": {
+      "exposure_ev": -1.0
+     },
+     "n2_door": {
+      "exposure_ev": -1.3
+     },
+     "n3_door": {
+      "exposure_ev": -1.3
+     },
+     "n4_door": {
+      "exposure_ev": -1.3
+     },
+     "n5_door": {
+      "exposure_ev": -1.3
+     },
+     "n6_door": {
+      "exposure_ev": -1.3
+     },
+     "n7_bunk_stay": {
+      "exposure_ev": -1.0
+     },
+     "n7_door": {
+      "exposure_ev": -1.3
+     }
+    }
+   }
+  },
+  {
+   "location": "cafeteria",
+   "reference": "games/man-eater/assets/locations/cafeteria.jpg",
+   "location_scene_count": 2,
+   "scene_lighting": "d1_cafeteria",
+   "camera": {
+    "location": [
+     8.5,
+     -5.0,
+     1.7
+    ],
+    "look_at": [
+     -5,
+     3,
+     1.8
+    ],
+    "lens_mm": 22
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "neutral_names": {
+     "by_object": {
+      "sleeping-bag": "bedroll-slab",
+      "laced-boots": "footwear-box",
+      "uniform": "hanging-panel",
+      "sheet-covered-table": "table-slab"
+     },
+     "by_id": {
+      "kit-fisk": "kit-bag-b",
+      "bed-fisk": "bed-a",
+      "bed-mate": "bed-b",
+      "bags-fisk": "bedroll-slab-a",
+      "bags-mate": "bedroll-slab-b",
+      "boots-mate": "footwear-box-b",
+      "uniform-fisk": "hanging-panel-e"
+     }
+    },
+    "overview_ev": 0.0,
+    "scenes": {
+     "d1_cafeteria": {
+      "exposure_ev": -0.6
+     },
+     "d6_next_week": {
+      "exposure_ev": 0.0
+     }
+    }
+   }
+  },
+  {
+   "location": "cold-store",
+   "reference": "games/man-eater/assets/locations/cold-store.jpg",
+   "location_scene_count": 1,
+   "scene_lighting": "d1_duty_coldstore",
+   "camera": {
+    "location": [
+     -18.5,
+     -2.2,
+     1.7
+    ],
+    "look_at": [
+     10,
+     1.5,
+     2.2
+    ],
+    "lens_mm": 22
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "neutral_names": {
+     "by_object": {
+      "sleeping-bag": "bedroll-slab",
+      "laced-boots": "footwear-box",
+      "uniform": "hanging-panel",
+      "sheet-covered-table": "table-slab"
+     },
+     "by_id": {
+      "kit-fisk": "kit-bag-b",
+      "bed-fisk": "bed-a",
+      "bed-mate": "bed-b",
+      "bags-fisk": "bedroll-slab-a",
+      "bags-mate": "bedroll-slab-b",
+      "boots-mate": "footwear-box-b",
+      "uniform-fisk": "hanging-panel-e"
+     }
+    },
+    "overview_ev": 0.0,
+    "scenes": {
+     "d1_duty_coldstore": {
+      "exposure_ev": 2.7
+     }
+    }
+   }
+  },
+  {
+   "location": "gate-yard",
+   "reference": "games/man-eater/assets/locations/gate-yard.jpg",
+   "location_scene_count": 4,
+   "scene_lighting": "d3_duty_shovel",
+   "camera": {
+    "location": [
+     3,
+     -14.2,
+     1.7
+    ],
+    "look_at": [
+     4,
+     8,
+     2.4
+    ],
+    "lens_mm": 22
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "neutral_names": {
+     "by_object": {
+      "sleeping-bag": "bedroll-slab",
+      "laced-boots": "footwear-box",
+      "uniform": "hanging-panel",
+      "sheet-covered-table": "table-slab"
+     },
+     "by_id": {
+      "kit-fisk": "kit-bag-b",
+      "bed-fisk": "bed-a",
+      "bed-mate": "bed-b",
+      "bags-fisk": "bedroll-slab-a",
+      "bags-mate": "bedroll-slab-b",
+      "boots-mate": "footwear-box-b",
+      "uniform-fisk": "hanging-panel-e"
+     }
+    },
+    "overview_ev": 0.0,
+    "scenes": {
+     "c1_truck_gate": {
+      "exposure_ev": -0.6
+     },
+     "d3_duty_shovel": {
+      "exposure_ev": -2.8
+     },
+     "e_new_recruit": {
+      "exposure_ev": -2.2
+     },
+     "e_transfer_truck": {
+      "exposure_ev": -0.6
+     }
+    }
+   }
+  },
+  {
+   "location": "laundry",
+   "reference": "games/man-eater/assets/locations/laundry.jpg",
+   "location_scene_count": 1,
+   "scene_lighting": "d5_duty_laundry",
+   "camera": {
+    "location": [
+     -3.5,
+     -2.6,
+     1.7
+    ],
+    "look_at": [
+     1.0,
+     2.0,
+     1.8
+    ],
+    "lens_mm": 20
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "neutral_names": {
+     "by_object": {
+      "sleeping-bag": "bedroll-slab",
+      "laced-boots": "footwear-box",
+      "uniform": "hanging-panel",
+      "sheet-covered-table": "table-slab"
+     },
+     "by_id": {
+      "kit-fisk": "kit-bag-b",
+      "bed-fisk": "bed-a",
+      "bed-mate": "bed-b",
+      "bags-fisk": "bedroll-slab-a",
+      "bags-mate": "bedroll-slab-b",
+      "boots-mate": "footwear-box-b",
+      "uniform-fisk": "hanging-panel-e"
+     }
+    },
+    "overview_ev": 0.0,
+    "scenes": {
+     "d5_duty_laundry": {
+      "exposure_ev": -2.8
+     }
+    }
+   }
+  },
+  {
+   "location": "mail-room",
+   "reference": "games/man-eater/assets/locations/mail-room.jpg",
+   "location_scene_count": 1,
+   "scene_lighting": "d3_mail_room",
+   "camera": {
+    "location": [
+     1.5,
+     -1.3,
+     1.7
+    ],
+    "look_at": [
+     -0.3,
+     1.5,
+     1.3
+    ],
+    "lens_mm": 18
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "neutral_names": {
+     "by_object": {
+      "sleeping-bag": "bedroll-slab",
+      "laced-boots": "footwear-box",
+      "uniform": "hanging-panel",
+      "sheet-covered-table": "table-slab"
+     },
+     "by_id": {
+      "kit-fisk": "kit-bag-b",
+      "bed-fisk": "bed-a",
+      "bed-mate": "bed-b",
+      "bags-fisk": "bedroll-slab-a",
+      "bags-mate": "bedroll-slab-b",
+      "boots-mate": "footwear-box-b",
+      "uniform-fisk": "hanging-panel-e"
+     }
+    },
+    "overview_ev": 0.0,
+    "scenes": {
+     "d3_mail_room": {
+      "exposure_ev": -0.9
+     }
+    }
+   }
+  },
+  {
+   "location": "perimeter",
+   "reference": "games/man-eater/assets/locations/perimeter.jpg",
+   "location_scene_count": 3,
+   "scene_lighting": "e_tree_line",
+   "camera": {
+    "location": [
+     0,
+     20,
+     1.7
+    ],
+    "look_at": [
+     0,
+     200,
+     6
+    ],
+    "lens_mm": 35
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "neutral_names": {
+     "by_object": {
+      "sleeping-bag": "bedroll-slab",
+      "laced-boots": "footwear-box",
+      "uniform": "hanging-panel",
+      "sheet-covered-table": "table-slab"
+     },
+     "by_id": {
+      "kit-fisk": "kit-bag-b",
+      "bed-fisk": "bed-a",
+      "bed-mate": "bed-b",
+      "bags-fisk": "bedroll-slab-a",
+      "bags-mate": "bedroll-slab-b",
+      "boots-mate": "footwear-box-b",
+      "uniform-fisk": "hanging-panel-e"
+     }
+    },
+    "overview_ev": 0.8,
+    "scenes": {
+     "e_tree_line": {
+      "exposure_ev": -1.7
+     },
+     "n7_perimeter": {
+      "exposure_ev": 0.0
+     },
+     "n7_set_down": {
+      "exposure_ev": 0.0
+     }
+    }
+   }
+  },
+  {
+   "location": "rec-room",
+   "reference": "games/man-eater/assets/locations/rec-room.jpg",
+   "location_scene_count": 1,
+   "scene_lighting": "d1_rec_room",
+   "camera": {
+    "location": [
+     -2.3,
+     -2.6,
+     1.6
+    ],
+    "look_at": [
+     0.5,
+     2.5,
+     1.8
+    ],
+    "lens_mm": 20
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "neutral_names": {
+     "by_object": {
+      "sleeping-bag": "bedroll-slab",
+      "laced-boots": "footwear-box",
+      "uniform": "hanging-panel",
+      "sheet-covered-table": "table-slab"
+     },
+     "by_id": {
+      "kit-fisk": "kit-bag-b",
+      "bed-fisk": "bed-a",
+      "bed-mate": "bed-b",
+      "bags-fisk": "bedroll-slab-a",
+      "bags-mate": "bedroll-slab-b",
+      "boots-mate": "footwear-box-b",
+      "uniform-fisk": "hanging-panel-e"
+     }
+    },
+    "overview_ev": 0.0,
+    "scenes": {
+     "d1_rec_room": {
+      "exposure_ev": -1.6
+     }
+    }
+   }
+  },
+  {
+   "location": "room-below",
+   "reference": "games/man-eater/assets/locations/room-below.jpg",
+   "location_scene_count": 1,
+   "scene_lighting": "e_zoo_wake",
+   "camera": {
+    "location": [
+     -2.2,
+     -2.2,
+     1.5
+    ],
+    "look_at": [
+     0.6,
+     2.5,
+     1.4
+    ],
+    "lens_mm": 18
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "neutral_names": {
+     "by_object": {
+      "sleeping-bag": "bedroll-slab",
+      "laced-boots": "footwear-box",
+      "uniform": "hanging-panel",
+      "sheet-covered-table": "table-slab"
+     },
+     "by_id": {
+      "kit-fisk": "kit-bag-b",
+      "bed-fisk": "bed-a",
+      "bed-mate": "bed-b",
+      "bags-fisk": "bedroll-slab-a",
+      "bags-mate": "bedroll-slab-b",
+      "boots-mate": "footwear-box-b",
+      "uniform-fisk": "hanging-panel-e"
+     }
+    },
+    "overview_ev": 0.0,
+    "scenes": {
+     "e_zoo_wake": {
+      "exposure_ev": -3.6
+     }
+    }
+   }
+  },
+  {
+   "location": "sams-office",
+   "reference": "games/man-eater/assets/locations/sams-office.jpg",
+   "location_scene_count": 2,
+   "scene_lighting": "d5_sam_office",
+   "camera": {
+    "location": [
+     -5.0,
+     -2.0,
+     1.5
+    ],
+    "look_at": [
+     -1.0,
+     2.0,
+     1.3
+    ],
+    "lens_mm": 20
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "neutral_names": {
+     "by_object": {
+      "sleeping-bag": "bedroll-slab",
+      "laced-boots": "footwear-box",
+      "uniform": "hanging-panel",
+      "sheet-covered-table": "table-slab"
+     },
+     "by_id": {
+      "kit-fisk": "kit-bag-b",
+      "bed-fisk": "bed-a",
+      "bed-mate": "bed-b",
+      "bags-fisk": "bedroll-slab-a",
+      "bags-mate": "bedroll-slab-b",
+      "boots-mate": "footwear-box-b",
+      "uniform-fisk": "hanging-panel-e"
+     }
+    },
+    "overview_ev": 0.0,
+    "scenes": {
+     "d5_sam_office": {
+      "exposure_ev": -2.6
+     },
+     "n4_office": {
+      "exposure_ev": 0.0
+     }
+    }
+   }
+  },
+  {
+   "location": "tall-halls",
+   "reference": "games/man-eater/assets/locations/tall-halls.jpg",
+   "location_scene_count": 4,
+   "scene_lighting": "c1_halls",
+   "camera": {
+    "location": [
+     0.3,
+     -52,
+     1.6
+    ],
+    "look_at": [
+     0,
+     -20,
+     2.4
+    ],
+    "lens_mm": 22
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "neutral_names": {
+     "by_object": {
+      "sleeping-bag": "bedroll-slab",
+      "laced-boots": "footwear-box",
+      "uniform": "hanging-panel",
+      "sheet-covered-table": "table-slab"
+     },
+     "by_id": {
+      "kit-fisk": "kit-bag-b",
+      "bed-fisk": "bed-a",
+      "bed-mate": "bed-b",
+      "bags-fisk": "bedroll-slab-a",
+      "bags-mate": "bedroll-slab-b",
+      "boots-mate": "footwear-box-b",
+      "uniform-fisk": "hanging-panel-e"
+     }
+    },
+    "overview_ev": 0.0,
+    "scenes": {
+     "c1_halls": {
+      "exposure_ev": 0.0
+     },
+     "d2_duty_paint": {
+      "exposure_ev": -1.1
+     },
+     "d7_duty_walk": {
+      "exposure_ev": -0.9
+     },
+     "n7_windigo": {
+      "exposure_ev": -0.6
+     }
+    }
+   }
+  },
+  {
+   "location": "the-cave",
+   "reference": "games/man-eater/assets/locations/the-cave.jpg",
+   "location_scene_count": 1,
+   "scene_lighting": "e_cave",
+   "camera": {
+    "location": [
+     0,
+     -6.5,
+     1.7
+    ],
+    "look_at": [
+     0,
+     5,
+     2.0
+    ],
+    "lens_mm": 22
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "neutral_names": {
+     "by_object": {
+      "sleeping-bag": "bedroll-slab",
+      "laced-boots": "footwear-box",
+      "uniform": "hanging-panel",
+      "sheet-covered-table": "table-slab"
+     },
+     "by_id": {
+      "kit-fisk": "kit-bag-b",
+      "bed-fisk": "bed-a",
+      "bed-mate": "bed-b",
+      "bags-fisk": "bedroll-slab-a",
+      "bags-mate": "bedroll-slab-b",
+      "boots-mate": "footwear-box-b",
+      "uniform-fisk": "hanging-panel-e"
+     }
+    },
+    "overview_ev": 0.5,
+    "scenes": {
+     "e_cave": {
+      "exposure_ev": 6.0
+     }
+    }
+   }
+  },
+  {
+   "location": "the-pens",
+   "reference": "left out (text card)",
+   "location_scene_count": 1,
+   "scene_lighting": "n6_pens",
+   "camera": {
+    "location": [
+     -19.0,
+     -2.6,
+     1.7
+    ],
+    "look_at": [
+     5,
+     1,
+     2.2
+    ],
+    "lens_mm": 22
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "neutral_names": {
+     "by_object": {
+      "sleeping-bag": "bedroll-slab",
+      "laced-boots": "footwear-box",
+      "uniform": "hanging-panel",
+      "sheet-covered-table": "table-slab"
+     },
+     "by_id": {
+      "kit-fisk": "kit-bag-b",
+      "bed-fisk": "bed-a",
+      "bed-mate": "bed-b",
+      "bags-fisk": "bedroll-slab-a",
+      "bags-mate": "bedroll-slab-b",
+      "boots-mate": "footwear-box-b",
+      "uniform-fisk": "hanging-panel-e"
+     }
+    },
+    "overview_ev": 0.0,
+    "scenes": {
+     "n6_pens": {
+      "exposure_ev": -2.8
+     }
+    },
+    "reference_card": "The reference painting for the pens shows a small seated shape at the right of the floor that reads as a figure at sheet size; man-eater keeps no figure imagery, so the reference is left out of this sheet."
+   }
+  },
+  {
+   "location": "truck-cab",
+   "reference": "games/man-eater/assets/locations/truck-cab.jpg",
+   "location_scene_count": 1,
+   "scene_lighting": "n3_glovebox",
+   "camera": {
+    "location": [
+     -1.1,
+     1.0,
+     1.7
+    ],
+    "look_at": [
+     1.7,
+     2.8,
+     1.4
+    ],
+    "lens_mm": 22
+   },
+   "rig": {
+    "exposure_ev": 0.0,
+    "neutral_names": {
+     "by_object": {
+      "sleeping-bag": "bedroll-slab",
+      "laced-boots": "footwear-box",
+      "uniform": "hanging-panel",
+      "sheet-covered-table": "table-slab"
+     },
+     "by_id": {
+      "kit-fisk": "kit-bag-b",
+      "bed-fisk": "bed-a",
+      "bed-mate": "bed-b",
+      "bags-fisk": "bedroll-slab-a",
+      "bags-mate": "bedroll-slab-b",
+      "boots-mate": "footwear-box-b",
+      "uniform-fisk": "hanging-panel-e"
+     }
+    },
+    "overview_ev": 0.0,
+    "scenes": {
+     "n3_glovebox": {
+      "exposure_ev": -1.1
+     }
+    }
+   }
+  }
+ ]
+}

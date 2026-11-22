@@ -55,6 +55,13 @@ recorded render-time overrides differ.
   camera fixes are `camera` overrides (`location` or `look_at`). No model ledger exists for either game, so nothing was swapped.
   Run each remote job on its own: `run.sh` reads one shared `args.txt`/`run.txt`, so two jobs started together clobber each other.
 
+- Added for batch 5 (man-eater): overrides take `hide_props` (prop ids left out of the scene) and `prop_alpha` ({prop id: opacity}, a proxy
+  drawn translucent where the player's camera rides inside it); the `props` override already patched a prop (location, `size_m`). The
+  checks gain `camera_inside_prop` (the camera inside a prop's bounding box). `rig.json` takes `neutral_names` (`by_id`, `by_object`: the
+  Blender object and the ledger `name` of a proxy whose id or object reads as a figure; the id and object stay in the ledger) and
+  `reference_card` (a location whose reference image is replaced by a text card on its sheet; `finish.py` draws it). Man Eater has no
+  figure imagery, so both are used there. No model ledger exists for man-eater, so nothing was swapped.
+
 ## Remote run
 
 Used on a rented RTX 4090: upload `render_scenes.py` and `pack.tgz`, run Blender 5.2.1 as above with `--device OPTIX`, fetch the
