@@ -238,5 +238,168 @@
         "exposure_ev": 3.0
       }
     }
+  },
+  "bloom-district": {
+    "overview_scene": "s3_bloom_morning",
+    "overview": {
+      "location": [
+        -56,
+        0,
+        14.5
+      ],
+      "look_at": [
+        30,
+        0,
+        2.0
+      ],
+      "lens_mm": 24
+    },
+    "exposure_ev": -0.5,
+    "grade_gain": [
+      0.92,
+      1.0,
+      1.0
+    ],
+    "piece_alpha": {
+      "haze": 0.06
+    }
+  },
+  "relief-hall": {
+    "overview_scene": "s3_relief_queue",
+    "overview": {
+      "location": [
+        29,
+        -1,
+        1.7
+      ],
+      "look_at": [
+        -30,
+        -3,
+        2.0
+      ],
+      "lens_mm": 22
+    },
+    "exposure_ev": 0.5,
+    "grade_gain": [
+      0.9,
+      1.0,
+      1.02
+    ],
+    "scenes": {
+      "s3_relief_standoff": {
+        "exposure_ev": 0.7
+      }
+    }
+  },
+  "salvage-settlement": {
+    "overview_scene": "s3_settlement_day",
+    "overview": {
+      "location": [
+        -5,
+        -30,
+        1.7
+      ],
+      "look_at": [
+        -30,
+        4,
+        5.0
+      ],
+      "lens_mm": 24
+    },
+    "exposure_ev": -1.6,
+    "grade_gain": [
+      0.92,
+      1.0,
+      1.04
+    ],
+    "scenes": {
+      "s3_settlement_raid": {
+        "exposure_ev": 1.5
+      },
+      "s3_settlement_haze": {
+        "exposure_ev": 0.4
+      },
+      "s3_settlement_lost": {
+        "exposure_ev": 0.4
+      }
+    }
+  },
+  "snakehead-fortress": {
+    "overview_scene": "s3_fortress_lamp",
+    "overview": {
+      "location": [
+        -9.5,
+        5,
+        1.8
+      ],
+      "look_at": [
+        -18,
+        -10,
+        1.4
+      ],
+      "lens_mm": 22
+    },
+    "exposure_ev": 2.4,
+    "grade_gain": [
+      0.9,
+      1.0,
+      1.05
+    ],
+    "piece_alpha": {
+      "glass": 0.3
+    },
+    "proxy_alpha": {
+      "batch-bench": 0.35
+    },
+    "overview_ev": 4.2,
+    "scenes": {
+      "s3_fortress_lamp": {
+        "exposure_ev": -4.2
+      },
+      "s3_fortress_bench": {
+        "exposure_ev": -4.2
+      },
+      "s3_fortress_workshop": {
+        "exposure_ev": -3.6
+      },
+      "s3_fortress_following": {
+        "exposure_ev": -0.8
+      },
+      "s3_fortress_rite": {
+        "exposure_ev": -0.8
+      }
+    }
+  },
+  "spire-gala": {
+    "overview_scene": "s3_gala_floor",
+    "overview": {
+      "location": [
+        10,
+        -23.5,
+        1.7
+      ],
+      "look_at": [
+        -2,
+        25,
+        6.0
+      ],
+      "lens_mm": 20
+    },
+    "exposure_ev": -3.2,
+    "grade_gain": [
+      1.0,
+      1.0,
+      0.95
+    ],
+    "piece_alpha": {
+      "glass": 0.25,
+      "frosted": 0.7
+    },
+    "scenes": {
+      "s3_gala_annex": {
+        "exposure_ev": 2.0
+      }
+    },
+    "world_gain": 4.0
   }
 }

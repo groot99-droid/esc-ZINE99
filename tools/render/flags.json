@@ -1,5 +1,34 @@
 {
-  "s3_hospital_2217": {"status": "fixed at render time + proposed diff", "what": "observation glass moved to the far (+y) wall by a render-time blockout override; bench proxy drawn translucent so the vial and syringe inside it show; the 85 mm push-in on the bench is kept (design). Build-file diff proposed in REFINEMENT_NOTES.md."},
-  "s3_injection_first": {"status": "fixed at render time + proposed diff", "what": "the vial and the syringe stand inside the solid bench-rig box proxy, which filled the frame; the bench proxy is drawn translucent. Build-file diff proposed."},
-  "s3_river_night": {"status": "fixed at render time + proposed diff", "what": "the fence blockout piece (100 m x 1.8 m, solid) stood between camera and pipe; a 8 m gate gap is cut in it by a render-time blockout override. Build-file diff proposed."}
+ "s3_hospital_2217": {
+  "status": "fixed at render time + proposed diff",
+  "what": "observation glass moved to the far (+y) wall by a render-time blockout override; bench proxy drawn translucent so the vial and syringe inside it show; the 85 mm push-in on the bench is kept (design). Build-file diff proposed in REFINEMENT_NOTES.md."
+ },
+ "s3_injection_first": {
+  "status": "fixed at render time + proposed diff",
+  "what": "the vial and the syringe stand inside the solid bench-rig box proxy, which filled the frame; the bench proxy is drawn translucent. Build-file diff proposed."
+ },
+ "s3_river_night": {
+  "status": "fixed at render time + proposed diff",
+  "what": "the fence blockout piece (100 m x 1.8 m, solid) stood between camera and pipe; a 8 m gate gap is cut in it by a render-time blockout override. Build-file diff proposed."
+ },
+ "s3_settlement_day": {
+  "status": "fixed at render time + proposed diff",
+  "what": "the camera (and player start) stood inside the embankment piece; moved to x -45.5, just east of its face, by a render-time override. Build-file diff proposed."
+ },
+ "s3_fortress_following": {
+  "status": "fixed at render time + proposed diff",
+  "what": "the end of archive-row-3 grazed the sight line to the hall; camera moved 2 m west (x -19) by a render-time override. Build-file diff proposed."
+ },
+ "s3_gala_balcony": {
+  "status": "fixed at render time + proposed diff",
+  "what": "the camera at y 16 faces the balcony through the solid glass-north wall; a 12 m doorway (x -6 to 6) is cut in glass-north by a render-time blockout override. Build-file diff proposed."
+ },
+ "s3_gala_leash": {
+  "status": "fixed at render time + proposed diff",
+  "what": "the camera at y 18 faces the balcony through the solid glass-north wall; a 12 m doorway (x -6 to 6) is cut in glass-north by a render-time blockout override. Build-file diff proposed."
+ },
+ "s3_gala_bond": {
+  "status": "fixed at render time + proposed diff",
+  "what": "the camera on the balcony looks back into the hall through the solid glass-north wall; a 12 m doorway (x -6 to 6) is cut in glass-north by a render-time blockout override. Build-file diff proposed."
+ }
 }

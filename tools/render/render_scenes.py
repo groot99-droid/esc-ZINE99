@@ -342,6 +342,7 @@ def main():
             pdict[pid].update(patch)
         props = list(pdict.values())
         cam_spec = merge(asm["camera"], ov.get("camera"))
+        pstart = merge(entry.get("player_start"), ov.get("player_start")) if entry.get("player_start") else None
 
         sc = new_scene()
         build_world(sc, asm["world"], rig, wgain)
@@ -362,6 +363,10 @@ def main():
             ob["shape"] = shape_of.get(ob.name[3:], "box")
             if ob.get("role") == "sky":
                 ob.hide_render = True  # a lid at sky height would shut out the sun and the world
+        for mname, a in rig.get("piece_alpha", {}).items():  # rig: a blockout material drawn translucent (haze, glass)
+            mt = bpy.data.materials.get("bo-" + mname)
+            if mt is not None and mt.node_tree.nodes.get("Principled BSDF"):
+                mt.node_tree.nodes["Principled BSDF"].inputs["Alpha"].default_value = a
         bpy.context.view_layer.update()
         checks = run_checks(sc, cam_spec["location"], cam_spec["look_at"], made, pieces_objs)
         rec = {"location": entry["location"], "scene": entry["scene"], "tier": entry["tier"],
@@ -385,7 +390,7 @@ def main():
         S = max(4, int(entry["samples"] * o["samples_scale"]))
         if "camera" in stills:
             shoot("camera", cam_spec["location"], cam_spec["look_at"], cam_spec.get("lens_mm", 35), (W, H), S)
-        ps = entry.get("player_start")
+        ps = pstart
         if "player" in stills and ps:
             f = math.radians(ps["facing_deg"])  # compass: 0 faces +y, 90 faces +x
             eye = ps["location"][2] + 1.6

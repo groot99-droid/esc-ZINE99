@@ -99,5 +99,93 @@
         }
       ]
     }
+  },
+  "salvage-settlement/s3_settlement_day": {
+    "camera": {
+      "location": [
+        -45.5,
+        -26,
+        1.7
+      ]
+    },
+    "player_start": {
+      "location": [
+        -45.5,
+        -28,
+        0
+      ]
+    }
+  },
+  "snakehead-fortress/s3_fortress_following": {
+    "camera": {
+      "location": [
+        -19,
+        -2,
+        1.7
+      ]
+    },
+    "player_start": {
+      "location": [
+        -19,
+        -2,
+        0
+      ]
+    }
+  },
+  "spire-gala/*": {
+    "blockout_replace": {
+      "glass-north": [
+        {
+          "id": "glass-north-west",
+          "shape": "box",
+          "role": "wall",
+          "size_m": [
+            34,
+            0.2,
+            24
+          ],
+          "location": [
+            -23.0,
+            19.0,
+            12.0
+          ],
+          "material": "glass"
+        },
+        {
+          "id": "glass-north-east",
+          "shape": "box",
+          "role": "wall",
+          "size_m": [
+            34,
+            0.2,
+            24
+          ],
+          "location": [
+            23.0,
+            19.0,
+            12.0
+          ],
+          "material": "glass"
+        }
+      ],
+      "annex-floor": [
+        {
+          "id": "annex-floor",
+          "shape": "box",
+          "role": "floor",
+          "size_m": [
+            10,
+            14,
+            0.1
+          ],
+          "location": [
+            -35,
+            -8,
+            -0.05
+          ],
+          "material": "white"
+        }
+      ]
+    }
   }
 }

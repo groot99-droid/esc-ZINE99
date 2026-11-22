@@ -9,7 +9,7 @@ recorded render-time overrides differ.
 | `pack.py` | `python tools/render/pack.py <slug> <out dir>`: runs `tools/blender/compile.py`, resolves every prop (object id, `size_m`, role) from `assets.json`, takes each scene's tier from `docs/blender_plans/plans.json` (hero 2560x1440 at 256 samples, otherwise 1920x1080 at 128), and writes `pack.tgz` |
 | `render_scenes.py` | Runs inside Blender (`blender -b --factory-startup --python tools/render/render_scenes.py -- --pack <pack> --out <dir>`). Builds the blockout with the repo's own `tools/blender/blockout.py`, each prop as a named box proxy (or the real model, see below), the scene's own lights, world, camera and lens; renders with Cycles (OptiX) and OpenImageDenoise; checks the geometry; writes `<scene>.json` per scene |
 | `rig.json` | The driver's rig per location: exposure (EV), world and light gain, optional fog, fill lights, proxy colours, the overview camera and which scene's lighting the overview uses |
-| `overrides.json` | Render-time overrides (a blockout piece replaced, a prop's rotation, a camera nudge), each written up as a proposed diff in `renders/<game>/REFINEMENT_NOTES.md` |
+| `overrides.json` | Render-time overrides (a blockout piece replaced, a prop's rotation, a camera nudge, a player-start nudge), each written up as a proposed diff in `renders/<game>/REFINEMENT_NOTES.md` |
 | `flags.json` | What was done about each first-pass flagged scene (feeds the ledger) |
 | `finish.py` | `python tools/render/finish.py <slug> <run dir>`: contact sheets (`renders/<slug>/<location>.jpg`) and `ledger.json` |
 
@@ -27,6 +27,11 @@ recorded render-time overrides differ.
 - Models: pass `--models <models.json>`; an entry per object id (`{"models": [{"object": id, "glb": path}]}`, a list, or a
   map id -> path) swaps the proxy for the glb, scaled to the prop's height and placed at its location and rotation. No
   dr-tox-rise ledger exists yet, so nothing was swapped and the swap path has not been run.
+- Added for dr-tox-fall: `piece_alpha` (rig, per location) draws a blockout material translucent by material name (haze, glass,
+  frosted glass), because the build files' glass and haze pieces are opaque boxes; and an override `player_start` (merged over the
+  build file's, used for the eye-height still). `--only` does not accept a `*` through `run.sh` (the shell expands it): list scenes.
+  `rig.json` also takes `overview_ev` (extra exposure for the overview only, used where its lighting scene needs a different EV).
+  No dr-tox-fall model ledger exists, so nothing was swapped.
 - Geometry checks per scene: camera inside a piece, a piece between camera and look_at, a prop whose centre is inside a piece
   (`prop_inside`) or that overlaps one (`prop_overlap`, informational), a ground prop off its floor.
 - Not produced: the depth and object-index passes of the plan.
