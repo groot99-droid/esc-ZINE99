@@ -117,6 +117,13 @@ recorded render-time overrides differ.
   front faces away from its scene camera (the shrine lectern). Models were lite copies again (12k triangles, 512 px JPEG, made with
   `lite.py`-style decimation in Blender, uploaded as one tar). The overview camera is still a rig item.
 
+- Added for batch 11 (dr-tox-rise, dr-tox-fall, dr-tox-finale models re-render): no driver change. All 21 + 21 + 24 scenes were rendered again with the
+  models of each game's ledger (lite copies, 12k triangles, 512 px, as before); `rig.json` per-scene `exposure_ev` and `overview_ev` were re-matched to the box
+  pass's mean luminance (a script comparing the box run with the model run, damped log2 of the luminance ratio). A model that shows a figure-like shape
+  (fall's `shroud-stand`) is skipped in the models json and stays a named box proxy. Where a model appears in the ledger during the run, only the locations that use
+  it are rendered again (`--only`), merged into the run folder, and `finish.py` is run on the merged folder (the-march of dr-tox-finale, twice). `finish.py --before`
+  now also runs for dr-tox-rise. The owner sheet for the batch is the three games' `--owner` sheets stacked (18 locations).
+
 ## Remote run
 
 Used on a rented RTX 4090: upload `render_scenes.py` and `pack.tgz`, run Blender 5.2.1 as above with `--device OPTIX`, fetch the

@@ -24,7 +24,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 11.1
+     "render_seconds": 11.9
     },
     {
      "still": "player",
@@ -33,7 +33,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 11.1
+     "render_seconds": 11.8
     },
     {
      "still": "overview",
@@ -42,59 +42,231 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 5.2
+     "render_seconds": 5.7
     }
    ],
    "props": [
     {
      "id": "stack-1",
      "object": "vent-stack",
-     "source": "box-proxy"
+     "source": "model:vent-stack.glb",
+     "fit": {
+      "model_dims_m": [
+       5.569,
+       8.108,
+       14.058
+      ],
+      "box_m": [
+       3.0,
+       3.0,
+       14.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.996,
+      "worst_side_ratio": 2.69
+     }
     },
     {
      "id": "stack-2",
      "object": "vent-stack",
-     "source": "box-proxy"
+     "source": "model:vent-stack.glb",
+     "fit": {
+      "model_dims_m": [
+       5.569,
+       8.108,
+       14.058
+      ],
+      "box_m": [
+       3.0,
+       3.0,
+       14.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.996,
+      "worst_side_ratio": 2.69
+     }
     },
     {
      "id": "rig",
      "object": "dispersal-rig",
-     "source": "box-proxy"
+     "source": "model:dispersal-rig.glb",
+     "fit": {
+      "model_dims_m": [
+       2.141,
+       0.89,
+       1.805
+      ],
+      "box_m": [
+       1.6,
+       1.2,
+       1.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.35
+     }
     },
     {
      "id": "drone",
      "object": "camera-drone",
-     "source": "box-proxy"
+     "source": "model:camera-drone.glb",
+     "fit": {
+      "model_dims_m": [
+       0.799,
+       0.675,
+       0.425
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.038,
+      "worst_side_ratio": 1.14
+     }
     },
     {
      "id": "truck",
      "object": "service-truck",
-     "source": "box-proxy"
+     "source": "model:service-truck.glb",
+     "fit": {
+      "model_dims_m": [
+       2.341,
+       6.049,
+       3.177
+      ],
+      "box_m": [
+       2.4,
+       6.0,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.987,
+      "worst_side_ratio": 1.04
+     }
     },
     {
      "id": "stall-1",
      "object": "market-stall",
-     "source": "box-proxy"
+     "source": "model:market-stall.glb",
+     "fit": {
+      "model_dims_m": [
+       2.41,
+       1.355,
+       2.324
+      ],
+      "box_m": [
+       2.4,
+       1.6,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.033,
+      "worst_side_ratio": 1.14
+     }
     },
     {
      "id": "stall-2",
      "object": "market-stall",
-     "source": "box-proxy"
+     "source": "model:market-stall.glb",
+     "fit": {
+      "model_dims_m": [
+       2.41,
+       1.355,
+       2.324
+      ],
+      "box_m": [
+       2.4,
+       1.6,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.033,
+      "worst_side_ratio": 1.14
+     }
     },
     {
      "id": "stall-3",
      "object": "market-stall",
-     "source": "box-proxy"
+     "source": "model:market-stall.glb",
+     "fit": {
+      "model_dims_m": [
+       2.41,
+       1.355,
+       2.324
+      ],
+      "box_m": [
+       2.4,
+       1.6,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.033,
+      "worst_side_ratio": 1.14
+     }
     },
     {
      "id": "stall-4",
      "object": "market-stall",
-     "source": "box-proxy"
+     "source": "model:market-stall.glb",
+     "fit": {
+      "model_dims_m": [
+       2.41,
+       1.355,
+       2.324
+      ],
+      "box_m": [
+       2.4,
+       1.6,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.033,
+      "worst_side_ratio": 1.14
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -122,7 +294,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 10.5
+     "render_seconds": 11.1
     },
     {
      "still": "player",
@@ -131,59 +303,231 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 10.5
+     "render_seconds": 11.1
     }
    ],
    "props": [
     {
      "id": "stack-1",
      "object": "vent-stack",
-     "source": "box-proxy"
+     "source": "model:vent-stack.glb",
+     "fit": {
+      "model_dims_m": [
+       5.569,
+       8.108,
+       14.058
+      ],
+      "box_m": [
+       3.0,
+       3.0,
+       14.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.996,
+      "worst_side_ratio": 2.69
+     }
     },
     {
      "id": "stack-2",
      "object": "vent-stack",
-     "source": "box-proxy"
+     "source": "model:vent-stack.glb",
+     "fit": {
+      "model_dims_m": [
+       5.569,
+       8.108,
+       14.058
+      ],
+      "box_m": [
+       3.0,
+       3.0,
+       14.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.996,
+      "worst_side_ratio": 2.69
+     }
     },
     {
      "id": "rig",
      "object": "dispersal-rig",
-     "source": "box-proxy"
+     "source": "model:dispersal-rig.glb",
+     "fit": {
+      "model_dims_m": [
+       2.141,
+       0.89,
+       1.805
+      ],
+      "box_m": [
+       1.6,
+       1.2,
+       1.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.35
+     }
     },
     {
      "id": "drone",
      "object": "camera-drone",
-     "source": "box-proxy"
+     "source": "model:camera-drone.glb",
+     "fit": {
+      "model_dims_m": [
+       0.799,
+       0.675,
+       0.425
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.038,
+      "worst_side_ratio": 1.14
+     }
     },
     {
      "id": "truck",
      "object": "service-truck",
-     "source": "box-proxy"
+     "source": "model:service-truck.glb",
+     "fit": {
+      "model_dims_m": [
+       2.341,
+       6.049,
+       3.177
+      ],
+      "box_m": [
+       2.4,
+       6.0,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.987,
+      "worst_side_ratio": 1.04
+     }
     },
     {
      "id": "stall-1",
      "object": "market-stall",
-     "source": "box-proxy"
+     "source": "model:market-stall.glb",
+     "fit": {
+      "model_dims_m": [
+       2.41,
+       1.355,
+       2.324
+      ],
+      "box_m": [
+       2.4,
+       1.6,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.033,
+      "worst_side_ratio": 1.14
+     }
     },
     {
      "id": "stall-2",
      "object": "market-stall",
-     "source": "box-proxy"
+     "source": "model:market-stall.glb",
+     "fit": {
+      "model_dims_m": [
+       2.41,
+       1.355,
+       2.324
+      ],
+      "box_m": [
+       2.4,
+       1.6,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.033,
+      "worst_side_ratio": 1.14
+     }
     },
     {
      "id": "stall-3",
      "object": "market-stall",
-     "source": "box-proxy"
+     "source": "model:market-stall.glb",
+     "fit": {
+      "model_dims_m": [
+       2.41,
+       1.355,
+       2.324
+      ],
+      "box_m": [
+       2.4,
+       1.6,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.033,
+      "worst_side_ratio": 1.14
+     }
     },
     {
      "id": "stall-4",
      "object": "market-stall",
-     "source": "box-proxy"
+     "source": "model:market-stall.glb",
+     "fit": {
+      "model_dims_m": [
+       2.41,
+       1.355,
+       2.324
+      ],
+      "box_m": [
+       2.4,
+       1.6,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.033,
+      "worst_side_ratio": 1.14
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -211,7 +555,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 7.1
+     "render_seconds": 7.8
     },
     {
      "still": "player",
@@ -220,59 +564,231 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 7.1
+     "render_seconds": 7.8
     }
    ],
    "props": [
     {
      "id": "stack-1",
      "object": "vent-stack",
-     "source": "box-proxy"
+     "source": "model:vent-stack.glb",
+     "fit": {
+      "model_dims_m": [
+       5.569,
+       8.108,
+       14.058
+      ],
+      "box_m": [
+       3.0,
+       3.0,
+       14.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.996,
+      "worst_side_ratio": 2.69
+     }
     },
     {
      "id": "stack-2",
      "object": "vent-stack",
-     "source": "box-proxy"
+     "source": "model:vent-stack.glb",
+     "fit": {
+      "model_dims_m": [
+       5.569,
+       8.108,
+       14.058
+      ],
+      "box_m": [
+       3.0,
+       3.0,
+       14.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.996,
+      "worst_side_ratio": 2.69
+     }
     },
     {
      "id": "rig",
      "object": "dispersal-rig",
-     "source": "box-proxy"
+     "source": "model:dispersal-rig.glb",
+     "fit": {
+      "model_dims_m": [
+       2.141,
+       0.89,
+       1.805
+      ],
+      "box_m": [
+       1.6,
+       1.2,
+       1.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.35
+     }
     },
     {
      "id": "drone",
      "object": "camera-drone",
-     "source": "box-proxy"
+     "source": "model:camera-drone.glb",
+     "fit": {
+      "model_dims_m": [
+       0.799,
+       0.675,
+       0.425
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.038,
+      "worst_side_ratio": 1.14
+     }
     },
     {
      "id": "truck",
      "object": "service-truck",
-     "source": "box-proxy"
+     "source": "model:service-truck.glb",
+     "fit": {
+      "model_dims_m": [
+       2.341,
+       6.049,
+       3.177
+      ],
+      "box_m": [
+       2.4,
+       6.0,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.987,
+      "worst_side_ratio": 1.04
+     }
     },
     {
      "id": "stall-1",
      "object": "market-stall",
-     "source": "box-proxy"
+     "source": "model:market-stall.glb",
+     "fit": {
+      "model_dims_m": [
+       2.41,
+       1.355,
+       2.324
+      ],
+      "box_m": [
+       2.4,
+       1.6,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.033,
+      "worst_side_ratio": 1.14
+     }
     },
     {
      "id": "stall-2",
      "object": "market-stall",
-     "source": "box-proxy"
+     "source": "model:market-stall.glb",
+     "fit": {
+      "model_dims_m": [
+       2.41,
+       1.355,
+       2.324
+      ],
+      "box_m": [
+       2.4,
+       1.6,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.033,
+      "worst_side_ratio": 1.14
+     }
     },
     {
      "id": "stall-3",
      "object": "market-stall",
-     "source": "box-proxy"
+     "source": "model:market-stall.glb",
+     "fit": {
+      "model_dims_m": [
+       2.41,
+       1.355,
+       2.324
+      ],
+      "box_m": [
+       2.4,
+       1.6,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.033,
+      "worst_side_ratio": 1.14
+     }
     },
     {
      "id": "stall-4",
      "object": "market-stall",
-     "source": "box-proxy"
+     "source": "model:market-stall.glb",
+     "fit": {
+      "model_dims_m": [
+       2.41,
+       1.355,
+       2.324
+      ],
+      "box_m": [
+       2.4,
+       1.6,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.033,
+      "worst_side_ratio": 1.14
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -300,7 +816,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 13.3
+     "render_seconds": 14.1
     },
     {
      "still": "player",
@@ -309,7 +825,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 13.0
+     "render_seconds": 13.8
     },
     {
      "still": "overview",
@@ -318,87 +834,360 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 6.3
+     "render_seconds": 6.9
     }
    ],
    "props": [
     {
      "id": "shutter",
      "object": "relief-shutter",
-     "source": "box-proxy"
+     "source": "model:relief-shutter.glb",
+     "fit": {
+      "model_dims_m": [
+       6.051,
+       1.822,
+       5.559
+      ],
+      "box_m": [
+       6.0,
+       0.4,
+       3.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.516,
+      "worst_side_ratio": 2.35
+     }
     },
     {
      "id": "dispenser-1",
      "object": "ration-dispenser",
-     "source": "box-proxy"
+     "source": "model:ration-dispenser.glb",
+     "fit": {
+      "model_dims_m": [
+       1.095,
+       0.906,
+       2.213
+      ],
+      "box_m": [
+       1.2,
+       0.7,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.994,
+      "worst_side_ratio": 1.29
+     }
     },
     {
      "id": "dispenser-2",
      "object": "ration-dispenser",
-     "source": "box-proxy"
+     "source": "model:ration-dispenser.glb",
+     "fit": {
+      "model_dims_m": [
+       1.095,
+       0.906,
+       2.213
+      ],
+      "box_m": [
+       1.2,
+       0.7,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.994,
+      "worst_side_ratio": 1.29
+     }
     },
     {
      "id": "dispenser-3",
      "object": "ration-dispenser",
-     "source": "box-proxy"
+     "source": "model:ration-dispenser.glb",
+     "fit": {
+      "model_dims_m": [
+       1.095,
+       0.906,
+       2.213
+      ],
+      "box_m": [
+       1.2,
+       0.7,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.994,
+      "worst_side_ratio": 1.29
+     }
     },
     {
      "id": "dispenser-4",
      "object": "ration-dispenser",
-     "source": "box-proxy"
+     "source": "model:ration-dispenser.glb",
+     "fit": {
+      "model_dims_m": [
+       1.095,
+       0.906,
+       2.213
+      ],
+      "box_m": [
+       1.2,
+       0.7,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.994,
+      "worst_side_ratio": 1.29
+     }
     },
     {
      "id": "board",
      "object": "number-board",
-     "source": "box-proxy"
+     "source": "model:number-board.glb",
+     "fit": {
+      "model_dims_m": [
+       1.817,
+       0.325,
+       1.97
+      ],
+      "box_m": [
+       1.8,
+       0.1,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.57,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "rail-1",
      "object": "queue-rail",
-     "source": "box-proxy"
+     "source": "model:queue-rail.glb",
+     "fit": {
+      "model_dims_m": [
+       4.018,
+       1.155,
+       2.5
+      ],
+      "box_m": [
+       4.0,
+       0.3,
+       1.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.469,
+      "worst_side_ratio": 2.12
+     }
     },
     {
      "id": "rail-2",
      "object": "queue-rail",
-     "source": "box-proxy"
+     "source": "model:queue-rail.glb",
+     "fit": {
+      "model_dims_m": [
+       4.018,
+       1.155,
+       2.5
+      ],
+      "box_m": [
+       4.0,
+       0.3,
+       1.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.469,
+      "worst_side_ratio": 2.12
+     }
     },
     {
      "id": "rail-3",
      "object": "queue-rail",
-     "source": "box-proxy"
+     "source": "model:queue-rail.glb",
+     "fit": {
+      "model_dims_m": [
+       4.018,
+       1.155,
+       2.5
+      ],
+      "box_m": [
+       4.0,
+       0.3,
+       1.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.469,
+      "worst_side_ratio": 2.12
+     }
     },
     {
      "id": "rail-4",
      "object": "queue-rail",
-     "source": "box-proxy"
+     "source": "model:queue-rail.glb",
+     "fit": {
+      "model_dims_m": [
+       4.018,
+       1.155,
+       2.5
+      ],
+      "box_m": [
+       4.0,
+       0.3,
+       1.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.469,
+      "worst_side_ratio": 2.12
+     }
     },
     {
      "id": "rail-5",
      "object": "queue-rail",
-     "source": "box-proxy"
+     "source": "model:queue-rail.glb",
+     "fit": {
+      "model_dims_m": [
+       4.018,
+       1.155,
+       2.5
+      ],
+      "box_m": [
+       4.0,
+       0.3,
+       1.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.469,
+      "worst_side_ratio": 2.12
+     }
     },
     {
      "id": "bucket-1",
      "object": "dented-bucket",
-     "source": "box-proxy"
+     "source": "model:dented-bucket.glb",
+     "fit": {
+      "model_dims_m": [
+       0.351,
+       0.312,
+       0.327
+      ],
+      "box_m": [
+       0.35,
+       0.35,
+       0.35
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.069,
+      "worst_side_ratio": 1.07
+     }
     },
     {
      "id": "bucket-2",
      "object": "dented-bucket",
-     "source": "box-proxy"
+     "source": "model:dented-bucket.glb",
+     "fit": {
+      "model_dims_m": [
+       0.351,
+       0.312,
+       0.327
+      ],
+      "box_m": [
+       0.35,
+       0.35,
+       0.35
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.069,
+      "worst_side_ratio": 1.07
+     }
     },
     {
      "id": "table",
      "object": "clinic-table",
-     "source": "box-proxy"
+     "source": "model:clinic-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.808,
+       1.203,
+       1.573
+      ],
+      "box_m": [
+       1.8,
+       0.8,
+       0.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.724,
+      "worst_side_ratio": 1.38
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
-    "prop_overlap": [],
+    "prop_overlap": [
+     {
+      "prop": "shutter",
+      "piece": "wall-front",
+      "samples": "9/27"
+     }
+    ],
     "prop_off_floor": []
    },
    "render_time_overrides": [],
@@ -423,7 +1212,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 13.2
+     "render_seconds": 13.6
     },
     {
      "still": "player",
@@ -432,102 +1221,432 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 13.1
+     "render_seconds": 13.6
     }
    ],
    "props": [
     {
      "id": "shutter",
      "object": "relief-shutter",
-     "source": "box-proxy"
+     "source": "model:relief-shutter.glb",
+     "fit": {
+      "model_dims_m": [
+       6.051,
+       1.822,
+       5.559
+      ],
+      "box_m": [
+       6.0,
+       0.4,
+       3.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.516,
+      "worst_side_ratio": 2.35
+     }
     },
     {
      "id": "dispenser-1",
      "object": "ration-dispenser",
-     "source": "box-proxy"
+     "source": "model:ration-dispenser.glb",
+     "fit": {
+      "model_dims_m": [
+       1.095,
+       0.906,
+       2.213
+      ],
+      "box_m": [
+       1.2,
+       0.7,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.994,
+      "worst_side_ratio": 1.29
+     }
     },
     {
      "id": "dispenser-2",
      "object": "ration-dispenser",
-     "source": "box-proxy"
+     "source": "model:ration-dispenser.glb",
+     "fit": {
+      "model_dims_m": [
+       1.095,
+       0.906,
+       2.213
+      ],
+      "box_m": [
+       1.2,
+       0.7,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.994,
+      "worst_side_ratio": 1.29
+     }
     },
     {
      "id": "dispenser-3",
      "object": "ration-dispenser",
-     "source": "box-proxy"
+     "source": "model:ration-dispenser.glb",
+     "fit": {
+      "model_dims_m": [
+       1.095,
+       0.906,
+       2.213
+      ],
+      "box_m": [
+       1.2,
+       0.7,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.994,
+      "worst_side_ratio": 1.29
+     }
     },
     {
      "id": "dispenser-4",
      "object": "ration-dispenser",
-     "source": "box-proxy"
+     "source": "model:ration-dispenser.glb",
+     "fit": {
+      "model_dims_m": [
+       1.095,
+       0.906,
+       2.213
+      ],
+      "box_m": [
+       1.2,
+       0.7,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.994,
+      "worst_side_ratio": 1.29
+     }
     },
     {
      "id": "board",
      "object": "number-board",
-     "source": "box-proxy"
+     "source": "model:number-board.glb",
+     "fit": {
+      "model_dims_m": [
+       1.817,
+       0.325,
+       1.97
+      ],
+      "box_m": [
+       1.8,
+       0.1,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.57,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "rail-1",
      "object": "queue-rail",
-     "source": "box-proxy"
+     "source": "model:queue-rail.glb",
+     "fit": {
+      "model_dims_m": [
+       4.018,
+       1.155,
+       2.5
+      ],
+      "box_m": [
+       4.0,
+       0.3,
+       1.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.469,
+      "worst_side_ratio": 2.12
+     }
     },
     {
      "id": "rail-2",
      "object": "queue-rail",
-     "source": "box-proxy"
+     "source": "model:queue-rail.glb",
+     "fit": {
+      "model_dims_m": [
+       4.018,
+       1.155,
+       2.5
+      ],
+      "box_m": [
+       4.0,
+       0.3,
+       1.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.469,
+      "worst_side_ratio": 2.12
+     }
     },
     {
      "id": "rail-3",
      "object": "queue-rail",
-     "source": "box-proxy"
+     "source": "model:queue-rail.glb",
+     "fit": {
+      "model_dims_m": [
+       4.018,
+       1.155,
+       2.5
+      ],
+      "box_m": [
+       4.0,
+       0.3,
+       1.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.469,
+      "worst_side_ratio": 2.12
+     }
     },
     {
      "id": "rail-4",
      "object": "queue-rail",
-     "source": "box-proxy"
+     "source": "model:queue-rail.glb",
+     "fit": {
+      "model_dims_m": [
+       4.018,
+       1.155,
+       2.5
+      ],
+      "box_m": [
+       4.0,
+       0.3,
+       1.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.469,
+      "worst_side_ratio": 2.12
+     }
     },
     {
      "id": "rail-5",
      "object": "queue-rail",
-     "source": "box-proxy"
+     "source": "model:queue-rail.glb",
+     "fit": {
+      "model_dims_m": [
+       4.018,
+       1.155,
+       2.5
+      ],
+      "box_m": [
+       4.0,
+       0.3,
+       1.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.469,
+      "worst_side_ratio": 2.12
+     }
     },
     {
      "id": "bucket-1",
      "object": "dented-bucket",
-     "source": "box-proxy"
+     "source": "model:dented-bucket.glb",
+     "fit": {
+      "model_dims_m": [
+       0.351,
+       0.312,
+       0.327
+      ],
+      "box_m": [
+       0.35,
+       0.35,
+       0.35
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.069,
+      "worst_side_ratio": 1.07
+     }
     },
     {
      "id": "bucket-2",
      "object": "dented-bucket",
-     "source": "box-proxy"
+     "source": "model:dented-bucket.glb",
+     "fit": {
+      "model_dims_m": [
+       0.351,
+       0.312,
+       0.327
+      ],
+      "box_m": [
+       0.35,
+       0.35,
+       0.35
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.069,
+      "worst_side_ratio": 1.07
+     }
     },
     {
      "id": "table",
      "object": "clinic-table",
-     "source": "box-proxy"
+     "source": "model:clinic-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.808,
+       1.203,
+       1.573
+      ],
+      "box_m": [
+       1.8,
+       0.8,
+       0.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.724,
+      "worst_side_ratio": 1.38
+     }
     },
     {
      "id": "cot-1",
      "object": "folding-cot",
-     "source": "box-proxy"
+     "source": "model:folding-cot.glb",
+     "fit": {
+      "model_dims_m": [
+       0.725,
+       1.905,
+       0.753
+      ],
+      "box_m": [
+       0.8,
+       1.9,
+       0.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.901,
+      "worst_side_ratio": 1.36
+     }
     },
     {
      "id": "cot-2",
      "object": "folding-cot",
-     "source": "box-proxy"
+     "source": "model:folding-cot.glb",
+     "fit": {
+      "model_dims_m": [
+       0.725,
+       1.905,
+       0.753
+      ],
+      "box_m": [
+       0.8,
+       1.9,
+       0.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.901,
+      "worst_side_ratio": 1.36
+     }
     },
     {
      "id": "cot-3",
      "object": "folding-cot",
-     "source": "box-proxy"
+     "source": "model:folding-cot.glb",
+     "fit": {
+      "model_dims_m": [
+       0.725,
+       1.905,
+       0.753
+      ],
+      "box_m": [
+       0.8,
+       1.9,
+       0.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.901,
+      "worst_side_ratio": 1.36
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
-    "prop_overlap": [],
+    "prop_overlap": [
+     {
+      "prop": "shutter",
+      "piece": "wall-front",
+      "samples": "9/27"
+     }
+    ],
     "prop_off_floor": []
    },
    "render_time_overrides": [],
@@ -552,7 +1671,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 14.9
+     "render_seconds": 15.6
     },
     {
      "still": "player",
@@ -561,102 +1680,432 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 15.1
+     "render_seconds": 15.5
     }
    ],
    "props": [
     {
      "id": "shutter",
      "object": "relief-shutter",
-     "source": "box-proxy"
+     "source": "model:relief-shutter.glb",
+     "fit": {
+      "model_dims_m": [
+       6.051,
+       1.822,
+       5.559
+      ],
+      "box_m": [
+       6.0,
+       0.4,
+       3.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.516,
+      "worst_side_ratio": 2.35
+     }
     },
     {
      "id": "dispenser-1",
      "object": "ration-dispenser",
-     "source": "box-proxy"
+     "source": "model:ration-dispenser.glb",
+     "fit": {
+      "model_dims_m": [
+       1.095,
+       0.906,
+       2.213
+      ],
+      "box_m": [
+       1.2,
+       0.7,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.994,
+      "worst_side_ratio": 1.29
+     }
     },
     {
      "id": "dispenser-2",
      "object": "ration-dispenser",
-     "source": "box-proxy"
+     "source": "model:ration-dispenser.glb",
+     "fit": {
+      "model_dims_m": [
+       1.095,
+       0.906,
+       2.213
+      ],
+      "box_m": [
+       1.2,
+       0.7,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.994,
+      "worst_side_ratio": 1.29
+     }
     },
     {
      "id": "dispenser-3",
      "object": "ration-dispenser",
-     "source": "box-proxy"
+     "source": "model:ration-dispenser.glb",
+     "fit": {
+      "model_dims_m": [
+       1.095,
+       0.906,
+       2.213
+      ],
+      "box_m": [
+       1.2,
+       0.7,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.994,
+      "worst_side_ratio": 1.29
+     }
     },
     {
      "id": "dispenser-4",
      "object": "ration-dispenser",
-     "source": "box-proxy"
+     "source": "model:ration-dispenser.glb",
+     "fit": {
+      "model_dims_m": [
+       1.095,
+       0.906,
+       2.213
+      ],
+      "box_m": [
+       1.2,
+       0.7,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.994,
+      "worst_side_ratio": 1.29
+     }
     },
     {
      "id": "board",
      "object": "number-board",
-     "source": "box-proxy"
+     "source": "model:number-board.glb",
+     "fit": {
+      "model_dims_m": [
+       1.817,
+       0.325,
+       1.97
+      ],
+      "box_m": [
+       1.8,
+       0.1,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.57,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "rail-1",
      "object": "queue-rail",
-     "source": "box-proxy"
+     "source": "model:queue-rail.glb",
+     "fit": {
+      "model_dims_m": [
+       4.018,
+       1.155,
+       2.5
+      ],
+      "box_m": [
+       4.0,
+       0.3,
+       1.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.469,
+      "worst_side_ratio": 2.12
+     }
     },
     {
      "id": "rail-2",
      "object": "queue-rail",
-     "source": "box-proxy"
+     "source": "model:queue-rail.glb",
+     "fit": {
+      "model_dims_m": [
+       4.018,
+       1.155,
+       2.5
+      ],
+      "box_m": [
+       4.0,
+       0.3,
+       1.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.469,
+      "worst_side_ratio": 2.12
+     }
     },
     {
      "id": "rail-3",
      "object": "queue-rail",
-     "source": "box-proxy"
+     "source": "model:queue-rail.glb",
+     "fit": {
+      "model_dims_m": [
+       4.018,
+       1.155,
+       2.5
+      ],
+      "box_m": [
+       4.0,
+       0.3,
+       1.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.469,
+      "worst_side_ratio": 2.12
+     }
     },
     {
      "id": "rail-4",
      "object": "queue-rail",
-     "source": "box-proxy"
+     "source": "model:queue-rail.glb",
+     "fit": {
+      "model_dims_m": [
+       4.018,
+       1.155,
+       2.5
+      ],
+      "box_m": [
+       4.0,
+       0.3,
+       1.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.469,
+      "worst_side_ratio": 2.12
+     }
     },
     {
      "id": "rail-5",
      "object": "queue-rail",
-     "source": "box-proxy"
+     "source": "model:queue-rail.glb",
+     "fit": {
+      "model_dims_m": [
+       4.018,
+       1.155,
+       2.5
+      ],
+      "box_m": [
+       4.0,
+       0.3,
+       1.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.469,
+      "worst_side_ratio": 2.12
+     }
     },
     {
      "id": "bucket-1",
      "object": "dented-bucket",
-     "source": "box-proxy"
+     "source": "model:dented-bucket.glb",
+     "fit": {
+      "model_dims_m": [
+       0.351,
+       0.312,
+       0.327
+      ],
+      "box_m": [
+       0.35,
+       0.35,
+       0.35
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.069,
+      "worst_side_ratio": 1.07
+     }
     },
     {
      "id": "bucket-2",
      "object": "dented-bucket",
-     "source": "box-proxy"
+     "source": "model:dented-bucket.glb",
+     "fit": {
+      "model_dims_m": [
+       0.351,
+       0.312,
+       0.327
+      ],
+      "box_m": [
+       0.35,
+       0.35,
+       0.35
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.069,
+      "worst_side_ratio": 1.07
+     }
     },
     {
      "id": "table",
      "object": "clinic-table",
-     "source": "box-proxy"
+     "source": "model:clinic-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.808,
+       1.203,
+       1.573
+      ],
+      "box_m": [
+       1.8,
+       0.8,
+       0.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.724,
+      "worst_side_ratio": 1.38
+     }
     },
     {
      "id": "cot-1",
      "object": "folding-cot",
-     "source": "box-proxy"
+     "source": "model:folding-cot.glb",
+     "fit": {
+      "model_dims_m": [
+       0.725,
+       1.905,
+       0.753
+      ],
+      "box_m": [
+       0.8,
+       1.9,
+       0.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.901,
+      "worst_side_ratio": 1.36
+     }
     },
     {
      "id": "cot-2",
      "object": "folding-cot",
-     "source": "box-proxy"
+     "source": "model:folding-cot.glb",
+     "fit": {
+      "model_dims_m": [
+       0.725,
+       1.905,
+       0.753
+      ],
+      "box_m": [
+       0.8,
+       1.9,
+       0.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.901,
+      "worst_side_ratio": 1.36
+     }
     },
     {
      "id": "cot-3",
      "object": "folding-cot",
-     "source": "box-proxy"
+     "source": "model:folding-cot.glb",
+     "fit": {
+      "model_dims_m": [
+       0.725,
+       1.905,
+       0.753
+      ],
+      "box_m": [
+       0.8,
+       1.9,
+       0.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.901,
+      "worst_side_ratio": 1.36
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
-    "prop_overlap": [],
+    "prop_overlap": [
+     {
+      "prop": "shutter",
+      "piece": "wall-front",
+      "samples": "9/27"
+     }
+    ],
     "prop_off_floor": []
    },
    "render_time_overrides": [],
@@ -681,7 +2130,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 7.8
+     "render_seconds": 8.4
     },
     {
      "still": "player",
@@ -690,7 +2139,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 7.7
+     "render_seconds": 8.3
     },
     {
      "still": "overview",
@@ -699,64 +2148,273 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 4.3
+     "render_seconds": 4.7
     }
    ],
    "props": [
     {
      "id": "span",
      "object": "freeway-span",
-     "source": "box-proxy"
+     "source": "model:freeway-span.glb",
+     "fit": {
+      "model_dims_m": [
+       30.084,
+       13.969,
+       13.792
+      ],
+      "box_m": [
+       30.0,
+       12.0,
+       9.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.824,
+      "worst_side_ratio": 1.26
+     }
     },
     {
      "id": "drum-1",
      "object": "water-drum",
-     "source": "box-proxy"
+     "source": "model:water-drum.glb",
+     "fit": {
+      "model_dims_m": [
+       0.57,
+       0.461,
+       0.904
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.996,
+      "worst_side_ratio": 1.31
+     }
     },
     {
      "id": "drum-2",
      "object": "water-drum",
-     "source": "box-proxy"
+     "source": "model:water-drum.glb",
+     "fit": {
+      "model_dims_m": [
+       0.57,
+       0.461,
+       0.904
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.996,
+      "worst_side_ratio": 1.31
+     }
     },
     {
      "id": "drum-3",
      "object": "water-drum",
-     "source": "box-proxy"
+     "source": "model:water-drum.glb",
+     "fit": {
+      "model_dims_m": [
+       0.57,
+       0.461,
+       0.904
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.996,
+      "worst_side_ratio": 1.31
+     }
     },
     {
      "id": "drum-4",
      "object": "water-drum",
-     "source": "box-proxy"
+     "source": "model:water-drum.glb",
+     "fit": {
+      "model_dims_m": [
+       0.57,
+       0.461,
+       0.904
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.996,
+      "worst_side_ratio": 1.31
+     }
     },
     {
      "id": "generator",
      "object": "generator-cart",
-     "source": "box-proxy"
+     "source": "model:generator-cart.glb",
+     "fit": {
+      "model_dims_m": [
+       1.436,
+       1.41,
+       1.87
+      ],
+      "box_m": [
+       1.4,
+       0.9,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.642,
+      "worst_side_ratio": 1.52
+     }
     },
     {
      "id": "monitors",
      "object": "crt-stack",
-     "source": "box-proxy"
+     "source": "model:crt-stack.glb",
+     "fit": {
+      "model_dims_m": [
+       1.097,
+       1.002,
+       1.517
+      ],
+      "box_m": [
+       1.0,
+       0.6,
+       1.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.65
+     }
     },
     {
      "id": "laundry",
      "object": "laundry-line",
-     "source": "box-proxy"
+     "source": "model:laundry-line.glb",
+     "fit": {
+      "model_dims_m": [
+       6.042,
+       1.097,
+       4.035
+      ],
+      "box_m": [
+       6.0,
+       0.4,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.582,
+      "worst_side_ratio": 1.71
+     }
     },
     {
      "id": "shelter-1",
      "object": "settlement-shelter",
-     "source": "box-proxy"
+     "source": "model:settlement-shelter.glb",
+     "fit": {
+      "model_dims_m": [
+       3.013,
+       2.677,
+       2.562
+      ],
+      "box_m": [
+       3.0,
+       3.0,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.986,
+      "worst_side_ratio": 1.15
+     }
     },
     {
      "id": "shelter-2",
      "object": "settlement-shelter",
-     "source": "box-proxy"
+     "source": "model:settlement-shelter.glb",
+     "fit": {
+      "model_dims_m": [
+       3.013,
+       2.677,
+       2.562
+      ],
+      "box_m": [
+       3.0,
+       3.0,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.986,
+      "worst_side_ratio": 1.15
+     }
     },
     {
      "id": "shelter-3",
      "object": "settlement-shelter",
-     "source": "box-proxy"
+     "source": "model:settlement-shelter.glb",
+     "fit": {
+      "model_dims_m": [
+       3.013,
+       2.677,
+       2.562
+      ],
+      "box_m": [
+       3.0,
+       3.0,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.986,
+      "worst_side_ratio": 1.15
+     }
     }
    ],
    "flagged_in_first_pass": [
@@ -764,6 +2422,7 @@
    ],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -795,7 +2454,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.0
+     "render_seconds": 8.1
     },
     {
      "still": "player",
@@ -804,74 +2463,303 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.4
+     "render_seconds": 8.2
     }
    ],
    "props": [
     {
      "id": "span",
      "object": "freeway-span",
-     "source": "box-proxy"
+     "source": "model:freeway-span.glb",
+     "fit": {
+      "model_dims_m": [
+       30.084,
+       13.969,
+       13.792
+      ],
+      "box_m": [
+       30.0,
+       12.0,
+       9.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.824,
+      "worst_side_ratio": 1.26
+     }
     },
     {
      "id": "drum-1",
      "object": "water-drum",
-     "source": "box-proxy"
+     "source": "model:water-drum.glb",
+     "fit": {
+      "model_dims_m": [
+       0.57,
+       0.461,
+       0.904
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.996,
+      "worst_side_ratio": 1.31
+     }
     },
     {
      "id": "drum-2",
      "object": "water-drum",
-     "source": "box-proxy"
+     "source": "model:water-drum.glb",
+     "fit": {
+      "model_dims_m": [
+       0.57,
+       0.461,
+       0.904
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.996,
+      "worst_side_ratio": 1.31
+     }
     },
     {
      "id": "drum-3",
      "object": "water-drum",
-     "source": "box-proxy"
+     "source": "model:water-drum.glb",
+     "fit": {
+      "model_dims_m": [
+       0.57,
+       0.461,
+       0.904
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.996,
+      "worst_side_ratio": 1.31
+     }
     },
     {
      "id": "drum-4",
      "object": "water-drum",
-     "source": "box-proxy"
+     "source": "model:water-drum.glb",
+     "fit": {
+      "model_dims_m": [
+       0.57,
+       0.461,
+       0.904
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.996,
+      "worst_side_ratio": 1.31
+     }
     },
     {
      "id": "generator",
      "object": "generator-cart",
-     "source": "box-proxy"
+     "source": "model:generator-cart.glb",
+     "fit": {
+      "model_dims_m": [
+       1.436,
+       1.41,
+       1.87
+      ],
+      "box_m": [
+       1.4,
+       0.9,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.642,
+      "worst_side_ratio": 1.52
+     }
     },
     {
      "id": "monitors",
      "object": "crt-stack",
-     "source": "box-proxy"
+     "source": "model:crt-stack.glb",
+     "fit": {
+      "model_dims_m": [
+       1.097,
+       1.002,
+       1.517
+      ],
+      "box_m": [
+       1.0,
+       0.6,
+       1.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.65
+     }
     },
     {
      "id": "laundry",
      "object": "laundry-line",
-     "source": "box-proxy"
+     "source": "model:laundry-line.glb",
+     "fit": {
+      "model_dims_m": [
+       6.042,
+       1.097,
+       4.035
+      ],
+      "box_m": [
+       6.0,
+       0.4,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.582,
+      "worst_side_ratio": 1.71
+     }
     },
     {
      "id": "shelter-1",
      "object": "settlement-shelter",
-     "source": "box-proxy"
+     "source": "model:settlement-shelter.glb",
+     "fit": {
+      "model_dims_m": [
+       3.013,
+       2.677,
+       2.562
+      ],
+      "box_m": [
+       3.0,
+       3.0,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.986,
+      "worst_side_ratio": 1.15
+     }
     },
     {
      "id": "shelter-2",
      "object": "settlement-shelter",
-     "source": "box-proxy"
+     "source": "model:settlement-shelter.glb",
+     "fit": {
+      "model_dims_m": [
+       3.013,
+       2.677,
+       2.562
+      ],
+      "box_m": [
+       3.0,
+       3.0,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.986,
+      "worst_side_ratio": 1.15
+     }
     },
     {
      "id": "shelter-3",
      "object": "settlement-shelter",
-     "source": "box-proxy"
+     "source": "model:settlement-shelter.glb",
+     "fit": {
+      "model_dims_m": [
+       3.013,
+       2.677,
+       2.562
+      ],
+      "box_m": [
+       3.0,
+       3.0,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.986,
+      "worst_side_ratio": 1.15
+     }
     },
     {
      "id": "truck",
      "object": "floodlight-truck",
-     "source": "box-proxy"
+     "source": "model:floodlight-truck.glb",
+     "fit": {
+      "model_dims_m": [
+       2.786,
+       6.546,
+       4.913
+      ],
+      "box_m": [
+       2.6,
+       6.5,
+       4.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.947,
+      "worst_side_ratio": 1.05
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -899,7 +2787,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 9.8
+     "render_seconds": 8.6
     },
     {
      "still": "player",
@@ -908,69 +2796,279 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 9.5
+     "render_seconds": 8.6
     }
    ],
    "props": [
     {
      "id": "span",
      "object": "freeway-span",
-     "source": "box-proxy"
+     "source": "model:freeway-span.glb",
+     "fit": {
+      "model_dims_m": [
+       30.084,
+       13.969,
+       13.792
+      ],
+      "box_m": [
+       30.0,
+       12.0,
+       9.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.824,
+      "worst_side_ratio": 1.26
+     }
     },
     {
      "id": "drum-1",
      "object": "water-drum",
-     "source": "box-proxy"
+     "source": "model:water-drum.glb",
+     "fit": {
+      "model_dims_m": [
+       0.57,
+       0.461,
+       0.904
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.996,
+      "worst_side_ratio": 1.31
+     }
     },
     {
      "id": "drum-2",
      "object": "water-drum",
-     "source": "box-proxy"
+     "source": "model:water-drum.glb",
+     "fit": {
+      "model_dims_m": [
+       0.57,
+       0.461,
+       0.904
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.996,
+      "worst_side_ratio": 1.31
+     }
     },
     {
      "id": "drum-3",
      "object": "water-drum",
-     "source": "box-proxy"
+     "source": "model:water-drum.glb",
+     "fit": {
+      "model_dims_m": [
+       0.57,
+       0.461,
+       0.904
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.996,
+      "worst_side_ratio": 1.31
+     }
     },
     {
      "id": "drum-4",
      "object": "water-drum",
-     "source": "box-proxy"
+     "source": "model:water-drum.glb",
+     "fit": {
+      "model_dims_m": [
+       0.57,
+       0.461,
+       0.904
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.996,
+      "worst_side_ratio": 1.31
+     }
     },
     {
      "id": "generator",
      "object": "generator-cart",
-     "source": "box-proxy"
+     "source": "model:generator-cart.glb",
+     "fit": {
+      "model_dims_m": [
+       1.436,
+       1.41,
+       1.87
+      ],
+      "box_m": [
+       1.4,
+       0.9,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.642,
+      "worst_side_ratio": 1.52
+     }
     },
     {
      "id": "monitors",
      "object": "crt-stack",
-     "source": "box-proxy"
+     "source": "model:crt-stack.glb",
+     "fit": {
+      "model_dims_m": [
+       1.097,
+       1.002,
+       1.517
+      ],
+      "box_m": [
+       1.0,
+       0.6,
+       1.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.65
+     }
     },
     {
      "id": "laundry",
      "object": "laundry-line",
-     "source": "box-proxy"
+     "source": "model:laundry-line.glb",
+     "fit": {
+      "model_dims_m": [
+       6.042,
+       1.097,
+       4.035
+      ],
+      "box_m": [
+       6.0,
+       0.4,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.582,
+      "worst_side_ratio": 1.71
+     }
     },
     {
      "id": "shelter-1",
      "object": "settlement-shelter",
-     "source": "box-proxy"
+     "source": "model:settlement-shelter.glb",
+     "fit": {
+      "model_dims_m": [
+       3.013,
+       2.677,
+       2.562
+      ],
+      "box_m": [
+       3.0,
+       3.0,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.986,
+      "worst_side_ratio": 1.15
+     }
     },
     {
      "id": "shelter-2",
      "object": "settlement-shelter",
-     "source": "box-proxy"
+     "source": "model:settlement-shelter.glb",
+     "fit": {
+      "model_dims_m": [
+       3.013,
+       2.677,
+       2.562
+      ],
+      "box_m": [
+       3.0,
+       3.0,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.986,
+      "worst_side_ratio": 1.15
+     }
     },
     {
      "id": "shelter-3",
      "object": "settlement-shelter",
-     "source": "box-proxy"
+     "source": "model:settlement-shelter.glb",
+     "fit": {
+      "model_dims_m": [
+       3.013,
+       2.677,
+       2.562
+      ],
+      "box_m": [
+       3.0,
+       3.0,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.986,
+      "worst_side_ratio": 1.15
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -998,7 +3096,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 9.5
+     "render_seconds": 8.4
     },
     {
      "still": "player",
@@ -1007,69 +3105,279 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 9.2
+     "render_seconds": 8.5
     }
    ],
    "props": [
     {
      "id": "span",
      "object": "freeway-span",
-     "source": "box-proxy"
+     "source": "model:freeway-span.glb",
+     "fit": {
+      "model_dims_m": [
+       30.084,
+       13.969,
+       13.792
+      ],
+      "box_m": [
+       30.0,
+       12.0,
+       9.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.824,
+      "worst_side_ratio": 1.26
+     }
     },
     {
      "id": "drum-1",
      "object": "water-drum",
-     "source": "box-proxy"
+     "source": "model:water-drum.glb",
+     "fit": {
+      "model_dims_m": [
+       0.57,
+       0.461,
+       0.904
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.996,
+      "worst_side_ratio": 1.31
+     }
     },
     {
      "id": "drum-2",
      "object": "water-drum",
-     "source": "box-proxy"
+     "source": "model:water-drum.glb",
+     "fit": {
+      "model_dims_m": [
+       0.57,
+       0.461,
+       0.904
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.996,
+      "worst_side_ratio": 1.31
+     }
     },
     {
      "id": "drum-3",
      "object": "water-drum",
-     "source": "box-proxy"
+     "source": "model:water-drum.glb",
+     "fit": {
+      "model_dims_m": [
+       0.57,
+       0.461,
+       0.904
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.996,
+      "worst_side_ratio": 1.31
+     }
     },
     {
      "id": "drum-4",
      "object": "water-drum",
-     "source": "box-proxy"
+     "source": "model:water-drum.glb",
+     "fit": {
+      "model_dims_m": [
+       0.57,
+       0.461,
+       0.904
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.996,
+      "worst_side_ratio": 1.31
+     }
     },
     {
      "id": "generator",
      "object": "generator-cart",
-     "source": "box-proxy"
+     "source": "model:generator-cart.glb",
+     "fit": {
+      "model_dims_m": [
+       1.436,
+       1.41,
+       1.87
+      ],
+      "box_m": [
+       1.4,
+       0.9,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.642,
+      "worst_side_ratio": 1.52
+     }
     },
     {
      "id": "monitors",
      "object": "crt-stack",
-     "source": "box-proxy"
+     "source": "model:crt-stack.glb",
+     "fit": {
+      "model_dims_m": [
+       1.097,
+       1.002,
+       1.517
+      ],
+      "box_m": [
+       1.0,
+       0.6,
+       1.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.65
+     }
     },
     {
      "id": "laundry",
      "object": "laundry-line",
-     "source": "box-proxy"
+     "source": "model:laundry-line.glb",
+     "fit": {
+      "model_dims_m": [
+       6.042,
+       1.097,
+       4.035
+      ],
+      "box_m": [
+       6.0,
+       0.4,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.582,
+      "worst_side_ratio": 1.71
+     }
     },
     {
      "id": "shelter-1",
      "object": "settlement-shelter",
-     "source": "box-proxy"
+     "source": "model:settlement-shelter.glb",
+     "fit": {
+      "model_dims_m": [
+       3.013,
+       2.677,
+       2.562
+      ],
+      "box_m": [
+       3.0,
+       3.0,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.986,
+      "worst_side_ratio": 1.15
+     }
     },
     {
      "id": "shelter-2",
      "object": "settlement-shelter",
-     "source": "box-proxy"
+     "source": "model:settlement-shelter.glb",
+     "fit": {
+      "model_dims_m": [
+       3.013,
+       2.677,
+       2.562
+      ],
+      "box_m": [
+       3.0,
+       3.0,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.986,
+      "worst_side_ratio": 1.15
+     }
     },
     {
      "id": "shelter-3",
      "object": "settlement-shelter",
-     "source": "box-proxy"
+     "source": "model:settlement-shelter.glb",
+     "fit": {
+      "model_dims_m": [
+       3.013,
+       2.677,
+       2.562
+      ],
+      "box_m": [
+       3.0,
+       3.0,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.986,
+      "worst_side_ratio": 1.15
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -1097,7 +3405,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 17.9
+     "render_seconds": 10.2
     },
     {
      "still": "player",
@@ -1106,7 +3414,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 14.8
+     "render_seconds": 9.9
     },
     {
      "still": "overview",
@@ -1115,49 +3423,167 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 6.7
+     "render_seconds": 6.0
     }
    ],
    "props": [
     {
      "id": "lamp",
      "object": "fortress-work-lamp",
-     "source": "box-proxy"
+     "source": "model:fortress-work-lamp.glb",
+     "fit": {
+      "model_dims_m": [
+       0.391,
+       0.298,
+       0.602
+      ],
+      "box_m": [
+       0.4,
+       0.4,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.35
+     }
     },
     {
      "id": "bench",
      "object": "batch-bench",
-     "source": "box-proxy"
+     "source": "model:batch-bench.glb",
+     "fit": {
+      "model_dims_m": [
+       1.816,
+       0.826,
+       1.609
+      ],
+      "box_m": [
+       1.8,
+       0.7,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.994,
+      "worst_side_ratio": 1.17
+     }
     },
     {
      "id": "locker",
      "object": "shielded-locker",
-     "source": "box-proxy"
+     "source": "model:shielded-locker.glb",
+     "fit": {
+      "model_dims_m": [
+       1.312,
+       1.026,
+       2.017
+      ],
+      "box_m": [
+       0.8,
+       0.6,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.991,
+      "worst_side_ratio": 1.69
+     }
     },
     {
      "id": "shroud",
      "object": "shroud-stand",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "the model shows a hooded cloak on a stand (a figure-like shape); named box proxy stays"
+     }
     },
     {
      "id": "vise",
      "object": "gauntlet-vise",
-     "source": "box-proxy"
+     "source": "model:gauntlet-vise.glb",
+     "fit": {
+      "model_dims_m": [
+       1.176,
+       1.048,
+       1.105
+      ],
+      "box_m": [
+       0.7,
+       0.5,
+       1.1
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.996,
+      "worst_side_ratio": 2.09
+     }
     },
     {
      "id": "names",
      "object": "names-board",
-     "source": "box-proxy"
+     "source": "model:names-board.glb",
+     "fit": {
+      "model_dims_m": [
+       3.217,
+       0.265,
+       2.393
+      ],
+      "box_m": [
+       3.2,
+       0.1,
+       1.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.656,
+      "worst_side_ratio": 1.74
+     }
     },
     {
      "id": "tank",
      "object": "clean-water-tank",
-     "source": "box-proxy"
+     "source": "model:clean-water-tank.glb",
+     "fit": {
+      "model_dims_m": [
+       1.173,
+       1.438,
+       2.014
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.993,
+      "worst_side_ratio": 1.37
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -1185,7 +3611,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 17.5
+     "render_seconds": 11.1
     },
     {
      "still": "player",
@@ -1194,49 +3620,167 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 17.0
+     "render_seconds": 9.7
     }
    ],
    "props": [
     {
      "id": "lamp",
      "object": "fortress-work-lamp",
-     "source": "box-proxy"
+     "source": "model:fortress-work-lamp.glb",
+     "fit": {
+      "model_dims_m": [
+       0.391,
+       0.298,
+       0.602
+      ],
+      "box_m": [
+       0.4,
+       0.4,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.35
+     }
     },
     {
      "id": "bench",
      "object": "batch-bench",
-     "source": "box-proxy"
+     "source": "model:batch-bench.glb",
+     "fit": {
+      "model_dims_m": [
+       1.816,
+       0.826,
+       1.609
+      ],
+      "box_m": [
+       1.8,
+       0.7,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.994,
+      "worst_side_ratio": 1.17
+     }
     },
     {
      "id": "locker",
      "object": "shielded-locker",
-     "source": "box-proxy"
+     "source": "model:shielded-locker.glb",
+     "fit": {
+      "model_dims_m": [
+       1.312,
+       1.026,
+       2.017
+      ],
+      "box_m": [
+       0.8,
+       0.6,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.991,
+      "worst_side_ratio": 1.69
+     }
     },
     {
      "id": "shroud",
      "object": "shroud-stand",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "the model shows a hooded cloak on a stand (a figure-like shape); named box proxy stays"
+     }
     },
     {
      "id": "vise",
      "object": "gauntlet-vise",
-     "source": "box-proxy"
+     "source": "model:gauntlet-vise.glb",
+     "fit": {
+      "model_dims_m": [
+       1.176,
+       1.048,
+       1.105
+      ],
+      "box_m": [
+       0.7,
+       0.5,
+       1.1
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.996,
+      "worst_side_ratio": 2.09
+     }
     },
     {
      "id": "names",
      "object": "names-board",
-     "source": "box-proxy"
+     "source": "model:names-board.glb",
+     "fit": {
+      "model_dims_m": [
+       3.217,
+       0.265,
+       2.393
+      ],
+      "box_m": [
+       3.2,
+       0.1,
+       1.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.656,
+      "worst_side_ratio": 1.74
+     }
     },
     {
      "id": "tank",
      "object": "clean-water-tank",
-     "source": "box-proxy"
+     "source": "model:clean-water-tank.glb",
+     "fit": {
+      "model_dims_m": [
+       1.173,
+       1.438,
+       2.014
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.993,
+      "worst_side_ratio": 1.37
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -1264,7 +3808,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 12.8
+     "render_seconds": 10.7
     },
     {
      "still": "player",
@@ -1273,69 +3817,263 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 10.5
+     "render_seconds": 9.9
     }
    ],
    "props": [
     {
      "id": "lamp",
      "object": "fortress-work-lamp",
-     "source": "box-proxy"
+     "source": "model:fortress-work-lamp.glb",
+     "fit": {
+      "model_dims_m": [
+       0.391,
+       0.298,
+       0.602
+      ],
+      "box_m": [
+       0.4,
+       0.4,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.35
+     }
     },
     {
      "id": "bench",
      "object": "batch-bench",
-     "source": "box-proxy"
+     "source": "model:batch-bench.glb",
+     "fit": {
+      "model_dims_m": [
+       1.816,
+       0.826,
+       1.609
+      ],
+      "box_m": [
+       1.8,
+       0.7,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.994,
+      "worst_side_ratio": 1.17
+     }
     },
     {
      "id": "locker",
      "object": "shielded-locker",
-     "source": "box-proxy"
+     "source": "model:shielded-locker.glb",
+     "fit": {
+      "model_dims_m": [
+       1.312,
+       1.026,
+       2.017
+      ],
+      "box_m": [
+       0.8,
+       0.6,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.991,
+      "worst_side_ratio": 1.69
+     }
     },
     {
      "id": "shroud",
      "object": "shroud-stand",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "the model shows a hooded cloak on a stand (a figure-like shape); named box proxy stays"
+     }
     },
     {
      "id": "vise",
      "object": "gauntlet-vise",
-     "source": "box-proxy"
+     "source": "model:gauntlet-vise.glb",
+     "fit": {
+      "model_dims_m": [
+       1.176,
+       1.048,
+       1.105
+      ],
+      "box_m": [
+       0.7,
+       0.5,
+       1.1
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.996,
+      "worst_side_ratio": 2.09
+     }
     },
     {
      "id": "names",
      "object": "names-board",
-     "source": "box-proxy"
+     "source": "model:names-board.glb",
+     "fit": {
+      "model_dims_m": [
+       3.217,
+       0.265,
+       2.393
+      ],
+      "box_m": [
+       3.2,
+       0.1,
+       1.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.656,
+      "worst_side_ratio": 1.74
+     }
     },
     {
      "id": "tank",
      "object": "clean-water-tank",
-     "source": "box-proxy"
+     "source": "model:clean-water-tank.glb",
+     "fit": {
+      "model_dims_m": [
+       1.173,
+       1.438,
+       2.014
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.993,
+      "worst_side_ratio": 1.37
+     }
     },
     {
      "id": "cot-1",
      "object": "folding-cot",
-     "source": "box-proxy"
+     "source": "model:folding-cot.glb",
+     "fit": {
+      "model_dims_m": [
+       0.725,
+       1.905,
+       0.753
+      ],
+      "box_m": [
+       0.8,
+       1.9,
+       0.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.901,
+      "worst_side_ratio": 1.36
+     }
     },
     {
      "id": "cot-2",
      "object": "folding-cot",
-     "source": "box-proxy"
+     "source": "model:folding-cot.glb",
+     "fit": {
+      "model_dims_m": [
+       0.725,
+       1.905,
+       0.753
+      ],
+      "box_m": [
+       0.8,
+       1.9,
+       0.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.901,
+      "worst_side_ratio": 1.36
+     }
     },
     {
      "id": "cot-3",
      "object": "folding-cot",
-     "source": "box-proxy"
+     "source": "model:folding-cot.glb",
+     "fit": {
+      "model_dims_m": [
+       0.725,
+       1.905,
+       0.753
+      ],
+      "box_m": [
+       0.8,
+       1.9,
+       0.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.901,
+      "worst_side_ratio": 1.36
+     }
     },
     {
      "id": "cot-4",
      "object": "folding-cot",
-     "source": "box-proxy"
+     "source": "model:folding-cot.glb",
+     "fit": {
+      "model_dims_m": [
+       0.725,
+       1.905,
+       0.753
+      ],
+      "box_m": [
+       0.8,
+       1.9,
+       0.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.901,
+      "worst_side_ratio": 1.36
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -1363,7 +4101,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 13.4
+     "render_seconds": 12.7
     },
     {
      "still": "player",
@@ -1372,69 +4110,263 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 12.6
+     "render_seconds": 12.7
     }
    ],
    "props": [
     {
      "id": "lamp",
      "object": "fortress-work-lamp",
-     "source": "box-proxy"
+     "source": "model:fortress-work-lamp.glb",
+     "fit": {
+      "model_dims_m": [
+       0.391,
+       0.298,
+       0.602
+      ],
+      "box_m": [
+       0.4,
+       0.4,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.35
+     }
     },
     {
      "id": "bench",
      "object": "batch-bench",
-     "source": "box-proxy"
+     "source": "model:batch-bench.glb",
+     "fit": {
+      "model_dims_m": [
+       1.816,
+       0.826,
+       1.609
+      ],
+      "box_m": [
+       1.8,
+       0.7,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.994,
+      "worst_side_ratio": 1.17
+     }
     },
     {
      "id": "locker",
      "object": "shielded-locker",
-     "source": "box-proxy"
+     "source": "model:shielded-locker.glb",
+     "fit": {
+      "model_dims_m": [
+       1.312,
+       1.026,
+       2.017
+      ],
+      "box_m": [
+       0.8,
+       0.6,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.991,
+      "worst_side_ratio": 1.69
+     }
     },
     {
      "id": "shroud",
      "object": "shroud-stand",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "the model shows a hooded cloak on a stand (a figure-like shape); named box proxy stays"
+     }
     },
     {
      "id": "vise",
      "object": "gauntlet-vise",
-     "source": "box-proxy"
+     "source": "model:gauntlet-vise.glb",
+     "fit": {
+      "model_dims_m": [
+       1.176,
+       1.048,
+       1.105
+      ],
+      "box_m": [
+       0.7,
+       0.5,
+       1.1
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.996,
+      "worst_side_ratio": 2.09
+     }
     },
     {
      "id": "names",
      "object": "names-board",
-     "source": "box-proxy"
+     "source": "model:names-board.glb",
+     "fit": {
+      "model_dims_m": [
+       3.217,
+       0.265,
+       2.393
+      ],
+      "box_m": [
+       3.2,
+       0.1,
+       1.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.656,
+      "worst_side_ratio": 1.74
+     }
     },
     {
      "id": "tank",
      "object": "clean-water-tank",
-     "source": "box-proxy"
+     "source": "model:clean-water-tank.glb",
+     "fit": {
+      "model_dims_m": [
+       1.173,
+       1.438,
+       2.014
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.993,
+      "worst_side_ratio": 1.37
+     }
     },
     {
      "id": "cot-1",
      "object": "folding-cot",
-     "source": "box-proxy"
+     "source": "model:folding-cot.glb",
+     "fit": {
+      "model_dims_m": [
+       0.725,
+       1.905,
+       0.753
+      ],
+      "box_m": [
+       0.8,
+       1.9,
+       0.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.901,
+      "worst_side_ratio": 1.36
+     }
     },
     {
      "id": "cot-2",
      "object": "folding-cot",
-     "source": "box-proxy"
+     "source": "model:folding-cot.glb",
+     "fit": {
+      "model_dims_m": [
+       0.725,
+       1.905,
+       0.753
+      ],
+      "box_m": [
+       0.8,
+       1.9,
+       0.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.901,
+      "worst_side_ratio": 1.36
+     }
     },
     {
      "id": "cot-3",
      "object": "folding-cot",
-     "source": "box-proxy"
+     "source": "model:folding-cot.glb",
+     "fit": {
+      "model_dims_m": [
+       0.725,
+       1.905,
+       0.753
+      ],
+      "box_m": [
+       0.8,
+       1.9,
+       0.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.901,
+      "worst_side_ratio": 1.36
+     }
     },
     {
      "id": "cot-4",
      "object": "folding-cot",
-     "source": "box-proxy"
+     "source": "model:folding-cot.glb",
+     "fit": {
+      "model_dims_m": [
+       0.725,
+       1.905,
+       0.753
+      ],
+      "box_m": [
+       0.8,
+       1.9,
+       0.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.901,
+      "worst_side_ratio": 1.36
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -1462,7 +4394,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 10.3
+     "render_seconds": 10.0
     },
     {
      "still": "player",
@@ -1471,69 +4403,263 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 10.2
+     "render_seconds": 9.8
     }
    ],
    "props": [
     {
      "id": "lamp",
      "object": "fortress-work-lamp",
-     "source": "box-proxy"
+     "source": "model:fortress-work-lamp.glb",
+     "fit": {
+      "model_dims_m": [
+       0.391,
+       0.298,
+       0.602
+      ],
+      "box_m": [
+       0.4,
+       0.4,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.35
+     }
     },
     {
      "id": "bench",
      "object": "batch-bench",
-     "source": "box-proxy"
+     "source": "model:batch-bench.glb",
+     "fit": {
+      "model_dims_m": [
+       1.816,
+       0.826,
+       1.609
+      ],
+      "box_m": [
+       1.8,
+       0.7,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.994,
+      "worst_side_ratio": 1.17
+     }
     },
     {
      "id": "locker",
      "object": "shielded-locker",
-     "source": "box-proxy"
+     "source": "model:shielded-locker.glb",
+     "fit": {
+      "model_dims_m": [
+       1.312,
+       1.026,
+       2.017
+      ],
+      "box_m": [
+       0.8,
+       0.6,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.991,
+      "worst_side_ratio": 1.69
+     }
     },
     {
      "id": "shroud",
      "object": "shroud-stand",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "the model shows a hooded cloak on a stand (a figure-like shape); named box proxy stays"
+     }
     },
     {
      "id": "vise",
      "object": "gauntlet-vise",
-     "source": "box-proxy"
+     "source": "model:gauntlet-vise.glb",
+     "fit": {
+      "model_dims_m": [
+       1.176,
+       1.048,
+       1.105
+      ],
+      "box_m": [
+       0.7,
+       0.5,
+       1.1
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.996,
+      "worst_side_ratio": 2.09
+     }
     },
     {
      "id": "names",
      "object": "names-board",
-     "source": "box-proxy"
+     "source": "model:names-board.glb",
+     "fit": {
+      "model_dims_m": [
+       3.217,
+       0.265,
+       2.393
+      ],
+      "box_m": [
+       3.2,
+       0.1,
+       1.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.656,
+      "worst_side_ratio": 1.74
+     }
     },
     {
      "id": "tank",
      "object": "clean-water-tank",
-     "source": "box-proxy"
+     "source": "model:clean-water-tank.glb",
+     "fit": {
+      "model_dims_m": [
+       1.173,
+       1.438,
+       2.014
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.993,
+      "worst_side_ratio": 1.37
+     }
     },
     {
      "id": "cot-1",
      "object": "folding-cot",
-     "source": "box-proxy"
+     "source": "model:folding-cot.glb",
+     "fit": {
+      "model_dims_m": [
+       0.725,
+       1.905,
+       0.753
+      ],
+      "box_m": [
+       0.8,
+       1.9,
+       0.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.901,
+      "worst_side_ratio": 1.36
+     }
     },
     {
      "id": "cot-2",
      "object": "folding-cot",
-     "source": "box-proxy"
+     "source": "model:folding-cot.glb",
+     "fit": {
+      "model_dims_m": [
+       0.725,
+       1.905,
+       0.753
+      ],
+      "box_m": [
+       0.8,
+       1.9,
+       0.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.901,
+      "worst_side_ratio": 1.36
+     }
     },
     {
      "id": "cot-3",
      "object": "folding-cot",
-     "source": "box-proxy"
+     "source": "model:folding-cot.glb",
+     "fit": {
+      "model_dims_m": [
+       0.725,
+       1.905,
+       0.753
+      ],
+      "box_m": [
+       0.8,
+       1.9,
+       0.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.901,
+      "worst_side_ratio": 1.36
+     }
     },
     {
      "id": "cot-4",
      "object": "folding-cot",
-     "source": "box-proxy"
+     "source": "model:folding-cot.glb",
+     "fit": {
+      "model_dims_m": [
+       0.725,
+       1.905,
+       0.753
+      ],
+      "box_m": [
+       0.8,
+       1.9,
+       0.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.901,
+      "worst_side_ratio": 1.36
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -1561,7 +4687,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 13.1
+     "render_seconds": 12.6
     },
     {
      "still": "player",
@@ -1570,69 +4696,281 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 12.6
+     "render_seconds": 12.4
     }
    ],
    "props": [
     {
      "id": "lamp",
      "object": "fortress-work-lamp",
-     "source": "box-proxy"
+     "source": "model:fortress-work-lamp.glb",
+     "fit": {
+      "model_dims_m": [
+       0.391,
+       0.298,
+       0.602
+      ],
+      "box_m": [
+       0.4,
+       0.4,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.35
+     }
     },
     {
      "id": "bench",
      "object": "batch-bench",
-     "source": "box-proxy"
+     "source": "model:batch-bench.glb",
+     "fit": {
+      "model_dims_m": [
+       1.816,
+       0.826,
+       1.609
+      ],
+      "box_m": [
+       1.8,
+       0.7,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.994,
+      "worst_side_ratio": 1.17
+     }
     },
     {
      "id": "locker",
      "object": "shielded-locker",
-     "source": "box-proxy"
+     "source": "model:shielded-locker.glb",
+     "fit": {
+      "model_dims_m": [
+       1.312,
+       1.026,
+       2.017
+      ],
+      "box_m": [
+       0.8,
+       0.6,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.991,
+      "worst_side_ratio": 1.69
+     }
     },
     {
      "id": "shroud",
      "object": "shroud-stand",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "the model shows a hooded cloak on a stand (a figure-like shape); named box proxy stays"
+     }
     },
     {
      "id": "vise",
      "object": "gauntlet-vise",
-     "source": "box-proxy"
+     "source": "model:gauntlet-vise.glb",
+     "fit": {
+      "model_dims_m": [
+       1.176,
+       1.048,
+       1.105
+      ],
+      "box_m": [
+       0.7,
+       0.5,
+       1.1
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.996,
+      "worst_side_ratio": 2.09
+     }
     },
     {
      "id": "names",
      "object": "names-board",
-     "source": "box-proxy"
+     "source": "model:names-board.glb",
+     "fit": {
+      "model_dims_m": [
+       3.217,
+       0.265,
+       2.393
+      ],
+      "box_m": [
+       3.2,
+       0.1,
+       1.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.656,
+      "worst_side_ratio": 1.74
+     }
     },
     {
      "id": "tank",
      "object": "clean-water-tank",
-     "source": "box-proxy"
+     "source": "model:clean-water-tank.glb",
+     "fit": {
+      "model_dims_m": [
+       1.173,
+       1.438,
+       2.014
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.993,
+      "worst_side_ratio": 1.37
+     }
     },
     {
      "id": "cot-1",
      "object": "folding-cot",
-     "source": "box-proxy"
+     "source": "model:folding-cot.glb",
+     "fit": {
+      "model_dims_m": [
+       0.725,
+       1.905,
+       0.753
+      ],
+      "box_m": [
+       0.8,
+       1.9,
+       0.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.901,
+      "worst_side_ratio": 1.36
+     }
     },
     {
      "id": "cot-2",
      "object": "folding-cot",
-     "source": "box-proxy"
+     "source": "model:folding-cot.glb",
+     "fit": {
+      "model_dims_m": [
+       0.725,
+       1.905,
+       0.753
+      ],
+      "box_m": [
+       0.8,
+       1.9,
+       0.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.901,
+      "worst_side_ratio": 1.36
+     }
     },
     {
      "id": "cot-3",
      "object": "folding-cot",
-     "source": "box-proxy"
+     "source": "model:folding-cot.glb",
+     "fit": {
+      "model_dims_m": [
+       0.725,
+       1.905,
+       0.753
+      ],
+      "box_m": [
+       0.8,
+       1.9,
+       0.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.901,
+      "worst_side_ratio": 1.36
+     }
     },
     {
      "id": "cot-4",
      "object": "folding-cot",
-     "source": "box-proxy"
+     "source": "model:folding-cot.glb",
+     "fit": {
+      "model_dims_m": [
+       0.725,
+       1.905,
+       0.753
+      ],
+      "box_m": [
+       0.8,
+       1.9,
+       0.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.901,
+      "worst_side_ratio": 1.36
+     }
     },
     {
      "id": "blades",
      "object": "blade-cloth",
-     "source": "box-proxy"
+     "source": "model:blade-cloth.glb",
+     "fit": {
+      "model_dims_m": [
+       1.202,
+       0.703,
+       0.087
+      ],
+      "box_m": [
+       1.2,
+       0.8,
+       0.08
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.066,
+      "worst_side_ratio": 1.07
+     }
     }
    ],
    "flagged_in_first_pass": [
@@ -1640,6 +4978,7 @@
    ],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -1671,7 +5010,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 19.0
+     "render_seconds": 19.9
     },
     {
      "still": "player",
@@ -1680,49 +5019,183 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 18.5
+     "render_seconds": 19.5
     }
    ],
    "props": [
     {
      "id": "chair",
      "object": "calibration-chair",
-     "source": "box-proxy"
+     "source": "model:calibration-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       1.429,
+       1.547,
+       1.402
+      ],
+      "box_m": [
+       0.9,
+       1.3,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.59
+     }
     },
     {
      "id": "mirror",
      "object": "annex-mirror",
-     "source": "box-proxy"
+     "source": "model:annex-mirror.glb",
+     "fit": {
+      "model_dims_m": [
+       1.043,
+       0.538,
+       2.218
+      ],
+      "box_m": [
+       1.2,
+       0.4,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.992,
+      "worst_side_ratio": 1.33
+     }
     },
     {
      "id": "column-1",
      "object": "clean-air-column",
-     "source": "box-proxy"
+     "source": "model:clean-air-column.glb",
+     "fit": {
+      "model_dims_m": [
+       2.95,
+       2.844,
+       6.034
+      ],
+      "box_m": [
+       1.4,
+       1.4,
+       6.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.994,
+      "worst_side_ratio": 2.1
+     }
     },
     {
      "id": "column-2",
      "object": "clean-air-column",
-     "source": "box-proxy"
+     "source": "model:clean-air-column.glb",
+     "fit": {
+      "model_dims_m": [
+       2.95,
+       2.844,
+       6.034
+      ],
+      "box_m": [
+       1.4,
+       1.4,
+       6.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.994,
+      "worst_side_ratio": 2.1
+     }
     },
     {
      "id": "rail",
      "object": "balcony-rail",
-     "source": "box-proxy"
+     "source": "model:balcony-rail.glb",
+     "fit": {
+      "model_dims_m": [
+       8.015,
+       0.543,
+       2.995
+      ],
+      "box_m": [
+       8.0,
+       0.3,
+       1.1
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.587,
+      "worst_side_ratio": 1.7
+     }
     },
     {
      "id": "service",
      "object": "service-door",
-     "source": "box-proxy"
+     "source": "model:service-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.368,
+       0.263,
+       2.324
+      ],
+      "box_m": [
+       1.2,
+       0.3,
+       2.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.99,
+      "worst_side_ratio": 1.15
+     }
     },
     {
      "id": "lectern",
      "object": "gala-lectern",
-     "source": "box-proxy"
+     "source": "model:gala-lectern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.535,
+       0.45,
+       1.203
+      ],
+      "box_m": [
+       0.9,
+       0.6,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.69
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -1752,7 +5225,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 13.8
+     "render_seconds": 13.7
     },
     {
      "still": "player",
@@ -1761,7 +5234,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 14.5
+     "render_seconds": 14.4
     },
     {
      "still": "overview",
@@ -1770,79 +5243,327 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 7.4
+     "render_seconds": 7.5
     }
    ],
    "props": [
     {
      "id": "chair",
      "object": "calibration-chair",
-     "source": "box-proxy"
+     "source": "model:calibration-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       1.429,
+       1.547,
+       1.402
+      ],
+      "box_m": [
+       0.9,
+       1.3,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.59
+     }
     },
     {
      "id": "mirror",
      "object": "annex-mirror",
-     "source": "box-proxy"
+     "source": "model:annex-mirror.glb",
+     "fit": {
+      "model_dims_m": [
+       1.043,
+       0.538,
+       2.218
+      ],
+      "box_m": [
+       1.2,
+       0.4,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.992,
+      "worst_side_ratio": 1.33
+     }
     },
     {
      "id": "table-1",
      "object": "gala-table",
-     "source": "box-proxy"
+     "source": "model:gala-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.812,
+       1.831,
+       1.323
+      ],
+      "box_m": [
+       1.8,
+       1.8,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.839,
+      "worst_side_ratio": 1.39
+     }
     },
     {
      "id": "table-2",
      "object": "gala-table",
-     "source": "box-proxy"
+     "source": "model:gala-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.812,
+       1.831,
+       1.323
+      ],
+      "box_m": [
+       1.8,
+       1.8,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.839,
+      "worst_side_ratio": 1.39
+     }
     },
     {
      "id": "table-3",
      "object": "gala-table",
-     "source": "box-proxy"
+     "source": "model:gala-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.812,
+       1.831,
+       1.323
+      ],
+      "box_m": [
+       1.8,
+       1.8,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.839,
+      "worst_side_ratio": 1.39
+     }
     },
     {
      "id": "table-4",
      "object": "gala-table",
-     "source": "box-proxy"
+     "source": "model:gala-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.812,
+       1.831,
+       1.323
+      ],
+      "box_m": [
+       1.8,
+       1.8,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.839,
+      "worst_side_ratio": 1.39
+     }
     },
     {
      "id": "table-5",
      "object": "gala-table",
-     "source": "box-proxy"
+     "source": "model:gala-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.812,
+       1.831,
+       1.323
+      ],
+      "box_m": [
+       1.8,
+       1.8,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.839,
+      "worst_side_ratio": 1.39
+     }
     },
     {
      "id": "table-6",
      "object": "gala-table",
-     "source": "box-proxy"
+     "source": "model:gala-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.812,
+       1.831,
+       1.323
+      ],
+      "box_m": [
+       1.8,
+       1.8,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.839,
+      "worst_side_ratio": 1.39
+     }
     },
     {
      "id": "column-1",
      "object": "clean-air-column",
-     "source": "box-proxy"
+     "source": "model:clean-air-column.glb",
+     "fit": {
+      "model_dims_m": [
+       2.95,
+       2.844,
+       6.034
+      ],
+      "box_m": [
+       1.4,
+       1.4,
+       6.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.994,
+      "worst_side_ratio": 2.1
+     }
     },
     {
      "id": "column-2",
      "object": "clean-air-column",
-     "source": "box-proxy"
+     "source": "model:clean-air-column.glb",
+     "fit": {
+      "model_dims_m": [
+       2.95,
+       2.844,
+       6.034
+      ],
+      "box_m": [
+       1.4,
+       1.4,
+       6.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.994,
+      "worst_side_ratio": 2.1
+     }
     },
     {
      "id": "rail",
      "object": "balcony-rail",
-     "source": "box-proxy"
+     "source": "model:balcony-rail.glb",
+     "fit": {
+      "model_dims_m": [
+       8.015,
+       0.543,
+       2.995
+      ],
+      "box_m": [
+       8.0,
+       0.3,
+       1.1
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.587,
+      "worst_side_ratio": 1.7
+     }
     },
     {
      "id": "service",
      "object": "service-door",
-     "source": "box-proxy"
+     "source": "model:service-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.368,
+       0.263,
+       2.324
+      ],
+      "box_m": [
+       1.2,
+       0.3,
+       2.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.99,
+      "worst_side_ratio": 1.15
+     }
     },
     {
      "id": "lectern",
      "object": "gala-lectern",
-     "source": "box-proxy"
+     "source": "model:gala-lectern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.535,
+       0.45,
+       1.203
+      ],
+      "box_m": [
+       0.9,
+       0.6,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.69
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -1872,7 +5593,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 11.5
+     "render_seconds": 9.7
     },
     {
      "still": "player",
@@ -1881,74 +5602,321 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 11.4
+     "render_seconds": 9.4
     }
    ],
    "props": [
     {
      "id": "chair",
      "object": "calibration-chair",
-     "source": "box-proxy"
+     "source": "model:calibration-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       1.429,
+       1.547,
+       1.402
+      ],
+      "box_m": [
+       0.9,
+       1.3,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.59
+     }
     },
     {
      "id": "mirror",
      "object": "annex-mirror",
-     "source": "box-proxy"
+     "source": "model:annex-mirror.glb",
+     "fit": {
+      "model_dims_m": [
+       1.043,
+       0.538,
+       2.218
+      ],
+      "box_m": [
+       1.2,
+       0.4,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.992,
+      "worst_side_ratio": 1.33
+     }
     },
     {
      "id": "table-1",
      "object": "gala-table",
-     "source": "box-proxy"
+     "source": "model:gala-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.812,
+       1.831,
+       1.323
+      ],
+      "box_m": [
+       1.8,
+       1.8,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.839,
+      "worst_side_ratio": 1.39
+     }
     },
     {
      "id": "table-2",
      "object": "gala-table",
-     "source": "box-proxy"
+     "source": "model:gala-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.812,
+       1.831,
+       1.323
+      ],
+      "box_m": [
+       1.8,
+       1.8,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.839,
+      "worst_side_ratio": 1.39
+     }
     },
     {
      "id": "table-3",
      "object": "gala-table",
-     "source": "box-proxy"
+     "source": "model:gala-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.812,
+       1.831,
+       1.323
+      ],
+      "box_m": [
+       1.8,
+       1.8,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.839,
+      "worst_side_ratio": 1.39
+     }
     },
     {
      "id": "table-4",
      "object": "gala-table",
-     "source": "box-proxy"
+     "source": "model:gala-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.812,
+       1.831,
+       1.323
+      ],
+      "box_m": [
+       1.8,
+       1.8,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.839,
+      "worst_side_ratio": 1.39
+     }
     },
     {
      "id": "table-5",
      "object": "gala-table",
-     "source": "box-proxy"
+     "source": "model:gala-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.812,
+       1.831,
+       1.323
+      ],
+      "box_m": [
+       1.8,
+       1.8,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.839,
+      "worst_side_ratio": 1.39
+     }
     },
     {
      "id": "table-6",
      "object": "gala-table",
-     "source": "box-proxy"
+     "source": "model:gala-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.812,
+       1.831,
+       1.323
+      ],
+      "box_m": [
+       1.8,
+       1.8,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.839,
+      "worst_side_ratio": 1.39
+     }
     },
     {
      "id": "column-1",
      "object": "clean-air-column",
-     "source": "box-proxy"
+     "source": "model:clean-air-column.glb",
+     "fit": {
+      "model_dims_m": [
+       2.95,
+       2.844,
+       6.034
+      ],
+      "box_m": [
+       1.4,
+       1.4,
+       6.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.994,
+      "worst_side_ratio": 2.1
+     }
     },
     {
      "id": "column-2",
      "object": "clean-air-column",
-     "source": "box-proxy"
+     "source": "model:clean-air-column.glb",
+     "fit": {
+      "model_dims_m": [
+       2.95,
+       2.844,
+       6.034
+      ],
+      "box_m": [
+       1.4,
+       1.4,
+       6.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.994,
+      "worst_side_ratio": 2.1
+     }
     },
     {
      "id": "rail",
      "object": "balcony-rail",
-     "source": "box-proxy"
+     "source": "model:balcony-rail.glb",
+     "fit": {
+      "model_dims_m": [
+       8.015,
+       0.543,
+       2.995
+      ],
+      "box_m": [
+       8.0,
+       0.3,
+       1.1
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.587,
+      "worst_side_ratio": 1.7
+     }
     },
     {
      "id": "service",
      "object": "service-door",
-     "source": "box-proxy"
+     "source": "model:service-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.368,
+       0.263,
+       2.324
+      ],
+      "box_m": [
+       1.2,
+       0.3,
+       2.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.99,
+      "worst_side_ratio": 1.15
+     }
     },
     {
      "id": "lectern",
      "object": "gala-lectern",
-     "source": "box-proxy"
+     "source": "model:gala-lectern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.535,
+       0.45,
+       1.203
+      ],
+      "box_m": [
+       0.9,
+       0.6,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.69
+     }
     }
    ],
    "flagged_in_first_pass": [
@@ -1956,6 +5924,7 @@
    ],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -1986,7 +5955,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 11.6
+     "render_seconds": 10.0
     },
     {
      "still": "player",
@@ -1995,74 +5964,321 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 11.0
+     "render_seconds": 9.6
     }
    ],
    "props": [
     {
      "id": "chair",
      "object": "calibration-chair",
-     "source": "box-proxy"
+     "source": "model:calibration-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       1.429,
+       1.547,
+       1.402
+      ],
+      "box_m": [
+       0.9,
+       1.3,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.59
+     }
     },
     {
      "id": "mirror",
      "object": "annex-mirror",
-     "source": "box-proxy"
+     "source": "model:annex-mirror.glb",
+     "fit": {
+      "model_dims_m": [
+       1.043,
+       0.538,
+       2.218
+      ],
+      "box_m": [
+       1.2,
+       0.4,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.992,
+      "worst_side_ratio": 1.33
+     }
     },
     {
      "id": "table-1",
      "object": "gala-table",
-     "source": "box-proxy"
+     "source": "model:gala-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.812,
+       1.831,
+       1.323
+      ],
+      "box_m": [
+       1.8,
+       1.8,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.839,
+      "worst_side_ratio": 1.39
+     }
     },
     {
      "id": "table-2",
      "object": "gala-table",
-     "source": "box-proxy"
+     "source": "model:gala-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.812,
+       1.831,
+       1.323
+      ],
+      "box_m": [
+       1.8,
+       1.8,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.839,
+      "worst_side_ratio": 1.39
+     }
     },
     {
      "id": "table-3",
      "object": "gala-table",
-     "source": "box-proxy"
+     "source": "model:gala-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.812,
+       1.831,
+       1.323
+      ],
+      "box_m": [
+       1.8,
+       1.8,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.839,
+      "worst_side_ratio": 1.39
+     }
     },
     {
      "id": "table-4",
      "object": "gala-table",
-     "source": "box-proxy"
+     "source": "model:gala-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.812,
+       1.831,
+       1.323
+      ],
+      "box_m": [
+       1.8,
+       1.8,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.839,
+      "worst_side_ratio": 1.39
+     }
     },
     {
      "id": "table-5",
      "object": "gala-table",
-     "source": "box-proxy"
+     "source": "model:gala-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.812,
+       1.831,
+       1.323
+      ],
+      "box_m": [
+       1.8,
+       1.8,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.839,
+      "worst_side_ratio": 1.39
+     }
     },
     {
      "id": "table-6",
      "object": "gala-table",
-     "source": "box-proxy"
+     "source": "model:gala-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.812,
+       1.831,
+       1.323
+      ],
+      "box_m": [
+       1.8,
+       1.8,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.839,
+      "worst_side_ratio": 1.39
+     }
     },
     {
      "id": "column-1",
      "object": "clean-air-column",
-     "source": "box-proxy"
+     "source": "model:clean-air-column.glb",
+     "fit": {
+      "model_dims_m": [
+       2.95,
+       2.844,
+       6.034
+      ],
+      "box_m": [
+       1.4,
+       1.4,
+       6.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.994,
+      "worst_side_ratio": 2.1
+     }
     },
     {
      "id": "column-2",
      "object": "clean-air-column",
-     "source": "box-proxy"
+     "source": "model:clean-air-column.glb",
+     "fit": {
+      "model_dims_m": [
+       2.95,
+       2.844,
+       6.034
+      ],
+      "box_m": [
+       1.4,
+       1.4,
+       6.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.994,
+      "worst_side_ratio": 2.1
+     }
     },
     {
      "id": "rail",
      "object": "balcony-rail",
-     "source": "box-proxy"
+     "source": "model:balcony-rail.glb",
+     "fit": {
+      "model_dims_m": [
+       8.015,
+       0.543,
+       2.995
+      ],
+      "box_m": [
+       8.0,
+       0.3,
+       1.1
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.587,
+      "worst_side_ratio": 1.7
+     }
     },
     {
      "id": "service",
      "object": "service-door",
-     "source": "box-proxy"
+     "source": "model:service-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.368,
+       0.263,
+       2.324
+      ],
+      "box_m": [
+       1.2,
+       0.3,
+       2.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.99,
+      "worst_side_ratio": 1.15
+     }
     },
     {
      "id": "lectern",
      "object": "gala-lectern",
-     "source": "box-proxy"
+     "source": "model:gala-lectern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.535,
+       0.45,
+       1.203
+      ],
+      "box_m": [
+       0.9,
+       0.6,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.69
+     }
     }
    ],
    "flagged_in_first_pass": [
@@ -2070,6 +6286,7 @@
    ],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -2100,7 +6317,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 16.1
+     "render_seconds": 16.2
     },
     {
      "still": "player",
@@ -2109,74 +6326,321 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 13.6
+     "render_seconds": 13.7
     }
    ],
    "props": [
     {
      "id": "chair",
      "object": "calibration-chair",
-     "source": "box-proxy"
+     "source": "model:calibration-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       1.429,
+       1.547,
+       1.402
+      ],
+      "box_m": [
+       0.9,
+       1.3,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.999,
+      "worst_side_ratio": 1.59
+     }
     },
     {
      "id": "mirror",
      "object": "annex-mirror",
-     "source": "box-proxy"
+     "source": "model:annex-mirror.glb",
+     "fit": {
+      "model_dims_m": [
+       1.043,
+       0.538,
+       2.218
+      ],
+      "box_m": [
+       1.2,
+       0.4,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.992,
+      "worst_side_ratio": 1.33
+     }
     },
     {
      "id": "table-1",
      "object": "gala-table",
-     "source": "box-proxy"
+     "source": "model:gala-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.812,
+       1.831,
+       1.323
+      ],
+      "box_m": [
+       1.8,
+       1.8,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.839,
+      "worst_side_ratio": 1.39
+     }
     },
     {
      "id": "table-2",
      "object": "gala-table",
-     "source": "box-proxy"
+     "source": "model:gala-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.812,
+       1.831,
+       1.323
+      ],
+      "box_m": [
+       1.8,
+       1.8,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.839,
+      "worst_side_ratio": 1.39
+     }
     },
     {
      "id": "table-3",
      "object": "gala-table",
-     "source": "box-proxy"
+     "source": "model:gala-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.812,
+       1.831,
+       1.323
+      ],
+      "box_m": [
+       1.8,
+       1.8,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.839,
+      "worst_side_ratio": 1.39
+     }
     },
     {
      "id": "table-4",
      "object": "gala-table",
-     "source": "box-proxy"
+     "source": "model:gala-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.812,
+       1.831,
+       1.323
+      ],
+      "box_m": [
+       1.8,
+       1.8,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.839,
+      "worst_side_ratio": 1.39
+     }
     },
     {
      "id": "table-5",
      "object": "gala-table",
-     "source": "box-proxy"
+     "source": "model:gala-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.812,
+       1.831,
+       1.323
+      ],
+      "box_m": [
+       1.8,
+       1.8,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.839,
+      "worst_side_ratio": 1.39
+     }
     },
     {
      "id": "table-6",
      "object": "gala-table",
-     "source": "box-proxy"
+     "source": "model:gala-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.812,
+       1.831,
+       1.323
+      ],
+      "box_m": [
+       1.8,
+       1.8,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.839,
+      "worst_side_ratio": 1.39
+     }
     },
     {
      "id": "column-1",
      "object": "clean-air-column",
-     "source": "box-proxy"
+     "source": "model:clean-air-column.glb",
+     "fit": {
+      "model_dims_m": [
+       2.95,
+       2.844,
+       6.034
+      ],
+      "box_m": [
+       1.4,
+       1.4,
+       6.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.994,
+      "worst_side_ratio": 2.1
+     }
     },
     {
      "id": "column-2",
      "object": "clean-air-column",
-     "source": "box-proxy"
+     "source": "model:clean-air-column.glb",
+     "fit": {
+      "model_dims_m": [
+       2.95,
+       2.844,
+       6.034
+      ],
+      "box_m": [
+       1.4,
+       1.4,
+       6.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.994,
+      "worst_side_ratio": 2.1
+     }
     },
     {
      "id": "rail",
      "object": "balcony-rail",
-     "source": "box-proxy"
+     "source": "model:balcony-rail.glb",
+     "fit": {
+      "model_dims_m": [
+       8.015,
+       0.543,
+       2.995
+      ],
+      "box_m": [
+       8.0,
+       0.3,
+       1.1
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.587,
+      "worst_side_ratio": 1.7
+     }
     },
     {
      "id": "service",
      "object": "service-door",
-     "source": "box-proxy"
+     "source": "model:service-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.368,
+       0.263,
+       2.324
+      ],
+      "box_m": [
+       1.2,
+       0.3,
+       2.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.99,
+      "worst_side_ratio": 1.15
+     }
     },
     {
      "id": "lectern",
      "object": "gala-lectern",
-     "source": "box-proxy"
+     "source": "model:gala-lectern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.535,
+       0.45,
+       1.203
+      ],
+      "box_m": [
+       0.9,
+       0.6,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.69
+     }
     }
    ],
    "flagged_in_first_pass": [
@@ -2184,6 +6648,7 @@
    ],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -2201,6 +6666,8 @@
  "overviews": [
   {
    "location": "bloom-district",
+   "reference": "games/dr-tox-fall/assets/locations/bloom-district.jpg",
+   "location_scene_count": 3,
    "scene_lighting": "s3_bloom_morning",
    "camera": {
     "location": [
@@ -2229,6 +6696,8 @@
   },
   {
    "location": "relief-hall",
+   "reference": "games/dr-tox-fall/assets/locations/relief-hall.jpg",
+   "location_scene_count": 3,
    "scene_lighting": "s3_relief_queue",
    "camera": {
     "location": [
@@ -2253,12 +6722,18 @@
     "scenes": {
      "s3_relief_standoff": {
       "exposure_ev": 0.7
+     },
+     "s3_relief_queue": {
+      "exposure_ev": -0.3
      }
-    }
+    },
+    "overview_ev": 0.3
    }
   },
   {
    "location": "salvage-settlement",
+   "reference": "games/dr-tox-fall/assets/locations/salvage-settlement.jpg",
+   "location_scene_count": 4,
    "scene_lighting": "s3_settlement_day",
    "camera": {
     "location": [
@@ -2282,10 +6757,10 @@
     ],
     "scenes": {
      "s3_settlement_raid": {
-      "exposure_ev": 1.5
+      "exposure_ev": 1.9
      },
      "s3_settlement_haze": {
-      "exposure_ev": 0.4
+      "exposure_ev": 0.0
      },
      "s3_settlement_lost": {
       "exposure_ev": 0.4
@@ -2295,6 +6770,8 @@
   },
   {
    "location": "snakehead-fortress",
+   "reference": "games/dr-tox-fall/assets/locations/snakehead-fortress.jpg",
+   "location_scene_count": 6,
    "scene_lighting": "s3_fortress_lamp",
    "camera": {
     "location": [
@@ -2322,16 +6799,16 @@
     "proxy_alpha": {
      "batch-bench": 0.35
     },
-    "overview_ev": 4.2,
+    "overview_ev": 2.0,
     "scenes": {
      "s3_fortress_lamp": {
-      "exposure_ev": -4.2
+      "exposure_ev": -2.0
      },
      "s3_fortress_bench": {
-      "exposure_ev": -4.2
+      "exposure_ev": -2.8
      },
      "s3_fortress_workshop": {
-      "exposure_ev": -3.6
+      "exposure_ev": -2.7
      },
      "s3_fortress_following": {
       "exposure_ev": -0.8
@@ -2344,6 +6821,8 @@
   },
   {
    "location": "spire-gala",
+   "reference": "games/dr-tox-fall/assets/locations/spire-gala.jpg",
+   "location_scene_count": 5,
    "scene_lighting": "s3_gala_floor",
    "camera": {
     "location": [
@@ -2377,5 +6856,841 @@
     "world_gain": 4.0
    }
   }
- ]
+ ],
+ "objects": {
+  "annex-mirror": {
+   "source": "model",
+   "model": "annex-mirror.glb",
+   "props": 5,
+   "fit": {
+    "model_dims_m": [
+     1.043,
+     0.538,
+     2.218
+    ],
+    "box_m": [
+     1.2,
+     0.4,
+     2.2
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.992,
+    "worst_side_ratio": 1.33
+   },
+   "note": null
+  },
+  "balcony-rail": {
+   "source": "model",
+   "model": "balcony-rail.glb",
+   "props": 5,
+   "fit": {
+    "model_dims_m": [
+     8.015,
+     0.543,
+     2.995
+    ],
+    "box_m": [
+     8.0,
+     0.3,
+     1.1
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.587,
+    "worst_side_ratio": 1.7
+   },
+   "note": null
+  },
+  "batch-bench": {
+   "source": "model",
+   "model": "batch-bench.glb",
+   "props": 6,
+   "fit": {
+    "model_dims_m": [
+     1.816,
+     0.826,
+     1.609
+    ],
+    "box_m": [
+     1.8,
+     0.7,
+     1.6
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.994,
+    "worst_side_ratio": 1.17
+   },
+   "note": null
+  },
+  "blade-cloth": {
+   "source": "model",
+   "model": "blade-cloth.glb",
+   "props": 1,
+   "fit": {
+    "model_dims_m": [
+     1.202,
+     0.703,
+     0.087
+    ],
+    "box_m": [
+     1.2,
+     0.8,
+     0.08
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.066,
+    "worst_side_ratio": 1.07
+   },
+   "note": null
+  },
+  "calibration-chair": {
+   "source": "model",
+   "model": "calibration-chair.glb",
+   "props": 5,
+   "fit": {
+    "model_dims_m": [
+     1.429,
+     1.547,
+     1.402
+    ],
+    "box_m": [
+     0.9,
+     1.3,
+     1.4
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.999,
+    "worst_side_ratio": 1.59
+   },
+   "note": null
+  },
+  "camera-drone": {
+   "source": "model",
+   "model": "camera-drone.glb",
+   "props": 3,
+   "fit": {
+    "model_dims_m": [
+     0.799,
+     0.675,
+     0.425
+    ],
+    "box_m": [
+     0.8,
+     0.8,
+     0.4
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.038,
+    "worst_side_ratio": 1.14
+   },
+   "note": null
+  },
+  "clean-air-column": {
+   "source": "model",
+   "model": "clean-air-column.glb",
+   "props": 10,
+   "fit": {
+    "model_dims_m": [
+     2.95,
+     2.844,
+     6.034
+    ],
+    "box_m": [
+     1.4,
+     1.4,
+     6.0
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.994,
+    "worst_side_ratio": 2.1
+   },
+   "note": null
+  },
+  "clean-water-tank": {
+   "source": "model",
+   "model": "clean-water-tank.glb",
+   "props": 6,
+   "fit": {
+    "model_dims_m": [
+     1.173,
+     1.438,
+     2.014
+    ],
+    "box_m": [
+     1.6,
+     1.6,
+     2.0
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.993,
+    "worst_side_ratio": 1.37
+   },
+   "note": null
+  },
+  "clinic-table": {
+   "source": "model",
+   "model": "clinic-table.glb",
+   "props": 3,
+   "fit": {
+    "model_dims_m": [
+     1.808,
+     1.203,
+     1.573
+    ],
+    "box_m": [
+     1.8,
+     0.8,
+     0.9
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.724,
+    "worst_side_ratio": 1.38
+   },
+   "note": null
+  },
+  "crt-stack": {
+   "source": "model",
+   "model": "crt-stack.glb",
+   "props": 4,
+   "fit": {
+    "model_dims_m": [
+     1.097,
+     1.002,
+     1.517
+    ],
+    "box_m": [
+     1.0,
+     0.6,
+     1.5
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.989,
+    "worst_side_ratio": 1.65
+   },
+   "note": null
+  },
+  "dented-bucket": {
+   "source": "model",
+   "model": "dented-bucket.glb",
+   "props": 6,
+   "fit": {
+    "model_dims_m": [
+     0.351,
+     0.312,
+     0.327
+    ],
+    "box_m": [
+     0.35,
+     0.35,
+     0.35
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.069,
+    "worst_side_ratio": 1.07
+   },
+   "note": null
+  },
+  "dispersal-rig": {
+   "source": "model",
+   "model": "dispersal-rig.glb",
+   "props": 3,
+   "fit": {
+    "model_dims_m": [
+     2.141,
+     0.89,
+     1.805
+    ],
+    "box_m": [
+     1.6,
+     1.2,
+     1.8
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.997,
+    "worst_side_ratio": 1.35
+   },
+   "note": null
+  },
+  "floodlight-truck": {
+   "source": "model",
+   "model": "floodlight-truck.glb",
+   "props": 1,
+   "fit": {
+    "model_dims_m": [
+     2.786,
+     6.546,
+     4.913
+    ],
+    "box_m": [
+     2.6,
+     6.5,
+     4.5
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.947,
+    "worst_side_ratio": 1.05
+   },
+   "note": null
+  },
+  "folding-cot": {
+   "source": "model",
+   "model": "folding-cot.glb",
+   "props": 22,
+   "fit": {
+    "model_dims_m": [
+     0.725,
+     1.905,
+     0.753
+    ],
+    "box_m": [
+     0.8,
+     1.9,
+     0.5
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.901,
+    "worst_side_ratio": 1.36
+   },
+   "note": null
+  },
+  "fortress-work-lamp": {
+   "source": "model",
+   "model": "fortress-work-lamp.glb",
+   "props": 6,
+   "fit": {
+    "model_dims_m": [
+     0.391,
+     0.298,
+     0.602
+    ],
+    "box_m": [
+     0.4,
+     0.4,
+     0.6
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.997,
+    "worst_side_ratio": 1.35
+   },
+   "note": null
+  },
+  "freeway-span": {
+   "source": "model",
+   "model": "freeway-span.glb",
+   "props": 4,
+   "fit": {
+    "model_dims_m": [
+     30.084,
+     13.969,
+     13.792
+    ],
+    "box_m": [
+     30.0,
+     12.0,
+     9.0
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.824,
+    "worst_side_ratio": 1.26
+   },
+   "note": null
+  },
+  "gala-lectern": {
+   "source": "model",
+   "model": "gala-lectern.glb",
+   "props": 5,
+   "fit": {
+    "model_dims_m": [
+     0.535,
+     0.45,
+     1.203
+    ],
+    "box_m": [
+     0.9,
+     0.6,
+     1.2
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.997,
+    "worst_side_ratio": 1.69
+   },
+   "note": null
+  },
+  "gala-table": {
+   "source": "model",
+   "model": "gala-table.glb",
+   "props": 24,
+   "fit": {
+    "model_dims_m": [
+     1.812,
+     1.831,
+     1.323
+    ],
+    "box_m": [
+     1.8,
+     1.8,
+     0.8
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.839,
+    "worst_side_ratio": 1.39
+   },
+   "note": null
+  },
+  "gauntlet-vise": {
+   "source": "model",
+   "model": "gauntlet-vise.glb",
+   "props": 6,
+   "fit": {
+    "model_dims_m": [
+     1.176,
+     1.048,
+     1.105
+    ],
+    "box_m": [
+     0.7,
+     0.5,
+     1.1
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.996,
+    "worst_side_ratio": 2.09
+   },
+   "note": null
+  },
+  "generator-cart": {
+   "source": "model",
+   "model": "generator-cart.glb",
+   "props": 4,
+   "fit": {
+    "model_dims_m": [
+     1.436,
+     1.41,
+     1.87
+    ],
+    "box_m": [
+     1.4,
+     0.9,
+     1.2
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.642,
+    "worst_side_ratio": 1.52
+   },
+   "note": null
+  },
+  "laundry-line": {
+   "source": "model",
+   "model": "laundry-line.glb",
+   "props": 4,
+   "fit": {
+    "model_dims_m": [
+     6.042,
+     1.097,
+     4.035
+    ],
+    "box_m": [
+     6.0,
+     0.4,
+     2.2
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.582,
+    "worst_side_ratio": 1.71
+   },
+   "note": null
+  },
+  "market-stall": {
+   "source": "model",
+   "model": "market-stall.glb",
+   "props": 12,
+   "fit": {
+    "model_dims_m": [
+     2.41,
+     1.355,
+     2.324
+    ],
+    "box_m": [
+     2.4,
+     1.6,
+     2.4
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.033,
+    "worst_side_ratio": 1.14
+   },
+   "note": null
+  },
+  "names-board": {
+   "source": "model",
+   "model": "names-board.glb",
+   "props": 6,
+   "fit": {
+    "model_dims_m": [
+     3.217,
+     0.265,
+     2.393
+    ],
+    "box_m": [
+     3.2,
+     0.1,
+     1.8
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.656,
+    "worst_side_ratio": 1.74
+   },
+   "note": null
+  },
+  "number-board": {
+   "source": "model",
+   "model": "number-board.glb",
+   "props": 3,
+   "fit": {
+    "model_dims_m": [
+     1.817,
+     0.325,
+     1.97
+    ],
+    "box_m": [
+     1.8,
+     0.1,
+     1.2
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.57,
+    "worst_side_ratio": 1.86
+   },
+   "note": null
+  },
+  "queue-rail": {
+   "source": "model",
+   "model": "queue-rail.glb",
+   "props": 15,
+   "fit": {
+    "model_dims_m": [
+     4.018,
+     1.155,
+     2.5
+    ],
+    "box_m": [
+     4.0,
+     0.3,
+     1.0
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.469,
+    "worst_side_ratio": 2.12
+   },
+   "note": null
+  },
+  "ration-dispenser": {
+   "source": "model",
+   "model": "ration-dispenser.glb",
+   "props": 12,
+   "fit": {
+    "model_dims_m": [
+     1.095,
+     0.906,
+     2.213
+    ],
+    "box_m": [
+     1.2,
+     0.7,
+     2.2
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.994,
+    "worst_side_ratio": 1.29
+   },
+   "note": null
+  },
+  "relief-shutter": {
+   "source": "model",
+   "model": "relief-shutter.glb",
+   "props": 3,
+   "fit": {
+    "model_dims_m": [
+     6.051,
+     1.822,
+     5.559
+    ],
+    "box_m": [
+     6.0,
+     0.4,
+     3.5
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.516,
+    "worst_side_ratio": 2.35
+   },
+   "note": null
+  },
+  "service-door": {
+   "source": "model",
+   "model": "service-door.glb",
+   "props": 5,
+   "fit": {
+    "model_dims_m": [
+     1.368,
+     0.263,
+     2.324
+    ],
+    "box_m": [
+     1.2,
+     0.3,
+     2.3
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.99,
+    "worst_side_ratio": 1.15
+   },
+   "note": null
+  },
+  "service-truck": {
+   "source": "model",
+   "model": "service-truck.glb",
+   "props": 3,
+   "fit": {
+    "model_dims_m": [
+     2.341,
+     6.049,
+     3.177
+    ],
+    "box_m": [
+     2.4,
+     6.0,
+     3.0
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.987,
+    "worst_side_ratio": 1.04
+   },
+   "note": null
+  },
+  "settlement-shelter": {
+   "source": "model",
+   "model": "settlement-shelter.glb",
+   "props": 12,
+   "fit": {
+    "model_dims_m": [
+     3.013,
+     2.677,
+     2.562
+    ],
+    "box_m": [
+     3.0,
+     3.0,
+     2.2
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.986,
+    "worst_side_ratio": 1.15
+   },
+   "note": null
+  },
+  "shielded-locker": {
+   "source": "model",
+   "model": "shielded-locker.glb",
+   "props": 6,
+   "fit": {
+    "model_dims_m": [
+     1.312,
+     1.026,
+     2.017
+    ],
+    "box_m": [
+     0.8,
+     0.6,
+     2.0
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.991,
+    "worst_side_ratio": 1.69
+   },
+   "note": null
+  },
+  "shroud-stand": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 6,
+   "fit": {
+    "model_skipped": "the model shows a hooded cloak on a stand (a figure-like shape); named box proxy stays"
+   },
+   "note": "model skipped: the model shows a hooded cloak on a stand (a figure-like shape); named box proxy stays"
+  },
+  "vent-stack": {
+   "source": "model",
+   "model": "vent-stack.glb",
+   "props": 6,
+   "fit": {
+    "model_dims_m": [
+     5.569,
+     8.108,
+     14.058
+    ],
+    "box_m": [
+     3.0,
+     3.0,
+     14.0
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.996,
+    "worst_side_ratio": 2.69
+   },
+   "note": null
+  },
+  "water-drum": {
+   "source": "model",
+   "model": "water-drum.glb",
+   "props": 16,
+   "fit": {
+    "model_dims_m": [
+     0.57,
+     0.461,
+     0.904
+    ],
+    "box_m": [
+     0.6,
+     0.6,
+     0.9
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.996,
+    "worst_side_ratio": 1.31
+   },
+   "note": null
+  }
+ }
 }

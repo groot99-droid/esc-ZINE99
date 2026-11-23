@@ -47,7 +47,12 @@
       0.86,
       0.98,
       1.1
-    ]
+    ],
+    "scenes": {
+      "s3_injection_first": {
+        "exposure_ev": 0.3
+      }
+    }
   },
   "idaho-river-town": {
     "overview_scene": "s3_river_town",
@@ -103,7 +108,7 @@
     },
     "scenes": {
       "s3_lower_ring_after": {
-        "exposure_ev": -1.5
+        "exposure_ev": -1.4
       }
     }
   },
@@ -140,8 +145,12 @@
     "scenes": {
       "s3_printer_room_after": {
         "exposure_ev": 1.0
+      },
+      "s3_printer_room": {
+        "exposure_ev": 0.9
       }
-    }
+    },
+    "overview_ev": -0.6
   },
   "sky-room": {
     "overview_scene": "s3_skyroom_small",
@@ -161,9 +170,13 @@
     "exposure_ev": -2.0,
     "scenes": {
       "s3_skyroom_evening": {
-        "exposure_ev": 1.5
+        "exposure_ev": 2.1
+      },
+      "s3_skyroom_small": {
+        "exposure_ev": 0.2
       }
-    }
+    },
+    "overview_ev": -0.2
   },
   "snakehead-archive": {
     "overview_scene": "s3_archive_fall",
@@ -191,9 +204,13 @@
         "exposure_ev": 2.0
       },
       "s3_archive_fall": {
-        "exposure_ev": 1.0
+        "exposure_ev": 1.6
+      },
+      "s3_bunker_injection": {
+        "exposure_ev": 2.3
       }
-    }
+    },
+    "overview_ev": -0.6
   },
   "spire-plaza": {
     "overview_scene": "s3_spire_ceremony",
@@ -210,7 +227,12 @@
       ],
       "lens_mm": 20
     },
-    "exposure_ev": -3.2
+    "exposure_ev": -3.2,
+    "scenes": {
+      "s3_spire_mirror": {
+        "exposure_ev": 0.5
+      }
+    }
   },
   "trial-53-arena": {
     "overview_scene": "s3_arena",
@@ -288,8 +310,12 @@
     "scenes": {
       "s3_relief_standoff": {
         "exposure_ev": 0.7
+      },
+      "s3_relief_queue": {
+        "exposure_ev": -0.3
       }
-    }
+    },
+    "overview_ev": 0.3
   },
   "salvage-settlement": {
     "overview_scene": "s3_settlement_day",
@@ -314,10 +340,10 @@
     ],
     "scenes": {
       "s3_settlement_raid": {
-        "exposure_ev": 1.5
+        "exposure_ev": 1.9
       },
       "s3_settlement_haze": {
-        "exposure_ev": 0.4
+        "exposure_ev": 0.0
       },
       "s3_settlement_lost": {
         "exposure_ev": 0.4
@@ -351,16 +377,16 @@
     "proxy_alpha": {
       "batch-bench": 0.35
     },
-    "overview_ev": 4.2,
+    "overview_ev": 2.0,
     "scenes": {
       "s3_fortress_lamp": {
-        "exposure_ev": -4.2
+        "exposure_ev": -2.0
       },
       "s3_fortress_bench": {
-        "exposure_ev": -4.2
+        "exposure_ev": -2.8
       },
       "s3_fortress_workshop": {
-        "exposure_ev": -3.6
+        "exposure_ev": -2.7
       },
       "s3_fortress_following": {
         "exposure_ev": -0.8
@@ -423,22 +449,28 @@
     },
     "scenes": {
       "s3_hub_door": {
-        "exposure_ev": -0.5
+        "exposure_ev": 1.8
       },
       "s3_hub_core": {
-        "exposure_ev": 0.5
+        "exposure_ev": 0.9
       },
       "s3_reset_heart": {
-        "exposure_ev": 0.8
+        "exposure_ev": 1.8
       },
       "s3_first_word_core": {
-        "exposure_ev": 0.8
+        "exposure_ev": 1.3
       },
       "s3_green_core": {
         "exposure_ev": -0.3
+      },
+      "s3_hub_gallery": {
+        "exposure_ev": 0.1
+      },
+      "s3_wall_outside": {
+        "exposure_ev": 0.3
       }
     },
-    "overview_ev": -1.3,
+    "overview_ev": -1.4,
     "grade_gain": [
       0.9,
       1.0,
@@ -467,7 +499,7 @@
     "overview_ev": -0.9,
     "scenes": {
       "s3_suite_printer": {
-        "exposure_ev": 0.4
+        "exposure_ev": 0.6
       },
       "s3_clinical_suite": {
         "light_gains": {
@@ -536,10 +568,10 @@
         "exposure_ev": 1.0
       },
       "s3_snakehead_bench": {
-        "exposure_ev": 0.0
+        "exposure_ev": 1.5
       },
       "s3_snakehead_resin": {
-        "exposure_ev": 0.5
+        "exposure_ev": 1.0
       }
     },
     "overview_ev": -0.2,
@@ -573,10 +605,13 @@
         "exposure_ev": 1.0
       },
       "s3_march_front": {
-        "exposure_ev": 0.3
+        "exposure_ev": 0.5
       },
       "s3_perimeter_breach": {
         "exposure_ev": -0.3
+      },
+      "s3_station_after": {
+        "exposure_ev": 1.3
       }
     },
     "overview_ev": 0.0,

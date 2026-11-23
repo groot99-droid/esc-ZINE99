@@ -24,7 +24,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 28.3
+     "render_seconds": 18.9
     },
     {
      "still": "player",
@@ -33,7 +33,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 29.5
+     "render_seconds": 19.0
     },
     {
      "still": "overview",
@@ -42,34 +42,129 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 9.6
+     "render_seconds": 7.7
     }
    ],
    "props": [
     {
      "id": "bed",
      "object": "isolation-bed",
-     "source": "box-proxy"
+     "source": "model:isolation-bed.glb",
+     "fit": {
+      "model_dims_m": [
+       0.995,
+       2.217,
+       1.572
+      ],
+      "box_m": [
+       1.1,
+       2.2,
+       2.1
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.336,
+      "worst_side_ratio": 1.35
+     }
     },
     {
      "id": "bench",
      "object": "bench-rig",
-     "source": "box-proxy"
+     "source": "model:bench-rig.glb",
+     "fit": {
+      "model_dims_m": [
+       1.387,
+       0.767,
+       1.507
+      ],
+      "box_m": [
+       1.4,
+       0.6,
+       1.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.995,
+      "worst_side_ratio": 1.27
+     }
     },
     {
      "id": "vial",
      "object": "amber-vial",
-     "source": "box-proxy"
+     "source": "model:amber-vial.glb",
+     "fit": {
+      "model_dims_m": [
+       0.057,
+       0.057,
+       0.12
+      ],
+      "box_m": [
+       0.05,
+       0.05,
+       0.12
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.14
+     }
     },
     {
      "id": "syringe",
      "object": "lead-shielded-syringe",
-     "source": "box-proxy"
+     "source": "model:lead-shielded-syringe.glb",
+     "fit": {
+      "model_dims_m": [
+       0.115,
+       0.3,
+       0.05
+      ],
+      "box_m": [
+       0.06,
+       0.3,
+       0.06
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.855,
+      "worst_side_ratio": 1.64
+     }
     },
     {
      "id": "iv",
      "object": "iv-pole",
-     "source": "box-proxy"
+     "source": "model:iv-pole.glb",
+     "fit": {
+      "model_dims_m": [
+       1.014,
+       0.99,
+       2.005
+      ],
+      "box_m": [
+       0.5,
+       0.5,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 2.02
+     }
     }
    ],
    "flagged_in_first_pass": [
@@ -77,6 +172,7 @@
    ],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -107,7 +203,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 26.2
+     "render_seconds": 17.8
     },
     {
      "still": "player",
@@ -116,34 +212,129 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 27.6
+     "render_seconds": 18.4
     }
    ],
    "props": [
     {
      "id": "bed",
      "object": "isolation-bed",
-     "source": "box-proxy"
+     "source": "model:isolation-bed.glb",
+     "fit": {
+      "model_dims_m": [
+       0.995,
+       2.217,
+       1.572
+      ],
+      "box_m": [
+       1.1,
+       2.2,
+       2.1
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.336,
+      "worst_side_ratio": 1.35
+     }
     },
     {
      "id": "bench",
      "object": "bench-rig",
-     "source": "box-proxy"
+     "source": "model:bench-rig.glb",
+     "fit": {
+      "model_dims_m": [
+       1.387,
+       0.767,
+       1.507
+      ],
+      "box_m": [
+       1.4,
+       0.6,
+       1.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.995,
+      "worst_side_ratio": 1.27
+     }
     },
     {
      "id": "vial",
      "object": "amber-vial",
-     "source": "box-proxy"
+     "source": "model:amber-vial.glb",
+     "fit": {
+      "model_dims_m": [
+       0.057,
+       0.057,
+       0.12
+      ],
+      "box_m": [
+       0.05,
+       0.05,
+       0.12
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.14
+     }
     },
     {
      "id": "syringe",
      "object": "lead-shielded-syringe",
-     "source": "box-proxy"
+     "source": "model:lead-shielded-syringe.glb",
+     "fit": {
+      "model_dims_m": [
+       0.115,
+       0.3,
+       0.05
+      ],
+      "box_m": [
+       0.06,
+       0.3,
+       0.06
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.855,
+      "worst_side_ratio": 1.64
+     }
     },
     {
      "id": "iv",
      "object": "iv-pole",
-     "source": "box-proxy"
+     "source": "model:iv-pole.glb",
+     "fit": {
+      "model_dims_m": [
+       1.014,
+       0.99,
+       2.005
+      ],
+      "box_m": [
+       0.5,
+       0.5,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 2.02
+     }
     }
    ],
    "flagged_in_first_pass": [
@@ -151,6 +342,7 @@
    ],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -181,7 +373,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 22.8
+     "render_seconds": 19.6
     },
     {
      "still": "player",
@@ -190,34 +382,111 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 25.2
+     "render_seconds": 19.5
     }
    ],
    "props": [
     {
      "id": "bed",
      "object": "isolation-bed",
-     "source": "box-proxy"
+     "source": "model:isolation-bed.glb",
+     "fit": {
+      "model_dims_m": [
+       0.995,
+       2.217,
+       1.572
+      ],
+      "box_m": [
+       1.1,
+       2.2,
+       2.1
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.336,
+      "worst_side_ratio": 1.35
+     }
     },
     {
      "id": "bench",
      "object": "bench-rig",
-     "source": "box-proxy"
+     "source": "model:bench-rig.glb",
+     "fit": {
+      "model_dims_m": [
+       1.387,
+       0.767,
+       1.507
+      ],
+      "box_m": [
+       1.4,
+       0.6,
+       1.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.995,
+      "worst_side_ratio": 1.27
+     }
     },
     {
      "id": "vial",
      "object": "amber-vial",
-     "source": "box-proxy"
+     "source": "model:amber-vial.glb",
+     "fit": {
+      "model_dims_m": [
+       0.057,
+       0.057,
+       0.12
+      ],
+      "box_m": [
+       0.05,
+       0.05,
+       0.12
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.14
+     }
     },
     {
      "id": "syringe",
      "object": "lead-shielded-syringe",
-     "source": "box-proxy"
+     "source": "model:lead-shielded-syringe.glb",
+     "fit": {
+      "model_dims_m": [
+       0.115,
+       0.3,
+       0.05
+      ],
+      "box_m": [
+       0.06,
+       0.3,
+       0.06
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.855,
+      "worst_side_ratio": 1.64
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -247,7 +516,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 12.1
+     "render_seconds": 8.1
     },
     {
      "still": "player",
@@ -256,7 +525,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 12.0
+     "render_seconds": 8.0
     },
     {
      "still": "overview",
@@ -265,44 +534,159 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 6.7
+     "render_seconds": 4.7
     }
    ],
    "props": [
     {
      "id": "pipe",
      "object": "outflow-pipe",
-     "source": "box-proxy"
+     "source": "model:outflow-pipe.glb",
+     "fit": {
+      "model_dims_m": [
+       6.735,
+       6.07,
+       6.336
+      ],
+      "box_m": [
+       2.2,
+       6.0,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.482,
+      "worst_side_ratio": 2.05
+     }
     },
     {
      "id": "bike-dale",
      "object": "child-bicycle",
-     "source": "box-proxy"
+     "source": "model:child-bicycle.glb",
+     "fit": {
+      "model_dims_m": [
+       0.921,
+       1.407,
+       0.966
+      ],
+      "box_m": [
+       0.5,
+       1.4,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.765,
+      "worst_side_ratio": 1.41
+     }
     },
     {
      "id": "bike-two",
      "object": "child-bicycle",
-     "source": "box-proxy"
+     "source": "model:child-bicycle.glb",
+     "fit": {
+      "model_dims_m": [
+       0.921,
+       1.407,
+       0.966
+      ],
+      "box_m": [
+       0.5,
+       1.4,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.765,
+      "worst_side_ratio": 1.41
+     }
     },
     {
      "id": "sawhorse-store",
      "object": "quarantine-sawhorse",
-     "source": "box-proxy"
+     "source": "model:quarantine-sawhorse.glb",
+     "fit": {
+      "model_dims_m": [
+       1.795,
+       0.875,
+       1.372
+      ],
+      "box_m": [
+       1.8,
+       0.6,
+       1.1
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.82,
+      "worst_side_ratio": 1.22
+     }
     },
     {
      "id": "sawhorse-bank",
      "object": "quarantine-sawhorse",
-     "source": "box-proxy"
+     "source": "model:quarantine-sawhorse.glb",
+     "fit": {
+      "model_dims_m": [
+       1.795,
+       0.875,
+       1.372
+      ],
+      "box_m": [
+       1.8,
+       0.6,
+       1.1
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.82,
+      "worst_side_ratio": 1.22
+     }
     },
     {
      "id": "notice-post",
      "object": "town-notice-post",
-     "source": "box-proxy"
+     "source": "model:town-notice-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.573,
+       0.559,
+       2.008
+      ],
+      "box_m": [
+       0.6,
+       0.3,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.996,
+      "worst_side_ratio": 1.85
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [
@@ -341,7 +725,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 11.0
+     "render_seconds": 7.9
     },
     {
      "still": "player",
@@ -350,34 +734,129 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 11.2
+     "render_seconds": 8.3
     }
    ],
    "props": [
     {
      "id": "pipe",
      "object": "outflow-pipe",
-     "source": "box-proxy"
+     "source": "model:outflow-pipe.glb",
+     "fit": {
+      "model_dims_m": [
+       6.735,
+       6.07,
+       6.336
+      ],
+      "box_m": [
+       2.2,
+       6.0,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.482,
+      "worst_side_ratio": 2.05
+     }
     },
     {
      "id": "bike-dale",
      "object": "child-bicycle",
-     "source": "box-proxy"
+     "source": "model:child-bicycle.glb",
+     "fit": {
+      "model_dims_m": [
+       0.921,
+       1.407,
+       0.966
+      ],
+      "box_m": [
+       0.5,
+       1.4,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.765,
+      "worst_side_ratio": 1.41
+     }
     },
     {
      "id": "sawhorse-store",
      "object": "quarantine-sawhorse",
-     "source": "box-proxy"
+     "source": "model:quarantine-sawhorse.glb",
+     "fit": {
+      "model_dims_m": [
+       1.795,
+       0.875,
+       1.372
+      ],
+      "box_m": [
+       1.8,
+       0.6,
+       1.1
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.82,
+      "worst_side_ratio": 1.22
+     }
     },
     {
      "id": "sawhorse-bank",
      "object": "quarantine-sawhorse",
-     "source": "box-proxy"
+     "source": "model:quarantine-sawhorse.glb",
+     "fit": {
+      "model_dims_m": [
+       1.795,
+       0.875,
+       1.372
+      ],
+      "box_m": [
+       1.8,
+       0.6,
+       1.1
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.82,
+      "worst_side_ratio": 1.22
+     }
     },
     {
      "id": "notice-post",
      "object": "town-notice-post",
-     "source": "box-proxy"
+     "source": "model:town-notice-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.573,
+       0.559,
+       2.008
+      ],
+      "box_m": [
+       0.6,
+       0.3,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.996,
+      "worst_side_ratio": 1.85
+     }
     }
    ],
    "flagged_in_first_pass": [
@@ -385,6 +864,7 @@
    ],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [
@@ -426,7 +906,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 24.0
+     "render_seconds": 20.0
     },
     {
      "still": "player",
@@ -435,7 +915,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 20.1
+     "render_seconds": 15.5
     },
     {
      "still": "overview",
@@ -444,49 +924,183 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 10.4
+     "render_seconds": 8.4
     }
    ],
    "props": [
     {
      "id": "transport",
      "object": "armoured-transport",
-     "source": "box-proxy"
+     "source": "model:armoured-transport.glb",
+     "fit": {
+      "model_dims_m": [
+       3.801,
+       8.055,
+       3.789
+      ],
+      "box_m": [
+       3.0,
+       8.0,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.872,
+      "worst_side_ratio": 1.14
+     }
     },
     {
      "id": "emitter-1",
      "object": "barrier-emitter",
-     "source": "box-proxy"
+     "source": "model:barrier-emitter.glb",
+     "fit": {
+      "model_dims_m": [
+       0.815,
+       0.981,
+       1.413
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.991,
+      "worst_side_ratio": 1.62
+     }
     },
     {
      "id": "emitter-2",
      "object": "barrier-emitter",
-     "source": "box-proxy"
+     "source": "model:barrier-emitter.glb",
+     "fit": {
+      "model_dims_m": [
+       0.815,
+       0.981,
+       1.413
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.991,
+      "worst_side_ratio": 1.62
+     }
     },
     {
      "id": "emitter-3",
      "object": "barrier-emitter",
-     "source": "box-proxy"
+     "source": "model:barrier-emitter.glb",
+     "fit": {
+      "model_dims_m": [
+       0.815,
+       0.981,
+       1.413
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.991,
+      "worst_side_ratio": 1.62
+     }
     },
     {
      "id": "scaffold",
      "object": "collapsed-scaffold",
-     "source": "box-proxy"
+     "source": "model:collapsed-scaffold.glb",
+     "fit": {
+      "model_dims_m": [
+       5.987,
+       6.559,
+       6.928
+      ],
+      "box_m": [
+       6.0,
+       3.0,
+       5.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.722,
+      "worst_side_ratio": 1.58
+     }
     },
     {
      "id": "crate-1",
      "object": "supply-crate",
-     "source": "box-proxy"
+     "source": "model:supply-crate.glb",
+     "fit": {
+      "model_dims_m": [
+       1.204,
+       0.777,
+       0.786
+      ],
+      "box_m": [
+       1.2,
+       0.8,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.015,
+      "worst_side_ratio": 1.02
+     }
     },
     {
      "id": "crate-2",
      "object": "supply-crate",
-     "source": "box-proxy"
+     "source": "model:supply-crate.glb",
+     "fit": {
+      "model_dims_m": [
+       1.204,
+       0.777,
+       0.786
+      ],
+      "box_m": [
+       1.2,
+       0.8,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.015,
+      "worst_side_ratio": 1.02
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [
@@ -520,7 +1134,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 24.9
+     "render_seconds": 20.2
     },
     {
      "still": "player",
@@ -529,49 +1143,183 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 21.9
+     "render_seconds": 18.7
     }
    ],
    "props": [
     {
      "id": "transport",
      "object": "armoured-transport",
-     "source": "box-proxy"
+     "source": "model:armoured-transport.glb",
+     "fit": {
+      "model_dims_m": [
+       3.801,
+       8.055,
+       3.789
+      ],
+      "box_m": [
+       3.0,
+       8.0,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.872,
+      "worst_side_ratio": 1.14
+     }
     },
     {
      "id": "emitter-1",
      "object": "barrier-emitter",
-     "source": "box-proxy"
+     "source": "model:barrier-emitter.glb",
+     "fit": {
+      "model_dims_m": [
+       0.815,
+       0.981,
+       1.413
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.991,
+      "worst_side_ratio": 1.62
+     }
     },
     {
      "id": "emitter-2",
      "object": "barrier-emitter",
-     "source": "box-proxy"
+     "source": "model:barrier-emitter.glb",
+     "fit": {
+      "model_dims_m": [
+       0.815,
+       0.981,
+       1.413
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.991,
+      "worst_side_ratio": 1.62
+     }
     },
     {
      "id": "emitter-3",
      "object": "barrier-emitter",
-     "source": "box-proxy"
+     "source": "model:barrier-emitter.glb",
+     "fit": {
+      "model_dims_m": [
+       0.815,
+       0.981,
+       1.413
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.991,
+      "worst_side_ratio": 1.62
+     }
     },
     {
      "id": "scaffold",
      "object": "collapsed-scaffold",
-     "source": "box-proxy"
+     "source": "model:collapsed-scaffold.glb",
+     "fit": {
+      "model_dims_m": [
+       5.987,
+       6.559,
+       6.928
+      ],
+      "box_m": [
+       6.0,
+       3.0,
+       5.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.722,
+      "worst_side_ratio": 1.58
+     }
     },
     {
      "id": "crate-1",
      "object": "supply-crate",
-     "source": "box-proxy"
+     "source": "model:supply-crate.glb",
+     "fit": {
+      "model_dims_m": [
+       1.204,
+       0.777,
+       0.786
+      ],
+      "box_m": [
+       1.2,
+       0.8,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.015,
+      "worst_side_ratio": 1.02
+     }
     },
     {
      "id": "crate-2",
      "object": "supply-crate",
-     "source": "box-proxy"
+     "source": "model:supply-crate.glb",
+     "fit": {
+      "model_dims_m": [
+       1.204,
+       0.777,
+       0.786
+      ],
+      "box_m": [
+       1.2,
+       0.8,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.015,
+      "worst_side_ratio": 1.02
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [
@@ -605,7 +1353,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 28.1
+     "render_seconds": 21.3
     },
     {
      "still": "player",
@@ -614,7 +1362,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 29.1
+     "render_seconds": 21.3
     },
     {
      "still": "overview",
@@ -623,64 +1371,255 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 11.3
+     "render_seconds": 8.7
     }
    ],
    "props": [
     {
      "id": "column",
      "object": "printer-column",
-     "source": "box-proxy"
+     "source": "model:printer-column.glb",
+     "fit": {
+      "model_dims_m": [
+       2.323,
+       2.052,
+       6.553
+      ],
+      "box_m": [
+       1.8,
+       1.8,
+       6.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.992,
+      "worst_side_ratio": 1.28
+     }
     },
     {
      "id": "terminal",
      "object": "rcc-terminal",
-     "source": "box-proxy"
+     "source": "model:rcc-terminal.glb",
+     "fit": {
+      "model_dims_m": [
+       1.099,
+       0.985,
+       1.309
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       1.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.993,
+      "worst_side_ratio": 1.82
+     }
     },
     {
      "id": "vat-0",
      "object": "vat-unit",
-     "source": "box-proxy"
+     "source": "model:vat-unit.glb",
+     "fit": {
+      "model_dims_m": [
+       1.121,
+       0.961,
+       2.412
+      ],
+      "box_m": [
+       1.2,
+       0.8,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.995,
+      "worst_side_ratio": 1.2
+     }
     },
     {
      "id": "vat-1",
      "object": "vat-unit",
-     "source": "box-proxy"
+     "source": "model:vat-unit.glb",
+     "fit": {
+      "model_dims_m": [
+       1.121,
+       0.961,
+       2.412
+      ],
+      "box_m": [
+       1.2,
+       0.8,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.995,
+      "worst_side_ratio": 1.2
+     }
     },
     {
      "id": "vat-2",
      "object": "vat-unit",
-     "source": "box-proxy"
+     "source": "model:vat-unit.glb",
+     "fit": {
+      "model_dims_m": [
+       1.121,
+       0.961,
+       2.412
+      ],
+      "box_m": [
+       1.2,
+       0.8,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.995,
+      "worst_side_ratio": 1.2
+     }
     },
     {
      "id": "vat-3",
      "object": "vat-unit",
-     "source": "box-proxy"
+     "source": "model:vat-unit.glb",
+     "fit": {
+      "model_dims_m": [
+       1.121,
+       0.961,
+       2.412
+      ],
+      "box_m": [
+       1.2,
+       0.8,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.995,
+      "worst_side_ratio": 1.2
+     }
     },
     {
      "id": "vat-e0",
      "object": "vat-unit",
-     "source": "box-proxy"
+     "source": "model:vat-unit.glb",
+     "fit": {
+      "model_dims_m": [
+       1.121,
+       0.961,
+       2.412
+      ],
+      "box_m": [
+       1.2,
+       0.8,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.995,
+      "worst_side_ratio": 1.2
+     }
     },
     {
      "id": "vat-e1",
      "object": "vat-unit",
-     "source": "box-proxy"
+     "source": "model:vat-unit.glb",
+     "fit": {
+      "model_dims_m": [
+       1.121,
+       0.961,
+       2.412
+      ],
+      "box_m": [
+       1.2,
+       0.8,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.995,
+      "worst_side_ratio": 1.2
+     }
     },
     {
      "id": "vat-e2",
      "object": "vat-unit",
-     "source": "box-proxy"
+     "source": "model:vat-unit.glb",
+     "fit": {
+      "model_dims_m": [
+       1.121,
+       0.961,
+       2.412
+      ],
+      "box_m": [
+       1.2,
+       0.8,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.995,
+      "worst_side_ratio": 1.2
+     }
     },
     {
      "id": "vat-e3",
      "object": "vat-unit",
-     "source": "box-proxy"
+     "source": "model:vat-unit.glb",
+     "fit": {
+      "model_dims_m": [
+       1.121,
+       0.961,
+       2.412
+      ],
+      "box_m": [
+       1.2,
+       0.8,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.995,
+      "worst_side_ratio": 1.2
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -710,7 +1649,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 23.2
+     "render_seconds": 18.0
     },
     {
      "still": "player",
@@ -719,59 +1658,231 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 22.5
+     "render_seconds": 18.2
     }
    ],
    "props": [
     {
      "id": "terminal",
      "object": "rcc-terminal",
-     "source": "box-proxy"
+     "source": "model:rcc-terminal.glb",
+     "fit": {
+      "model_dims_m": [
+       1.099,
+       0.985,
+       1.309
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       1.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.993,
+      "worst_side_ratio": 1.82
+     }
     },
     {
      "id": "vat-0",
      "object": "vat-unit",
-     "source": "box-proxy"
+     "source": "model:vat-unit.glb",
+     "fit": {
+      "model_dims_m": [
+       1.121,
+       0.961,
+       2.412
+      ],
+      "box_m": [
+       1.2,
+       0.8,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.995,
+      "worst_side_ratio": 1.2
+     }
     },
     {
      "id": "vat-1",
      "object": "vat-unit",
-     "source": "box-proxy"
+     "source": "model:vat-unit.glb",
+     "fit": {
+      "model_dims_m": [
+       1.121,
+       0.961,
+       2.412
+      ],
+      "box_m": [
+       1.2,
+       0.8,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.995,
+      "worst_side_ratio": 1.2
+     }
     },
     {
      "id": "vat-2",
      "object": "vat-unit",
-     "source": "box-proxy"
+     "source": "model:vat-unit.glb",
+     "fit": {
+      "model_dims_m": [
+       1.121,
+       0.961,
+       2.412
+      ],
+      "box_m": [
+       1.2,
+       0.8,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.995,
+      "worst_side_ratio": 1.2
+     }
     },
     {
      "id": "vat-3",
      "object": "vat-unit",
-     "source": "box-proxy"
+     "source": "model:vat-unit.glb",
+     "fit": {
+      "model_dims_m": [
+       1.121,
+       0.961,
+       2.412
+      ],
+      "box_m": [
+       1.2,
+       0.8,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.995,
+      "worst_side_ratio": 1.2
+     }
     },
     {
      "id": "vat-e0",
      "object": "vat-unit",
-     "source": "box-proxy"
+     "source": "model:vat-unit.glb",
+     "fit": {
+      "model_dims_m": [
+       1.121,
+       0.961,
+       2.412
+      ],
+      "box_m": [
+       1.2,
+       0.8,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.995,
+      "worst_side_ratio": 1.2
+     }
     },
     {
      "id": "vat-e1",
      "object": "vat-unit",
-     "source": "box-proxy"
+     "source": "model:vat-unit.glb",
+     "fit": {
+      "model_dims_m": [
+       1.121,
+       0.961,
+       2.412
+      ],
+      "box_m": [
+       1.2,
+       0.8,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.995,
+      "worst_side_ratio": 1.2
+     }
     },
     {
      "id": "vat-e2",
      "object": "vat-unit",
-     "source": "box-proxy"
+     "source": "model:vat-unit.glb",
+     "fit": {
+      "model_dims_m": [
+       1.121,
+       0.961,
+       2.412
+      ],
+      "box_m": [
+       1.2,
+       0.8,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.995,
+      "worst_side_ratio": 1.2
+     }
     },
     {
      "id": "vat-e3",
      "object": "vat-unit",
-     "source": "box-proxy"
+     "source": "model:vat-unit.glb",
+     "fit": {
+      "model_dims_m": [
+       1.121,
+       0.961,
+       2.412
+      ],
+      "box_m": [
+       1.2,
+       0.8,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.995,
+      "worst_side_ratio": 1.2
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -801,7 +1912,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 14.8
+     "render_seconds": 13.8
     },
     {
      "still": "player",
@@ -810,7 +1921,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 15.4
+     "render_seconds": 14.0
     },
     {
      "still": "overview",
@@ -819,59 +1930,231 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 7.9
+     "render_seconds": 6.8
     }
    ],
    "props": [
     {
      "id": "bunk-0",
      "object": "child-bunk",
-     "source": "box-proxy"
+     "source": "model:child-bunk.glb",
+     "fit": {
+      "model_dims_m": [
+       1.311,
+       2.024,
+       1.877
+      ],
+      "box_m": [
+       1.0,
+       2.0,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.852,
+      "worst_side_ratio": 1.16
+     }
     },
     {
      "id": "bunk-1",
      "object": "child-bunk",
-     "source": "box-proxy"
+     "source": "model:child-bunk.glb",
+     "fit": {
+      "model_dims_m": [
+       1.311,
+       2.024,
+       1.877
+      ],
+      "box_m": [
+       1.0,
+       2.0,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.852,
+      "worst_side_ratio": 1.16
+     }
     },
     {
      "id": "bunk-2",
      "object": "child-bunk",
-     "source": "box-proxy"
+     "source": "model:child-bunk.glb",
+     "fit": {
+      "model_dims_m": [
+       1.311,
+       2.024,
+       1.877
+      ],
+      "box_m": [
+       1.0,
+       2.0,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.852,
+      "worst_side_ratio": 1.16
+     }
     },
     {
      "id": "bunk-3",
      "object": "child-bunk",
-     "source": "box-proxy"
+     "source": "model:child-bunk.glb",
+     "fit": {
+      "model_dims_m": [
+       1.311,
+       2.024,
+       1.877
+      ],
+      "box_m": [
+       1.0,
+       2.0,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.852,
+      "worst_side_ratio": 1.16
+     }
     },
     {
      "id": "bunk-4",
      "object": "child-bunk",
-     "source": "box-proxy"
+     "source": "model:child-bunk.glb",
+     "fit": {
+      "model_dims_m": [
+       1.311,
+       2.024,
+       1.877
+      ],
+      "box_m": [
+       1.0,
+       2.0,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.852,
+      "worst_side_ratio": 1.16
+     }
     },
     {
      "id": "bunk-5",
      "object": "child-bunk",
-     "source": "box-proxy"
+     "source": "model:child-bunk.glb",
+     "fit": {
+      "model_dims_m": [
+       1.311,
+       2.024,
+       1.877
+      ],
+      "box_m": [
+       1.0,
+       2.0,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.852,
+      "worst_side_ratio": 1.16
+     }
     },
     {
      "id": "mat",
      "object": "play-mat",
-     "source": "box-proxy"
+     "source": "model:play-mat.glb",
+     "fit": {
+      "model_dims_m": [
+       3.016,
+       3.016,
+       0.118
+      ],
+      "box_m": [
+       3.0,
+       3.0,
+       0.04
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.995,
+      "worst_side_ratio": 1.72
+     }
     },
     {
      "id": "speaker",
      "object": "wall-speaker",
-     "source": "box-proxy"
+     "source": "model:wall-speaker.glb",
+     "fit": {
+      "model_dims_m": [
+       0.404,
+       0.258,
+       0.549
+      ],
+      "box_m": [
+       0.4,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.728,
+      "worst_side_ratio": 1.36
+     }
     },
     {
      "id": "crate",
      "object": "toy-crate",
-     "source": "box-proxy"
+     "source": "model:toy-crate.glb",
+     "fit": {
+      "model_dims_m": [
+       0.808,
+       0.624,
+       0.454
+      ],
+      "box_m": [
+       0.8,
+       0.5,
+       0.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.956,
+      "worst_side_ratio": 1.19
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [
@@ -905,7 +2188,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 10.9
+     "render_seconds": 9.7
     },
     {
      "still": "player",
@@ -914,59 +2197,231 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 11.8
+     "render_seconds": 9.8
     }
    ],
    "props": [
     {
      "id": "bunk-0",
      "object": "child-bunk",
-     "source": "box-proxy"
+     "source": "model:child-bunk.glb",
+     "fit": {
+      "model_dims_m": [
+       1.311,
+       2.024,
+       1.877
+      ],
+      "box_m": [
+       1.0,
+       2.0,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.852,
+      "worst_side_ratio": 1.16
+     }
     },
     {
      "id": "bunk-1",
      "object": "child-bunk",
-     "source": "box-proxy"
+     "source": "model:child-bunk.glb",
+     "fit": {
+      "model_dims_m": [
+       1.311,
+       2.024,
+       1.877
+      ],
+      "box_m": [
+       1.0,
+       2.0,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.852,
+      "worst_side_ratio": 1.16
+     }
     },
     {
      "id": "bunk-2",
      "object": "child-bunk",
-     "source": "box-proxy"
+     "source": "model:child-bunk.glb",
+     "fit": {
+      "model_dims_m": [
+       1.311,
+       2.024,
+       1.877
+      ],
+      "box_m": [
+       1.0,
+       2.0,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.852,
+      "worst_side_ratio": 1.16
+     }
     },
     {
      "id": "bunk-3",
      "object": "child-bunk",
-     "source": "box-proxy"
+     "source": "model:child-bunk.glb",
+     "fit": {
+      "model_dims_m": [
+       1.311,
+       2.024,
+       1.877
+      ],
+      "box_m": [
+       1.0,
+       2.0,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.852,
+      "worst_side_ratio": 1.16
+     }
     },
     {
      "id": "bunk-4",
      "object": "child-bunk",
-     "source": "box-proxy"
+     "source": "model:child-bunk.glb",
+     "fit": {
+      "model_dims_m": [
+       1.311,
+       2.024,
+       1.877
+      ],
+      "box_m": [
+       1.0,
+       2.0,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.852,
+      "worst_side_ratio": 1.16
+     }
     },
     {
      "id": "bunk-5",
      "object": "child-bunk",
-     "source": "box-proxy"
+     "source": "model:child-bunk.glb",
+     "fit": {
+      "model_dims_m": [
+       1.311,
+       2.024,
+       1.877
+      ],
+      "box_m": [
+       1.0,
+       2.0,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.852,
+      "worst_side_ratio": 1.16
+     }
     },
     {
      "id": "mat",
      "object": "play-mat",
-     "source": "box-proxy"
+     "source": "model:play-mat.glb",
+     "fit": {
+      "model_dims_m": [
+       3.016,
+       3.016,
+       0.118
+      ],
+      "box_m": [
+       3.0,
+       3.0,
+       0.04
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.995,
+      "worst_side_ratio": 1.72
+     }
     },
     {
      "id": "speaker",
      "object": "wall-speaker",
-     "source": "box-proxy"
+     "source": "model:wall-speaker.glb",
+     "fit": {
+      "model_dims_m": [
+       0.404,
+       0.258,
+       0.549
+      ],
+      "box_m": [
+       0.4,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.728,
+      "worst_side_ratio": 1.36
+     }
     },
     {
      "id": "crate",
      "object": "toy-crate",
-     "source": "box-proxy"
+     "source": "model:toy-crate.glb",
+     "fit": {
+      "model_dims_m": [
+       0.808,
+       0.624,
+       0.454
+      ],
+      "box_m": [
+       0.8,
+       0.5,
+       0.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.956,
+      "worst_side_ratio": 1.19
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [
@@ -1000,7 +2455,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 11.9
+     "render_seconds": 10.2
     },
     {
      "still": "player",
@@ -1009,7 +2464,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 13.4
+     "render_seconds": 12.1
     },
     {
      "still": "overview",
@@ -1018,129 +2473,567 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 6.2
+     "render_seconds": 6.4
     }
    ],
    "props": [
     {
      "id": "cab-0-0",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-0-1",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-0-2",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-0-3",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-0-4",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-0-5",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-1-0",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-1-1",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-1-2",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-1-3",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-1-4",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-1-5",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-2-0",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-2-1",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-2-2",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-2-3",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-2-4",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-2-5",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "reader",
      "object": "fiche-reader",
-     "source": "box-proxy"
+     "source": "model:fiche-reader.glb",
+     "fit": {
+      "model_dims_m": [
+       0.682,
+       0.772,
+       0.805
+      ],
+      "box_m": [
+       0.7,
+       0.6,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.993,
+      "worst_side_ratio": 1.28
+     }
     },
     {
      "id": "pins",
      "object": "pin-board",
-     "source": "box-proxy"
+     "source": "model:pin-board.glb",
+     "fit": {
+      "model_dims_m": [
+       2.425,
+       0.296,
+       1.989
+      ],
+      "box_m": [
+       2.4,
+       0.1,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.617,
+      "worst_side_ratio": 1.83
+     }
     },
     {
      "id": "locker",
      "object": "shielded-locker",
-     "source": "box-proxy"
+     "source": "model:shielded-locker.glb",
+     "fit": {
+      "model_dims_m": [
+       1.894,
+       1.466,
+       2.029
+      ],
+      "box_m": [
+       0.8,
+       0.6,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.986,
+      "worst_side_ratio": 2.41
+     }
     },
     {
      "id": "chair",
      "object": "bay-chair",
-     "source": "box-proxy"
+     "source": "model:bay-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       1.663,
+       1.613,
+       2.192
+      ],
+      "box_m": [
+       0.8,
+       1.6,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.639,
+      "worst_side_ratio": 1.55
+     }
     },
     {
      "id": "tank",
      "object": "clean-water-tank",
-     "source": "box-proxy"
+     "source": "model:clean-water-tank.glb",
+     "fit": {
+      "model_dims_m": [
+       0.866,
+       1.884,
+       2.013
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.993,
+      "worst_side_ratio": 1.86
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -1168,7 +3061,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 12.0
+     "render_seconds": 12.6
     },
     {
      "still": "player",
@@ -1177,129 +3070,567 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 12.3
+     "render_seconds": 13.0
     }
    ],
    "props": [
     {
      "id": "cab-0-0",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-0-1",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-0-2",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-0-3",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-0-4",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-0-5",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-1-0",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-1-1",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-1-2",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-1-3",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-1-4",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-1-5",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-2-0",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-2-1",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-2-2",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-2-3",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-2-4",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-2-5",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "reader",
      "object": "fiche-reader",
-     "source": "box-proxy"
+     "source": "model:fiche-reader.glb",
+     "fit": {
+      "model_dims_m": [
+       0.682,
+       0.772,
+       0.805
+      ],
+      "box_m": [
+       0.7,
+       0.6,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.993,
+      "worst_side_ratio": 1.28
+     }
     },
     {
      "id": "pins",
      "object": "pin-board",
-     "source": "box-proxy"
+     "source": "model:pin-board.glb",
+     "fit": {
+      "model_dims_m": [
+       2.425,
+       0.296,
+       1.989
+      ],
+      "box_m": [
+       2.4,
+       0.1,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.617,
+      "worst_side_ratio": 1.83
+     }
     },
     {
      "id": "locker",
      "object": "shielded-locker",
-     "source": "box-proxy"
+     "source": "model:shielded-locker.glb",
+     "fit": {
+      "model_dims_m": [
+       1.894,
+       1.466,
+       2.029
+      ],
+      "box_m": [
+       0.8,
+       0.6,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.986,
+      "worst_side_ratio": 2.41
+     }
     },
     {
      "id": "chair",
      "object": "bay-chair",
-     "source": "box-proxy"
+     "source": "model:bay-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       1.663,
+       1.613,
+       2.192
+      ],
+      "box_m": [
+       0.8,
+       1.6,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.639,
+      "worst_side_ratio": 1.55
+     }
     },
     {
      "id": "tank",
      "object": "clean-water-tank",
-     "source": "box-proxy"
+     "source": "model:clean-water-tank.glb",
+     "fit": {
+      "model_dims_m": [
+       0.866,
+       1.884,
+       2.013
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.993,
+      "worst_side_ratio": 1.86
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -1327,7 +3658,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 11.7
+     "render_seconds": 10.8
     },
     {
      "still": "player",
@@ -1336,144 +3667,639 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 10.5
+     "render_seconds": 10.6
     }
    ],
    "props": [
     {
      "id": "cab-0-0",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-0-1",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-0-2",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-0-3",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-0-4",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-0-5",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-1-0",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-1-1",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-1-2",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-1-3",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-1-4",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-1-5",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-2-0",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-2-1",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-2-2",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-2-3",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-2-4",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-2-5",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "reader",
      "object": "fiche-reader",
-     "source": "box-proxy"
+     "source": "model:fiche-reader.glb",
+     "fit": {
+      "model_dims_m": [
+       0.682,
+       0.772,
+       0.805
+      ],
+      "box_m": [
+       0.7,
+       0.6,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.993,
+      "worst_side_ratio": 1.28
+     }
     },
     {
      "id": "pins",
      "object": "pin-board",
-     "source": "box-proxy"
+     "source": "model:pin-board.glb",
+     "fit": {
+      "model_dims_m": [
+       2.425,
+       0.296,
+       1.989
+      ],
+      "box_m": [
+       2.4,
+       0.1,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.617,
+      "worst_side_ratio": 1.83
+     }
     },
     {
      "id": "lamp",
      "object": "amber-work-lamp",
-     "source": "box-proxy"
+     "source": "model:amber-work-lamp.glb",
+     "fit": {
+      "model_dims_m": [
+       0.601,
+       0.366,
+       0.602
+      ],
+      "box_m": [
+       0.4,
+       0.4,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.5
+     }
     },
     {
      "id": "locker",
      "object": "shielded-locker",
-     "source": "box-proxy"
+     "source": "model:shielded-locker.glb",
+     "fit": {
+      "model_dims_m": [
+       1.894,
+       1.466,
+       2.029
+      ],
+      "box_m": [
+       0.8,
+       0.6,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.986,
+      "worst_side_ratio": 2.41
+     }
     },
     {
      "id": "chair",
      "object": "bay-chair",
-     "source": "box-proxy"
+     "source": "model:bay-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       1.663,
+       1.613,
+       2.192
+      ],
+      "box_m": [
+       0.8,
+       1.6,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.639,
+      "worst_side_ratio": 1.55
+     }
     },
     {
      "id": "tank",
      "object": "clean-water-tank",
-     "source": "box-proxy"
+     "source": "model:clean-water-tank.glb",
+     "fit": {
+      "model_dims_m": [
+       0.866,
+       1.884,
+       2.013
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.993,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "bay-vial",
      "object": "amber-vial",
-     "source": "box-proxy"
+     "source": "model:amber-vial.glb",
+     "fit": {
+      "model_dims_m": [
+       0.057,
+       0.057,
+       0.12
+      ],
+      "box_m": [
+       0.05,
+       0.05,
+       0.12
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.14
+     }
     },
     {
      "id": "bay-syringe",
      "object": "lead-shielded-syringe",
-     "source": "box-proxy"
+     "source": "model:lead-shielded-syringe.glb",
+     "fit": {
+      "model_dims_m": [
+       0.115,
+       0.3,
+       0.05
+      ],
+      "box_m": [
+       0.06,
+       0.3,
+       0.06
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.855,
+      "worst_side_ratio": 1.64
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -1501,7 +4327,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 11.0
+     "render_seconds": 11.4
     },
     {
      "still": "player",
@@ -1510,144 +4336,639 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 11.4
+     "render_seconds": 11.5
     }
    ],
    "props": [
     {
      "id": "cab-0-0",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-0-1",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-0-2",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-0-3",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-0-4",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-0-5",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-1-0",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-1-1",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-1-2",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-1-3",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-1-4",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-1-5",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-2-0",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-2-1",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-2-2",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-2-3",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-2-4",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-2-5",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "reader",
      "object": "fiche-reader",
-     "source": "box-proxy"
+     "source": "model:fiche-reader.glb",
+     "fit": {
+      "model_dims_m": [
+       0.682,
+       0.772,
+       0.805
+      ],
+      "box_m": [
+       0.7,
+       0.6,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.993,
+      "worst_side_ratio": 1.28
+     }
     },
     {
      "id": "pins",
      "object": "pin-board",
-     "source": "box-proxy"
+     "source": "model:pin-board.glb",
+     "fit": {
+      "model_dims_m": [
+       2.425,
+       0.296,
+       1.989
+      ],
+      "box_m": [
+       2.4,
+       0.1,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.617,
+      "worst_side_ratio": 1.83
+     }
     },
     {
      "id": "lamp",
      "object": "amber-work-lamp",
-     "source": "box-proxy"
+     "source": "model:amber-work-lamp.glb",
+     "fit": {
+      "model_dims_m": [
+       0.601,
+       0.366,
+       0.602
+      ],
+      "box_m": [
+       0.4,
+       0.4,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.5
+     }
     },
     {
      "id": "locker",
      "object": "shielded-locker",
-     "source": "box-proxy"
+     "source": "model:shielded-locker.glb",
+     "fit": {
+      "model_dims_m": [
+       1.894,
+       1.466,
+       2.029
+      ],
+      "box_m": [
+       0.8,
+       0.6,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.986,
+      "worst_side_ratio": 2.41
+     }
     },
     {
      "id": "chair",
      "object": "bay-chair",
-     "source": "box-proxy"
+     "source": "model:bay-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       1.663,
+       1.613,
+       2.192
+      ],
+      "box_m": [
+       0.8,
+       1.6,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.639,
+      "worst_side_ratio": 1.55
+     }
     },
     {
      "id": "tank",
      "object": "clean-water-tank",
-     "source": "box-proxy"
+     "source": "model:clean-water-tank.glb",
+     "fit": {
+      "model_dims_m": [
+       0.866,
+       1.884,
+       2.013
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.993,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "bay-vial",
      "object": "amber-vial",
-     "source": "box-proxy"
+     "source": "model:amber-vial.glb",
+     "fit": {
+      "model_dims_m": [
+       0.057,
+       0.057,
+       0.12
+      ],
+      "box_m": [
+       0.05,
+       0.05,
+       0.12
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.14
+     }
     },
     {
      "id": "bay-syringe",
      "object": "lead-shielded-syringe",
-     "source": "box-proxy"
+     "source": "model:lead-shielded-syringe.glb",
+     "fit": {
+      "model_dims_m": [
+       0.115,
+       0.3,
+       0.05
+      ],
+      "box_m": [
+       0.06,
+       0.3,
+       0.06
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.855,
+      "worst_side_ratio": 1.64
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -1675,139 +4996,615 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 10.3
+     "render_seconds": 11.0
     }
    ],
    "props": [
     {
      "id": "cab-0-0",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-0-1",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-0-2",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-0-3",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-0-4",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-0-5",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-1-0",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-1-1",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-1-2",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-1-3",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-1-4",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-1-5",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-2-0",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-2-1",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-2-2",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-2-3",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-2-4",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-2-5",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "reader",
      "object": "fiche-reader",
-     "source": "box-proxy"
+     "source": "model:fiche-reader.glb",
+     "fit": {
+      "model_dims_m": [
+       0.682,
+       0.772,
+       0.805
+      ],
+      "box_m": [
+       0.7,
+       0.6,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.993,
+      "worst_side_ratio": 1.28
+     }
     },
     {
      "id": "pins",
      "object": "pin-board",
-     "source": "box-proxy"
+     "source": "model:pin-board.glb",
+     "fit": {
+      "model_dims_m": [
+       2.425,
+       0.296,
+       1.989
+      ],
+      "box_m": [
+       2.4,
+       0.1,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.617,
+      "worst_side_ratio": 1.83
+     }
     },
     {
      "id": "locker",
      "object": "shielded-locker",
-     "source": "box-proxy"
+     "source": "model:shielded-locker.glb",
+     "fit": {
+      "model_dims_m": [
+       1.894,
+       1.466,
+       2.029
+      ],
+      "box_m": [
+       0.8,
+       0.6,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.986,
+      "worst_side_ratio": 2.41
+     }
     },
     {
      "id": "chair",
      "object": "bay-chair",
-     "source": "box-proxy"
+     "source": "model:bay-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       1.663,
+       1.613,
+       2.192
+      ],
+      "box_m": [
+       0.8,
+       1.6,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.639,
+      "worst_side_ratio": 1.55
+     }
     },
     {
      "id": "tank",
      "object": "clean-water-tank",
-     "source": "box-proxy"
+     "source": "model:clean-water-tank.glb",
+     "fit": {
+      "model_dims_m": [
+       0.866,
+       1.884,
+       2.013
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.993,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "bay-vial",
      "object": "amber-vial",
-     "source": "box-proxy"
+     "source": "model:amber-vial.glb",
+     "fit": {
+      "model_dims_m": [
+       0.057,
+       0.057,
+       0.12
+      ],
+      "box_m": [
+       0.05,
+       0.05,
+       0.12
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.14
+     }
     },
     {
      "id": "bay-syringe",
      "object": "lead-shielded-syringe",
-     "source": "box-proxy"
+     "source": "model:lead-shielded-syringe.glb",
+     "fit": {
+      "model_dims_m": [
+       0.115,
+       0.3,
+       0.05
+      ],
+      "box_m": [
+       0.06,
+       0.3,
+       0.06
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.855,
+      "worst_side_ratio": 1.64
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -1835,144 +5632,639 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 11.8
+     "render_seconds": 10.4
     }
    ],
    "props": [
     {
      "id": "cab-0-0",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-0-1",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-0-2",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-0-3",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-0-4",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-0-5",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-1-0",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-1-1",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-1-2",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-1-3",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-1-4",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-1-5",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-2-0",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-2-1",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-2-2",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-2-3",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-2-4",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "cab-2-5",
      "object": "archive-cabinet",
-     "source": "box-proxy"
+     "source": "model:archive-cabinet.glb",
+     "fit": {
+      "model_dims_m": [
+       0.969,
+       0.796,
+       2.023
+      ],
+      "box_m": [
+       1.0,
+       0.7,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.989,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "reader",
      "object": "fiche-reader",
-     "source": "box-proxy"
+     "source": "model:fiche-reader.glb",
+     "fit": {
+      "model_dims_m": [
+       0.682,
+       0.772,
+       0.805
+      ],
+      "box_m": [
+       0.7,
+       0.6,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.993,
+      "worst_side_ratio": 1.28
+     }
     },
     {
      "id": "pins",
      "object": "pin-board",
-     "source": "box-proxy"
+     "source": "model:pin-board.glb",
+     "fit": {
+      "model_dims_m": [
+       2.425,
+       0.296,
+       1.989
+      ],
+      "box_m": [
+       2.4,
+       0.1,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.617,
+      "worst_side_ratio": 1.83
+     }
     },
     {
      "id": "lamp",
      "object": "amber-work-lamp",
-     "source": "box-proxy"
+     "source": "model:amber-work-lamp.glb",
+     "fit": {
+      "model_dims_m": [
+       0.601,
+       0.366,
+       0.602
+      ],
+      "box_m": [
+       0.4,
+       0.4,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.5
+     }
     },
     {
      "id": "locker",
      "object": "shielded-locker",
-     "source": "box-proxy"
+     "source": "model:shielded-locker.glb",
+     "fit": {
+      "model_dims_m": [
+       1.894,
+       1.466,
+       2.029
+      ],
+      "box_m": [
+       0.8,
+       0.6,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.986,
+      "worst_side_ratio": 2.41
+     }
     },
     {
      "id": "chair",
      "object": "bay-chair",
-     "source": "box-proxy"
+     "source": "model:bay-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       1.663,
+       1.613,
+       2.192
+      ],
+      "box_m": [
+       0.8,
+       1.6,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.639,
+      "worst_side_ratio": 1.55
+     }
     },
     {
      "id": "tank",
      "object": "clean-water-tank",
-     "source": "box-proxy"
+     "source": "model:clean-water-tank.glb",
+     "fit": {
+      "model_dims_m": [
+       0.866,
+       1.884,
+       2.013
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.993,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "bay-vial",
      "object": "amber-vial",
-     "source": "box-proxy"
+     "source": "model:amber-vial.glb",
+     "fit": {
+      "model_dims_m": [
+       0.057,
+       0.057,
+       0.12
+      ],
+      "box_m": [
+       0.05,
+       0.05,
+       0.12
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 1.14
+     }
     },
     {
      "id": "bay-syringe",
      "object": "lead-shielded-syringe",
-     "source": "box-proxy"
+     "source": "model:lead-shielded-syringe.glb",
+     "fit": {
+      "model_dims_m": [
+       0.115,
+       0.3,
+       0.05
+      ],
+      "box_m": [
+       0.06,
+       0.3,
+       0.06
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.855,
+      "worst_side_ratio": 1.64
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -2000,7 +6292,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.9
+     "render_seconds": 9.8
     },
     {
      "still": "player",
@@ -2009,44 +6301,162 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.8
+     "render_seconds": 9.8
     }
    ],
    "props": [
     {
      "id": "mirror",
      "object": "dressing-mirror",
-     "source": "box-proxy"
+     "source": "model:dressing-mirror.glb",
+     "fit": {
+      "model_dims_m": [
+       0.958,
+       0.868,
+       2.208
+      ],
+      "box_m": [
+       1.2,
+       0.4,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 2.16
+     }
     },
     {
      "id": "insignia",
      "object": "insignia-case",
-     "source": "box-proxy"
+     "source": "model:insignia-case.glb",
+     "fit": {
+      "model_dims_m": [
+       0.409,
+       0.43,
+       0.436
+      ],
+      "box_m": [
+       0.4,
+       0.3,
+       0.15
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.617,
+      "worst_side_ratio": 1.79
+     }
     },
     {
      "id": "lectern",
      "object": "ceremony-lectern",
-     "source": "box-proxy"
+     "source": "model:ceremony-lectern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.688,
+       0.629,
+       1.207
+      ],
+      "box_m": [
+       1.0,
+       0.6,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.994,
+      "worst_side_ratio": 1.46
+     }
     },
     {
      "id": "screen-west",
      "object": "broadcast-screen",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       22.623,
+       9.374,
+       40.054
+      ],
+      "box_m": [
+       24.0,
+       1.2,
+       40.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       0
+      ],
+      "scale": 0.514,
+      "worst_side_ratio": 4.01,
+      "rejected": "proportions: a side is off by x4.0 after the best fit"
+     }
     },
     {
      "id": "screen-east",
      "object": "broadcast-screen",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       22.623,
+       9.374,
+       40.054
+      ],
+      "box_m": [
+       24.0,
+       1.2,
+       40.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       0
+      ],
+      "scale": 0.514,
+      "worst_side_ratio": 4.01,
+      "rejected": "proportions: a side is off by x4.0 after the best fit"
+     }
     },
     {
      "id": "screen-south",
      "object": "broadcast-screen",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       22.623,
+       9.374,
+       40.054
+      ],
+      "box_m": [
+       24.0,
+       1.2,
+       40.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       0
+      ],
+      "scale": 0.514,
+      "worst_side_ratio": 4.01,
+      "rejected": "proportions: a side is off by x4.0 after the best fit"
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -2074,7 +6484,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.3
+     "render_seconds": 8.9
     },
     {
      "still": "player",
@@ -2083,7 +6493,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.5
+     "render_seconds": 9.2
     },
     {
      "still": "overview",
@@ -2092,44 +6502,162 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 4.9
+     "render_seconds": 5.3
     }
    ],
    "props": [
     {
      "id": "mirror",
      "object": "dressing-mirror",
-     "source": "box-proxy"
+     "source": "model:dressing-mirror.glb",
+     "fit": {
+      "model_dims_m": [
+       0.958,
+       0.868,
+       2.208
+      ],
+      "box_m": [
+       1.2,
+       0.4,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.997,
+      "worst_side_ratio": 2.16
+     }
     },
     {
      "id": "insignia",
      "object": "insignia-case",
-     "source": "box-proxy"
+     "source": "model:insignia-case.glb",
+     "fit": {
+      "model_dims_m": [
+       0.409,
+       0.43,
+       0.436
+      ],
+      "box_m": [
+       0.4,
+       0.3,
+       0.15
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.617,
+      "worst_side_ratio": 1.79
+     }
     },
     {
      "id": "lectern",
      "object": "ceremony-lectern",
-     "source": "box-proxy"
+     "source": "model:ceremony-lectern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.688,
+       0.629,
+       1.207
+      ],
+      "box_m": [
+       1.0,
+       0.6,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.994,
+      "worst_side_ratio": 1.46
+     }
     },
     {
      "id": "screen-west",
      "object": "broadcast-screen",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       22.623,
+       9.374,
+       40.054
+      ],
+      "box_m": [
+       24.0,
+       1.2,
+       40.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       0
+      ],
+      "scale": 0.514,
+      "worst_side_ratio": 4.01,
+      "rejected": "proportions: a side is off by x4.0 after the best fit"
+     }
     },
     {
      "id": "screen-east",
      "object": "broadcast-screen",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       22.623,
+       9.374,
+       40.054
+      ],
+      "box_m": [
+       24.0,
+       1.2,
+       40.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       0
+      ],
+      "scale": 0.514,
+      "worst_side_ratio": 4.01,
+      "rejected": "proportions: a side is off by x4.0 after the best fit"
+     }
     },
     {
      "id": "screen-south",
      "object": "broadcast-screen",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       22.623,
+       9.374,
+       40.054
+      ],
+      "box_m": [
+       24.0,
+       1.2,
+       40.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       0
+      ],
+      "scale": 0.514,
+      "worst_side_ratio": 4.01,
+      "rejected": "proportions: a side is off by x4.0 after the best fit"
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -2157,7 +6685,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 10.7
+     "render_seconds": 11.4
     },
     {
      "still": "player",
@@ -2166,7 +6694,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 10.5
+     "render_seconds": 11.1
     },
     {
      "still": "overview",
@@ -2175,34 +6703,111 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 5.8
+     "render_seconds": 6.0
     }
    ],
    "props": [
     {
      "id": "rack",
      "object": "training-blade-rack",
-     "source": "box-proxy"
+     "source": "model:training-blade-rack.glb",
+     "fit": {
+      "model_dims_m": [
+       1.611,
+       0.237,
+       1.367
+      ],
+      "box_m": [
+       1.6,
+       0.5,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.024,
+      "worst_side_ratio": 2.06
+     }
     },
     {
      "id": "blade-reese",
      "object": "training-blade",
-     "source": "box-proxy"
+     "source": "model:training-blade.glb",
+     "fit": {
+      "model_dims_m": [
+       0.183,
+       0.7,
+       0.099
+      ],
+      "box_m": [
+       0.08,
+       0.7,
+       0.04
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.58
+     }
     },
     {
      "id": "blade-cally",
      "object": "training-blade",
-     "source": "box-proxy"
+     "source": "model:training-blade.glb",
+     "fit": {
+      "model_dims_m": [
+       0.183,
+       0.7,
+       0.099
+      ],
+      "box_m": [
+       0.08,
+       0.7,
+       0.04
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.58
+     }
     },
     {
      "id": "speaker-north",
      "object": "wall-speaker",
-     "source": "box-proxy"
+     "source": "model:wall-speaker.glb",
+     "fit": {
+      "model_dims_m": [
+       0.404,
+       0.258,
+       0.549
+      ],
+      "box_m": [
+       0.4,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.728,
+      "worst_side_ratio": 1.36
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -2232,34 +6837,111 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 10.6
+     "render_seconds": 11.1
     }
    ],
    "props": [
     {
      "id": "rack",
      "object": "training-blade-rack",
-     "source": "box-proxy"
+     "source": "model:training-blade-rack.glb",
+     "fit": {
+      "model_dims_m": [
+       1.611,
+       0.237,
+       1.367
+      ],
+      "box_m": [
+       1.6,
+       0.5,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.024,
+      "worst_side_ratio": 2.06
+     }
     },
     {
      "id": "blade-reese",
      "object": "training-blade",
-     "source": "box-proxy"
+     "source": "model:training-blade.glb",
+     "fit": {
+      "model_dims_m": [
+       0.183,
+       0.7,
+       0.099
+      ],
+      "box_m": [
+       0.08,
+       0.7,
+       0.04
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.58
+     }
     },
     {
      "id": "blade-cally",
      "object": "training-blade",
-     "source": "box-proxy"
+     "source": "model:training-blade.glb",
+     "fit": {
+      "model_dims_m": [
+       0.183,
+       0.7,
+       0.099
+      ],
+      "box_m": [
+       0.08,
+       0.7,
+       0.04
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.58
+     }
     },
     {
      "id": "speaker-north",
      "object": "wall-speaker",
-     "source": "box-proxy"
+     "source": "model:wall-speaker.glb",
+     "fit": {
+      "model_dims_m": [
+       0.404,
+       0.258,
+       0.549
+      ],
+      "box_m": [
+       0.4,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.728,
+      "worst_side_ratio": 1.36
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -2276,6 +6958,8 @@
  "overviews": [
   {
    "location": "hospital-room",
+   "reference": "games/dr-tox-rise/assets/locations/hospital-room.jpg",
+   "location_scene_count": 3,
    "scene_lighting": "s3_hospital_2217",
    "camera": {
     "location": [
@@ -2296,11 +6980,18 @@
      0.86,
      0.98,
      1.1
-    ]
+    ],
+    "scenes": {
+     "s3_injection_first": {
+      "exposure_ev": 0.3
+     }
+    }
    }
   },
   {
    "location": "idaho-river-town",
+   "reference": "games/dr-tox-rise/assets/locations/idaho-river-town.jpg",
+   "location_scene_count": 2,
    "scene_lighting": "s3_river_town",
    "camera": {
     "location": [
@@ -2331,6 +7022,8 @@
   },
   {
    "location": "lower-ring-corridor",
+   "reference": "games/dr-tox-rise/assets/locations/lower-ring-corridor.jpg",
+   "location_scene_count": 2,
    "scene_lighting": "s3_lower_ring",
    "camera": {
     "location": [
@@ -2358,13 +7051,15 @@
     },
     "scenes": {
      "s3_lower_ring_after": {
-      "exposure_ev": -1.5
+      "exposure_ev": -1.4
      }
     }
    }
   },
   {
    "location": "printer-room",
+   "reference": "games/dr-tox-rise/assets/locations/printer-room.jpg",
+   "location_scene_count": 2,
    "scene_lighting": "s3_printer_room",
    "camera": {
     "location": [
@@ -2398,12 +7093,18 @@
     "scenes": {
      "s3_printer_room_after": {
       "exposure_ev": 1.0
+     },
+     "s3_printer_room": {
+      "exposure_ev": 0.9
      }
-    }
+    },
+    "overview_ev": -0.6
    }
   },
   {
    "location": "sky-room",
+   "reference": "games/dr-tox-rise/assets/locations/sky-room.jpg",
+   "location_scene_count": 2,
    "scene_lighting": "s3_skyroom_small",
    "camera": {
     "location": [
@@ -2422,13 +7123,19 @@
     "exposure_ev": -2.0,
     "scenes": {
      "s3_skyroom_evening": {
-      "exposure_ev": 1.5
+      "exposure_ev": 2.1
+     },
+     "s3_skyroom_small": {
+      "exposure_ev": 0.2
      }
-    }
+    },
+    "overview_ev": -0.2
    }
   },
   {
    "location": "snakehead-archive",
+   "reference": "games/dr-tox-rise/assets/locations/snakehead-archive.jpg",
+   "location_scene_count": 6,
    "scene_lighting": "s3_archive_fall",
    "camera": {
     "location": [
@@ -2455,13 +7162,19 @@
       "exposure_ev": 2.0
      },
      "s3_archive_fall": {
-      "exposure_ev": 1.0
+      "exposure_ev": 1.6
+     },
+     "s3_bunker_injection": {
+      "exposure_ev": 2.3
      }
-    }
+    },
+    "overview_ev": -0.6
    }
   },
   {
    "location": "spire-plaza",
+   "reference": "games/dr-tox-rise/assets/locations/spire-plaza.jpg",
+   "location_scene_count": 2,
    "scene_lighting": "s3_spire_ceremony",
    "camera": {
     "location": [
@@ -2477,11 +7190,18 @@
     "lens_mm": 20
    },
    "rig": {
-    "exposure_ev": -3.2
+    "exposure_ev": -3.2,
+    "scenes": {
+     "s3_spire_mirror": {
+      "exposure_ev": 0.5
+     }
+    }
    }
   },
   {
    "location": "trial-53-arena",
+   "reference": "games/dr-tox-rise/assets/locations/trial-53-arena.jpg",
+   "location_scene_count": 2,
    "scene_lighting": "s3_arena",
    "camera": {
     "location": [
@@ -2510,5 +7230,833 @@
     }
    }
   }
- ]
+ ],
+ "objects": {
+  "amber-vial": {
+   "source": "model",
+   "model": "amber-vial.glb",
+   "props": 7,
+   "fit": {
+    "model_dims_m": [
+     0.057,
+     0.057,
+     0.12
+    ],
+    "box_m": [
+     0.05,
+     0.05,
+     0.12
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.997,
+    "worst_side_ratio": 1.14
+   },
+   "note": null
+  },
+  "amber-work-lamp": {
+   "source": "model",
+   "model": "amber-work-lamp.glb",
+   "props": 3,
+   "fit": {
+    "model_dims_m": [
+     0.601,
+     0.366,
+     0.602
+    ],
+    "box_m": [
+     0.4,
+     0.4,
+     0.6
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.997,
+    "worst_side_ratio": 1.5
+   },
+   "note": null
+  },
+  "archive-cabinet": {
+   "source": "model",
+   "model": "archive-cabinet.glb",
+   "props": 108,
+   "fit": {
+    "model_dims_m": [
+     0.969,
+     0.796,
+     2.023
+    ],
+    "box_m": [
+     1.0,
+     0.7,
+     2.0
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.989,
+    "worst_side_ratio": 1.12
+   },
+   "note": null
+  },
+  "armoured-transport": {
+   "source": "model",
+   "model": "armoured-transport.glb",
+   "props": 2,
+   "fit": {
+    "model_dims_m": [
+     3.801,
+     8.055,
+     3.789
+    ],
+    "box_m": [
+     3.0,
+     8.0,
+     3.2
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.872,
+    "worst_side_ratio": 1.14
+   },
+   "note": null
+  },
+  "barrier-emitter": {
+   "source": "model",
+   "model": "barrier-emitter.glb",
+   "props": 6,
+   "fit": {
+    "model_dims_m": [
+     0.815,
+     0.981,
+     1.413
+    ],
+    "box_m": [
+     0.6,
+     0.6,
+     1.4
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.991,
+    "worst_side_ratio": 1.62
+   },
+   "note": null
+  },
+  "bay-chair": {
+   "source": "model",
+   "model": "bay-chair.glb",
+   "props": 6,
+   "fit": {
+    "model_dims_m": [
+     1.663,
+     1.613,
+     2.192
+    ],
+    "box_m": [
+     0.8,
+     1.6,
+     1.2
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.639,
+    "worst_side_ratio": 1.55
+   },
+   "note": null
+  },
+  "bench-rig": {
+   "source": "model",
+   "model": "bench-rig.glb",
+   "props": 3,
+   "fit": {
+    "model_dims_m": [
+     1.387,
+     0.767,
+     1.507
+    ],
+    "box_m": [
+     1.4,
+     0.6,
+     1.5
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.995,
+    "worst_side_ratio": 1.27
+   },
+   "note": null
+  },
+  "broadcast-screen": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 6,
+   "fit": {
+    "model_dims_m": [
+     22.623,
+     9.374,
+     40.054
+    ],
+    "box_m": [
+     24.0,
+     1.2,
+     40.0
+    ],
+    "fit_rotation_deg": [
+     0,
+     90,
+     0
+    ],
+    "scale": 0.514,
+    "worst_side_ratio": 4.01,
+    "rejected": "proportions: a side is off by x4.0 after the best fit"
+   },
+   "note": "proportions: a side is off by x4.0 after the best fit"
+  },
+  "ceremony-lectern": {
+   "source": "model",
+   "model": "ceremony-lectern.glb",
+   "props": 2,
+   "fit": {
+    "model_dims_m": [
+     0.688,
+     0.629,
+     1.207
+    ],
+    "box_m": [
+     1.0,
+     0.6,
+     1.2
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.994,
+    "worst_side_ratio": 1.46
+   },
+   "note": null
+  },
+  "child-bicycle": {
+   "source": "model",
+   "model": "child-bicycle.glb",
+   "props": 3,
+   "fit": {
+    "model_dims_m": [
+     0.921,
+     1.407,
+     0.966
+    ],
+    "box_m": [
+     0.5,
+     1.4,
+     0.8
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.765,
+    "worst_side_ratio": 1.41
+   },
+   "note": null
+  },
+  "child-bunk": {
+   "source": "model",
+   "model": "child-bunk.glb",
+   "props": 12,
+   "fit": {
+    "model_dims_m": [
+     1.311,
+     2.024,
+     1.877
+    ],
+    "box_m": [
+     1.0,
+     2.0,
+     1.6
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.852,
+    "worst_side_ratio": 1.16
+   },
+   "note": null
+  },
+  "clean-water-tank": {
+   "source": "model",
+   "model": "clean-water-tank.glb",
+   "props": 6,
+   "fit": {
+    "model_dims_m": [
+     0.866,
+     1.884,
+     2.013
+    ],
+    "box_m": [
+     1.6,
+     1.6,
+     2.0
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.993,
+    "worst_side_ratio": 1.86
+   },
+   "note": null
+  },
+  "collapsed-scaffold": {
+   "source": "model",
+   "model": "collapsed-scaffold.glb",
+   "props": 2,
+   "fit": {
+    "model_dims_m": [
+     5.987,
+     6.559,
+     6.928
+    ],
+    "box_m": [
+     6.0,
+     3.0,
+     5.0
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.722,
+    "worst_side_ratio": 1.58
+   },
+   "note": null
+  },
+  "dressing-mirror": {
+   "source": "model",
+   "model": "dressing-mirror.glb",
+   "props": 2,
+   "fit": {
+    "model_dims_m": [
+     0.958,
+     0.868,
+     2.208
+    ],
+    "box_m": [
+     1.2,
+     0.4,
+     2.2
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.997,
+    "worst_side_ratio": 2.16
+   },
+   "note": null
+  },
+  "fiche-reader": {
+   "source": "model",
+   "model": "fiche-reader.glb",
+   "props": 6,
+   "fit": {
+    "model_dims_m": [
+     0.682,
+     0.772,
+     0.805
+    ],
+    "box_m": [
+     0.7,
+     0.6,
+     0.8
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.993,
+    "worst_side_ratio": 1.28
+   },
+   "note": null
+  },
+  "insignia-case": {
+   "source": "model",
+   "model": "insignia-case.glb",
+   "props": 2,
+   "fit": {
+    "model_dims_m": [
+     0.409,
+     0.43,
+     0.436
+    ],
+    "box_m": [
+     0.4,
+     0.3,
+     0.15
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.617,
+    "worst_side_ratio": 1.79
+   },
+   "note": null
+  },
+  "isolation-bed": {
+   "source": "model",
+   "model": "isolation-bed.glb",
+   "props": 3,
+   "fit": {
+    "model_dims_m": [
+     0.995,
+     2.217,
+     1.572
+    ],
+    "box_m": [
+     1.1,
+     2.2,
+     2.1
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.336,
+    "worst_side_ratio": 1.35
+   },
+   "note": null
+  },
+  "iv-pole": {
+   "source": "model",
+   "model": "iv-pole.glb",
+   "props": 2,
+   "fit": {
+    "model_dims_m": [
+     1.014,
+     0.99,
+     2.005
+    ],
+    "box_m": [
+     0.5,
+     0.5,
+     2.0
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.997,
+    "worst_side_ratio": 2.02
+   },
+   "note": null
+  },
+  "lead-shielded-syringe": {
+   "source": "model",
+   "model": "lead-shielded-syringe.glb",
+   "props": 7,
+   "fit": {
+    "model_dims_m": [
+     0.115,
+     0.3,
+     0.05
+    ],
+    "box_m": [
+     0.06,
+     0.3,
+     0.06
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.855,
+    "worst_side_ratio": 1.64
+   },
+   "note": null
+  },
+  "outflow-pipe": {
+   "source": "model",
+   "model": "outflow-pipe.glb",
+   "props": 2,
+   "fit": {
+    "model_dims_m": [
+     6.735,
+     6.07,
+     6.336
+    ],
+    "box_m": [
+     2.2,
+     6.0,
+     2.2
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.482,
+    "worst_side_ratio": 2.05
+   },
+   "note": null
+  },
+  "pin-board": {
+   "source": "model",
+   "model": "pin-board.glb",
+   "props": 6,
+   "fit": {
+    "model_dims_m": [
+     2.425,
+     0.296,
+     1.989
+    ],
+    "box_m": [
+     2.4,
+     0.1,
+     1.4
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.617,
+    "worst_side_ratio": 1.83
+   },
+   "note": null
+  },
+  "play-mat": {
+   "source": "model",
+   "model": "play-mat.glb",
+   "props": 2,
+   "fit": {
+    "model_dims_m": [
+     3.016,
+     3.016,
+     0.118
+    ],
+    "box_m": [
+     3.0,
+     3.0,
+     0.04
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.995,
+    "worst_side_ratio": 1.72
+   },
+   "note": null
+  },
+  "printer-column": {
+   "source": "model",
+   "model": "printer-column.glb",
+   "props": 1,
+   "fit": {
+    "model_dims_m": [
+     2.323,
+     2.052,
+     6.553
+    ],
+    "box_m": [
+     1.8,
+     1.8,
+     6.5
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.992,
+    "worst_side_ratio": 1.28
+   },
+   "note": null
+  },
+  "quarantine-sawhorse": {
+   "source": "model",
+   "model": "quarantine-sawhorse.glb",
+   "props": 4,
+   "fit": {
+    "model_dims_m": [
+     1.795,
+     0.875,
+     1.372
+    ],
+    "box_m": [
+     1.8,
+     0.6,
+     1.1
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.82,
+    "worst_side_ratio": 1.22
+   },
+   "note": null
+  },
+  "rcc-terminal": {
+   "source": "model",
+   "model": "rcc-terminal.glb",
+   "props": 2,
+   "fit": {
+    "model_dims_m": [
+     1.099,
+     0.985,
+     1.309
+    ],
+    "box_m": [
+     0.6,
+     0.6,
+     1.3
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.993,
+    "worst_side_ratio": 1.82
+   },
+   "note": null
+  },
+  "shielded-locker": {
+   "source": "model",
+   "model": "shielded-locker.glb",
+   "props": 6,
+   "fit": {
+    "model_dims_m": [
+     1.894,
+     1.466,
+     2.029
+    ],
+    "box_m": [
+     0.8,
+     0.6,
+     2.0
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.986,
+    "worst_side_ratio": 2.41
+   },
+   "note": null
+  },
+  "supply-crate": {
+   "source": "model",
+   "model": "supply-crate.glb",
+   "props": 4,
+   "fit": {
+    "model_dims_m": [
+     1.204,
+     0.777,
+     0.786
+    ],
+    "box_m": [
+     1.2,
+     0.8,
+     0.8
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.015,
+    "worst_side_ratio": 1.02
+   },
+   "note": null
+  },
+  "town-notice-post": {
+   "source": "model",
+   "model": "town-notice-post.glb",
+   "props": 2,
+   "fit": {
+    "model_dims_m": [
+     0.573,
+     0.559,
+     2.008
+    ],
+    "box_m": [
+     0.6,
+     0.3,
+     2.0
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.996,
+    "worst_side_ratio": 1.85
+   },
+   "note": null
+  },
+  "toy-crate": {
+   "source": "model",
+   "model": "toy-crate.glb",
+   "props": 2,
+   "fit": {
+    "model_dims_m": [
+     0.808,
+     0.624,
+     0.454
+    ],
+    "box_m": [
+     0.8,
+     0.5,
+     0.5
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.956,
+    "worst_side_ratio": 1.19
+   },
+   "note": null
+  },
+  "training-blade": {
+   "source": "model",
+   "model": "training-blade.glb",
+   "props": 4,
+   "fit": {
+    "model_dims_m": [
+     0.183,
+     0.7,
+     0.099
+    ],
+    "box_m": [
+     0.08,
+     0.7,
+     0.04
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.0,
+    "worst_side_ratio": 1.58
+   },
+   "note": null
+  },
+  "training-blade-rack": {
+   "source": "model",
+   "model": "training-blade-rack.glb",
+   "props": 2,
+   "fit": {
+    "model_dims_m": [
+     1.611,
+     0.237,
+     1.367
+    ],
+    "box_m": [
+     1.6,
+     0.5,
+     1.4
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.024,
+    "worst_side_ratio": 2.06
+   },
+   "note": null
+  },
+  "vat-unit": {
+   "source": "model",
+   "model": "vat-unit.glb",
+   "props": 16,
+   "fit": {
+    "model_dims_m": [
+     1.121,
+     0.961,
+     2.412
+    ],
+    "box_m": [
+     1.2,
+     0.8,
+     2.4
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.995,
+    "worst_side_ratio": 1.2
+   },
+   "note": null
+  },
+  "wall-speaker": {
+   "source": "model",
+   "model": "wall-speaker.glb",
+   "props": 4,
+   "fit": {
+    "model_dims_m": [
+     0.404,
+     0.258,
+     0.549
+    ],
+    "box_m": [
+     0.4,
+     0.2,
+     0.4
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.728,
+    "worst_side_ratio": 1.36
+   },
+   "note": null
+  }
+ }
 }
