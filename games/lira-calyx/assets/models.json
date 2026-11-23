@@ -212,15 +212,16 @@
       "id": "field-journal",
       "name": "Lira's field journal",
       "date": "2026-11-23",
-      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
-      "model": "trellis_2_int8_convrot",
-      "seed": 1,
+      "status": "not_built",
       "image": "games/lira-calyx/assets/objects/field-journal.jpg",
-      "image_sha256": "2b6afd40c3364976a07c556e08558ea61d9acb86228ec5ed282d51e4377c364e",
-      "output": "build/models/lira-calyx/field-journal.glb",
-      "status": "failed",
+      "size_m_requested": [
+        0.18,
+        0.04,
+        0.24
+      ],
+      "source": "model_requests.json",
       "problems": [
-        "comfy:  4], background removed, image sha256 2b6afd40c3364976, server 127.0.0.1:8188\nqueued    prompt cd19a074-53fe-4342-99b3-8e42c5e0ce34\nREFUSED   the workflow failed on the server: VaeDecodeShapeTrellis: Allocation on device 0 would exceed allowed memory. (out of memory)\nCurrently allocated     : 12.01 GiB\nRequested               : 17.28 GiB\nDevice limit            : 31.36 GiB\nFree (according to CUDA)"
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
       ]
     },
     {

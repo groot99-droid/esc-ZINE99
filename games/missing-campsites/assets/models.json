@@ -321,17 +321,31 @@
       "id": "crate-coffee-table",
       "name": "Crate coffee table in pine ply, 0.6 x 0.8 x 0.45 m, with a closed laptop",
       "date": "2026-11-23",
-      "status": "not_built",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
       "image": "games/missing-campsites/assets/objects/crate-coffee-table.jpg",
+      "image_sha256": "0fb4de455db7c650768286fa1637e5bc8ed67cc5cdb71a6a62666b00bef115af",
+      "output": "build/models/missing-campsites/crate-coffee-table.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699240,
       "size_m_requested": [
         0.8,
         0.6,
         0.45
       ],
-      "source": "realism list",
+      "dimensions_m": [
+        0.8,
+        0.677,
+        0.861
+      ],
       "problems": [
-        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
-      ]
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 1.00, 0.89, 0.52); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 642
     },
     {
       "id": "doormat",
@@ -380,19 +394,32 @@
     },
     {
       "id": "firewood-bundle",
-      "name": "Firewood bundle",
+      "name": "Firewood bundle (split pine, cord)",
       "date": "2026-11-23",
-      "status": "not_built",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
       "image": "games/missing-campsites/assets/objects/firewood-bundle.jpg",
+      "image_sha256": "4e8dcb0317dba9f514f831e2b37212dd70574cbd319f7585dad39c42947a52c4",
+      "output": "build/models/missing-campsites/firewood-bundle.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 699628,
       "size_m_requested": [
-        0.4,
+        0.5,
         0.3,
         0.35
       ],
-      "source": "model_requests.json",
+      "dimensions_m": [
+        0.5,
+        0.391,
+        0.27
+      ],
       "problems": [
-        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
-      ]
+        "proportions differ from size_m (axis ratios 1.00, 0.77, 1.30); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 491
     },
     {
       "id": "folding-chair-black",
@@ -981,17 +1008,30 @@
       "id": "split-wood-pile",
       "name": "Firewood bundle and stacked split-wood pile (0.9 x 0.7 x 0.9 m)",
       "date": "2026-11-23",
-      "status": "not_built",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
       "image": "games/missing-campsites/assets/objects/split-wood-pile.jpg",
+      "image_sha256": "f32e8e6260e97dc4e25869f28c1da4d42ad8ef9880a88038041d73538dc7f9cf",
+      "output": "build/models/missing-campsites/split-wood-pile.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699686,
       "size_m_requested": [
         0.9,
         0.7,
         0.9
       ],
-      "source": "realism list",
+      "dimensions_m": [
+        0.9,
+        0.811,
+        0.687
+      ],
       "problems": [
-        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
-      ]
+        "proportions differ from size_m (axis ratios 1.00, 0.86, 1.31); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1054
     },
     {
       "id": "study-desk-chair",

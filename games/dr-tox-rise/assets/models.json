@@ -471,11 +471,24 @@
       "image": "games/dr-tox-rise/assets/objects/floodlight-housing.jpg",
       "image_sha256": "7a918b5016134d66faf9801d1284778e32dc9d3ac4b1d5e36b62a378429b8f6d",
       "output": "build/models/dr-tox-rise/floodlight-housing.glb",
-      "status": "failed",
-      "problems": [
-        "comfy: eeds [1, 2, 3, 4], background removed, image sha256 d9aa922a0faa5815, server 127.0.0.1:8189\nqueued    prompt 63aa64b9-f215-4129-a1db-5a0aa6a0761c\nREFUSED   the workflow failed on the server: KSampler: Allocation on device 0 would exceed allowed memory. (out of memory)\nCurrently allocated     : 3.14 GiB\nRequested               : 3.68 GiB\nDevice limit            : 31.36 GiB\nFree (according to CUDA):"
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699162,
+      "size_m_requested": [
+        0.6,
+        0.4,
+        0.5
       ],
-      "source": "realism list (reference image generated with Flux schnell in ComfyUI)"
+      "dimensions_m": [
+        0.6,
+        0.6,
+        0.551
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.67, 0.91); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 953
     },
     {
       "id": "insignia-case",

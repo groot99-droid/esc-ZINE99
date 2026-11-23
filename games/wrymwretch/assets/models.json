@@ -231,17 +231,17 @@
     },
     {
       "id": "mossy-boulder",
-      "name": "Mossy boulder",
+      "name": "Mossy boulders (2 x 1.6 x 1.2 m, grey with moss and ferns)",
       "date": "2026-11-23",
       "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
       "model": "trellis_2_int8_convrot",
       "seed": 1,
       "image": "games/wrymwretch/assets/objects/mossy-boulder.jpg",
-      "image_sha256": "440e943e1ff8e1d13c52fc5da7d35d643ffa68fd382b03b2fe9e07c7052f225b",
+      "image_sha256": "14d57ce45120b6c22981e40831aa89620438b71e5b2004f5ce52578f8f6423cd",
       "output": "build/models/wrymwretch/mossy-boulder.glb",
       "status": "failed",
       "problems": [
-        "comfy:  4], background removed, image sha256 440e943e1ff8e1d1, server 127.0.0.1:8188\nqueued    prompt 013e2b46-d625-4e91-9a09-36044d24fa5e\nREFUSED   the workflow failed on the server: VaeDecodeShapeTrellis: Allocation on device 0 would exceed allowed memory. (out of memory)\nCurrently allocated     : 11.22 GiB\nRequested               : 16.20 GiB\nDevice limit            : 31.36 GiB\nFree (according to CUDA)"
+        "comfy:  4], background removed, image sha256 14d57ce45120b6c2, server 127.0.0.1:8188\nqueued    prompt 06bf1560-1e32-4cd2-b6be-5ea7ab8752f4\nREFUSED   the workflow failed on the server: VaeDecodeShapeTrellis: Allocation on device 0 would exceed allowed memory. (out of memory)\nCurrently allocated     : 26.60 GiB\nRequested               : 4.40 GiB\nDevice limit            : 31.36 GiB\nFree (according to CUDA):"
       ]
     },
     {
@@ -331,15 +331,16 @@
       "id": "split-tree",
       "name": "The split tree",
       "date": "2026-11-23",
-      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
-      "model": "trellis_2_int8_convrot",
-      "seed": 1,
+      "status": "not_built",
       "image": "games/wrymwretch/assets/objects/split-tree.jpg",
-      "image_sha256": "c7f70b0e32c5cfe03bef27471f83f8caa76b43e94e630b20745729cea0944c33",
-      "output": "build/models/wrymwretch/split-tree.glb",
-      "status": "failed",
+      "size_m_requested": [
+        6,
+        6,
+        14
+      ],
+      "source": "model_requests.json",
       "problems": [
-        "comfy:  4], background removed, image sha256 c7f70b0e32c5cfe0, server 127.0.0.1:8189\nqueued    prompt 6ac8b786-ac1b-43cf-9281-a602c6dcb24c\nREFUSED   the workflow failed on the server: VaeDecodeShapeTrellis: Allocation on device 0 would exceed allowed memory. (out of memory)\nCurrently allocated     : 7.92 GiB\nRequested               : 10.89 GiB\nDevice limit            : 31.36 GiB\nFree (according to CUDA):"
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
       ]
     },
     {

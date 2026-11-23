@@ -93,17 +93,29 @@
       "id": "axial-fan-housing",
       "name": "Axial fans in housings, big",
       "date": "2026-11-23",
-      "status": "not_built",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
       "image": "games/dr-tox-finale/assets/objects/axial-fan-housing.jpg",
+      "image_sha256": "669a3a3a509d31e62922af4b8936c45f89d7d5035ab82e2a9e97bc83486e3807",
+      "output": "build/models/dr-tox-finale/axial-fan-housing.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699577,
       "size_m_requested": [
         2.0,
         1.2,
         2.0
       ],
-      "source": "realism list",
+      "dimensions_m": [
+        2.0,
+        1.571,
+        2.021
+      ],
       "problems": [
-        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
-      ]
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 780
     },
     {
       "id": "balance-scale",
@@ -837,17 +849,30 @@
       "id": "service-door-steel",
       "name": "Service door, steel, at -x",
       "date": "2026-11-23",
-      "status": "not_built",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
       "image": "games/dr-tox-finale/assets/objects/service-door-steel.jpg",
+      "image_sha256": "93bc4d781e57a49139df7999fa71b674a03a3588fa82b634d624bb10b03ea325",
+      "output": "build/models/dr-tox-finale/service-door-steel.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699271,
       "size_m_requested": [
         1.4,
         0.1,
         2.4
       ],
-      "source": "realism list",
+      "dimensions_m": [
+        2.947,
+        1.573,
+        2.4
+      ],
       "problems": [
-        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
-      ]
+        "proportions differ from size_m (axis ratios 0.48, 0.06, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 579
     },
     {
       "id": "shanty-shelter",
@@ -968,17 +993,30 @@
       "id": "steel-cell-door",
       "name": "Steel cell doors, bolted, with a hatch",
       "date": "2026-11-23",
-      "status": "not_built",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
       "image": "games/dr-tox-finale/assets/objects/steel-cell-door.jpg",
+      "image_sha256": "eada920b58a9b3496cc897f145443bf199f175a434a87457a418cfff5bd26fce",
+      "output": "build/models/dr-tox-finale/steel-cell-door.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 698424,
       "size_m_requested": [
         1.0,
         0.15,
         2.1
       ],
-      "source": "realism list",
+      "dimensions_m": [
+        1.991,
+        2.08,
+        2.1
+      ],
       "problems": [
-        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
-      ]
+        "proportions differ from size_m (axis ratios 0.50, 0.07, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 872
     },
     {
       "id": "switchboard-console",
@@ -1043,17 +1081,30 @@
       "id": "tract-booklet",
       "name": "Stapled booklet (the tract) on the lectern",
       "date": "2026-11-23",
-      "status": "not_built",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
       "image": "games/dr-tox-finale/assets/objects/tract-booklet.jpg",
+      "image_sha256": "85cda39ba1696dcff48a175bda9b3982805c1f3462e94a5c9d49b4e913170b47",
+      "output": "build/models/dr-tox-finale/tract-booklet.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699049,
       "size_m_requested": [
         0.15,
         0.2,
         0.02
       ],
-      "source": "realism list",
+      "dimensions_m": [
+        0.211,
+        0.2,
+        0.074
+      ],
       "problems": [
-        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
-      ]
+        "proportions differ from size_m (axis ratios 0.71, 1.00, 0.27); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 480
     },
     {
       "id": "treatment-chair",

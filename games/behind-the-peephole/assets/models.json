@@ -63,15 +63,16 @@
       "id": "card-deck",
       "name": "Deck of cards",
       "date": "2026-11-23",
-      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
-      "model": "trellis_2_int8_convrot",
-      "seed": 1,
+      "status": "not_built",
       "image": "games/behind-the-peephole/assets/objects/card-deck.jpg",
-      "image_sha256": "edd7ad1a721695dcefbd7dffde2aac8a97aba17ede70d54c057bb79235c25a55",
-      "output": "build/models/behind-the-peephole/card-deck.glb",
-      "status": "failed",
+      "size_m_requested": [
+        0.064,
+        0.09,
+        0.02
+      ],
+      "source": "model_requests.json",
       "problems": [
-        "comfy:  4], background removed, image sha256 edd7ad1a721695dc, server 127.0.0.1:8188\nqueued    prompt b022447e-1c5e-4cd8-b869-f73965042b61\nREFUSED   the workflow failed on the server: VaeDecodeShapeTrellis: Allocation on device 0 would exceed allowed memory. (out of memory)\nCurrently allocated     : 29.10 GiB\nRequested               : 4.51 GiB\nDevice limit            : 31.36 GiB\nFree (according to CUDA):"
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
       ]
     },
     {
@@ -823,15 +824,16 @@
       "id": "wall-sconce",
       "name": "Wall sconce",
       "date": "2026-11-23",
-      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
-      "model": "trellis_2_int8_convrot",
-      "seed": 1,
+      "status": "not_built",
       "image": "games/behind-the-peephole/assets/objects/wall-sconce.jpg",
-      "image_sha256": "fb064f01aa2808666d2c74c13c58f8842bfc7b5543a7c14eb0f6c3613fefa62f",
-      "output": "build/models/behind-the-peephole/wall-sconce.glb",
-      "status": "failed",
+      "size_m_requested": [
+        0.15,
+        0.18,
+        0.3
+      ],
+      "source": "model_requests.json",
       "problems": [
-        "comfy: .unlink()\n    ~~~~~~~~~~~^^\n  File \"C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\pathlib\\_local.py\", line 746, in unlink\n    os.unlink(self)\n    ~~~~~~~~~^^^^^^\nFileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\\\Users\\\\utopi\\\\esc-ZINE99\\\\build\\\\models\\\\behind-the-peephole\\\\raw\\\\wall-sconce\\\\ComfyUI_00001.glb.part'"
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
       ]
     }
   ]

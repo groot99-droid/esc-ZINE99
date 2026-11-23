@@ -121,31 +121,45 @@
       "id": "cab-bench-seat",
       "name": "Cab shell: bench seat",
       "date": "2026-11-23",
-      "status": "not_built",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
       "image": "games/man-eater/assets/objects/cab-bench-seat.jpg",
+      "image_sha256": "1826315be1f0569cf6a45eb2a273b6b6e7a53f89cb481ec51b9d4180b8e2c38f",
+      "output": "build/models/man-eater/cab-bench-seat.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699144,
       "size_m_requested": [
         1.7,
         0.55,
         0.9
       ],
-      "source": "realism list",
+      "dimensions_m": [
+        1.7,
+        1.452,
+        1.519
+      ],
       "problems": [
-        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
-      ]
+        "proportions differ from size_m (axis ratios 1.00, 0.38, 0.59); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 632
     },
     {
       "id": "card-deck",
       "name": "Deck of cards",
       "date": "2026-11-23",
-      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
-      "model": "trellis_2_int8_convrot",
-      "seed": 1,
+      "status": "not_built",
       "image": "games/man-eater/assets/objects/card-deck.jpg",
-      "image_sha256": "2c553a61c1ef57349718d35ce6a3fd8e3a69c083fa9c661eeffe67e04ea10b63",
-      "output": "build/models/man-eater/card-deck.glb",
-      "status": "failed",
+      "size_m_requested": [
+        0.064,
+        0.09,
+        0.02
+      ],
+      "source": "model_requests.json",
       "problems": [
-        "comfy:  4], background removed, image sha256 2c553a61c1ef5734, server 127.0.0.1:8188\nqueued    prompt f7fd653c-4e44-4330-b860-b8504a9c89d1\nREFUSED   the workflow failed on the server: VaeDecodeShapeTrellis: Allocation on device 0 would exceed allowed memory. (out of memory)\nCurrently allocated     : 11.75 GiB\nRequested               : 16.82 GiB\nDevice limit            : 31.36 GiB\nFree (according to CUDA)"
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
       ]
     },
     {
@@ -182,33 +196,60 @@
       "id": "dashboard",
       "name": "Dashboard with gauges, glovebox, glovebox door",
       "date": "2026-11-23",
-      "status": "not_built",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
       "image": "games/man-eater/assets/objects/dashboard.jpg",
+      "image_sha256": "44f5eb2554225219fd4f1fc65950c4fc8988e6d8a28f257c0ce2b60a0bc6f6b4",
+      "output": "build/models/man-eater/dashboard.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 699493,
       "size_m_requested": [
         1.9,
         0.3,
         0.6
       ],
-      "source": "realism list",
+      "dimensions_m": [
+        1.9,
+        1.301,
+        0.968
+      ],
       "problems": [
-        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
-      ]
+        "proportions differ from size_m (axis ratios 1.00, 0.23, 0.62); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 436
     },
     {
       "id": "dead-forklift",
       "name": "Dead forklift",
       "date": "2026-11-23",
-      "status": "not_built",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
       "image": "games/man-eater/assets/objects/dead-forklift.jpg",
+      "image_sha256": "797a4617617e5aae1aa3dcfb4d09c0d985b426b55855fae2d647058de59e86e2",
+      "output": "build/models/man-eater/dead-forklift.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699633,
       "size_m_requested": [
         1.2,
         2.2,
         2.1
       ],
-      "source": "realism list",
+      "dimensions_m": [
+        0.784,
+        2.2,
+        1.362
+      ],
       "problems": [
-        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
-      ]
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 1.53, 1.00, 1.54); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 222
     },
     {
       "id": "door-log-clipboard",
@@ -243,17 +284,29 @@
       "id": "drum-washing-machine",
       "name": "Steel drum washing machines",
       "date": "2026-11-23",
-      "status": "not_built",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
       "image": "games/man-eater/assets/objects/drum-washing-machine.jpg",
+      "image_sha256": "00395473c21a280791283faaea5b4cbb5e7af3decaef554e967bf6ae90e4733f",
+      "output": "build/models/man-eater/drum-washing-machine.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 698848,
       "size_m_requested": [
         0.95,
         0.95,
         1.1
       ],
-      "source": "realism list",
+      "dimensions_m": [
+        0.858,
+        0.858,
+        1.1
+      ],
       "problems": [
-        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
-      ]
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 305
     },
     {
       "id": "empty-cot",
@@ -289,17 +342,30 @@
       "id": "envelope-bundle",
       "name": "Bundled envelopes tied with string",
       "date": "2026-11-23",
-      "status": "not_built",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
       "image": "games/man-eater/assets/objects/envelope-bundle.jpg",
+      "image_sha256": "0a664528c82ba929e087ffd434df0edf5d9577af6aa65ed99baacb5e21125404",
+      "output": "build/models/man-eater/envelope-bundle.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 699584,
       "size_m_requested": [
         0.2,
         0.12,
         0.06
       ],
-      "source": "realism list",
+      "dimensions_m": [
+        0.2,
+        0.057,
+        0.107
+      ],
       "problems": [
-        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
-      ]
+        "proportions differ from size_m (axis ratios 1.00, 2.11, 0.56); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 602
     },
     {
       "id": "fence-post",
@@ -334,30 +400,31 @@
       "id": "file-folder",
       "name": "File folder",
       "date": "2026-11-23",
-      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
-      "model": "trellis_2_int8_convrot",
-      "seed": 1,
+      "status": "not_built",
       "image": "games/man-eater/assets/objects/file-folder.jpg",
-      "image_sha256": "45bed98f68b65a8afe32339d87f83f27bb6128371df8190d7b913d1edaee359f",
-      "output": "build/models/man-eater/file-folder.glb",
-      "status": "failed",
+      "size_m_requested": [
+        0.24,
+        0.32,
+        0.02
+      ],
+      "source": "model_requests.json",
       "problems": [
-        "comfy:  4], background removed, image sha256 45bed98f68b65a8a, server 127.0.0.1:8188\nqueued    prompt cb52b58b-61fb-4050-9586-7d7029205b85\nREFUSED   the workflow failed on the server: VaeDecodeShapeTrellis: Allocation on device 0 would exceed allowed memory. (out of memory)\nCurrently allocated     : 22.85 GiB\nRequested               : 7.36 GiB\nDevice limit            : 31.36 GiB\nFree (according to CUDA):"
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
       ]
     },
     {
       "id": "filing-cabinet",
-      "name": "Filing cabinet",
+      "name": "filing-cabinet",
       "date": "2026-11-23",
       "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
       "model": "trellis_2_int8_convrot",
       "seed": 1,
       "image": "games/man-eater/assets/objects/filing-cabinet.jpg",
-      "image_sha256": "298850fce84fd25a3892270b439ed0790c3563ca8454f4801aa791d4e94ec079",
+      "image_sha256": "a22bb50693489e9474e6914c9df06b0e639e01f474b2e0ce0bdc399507f1cff3",
       "output": "build/models/man-eater/filing-cabinet.glb",
       "status": "failed",
       "problems": [
-        "comfy:  4], background removed, image sha256 298850fce84fd25a, server 127.0.0.1:8189\nqueued    prompt f7350884-dc9c-4c4a-89d4-89436e21131f\nREFUSED   the workflow failed on the server: VaeDecodeShapeTrellis: Allocation on device 0 would exceed allowed memory. (out of memory)\nCurrently allocated     : 12.74 GiB\nRequested               : 4.12 GiB\nDevice limit            : 31.36 GiB\nFree (according to CUDA):"
+        "comfy:  4], background removed, image sha256 a22bb50693489e94, server 127.0.0.1:8188\nqueued    prompt ba7e18e9-0e55-4774-80bc-c9db89c524b1\nREFUSED   the workflow failed on the server: VaeDecodeShapeTrellis: Allocation on device 0 would exceed allowed memory. (out of memory)\nCurrently allocated     : 21.83 GiB\nRequested               : 7.00 GiB\nDevice limit            : 31.36 GiB\nFree (according to CUDA):"
       ]
     },
     {
@@ -423,16 +490,15 @@
       "id": "footlocker",
       "name": "Footlocker",
       "date": "2026-11-23",
-      "status": "not_built",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
       "image": "games/man-eater/assets/objects/footlocker.jpg",
-      "size_m_requested": [
-        0.9,
-        0.5,
-        0.45
-      ],
-      "source": "realism list",
+      "image_sha256": "b2846395e736e8f0821e240c7123876dbe1d9cf556e50bd8366ca88af737e5ec",
+      "output": "build/models/man-eater/footlocker.glb",
+      "status": "failed",
       "problems": [
-        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
+        "comfy: request   trellis2, seeds [1, 2, 3, 4], background removed, image sha256 b2846395e736e8f0, server 127.0.0.1:8188\nqueued    prompt 16a62188-c07b-47af-b06b-6c8d1036108f\nREFUSED   ComfyUI_00010.glb: got 6815744 bytes of 57924200. The prompt 16a62188-c07b-47af-b06b-6c8d1036108f is done on the server; run `status 16a62188-c07b-47af-b06b-6c8d1036108f` and download again."
       ]
     },
     {
@@ -938,17 +1004,30 @@
       "id": "roller-shutter-door",
       "name": "Roller shutter bay doors",
       "date": "2026-11-23",
-      "status": "not_built",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
       "image": "games/man-eater/assets/objects/roller-shutter-door.jpg",
+      "image_sha256": "1e788d8f5dd436091ef5abd29bde2b2187acbc1b245df218b47c0122c1877837",
+      "output": "build/models/man-eater/roller-shutter-door.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699870,
       "size_m_requested": [
         6.0,
         0.2,
         4.2
       ],
-      "source": "realism list",
+      "dimensions_m": [
+        6.0,
+        6.019,
+        5.641
+      ],
       "problems": [
-        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
-      ]
+        "proportions differ from size_m (axis ratios 1.00, 0.03, 0.74); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 807
     },
     {
       "id": "round-table",
@@ -1011,17 +1090,30 @@
       "id": "servery-counter",
       "name": "Servery counter and hatch",
       "date": "2026-11-23",
-      "status": "not_built",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
       "image": "games/man-eater/assets/objects/servery-counter.jpg",
+      "image_sha256": "8385efa67d8496c8bf4bf3b3a309bd83eeb76a687100c8613fc3db442f8a1f0f",
+      "output": "build/models/man-eater/servery-counter.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 698867,
       "size_m_requested": [
         3.0,
         0.8,
         1.2
       ],
-      "source": "realism list",
+      "dimensions_m": [
+        3.0,
+        2.27,
+        3.541
+      ],
       "problems": [
-        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
-      ]
+        "proportions differ from size_m (axis ratios 1.00, 0.35, 0.34); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 553
     },
     {
       "id": "sheet-covered-table",
@@ -1085,17 +1177,29 @@
       "id": "small-generator",
       "name": "Small generator",
       "date": "2026-11-23",
-      "status": "not_built",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
       "image": "games/man-eater/assets/objects/small-generator.jpg",
+      "image_sha256": "d9a99183947c7e4e17e65a78a61a283d0be98b5b9f17583cf66a91f7cdc88f92",
+      "output": "build/models/man-eater/small-generator.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699515,
       "size_m_requested": [
         0.8,
         0.6,
         0.7
       ],
-      "source": "realism list",
+      "dimensions_m": [
+        0.8,
+        0.566,
+        0.64
+      ],
       "problems": [
-        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
-      ]
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 822
     },
     {
       "id": "small-steel-pump",
@@ -1161,17 +1265,30 @@
       "id": "sorting-counter",
       "name": "Sorting counter",
       "date": "2026-11-23",
-      "status": "not_built",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
       "image": "games/man-eater/assets/objects/sorting-counter.jpg",
+      "image_sha256": "089d5353f98366a152254375a6fba61a9852ed534282e43f18c3fe0bb32f5b4f",
+      "output": "build/models/man-eater/sorting-counter.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699358,
       "size_m_requested": [
         2.4,
         0.6,
         1.0
       ],
-      "source": "realism list",
+      "dimensions_m": [
+        2.4,
+        2.611,
+        3.425
+      ],
       "problems": [
-        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
-      ]
+        "proportions differ from size_m (axis ratios 1.00, 0.23, 0.29); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 758
     },
     {
       "id": "split-rail-fence-section",
@@ -1296,17 +1413,30 @@
       "id": "truck-door",
       "name": "Driver's door, frozen half open, door step",
       "date": "2026-11-23",
-      "status": "not_built",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
       "image": "games/man-eater/assets/objects/truck-door.jpg",
+      "image_sha256": "7cec94c1c81536c38b8269d1307d18ae045be2feda0d26fac57f1b073e71688b",
+      "output": "build/models/man-eater/truck-door.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699285,
       "size_m_requested": [
         1.0,
         0.1,
         1.3
       ],
-      "source": "realism list",
+      "dimensions_m": [
+        1.199,
+        1.154,
+        1.3
+      ],
       "problems": [
-        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
-      ]
+        "proportions differ from size_m (axis ratios 0.83, 0.09, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 795
     },
     {
       "id": "tube-stand",
@@ -1486,17 +1616,30 @@
       "id": "wooden-chair",
       "name": "Wooden chairs",
       "date": "2026-11-23",
-      "status": "not_built",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
       "image": "games/man-eater/assets/objects/wooden-chair.jpg",
+      "image_sha256": "3f575a9fd0d1de656c57afdd290da065c9bddc1fc40db209eaa3e8289e511315",
+      "output": "build/models/man-eater/wooden-chair.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699122,
       "size_m_requested": [
         0.42,
         0.42,
         0.85
       ],
-      "source": "realism list",
+      "dimensions_m": [
+        0.674,
+        0.627,
+        0.85
+      ],
       "problems": [
-        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
-      ]
+        "proportions differ from size_m (axis ratios 0.62, 0.67, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 337
     },
     {
       "id": "work-lamp",

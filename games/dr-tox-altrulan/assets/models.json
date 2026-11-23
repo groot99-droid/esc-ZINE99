@@ -120,15 +120,16 @@
       "id": "fungus-lamp",
       "name": "fungus lamp",
       "date": "2026-11-23",
-      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
-      "model": "trellis_2_int8_convrot",
-      "seed": 1,
+      "status": "not_built",
       "image": "games/dr-tox-altrulan/assets/objects/fungus-lamp.jpg",
-      "image_sha256": "ddcaaf6c46a31db8aef0455e58e043bee20c85d4ff583c8f385d022049d09cb4",
-      "output": "build/models/dr-tox-altrulan/fungus-lamp.glb",
-      "status": "failed",
+      "size_m_requested": [
+        0.5,
+        0.5,
+        0.7
+      ],
+      "source": "altrulan images from the Blender session",
       "problems": [
-        "comfy:  4], background removed, image sha256 ddcaaf6c46a31db8, server 127.0.0.1:8189\nqueued    prompt c40e36c6-6df0-4281-893a-57a3e9f917e6\nREFUSED   the workflow failed on the server: VaeDecodeShapeTrellis: Allocation on device 0 would exceed allowed memory. (out of memory)\nCurrently allocated     : 13.46 GiB\nRequested               : 5.24 GiB\nDevice limit            : 31.36 GiB\nFree (according to CUDA):"
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
       ]
     },
     {
