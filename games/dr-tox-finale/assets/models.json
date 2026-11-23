@@ -31,6 +31,36 @@
       "seconds": 1182
     },
     {
+      "id": "amber-lantern",
+      "name": "Amber lanterns",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-finale/assets/objects/amber-lantern.jpg",
+      "image_sha256": "e2b5bbd2881ecbe91ffcdb89dfe2b6aadaeb574b459b2edd89648f776e3c3792",
+      "output": "build/models/dr-tox-finale/amber-lantern.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699473,
+      "size_m_requested": [
+        0.2,
+        0.2,
+        0.35
+      ],
+      "dimensions_m": [
+        0.168,
+        0.147,
+        0.35
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.19, 1.36, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 431,
+      "source": "realism list (reference image generated with Flux schnell in ComfyUI)"
+    },
+    {
       "id": "atrium-glass-panel",
       "name": "Atrium glass panel",
       "date": "2026-11-21",
@@ -58,6 +88,22 @@
         "front direction (-y) not checked by eye"
       ],
       "seconds": 251
+    },
+    {
+      "id": "axial-fan-housing",
+      "name": "Axial fans in housings, big",
+      "date": "2026-11-23",
+      "status": "not_built",
+      "image": "games/dr-tox-finale/assets/objects/axial-fan-housing.jpg",
+      "size_m_requested": [
+        2.0,
+        1.2,
+        2.0
+      ],
+      "source": "realism list",
+      "problems": [
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
+      ]
     },
     {
       "id": "balance-scale",
@@ -146,19 +192,62 @@
       "seconds": 541
     },
     {
+      "id": "bedside-patient-monitor",
+      "name": "Bedside patient monitors and infusion pumps (screens)",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-finale/assets/objects/bedside-patient-monitor.jpg",
+      "image_sha256": "7a4d65abf2ea394f2ec6007c068755cb8effed8dfd9ce184160402668a711ebf",
+      "output": "build/models/dr-tox-finale/bedside-patient-monitor.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699845,
+      "size_m_requested": [
+        0.5,
+        0.4,
+        1.5
+      ],
+      "dimensions_m": [
+        0.541,
+        0.504,
+        1.5
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 425,
+      "source": "realism list (reference image generated with Flux schnell in ComfyUI)"
+    },
+    {
       "id": "blade-crate",
       "name": "Blade crate",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
       "model": "trellis_2_int8_convrot",
       "seed": 1,
       "image": "games/dr-tox-finale/assets/objects/blade-crate.jpg",
       "image_sha256": "e4013dcf42d0674f8d1f8b5c1a9227aa1db53a516ff80bdf0a51d51269a96df2",
       "output": "build/models/dr-tox-finale/blade-crate.glb",
-      "status": "failed",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699440,
+      "size_m_requested": [
+        1.0,
+        0.6,
+        0.5
+      ],
+      "dimensions_m": [
+        1.0,
+        0.849,
+        0.689
+      ],
       "problems": [
-        "comfy: ], background removed, image sha256 e4013dcf42d0674f, server 127.0.0.1:8190\nqueued    prompt aead0950-fc89-410e-bded-a94be70cfa50\nREFUSED   the workflow failed on the server: VaeDecodeTextureTrellis: Allocation on device 0 would exceed allowed memory. (out of memory)\nCurrently allocated     : 15.88 GiB\nRequested               : 2.16 GiB\nDevice limit            : 31.36 GiB\nFree (according to CUDA):"
-      ]
+        "proportions differ from size_m (axis ratios 1.00, 0.71, 0.73); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 54
     },
     {
       "id": "calibration-booth",
@@ -277,6 +366,66 @@
       "seconds": 911
     },
     {
+      "id": "core-table",
+      "name": "Core table: plain steel frame, scarred wood top",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-finale/assets/objects/core-table.jpg",
+      "image_sha256": "d984c3e33406653cc7eeb08f37ef28188e375269497e415b2cb9ca63649a367a",
+      "output": "build/models/dr-tox-finale/core-table.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 698744,
+      "size_m_requested": [
+        1.6,
+        0.8,
+        0.9
+      ],
+      "dimensions_m": [
+        1.6,
+        1.594,
+        1.188
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.50, 0.76); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 503,
+      "source": "realism list (reference image generated with Flux schnell in ComfyUI)"
+    },
+    {
+      "id": "crt-monitor-cart",
+      "name": "CRT monitor on a steel cart",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-finale/assets/objects/crt-monitor-cart.jpg",
+      "image_sha256": "6866545bd7e7855af4c4de802a1f4615da11da5faab2cb533cd8f80ce8b12f0f",
+      "output": "build/models/dr-tox-finale/crt-monitor-cart.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699321,
+      "size_m_requested": [
+        0.7,
+        0.6,
+        1.3
+      ],
+      "dimensions_m": [
+        0.872,
+        0.953,
+        1.3
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.80, 0.63, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 723,
+      "source": "realism list (reference image generated with Flux schnell in ComfyUI)"
+    },
+    {
       "id": "drum-lectern",
       "name": "Steel-drum lectern",
       "date": "2026-11-21",
@@ -337,17 +486,31 @@
     {
       "id": "exhaust-vent",
       "name": "Exhaust vent",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
       "model": "trellis_2_int8_convrot",
       "seed": 1,
       "image": "games/dr-tox-finale/assets/objects/exhaust-vent.jpg",
       "image_sha256": "be0e222ea628d02952c933e61af94dfcc35597ba9e2b50ce36f8bcd77f520a09",
       "output": "build/models/dr-tox-finale/exhaust-vent.glb",
-      "status": "failed",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699646,
+      "size_m_requested": [
+        4.0,
+        1.2,
+        4.0
+      ],
+      "dimensions_m": [
+        4.0,
+        1.737,
+        4.505
+      ],
       "problems": [
-        "comfy: , 4], background removed, image sha256 be0e222ea628d029, server 127.0.0.1:8188\nqueued    prompt 12e5ea15-4827-4955-bc5e-bfb459200116\nREFUSED   the workflow failed on the server: BakeTextureFromVoxel: Allocation on device 0 would exceed allowed memory. (out of memory)\nCurrently allocated     : 11.13 GiB\nRequested               : 322.86 MiB\nDevice limit            : 31.36 GiB\nFree (according to CUDA"
-      ]
+        "proportions differ from size_m (axis ratios 1.00, 0.69, 0.89); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1340
     },
     {
       "id": "floodlight-mast",
@@ -556,19 +719,63 @@
       "seconds": 754
     },
     {
+      "id": "long-wooden-bench",
+      "name": "Long wooden benches facing the lectern",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-finale/assets/objects/long-wooden-bench.jpg",
+      "image_sha256": "24103590a56f62dab7547a237972afefbddd2cf9338246ef41a196e2cf4026bf",
+      "output": "build/models/dr-tox-finale/long-wooden-bench.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699806,
+      "size_m_requested": [
+        3.0,
+        0.45,
+        0.5
+      ],
+      "dimensions_m": [
+        3.0,
+        1.041,
+        1.394
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.43, 0.36); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 339,
+      "source": "realism list (reference image generated with Flux schnell in ComfyUI)"
+    },
+    {
       "id": "march-handcart",
       "name": "Handcart",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
       "model": "trellis_2_int8_convrot",
       "seed": 1,
       "image": "games/dr-tox-finale/assets/objects/march-handcart.jpg",
       "image_sha256": "ff160856abb924d9f4be620aa96de00b6079ecc4277bf9ca25b98894c9520179",
       "output": "build/models/dr-tox-finale/march-handcart.glb",
-      "status": "failed",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699814,
+      "size_m_requested": [
+        1.2,
+        2.0,
+        1.2
+      ],
+      "dimensions_m": [
+        1.191,
+        2.0,
+        1.487
+      ],
       "problems": [
-        "comfy: , 4], background removed, image sha256 ff160856abb924d9, server 127.0.0.1:8189\nqueued    prompt c67cda95-de24-4e02-9679-d3d7bbaa0b20\nREFUSED   the workflow failed on the server: BakeTextureFromVoxel: Allocation on device 0 would exceed allowed memory. (out of memory)\nCurrently allocated     : 14.58 GiB\nRequested               : 424.02 MiB\nDevice limit            : 31.36 GiB\nFree (according to CUDA"
-      ]
+        "rotated 90 deg about Z so its long side matches size_m",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 796
     },
     {
       "id": "printer-column",
@@ -625,6 +832,22 @@
         "front direction (-y) not checked by eye"
       ],
       "seconds": 771
+    },
+    {
+      "id": "service-door-steel",
+      "name": "Service door, steel, at -x",
+      "date": "2026-11-23",
+      "status": "not_built",
+      "image": "games/dr-tox-finale/assets/objects/service-door-steel.jpg",
+      "size_m_requested": [
+        1.4,
+        0.1,
+        2.4
+      ],
+      "source": "realism list",
+      "problems": [
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
+      ]
     },
     {
       "id": "shanty-shelter",
@@ -712,6 +935,52 @@
       "seconds": 628
     },
     {
+      "id": "small-generator-amber-lamp",
+      "name": "Small generator with amber lamp",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-finale/assets/objects/small-generator-amber-lamp.jpg",
+      "image_sha256": "44008837cea3b1c632ac1a8525be9782bfc8f5e3abceec822ef1a58c90b62f3c",
+      "output": "build/models/dr-tox-finale/small-generator-amber-lamp.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699830,
+      "size_m_requested": [
+        0.8,
+        0.5,
+        0.7
+      ],
+      "dimensions_m": [
+        0.8,
+        0.909,
+        1.302
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.55, 0.54); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 785,
+      "source": "realism list (reference image generated with Flux schnell in ComfyUI)"
+    },
+    {
+      "id": "steel-cell-door",
+      "name": "Steel cell doors, bolted, with a hatch",
+      "date": "2026-11-23",
+      "status": "not_built",
+      "image": "games/dr-tox-finale/assets/objects/steel-cell-door.jpg",
+      "size_m_requested": [
+        1.0,
+        0.15,
+        2.1
+      ],
+      "source": "realism list",
+      "problems": [
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
+      ]
+    },
+    {
       "id": "switchboard-console",
       "name": "Life-support switchboard",
       "date": "2026-11-21",
@@ -739,6 +1008,52 @@
         "front direction (-y) not checked by eye"
       ],
       "seconds": 821
+    },
+    {
+      "id": "tarp-tent",
+      "name": "Tarp tents",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-finale/assets/objects/tarp-tent.jpg",
+      "image_sha256": "f6076b54a9ab50756e6e647e2acd1a25bc3a55f46a2a42df402fb6f5632cf2be",
+      "output": "build/models/dr-tox-finale/tarp-tent.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699376,
+      "size_m_requested": [
+        3.0,
+        2.5,
+        1.6
+      ],
+      "dimensions_m": [
+        3.0,
+        2.826,
+        2.446
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.88, 0.65); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 611,
+      "source": "realism list (reference image generated with Flux schnell in ComfyUI)"
+    },
+    {
+      "id": "tract-booklet",
+      "name": "Stapled booklet (the tract) on the lectern",
+      "date": "2026-11-23",
+      "status": "not_built",
+      "image": "games/dr-tox-finale/assets/objects/tract-booklet.jpg",
+      "size_m_requested": [
+        0.15,
+        0.2,
+        0.02
+      ],
+      "source": "realism list",
+      "problems": [
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
+      ]
     },
     {
       "id": "treatment-chair",

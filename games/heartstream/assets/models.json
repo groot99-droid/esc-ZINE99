@@ -62,47 +62,105 @@
     {
       "id": "bone-blank",
       "name": "Bone blank",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
       "model": "trellis_2_int8_convrot",
       "seed": 1,
       "image": "games/heartstream/assets/objects/bone-blank.jpg",
       "image_sha256": "1e5674c16bba0906d831bfec02a21a9eb81133267827665ff1fa88692938af0b",
       "output": "build/models/heartstream/bone-blank.glb",
-      "status": "failed",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699800,
+      "size_m_requested": [
+        0.08,
+        0.05,
+        0.35
+      ],
+      "dimensions_m": [
+        1.225,
+        0.354,
+        0.35
+      ],
       "problems": [
-        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8189: [WinError 10061] No connection could be made because the target machine actively refused it. Start ComfyUI, or set COMFY_URL."
-      ]
+        "proportions differ from size_m (axis ratios 0.07, 0.14, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 463
     },
     {
       "id": "bone-bowl",
       "name": "Bone bowl",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
       "model": "trellis_2_int8_convrot",
       "seed": 1,
       "image": "games/heartstream/assets/objects/bone-bowl.jpg",
       "image_sha256": "be544e535844f06baba0340e8d1042aa14951ca770b4cef8ab3be8b648cff33a",
       "output": "build/models/heartstream/bone-bowl.glb",
-      "status": "failed",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 698523,
+      "size_m_requested": [
+        0.22,
+        0.22,
+        0.1
+      ],
+      "dimensions_m": [
+        0.22,
+        0.221,
+        0.106
+      ],
       "problems": [
-        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8190: [WinError 10061] No connection could be made because the target machine actively refused it. Start ComfyUI, or set COMFY_URL."
-      ]
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 362
     },
     {
       "id": "bone-shard",
       "name": "Fallen bone shard",
-      "date": "2026-11-21",
+      "date": "2026-11-23",
+      "status": "not_built",
+      "image": "games/heartstream/assets/objects/bone-shard.jpg",
+      "size_m_requested": [
+        1.2,
+        0.6,
+        0.7
+      ],
+      "source": "model_requests.json",
+      "problems": [
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
+      ]
+    },
+    {
+      "id": "carving-slab",
+      "name": "Carving slab",
+      "date": "2026-11-22",
       "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
       "model": "trellis_2_int8_convrot",
       "seed": 1,
-      "image": "games/heartstream/assets/objects/bone-shard.jpg",
-      "image_sha256": "54946f559069a7e2ca2b3c87072902d499bb9595c2de03b979aa57f175a0cdbf",
-      "output": "build/models/heartstream/bone-shard.glb",
-      "status": "failed",
+      "image": "games/heartstream/assets/objects/carving-slab.jpg",
+      "image_sha256": "b2dc6f23b2390ce28fa3fe80ec77401a99114bfb6861f2b931d51a62d444e91f",
+      "output": "build/models/heartstream/carving-slab.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699392,
+      "size_m_requested": [
+        1.2,
+        0.7,
+        0.6
+      ],
+      "dimensions_m": [
+        1.2,
+        1.006,
+        0.591
+      ],
       "problems": [
-        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8189: [WinError 10061] No connection could be made because the target machine actively refused it. Start ComfyUI, or set COMFY_URL."
-      ]
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 1.00, 0.70, 1.01); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1061
     },
     {
       "id": "chisel",
@@ -136,47 +194,233 @@
     {
       "id": "counter-board",
       "name": "Bone-counter board",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
       "model": "trellis_2_int8_convrot",
       "seed": 1,
       "image": "games/heartstream/assets/objects/counter-board.jpg",
       "image_sha256": "e36b43da0e19bd436a11b0ff772ba904891e6be4433c6b5f35c8897306388016",
       "output": "build/models/heartstream/counter-board.glb",
-      "status": "failed",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699720,
+      "size_m_requested": [
+        0.9,
+        0.35,
+        0.12
+      ],
+      "dimensions_m": [
+        0.9,
+        0.389,
+        0.085
+      ],
       "problems": [
-        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8190: [WinError 10061] No connection could be made because the target machine actively refused it. Start ComfyUI, or set COMFY_URL."
-      ]
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 1.00, 0.90, 1.42); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 462
+    },
+    {
+      "id": "counter-piece",
+      "name": "Counter piece",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/heartstream/assets/objects/counter-piece.jpg",
+      "image_sha256": "52d73c61b1fc229919bd584e35d10287fb92c6729cdb9490a612d9a56a1f9700",
+      "output": "build/models/heartstream/counter-piece.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 698328,
+      "size_m_requested": [
+        0.04,
+        0.04,
+        0.02
+      ],
+      "dimensions_m": [
+        0.04,
+        0.038,
+        0.013
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 1.05, 1.51); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 439
+    },
+    {
+      "id": "elders-bench",
+      "name": "The elders' bench",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/heartstream/assets/objects/elders-bench.jpg",
+      "image_sha256": "fbc769fce592fb9f9ac0082c16dee81f61aebcc64bbaf64d1a5599ec92740b07",
+      "output": "build/models/heartstream/elders-bench.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699760,
+      "size_m_requested": [
+        5.0,
+        0.9,
+        1.0
+      ],
+      "dimensions_m": [
+        5.0,
+        1.681,
+        1.9
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.54, 0.53); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 754
     },
     {
       "id": "flake-pile",
       "name": "Pile of shed flakes",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
       "model": "trellis_2_int8_convrot",
       "seed": 1,
       "image": "games/heartstream/assets/objects/flake-pile.jpg",
       "image_sha256": "fd82aaec3dccbf3c057d26b2327a5e071c5062181212857ed70ab68391cc2820",
       "output": "build/models/heartstream/flake-pile.glb",
-      "status": "failed",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699980,
+      "size_m_requested": [
+        0.8,
+        0.8,
+        0.3
+      ],
+      "dimensions_m": [
+        0.8,
+        0.786,
+        0.356
+      ],
       "problems": [
-        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8190: [WinError 10061] No connection could be made because the target machine actively refused it. Start ComfyUI, or set COMFY_URL."
-      ]
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 851
+    },
+    {
+      "id": "gathering-basket",
+      "name": "Gathering basket",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/heartstream/assets/objects/gathering-basket.jpg",
+      "image_sha256": "68ea77d5c55b763d6367dc36fbc2ad1283a29389c50f4fa15d7d111c424f2be3",
+      "output": "build/models/heartstream/gathering-basket.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699796,
+      "size_m_requested": [
+        0.45,
+        0.35,
+        0.35
+      ],
+      "dimensions_m": [
+        0.45,
+        0.45,
+        0.424
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 844
+    },
+    {
+      "id": "gift-awl",
+      "name": "Gift: awl",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/heartstream/assets/objects/gift-awl.jpg",
+      "image_sha256": "932303a2a049dbbc7c253ea50dd2d611b2f773333bf641b6f2625326aacba9f1",
+      "output": "build/models/heartstream/gift-awl.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 678202,
+      "size_m_requested": [
+        0.03,
+        0.03,
+        0.18
+      ],
+      "dimensions_m": [
+        0.187,
+        0.677,
+        0.18
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.16, 0.04, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 617
     },
     {
       "id": "gift-comb",
       "name": "Gift: comb",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
       "model": "trellis_2_int8_convrot",
       "seed": 1,
       "image": "games/heartstream/assets/objects/gift-comb.jpg",
       "image_sha256": "4ed06598f47ee64a4123c50aba3261122be6f2bcc3e6c316864f776e0c59e31a",
       "output": "build/models/heartstream/gift-comb.glb",
-      "status": "failed",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699742,
+      "size_m_requested": [
+        0.12,
+        0.01,
+        0.08
+      ],
+      "dimensions_m": [
+        0.12,
+        0.011,
+        0.062
+      ],
       "problems": [
-        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8189: [WinError 10061] No connection could be made because the target machine actively refused it. Start ComfyUI, or set COMFY_URL."
-      ]
+        "proportions differ from size_m (axis ratios 1.00, 0.90, 1.28); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 271
+    },
+    {
+      "id": "gift-flute",
+      "name": "Gift: flute",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/heartstream/assets/objects/gift-flute.jpg",
+      "image_sha256": "7cdc0fd1cd1aa8491bc54d3c92b7b01ca1df81106f9b2f858ea6c89ed78286f0",
+      "output": "build/models/heartstream/gift-flute.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 699994,
+      "size_m_requested": [
+        0.03,
+        0.03,
+        0.25
+      ],
+      "dimensions_m": [
+        1.245,
+        0.21,
+        0.25
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.02, 0.14, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 237
     },
     {
       "id": "gift-hook",
@@ -210,47 +454,118 @@
     {
       "id": "gift-scraper",
       "name": "Gift: scraper",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
       "model": "trellis_2_int8_convrot",
       "seed": 1,
       "image": "games/heartstream/assets/objects/gift-scraper.jpg",
       "image_sha256": "417afeb598e3af1d430c7bb16a2cdab42ed55f015be3fed7c58df97b7c5fdff8",
       "output": "build/models/heartstream/gift-scraper.glb",
-      "status": "failed",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699966,
+      "size_m_requested": [
+        0.1,
+        0.02,
+        0.16
+      ],
+      "dimensions_m": [
+        0.913,
+        0.61,
+        0.16
+      ],
       "problems": [
-        "comfy: request   trellis2, seeds [1, 2, 3, 4], background removed, image sha256 417afeb598e3af1d, server 127.0.0.1:8190\nqueued    prompt e85c60fd-2c54-485f-98ed-d993b6d130f4\nREFUSED   ComfyUI_00061.glb: got 39092224 bytes of 47041812. The prompt e85c60fd-2c54-485f-98ed-d993b6d130f4 is done on the server; run `status e85c60fd-2c54-485f-98ed-d993b6d130f4` and download again."
-      ]
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 0.11, 0.03, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 291
     },
     {
       "id": "mark-stone",
       "name": "The mark stone",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
       "model": "trellis_2_int8_convrot",
       "seed": 1,
       "image": "games/heartstream/assets/objects/mark-stone.jpg",
       "image_sha256": "1f3a5287b710be0d8c7a24c83a73a483c8341d961a43ce3929f7a2fcecb0aa33",
       "output": "build/models/heartstream/mark-stone.glb",
-      "status": "failed",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 698714,
+      "size_m_requested": [
+        0.8,
+        0.6,
+        1.1
+      ],
+      "dimensions_m": [
+        0.784,
+        0.787,
+        1.1
+      ],
       "problems": [
-        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8190: [WinError 10061] No connection could be made because the target machine actively refused it. Start ComfyUI, or set COMFY_URL."
-      ]
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 539
     },
     {
       "id": "marrow-lamp",
       "name": "Marrow lamp",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
       "model": "trellis_2_int8_convrot",
       "seed": 1,
       "image": "games/heartstream/assets/objects/marrow-lamp.jpg",
       "image_sha256": "e66742a2fac187eaac7e6c230b5485e51fbe5181d656db0f5aa8b06b0e2e5a41",
       "output": "build/models/heartstream/marrow-lamp.glb",
-      "status": "failed",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699549,
+      "size_m_requested": [
+        0.3,
+        0.3,
+        0.9
+      ],
+      "dimensions_m": [
+        0.562,
+        0.709,
+        0.9
+      ],
       "problems": [
-        "comfy: request   trellis2, seeds [1, 2, 3, 4], background removed, image sha256 e66742a2fac187ea, server 127.0.0.1:8189\nqueued    prompt 78a9967d-31ed-4246-a0c9-3c14a13df99a\nREFUSED   ComfyUI_00064.glb: got 53477376 bytes of 55075768. The prompt 78a9967d-31ed-4246-a0c9-3c14a13df99a is done on the server; run `status 78a9967d-31ed-4246-a0c9-3c14a13df99a` and download again."
-      ]
+        "proportions differ from size_m (axis ratios 0.53, 0.42, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 697
+    },
+    {
+      "id": "membrane-pillar",
+      "name": "Membrane pillar",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/heartstream/assets/objects/membrane-pillar.jpg",
+      "image_sha256": "2a07b5b2eb518f3199f548c948d90b3cf17ab35da2210d25f220cfff8b2103b2",
+      "output": "build/models/heartstream/membrane-pillar.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699562,
+      "size_m_requested": [
+        0.8,
+        0.8,
+        3.0
+      ],
+      "dimensions_m": [
+        2.071,
+        1.976,
+        3.0
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.39, 0.40, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 816
     },
     {
       "id": "oar",
@@ -284,47 +599,147 @@
     {
       "id": "old-carved-hook",
       "name": "Old carved hook",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
       "model": "trellis_2_int8_convrot",
       "seed": 1,
       "image": "games/heartstream/assets/objects/old-carved-hook.jpg",
       "image_sha256": "b36dbc39837e15915cd545bb273ce5909d00e92cb60816b047c8fd6e1cc8b036",
       "output": "build/models/heartstream/old-carved-hook.glb",
-      "status": "failed",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699974,
+      "size_m_requested": [
+        0.06,
+        0.03,
+        0.22
+      ],
+      "dimensions_m": [
+        0.217,
+        0.043,
+        0.22
+      ],
       "problems": [
-        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8189: [WinError 10061] No connection could be made because the target machine actively refused it. Start ComfyUI, or set COMFY_URL."
-      ]
+        "proportions differ from size_m (axis ratios 0.28, 0.70, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 577
+    },
+    {
+      "id": "raft",
+      "name": "The Ceremonial Raft",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/heartstream/assets/objects/raft.jpg",
+      "image_sha256": "a0354cf7e21df13472062c60970130b7bfbff4241bc54ce7b48aa63b648c8377",
+      "output": "build/models/heartstream/raft.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699507,
+      "size_m_requested": [
+        3.2,
+        7.0,
+        1.8
+      ],
+      "dimensions_m": [
+        3.107,
+        7.0,
+        3.874
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.03, 1.00, 0.46); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 372
     },
     {
       "id": "resonant-growth",
       "name": "Resonant growth",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
       "model": "trellis_2_int8_convrot",
       "seed": 1,
       "image": "games/heartstream/assets/objects/resonant-growth.jpg",
       "image_sha256": "6ab1eae5d5784602e1b0a4f8f91baca3878b9510bcc7a92816e00d47e321071d",
       "output": "build/models/heartstream/resonant-growth.glb",
-      "status": "failed",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699463,
+      "size_m_requested": [
+        0.9,
+        0.9,
+        2.2
+      ],
+      "dimensions_m": [
+        1.49,
+        1.501,
+        2.2
+      ],
       "problems": [
-        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8189: [WinError 10061] No connection could be made because the target machine actively refused it. Start ComfyUI, or set COMFY_URL."
-      ]
+        "proportions differ from size_m (axis ratios 0.60, 0.60, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 771
     },
     {
       "id": "river-boulder",
       "name": "Tissue boulder",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
       "model": "trellis_2_int8_convrot",
       "seed": 1,
       "image": "games/heartstream/assets/objects/river-boulder.jpg",
       "image_sha256": "948f4b1723844fcf1c17440a340d336cddf782a22b3b045ecb046639629ad948",
       "output": "build/models/heartstream/river-boulder.glb",
-      "status": "failed",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699570,
+      "size_m_requested": [
+        2.5,
+        2.0,
+        1.6
+      ],
+      "dimensions_m": [
+        2.5,
+        2.494,
+        2.287
+      ],
       "problems": [
-        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8189: [WinError 10061] No connection could be made because the target machine actively refused it. Start ComfyUI, or set COMFY_URL."
-      ]
+        "proportions differ from size_m (axis ratios 1.00, 0.80, 0.70); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 534
+    },
+    {
+      "id": "sleeping-pod",
+      "name": "Sleeping alcove pod",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/heartstream/assets/objects/sleeping-pod.jpg",
+      "image_sha256": "d5c815d0fc684f99f2ae48e054ca316711254581a505781ce774e3d88499c446",
+      "output": "build/models/heartstream/sleeping-pod.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699506,
+      "size_m_requested": [
+        1.0,
+        2.0,
+        0.8
+      ],
+      "dimensions_m": [
+        1.998,
+        2.0,
+        1.704
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.50, 1.00, 0.47); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1230
     }
   ]
 }

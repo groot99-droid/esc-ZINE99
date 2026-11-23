@@ -33,22 +33,36 @@
     {
       "id": "brass-rose",
       "name": "Brass rose (peephole)",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
       "model": "trellis_2_int8_convrot",
       "seed": 1,
       "image": "games/behind-the-peephole/assets/objects/brass-rose.jpg",
       "image_sha256": "682c812e9d7979e9125dd9630a3440ac49c1d314d12e94b39bf071528453c68f",
       "output": "build/models/behind-the-peephole/brass-rose.glb",
-      "status": "failed",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 698953,
+      "size_m_requested": [
+        0.09,
+        0.04,
+        0.09
+      ],
+      "dimensions_m": [
+        0.09,
+        0.09,
+        0.029
+      ],
       "problems": [
-        "comfy: eds [1, 2, 3, 4], background removed, image sha256 682c812e9d7979e9, server 127.0.0.1:8189\nqueued    prompt 03d42859-5edd-45e7-b8d1-b43deb99ef82\nREFUSED   the workflow failed on the server: KSampler: Allocation on device 0 would exceed allowed memory. (out of memory)\nCurrently allocated     : 1.34 GiB\nRequested               : 877.00 MiB\nDevice limit            : 31.36 GiB\nFree (according to CUDA)"
-      ]
+        "proportions differ from size_m (axis ratios 1.00, 0.44, 3.06); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 594
     },
     {
       "id": "card-deck",
       "name": "Deck of cards",
-      "date": "2026-11-21",
+      "date": "2026-11-23",
       "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
       "model": "trellis_2_int8_convrot",
       "seed": 1,
@@ -57,23 +71,36 @@
       "output": "build/models/behind-the-peephole/card-deck.glb",
       "status": "failed",
       "problems": [
-        "comfy: eeds [1, 2, 3, 4], background removed, image sha256 edd7ad1a721695dc, server 127.0.0.1:8190\nqueued    prompt 8f0a65e0-22c6-4453-a0b6-d379dca4a43a\nREFUSED   the workflow failed on the server: KSampler: Allocation on device 0 would exceed allowed memory. (out of memory)\nCurrently allocated     : 3.90 GiB\nRequested               : 4.87 GiB\nDevice limit            : 31.36 GiB\nFree (according to CUDA):"
+        "comfy:  4], background removed, image sha256 edd7ad1a721695dc, server 127.0.0.1:8188\nqueued    prompt b022447e-1c5e-4cd8-b869-f73965042b61\nREFUSED   the workflow failed on the server: VaeDecodeShapeTrellis: Allocation on device 0 would exceed allowed memory. (out of memory)\nCurrently allocated     : 29.10 GiB\nRequested               : 4.51 GiB\nDevice limit            : 31.36 GiB\nFree (according to CUDA):"
       ]
     },
     {
       "id": "card-table",
       "name": "Card table",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
       "model": "trellis_2_int8_convrot",
       "seed": 1,
       "image": "games/behind-the-peephole/assets/objects/card-table.jpg",
       "image_sha256": "42edfc3a164e25e96f5f83f6c7a94a719cffaf2daa856b87e0a077948b1b5897",
       "output": "build/models/behind-the-peephole/card-table.glb",
-      "status": "failed",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 698645,
+      "size_m_requested": [
+        0.76,
+        0.76,
+        0.72
+      ],
+      "dimensions_m": [
+        0.76,
+        0.768,
+        0.787
+      ],
       "problems": [
-        "comfy: eds [1, 2, 3, 4], background removed, image sha256 42edfc3a164e25e9, server 127.0.0.1:8189\nqueued    prompt ae04ebfc-ba9f-4348-b050-3ad6d79c0e0f\nREFUSED   the workflow failed on the server: KSampler: Allocation on device 0 would exceed allowed memory. (out of memory)\nCurrently allocated     : 2.85 GiB\nRequested               : 108.74 MiB\nDevice limit            : 31.36 GiB\nFree (according to CUDA)"
-      ]
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1103
     },
     {
       "id": "chandelier",
@@ -113,25 +140,52 @@
       "image": "games/behind-the-peephole/assets/objects/chute-box.jpg",
       "image_sha256": "96d34f1a3eda70c4af6fce9f4fafef44a2aa102f04453da7d94ee7bc2410ee3b",
       "output": "build/models/behind-the-peephole/chute-box.glb",
-      "status": "failed",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 698567,
+      "size_m_requested": [
+        0.9,
+        0.6,
+        0.8
+      ],
+      "dimensions_m": [
+        0.9,
+        0.594,
+        0.964
+      ],
       "problems": [
-        "comfy: request   trellis2, seeds [1, 2, 3, 4], background removed, image sha256 96d34f1a3eda70c4, server 127.0.0.1:8188\nqueued    prompt f73064f7-9a21-440a-98b6-665ff62a8427\nREFUSED   ComfyUI_00073.glb: got 40075264 bytes of 54585756. The prompt f73064f7-9a21-440a-98b6-665ff62a8427 is done on the server; run `status f73064f7-9a21-440a-98b6-665ff62a8427` and download again."
-      ]
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 880
     },
     {
       "id": "chute-hatch",
       "name": "Chute hatch",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
       "model": "trellis_2_int8_convrot",
       "seed": 1,
       "image": "games/behind-the-peephole/assets/objects/chute-hatch.jpg",
       "image_sha256": "16c0493f1b1996bab53bf56199ce9ff797e273fbc671556d614e8ac3185af0b8",
       "output": "build/models/behind-the-peephole/chute-hatch.glb",
-      "status": "failed",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 698921,
+      "size_m_requested": [
+        0.45,
+        0.2,
+        0.45
+      ],
+      "dimensions_m": [
+        0.45,
+        0.23,
+        0.461
+      ],
       "problems": [
-        "comfy: eds [1, 2, 3, 4], background removed, image sha256 16c0493f1b1996ba, server 127.0.0.1:8189\nqueued    prompt d1cb8e70-5c03-4f33-9235-68ca0aefdc24\nREFUSED   the workflow failed on the server: KSampler: Allocation on device 0 would exceed allowed memory. (out of memory)\nCurrently allocated     : 2.72 GiB\nRequested               : 255.99 MiB\nDevice limit            : 31.36 GiB\nFree (according to CUDA)"
-      ]
+        "rotated 90 deg about Z so its long side matches size_m",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 585
     },
     {
       "id": "coat-stand",
@@ -279,17 +333,32 @@
     {
       "id": "evening-paper",
       "name": "Evening paper",
-      "date": "2026-11-22",
+      "date": "2026-11-23",
       "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
       "model": "trellis_2_int8_convrot",
       "seed": 1,
       "image": "games/behind-the-peephole/assets/objects/evening-paper.jpg",
       "image_sha256": "f9e096aa0c63c2318f10cabd19fe53cfca47fc04946c2a504d12646891d05d55",
       "output": "build/models/behind-the-peephole/evening-paper.glb",
-      "status": "failed",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699815,
+      "size_m_requested": [
+        0.3,
+        0.4,
+        0.01
+      ],
+      "dimensions_m": [
+        0.335,
+        0.4,
+        0.046
+      ],
       "problems": [
-        "comfy:  4], background removed, image sha256 f9e096aa0c63c231, server 127.0.0.1:8188\nqueued    prompt c93bd53e-0938-4f13-be13-a8c57a9ebb96\nREFUSED   the workflow failed on the server: VaeDecodeShapeTrellis: Allocation on device 0 would exceed allowed memory. (out of memory)\nCurrently allocated     : 15.01 GiB\nRequested               : 4.58 GiB\nDevice limit            : 31.36 GiB\nFree (according to CUDA):"
-      ]
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 0.89, 1.00, 0.22); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 986
     },
     {
       "id": "iron-lamp-post",
@@ -406,17 +475,32 @@
     {
       "id": "logbook",
       "name": "The logbook",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
       "model": "trellis_2_int8_convrot",
       "seed": 1,
       "image": "games/behind-the-peephole/assets/objects/logbook.jpg",
       "image_sha256": "bd9aa59e591ecf4759e0ba26aa36f0f1e75558ee61b2f8c51a25fb6a73cddda6",
       "output": "build/models/behind-the-peephole/logbook.glb",
-      "status": "failed",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 699449,
+      "size_m_requested": [
+        0.24,
+        0.32,
+        0.03
+      ],
+      "dimensions_m": [
+        0.235,
+        0.32,
+        0.054
+      ],
       "problems": [
-        "comfy: eeds [1, 2, 3, 4], background removed, image sha256 bd9aa59e591ecf47, server 127.0.0.1:8189\nqueued    prompt e53c3d48-80fa-4763-a92c-072314d9224d\nREFUSED   the workflow failed on the server: KSampler: Allocation on device 0 would exceed allowed memory. (out of memory)\nCurrently allocated     : 1.43 GiB\nRequested               : 1.00 GiB\nDevice limit            : 31.36 GiB\nFree (according to CUDA):"
-      ]
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 1.02, 1.00, 0.55); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 259
     },
     {
       "id": "lost-property-cabinet",
@@ -479,17 +563,30 @@
     {
       "id": "maids-trolley",
       "name": "Maid's trolley",
-      "date": "2026-11-21",
+      "date": "2026-11-23",
       "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
       "model": "trellis_2_int8_convrot",
       "seed": 1,
       "image": "games/behind-the-peephole/assets/objects/maids-trolley.jpg",
       "image_sha256": "4c26c768918a986a4f3826b336f8a547cbcd3dc59f1286c4676314f92e76dea0",
       "output": "build/models/behind-the-peephole/maids-trolley.glb",
-      "status": "failed",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699928,
+      "size_m_requested": [
+        1.0,
+        0.5,
+        1.0
+      ],
+      "dimensions_m": [
+        1.0,
+        0.448,
+        0.875
+      ],
       "problems": [
-        "comfy: request   trellis2, seeds [1, 2, 3, 4], background removed, image sha256 4c26c768918a986a, server 127.0.0.1:8190\nqueued    prompt 01e71456-e735-4576-8da1-19d0692b2aec\nREFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8190: timed out. Start ComfyUI, or set COMFY_URL."
-      ]
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1172
     },
     {
       "id": "mooring-bollard",
@@ -523,17 +620,31 @@
     {
       "id": "noticeboard",
       "name": "Staff noticeboard",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
       "model": "trellis_2_int8_convrot",
       "seed": 1,
       "image": "games/behind-the-peephole/assets/objects/noticeboard.jpg",
       "image_sha256": "102e22b9f928b1a0bbad5106ce4aadf39de9b33cccfe83143e3f8077b674dd25",
       "output": "build/models/behind-the-peephole/noticeboard.glb",
-      "status": "failed",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699661,
+      "size_m_requested": [
+        0.6,
+        0.05,
+        0.8
+      ],
+      "dimensions_m": [
+        0.903,
+        0.119,
+        0.8
+      ],
       "problems": [
-        "comfy: , 4], background removed, image sha256 102e22b9f928b1a0, server 127.0.0.1:8190\nqueued    prompt 6b1e8d3b-aae9-4956-9242-bd362ae9dd97\nREFUSED   the workflow failed on the server: BakeTextureFromVoxel: Allocation on device 0 would exceed allowed memory. (out of memory)\nCurrently allocated     : 2.37 GiB\nRequested               : 118.64 MiB\nDevice limit            : 31.36 GiB\nFree (according to CUDA)"
-      ]
+        "proportions differ from size_m (axis ratios 0.66, 0.42, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 594
     },
     {
       "id": "office-chair",
@@ -567,47 +678,88 @@
     {
       "id": "reception-desk",
       "name": "Reception desk",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
       "model": "trellis_2_int8_convrot",
       "seed": 1,
       "image": "games/behind-the-peephole/assets/objects/reception-desk.jpg",
       "image_sha256": "071328e9c9930282ab60a57bad933753124460ba744ee792a8454b631da44c7d",
       "output": "build/models/behind-the-peephole/reception-desk.glb",
-      "status": "failed",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699487,
+      "size_m_requested": [
+        4.5,
+        0.9,
+        1.15
+      ],
+      "dimensions_m": [
+        4.5,
+        1.586,
+        1.783
+      ],
       "problems": [
-        "comfy: eds [1, 2, 3, 4], background removed, image sha256 071328e9c9930282, server 127.0.0.1:8189\nqueued    prompt baa0fda0-e053-49cd-8d8e-2c69699f285c\nREFUSED   the workflow failed on the server: KSampler: Allocation on device 0 would exceed allowed memory. (out of memory)\nCurrently allocated     : 2.66 GiB\nRequested               : 128.00 MiB\nDevice limit            : 31.36 GiB\nFree (according to CUDA)"
-      ]
+        "proportions differ from size_m (axis ratios 1.00, 0.57, 0.65); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 597
     },
     {
       "id": "safe",
       "name": "Floor safe",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
       "model": "trellis_2_int8_convrot",
       "seed": 1,
       "image": "games/behind-the-peephole/assets/objects/safe.jpg",
       "image_sha256": "99a996014b01b59bd330900ce75479fb752f5e89e84576465fec754961602f8b",
       "output": "build/models/behind-the-peephole/safe.glb",
-      "status": "failed",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 698721,
+      "size_m_requested": [
+        0.6,
+        0.6,
+        0.9
+      ],
+      "dimensions_m": [
+        0.632,
+        0.66,
+        0.9
+      ],
       "problems": [
-        "comfy: eds [1, 2, 3, 4], background removed, image sha256 99a996014b01b59b, server 127.0.0.1:8189\nqueued    prompt e62e3016-3d56-4ee7-8ada-2bc290d934f9\nREFUSED   the workflow failed on the server: KSampler: Allocation on device 0 would exceed allowed memory. (out of memory)\nCurrently allocated     : 2.69 GiB\nRequested               : 128.00 MiB\nDevice limit            : 31.36 GiB\nFree (according to CUDA)"
-      ]
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 363
     },
     {
       "id": "staff-door",
       "name": "Staff door",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
       "model": "trellis_2_int8_convrot",
       "seed": 1,
       "image": "games/behind-the-peephole/assets/objects/staff-door.jpg",
       "image_sha256": "3de456025bb817004e8bdff2cc5e31982e3654d6f1a5545e5f4c15a7582d90a3",
       "output": "build/models/behind-the-peephole/staff-door.glb",
-      "status": "failed",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699716,
+      "size_m_requested": [
+        1.0,
+        0.15,
+        2.1
+      ],
+      "dimensions_m": [
+        1.26,
+        0.308,
+        2.1
+      ],
       "problems": [
-        "comfy: eds [1, 2, 3, 4], background removed, image sha256 3de456025bb81700, server 127.0.0.1:8189\nqueued    prompt 821c05c7-c926-40b3-bd14-11a836a8395e\nREFUSED   the workflow failed on the server: KSampler: Allocation on device 0 would exceed allowed memory. (out of memory)\nCurrently allocated     : 2.43 GiB\nRequested               : 128.00 MiB\nDevice limit            : 31.36 GiB\nFree (according to CUDA)"
-      ]
+        "proportions differ from size_m (axis ratios 0.79, 0.49, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 318
     },
     {
       "id": "telephone",
@@ -670,7 +822,7 @@
     {
       "id": "wall-sconce",
       "name": "Wall sconce",
-      "date": "2026-11-21",
+      "date": "2026-11-23",
       "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
       "model": "trellis_2_int8_convrot",
       "seed": 1,
@@ -679,7 +831,7 @@
       "output": "build/models/behind-the-peephole/wall-sconce.glb",
       "status": "failed",
       "problems": [
-        "comfy: eds [1, 2, 3, 4], background removed, image sha256 fb064f01aa280866, server 127.0.0.1:8189\nqueued    prompt 466784d4-4a53-4de5-871e-02384e208d1f\nREFUSED   the workflow failed on the server: KSampler: Allocation on device 0 would exceed allowed memory. (out of memory)\nCurrently allocated     : 2.70 GiB\nRequested               : 128.00 MiB\nDevice limit            : 31.36 GiB\nFree (according to CUDA)"
+        "comfy: .unlink()\n    ~~~~~~~~~~~^^\n  File \"C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\pathlib\\_local.py\", line 746, in unlink\n    os.unlink(self)\n    ~~~~~~~~~^^^^^^\nFileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\\\Users\\\\utopi\\\\esc-ZINE99\\\\build\\\\models\\\\behind-the-peephole\\\\raw\\\\wall-sconce\\\\ComfyUI_00001.glb.part'"
       ]
     }
   ]

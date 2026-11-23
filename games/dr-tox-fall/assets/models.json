@@ -31,6 +31,36 @@
       "seconds": 520
     },
     {
+      "id": "annex-wall-monitor",
+      "name": "Annex wall monitor or screen for the file and the log",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-fall/assets/objects/annex-wall-monitor.jpg",
+      "image_sha256": "881e60dbcc930d2ec02e2a570c21c491e0f39e8a3f1a85cdacf8c0889cb4117c",
+      "output": "build/models/dr-tox-fall/annex-wall-monitor.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699908,
+      "size_m_requested": [
+        0.9,
+        0.1,
+        0.55
+      ],
+      "dimensions_m": [
+        0.9,
+        0.042,
+        0.49
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 2.39, 1.12); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 822,
+      "source": "realism list (reference image generated with Flux schnell in ComfyUI)"
+    },
+    {
       "id": "balcony-rail",
       "name": "Balcony rail",
       "date": "2026-11-21",
@@ -58,6 +88,35 @@
         "front direction (-y) not checked by eye"
       ],
       "seconds": 329
+    },
+    {
+      "id": "banquet-chair",
+      "name": "Banquet chairs (slim, wooden, cushioned)",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-fall/assets/objects/banquet-chair.jpg",
+      "image_sha256": "eaffd71dad09373c1a648baae7b4c77281e71a3ee3a9278eba2c9d09a9ec554c",
+      "output": "build/models/dr-tox-fall/banquet-chair.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699550,
+      "size_m_requested": [
+        0.45,
+        0.5,
+        0.9
+      ],
+      "dimensions_m": [
+        0.541,
+        0.548,
+        0.9
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 377,
+      "source": "realism list (reference image generated with Flux schnell in ComfyUI)"
     },
     {
       "id": "batch-bench",
@@ -783,6 +842,66 @@
       "seconds": 521
     },
     {
+      "id": "roof-turbine-vent",
+      "name": "Roof turbine vents and small chimney caps (round)",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-fall/assets/objects/roof-turbine-vent.jpg",
+      "image_sha256": "53570cf4b21e85649b1807cf6823c629c92c0eb221f879ec5219b421413886f7",
+      "output": "build/models/dr-tox-fall/roof-turbine-vent.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699446,
+      "size_m_requested": [
+        0.6,
+        0.6,
+        0.7
+      ],
+      "dimensions_m": [
+        2.494,
+        2.495,
+        0.7
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.24, 0.24, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 710,
+      "source": "realism list (reference image generated with Flux schnell in ComfyUI)"
+    },
+    {
+      "id": "sandbag-pile",
+      "name": "Sandbags",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-fall/assets/objects/sandbag-pile.jpg",
+      "image_sha256": "90808c9a592afc193fe73b32ead48ea2243f7c734bf9eea0a4c4dba480770d29",
+      "output": "build/models/dr-tox-fall/sandbag-pile.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699892,
+      "size_m_requested": [
+        0.9,
+        0.6,
+        0.5
+      ],
+      "dimensions_m": [
+        0.9,
+        0.853,
+        0.261
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.70, 1.91); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 968,
+      "source": "realism list (reference image generated with Flux schnell in ComfyUI)"
+    },
+    {
       "id": "service-door",
       "name": "Service door",
       "date": "2026-11-21",
@@ -924,6 +1043,67 @@
         "front direction (-y) not checked by eye"
       ],
       "seconds": 633
+    },
+    {
+      "id": "steel-shelving-rack",
+      "name": "Steel shelving racks with binders, cardboard boxes, document boxes",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-fall/assets/objects/steel-shelving-rack.jpg",
+      "image_sha256": "50a0a883782abd4d8578f0c920f9ac9b3a08616d6ce33674e3b4c292c9cf899b",
+      "output": "build/models/dr-tox-fall/steel-shelving-rack.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699752,
+      "size_m_requested": [
+        1.3,
+        0.5,
+        2.0
+      ],
+      "dimensions_m": [
+        1.261,
+        1.018,
+        2.0
+      ],
+      "problems": [
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 1.03, 0.49, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1050,
+      "source": "realism list (reference image generated with Flux schnell in ComfyUI)"
+    },
+    {
+      "id": "tube-light-bar",
+      "name": "Tube light bar (twin tube, bare, wired)",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-fall/assets/objects/tube-light-bar.jpg",
+      "image_sha256": "8d53d323926b360a3c955d1e78d11ad499ec245c892f6938f03a07259a3252a4",
+      "output": "build/models/dr-tox-fall/tube-light-bar.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 644729,
+      "size_m_requested": [
+        1.3,
+        0.12,
+        0.1
+      ],
+      "dimensions_m": [
+        1.3,
+        0.142,
+        0.622
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.84, 0.16); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 310,
+      "source": "realism list (reference image generated with Flux schnell in ComfyUI)"
     },
     {
       "id": "vent-stack",

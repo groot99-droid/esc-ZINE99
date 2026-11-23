@@ -2,19 +2,61 @@
   "tool": "ComfyUI 0.46.2, core Trellis 2 nodes",
   "models": [
     {
+      "id": "balance-rope",
+      "name": "The Balance Rope",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/people-of-the-bark/assets/objects/balance-rope.jpg",
+      "image_sha256": "7b18d7f17896dd46ea00c26f8079fcd78478f6354e585b7ccaf8933d421bb275",
+      "output": "build/models/people-of-the-bark/balance-rope.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699916,
+      "size_m_requested": [
+        0.03,
+        0.004,
+        0.002
+      ],
+      "dimensions_m": [
+        0.03,
+        0.026,
+        0.003
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.15, 0.65); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 338
+    },
+    {
       "id": "battlement-slot",
       "name": "Battlement slot",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
       "model": "trellis_2_int8_convrot",
       "seed": 1,
       "image": "games/people-of-the-bark/assets/objects/battlement-slot.jpg",
       "image_sha256": "6075f28ccf2d71c127555b5853053a7b66640dd873e72fd708358444c91db256",
       "output": "build/models/people-of-the-bark/battlement-slot.glb",
-      "status": "failed",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699777,
+      "size_m_requested": [
+        0.006,
+        0.004,
+        0.005
+      ],
+      "dimensions_m": [
+        0.006,
+        0.003,
+        0.004
+      ],
       "problems": [
-        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8189: [WinError 10061] No connection could be made because the target machine actively refused it. Start ComfyUI, or set COMFY_URL."
-      ]
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 893
     },
     {
       "id": "chant-drum",
@@ -43,6 +85,22 @@
         "front direction (-y) not checked by eye"
       ],
       "seconds": 1589
+    },
+    {
+      "id": "cover-hollow",
+      "name": "Cover hollow",
+      "date": "2026-11-23",
+      "status": "not_built",
+      "image": "games/people-of-the-bark/assets/objects/cover-hollow.jpg",
+      "size_m_requested": [
+        0.006,
+        0.004,
+        0.004
+      ],
+      "source": "model_requests.json",
+      "problems": [
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
+      ]
     },
     {
       "id": "dwelling",
@@ -76,32 +134,278 @@
     {
       "id": "edge-stake",
       "name": "Edge stake",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
       "model": "trellis_2_int8_convrot",
       "seed": 1,
       "image": "games/people-of-the-bark/assets/objects/edge-stake.jpg",
       "image_sha256": "e331af885035c01e717244dd023834a864823b5f7c7001a6a486727c076adee1",
       "output": "build/models/people-of-the-bark/edge-stake.glb",
-      "status": "failed",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 293302,
+      "size_m_requested": [
+        0.0015,
+        0.0015,
+        0.006
+      ],
+      "dimensions_m": [
+        0.002,
+        0.0,
+        0.006
+      ],
       "problems": [
-        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8189: [WinError 10061] No connection could be made because the target machine actively refused it. Start ComfyUI, or set COMFY_URL."
+        "proportions differ from size_m (axis ratios 0.80, 3.54, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 274
+    },
+    {
+      "id": "falling-leaf",
+      "name": "The falling leaf",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/people-of-the-bark/assets/objects/falling-leaf.jpg",
+      "image_sha256": "e8e86ea4bc909299859d80b1a2576a5731abf8ea2d203933ab042bba2e218d96",
+      "output": "build/models/people-of-the-bark/falling-leaf.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699434,
+      "size_m_requested": [
+        0.08,
+        0.01,
+        0.06
+      ],
+      "dimensions_m": [
+        0.08,
+        0.073,
+        0.062
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.14, 0.97); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 781
+    },
+    {
+      "id": "fence-panel",
+      "name": "Fence panel",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/people-of-the-bark/assets/objects/fence-panel.jpg",
+      "image_sha256": "69fce11c83dacb87b0554d4016068b5b42173a73e8ac648665a368e010ca26cb",
+      "output": "build/models/people-of-the-bark/fence-panel.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699640,
+      "size_m_requested": [
+        1.8,
+        0.1,
+        1.0
+      ],
+      "dimensions_m": [
+        1.8,
+        0.172,
+        1.267
+      ],
+      "problems": [
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 1.00, 0.58, 0.79); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 492
+    },
+    {
+      "id": "garden-shed",
+      "name": "Garden shed",
+      "date": "2026-11-23",
+      "status": "not_built",
+      "image": "games/people-of-the-bark/assets/objects/garden-shed.jpg",
+      "size_m_requested": [
+        2.4,
+        1.8,
+        2.2
+      ],
+      "source": "model_requests.json",
+      "problems": [
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
       ]
+    },
+    {
+      "id": "garden-swing",
+      "name": "Rope swing",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/people-of-the-bark/assets/objects/garden-swing.jpg",
+      "image_sha256": "41673d38c8471e9d1ee273aea6a18c85559b0a356a67b88390bada73aad61246",
+      "output": "build/models/people-of-the-bark/garden-swing.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699910,
+      "size_m_requested": [
+        0.6,
+        0.2,
+        2.0
+      ],
+      "dimensions_m": [
+        1.424,
+        0.566,
+        2.0
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.42, 0.35, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 658
+    },
+    {
+      "id": "knot-sanctum",
+      "name": "Knot Sanctum",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/people-of-the-bark/assets/objects/knot-sanctum.jpg",
+      "image_sha256": "a1aac68d2d71b073f3a14c32ca6d85677e65e6e657099e3e9d051ce38ea2e8dc",
+      "output": "build/models/people-of-the-bark/knot-sanctum.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699401,
+      "size_m_requested": [
+        0.012,
+        0.008,
+        0.014
+      ],
+      "dimensions_m": [
+        0.014,
+        0.008,
+        0.014
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 736
+    },
+    {
+      "id": "knot-shelter-door",
+      "name": "Knot shelter door",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/people-of-the-bark/assets/objects/knot-shelter-door.jpg",
+      "image_sha256": "43e495683261feea9b18bfc49f05c415959f1cc0ef75bc9646809975b79db0b3",
+      "output": "build/models/people-of-the-bark/knot-shelter-door.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699349,
+      "size_m_requested": [
+        0.004,
+        0.001,
+        0.006
+      ],
+      "dimensions_m": [
+        0.006,
+        0.001,
+        0.006
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.66, 0.73, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1434
+    },
+    {
+      "id": "lichen-lantern",
+      "name": "Glow-lichen lantern",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/people-of-the-bark/assets/objects/lichen-lantern.jpg",
+      "image_sha256": "c576f1dc953200d512768953d43c91dec6324c37f1ff5885b0367dfffb394ead",
+      "output": "build/models/people-of-the-bark/lichen-lantern.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699689,
+      "size_m_requested": [
+        0.002,
+        0.002,
+        0.008
+      ],
+      "dimensions_m": [
+        0.004,
+        0.003,
+        0.008
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.56, 0.62, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 574
+    },
+    {
+      "id": "pells-lantern",
+      "name": "Pell's lantern",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/people-of-the-bark/assets/objects/pells-lantern.jpg",
+      "image_sha256": "2849faf8a2bd28e0b6b6425de3c8f9c245c95723be57e50855607064b765e991",
+      "output": "build/models/people-of-the-bark/pells-lantern.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699177,
+      "size_m_requested": [
+        0.003,
+        0.003,
+        0.005
+      ],
+      "dimensions_m": [
+        0.003,
+        0.003,
+        0.005
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 549
     },
     {
       "id": "rain-bead",
       "name": "Rain bead",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
       "model": "trellis_2_int8_convrot",
       "seed": 1,
       "image": "games/people-of-the-bark/assets/objects/rain-bead.jpg",
       "image_sha256": "4c78600c1802b46abb060b3fd76361e4c37776fb1cd598a603b1c25d8b9f218a",
       "output": "build/models/people-of-the-bark/rain-bead.glb",
-      "status": "failed",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 698319,
+      "size_m_requested": [
+        0.008,
+        0.008,
+        0.007
+      ],
+      "dimensions_m": [
+        0.008,
+        0.008,
+        0.011
+      ],
       "problems": [
-        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8189: [WinError 10061] No connection could be made because the target machine actively refused it. Start ComfyUI, or set COMFY_URL."
-      ]
+        "proportions differ from size_m (axis ratios 1.00, 1.00, 0.62); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 784
     },
     {
       "id": "record-hall",
@@ -164,92 +468,335 @@
     {
       "id": "sap-cup",
       "name": "Sap cup",
-      "date": "2026-11-21",
+      "date": "2026-11-23",
+      "status": "not_built",
+      "image": "games/people-of-the-bark/assets/objects/sap-cup.jpg",
+      "size_m_requested": [
+        0.004,
+        0.004,
+        0.002
+      ],
+      "source": "model_requests.json",
+      "problems": [
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
+      ]
+    },
+    {
+      "id": "sap-jar",
+      "name": "Sap jar",
+      "date": "2026-11-22",
       "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
       "model": "trellis_2_int8_convrot",
       "seed": 1,
-      "image": "games/people-of-the-bark/assets/objects/sap-cup.jpg",
-      "image_sha256": "6904e61a9eb46a4cdf9bcae235f9884cc702fe25e871d4821e0ba70b5adc20cb",
-      "output": "build/models/people-of-the-bark/sap-cup.glb",
-      "status": "failed",
+      "image": "games/people-of-the-bark/assets/objects/sap-jar.jpg",
+      "image_sha256": "c73a0d31bf0ca88c012cba6968d41eaaf5c8d6c6908e0719637d9b27e90b7643",
+      "output": "build/models/people-of-the-bark/sap-jar.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699505,
+      "size_m_requested": [
+        0.004,
+        0.004,
+        0.005
+      ],
+      "dimensions_m": [
+        0.004,
+        0.004,
+        0.005
+      ],
       "problems": [
-        "comfy: , 4], background removed, image sha256 6904e61a9eb46a4c, server 127.0.0.1:8190\nqueued    prompt 0bba5b6c-7a75-471a-82d4-91cc83bce1a0\nREFUSED   the workflow failed on the server: BakeTextureFromVoxel: Allocation on device 0 would exceed allowed memory. (out of memory)\nCurrently allocated     : 9.11 GiB\nRequested               : 272.93 MiB\nDevice limit            : 31.36 GiB\nFree (according to CUDA)"
-      ]
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 703
     },
     {
       "id": "sap-tap",
       "name": "Sap tap",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
       "model": "trellis_2_int8_convrot",
       "seed": 1,
       "image": "games/people-of-the-bark/assets/objects/sap-tap.jpg",
       "image_sha256": "87f4c2de305e4a3a8fba780e90f927f02fd4548cd662de0985119b748fd38518",
       "output": "build/models/people-of-the-bark/sap-tap.glb",
-      "status": "failed",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699581,
+      "size_m_requested": [
+        0.003,
+        0.004,
+        0.004
+      ],
+      "dimensions_m": [
+        0.002,
+        0.004,
+        0.006
+      ],
       "problems": [
-        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8189: [WinError 10061] No connection could be made because the target machine actively refused it. Start ComfyUI, or set COMFY_URL."
-      ]
+        "proportions differ from size_m (axis ratios 1.24, 1.00, 0.68); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 381
+    },
+    {
+      "id": "scroll-frame",
+      "name": "Tremor scroll frame",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/people-of-the-bark/assets/objects/scroll-frame.jpg",
+      "image_sha256": "9a3de0415a976447891c042eadcd5db4576fa1fefa0a55ed08650ec84915c800",
+      "output": "build/models/people-of-the-bark/scroll-frame.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699321,
+      "size_m_requested": [
+        0.008,
+        0.004,
+        0.008
+      ],
+      "dimensions_m": [
+        0.008,
+        0.005,
+        0.007
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1111
     },
     {
       "id": "silk-anchor",
       "name": "Silk anchor point",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
       "model": "trellis_2_int8_convrot",
       "seed": 1,
       "image": "games/people-of-the-bark/assets/objects/silk-anchor.jpg",
       "image_sha256": "868787f4684046eb7d4b5f5a133fee02d804b28e74f74972c68a128d8012bf3a",
       "output": "build/models/people-of-the-bark/silk-anchor.glb",
-      "status": "failed",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699718,
+      "size_m_requested": [
+        0.003,
+        0.003,
+        0.004
+      ],
+      "dimensions_m": [
+        0.004,
+        0.001,
+        0.004
+      ],
       "problems": [
-        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8189: [WinError 10061] No connection could be made because the target machine actively refused it. Start ComfyUI, or set COMFY_URL."
-      ]
+        "proportions differ from size_m (axis ratios 0.75, 2.26, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 581
+    },
+    {
+      "id": "spear-rack",
+      "name": "Splinter spear rack",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/people-of-the-bark/assets/objects/spear-rack.jpg",
+      "image_sha256": "4cc04820ece1f998feb751a7ee0ed3a15ea59ee82651ba12d55d412749a89a3f",
+      "output": "build/models/people-of-the-bark/spear-rack.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699739,
+      "size_m_requested": [
+        0.008,
+        0.003,
+        0.012
+      ],
+      "dimensions_m": [
+        0.008,
+        0.005,
+        0.012
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.96, 0.57, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 740
+    },
+    {
+      "id": "temple-altar",
+      "name": "First Ring altar",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/people-of-the-bark/assets/objects/temple-altar.jpg",
+      "image_sha256": "e5797ad370ba7869f1141c50e0ae65fbc812edcfd5a0ecd583fcbbac8fbbf36c",
+      "output": "build/models/people-of-the-bark/temple-altar.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 698863,
+      "size_m_requested": [
+        0.008,
+        0.005,
+        0.004
+      ],
+      "dimensions_m": [
+        0.008,
+        0.008,
+        0.004
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.62, 1.07); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 906
+    },
+    {
+      "id": "twigs-kite",
+      "name": "Twig's kite",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/people-of-the-bark/assets/objects/twigs-kite.jpg",
+      "image_sha256": "b68e876adf97a5e71a3b30fc3fb302c6233a7d6b4fdbafb3487b13ec0c19525b",
+      "output": "build/models/people-of-the-bark/twigs-kite.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699887,
+      "size_m_requested": [
+        0.01,
+        0.002,
+        0.012
+      ],
+      "dimensions_m": [
+        0.008,
+        0.002,
+        0.012
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 279
     },
     {
       "id": "war-hall",
       "name": "War Hall",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
       "model": "trellis_2_int8_convrot",
       "seed": 1,
       "image": "games/people-of-the-bark/assets/objects/war-hall.jpg",
       "image_sha256": "b3715f600e8e6952dec1aea00233402cf74f479aba5d7fc367bf2e5b74e9970d",
       "output": "build/models/people-of-the-bark/war-hall.glb",
-      "status": "failed",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699823,
+      "size_m_requested": [
+        0.012,
+        0.008,
+        0.016
+      ],
+      "dimensions_m": [
+        0.021,
+        0.015,
+        0.016
+      ],
       "problems": [
-        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8189: [WinError 10061] No connection could be made because the target machine actively refused it. Start ComfyUI, or set COMFY_URL."
-      ]
+        "proportions differ from size_m (axis ratios 0.57, 0.55, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 782
     },
     {
       "id": "washing-line",
       "name": "Washing line",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
       "model": "trellis_2_int8_convrot",
       "seed": 1,
       "image": "games/people-of-the-bark/assets/objects/washing-line.jpg",
       "image_sha256": "3e139b727c6808d9fcb4ca75f1dbfa70928a32840e361ca99706254322ee022e",
       "output": "build/models/people-of-the-bark/washing-line.glb",
-      "status": "failed",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 310566,
+      "size_m_requested": [
+        3.0,
+        0.1,
+        1.9
+      ],
+      "dimensions_m": [
+        3.0,
+        0.691,
+        1.47
+      ],
       "problems": [
-        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8189: timed out. Start ComfyUI, or set COMFY_URL."
-      ]
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 1.00, 0.14, 1.29); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 663
+    },
+    {
+      "id": "watchtower",
+      "name": "Watchtower",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/people-of-the-bark/assets/objects/watchtower.jpg",
+      "image_sha256": "9b279c3c886468a4251560ed021cfd5ee196ffe3ff668f7429ef385ab773a8a6",
+      "output": "build/models/people-of-the-bark/watchtower.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699690,
+      "size_m_requested": [
+        0.006,
+        0.006,
+        0.03
+      ],
+      "dimensions_m": [
+        0.013,
+        0.013,
+        0.03
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.47, 0.47, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 538
     },
     {
       "id": "window-shutter",
       "name": "Bark-chip shutter",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
       "model": "trellis_2_int8_convrot",
       "seed": 1,
       "image": "games/people-of-the-bark/assets/objects/window-shutter.jpg",
       "image_sha256": "126bef903204df2e9b9618688bd3c1ea52824b19436818b0586aedfbd2649f8b",
       "output": "build/models/people-of-the-bark/window-shutter.glb",
-      "status": "failed",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699842,
+      "size_m_requested": [
+        0.003,
+        0.0005,
+        0.004
+      ],
+      "dimensions_m": [
+        0.004,
+        0.002,
+        0.004
+      ],
       "problems": [
-        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8190: [WinError 10061] No connection could be made because the target machine actively refused it. Start ComfyUI, or set COMFY_URL."
-      ]
+        "proportions differ from size_m (axis ratios 0.80, 0.27, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 981
     }
   ]
 }

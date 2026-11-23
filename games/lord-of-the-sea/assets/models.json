@@ -1,4 +1,763 @@
 {
   "tool": "ComfyUI 0.46.2, core Trellis 2 nodes",
-  "models": []
+  "models": [
+    {
+      "id": "brass-dividers",
+      "name": "Brass dividers",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lord-of-the-sea/assets/objects/brass-dividers.jpg",
+      "image_sha256": "6d12b33fb3dfda9f5e00509a8a9448907b7ff118e10864f240cd10c0d5f1bcc1",
+      "output": "build/models/lord-of-the-sea/brass-dividers.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 578290,
+      "size_m_requested": [
+        0.04,
+        0.02,
+        0.18
+      ],
+      "dimensions_m": [
+        0.941,
+        0.335,
+        0.18
+      ],
+      "problems": [
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 0.04, 0.06, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 220
+    },
+    {
+      "id": "chart-table",
+      "name": "Chart table",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lord-of-the-sea/assets/objects/chart-table.jpg",
+      "image_sha256": "55c793e33f038800b5c435dd38e62eebc891091c5ee4b2258d0e1f881c514f36",
+      "output": "build/models/lord-of-the-sea/chart-table.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699135,
+      "size_m_requested": [
+        1.4,
+        0.9,
+        0.95
+      ],
+      "dimensions_m": [
+        1.4,
+        0.946,
+        1.373
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.95, 0.69); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1467
+    },
+    {
+      "id": "coin-chest",
+      "name": "The king's payment",
+      "date": "2026-11-23",
+      "status": "not_built",
+      "image": "games/lord-of-the-sea/assets/objects/coin-chest.jpg",
+      "size_m_requested": [
+        0.6,
+        0.4,
+        0.4
+      ],
+      "source": "model_requests.json",
+      "problems": [
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
+      ]
+    },
+    {
+      "id": "company-buoy",
+      "name": "Company buoy",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lord-of-the-sea/assets/objects/company-buoy.jpg",
+      "image_sha256": "938c6b4b28d7fc13df4b4415d93182ecc7fb9dd48e8de2b312b297d58c08277b",
+      "output": "build/models/lord-of-the-sea/company-buoy.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699450,
+      "size_m_requested": [
+        1.6,
+        1.6,
+        3.2
+      ],
+      "dimensions_m": [
+        1.718,
+        1.72,
+        3.2
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 421
+    },
+    {
+      "id": "dinghy",
+      "name": "Dinghy",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lord-of-the-sea/assets/objects/dinghy.jpg",
+      "image_sha256": "79b64d0ba745cd90c3afab00142555bcfd18a6182b78c9aa5a855a91429449c5",
+      "output": "build/models/lord-of-the-sea/dinghy.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 699610,
+      "size_m_requested": [
+        1.4,
+        3.2,
+        0.6
+      ],
+      "dimensions_m": [
+        1.678,
+        3.2,
+        1.381
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.83, 1.00, 0.43); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 475
+    },
+    {
+      "id": "diving-boat",
+      "name": "Ide's diving boat",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lord-of-the-sea/assets/objects/diving-boat.jpg",
+      "image_sha256": "07934587e8059dfa8d97b55856844934185ee895b3c93b4f08a9f67d5050f26a",
+      "output": "build/models/lord-of-the-sea/diving-boat.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699673,
+      "size_m_requested": [
+        1.2,
+        7,
+        1.2
+      ],
+      "dimensions_m": [
+        7.045,
+        7.0,
+        2.199
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.17, 1.00, 0.55); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 749
+    },
+    {
+      "id": "gallery-mirror",
+      "name": "Gallery mirror",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lord-of-the-sea/assets/objects/gallery-mirror.jpg",
+      "image_sha256": "773dacab63a673889d5b384e3d0bde5666adccf913ec3ab132b9ce760334bd4b",
+      "output": "build/models/lord-of-the-sea/gallery-mirror.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699856,
+      "size_m_requested": [
+        1.2,
+        0.15,
+        2.6
+      ],
+      "dimensions_m": [
+        1.249,
+        0.879,
+        2.6
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.96, 0.17, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 221
+    },
+    {
+      "id": "gullwife-boat",
+      "name": "The Gullwife boat",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lord-of-the-sea/assets/objects/gullwife-boat.jpg",
+      "image_sha256": "7595fe9579e7f436979a793c5a164233153a5bfbc9ce69cccbf1a8b2c2ca296d",
+      "output": "build/models/lord-of-the-sea/gullwife-boat.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699786,
+      "size_m_requested": [
+        4,
+        12,
+        10
+      ],
+      "dimensions_m": [
+        5.57,
+        12.0,
+        9.967
+      ],
+      "problems": [
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 0.72, 1.00, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 571
+    },
+    {
+      "id": "harbour-book",
+      "name": "Harbour book",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lord-of-the-sea/assets/objects/harbour-book.jpg",
+      "image_sha256": "f0cb3aded06011ee01f58dbb8b2c1e1e86a8e1d56f00a8b0057598de7528dc02",
+      "output": "build/models/lord-of-the-sea/harbour-book.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 699520,
+      "size_m_requested": [
+        0.3,
+        0.06,
+        0.4
+      ],
+      "dimensions_m": [
+        1.005,
+        1.174,
+        0.4
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.30, 0.05, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 501
+    },
+    {
+      "id": "harbour-ferry",
+      "name": "Tidewater ferry",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lord-of-the-sea/assets/objects/harbour-ferry.jpg",
+      "image_sha256": "d0181d9c78b695a8b684b27fa6701c541b798340216a447cdc666279c7eacef8",
+      "output": "build/models/lord-of-the-sea/harbour-ferry.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699466,
+      "size_m_requested": [
+        3.5,
+        10,
+        5
+      ],
+      "dimensions_m": [
+        4.75,
+        10.0,
+        7.701
+      ],
+      "problems": [
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 0.74, 1.00, 0.65); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 273
+    },
+    {
+      "id": "ledger",
+      "name": "Ledger",
+      "date": "2026-11-23",
+      "status": "not_built",
+      "image": "games/lord-of-the-sea/assets/objects/ledger.jpg",
+      "size_m_requested": [
+        0.3,
+        0.05,
+        0.42
+      ],
+      "source": "model_requests.json",
+      "problems": [
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
+      ]
+    },
+    {
+      "id": "lighthouse-lamp",
+      "name": "Lighthouse lamp",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lord-of-the-sea/assets/objects/lighthouse-lamp.jpg",
+      "image_sha256": "30e30e3a72696bb4d26e0253a2c49261eaab640432cc66fffe7c4345a4a71d40",
+      "output": "build/models/lord-of-the-sea/lighthouse-lamp.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699051,
+      "size_m_requested": [
+        0.6,
+        0.6,
+        0.9
+      ],
+      "dimensions_m": [
+        0.555,
+        0.482,
+        0.9
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 593
+    },
+    {
+      "id": "lobster-pot",
+      "name": "Lobster pot",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lord-of-the-sea/assets/objects/lobster-pot.jpg",
+      "image_sha256": "d0a1707348d32942bbbbc5321d5f5cf3e8f76edb37b3e4a1598c5d7189130c7e",
+      "output": "build/models/lord-of-the-sea/lobster-pot.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699910,
+      "size_m_requested": [
+        0.6,
+        0.4,
+        0.4
+      ],
+      "dimensions_m": [
+        0.6,
+        0.479,
+        0.38
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1170
+    },
+    {
+      "id": "notice-board",
+      "name": "Notice board",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lord-of-the-sea/assets/objects/notice-board.jpg",
+      "image_sha256": "044ee44d16f1286dd3359b6591147c4e87d03f7cb112c1d4a473d7b72f5d3578",
+      "output": "build/models/lord-of-the-sea/notice-board.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 699120,
+      "size_m_requested": [
+        1.2,
+        0.2,
+        2.0
+      ],
+      "dimensions_m": [
+        1.613,
+        0.824,
+        2.0
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.74, 0.24, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 372
+    },
+    {
+      "id": "oar",
+      "name": "Oar",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lord-of-the-sea/assets/objects/oar.jpg",
+      "image_sha256": "34211ab0b6bdc32fb3af657ef2f9d90a348661f9baaf03cf3c13e89218e095d7",
+      "output": "build/models/lord-of-the-sea/oar.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 557762,
+      "size_m_requested": [
+        0.15,
+        0.05,
+        2.4
+      ],
+      "dimensions_m": [
+        2.221,
+        1.6,
+        2.4
+      ],
+      "problems": [
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 0.07, 0.03, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 331
+    },
+    {
+      "id": "pay-table",
+      "name": "Pay table",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lord-of-the-sea/assets/objects/pay-table.jpg",
+      "image_sha256": "06029426516975fea6861cbab66383677f9b9f66801153e6a5b7aaea5f250357",
+      "output": "build/models/lord-of-the-sea/pay-table.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699547,
+      "size_m_requested": [
+        1.8,
+        0.8,
+        0.8
+      ],
+      "dimensions_m": [
+        1.8,
+        0.712,
+        1.119
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 1.12, 0.72); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 629
+    },
+    {
+      "id": "revenue-cutter",
+      "name": "Revenue cutter",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lord-of-the-sea/assets/objects/revenue-cutter.jpg",
+      "image_sha256": "0ac8f1576600839a68951106799e97938e38daab6931eecb13b8f1375d3dd335",
+      "output": "build/models/lord-of-the-sea/revenue-cutter.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699409,
+      "size_m_requested": [
+        6,
+        24,
+        22
+      ],
+      "dimensions_m": [
+        6.726,
+        24.0,
+        20.756
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 643
+    },
+    {
+      "id": "rope-coil",
+      "name": "Rope coil",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lord-of-the-sea/assets/objects/rope-coil.jpg",
+      "image_sha256": "9e5e62461edded672c8f77965d1dc95330e3e16cdb6f21c6e19505effbb5c498",
+      "output": "build/models/lord-of-the-sea/rope-coil.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699902,
+      "size_m_requested": [
+        0.6,
+        0.6,
+        0.2
+      ],
+      "dimensions_m": [
+        0.6,
+        0.57,
+        0.066
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 1.05, 3.02); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 980
+    },
+    {
+      "id": "rum-bottle",
+      "name": "The bottle",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lord-of-the-sea/assets/objects/rum-bottle.jpg",
+      "image_sha256": "95f863752772c652d41ca50fe4dd79533603bb1f806d12fac70bf5fbf2de40fa",
+      "output": "build/models/lord-of-the-sea/rum-bottle.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699210,
+      "size_m_requested": [
+        0.09,
+        0.09,
+        0.32
+      ],
+      "dimensions_m": [
+        0.158,
+        0.123,
+        0.32
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.57, 0.73, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 309
+    },
+    {
+      "id": "sale-deed",
+      "name": "Sale deed",
+      "date": "2026-11-23",
+      "status": "not_built",
+      "image": "games/lord-of-the-sea/assets/objects/sale-deed.jpg",
+      "size_m_requested": [
+        0.3,
+        0.01,
+        0.42
+      ],
+      "source": "model_requests.json",
+      "problems": [
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
+      ]
+    },
+    {
+      "id": "ship-lantern",
+      "name": "Ship's lantern",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lord-of-the-sea/assets/objects/ship-lantern.jpg",
+      "image_sha256": "15c909f0c5bced6f44ed39fcc747518ef0eb983b566dcfbb61d010e085c8cb04",
+      "output": "build/models/lord-of-the-sea/ship-lantern.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699494,
+      "size_m_requested": [
+        0.2,
+        0.2,
+        0.4
+      ],
+      "dimensions_m": [
+        0.213,
+        0.225,
+        0.4
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 863
+    },
+    {
+      "id": "spice-jar",
+      "name": "Spice jar",
+      "date": "2026-11-23",
+      "status": "not_built",
+      "image": "games/lord-of-the-sea/assets/objects/spice-jar.jpg",
+      "size_m_requested": [
+        0.12,
+        0.12,
+        0.2
+      ],
+      "source": "model_requests.json",
+      "problems": [
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
+      ]
+    },
+    {
+      "id": "strongbox",
+      "name": "Strongbox",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lord-of-the-sea/assets/objects/strongbox.jpg",
+      "image_sha256": "10af2c8e96aae23ee826eb45d6f32ba117179e4ae962bba42c30b0b503f4b7ca",
+      "output": "build/models/lord-of-the-sea/strongbox.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699115,
+      "size_m_requested": [
+        0.5,
+        0.35,
+        0.3
+      ],
+      "dimensions_m": [
+        0.5,
+        0.499,
+        0.403
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.70, 0.74); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 916
+    },
+    {
+      "id": "tea-board",
+      "name": "The Tea Board",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lord-of-the-sea/assets/objects/tea-board.jpg",
+      "image_sha256": "5617e96cdc7d34d0d23ecbc61bc38eacd33bd4916a7afd5e0841ff1f3ce80141",
+      "output": "build/models/lord-of-the-sea/tea-board.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699467,
+      "size_m_requested": [
+        0.7,
+        0.7,
+        0.06
+      ],
+      "dimensions_m": [
+        0.7,
+        0.7,
+        0.197
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 1.00, 0.30); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 442
+    },
+    {
+      "id": "tea-caddy",
+      "name": "Tea caddy",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lord-of-the-sea/assets/objects/tea-caddy.jpg",
+      "image_sha256": "60bba647dac5c6a320f992ac76931590bf26c71995b4923870b9e0a8d208b56c",
+      "output": "build/models/lord-of-the-sea/tea-caddy.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 698351,
+      "size_m_requested": [
+        0.14,
+        0.14,
+        0.18
+      ],
+      "dimensions_m": [
+        0.173,
+        0.161,
+        0.18
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 466
+    },
+    {
+      "id": "tea-chest",
+      "name": "Tea chest",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lord-of-the-sea/assets/objects/tea-chest.jpg",
+      "image_sha256": "86f7863cc4ff1894655bb54c03e7b4d63292f13f56731873b2c332448802d4a3",
+      "output": "build/models/lord-of-the-sea/tea-chest.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 698815,
+      "size_m_requested": [
+        0.5,
+        0.5,
+        0.6
+      ],
+      "dimensions_m": [
+        0.804,
+        0.535,
+        0.6
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.62, 0.93, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 828
+    },
+    {
+      "id": "throne",
+      "name": "The king's throne",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lord-of-the-sea/assets/objects/throne.jpg",
+      "image_sha256": "008de9ed1cd3acb396a446993c2ee648c8ff168ebbceca03dbcc0696d3ff20ec",
+      "output": "build/models/lord-of-the-sea/throne.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699728,
+      "size_m_requested": [
+        1.2,
+        1.0,
+        2.2
+      ],
+      "dimensions_m": [
+        1.255,
+        1.372,
+        2.2
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.96, 0.73, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 535
+    },
+    {
+      "id": "tideline-stone",
+      "name": "Tideline stone",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lord-of-the-sea/assets/objects/tideline-stone.jpg",
+      "image_sha256": "90d6956a307c7a39b93549766b3fb00c3020813955bc3379f8e8df63cdb1cdee",
+      "output": "build/models/lord-of-the-sea/tideline-stone.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699640,
+      "size_m_requested": [
+        0.6,
+        0.4,
+        1.4
+      ],
+      "dimensions_m": [
+        0.869,
+        0.827,
+        1.4
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.69, 0.48, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 459
+    }
+  ]
 }

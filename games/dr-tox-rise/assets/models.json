@@ -230,6 +230,36 @@
       "seconds": 284
     },
     {
+      "id": "broken-barricade",
+      "name": "Broken barricades (sawhorse, barrier fragments, pallet)",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/broken-barricade.jpg",
+      "image_sha256": "365c92cd9a9d3e4636cfd9165f7701c1e1fd18afedaf7ee1b26f3bd5c2603b2a",
+      "output": "build/models/dr-tox-rise/broken-barricade.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699498,
+      "size_m_requested": [
+        1.5,
+        0.5,
+        1.0
+      ],
+      "dimensions_m": [
+        1.5,
+        0.755,
+        0.851
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.66, 1.18); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 317,
+      "source": "realism list (reference image generated with Flux schnell in ComfyUI)"
+    },
+    {
       "id": "ceremony-lectern",
       "name": "Lectern",
       "date": "2026-11-21",
@@ -430,6 +460,22 @@
         "front direction (-y) not checked by eye"
       ],
       "seconds": 773
+    },
+    {
+      "id": "floodlight-housing",
+      "name": "Hard white floodlight housings (north and south, high)",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/floodlight-housing.jpg",
+      "image_sha256": "7a918b5016134d66faf9801d1284778e32dc9d3ac4b1d5e36b62a378429b8f6d",
+      "output": "build/models/dr-tox-rise/floodlight-housing.glb",
+      "status": "failed",
+      "problems": [
+        "comfy: eeds [1, 2, 3, 4], background removed, image sha256 d9aa922a0faa5815, server 127.0.0.1:8189\nqueued    prompt 63aa64b9-f215-4129-a1db-5a0aa6a0761c\nREFUSED   the workflow failed on the server: KSampler: Allocation on device 0 would exceed allowed memory. (out of memory)\nCurrently allocated     : 3.14 GiB\nRequested               : 3.68 GiB\nDevice limit            : 31.36 GiB\nFree (according to CUDA):"
+      ],
+      "source": "realism list (reference image generated with Flux schnell in ComfyUI)"
     },
     {
       "id": "insignia-case",
@@ -721,6 +767,125 @@
       "seconds": 375
     },
     {
+      "id": "red-emergency-lamp",
+      "name": "Red emergency lamp (caged, small)",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/red-emergency-lamp.jpg",
+      "image_sha256": "665ca1bb9df8484f083b682178b58ce1d402fdb421f079a2eb97dd4a79bb9863",
+      "output": "build/models/dr-tox-rise/red-emergency-lamp.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699381,
+      "size_m_requested": [
+        0.2,
+        0.2,
+        0.25
+      ],
+      "dimensions_m": [
+        0.221,
+        0.222,
+        0.25
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 759,
+      "source": "realism list (reference image generated with Flux schnell in ComfyUI)"
+    },
+    {
+      "id": "road-flare",
+      "name": "Road flare, burning, on the bank or pipe ledge",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/road-flare.jpg",
+      "image_sha256": "28b666bb40337873085e93b6b0ae8daed3746549587d3c1af0c768dcb4b5ccc0",
+      "output": "build/models/dr-tox-rise/road-flare.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 181478,
+      "size_m_requested": [
+        0.04,
+        0.04,
+        0.25
+      ],
+      "dimensions_m": [
+        0.013,
+        0.013,
+        0.25
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 3.06, 3.03, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 257,
+      "source": "realism list (reference image generated with Flux schnell in ComfyUI)"
+    },
+    {
+      "id": "salvaged-tools-bundle",
+      "name": "Salvaged tools: shovels, crowbars, hammers, coils of rope",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/salvaged-tools-bundle.jpg",
+      "image_sha256": "b84651cfc44bbcc50555cd483c756f0bcd7f2fe9d5b0bf1306e3c7cd3ee61d96",
+      "output": "build/models/dr-tox-rise/salvaged-tools-bundle.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699869,
+      "size_m_requested": [
+        0.8,
+        0.5,
+        0.15
+      ],
+      "dimensions_m": [
+        0.8,
+        0.747,
+        0.092
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.67, 1.63); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 882,
+      "source": "realism list (reference image generated with Flux schnell in ComfyUI)"
+    },
+    {
+      "id": "screen-door",
+      "name": "Screen door on a storefront or porch",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/screen-door.jpg",
+      "image_sha256": "438353fe23d700f413f55add0bf7b5d93ae7e46495c2aaaab03dae70965cabb9",
+      "output": "build/models/dr-tox-rise/screen-door.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699122,
+      "size_m_requested": [
+        0.9,
+        0.08,
+        2.0
+      ],
+      "dimensions_m": [
+        2.011,
+        0.241,
+        2.0
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.45, 0.33, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 475,
+      "source": "realism list (reference image generated with Flux schnell in ComfyUI)"
+    },
+    {
       "id": "shielded-locker",
       "name": "Shielded locker",
       "date": "2026-11-21",
@@ -950,6 +1115,35 @@
         "front direction (-y) not checked by eye"
       ],
       "seconds": 477
+    },
+    {
+      "id": "water-drum",
+      "name": "Plain unmarked water drums",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/water-drum.jpg",
+      "image_sha256": "915bd072ed13dc1507dc8bcd2e0076844a244d9533384c7e8b4cad949c28d858",
+      "output": "build/models/dr-tox-rise/water-drum.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 698539,
+      "size_m_requested": [
+        0.6,
+        0.6,
+        0.9
+      ],
+      "dimensions_m": [
+        0.631,
+        0.631,
+        0.9
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 574,
+      "source": "realism list (reference image generated with Flux schnell in ComfyUI)"
     }
   ]
 }

@@ -2,79 +2,1021 @@
   "tool": "ComfyUI 0.46.2, core Trellis 2 nodes",
   "models": [
     {
+      "id": "bell-staff",
+      "name": "Tall staffs with bells and paper lanterns",
+      "date": "2026-11-23",
+      "status": "not_built",
+      "image": "games/endless-temple/assets/objects/bell-staff.jpg",
+      "size_m_requested": [
+        0.1,
+        0.1,
+        2.2
+      ],
+      "source": "realism list",
+      "problems": [
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
+      ]
+    },
+    {
+      "id": "black-book",
+      "name": "The black book",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/endless-temple/assets/objects/black-book.jpg",
+      "image_sha256": "b7632769abb4476b69bf526f33b6e8cf8b146ebde7053b5f759bdfd6db2c809c",
+      "output": "build/models/endless-temple/black-book.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699741,
+      "size_m_requested": [
+        0.28,
+        0.07,
+        0.38
+      ],
+      "dimensions_m": [
+        1.262,
+        0.852,
+        0.38
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.22, 0.08, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1083
+    },
+    {
+      "id": "bookshelf",
+      "name": "Temple bookshelf",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/endless-temple/assets/objects/bookshelf.jpg",
+      "image_sha256": "b22ed951b224f0460c92fcb8dc0c64d657ba3cbb6920f61811f01e54a8f3d55b",
+      "output": "build/models/endless-temple/bookshelf.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 699615,
+      "size_m_requested": [
+        2.0,
+        0.5,
+        3.2
+      ],
+      "dimensions_m": [
+        2.323,
+        0.929,
+        3.2
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.86, 0.54, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1890
+    },
+    {
+      "id": "broom",
+      "name": "The broom",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/endless-temple/assets/objects/broom.jpg",
+      "image_sha256": "8403c55dcaf80e387d1bef31ef572d2d2ffc94f42d3299985168081f4d006dac",
+      "output": "build/models/endless-temple/broom.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699180,
+      "size_m_requested": [
+        0.35,
+        0.1,
+        1.6
+      ],
+      "dimensions_m": [
+        14.275,
+        3.386,
+        1.6
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.02, 0.03, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 314
+    },
+    {
+      "id": "campfire-ring",
+      "name": "Camp fire ring",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/endless-temple/assets/objects/campfire-ring.jpg",
+      "image_sha256": "c3841db0b67ad58bcc06dffeb61720cbf2ae255aa9a8b8f66ad8892256104f11",
+      "output": "build/models/endless-temple/campfire-ring.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699629,
+      "size_m_requested": [
+        1.2,
+        1.2,
+        0.3
+      ],
+      "dimensions_m": [
+        1.2,
+        1.21,
+        0.326
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 598
+    },
+    {
+      "id": "candlestick",
+      "name": "The candle",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/endless-temple/assets/objects/candlestick.jpg",
+      "image_sha256": "64a2a14e12ea803729bff8b91f23c5cd7455f52859c322ae91c3ca297d0751aa",
+      "output": "build/models/endless-temple/candlestick.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 697995,
+      "size_m_requested": [
+        0.12,
+        0.12,
+        0.3
+      ],
+      "dimensions_m": [
+        0.295,
+        0.352,
+        0.3
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.41, 0.34, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 638
+    },
+    {
+      "id": "clay-oil-lamp",
+      "name": "Clay oil lamp in a wall niche",
+      "date": "2026-11-23",
+      "status": "not_built",
+      "image": "games/endless-temple/assets/objects/clay-oil-lamp.jpg",
+      "size_m_requested": [
+        0.15,
+        0.1,
+        0.07
+      ],
+      "source": "realism list",
+      "problems": [
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
+      ]
+    },
+    {
+      "id": "clay-pitcher-basin",
+      "name": "Clay water pitcher and basin",
+      "date": "2026-11-23",
+      "status": "not_built",
+      "image": "games/endless-temple/assets/objects/clay-pitcher-basin.jpg",
+      "size_m_requested": [
+        0.5,
+        0.5,
+        0.35
+      ],
+      "source": "realism list",
+      "problems": [
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
+      ]
+    },
+    {
+      "id": "clerk-umbrella",
+      "name": "The Clerk's umbrella",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/endless-temple/assets/objects/clerk-umbrella.jpg",
+      "image_sha256": "e4f8cc73ba592a327e01eac9815244ef9c36aa8b86f9cf237b7dc395a709316f",
+      "output": "build/models/endless-temple/clerk-umbrella.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 698967,
+      "size_m_requested": [
+        1.1,
+        1.1,
+        0.95
+      ],
+      "dimensions_m": [
+        1.1,
+        1.178,
+        1.138
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 779
+    },
+    {
+      "id": "clerks-chair",
+      "name": "The Clerk's chair",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/endless-temple/assets/objects/clerks-chair.jpg",
+      "image_sha256": "62efb7524f05edf352a0589243698a3ae293867f148aba4ed433cc8ff418aea8",
+      "output": "build/models/endless-temple/clerks-chair.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699798,
+      "size_m_requested": [
+        0.7,
+        0.7,
+        1.5
+      ],
+      "dimensions_m": [
+        0.769,
+        0.694,
+        1.5
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 297
+    },
+    {
       "id": "cuckoo-clock",
       "name": "The cuckoo clock",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
       "model": "trellis_2_int8_convrot",
       "seed": 1,
       "image": "games/endless-temple/assets/objects/cuckoo-clock.jpg",
       "image_sha256": "68741991d539056ca544518c7fff17b0235633cb2e1fa5b835adfd98dafcf9e3",
       "output": "build/models/endless-temple/cuckoo-clock.glb",
-      "status": "failed",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699414,
+      "size_m_requested": [
+        0.5,
+        0.25,
+        0.9
+      ],
+      "dimensions_m": [
+        0.493,
+        0.407,
+        0.9
+      ],
       "problems": [
-        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8189: [WinError 10061] No connection could be made because the target machine actively refused it. Start ComfyUI, or set COMFY_URL."
+        "proportions differ from size_m (axis ratios 1.01, 0.61, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1543
+    },
+    {
+      "id": "day-book",
+      "name": "The Day-Book",
+      "date": "2026-11-23",
+      "status": "not_built",
+      "image": "games/endless-temple/assets/objects/day-book.jpg",
+      "size_m_requested": [
+        0.6,
+        0.45,
+        0.1
+      ],
+      "source": "model_requests.json",
+      "problems": [
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
       ]
+    },
+    {
+      "id": "father-journal",
+      "name": "The father's journal",
+      "date": "2026-11-23",
+      "status": "not_built",
+      "image": "games/endless-temple/assets/objects/father-journal.jpg",
+      "size_m_requested": [
+        0.15,
+        0.03,
+        0.2
+      ],
+      "source": "model_requests.json",
+      "problems": [
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
+      ]
+    },
+    {
+      "id": "floor-book-stack",
+      "name": "Book stacks on the floor",
+      "date": "2026-11-23",
+      "status": "not_built",
+      "image": "games/endless-temple/assets/objects/floor-book-stack.jpg",
+      "size_m_requested": [
+        0.4,
+        0.3,
+        0.35
+      ],
+      "source": "realism list",
+      "problems": [
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
+      ]
+    },
+    {
+      "id": "giant-bone",
+      "name": "Old bones",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/endless-temple/assets/objects/giant-bone.jpg",
+      "image_sha256": "4e57d2063481facb7e999410550f4b0da97d637f320db377b9fc50d72e13ff68",
+      "output": "build/models/endless-temple/giant-bone.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699414,
+      "size_m_requested": [
+        4,
+        1.2,
+        2.5
+      ],
+      "dimensions_m": [
+        4.0,
+        3.773,
+        1.239
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.32, 2.02); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 206
+    },
+    {
+      "id": "heavy-reading-table",
+      "name": "Heavy reading table",
+      "date": "2026-11-23",
+      "status": "not_built",
+      "image": "games/endless-temple/assets/objects/heavy-reading-table.jpg",
+      "size_m_requested": [
+        2.2,
+        1.0,
+        0.8
+      ],
+      "source": "realism list",
+      "problems": [
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
+      ]
+    },
+    {
+      "id": "hut-mirror",
+      "name": "The hut mirror",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/endless-temple/assets/objects/hut-mirror.jpg",
+      "image_sha256": "0bba2607e09155037ce2dbe80662b36a705bba71ea25261cd1ef0582bd921c3e",
+      "output": "build/models/endless-temple/hut-mirror.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699567,
+      "size_m_requested": [
+        0.3,
+        0.03,
+        0.4
+      ],
+      "dimensions_m": [
+        0.333,
+        0.074,
+        0.4
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.90, 0.41, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 578
     },
     {
       "id": "kettle",
       "name": "The kettle",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
       "model": "trellis_2_int8_convrot",
       "seed": 1,
       "image": "games/endless-temple/assets/objects/kettle.jpg",
       "image_sha256": "ec00508bbc80cc56dad333d3e7bba1cb25857ee4b3274066404392269455f7c7",
       "output": "build/models/endless-temple/kettle.glb",
-      "status": "failed",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 698144,
+      "size_m_requested": [
+        0.28,
+        0.2,
+        0.25
+      ],
+      "dimensions_m": [
+        0.28,
+        0.217,
+        0.278
+      ],
       "problems": [
-        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8189: [WinError 10061] No connection could be made because the target machine actively refused it. Start ComfyUI, or set COMFY_URL."
-      ]
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1128
+    },
+    {
+      "id": "library-ladder",
+      "name": "Library ladder",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/endless-temple/assets/objects/library-ladder.jpg",
+      "image_sha256": "d479f1770ddde223619dbb1a08919209b46d70646d241e7abef0a576213bfc8c",
+      "output": "build/models/endless-temple/library-ladder.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699978,
+      "size_m_requested": [
+        0.6,
+        0.4,
+        3.5
+      ],
+      "dimensions_m": [
+        1.404,
+        1.078,
+        3.5
+      ],
+      "problems": [
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 0.43, 0.37, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 550
     },
     {
       "id": "lizard-plate",
       "name": "Plate of roast sea lizard",
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
       "model": "trellis_2_int8_convrot",
       "seed": 1,
       "image": "games/endless-temple/assets/objects/lizard-plate.jpg",
       "image_sha256": "81745555eab8f8814a85ae5d1b9294bc8d4443b1430b7ffe45d5f29be5279dc8",
       "output": "build/models/endless-temple/lizard-plate.glb",
-      "status": "failed",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699811,
+      "size_m_requested": [
+        0.35,
+        0.25,
+        0.1
+      ],
+      "dimensions_m": [
+        0.35,
+        0.406,
+        0.086
+      ],
       "problems": [
-        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8189: [WinError 10061] No connection could be made because the target machine actively refused it. Start ComfyUI, or set COMFY_URL."
+        "proportions differ from size_m (axis ratios 1.00, 0.62, 1.17); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 606
+    },
+    {
+      "id": "loft-bell",
+      "name": "The bell",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/endless-temple/assets/objects/loft-bell.jpg",
+      "image_sha256": "c58afe3e500b1eb7a21e0604e07ffe9fdcde6d2e6fb2cae4b6a7219b646f4eaa",
+      "output": "build/models/endless-temple/loft-bell.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699713,
+      "size_m_requested": [
+        0.9,
+        0.9,
+        1.1
+      ],
+      "dimensions_m": [
+        0.941,
+        0.73,
+        1.1
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 932
+    },
+    {
+      "id": "long-narrow-bed",
+      "name": "Long narrow bed, headboard, footboard",
+      "date": "2026-11-23",
+      "status": "not_built",
+      "image": "games/endless-temple/assets/objects/long-narrow-bed.jpg",
+      "size_m_requested": [
+        0.8,
+        2.0,
+        0.6
+      ],
+      "source": "realism list",
+      "problems": [
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
       ]
+    },
+    {
+      "id": "low-wooden-bench",
+      "name": "Single low wooden bench",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/endless-temple/assets/objects/low-wooden-bench.jpg",
+      "image_sha256": "a2c19df7266b8ea8500bb06a0d89c9337e6173c8f34887b491608f290e843203",
+      "output": "build/models/endless-temple/low-wooden-bench.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699978,
+      "size_m_requested": [
+        1.5,
+        0.4,
+        0.4
+      ],
+      "dimensions_m": [
+        1.5,
+        0.484,
+        0.391
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1038,
+      "source": "realism list (reference image generated with Flux schnell in ComfyUI)"
+    },
+    {
+      "id": "marker-pole",
+      "name": "The father's marker pole",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/endless-temple/assets/objects/marker-pole.jpg",
+      "image_sha256": "7617d512fb0e02f4819e0ecf85e41abe14f9c6ab36df6e698ac8401ec30ce1eb",
+      "output": "build/models/endless-temple/marker-pole.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699941,
+      "size_m_requested": [
+        0.4,
+        0.4,
+        2.6
+      ],
+      "dimensions_m": [
+        0.8,
+        0.753,
+        2.6
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.50, 0.53, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 634
+    },
+    {
+      "id": "pilgrim-lantern",
+      "name": "Pilgrim's lantern",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/endless-temple/assets/objects/pilgrim-lantern.jpg",
+      "image_sha256": "cb6fe52e1b89f21b045b8f0e802de430f8d4768b69ef83ca9ffaffa46731b42a",
+      "output": "build/models/endless-temple/pilgrim-lantern.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699626,
+      "size_m_requested": [
+        0.2,
+        0.2,
+        0.4
+      ],
+      "dimensions_m": [
+        0.166,
+        0.141,
+        0.4
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.20, 1.42, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 549
+    },
+    {
+      "id": "quill-pen",
+      "name": "The pen",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/endless-temple/assets/objects/quill-pen.jpg",
+      "image_sha256": "bbcd7cd6b31723aa403d2b4cc1fedf45d55e4271663ffca75f70eda9961535b1",
+      "output": "build/models/endless-temple/quill-pen.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699652,
+      "size_m_requested": [
+        0.03,
+        0.03,
+        0.3
+      ],
+      "dimensions_m": [
+        0.289,
+        0.324,
+        0.3
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.10, 0.09, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 653
+    },
+    {
+      "id": "reading-chair",
+      "name": "The reading chair",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/endless-temple/assets/objects/reading-chair.jpg",
+      "image_sha256": "152cd5edb5034bc16d14eeba669c91821f7d8d7187f4aa3f438200acd52dedd9",
+      "output": "build/models/endless-temple/reading-chair.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699623,
+      "size_m_requested": [
+        0.9,
+        0.9,
+        1.4
+      ],
+      "dimensions_m": [
+        0.819,
+        0.982,
+        1.4
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 557
     },
     {
       "id": "sand-book",
       "name": "The sand book",
-      "date": "2026-11-21",
+      "date": "2026-11-23",
+      "status": "not_built",
+      "image": "games/endless-temple/assets/objects/sand-book.jpg",
+      "size_m_requested": [
+        0.3,
+        0.08,
+        0.4
+      ],
+      "source": "model_requests.json",
+      "problems": [
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
+      ]
+    },
+    {
+      "id": "scribe-scroll",
+      "name": "The Scribe's scroll",
+      "date": "2026-11-22",
       "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
       "model": "trellis_2_int8_convrot",
       "seed": 1,
-      "image": "games/endless-temple/assets/objects/sand-book.jpg",
-      "image_sha256": "ff3c51ccb599d16d27b38c511b24d2dc014dfc2285f2ff89379854a148b0413d",
-      "output": "build/models/endless-temple/sand-book.glb",
-      "status": "failed",
+      "image": "games/endless-temple/assets/objects/scribe-scroll.jpg",
+      "image_sha256": "e07673f054dafff908183655bfa87b6e89fa692984ea46b4fbd1a18e6855fce9",
+      "output": "build/models/endless-temple/scribe-scroll.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699598,
+      "size_m_requested": [
+        0.6,
+        0.4,
+        0.15
+      ],
+      "dimensions_m": [
+        0.6,
+        0.451,
+        0.086
+      ],
       "problems": [
-        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8189: [WinError 10054] An existing connection was forcibly closed by the remote host. Start ComfyUI, or set COMFY_URL."
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 1.00, 0.89, 1.74); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 154
+    },
+    {
+      "id": "scrubbed-worktable",
+      "name": "Scrubbed wooden worktable",
+      "date": "2026-11-23",
+      "status": "not_built",
+      "image": "games/endless-temple/assets/objects/scrubbed-worktable.jpg",
+      "size_m_requested": [
+        1.6,
+        0.8,
+        0.85
+      ],
+      "source": "realism list",
+      "problems": [
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
       ]
+    },
+    {
+      "id": "sleeping-mat-bedroll",
+      "name": "Sleeping mat (bedroll)",
+      "date": "2026-11-23",
+      "status": "not_built",
+      "image": "games/endless-temple/assets/objects/sleeping-mat-bedroll.jpg",
+      "size_m_requested": [
+        0.7,
+        2.0,
+        0.15
+      ],
+      "source": "realism list",
+      "problems": [
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
+      ]
+    },
+    {
+      "id": "small-iron-stove",
+      "name": "Small iron stove",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/endless-temple/assets/objects/small-iron-stove.jpg",
+      "image_sha256": "48084cc8679c1337c26d0515825e2bf2185be80b52405885cb7142d2b4bf8460",
+      "output": "build/models/endless-temple/small-iron-stove.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699561,
+      "size_m_requested": [
+        0.5,
+        0.4,
+        0.8
+      ],
+      "dimensions_m": [
+        0.402,
+        0.404,
+        0.8
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1432,
+      "source": "realism list (reference image generated with Flux schnell in ComfyUI)"
+    },
+    {
+      "id": "small-wooden-stool",
+      "name": "Small wooden stools",
+      "date": "2026-11-23",
+      "status": "not_built",
+      "image": "games/endless-temple/assets/objects/small-wooden-stool.jpg",
+      "size_m_requested": [
+        0.35,
+        0.35,
+        0.4
+      ],
+      "source": "realism list",
+      "problems": [
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
+      ]
+    },
+    {
+      "id": "specimen-jar",
+      "name": "Pantry jar",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/endless-temple/assets/objects/specimen-jar.jpg",
+      "image_sha256": "dd5f33590e862ee911a08f5f021e57776975e8e898a2d7215c962f86256a37de",
+      "output": "build/models/endless-temple/specimen-jar.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699292,
+      "size_m_requested": [
+        0.15,
+        0.15,
+        0.3
+      ],
+      "dimensions_m": [
+        0.132,
+        0.126,
+        0.3
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 707
+    },
+    {
+      "id": "stone-cairn",
+      "name": "Cairn with the father's mark",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/endless-temple/assets/objects/stone-cairn.jpg",
+      "image_sha256": "a0ae3c7bc9b714c37cdd905d73b398264495908334509e80e7d92f53d84dce47",
+      "output": "build/models/endless-temple/stone-cairn.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699882,
+      "size_m_requested": [
+        0.8,
+        0.8,
+        1.2
+      ],
+      "dimensions_m": [
+        1.297,
+        1.282,
+        1.2
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.62, 0.62, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 685
+    },
+    {
+      "id": "storyteller-seat",
+      "name": "Storyteller's carved seat",
+      "date": "2026-11-23",
+      "status": "not_built",
+      "image": "games/endless-temple/assets/objects/storyteller-seat.jpg",
+      "size_m_requested": [
+        0.7,
+        0.6,
+        1.0
+      ],
+      "source": "realism list",
+      "problems": [
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
+      ]
+    },
+    {
+      "id": "tea-tin",
+      "name": "Tea tin",
+      "date": "2026-11-23",
+      "status": "not_built",
+      "image": "games/endless-temple/assets/objects/tea-tin.jpg",
+      "size_m_requested": [
+        0.1,
+        0.1,
+        0.14
+      ],
+      "source": "model_requests.json",
+      "problems": [
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
+      ]
+    },
+    {
+      "id": "teacup",
+      "name": "The cup",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/endless-temple/assets/objects/teacup.jpg",
+      "image_sha256": "80904afad519151f4d7a0d8ed37edd1350b4eb2914ebecc8338d87b62f798846",
+      "output": "build/models/endless-temple/teacup.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699079,
+      "size_m_requested": [
+        0.12,
+        0.12,
+        0.08
+      ],
+      "dimensions_m": [
+        0.12,
+        0.12,
+        0.065
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 573
     },
     {
       "id": "travel-pack",
       "name": "Xandri's pack",
-      "date": "2026-11-21",
+      "date": "2026-11-23",
+      "status": "not_built",
+      "image": "games/endless-temple/assets/objects/travel-pack.jpg",
+      "size_m_requested": [
+        0.4,
+        0.25,
+        0.55
+      ],
+      "source": "model_requests.json",
+      "problems": [
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
+      ]
+    },
+    {
+      "id": "waterskin",
+      "name": "The father's waterskin",
+      "date": "2026-11-22",
       "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
       "model": "trellis_2_int8_convrot",
       "seed": 1,
-      "image": "games/endless-temple/assets/objects/travel-pack.jpg",
-      "image_sha256": "ceab86abe0938720711bcb6718bed3bfb76e82b81dd6ab9d97d7d52dde6347ee",
-      "output": "build/models/endless-temple/travel-pack.glb",
-      "status": "failed",
+      "image": "games/endless-temple/assets/objects/waterskin.jpg",
+      "image_sha256": "31b215f7875e0dba1a1e19a7fa5707a07a00c88b5781d4a41d2250b8599a63fc",
+      "output": "build/models/endless-temple/waterskin.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699107,
+      "size_m_requested": [
+        0.25,
+        0.12,
+        0.4
+      ],
+      "dimensions_m": [
+        0.34,
+        0.161,
+        0.4
+      ],
       "problems": [
-        "comfy: REFUSED   cannot reach the ComfyUI server at http://127.0.0.1:8189: [WinError 10061] No connection could be made because the target machine actively refused it. Start ComfyUI, or set COMFY_URL."
-      ]
+        "proportions differ from size_m (axis ratios 0.74, 0.74, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 399
+    },
+    {
+      "id": "yesterdays-book",
+      "name": "Yesterday's book",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/endless-temple/assets/objects/yesterdays-book.jpg",
+      "image_sha256": "7e6d72dbc67263c3d925eaab39297e3e8eaf071105f3303072987ecd6d739c61",
+      "output": "build/models/endless-temple/yesterdays-book.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699482,
+      "size_m_requested": [
+        0.22,
+        0.04,
+        0.3
+      ],
+      "dimensions_m": [
+        1.301,
+        0.852,
+        0.3
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.17, 0.05, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 564
+    },
+    {
+      "id": "zorlop-leaf-shoes",
+      "name": "Zorlop-leaf shoes",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/endless-temple/assets/objects/zorlop-leaf-shoes.jpg",
+      "image_sha256": "005cc3fffa0c934686ed94d5ffba8f2723685a48dfc4812f58635ff611803c1f",
+      "output": "build/models/endless-temple/zorlop-leaf-shoes.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699821,
+      "size_m_requested": [
+        0.4,
+        0.6,
+        0.08
+      ],
+      "dimensions_m": [
+        0.503,
+        0.6,
+        0.135
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.80, 1.00, 0.59); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 400
     }
   ]
 }
