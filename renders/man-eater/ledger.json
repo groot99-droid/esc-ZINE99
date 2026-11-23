@@ -24,7 +24,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 14.5
+     "render_seconds": 38.7
     },
     {
      "still": "player",
@@ -33,7 +33,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 13.5
+     "render_seconds": 29.4
     },
     {
      "still": "overview",
@@ -42,44 +42,177 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 6.2
+     "render_seconds": 10.2
     }
    ],
    "props": [
     {
      "id": "boiler-a",
      "object": "boiler",
-     "source": "box-proxy"
+     "source": "model:boiler.glb",
+     "fit": {
+      "model_dims_m": [
+       2.133,
+       3.5,
+       2.929
+      ],
+      "box_m": [
+       2.0,
+       3.5,
+       2.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.964,
+      "worst_side_ratio": 1.04
+     }
     },
     {
      "id": "boiler-b",
      "object": "boiler",
-     "source": "box-proxy"
+     "source": "model:boiler.glb",
+     "fit": {
+      "model_dims_m": [
+       2.133,
+       3.5,
+       2.929
+      ],
+      "box_m": [
+       2.0,
+       3.5,
+       2.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.964,
+      "worst_side_ratio": 1.04
+     }
     },
     {
      "id": "drain-1",
      "object": "floor-drain",
-     "source": "box-proxy"
+     "source": "model:floor-drain.glb",
+     "fit": {
+      "model_dims_m": [
+       0.4,
+       0.403,
+       0.09
+      ],
+      "box_m": [
+       0.4,
+       0.4,
+       0.08
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.959,
+      "worst_side_ratio": 1.08
+     }
     },
     {
      "id": "drain-2",
      "object": "floor-drain",
-     "source": "box-proxy"
+     "source": "model:floor-drain.glb",
+     "fit": {
+      "model_dims_m": [
+       0.4,
+       0.403,
+       0.09
+      ],
+      "box_m": [
+       0.4,
+       0.4,
+       0.08
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.959,
+      "worst_side_ratio": 1.08
+     }
     },
     {
      "id": "drain-3",
      "object": "floor-drain",
-     "source": "box-proxy"
+     "source": "model:floor-drain.glb",
+     "fit": {
+      "model_dims_m": [
+       0.4,
+       0.403,
+       0.09
+      ],
+      "box_m": [
+       0.4,
+       0.4,
+       0.08
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.959,
+      "worst_side_ratio": 1.08
+     }
     },
     {
      "id": "drain-4",
      "object": "floor-drain",
-     "source": "box-proxy"
+     "source": "model:floor-drain.glb",
+     "fit": {
+      "model_dims_m": [
+       0.4,
+       0.403,
+       0.09
+      ],
+      "box_m": [
+       0.4,
+       0.4,
+       0.08
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.959,
+      "worst_side_ratio": 1.08
+     }
     },
     {
      "id": "drain-5",
      "object": "floor-drain",
-     "source": "box-proxy"
+     "source": "model:floor-drain.glb",
+     "fit": {
+      "model_dims_m": [
+       0.4,
+       0.403,
+       0.09
+      ],
+      "box_m": [
+       0.4,
+       0.4,
+       0.08
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.959,
+      "worst_side_ratio": 1.08
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -113,7 +246,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 15.4
+     "render_seconds": 49.4
     },
     {
      "still": "player",
@@ -122,7 +255,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 15.6
+     "render_seconds": 38.0
     },
     {
      "still": "overview",
@@ -131,64 +264,206 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 6.8
+     "render_seconds": 26.5
     }
    ],
    "props": [
     {
      "id": "bed-fisk",
      "object": "bunk-bed",
-     "source": "box-proxy",
-     "name": "bed-a"
+     "source": "model:bunk-bed.glb",
+     "name": "bed-a",
+     "fit": {
+      "model_dims_m": [
+       0.772,
+       2.0,
+       0.851
+      ],
+      "box_m": [
+       0.9,
+       2.0,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.937,
+      "worst_side_ratio": 1.33
+     }
     },
     {
      "id": "bed-mate",
      "object": "bunk-bed",
-     "source": "box-proxy",
-     "name": "bed-b"
+     "source": "model:bunk-bed.glb",
+     "name": "bed-b",
+     "fit": {
+      "model_dims_m": [
+       0.772,
+       2.0,
+       0.851
+      ],
+      "box_m": [
+       0.9,
+       2.0,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.937,
+      "worst_side_ratio": 1.33
+     }
     },
     {
      "id": "bags-fisk",
      "object": "sleeping-bag",
      "source": "box-proxy",
-     "name": "bedroll-slab-a"
+     "name": "bedroll-slab-a",
+     "fit": {
+      "model_skipped": "Man Eater: no figure-like models; the mummy bag has a body-shaped outline; named box proxy (bedroll-slab) stays"
+     }
     },
     {
      "id": "bags-mate",
      "object": "sleeping-bag",
      "source": "box-proxy",
-     "name": "bedroll-slab-b"
+     "name": "bedroll-slab-b",
+     "fit": {
+      "model_skipped": "Man Eater: no figure-like models; the mummy bag has a body-shaped outline; named box proxy (bedroll-slab) stays"
+     }
     },
     {
      "id": "door",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "rules-card",
      "object": "rules-card",
-     "source": "box-proxy"
+     "source": "model:rules-card.glb",
+     "fit": {
+      "model_dims_m": [
+       0.692,
+       0.082,
+       0.4
+      ],
+      "box_m": [
+       0.3,
+       0.01,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.658,
+      "worst_side_ratio": 2.32
+     }
     },
     {
      "id": "clock",
      "object": "wall-clock",
-     "source": "box-proxy"
+     "source": "model:wall-clock.glb",
+     "fit": {
+      "model_dims_m": [
+       0.3,
+       0.045,
+       0.301
+      ],
+      "box_m": [
+       0.3,
+       0.06,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.998,
+      "worst_side_ratio": 1.35
+     }
     },
     {
      "id": "boots-mate",
      "object": "laced-boots",
      "source": "box-proxy",
-     "name": "footwear-box-b"
+     "name": "footwear-box-b",
+     "fit": {
+      "model_skipped": "Man Eater: no figure-like models; a pair of upright boots reads as legs; named box proxy (footwear-box) stays"
+     }
     },
     {
      "id": "kit-bag",
      "object": "kit-bag",
-     "source": "box-proxy"
+     "source": "model:kit-bag.glb",
+     "fit": {
+      "model_dims_m": [
+       0.49,
+       0.538,
+       0.8
+      ],
+      "box_m": [
+       0.35,
+       0.35,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.54
+     }
     },
     {
      "id": "keys",
      "object": "key-ring",
-     "source": "box-proxy"
+     "source": "model:key-ring.glb",
+     "fit": {
+      "model_dims_m": [
+       0.782,
+       0.517,
+       0.12
+      ],
+      "box_m": [
+       0.08,
+       0.02,
+       0.12
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.153,
+      "worst_side_ratio": 1.09
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -222,7 +497,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 14.6
+     "render_seconds": 40.2
     },
     {
      "still": "player",
@@ -231,64 +506,206 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 14.8
+     "render_seconds": 34.4
     }
    ],
    "props": [
     {
      "id": "bed-fisk",
      "object": "bunk-bed",
-     "source": "box-proxy",
-     "name": "bed-a"
+     "source": "model:bunk-bed.glb",
+     "name": "bed-a",
+     "fit": {
+      "model_dims_m": [
+       0.772,
+       2.0,
+       0.851
+      ],
+      "box_m": [
+       0.9,
+       2.0,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.937,
+      "worst_side_ratio": 1.33
+     }
     },
     {
      "id": "bed-mate",
      "object": "bunk-bed",
-     "source": "box-proxy",
-     "name": "bed-b"
+     "source": "model:bunk-bed.glb",
+     "name": "bed-b",
+     "fit": {
+      "model_dims_m": [
+       0.772,
+       2.0,
+       0.851
+      ],
+      "box_m": [
+       0.9,
+       2.0,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.937,
+      "worst_side_ratio": 1.33
+     }
     },
     {
      "id": "bags-fisk",
      "object": "sleeping-bag",
      "source": "box-proxy",
-     "name": "bedroll-slab-a"
+     "name": "bedroll-slab-a",
+     "fit": {
+      "model_skipped": "Man Eater: no figure-like models; the mummy bag has a body-shaped outline; named box proxy (bedroll-slab) stays"
+     }
     },
     {
      "id": "bags-mate",
      "object": "sleeping-bag",
      "source": "box-proxy",
-     "name": "bedroll-slab-b"
+     "name": "bedroll-slab-b",
+     "fit": {
+      "model_skipped": "Man Eater: no figure-like models; the mummy bag has a body-shaped outline; named box proxy (bedroll-slab) stays"
+     }
     },
     {
      "id": "door",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "rules-card",
      "object": "rules-card",
-     "source": "box-proxy"
+     "source": "model:rules-card.glb",
+     "fit": {
+      "model_dims_m": [
+       0.692,
+       0.082,
+       0.4
+      ],
+      "box_m": [
+       0.3,
+       0.01,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.658,
+      "worst_side_ratio": 2.32
+     }
     },
     {
      "id": "clock",
      "object": "wall-clock",
-     "source": "box-proxy"
+     "source": "model:wall-clock.glb",
+     "fit": {
+      "model_dims_m": [
+       0.3,
+       0.045,
+       0.301
+      ],
+      "box_m": [
+       0.3,
+       0.06,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.998,
+      "worst_side_ratio": 1.35
+     }
     },
     {
      "id": "boots-mate",
      "object": "laced-boots",
      "source": "box-proxy",
-     "name": "footwear-box-b"
+     "name": "footwear-box-b",
+     "fit": {
+      "model_skipped": "Man Eater: no figure-like models; a pair of upright boots reads as legs; named box proxy (footwear-box) stays"
+     }
     },
     {
      "id": "kit-bag",
      "object": "kit-bag",
-     "source": "box-proxy"
+     "source": "model:kit-bag.glb",
+     "fit": {
+      "model_dims_m": [
+       0.49,
+       0.538,
+       0.8
+      ],
+      "box_m": [
+       0.35,
+       0.35,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.54
+     }
     },
     {
      "id": "keys",
      "object": "key-ring",
-     "source": "box-proxy"
+     "source": "model:key-ring.glb",
+     "fit": {
+      "model_dims_m": [
+       0.782,
+       0.517,
+       0.12
+      ],
+      "box_m": [
+       0.08,
+       0.02,
+       0.12
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.153,
+      "worst_side_ratio": 1.09
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -322,7 +739,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 15.4
+     "render_seconds": 34.5
     },
     {
      "still": "player",
@@ -331,52 +748,188 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 16.6
+     "render_seconds": 27.6
     }
    ],
    "props": [
     {
      "id": "bed-fisk",
      "object": "bunk-bed",
-     "source": "box-proxy",
-     "name": "bed-a"
+     "source": "model:bunk-bed.glb",
+     "name": "bed-a",
+     "fit": {
+      "model_dims_m": [
+       0.772,
+       2.0,
+       0.851
+      ],
+      "box_m": [
+       0.9,
+       2.0,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.937,
+      "worst_side_ratio": 1.33
+     }
     },
     {
      "id": "bed-mate",
      "object": "bunk-bed",
-     "source": "box-proxy",
-     "name": "bed-b"
+     "source": "model:bunk-bed.glb",
+     "name": "bed-b",
+     "fit": {
+      "model_dims_m": [
+       0.772,
+       2.0,
+       0.851
+      ],
+      "box_m": [
+       0.9,
+       2.0,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.937,
+      "worst_side_ratio": 1.33
+     }
     },
     {
      "id": "bags-fisk",
      "object": "sleeping-bag",
      "source": "box-proxy",
-     "name": "bedroll-slab-a"
+     "name": "bedroll-slab-a",
+     "fit": {
+      "model_skipped": "Man Eater: no figure-like models; the mummy bag has a body-shaped outline; named box proxy (bedroll-slab) stays"
+     }
     },
     {
      "id": "door",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "rules-card",
      "object": "rules-card",
-     "source": "box-proxy"
+     "source": "model:rules-card.glb",
+     "fit": {
+      "model_dims_m": [
+       0.692,
+       0.082,
+       0.4
+      ],
+      "box_m": [
+       0.3,
+       0.01,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.658,
+      "worst_side_ratio": 2.32
+     }
     },
     {
      "id": "clock",
      "object": "wall-clock",
-     "source": "box-proxy"
+     "source": "model:wall-clock.glb",
+     "fit": {
+      "model_dims_m": [
+       0.3,
+       0.045,
+       0.301
+      ],
+      "box_m": [
+       0.3,
+       0.06,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.998,
+      "worst_side_ratio": 1.35
+     }
     },
     {
      "id": "kit-bag",
      "object": "kit-bag",
-     "source": "box-proxy"
+     "source": "model:kit-bag.glb",
+     "fit": {
+      "model_dims_m": [
+       0.49,
+       0.538,
+       0.8
+      ],
+      "box_m": [
+       0.35,
+       0.35,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.54
+     }
     },
     {
      "id": "keys",
      "object": "key-ring",
-     "source": "box-proxy"
+     "source": "model:key-ring.glb",
+     "fit": {
+      "model_dims_m": [
+       0.782,
+       0.517,
+       0.12
+      ],
+      "box_m": [
+       0.08,
+       0.02,
+       0.12
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.153,
+      "worst_side_ratio": 1.09
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -410,7 +963,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 16.8
+     "render_seconds": 43.3
     },
     {
      "still": "player",
@@ -419,63 +972,221 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 17.2
+     "render_seconds": 30.9
     }
    ],
    "props": [
     {
      "id": "bed-fisk",
      "object": "bunk-bed",
-     "source": "box-proxy",
-     "name": "bed-a"
+     "source": "model:bunk-bed.glb",
+     "name": "bed-a",
+     "fit": {
+      "model_dims_m": [
+       0.772,
+       2.0,
+       0.851
+      ],
+      "box_m": [
+       0.9,
+       2.0,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.937,
+      "worst_side_ratio": 1.33
+     }
     },
     {
      "id": "bed-mate",
      "object": "bunk-bed",
-     "source": "box-proxy",
-     "name": "bed-b"
+     "source": "model:bunk-bed.glb",
+     "name": "bed-b",
+     "fit": {
+      "model_dims_m": [
+       0.772,
+       2.0,
+       0.851
+      ],
+      "box_m": [
+       0.9,
+       2.0,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.937,
+      "worst_side_ratio": 1.33
+     }
     },
     {
      "id": "bags-fisk",
      "object": "sleeping-bag",
      "source": "box-proxy",
-     "name": "bedroll-slab-a"
+     "name": "bedroll-slab-a",
+     "fit": {
+      "model_skipped": "Man Eater: no figure-like models; the mummy bag has a body-shaped outline; named box proxy (bedroll-slab) stays"
+     }
     },
     {
      "id": "bags-mate",
      "object": "sleeping-bag",
      "source": "box-proxy",
-     "name": "bedroll-slab-b"
+     "name": "bedroll-slab-b",
+     "fit": {
+      "model_skipped": "Man Eater: no figure-like models; the mummy bag has a body-shaped outline; named box proxy (bedroll-slab) stays"
+     }
     },
     {
      "id": "door",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "rules-card",
      "object": "rules-card",
-     "source": "box-proxy"
+     "source": "model:rules-card.glb",
+     "fit": {
+      "model_dims_m": [
+       0.692,
+       0.082,
+       0.4
+      ],
+      "box_m": [
+       0.3,
+       0.01,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.658,
+      "worst_side_ratio": 2.32
+     }
     },
     {
      "id": "clock",
      "object": "wall-clock",
-     "source": "box-proxy"
+     "source": "model:wall-clock.glb",
+     "fit": {
+      "model_dims_m": [
+       0.3,
+       0.045,
+       0.301
+      ],
+      "box_m": [
+       0.3,
+       0.06,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.998,
+      "worst_side_ratio": 1.35
+     }
     },
     {
      "id": "kit-bag",
      "object": "kit-bag",
-     "source": "box-proxy"
+     "source": "model:kit-bag.glb",
+     "fit": {
+      "model_dims_m": [
+       0.49,
+       0.538,
+       0.8
+      ],
+      "box_m": [
+       0.35,
+       0.35,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.54
+     }
     },
     {
      "id": "bread",
      "object": "bread-loaf",
-     "source": "box-proxy"
+     "source": "model:bread-loaf.glb",
+     "fit": {
+      "model_dims_m": [
+       0.25,
+       0.156,
+       0.153
+      ],
+      "box_m": [
+       0.25,
+       0.12,
+       0.1
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.796,
+      "worst_side_ratio": 1.26
+     }
     },
     {
      "id": "keys",
      "object": "key-ring",
-     "source": "box-proxy"
+     "source": "model:key-ring.glb",
+     "fit": {
+      "model_dims_m": [
+       0.782,
+       0.517,
+       0.12
+      ],
+      "box_m": [
+       0.08,
+       0.02,
+       0.12
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.153,
+      "worst_side_ratio": 1.09
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -509,7 +1220,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 18.3
+     "render_seconds": 40.7
     },
     {
      "still": "player",
@@ -518,63 +1229,221 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 17.6
+     "render_seconds": 39.0
     }
    ],
    "props": [
     {
      "id": "bed-fisk",
      "object": "bunk-bed",
-     "source": "box-proxy",
-     "name": "bed-a"
+     "source": "model:bunk-bed.glb",
+     "name": "bed-a",
+     "fit": {
+      "model_dims_m": [
+       0.772,
+       2.0,
+       0.851
+      ],
+      "box_m": [
+       0.9,
+       2.0,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.937,
+      "worst_side_ratio": 1.33
+     }
     },
     {
      "id": "bed-mate",
      "object": "bunk-bed",
-     "source": "box-proxy",
-     "name": "bed-b"
+     "source": "model:bunk-bed.glb",
+     "name": "bed-b",
+     "fit": {
+      "model_dims_m": [
+       0.772,
+       2.0,
+       0.851
+      ],
+      "box_m": [
+       0.9,
+       2.0,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.937,
+      "worst_side_ratio": 1.33
+     }
     },
     {
      "id": "bags-fisk",
      "object": "sleeping-bag",
      "source": "box-proxy",
-     "name": "bedroll-slab-a"
+     "name": "bedroll-slab-a",
+     "fit": {
+      "model_skipped": "Man Eater: no figure-like models; the mummy bag has a body-shaped outline; named box proxy (bedroll-slab) stays"
+     }
     },
     {
      "id": "bags-mate",
      "object": "sleeping-bag",
      "source": "box-proxy",
-     "name": "bedroll-slab-b"
+     "name": "bedroll-slab-b",
+     "fit": {
+      "model_skipped": "Man Eater: no figure-like models; the mummy bag has a body-shaped outline; named box proxy (bedroll-slab) stays"
+     }
     },
     {
      "id": "door",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "rules-card",
      "object": "rules-card",
-     "source": "box-proxy"
+     "source": "model:rules-card.glb",
+     "fit": {
+      "model_dims_m": [
+       0.692,
+       0.082,
+       0.4
+      ],
+      "box_m": [
+       0.3,
+       0.01,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.658,
+      "worst_side_ratio": 2.32
+     }
     },
     {
      "id": "clock",
      "object": "wall-clock",
-     "source": "box-proxy"
+     "source": "model:wall-clock.glb",
+     "fit": {
+      "model_dims_m": [
+       0.3,
+       0.045,
+       0.301
+      ],
+      "box_m": [
+       0.3,
+       0.06,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.998,
+      "worst_side_ratio": 1.35
+     }
     },
     {
      "id": "kit-bag",
      "object": "kit-bag",
-     "source": "box-proxy"
+     "source": "model:kit-bag.glb",
+     "fit": {
+      "model_dims_m": [
+       0.49,
+       0.538,
+       0.8
+      ],
+      "box_m": [
+       0.35,
+       0.35,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.54
+     }
     },
     {
      "id": "bread",
      "object": "bread-loaf",
-     "source": "box-proxy"
+     "source": "model:bread-loaf.glb",
+     "fit": {
+      "model_dims_m": [
+       0.25,
+       0.156,
+       0.153
+      ],
+      "box_m": [
+       0.25,
+       0.12,
+       0.1
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.796,
+      "worst_side_ratio": 1.26
+     }
     },
     {
      "id": "keys",
      "object": "key-ring",
-     "source": "box-proxy"
+     "source": "model:key-ring.glb",
+     "fit": {
+      "model_dims_m": [
+       0.782,
+       0.517,
+       0.12
+      ],
+      "box_m": [
+       0.08,
+       0.02,
+       0.12
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.153,
+      "worst_side_ratio": 1.09
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -608,7 +1477,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 17.4
+     "render_seconds": 28.2
     },
     {
      "still": "player",
@@ -617,63 +1486,221 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 15.9
+     "render_seconds": 30.5
     }
    ],
    "props": [
     {
      "id": "bed-fisk",
      "object": "bunk-bed",
-     "source": "box-proxy",
-     "name": "bed-a"
+     "source": "model:bunk-bed.glb",
+     "name": "bed-a",
+     "fit": {
+      "model_dims_m": [
+       0.772,
+       2.0,
+       0.851
+      ],
+      "box_m": [
+       0.9,
+       2.0,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.937,
+      "worst_side_ratio": 1.33
+     }
     },
     {
      "id": "bed-mate",
      "object": "bunk-bed",
-     "source": "box-proxy",
-     "name": "bed-b"
+     "source": "model:bunk-bed.glb",
+     "name": "bed-b",
+     "fit": {
+      "model_dims_m": [
+       0.772,
+       2.0,
+       0.851
+      ],
+      "box_m": [
+       0.9,
+       2.0,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.937,
+      "worst_side_ratio": 1.33
+     }
     },
     {
      "id": "bags-fisk",
      "object": "sleeping-bag",
      "source": "box-proxy",
-     "name": "bedroll-slab-a"
+     "name": "bedroll-slab-a",
+     "fit": {
+      "model_skipped": "Man Eater: no figure-like models; the mummy bag has a body-shaped outline; named box proxy (bedroll-slab) stays"
+     }
     },
     {
      "id": "bags-mate",
      "object": "sleeping-bag",
      "source": "box-proxy",
-     "name": "bedroll-slab-b"
+     "name": "bedroll-slab-b",
+     "fit": {
+      "model_skipped": "Man Eater: no figure-like models; the mummy bag has a body-shaped outline; named box proxy (bedroll-slab) stays"
+     }
     },
     {
      "id": "door",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "rules-card",
      "object": "rules-card",
-     "source": "box-proxy"
+     "source": "model:rules-card.glb",
+     "fit": {
+      "model_dims_m": [
+       0.692,
+       0.082,
+       0.4
+      ],
+      "box_m": [
+       0.3,
+       0.01,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.658,
+      "worst_side_ratio": 2.32
+     }
     },
     {
      "id": "clock",
      "object": "wall-clock",
-     "source": "box-proxy"
+     "source": "model:wall-clock.glb",
+     "fit": {
+      "model_dims_m": [
+       0.3,
+       0.045,
+       0.301
+      ],
+      "box_m": [
+       0.3,
+       0.06,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.998,
+      "worst_side_ratio": 1.35
+     }
     },
     {
      "id": "kit-bag",
      "object": "kit-bag",
-     "source": "box-proxy"
+     "source": "model:kit-bag.glb",
+     "fit": {
+      "model_dims_m": [
+       0.49,
+       0.538,
+       0.8
+      ],
+      "box_m": [
+       0.35,
+       0.35,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.54
+     }
     },
     {
      "id": "bread",
      "object": "bread-loaf",
-     "source": "box-proxy"
+     "source": "model:bread-loaf.glb",
+     "fit": {
+      "model_dims_m": [
+       0.25,
+       0.156,
+       0.153
+      ],
+      "box_m": [
+       0.25,
+       0.12,
+       0.1
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.796,
+      "worst_side_ratio": 1.26
+     }
     },
     {
      "id": "keys",
      "object": "key-ring",
-     "source": "box-proxy"
+     "source": "model:key-ring.glb",
+     "fit": {
+      "model_dims_m": [
+       0.782,
+       0.517,
+       0.12
+      ],
+      "box_m": [
+       0.08,
+       0.02,
+       0.12
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.153,
+      "worst_side_ratio": 1.09
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -707,7 +1734,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 15.6
+     "render_seconds": 22.3
     },
     {
      "still": "player",
@@ -716,63 +1743,221 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 15.6
+     "render_seconds": 39.5
     }
    ],
    "props": [
     {
      "id": "bed-fisk",
      "object": "bunk-bed",
-     "source": "box-proxy",
-     "name": "bed-a"
+     "source": "model:bunk-bed.glb",
+     "name": "bed-a",
+     "fit": {
+      "model_dims_m": [
+       0.772,
+       2.0,
+       0.851
+      ],
+      "box_m": [
+       0.9,
+       2.0,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.937,
+      "worst_side_ratio": 1.33
+     }
     },
     {
      "id": "bed-mate",
      "object": "bunk-bed",
-     "source": "box-proxy",
-     "name": "bed-b"
+     "source": "model:bunk-bed.glb",
+     "name": "bed-b",
+     "fit": {
+      "model_dims_m": [
+       0.772,
+       2.0,
+       0.851
+      ],
+      "box_m": [
+       0.9,
+       2.0,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.937,
+      "worst_side_ratio": 1.33
+     }
     },
     {
      "id": "bags-fisk",
      "object": "sleeping-bag",
      "source": "box-proxy",
-     "name": "bedroll-slab-a"
+     "name": "bedroll-slab-a",
+     "fit": {
+      "model_skipped": "Man Eater: no figure-like models; the mummy bag has a body-shaped outline; named box proxy (bedroll-slab) stays"
+     }
     },
     {
      "id": "bags-mate",
      "object": "sleeping-bag",
      "source": "box-proxy",
-     "name": "bedroll-slab-b"
+     "name": "bedroll-slab-b",
+     "fit": {
+      "model_skipped": "Man Eater: no figure-like models; the mummy bag has a body-shaped outline; named box proxy (bedroll-slab) stays"
+     }
     },
     {
      "id": "door",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "rules-card",
      "object": "rules-card",
-     "source": "box-proxy"
+     "source": "model:rules-card.glb",
+     "fit": {
+      "model_dims_m": [
+       0.692,
+       0.082,
+       0.4
+      ],
+      "box_m": [
+       0.3,
+       0.01,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.658,
+      "worst_side_ratio": 2.32
+     }
     },
     {
      "id": "clock",
      "object": "wall-clock",
-     "source": "box-proxy"
+     "source": "model:wall-clock.glb",
+     "fit": {
+      "model_dims_m": [
+       0.3,
+       0.045,
+       0.301
+      ],
+      "box_m": [
+       0.3,
+       0.06,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.998,
+      "worst_side_ratio": 1.35
+     }
     },
     {
      "id": "kit-bag",
      "object": "kit-bag",
-     "source": "box-proxy"
+     "source": "model:kit-bag.glb",
+     "fit": {
+      "model_dims_m": [
+       0.49,
+       0.538,
+       0.8
+      ],
+      "box_m": [
+       0.35,
+       0.35,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.54
+     }
     },
     {
      "id": "bread",
      "object": "bread-loaf",
-     "source": "box-proxy"
+     "source": "model:bread-loaf.glb",
+     "fit": {
+      "model_dims_m": [
+       0.25,
+       0.156,
+       0.153
+      ],
+      "box_m": [
+       0.25,
+       0.12,
+       0.1
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.796,
+      "worst_side_ratio": 1.26
+     }
     },
     {
      "id": "keys",
      "object": "key-ring",
-     "source": "box-proxy"
+     "source": "model:key-ring.glb",
+     "fit": {
+      "model_dims_m": [
+       0.782,
+       0.517,
+       0.12
+      ],
+      "box_m": [
+       0.08,
+       0.02,
+       0.12
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.153,
+      "worst_side_ratio": 1.09
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -806,7 +1991,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 15.3
+     "render_seconds": 34.1
     },
     {
      "still": "player",
@@ -815,69 +2000,230 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 15.1
+     "render_seconds": 30.3
     }
    ],
    "props": [
     {
      "id": "bed-fisk",
      "object": "bunk-bed",
-     "source": "box-proxy",
-     "name": "bed-a"
+     "source": "model:bunk-bed.glb",
+     "name": "bed-a",
+     "fit": {
+      "model_dims_m": [
+       0.772,
+       2.0,
+       0.851
+      ],
+      "box_m": [
+       0.9,
+       2.0,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.937,
+      "worst_side_ratio": 1.33
+     }
     },
     {
      "id": "bed-mate",
      "object": "bunk-bed",
-     "source": "box-proxy",
-     "name": "bed-b"
+     "source": "model:bunk-bed.glb",
+     "name": "bed-b",
+     "fit": {
+      "model_dims_m": [
+       0.772,
+       2.0,
+       0.851
+      ],
+      "box_m": [
+       0.9,
+       2.0,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.937,
+      "worst_side_ratio": 1.33
+     }
     },
     {
      "id": "bags-fisk",
      "object": "sleeping-bag",
      "source": "box-proxy",
-     "name": "bedroll-slab-a"
+     "name": "bedroll-slab-a",
+     "fit": {
+      "model_skipped": "Man Eater: no figure-like models; the mummy bag has a body-shaped outline; named box proxy (bedroll-slab) stays"
+     }
     },
     {
      "id": "bags-mate",
      "object": "sleeping-bag",
      "source": "box-proxy",
-     "name": "bedroll-slab-b"
+     "name": "bedroll-slab-b",
+     "fit": {
+      "model_skipped": "Man Eater: no figure-like models; the mummy bag has a body-shaped outline; named box proxy (bedroll-slab) stays"
+     }
     },
     {
      "id": "door",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "rules-card",
      "object": "rules-card",
-     "source": "box-proxy"
+     "source": "model:rules-card.glb",
+     "fit": {
+      "model_dims_m": [
+       0.692,
+       0.082,
+       0.4
+      ],
+      "box_m": [
+       0.3,
+       0.01,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.658,
+      "worst_side_ratio": 2.32
+     }
     },
     {
      "id": "clock",
      "object": "wall-clock",
-     "source": "box-proxy"
+     "source": "model:wall-clock.glb",
+     "fit": {
+      "model_dims_m": [
+       0.3,
+       0.045,
+       0.301
+      ],
+      "box_m": [
+       0.3,
+       0.06,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.998,
+      "worst_side_ratio": 1.35
+     }
     },
     {
      "id": "boots-mate",
      "object": "laced-boots",
      "source": "box-proxy",
-     "name": "footwear-box-b"
+     "name": "footwear-box-b",
+     "fit": {
+      "model_skipped": "Man Eater: no figure-like models; a pair of upright boots reads as legs; named box proxy (footwear-box) stays"
+     }
     },
     {
      "id": "kit-bag",
      "object": "kit-bag",
-     "source": "box-proxy"
+     "source": "model:kit-bag.glb",
+     "fit": {
+      "model_dims_m": [
+       0.49,
+       0.538,
+       0.8
+      ],
+      "box_m": [
+       0.35,
+       0.35,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.54
+     }
     },
     {
      "id": "bread",
      "object": "bread-loaf",
-     "source": "box-proxy"
+     "source": "model:bread-loaf.glb",
+     "fit": {
+      "model_dims_m": [
+       0.25,
+       0.156,
+       0.153
+      ],
+      "box_m": [
+       0.25,
+       0.12,
+       0.1
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.796,
+      "worst_side_ratio": 1.26
+     }
     },
     {
      "id": "keys",
      "object": "key-ring",
-     "source": "box-proxy"
+     "source": "model:key-ring.glb",
+     "fit": {
+      "model_dims_m": [
+       0.782,
+       0.517,
+       0.12
+      ],
+      "box_m": [
+       0.08,
+       0.02,
+       0.12
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.153,
+      "worst_side_ratio": 1.09
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -911,7 +2257,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 15.3
+     "render_seconds": 28.0
     },
     {
      "still": "player",
@@ -920,63 +2266,221 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 15.2
+     "render_seconds": 31.4
     }
    ],
    "props": [
     {
      "id": "bed-fisk",
      "object": "bunk-bed",
-     "source": "box-proxy",
-     "name": "bed-a"
+     "source": "model:bunk-bed.glb",
+     "name": "bed-a",
+     "fit": {
+      "model_dims_m": [
+       0.772,
+       2.0,
+       0.851
+      ],
+      "box_m": [
+       0.9,
+       2.0,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.937,
+      "worst_side_ratio": 1.33
+     }
     },
     {
      "id": "bed-mate",
      "object": "bunk-bed",
-     "source": "box-proxy",
-     "name": "bed-b"
+     "source": "model:bunk-bed.glb",
+     "name": "bed-b",
+     "fit": {
+      "model_dims_m": [
+       0.772,
+       2.0,
+       0.851
+      ],
+      "box_m": [
+       0.9,
+       2.0,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.937,
+      "worst_side_ratio": 1.33
+     }
     },
     {
      "id": "bags-fisk",
      "object": "sleeping-bag",
      "source": "box-proxy",
-     "name": "bedroll-slab-a"
+     "name": "bedroll-slab-a",
+     "fit": {
+      "model_skipped": "Man Eater: no figure-like models; the mummy bag has a body-shaped outline; named box proxy (bedroll-slab) stays"
+     }
     },
     {
      "id": "bags-mate",
      "object": "sleeping-bag",
      "source": "box-proxy",
-     "name": "bedroll-slab-b"
+     "name": "bedroll-slab-b",
+     "fit": {
+      "model_skipped": "Man Eater: no figure-like models; the mummy bag has a body-shaped outline; named box proxy (bedroll-slab) stays"
+     }
     },
     {
      "id": "door",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "rules-card",
      "object": "rules-card",
-     "source": "box-proxy"
+     "source": "model:rules-card.glb",
+     "fit": {
+      "model_dims_m": [
+       0.692,
+       0.082,
+       0.4
+      ],
+      "box_m": [
+       0.3,
+       0.01,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.658,
+      "worst_side_ratio": 2.32
+     }
     },
     {
      "id": "clock",
      "object": "wall-clock",
-     "source": "box-proxy"
+     "source": "model:wall-clock.glb",
+     "fit": {
+      "model_dims_m": [
+       0.3,
+       0.045,
+       0.301
+      ],
+      "box_m": [
+       0.3,
+       0.06,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.998,
+      "worst_side_ratio": 1.35
+     }
     },
     {
      "id": "kit-bag",
      "object": "kit-bag",
-     "source": "box-proxy"
+     "source": "model:kit-bag.glb",
+     "fit": {
+      "model_dims_m": [
+       0.49,
+       0.538,
+       0.8
+      ],
+      "box_m": [
+       0.35,
+       0.35,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.54
+     }
     },
     {
      "id": "bread",
      "object": "bread-loaf",
-     "source": "box-proxy"
+     "source": "model:bread-loaf.glb",
+     "fit": {
+      "model_dims_m": [
+       0.25,
+       0.156,
+       0.153
+      ],
+      "box_m": [
+       0.25,
+       0.12,
+       0.1
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.796,
+      "worst_side_ratio": 1.26
+     }
     },
     {
      "id": "keys",
      "object": "key-ring",
-     "source": "box-proxy"
+     "source": "model:key-ring.glb",
+     "fit": {
+      "model_dims_m": [
+       0.782,
+       0.517,
+       0.12
+      ],
+      "box_m": [
+       0.08,
+       0.02,
+       0.12
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.153,
+      "worst_side_ratio": 1.09
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -1010,7 +2514,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 15.4
+     "render_seconds": 25.4
     },
     {
      "still": "player",
@@ -1019,63 +2523,221 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 15.3
+     "render_seconds": 36.5
     }
    ],
    "props": [
     {
      "id": "bed-fisk",
      "object": "bunk-bed",
-     "source": "box-proxy",
-     "name": "bed-a"
+     "source": "model:bunk-bed.glb",
+     "name": "bed-a",
+     "fit": {
+      "model_dims_m": [
+       0.772,
+       2.0,
+       0.851
+      ],
+      "box_m": [
+       0.9,
+       2.0,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.937,
+      "worst_side_ratio": 1.33
+     }
     },
     {
      "id": "bed-mate",
      "object": "bunk-bed",
-     "source": "box-proxy",
-     "name": "bed-b"
+     "source": "model:bunk-bed.glb",
+     "name": "bed-b",
+     "fit": {
+      "model_dims_m": [
+       0.772,
+       2.0,
+       0.851
+      ],
+      "box_m": [
+       0.9,
+       2.0,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.937,
+      "worst_side_ratio": 1.33
+     }
     },
     {
      "id": "bags-fisk",
      "object": "sleeping-bag",
      "source": "box-proxy",
-     "name": "bedroll-slab-a"
+     "name": "bedroll-slab-a",
+     "fit": {
+      "model_skipped": "Man Eater: no figure-like models; the mummy bag has a body-shaped outline; named box proxy (bedroll-slab) stays"
+     }
     },
     {
      "id": "bags-mate",
      "object": "sleeping-bag",
      "source": "box-proxy",
-     "name": "bedroll-slab-b"
+     "name": "bedroll-slab-b",
+     "fit": {
+      "model_skipped": "Man Eater: no figure-like models; the mummy bag has a body-shaped outline; named box proxy (bedroll-slab) stays"
+     }
     },
     {
      "id": "door",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "rules-card",
      "object": "rules-card",
-     "source": "box-proxy"
+     "source": "model:rules-card.glb",
+     "fit": {
+      "model_dims_m": [
+       0.692,
+       0.082,
+       0.4
+      ],
+      "box_m": [
+       0.3,
+       0.01,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.658,
+      "worst_side_ratio": 2.32
+     }
     },
     {
      "id": "clock",
      "object": "wall-clock",
-     "source": "box-proxy"
+     "source": "model:wall-clock.glb",
+     "fit": {
+      "model_dims_m": [
+       0.3,
+       0.045,
+       0.301
+      ],
+      "box_m": [
+       0.3,
+       0.06,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.998,
+      "worst_side_ratio": 1.35
+     }
     },
     {
      "id": "kit-bag",
      "object": "kit-bag",
-     "source": "box-proxy"
+     "source": "model:kit-bag.glb",
+     "fit": {
+      "model_dims_m": [
+       0.49,
+       0.538,
+       0.8
+      ],
+      "box_m": [
+       0.35,
+       0.35,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.54
+     }
     },
     {
      "id": "bread",
      "object": "bread-loaf",
-     "source": "box-proxy"
+     "source": "model:bread-loaf.glb",
+     "fit": {
+      "model_dims_m": [
+       0.25,
+       0.156,
+       0.153
+      ],
+      "box_m": [
+       0.25,
+       0.12,
+       0.1
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.796,
+      "worst_side_ratio": 1.26
+     }
     },
     {
      "id": "keys",
      "object": "key-ring",
-     "source": "box-proxy"
+     "source": "model:key-ring.glb",
+     "fit": {
+      "model_dims_m": [
+       0.782,
+       0.517,
+       0.12
+      ],
+      "box_m": [
+       0.08,
+       0.02,
+       0.12
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.153,
+      "worst_side_ratio": 1.09
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -1109,7 +2771,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 15.3
+     "render_seconds": 28.3
     },
     {
      "still": "player",
@@ -1118,63 +2780,221 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 15.5
+     "render_seconds": 31.8
     }
    ],
    "props": [
     {
      "id": "bed-fisk",
      "object": "bunk-bed",
-     "source": "box-proxy",
-     "name": "bed-a"
+     "source": "model:bunk-bed.glb",
+     "name": "bed-a",
+     "fit": {
+      "model_dims_m": [
+       0.772,
+       2.0,
+       0.851
+      ],
+      "box_m": [
+       0.9,
+       2.0,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.937,
+      "worst_side_ratio": 1.33
+     }
     },
     {
      "id": "bed-mate",
      "object": "bunk-bed",
-     "source": "box-proxy",
-     "name": "bed-b"
+     "source": "model:bunk-bed.glb",
+     "name": "bed-b",
+     "fit": {
+      "model_dims_m": [
+       0.772,
+       2.0,
+       0.851
+      ],
+      "box_m": [
+       0.9,
+       2.0,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.937,
+      "worst_side_ratio": 1.33
+     }
     },
     {
      "id": "bags-fisk",
      "object": "sleeping-bag",
      "source": "box-proxy",
-     "name": "bedroll-slab-a"
+     "name": "bedroll-slab-a",
+     "fit": {
+      "model_skipped": "Man Eater: no figure-like models; the mummy bag has a body-shaped outline; named box proxy (bedroll-slab) stays"
+     }
     },
     {
      "id": "bags-mate",
      "object": "sleeping-bag",
      "source": "box-proxy",
-     "name": "bedroll-slab-b"
+     "name": "bedroll-slab-b",
+     "fit": {
+      "model_skipped": "Man Eater: no figure-like models; the mummy bag has a body-shaped outline; named box proxy (bedroll-slab) stays"
+     }
     },
     {
      "id": "door",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "rules-card",
      "object": "rules-card",
-     "source": "box-proxy"
+     "source": "model:rules-card.glb",
+     "fit": {
+      "model_dims_m": [
+       0.692,
+       0.082,
+       0.4
+      ],
+      "box_m": [
+       0.3,
+       0.01,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.658,
+      "worst_side_ratio": 2.32
+     }
     },
     {
      "id": "clock",
      "object": "wall-clock",
-     "source": "box-proxy"
+     "source": "model:wall-clock.glb",
+     "fit": {
+      "model_dims_m": [
+       0.3,
+       0.045,
+       0.301
+      ],
+      "box_m": [
+       0.3,
+       0.06,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.998,
+      "worst_side_ratio": 1.35
+     }
     },
     {
      "id": "kit-bag",
      "object": "kit-bag",
-     "source": "box-proxy"
+     "source": "model:kit-bag.glb",
+     "fit": {
+      "model_dims_m": [
+       0.49,
+       0.538,
+       0.8
+      ],
+      "box_m": [
+       0.35,
+       0.35,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.54
+     }
     },
     {
      "id": "bread",
      "object": "bread-loaf",
-     "source": "box-proxy"
+     "source": "model:bread-loaf.glb",
+     "fit": {
+      "model_dims_m": [
+       0.25,
+       0.156,
+       0.153
+      ],
+      "box_m": [
+       0.25,
+       0.12,
+       0.1
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.796,
+      "worst_side_ratio": 1.26
+     }
     },
     {
      "id": "keys",
      "object": "key-ring",
-     "source": "box-proxy"
+     "source": "model:key-ring.glb",
+     "fit": {
+      "model_dims_m": [
+       0.782,
+       0.517,
+       0.12
+      ],
+      "box_m": [
+       0.08,
+       0.02,
+       0.12
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.153,
+      "worst_side_ratio": 1.09
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -1208,7 +3028,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 15.2
+     "render_seconds": 30.7
     },
     {
      "still": "player",
@@ -1217,63 +3037,221 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 15.3
+     "render_seconds": 39.8
     }
    ],
    "props": [
     {
      "id": "bed-fisk",
      "object": "bunk-bed",
-     "source": "box-proxy",
-     "name": "bed-a"
+     "source": "model:bunk-bed.glb",
+     "name": "bed-a",
+     "fit": {
+      "model_dims_m": [
+       0.772,
+       2.0,
+       0.851
+      ],
+      "box_m": [
+       0.9,
+       2.0,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.937,
+      "worst_side_ratio": 1.33
+     }
     },
     {
      "id": "bed-mate",
      "object": "bunk-bed",
-     "source": "box-proxy",
-     "name": "bed-b"
+     "source": "model:bunk-bed.glb",
+     "name": "bed-b",
+     "fit": {
+      "model_dims_m": [
+       0.772,
+       2.0,
+       0.851
+      ],
+      "box_m": [
+       0.9,
+       2.0,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.937,
+      "worst_side_ratio": 1.33
+     }
     },
     {
      "id": "bags-fisk",
      "object": "sleeping-bag",
      "source": "box-proxy",
-     "name": "bedroll-slab-a"
+     "name": "bedroll-slab-a",
+     "fit": {
+      "model_skipped": "Man Eater: no figure-like models; the mummy bag has a body-shaped outline; named box proxy (bedroll-slab) stays"
+     }
     },
     {
      "id": "bags-mate",
      "object": "sleeping-bag",
      "source": "box-proxy",
-     "name": "bedroll-slab-b"
+     "name": "bedroll-slab-b",
+     "fit": {
+      "model_skipped": "Man Eater: no figure-like models; the mummy bag has a body-shaped outline; named box proxy (bedroll-slab) stays"
+     }
     },
     {
      "id": "door",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "rules-card",
      "object": "rules-card",
-     "source": "box-proxy"
+     "source": "model:rules-card.glb",
+     "fit": {
+      "model_dims_m": [
+       0.692,
+       0.082,
+       0.4
+      ],
+      "box_m": [
+       0.3,
+       0.01,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.658,
+      "worst_side_ratio": 2.32
+     }
     },
     {
      "id": "clock",
      "object": "wall-clock",
-     "source": "box-proxy"
+     "source": "model:wall-clock.glb",
+     "fit": {
+      "model_dims_m": [
+       0.3,
+       0.045,
+       0.301
+      ],
+      "box_m": [
+       0.3,
+       0.06,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.998,
+      "worst_side_ratio": 1.35
+     }
     },
     {
      "id": "kit-bag",
      "object": "kit-bag",
-     "source": "box-proxy"
+     "source": "model:kit-bag.glb",
+     "fit": {
+      "model_dims_m": [
+       0.49,
+       0.538,
+       0.8
+      ],
+      "box_m": [
+       0.35,
+       0.35,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.54
+     }
     },
     {
      "id": "bread",
      "object": "bread-loaf",
-     "source": "box-proxy"
+     "source": "model:bread-loaf.glb",
+     "fit": {
+      "model_dims_m": [
+       0.25,
+       0.156,
+       0.153
+      ],
+      "box_m": [
+       0.25,
+       0.12,
+       0.1
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.796,
+      "worst_side_ratio": 1.26
+     }
     },
     {
      "id": "keys",
      "object": "key-ring",
-     "source": "box-proxy"
+     "source": "model:key-ring.glb",
+     "fit": {
+      "model_dims_m": [
+       0.782,
+       0.517,
+       0.12
+      ],
+      "box_m": [
+       0.08,
+       0.02,
+       0.12
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.153,
+      "worst_side_ratio": 1.09
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -1307,7 +3285,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 15.3
+     "render_seconds": 18.3
     },
     {
      "still": "player",
@@ -1316,63 +3294,221 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 15.4
+     "render_seconds": 28.9
     }
    ],
    "props": [
     {
      "id": "bed-fisk",
      "object": "bunk-bed",
-     "source": "box-proxy",
-     "name": "bed-a"
+     "source": "model:bunk-bed.glb",
+     "name": "bed-a",
+     "fit": {
+      "model_dims_m": [
+       0.772,
+       2.0,
+       0.851
+      ],
+      "box_m": [
+       0.9,
+       2.0,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.937,
+      "worst_side_ratio": 1.33
+     }
     },
     {
      "id": "bed-mate",
      "object": "bunk-bed",
-     "source": "box-proxy",
-     "name": "bed-b"
+     "source": "model:bunk-bed.glb",
+     "name": "bed-b",
+     "fit": {
+      "model_dims_m": [
+       0.772,
+       2.0,
+       0.851
+      ],
+      "box_m": [
+       0.9,
+       2.0,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.937,
+      "worst_side_ratio": 1.33
+     }
     },
     {
      "id": "bags-fisk",
      "object": "sleeping-bag",
      "source": "box-proxy",
-     "name": "bedroll-slab-a"
+     "name": "bedroll-slab-a",
+     "fit": {
+      "model_skipped": "Man Eater: no figure-like models; the mummy bag has a body-shaped outline; named box proxy (bedroll-slab) stays"
+     }
     },
     {
      "id": "bags-mate",
      "object": "sleeping-bag",
      "source": "box-proxy",
-     "name": "bedroll-slab-b"
+     "name": "bedroll-slab-b",
+     "fit": {
+      "model_skipped": "Man Eater: no figure-like models; the mummy bag has a body-shaped outline; named box proxy (bedroll-slab) stays"
+     }
     },
     {
      "id": "door",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "rules-card",
      "object": "rules-card",
-     "source": "box-proxy"
+     "source": "model:rules-card.glb",
+     "fit": {
+      "model_dims_m": [
+       0.692,
+       0.082,
+       0.4
+      ],
+      "box_m": [
+       0.3,
+       0.01,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.658,
+      "worst_side_ratio": 2.32
+     }
     },
     {
      "id": "clock",
      "object": "wall-clock",
-     "source": "box-proxy"
+     "source": "model:wall-clock.glb",
+     "fit": {
+      "model_dims_m": [
+       0.3,
+       0.045,
+       0.301
+      ],
+      "box_m": [
+       0.3,
+       0.06,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.998,
+      "worst_side_ratio": 1.35
+     }
     },
     {
      "id": "kit-bag",
      "object": "kit-bag",
-     "source": "box-proxy"
+     "source": "model:kit-bag.glb",
+     "fit": {
+      "model_dims_m": [
+       0.49,
+       0.538,
+       0.8
+      ],
+      "box_m": [
+       0.35,
+       0.35,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.54
+     }
     },
     {
      "id": "bread",
      "object": "bread-loaf",
-     "source": "box-proxy"
+     "source": "model:bread-loaf.glb",
+     "fit": {
+      "model_dims_m": [
+       0.25,
+       0.156,
+       0.153
+      ],
+      "box_m": [
+       0.25,
+       0.12,
+       0.1
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.796,
+      "worst_side_ratio": 1.26
+     }
     },
     {
      "id": "keys",
      "object": "key-ring",
-     "source": "box-proxy"
+     "source": "model:key-ring.glb",
+     "fit": {
+      "model_dims_m": [
+       0.782,
+       0.517,
+       0.12
+      ],
+      "box_m": [
+       0.08,
+       0.02,
+       0.12
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.153,
+      "worst_side_ratio": 1.09
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -1406,7 +3542,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 13.9
+     "render_seconds": 21.8
     },
     {
      "still": "player",
@@ -1415,52 +3551,188 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 14.0
+     "render_seconds": 28.0
     }
    ],
    "props": [
     {
      "id": "bed-fisk",
      "object": "bunk-bed",
-     "source": "box-proxy",
-     "name": "bed-a"
+     "source": "model:bunk-bed.glb",
+     "name": "bed-a",
+     "fit": {
+      "model_dims_m": [
+       0.772,
+       2.0,
+       0.851
+      ],
+      "box_m": [
+       0.9,
+       2.0,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.937,
+      "worst_side_ratio": 1.33
+     }
     },
     {
      "id": "bed-mate",
      "object": "bunk-bed",
-     "source": "box-proxy",
-     "name": "bed-b"
+     "source": "model:bunk-bed.glb",
+     "name": "bed-b",
+     "fit": {
+      "model_dims_m": [
+       0.772,
+       2.0,
+       0.851
+      ],
+      "box_m": [
+       0.9,
+       2.0,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.937,
+      "worst_side_ratio": 1.33
+     }
     },
     {
      "id": "bags-fisk",
      "object": "sleeping-bag",
      "source": "box-proxy",
-     "name": "bedroll-slab-a"
+     "name": "bedroll-slab-a",
+     "fit": {
+      "model_skipped": "Man Eater: no figure-like models; the mummy bag has a body-shaped outline; named box proxy (bedroll-slab) stays"
+     }
     },
     {
      "id": "door",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "rules-card",
      "object": "rules-card",
-     "source": "box-proxy"
+     "source": "model:rules-card.glb",
+     "fit": {
+      "model_dims_m": [
+       0.692,
+       0.082,
+       0.4
+      ],
+      "box_m": [
+       0.3,
+       0.01,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.658,
+      "worst_side_ratio": 2.32
+     }
     },
     {
      "id": "clock",
      "object": "wall-clock",
-     "source": "box-proxy"
+     "source": "model:wall-clock.glb",
+     "fit": {
+      "model_dims_m": [
+       0.3,
+       0.045,
+       0.301
+      ],
+      "box_m": [
+       0.3,
+       0.06,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.998,
+      "worst_side_ratio": 1.35
+     }
     },
     {
      "id": "kit-bag",
      "object": "kit-bag",
-     "source": "box-proxy"
+     "source": "model:kit-bag.glb",
+     "fit": {
+      "model_dims_m": [
+       0.49,
+       0.538,
+       0.8
+      ],
+      "box_m": [
+       0.35,
+       0.35,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.54
+     }
     },
     {
      "id": "keys",
      "object": "key-ring",
-     "source": "box-proxy"
+     "source": "model:key-ring.glb",
+     "fit": {
+      "model_dims_m": [
+       0.782,
+       0.517,
+       0.12
+      ],
+      "box_m": [
+       0.08,
+       0.02,
+       0.12
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.153,
+      "worst_side_ratio": 1.09
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -1494,7 +3766,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 13.0
+     "render_seconds": 29.1
     },
     {
      "still": "player",
@@ -1503,7 +3775,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 14.8
+     "render_seconds": 21.5
     },
     {
      "still": "overview",
@@ -1512,29 +3784,105 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 7.1
+     "render_seconds": 7.2
     }
    ],
    "props": [
     {
      "id": "tray-stack-1",
      "object": "meal-tray",
-     "source": "box-proxy"
+     "source": "model:meal-tray.glb",
+     "fit": {
+      "model_dims_m": [
+       0.45,
+       0.402,
+       0.045
+      ],
+      "box_m": [
+       0.45,
+       0.33,
+       0.03
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.906,
+      "worst_side_ratio": 1.17
+     }
     },
     {
      "id": "tray-stack-2",
      "object": "meal-tray",
-     "source": "box-proxy"
+     "source": "model:meal-tray.glb",
+     "fit": {
+      "model_dims_m": [
+       0.45,
+       0.402,
+       0.045
+      ],
+      "box_m": [
+       0.45,
+       0.33,
+       0.03
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.906,
+      "worst_side_ratio": 1.17
+     }
     },
     {
      "id": "tray-stack-3",
      "object": "meal-tray",
-     "source": "box-proxy"
+     "source": "model:meal-tray.glb",
+     "fit": {
+      "model_dims_m": [
+       0.45,
+       0.402,
+       0.045
+      ],
+      "box_m": [
+       0.45,
+       0.33,
+       0.03
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.906,
+      "worst_side_ratio": 1.17
+     }
     },
     {
      "id": "tray-served",
      "object": "meal-tray",
-     "source": "box-proxy"
+     "source": "model:meal-tray.glb",
+     "fit": {
+      "model_dims_m": [
+       0.45,
+       0.402,
+       0.045
+      ],
+      "box_m": [
+       0.45,
+       0.33,
+       0.03
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.906,
+      "worst_side_ratio": 1.17
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -1568,7 +3916,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 16.8
+     "render_seconds": 24.4
     },
     {
      "still": "player",
@@ -1577,29 +3925,105 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 17.4
+     "render_seconds": 30.6
     }
    ],
    "props": [
     {
      "id": "tray-stack-1",
      "object": "meal-tray",
-     "source": "box-proxy"
+     "source": "model:meal-tray.glb",
+     "fit": {
+      "model_dims_m": [
+       0.45,
+       0.402,
+       0.045
+      ],
+      "box_m": [
+       0.45,
+       0.33,
+       0.03
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.906,
+      "worst_side_ratio": 1.17
+     }
     },
     {
      "id": "tray-stack-2",
      "object": "meal-tray",
-     "source": "box-proxy"
+     "source": "model:meal-tray.glb",
+     "fit": {
+      "model_dims_m": [
+       0.45,
+       0.402,
+       0.045
+      ],
+      "box_m": [
+       0.45,
+       0.33,
+       0.03
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.906,
+      "worst_side_ratio": 1.17
+     }
     },
     {
      "id": "tray-stack-3",
      "object": "meal-tray",
-     "source": "box-proxy"
+     "source": "model:meal-tray.glb",
+     "fit": {
+      "model_dims_m": [
+       0.45,
+       0.402,
+       0.045
+      ],
+      "box_m": [
+       0.45,
+       0.33,
+       0.03
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.906,
+      "worst_side_ratio": 1.17
+     }
     },
     {
      "id": "tray-served",
      "object": "meal-tray",
-     "source": "box-proxy"
+     "source": "model:meal-tray.glb",
+     "fit": {
+      "model_dims_m": [
+       0.45,
+       0.402,
+       0.045
+      ],
+      "box_m": [
+       0.45,
+       0.33,
+       0.03
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.906,
+      "worst_side_ratio": 1.17
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -1633,7 +4057,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 20.0
+     "render_seconds": 32.0
     },
     {
      "still": "player",
@@ -1642,7 +4066,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 18.2
+     "render_seconds": 32.4
     },
     {
      "still": "overview",
@@ -1651,49 +4075,201 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 7.3
+     "render_seconds": 11.8
     }
    ],
    "props": [
     {
      "id": "crate-1",
      "object": "supply-crate",
-     "source": "box-proxy"
+     "source": "model:supply-crate.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.277,
+       0.256
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.312,
+      "worst_side_ratio": 1.31
+     }
     },
     {
      "id": "crate-2",
      "object": "supply-crate",
-     "source": "box-proxy"
+     "source": "model:supply-crate.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.277,
+       0.256
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.312,
+      "worst_side_ratio": 1.31
+     }
     },
     {
      "id": "crate-3",
      "object": "supply-crate",
-     "source": "box-proxy"
+     "source": "model:supply-crate.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.277,
+       0.256
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.312,
+      "worst_side_ratio": 1.31
+     }
     },
     {
      "id": "crate-4",
      "object": "supply-crate",
-     "source": "box-proxy"
+     "source": "model:supply-crate.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.277,
+       0.256
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.312,
+      "worst_side_ratio": 1.31
+     }
     },
     {
      "id": "crate-stack-a",
      "object": "supply-crate",
-     "source": "box-proxy"
+     "source": "model:supply-crate.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.277,
+       0.256
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.312,
+      "worst_side_ratio": 1.31
+     }
     },
     {
      "id": "crate-stack-b",
      "object": "supply-crate",
-     "source": "box-proxy"
+     "source": "model:supply-crate.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.277,
+       0.256
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.312,
+      "worst_side_ratio": 1.31
+     }
     },
     {
      "id": "crate-stack-c",
      "object": "supply-crate",
-     "source": "box-proxy"
+     "source": "model:supply-crate.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.277,
+       0.256
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.312,
+      "worst_side_ratio": 1.31
+     }
     },
     {
      "id": "crate-delivered",
      "object": "supply-crate",
-     "source": "box-proxy"
+     "source": "model:supply-crate.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.277,
+       0.256
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.312,
+      "worst_side_ratio": 1.31
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -1743,7 +4319,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 12.9
+     "render_seconds": 16.4
     },
     {
      "still": "player",
@@ -1752,90 +4328,394 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 12.9
+     "render_seconds": 20.6
     }
    ],
    "props": [
     {
      "id": "truck-gate",
      "object": "army-truck",
-     "source": "box-proxy"
+     "source": "model:army-truck.glb",
+     "fit": {
+      "model_dims_m": [
+       3.036,
+       7.0,
+       3.83
+      ],
+      "box_m": [
+       2.5,
+       7.0,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.864,
+      "worst_side_ratio": 1.16
+     }
     },
     {
      "id": "truck-buried",
      "object": "army-truck",
-     "source": "box-proxy"
+     "source": "model:army-truck.glb",
+     "fit": {
+      "model_dims_m": [
+       3.036,
+       7.0,
+       3.83
+      ],
+      "box_m": [
+       2.5,
+       7.0,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.864,
+      "worst_side_ratio": 1.16
+     }
     },
     {
      "id": "kit-fisk",
      "object": "kit-bag",
-     "source": "box-proxy",
-     "name": "kit-bag-b"
+     "source": "model:kit-bag.glb",
+     "name": "kit-bag-b",
+     "fit": {
+      "model_dims_m": [
+       0.49,
+       0.538,
+       0.8
+      ],
+      "box_m": [
+       0.35,
+       0.35,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.54
+     }
     },
     {
      "id": "shovel",
      "object": "snow-shovel",
-     "source": "box-proxy"
+     "source": "model:snow-shovel.glb",
+     "fit": {
+      "model_dims_m": [
+       1.91,
+       1.099,
+       1.4
+      ],
+      "box_m": [
+       0.45,
+       0.2,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       0
+      ],
+      "scale": 0.35,
+      "worst_side_ratio": 2.09
+     }
     },
     {
      "id": "lamp-gate",
      "object": "yard-lamp",
-     "source": "box-proxy"
+     "source": "model:yard-lamp.glb",
+     "fit": {
+      "model_dims_m": [
+       2.198,
+       1.086,
+       5.0
+      ],
+      "box_m": [
+       0.4,
+       0.4,
+       5.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.406,
+      "worst_side_ratio": 2.46
+     }
     },
     {
      "id": "lamp-yard",
      "object": "yard-lamp",
-     "source": "box-proxy"
+     "source": "model:yard-lamp.glb",
+     "fit": {
+      "model_dims_m": [
+       2.198,
+       1.086,
+       5.0
+      ],
+      "box_m": [
+       0.4,
+       0.4,
+       5.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.406,
+      "worst_side_ratio": 2.46
+     }
     },
     {
      "id": "lamp-barracks",
      "object": "yard-lamp",
-     "source": "box-proxy"
+     "source": "model:yard-lamp.glb",
+     "fit": {
+      "model_dims_m": [
+       2.198,
+       1.086,
+       5.0
+      ],
+      "box_m": [
+       0.4,
+       0.4,
+       5.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.406,
+      "worst_side_ratio": 2.46
+     }
     },
     {
      "id": "post-1",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     },
     {
      "id": "post-2",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     },
     {
      "id": "post-3",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     },
     {
      "id": "post-4",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     },
     {
      "id": "post-5",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     },
     {
      "id": "post-6",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     },
     {
      "id": "post-7",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     },
     {
      "id": "post-8",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     },
     {
      "id": "post-9",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -1884,7 +4764,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 9.4
+     "render_seconds": 10.7
     },
     {
      "still": "player",
@@ -1893,7 +4773,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 10.4
+     "render_seconds": 15.6
     },
     {
      "still": "overview",
@@ -1902,79 +4782,345 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 4.9
+     "render_seconds": 6.2
     }
    ],
    "props": [
     {
      "id": "truck-buried",
      "object": "army-truck",
-     "source": "box-proxy"
+     "source": "model:army-truck.glb",
+     "fit": {
+      "model_dims_m": [
+       3.036,
+       7.0,
+       3.83
+      ],
+      "box_m": [
+       2.5,
+       7.0,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.864,
+      "worst_side_ratio": 1.16
+     }
     },
     {
      "id": "shovel",
      "object": "snow-shovel",
-     "source": "box-proxy"
+     "source": "model:snow-shovel.glb",
+     "fit": {
+      "model_dims_m": [
+       1.91,
+       1.099,
+       1.4
+      ],
+      "box_m": [
+       0.45,
+       0.2,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       0
+      ],
+      "scale": 0.35,
+      "worst_side_ratio": 2.09
+     }
     },
     {
      "id": "lamp-gate",
      "object": "yard-lamp",
-     "source": "box-proxy"
+     "source": "model:yard-lamp.glb",
+     "fit": {
+      "model_dims_m": [
+       2.198,
+       1.086,
+       5.0
+      ],
+      "box_m": [
+       0.4,
+       0.4,
+       5.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.406,
+      "worst_side_ratio": 2.46
+     }
     },
     {
      "id": "lamp-yard",
      "object": "yard-lamp",
-     "source": "box-proxy"
+     "source": "model:yard-lamp.glb",
+     "fit": {
+      "model_dims_m": [
+       2.198,
+       1.086,
+       5.0
+      ],
+      "box_m": [
+       0.4,
+       0.4,
+       5.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.406,
+      "worst_side_ratio": 2.46
+     }
     },
     {
      "id": "lamp-barracks",
      "object": "yard-lamp",
-     "source": "box-proxy"
+     "source": "model:yard-lamp.glb",
+     "fit": {
+      "model_dims_m": [
+       2.198,
+       1.086,
+       5.0
+      ],
+      "box_m": [
+       0.4,
+       0.4,
+       5.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.406,
+      "worst_side_ratio": 2.46
+     }
     },
     {
      "id": "post-1",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     },
     {
      "id": "post-2",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     },
     {
      "id": "post-3",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     },
     {
      "id": "post-4",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     },
     {
      "id": "post-5",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     },
     {
      "id": "post-6",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     },
     {
      "id": "post-7",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     },
     {
      "id": "post-8",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     },
     {
      "id": "post-9",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -2022,7 +5168,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 11.9
+     "render_seconds": 10.0
     },
     {
      "still": "player",
@@ -2031,85 +5177,370 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 11.9
+     "render_seconds": 13.8
     }
    ],
    "props": [
     {
      "id": "truck-gate",
      "object": "army-truck",
-     "source": "box-proxy"
+     "source": "model:army-truck.glb",
+     "fit": {
+      "model_dims_m": [
+       3.036,
+       7.0,
+       3.83
+      ],
+      "box_m": [
+       2.5,
+       7.0,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.864,
+      "worst_side_ratio": 1.16
+     }
     },
     {
      "id": "truck-buried",
      "object": "army-truck",
-     "source": "box-proxy"
+     "source": "model:army-truck.glb",
+     "fit": {
+      "model_dims_m": [
+       3.036,
+       7.0,
+       3.83
+      ],
+      "box_m": [
+       2.5,
+       7.0,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.864,
+      "worst_side_ratio": 1.16
+     }
     },
     {
      "id": "kit-fisk",
      "object": "kit-bag",
-     "source": "box-proxy",
-     "name": "kit-bag-b"
+     "source": "model:kit-bag.glb",
+     "name": "kit-bag-b",
+     "fit": {
+      "model_dims_m": [
+       0.49,
+       0.538,
+       0.8
+      ],
+      "box_m": [
+       0.35,
+       0.35,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.54
+     }
     },
     {
      "id": "lamp-gate",
      "object": "yard-lamp",
-     "source": "box-proxy"
+     "source": "model:yard-lamp.glb",
+     "fit": {
+      "model_dims_m": [
+       2.198,
+       1.086,
+       5.0
+      ],
+      "box_m": [
+       0.4,
+       0.4,
+       5.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.406,
+      "worst_side_ratio": 2.46
+     }
     },
     {
      "id": "lamp-yard",
      "object": "yard-lamp",
-     "source": "box-proxy"
+     "source": "model:yard-lamp.glb",
+     "fit": {
+      "model_dims_m": [
+       2.198,
+       1.086,
+       5.0
+      ],
+      "box_m": [
+       0.4,
+       0.4,
+       5.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.406,
+      "worst_side_ratio": 2.46
+     }
     },
     {
      "id": "lamp-barracks",
      "object": "yard-lamp",
-     "source": "box-proxy"
+     "source": "model:yard-lamp.glb",
+     "fit": {
+      "model_dims_m": [
+       2.198,
+       1.086,
+       5.0
+      ],
+      "box_m": [
+       0.4,
+       0.4,
+       5.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.406,
+      "worst_side_ratio": 2.46
+     }
     },
     {
      "id": "post-1",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     },
     {
      "id": "post-2",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     },
     {
      "id": "post-3",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     },
     {
      "id": "post-4",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     },
     {
      "id": "post-5",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     },
     {
      "id": "post-6",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     },
     {
      "id": "post-7",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     },
     {
      "id": "post-8",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     },
     {
      "id": "post-9",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -2158,7 +5589,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 9.7
+     "render_seconds": 13.0
     },
     {
      "still": "player",
@@ -2167,85 +5598,370 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 9.7
+     "render_seconds": 14.7
     }
    ],
    "props": [
     {
      "id": "truck-gate",
      "object": "army-truck",
-     "source": "box-proxy"
+     "source": "model:army-truck.glb",
+     "fit": {
+      "model_dims_m": [
+       3.036,
+       7.0,
+       3.83
+      ],
+      "box_m": [
+       2.5,
+       7.0,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.864,
+      "worst_side_ratio": 1.16
+     }
     },
     {
      "id": "truck-buried",
      "object": "army-truck",
-     "source": "box-proxy"
+     "source": "model:army-truck.glb",
+     "fit": {
+      "model_dims_m": [
+       3.036,
+       7.0,
+       3.83
+      ],
+      "box_m": [
+       2.5,
+       7.0,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.864,
+      "worst_side_ratio": 1.16
+     }
     },
     {
      "id": "kit-fisk",
      "object": "kit-bag",
-     "source": "box-proxy",
-     "name": "kit-bag-b"
+     "source": "model:kit-bag.glb",
+     "name": "kit-bag-b",
+     "fit": {
+      "model_dims_m": [
+       0.49,
+       0.538,
+       0.8
+      ],
+      "box_m": [
+       0.35,
+       0.35,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.54
+     }
     },
     {
      "id": "lamp-gate",
      "object": "yard-lamp",
-     "source": "box-proxy"
+     "source": "model:yard-lamp.glb",
+     "fit": {
+      "model_dims_m": [
+       2.198,
+       1.086,
+       5.0
+      ],
+      "box_m": [
+       0.4,
+       0.4,
+       5.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.406,
+      "worst_side_ratio": 2.46
+     }
     },
     {
      "id": "lamp-yard",
      "object": "yard-lamp",
-     "source": "box-proxy"
+     "source": "model:yard-lamp.glb",
+     "fit": {
+      "model_dims_m": [
+       2.198,
+       1.086,
+       5.0
+      ],
+      "box_m": [
+       0.4,
+       0.4,
+       5.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.406,
+      "worst_side_ratio": 2.46
+     }
     },
     {
      "id": "lamp-barracks",
      "object": "yard-lamp",
-     "source": "box-proxy"
+     "source": "model:yard-lamp.glb",
+     "fit": {
+      "model_dims_m": [
+       2.198,
+       1.086,
+       5.0
+      ],
+      "box_m": [
+       0.4,
+       0.4,
+       5.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.406,
+      "worst_side_ratio": 2.46
+     }
     },
     {
      "id": "post-1",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     },
     {
      "id": "post-2",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     },
     {
      "id": "post-3",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     },
     {
      "id": "post-4",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     },
     {
      "id": "post-5",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     },
     {
      "id": "post-6",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     },
     {
      "id": "post-7",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     },
     {
      "id": "post-8",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     },
     {
      "id": "post-9",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -2293,7 +6009,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 17.6
+     "render_seconds": 22.3
     },
     {
      "still": "player",
@@ -2302,7 +6018,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 18.9
+     "render_seconds": 19.3
     },
     {
      "still": "overview",
@@ -2311,7 +6027,7 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 7.7
+     "render_seconds": 7.6
     }
    ],
    "props": [
@@ -2319,31 +6035,46 @@
      "id": "uniform-1",
      "object": "uniform",
      "source": "box-proxy",
-     "name": "hanging-panel"
+     "name": "hanging-panel",
+     "fit": {
+      "model_skipped": "Man Eater: no figure-like models; the garment on its hanger reads as a body; named box proxy stays"
+     }
     },
     {
      "id": "uniform-2",
      "object": "uniform",
      "source": "box-proxy",
-     "name": "hanging-panel"
+     "name": "hanging-panel",
+     "fit": {
+      "model_skipped": "Man Eater: no figure-like models; the garment on its hanger reads as a body; named box proxy stays"
+     }
     },
     {
      "id": "uniform-3",
      "object": "uniform",
      "source": "box-proxy",
-     "name": "hanging-panel"
+     "name": "hanging-panel",
+     "fit": {
+      "model_skipped": "Man Eater: no figure-like models; the garment on its hanger reads as a body; named box proxy stays"
+     }
     },
     {
      "id": "uniform-4",
      "object": "uniform",
      "source": "box-proxy",
-     "name": "hanging-panel"
+     "name": "hanging-panel",
+     "fit": {
+      "model_skipped": "Man Eater: no figure-like models; the garment on its hanger reads as a body; named box proxy stays"
+     }
     },
     {
      "id": "uniform-fisk",
      "object": "uniform",
      "source": "box-proxy",
-     "name": "hanging-panel-e"
+     "name": "hanging-panel-e",
+     "fit": {
+      "model_skipped": "Man Eater: no figure-like models; the garment on its hanger reads as a body; named box proxy stays"
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -2377,7 +6108,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 14.6
+     "render_seconds": 14.8
     },
     {
      "still": "player",
@@ -2386,7 +6117,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 15.1
+     "render_seconds": 15.6
     },
     {
      "still": "overview",
@@ -2395,49 +6126,201 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 6.5
+     "render_seconds": 6.6
     }
    ],
    "props": [
     {
      "id": "sack-counter-a",
      "object": "mail-sack",
-     "source": "box-proxy"
+     "source": "model:mail-sack.glb",
+     "fit": {
+      "model_dims_m": [
+       0.723,
+       0.592,
+       0.9
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       0.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.48
+     }
     },
     {
      "id": "sack-counter-b",
      "object": "mail-sack",
-     "source": "box-proxy"
+     "source": "model:mail-sack.glb",
+     "fit": {
+      "model_dims_m": [
+       0.723,
+       0.592,
+       0.9
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       0.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.48
+     }
     },
     {
      "id": "sack-west",
      "object": "mail-sack",
-     "source": "box-proxy"
+     "source": "model:mail-sack.glb",
+     "fit": {
+      "model_dims_m": [
+       0.723,
+       0.592,
+       0.9
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       0.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.48
+     }
     },
     {
      "id": "sack-hold-full",
      "object": "mail-sack",
-     "source": "box-proxy"
+     "source": "model:mail-sack.glb",
+     "fit": {
+      "model_dims_m": [
+       0.723,
+       0.592,
+       0.9
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       0.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.48
+     }
     },
     {
      "id": "sack-hold-new",
      "object": "mail-sack",
-     "source": "box-proxy"
+     "source": "model:mail-sack.glb",
+     "fit": {
+      "model_dims_m": [
+       0.723,
+       0.592,
+       0.9
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       0.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.48
+     }
     },
     {
      "id": "sack-pile",
      "object": "mail-sack",
-     "source": "box-proxy"
+     "source": "model:mail-sack.glb",
+     "fit": {
+      "model_dims_m": [
+       0.723,
+       0.592,
+       0.9
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       0.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.48
+     }
     },
     {
      "id": "sack-shelf-1",
      "object": "mail-sack",
-     "source": "box-proxy"
+     "source": "model:mail-sack.glb",
+     "fit": {
+      "model_dims_m": [
+       0.723,
+       0.592,
+       0.9
+      ],
+      "box_m": [
+       0.267,
+       0.178,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.444,
+      "worst_side_ratio": 1.48
+     }
     },
     {
      "id": "sack-shelf-2",
      "object": "mail-sack",
-     "source": "box-proxy"
+     "source": "model:mail-sack.glb",
+     "fit": {
+      "model_dims_m": [
+       0.723,
+       0.592,
+       0.9
+      ],
+      "box_m": [
+       0.267,
+       0.178,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.444,
+      "worst_side_ratio": 1.48
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -2446,7 +6329,23 @@
     "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
-    "prop_overlap": [],
+    "prop_overlap": [
+     {
+      "prop": "sack-counter-a",
+      "piece": "counter",
+      "samples": "9/27"
+     },
+     {
+      "prop": "sack-counter-b",
+      "piece": "counter",
+      "samples": "9/27"
+     },
+     {
+      "prop": "sack-pile",
+      "piece": "east-door",
+      "samples": "9/27"
+     }
+    ],
     "prop_off_floor": []
    },
    "render_time_overrides": [],
@@ -2471,7 +6370,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 7.5
+     "render_seconds": 7.8
     },
     {
      "still": "player",
@@ -2480,34 +6379,129 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 7.5
+     "render_seconds": 7.8
     }
    ],
    "props": [
     {
      "id": "post-1",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     },
     {
      "id": "post-2",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     },
     {
      "id": "post-3",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     },
     {
      "id": "post-4",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     },
     {
      "id": "post-5",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -2541,7 +6535,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.1
+     "render_seconds": 8.5
     },
     {
      "still": "player",
@@ -2550,7 +6544,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.1
+     "render_seconds": 8.4
     },
     {
      "still": "overview",
@@ -2559,34 +6553,129 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 4.5
+     "render_seconds": 4.8
     }
    ],
    "props": [
     {
      "id": "post-1",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     },
     {
      "id": "post-2",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     },
     {
      "id": "post-3",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     },
     {
      "id": "post-4",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     },
     {
      "id": "post-5",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -2620,7 +6709,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 7.8
+     "render_seconds": 8.1
     },
     {
      "still": "player",
@@ -2629,34 +6718,129 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 7.8
+     "render_seconds": 8.1
     }
    ],
    "props": [
     {
      "id": "post-1",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     },
     {
      "id": "post-2",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     },
     {
      "id": "post-3",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     },
     {
      "id": "post-4",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     },
     {
      "id": "post-5",
      "object": "fence-post",
-     "source": "box-proxy"
+     "source": "model:fence-post.glb",
+     "fit": {
+      "model_dims_m": [
+       0.677,
+       0.655,
+       3.0
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.449,
+      "worst_side_ratio": 2.23
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -2690,7 +6874,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 13.8
+     "render_seconds": 32.9
     },
     {
      "still": "player",
@@ -2699,7 +6883,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 7.3
+     "render_seconds": 16.4
     },
     {
      "still": "overview",
@@ -2708,14 +6892,33 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 6.7
+     "render_seconds": 9.1
     }
    ],
    "props": [
     {
      "id": "table",
      "object": "round-table",
-     "source": "box-proxy"
+     "source": "model:round-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.2,
+       1.201,
+       0.872
+      ],
+      "box_m": [
+       1.2,
+       1.2,
+       0.75
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.951,
+      "worst_side_ratio": 1.11
+     }
     },
     {
      "id": "deck",
@@ -2725,7 +6928,26 @@
     {
      "id": "stove",
      "object": "wood-stove",
-     "source": "box-proxy"
+     "source": "model:wood-stove.glb",
+     "fit": {
+      "model_dims_m": [
+       1.01,
+       0.948,
+       1.8
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       1.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.68
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -2759,7 +6981,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 20.6
+     "render_seconds": 21.9
     },
     {
      "still": "player",
@@ -2768,7 +6990,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 23.0
+     "render_seconds": 22.0
     },
     {
      "still": "overview",
@@ -2777,20 +6999,58 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 9.0
+     "render_seconds": 8.6
     }
    ],
    "props": [
     {
      "id": "sheet-table",
      "object": "sheet-covered-table",
-     "source": "box-proxy",
-     "name": "table-slab"
+     "source": "model:sheet-covered-table.glb",
+     "name": "table-slab",
+     "fit": {
+      "model_dims_m": [
+       0.916,
+       2.0,
+       1.024
+      ],
+      "box_m": [
+       0.8,
+       2.0,
+       0.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.915,
+      "worst_side_ratio": 1.09
+     }
     },
     {
      "id": "drip-stand",
      "object": "tube-stand",
-     "source": "box-proxy"
+     "source": "model:tube-stand.glb",
+     "fit": {
+      "model_dims_m": [
+       0.725,
+       0.606,
+       1.9
+      ],
+      "box_m": [
+       0.5,
+       0.5,
+       1.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.45
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -2799,7 +7059,13 @@
     "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
-    "prop_overlap": [],
+    "prop_overlap": [
+     {
+      "prop": "drip-stand",
+      "piece": "cot",
+      "samples": "3/27"
+     }
+    ],
     "prop_off_floor": []
    },
    "render_time_overrides": [],
@@ -2824,7 +7090,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 18.3
+     "render_seconds": 16.6
     },
     {
      "still": "player",
@@ -2833,7 +7099,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 19.9
+     "render_seconds": 17.3
     }
    ],
    "props": [
@@ -2855,12 +7121,50 @@
     {
      "id": "clock",
      "object": "wall-clock",
-     "source": "box-proxy"
+     "source": "model:wall-clock.glb",
+     "fit": {
+      "model_dims_m": [
+       0.3,
+       0.045,
+       0.301
+      ],
+      "box_m": [
+       0.3,
+       0.06,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.998,
+      "worst_side_ratio": 1.35
+     }
     },
     {
      "id": "staff-plate",
      "object": "meal-tray",
-     "source": "box-proxy"
+     "source": "model:meal-tray.glb",
+     "fit": {
+      "model_dims_m": [
+       0.45,
+       0.402,
+       0.045
+      ],
+      "box_m": [
+       0.45,
+       0.33,
+       0.03
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.906,
+      "worst_side_ratio": 1.17
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -2894,7 +7198,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 14.8
+     "render_seconds": 14.9
     },
     {
      "still": "player",
@@ -2903,7 +7207,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 14.5
+     "render_seconds": 14.9
     },
     {
      "still": "overview",
@@ -2912,7 +7216,7 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 6.8
+     "render_seconds": 7.0
     }
    ],
    "props": [
@@ -2929,7 +7233,26 @@
     {
      "id": "clock",
      "object": "wall-clock",
-     "source": "box-proxy"
+     "source": "model:wall-clock.glb",
+     "fit": {
+      "model_dims_m": [
+       0.3,
+       0.045,
+       0.301
+      ],
+      "box_m": [
+       0.3,
+       0.06,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.998,
+      "worst_side_ratio": 1.35
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -2981,74 +7304,321 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 7.3
+     "render_seconds": 7.6
     }
    ],
    "props": [
     {
      "id": "door-yard",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-stair",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-1",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-2",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-3",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-4",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-5",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-6",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-bunk",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-8",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-9",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-10",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-log",
      "object": "door-log-clipboard",
-     "source": "box-proxy"
+     "source": "model:door-log-clipboard.glb",
+     "fit": {
+      "model_dims_m": [
+       1.683,
+       1.166,
+       0.32
+      ],
+      "box_m": [
+       0.23,
+       0.02,
+       0.32
+      ],
+      "fit_rotation_deg": [
+       90,
+       0,
+       0
+      ],
+      "scale": 0.194,
+      "worst_side_ratio": 1.76
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -3056,7 +7626,58 @@
     "camera_inside": [],
     "camera_inside_prop": [],
     "between_camera_and_target": [],
-    "prop_inside": [],
+    "prop_inside": [
+     {
+      "prop": "door-1",
+      "piece": "rail-west",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-2",
+      "piece": "rail-east",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-3",
+      "piece": "rail-west",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-4",
+      "piece": "rail-east",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-5",
+      "piece": "rail-west",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-6",
+      "piece": "rail-east",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-bunk",
+      "piece": "rail-west",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-8",
+      "piece": "rail-east",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-9",
+      "piece": "rail-west",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-10",
+      "piece": "rail-east",
+      "samples": "3/27"
+     }
+    ],
     "prop_overlap": [],
     "prop_off_floor": []
    },
@@ -3091,84 +7712,369 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 17.6
+     "render_seconds": 18.6
     }
    ],
    "props": [
     {
      "id": "door-yard",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-stair",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-1",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-2",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-3",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-4",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-5",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-6",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-bunk",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-8",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-9",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-10",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "ladder",
      "object": "ladder",
-     "source": "box-proxy"
+     "source": "model:ladder.glb",
+     "fit": {
+      "model_dims_m": [
+       0.76,
+       0.153,
+       4.0
+      ],
+      "box_m": [
+       0.5,
+       0.15,
+       4.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.52
+     }
     },
     {
      "id": "paint-tin",
      "object": "paint-tin",
-     "source": "box-proxy"
+     "source": "model:paint-tin.glb",
+     "fit": {
+      "model_dims_m": [
+       0.2,
+       0.214,
+       0.216
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       0.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.926,
+      "worst_side_ratio": 1.08
+     }
     },
     {
      "id": "door-log",
      "object": "door-log-clipboard",
-     "source": "box-proxy"
+     "source": "model:door-log-clipboard.glb",
+     "fit": {
+      "model_dims_m": [
+       1.683,
+       1.166,
+       0.32
+      ],
+      "box_m": [
+       0.23,
+       0.02,
+       0.32
+      ],
+      "fit_rotation_deg": [
+       90,
+       0,
+       0
+      ],
+      "scale": 0.194,
+      "worst_side_ratio": 1.76
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -3176,7 +8082,58 @@
     "camera_inside": [],
     "camera_inside_prop": [],
     "between_camera_and_target": [],
-    "prop_inside": [],
+    "prop_inside": [
+     {
+      "prop": "door-1",
+      "piece": "rail-west",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-2",
+      "piece": "rail-east",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-3",
+      "piece": "rail-west",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-4",
+      "piece": "rail-east",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-5",
+      "piece": "rail-west",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-6",
+      "piece": "rail-east",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-bunk",
+      "piece": "rail-west",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-8",
+      "piece": "rail-east",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-9",
+      "piece": "rail-west",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-10",
+      "piece": "rail-east",
+      "samples": "3/27"
+     }
+    ],
     "prop_overlap": [],
     "prop_off_floor": []
    },
@@ -3202,7 +8159,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 19.8
+     "render_seconds": 20.2
     },
     {
      "still": "player",
@@ -3211,74 +8168,321 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 18.8
+     "render_seconds": 19.0
     }
    ],
    "props": [
     {
      "id": "door-yard",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-stair",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-1",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-2",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-3",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-4",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-5",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-6",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-bunk",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-8",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-9",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-10",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-log",
      "object": "door-log-clipboard",
-     "source": "box-proxy"
+     "source": "model:door-log-clipboard.glb",
+     "fit": {
+      "model_dims_m": [
+       1.683,
+       1.166,
+       0.32
+      ],
+      "box_m": [
+       0.23,
+       0.02,
+       0.32
+      ],
+      "fit_rotation_deg": [
+       90,
+       0,
+       0
+      ],
+      "scale": 0.194,
+      "worst_side_ratio": 1.76
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -3286,7 +8490,58 @@
     "camera_inside": [],
     "camera_inside_prop": [],
     "between_camera_and_target": [],
-    "prop_inside": [],
+    "prop_inside": [
+     {
+      "prop": "door-1",
+      "piece": "rail-west",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-2",
+      "piece": "rail-east",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-3",
+      "piece": "rail-west",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-4",
+      "piece": "rail-east",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-5",
+      "piece": "rail-west",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-6",
+      "piece": "rail-east",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-bunk",
+      "piece": "rail-west",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-8",
+      "piece": "rail-east",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-9",
+      "piece": "rail-west",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-10",
+      "piece": "rail-east",
+      "samples": "3/27"
+     }
+    ],
     "prop_overlap": [],
     "prop_off_floor": []
    },
@@ -3312,7 +8567,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 19.0
+     "render_seconds": 19.5
     },
     {
      "still": "player",
@@ -3321,69 +8576,297 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 19.5
+     "render_seconds": 18.6
     }
    ],
    "props": [
     {
      "id": "door-yard",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-stair",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-1",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-2",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-3",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-4",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-5",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-6",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-bunk",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-8",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-9",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     },
     {
      "id": "door-10",
      "object": "two-handle-door",
-     "source": "box-proxy"
+     "source": "model:two-handle-door.glb",
+     "fit": {
+      "model_dims_m": [
+       1.214,
+       0.725,
+       4.2
+      ],
+      "box_m": [
+       1.1,
+       0.08,
+       4.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.952,
+      "worst_side_ratio": 2.94
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -3391,7 +8874,58 @@
     "camera_inside": [],
     "camera_inside_prop": [],
     "between_camera_and_target": [],
-    "prop_inside": [],
+    "prop_inside": [
+     {
+      "prop": "door-1",
+      "piece": "rail-west",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-2",
+      "piece": "rail-east",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-3",
+      "piece": "rail-west",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-4",
+      "piece": "rail-east",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-5",
+      "piece": "rail-west",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-6",
+      "piece": "rail-east",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-bunk",
+      "piece": "rail-west",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-8",
+      "piece": "rail-east",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-9",
+      "piece": "rail-west",
+      "samples": "3/27"
+     },
+     {
+      "prop": "door-10",
+      "piece": "rail-east",
+      "samples": "3/27"
+     }
+    ],
     "prop_overlap": [],
     "prop_off_floor": []
    },
@@ -3417,7 +8951,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 10.0
+     "render_seconds": 13.2
     },
     {
      "still": "player",
@@ -3426,7 +8960,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 10.0
+     "render_seconds": 13.3
     },
     {
      "still": "overview",
@@ -3435,24 +8969,81 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 6.0
+     "render_seconds": 6.4
     }
    ],
    "props": [
     {
      "id": "lamp-west",
      "object": "work-lamp",
-     "source": "box-proxy"
+     "source": "model:work-lamp.glb",
+     "fit": {
+      "model_dims_m": [
+       1.169,
+       1.213,
+       2.0
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.52
+     }
     },
     {
      "id": "lamp-south",
      "object": "work-lamp",
-     "source": "box-proxy"
+     "source": "model:work-lamp.glb",
+     "fit": {
+      "model_dims_m": [
+       1.169,
+       1.213,
+       2.0
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.52
+     }
     },
     {
      "id": "lamp-east",
      "object": "work-lamp",
-     "source": "box-proxy"
+     "source": "model:work-lamp.glb",
+     "fit": {
+      "model_dims_m": [
+       1.169,
+       1.213,
+       2.0
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.52
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -3486,7 +9077,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 15.6
+     "render_seconds": 14.3
     },
     {
      "still": "player",
@@ -3495,7 +9086,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 10.0
+     "render_seconds": 9.3
     },
     {
      "still": "overview",
@@ -3504,19 +9095,57 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 7.0
+     "render_seconds": 6.8
     }
    ],
    "props": [
     {
      "id": "stand-first",
      "object": "tube-stand",
-     "source": "box-proxy"
+     "source": "model:tube-stand.glb",
+     "fit": {
+      "model_dims_m": [
+       0.725,
+       0.606,
+       1.9
+      ],
+      "box_m": [
+       0.5,
+       0.5,
+       1.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.45
+     }
     },
     {
      "id": "pump-end",
      "object": "tube-stand",
-     "source": "box-proxy"
+     "source": "model:tube-stand.glb",
+     "fit": {
+      "model_dims_m": [
+       0.725,
+       0.606,
+       1.9
+      ],
+      "box_m": [
+       0.5,
+       0.5,
+       1.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.45
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -3550,7 +9179,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 10.5
+     "render_seconds": 10.8
     },
     {
      "still": "player",
@@ -3559,7 +9188,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 12.1
+     "render_seconds": 13.2
     },
     {
      "still": "overview",
@@ -3568,14 +9197,33 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 5.6
+     "render_seconds": 5.5
     }
    ],
    "props": [
     {
      "id": "truck",
      "object": "army-truck",
-     "source": "box-proxy"
+     "source": "model:army-truck.glb",
+     "fit": {
+      "model_dims_m": [
+       3.036,
+       7.0,
+       3.83
+      ],
+      "box_m": [
+       2.5,
+       5.2,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.783,
+      "worst_side_ratio": 1.05
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -3635,10 +9283,10 @@
       "uniform-fisk": "hanging-panel-e"
      }
     },
-    "overview_ev": 0.0,
+    "overview_ev": 1.07,
     "scenes": {
      "d4_duty_boiler": {
-      "exposure_ev": -1.9
+      "exposure_ev": 0.77
      }
     }
    }
@@ -3689,40 +9337,40 @@
       "exposure_ev": -2.8
      },
      "d5_jax_plan": {
-      "exposure_ev": -0.8
+      "exposure_ev": -0.42
      },
      "d6_sam_offer": {
       "exposure_ev": -2.8
      },
      "d7_bunk_evening": {
-      "exposure_ev": -0.8
+      "exposure_ev": -0.42
      },
      "e_prints_bunk": {
-      "exposure_ev": 0.0
+      "exposure_ev": 0.33
      },
      "n1_bunk_call": {
-      "exposure_ev": -1.0
+      "exposure_ev": -0.63
      },
      "n2_door": {
-      "exposure_ev": -1.3
+      "exposure_ev": 0.27
      },
      "n3_door": {
-      "exposure_ev": -1.3
+      "exposure_ev": 0.37
      },
      "n4_door": {
-      "exposure_ev": -1.3
+      "exposure_ev": 0.46
      },
      "n5_door": {
-      "exposure_ev": -1.3
+      "exposure_ev": 0.55
      },
      "n6_door": {
-      "exposure_ev": -1.3
+      "exposure_ev": 0.62
      },
      "n7_bunk_stay": {
-      "exposure_ev": -1.0
+      "exposure_ev": -0.63
      },
      "n7_door": {
-      "exposure_ev": -1.3
+      "exposure_ev": 0.55
      }
     }
    }
@@ -3956,10 +9604,10 @@
       "uniform-fisk": "hanging-panel-e"
      }
     },
-    "overview_ev": 0.0,
+    "overview_ev": 0.32,
     "scenes": {
      "d3_mail_room": {
-      "exposure_ev": -0.9
+      "exposure_ev": -0.24
      }
     }
    }
@@ -4100,7 +9748,7 @@
     "overview_ev": 0.0,
     "scenes": {
      "e_zoo_wake": {
-      "exposure_ev": -3.6
+      "exposure_ev": -3.89
      }
     }
    }
@@ -4244,10 +9892,10 @@
       "uniform-fisk": "hanging-panel-e"
      }
     },
-    "overview_ev": 0.5,
+    "overview_ev": -2.5,
     "scenes": {
      "e_cave": {
-      "exposure_ev": 6.0
+      "exposure_ev": 3.0
      }
     }
    }
@@ -4292,7 +9940,7 @@
     "overview_ev": 0.0,
     "scenes": {
      "n6_pens": {
-      "exposure_ev": -2.8
+      "exposure_ev": -3.09
      }
     },
     "reference_card": "The reference painting for the pens shows a small seated shape at the right of the floor that reads as a figure at sheet size; man-eater keeps no figure imagery, so the reference is left out of this sheet."
@@ -4335,7 +9983,7 @@
       "uniform-fisk": "hanging-panel-e"
      }
     },
-    "overview_ev": 0.0,
+    "overview_ev": 0.67,
     "scenes": {
      "n3_glovebox": {
       "exposure_ev": -1.1
@@ -4343,5 +9991,745 @@
     }
    }
   }
- ]
+ ],
+ "objects": {
+  "army-truck": {
+   "source": "model",
+   "model": "army-truck.glb",
+   "props": 8,
+   "fit": {
+    "model_dims_m": [
+     3.036,
+     7.0,
+     3.83
+    ],
+    "box_m": [
+     2.5,
+     7.0,
+     3.0
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.864,
+    "worst_side_ratio": 1.16
+   },
+   "note": null
+  },
+  "boiler": {
+   "source": "model",
+   "model": "boiler.glb",
+   "props": 2,
+   "fit": {
+    "model_dims_m": [
+     2.133,
+     3.5,
+     2.929
+    ],
+    "box_m": [
+     2.0,
+     3.5,
+     2.8
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.964,
+    "worst_side_ratio": 1.04
+   },
+   "note": null
+  },
+  "bread-loaf": {
+   "source": "model",
+   "model": "bread-loaf.glb",
+   "props": 10,
+   "fit": {
+    "model_dims_m": [
+     0.25,
+     0.156,
+     0.153
+    ],
+    "box_m": [
+     0.25,
+     0.12,
+     0.1
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.796,
+    "worst_side_ratio": 1.26
+   },
+   "note": null
+  },
+  "bunk-bed": {
+   "source": "model",
+   "model": "bunk-bed.glb",
+   "props": 28,
+   "fit": {
+    "model_dims_m": [
+     0.772,
+     2.0,
+     0.851
+    ],
+    "box_m": [
+     0.9,
+     2.0,
+     0.6
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.937,
+    "worst_side_ratio": 1.33
+   },
+   "note": null
+  },
+  "card-deck": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 1,
+   "fit": null,
+   "note": null
+  },
+  "door-log-clipboard": {
+   "source": "model",
+   "model": "door-log-clipboard.glb",
+   "props": 3,
+   "fit": {
+    "model_dims_m": [
+     1.683,
+     1.166,
+     0.32
+    ],
+    "box_m": [
+     0.23,
+     0.02,
+     0.32
+    ],
+    "fit_rotation_deg": [
+     90,
+     0,
+     0
+    ],
+    "scale": 0.194,
+    "worst_side_ratio": 1.76
+   },
+   "note": null
+  },
+  "fence-post": {
+   "source": "model",
+   "model": "fence-post.glb",
+   "props": 51,
+   "fit": {
+    "model_dims_m": [
+     0.677,
+     0.655,
+     3.0
+    ],
+    "box_m": [
+     0.2,
+     0.2,
+     3.0
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.449,
+    "worst_side_ratio": 2.23
+   },
+   "note": null
+  },
+  "file-folder": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 3,
+   "fit": null,
+   "note": null
+  },
+  "filing-cabinet": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 2,
+   "fit": null,
+   "note": null
+  },
+  "floor-drain": {
+   "source": "model",
+   "model": "floor-drain.glb",
+   "props": 5,
+   "fit": {
+    "model_dims_m": [
+     0.4,
+     0.403,
+     0.09
+    ],
+    "box_m": [
+     0.4,
+     0.4,
+     0.08
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.959,
+    "worst_side_ratio": 1.08
+   },
+   "note": null
+  },
+  "key-ring": {
+   "source": "model",
+   "model": "key-ring.glb",
+   "props": 14,
+   "fit": {
+    "model_dims_m": [
+     0.782,
+     0.517,
+     0.12
+    ],
+    "box_m": [
+     0.08,
+     0.02,
+     0.12
+    ],
+    "fit_rotation_deg": [
+     0,
+     90,
+     90
+    ],
+    "scale": 0.153,
+    "worst_side_ratio": 1.09
+   },
+   "note": null
+  },
+  "kit-bag": {
+   "source": "model",
+   "model": "kit-bag.glb",
+   "props": 17,
+   "fit": {
+    "model_dims_m": [
+     0.49,
+     0.538,
+     0.8
+    ],
+    "box_m": [
+     0.35,
+     0.35,
+     0.8
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.0,
+    "worst_side_ratio": 1.54
+   },
+   "note": null
+  },
+  "laced-boots": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 3,
+   "fit": {
+    "model_skipped": "Man Eater: no figure-like models; a pair of upright boots reads as legs; named box proxy (footwear-box) stays"
+   },
+   "note": "model skipped: Man Eater: no figure-like models; a pair of upright boots reads as legs; named box proxy (footwear-box) stays"
+  },
+  "ladder": {
+   "source": "model",
+   "model": "ladder.glb",
+   "props": 1,
+   "fit": {
+    "model_dims_m": [
+     0.76,
+     0.153,
+     4.0
+    ],
+    "box_m": [
+     0.5,
+     0.15,
+     4.0
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.0,
+    "worst_side_ratio": 1.52
+   },
+   "note": null
+  },
+  "mail-sack": {
+   "source": "model",
+   "model": "mail-sack.glb",
+   "props": 8,
+   "fit": {
+    "model_dims_m": [
+     0.723,
+     0.592,
+     0.9
+    ],
+    "box_m": [
+     0.6,
+     0.4,
+     0.9
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.0,
+    "worst_side_ratio": 1.48
+   },
+   "note": null
+  },
+  "meal-tray": {
+   "source": "model",
+   "model": "meal-tray.glb",
+   "props": 9,
+   "fit": {
+    "model_dims_m": [
+     0.45,
+     0.402,
+     0.045
+    ],
+    "box_m": [
+     0.45,
+     0.33,
+     0.03
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.906,
+    "worst_side_ratio": 1.17
+   },
+   "note": null
+  },
+  "paint-tin": {
+   "source": "model",
+   "model": "paint-tin.glb",
+   "props": 1,
+   "fit": {
+    "model_dims_m": [
+     0.2,
+     0.214,
+     0.216
+    ],
+    "box_m": [
+     0.2,
+     0.2,
+     0.2
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.926,
+    "worst_side_ratio": 1.08
+   },
+   "note": null
+  },
+  "round-table": {
+   "source": "model",
+   "model": "round-table.glb",
+   "props": 1,
+   "fit": {
+    "model_dims_m": [
+     1.2,
+     1.201,
+     0.872
+    ],
+    "box_m": [
+     1.2,
+     1.2,
+     0.75
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.951,
+    "worst_side_ratio": 1.11
+   },
+   "note": null
+  },
+  "rules-card": {
+   "source": "model",
+   "model": "rules-card.glb",
+   "props": 14,
+   "fit": {
+    "model_dims_m": [
+     0.692,
+     0.082,
+     0.4
+    ],
+    "box_m": [
+     0.3,
+     0.01,
+     0.4
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.658,
+    "worst_side_ratio": 2.32
+   },
+   "note": null
+  },
+  "sheet-covered-table": {
+   "source": "model",
+   "model": "sheet-covered-table.glb",
+   "props": 1,
+   "fit": {
+    "model_dims_m": [
+     0.916,
+     2.0,
+     1.024
+    ],
+    "box_m": [
+     0.8,
+     2.0,
+     0.9
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.915,
+    "worst_side_ratio": 1.09
+   },
+   "note": null
+  },
+  "sleeping-bag": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 26,
+   "fit": {
+    "model_skipped": "Man Eater: no figure-like models; the mummy bag has a body-shaped outline; named box proxy (bedroll-slab) stays"
+   },
+   "note": "model skipped: Man Eater: no figure-like models; the mummy bag has a body-shaped outline; named box proxy (bedroll-slab) stays"
+  },
+  "snow-shovel": {
+   "source": "model",
+   "model": "snow-shovel.glb",
+   "props": 2,
+   "fit": {
+    "model_dims_m": [
+     1.91,
+     1.099,
+     1.4
+    ],
+    "box_m": [
+     0.45,
+     0.2,
+     1.4
+    ],
+    "fit_rotation_deg": [
+     0,
+     90,
+     0
+    ],
+    "scale": 0.35,
+    "worst_side_ratio": 2.09
+   },
+   "note": null
+  },
+  "supply-crate": {
+   "source": "model",
+   "model": "supply-crate.glb",
+   "props": 8,
+   "fit": {
+    "model_dims_m": [
+     0.6,
+     0.277,
+     0.256
+    ],
+    "box_m": [
+     0.6,
+     0.4,
+     0.4
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.312,
+    "worst_side_ratio": 1.31
+   },
+   "note": null
+  },
+  "tube-stand": {
+   "source": "model",
+   "model": "tube-stand.glb",
+   "props": 3,
+   "fit": {
+    "model_dims_m": [
+     0.725,
+     0.606,
+     1.9
+    ],
+    "box_m": [
+     0.5,
+     0.5,
+     1.9
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.0,
+    "worst_side_ratio": 1.45
+   },
+   "note": null
+  },
+  "two-handle-door": {
+   "source": "model",
+   "model": "two-handle-door.glb",
+   "props": 62,
+   "fit": {
+    "model_dims_m": [
+     1.214,
+     0.725,
+     4.2
+    ],
+    "box_m": [
+     1.1,
+     0.08,
+     4.2
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.952,
+    "worst_side_ratio": 2.94
+   },
+   "note": null
+  },
+  "uniform": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 5,
+   "fit": {
+    "model_skipped": "Man Eater: no figure-like models; the garment on its hanger reads as a body; named box proxy stays"
+   },
+   "note": "model skipped: Man Eater: no figure-like models; the garment on its hanger reads as a body; named box proxy stays"
+  },
+  "wall-clock": {
+   "source": "model",
+   "model": "wall-clock.glb",
+   "props": 16,
+   "fit": {
+    "model_dims_m": [
+     0.3,
+     0.045,
+     0.301
+    ],
+    "box_m": [
+     0.3,
+     0.06,
+     0.3
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.998,
+    "worst_side_ratio": 1.35
+   },
+   "note": null
+  },
+  "wood-stove": {
+   "source": "model",
+   "model": "wood-stove.glb",
+   "props": 1,
+   "fit": {
+    "model_dims_m": [
+     1.01,
+     0.948,
+     1.8
+    ],
+    "box_m": [
+     0.6,
+     0.6,
+     1.8
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.0,
+    "worst_side_ratio": 1.68
+   },
+   "note": null
+  },
+  "work-lamp": {
+   "source": "model",
+   "model": "work-lamp.glb",
+   "props": 3,
+   "fit": {
+    "model_dims_m": [
+     1.169,
+     1.213,
+     2.0
+    ],
+    "box_m": [
+     0.8,
+     0.8,
+     2.0
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.0,
+    "worst_side_ratio": 1.52
+   },
+   "note": null
+  },
+  "yard-lamp": {
+   "source": "model",
+   "model": "yard-lamp.glb",
+   "props": 12,
+   "fit": {
+    "model_dims_m": [
+     2.198,
+     1.086,
+     5.0
+    ],
+    "box_m": [
+     0.4,
+     0.4,
+     5.0
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.406,
+    "worst_side_ratio": 2.46
+   },
+   "note": null
+  }
+ },
+ "models": {
+  "ledger": "games/man-eater/assets/models.json of the image/model session's working copy (read only; neither the ledger nor the glbs are in this branch)",
+  "ledger_status": {
+   "built": [
+    "army-truck",
+    "boiler",
+    "bread-loaf",
+    "bunk-bed",
+    "door-log-clipboard",
+    "fence-post",
+    "floor-drain",
+    "key-ring",
+    "kit-bag",
+    "laced-boots",
+    "ladder",
+    "mail-sack",
+    "meal-tray",
+    "paint-tin",
+    "round-table",
+    "rules-card",
+    "sheet-covered-table",
+    "sleeping-bag",
+    "snow-shovel",
+    "supply-crate",
+    "tube-stand",
+    "two-handle-door",
+    "uniform",
+    "wall-clock",
+    "wood-stove",
+    "work-lamp",
+    "yard-lamp"
+   ],
+   "failed": [
+    "card-deck",
+    "file-folder",
+    "filing-cabinet"
+   ]
+  },
+  "used_as_models": [
+   "army-truck",
+   "boiler",
+   "bread-loaf",
+   "bunk-bed",
+   "door-log-clipboard",
+   "fence-post",
+   "floor-drain",
+   "key-ring",
+   "kit-bag",
+   "ladder",
+   "mail-sack",
+   "meal-tray",
+   "paint-tin",
+   "round-table",
+   "rules-card",
+   "sheet-covered-table",
+   "snow-shovel",
+   "supply-crate",
+   "tube-stand",
+   "two-handle-door",
+   "wall-clock",
+   "wood-stove",
+   "work-lamp",
+   "yard-lamp"
+  ],
+  "named_box_proxy": {
+   "card-deck": "no model used: ledger status failed",
+   "file-folder": "no model used: ledger status failed",
+   "filing-cabinet": "no model used: ledger status failed",
+   "laced-boots": "model skipped: Man Eater: no figure-like models; a pair of upright boots reads as legs; named box proxy (footwear-box) stays",
+   "sleeping-bag": "model skipped: Man Eater: no figure-like models; the mummy bag has a body-shaped outline; named box proxy (bedroll-slab) stays",
+   "uniform": "model skipped: Man Eater: no figure-like models; the garment on its hanger reads as a body; named box proxy stays"
+  },
+  "built_in_ledger_not_in_any_scene": [],
+  "render_copies": "full 80000-triangle models re-exported with 1024 px JPEG textures (copies made in Blender because the render box's upload link is slow; never copied into the repo)",
+  "front_check": "every built model viewed from -y and from 50 degrees (workbench) before the render",
+  "figure_policy": "Man Eater takes no figure-like model: `uniform` (trousers on a hanger, reads as a body), `laced-boots` (an upright pair reads as legs) and `sleeping-bag` (a body-shaped mummy bag) are skipped and stay the neutral-named box proxies (hanging-panel, footwear-box, bedroll-slab); the new `wood-stove` was viewed from -y and at 50 degrees and is not figure-like."
+ },
+ "gpu": {
+  "device": "one rented RTX 4090 (Blender 5.2.1, OptiX)",
+  "first_final_12k_lite_s": 1185,
+  "look_model_s": 115,
+  "look_box_s": 105,
+  "before_s": 33,
+  "final_s": 1951,
+  "note": "the per-run wall times overlap; the box-busy window of the three finals is about 2280 s",
+  "fix_round_s": {
+   "rec_room_scene_with_wood_stove": 60,
+   "total": 60
+  }
+ }
 }

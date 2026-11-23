@@ -124,6 +124,13 @@ recorded render-time overrides differ.
   it are rendered again (`--only`), merged into the run folder, and `finish.py` is run on the merged folder (the-march of dr-tox-finale, twice). `finish.py --before`
   now also runs for dr-tox-rise. The owner sheet for the batch is the three games' `--owner` sheets stacked (18 locations).
 
+- Added for batch 12 (wrymwretch, behind-the-peephole, man-eater models re-render): no driver change. All 36 + 26 + 38 scenes were rendered again with every built model of
+  each game's ledger; skipped as figure-like or creature-like: wrymwretch's `wyrm-rib`; man-eater's `uniform`, `laced-boots`, `sleeping-bag`, which keep the
+  neutral-named box proxies. The model copies were first 12k triangles / 512 px, which shattered the thin door and the boiler (face-split decimation), so the final
+  run uses the full 80k-triangle models with 1024 px JPEG textures (copies in Blender, uploaded in three tars; the link drops large uploads, retry). `rig.json`
+  per-scene `exposure_ev` and `overview_ev` were re-matched to a box-proxy look pass of the same rig (damped log2 of the mean/median luminance ratio, changed only
+  where the two differ by more than 10 %). The owner sheet joins the three games (36 locations). Fix round: the first pass of this batch had read the ledgers stale and left 8 built peephole models (brass-rose, card-table, chute-hatch, logbook, noticeboard, reception-desk, safe, staff-door) and man-eater's wood-stove as box proxies; the models json is now built from the ledger in the same read that decides each proxy, and the affected scenes were rendered again (all 26 peephole scenes, man-eater's rec-room) with `exposure_ev` re-matched for lobby/end_sitter and the office scenes. `ledger.json` `models.named_box_proxy` states each proxy's reason from the ledger status.
+
 ## Remote run
 
 Used on a rented RTX 4090: upload `render_scenes.py` and `pack.tgz`, run Blender 5.2.1 as above with `--device OPTIX`, fetch the

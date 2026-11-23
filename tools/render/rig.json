@@ -1134,7 +1134,7 @@
         "exposure_ev": 3.1
       },
       "s_moot_camp": {
-        "exposure_ev": 0.0
+        "exposure_ev": -0.34
       },
       "s_moot_dawn": {
         "exposure_ev": -1.0
@@ -1270,7 +1270,7 @@
     "exposure_ev": 0.0,
     "scenes": {
       "s_shore_night": {
-        "exposure_ev": 1.8
+        "exposure_ev": 2.08
       },
       "s_tide_shore": {
         "exposure_ev": -3.1
@@ -1322,10 +1322,10 @@
     "exposure_ev": 0.0,
     "scenes": {
       "n6_back_office": {
-        "exposure_ev": 0.0
+        "exposure_ev": 0.65
       }
     },
-    "overview_ev": -0.5
+    "overview_ev": -0.2
   },
   "back-stair": {
     "overview_scene": "n3_stairwell",
@@ -1371,16 +1371,16 @@
     "exposure_ev": 0.0,
     "scenes": {
       "dawn_lobby": {
-        "exposure_ev": -1.1
+        "exposure_ev": -1.47
       },
       "end_sitter": {
-        "exposure_ev": -1.5
+        "exposure_ev": -0.61
       },
       "end_wrong_picture": {
-        "exposure_ev": -1.0
+        "exposure_ev": -1.43
       }
     },
-    "overview_ev": 0.0
+    "overview_ev": -0.41
   },
   "office": {
     "overview_scene": "n1_office",
@@ -1400,55 +1400,55 @@
     "exposure_ev": 0.0,
     "scenes": {
       "n1_morning": {
-        "exposure_ev": -0.8
+        "exposure_ev": -0.42
       },
       "n1_office": {
-        "exposure_ev": 1.4
+        "exposure_ev": 1.8
       },
       "n2_morning": {
-        "exposure_ev": -0.8
+        "exposure_ev": -0.42
       },
       "n2_office": {
-        "exposure_ev": 1.4
+        "exposure_ev": 1.8
       },
       "n2_seventh_bell": {
-        "exposure_ev": 0.0
+        "exposure_ev": 0.37
       },
       "n3_morning": {
-        "exposure_ev": -0.8
+        "exposure_ev": -0.42
       },
       "n3_office": {
-        "exposure_ev": 1.4
+        "exposure_ev": 1.8
       },
       "n3_tea": {
         "exposure_ev": 0.9
       },
       "n4_morning": {
-        "exposure_ev": -0.8
+        "exposure_ev": -0.42
       },
       "n4_office": {
-        "exposure_ev": 1.4
+        "exposure_ev": 1.8
       },
       "n5_morning": {
-        "exposure_ev": -0.8
+        "exposure_ev": -0.42
       },
       "n5_office": {
-        "exposure_ev": 1.4
+        "exposure_ev": 1.8
       },
       "n6_morning": {
-        "exposure_ev": -0.8
+        "exposure_ev": -0.42
       },
       "n6_office": {
-        "exposure_ev": 1.4
+        "exposure_ev": 1.8
       },
       "n7_office": {
-        "exposure_ev": 1.4
+        "exposure_ev": 1.8
       },
       "n7_your_door": {
         "exposure_ev": 0.6
       }
     },
-    "overview_ev": 0.0
+    "overview_ev": -0.3
   },
   "river-wall": {
     "overview_scene": "end_open_door",
@@ -1491,10 +1491,10 @@
     "exposure_ev": 0.0,
     "scenes": {
       "n1_arrival": {
-        "exposure_ev": 3.5
+        "exposure_ev": 1.92
       }
     },
-    "overview_ev": -0.5
+    "overview_ev": -1.95
   },
   "valet-passage": {
     "overview_scene": "n1_passage",
@@ -1555,10 +1555,10 @@
         "uniform-fisk": "hanging-panel-e"
       }
     },
-    "overview_ev": 0.0,
+    "overview_ev": 1.07,
     "scenes": {
       "d4_duty_boiler": {
-        "exposure_ev": -1.9
+        "exposure_ev": 0.77
       }
     }
   },
@@ -1604,40 +1604,40 @@
         "exposure_ev": -2.8
       },
       "d5_jax_plan": {
-        "exposure_ev": -0.8
+        "exposure_ev": -0.42
       },
       "d6_sam_offer": {
         "exposure_ev": -2.8
       },
       "d7_bunk_evening": {
-        "exposure_ev": -0.8
+        "exposure_ev": -0.42
       },
       "e_prints_bunk": {
-        "exposure_ev": 0.0
+        "exposure_ev": 0.33
       },
       "n1_bunk_call": {
-        "exposure_ev": -1.0
+        "exposure_ev": -0.63
       },
       "n2_door": {
-        "exposure_ev": -1.3
+        "exposure_ev": 0.27
       },
       "n3_door": {
-        "exposure_ev": -1.3
+        "exposure_ev": 0.37
       },
       "n4_door": {
-        "exposure_ev": -1.3
+        "exposure_ev": 0.46
       },
       "n5_door": {
-        "exposure_ev": -1.3
+        "exposure_ev": 0.55
       },
       "n6_door": {
-        "exposure_ev": -1.3
+        "exposure_ev": 0.62
       },
       "n7_bunk_stay": {
-        "exposure_ev": -1.0
+        "exposure_ev": -0.63
       },
       "n7_door": {
-        "exposure_ev": -1.3
+        "exposure_ev": 0.55
       }
     }
   },
@@ -1846,10 +1846,10 @@
         "uniform-fisk": "hanging-panel-e"
       }
     },
-    "overview_ev": 0.0,
+    "overview_ev": 0.32,
     "scenes": {
       "d3_mail_room": {
-        "exposure_ev": -0.9
+        "exposure_ev": -0.24
       }
     }
   },
@@ -1975,7 +1975,7 @@
     "overview_ev": 0.0,
     "scenes": {
       "e_zoo_wake": {
-        "exposure_ev": -3.6
+        "exposure_ev": -3.89
       }
     }
   },
@@ -2104,10 +2104,10 @@
         "uniform-fisk": "hanging-panel-e"
       }
     },
-    "overview_ev": 0.5,
+    "overview_ev": -2.5,
     "scenes": {
       "e_cave": {
-        "exposure_ev": 6.0
+        "exposure_ev": 3.0
       }
     }
   },
@@ -2147,7 +2147,7 @@
     "overview_ev": 0.0,
     "scenes": {
       "n6_pens": {
-        "exposure_ev": -2.8
+        "exposure_ev": -3.09
       }
     },
     "reference_card": "The reference painting for the pens shows a small seated shape at the right of the floor that reads as a figure at sheet size; man-eater keeps no figure imagery, so the reference is left out of this sheet."
@@ -2185,7 +2185,7 @@
         "uniform-fisk": "hanging-panel-e"
       }
     },
-    "overview_ev": 0.0,
+    "overview_ev": 0.67,
     "scenes": {
       "n3_glovebox": {
         "exposure_ev": -1.1

@@ -1,4 +1,4 @@
-# wrymwretch: box-proxy renders, refinement batch 4
+# wrymwretch: renders with models (box-proxy first pass, then models re-render), refinement batch 4
 
 36 scenes in 14 locations (the first pass rendered all of them at 1920x1080 / 128 samples; 5 were flagged). Rendered with the build files as
 they are (box proxies, each scene's own lights, world, camera and lens) plus the driver's rig (`tools/render/rig.json`) and 9 render-time
@@ -13,7 +13,7 @@ overrides (`tools/render/overrides.json`, each written up as a proposed diff in 
   were deleted from the render box afterwards to free space (re-render with tools/render/pack.py and render_scenes.py to regenerate).
 - Reference images: 14 location paintings in `games/wrymwretch/assets/locations/`. The overviews match layout, key colour and light direction
   only (see Phase B in the notes).
-- Models: `games/wrymwretch/assets/models.json` does not exist and no `.glb` was found; every prop is a named box proxy (30 object types).
+- Models: re-rendered 2026-11-23 with every model built in `games/wrymwretch/assets/models.json` (11 object types, 121 of 275 prop instances; the rest are named box proxies: figure-like or unbuilt ones, listed in `ledger.json` `models`). See "Models re-render" in `REFINEMENT_NOTES.md`; the ledger's `objects` says model or proxy per object, with the fit. The earlier box-proxy stills are replaced by the model stills (rig, overrides and fixes unchanged; exposure re-matched).
 - Flagged: 5 from the first pass plus 4 found by the driver or by looking; 8 fixed at render time with a proposed diff each, the others
   proposed only. Nothing in `games/` was edited.
 - No people or creatures in any frame; `king-statue`, `queen-statue`, `wyrm-skull` and `wyrm-rib` are plain boxes.
