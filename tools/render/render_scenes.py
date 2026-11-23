@@ -3,6 +3,7 @@
     blender -b --factory-startup --python tools/render/render_scenes.py -- \
         --pack <pack dir> --out <out dir> [--only loc/scene,loc/scene] [--stills camera,player,overview]
         [--device OPTIX|CUDA|CPU] [--res-scale 1.0] [--samples-scale 1.0] [--models <models.json>]
+        [--no-dress 1 | --dress <dress dir> [--dress-layers surfaces,scatter,...]] [--ids 1] [--seed-offset N]
 
 The pack is made by tools/render/pack.py (compiled scenes, resolved props, rig.json, overrides.json, the
 repo's tools/blender/blockout.py). Per scene it builds the set exactly as the build file says: the blockout
@@ -15,11 +16,16 @@ camera and target, a prop inside a piece, a prop off its floor) and writes one `
 import json
 import math
 import os
+import subprocess
 import sys
+import threading
 import time
+import zlib
 
 import bpy
 from mathutils import Vector
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # the dress package sits next to this file
 
 
 def argv():
@@ -29,12 +35,13 @@ def argv():
 
 def parse(args):
     o = {"pack": None, "out": None, "only": None, "stills": "camera,player,overview", "device": "OPTIX",
-         "res_scale": 1.0, "samples_scale": 1.0, "models": None, "no_overrides": "0"}
+         "res_scale": 1.0, "samples_scale": 1.0, "models": None, "no_overrides": "0",
+         "dress": None, "no_dress": "0", "ids": "0", "dress_layers": None, "seed_offset": 0, "denoise_passes": "albedo_normal", "jpg": "0"}
     i = 0
     while i < len(args):
         k = args[i].lstrip("-").replace("-", "_")
         v = args[i + 1]
-        o[k] = float(v) if k in ("res_scale", "samples_scale") else v
+        o[k] = float(v) if k in ("res_scale", "samples_scale") else int(v) if k == "seed_offset" else v
         i += 2
     return o
 
@@ -399,7 +406,7 @@ def run_checks(sc, cam_loc, lookat, props, pieces):
 
 
 # ---------------------------------------------------------------- render
-def setup_render(sc, res, samples, device, ev, grade=None):
+def setup_render(sc, res, samples, device, ev, grade=None, seed=0, den="albedo_normal"):
     sc.render.engine = "CYCLES"
     cy = sc.cycles
     cy.samples = samples
@@ -407,6 +414,10 @@ def setup_render(sc, res, samples, device, ev, grade=None):
     cy.adaptive_threshold = 0.01
     cy.use_denoising = True
     cy.denoiser = "OPENIMAGEDENOISE"
+    cy.denoising_input_passes = {"albedo_normal": "RGB_ALBEDO_NORMAL", "albedo": "RGB_ALBEDO", "none": "RGB"}[den]  # the guide passes OIDN is fed (Blender's default, now explicit)
+    cy.denoising_prefilter = "ACCURATE"
+    cy.seed = seed
+    cy.use_animated_seed = False
     cy.max_bounces = 10
     cy.caustics_reflective = False
     cy.caustics_refractive = False
@@ -455,6 +466,64 @@ def merge(base, patch):
     return out
 
 
+def player_view(ps, cam_spec, rig):
+    """(eye location, look-at point) of the eye-height player still (rig "facing": compass or ccw; see the batch 6 note)."""
+    fdeg = ps["facing_deg"] * (-1 if rig.get("facing", "compass") == "ccw" else 1)
+    f = math.radians(fdeg)
+    eye = ps["location"][2] + 1.6
+    if ps["location"][2] == 0:
+        eye = min(max(cam_spec["location"][2], rig.get("min_eye_m", 0.8)), 2.0)
+    loc = [ps["location"][0], ps["location"][1], eye]
+    return loc, [loc[0] + math.sin(f) * 5, loc[1] + math.cos(f) * 5, eye - 0.1]
+
+
+class VramWatch:
+    """Peak GPU memory (MiB) while a render runs, polled from nvidia-smi (None when there is no nvidia-smi)."""
+
+    def __init__(self):
+        self.peak, self._stop = None, threading.Event()
+        self._t = threading.Thread(target=self._run, daemon=True)
+
+    def _run(self):
+        while not self._stop.is_set():
+            try:
+                v = int(subprocess.run(["nvidia-smi", "--query-gpu=memory.used", "--format=csv,noheader,nounits"], capture_output=True,
+                                       text=True, timeout=5).stdout.split()[0])
+                self.peak = v if self.peak is None else max(self.peak, v)
+            except Exception:
+                return
+            self._stop.wait(0.5)
+
+    def __enter__(self):
+        self._t.start()
+        return self
+
+    def __exit__(self, *a):
+        self._stop.set()
+        self._t.join(timeout=3)
+
+
+def scene_stats():
+    """Triangle and texture budget of the built scene (gate G13): unique triangles (each mesh once), expanded triangles (every user),
+    texture memory (8-bit RGBA, with a third more for mip levels) and the image count."""
+    uniq, expanded, seen = 0, 0, {}
+    for ob in bpy.data.objects:
+        if ob.type != "MESH" or ob.hide_render:
+            continue
+        me = ob.data
+        if me.name not in seen:
+            me.calc_loop_triangles()
+            seen[me.name] = len(me.loop_triangles)
+            uniq += seen[me.name]
+        expanded += seen[me.name]
+    tex, n = 0, 0
+    for im in bpy.data.images:
+        if im.users and im.size[0] and im.type == "IMAGE":
+            tex += im.size[0] * im.size[1] * 4 * (4 if im.is_float else 1) * 4 // 3
+            n += 1
+    return {"unique_tris": uniq, "expanded_tris": expanded, "texture_bytes": tex, "images": n}
+
+
 def main():
     o = parse(argv())
     pack, out = o["pack"], o["out"]
@@ -480,6 +549,12 @@ def main():
                 models[oid] = g
     wanted = set(o["only"].split(",")) if o["only"] else None
     stills = set(o["stills"].split(","))
+    use_dress = bool(o["dress"]) and o["no_dress"] != "1"  # --dress <dir>: the dressed pass; --no-dress 1: the "before" pass (same ids, same seeds)
+    ids_on = use_dress or o["no_dress"] == "1" or o["ids"] == "1"
+    if ids_on:
+        from dress import idpass, intent as dintent
+    if use_dress:
+        from dress import dress as dresslib
     total0 = time.time()
     done = 0
     for entry in man["scenes"]:
@@ -572,18 +647,56 @@ def main():
                "rig": {"exposure_ev": ev, "world_gain": wgain, "light_gain": lgain, "light_gains": per_light,
                        "fog": rig.get("fog"), "grade_gain": rig.get("grade_gain"), "fills": [f["name"] for f in fills]},
                "scene_scale": K, "overrides": ov, "props": sources, "checks": checks, "stills": []}
+        cseed = (zlib.crc32((man["game"] + "/" + key).encode()) + o["seed_offset"]) % (2 ** 31)  # one fixed Cycles seed per scene
+        rec["cycles_seed"] = cseed
+        views = {"camera": (cam_spec["location"], cam_spec["look_at"], cam_spec.get("lens_mm", 35))}
+        if pstart:
+            views["player"] = player_view(pstart, cam_spec, rig) + (cam_spec.get("lens_mm", 35),)
+        if entry.get("overview") is not None:
+            ovw0 = merge(entry["overview"], rig.get("overview", {}))
+            if K != 1.0:
+                ovw0 = dict(ovw0, location=[x * K for x in ovw0["location"]], look_at=[x * K for x in ovw0["look_at"]])
+            views["overview"] = (ovw0["location"], ovw0["look_at"], ovw0.get("lens_mm", 28))
+        dctx = None
+        if use_dress:
+            dctx = dresslib.apply(bpy=bpy, sc=sc, game=man["game"], location=entry["location"], scene=entry["scene"], K=K, rig=rig, views=views,
+                                  made=made, pieces=pieces_objs, dress_dir=o["dress"], layers=o["dress_layers"], ov=ov, pack=pack)
+            rec["dress"] = dctx["record"]
+            ev += dctx.get("ev_delta", 0.0)
+        elif ids_on:
+            rec["dress"] = {"enabled": False}
+        leg = None
+        if ids_on:
+            bpy.context.view_layer.update()
+            leg = idpass.legend(bpy.data.objects)
+            rec["ids"] = leg
+            rec["stats"] = scene_stats()
 
         def shoot(name, loc, look, lens, res, samples, ev_extra=0.0, grade=None):
-            setup_render(sc, res, samples, o["device"], ev + ev_extra, grade if grade is not None else rig.get("grade_gain"))
+            setup_render(sc, res, samples, o["device"], ev + ev_extra, grade if grade is not None else rig.get("grade_gain"), cseed, o["denoise_passes"])
             set_camera(sc, loc, look, lens)
             d = os.path.join(out, entry["location"], "_overview" if name == "overview" else entry["scene"])
             os.makedirs(d, exist_ok=True)
             fp = os.path.join(d, name + ".png")
             sc.render.filepath = fp
+            bpy.context.view_layer.update()
             t1 = time.time()
-            bpy.ops.render.render(write_still=True)
-            rec["stills"].append({"still": name, "file": os.path.relpath(fp, out).replace("\\", "/"),
-                                  "resolution": list(res), "samples": samples, "seconds": round(time.time() - t1, 1)})
+            with VramWatch() as vw:
+                bpy.ops.render.render(write_still=True)
+            srec = {"still": name, "file": os.path.relpath(fp, out).replace("\\", "/"),
+                    "resolution": list(res), "samples": samples, "seconds": round(time.time() - t1, 1)}
+            if ids_on:
+                srec["vram_peak_mib"] = vw.peak
+                irec, ihash = dintent.intent(bpy, sc)
+                srec["intent"], srec["intent_hash"] = irec, ihash
+                srec["ev"] = ev + ev_extra
+                t2 = time.time()
+                idpass.render_ids(sc, os.path.join(d, name + "_id.png"), leg)
+                srec["id_file"] = os.path.relpath(os.path.join(d, name + "_id.png"), out).replace("\\", "/")
+                srec["id_seconds"] = round(time.time() - t2, 1)
+                if dctx is not None and name in views:
+                    srec["dress_view"] = dresslib.view_record(bpy, sc, views[name], res, dctx)
+            rec["stills"].append(srec)
 
         W, H = int(entry["resolution"][0] * o["res_scale"]), int(entry["resolution"][1] * o["res_scale"])
         S = max(4, int(entry["samples"] * o["samples_scale"]))
@@ -591,21 +704,15 @@ def main():
             shoot("camera", cam_spec["location"], cam_spec["look_at"], cam_spec.get("lens_mm", 35), (W, H), S)
         ps = pstart
         if "player" in stills and ps:
-            # rig "facing": "compass" (default; 0 faces +y, 90 faces +x) or "ccw" (a rotation about Z: 0 faces +y, 90 faces -x),
-            # which is what most cameras of stuffed-ones and missing-campsites agree with
-            fdeg = ps["facing_deg"] * (-1 if rig.get("facing", "compass") == "ccw" else 1)
-            f = math.radians(fdeg)
-            eye = ps["location"][2] + 1.6
-            if ps["location"][2] == 0:
-                eye = min(max(cam_spec["location"][2], rig.get("min_eye_m", 0.8)), 2.0)
-            loc = [ps["location"][0], ps["location"][1], eye]
-            shoot("player", loc, [loc[0] + math.sin(f) * 5, loc[1] + math.cos(f) * 5, eye - 0.1],
-                  cam_spec.get("lens_mm", 35), (W, H), S)
+            loc, look = player_view(ps, cam_spec, rig)  # rig "facing": "compass" (default) or "ccw", see player_view
+            shoot("player", loc, look, cam_spec.get("lens_mm", 35), (W, H), S)
         if "overview" in stills and entry.get("overview") is not None:
             ovw = merge(entry["overview"], rig.get("overview", {}))
             if K != 1.0:
                 ovw = dict(ovw, location=[x * K for x in ovw["location"]], look_at=[x * K for x in ovw["look_at"]])
             ograde = overview_rig(sc, rig, K)
+            if dctx is not None:
+                dresslib.after_overview(bpy, sc, dctx, rig)
             shoot("overview", ovw["location"], ovw["look_at"], ovw.get("lens_mm", 28),
                   (int(1920 * o["res_scale"]), int(1080 * o["res_scale"])), max(4, int(128 * o["samples_scale"])),
                   rig.get("overview_ev", 0.0), ograde)

@@ -1,0 +1,172 @@
+{
+ "game": "missing-campsites",
+ "version": 1,
+ "note": "P0 pilot entry: loop-road (4 scenes). Outdoor: surfaces, scatter and a camera-only sky plate.",
+ "locations": {
+  "loop-road": {
+   "grime": {
+    "strength": 0.6,
+    "ao": 0.18,
+    "dust": 0.08,
+    "damp": 0.1,
+    "damp_height_m": 0.3,
+    "ao_distance_m": 1.0,
+    "tone_gain": 1.04
+   },
+   "materials": {
+    "forest-floor": {
+     "family": "scan",
+     "scan": "forrest_ground_01",
+     "res": "2k",
+     "tile_m": 2.2,
+     "chroma": 0.5,
+     "bump": 0.8,
+     "macro": 0.14
+    },
+    "gravel": {
+     "family": "scan",
+     "scan": "gravel_floor",
+     "res": "2k",
+     "tile_m": 1.8,
+     "chroma": 0.3,
+     "bump": 0.8,
+     "macro": 0.1
+    },
+    "gravel-wet": {
+     "family": "scan",
+     "scan": "rocky_trail",
+     "res": "2k",
+     "tile_m": 2.4,
+     "chroma": 0.3,
+     "bump": 0.6,
+     "macro": 0.08
+    },
+    "cedar": {
+     "family": "scan",
+     "scan": "weathered_planks",
+     "res": "1k",
+     "tile_m": 2.0,
+     "chroma": 0.2,
+     "bump": 0.4
+    },
+    "trunk": {
+     "family": "scan",
+     "scan": "pine_bark",
+     "res": "1k",
+     "tile_m": 1.6,
+     "chroma": 0.3,
+     "bump": 0.9,
+     "macro": 0.12,
+     "grime": 0.3
+    },
+    "conifer": {
+     "family": "foliage",
+     "tile_m": 3.0,
+     "grime": 0.0,
+     "bump": 0.0
+    },
+    "creek": {
+     "family": "noise",
+     "tile_m": 4.0,
+     "macro": 0.04,
+     "fine": 0.02,
+     "bump": 0.5,
+     "bump_m": 0.01,
+     "grime": 0.0
+    }
+   },
+   "scatter": [
+    {
+     "kind": "grass",
+     "name": "grass",
+     "on": {
+      "materials": [
+       "forest-floor"
+      ]
+     },
+     "density": 110,
+     "max_dist_m": 32,
+     "limit": 5000,
+     "color": [
+      0.3,
+      0.34,
+      0.16
+     ],
+     "roughness": 0.8,
+     "surface": {
+      "family": "foliage",
+      "tile_m": 0.3,
+      "macro": 0.2,
+      "fine": 0.12,
+      "bump": 0.0
+     }
+    },
+    {
+     "kind": "pebbles",
+     "name": "pebbles",
+     "on": {
+      "materials": [
+       "gravel",
+       "gravel-wet"
+      ]
+     },
+     "density": 400,
+     "max_dist_m": 26,
+     "limit": 5000,
+     "color": [
+      0.55,
+      0.5,
+      0.42
+     ],
+     "roughness": 0.9,
+     "surface": {
+      "family": "scan",
+      "scan": "rock_ground",
+      "res": "1k",
+      "tile_m": 0.5,
+      "chroma": 0.4,
+      "bump": 0.3
+     }
+    },
+    {
+     "kind": "twigs",
+     "name": "twigs",
+     "on": {
+      "materials": [
+       "forest-floor"
+      ]
+     },
+     "density": 14,
+     "max_dist_m": 24,
+     "limit": 1200,
+     "color": [
+      0.26,
+      0.18,
+      0.11
+     ],
+     "roughness": 0.9,
+     "surface": {
+      "family": "scan",
+      "scan": "pine_bark",
+      "res": "1k",
+      "tile_m": 0.3,
+      "chroma": 0.3,
+      "bump": 0.4
+     }
+    }
+   ],
+   "atmos": {
+    "sky_plate": {
+     "name": "overcast-hdri",
+     "horizon_gain": 1.15,
+     "zenith_gain": 0.88,
+     "cloud_scale": 3.0,
+     "cloud_contrast": 0.32,
+     "hdri": "kloofendal_overcast_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.85
+    }
+   }
+  }
+ }
+}

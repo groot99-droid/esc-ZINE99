@@ -1,0 +1,111 @@
+{
+ "game": "heartstream",
+ "version": 1,
+ "note": "P0 pilot entry: marrow-caverns (3 scenes). No CC0 source for organic tissue: procedural abstract wet membrane, nothing wound-like.",
+ "locations": {
+  "marrow-caverns": {
+   "grime": {
+    "strength": 0.5,
+    "ao": 0.22,
+    "dust": 0.04,
+    "damp": 0.0,
+    "ao_distance_m": 1.5,
+    "tone_gain": 1.07
+   },
+   "materials": {
+    "marrow-floor": {
+     "family": "scan",
+     "scan": "low_tide_rocks",
+     "res": "1k",
+     "tile_m": 2.2,
+     "chroma": 0.18,
+     "bump": 0.7,
+     "macro": 0.1
+    },
+    "marrow-tissue": {
+     "family": "tissue",
+     "tile_m": 2.4,
+     "macro": 0.28,
+     "fine": 0.1,
+     "bump": 0.9,
+     "bump_m": 0.02,
+     "grime": 0.6
+    },
+    "marrow-deep": {
+     "family": "tissue",
+     "tile_m": 3.0,
+     "macro": 0.28,
+     "fine": 0.1,
+     "bump": 0.9,
+     "bump_m": 0.02,
+     "grime": 0.5
+    },
+    "marrow-glow": {
+     "family": "keep"
+    },
+    "puddle": {
+     "family": "keep"
+    },
+    "shaft-dark": {
+     "family": "keep"
+    }
+   },
+   "scatter": [
+    {
+     "kind": "nodules",
+     "name": "nodules",
+     "on": {
+      "materials": [
+       "marrow-floor"
+      ]
+     },
+     "density": 9,
+     "max_dist_m": 38,
+     "limit": 900,
+     "color": [
+      0.52,
+      0.58,
+      0.7
+     ],
+     "roughness": 0.45,
+     "scale": 1.0,
+     "surface": {
+      "family": "scan",
+      "scan": "low_tide_rocks",
+      "res": "1k",
+      "tile_m": 0.6,
+      "chroma": 0.15,
+      "bump": 0.4
+     }
+    },
+    {
+     "kind": "pebbles",
+     "name": "grit",
+     "on": {
+      "materials": [
+       "marrow-floor"
+      ]
+     },
+     "density": 80,
+     "max_dist_m": 24,
+     "limit": 4000,
+     "color": [
+      0.5,
+      0.55,
+      0.66
+     ],
+     "roughness": 0.6,
+     "scale": 0.8,
+     "surface": {
+      "family": "scan",
+      "scan": "low_tide_rocks",
+      "res": "1k",
+      "tile_m": 0.4,
+      "chroma": 0.15,
+      "bump": 0.3
+     }
+    }
+   ]
+  }
+ }
+}

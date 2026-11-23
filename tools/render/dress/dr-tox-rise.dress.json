@@ -1,0 +1,143 @@
+{
+ "game": "dr-tox-rise",
+ "version": 1,
+ "note": "P0 pilot entry: hospital-room. Walls use the approved Poly Haven painted-concrete scan (tone-locked to the build file's white); floor and ceiling are tile grids. Other locations come in P1.",
+ "locations": {
+  "hospital-room": {
+   "grime": {
+    "strength": 1.0,
+    "ao": 0.22,
+    "dust": 0.1,
+    "damp": 0.1,
+    "damp_height_m": 0.5,
+    "tone_gain": 1.12
+   },
+   "materials": {
+    "clinical-white": {
+     "family": "scan",
+     "scan": "concrete_wall_008",
+     "res": "2k",
+     "tile_m": 1.4,
+     "chroma": 0.1,
+     "bump": 0.25,
+     "macro": 0.06,
+     "grime": 1.0
+    },
+    "steel": {
+     "family": "metal",
+     "tile_m": 0.5,
+     "bump": 0.15,
+     "grime": 0.8
+    },
+    "glass": {
+     "family": "dirt-only",
+     "dirt": 0.2
+    }
+   },
+   "pieces": {
+    "floor": {
+     "family": "grid",
+     "tile_m": 0.5,
+     "joint": 0.008,
+     "joint_tone": 0.78,
+     "macro": 0.05,
+     "bump": 0.2,
+     "grime": 1.2
+    },
+    "ceiling": {
+     "family": "grid",
+     "tile_m": 0.6,
+     "joint": 0.012,
+     "joint_tone": 0.8,
+     "bond_offset": 0.0,
+     "bump": 0.1,
+     "grime": 0.6
+    },
+    "fluoro-1": {
+     "family": "metal",
+     "tile_m": 0.4,
+     "bump": 0.0,
+     "grime": 0.3
+    }
+   },
+   "kits": [
+    {
+     "kit": "baseboard",
+     "name": "cove-base",
+     "color": [
+      0.52,
+      0.58,
+      0.6
+     ],
+     "roughness": 0.55,
+     "height_m": 0.1,
+     "thickness_m": 0.018,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.8,
+      "macro": 0.04,
+      "bump": 0.05
+     }
+    },
+    {
+     "kit": "ceiling_grid",
+     "name": "tbar",
+     "color": [
+      0.85,
+      0.86,
+      0.85
+     ],
+     "roughness": 0.45,
+     "metallic": 0.2,
+     "pitch_m": 0.6,
+     "width_m": 0.03,
+     "depth_m": 0.03,
+     "surface": {
+      "family": "metal",
+      "tile_m": 0.3,
+      "bump": 0.0
+     }
+    },
+    {
+     "kit": "conduit",
+     "name": "conduit",
+     "wall": "wall-west",
+     "color": [
+      0.62,
+      0.64,
+      0.66
+     ],
+     "roughness": 0.4,
+     "metallic": 0.8,
+     "radius_m": 0.022,
+     "below_top_m": 0.3,
+     "surface": {
+      "family": "metal",
+      "tile_m": 0.4,
+      "bump": 0.0
+     }
+    }
+   ],
+   "decals": [
+    {
+     "name": "stains",
+     "count": 5,
+     "size_m": [
+      0.5,
+      1.1
+     ],
+     "tint": [
+      0.3,
+      0.27,
+      0.22
+     ],
+     "opacity": 0.2,
+     "z_m": [
+      1.2,
+      2.9
+     ]
+    }
+   ]
+  }
+ }
+}

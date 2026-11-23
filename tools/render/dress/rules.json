@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "arena": {"game": "dr-tox-rise", "location": "trial-53-arena", "allowed_layers": ["surfaces"], "note": "materials on the existing pieces only; no scatter, grime decals, kits or atmosphere; the arena stays empty"},
+  "layers": ["surfaces", "scatter", "decals", "kits", "atmos"],
+  "keep_materials": ["glass", "frosted-glass", "haze", "door-light"],
+  "man_eater": {
+    "game": "man-eater",
+    "note": "no figure imagery, no stains in the red-brown band, no hand-like or face-like decals",
+    "denied_layers": ["decals"],
+    "stain_hue_band_deg": [340, 20],
+    "stain_min_saturation": 0.4
+  },
+  "banned_words": ["person", "people", "human", "man", "woman", "child", "baby", "face", "hand", "finger", "foot", "footprint", "corpse", "body", "blood", "gore", "wound", "entrails", "creature", "animal", "bird", "insect", "spider", "skull", "figure", "ghost", "monster"],
+  "skipped_as_figure": {
+    "wrymwretch": ["wyrm-rib"],
+    "man-eater": ["uniform", "laced-boots", "sleeping-bag"],
+    "stuffed-ones": ["sampler"],
+    "missing-campsites": ["heron-sign"],
+    "lira-calyx": ["specimen-shelf"],
+    "endless-temple": ["lizard-plate"],
+    "lord-of-the-sea": ["tea-board"],
+    "dr-tox-fall": ["shroud-stand"]
+  }
+}
