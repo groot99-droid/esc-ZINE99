@@ -106,6 +106,17 @@ recorded render-time overrides differ.
   for the Gullwife boat. Overrides: one camera nudge, lamplit-strait's landing, stairs and camera moved out of the solid headland, replacements for chandlery's solid
   shelves and spice-mouth's solid pavilion posts. Models: 2 ledger entries built (lite copies, 12k triangles, 512 px): the chart table is fitted, the oar rejected by the fit.
 
+- Added for batch 10 (dr-tox-altrulan re-render, first batch with the reference images beside the overviews and all of a game's models): rig key
+  `model_fit` (`{object: "height"}`: the model is scaled by the prop's height only and never rejected, for the 18 m glass-mountains mast whose model
+  has a head 4.9 times wider than its box; the fit record says `fit_mode: height only`). Overview-only rig keys, applied after the scene's own stills so
+  only the overview changes: `overview_world` (`color`, or `horizon` + `zenith` with `z_range` for a sky gradient, `strength`, optional `fog`
+  `{density, anisotropy}`), `overview_fills` (extra lights like `fills`, build-file units; not scaled by `scene_scale`), `overview_light_gain` and
+  `overview_light_gains` (the scene's own lights, scaled), `overview_piece_alpha` (`{material: opacity}`), `overview_hide_pieces` (blockout piece ids
+  left out, a cutaway), `overview_grade_gain` (replaces `grade_gain` for the overview). `finish.py --refs <repo root>` reads the location reference
+  images from another checkout (read only; they are never copied into this branch). A prop override `rotation_deg` (scene level) turns a model whose
+  front faces away from its scene camera (the shrine lectern). Models were lite copies again (12k triangles, 512 px JPEG, made with
+  `lite.py`-style decimation in Blender, uploaded as one tar). The overview camera is still a rig item.
+
 ## Remote run
 
 Used on a rented RTX 4090: upload `render_scenes.py` and `pack.tgz`, run Blender 5.2.1 as above with `--device OPTIX`, fetch the

@@ -450,5 +450,9 @@
  "s-salt-steps": {
   "status": "found by the driver: left as built",
   "what": "the tideline-stone overlaps a pan wall in 3 of 27 samples (informational). No change."
+ },
+ "s3_shrine_book": {
+  "status": "found with the real model (batch 10); fixed at render time + proposed diff",
+  "what": "the lectern is rotated 200 degrees in the build file, so the real shrine-lectern (reading side toward -y) turns its back to the scene camera, which stands south-west of it; a render-time prop override rotates it to -20 degrees so the open book faces the camera. Build-file diff proposed in REFINEMENT_NOTES.md (batch 10)."
  }
 }

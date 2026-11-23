@@ -24,7 +24,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.9
+     "render_seconds": 10.0
     },
     {
      "still": "player",
@@ -33,7 +33,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.6
+     "render_seconds": 9.6
     },
     {
      "still": "overview",
@@ -42,49 +42,186 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 5.0
+     "render_seconds": 5.6
     }
    ],
    "props": [
     {
      "id": "mast-1",
      "object": "trellis-mast",
-     "source": "box-proxy"
+     "source": "model:trellis-mast.glb",
+     "fit": {
+      "model_dims_m": [
+       7.891,
+       6.085,
+       18.248
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       18.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.986,
+      "worst_side_ratio": 4.86,
+      "fit_mode": "height only"
+     }
     },
     {
      "id": "mast-2",
      "object": "trellis-mast",
-     "source": "box-proxy"
+     "source": "model:trellis-mast.glb",
+     "fit": {
+      "model_dims_m": [
+       7.891,
+       6.085,
+       18.248
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       18.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.986,
+      "worst_side_ratio": 4.86,
+      "fit_mode": "height only"
+     }
     },
     {
      "id": "mast-3",
      "object": "trellis-mast",
-     "source": "box-proxy"
+     "source": "model:trellis-mast.glb",
+     "fit": {
+      "model_dims_m": [
+       7.891,
+       6.085,
+       18.248
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       18.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.986,
+      "worst_side_ratio": 4.86,
+      "fit_mode": "height only"
+     }
     },
     {
      "id": "cart",
      "object": "pilgrim-handcart",
-     "source": "box-proxy"
+     "source": "model:pilgrim-handcart.glb",
+     "fit": {
+      "model_dims_m": [
+       2.005,
+       1.431,
+       1.508
+      ],
+      "box_m": [
+       2.0,
+       1.2,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.873,
+      "worst_side_ratio": 1.14
+     }
     },
     {
      "id": "stone",
      "object": "way-stone",
-     "source": "box-proxy"
+     "source": "model:way-stone.glb",
+     "fit": {
+      "model_dims_m": [
+       0.804,
+       0.768,
+       1.409
+      ],
+      "box_m": [
+       1.0,
+       0.6,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.993,
+      "worst_side_ratio": 1.27
+     }
     },
     {
      "id": "bells",
      "object": "bell-frame",
-     "source": "box-proxy"
+     "source": "model:bell-frame.glb",
+     "fit": {
+      "model_dims_m": [
+       4.061,
+       1.685,
+       3.34
+      ],
+      "box_m": [
+       4.0,
+       4.0,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.281,
+      "worst_side_ratio": 1.85
+     }
     },
     {
      "id": "board",
      "object": "morris-bench",
-     "source": "box-proxy"
+     "source": "model:morris-bench.glb",
+     "fit": {
+      "model_dims_m": [
+       1.814,
+       0.76,
+       0.904
+      ],
+      "box_m": [
+       1.8,
+       0.6,
+       0.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.757,
+      "worst_side_ratio": 1.37
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [
      "vine-face",
      "tower-1"
@@ -95,11 +232,6 @@
       "prop": "cart",
       "piece": "plaza",
       "samples": "9/27"
-     },
-     {
-      "prop": "cart",
-      "piece": "road",
-      "samples": "3/27"
      },
      {
       "prop": "stone",
@@ -153,7 +285,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.8
+     "render_seconds": 9.8
     },
     {
      "still": "player",
@@ -162,49 +294,186 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.9
+     "render_seconds": 9.9
     }
    ],
    "props": [
     {
      "id": "mast-1",
      "object": "trellis-mast",
-     "source": "box-proxy"
+     "source": "model:trellis-mast.glb",
+     "fit": {
+      "model_dims_m": [
+       7.891,
+       6.085,
+       18.248
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       18.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.986,
+      "worst_side_ratio": 4.86,
+      "fit_mode": "height only"
+     }
     },
     {
      "id": "mast-2",
      "object": "trellis-mast",
-     "source": "box-proxy"
+     "source": "model:trellis-mast.glb",
+     "fit": {
+      "model_dims_m": [
+       7.891,
+       6.085,
+       18.248
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       18.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.986,
+      "worst_side_ratio": 4.86,
+      "fit_mode": "height only"
+     }
     },
     {
      "id": "mast-3",
      "object": "trellis-mast",
-     "source": "box-proxy"
+     "source": "model:trellis-mast.glb",
+     "fit": {
+      "model_dims_m": [
+       7.891,
+       6.085,
+       18.248
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       18.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.986,
+      "worst_side_ratio": 4.86,
+      "fit_mode": "height only"
+     }
     },
     {
      "id": "cart",
      "object": "pilgrim-handcart",
-     "source": "box-proxy"
+     "source": "model:pilgrim-handcart.glb",
+     "fit": {
+      "model_dims_m": [
+       2.005,
+       1.431,
+       1.508
+      ],
+      "box_m": [
+       2.0,
+       1.2,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.873,
+      "worst_side_ratio": 1.14
+     }
     },
     {
      "id": "stone",
      "object": "way-stone",
-     "source": "box-proxy"
+     "source": "model:way-stone.glb",
+     "fit": {
+      "model_dims_m": [
+       0.804,
+       0.768,
+       1.409
+      ],
+      "box_m": [
+       1.0,
+       0.6,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.993,
+      "worst_side_ratio": 1.27
+     }
     },
     {
      "id": "bells",
      "object": "bell-frame",
-     "source": "box-proxy"
+     "source": "model:bell-frame.glb",
+     "fit": {
+      "model_dims_m": [
+       4.061,
+       1.685,
+       3.34
+      ],
+      "box_m": [
+       4.0,
+       4.0,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.281,
+      "worst_side_ratio": 1.85
+     }
     },
     {
      "id": "board",
      "object": "morris-bench",
-     "source": "box-proxy"
+     "source": "model:morris-bench.glb",
+     "fit": {
+      "model_dims_m": [
+       1.814,
+       0.76,
+       0.904
+      ],
+      "box_m": [
+       1.8,
+       0.6,
+       0.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.757,
+      "worst_side_ratio": 1.37
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [
@@ -212,11 +481,6 @@
       "prop": "cart",
       "piece": "plaza",
       "samples": "9/27"
-     },
-     {
-      "prop": "cart",
-      "piece": "road",
-      "samples": "3/27"
      },
      {
       "prop": "stone",
@@ -269,7 +533,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.2
+     "render_seconds": 9.1
     },
     {
      "still": "player",
@@ -278,49 +542,186 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.6
+     "render_seconds": 9.7
     }
    ],
    "props": [
     {
      "id": "mast-1",
      "object": "trellis-mast",
-     "source": "box-proxy"
+     "source": "model:trellis-mast.glb",
+     "fit": {
+      "model_dims_m": [
+       7.891,
+       6.085,
+       18.248
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       18.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.986,
+      "worst_side_ratio": 4.86,
+      "fit_mode": "height only"
+     }
     },
     {
      "id": "mast-2",
      "object": "trellis-mast",
-     "source": "box-proxy"
+     "source": "model:trellis-mast.glb",
+     "fit": {
+      "model_dims_m": [
+       7.891,
+       6.085,
+       18.248
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       18.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.986,
+      "worst_side_ratio": 4.86,
+      "fit_mode": "height only"
+     }
     },
     {
      "id": "mast-3",
      "object": "trellis-mast",
-     "source": "box-proxy"
+     "source": "model:trellis-mast.glb",
+     "fit": {
+      "model_dims_m": [
+       7.891,
+       6.085,
+       18.248
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       18.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.986,
+      "worst_side_ratio": 4.86,
+      "fit_mode": "height only"
+     }
     },
     {
      "id": "cart",
      "object": "pilgrim-handcart",
-     "source": "box-proxy"
+     "source": "model:pilgrim-handcart.glb",
+     "fit": {
+      "model_dims_m": [
+       2.005,
+       1.431,
+       1.508
+      ],
+      "box_m": [
+       2.0,
+       1.2,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.873,
+      "worst_side_ratio": 1.14
+     }
     },
     {
      "id": "stone",
      "object": "way-stone",
-     "source": "box-proxy"
+     "source": "model:way-stone.glb",
+     "fit": {
+      "model_dims_m": [
+       0.804,
+       0.768,
+       1.409
+      ],
+      "box_m": [
+       1.0,
+       0.6,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.993,
+      "worst_side_ratio": 1.27
+     }
     },
     {
      "id": "bells",
      "object": "bell-frame",
-     "source": "box-proxy"
+     "source": "model:bell-frame.glb",
+     "fit": {
+      "model_dims_m": [
+       4.061,
+       1.685,
+       3.34
+      ],
+      "box_m": [
+       4.0,
+       4.0,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.281,
+      "worst_side_ratio": 1.85
+     }
     },
     {
      "id": "board",
      "object": "morris-bench",
-     "source": "box-proxy"
+     "source": "model:morris-bench.glb",
+     "fit": {
+      "model_dims_m": [
+       1.814,
+       0.76,
+       0.904
+      ],
+      "box_m": [
+       1.8,
+       0.6,
+       0.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.757,
+      "worst_side_ratio": 1.37
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [
@@ -328,11 +729,6 @@
       "prop": "cart",
       "piece": "plaza",
       "samples": "9/27"
-     },
-     {
-      "prop": "cart",
-      "piece": "road",
-      "samples": "3/27"
      },
      {
       "prop": "stone",
@@ -385,7 +781,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.4
+     "render_seconds": 9.1
     },
     {
      "still": "player",
@@ -394,49 +790,186 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.4
+     "render_seconds": 9.1
     }
    ],
    "props": [
     {
      "id": "mast-1",
      "object": "trellis-mast",
-     "source": "box-proxy"
+     "source": "model:trellis-mast.glb",
+     "fit": {
+      "model_dims_m": [
+       7.891,
+       6.085,
+       18.248
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       18.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.986,
+      "worst_side_ratio": 4.86,
+      "fit_mode": "height only"
+     }
     },
     {
      "id": "mast-2",
      "object": "trellis-mast",
-     "source": "box-proxy"
+     "source": "model:trellis-mast.glb",
+     "fit": {
+      "model_dims_m": [
+       7.891,
+       6.085,
+       18.248
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       18.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.986,
+      "worst_side_ratio": 4.86,
+      "fit_mode": "height only"
+     }
     },
     {
      "id": "mast-3",
      "object": "trellis-mast",
-     "source": "box-proxy"
+     "source": "model:trellis-mast.glb",
+     "fit": {
+      "model_dims_m": [
+       7.891,
+       6.085,
+       18.248
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       18.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.986,
+      "worst_side_ratio": 4.86,
+      "fit_mode": "height only"
+     }
     },
     {
      "id": "cart",
      "object": "pilgrim-handcart",
-     "source": "box-proxy"
+     "source": "model:pilgrim-handcart.glb",
+     "fit": {
+      "model_dims_m": [
+       2.005,
+       1.431,
+       1.508
+      ],
+      "box_m": [
+       2.0,
+       1.2,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.873,
+      "worst_side_ratio": 1.14
+     }
     },
     {
      "id": "stone",
      "object": "way-stone",
-     "source": "box-proxy"
+     "source": "model:way-stone.glb",
+     "fit": {
+      "model_dims_m": [
+       0.804,
+       0.768,
+       1.409
+      ],
+      "box_m": [
+       1.0,
+       0.6,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.993,
+      "worst_side_ratio": 1.27
+     }
     },
     {
      "id": "bells",
      "object": "bell-frame",
-     "source": "box-proxy"
+     "source": "model:bell-frame.glb",
+     "fit": {
+      "model_dims_m": [
+       4.061,
+       1.685,
+       3.34
+      ],
+      "box_m": [
+       4.0,
+       4.0,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.281,
+      "worst_side_ratio": 1.85
+     }
     },
     {
      "id": "board",
      "object": "morris-bench",
-     "source": "box-proxy"
+     "source": "model:morris-bench.glb",
+     "fit": {
+      "model_dims_m": [
+       1.814,
+       0.76,
+       0.904
+      ],
+      "box_m": [
+       1.8,
+       0.6,
+       0.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.757,
+      "worst_side_ratio": 1.37
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [
@@ -444,11 +977,6 @@
       "prop": "cart",
       "piece": "plaza",
       "samples": "9/27"
-     },
-     {
-      "prop": "cart",
-      "piece": "road",
-      "samples": "3/27"
      },
      {
       "prop": "stone",
@@ -501,7 +1029,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.4
+     "render_seconds": 9.4
     },
     {
      "still": "player",
@@ -510,49 +1038,186 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.3
+     "render_seconds": 9.5
     }
    ],
    "props": [
     {
      "id": "mast-1",
      "object": "trellis-mast",
-     "source": "box-proxy"
+     "source": "model:trellis-mast.glb",
+     "fit": {
+      "model_dims_m": [
+       7.891,
+       6.085,
+       18.248
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       18.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.986,
+      "worst_side_ratio": 4.86,
+      "fit_mode": "height only"
+     }
     },
     {
      "id": "mast-2",
      "object": "trellis-mast",
-     "source": "box-proxy"
+     "source": "model:trellis-mast.glb",
+     "fit": {
+      "model_dims_m": [
+       7.891,
+       6.085,
+       18.248
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       18.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.986,
+      "worst_side_ratio": 4.86,
+      "fit_mode": "height only"
+     }
     },
     {
      "id": "mast-3",
      "object": "trellis-mast",
-     "source": "box-proxy"
+     "source": "model:trellis-mast.glb",
+     "fit": {
+      "model_dims_m": [
+       7.891,
+       6.085,
+       18.248
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       18.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.986,
+      "worst_side_ratio": 4.86,
+      "fit_mode": "height only"
+     }
     },
     {
      "id": "cart",
      "object": "pilgrim-handcart",
-     "source": "box-proxy"
+     "source": "model:pilgrim-handcart.glb",
+     "fit": {
+      "model_dims_m": [
+       2.005,
+       1.431,
+       1.508
+      ],
+      "box_m": [
+       2.0,
+       1.2,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.873,
+      "worst_side_ratio": 1.14
+     }
     },
     {
      "id": "stone",
      "object": "way-stone",
-     "source": "box-proxy"
+     "source": "model:way-stone.glb",
+     "fit": {
+      "model_dims_m": [
+       0.804,
+       0.768,
+       1.409
+      ],
+      "box_m": [
+       1.0,
+       0.6,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.993,
+      "worst_side_ratio": 1.27
+     }
     },
     {
      "id": "bells",
      "object": "bell-frame",
-     "source": "box-proxy"
+     "source": "model:bell-frame.glb",
+     "fit": {
+      "model_dims_m": [
+       4.061,
+       1.685,
+       3.34
+      ],
+      "box_m": [
+       4.0,
+       4.0,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.281,
+      "worst_side_ratio": 1.85
+     }
     },
     {
      "id": "board",
      "object": "morris-bench",
-     "source": "box-proxy"
+     "source": "model:morris-bench.glb",
+     "fit": {
+      "model_dims_m": [
+       1.814,
+       0.76,
+       0.904
+      ],
+      "box_m": [
+       1.8,
+       0.6,
+       0.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.757,
+      "worst_side_ratio": 1.37
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [
@@ -560,11 +1225,6 @@
       "prop": "cart",
       "piece": "plaza",
       "samples": "9/27"
-     },
-     {
-      "prop": "cart",
-      "piece": "road",
-      "samples": "3/27"
      },
      {
       "prop": "stone",
@@ -617,7 +1277,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 13.4
+     "render_seconds": 14.2
     },
     {
      "still": "player",
@@ -626,69 +1286,263 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 13.4
+     "render_seconds": 13.7
     }
    ],
    "props": [
     {
      "id": "relief",
      "object": "halo-relief",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "the object image shows a figure (carved halo relief); no model, plain slab proxy"
+     }
     },
     {
      "id": "door",
      "object": "plate-door",
-     "source": "box-proxy"
+     "source": "model:plate-door.glb",
+     "fit": {
+      "model_dims_m": [
+       3.108,
+       0.958,
+       3.256
+      ],
+      "box_m": [
+       2.4,
+       0.4,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.983,
+      "worst_side_ratio": 2.35
+     }
     },
     {
      "id": "altar",
      "object": "altar-stone",
-     "source": "box-proxy"
+     "source": "model:altar-stone.glb",
+     "fit": {
+      "model_dims_m": [
+       2.027,
+       1.184,
+       1.399
+      ],
+      "box_m": [
+       2.0,
+       1.2,
+       1.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.894,
+      "worst_side_ratio": 1.25
+     }
     },
     {
      "id": "scales",
      "object": "scales-relic",
-     "source": "box-proxy"
+     "source": "model:scales-relic.glb",
+     "fit": {
+      "model_dims_m": [
+       1.798,
+       0.87,
+       1.614
+      ],
+      "box_m": [
+       1.2,
+       0.5,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.991,
+      "worst_side_ratio": 1.72
+     }
     },
     {
      "id": "basin",
      "object": "altar-basin",
-     "source": "box-proxy"
+     "source": "model:altar-basin.glb",
+     "fit": {
+      "model_dims_m": [
+       1.004,
+       1.001,
+       1.022
+      ],
+      "box_m": [
+       1.0,
+       1.0,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.783,
+      "worst_side_ratio": 1.28
+     }
     },
     {
      "id": "lectern",
      "object": "shrine-lectern",
-     "source": "box-proxy"
+     "source": "model:shrine-lectern.glb",
+     "fit": {
+      "model_dims_m": [
+       1.077,
+       0.749,
+       1.309
+      ],
+      "box_m": [
+       0.7,
+       0.6,
+       1.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.993,
+      "worst_side_ratio": 1.53
+     }
     },
     {
      "id": "cushion-1",
      "object": "kneeling-cushion",
-     "source": "box-proxy"
+     "source": "model:kneeling-cushion.glb",
+     "fit": {
+      "model_dims_m": [
+       0.603,
+       0.582,
+       0.198
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.15
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.919,
+      "worst_side_ratio": 1.22
+     }
     },
     {
      "id": "cushion-2",
      "object": "kneeling-cushion",
-     "source": "box-proxy"
+     "source": "model:kneeling-cushion.glb",
+     "fit": {
+      "model_dims_m": [
+       0.603,
+       0.582,
+       0.198
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.15
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.919,
+      "worst_side_ratio": 1.22
+     }
     },
     {
      "id": "cushion-3",
      "object": "kneeling-cushion",
-     "source": "box-proxy"
+     "source": "model:kneeling-cushion.glb",
+     "fit": {
+      "model_dims_m": [
+       0.603,
+       0.582,
+       0.198
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.15
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.919,
+      "worst_side_ratio": 1.22
+     }
     },
     {
      "id": "cushion-4",
      "object": "kneeling-cushion",
-     "source": "box-proxy"
+     "source": "model:kneeling-cushion.glb",
+     "fit": {
+      "model_dims_m": [
+       0.603,
+       0.582,
+       0.198
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.15
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.919,
+      "worst_side_ratio": 1.22
+     }
     },
     {
      "id": "bells",
      "object": "bell-frame",
-     "source": "box-proxy"
+     "source": "model:bell-frame.glb",
+     "fit": {
+      "model_dims_m": [
+       4.061,
+       1.685,
+       3.34
+      ],
+      "box_m": [
+       4.0,
+       4.0,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.281,
+      "worst_side_ratio": 1.85
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -716,7 +1570,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 18.6
+     "render_seconds": 19.2
     },
     {
      "still": "player",
@@ -725,7 +1579,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 18.4
+     "render_seconds": 19.2
     },
     {
      "still": "overview",
@@ -734,69 +1588,263 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 7.2
+     "render_seconds": 5.1
     }
    ],
    "props": [
     {
      "id": "relief",
      "object": "halo-relief",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "the object image shows a figure (carved halo relief); no model, plain slab proxy"
+     }
     },
     {
      "id": "door",
      "object": "plate-door",
-     "source": "box-proxy"
+     "source": "model:plate-door.glb",
+     "fit": {
+      "model_dims_m": [
+       3.108,
+       0.958,
+       3.256
+      ],
+      "box_m": [
+       2.4,
+       0.4,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.983,
+      "worst_side_ratio": 2.35
+     }
     },
     {
      "id": "altar",
      "object": "altar-stone",
-     "source": "box-proxy"
+     "source": "model:altar-stone.glb",
+     "fit": {
+      "model_dims_m": [
+       2.027,
+       1.184,
+       1.399
+      ],
+      "box_m": [
+       2.0,
+       1.2,
+       1.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.894,
+      "worst_side_ratio": 1.25
+     }
     },
     {
      "id": "scales",
      "object": "scales-relic",
-     "source": "box-proxy"
+     "source": "model:scales-relic.glb",
+     "fit": {
+      "model_dims_m": [
+       1.798,
+       0.87,
+       1.614
+      ],
+      "box_m": [
+       1.2,
+       0.5,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.991,
+      "worst_side_ratio": 1.72
+     }
     },
     {
      "id": "basin",
      "object": "altar-basin",
-     "source": "box-proxy"
+     "source": "model:altar-basin.glb",
+     "fit": {
+      "model_dims_m": [
+       1.004,
+       1.001,
+       1.022
+      ],
+      "box_m": [
+       1.0,
+       1.0,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.783,
+      "worst_side_ratio": 1.28
+     }
     },
     {
      "id": "lectern",
      "object": "shrine-lectern",
-     "source": "box-proxy"
+     "source": "model:shrine-lectern.glb",
+     "fit": {
+      "model_dims_m": [
+       1.077,
+       0.749,
+       1.309
+      ],
+      "box_m": [
+       0.7,
+       0.6,
+       1.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.993,
+      "worst_side_ratio": 1.53
+     }
     },
     {
      "id": "cushion-1",
      "object": "kneeling-cushion",
-     "source": "box-proxy"
+     "source": "model:kneeling-cushion.glb",
+     "fit": {
+      "model_dims_m": [
+       0.603,
+       0.582,
+       0.198
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.15
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.919,
+      "worst_side_ratio": 1.22
+     }
     },
     {
      "id": "cushion-2",
      "object": "kneeling-cushion",
-     "source": "box-proxy"
+     "source": "model:kneeling-cushion.glb",
+     "fit": {
+      "model_dims_m": [
+       0.603,
+       0.582,
+       0.198
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.15
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.919,
+      "worst_side_ratio": 1.22
+     }
     },
     {
      "id": "cushion-3",
      "object": "kneeling-cushion",
-     "source": "box-proxy"
+     "source": "model:kneeling-cushion.glb",
+     "fit": {
+      "model_dims_m": [
+       0.603,
+       0.582,
+       0.198
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.15
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.919,
+      "worst_side_ratio": 1.22
+     }
     },
     {
      "id": "cushion-4",
      "object": "kneeling-cushion",
-     "source": "box-proxy"
+     "source": "model:kneeling-cushion.glb",
+     "fit": {
+      "model_dims_m": [
+       0.603,
+       0.582,
+       0.198
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.15
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.919,
+      "worst_side_ratio": 1.22
+     }
     },
     {
      "id": "bells",
      "object": "bell-frame",
-     "source": "box-proxy"
+     "source": "model:bell-frame.glb",
+     "fit": {
+      "model_dims_m": [
+       4.061,
+       1.685,
+       3.34
+      ],
+      "box_m": [
+       4.0,
+       4.0,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.281,
+      "worst_side_ratio": 1.85
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -824,7 +1872,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 16.6
+     "render_seconds": 17.5
     },
     {
      "still": "player",
@@ -833,69 +1881,263 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 16.8
+     "render_seconds": 17.6
     }
    ],
    "props": [
     {
      "id": "relief",
      "object": "halo-relief",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "the object image shows a figure (carved halo relief); no model, plain slab proxy"
+     }
     },
     {
      "id": "door",
      "object": "plate-door",
-     "source": "box-proxy"
+     "source": "model:plate-door.glb",
+     "fit": {
+      "model_dims_m": [
+       3.108,
+       0.958,
+       3.256
+      ],
+      "box_m": [
+       2.4,
+       0.4,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.983,
+      "worst_side_ratio": 2.35
+     }
     },
     {
      "id": "altar",
      "object": "altar-stone",
-     "source": "box-proxy"
+     "source": "model:altar-stone.glb",
+     "fit": {
+      "model_dims_m": [
+       2.027,
+       1.184,
+       1.399
+      ],
+      "box_m": [
+       2.0,
+       1.2,
+       1.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.894,
+      "worst_side_ratio": 1.25
+     }
     },
     {
      "id": "scales",
      "object": "scales-relic",
-     "source": "box-proxy"
+     "source": "model:scales-relic.glb",
+     "fit": {
+      "model_dims_m": [
+       1.798,
+       0.87,
+       1.614
+      ],
+      "box_m": [
+       1.2,
+       0.5,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.991,
+      "worst_side_ratio": 1.72
+     }
     },
     {
      "id": "basin",
      "object": "altar-basin",
-     "source": "box-proxy"
+     "source": "model:altar-basin.glb",
+     "fit": {
+      "model_dims_m": [
+       1.004,
+       1.001,
+       1.022
+      ],
+      "box_m": [
+       1.0,
+       1.0,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.783,
+      "worst_side_ratio": 1.28
+     }
     },
     {
      "id": "lectern",
      "object": "shrine-lectern",
-     "source": "box-proxy"
+     "source": "model:shrine-lectern.glb",
+     "fit": {
+      "model_dims_m": [
+       1.077,
+       0.749,
+       1.309
+      ],
+      "box_m": [
+       0.7,
+       0.6,
+       1.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.993,
+      "worst_side_ratio": 1.53
+     }
     },
     {
      "id": "cushion-1",
      "object": "kneeling-cushion",
-     "source": "box-proxy"
+     "source": "model:kneeling-cushion.glb",
+     "fit": {
+      "model_dims_m": [
+       0.603,
+       0.582,
+       0.198
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.15
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.919,
+      "worst_side_ratio": 1.22
+     }
     },
     {
      "id": "cushion-2",
      "object": "kneeling-cushion",
-     "source": "box-proxy"
+     "source": "model:kneeling-cushion.glb",
+     "fit": {
+      "model_dims_m": [
+       0.603,
+       0.582,
+       0.198
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.15
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.919,
+      "worst_side_ratio": 1.22
+     }
     },
     {
      "id": "cushion-3",
      "object": "kneeling-cushion",
-     "source": "box-proxy"
+     "source": "model:kneeling-cushion.glb",
+     "fit": {
+      "model_dims_m": [
+       0.603,
+       0.582,
+       0.198
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.15
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.919,
+      "worst_side_ratio": 1.22
+     }
     },
     {
      "id": "cushion-4",
      "object": "kneeling-cushion",
-     "source": "box-proxy"
+     "source": "model:kneeling-cushion.glb",
+     "fit": {
+      "model_dims_m": [
+       0.603,
+       0.582,
+       0.198
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.15
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.919,
+      "worst_side_ratio": 1.22
+     }
     },
     {
      "id": "bells",
      "object": "bell-frame",
-     "source": "box-proxy"
+     "source": "model:bell-frame.glb",
+     "fit": {
+      "model_dims_m": [
+       4.061,
+       1.685,
+       3.34
+      ],
+      "box_m": [
+       4.0,
+       4.0,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.281,
+      "worst_side_ratio": 1.85
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -923,7 +2165,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 18.9
+     "render_seconds": 14.8
     },
     {
      "still": "player",
@@ -932,77 +2174,274 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 18.4
+     "render_seconds": 15.5
     }
    ],
    "props": [
     {
      "id": "relief",
      "object": "halo-relief",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "the object image shows a figure (carved halo relief); no model, plain slab proxy"
+     }
     },
     {
      "id": "door",
      "object": "plate-door",
-     "source": "box-proxy"
+     "source": "model:plate-door.glb",
+     "fit": {
+      "model_dims_m": [
+       3.108,
+       0.958,
+       3.256
+      ],
+      "box_m": [
+       2.4,
+       0.4,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.983,
+      "worst_side_ratio": 2.35
+     }
     },
     {
      "id": "altar",
      "object": "altar-stone",
-     "source": "box-proxy"
+     "source": "model:altar-stone.glb",
+     "fit": {
+      "model_dims_m": [
+       2.027,
+       1.184,
+       1.399
+      ],
+      "box_m": [
+       2.0,
+       1.2,
+       1.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.894,
+      "worst_side_ratio": 1.25
+     }
     },
     {
      "id": "scales",
      "object": "scales-relic",
-     "source": "box-proxy"
+     "source": "model:scales-relic.glb",
+     "fit": {
+      "model_dims_m": [
+       1.798,
+       0.87,
+       1.614
+      ],
+      "box_m": [
+       1.2,
+       0.5,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.991,
+      "worst_side_ratio": 1.72
+     }
     },
     {
      "id": "basin",
      "object": "altar-basin",
-     "source": "box-proxy"
+     "source": "model:altar-basin.glb",
+     "fit": {
+      "model_dims_m": [
+       1.004,
+       1.001,
+       1.022
+      ],
+      "box_m": [
+       1.0,
+       1.0,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.783,
+      "worst_side_ratio": 1.28
+     }
     },
     {
      "id": "lectern",
      "object": "shrine-lectern",
-     "source": "box-proxy"
+     "source": "model:shrine-lectern.glb",
+     "fit": {
+      "model_dims_m": [
+       1.077,
+       0.749,
+       1.309
+      ],
+      "box_m": [
+       0.7,
+       0.6,
+       1.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.993,
+      "worst_side_ratio": 1.53
+     }
     },
     {
      "id": "cushion-1",
      "object": "kneeling-cushion",
-     "source": "box-proxy"
+     "source": "model:kneeling-cushion.glb",
+     "fit": {
+      "model_dims_m": [
+       0.603,
+       0.582,
+       0.198
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.15
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.919,
+      "worst_side_ratio": 1.22
+     }
     },
     {
      "id": "cushion-2",
      "object": "kneeling-cushion",
-     "source": "box-proxy"
+     "source": "model:kneeling-cushion.glb",
+     "fit": {
+      "model_dims_m": [
+       0.603,
+       0.582,
+       0.198
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.15
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.919,
+      "worst_side_ratio": 1.22
+     }
     },
     {
      "id": "cushion-3",
      "object": "kneeling-cushion",
-     "source": "box-proxy"
+     "source": "model:kneeling-cushion.glb",
+     "fit": {
+      "model_dims_m": [
+       0.603,
+       0.582,
+       0.198
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.15
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.919,
+      "worst_side_ratio": 1.22
+     }
     },
     {
      "id": "cushion-4",
      "object": "kneeling-cushion",
-     "source": "box-proxy"
+     "source": "model:kneeling-cushion.glb",
+     "fit": {
+      "model_dims_m": [
+       0.603,
+       0.582,
+       0.198
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.15
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.919,
+      "worst_side_ratio": 1.22
+     }
     },
     {
      "id": "bells",
      "object": "bell-frame",
-     "source": "box-proxy"
+     "source": "model:bell-frame.glb",
+     "fit": {
+      "model_dims_m": [
+       4.061,
+       1.685,
+       3.34
+      ],
+      "box_m": [
+       4.0,
+       4.0,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.281,
+      "worst_side_ratio": 1.85
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
     "prop_off_floor": []
    },
-   "render_time_overrides": [],
+   "render_time_overrides": [
+    "props"
+   ],
    "flag_status": {
-    "status": "not flagged"
+    "status": "found with the real model (batch 10); fixed at render time + proposed diff",
+    "what": "the lectern is rotated 200 degrees in the build file, so the real shrine-lectern (reading side toward -y) turns its back to the scene camera, which stands south-west of it; a render-time prop override rotates it to -20 degrees so the open book faces the camera. Build-file diff proposed in REFINEMENT_NOTES.md (batch 10)."
    }
   },
   {
@@ -1022,73 +2461,273 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 4.9
+     "render_seconds": 5.0
     }
    ],
    "props": [
     {
      "id": "relief",
      "object": "halo-relief",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "the object image shows a figure (carved halo relief); no model, plain slab proxy"
+     }
     },
     {
      "id": "door",
      "object": "plate-door",
-     "source": "box-proxy"
+     "source": "model:plate-door.glb",
+     "fit": {
+      "model_dims_m": [
+       3.108,
+       0.958,
+       3.256
+      ],
+      "box_m": [
+       2.4,
+       0.4,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.983,
+      "worst_side_ratio": 2.35
+     }
     },
     {
      "id": "altar",
      "object": "altar-stone",
-     "source": "box-proxy"
+     "source": "model:altar-stone.glb",
+     "fit": {
+      "model_dims_m": [
+       2.027,
+       1.184,
+       1.399
+      ],
+      "box_m": [
+       2.0,
+       1.2,
+       1.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.894,
+      "worst_side_ratio": 1.25
+     }
     },
     {
      "id": "scales",
      "object": "scales-relic",
-     "source": "box-proxy"
+     "source": "model:scales-relic.glb",
+     "fit": {
+      "model_dims_m": [
+       1.798,
+       0.87,
+       1.614
+      ],
+      "box_m": [
+       1.2,
+       0.5,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.991,
+      "worst_side_ratio": 1.72
+     }
     },
     {
      "id": "basin",
      "object": "altar-basin",
-     "source": "box-proxy"
+     "source": "model:altar-basin.glb",
+     "fit": {
+      "model_dims_m": [
+       1.004,
+       1.001,
+       1.022
+      ],
+      "box_m": [
+       1.0,
+       1.0,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.783,
+      "worst_side_ratio": 1.28
+     }
     },
     {
      "id": "lectern",
      "object": "shrine-lectern",
-     "source": "box-proxy"
+     "source": "model:shrine-lectern.glb",
+     "fit": {
+      "model_dims_m": [
+       1.077,
+       0.749,
+       1.309
+      ],
+      "box_m": [
+       0.7,
+       0.6,
+       1.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.993,
+      "worst_side_ratio": 1.53
+     }
     },
     {
      "id": "cushion-1",
      "object": "kneeling-cushion",
-     "source": "box-proxy"
+     "source": "model:kneeling-cushion.glb",
+     "fit": {
+      "model_dims_m": [
+       0.603,
+       0.582,
+       0.198
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.15
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.919,
+      "worst_side_ratio": 1.22
+     }
     },
     {
      "id": "cushion-2",
      "object": "kneeling-cushion",
-     "source": "box-proxy"
+     "source": "model:kneeling-cushion.glb",
+     "fit": {
+      "model_dims_m": [
+       0.603,
+       0.582,
+       0.198
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.15
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.919,
+      "worst_side_ratio": 1.22
+     }
     },
     {
      "id": "cushion-3",
      "object": "kneeling-cushion",
-     "source": "box-proxy"
+     "source": "model:kneeling-cushion.glb",
+     "fit": {
+      "model_dims_m": [
+       0.603,
+       0.582,
+       0.198
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.15
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.919,
+      "worst_side_ratio": 1.22
+     }
     },
     {
      "id": "cushion-4",
      "object": "kneeling-cushion",
-     "source": "box-proxy"
+     "source": "model:kneeling-cushion.glb",
+     "fit": {
+      "model_dims_m": [
+       0.603,
+       0.582,
+       0.198
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.15
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.919,
+      "worst_side_ratio": 1.22
+     }
     },
     {
      "id": "bells",
      "object": "bell-frame",
-     "source": "box-proxy"
+     "source": "model:bell-frame.glb",
+     "fit": {
+      "model_dims_m": [
+       4.061,
+       1.685,
+       3.34
+      ],
+      "box_m": [
+       4.0,
+       4.0,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.281,
+      "worst_side_ratio": 1.85
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
-    "prop_off_floor": []
+    "prop_off_floor": [
+     {
+      "prop": "door",
+      "support": "gallery-floor",
+      "gap_m": 0.2
+     }
+    ]
    },
    "render_time_overrides": [
     "blockout_replace"
@@ -1115,69 +2754,263 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 7.4
+     "render_seconds": 6.9
     }
    ],
    "props": [
     {
      "id": "relief",
      "object": "halo-relief",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "the object image shows a figure (carved halo relief); no model, plain slab proxy"
+     }
     },
     {
      "id": "door",
      "object": "plate-door",
-     "source": "box-proxy"
+     "source": "model:plate-door.glb",
+     "fit": {
+      "model_dims_m": [
+       3.108,
+       0.958,
+       3.256
+      ],
+      "box_m": [
+       2.4,
+       0.4,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.983,
+      "worst_side_ratio": 2.35
+     }
     },
     {
      "id": "altar",
      "object": "altar-stone",
-     "source": "box-proxy"
+     "source": "model:altar-stone.glb",
+     "fit": {
+      "model_dims_m": [
+       2.027,
+       1.184,
+       1.399
+      ],
+      "box_m": [
+       2.0,
+       1.2,
+       1.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.894,
+      "worst_side_ratio": 1.25
+     }
     },
     {
      "id": "scales",
      "object": "scales-relic",
-     "source": "box-proxy"
+     "source": "model:scales-relic.glb",
+     "fit": {
+      "model_dims_m": [
+       1.798,
+       0.87,
+       1.614
+      ],
+      "box_m": [
+       1.2,
+       0.5,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.991,
+      "worst_side_ratio": 1.72
+     }
     },
     {
      "id": "basin",
      "object": "altar-basin",
-     "source": "box-proxy"
+     "source": "model:altar-basin.glb",
+     "fit": {
+      "model_dims_m": [
+       1.004,
+       1.001,
+       1.022
+      ],
+      "box_m": [
+       1.0,
+       1.0,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.783,
+      "worst_side_ratio": 1.28
+     }
     },
     {
      "id": "lectern",
      "object": "shrine-lectern",
-     "source": "box-proxy"
+     "source": "model:shrine-lectern.glb",
+     "fit": {
+      "model_dims_m": [
+       1.077,
+       0.749,
+       1.309
+      ],
+      "box_m": [
+       0.7,
+       0.6,
+       1.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.993,
+      "worst_side_ratio": 1.53
+     }
     },
     {
      "id": "cushion-1",
      "object": "kneeling-cushion",
-     "source": "box-proxy"
+     "source": "model:kneeling-cushion.glb",
+     "fit": {
+      "model_dims_m": [
+       0.603,
+       0.582,
+       0.198
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.15
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.919,
+      "worst_side_ratio": 1.22
+     }
     },
     {
      "id": "cushion-2",
      "object": "kneeling-cushion",
-     "source": "box-proxy"
+     "source": "model:kneeling-cushion.glb",
+     "fit": {
+      "model_dims_m": [
+       0.603,
+       0.582,
+       0.198
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.15
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.919,
+      "worst_side_ratio": 1.22
+     }
     },
     {
      "id": "cushion-3",
      "object": "kneeling-cushion",
-     "source": "box-proxy"
+     "source": "model:kneeling-cushion.glb",
+     "fit": {
+      "model_dims_m": [
+       0.603,
+       0.582,
+       0.198
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.15
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.919,
+      "worst_side_ratio": 1.22
+     }
     },
     {
      "id": "cushion-4",
      "object": "kneeling-cushion",
-     "source": "box-proxy"
+     "source": "model:kneeling-cushion.glb",
+     "fit": {
+      "model_dims_m": [
+       0.603,
+       0.582,
+       0.198
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.15
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.919,
+      "worst_side_ratio": 1.22
+     }
     },
     {
      "id": "bells",
      "object": "bell-frame",
-     "source": "box-proxy"
+     "source": "model:bell-frame.glb",
+     "fit": {
+      "model_dims_m": [
+       4.061,
+       1.685,
+       3.34
+      ],
+      "box_m": [
+       4.0,
+       4.0,
+       3.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.281,
+      "worst_side_ratio": 1.85
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -1205,7 +3038,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 12.8
+     "render_seconds": 12.1
     },
     {
      "still": "player",
@@ -1214,7 +3047,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 14.5
+     "render_seconds": 13.9
     },
     {
      "still": "overview",
@@ -1223,79 +3056,263 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 6.7
+     "render_seconds": 7.4
     }
    ],
    "props": [
     {
      "id": "lamp-1",
      "object": "fungus-lamp",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "model not built (ComfyUI out of memory); named box proxy stays"
+     }
     },
     {
      "id": "lamp-2",
      "object": "fungus-lamp",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "model not built (ComfyUI out of memory); named box proxy stays"
+     }
     },
     {
      "id": "lamp-3",
      "object": "fungus-lamp",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "model not built (ComfyUI out of memory); named box proxy stays"
+     }
     },
     {
      "id": "lamp-4",
      "object": "fungus-lamp",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "model not built (ComfyUI out of memory); named box proxy stays"
+     }
     },
     {
      "id": "stall-1",
      "object": "market-stall",
-     "source": "box-proxy"
+     "source": "model:market-stall.glb",
+     "fit": {
+      "model_dims_m": [
+       2.497,
+       1.878,
+       2.535
+      ],
+      "box_m": [
+       2.5,
+       1.5,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.947,
+      "worst_side_ratio": 1.19
+     }
     },
     {
      "id": "stall-2",
      "object": "market-stall",
-     "source": "box-proxy"
+     "source": "model:market-stall.glb",
+     "fit": {
+      "model_dims_m": [
+       2.497,
+       1.878,
+       2.535
+      ],
+      "box_m": [
+       2.5,
+       1.5,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.947,
+      "worst_side_ratio": 1.19
+     }
     },
     {
      "id": "brass",
      "object": "memorial-brass",
-     "source": "box-proxy"
+     "source": "model:memorial-brass.glb",
+     "fit": {
+      "model_dims_m": [
+       2.086,
+       0.817,
+       2.013
+      ],
+      "box_m": [
+       1.2,
+       0.3,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.994,
+      "worst_side_ratio": 2.71
+     }
     },
     {
      "id": "node-1",
      "object": "vine-node",
-     "source": "box-proxy"
+     "source": "model:vine-node.glb",
+     "fit": {
+      "model_dims_m": [
+       1.405,
+       1.392,
+       1.516
+      ],
+      "box_m": [
+       1.2,
+       1.2,
+       1.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.99,
+      "worst_side_ratio": 1.16
+     }
     },
     {
      "id": "node-2",
      "object": "vine-node",
-     "source": "box-proxy"
+     "source": "model:vine-node.glb",
+     "fit": {
+      "model_dims_m": [
+       1.405,
+       1.392,
+       1.516
+      ],
+      "box_m": [
+       1.2,
+       1.2,
+       1.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.99,
+      "worst_side_ratio": 1.16
+     }
     },
     {
      "id": "board",
      "object": "morris-bench",
-     "source": "box-proxy"
+     "source": "model:morris-bench.glb",
+     "fit": {
+      "model_dims_m": [
+       1.814,
+       0.76,
+       0.904
+      ],
+      "box_m": [
+       1.8,
+       0.6,
+       0.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.757,
+      "worst_side_ratio": 1.37
+     }
     },
     {
      "id": "bowl",
      "object": "water-bowl",
-     "source": "box-proxy"
+     "source": "model:water-bowl.glb",
+     "fit": {
+      "model_dims_m": [
+       0.604,
+       0.567,
+       0.221
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.25
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.059,
+      "worst_side_ratio": 1.07
+     }
     },
     {
      "id": "mat-1",
      "object": "sleeping-mat",
-     "source": "box-proxy"
+     "source": "model:sleeping-mat.glb",
+     "fit": {
+      "model_dims_m": [
+       2.003,
+       1.198,
+       0.416
+      ],
+      "box_m": [
+       2.0,
+       0.9,
+       0.1
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.565,
+      "worst_side_ratio": 2.35
+     }
     },
     {
      "id": "mat-2",
      "object": "sleeping-mat",
-     "source": "box-proxy"
+     "source": "model:sleeping-mat.glb",
+     "fit": {
+      "model_dims_m": [
+       2.003,
+       1.198,
+       0.416
+      ],
+      "box_m": [
+       2.0,
+       0.9,
+       0.1
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.565,
+      "worst_side_ratio": 2.35
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -1323,7 +3340,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 14.1
+     "render_seconds": 13.7
     },
     {
      "still": "player",
@@ -1332,79 +3349,263 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 13.4
+     "render_seconds": 13.2
     }
    ],
    "props": [
     {
      "id": "lamp-1",
      "object": "fungus-lamp",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "model not built (ComfyUI out of memory); named box proxy stays"
+     }
     },
     {
      "id": "lamp-2",
      "object": "fungus-lamp",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "model not built (ComfyUI out of memory); named box proxy stays"
+     }
     },
     {
      "id": "lamp-3",
      "object": "fungus-lamp",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "model not built (ComfyUI out of memory); named box proxy stays"
+     }
     },
     {
      "id": "lamp-4",
      "object": "fungus-lamp",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "model not built (ComfyUI out of memory); named box proxy stays"
+     }
     },
     {
      "id": "stall-1",
      "object": "market-stall",
-     "source": "box-proxy"
+     "source": "model:market-stall.glb",
+     "fit": {
+      "model_dims_m": [
+       2.497,
+       1.878,
+       2.535
+      ],
+      "box_m": [
+       2.5,
+       1.5,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.947,
+      "worst_side_ratio": 1.19
+     }
     },
     {
      "id": "stall-2",
      "object": "market-stall",
-     "source": "box-proxy"
+     "source": "model:market-stall.glb",
+     "fit": {
+      "model_dims_m": [
+       2.497,
+       1.878,
+       2.535
+      ],
+      "box_m": [
+       2.5,
+       1.5,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.947,
+      "worst_side_ratio": 1.19
+     }
     },
     {
      "id": "brass",
      "object": "memorial-brass",
-     "source": "box-proxy"
+     "source": "model:memorial-brass.glb",
+     "fit": {
+      "model_dims_m": [
+       2.086,
+       0.817,
+       2.013
+      ],
+      "box_m": [
+       1.2,
+       0.3,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.994,
+      "worst_side_ratio": 2.71
+     }
     },
     {
      "id": "node-1",
      "object": "vine-node",
-     "source": "box-proxy"
+     "source": "model:vine-node.glb",
+     "fit": {
+      "model_dims_m": [
+       1.405,
+       1.392,
+       1.516
+      ],
+      "box_m": [
+       1.2,
+       1.2,
+       1.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.99,
+      "worst_side_ratio": 1.16
+     }
     },
     {
      "id": "node-2",
      "object": "vine-node",
-     "source": "box-proxy"
+     "source": "model:vine-node.glb",
+     "fit": {
+      "model_dims_m": [
+       1.405,
+       1.392,
+       1.516
+      ],
+      "box_m": [
+       1.2,
+       1.2,
+       1.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.99,
+      "worst_side_ratio": 1.16
+     }
     },
     {
      "id": "board",
      "object": "morris-bench",
-     "source": "box-proxy"
+     "source": "model:morris-bench.glb",
+     "fit": {
+      "model_dims_m": [
+       1.814,
+       0.76,
+       0.904
+      ],
+      "box_m": [
+       1.8,
+       0.6,
+       0.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.757,
+      "worst_side_ratio": 1.37
+     }
     },
     {
      "id": "bowl",
      "object": "water-bowl",
-     "source": "box-proxy"
+     "source": "model:water-bowl.glb",
+     "fit": {
+      "model_dims_m": [
+       0.604,
+       0.567,
+       0.221
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.25
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.059,
+      "worst_side_ratio": 1.07
+     }
     },
     {
      "id": "mat-1",
      "object": "sleeping-mat",
-     "source": "box-proxy"
+     "source": "model:sleeping-mat.glb",
+     "fit": {
+      "model_dims_m": [
+       2.003,
+       1.198,
+       0.416
+      ],
+      "box_m": [
+       2.0,
+       0.9,
+       0.1
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.565,
+      "worst_side_ratio": 2.35
+     }
     },
     {
      "id": "mat-2",
      "object": "sleeping-mat",
-     "source": "box-proxy"
+     "source": "model:sleeping-mat.glb",
+     "fit": {
+      "model_dims_m": [
+       2.003,
+       1.198,
+       0.416
+      ],
+      "box_m": [
+       2.0,
+       0.9,
+       0.1
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.565,
+      "worst_side_ratio": 2.35
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -1432,7 +3633,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 15.5
+     "render_seconds": 15.6
     },
     {
      "still": "player",
@@ -1441,79 +3642,263 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 15.5
+     "render_seconds": 15.9
     }
    ],
    "props": [
     {
      "id": "lamp-1",
      "object": "fungus-lamp",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "model not built (ComfyUI out of memory); named box proxy stays"
+     }
     },
     {
      "id": "lamp-2",
      "object": "fungus-lamp",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "model not built (ComfyUI out of memory); named box proxy stays"
+     }
     },
     {
      "id": "lamp-3",
      "object": "fungus-lamp",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "model not built (ComfyUI out of memory); named box proxy stays"
+     }
     },
     {
      "id": "lamp-4",
      "object": "fungus-lamp",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "model not built (ComfyUI out of memory); named box proxy stays"
+     }
     },
     {
      "id": "stall-1",
      "object": "market-stall",
-     "source": "box-proxy"
+     "source": "model:market-stall.glb",
+     "fit": {
+      "model_dims_m": [
+       2.497,
+       1.878,
+       2.535
+      ],
+      "box_m": [
+       2.5,
+       1.5,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.947,
+      "worst_side_ratio": 1.19
+     }
     },
     {
      "id": "stall-2",
      "object": "market-stall",
-     "source": "box-proxy"
+     "source": "model:market-stall.glb",
+     "fit": {
+      "model_dims_m": [
+       2.497,
+       1.878,
+       2.535
+      ],
+      "box_m": [
+       2.5,
+       1.5,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.947,
+      "worst_side_ratio": 1.19
+     }
     },
     {
      "id": "brass",
      "object": "memorial-brass",
-     "source": "box-proxy"
+     "source": "model:memorial-brass.glb",
+     "fit": {
+      "model_dims_m": [
+       2.086,
+       0.817,
+       2.013
+      ],
+      "box_m": [
+       1.2,
+       0.3,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.994,
+      "worst_side_ratio": 2.71
+     }
     },
     {
      "id": "node-1",
      "object": "vine-node",
-     "source": "box-proxy"
+     "source": "model:vine-node.glb",
+     "fit": {
+      "model_dims_m": [
+       1.405,
+       1.392,
+       1.516
+      ],
+      "box_m": [
+       1.2,
+       1.2,
+       1.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.99,
+      "worst_side_ratio": 1.16
+     }
     },
     {
      "id": "node-2",
      "object": "vine-node",
-     "source": "box-proxy"
+     "source": "model:vine-node.glb",
+     "fit": {
+      "model_dims_m": [
+       1.405,
+       1.392,
+       1.516
+      ],
+      "box_m": [
+       1.2,
+       1.2,
+       1.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.99,
+      "worst_side_ratio": 1.16
+     }
     },
     {
      "id": "board",
      "object": "morris-bench",
-     "source": "box-proxy"
+     "source": "model:morris-bench.glb",
+     "fit": {
+      "model_dims_m": [
+       1.814,
+       0.76,
+       0.904
+      ],
+      "box_m": [
+       1.8,
+       0.6,
+       0.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.757,
+      "worst_side_ratio": 1.37
+     }
     },
     {
      "id": "bowl",
      "object": "water-bowl",
-     "source": "box-proxy"
+     "source": "model:water-bowl.glb",
+     "fit": {
+      "model_dims_m": [
+       0.604,
+       0.567,
+       0.221
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.25
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.059,
+      "worst_side_ratio": 1.07
+     }
     },
     {
      "id": "mat-1",
      "object": "sleeping-mat",
-     "source": "box-proxy"
+     "source": "model:sleeping-mat.glb",
+     "fit": {
+      "model_dims_m": [
+       2.003,
+       1.198,
+       0.416
+      ],
+      "box_m": [
+       2.0,
+       0.9,
+       0.1
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.565,
+      "worst_side_ratio": 2.35
+     }
     },
     {
      "id": "mat-2",
      "object": "sleeping-mat",
-     "source": "box-proxy"
+     "source": "model:sleeping-mat.glb",
+     "fit": {
+      "model_dims_m": [
+       2.003,
+       1.198,
+       0.416
+      ],
+      "box_m": [
+       2.0,
+       0.9,
+       0.1
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.565,
+      "worst_side_ratio": 2.35
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -1541,7 +3926,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 11.8
+     "render_seconds": 10.4
     },
     {
      "still": "player",
@@ -1550,7 +3935,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 11.1
+     "render_seconds": 10.3
     },
     {
      "still": "overview",
@@ -1559,89 +3944,295 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 5.7
+     "render_seconds": 8.0
     }
    ],
    "props": [
     {
      "id": "tank",
      "object": "ghost-tank",
-     "source": "box-proxy"
+     "source": "model:ghost-tank.glb",
+     "fit": {
+      "model_dims_m": [
+       2.407,
+       2.38,
+       2.319
+      ],
+      "box_m": [
+       2.4,
+       1.2,
+       1.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.731,
+      "worst_side_ratio": 1.45
+     }
     },
     {
      "id": "spring",
      "object": "spring-basin",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "model not built (ComfyUI out of memory); named box proxy stays"
+     }
     },
     {
      "id": "vessels",
      "object": "measure-vessels",
-     "source": "box-proxy"
+     "source": "model:measure-vessels.glb",
+     "fit": {
+      "model_dims_m": [
+       0.906,
+       0.904,
+       0.692
+      ],
+      "box_m": [
+       0.9,
+       0.45,
+       0.55
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.733,
+      "worst_side_ratio": 1.47
+     }
     },
     {
      "id": "bench",
      "object": "bench-altar",
-     "source": "box-proxy"
+     "source": "model:bench-altar.glb",
+     "fit": {
+      "model_dims_m": [
+       2.21,
+       1.204,
+       1.288
+      ],
+      "box_m": [
+       2.2,
+       0.8,
+       0.95
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.787,
+      "worst_side_ratio": 1.26
+     }
     },
     {
      "id": "lamp",
      "object": "votive-lamp",
-     "source": "box-proxy"
+     "source": "model:votive-lamp.glb",
+     "fit": {
+      "model_dims_m": [
+       0.321,
+       0.226,
+       0.602
+      ],
+      "box_m": [
+       0.4,
+       0.4,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.996,
+      "worst_side_ratio": 1.78
+     }
     },
     {
      "id": "shelf",
      "object": "store-shelf",
-     "source": "box-proxy"
+     "source": "model:store-shelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.414,
+       0.902,
+       1.034
+      ],
+      "box_m": [
+       2.4,
+       0.5,
+       1.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.986,
+      "worst_side_ratio": 1.78
+     }
     },
     {
      "id": "toad-1",
      "object": "toad-jar",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "model not built (ComfyUI out of memory); named box proxy stays"
+     }
     },
     {
      "id": "toad-2",
      "object": "toad-jar",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "model not built (ComfyUI out of memory); named box proxy stays"
+     }
     },
     {
      "id": "toad-3",
      "object": "toad-jar",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "model not built (ComfyUI out of memory); named box proxy stays"
+     }
     },
     {
      "id": "toad-4",
      "object": "toad-jar",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "model not built (ComfyUI out of memory); named box proxy stays"
+     }
     },
     {
      "id": "last-toad",
      "object": "last-toad-jar",
-     "source": "box-proxy"
+     "source": "model:last-toad-jar.glb",
+     "fit": {
+      "model_dims_m": [
+       0.407,
+       0.409,
+       0.608
+      ],
+      "box_m": [
+       0.4,
+       0.4,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.987,
+      "worst_side_ratio": 1.01
+     }
     },
     {
      "id": "scaffold",
      "object": "scaffold-plank",
-     "source": "box-proxy"
+     "source": "model:scaffold-plank.glb",
+     "fit": {
+      "model_dims_m": [
+       3.021,
+       1.314,
+       2.495
+      ],
+      "box_m": [
+       3.0,
+       0.7,
+       1.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.683,
+      "worst_side_ratio": 1.45
+     }
     },
     {
      "id": "lime",
      "object": "lime-tub",
-     "source": "box-proxy"
+     "source": "model:lime-tub.glb",
+     "fit": {
+      "model_dims_m": [
+       0.702,
+       0.735,
+       0.474
+      ],
+      "box_m": [
+       0.7,
+       0.7,
+       0.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.05
+     }
     },
     {
      "id": "lectern",
      "object": "keeper-lectern",
-     "source": "box-proxy"
+     "source": "model:keeper-lectern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.74,
+       0.646,
+       1.209
+      ],
+      "box_m": [
+       0.6,
+       0.5,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.993,
+      "worst_side_ratio": 1.28
+     }
     },
     {
      "id": "pallet",
      "object": "keeper-pallet",
-     "source": "box-proxy"
+     "source": "model:keeper-pallet.glb",
+     "fit": {
+      "model_dims_m": [
+       2.015,
+       1.658,
+       0.854
+      ],
+      "box_m": [
+       2.0,
+       0.9,
+       0.35
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.605,
+      "worst_side_ratio": 1.64
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -1669,7 +4260,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 15.2
+     "render_seconds": 15.8
     },
     {
      "still": "player",
@@ -1678,89 +4269,295 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 15.2
+     "render_seconds": 15.7
     }
    ],
    "props": [
     {
      "id": "tank",
      "object": "ghost-tank",
-     "source": "box-proxy"
+     "source": "model:ghost-tank.glb",
+     "fit": {
+      "model_dims_m": [
+       2.407,
+       2.38,
+       2.319
+      ],
+      "box_m": [
+       2.4,
+       1.2,
+       1.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.731,
+      "worst_side_ratio": 1.45
+     }
     },
     {
      "id": "spring",
      "object": "spring-basin",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "model not built (ComfyUI out of memory); named box proxy stays"
+     }
     },
     {
      "id": "vessels",
      "object": "measure-vessels",
-     "source": "box-proxy"
+     "source": "model:measure-vessels.glb",
+     "fit": {
+      "model_dims_m": [
+       0.906,
+       0.904,
+       0.692
+      ],
+      "box_m": [
+       0.9,
+       0.45,
+       0.55
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.733,
+      "worst_side_ratio": 1.47
+     }
     },
     {
      "id": "bench",
      "object": "bench-altar",
-     "source": "box-proxy"
+     "source": "model:bench-altar.glb",
+     "fit": {
+      "model_dims_m": [
+       2.21,
+       1.204,
+       1.288
+      ],
+      "box_m": [
+       2.2,
+       0.8,
+       0.95
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.787,
+      "worst_side_ratio": 1.26
+     }
     },
     {
      "id": "lamp",
      "object": "votive-lamp",
-     "source": "box-proxy"
+     "source": "model:votive-lamp.glb",
+     "fit": {
+      "model_dims_m": [
+       0.321,
+       0.226,
+       0.602
+      ],
+      "box_m": [
+       0.4,
+       0.4,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.996,
+      "worst_side_ratio": 1.78
+     }
     },
     {
      "id": "shelf",
      "object": "store-shelf",
-     "source": "box-proxy"
+     "source": "model:store-shelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.414,
+       0.902,
+       1.034
+      ],
+      "box_m": [
+       2.4,
+       0.5,
+       1.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.986,
+      "worst_side_ratio": 1.78
+     }
     },
     {
      "id": "toad-1",
      "object": "toad-jar",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "model not built (ComfyUI out of memory); named box proxy stays"
+     }
     },
     {
      "id": "toad-2",
      "object": "toad-jar",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "model not built (ComfyUI out of memory); named box proxy stays"
+     }
     },
     {
      "id": "toad-3",
      "object": "toad-jar",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "model not built (ComfyUI out of memory); named box proxy stays"
+     }
     },
     {
      "id": "toad-4",
      "object": "toad-jar",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "model not built (ComfyUI out of memory); named box proxy stays"
+     }
     },
     {
      "id": "last-toad",
      "object": "last-toad-jar",
-     "source": "box-proxy"
+     "source": "model:last-toad-jar.glb",
+     "fit": {
+      "model_dims_m": [
+       0.407,
+       0.409,
+       0.608
+      ],
+      "box_m": [
+       0.4,
+       0.4,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.987,
+      "worst_side_ratio": 1.01
+     }
     },
     {
      "id": "scaffold",
      "object": "scaffold-plank",
-     "source": "box-proxy"
+     "source": "model:scaffold-plank.glb",
+     "fit": {
+      "model_dims_m": [
+       3.021,
+       1.314,
+       2.495
+      ],
+      "box_m": [
+       3.0,
+       0.7,
+       1.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.683,
+      "worst_side_ratio": 1.45
+     }
     },
     {
      "id": "lime",
      "object": "lime-tub",
-     "source": "box-proxy"
+     "source": "model:lime-tub.glb",
+     "fit": {
+      "model_dims_m": [
+       0.702,
+       0.735,
+       0.474
+      ],
+      "box_m": [
+       0.7,
+       0.7,
+       0.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.05
+     }
     },
     {
      "id": "lectern",
      "object": "keeper-lectern",
-     "source": "box-proxy"
+     "source": "model:keeper-lectern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.74,
+       0.646,
+       1.209
+      ],
+      "box_m": [
+       0.6,
+       0.5,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.993,
+      "worst_side_ratio": 1.28
+     }
     },
     {
      "id": "pallet",
      "object": "keeper-pallet",
-     "source": "box-proxy"
+     "source": "model:keeper-pallet.glb",
+     "fit": {
+      "model_dims_m": [
+       2.015,
+       1.658,
+       0.854
+      ],
+      "box_m": [
+       2.0,
+       0.9,
+       0.35
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.605,
+      "worst_side_ratio": 1.64
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -1788,7 +4585,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 9.3
+     "render_seconds": 9.8
     },
     {
      "still": "player",
@@ -1797,89 +4594,295 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 9.5
+     "render_seconds": 9.9
     }
    ],
    "props": [
     {
      "id": "tank",
      "object": "ghost-tank",
-     "source": "box-proxy"
+     "source": "model:ghost-tank.glb",
+     "fit": {
+      "model_dims_m": [
+       2.407,
+       2.38,
+       2.319
+      ],
+      "box_m": [
+       2.4,
+       1.2,
+       1.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.731,
+      "worst_side_ratio": 1.45
+     }
     },
     {
      "id": "spring",
      "object": "spring-basin",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "model not built (ComfyUI out of memory); named box proxy stays"
+     }
     },
     {
      "id": "vessels",
      "object": "measure-vessels",
-     "source": "box-proxy"
+     "source": "model:measure-vessels.glb",
+     "fit": {
+      "model_dims_m": [
+       0.906,
+       0.904,
+       0.692
+      ],
+      "box_m": [
+       0.9,
+       0.45,
+       0.55
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.733,
+      "worst_side_ratio": 1.47
+     }
     },
     {
      "id": "bench",
      "object": "bench-altar",
-     "source": "box-proxy"
+     "source": "model:bench-altar.glb",
+     "fit": {
+      "model_dims_m": [
+       2.21,
+       1.204,
+       1.288
+      ],
+      "box_m": [
+       2.2,
+       0.8,
+       0.95
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.787,
+      "worst_side_ratio": 1.26
+     }
     },
     {
      "id": "lamp",
      "object": "votive-lamp",
-     "source": "box-proxy"
+     "source": "model:votive-lamp.glb",
+     "fit": {
+      "model_dims_m": [
+       0.321,
+       0.226,
+       0.602
+      ],
+      "box_m": [
+       0.4,
+       0.4,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.996,
+      "worst_side_ratio": 1.78
+     }
     },
     {
      "id": "shelf",
      "object": "store-shelf",
-     "source": "box-proxy"
+     "source": "model:store-shelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.414,
+       0.902,
+       1.034
+      ],
+      "box_m": [
+       2.4,
+       0.5,
+       1.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.986,
+      "worst_side_ratio": 1.78
+     }
     },
     {
      "id": "toad-1",
      "object": "toad-jar",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "model not built (ComfyUI out of memory); named box proxy stays"
+     }
     },
     {
      "id": "toad-2",
      "object": "toad-jar",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "model not built (ComfyUI out of memory); named box proxy stays"
+     }
     },
     {
      "id": "toad-3",
      "object": "toad-jar",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "model not built (ComfyUI out of memory); named box proxy stays"
+     }
     },
     {
      "id": "toad-4",
      "object": "toad-jar",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "model not built (ComfyUI out of memory); named box proxy stays"
+     }
     },
     {
      "id": "last-toad",
      "object": "last-toad-jar",
-     "source": "box-proxy"
+     "source": "model:last-toad-jar.glb",
+     "fit": {
+      "model_dims_m": [
+       0.407,
+       0.409,
+       0.608
+      ],
+      "box_m": [
+       0.4,
+       0.4,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.987,
+      "worst_side_ratio": 1.01
+     }
     },
     {
      "id": "scaffold",
      "object": "scaffold-plank",
-     "source": "box-proxy"
+     "source": "model:scaffold-plank.glb",
+     "fit": {
+      "model_dims_m": [
+       3.021,
+       1.314,
+       2.495
+      ],
+      "box_m": [
+       3.0,
+       0.7,
+       1.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.683,
+      "worst_side_ratio": 1.45
+     }
     },
     {
      "id": "lime",
      "object": "lime-tub",
-     "source": "box-proxy"
+     "source": "model:lime-tub.glb",
+     "fit": {
+      "model_dims_m": [
+       0.702,
+       0.735,
+       0.474
+      ],
+      "box_m": [
+       0.7,
+       0.7,
+       0.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.05
+     }
     },
     {
      "id": "lectern",
      "object": "keeper-lectern",
-     "source": "box-proxy"
+     "source": "model:keeper-lectern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.74,
+       0.646,
+       1.209
+      ],
+      "box_m": [
+       0.6,
+       0.5,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.993,
+      "worst_side_ratio": 1.28
+     }
     },
     {
      "id": "pallet",
      "object": "keeper-pallet",
-     "source": "box-proxy"
+     "source": "model:keeper-pallet.glb",
+     "fit": {
+      "model_dims_m": [
+       2.015,
+       1.658,
+       0.854
+      ],
+      "box_m": [
+       2.0,
+       0.9,
+       0.35
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.605,
+      "worst_side_ratio": 1.64
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -1907,89 +4910,295 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 11.1
+     "render_seconds": 9.8
     }
    ],
    "props": [
     {
      "id": "tank",
      "object": "ghost-tank",
-     "source": "box-proxy"
+     "source": "model:ghost-tank.glb",
+     "fit": {
+      "model_dims_m": [
+       2.407,
+       2.38,
+       2.319
+      ],
+      "box_m": [
+       2.4,
+       1.2,
+       1.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.731,
+      "worst_side_ratio": 1.45
+     }
     },
     {
      "id": "spring",
      "object": "spring-basin",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "model not built (ComfyUI out of memory); named box proxy stays"
+     }
     },
     {
      "id": "vessels",
      "object": "measure-vessels",
-     "source": "box-proxy"
+     "source": "model:measure-vessels.glb",
+     "fit": {
+      "model_dims_m": [
+       0.906,
+       0.904,
+       0.692
+      ],
+      "box_m": [
+       0.9,
+       0.45,
+       0.55
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.733,
+      "worst_side_ratio": 1.47
+     }
     },
     {
      "id": "bench",
      "object": "bench-altar",
-     "source": "box-proxy"
+     "source": "model:bench-altar.glb",
+     "fit": {
+      "model_dims_m": [
+       2.21,
+       1.204,
+       1.288
+      ],
+      "box_m": [
+       2.2,
+       0.8,
+       0.95
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.787,
+      "worst_side_ratio": 1.26
+     }
     },
     {
      "id": "lamp",
      "object": "votive-lamp",
-     "source": "box-proxy"
+     "source": "model:votive-lamp.glb",
+     "fit": {
+      "model_dims_m": [
+       0.321,
+       0.226,
+       0.602
+      ],
+      "box_m": [
+       0.4,
+       0.4,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.996,
+      "worst_side_ratio": 1.78
+     }
     },
     {
      "id": "shelf",
      "object": "store-shelf",
-     "source": "box-proxy"
+     "source": "model:store-shelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.414,
+       0.902,
+       1.034
+      ],
+      "box_m": [
+       2.4,
+       0.5,
+       1.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.986,
+      "worst_side_ratio": 1.78
+     }
     },
     {
      "id": "toad-1",
      "object": "toad-jar",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "model not built (ComfyUI out of memory); named box proxy stays"
+     }
     },
     {
      "id": "toad-2",
      "object": "toad-jar",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "model not built (ComfyUI out of memory); named box proxy stays"
+     }
     },
     {
      "id": "toad-3",
      "object": "toad-jar",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "model not built (ComfyUI out of memory); named box proxy stays"
+     }
     },
     {
      "id": "toad-4",
      "object": "toad-jar",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "model not built (ComfyUI out of memory); named box proxy stays"
+     }
     },
     {
      "id": "last-toad",
      "object": "last-toad-jar",
-     "source": "box-proxy"
+     "source": "model:last-toad-jar.glb",
+     "fit": {
+      "model_dims_m": [
+       0.407,
+       0.409,
+       0.608
+      ],
+      "box_m": [
+       0.4,
+       0.4,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.987,
+      "worst_side_ratio": 1.01
+     }
     },
     {
      "id": "scaffold",
      "object": "scaffold-plank",
-     "source": "box-proxy"
+     "source": "model:scaffold-plank.glb",
+     "fit": {
+      "model_dims_m": [
+       3.021,
+       1.314,
+       2.495
+      ],
+      "box_m": [
+       3.0,
+       0.7,
+       1.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.683,
+      "worst_side_ratio": 1.45
+     }
     },
     {
      "id": "lime",
      "object": "lime-tub",
-     "source": "box-proxy"
+     "source": "model:lime-tub.glb",
+     "fit": {
+      "model_dims_m": [
+       0.702,
+       0.735,
+       0.474
+      ],
+      "box_m": [
+       0.7,
+       0.7,
+       0.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.05
+     }
     },
     {
      "id": "lectern",
      "object": "keeper-lectern",
-     "source": "box-proxy"
+     "source": "model:keeper-lectern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.74,
+       0.646,
+       1.209
+      ],
+      "box_m": [
+       0.6,
+       0.5,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.993,
+      "worst_side_ratio": 1.28
+     }
     },
     {
      "id": "pallet",
      "object": "keeper-pallet",
-     "source": "box-proxy"
+     "source": "model:keeper-pallet.glb",
+     "fit": {
+      "model_dims_m": [
+       2.015,
+       1.658,
+       0.854
+      ],
+      "box_m": [
+       2.0,
+       0.9,
+       0.35
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.605,
+      "worst_side_ratio": 1.64
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -2017,69 +5226,263 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 9.3
+     "render_seconds": 9.7
     }
    ],
    "props": [
     {
      "id": "tank",
      "object": "ghost-tank",
-     "source": "box-proxy"
+     "source": "model:ghost-tank.glb",
+     "fit": {
+      "model_dims_m": [
+       2.407,
+       2.38,
+       2.319
+      ],
+      "box_m": [
+       2.4,
+       1.2,
+       1.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.731,
+      "worst_side_ratio": 1.45
+     }
     },
     {
      "id": "spring",
      "object": "spring-basin",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "model not built (ComfyUI out of memory); named box proxy stays"
+     }
     },
     {
      "id": "vessels",
      "object": "measure-vessels",
-     "source": "box-proxy"
+     "source": "model:measure-vessels.glb",
+     "fit": {
+      "model_dims_m": [
+       0.906,
+       0.904,
+       0.692
+      ],
+      "box_m": [
+       0.9,
+       0.45,
+       0.55
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.733,
+      "worst_side_ratio": 1.47
+     }
     },
     {
      "id": "bench",
      "object": "bench-altar",
-     "source": "box-proxy"
+     "source": "model:bench-altar.glb",
+     "fit": {
+      "model_dims_m": [
+       2.21,
+       1.204,
+       1.288
+      ],
+      "box_m": [
+       2.2,
+       0.8,
+       0.95
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.787,
+      "worst_side_ratio": 1.26
+     }
     },
     {
      "id": "lamp",
      "object": "votive-lamp",
-     "source": "box-proxy"
+     "source": "model:votive-lamp.glb",
+     "fit": {
+      "model_dims_m": [
+       0.321,
+       0.226,
+       0.602
+      ],
+      "box_m": [
+       0.4,
+       0.4,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.996,
+      "worst_side_ratio": 1.78
+     }
     },
     {
      "id": "shelf",
      "object": "store-shelf",
-     "source": "box-proxy"
+     "source": "model:store-shelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.414,
+       0.902,
+       1.034
+      ],
+      "box_m": [
+       2.4,
+       0.5,
+       1.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.986,
+      "worst_side_ratio": 1.78
+     }
     },
     {
      "id": "last-toad",
      "object": "last-toad-jar",
-     "source": "box-proxy"
+     "source": "model:last-toad-jar.glb",
+     "fit": {
+      "model_dims_m": [
+       0.407,
+       0.409,
+       0.608
+      ],
+      "box_m": [
+       0.4,
+       0.4,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.987,
+      "worst_side_ratio": 1.01
+     }
     },
     {
      "id": "scaffold",
      "object": "scaffold-plank",
-     "source": "box-proxy"
+     "source": "model:scaffold-plank.glb",
+     "fit": {
+      "model_dims_m": [
+       3.021,
+       1.314,
+       2.495
+      ],
+      "box_m": [
+       3.0,
+       0.7,
+       1.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.683,
+      "worst_side_ratio": 1.45
+     }
     },
     {
      "id": "lime",
      "object": "lime-tub",
-     "source": "box-proxy"
+     "source": "model:lime-tub.glb",
+     "fit": {
+      "model_dims_m": [
+       0.702,
+       0.735,
+       0.474
+      ],
+      "box_m": [
+       0.7,
+       0.7,
+       0.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.05
+     }
     },
     {
      "id": "lectern",
      "object": "keeper-lectern",
-     "source": "box-proxy"
+     "source": "model:keeper-lectern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.74,
+       0.646,
+       1.209
+      ],
+      "box_m": [
+       0.6,
+       0.5,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.993,
+      "worst_side_ratio": 1.28
+     }
     },
     {
      "id": "pallet",
      "object": "keeper-pallet",
-     "source": "box-proxy"
+     "source": "model:keeper-pallet.glb",
+     "fit": {
+      "model_dims_m": [
+       2.015,
+       1.658,
+       0.854
+      ],
+      "box_m": [
+       2.0,
+       0.9,
+       0.35
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.605,
+      "worst_side_ratio": 1.64
+     }
     }
    ],
    "flagged_in_first_pass": [],
    "geometry_checks": {
     "camera_inside": [],
+    "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
     "prop_overlap": [],
@@ -2094,21 +5497,21 @@
  "overviews": [
   {
    "location": "glass-mountains",
-   "reference": null,
+   "reference": "games/dr-tox-altrulan/assets/locations/glass-mountains.jpg",
    "location_scene_count": 5,
    "scene_lighting": "s3_mountains_foot",
    "camera": {
     "location": [
-     0,
-     -56,
-     2.5
+     -16,
+     -60,
+     3
     ],
     "look_at": [
-     0,
+     2,
      40,
-     38
+     54
     ],
-    "lens_mm": 22
+    "lens_mm": 14
    },
    "rig": {
     "exposure_ev": -1.6,
@@ -2120,26 +5523,77 @@
       "exposure_ev": 1.8
      }
     },
-    "overview_ev": -0.6
+    "overview_ev": 0.26,
+    "model_fit": {
+     "trellis-mast": "height"
+    },
+    "overview_world": {
+     "horizon": [
+      1.0,
+      0.55,
+      0.25
+     ],
+     "zenith": [
+      0.03,
+      0.06,
+      0.15
+     ],
+     "strength": 1.0,
+     "z_range": [
+      -0.02,
+      0.5
+     ]
+    },
+    "overview_fills": [
+     {
+      "name": "sun-gold",
+      "type": "SUN",
+      "location": [
+       -90,
+       -30,
+       22
+      ],
+      "look_at": [
+       0,
+       0,
+       0
+      ],
+      "energy": 5.0,
+      "color": [
+       1.0,
+       0.66,
+       0.35
+      ]
+     }
+    ],
+    "overview_light_gain": 0.25,
+    "overview_piece_alpha": {
+     "glass": 0.9
+    },
+    "overview_grade_gain": [
+     1.01,
+     1.013,
+     0.838
+    ]
    }
   },
   {
    "location": "light-bringers-shrine",
-   "reference": null,
+   "reference": "left out (text card)",
    "location_scene_count": 6,
    "scene_lighting": "s3_shrine_drum",
    "camera": {
     "location": [
-     6,
+     5.5,
      -19,
-     1.8
+     2.4
     ],
     "look_at": [
-     -2,
-     -8,
-     4.5
+     -1,
+     -5,
+     2.4
     ],
-    "lens_mm": 24
+    "lens_mm": 22
    },
    "rig": {
     "exposure_ev": 1.5,
@@ -2160,26 +5614,68 @@
       "exposure_ev": 1.0
      }
     },
-    "overview_ev": -1.5
+    "overview_ev": -1.63,
+    "overview_hide_pieces": [
+     "outer-wall",
+     "drum",
+     "scripture-ring"
+    ],
+    "overview_world": {
+     "color": [
+      1.0,
+      0.92,
+      0.78
+     ],
+     "strength": 0.12
+    },
+    "overview_fills": [
+     {
+      "name": "sun-warm",
+      "type": "SUN",
+      "location": [
+       -30,
+       -45,
+       50
+      ],
+      "look_at": [
+       0,
+       -10,
+       0
+      ],
+      "energy": 0.8,
+      "color": [
+       1.0,
+       0.9,
+       0.7
+      ]
+     }
+    ],
+    "overview_light_gain": 0.15,
+    "overview_grade_gain": [
+     1.041,
+     1.004,
+     0.83
+    ],
+    "reference_card": "The reference image shows a standing figure with a halo above the door and a fresco of figures; it is left out of the sheet. Tone, warmth and framing were matched to it by eye (rig only)."
    }
   },
   {
    "location": "metabolic-city",
-   "reference": null,
+   "reference": "games/dr-tox-altrulan/assets/locations/metabolic-city.jpg",
    "location_scene_count": 3,
    "scene_lighting": "s3_city_gate",
    "camera": {
     "location": [
-     0,
-     -27,
-     3
+     -14,
+     4,
+     1.6
     ],
     "look_at": [
-     0,
-     12,
-     9
+     2,
+     27,
+     3.5
     ],
-    "lens_mm": 22
+    "lens_mm": 24
    },
    "rig": {
     "exposure_ev": 0.3,
@@ -2193,26 +5689,63 @@
      "s3_city_night": {
       "exposure_ev": 0.8
      }
-    }
+    },
+    "overview_world": {
+     "color": [
+      0.55,
+      0.8,
+      0.7
+     ],
+     "strength": 0.5
+    },
+    "overview_fills": [
+     {
+      "name": "fungus",
+      "type": "AREA",
+      "location": [
+       -20,
+       27,
+       5
+      ],
+      "look_at": [
+       -12,
+       10,
+       1
+      ],
+      "size": 6,
+      "energy": 1500,
+      "color": [
+       0.55,
+       0.95,
+       1.0
+      ]
+     }
+    ],
+    "overview_ev": -1.26,
+    "overview_grade_gain": [
+     1.167,
+     0.97,
+     0.884
+    ]
    }
   },
   {
    "location": "snakehead-holy-site",
-   "reference": null,
+   "reference": "left out (text card)",
    "location_scene_count": 5,
    "scene_lighting": "s3_cave_tank",
    "camera": {
     "location": [
-     -2,
-     -10,
-     2.0
+     -9,
+     -4,
+     1.9
     ],
     "look_at": [
-     6,
-     14,
-     2.0
+     8,
+     13,
+     1.8
     ],
-    "lens_mm": 24
+    "lens_mm": 22
    },
    "rig": {
     "exposure_ev": 0.0,
@@ -2225,10 +5758,803 @@
      },
      "s3_cave_corridor": {
       "exposure_ev": 0.3
+     },
+     "s3_end_two_readings": {
+      "exposure_ev": 1.2
      }
     },
-    "overview_ev": 3.0
+    "overview_ev": 3.06,
+    "overview_world": {
+     "color": [
+      0.03,
+      0.035,
+      0.04
+     ],
+     "strength": 0.05,
+     "fog": {
+      "density": 0.004,
+      "anisotropy": 0.6
+     }
+    },
+    "overview_fills": [
+     {
+      "name": "breach-shaft",
+      "type": "SPOT",
+      "location": [
+       -17,
+       -16.5,
+       7.5
+      ],
+      "look_at": [
+       -9,
+       -8,
+       0
+      ],
+      "size": 0.5,
+      "energy": 3000,
+      "color": [
+       0.8,
+       0.9,
+       1.0
+      ]
+     }
+    ],
+    "overview_grade_gain": [
+     1.147,
+     0.973,
+     0.853
+    ],
+    "reference_card": "The reference image shows figures carved in relief along the corridor walls; it is left out of the sheet. Tone, the amber lamp, the cold tank glow and the grey shaft were matched to it by eye (rig only)."
    }
   }
- ]
+ ],
+ "objects": {
+  "altar-basin": {
+   "source": "model",
+   "model": "altar-basin.glb",
+   "props": 6,
+   "fit": {
+    "model_dims_m": [
+     1.004,
+     1.001,
+     1.022
+    ],
+    "box_m": [
+     1.0,
+     1.0,
+     0.8
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.783,
+    "worst_side_ratio": 1.28
+   },
+   "note": null
+  },
+  "altar-stone": {
+   "source": "model",
+   "model": "altar-stone.glb",
+   "props": 6,
+   "fit": {
+    "model_dims_m": [
+     2.027,
+     1.184,
+     1.399
+    ],
+    "box_m": [
+     2.0,
+     1.2,
+     1.0
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.894,
+    "worst_side_ratio": 1.25
+   },
+   "note": null
+  },
+  "bell-frame": {
+   "source": "model",
+   "model": "bell-frame.glb",
+   "props": 11,
+   "fit": {
+    "model_dims_m": [
+     4.061,
+     1.685,
+     3.34
+    ],
+    "box_m": [
+     4.0,
+     4.0,
+     3.0
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.281,
+    "worst_side_ratio": 1.85
+   },
+   "note": null
+  },
+  "bench-altar": {
+   "source": "model",
+   "model": "bench-altar.glb",
+   "props": 5,
+   "fit": {
+    "model_dims_m": [
+     2.21,
+     1.204,
+     1.288
+    ],
+    "box_m": [
+     2.2,
+     0.8,
+     0.95
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.787,
+    "worst_side_ratio": 1.26
+   },
+   "note": null
+  },
+  "fungus-lamp": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 12,
+   "fit": {
+    "model_skipped": "model not built (ComfyUI out of memory); named box proxy stays"
+   },
+   "note": "model skipped: model not built (ComfyUI out of memory); named box proxy stays"
+  },
+  "ghost-tank": {
+   "source": "model",
+   "model": "ghost-tank.glb",
+   "props": 5,
+   "fit": {
+    "model_dims_m": [
+     2.407,
+     2.38,
+     2.319
+    ],
+    "box_m": [
+     2.4,
+     1.2,
+     1.8
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.731,
+    "worst_side_ratio": 1.45
+   },
+   "note": null
+  },
+  "halo-relief": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 6,
+   "fit": {
+    "model_skipped": "the object image shows a figure (carved halo relief); no model, plain slab proxy"
+   },
+   "note": "model skipped: the object image shows a figure (carved halo relief); no model, plain slab proxy"
+  },
+  "keeper-lectern": {
+   "source": "model",
+   "model": "keeper-lectern.glb",
+   "props": 5,
+   "fit": {
+    "model_dims_m": [
+     0.74,
+     0.646,
+     1.209
+    ],
+    "box_m": [
+     0.6,
+     0.5,
+     1.2
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.993,
+    "worst_side_ratio": 1.28
+   },
+   "note": null
+  },
+  "keeper-pallet": {
+   "source": "model",
+   "model": "keeper-pallet.glb",
+   "props": 5,
+   "fit": {
+    "model_dims_m": [
+     2.015,
+     1.658,
+     0.854
+    ],
+    "box_m": [
+     2.0,
+     0.9,
+     0.35
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.605,
+    "worst_side_ratio": 1.64
+   },
+   "note": null
+  },
+  "kneeling-cushion": {
+   "source": "model",
+   "model": "kneeling-cushion.glb",
+   "props": 24,
+   "fit": {
+    "model_dims_m": [
+     0.603,
+     0.582,
+     0.198
+    ],
+    "box_m": [
+     0.6,
+     0.6,
+     0.15
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.919,
+    "worst_side_ratio": 1.22
+   },
+   "note": null
+  },
+  "last-toad-jar": {
+   "source": "model",
+   "model": "last-toad-jar.glb",
+   "props": 5,
+   "fit": {
+    "model_dims_m": [
+     0.407,
+     0.409,
+     0.608
+    ],
+    "box_m": [
+     0.4,
+     0.4,
+     0.6
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.987,
+    "worst_side_ratio": 1.01
+   },
+   "note": null
+  },
+  "lime-tub": {
+   "source": "model",
+   "model": "lime-tub.glb",
+   "props": 5,
+   "fit": {
+    "model_dims_m": [
+     0.702,
+     0.735,
+     0.474
+    ],
+    "box_m": [
+     0.7,
+     0.7,
+     0.5
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.0,
+    "worst_side_ratio": 1.05
+   },
+   "note": null
+  },
+  "market-stall": {
+   "source": "model",
+   "model": "market-stall.glb",
+   "props": 6,
+   "fit": {
+    "model_dims_m": [
+     2.497,
+     1.878,
+     2.535
+    ],
+    "box_m": [
+     2.5,
+     1.5,
+     2.4
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.947,
+    "worst_side_ratio": 1.19
+   },
+   "note": null
+  },
+  "measure-vessels": {
+   "source": "model",
+   "model": "measure-vessels.glb",
+   "props": 5,
+   "fit": {
+    "model_dims_m": [
+     0.906,
+     0.904,
+     0.692
+    ],
+    "box_m": [
+     0.9,
+     0.45,
+     0.55
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.733,
+    "worst_side_ratio": 1.47
+   },
+   "note": null
+  },
+  "memorial-brass": {
+   "source": "model",
+   "model": "memorial-brass.glb",
+   "props": 3,
+   "fit": {
+    "model_dims_m": [
+     2.086,
+     0.817,
+     2.013
+    ],
+    "box_m": [
+     1.2,
+     0.3,
+     2.0
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.994,
+    "worst_side_ratio": 2.71
+   },
+   "note": null
+  },
+  "morris-bench": {
+   "source": "model",
+   "model": "morris-bench.glb",
+   "props": 8,
+   "fit": {
+    "model_dims_m": [
+     1.814,
+     0.76,
+     0.904
+    ],
+    "box_m": [
+     1.8,
+     0.6,
+     0.5
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.757,
+    "worst_side_ratio": 1.37
+   },
+   "note": null
+  },
+  "pilgrim-handcart": {
+   "source": "model",
+   "model": "pilgrim-handcart.glb",
+   "props": 5,
+   "fit": {
+    "model_dims_m": [
+     2.005,
+     1.431,
+     1.508
+    ],
+    "box_m": [
+     2.0,
+     1.2,
+     1.2
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.873,
+    "worst_side_ratio": 1.14
+   },
+   "note": null
+  },
+  "plate-door": {
+   "source": "model",
+   "model": "plate-door.glb",
+   "props": 6,
+   "fit": {
+    "model_dims_m": [
+     3.108,
+     0.958,
+     3.256
+    ],
+    "box_m": [
+     2.4,
+     0.4,
+     3.2
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.983,
+    "worst_side_ratio": 2.35
+   },
+   "note": null
+  },
+  "scaffold-plank": {
+   "source": "model",
+   "model": "scaffold-plank.glb",
+   "props": 5,
+   "fit": {
+    "model_dims_m": [
+     3.021,
+     1.314,
+     2.495
+    ],
+    "box_m": [
+     3.0,
+     0.7,
+     1.5
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.683,
+    "worst_side_ratio": 1.45
+   },
+   "note": null
+  },
+  "scales-relic": {
+   "source": "model",
+   "model": "scales-relic.glb",
+   "props": 6,
+   "fit": {
+    "model_dims_m": [
+     1.798,
+     0.87,
+     1.614
+    ],
+    "box_m": [
+     1.2,
+     0.5,
+     1.6
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.991,
+    "worst_side_ratio": 1.72
+   },
+   "note": null
+  },
+  "shrine-lectern": {
+   "source": "model",
+   "model": "shrine-lectern.glb",
+   "props": 6,
+   "fit": {
+    "model_dims_m": [
+     1.077,
+     0.749,
+     1.309
+    ],
+    "box_m": [
+     0.7,
+     0.6,
+     1.3
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.993,
+    "worst_side_ratio": 1.53
+   },
+   "note": null
+  },
+  "sleeping-mat": {
+   "source": "model",
+   "model": "sleeping-mat.glb",
+   "props": 6,
+   "fit": {
+    "model_dims_m": [
+     2.003,
+     1.198,
+     0.416
+    ],
+    "box_m": [
+     2.0,
+     0.9,
+     0.1
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.565,
+    "worst_side_ratio": 2.35
+   },
+   "note": null
+  },
+  "spring-basin": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 5,
+   "fit": {
+    "model_skipped": "model not built (ComfyUI out of memory); named box proxy stays"
+   },
+   "note": "model skipped: model not built (ComfyUI out of memory); named box proxy stays"
+  },
+  "store-shelf": {
+   "source": "model",
+   "model": "store-shelf.glb",
+   "props": 5,
+   "fit": {
+    "model_dims_m": [
+     2.414,
+     0.902,
+     1.034
+    ],
+    "box_m": [
+     2.4,
+     0.5,
+     1.8
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.986,
+    "worst_side_ratio": 1.78
+   },
+   "note": null
+  },
+  "toad-jar": {
+   "source": "box-proxy",
+   "model": null,
+   "props": 16,
+   "fit": {
+    "model_skipped": "model not built (ComfyUI out of memory); named box proxy stays"
+   },
+   "note": "model skipped: model not built (ComfyUI out of memory); named box proxy stays"
+  },
+  "trellis-mast": {
+   "source": "model",
+   "model": "trellis-mast.glb",
+   "props": 15,
+   "fit": {
+    "model_dims_m": [
+     7.891,
+     6.085,
+     18.248
+    ],
+    "box_m": [
+     1.6,
+     1.6,
+     18.0
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.986,
+    "worst_side_ratio": 4.86,
+    "fit_mode": "height only"
+   },
+   "note": null
+  },
+  "vine-node": {
+   "source": "model",
+   "model": "vine-node.glb",
+   "props": 6,
+   "fit": {
+    "model_dims_m": [
+     1.405,
+     1.392,
+     1.516
+    ],
+    "box_m": [
+     1.2,
+     1.2,
+     1.5
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.99,
+    "worst_side_ratio": 1.16
+   },
+   "note": null
+  },
+  "votive-lamp": {
+   "source": "model",
+   "model": "votive-lamp.glb",
+   "props": 5,
+   "fit": {
+    "model_dims_m": [
+     0.321,
+     0.226,
+     0.602
+    ],
+    "box_m": [
+     0.4,
+     0.4,
+     0.6
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.996,
+    "worst_side_ratio": 1.78
+   },
+   "note": null
+  },
+  "water-bowl": {
+   "source": "model",
+   "model": "water-bowl.glb",
+   "props": 3,
+   "fit": {
+    "model_dims_m": [
+     0.604,
+     0.567,
+     0.221
+    ],
+    "box_m": [
+     0.6,
+     0.6,
+     0.25
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.059,
+    "worst_side_ratio": 1.07
+   },
+   "note": null
+  },
+  "way-stone": {
+   "source": "model",
+   "model": "way-stone.glb",
+   "props": 5,
+   "fit": {
+    "model_dims_m": [
+     0.804,
+     0.768,
+     1.409
+    ],
+    "box_m": [
+     1.0,
+     0.6,
+     1.4
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.993,
+    "worst_side_ratio": 1.27
+   },
+   "note": null
+  }
+ },
+ "models": {
+  "ledger": "games/dr-tox-altrulan/assets/models.json of the image/model session's working copy (read only at render time; the ledger and the glbs are not in this branch)",
+  "built_in_ledger": 26,
+  "failed_in_ledger": [
+   "fungus-lamp",
+   "spring-basin",
+   "toad-jar"
+  ],
+  "skipped_in_ledger": [
+   "halo-relief"
+  ],
+  "used_as_models": [
+   "altar-basin",
+   "altar-stone",
+   "bell-frame",
+   "bench-altar",
+   "ghost-tank",
+   "keeper-lectern",
+   "keeper-pallet",
+   "kneeling-cushion",
+   "last-toad-jar",
+   "lime-tub",
+   "market-stall",
+   "measure-vessels",
+   "memorial-brass",
+   "morris-bench",
+   "pilgrim-handcart",
+   "plate-door",
+   "scaffold-plank",
+   "scales-relic",
+   "shrine-lectern",
+   "sleeping-mat",
+   "store-shelf",
+   "trellis-mast",
+   "vine-node",
+   "votive-lamp",
+   "water-bowl",
+   "way-stone"
+  ],
+  "named_box_proxy": {
+   "fungus-lamp": "model not built (ComfyUI out of memory)",
+   "spring-basin": "model not built (ComfyUI out of memory)",
+   "toad-jar": "model not built (ComfyUI out of memory)",
+   "halo-relief": "the object image shows a carved figure; no model, plain slab proxy"
+  },
+  "render_copies": "lite copies of the glbs (12000 triangles, 512 px JPEG textures; the originals are 80000 triangles) because the render box's upload link is slow; never copied into the repo",
+  "front_check": "every model viewed from -y (workbench, two angles) before the render",
+  "fit_mode_height_only": [
+   "trellis-mast"
+  ]
+ },
+ "gpu": {
+  "device": "one rented RTX 4090 (Blender 5.2.1, OptiX)",
+  "final_run_seconds": 457,
+  "re_render_seconds": 43,
+  "before_pass_seconds": 6,
+  "look_passes_seconds": 163,
+  "total_blender_seconds": 669,
+  "note": "measured from the remote run logs (wall time of each Blender process); upload and download time not counted"
+ }
 }

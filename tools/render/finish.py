@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Contact sheets, owner sheet and ledger from a finished render run.
 
-    python tools/render/finish.py dr-tox-rise <run dir> [--owner <png>]
+    python tools/render/finish.py dr-tox-rise <run dir> [--owner <png>] [--before <run dir>] [--refs <repo root of the reference images>]
 
 <run dir> is the driver's output (<location>/<scene>/camera.png, <location>/_overview/overview.png,
 <location>/<scene>.json). Writes renders/<game>/<location>.jpg (overview beside its reference image, then the
@@ -82,6 +82,9 @@ def main(argv):
     slug, run = argv[0], Path(argv[1])
     owner = argv[argv.index("--owner") + 1] if "--owner" in argv else None
     before = Path(argv[argv.index("--before") + 1]) if "--before" in argv else None
+    # --refs <repo root>: where games/<slug>/assets/locations/<id>.jpg is read from when the reference images are not in this
+    # checkout (dr-tox-altrulan's live on another branch; read only, never copied into this branch)
+    refs_root = Path(argv[argv.index("--refs") + 1]) if "--refs" in argv else ROOT
     outdir = ROOT / "renders" / slug
     outdir.mkdir(parents=True, exist_ok=True)
     plans = [e for e in json.loads((ROOT / "docs/blender_plans/plans.json").read_text(encoding="utf-8"))["scenes"]
@@ -102,7 +105,7 @@ def main(argv):
     for loc in locs:
         tiles = []
         ov = run / loc / "_overview" / "overview.png"
-        rp = ROOT / "games" / slug / "assets" / "locations" / f"{loc}.jpg"
+        rp = refs_root / "games" / slug / "assets" / "locations" / f"{loc}.jpg"
         card = lrig(loc).get("reference_card")
         if card:
             ref = text_card("REFERENCE LEFT OUT", [card])

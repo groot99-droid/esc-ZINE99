@@ -99,6 +99,62 @@ def build_world(sc, world, rig, gain):
         nt.links.new(vs.outputs["Volume"], out.inputs["Volume"])
 
 
+def overview_rig(sc, rig, K):
+    """Overview-only rig (batch 10, matching a location's overview to its reference image): rig keys `overview_world`
+    ({"color" or "horizon"+"zenith", "strength"}: the world replaced by a flat colour or a horizon-to-zenith gradient),
+    `overview_light_gain` / `overview_light_gains` (the scene's own lights scaled for the overview only), `overview_piece_alpha` (a blockout material's opacity), `overview_fills` (extra lights, same fields as `fills`, in the build file's units) and `overview_hide_pieces` (blockout
+    piece ids left out of the overview). Applied after the scene's own stills, so only the overview changes. Returns the
+    grade_gain to use (`overview_grade_gain` or the location's `grade_gain`)."""
+    ow = rig.get("overview_world")
+    if ow:
+        nt = sc.world.node_tree
+        nt.nodes.clear()
+        bg = nt.nodes.new("ShaderNodeBackground")
+        out = nt.nodes.new("ShaderNodeOutputWorld")
+        nt.links.new(bg.outputs["Background"], out.inputs["Surface"])
+        bg.inputs["Strength"].default_value = ow.get("strength", 1.0)
+        if "horizon" in ow:
+            tc = nt.nodes.new("ShaderNodeTexCoord")
+            sep = nt.nodes.new("ShaderNodeSeparateXYZ")
+            mr = nt.nodes.new("ShaderNodeMapRange")
+            mx = nt.nodes.new("ShaderNodeMix")
+            mx.data_type = "RGBA"
+            mr.inputs["From Min"].default_value, mr.inputs["From Max"].default_value = ow.get("z_range", [-0.05, 0.6])
+            mr.clamp = True
+            nt.links.new(tc.outputs["Generated"], sep.inputs["Vector"])
+            nt.links.new(sep.outputs["Z"], mr.inputs["Value"])
+            nt.links.new(mr.outputs["Result"], mx.inputs["Factor"])
+            h, z = ow["horizon"], ow.get("zenith", ow["horizon"])
+            mx.inputs["A"].default_value = (h[0], h[1], h[2], 1)
+            mx.inputs["B"].default_value = (z[0], z[1], z[2], 1)
+            nt.links.new(mx.outputs["Result"], bg.inputs["Color"])
+        else:
+            c = ow["color"]
+            bg.inputs["Color"].default_value = (c[0], c[1], c[2], 1)
+    if ow and ow.get("fog", {}).get("density", 0) > 0:  # a thin volume so a spot light's shaft shows (snakehead-holy-site's breach)
+        nt = sc.world.node_tree
+        ot = next(n for n in nt.nodes if n.bl_idname == "ShaderNodeOutputWorld")
+        vs = nt.nodes.new("ShaderNodeVolumeScatter")
+        vs.inputs["Density"].default_value = ow["fog"]["density"]
+        vs.inputs["Anisotropy"].default_value = ow["fog"].get("anisotropy", 0.5)
+        nt.links.new(vs.outputs["Volume"], ot.inputs["Volume"])
+    g, gl = rig.get("overview_light_gain", 1.0), rig.get("overview_light_gains", {})
+    for ob in bpy.data.objects:  # the scene's own lights, scaled for the overview only (rig lights are added below, unscaled)
+        if ob.type == "LIGHT":
+            ob.data.energy *= g * gl.get(ob.name, 1.0)
+    for i, fl in enumerate(rig.get("overview_fills", [])):
+        make_light(sc, dict(fl, name="rig-ovfill-" + fl["name"]), 1.0, rig)
+    for mname, a in rig.get("overview_piece_alpha", {}).items():  # a blockout material's opacity for the overview only
+        mt = bpy.data.materials.get("bo-" + mname)
+        if mt is not None and mt.node_tree.nodes.get("Principled BSDF"):
+            mt.node_tree.nodes["Principled BSDF"].inputs["Alpha"].default_value = a
+    hide = set(rig.get("overview_hide_pieces", []))
+    for ob in bpy.data.objects:
+        if ob.name.startswith("bo-") and ob.name[3:] in hide:
+            ob.hide_render = True
+    return rig.get("overview_grade_gain", rig.get("grade_gain"))
+
+
 def aim(obj, target):
     d = Vector(target) - Vector(obj.location)
     obj.rotation_euler = d.to_track_quat("-Z", "Y").to_euler()
@@ -167,7 +223,7 @@ def neutral_name(rig, pr):
 FIT_CANDIDATES = [(0, 0, 0), (0, 0, 90), (90, 0, 0), (90, 0, 90), (0, 90, 0), (0, 90, 90)]  # model-local axis permutations tried
 
 
-def fit_model(sc, pr, glb):
+def fit_model(sc, pr, glb, mode=None):
     """Import a real model and fit it to the prop's box (the box proxy's size in the prop's own frame, before the build
     file's rotation): the model's axes are permuted only when the box fits them clearly better (the ledger's models for
     flat things come out lying down), the scale is uniform (the height ratio for an upright prop whose footprint then stays within x3 of the box, else the
@@ -192,6 +248,8 @@ def fit_model(sc, pr, glb):
     thin = [b < 0.15 * max(box) and b < 0.1 for b in box]  # a sheet or a book's thickness: its ratio counts for less
 
     def fit(d):
+        if mode == "height":  # rig "model_fit": {object: "height"}: scale by the prop's height only, never reject (a tall thin mast whose model has a wide head)
+            return box[2] / max(d[2], 1e-6), 0.0
         nt = [i for i in range(3) if not thin[i]] or [0, 1, 2]
         k = math.exp(sum(math.log(max(box[i], 1e-6) / max(d[i], 1e-6)) for i in nt) / len(nt))
         if box[2] >= 0.8 * max(box) and not thin[2]:  # an upright prop (post, lamp, phone, chair): its height is what the build file fixes
@@ -213,6 +271,9 @@ def fit_model(sc, pr, glb):
     rot, k, err, d = best
     rec = {"model_dims_m": [round(x, 3) for x in dims((0, 0, 0))], "box_m": [round(x, 3) for x in box],
            "fit_rotation_deg": list(rot), "scale": round(k, 3), "worst_side_ratio": round(math.exp(err), 2)}
+    if mode == "height":
+        rec["fit_mode"] = "height only"
+        rec["worst_side_ratio"] = round(max(max(k * d[i] / max(box[i], 1e-6), max(box[i], 1e-6) / (k * max(d[i], 1e-6))) for i in range(3)), 2)
     for o in new:
         o.hide_render = err > 1.1  # a rejected fit stays in the file hidden (its objects are templates for later copies)
     if err > 1.1:
@@ -241,7 +302,7 @@ def make_prop(sc, pr, rig, models, skipped=None):
     glb = models.get(pr["object"])
     fitrec = None
     if glb:
-        root, fitrec = fit_model(sc, pr, glb)
+        root, fitrec = fit_model(sc, pr, glb, (rig.get("model_fit") or {}).get(pr["object"]))
         if root is not None:
             return root, "model:" + os.path.basename(glb), fitrec
     elif skipped and pr["object"] in skipped:
@@ -512,8 +573,8 @@ def main():
                        "fog": rig.get("fog"), "grade_gain": rig.get("grade_gain"), "fills": [f["name"] for f in fills]},
                "scene_scale": K, "overrides": ov, "props": sources, "checks": checks, "stills": []}
 
-        def shoot(name, loc, look, lens, res, samples, ev_extra=0.0):
-            setup_render(sc, res, samples, o["device"], ev + ev_extra, rig.get("grade_gain"))
+        def shoot(name, loc, look, lens, res, samples, ev_extra=0.0, grade=None):
+            setup_render(sc, res, samples, o["device"], ev + ev_extra, grade if grade is not None else rig.get("grade_gain"))
             set_camera(sc, loc, look, lens)
             d = os.path.join(out, entry["location"], "_overview" if name == "overview" else entry["scene"])
             os.makedirs(d, exist_ok=True)
@@ -544,9 +605,10 @@ def main():
             ovw = merge(entry["overview"], rig.get("overview", {}))
             if K != 1.0:
                 ovw = dict(ovw, location=[x * K for x in ovw["location"]], look_at=[x * K for x in ovw["look_at"]])
+            ograde = overview_rig(sc, rig, K)
             shoot("overview", ovw["location"], ovw["look_at"], ovw.get("lens_mm", 28),
                   (int(1920 * o["res_scale"]), int(1080 * o["res_scale"])), max(4, int(128 * o["samples_scale"])),
-                  rig.get("overview_ev", 0.0))
+                  rig.get("overview_ev", 0.0), ograde)
         rec["seconds"] = round(time.time() - t0, 1)
         os.makedirs(os.path.join(out, entry["location"]), exist_ok=True)
         with open(os.path.join(out, entry["location"], entry["scene"] + ".json"), "w", encoding="utf-8") as f:

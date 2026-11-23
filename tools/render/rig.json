@@ -590,16 +590,16 @@
     "overview_scene": "s3_mountains_foot",
     "overview": {
       "location": [
-        0,
-        -56,
-        2.5
+        -16,
+        -60,
+        3
       ],
       "look_at": [
-        0,
+        2,
         40,
-        38
+        54
       ],
-      "lens_mm": 22
+      "lens_mm": 14
     },
     "exposure_ev": -1.6,
     "piece_alpha": {
@@ -610,22 +610,73 @@
         "exposure_ev": 1.8
       }
     },
-    "overview_ev": -0.6
+    "overview_ev": 0.26,
+    "model_fit": {
+      "trellis-mast": "height"
+    },
+    "overview_world": {
+      "horizon": [
+        1.0,
+        0.55,
+        0.25
+      ],
+      "zenith": [
+        0.03,
+        0.06,
+        0.15
+      ],
+      "strength": 1.0,
+      "z_range": [
+        -0.02,
+        0.5
+      ]
+    },
+    "overview_fills": [
+      {
+        "name": "sun-gold",
+        "type": "SUN",
+        "location": [
+          -90,
+          -30,
+          22
+        ],
+        "look_at": [
+          0,
+          0,
+          0
+        ],
+        "energy": 5.0,
+        "color": [
+          1.0,
+          0.66,
+          0.35
+        ]
+      }
+    ],
+    "overview_light_gain": 0.25,
+    "overview_piece_alpha": {
+      "glass": 0.9
+    },
+    "overview_grade_gain": [
+      1.01,
+      1.013,
+      0.838
+    ]
   },
   "light-bringers-shrine": {
     "overview_scene": "s3_shrine_drum",
     "overview": {
       "location": [
-        6,
+        5.5,
         -19,
-        1.8
+        2.4
       ],
       "look_at": [
-        -2,
-        -8,
-        4.5
+        -1,
+        -5,
+        2.4
       ],
-      "lens_mm": 24
+      "lens_mm": 22
     },
     "exposure_ev": 1.5,
     "piece_alpha": {
@@ -645,22 +696,64 @@
         "exposure_ev": 1.0
       }
     },
-    "overview_ev": -1.5
+    "overview_ev": -1.63,
+    "overview_hide_pieces": [
+      "outer-wall",
+      "drum",
+      "scripture-ring"
+    ],
+    "overview_world": {
+      "color": [
+        1.0,
+        0.92,
+        0.78
+      ],
+      "strength": 0.12
+    },
+    "overview_fills": [
+      {
+        "name": "sun-warm",
+        "type": "SUN",
+        "location": [
+          -30,
+          -45,
+          50
+        ],
+        "look_at": [
+          0,
+          -10,
+          0
+        ],
+        "energy": 0.8,
+        "color": [
+          1.0,
+          0.9,
+          0.7
+        ]
+      }
+    ],
+    "overview_light_gain": 0.15,
+    "overview_grade_gain": [
+      1.041,
+      1.004,
+      0.83
+    ],
+    "reference_card": "The reference image shows a standing figure with a halo above the door and a fresco of figures; it is left out of the sheet. Tone, warmth and framing were matched to it by eye (rig only)."
   },
   "metabolic-city": {
     "overview_scene": "s3_city_gate",
     "overview": {
       "location": [
-        0,
-        -27,
-        3
+        -14,
+        4,
+        1.6
       ],
       "look_at": [
-        0,
-        12,
-        9
+        2,
+        27,
+        3.5
       ],
-      "lens_mm": 22
+      "lens_mm": 24
     },
     "exposure_ev": 0.3,
     "piece_alpha": {
@@ -673,22 +766,59 @@
       "s3_city_night": {
         "exposure_ev": 0.8
       }
-    }
+    },
+    "overview_world": {
+      "color": [
+        0.55,
+        0.8,
+        0.7
+      ],
+      "strength": 0.5
+    },
+    "overview_fills": [
+      {
+        "name": "fungus",
+        "type": "AREA",
+        "location": [
+          -20,
+          27,
+          5
+        ],
+        "look_at": [
+          -12,
+          10,
+          1
+        ],
+        "size": 6,
+        "energy": 1500,
+        "color": [
+          0.55,
+          0.95,
+          1.0
+        ]
+      }
+    ],
+    "overview_ev": -1.26,
+    "overview_grade_gain": [
+      1.167,
+      0.97,
+      0.884
+    ]
   },
   "snakehead-holy-site": {
     "overview_scene": "s3_cave_tank",
     "overview": {
       "location": [
-        -2,
-        -10,
-        2.0
+        -9,
+        -4,
+        1.9
       ],
       "look_at": [
-        6,
-        14,
-        2.0
+        8,
+        13,
+        1.8
       ],
-      "lens_mm": 24
+      "lens_mm": 22
     },
     "exposure_ev": 0.0,
     "scenes": {
@@ -700,9 +830,53 @@
       },
       "s3_cave_corridor": {
         "exposure_ev": 0.3
+      },
+      "s3_end_two_readings": {
+        "exposure_ev": 1.2
       }
     },
-    "overview_ev": 3.0
+    "overview_ev": 3.06,
+    "overview_world": {
+      "color": [
+        0.03,
+        0.035,
+        0.04
+      ],
+      "strength": 0.05,
+      "fog": {
+        "density": 0.004,
+        "anisotropy": 0.6
+      }
+    },
+    "overview_fills": [
+      {
+        "name": "breach-shaft",
+        "type": "SPOT",
+        "location": [
+          -17,
+          -16.5,
+          7.5
+        ],
+        "look_at": [
+          -9,
+          -8,
+          0
+        ],
+        "size": 0.5,
+        "energy": 3000,
+        "color": [
+          0.8,
+          0.9,
+          1.0
+        ]
+      }
+    ],
+    "overview_grade_gain": [
+      1.147,
+      0.973,
+      0.853
+    ],
+    "reference_card": "The reference image shows figures carved in relief along the corridor walls; it is left out of the sheet. Tone, the amber lamp, the cold tank glow and the grey shaft were matched to it by eye (rig only)."
   },
   "astral-expanse": {
     "overview_scene": "s_expanse",

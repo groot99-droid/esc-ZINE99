@@ -1398,5 +1398,16 @@
         }
       ]
     }
+  },
+  "light-bringers-shrine/s3_shrine_book": {
+    "props": {
+      "lectern": {
+        "rotation_deg": [
+          0,
+          0,
+          -20
+        ]
+      }
+    }
   }
 }
