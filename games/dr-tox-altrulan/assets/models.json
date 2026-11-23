@@ -1,0 +1,836 @@
+{
+  "tool": "ComfyUI 0.46.2, core Trellis 2 nodes",
+  "models": [
+    {
+      "id": "altar-basin",
+      "name": "altar basin",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-altrulan/assets/objects/altar-basin.jpg",
+      "image_sha256": "75455b75d29d6735d2d7a4b7ff3b7a8736f71327908ecf25476ab85e9df3f852",
+      "output": "build/models/dr-tox-altrulan/altar-basin.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699437,
+      "size_m_requested": [
+        1.0,
+        1.0,
+        0.8
+      ],
+      "dimensions_m": [
+        1.0,
+        0.993,
+        1.01
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 707
+    },
+    {
+      "id": "altar-stone",
+      "name": "altar stone",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-altrulan/assets/objects/altar-stone.jpg",
+      "image_sha256": "0e0d3a18d6de70caaafa40aa003ba22acf1ad524220e5f5742b3f6ffc0f2c712",
+      "output": "build/models/dr-tox-altrulan/altar-stone.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699245,
+      "size_m_requested": [
+        2.0,
+        1.2,
+        1.0
+      ],
+      "dimensions_m": [
+        2.0,
+        1.162,
+        1.368
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 1.03, 0.73); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 531
+    },
+    {
+      "id": "bell-frame",
+      "name": "bell frame",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-altrulan/assets/objects/bell-frame.jpg",
+      "image_sha256": "e20d06dcfe8f4788ad59b6ca2331651986e00e20b3c014c31a2a1752bb5fa672",
+      "output": "build/models/dr-tox-altrulan/bell-frame.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699956,
+      "size_m_requested": [
+        4.0,
+        4.0,
+        3.0
+      ],
+      "dimensions_m": [
+        4.0,
+        1.68,
+        3.287
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 2.38, 0.91); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 796
+    },
+    {
+      "id": "bench-altar",
+      "name": "bench altar",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-altrulan/assets/objects/bench-altar.jpg",
+      "image_sha256": "fa39fe56b392bb8ca24f8f48cc714cf199573fd78136cb7d6dfceb19cbbef24d",
+      "output": "build/models/dr-tox-altrulan/bench-altar.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699432,
+      "size_m_requested": [
+        2.2,
+        0.8,
+        0.95
+      ],
+      "dimensions_m": [
+        2.2,
+        1.196,
+        1.272
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.67, 0.75); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 624
+    },
+    {
+      "id": "fungus-lamp",
+      "name": "fungus lamp",
+      "date": "2026-11-23",
+      "status": "not_built",
+      "image": "games/dr-tox-altrulan/assets/objects/fungus-lamp.jpg",
+      "size_m_requested": [
+        0.5,
+        0.5,
+        0.7
+      ],
+      "source": "altrulan images from the Blender session",
+      "problems": [
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
+      ]
+    },
+    {
+      "id": "ghost-tank",
+      "name": "ghost tank",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-altrulan/assets/objects/ghost-tank.jpg",
+      "image_sha256": "cb96f614dbcc7210ffd3c9e2931edafd543946ec803517f9f6c124aa23c33d5a",
+      "output": "build/models/dr-tox-altrulan/ghost-tank.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699875,
+      "size_m_requested": [
+        2.4,
+        1.2,
+        1.8
+      ],
+      "dimensions_m": [
+        2.4,
+        2.389,
+        2.321
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.50, 0.78); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 902
+    },
+    {
+      "id": "halo-relief",
+      "name": "halo relief",
+      "date": "2026-11-22",
+      "status": "skipped",
+      "problems": [
+        "the image shows a figure; not built"
+      ]
+    },
+    {
+      "id": "keeper-lectern",
+      "name": "keeper lectern",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-altrulan/assets/objects/keeper-lectern.jpg",
+      "image_sha256": "9e3f112feaaf6d9cad51faaa9005bdff2b550fc9ff2b6ef41b13c7d96ecc5da5",
+      "output": "build/models/dr-tox-altrulan/keeper-lectern.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699500,
+      "size_m_requested": [
+        0.6,
+        0.5,
+        1.2
+      ],
+      "dimensions_m": [
+        0.738,
+        0.642,
+        1.2
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 780
+    },
+    {
+      "id": "keeper-pallet",
+      "name": "keeper pallet",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-altrulan/assets/objects/keeper-pallet.jpg",
+      "image_sha256": "8bc53cacb2d9fbbe52425de5afc349cf618946654cb1644de07851c1b2c17d17",
+      "output": "build/models/dr-tox-altrulan/keeper-pallet.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699686,
+      "size_m_requested": [
+        2.0,
+        0.9,
+        0.35
+      ],
+      "dimensions_m": [
+        2.0,
+        1.651,
+        0.833
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.55, 0.42); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 750
+    },
+    {
+      "id": "kneeling-cushion",
+      "name": "kneeling cushion",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-altrulan/assets/objects/kneeling-cushion.jpg",
+      "image_sha256": "a82eab4c3db838f57ff9012537a27bc354127d1ce27a3f957143b4e22414aff1",
+      "output": "build/models/dr-tox-altrulan/kneeling-cushion.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699288,
+      "size_m_requested": [
+        0.6,
+        0.6,
+        0.15
+      ],
+      "dimensions_m": [
+        0.6,
+        0.579,
+        0.196
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 1.04, 0.77); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 652
+    },
+    {
+      "id": "last-toad-jar",
+      "name": "last toad jar",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-altrulan/assets/objects/last-toad-jar.jpg",
+      "image_sha256": "2da88bed99d4d5303c6a82395a86976b935d4d4603dac358de087881921137b2",
+      "output": "build/models/dr-tox-altrulan/last-toad-jar.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699544,
+      "size_m_requested": [
+        0.4,
+        0.4,
+        0.6
+      ],
+      "dimensions_m": [
+        0.407,
+        0.41,
+        0.6
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 882
+    },
+    {
+      "id": "lime-tub",
+      "name": "lime tub",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-altrulan/assets/objects/lime-tub.jpg",
+      "image_sha256": "49a389d7b2bb15966a28292ac3bd858f9791d5f0e859c15d48aea31cb3c1e301",
+      "output": "build/models/dr-tox-altrulan/lime-tub.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699213,
+      "size_m_requested": [
+        0.7,
+        0.7,
+        0.5
+      ],
+      "dimensions_m": [
+        0.7,
+        0.732,
+        0.462
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 974
+    },
+    {
+      "id": "market-stall",
+      "name": "market stall",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-altrulan/assets/objects/market-stall.jpg",
+      "image_sha256": "7b6a722e42ea9ee62d142e984b4682b616e6fa7bc96df0d40d1bf2fa02510689",
+      "output": "build/models/dr-tox-altrulan/market-stall.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 699960,
+      "size_m_requested": [
+        2.5,
+        1.5,
+        2.4
+      ],
+      "dimensions_m": [
+        2.5,
+        1.839,
+        2.5
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 955
+    },
+    {
+      "id": "measure-vessels",
+      "name": "measure vessels",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-altrulan/assets/objects/measure-vessels.jpg",
+      "image_sha256": "30803f74f69660a90317c924845c933fb781f0017d1462e3370a50ec46ce0e4b",
+      "output": "build/models/dr-tox-altrulan/measure-vessels.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 699338,
+      "size_m_requested": [
+        0.9,
+        0.45,
+        0.55
+      ],
+      "dimensions_m": [
+        0.9,
+        0.9,
+        0.68
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.50, 0.81); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1436
+    },
+    {
+      "id": "memorial-brass",
+      "name": "memorial brass",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-altrulan/assets/objects/memorial-brass.jpg",
+      "image_sha256": "98073b36aaed067ce98e04eb77bf4ee65907af46bdfd03d6c39b2e8f10264738",
+      "output": "build/models/dr-tox-altrulan/memorial-brass.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699004,
+      "size_m_requested": [
+        1.2,
+        0.3,
+        2.0
+      ],
+      "dimensions_m": [
+        2.085,
+        0.804,
+        2.0
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.58, 0.37, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 359
+    },
+    {
+      "id": "morris-bench",
+      "name": "morris bench",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-altrulan/assets/objects/morris-bench.jpg",
+      "image_sha256": "93709c8a9ad8d668cce378cf46ce6f1447f31fde5ab6059c5997642bb8493ab7",
+      "output": "build/models/dr-tox-altrulan/morris-bench.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699305,
+      "size_m_requested": [
+        1.8,
+        0.6,
+        0.5
+      ],
+      "dimensions_m": [
+        1.8,
+        0.741,
+        0.892
+      ],
+      "problems": [
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 1.00, 0.81, 0.56); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 340
+    },
+    {
+      "id": "pilgrim-handcart",
+      "name": "pilgrim handcart",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-altrulan/assets/objects/pilgrim-handcart.jpg",
+      "image_sha256": "d0eff5d4e359404a9a4e091e8a2e9b476e9e2dc6d8fa59d9716d1a9ba1b2c424",
+      "output": "build/models/dr-tox-altrulan/pilgrim-handcart.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699780,
+      "size_m_requested": [
+        2.0,
+        1.2,
+        1.2
+      ],
+      "dimensions_m": [
+        2.0,
+        1.42,
+        1.492
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 844
+    },
+    {
+      "id": "plate-door",
+      "name": "plate door",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-altrulan/assets/objects/plate-door.jpg",
+      "image_sha256": "b53db5b8fabd083ab9736a84d0bcfff20346fe77116a183f757b37e01929f230",
+      "output": "build/models/dr-tox-altrulan/plate-door.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699736,
+      "size_m_requested": [
+        2.4,
+        0.4,
+        3.2
+      ],
+      "dimensions_m": [
+        3.069,
+        0.913,
+        3.2
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.78, 0.44, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 765
+    },
+    {
+      "id": "scaffold-plank",
+      "name": "scaffold plank",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-altrulan/assets/objects/scaffold-plank.jpg",
+      "image_sha256": "3ce3b5d78c37c5e9985c767447dd0f7619c6a1b53c5ae9c81222afe8d84fa19c",
+      "output": "build/models/dr-tox-altrulan/scaffold-plank.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 699461,
+      "size_m_requested": [
+        3.0,
+        0.7,
+        1.5
+      ],
+      "dimensions_m": [
+        3.0,
+        1.312,
+        2.489
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.53, 0.60); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 912
+    },
+    {
+      "id": "scales-relic",
+      "name": "scales relic",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-altrulan/assets/objects/scales-relic.jpg",
+      "image_sha256": "834d477ccf239f143e684a698eee6a6215fafa603def844cb1013cd7ca54fad3",
+      "output": "build/models/dr-tox-altrulan/scales-relic.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699286,
+      "size_m_requested": [
+        1.2,
+        0.5,
+        1.6
+      ],
+      "dimensions_m": [
+        1.789,
+        0.862,
+        1.6
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.67, 0.58, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 450
+    },
+    {
+      "id": "shrine-lectern",
+      "name": "shrine lectern",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-altrulan/assets/objects/shrine-lectern.jpg",
+      "image_sha256": "469298fd4c254259efb25b77e188cea254fe278ed57bea7cff64013d732ce978",
+      "output": "build/models/dr-tox-altrulan/shrine-lectern.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699455,
+      "size_m_requested": [
+        0.7,
+        0.6,
+        1.3
+      ],
+      "dimensions_m": [
+        1.077,
+        0.734,
+        1.3
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.65, 0.82, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 696
+    },
+    {
+      "id": "sleeping-mat",
+      "name": "sleeping mat",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-altrulan/assets/objects/sleeping-mat.jpg",
+      "image_sha256": "9a33595364fd4150776dfac7350a9e5527c33f050997ab44f096685f1db3f406",
+      "output": "build/models/dr-tox-altrulan/sleeping-mat.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699820,
+      "size_m_requested": [
+        2.0,
+        0.9,
+        0.1
+      ],
+      "dimensions_m": [
+        2.0,
+        1.193,
+        0.408
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.75, 0.25); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 560
+    },
+    {
+      "id": "spring-basin",
+      "name": "spring basin",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-altrulan/assets/objects/spring-basin.jpg",
+      "image_sha256": "615156c3e7a596430b5563e348c4a27a94e368a09aa7744d5003449ad099aa9b",
+      "output": "build/models/dr-tox-altrulan/spring-basin.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699646,
+      "size_m_requested": [
+        1.2,
+        0.8,
+        0.9
+      ],
+      "dimensions_m": [
+        1.2,
+        0.975,
+        1.462
+      ],
+      "problems": [
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 1.00, 0.82, 0.62); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 431
+    },
+    {
+      "id": "store-shelf",
+      "name": "store shelf",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-altrulan/assets/objects/store-shelf.jpg",
+      "image_sha256": "b17081b00dfc14d836465ec1837a62e187012fb99830cd556dfa0f6845cb63c8",
+      "output": "build/models/dr-tox-altrulan/store-shelf.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 699594,
+      "size_m_requested": [
+        2.4,
+        0.5,
+        1.8
+      ],
+      "dimensions_m": [
+        2.4,
+        0.907,
+        1.003
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.55, 1.79); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 627
+    },
+    {
+      "id": "toad-jar",
+      "name": "toad jar",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-altrulan/assets/objects/toad-jar.jpg",
+      "image_sha256": "2b4e3b504c0c255ec6e81f30cf7e4fb3e781a14a12efd32b263099ab4c84f0bc",
+      "output": "build/models/dr-tox-altrulan/toad-jar.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699275,
+      "size_m_requested": [
+        0.45,
+        0.45,
+        0.7
+      ],
+      "dimensions_m": [
+        0.599,
+        0.715,
+        0.7
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.75, 0.63, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1131
+    },
+    {
+      "id": "trellis-mast",
+      "name": "trellis mast",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-altrulan/assets/objects/trellis-mast.jpg",
+      "image_sha256": "52911819d5d3d4984f8a9d0718d7b1fa964b72af9d21a1060f3cba5ebca33ecd",
+      "output": "build/models/dr-tox-altrulan/trellis-mast.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699936,
+      "size_m_requested": [
+        1.6,
+        1.6,
+        18.0
+      ],
+      "dimensions_m": [
+        7.864,
+        5.833,
+        18.0
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.20, 0.27, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1409
+    },
+    {
+      "id": "vine-node",
+      "name": "vine node",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-altrulan/assets/objects/vine-node.jpg",
+      "image_sha256": "c5776284f59b2e9998b30fea5aa40815a9606871011d15d6802c5c3ec8ef50b8",
+      "output": "build/models/dr-tox-altrulan/vine-node.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 699552,
+      "size_m_requested": [
+        1.2,
+        1.2,
+        1.5
+      ],
+      "dimensions_m": [
+        1.391,
+        1.393,
+        1.5
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1022
+    },
+    {
+      "id": "votive-lamp",
+      "name": "votive lamp",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-altrulan/assets/objects/votive-lamp.jpg",
+      "image_sha256": "d1f5c34f307d405cf399b82a66ce3dfc5a09f4c4b33a1d1bad1c2d2094b6a389",
+      "output": "build/models/dr-tox-altrulan/votive-lamp.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699708,
+      "size_m_requested": [
+        0.4,
+        0.4,
+        0.6
+      ],
+      "dimensions_m": [
+        0.32,
+        0.223,
+        0.6
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.25, 1.80, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 707
+    },
+    {
+      "id": "water-bowl",
+      "name": "water bowl",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-altrulan/assets/objects/water-bowl.jpg",
+      "image_sha256": "e6bfef998b6d1065046d418350e47c2a11b376f4332a5efd2fe2972428991f5b",
+      "output": "build/models/dr-tox-altrulan/water-bowl.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 699240,
+      "size_m_requested": [
+        0.6,
+        0.6,
+        0.25
+      ],
+      "dimensions_m": [
+        0.6,
+        0.566,
+        0.217
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 594
+    },
+    {
+      "id": "way-stone",
+      "name": "way stone",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-altrulan/assets/objects/way-stone.jpg",
+      "image_sha256": "a5fb31329495339a2125c4d20ce7a44ce05130775f739346f6ab3cf818c1820e",
+      "output": "build/models/dr-tox-altrulan/way-stone.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699226,
+      "size_m_requested": [
+        1.0,
+        0.6,
+        1.4
+      ],
+      "dimensions_m": [
+        0.799,
+        0.766,
+        1.4
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.25, 0.78, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 520
+    }
+  ]
+}

@@ -1,0 +1,1064 @@
+{
+  "tool": "ComfyUI 0.46.2, core Trellis 2 nodes",
+  "models": [
+    {
+      "id": "altar",
+      "name": "Altar",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/stuffed-ones/assets/objects/altar.jpg",
+      "image_sha256": "c4363ca17ae5b5744fb95c305cabcd619ebedacdde588246ae16296e56f3304b",
+      "output": "build/models/stuffed-ones/altar.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699320,
+      "size_m_requested": [
+        1.6,
+        0.9,
+        0.9
+      ],
+      "dimensions_m": [
+        1.6,
+        1.232,
+        0.745
+      ],
+      "problems": [
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 1.00, 0.73, 1.21); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 483
+    },
+    {
+      "id": "base-cupboard-run",
+      "name": "Base cupboards (white painted) with grey laminate counter",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/stuffed-ones/assets/objects/base-cupboard-run.jpg",
+      "image_sha256": "656672d5a27418ad4455140b30c25b9aeb85fa3a234179b94039d4e91cf0db5e",
+      "output": "build/models/stuffed-ones/base-cupboard-run.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699647,
+      "size_m_requested": [
+        2.9,
+        0.6,
+        0.9
+      ],
+      "dimensions_m": [
+        2.9,
+        0.853,
+        1.915
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.70, 0.47); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1133,
+      "source": "realism list (reference image generated with Flux schnell in ComfyUI)"
+    },
+    {
+      "id": "bedside-table",
+      "name": "Bedside table",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/stuffed-ones/assets/objects/bedside-table.jpg",
+      "image_sha256": "d9a670caa768d370cd2f8e4d880937d6e825704ef83e06bfbce382aec9b6275a",
+      "output": "build/models/stuffed-ones/bedside-table.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699356,
+      "size_m_requested": [
+        0.45,
+        0.4,
+        0.6
+      ],
+      "dimensions_m": [
+        0.667,
+        0.665,
+        0.6
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.67, 0.60, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1507,
+      "source": "realism list (reference image generated with Flux schnell in ComfyUI)"
+    },
+    {
+      "id": "binoculars",
+      "name": "Binoculars",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/stuffed-ones/assets/objects/binoculars.jpg",
+      "image_sha256": "41eedcdb7440742c5fbb9e5028484e9b461a84cfe0d67a66030d2739e96d85a4",
+      "output": "build/models/stuffed-ones/binoculars.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699390,
+      "size_m_requested": [
+        0.18,
+        0.07,
+        0.12
+      ],
+      "dimensions_m": [
+        0.18,
+        0.139,
+        0.079
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.50, 1.52); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 582
+    },
+    {
+      "id": "book-page",
+      "name": "Loose book page",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/stuffed-ones/assets/objects/book-page.jpg",
+      "image_sha256": "2e5050ce6465cd0b91fb9dce3db91e983236a9e0691439534a89bb29d041f8bc",
+      "output": "build/models/stuffed-ones/book-page.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699912,
+      "size_m_requested": [
+        0.25,
+        0.32,
+        0.005
+      ],
+      "dimensions_m": [
+        0.248,
+        0.32,
+        0.036
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.01, 1.00, 0.14); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 569
+    },
+    {
+      "id": "broken-crib",
+      "name": "Broken crib",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/stuffed-ones/assets/objects/broken-crib.jpg",
+      "image_sha256": "2de5fd4c8c41d193a73a092112ff92bd95de84e20e87e1e0c1e875080542aa42",
+      "output": "build/models/stuffed-ones/broken-crib.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699044,
+      "size_m_requested": [
+        1.3,
+        0.7,
+        1.0
+      ],
+      "dimensions_m": [
+        1.3,
+        0.784,
+        1.057
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 792
+    },
+    {
+      "id": "chili-bowl",
+      "name": "Chili bowl",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/stuffed-ones/assets/objects/chili-bowl.jpg",
+      "image_sha256": "5039427fd37b1be463a7a87217db16eeed9fac346934b090af100fdb34147f57",
+      "output": "build/models/stuffed-ones/chili-bowl.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 698593,
+      "size_m_requested": [
+        0.16,
+        0.16,
+        0.08
+      ],
+      "dimensions_m": [
+        0.16,
+        0.16,
+        0.08
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 733
+    },
+    {
+      "id": "coffee-mug",
+      "name": "Coffee mug",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/stuffed-ones/assets/objects/coffee-mug.jpg",
+      "image_sha256": "f635d27ff610359e320bdd09ad5a1d1d9276e37f96acd26da18ebf6343eee0e1",
+      "output": "build/models/stuffed-ones/coffee-mug.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 699049,
+      "size_m_requested": [
+        0.12,
+        0.09,
+        0.1
+      ],
+      "dimensions_m": [
+        0.12,
+        0.096,
+        0.092
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 740
+    },
+    {
+      "id": "couch",
+      "name": "The couch",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/stuffed-ones/assets/objects/couch.jpg",
+      "image_sha256": "979bc6f2f318cc80978e0d08e44367025752601ed60276e69e36b2e1e3746a74",
+      "output": "build/models/stuffed-ones/couch.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699278,
+      "size_m_requested": [
+        2.0,
+        0.9,
+        0.85
+      ],
+      "dimensions_m": [
+        2.0,
+        1.062,
+        1.059
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 902
+    },
+    {
+      "id": "counting-game-board",
+      "name": "Counting-game board",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/stuffed-ones/assets/objects/counting-game-board.jpg",
+      "image_sha256": "942bc05a24c32a9d90fd9048974194fa239cc6b0dbc5b447359682688de9206c",
+      "output": "build/models/stuffed-ones/counting-game-board.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699752,
+      "size_m_requested": [
+        0.45,
+        0.45,
+        0.02
+      ],
+      "dimensions_m": [
+        0.45,
+        0.45,
+        0.046
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 1.00, 0.43); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 522
+    },
+    {
+      "id": "cream-stove",
+      "name": "Old cream stove (cooker)",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/stuffed-ones/assets/objects/cream-stove.jpg",
+      "image_sha256": "b99c0554fbeadac350625781c59daf9a1f5ceda1805b51eecbf7357f6a1b4313",
+      "output": "build/models/stuffed-ones/cream-stove.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 698942,
+      "size_m_requested": [
+        0.6,
+        0.65,
+        0.9
+      ],
+      "dimensions_m": [
+        0.59,
+        0.607,
+        0.9
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1016,
+      "source": "realism list (reference image generated with Flux schnell in ComfyUI)"
+    },
+    {
+      "id": "dining-table",
+      "name": "Dining table",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/stuffed-ones/assets/objects/dining-table.jpg",
+      "image_sha256": "38b792b97609e201015a0ccb059ee36734a29fc9148743a90cfd9fffa9c33dad",
+      "output": "build/models/stuffed-ones/dining-table.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699596,
+      "size_m_requested": [
+        2.0,
+        0.9,
+        0.76
+      ],
+      "dimensions_m": [
+        2.0,
+        0.719,
+        0.675
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 451
+    },
+    {
+      "id": "enamel-sink-tap",
+      "name": "Enamel sink with tap, under a small window",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/stuffed-ones/assets/objects/enamel-sink-tap.jpg",
+      "image_sha256": "7f6ad8416b7790bbd778a178f1f124530d159b5c7e3166ef5562ae297809ae15",
+      "output": "build/models/stuffed-ones/enamel-sink-tap.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 698951,
+      "size_m_requested": [
+        0.6,
+        0.5,
+        0.9
+      ],
+      "dimensions_m": [
+        1.559,
+        1.353,
+        0.9
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.38, 0.37, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 518,
+      "source": "realism list (reference image generated with Flux schnell in ComfyUI)"
+    },
+    {
+      "id": "film-camera",
+      "name": "Lila's film camera",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/stuffed-ones/assets/objects/film-camera.jpg",
+      "image_sha256": "4fdb2666d1a65c5c22e8e5be74883611c2b92c084286ac044f1a2c80b0957887",
+      "output": "build/models/stuffed-ones/film-camera.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699654,
+      "size_m_requested": [
+        0.14,
+        0.08,
+        0.09
+      ],
+      "dimensions_m": [
+        0.14,
+        0.075,
+        0.099
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 509
+    },
+    {
+      "id": "game-box",
+      "name": "Counting-game box",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/stuffed-ones/assets/objects/game-box.jpg",
+      "image_sha256": "3c103e43886387879cb8980d2324b71dbccae1d4ce4445a4dcb141214df60220",
+      "output": "build/models/stuffed-ones/game-box.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699081,
+      "size_m_requested": [
+        0.48,
+        0.48,
+        0.08
+      ],
+      "dimensions_m": [
+        0.48,
+        0.342,
+        0.393
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 1.40, 0.20); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 875
+    },
+    {
+      "id": "guest-lamp",
+      "name": "Bedside lamp",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/stuffed-ones/assets/objects/guest-lamp.jpg",
+      "image_sha256": "794de747cf50e7f58c654e71d5e43077ff3d52aaf196e35c70c2ad816ce6675d",
+      "output": "build/models/stuffed-ones/guest-lamp.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699452,
+      "size_m_requested": [
+        0.25,
+        0.25,
+        0.45
+      ],
+      "dimensions_m": [
+        0.359,
+        0.31,
+        0.45
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.70, 0.81, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 695
+    },
+    {
+      "id": "guestbook",
+      "name": "Guestbook",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/stuffed-ones/assets/objects/guestbook.jpg",
+      "image_sha256": "62e4f89e00e89363ea150c3485edc4f14a2682747fc193ac7c9bf84044d076ad",
+      "output": "build/models/stuffed-ones/guestbook.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699385,
+      "size_m_requested": [
+        0.3,
+        0.22,
+        0.04
+      ],
+      "dimensions_m": [
+        0.3,
+        0.224,
+        0.062
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.98, 0.64); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 451
+    },
+    {
+      "id": "hall-table",
+      "name": "Hall table",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/stuffed-ones/assets/objects/hall-table.jpg",
+      "image_sha256": "72fa50803420b001205317a9f5675eb0465489258d5306ac4bd12b304be6a876",
+      "output": "build/models/stuffed-ones/hall-table.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 698590,
+      "size_m_requested": [
+        1.0,
+        0.4,
+        0.8
+      ],
+      "dimensions_m": [
+        1.0,
+        0.995,
+        0.818
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.40, 0.98); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 713,
+      "source": "realism list (reference image generated with Flux schnell in ComfyUI)"
+    },
+    {
+      "id": "hand-sewn-book",
+      "name": "The Hand-Sewn Book",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/stuffed-ones/assets/objects/hand-sewn-book.jpg",
+      "image_sha256": "51a94e198bdbcbc0d1d98b2898f2939ad3dd554b05d07233b8e95d05462509b4",
+      "output": "build/models/stuffed-ones/hand-sewn-book.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699682,
+      "size_m_requested": [
+        0.3,
+        0.25,
+        0.08
+      ],
+      "dimensions_m": [
+        0.3,
+        0.26,
+        0.121
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.96, 0.66); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1064
+    },
+    {
+      "id": "jamies-bag",
+      "name": "Jamie's bag",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/stuffed-ones/assets/objects/jamies-bag.jpg",
+      "image_sha256": "8837ee5377f51d5e6cd35bffbea82587c32f0d0d3d83cb2eb0d4b8e0677e7207",
+      "output": "build/models/stuffed-ones/jamies-bag.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699028,
+      "size_m_requested": [
+        0.6,
+        0.3,
+        0.3
+      ],
+      "dimensions_m": [
+        0.6,
+        0.356,
+        0.459
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.84, 0.65); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 688
+    },
+    {
+      "id": "ladder-back-chair",
+      "name": "Ladder-back chair",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/stuffed-ones/assets/objects/ladder-back-chair.jpg",
+      "image_sha256": "31997fd538faa1267bf4fb9975e19ecf2020122fd5a4203763d09cab1ef79c3d",
+      "output": "build/models/stuffed-ones/ladder-back-chair.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699695,
+      "size_m_requested": [
+        0.45,
+        0.45,
+        0.95
+      ],
+      "dimensions_m": [
+        0.491,
+        0.423,
+        0.95
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 599
+    },
+    {
+      "id": "lectern",
+      "name": "Lectern",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/stuffed-ones/assets/objects/lectern.jpg",
+      "image_sha256": "65c350d592ce3b9661c58dd21e7c9346c2ae9220bd8ce530a48b0f70b317d6f1",
+      "output": "build/models/stuffed-ones/lectern.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699246,
+      "size_m_requested": [
+        0.6,
+        0.5,
+        1.2
+      ],
+      "dimensions_m": [
+        0.508,
+        0.519,
+        1.2
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 681
+    },
+    {
+      "id": "low-game-table",
+      "name": "Low game table",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/stuffed-ones/assets/objects/low-game-table.jpg",
+      "image_sha256": "1cedcd66938209c74b8bb223863b68ba2bdaf0c3f4ffb02b6513851befc0a567",
+      "output": "build/models/stuffed-ones/low-game-table.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699130,
+      "size_m_requested": [
+        0.8,
+        0.8,
+        0.45
+      ],
+      "dimensions_m": [
+        0.8,
+        0.712,
+        0.32
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 1.12, 1.41); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 814,
+      "source": "realism list (reference image generated with Flux schnell in ComfyUI)"
+    },
+    {
+      "id": "old-refrigerator",
+      "name": "Refrigerator, old rounded",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/stuffed-ones/assets/objects/old-refrigerator.jpg",
+      "image_sha256": "601a301bc4b5edb47dde853d50ae3f0685d8a4a1d1b88ea991b94f12ee5014a9",
+      "output": "build/models/stuffed-ones/old-refrigerator.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 698730,
+      "size_m_requested": [
+        0.65,
+        0.7,
+        1.5
+      ],
+      "dimensions_m": [
+        0.793,
+        0.714,
+        1.5
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 632,
+      "source": "realism list (reference image generated with Flux schnell in ComfyUI)"
+    },
+    {
+      "id": "open-shelves-stoneware",
+      "name": "Open shelves with stoneware (plates, jars, jugs, bowls)",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/stuffed-ones/assets/objects/open-shelves-stoneware.jpg",
+      "image_sha256": "4efb5ea62a2b65654d5c959fe61187a7e346c8c220e23d1abdef0f1285ad0938",
+      "output": "build/models/stuffed-ones/open-shelves-stoneware.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699473,
+      "size_m_requested": [
+        1.0,
+        0.3,
+        1.5
+      ],
+      "dimensions_m": [
+        2.447,
+        0.543,
+        1.5
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.41, 0.55, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 549,
+      "source": "realism list (reference image generated with Flux schnell in ComfyUI)"
+    },
+    {
+      "id": "paper-map",
+      "name": "Marcus's paper map",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/stuffed-ones/assets/objects/paper-map.jpg",
+      "image_sha256": "246b75202d6cb9fc3506ca412ca33ad1177502ef85e7a6acce19f95731f98a2d",
+      "output": "build/models/stuffed-ones/paper-map.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699789,
+      "size_m_requested": [
+        0.25,
+        0.18,
+        0.01
+      ],
+      "dimensions_m": [
+        0.25,
+        0.202,
+        0.058
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.89, 0.17); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 786
+    },
+    {
+      "id": "pine-dresser",
+      "name": "Small pine dresser",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/stuffed-ones/assets/objects/pine-dresser.jpg",
+      "image_sha256": "2ef66578bb7c49b1b7267d4e8f4ee3befa8a0558efd4cac961ab55a7c8e2e5a5",
+      "output": "build/models/stuffed-ones/pine-dresser.glb",
+      "status": "failed",
+      "problems": [
+        "comfy: request   trellis2, seeds [1, 2, 3, 4], background removed, image sha256 2ef66578bb7c49b1, server 127.0.0.1:8188\nqueued    prompt ae3d0511-5be8-44d2-908a-0c093eced18b\nREFUSED   ComfyUI_00002.glb: the download failed (Not Found). The prompt ae3d0511-5be8-44d2-908a-0c093eced18b is done on the server; run `status ae3d0511-5be8-44d2-908a-0c093eced18b` and download again."
+      ]
+    },
+    {
+      "id": "quilted-bed",
+      "name": "Lila's bed",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/stuffed-ones/assets/objects/quilted-bed.jpg",
+      "image_sha256": "a4b1b473b708fa9a5a48a308caac8fdc856624ab7f456337e1b9104b310d4481",
+      "output": "build/models/stuffed-ones/quilted-bed.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699521,
+      "size_m_requested": [
+        1.0,
+        2.0,
+        1.0
+      ],
+      "dimensions_m": [
+        1.355,
+        2.0,
+        1.165
+      ],
+      "problems": [
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 0.74, 1.00, 0.86); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 850
+    },
+    {
+      "id": "rag-rug",
+      "name": "Braided rag rug",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/stuffed-ones/assets/objects/rag-rug.jpg",
+      "image_sha256": "5cbeb003c866b70396b666a047576acd2b5d43ce985bde1d0385e9ed0600c090",
+      "output": "build/models/stuffed-ones/rag-rug.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699922,
+      "size_m_requested": [
+        1.8,
+        1.2,
+        0.02
+      ],
+      "dimensions_m": [
+        1.8,
+        1.721,
+        0.18
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.70, 0.11); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 901
+    },
+    {
+      "id": "rocking-chair",
+      "name": "Two wooden rocking chairs on the porch",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/stuffed-ones/assets/objects/rocking-chair.jpg",
+      "image_sha256": "02eeb62aa627c185b519e797a362a3f4ca46647b3d773e083c48028575c63f81",
+      "output": "build/models/stuffed-ones/rocking-chair.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699399,
+      "size_m_requested": [
+        0.6,
+        0.9,
+        1.0
+      ],
+      "dimensions_m": [
+        0.627,
+        0.817,
+        1.0
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 570,
+      "source": "realism list (reference image generated with Flux schnell in ComfyUI)"
+    },
+    {
+      "id": "rucksack",
+      "name": "Marcus's rucksack and strap",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/stuffed-ones/assets/objects/rucksack.jpg",
+      "image_sha256": "806f332055b559863c0acca58c083e108d70ecb606e551db651cd7cf67c80c80",
+      "output": "build/models/stuffed-ones/rucksack.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699340,
+      "size_m_requested": [
+        0.35,
+        0.22,
+        0.5
+      ],
+      "dimensions_m": [
+        0.474,
+        0.412,
+        0.5
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.74, 0.53, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1032
+    },
+    {
+      "id": "sampler",
+      "name": "Mabel's sampler",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/stuffed-ones/assets/objects/sampler.jpg",
+      "image_sha256": "422dd2a041092ee744b4a9bbebfe2a975ad51cd2da3986100f82658787b64eb9",
+      "output": "build/models/stuffed-ones/sampler.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 699536,
+      "size_m_requested": [
+        0.4,
+        0.03,
+        0.5
+      ],
+      "dimensions_m": [
+        0.553,
+        0.056,
+        0.5
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.72, 0.53, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 890
+    },
+    {
+      "id": "sketchbook",
+      "name": "Sketchbook",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/stuffed-ones/assets/objects/sketchbook.jpg",
+      "image_sha256": "ce9b3f8d48f45421145156e722e25733aee72d9954221e2d5f71873d35a0fa22",
+      "output": "build/models/stuffed-ones/sketchbook.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699624,
+      "size_m_requested": [
+        0.22,
+        0.3,
+        0.02
+      ],
+      "dimensions_m": [
+        0.222,
+        0.3,
+        0.065
+      ],
+      "problems": [
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 0.99, 1.00, 0.31); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 672
+    },
+    {
+      "id": "tarp",
+      "name": "Canvas tarp over a mound",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/stuffed-ones/assets/objects/tarp.jpg",
+      "image_sha256": "b0208bc378973a02be7d14fa47faf69efd925b04b86bdd91d9b34980876fdf66",
+      "output": "build/models/stuffed-ones/tarp.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699668,
+      "size_m_requested": [
+        2.0,
+        1.5,
+        0.4
+      ],
+      "dimensions_m": [
+        2.0,
+        1.865,
+        0.739
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.80, 0.54); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 625
+    },
+    {
+      "id": "toy-shelf",
+      "name": "The shelves",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/stuffed-ones/assets/objects/toy-shelf.jpg",
+      "image_sha256": "52be30488ed9981c336157e8beabf64038ef780d30d4d8c78a8546b173c024fc",
+      "output": "build/models/stuffed-ones/toy-shelf.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699255,
+      "size_m_requested": [
+        2.4,
+        0.4,
+        2.2
+      ],
+      "dimensions_m": [
+        2.4,
+        0.893,
+        3.194
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.45, 0.69); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 869
+    },
+    {
+      "id": "trapdoor",
+      "name": "Cellar trapdoor",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/stuffed-ones/assets/objects/trapdoor.jpg",
+      "image_sha256": "31f0cc86dc8f32cf9f1e3f2666ec9a631cb68d001a2afed5586e9d23d19ba894",
+      "output": "build/models/stuffed-ones/trapdoor.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699514,
+      "size_m_requested": [
+        1.0,
+        1.0,
+        0.1
+      ],
+      "dimensions_m": [
+        1.0,
+        0.938,
+        0.804
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 1.07, 0.12); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1112
+    },
+    {
+      "id": "wood-stove",
+      "name": "Wood stove",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/stuffed-ones/assets/objects/wood-stove.jpg",
+      "image_sha256": "74ca97a40de3cbe32df0ed44ae38e55d5f7ca3b08bfb7416ca18270c8f719931",
+      "output": "build/models/stuffed-ones/wood-stove.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699417,
+      "size_m_requested": [
+        0.6,
+        0.6,
+        0.8
+      ],
+      "dimensions_m": [
+        0.575,
+        0.578,
+        0.8
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1797
+    }
+  ]
+}

@@ -1,0 +1,1162 @@
+{
+  "tool": "ComfyUI 0.46.2, core Trellis 2 nodes",
+  "models": [
+    {
+      "id": "amber-vial",
+      "name": "Amber vial",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/amber-vial.jpg",
+      "image_sha256": "d6354f41bef4c5aac7c0ce7f9c7cbcf14c9aab4edef39e852416732430ceb01e",
+      "output": "build/models/dr-tox-rise/amber-vial.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 699013,
+      "size_m_requested": [
+        0.05,
+        0.05,
+        0.12
+      ],
+      "dimensions_m": [
+        0.057,
+        0.057,
+        0.12
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 307
+    },
+    {
+      "id": "amber-work-lamp",
+      "name": "Amber work lamp",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/amber-work-lamp.jpg",
+      "image_sha256": "599bf278fbeda1363e38948c077e6d8314ec7e5a4ff3ed450fb7b3d2fc985246",
+      "output": "build/models/dr-tox-rise/amber-work-lamp.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699356,
+      "size_m_requested": [
+        0.4,
+        0.4,
+        0.6
+      ],
+      "dimensions_m": [
+        0.6,
+        0.366,
+        0.6
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.67, 1.09, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 256
+    },
+    {
+      "id": "archive-cabinet",
+      "name": "Archive cabinet",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/archive-cabinet.jpg",
+      "image_sha256": "74696eeddc40084e4e6b0e15d39477d4853adc2f8aafaca81bd15630297a9db2",
+      "output": "build/models/dr-tox-rise/archive-cabinet.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699118,
+      "size_m_requested": [
+        1.0,
+        0.7,
+        2.0
+      ],
+      "dimensions_m": [
+        0.946,
+        0.781,
+        2.0
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 547
+    },
+    {
+      "id": "armoured-transport",
+      "name": "Armoured transport",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/armoured-transport.jpg",
+      "image_sha256": "57ef1ca9ccc342353c70b1d95e2af109d6934d19af5bc8f8b8e0248e0037ede5",
+      "output": "build/models/dr-tox-rise/armoured-transport.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699891,
+      "size_m_requested": [
+        3.0,
+        8.0,
+        3.2
+      ],
+      "dimensions_m": [
+        3.795,
+        8.0,
+        3.726
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 429
+    },
+    {
+      "id": "barrier-emitter",
+      "name": "Barrier emitter",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/barrier-emitter.jpg",
+      "image_sha256": "e4c9f077b2a4af1fee454393adf18e0eb089f10f825d90ac0937058f66bf9d30",
+      "output": "build/models/dr-tox-rise/barrier-emitter.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699068,
+      "size_m_requested": [
+        0.6,
+        0.6,
+        1.4
+      ],
+      "dimensions_m": [
+        0.806,
+        0.972,
+        1.4
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.74, 0.62, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 429
+    },
+    {
+      "id": "bay-chair",
+      "name": "Treatment chair",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/bay-chair.jpg",
+      "image_sha256": "91305d6173227d9a76ca1403c91e3947956bbb65e3bf9a0a8ab2609e747e9171",
+      "output": "build/models/dr-tox-rise/bay-chair.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 699564,
+      "size_m_requested": [
+        0.8,
+        1.6,
+        1.2
+      ],
+      "dimensions_m": [
+        1.658,
+        1.6,
+        2.175
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.48, 1.00, 0.55); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 233
+    },
+    {
+      "id": "bench-rig",
+      "name": "Hand-built bench",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/bench-rig.jpg",
+      "image_sha256": "3d3a6c1b5a3c45a6bafb363ee96311928fc8a745666733a71af32112b0252a5d",
+      "output": "build/models/dr-tox-rise/bench-rig.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699806,
+      "size_m_requested": [
+        1.4,
+        0.6,
+        1.5
+      ],
+      "dimensions_m": [
+        1.38,
+        0.762,
+        1.5
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 267
+    },
+    {
+      "id": "broadcast-screen",
+      "name": "Broadcast screen",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/broadcast-screen.jpg",
+      "image_sha256": "dd72f562e4be5a261f41f5862b1bc81a6dbc9955750a4ae5e0f76989a915383d",
+      "output": "build/models/dr-tox-rise/broadcast-screen.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699815,
+      "size_m_requested": [
+        24.0,
+        1.2,
+        40.0
+      ],
+      "dimensions_m": [
+        22.365,
+        9.126,
+        40.0
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.07, 0.13, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 284
+    },
+    {
+      "id": "broken-barricade",
+      "name": "Broken barricades (sawhorse, barrier fragments, pallet)",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/broken-barricade.jpg",
+      "image_sha256": "365c92cd9a9d3e4636cfd9165f7701c1e1fd18afedaf7ee1b26f3bd5c2603b2a",
+      "output": "build/models/dr-tox-rise/broken-barricade.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699498,
+      "size_m_requested": [
+        1.5,
+        0.5,
+        1.0
+      ],
+      "dimensions_m": [
+        1.5,
+        0.755,
+        0.851
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.66, 1.18); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 317,
+      "source": "realism list (reference image generated with Flux schnell in ComfyUI)"
+    },
+    {
+      "id": "ceremony-lectern",
+      "name": "Lectern",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/ceremony-lectern.jpg",
+      "image_sha256": "e3eda752379e594ea514a2efffc1587c6cab4a3af573bf96cc044727a7749f4f",
+      "output": "build/models/dr-tox-rise/ceremony-lectern.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699562,
+      "size_m_requested": [
+        1.0,
+        0.6,
+        1.2
+      ],
+      "dimensions_m": [
+        0.679,
+        0.619,
+        1.2
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.47, 0.97, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 323
+    },
+    {
+      "id": "child-bicycle",
+      "name": "Child's bicycle",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/child-bicycle.jpg",
+      "image_sha256": "c8ebccff4fc0f6f4452f0063d452cd2f68bdfd3b837edc57e664b80f689561e0",
+      "output": "build/models/dr-tox-rise/child-bicycle.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699790,
+      "size_m_requested": [
+        0.5,
+        1.4,
+        0.8
+      ],
+      "dimensions_m": [
+        0.924,
+        1.4,
+        0.963
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.54, 1.00, 0.83); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 183
+    },
+    {
+      "id": "child-bunk",
+      "name": "Child's bunk",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/child-bunk.jpg",
+      "image_sha256": "4f3251a13d8e4a4c89ad4753a49532c06e7486e4c2e033b933ff6eb53117de82",
+      "output": "build/models/dr-tox-rise/child-bunk.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699705,
+      "size_m_requested": [
+        1.0,
+        2.0,
+        1.6
+      ],
+      "dimensions_m": [
+        1.287,
+        2.0,
+        1.848
+      ],
+      "problems": [
+        "rotated 90 deg about Z so its long side matches size_m",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 517
+    },
+    {
+      "id": "clean-water-tank",
+      "name": "Clean-water tank",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/clean-water-tank.jpg",
+      "image_sha256": "23fca2ad9c4a57fcb78705e804e3ac22b95d402e9834ecbb7fca44d02ddac02a",
+      "output": "build/models/dr-tox-rise/clean-water-tank.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699794,
+      "size_m_requested": [
+        1.6,
+        1.6,
+        2.0
+      ],
+      "dimensions_m": [
+        0.848,
+        1.882,
+        2.0
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.89, 0.85, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 363
+    },
+    {
+      "id": "collapsed-scaffold",
+      "name": "Collapsed scaffold",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/collapsed-scaffold.jpg",
+      "image_sha256": "2a9dc4803974e5e7c6f8592599bafcae11aa3f734ea56e1cb2cff74792e95664",
+      "output": "build/models/dr-tox-rise/collapsed-scaffold.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699953,
+      "size_m_requested": [
+        6.0,
+        3.0,
+        5.0
+      ],
+      "dimensions_m": [
+        6.0,
+        6.555,
+        6.916
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.46, 0.72); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 513
+    },
+    {
+      "id": "dressing-mirror",
+      "name": "Tall mirror",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/dressing-mirror.jpg",
+      "image_sha256": "83b6edd1f4688245c611f8fb571ce3311ea28a027195fe1affd71d054ed20968",
+      "output": "build/models/dr-tox-rise/dressing-mirror.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699814,
+      "size_m_requested": [
+        1.2,
+        0.4,
+        2.2
+      ],
+      "dimensions_m": [
+        0.956,
+        0.866,
+        2.2
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.26, 0.46, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 219
+    },
+    {
+      "id": "fiche-reader",
+      "name": "Microfiche reader",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/fiche-reader.jpg",
+      "image_sha256": "88a313a3faddb30df2e0a0605346f5c16f5ee7819e628327878739d2be30fd6b",
+      "output": "build/models/dr-tox-rise/fiche-reader.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 698910,
+      "size_m_requested": [
+        0.7,
+        0.6,
+        0.8
+      ],
+      "dimensions_m": [
+        0.672,
+        0.76,
+        0.8
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 773
+    },
+    {
+      "id": "floodlight-housing",
+      "name": "Hard white floodlight housings (north and south, high)",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/floodlight-housing.jpg",
+      "image_sha256": "7a918b5016134d66faf9801d1284778e32dc9d3ac4b1d5e36b62a378429b8f6d",
+      "output": "build/models/dr-tox-rise/floodlight-housing.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699162,
+      "size_m_requested": [
+        0.6,
+        0.4,
+        0.5
+      ],
+      "dimensions_m": [
+        0.6,
+        0.6,
+        0.551
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.67, 0.91); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 953
+    },
+    {
+      "id": "insignia-case",
+      "name": "Insignia case",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/insignia-case.jpg",
+      "image_sha256": "8860c6c5a3757109051c4063c8fb44b8c27c47be0d85fbba28e98cf4647cba52",
+      "output": "build/models/dr-tox-rise/insignia-case.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 698504,
+      "size_m_requested": [
+        0.4,
+        0.3,
+        0.15
+      ],
+      "dimensions_m": [
+        0.4,
+        0.427,
+        0.433
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.70, 0.35); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 411
+    },
+    {
+      "id": "isolation-bed",
+      "name": "Isolation bed with breath tent",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/isolation-bed.jpg",
+      "image_sha256": "43c55f5dfaa31e3e458beccaa4360162d94286114a68d0bcf9bc63f6ef479ea0",
+      "output": "build/models/dr-tox-rise/isolation-bed.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699968,
+      "size_m_requested": [
+        1.1,
+        2.2,
+        2.1
+      ],
+      "dimensions_m": [
+        0.995,
+        2.2,
+        1.561
+      ],
+      "problems": [
+        "rotated 90 deg about Z so its long side matches size_m",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 28
+    },
+    {
+      "id": "iv-pole",
+      "name": "IV pole",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/iv-pole.jpg",
+      "image_sha256": "d2e25080e8f16caba7fc68844f0e9b2818fdf61182d011e5aaff780de4d86a65",
+      "output": "build/models/dr-tox-rise/iv-pole.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 533634,
+      "size_m_requested": [
+        0.5,
+        0.5,
+        2.0
+      ],
+      "dimensions_m": [
+        1.01,
+        0.989,
+        2.0
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.49, 0.51, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 132
+    },
+    {
+      "id": "lead-shielded-syringe",
+      "name": "Lead-shielded syringe",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/lead-shielded-syringe.jpg",
+      "image_sha256": "af12168f2f86aac866a1e40c9545569bf600cda99d8f865010b1348cadd6dd91",
+      "output": "build/models/dr-tox-rise/lead-shielded-syringe.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 675078,
+      "size_m_requested": [
+        0.06,
+        0.3,
+        0.06
+      ],
+      "dimensions_m": [
+        0.114,
+        0.3,
+        0.05
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.52, 1.00, 1.19); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 154
+    },
+    {
+      "id": "outflow-pipe",
+      "name": "Outflow pipe",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/outflow-pipe.jpg",
+      "image_sha256": "023520f86ee750ff6fe80a135e47e0be2d050de94a76cd48ea46d5162b60e340",
+      "output": "build/models/dr-tox-rise/outflow-pipe.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699560,
+      "size_m_requested": [
+        2.2,
+        6.0,
+        2.2
+      ],
+      "dimensions_m": [
+        6.673,
+        6.0,
+        6.198
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.33, 1.00, 0.35); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 726
+    },
+    {
+      "id": "pin-board",
+      "name": "Pin board",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/pin-board.jpg",
+      "image_sha256": "08627c753e1ce3085acbcd64bbfc4e676726488d0d68eacf9e60c3946d1b2038",
+      "output": "build/models/dr-tox-rise/pin-board.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699861,
+      "size_m_requested": [
+        2.4,
+        0.1,
+        1.4
+      ],
+      "dimensions_m": [
+        2.4,
+        0.283,
+        1.956
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.35, 0.72); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 327
+    },
+    {
+      "id": "play-mat",
+      "name": "Play mat",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/play-mat.jpg",
+      "image_sha256": "3d344746dc827687e3329ba116475f45af3626b2666fae7fd36beadc92dd9290",
+      "output": "build/models/dr-tox-rise/play-mat.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699846,
+      "size_m_requested": [
+        3.0,
+        3.0,
+        0.04
+      ],
+      "dimensions_m": [
+        3.0,
+        3.002,
+        0.096
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 1.00, 0.42); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 268
+    },
+    {
+      "id": "printer-column",
+      "name": "Printer column",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/printer-column.jpg",
+      "image_sha256": "f0516bc899c3640121f7989dab608478b894a1313c0592384c35ea109b8840cc",
+      "output": "build/models/dr-tox-rise/printer-column.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699607,
+      "size_m_requested": [
+        1.8,
+        1.8,
+        6.5
+      ],
+      "dimensions_m": [
+        2.295,
+        2.023,
+        6.5
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 178
+    },
+    {
+      "id": "quarantine-sawhorse",
+      "name": "Quarantine sawhorse",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/quarantine-sawhorse.jpg",
+      "image_sha256": "e2598d523c1c325469675c4f9b1dd510a3e896f3a95888208457967663697b93",
+      "output": "build/models/dr-tox-rise/quarantine-sawhorse.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 699545,
+      "size_m_requested": [
+        1.8,
+        0.6,
+        1.1
+      ],
+      "dimensions_m": [
+        1.8,
+        0.865,
+        1.359
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.69, 0.81); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 303
+    },
+    {
+      "id": "rcc-terminal",
+      "name": "Terminal",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/rcc-terminal.jpg",
+      "image_sha256": "09bc9a608ff60ae72b86423432d7e830d60780755964ff75a1cef870fdb685ee",
+      "output": "build/models/dr-tox-rise/rcc-terminal.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699148,
+      "size_m_requested": [
+        0.6,
+        0.6,
+        1.3
+      ],
+      "dimensions_m": [
+        1.085,
+        0.973,
+        1.3
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.55, 0.62, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 375
+    },
+    {
+      "id": "red-emergency-lamp",
+      "name": "Red emergency lamp (caged, small)",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/red-emergency-lamp.jpg",
+      "image_sha256": "665ca1bb9df8484f083b682178b58ce1d402fdb421f079a2eb97dd4a79bb9863",
+      "output": "build/models/dr-tox-rise/red-emergency-lamp.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699381,
+      "size_m_requested": [
+        0.2,
+        0.2,
+        0.25
+      ],
+      "dimensions_m": [
+        0.221,
+        0.222,
+        0.25
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 759,
+      "source": "realism list (reference image generated with Flux schnell in ComfyUI)"
+    },
+    {
+      "id": "road-flare",
+      "name": "Road flare, burning, on the bank or pipe ledge",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/road-flare.jpg",
+      "image_sha256": "28b666bb40337873085e93b6b0ae8daed3746549587d3c1af0c768dcb4b5ccc0",
+      "output": "build/models/dr-tox-rise/road-flare.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 181478,
+      "size_m_requested": [
+        0.04,
+        0.04,
+        0.25
+      ],
+      "dimensions_m": [
+        0.013,
+        0.013,
+        0.25
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 3.06, 3.03, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 257,
+      "source": "realism list (reference image generated with Flux schnell in ComfyUI)"
+    },
+    {
+      "id": "salvaged-tools-bundle",
+      "name": "Salvaged tools: shovels, crowbars, hammers, coils of rope",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/salvaged-tools-bundle.jpg",
+      "image_sha256": "b84651cfc44bbcc50555cd483c756f0bcd7f2fe9d5b0bf1306e3c7cd3ee61d96",
+      "output": "build/models/dr-tox-rise/salvaged-tools-bundle.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699869,
+      "size_m_requested": [
+        0.8,
+        0.5,
+        0.15
+      ],
+      "dimensions_m": [
+        0.8,
+        0.747,
+        0.092
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.67, 1.63); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 882,
+      "source": "realism list (reference image generated with Flux schnell in ComfyUI)"
+    },
+    {
+      "id": "screen-door",
+      "name": "Screen door on a storefront or porch",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/screen-door.jpg",
+      "image_sha256": "438353fe23d700f413f55add0bf7b5d93ae7e46495c2aaaab03dae70965cabb9",
+      "output": "build/models/dr-tox-rise/screen-door.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699122,
+      "size_m_requested": [
+        0.9,
+        0.08,
+        2.0
+      ],
+      "dimensions_m": [
+        2.011,
+        0.241,
+        2.0
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.45, 0.33, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 475,
+      "source": "realism list (reference image generated with Flux schnell in ComfyUI)"
+    },
+    {
+      "id": "shielded-locker",
+      "name": "Shielded locker",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/shielded-locker.jpg",
+      "image_sha256": "736ff2c71b987e1f3e1673ed53d48771b5e66e14ca80e3a7eef23f0bee5ae7dd",
+      "output": "build/models/dr-tox-rise/shielded-locker.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699351,
+      "size_m_requested": [
+        0.8,
+        0.6,
+        2.0
+      ],
+      "dimensions_m": [
+        1.883,
+        1.434,
+        2.0
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.42, 0.42, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1072
+    },
+    {
+      "id": "supply-crate",
+      "name": "Supply crate",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/supply-crate.jpg",
+      "image_sha256": "58fd4128365c210d7838291ee661c70ae1c20639e0cbfdfff300225b9c243b26",
+      "output": "build/models/dr-tox-rise/supply-crate.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699065,
+      "size_m_requested": [
+        1.2,
+        0.8,
+        0.8
+      ],
+      "dimensions_m": [
+        1.2,
+        0.77,
+        0.772
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 396
+    },
+    {
+      "id": "town-notice-post",
+      "name": "Notice post",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/town-notice-post.jpg",
+      "image_sha256": "11e0824195310d92a832263439bae528b0f7f3a152c21dfcb738377fb6f6c82c",
+      "output": "build/models/dr-tox-rise/town-notice-post.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699824,
+      "size_m_requested": [
+        0.6,
+        0.3,
+        2.0
+      ],
+      "dimensions_m": [
+        0.577,
+        0.564,
+        2.0
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.04, 0.53, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 242
+    },
+    {
+      "id": "toy-crate",
+      "name": "Toy crate",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/toy-crate.jpg",
+      "image_sha256": "14f20ef87800d7a48f5b5b65a9423e320554757028e0df645c621c4f6c3afec5",
+      "output": "build/models/dr-tox-rise/toy-crate.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699683,
+      "size_m_requested": [
+        0.8,
+        0.5,
+        0.5
+      ],
+      "dimensions_m": [
+        0.8,
+        0.607,
+        0.445
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.82, 1.12); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 600
+    },
+    {
+      "id": "training-blade",
+      "name": "Training blade",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/training-blade.jpg",
+      "image_sha256": "af16c91e34234d2b5a959c92ee8c660b5a57d00a887c0618247ceb5febcecb31",
+      "output": "build/models/dr-tox-rise/training-blade.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 578908,
+      "size_m_requested": [
+        0.08,
+        0.7,
+        0.04
+      ],
+      "dimensions_m": [
+        0.184,
+        0.7,
+        0.099
+      ],
+      "problems": [
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 0.44, 1.00, 0.40); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 163
+    },
+    {
+      "id": "training-blade-rack",
+      "name": "Blade rack",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/training-blade-rack.jpg",
+      "image_sha256": "87ed5cfa657b237ab140136dcca228ba0da006f71e464c99dfcf77def2ca0670",
+      "output": "build/models/dr-tox-rise/training-blade-rack.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699600,
+      "size_m_requested": [
+        1.6,
+        0.5,
+        1.4
+      ],
+      "dimensions_m": [
+        1.6,
+        0.236,
+        1.361
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 2.12, 1.03); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 274
+    },
+    {
+      "id": "vat-unit",
+      "name": "Vat unit",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/vat-unit.jpg",
+      "image_sha256": "0ef95821dd286eaeeb523125bfaffe8de65ad1a4a9bbbf23e1ecd97f5212dece",
+      "output": "build/models/dr-tox-rise/vat-unit.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699573,
+      "size_m_requested": [
+        1.2,
+        0.8,
+        2.4
+      ],
+      "dimensions_m": [
+        1.118,
+        0.951,
+        2.4
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 221
+    },
+    {
+      "id": "wall-speaker",
+      "name": "Wall speaker",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/wall-speaker.jpg",
+      "image_sha256": "866e613bc7f5b858b4a0c77024e42eeae93a9fe2e50a32b05d783965257f2c2a",
+      "output": "build/models/dr-tox-rise/wall-speaker.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699806,
+      "size_m_requested": [
+        0.4,
+        0.2,
+        0.4
+      ],
+      "dimensions_m": [
+        0.4,
+        0.246,
+        0.545
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.81, 0.73); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 477
+    },
+    {
+      "id": "water-drum",
+      "name": "Plain unmarked water drums",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/dr-tox-rise/assets/objects/water-drum.jpg",
+      "image_sha256": "915bd072ed13dc1507dc8bcd2e0076844a244d9533384c7e8b4cad949c28d858",
+      "output": "build/models/dr-tox-rise/water-drum.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 698539,
+      "size_m_requested": [
+        0.6,
+        0.6,
+        0.9
+      ],
+      "dimensions_m": [
+        0.631,
+        0.631,
+        0.9
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 574,
+      "source": "realism list (reference image generated with Flux schnell in ComfyUI)"
+    }
+  ]
+}

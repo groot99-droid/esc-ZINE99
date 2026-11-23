@@ -1,0 +1,840 @@
+{
+  "tool": "ComfyUI 0.46.2, core Trellis 2 nodes",
+  "models": [
+    {
+      "id": "bell-board",
+      "name": "Bell board",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/behind-the-peephole/assets/objects/bell-board.jpg",
+      "image_sha256": "632cf927fe898a586caca0a4d2cf59702abba8574e083713b0582fd7f7b58c45",
+      "output": "build/models/behind-the-peephole/bell-board.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699299,
+      "size_m_requested": [
+        0.9,
+        0.12,
+        0.5
+      ],
+      "dimensions_m": [
+        0.9,
+        0.329,
+        0.602
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.37, 0.83); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 441
+    },
+    {
+      "id": "brass-rose",
+      "name": "Brass rose (peephole)",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/behind-the-peephole/assets/objects/brass-rose.jpg",
+      "image_sha256": "682c812e9d7979e9125dd9630a3440ac49c1d314d12e94b39bf071528453c68f",
+      "output": "build/models/behind-the-peephole/brass-rose.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 698953,
+      "size_m_requested": [
+        0.09,
+        0.04,
+        0.09
+      ],
+      "dimensions_m": [
+        0.09,
+        0.09,
+        0.029
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.44, 3.06); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 594
+    },
+    {
+      "id": "card-deck",
+      "name": "Deck of cards",
+      "date": "2026-11-23",
+      "status": "not_built",
+      "image": "games/behind-the-peephole/assets/objects/card-deck.jpg",
+      "size_m_requested": [
+        0.064,
+        0.09,
+        0.02
+      ],
+      "source": "model_requests.json",
+      "problems": [
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
+      ]
+    },
+    {
+      "id": "card-table",
+      "name": "Card table",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/behind-the-peephole/assets/objects/card-table.jpg",
+      "image_sha256": "42edfc3a164e25e96f5f83f6c7a94a719cffaf2daa856b87e0a077948b1b5897",
+      "output": "build/models/behind-the-peephole/card-table.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 698645,
+      "size_m_requested": [
+        0.76,
+        0.76,
+        0.72
+      ],
+      "dimensions_m": [
+        0.76,
+        0.768,
+        0.787
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1103
+    },
+    {
+      "id": "chandelier",
+      "name": "Lobby chandelier",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/behind-the-peephole/assets/objects/chandelier.jpg",
+      "image_sha256": "85de3734c4b17f7eccff5c32eeaae29a333e0ee970c1748237efdea5d3efce9e",
+      "output": "build/models/behind-the-peephole/chandelier.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699971,
+      "size_m_requested": [
+        2.2,
+        2.2,
+        2.5
+      ],
+      "dimensions_m": [
+        2.347,
+        2.342,
+        2.5
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1232
+    },
+    {
+      "id": "chute-box",
+      "name": "Chute box",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/behind-the-peephole/assets/objects/chute-box.jpg",
+      "image_sha256": "96d34f1a3eda70c4af6fce9f4fafef44a2aa102f04453da7d94ee7bc2410ee3b",
+      "output": "build/models/behind-the-peephole/chute-box.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 698567,
+      "size_m_requested": [
+        0.9,
+        0.6,
+        0.8
+      ],
+      "dimensions_m": [
+        0.9,
+        0.594,
+        0.964
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 880
+    },
+    {
+      "id": "chute-hatch",
+      "name": "Chute hatch",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/behind-the-peephole/assets/objects/chute-hatch.jpg",
+      "image_sha256": "16c0493f1b1996bab53bf56199ce9ff797e273fbc671556d614e8ac3185af0b8",
+      "output": "build/models/behind-the-peephole/chute-hatch.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 698921,
+      "size_m_requested": [
+        0.45,
+        0.2,
+        0.45
+      ],
+      "dimensions_m": [
+        0.45,
+        0.23,
+        0.461
+      ],
+      "problems": [
+        "rotated 90 deg about Z so its long side matches size_m",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 585
+    },
+    {
+      "id": "coat-stand",
+      "name": "Coat stand",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/behind-the-peephole/assets/objects/coat-stand.jpg",
+      "image_sha256": "c0a054799e779a229b374d3cf112ccc18b9cfb5e7abf37ca1644fcacaa679985",
+      "output": "build/models/behind-the-peephole/coat-stand.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 678448,
+      "size_m_requested": [
+        0.5,
+        0.5,
+        1.85
+      ],
+      "dimensions_m": [
+        0.692,
+        0.688,
+        1.85
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.72, 0.73, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 585
+    },
+    {
+      "id": "cork-board",
+      "name": "Cork board",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/behind-the-peephole/assets/objects/cork-board.jpg",
+      "image_sha256": "dd07eadee7d63a045af3961e14e91223c5d79c9d08c85939865f1607131d2554",
+      "output": "build/models/behind-the-peephole/cork-board.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699608,
+      "size_m_requested": [
+        0.9,
+        0.03,
+        0.6
+      ],
+      "dimensions_m": [
+        0.9,
+        0.097,
+        0.676
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.31, 0.89); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 565
+    },
+    {
+      "id": "desk",
+      "name": "Writing desk",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/behind-the-peephole/assets/objects/desk.jpg",
+      "image_sha256": "53de6bf62c465e8adc0c445a561102b69ddb6feb6e68e5add0418ad3f88c4c41",
+      "output": "build/models/behind-the-peephole/desk.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699238,
+      "size_m_requested": [
+        1.4,
+        0.7,
+        0.78
+      ],
+      "dimensions_m": [
+        1.4,
+        0.943,
+        0.895
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 838
+    },
+    {
+      "id": "desk-lamp",
+      "name": "Green-shaded desk lamp",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/behind-the-peephole/assets/objects/desk-lamp.jpg",
+      "image_sha256": "627cb408023f945abd5451afc6f5a609fba9b6c58b1caa3092f719f70a914a88",
+      "output": "build/models/behind-the-peephole/desk-lamp.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 698162,
+      "size_m_requested": [
+        0.3,
+        0.22,
+        0.42
+      ],
+      "dimensions_m": [
+        0.333,
+        0.344,
+        0.42
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.90, 0.64, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 609
+    },
+    {
+      "id": "dustbin",
+      "name": "Dustbin",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/behind-the-peephole/assets/objects/dustbin.jpg",
+      "image_sha256": "21453aed7b92a75c84b31a3af302e448cd2d677196157d87ca466595813a762a",
+      "output": "build/models/behind-the-peephole/dustbin.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 698772,
+      "size_m_requested": [
+        0.5,
+        0.5,
+        0.75
+      ],
+      "dimensions_m": [
+        0.6,
+        0.572,
+        0.75
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 852
+    },
+    {
+      "id": "evening-paper",
+      "name": "Evening paper",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/behind-the-peephole/assets/objects/evening-paper.jpg",
+      "image_sha256": "f9e096aa0c63c2318f10cabd19fe53cfca47fc04946c2a504d12646891d05d55",
+      "output": "build/models/behind-the-peephole/evening-paper.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699815,
+      "size_m_requested": [
+        0.3,
+        0.4,
+        0.01
+      ],
+      "dimensions_m": [
+        0.335,
+        0.4,
+        0.046
+      ],
+      "problems": [
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 0.89, 1.00, 0.22); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 986
+    },
+    {
+      "id": "iron-lamp-post",
+      "name": "Iron lamp post",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/behind-the-peephole/assets/objects/iron-lamp-post.jpg",
+      "image_sha256": "0b241a38e9733bfbe3662ea727837ae7a5e5208ac5228622c0454203dbc4e64e",
+      "output": "build/models/behind-the-peephole/iron-lamp-post.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 471640,
+      "size_m_requested": [
+        0.5,
+        0.5,
+        4.0
+      ],
+      "dimensions_m": [
+        0.592,
+        0.595,
+        4.0
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 407
+    },
+    {
+      "id": "kettle",
+      "name": "Electric kettle",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/behind-the-peephole/assets/objects/kettle.jpg",
+      "image_sha256": "f4ef82018f2b82c5f5983b50893866d53cdb14a22e5cf09a23cd2de8561b9c5d",
+      "output": "build/models/behind-the-peephole/kettle.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 698796,
+      "size_m_requested": [
+        0.25,
+        0.16,
+        0.24
+      ],
+      "dimensions_m": [
+        0.25,
+        0.187,
+        0.232
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 779
+    },
+    {
+      "id": "laundry-cart",
+      "name": "Laundry cart",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/behind-the-peephole/assets/objects/laundry-cart.jpg",
+      "image_sha256": "ca8f0f4c1c6542978736a1e1240da62bed41743ae7a2259aa936c103029f6ce5",
+      "output": "build/models/behind-the-peephole/laundry-cart.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699754,
+      "size_m_requested": [
+        1.0,
+        0.65,
+        0.9
+      ],
+      "dimensions_m": [
+        1.0,
+        0.672,
+        0.875
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 802
+    },
+    {
+      "id": "lobby-armchair",
+      "name": "Lobby armchair",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/behind-the-peephole/assets/objects/lobby-armchair.jpg",
+      "image_sha256": "63b62643ad0d665cc4bd8edb745ddb6c0e09d2bda6a3da823c23a480a1c01167",
+      "output": "build/models/behind-the-peephole/lobby-armchair.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 698613,
+      "size_m_requested": [
+        0.85,
+        0.85,
+        0.95
+      ],
+      "dimensions_m": [
+        1.008,
+        0.952,
+        0.95
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 976
+    },
+    {
+      "id": "logbook",
+      "name": "The logbook",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/behind-the-peephole/assets/objects/logbook.jpg",
+      "image_sha256": "bd9aa59e591ecf4759e0ba26aa36f0f1e75558ee61b2f8c51a25fb6a73cddda6",
+      "output": "build/models/behind-the-peephole/logbook.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 699449,
+      "size_m_requested": [
+        0.24,
+        0.32,
+        0.03
+      ],
+      "dimensions_m": [
+        0.235,
+        0.32,
+        0.054
+      ],
+      "problems": [
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 1.02, 1.00, 0.55); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 259
+    },
+    {
+      "id": "lost-property-cabinet",
+      "name": "Lost-property cabinet",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/behind-the-peephole/assets/objects/lost-property-cabinet.jpg",
+      "image_sha256": "072c81e1716a8f2a5b86f240e485bfa8b09e0aa71f6f58578b00dce7a8f42ed5",
+      "output": "build/models/behind-the-peephole/lost-property-cabinet.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699428,
+      "size_m_requested": [
+        0.8,
+        0.4,
+        1.8
+      ],
+      "dimensions_m": [
+        0.955,
+        0.47,
+        1.8
+      ],
+      "problems": [
+        "rotated 90 deg about Z so its long side matches size_m",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 727
+    },
+    {
+      "id": "luggage-trolley",
+      "name": "Luggage trolley",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/behind-the-peephole/assets/objects/luggage-trolley.jpg",
+      "image_sha256": "c4f3c4a9124bce5d4ea94db34f8e53919bce2989907338eef32497473903b94e",
+      "output": "build/models/behind-the-peephole/luggage-trolley.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699372,
+      "size_m_requested": [
+        1.1,
+        0.6,
+        1.8
+      ],
+      "dimensions_m": [
+        1.221,
+        0.643,
+        1.8
+      ],
+      "problems": [
+        "rotated 90 deg about Z so its long side matches size_m",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 348
+    },
+    {
+      "id": "maids-trolley",
+      "name": "Maid's trolley",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/behind-the-peephole/assets/objects/maids-trolley.jpg",
+      "image_sha256": "4c26c768918a986a4f3826b336f8a547cbcd3dc59f1286c4676314f92e76dea0",
+      "output": "build/models/behind-the-peephole/maids-trolley.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699928,
+      "size_m_requested": [
+        1.0,
+        0.5,
+        1.0
+      ],
+      "dimensions_m": [
+        1.0,
+        0.448,
+        0.875
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1172
+    },
+    {
+      "id": "mooring-bollard",
+      "name": "Mooring bollard",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/behind-the-peephole/assets/objects/mooring-bollard.jpg",
+      "image_sha256": "d9f85f92de8f075f9b8f9c0ee2b47c620cb3b5159062529432d6e717af0b3cd7",
+      "output": "build/models/behind-the-peephole/mooring-bollard.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699137,
+      "size_m_requested": [
+        0.45,
+        0.45,
+        0.6
+      ],
+      "dimensions_m": [
+        0.728,
+        0.73,
+        0.6
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.62, 0.62, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 853
+    },
+    {
+      "id": "noticeboard",
+      "name": "Staff noticeboard",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/behind-the-peephole/assets/objects/noticeboard.jpg",
+      "image_sha256": "102e22b9f928b1a0bbad5106ce4aadf39de9b33cccfe83143e3f8077b674dd25",
+      "output": "build/models/behind-the-peephole/noticeboard.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699661,
+      "size_m_requested": [
+        0.6,
+        0.05,
+        0.8
+      ],
+      "dimensions_m": [
+        0.903,
+        0.119,
+        0.8
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.66, 0.42, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 594
+    },
+    {
+      "id": "office-chair",
+      "name": "Office chair",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/behind-the-peephole/assets/objects/office-chair.jpg",
+      "image_sha256": "67282b5c936bcf3b92643157018d2501d9febc4f53c3aa77e502bde4e8fce542",
+      "output": "build/models/behind-the-peephole/office-chair.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699428,
+      "size_m_requested": [
+        0.5,
+        0.5,
+        0.85
+      ],
+      "dimensions_m": [
+        0.73,
+        0.741,
+        0.85
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.68, 0.67, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 809
+    },
+    {
+      "id": "reception-desk",
+      "name": "Reception desk",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/behind-the-peephole/assets/objects/reception-desk.jpg",
+      "image_sha256": "071328e9c9930282ab60a57bad933753124460ba744ee792a8454b631da44c7d",
+      "output": "build/models/behind-the-peephole/reception-desk.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699487,
+      "size_m_requested": [
+        4.5,
+        0.9,
+        1.15
+      ],
+      "dimensions_m": [
+        4.5,
+        1.586,
+        1.783
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.57, 0.65); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 597
+    },
+    {
+      "id": "safe",
+      "name": "Floor safe",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/behind-the-peephole/assets/objects/safe.jpg",
+      "image_sha256": "99a996014b01b59bd330900ce75479fb752f5e89e84576465fec754961602f8b",
+      "output": "build/models/behind-the-peephole/safe.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 698721,
+      "size_m_requested": [
+        0.6,
+        0.6,
+        0.9
+      ],
+      "dimensions_m": [
+        0.632,
+        0.66,
+        0.9
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 363
+    },
+    {
+      "id": "staff-door",
+      "name": "Staff door",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/behind-the-peephole/assets/objects/staff-door.jpg",
+      "image_sha256": "3de456025bb817004e8bdff2cc5e31982e3654d6f1a5545e5f4c15a7582d90a3",
+      "output": "build/models/behind-the-peephole/staff-door.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699716,
+      "size_m_requested": [
+        1.0,
+        0.15,
+        2.1
+      ],
+      "dimensions_m": [
+        1.26,
+        0.308,
+        2.1
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.79, 0.49, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 318
+    },
+    {
+      "id": "telephone",
+      "name": "Rotary telephone",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/behind-the-peephole/assets/objects/telephone.jpg",
+      "image_sha256": "ffca3dec5d28f573f2dfbfafd13bab9c2908f15e991bace6abafb5aa58f1388a",
+      "output": "build/models/behind-the-peephole/telephone.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699387,
+      "size_m_requested": [
+        0.22,
+        0.24,
+        0.14
+      ],
+      "dimensions_m": [
+        0.347,
+        0.24,
+        0.242
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.63, 1.00, 0.58); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 716
+    },
+    {
+      "id": "valet-door",
+      "name": "Valet door",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/behind-the-peephole/assets/objects/valet-door.jpg",
+      "image_sha256": "96013a34fa3bce7a1e45737c622afe1625c6916b02227df4f9860e72bf0deddd",
+      "output": "build/models/behind-the-peephole/valet-door.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699842,
+      "size_m_requested": [
+        0.7,
+        0.08,
+        1.9
+      ],
+      "dimensions_m": [
+        0.879,
+        0.179,
+        1.9
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.80, 0.45, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 268
+    },
+    {
+      "id": "wall-sconce",
+      "name": "Wall sconce",
+      "date": "2026-11-23",
+      "status": "not_built",
+      "image": "games/behind-the-peephole/assets/objects/wall-sconce.jpg",
+      "size_m_requested": [
+        0.15,
+        0.18,
+        0.3
+      ],
+      "source": "model_requests.json",
+      "problems": [
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
+      ]
+    }
+  ]
+}

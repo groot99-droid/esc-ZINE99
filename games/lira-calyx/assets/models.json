@@ -1,0 +1,1057 @@
+{
+  "tool": "ComfyUI 0.46.2, core Trellis 2 nodes",
+  "models": [
+    {
+      "id": "aetheric-emitter",
+      "name": "Aetheric emitter",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/aetheric-emitter.jpg",
+      "image_sha256": "3917c9eaef7f8f7fa7799ced0efdaf1aab69fae0fd9fefce225353127cfd1e3e",
+      "output": "build/models/lira-calyx/aetheric-emitter.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699661,
+      "size_m_requested": [
+        0.8,
+        0.8,
+        1.6
+      ],
+      "dimensions_m": [
+        1.004,
+        1.107,
+        1.6
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.80, 0.72, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 817
+    },
+    {
+      "id": "afu-meter",
+      "name": "AFU meter",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/afu-meter.jpg",
+      "image_sha256": "7c8fd44389d43d1ade6a38f55b8d641dfca73a6261a6c8f41c1255e6488237e9",
+      "output": "build/models/lira-calyx/afu-meter.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699374,
+      "size_m_requested": [
+        0.15,
+        0.08,
+        0.2
+      ],
+      "dimensions_m": [
+        0.199,
+        0.134,
+        0.2
+      ],
+      "problems": [
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 0.75, 0.60, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 592
+    },
+    {
+      "id": "board-table",
+      "name": "Board table",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/board-table.jpg",
+      "image_sha256": "61cb850016c77f9d581fdc3556485220237b87bd995eab34b99599661bd06798",
+      "output": "build/models/lira-calyx/board-table.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699533,
+      "size_m_requested": [
+        2.0,
+        1.2,
+        0.9
+      ],
+      "dimensions_m": [
+        2.0,
+        1.987,
+        1.376
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.60, 0.65); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 597
+    },
+    {
+      "id": "book-shelf",
+      "name": "Book shelf with books",
+      "date": "2026-11-23",
+      "status": "not_built",
+      "image": "games/lira-calyx/assets/objects/book-shelf.jpg",
+      "size_m_requested": [
+        1.2,
+        0.4,
+        2.0
+      ],
+      "source": "realism list",
+      "problems": [
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
+      ]
+    },
+    {
+      "id": "coordinate-card",
+      "name": "Misfiled coordinate card",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/coordinate-card.jpg",
+      "image_sha256": "19d8770dadcca935cde20aef5fb8ab94800b139bd4e3efa608b0478c7c1b82c6",
+      "output": "build/models/lira-calyx/coordinate-card.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699801,
+      "size_m_requested": [
+        0.15,
+        0.005,
+        0.1
+      ],
+      "dimensions_m": [
+        0.15,
+        0.112,
+        0.023
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.04, 4.44); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 440
+    },
+    {
+      "id": "crystal-cluster",
+      "name": "Crystal grass cluster",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/crystal-cluster.jpg",
+      "image_sha256": "d2d4219267d9a93588c88f340fb5bf5dff4a8b9bc4a89b344b5a22e63a5fb58b",
+      "output": "build/models/lira-calyx/crystal-cluster.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699735,
+      "size_m_requested": [
+        0.8,
+        0.6,
+        0.7
+      ],
+      "dimensions_m": [
+        0.8,
+        0.659,
+        0.793
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 728
+    },
+    {
+      "id": "culture-bench",
+      "name": "Benches with glass culture chambers holding glowing fungus",
+      "date": "2026-11-23",
+      "status": "not_built",
+      "image": "games/lira-calyx/assets/objects/culture-bench.jpg",
+      "size_m_requested": [
+        1.8,
+        0.7,
+        1.3
+      ],
+      "source": "realism list",
+      "problems": [
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
+      ]
+    },
+    {
+      "id": "emitter-crate",
+      "name": "Emitter crates (timber, stencilled)",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/emitter-crate.jpg",
+      "image_sha256": "3394a6a37300daa1f5116e46adcc274a57d0b9247296b41defd7c1e0e0bb88e1",
+      "output": "build/models/lira-calyx/emitter-crate.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699352,
+      "size_m_requested": [
+        0.8,
+        0.6,
+        0.6
+      ],
+      "dimensions_m": [
+        0.8,
+        0.524,
+        0.345
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 1.15, 1.74); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 782,
+      "source": "realism list (reference image generated with Flux schnell in ComfyUI)"
+    },
+    {
+      "id": "field-journal",
+      "name": "Lira's field journal",
+      "date": "2026-11-23",
+      "status": "not_built",
+      "image": "games/lira-calyx/assets/objects/field-journal.jpg",
+      "size_m_requested": [
+        0.18,
+        0.04,
+        0.24
+      ],
+      "source": "model_requests.json",
+      "problems": [
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
+      ]
+    },
+    {
+      "id": "field-recorder",
+      "name": "Field recorder",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/field-recorder.jpg",
+      "image_sha256": "899288a026e5a7bcdd6fce5e01182c4e83a8c624e16f8a2adc1e4fafe3424965",
+      "output": "build/models/lira-calyx/field-recorder.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699479,
+      "size_m_requested": [
+        0.25,
+        0.12,
+        0.18
+      ],
+      "dimensions_m": [
+        0.25,
+        0.235,
+        0.101
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.51, 1.77); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1149
+    },
+    {
+      "id": "flood-siren",
+      "name": "Flood siren with dial",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/flood-siren.jpg",
+      "image_sha256": "4bfa2a30fe9bc3996c532c3bcf719afbf16621389fc5767fa0995faa1ff1a4f8",
+      "output": "build/models/lira-calyx/flood-siren.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699543,
+      "size_m_requested": [
+        0.6,
+        0.5,
+        2.2
+      ],
+      "dimensions_m": [
+        1.628,
+        1.258,
+        2.2
+      ],
+      "problems": [
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 0.37, 0.40, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 787
+    },
+    {
+      "id": "flux-probe",
+      "name": "Flux probe",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/flux-probe.jpg",
+      "image_sha256": "0ee205afaa254faa46212196d5a4ab8f8808ab0b2201de97886631738946766e",
+      "output": "build/models/lira-calyx/flux-probe.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 383164,
+      "size_m_requested": [
+        0.12,
+        0.12,
+        1.1
+      ],
+      "dimensions_m": [
+        0.236,
+        0.21,
+        1.1
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.51, 0.57, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 324
+    },
+    {
+      "id": "folding-field-table",
+      "name": "Folding field table",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/folding-field-table.jpg",
+      "image_sha256": "fa064686d7dec91a0f891e4a0ba62abc85b94f2e77ea2649e4b690543492c4d8",
+      "output": "build/models/lira-calyx/folding-field-table.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 698634,
+      "size_m_requested": [
+        1.0,
+        0.6,
+        0.75
+      ],
+      "dimensions_m": [
+        1.0,
+        0.698,
+        0.886
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 781
+    },
+    {
+      "id": "fused-glass-fragment",
+      "name": "Fragment in fused glass",
+      "date": "2026-11-23",
+      "status": "not_built",
+      "image": "games/lira-calyx/assets/objects/fused-glass-fragment.jpg",
+      "size_m_requested": [
+        0.2,
+        0.15,
+        0.12
+      ],
+      "source": "model_requests.json",
+      "problems": [
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
+      ]
+    },
+    {
+      "id": "gravimeter",
+      "name": "Gravimeter on tripod",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/gravimeter.jpg",
+      "image_sha256": "5cbaf6b664e481203510f274b1c5ca81df5c5c2dd17746c36ae962aac88152cc",
+      "output": "build/models/lira-calyx/gravimeter.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699840,
+      "size_m_requested": [
+        0.6,
+        0.6,
+        1.4
+      ],
+      "dimensions_m": [
+        0.884,
+        0.884,
+        1.4
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.68, 0.68, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 579
+    },
+    {
+      "id": "hand-lamp",
+      "name": "Hand lamp",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/hand-lamp.jpg",
+      "image_sha256": "b0194623cf645978abc301edf095d3dbf195bde253abb2383a3a62f263136277",
+      "output": "build/models/lira-calyx/hand-lamp.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 699490,
+      "size_m_requested": [
+        0.14,
+        0.14,
+        0.32
+      ],
+      "dimensions_m": [
+        0.166,
+        0.139,
+        0.32
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 611
+    },
+    {
+      "id": "hanging-bare-bulb",
+      "name": "Hanging bare bulb with cord",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/hanging-bare-bulb.jpg",
+      "image_sha256": "7fc314e8a5f7e028b5c8350233224dd6bc8d40b30e795c3896a6c107ae2f746b",
+      "output": "build/models/lira-calyx/hanging-bare-bulb.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699978,
+      "size_m_requested": [
+        0.12,
+        0.12,
+        0.5
+      ],
+      "dimensions_m": [
+        0.187,
+        0.187,
+        0.5
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.64, 0.64, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 419,
+      "source": "realism list (reference image generated with Flux schnell in ComfyUI)"
+    },
+    {
+      "id": "journal-case",
+      "name": "Journal case",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/journal-case.jpg",
+      "image_sha256": "7477973bf5bd8d01c124bf0fa875a3843de5b280472681c50e5a23e49bed22de",
+      "output": "build/models/lira-calyx/journal-case.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699157,
+      "size_m_requested": [
+        0.5,
+        0.35,
+        0.3
+      ],
+      "dimensions_m": [
+        0.5,
+        0.46,
+        0.157
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.76, 1.91); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 685
+    },
+    {
+      "id": "lab-console",
+      "name": "Lab console",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/lab-console.jpg",
+      "image_sha256": "c49289f07db7605893c5c4357889c2a26085b1cbcf78a907478dd619af22f19a",
+      "output": "build/models/lira-calyx/lab-console.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699197,
+      "size_m_requested": [
+        1.6,
+        0.8,
+        1.3
+      ],
+      "dimensions_m": [
+        1.6,
+        0.951,
+        1.38
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 816
+    },
+    {
+      "id": "light-table",
+      "name": "Light table",
+      "date": "2026-11-23",
+      "status": "not_built",
+      "image": "games/lira-calyx/assets/objects/light-table.jpg",
+      "size_m_requested": [
+        1.4,
+        0.9,
+        1.0
+      ],
+      "source": "model_requests.json",
+      "problems": [
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
+      ]
+    },
+    {
+      "id": "log-cabinet",
+      "name": "Log cabinet",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/log-cabinet.jpg",
+      "image_sha256": "9dd2afd0f5b565585628862f7f45958d4b6dca8b117bb8a9c6f3e1f6e13b0bdf",
+      "output": "build/models/lira-calyx/log-cabinet.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 698688,
+      "size_m_requested": [
+        0.5,
+        0.6,
+        1.3
+      ],
+      "dimensions_m": [
+        0.683,
+        0.737,
+        1.3
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.73, 0.81, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 743
+    },
+    {
+      "id": "narrow-cot-linen",
+      "name": "Narrow cot with linen, bed head",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/narrow-cot-linen.jpg",
+      "image_sha256": "d3c9ee78bd7b6e2a6b602c170f2b47cbfec22b1cc1d5909d08ce6cb6b64f41f5",
+      "output": "build/models/lira-calyx/narrow-cot-linen.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699523,
+      "size_m_requested": [
+        0.8,
+        1.9,
+        0.5
+      ],
+      "dimensions_m": [
+        1.224,
+        1.9,
+        1.123
+      ],
+      "problems": [
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 0.65, 1.00, 0.45); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 874,
+      "source": "realism list (reference image generated with Flux schnell in ComfyUI)"
+    },
+    {
+      "id": "patent-drawer-cabinet",
+      "name": "Patent drawer cabinet",
+      "date": "2026-11-23",
+      "status": "not_built",
+      "image": "games/lira-calyx/assets/objects/patent-drawer-cabinet.jpg",
+      "size_m_requested": [
+        1.2,
+        0.9,
+        1.4
+      ],
+      "source": "model_requests.json",
+      "problems": [
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
+      ]
+    },
+    {
+      "id": "photodiode-post",
+      "name": "Photodiode post",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/photodiode-post.jpg",
+      "image_sha256": "38dde2d3e90fb3ca02d9ef8fd57deb6e2094762e6304a9239e04f35511851eb8",
+      "output": "build/models/lira-calyx/photodiode-post.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 507882,
+      "size_m_requested": [
+        0.15,
+        0.15,
+        1.3
+      ],
+      "dimensions_m": [
+        0.268,
+        0.347,
+        1.3
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.56, 0.43, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 416
+    },
+    {
+      "id": "pit-prop-set",
+      "name": "Pit-props: timber posts and caps",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/pit-prop-set.jpg",
+      "image_sha256": "08cdf40ef83f94d92c5eb0a165298e95ff5e9892f064e93b680d7b71ed4f649c",
+      "output": "build/models/lira-calyx/pit-prop-set.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699076,
+      "size_m_requested": [
+        2.0,
+        0.3,
+        2.4
+      ],
+      "dimensions_m": [
+        3.544,
+        1.623,
+        2.4
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.56, 0.18, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 650,
+      "source": "realism list (reference image generated with Flux schnell in ComfyUI)"
+    },
+    {
+      "id": "plain-crate",
+      "name": "Scattered crates",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/plain-crate.jpg",
+      "image_sha256": "2e0353e614725f6d41ce564a5d177347320b4378466fe0bfc861c337585a4ae2",
+      "output": "build/models/lira-calyx/plain-crate.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699358,
+      "size_m_requested": [
+        0.6,
+        0.5,
+        0.45
+      ],
+      "dimensions_m": [
+        0.6,
+        0.621,
+        0.448
+      ],
+      "problems": [
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1075,
+      "source": "realism list (reference image generated with Flux schnell in ComfyUI)"
+    },
+    {
+      "id": "prototype-harvester",
+      "name": "Prototype harvester",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/prototype-harvester.jpg",
+      "image_sha256": "670ff047b0a250c964434df7580c60f3f47eb6cb49088aeaf36de0dd1faf4a1b",
+      "output": "build/models/lira-calyx/prototype-harvester.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699931,
+      "size_m_requested": [
+        6,
+        6,
+        9
+      ],
+      "dimensions_m": [
+        8.944,
+        7.118,
+        9.0
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.67, 0.84, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 990
+    },
+    {
+      "id": "pulse-rig",
+      "name": "Pulse rig",
+      "date": "2026-11-23",
+      "status": "not_built",
+      "image": "games/lira-calyx/assets/objects/pulse-rig.jpg",
+      "size_m_requested": [
+        0.7,
+        0.5,
+        0.9
+      ],
+      "source": "model_requests.json",
+      "problems": [
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
+      ]
+    },
+    {
+      "id": "radio-cabinet",
+      "name": "Radio cabinet or side bench",
+      "date": "2026-11-23",
+      "status": "not_built",
+      "image": "games/lira-calyx/assets/objects/radio-cabinet.jpg",
+      "size_m_requested": [
+        0.9,
+        0.4,
+        0.9
+      ],
+      "source": "realism list",
+      "problems": [
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
+      ]
+    },
+    {
+      "id": "red-indicator-light",
+      "name": "Red indicator lights",
+      "date": "2026-11-23",
+      "status": "not_built",
+      "image": "games/lira-calyx/assets/objects/red-indicator-light.jpg",
+      "size_m_requested": [
+        0.08,
+        0.08,
+        0.1
+      ],
+      "source": "realism list",
+      "problems": [
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
+      ]
+    },
+    {
+      "id": "relay-beacon",
+      "name": "Relay beacon",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/relay-beacon.jpg",
+      "image_sha256": "7d469784aff5ec4a78fb882f9cf72a2fb108b18a2ab73ff2c8b7d39a679a2fb1",
+      "output": "build/models/lira-calyx/relay-beacon.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699954,
+      "size_m_requested": [
+        0.4,
+        0.4,
+        1.6
+      ],
+      "dimensions_m": [
+        0.764,
+        0.7,
+        1.6
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.52, 0.57, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 274
+    },
+    {
+      "id": "river-glow-meter",
+      "name": "River glow meter",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/river-glow-meter.jpg",
+      "image_sha256": "4073d4f186f050ddd124e204150541c78471874f19b09a60b77d51c4fcb2f823",
+      "output": "build/models/lira-calyx/river-glow-meter.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699882,
+      "size_m_requested": [
+        0.25,
+        0.2,
+        1.2
+      ],
+      "dimensions_m": [
+        0.571,
+        0.446,
+        1.2
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.44, 0.45, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 633
+    },
+    {
+      "id": "sampling-dial",
+      "name": "Sampling dial",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/sampling-dial.jpg",
+      "image_sha256": "33919acfadcbd8a8ff55552804f5017e8f3b2b2c428b25caae229b97070a68f1",
+      "output": "build/models/lira-calyx/sampling-dial.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 698187,
+      "size_m_requested": [
+        0.2,
+        0.12,
+        0.15
+      ],
+      "dimensions_m": [
+        0.2,
+        0.164,
+        0.193
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.73, 0.78); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1201
+    },
+    {
+      "id": "seal-press",
+      "name": "Seal press",
+      "date": "2026-11-21",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/seal-press.jpg",
+      "image_sha256": "f623e364679dd3c2babd541808338cfe3474fe72d752ac63752c98dc4883ce6b",
+      "output": "build/models/lira-calyx/seal-press.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699001,
+      "size_m_requested": [
+        0.3,
+        0.25,
+        0.4
+      ],
+      "dimensions_m": [
+        0.436,
+        0.194,
+        0.4
+      ],
+      "problems": [
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 0.69, 1.29, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 867
+    },
+    {
+      "id": "specimen-shelf",
+      "name": "Specimen shelf",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/specimen-shelf.jpg",
+      "image_sha256": "ff89c90b7f6367058fe7ad726ff8f0915719b3d75c5da2c19b21e5faa71ff4d3",
+      "output": "build/models/lira-calyx/specimen-shelf.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699790,
+      "size_m_requested": [
+        1.2,
+        0.35,
+        1.6
+      ],
+      "dimensions_m": [
+        1.216,
+        0.556,
+        1.6
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.99, 0.63, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1807
+    },
+    {
+      "id": "strain-gauge",
+      "name": "Strain gauge clamp",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/strain-gauge.jpg",
+      "image_sha256": "f4f3995a6a1e00a16a82fff22fd1f4753635b3d2ef6da0800a5c23f2fc590848",
+      "output": "build/models/lira-calyx/strain-gauge.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699291,
+      "size_m_requested": [
+        0.3,
+        0.12,
+        0.2
+      ],
+      "dimensions_m": [
+        0.3,
+        0.123,
+        0.291
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.97, 0.69); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 640
+    },
+    {
+      "id": "strider-clicker",
+      "name": "Strider tally clicker",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/strider-clicker.jpg",
+      "image_sha256": "102e535897ee3e07168d603e1a7ff5506fbc1eaf1754530fd5ef222ec5edbb90",
+      "output": "build/models/lira-calyx/strider-clicker.glb",
+      "status": "built",
+      "triangles": 79999,
+      "triangles_raw": 698720,
+      "size_m_requested": [
+        0.06,
+        0.03,
+        0.08
+      ],
+      "dimensions_m": [
+        0.074,
+        0.082,
+        0.08
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 0.82, 0.36, 1.00); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 808
+    },
+    {
+      "id": "threat-packet",
+      "name": "Sealed packet",
+      "date": "2026-11-23",
+      "status": "not_built",
+      "image": "games/lira-calyx/assets/objects/threat-packet.jpg",
+      "size_m_requested": [
+        0.24,
+        0.03,
+        0.32
+      ],
+      "source": "model_requests.json",
+      "problems": [
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
+      ]
+    },
+    {
+      "id": "transmitter",
+      "name": "Radio transmitter",
+      "date": "2026-11-22",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/transmitter.jpg",
+      "image_sha256": "5e2e7e71a3735c87d90f20108c5b08e9920c39e4a03df2a222797fe9c09458d0",
+      "output": "build/models/lira-calyx/transmitter.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699143,
+      "size_m_requested": [
+        0.5,
+        0.35,
+        0.35
+      ],
+      "dimensions_m": [
+        0.5,
+        0.417,
+        0.532
+      ],
+      "problems": [
+        "proportions differ from size_m (axis ratios 1.00, 0.84, 0.66); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 690
+    },
+    {
+      "id": "vitrine-plinth-case",
+      "name": "Vitrine plinth and glass case",
+      "date": "2026-11-23",
+      "status": "not_built",
+      "image": "games/lira-calyx/assets/objects/vitrine-plinth-case.jpg",
+      "size_m_requested": [
+        0.8,
+        0.8,
+        1.5
+      ],
+      "source": "realism list",
+      "problems": [
+        "not built: the rented GPU ran out of time (failed earlier on GPU memory or a full disk, then not retried); the request is unchanged and can be built from this image"
+      ]
+    },
+    {
+      "id": "writing-desk-chair",
+      "name": "Writing desk and chair",
+      "date": "2026-11-23",
+      "tool": "ComfyUI Trellis 2 (core nodes) + Blender 5.2 decimate/scale",
+      "model": "trellis_2_int8_convrot",
+      "seed": 1,
+      "image": "games/lira-calyx/assets/objects/writing-desk-chair.jpg",
+      "image_sha256": "5f6613b9ece1bf82ff00d906a6e8e22eb64f640723cdadfec518d76ba0872d25",
+      "output": "build/models/lira-calyx/writing-desk-chair.glb",
+      "status": "built",
+      "triangles": 80000,
+      "triangles_raw": 699438,
+      "size_m_requested": [
+        1.2,
+        0.6,
+        1.1
+      ],
+      "dimensions_m": [
+        1.2,
+        0.955,
+        0.764
+      ],
+      "problems": [
+        "rotated 90 deg about Z so its long side matches size_m",
+        "proportions differ from size_m (axis ratios 1.00, 0.63, 1.44); scaled uniformly so its largest requested side matches",
+        "front direction (-y) not checked by eye"
+      ],
+      "seconds": 1051,
+      "source": "realism list (reference image generated with Flux schnell in ComfyUI)"
+    }
+  ]
+}
