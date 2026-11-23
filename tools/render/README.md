@@ -135,3 +135,11 @@ recorded render-time overrides differ.
 
 Used on a rented RTX 4090: upload `render_scenes.py` and `pack.tgz`, run Blender 5.2.1 as above with `--device OPTIX`, fetch the
 tar of the output folder. `--res-scale` and `--samples-scale` give quick look-development passes.
+
+- Added for batch 13 (stuffed-ones, missing-campsites, lira-calyx models re-render): no driver change. All 41 + 24 + 24 scenes were rendered again with every built model of each
+  game's ledger (full 80k-triangle models re-exported with 1024 px JPEG textures; uploaded one file at a time because the box link drops large transfers). Skipped as
+  figure or creature imagery (stay named box proxies): stuffed-ones `sampler` (stitched figures and animals), missing-campsites `heron-sign` (a heron on the board),
+  lira-calyx `specimen-shelf` (skulls, spine, antlers). `overrides.json` gains 14 scene overrides `stuffed-ones/cabin-living-room/<scene>` with `hide_props: [shelf-north-b]`
+  (the camera stands inside the real shelf model; its triangles shatter around the lens). `rig.json` per-scene `exposure_ev` and `overview_ev` re-matched to a box-proxy
+  look pass (damped log2 of the luminance ratio, as in batch 12). Remote runs need a launch that checks the remote log exists (the box refused connections now and then, and
+  a background job that never started looked like a hang) and a download that retries.

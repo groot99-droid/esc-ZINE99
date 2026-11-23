@@ -1409,5 +1409,75 @@
         ]
       }
     }
+  },
+  "stuffed-ones/cabin-living-room/b6_keepers_visit": {
+    "hide_props": [
+      "shelf-north-b"
+    ]
+  },
+  "stuffed-ones/cabin-living-room/b6_waking": {
+    "hide_props": [
+      "shelf-north-b"
+    ]
+  },
+  "stuffed-ones/cabin-living-room/b7_arrivals": {
+    "hide_props": [
+      "shelf-north-b"
+    ]
+  },
+  "stuffed-ones/cabin-living-room/b7_jamie_falls": {
+    "hide_props": [
+      "shelf-north-b"
+    ]
+  },
+  "stuffed-ones/cabin-living-room/b8_breaking_point": {
+    "hide_props": [
+      "shelf-north-b"
+    ]
+  },
+  "stuffed-ones/cabin-living-room/c10_hold_shelf": {
+    "hide_props": [
+      "shelf-north-b"
+    ]
+  },
+  "stuffed-ones/cabin-living-room/c11_hold_shelf": {
+    "hide_props": [
+      "shelf-north-b"
+    ]
+  },
+  "stuffed-ones/cabin-living-room/c12_hold_shelf": {
+    "hide_props": [
+      "shelf-north-b"
+    ]
+  },
+  "stuffed-ones/cabin-living-room/c13_flight": {
+    "hide_props": [
+      "shelf-north-b"
+    ]
+  },
+  "stuffed-ones/cabin-living-room/c13_seal": {
+    "hide_props": [
+      "shelf-north-b"
+    ]
+  },
+  "stuffed-ones/cabin-living-room/c14_hold_shelf": {
+    "hide_props": [
+      "shelf-north-b"
+    ]
+  },
+  "stuffed-ones/cabin-living-room/c9_new_guests": {
+    "hide_props": [
+      "shelf-north-b"
+    ]
+  },
+  "stuffed-ones/cabin-living-room/e_cycle_shelf": {
+    "hide_props": [
+      "shelf-north-b"
+    ]
+  },
+  "stuffed-ones/cabin-living-room/e_empty_toy": {
+    "hide_props": [
+      "shelf-north-b"
+    ]
   }
 }

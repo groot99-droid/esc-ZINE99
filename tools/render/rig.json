@@ -2208,20 +2208,20 @@
       "lens_mm": 20
     },
     "exposure_ev": 0.0,
-    "overview_ev": 1.2,
+    "overview_ev": 1.61,
     "facing": "ccw",
     "scenes": {
       "a1_dinner": {
-        "exposure_ev": -0.9
+        "exposure_ev": 0.65
       },
       "a2_breakfast": {
-        "exposure_ev": -2.3
+        "exposure_ev": -1.3
       },
       "a5_kitchen_bear": {
         "exposure_ev": 0.0
       },
       "e_warning_unpick": {
-        "exposure_ev": 1.0
+        "exposure_ev": 2.46
       }
     }
   },
@@ -2246,7 +2246,7 @@
     "min_eye_m": 0.2,
     "scenes": {
       "a1_cabin_arrival": {
-        "exposure_ev": -3.3
+        "exposure_ev": -2.75
       },
       "a3_smell": {
         "exposure_ev": -3.5
@@ -2261,7 +2261,7 @@
         "exposure_ev": -3.5
       },
       "b6_waking": {
-        "exposure_ev": -2.1
+        "exposure_ev": -1.56
       },
       "b7_arrivals": {
         "exposure_ev": -3.5
@@ -2291,7 +2291,7 @@
         "exposure_ev": -3.5
       },
       "c14_chase_cabin": {
-        "exposure_ev": -1.7
+        "exposure_ev": -1.37
       },
       "c14_hold_shelf": {
         "exposure_ev": -2.0
@@ -2303,7 +2303,7 @@
         "exposure_ev": -3.3
       },
       "e_empty_toy": {
-        "exposure_ev": -1.8
+        "exposure_ev": -1.24
       }
     }
   },
@@ -2399,7 +2399,7 @@
     "facing": "ccw",
     "scenes": {
       "a3_warmth": {
-        "exposure_ev": -3.2
+        "exposure_ev": -3.64
       }
     }
   },
@@ -2504,13 +2504,13 @@
     "min_eye_m": 0.2,
     "scenes": {
       "a5_last_thing": {
-        "exposure_ev": 0.9
+        "exposure_ev": 1.41
       },
       "a5_ritual_room": {
         "exposure_ev": -0.5
       },
       "e_page_circle": {
-        "exposure_ev": 1.0
+        "exposure_ev": 2.12
       }
     }
   },
@@ -2616,7 +2616,7 @@
         "exposure_ev": -1.0
       },
       "payphone_night1": {
-        "exposure_ev": 1.0
+        "exposure_ev": 1.82
       },
       "supper_for_two": {
         "exposure_ev": -1.3
@@ -2643,10 +2643,10 @@
     "facing": "ccw",
     "scenes": {
       "campfire_night1": {
-        "exposure_ev": 0.0
+        "exposure_ev": -0.46
       },
       "campfire_night2": {
-        "exposure_ev": 0.0
+        "exposure_ev": -0.35
       }
     }
   },
@@ -2670,7 +2670,7 @@
     "facing": "ccw",
     "scenes": {
       "channel_two": {
-        "exposure_ev": 0.0
+        "exposure_ev": 1.35
       },
       "dusk_choice": {
         "exposure_ev": 0.0
@@ -2742,7 +2742,7 @@
         "exposure_ev": -1.8
       },
       "loop_day2pm": {
-        "exposure_ev": 0.0
+        "exposure_ev": 0.56
       },
       "ordinary_morning": {
         "exposure_ev": -1.8
@@ -3200,7 +3200,7 @@
         "exposure_ev": 3.5
       },
       "end-written": {
-        "exposure_ev": 0.9
+        "exposure_ev": -1.35
       }
     }
   },
