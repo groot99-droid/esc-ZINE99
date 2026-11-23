@@ -24,7 +24,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 7.8
+     "render_seconds": 13.2
     },
     {
      "still": "player",
@@ -33,7 +33,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 7.2
+     "render_seconds": 8.5
     },
     {
      "still": "overview",
@@ -42,14 +42,33 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 4.4
+     "render_seconds": 9.2
     }
    ],
    "props": [
     {
      "id": "cairn-flat-stones",
      "object": "stone-cairn",
-     "source": "box-proxy"
+     "source": "model:stone-cairn.glb",
+     "fit": {
+      "model_dims_m": [
+       1.297,
+       1.282,
+       1.2
+      ],
+      "box_m": [
+       0.667,
+       0.667,
+       1.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.833,
+      "worst_side_ratio": 1.62
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -83,7 +102,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 7.4
+     "render_seconds": 10.2
     },
     {
      "still": "player",
@@ -92,24 +111,81 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 7.3
+     "render_seconds": 11.7
     }
    ],
    "props": [
     {
      "id": "cairn-flat-stones",
      "object": "stone-cairn",
-     "source": "box-proxy"
+     "source": "model:stone-cairn.glb",
+     "fit": {
+      "model_dims_m": [
+       1.297,
+       1.282,
+       1.2
+      ],
+      "box_m": [
+       0.667,
+       0.667,
+       1.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.833,
+      "worst_side_ratio": 1.62
+     }
     },
     {
      "id": "black-book",
      "object": "black-book",
-     "source": "box-proxy"
+     "source": "model:black-book.glb",
+     "fit": {
+      "model_dims_m": [
+       1.262,
+       0.852,
+       0.38
+      ],
+      "box_m": [
+       0.28,
+       0.07,
+       0.38
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.301,
+      "worst_side_ratio": 1.63
+     }
     },
     {
      "id": "candle",
      "object": "candlestick",
-     "source": "box-proxy"
+     "source": "model:candlestick.glb",
+     "fit": {
+      "model_dims_m": [
+       0.295,
+       0.352,
+       0.3
+      ],
+      "box_m": [
+       0.12,
+       0.12,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       90,
+       0,
+       0
+      ],
+      "scale": 0.853,
+      "worst_side_ratio": 2.13
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -143,7 +219,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 15.9
+     "render_seconds": 23.5
     },
     {
      "still": "player",
@@ -152,7 +228,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 15.1
+     "render_seconds": 20.7
     },
     {
      "still": "overview",
@@ -161,7 +237,7 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 7.3
+     "render_seconds": 9.1
     }
    ],
    "props": [
@@ -173,17 +249,75 @@
     {
      "id": "quill",
      "object": "quill-pen",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       0.289,
+       0.324,
+       0.3
+      ],
+      "box_m": [
+       0.03,
+       0.03,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       90,
+       0,
+       0
+      ],
+      "scale": 0.927,
+      "worst_side_ratio": 3.04,
+      "rejected": "proportions: a side is off by x3.0 after the best fit"
+     }
     },
     {
      "id": "clerks-chair",
      "object": "clerks-chair",
-     "source": "box-proxy"
+     "source": "model:clerks-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       0.769,
+       0.694,
+       1.5
+      ],
+      "box_m": [
+       0.7,
+       0.7,
+       1.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.1
+     }
     },
     {
      "id": "loft-bell",
      "object": "loft-bell",
-     "source": "box-proxy"
+     "source": "model:loft-bell.glb",
+     "fit": {
+      "model_dims_m": [
+       0.941,
+       0.73,
+       1.1
+      ],
+      "box_m": [
+       0.9,
+       0.9,
+       1.1
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.23
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -220,7 +354,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 13.8
+     "render_seconds": 19.9
     },
     {
      "still": "player",
@@ -229,19 +363,57 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 13.5
+     "render_seconds": 12.9
     }
    ],
    "props": [
     {
      "id": "loft-bell",
      "object": "loft-bell",
-     "source": "box-proxy"
+     "source": "model:loft-bell.glb",
+     "fit": {
+      "model_dims_m": [
+       0.941,
+       0.73,
+       1.1
+      ],
+      "box_m": [
+       0.9,
+       0.9,
+       1.1
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.23
+     }
     },
     {
      "id": "chair-loft",
      "object": "clerks-chair",
-     "source": "box-proxy"
+     "source": "model:clerks-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       0.769,
+       0.694,
+       1.5
+      ],
+      "box_m": [
+       0.7,
+       0.7,
+       1.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.1
+     }
     },
     {
      "id": "day-book-loft",
@@ -283,7 +455,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 7.6
+     "render_seconds": 8.1
     },
     {
      "still": "player",
@@ -292,7 +464,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 7.7
+     "render_seconds": 8.1
     },
     {
      "still": "overview",
@@ -301,29 +473,105 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 4.6
+     "render_seconds": 4.7
     }
    ],
    "props": [
     {
      "id": "bone-a",
      "object": "giant-bone",
-     "source": "box-proxy"
+     "source": "model:giant-bone.glb",
+     "fit": {
+      "model_dims_m": [
+       4.0,
+       3.773,
+       1.239
+      ],
+      "box_m": [
+       4.0,
+       1.2,
+       2.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.863,
+      "worst_side_ratio": 2.71
+     }
     },
     {
      "id": "bone-b",
      "object": "giant-bone",
-     "source": "box-proxy"
+     "source": "model:giant-bone.glb",
+     "fit": {
+      "model_dims_m": [
+       4.0,
+       3.773,
+       1.239
+      ],
+      "box_m": [
+       2.4,
+       0.72,
+       1.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.518,
+      "worst_side_ratio": 2.71
+     }
     },
     {
      "id": "bone-c",
      "object": "giant-bone",
-     "source": "box-proxy"
+     "source": "model:giant-bone.glb",
+     "fit": {
+      "model_dims_m": [
+       4.0,
+       3.773,
+       1.239
+      ],
+      "box_m": [
+       2.88,
+       0.864,
+       1.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.621,
+      "worst_side_ratio": 2.71
+     }
     },
     {
      "id": "bone-crest",
      "object": "giant-bone",
-     "source": "box-proxy"
+     "source": "model:giant-bone.glb",
+     "fit": {
+      "model_dims_m": [
+       4.0,
+       3.773,
+       1.239
+      ],
+      "box_m": [
+       1.92,
+       0.576,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.414,
+      "worst_side_ratio": 2.71
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -336,7 +584,7 @@
      {
       "prop": "bone-crest",
       "piece": "crest",
-      "samples": "6/27"
+      "samples": "8/27"
      }
     ],
     "prop_off_floor": []
@@ -363,7 +611,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 12.0
+     "render_seconds": 12.9
     },
     {
      "still": "player",
@@ -372,29 +620,105 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 11.8
+     "render_seconds": 12.8
     }
    ],
    "props": [
     {
      "id": "bone-a",
      "object": "giant-bone",
-     "source": "box-proxy"
+     "source": "model:giant-bone.glb",
+     "fit": {
+      "model_dims_m": [
+       4.0,
+       3.773,
+       1.239
+      ],
+      "box_m": [
+       4.0,
+       1.2,
+       2.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.863,
+      "worst_side_ratio": 2.71
+     }
     },
     {
      "id": "bone-b",
      "object": "giant-bone",
-     "source": "box-proxy"
+     "source": "model:giant-bone.glb",
+     "fit": {
+      "model_dims_m": [
+       4.0,
+       3.773,
+       1.239
+      ],
+      "box_m": [
+       2.4,
+       0.72,
+       1.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.518,
+      "worst_side_ratio": 2.71
+     }
     },
     {
      "id": "bone-c",
      "object": "giant-bone",
-     "source": "box-proxy"
+     "source": "model:giant-bone.glb",
+     "fit": {
+      "model_dims_m": [
+       4.0,
+       3.773,
+       1.239
+      ],
+      "box_m": [
+       2.88,
+       0.864,
+       1.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.621,
+      "worst_side_ratio": 2.71
+     }
     },
     {
      "id": "bone-crest",
      "object": "giant-bone",
-     "source": "box-proxy"
+     "source": "model:giant-bone.glb",
+     "fit": {
+      "model_dims_m": [
+       4.0,
+       3.773,
+       1.239
+      ],
+      "box_m": [
+       1.92,
+       0.576,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.414,
+      "worst_side_ratio": 2.71
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -407,7 +731,7 @@
      {
       "prop": "bone-crest",
       "piece": "crest",
-      "samples": "6/27"
+      "samples": "8/27"
      }
     ],
     "prop_off_floor": []
@@ -437,7 +761,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 7.3
+     "render_seconds": 7.8
     },
     {
      "still": "player",
@@ -446,29 +770,105 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 7.3
+     "render_seconds": 7.7
     }
    ],
    "props": [
     {
      "id": "bone-a",
      "object": "giant-bone",
-     "source": "box-proxy"
+     "source": "model:giant-bone.glb",
+     "fit": {
+      "model_dims_m": [
+       4.0,
+       3.773,
+       1.239
+      ],
+      "box_m": [
+       4.0,
+       1.2,
+       2.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.863,
+      "worst_side_ratio": 2.71
+     }
     },
     {
      "id": "bone-b",
      "object": "giant-bone",
-     "source": "box-proxy"
+     "source": "model:giant-bone.glb",
+     "fit": {
+      "model_dims_m": [
+       4.0,
+       3.773,
+       1.239
+      ],
+      "box_m": [
+       2.4,
+       0.72,
+       1.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.518,
+      "worst_side_ratio": 2.71
+     }
     },
     {
      "id": "bone-c",
      "object": "giant-bone",
-     "source": "box-proxy"
+     "source": "model:giant-bone.glb",
+     "fit": {
+      "model_dims_m": [
+       4.0,
+       3.773,
+       1.239
+      ],
+      "box_m": [
+       2.88,
+       0.864,
+       1.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.621,
+      "worst_side_ratio": 2.71
+     }
     },
     {
      "id": "bone-crest",
      "object": "giant-bone",
-     "source": "box-proxy"
+     "source": "model:giant-bone.glb",
+     "fit": {
+      "model_dims_m": [
+       4.0,
+       3.773,
+       1.239
+      ],
+      "box_m": [
+       1.92,
+       0.576,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.414,
+      "worst_side_ratio": 2.71
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -481,7 +881,7 @@
      {
       "prop": "bone-crest",
       "piece": "crest",
-      "samples": "6/27"
+      "samples": "8/27"
      }
     ],
     "prop_off_floor": []
@@ -508,7 +908,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 14.7
+     "render_seconds": 15.0
     },
     {
      "still": "player",
@@ -517,7 +917,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 14.0
+     "render_seconds": 14.6
     },
     {
      "still": "overview",
@@ -526,14 +926,33 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 7.2
+     "render_seconds": 7.3
     }
    ],
    "props": [
     {
      "id": "bookshelf",
      "object": "bookshelf",
-     "source": "box-proxy"
+     "source": "model:bookshelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.323,
+       0.929,
+       3.2
+      ],
+      "box_m": [
+       1.5,
+       0.375,
+       2.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.75,
+      "worst_side_ratio": 1.86
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -567,7 +986,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 7.7
+     "render_seconds": 8.5
     },
     {
      "still": "player",
@@ -576,7 +995,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 7.9
+     "render_seconds": 8.3
     },
     {
      "still": "overview",
@@ -585,14 +1004,33 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 4.7
+     "render_seconds": 4.9
     }
    ],
    "props": [
     {
      "id": "marker-pole",
      "object": "marker-pole",
-     "source": "box-proxy"
+     "source": "model:marker-pole.glb",
+     "fit": {
+      "model_dims_m": [
+       0.8,
+       0.753,
+       2.6
+      ],
+      "box_m": [
+       0.4,
+       0.4,
+       2.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.0
+     }
     },
     {
      "id": "journal",
@@ -602,17 +1040,74 @@
     {
      "id": "camp-fire",
      "object": "campfire-ring",
-     "source": "box-proxy"
+     "source": "model:campfire-ring.glb",
+     "fit": {
+      "model_dims_m": [
+       1.2,
+       1.21,
+       0.326
+      ],
+      "box_m": [
+       1.2,
+       1.2,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.97,
+      "worst_side_ratio": 1.05
+     }
     },
     {
      "id": "cairn-camp",
      "object": "stone-cairn",
-     "source": "box-proxy"
+     "source": "model:stone-cairn.glb",
+     "fit": {
+      "model_dims_m": [
+       1.297,
+       1.282,
+       1.2
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.62
+     }
     },
     {
      "id": "cairn-home",
      "object": "stone-cairn",
-     "source": "box-proxy"
+     "source": "model:stone-cairn.glb",
+     "fit": {
+      "model_dims_m": [
+       1.297,
+       1.282,
+       1.2
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.75,
+      "worst_side_ratio": 1.62
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -649,7 +1144,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 11.6
+     "render_seconds": 12.4
     },
     {
      "still": "player",
@@ -658,24 +1153,81 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 7.8
+     "render_seconds": 8.3
     }
    ],
    "props": [
     {
      "id": "marker-pole",
      "object": "marker-pole",
-     "source": "box-proxy"
+     "source": "model:marker-pole.glb",
+     "fit": {
+      "model_dims_m": [
+       0.8,
+       0.753,
+       2.6
+      ],
+      "box_m": [
+       0.4,
+       0.4,
+       2.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.0
+     }
     },
     {
      "id": "camp-fire",
      "object": "campfire-ring",
-     "source": "box-proxy"
+     "source": "model:campfire-ring.glb",
+     "fit": {
+      "model_dims_m": [
+       1.2,
+       1.21,
+       0.326
+      ],
+      "box_m": [
+       1.2,
+       1.2,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.97,
+      "worst_side_ratio": 1.05
+     }
     },
     {
      "id": "cairn-camp",
      "object": "stone-cairn",
-     "source": "box-proxy"
+     "source": "model:stone-cairn.glb",
+     "fit": {
+      "model_dims_m": [
+       1.297,
+       1.282,
+       1.2
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.62
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -712,7 +1264,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.6
+     "render_seconds": 9.1
     },
     {
      "still": "player",
@@ -721,29 +1273,105 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.2
+     "render_seconds": 8.6
     }
    ],
    "props": [
     {
      "id": "marker-pole",
      "object": "marker-pole",
-     "source": "box-proxy"
+     "source": "model:marker-pole.glb",
+     "fit": {
+      "model_dims_m": [
+       0.8,
+       0.753,
+       2.6
+      ],
+      "box_m": [
+       0.4,
+       0.4,
+       2.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.0
+     }
     },
     {
      "id": "camp-fire",
      "object": "campfire-ring",
-     "source": "box-proxy"
+     "source": "model:campfire-ring.glb",
+     "fit": {
+      "model_dims_m": [
+       1.2,
+       1.21,
+       0.326
+      ],
+      "box_m": [
+       1.2,
+       1.2,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.97,
+      "worst_side_ratio": 1.05
+     }
     },
     {
      "id": "cairn-camp",
      "object": "stone-cairn",
-     "source": "box-proxy"
+     "source": "model:stone-cairn.glb",
+     "fit": {
+      "model_dims_m": [
+       1.297,
+       1.282,
+       1.2
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.62
+     }
     },
     {
      "id": "cairn-home",
      "object": "stone-cairn",
-     "source": "box-proxy"
+     "source": "model:stone-cairn.glb",
+     "fit": {
+      "model_dims_m": [
+       1.297,
+       1.282,
+       1.2
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.75,
+      "worst_side_ratio": 1.62
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -780,7 +1408,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 12.7
+     "render_seconds": 8.5
     },
     {
      "still": "player",
@@ -789,29 +1417,105 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 7.8
+     "render_seconds": 8.1
     }
    ],
    "props": [
     {
      "id": "marker-pole",
      "object": "marker-pole",
-     "source": "box-proxy"
+     "source": "model:marker-pole.glb",
+     "fit": {
+      "model_dims_m": [
+       0.8,
+       0.753,
+       2.6
+      ],
+      "box_m": [
+       0.4,
+       0.4,
+       2.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.0
+     }
     },
     {
      "id": "camp-fire",
      "object": "campfire-ring",
-     "source": "box-proxy"
+     "source": "model:campfire-ring.glb",
+     "fit": {
+      "model_dims_m": [
+       1.2,
+       1.21,
+       0.326
+      ],
+      "box_m": [
+       1.2,
+       1.2,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.97,
+      "worst_side_ratio": 1.05
+     }
     },
     {
      "id": "cairn-camp",
      "object": "stone-cairn",
-     "source": "box-proxy"
+     "source": "model:stone-cairn.glb",
+     "fit": {
+      "model_dims_m": [
+       1.297,
+       1.282,
+       1.2
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.62
+     }
     },
     {
      "id": "cairn-home",
      "object": "stone-cairn",
-     "source": "box-proxy"
+     "source": "model:stone-cairn.glb",
+     "fit": {
+      "model_dims_m": [
+       1.297,
+       1.282,
+       1.2
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.75,
+      "worst_side_ratio": 1.62
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -845,7 +1549,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 7.8
+     "render_seconds": 8.2
     },
     {
      "still": "player",
@@ -854,29 +1558,105 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 7.8
+     "render_seconds": 8.2
     }
    ],
    "props": [
     {
      "id": "marker-pole",
      "object": "marker-pole",
-     "source": "box-proxy"
+     "source": "model:marker-pole.glb",
+     "fit": {
+      "model_dims_m": [
+       0.8,
+       0.753,
+       2.6
+      ],
+      "box_m": [
+       0.4,
+       0.4,
+       2.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.0
+     }
     },
     {
      "id": "camp-fire",
      "object": "campfire-ring",
-     "source": "box-proxy"
+     "source": "model:campfire-ring.glb",
+     "fit": {
+      "model_dims_m": [
+       1.2,
+       1.21,
+       0.326
+      ],
+      "box_m": [
+       1.2,
+       1.2,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.97,
+      "worst_side_ratio": 1.05
+     }
     },
     {
      "id": "cairn-camp",
      "object": "stone-cairn",
-     "source": "box-proxy"
+     "source": "model:stone-cairn.glb",
+     "fit": {
+      "model_dims_m": [
+       1.297,
+       1.282,
+       1.2
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.62
+     }
     },
     {
      "id": "cairn-home",
      "object": "stone-cairn",
-     "source": "box-proxy"
+     "source": "model:stone-cairn.glb",
+     "fit": {
+      "model_dims_m": [
+       1.297,
+       1.282,
+       1.2
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.75,
+      "worst_side_ratio": 1.62
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -910,7 +1690,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 12.6
+     "render_seconds": 13.1
     },
     {
      "still": "player",
@@ -919,7 +1699,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 12.7
+     "render_seconds": 13.0
     },
     {
      "still": "overview",
@@ -928,14 +1708,33 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 6.0
+     "render_seconds": 6.1
     }
    ],
    "props": [
     {
      "id": "umbrella",
      "object": "clerk-umbrella",
-     "source": "box-proxy"
+     "source": "model:clerk-umbrella.glb",
+     "fit": {
+      "model_dims_m": [
+       1.1,
+       1.178,
+       1.138
+      ],
+      "box_m": [
+       1.1,
+       1.1,
+       0.95
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.835,
+      "worst_side_ratio": 1.2
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -969,7 +1768,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 13.6
+     "render_seconds": 13.8
     },
     {
      "still": "player",
@@ -978,7 +1777,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 13.6
+     "render_seconds": 14.0
     },
     {
      "still": "overview",
@@ -987,44 +1786,177 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 6.5
+     "render_seconds": 6.7
     }
    ],
    "props": [
     {
      "id": "jar-goblins-eyes",
      "object": "specimen-jar",
-     "source": "box-proxy"
+     "source": "model:specimen-jar.glb",
+     "fit": {
+      "model_dims_m": [
+       0.132,
+       0.126,
+       0.3
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.19
+     }
     },
     {
      "id": "jar-ogers-tongue",
      "object": "specimen-jar",
-     "source": "box-proxy"
+     "source": "model:specimen-jar.glb",
+     "fit": {
+      "model_dims_m": [
+       0.132,
+       0.126,
+       0.3
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.19
+     }
     },
     {
      "id": "jar-north-3",
      "object": "specimen-jar",
-     "source": "box-proxy"
+     "source": "model:specimen-jar.glb",
+     "fit": {
+      "model_dims_m": [
+       0.132,
+       0.126,
+       0.3
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.19
+     }
     },
     {
      "id": "jar-north-4",
      "object": "specimen-jar",
-     "source": "box-proxy"
+     "source": "model:specimen-jar.glb",
+     "fit": {
+      "model_dims_m": [
+       0.132,
+       0.126,
+       0.3
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.19
+     }
     },
     {
      "id": "jar-east-1",
      "object": "specimen-jar",
-     "source": "box-proxy"
+     "source": "model:specimen-jar.glb",
+     "fit": {
+      "model_dims_m": [
+       0.132,
+       0.126,
+       0.3
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.19
+     }
     },
     {
      "id": "jar-east-2",
      "object": "specimen-jar",
-     "source": "box-proxy"
+     "source": "model:specimen-jar.glb",
+     "fit": {
+      "model_dims_m": [
+       0.132,
+       0.126,
+       0.3
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.19
+     }
     },
     {
      "id": "jar-west-1",
      "object": "specimen-jar",
-     "source": "box-proxy"
+     "source": "model:specimen-jar.glb",
+     "fit": {
+      "model_dims_m": [
+       0.132,
+       0.126,
+       0.3
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.19
+     }
     },
     {
      "id": "tin-mint",
@@ -1044,12 +1976,50 @@
     {
      "id": "kettle",
      "object": "kettle",
-     "source": "box-proxy"
+     "source": "model:kettle.glb",
+     "fit": {
+      "model_dims_m": [
+       0.28,
+       0.217,
+       0.278
+      ],
+      "box_m": [
+       0.28,
+       0.2,
+       0.25
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.9,
+      "worst_side_ratio": 1.11
+     }
     },
     {
      "id": "teacup",
      "object": "teacup",
-     "source": "box-proxy"
+     "source": "model:teacup.glb",
+     "fit": {
+      "model_dims_m": [
+       0.12,
+       0.12,
+       0.065
+      ],
+      "box_m": [
+       0.12,
+       0.12,
+       0.08
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.072,
+      "worst_side_ratio": 1.15
+     }
     },
     {
      "id": "ledger",
@@ -1088,7 +2058,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 13.5
+     "render_seconds": 13.8
     },
     {
      "still": "player",
@@ -1097,44 +2067,177 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 13.6
+     "render_seconds": 13.9
     }
    ],
    "props": [
     {
      "id": "jar-goblins-eyes",
      "object": "specimen-jar",
-     "source": "box-proxy"
+     "source": "model:specimen-jar.glb",
+     "fit": {
+      "model_dims_m": [
+       0.132,
+       0.126,
+       0.3
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.19
+     }
     },
     {
      "id": "jar-ogers-tongue",
      "object": "specimen-jar",
-     "source": "box-proxy"
+     "source": "model:specimen-jar.glb",
+     "fit": {
+      "model_dims_m": [
+       0.132,
+       0.126,
+       0.3
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.19
+     }
     },
     {
      "id": "jar-north-3",
      "object": "specimen-jar",
-     "source": "box-proxy"
+     "source": "model:specimen-jar.glb",
+     "fit": {
+      "model_dims_m": [
+       0.132,
+       0.126,
+       0.3
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.19
+     }
     },
     {
      "id": "jar-north-4",
      "object": "specimen-jar",
-     "source": "box-proxy"
+     "source": "model:specimen-jar.glb",
+     "fit": {
+      "model_dims_m": [
+       0.132,
+       0.126,
+       0.3
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.19
+     }
     },
     {
      "id": "jar-east-1",
      "object": "specimen-jar",
-     "source": "box-proxy"
+     "source": "model:specimen-jar.glb",
+     "fit": {
+      "model_dims_m": [
+       0.132,
+       0.126,
+       0.3
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.19
+     }
     },
     {
      "id": "jar-east-2",
      "object": "specimen-jar",
-     "source": "box-proxy"
+     "source": "model:specimen-jar.glb",
+     "fit": {
+      "model_dims_m": [
+       0.132,
+       0.126,
+       0.3
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.19
+     }
     },
     {
      "id": "jar-west-1",
      "object": "specimen-jar",
-     "source": "box-proxy"
+     "source": "model:specimen-jar.glb",
+     "fit": {
+      "model_dims_m": [
+       0.132,
+       0.126,
+       0.3
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.19
+     }
     },
     {
      "id": "tin-mint",
@@ -1154,7 +2257,26 @@
     {
      "id": "kettle",
      "object": "kettle",
-     "source": "box-proxy"
+     "source": "model:kettle.glb",
+     "fit": {
+      "model_dims_m": [
+       0.28,
+       0.217,
+       0.278
+      ],
+      "box_m": [
+       0.28,
+       0.2,
+       0.25
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.9,
+      "worst_side_ratio": 1.11
+     }
     },
     {
      "id": "ledger",
@@ -1193,7 +2315,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 12.9
+     "render_seconds": 13.3
     },
     {
      "still": "player",
@@ -1202,44 +2324,177 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 12.0
+     "render_seconds": 12.2
     }
    ],
    "props": [
     {
      "id": "jar-goblins-eyes",
      "object": "specimen-jar",
-     "source": "box-proxy"
+     "source": "model:specimen-jar.glb",
+     "fit": {
+      "model_dims_m": [
+       0.132,
+       0.126,
+       0.3
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.19
+     }
     },
     {
      "id": "jar-ogers-tongue",
      "object": "specimen-jar",
-     "source": "box-proxy"
+     "source": "model:specimen-jar.glb",
+     "fit": {
+      "model_dims_m": [
+       0.132,
+       0.126,
+       0.3
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.19
+     }
     },
     {
      "id": "jar-north-3",
      "object": "specimen-jar",
-     "source": "box-proxy"
+     "source": "model:specimen-jar.glb",
+     "fit": {
+      "model_dims_m": [
+       0.132,
+       0.126,
+       0.3
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.19
+     }
     },
     {
      "id": "jar-north-4",
      "object": "specimen-jar",
-     "source": "box-proxy"
+     "source": "model:specimen-jar.glb",
+     "fit": {
+      "model_dims_m": [
+       0.132,
+       0.126,
+       0.3
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.19
+     }
     },
     {
      "id": "jar-east-1",
      "object": "specimen-jar",
-     "source": "box-proxy"
+     "source": "model:specimen-jar.glb",
+     "fit": {
+      "model_dims_m": [
+       0.132,
+       0.126,
+       0.3
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.19
+     }
     },
     {
      "id": "jar-east-2",
      "object": "specimen-jar",
-     "source": "box-proxy"
+     "source": "model:specimen-jar.glb",
+     "fit": {
+      "model_dims_m": [
+       0.132,
+       0.126,
+       0.3
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.19
+     }
     },
     {
      "id": "jar-west-1",
      "object": "specimen-jar",
-     "source": "box-proxy"
+     "source": "model:specimen-jar.glb",
+     "fit": {
+      "model_dims_m": [
+       0.132,
+       0.126,
+       0.3
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.19
+     }
     },
     {
      "id": "tin-mint",
@@ -1259,12 +2514,50 @@
     {
      "id": "kettle",
      "object": "kettle",
-     "source": "box-proxy"
+     "source": "model:kettle.glb",
+     "fit": {
+      "model_dims_m": [
+       0.28,
+       0.217,
+       0.278
+      ],
+      "box_m": [
+       0.28,
+       0.2,
+       0.25
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.9,
+      "worst_side_ratio": 1.11
+     }
     },
     {
      "id": "teacup",
      "object": "teacup",
-     "source": "box-proxy"
+     "source": "model:teacup.glb",
+     "fit": {
+      "model_dims_m": [
+       0.12,
+       0.12,
+       0.065
+      ],
+      "box_m": [
+       0.12,
+       0.12,
+       0.08
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.072,
+      "worst_side_ratio": 1.15
+     }
     },
     {
      "id": "ledger",
@@ -1303,7 +2596,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 12.7
+     "render_seconds": 13.1
     },
     {
      "still": "player",
@@ -1319,37 +2612,170 @@
     {
      "id": "jar-goblins-eyes",
      "object": "specimen-jar",
-     "source": "box-proxy"
+     "source": "model:specimen-jar.glb",
+     "fit": {
+      "model_dims_m": [
+       0.132,
+       0.126,
+       0.3
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.19
+     }
     },
     {
      "id": "jar-ogers-tongue",
      "object": "specimen-jar",
-     "source": "box-proxy"
+     "source": "model:specimen-jar.glb",
+     "fit": {
+      "model_dims_m": [
+       0.132,
+       0.126,
+       0.3
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.19
+     }
     },
     {
      "id": "jar-north-3",
      "object": "specimen-jar",
-     "source": "box-proxy"
+     "source": "model:specimen-jar.glb",
+     "fit": {
+      "model_dims_m": [
+       0.132,
+       0.126,
+       0.3
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.19
+     }
     },
     {
      "id": "jar-north-4",
      "object": "specimen-jar",
-     "source": "box-proxy"
+     "source": "model:specimen-jar.glb",
+     "fit": {
+      "model_dims_m": [
+       0.132,
+       0.126,
+       0.3
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.19
+     }
     },
     {
      "id": "jar-east-1",
      "object": "specimen-jar",
-     "source": "box-proxy"
+     "source": "model:specimen-jar.glb",
+     "fit": {
+      "model_dims_m": [
+       0.132,
+       0.126,
+       0.3
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.19
+     }
     },
     {
      "id": "jar-east-2",
      "object": "specimen-jar",
-     "source": "box-proxy"
+     "source": "model:specimen-jar.glb",
+     "fit": {
+      "model_dims_m": [
+       0.132,
+       0.126,
+       0.3
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.19
+     }
     },
     {
      "id": "jar-west-1",
      "object": "specimen-jar",
-     "source": "box-proxy"
+     "source": "model:specimen-jar.glb",
+     "fit": {
+      "model_dims_m": [
+       0.132,
+       0.126,
+       0.3
+      ],
+      "box_m": [
+       0.15,
+       0.15,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.19
+     }
     },
     {
      "id": "tin-mint",
@@ -1369,12 +2795,50 @@
     {
      "id": "kettle",
      "object": "kettle",
-     "source": "box-proxy"
+     "source": "model:kettle.glb",
+     "fit": {
+      "model_dims_m": [
+       0.28,
+       0.217,
+       0.278
+      ],
+      "box_m": [
+       0.28,
+       0.2,
+       0.25
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.9,
+      "worst_side_ratio": 1.11
+     }
     },
     {
      "id": "candle",
      "object": "candlestick",
-     "source": "box-proxy"
+     "source": "model:candlestick.glb",
+     "fit": {
+      "model_dims_m": [
+       0.295,
+       0.352,
+       0.3
+      ],
+      "box_m": [
+       0.12,
+       0.12,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       90,
+       0,
+       0
+      ],
+      "scale": 0.853,
+      "worst_side_ratio": 2.13
+     }
     },
     {
      "id": "ledger",
@@ -1413,7 +2877,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 7.6
+     "render_seconds": 8.1
     },
     {
      "still": "player",
@@ -1438,52 +2902,243 @@
     {
      "id": "lantern-1",
      "object": "pilgrim-lantern",
-     "source": "box-proxy"
+     "source": "model:pilgrim-lantern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.166,
+       0.141,
+       0.4
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.42
+     }
     },
     {
      "id": "lantern-2",
      "object": "pilgrim-lantern",
-     "source": "box-proxy"
+     "source": "model:pilgrim-lantern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.166,
+       0.141,
+       0.4
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.42
+     }
     },
     {
      "id": "lantern-3",
      "object": "pilgrim-lantern",
-     "source": "box-proxy"
+     "source": "model:pilgrim-lantern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.166,
+       0.141,
+       0.4
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.42
+     }
     },
     {
      "id": "lantern-4",
      "object": "pilgrim-lantern",
-     "source": "box-proxy"
+     "source": "model:pilgrim-lantern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.166,
+       0.141,
+       0.4
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.42
+     }
     },
     {
      "id": "lantern-5",
      "object": "pilgrim-lantern",
-     "source": "box-proxy"
+     "source": "model:pilgrim-lantern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.166,
+       0.141,
+       0.4
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.42
+     }
     },
     {
      "id": "lantern-6",
      "object": "pilgrim-lantern",
-     "source": "box-proxy"
+     "source": "model:pilgrim-lantern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.166,
+       0.141,
+       0.4
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.42
+     }
     },
     {
      "id": "lantern-7",
      "object": "pilgrim-lantern",
-     "source": "box-proxy"
+     "source": "model:pilgrim-lantern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.166,
+       0.141,
+       0.4
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.42
+     }
     },
     {
      "id": "lantern-wagon",
      "object": "pilgrim-lantern",
-     "source": "box-proxy"
+     "source": "model:pilgrim-lantern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.166,
+       0.141,
+       0.4
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.42
+     }
     },
     {
      "id": "scroll",
      "object": "scribe-scroll",
-     "source": "box-proxy"
+     "source": "model:scribe-scroll.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.451,
+       0.086
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       0.15
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.156,
+      "worst_side_ratio": 1.51
+     }
     },
     {
      "id": "quill",
      "object": "quill-pen",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       0.289,
+       0.324,
+       0.3
+      ],
+      "box_m": [
+       0.03,
+       0.03,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       90,
+       0,
+       0
+      ],
+      "scale": 0.927,
+      "worst_side_ratio": 3.04,
+      "rejected": "proportions: a side is off by x3.0 after the best fit"
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -1556,7 +3211,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 9.4
+     "render_seconds": 9.7
     },
     {
      "still": "player",
@@ -1565,59 +3220,250 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 9.3
+     "render_seconds": 9.7
     }
    ],
    "props": [
     {
      "id": "lantern-1",
      "object": "pilgrim-lantern",
-     "source": "box-proxy"
+     "source": "model:pilgrim-lantern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.166,
+       0.141,
+       0.4
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.42
+     }
     },
     {
      "id": "lantern-2",
      "object": "pilgrim-lantern",
-     "source": "box-proxy"
+     "source": "model:pilgrim-lantern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.166,
+       0.141,
+       0.4
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.42
+     }
     },
     {
      "id": "lantern-3",
      "object": "pilgrim-lantern",
-     "source": "box-proxy"
+     "source": "model:pilgrim-lantern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.166,
+       0.141,
+       0.4
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.42
+     }
     },
     {
      "id": "lantern-4",
      "object": "pilgrim-lantern",
-     "source": "box-proxy"
+     "source": "model:pilgrim-lantern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.166,
+       0.141,
+       0.4
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.42
+     }
     },
     {
      "id": "lantern-5",
      "object": "pilgrim-lantern",
-     "source": "box-proxy"
+     "source": "model:pilgrim-lantern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.166,
+       0.141,
+       0.4
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.42
+     }
     },
     {
      "id": "lantern-6",
      "object": "pilgrim-lantern",
-     "source": "box-proxy"
+     "source": "model:pilgrim-lantern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.166,
+       0.141,
+       0.4
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.42
+     }
     },
     {
      "id": "lantern-7",
      "object": "pilgrim-lantern",
-     "source": "box-proxy"
+     "source": "model:pilgrim-lantern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.166,
+       0.141,
+       0.4
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.42
+     }
     },
     {
      "id": "lantern-wagon",
      "object": "pilgrim-lantern",
-     "source": "box-proxy"
+     "source": "model:pilgrim-lantern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.166,
+       0.141,
+       0.4
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.42
+     }
     },
     {
      "id": "scroll",
      "object": "scribe-scroll",
-     "source": "box-proxy"
+     "source": "model:scribe-scroll.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.451,
+       0.086
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       0.15
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.156,
+      "worst_side_ratio": 1.51
+     }
     },
     {
      "id": "quill",
      "object": "quill-pen",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       0.289,
+       0.324,
+       0.3
+      ],
+      "box_m": [
+       0.03,
+       0.03,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       90,
+       0,
+       0
+      ],
+      "scale": 0.927,
+      "worst_side_ratio": 3.04,
+      "rejected": "proportions: a side is off by x3.0 after the best fit"
+     }
     }
    ],
    "flagged_in_first_pass": [
@@ -1693,7 +3539,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 7.8
+     "render_seconds": 8.0
     },
     {
      "still": "player",
@@ -1702,64 +3548,274 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 7.6
+     "render_seconds": 7.9
     }
    ],
    "props": [
     {
      "id": "lantern-1",
      "object": "pilgrim-lantern",
-     "source": "box-proxy"
+     "source": "model:pilgrim-lantern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.166,
+       0.141,
+       0.4
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.42
+     }
     },
     {
      "id": "lantern-2",
      "object": "pilgrim-lantern",
-     "source": "box-proxy"
+     "source": "model:pilgrim-lantern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.166,
+       0.141,
+       0.4
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.42
+     }
     },
     {
      "id": "lantern-3",
      "object": "pilgrim-lantern",
-     "source": "box-proxy"
+     "source": "model:pilgrim-lantern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.166,
+       0.141,
+       0.4
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.42
+     }
     },
     {
      "id": "lantern-4",
      "object": "pilgrim-lantern",
-     "source": "box-proxy"
+     "source": "model:pilgrim-lantern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.166,
+       0.141,
+       0.4
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.42
+     }
     },
     {
      "id": "lantern-5",
      "object": "pilgrim-lantern",
-     "source": "box-proxy"
+     "source": "model:pilgrim-lantern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.166,
+       0.141,
+       0.4
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.42
+     }
     },
     {
      "id": "lantern-6",
      "object": "pilgrim-lantern",
-     "source": "box-proxy"
+     "source": "model:pilgrim-lantern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.166,
+       0.141,
+       0.4
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.42
+     }
     },
     {
      "id": "lantern-7",
      "object": "pilgrim-lantern",
-     "source": "box-proxy"
+     "source": "model:pilgrim-lantern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.166,
+       0.141,
+       0.4
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.42
+     }
     },
     {
      "id": "lantern-wagon",
      "object": "pilgrim-lantern",
-     "source": "box-proxy"
+     "source": "model:pilgrim-lantern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.166,
+       0.141,
+       0.4
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.42
+     }
     },
     {
      "id": "scroll",
      "object": "scribe-scroll",
-     "source": "box-proxy"
+     "source": "model:scribe-scroll.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.451,
+       0.086
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       0.15
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.156,
+      "worst_side_ratio": 1.51
+     }
     },
     {
      "id": "last-sheet",
      "object": "scribe-scroll",
-     "source": "box-proxy"
+     "source": "model:scribe-scroll.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.451,
+       0.086
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       0.15
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.156,
+      "worst_side_ratio": 1.51
+     }
     },
     {
      "id": "quill-cliff",
      "object": "quill-pen",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       0.289,
+       0.324,
+       0.3
+      ],
+      "box_m": [
+       0.03,
+       0.03,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       90,
+       0,
+       0
+      ],
+      "scale": 0.927,
+      "worst_side_ratio": 3.04,
+      "rejected": "proportions: a side is off by x3.0 after the best fit"
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -1850,34 +3906,129 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 4.8
+     "render_seconds": 4.7
     }
    ],
    "props": [
     {
      "id": "cairn-mark",
      "object": "stone-cairn",
-     "source": "box-proxy"
+     "source": "model:stone-cairn.glb",
+     "fit": {
+      "model_dims_m": [
+       1.297,
+       1.282,
+       1.2
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.62
+     }
     },
     {
      "id": "cairn-2",
      "object": "stone-cairn",
-     "source": "box-proxy"
+     "source": "model:stone-cairn.glb",
+     "fit": {
+      "model_dims_m": [
+       1.297,
+       1.282,
+       1.2
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.62
+     }
     },
     {
      "id": "cairn-3",
      "object": "stone-cairn",
-     "source": "box-proxy"
+     "source": "model:stone-cairn.glb",
+     "fit": {
+      "model_dims_m": [
+       1.297,
+       1.282,
+       1.2
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.62
+     }
     },
     {
      "id": "cairn-4",
      "object": "stone-cairn",
-     "source": "box-proxy"
+     "source": "model:stone-cairn.glb",
+     "fit": {
+      "model_dims_m": [
+       1.297,
+       1.282,
+       1.2
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.62
+     }
     },
     {
      "id": "cairn-5",
      "object": "stone-cairn",
-     "source": "box-proxy"
+     "source": "model:stone-cairn.glb",
+     "fit": {
+      "model_dims_m": [
+       1.297,
+       1.282,
+       1.2
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.62
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -1911,7 +4062,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 12.7
+     "render_seconds": 12.9
     },
     {
      "still": "player",
@@ -1920,34 +4071,129 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 12.6
+     "render_seconds": 12.9
     }
    ],
    "props": [
     {
      "id": "cairn-mark",
      "object": "stone-cairn",
-     "source": "box-proxy"
+     "source": "model:stone-cairn.glb",
+     "fit": {
+      "model_dims_m": [
+       1.297,
+       1.282,
+       1.2
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.62
+     }
     },
     {
      "id": "cairn-2",
      "object": "stone-cairn",
-     "source": "box-proxy"
+     "source": "model:stone-cairn.glb",
+     "fit": {
+      "model_dims_m": [
+       1.297,
+       1.282,
+       1.2
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.62
+     }
     },
     {
      "id": "cairn-3",
      "object": "stone-cairn",
-     "source": "box-proxy"
+     "source": "model:stone-cairn.glb",
+     "fit": {
+      "model_dims_m": [
+       1.297,
+       1.282,
+       1.2
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.62
+     }
     },
     {
      "id": "cairn-4",
      "object": "stone-cairn",
-     "source": "box-proxy"
+     "source": "model:stone-cairn.glb",
+     "fit": {
+      "model_dims_m": [
+       1.297,
+       1.282,
+       1.2
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.62
+     }
     },
     {
      "id": "cairn-5",
      "object": "stone-cairn",
-     "source": "box-proxy"
+     "source": "model:stone-cairn.glb",
+     "fit": {
+      "model_dims_m": [
+       1.297,
+       1.282,
+       1.2
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.62
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -1981,7 +4227,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.1
+     "render_seconds": 8.2
     },
     {
      "still": "player",
@@ -1990,39 +4236,153 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.1
+     "render_seconds": 8.2
     }
    ],
    "props": [
     {
      "id": "cairn-mark",
      "object": "stone-cairn",
-     "source": "box-proxy"
+     "source": "model:stone-cairn.glb",
+     "fit": {
+      "model_dims_m": [
+       1.297,
+       1.282,
+       1.2
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.62
+     }
     },
     {
      "id": "cairn-2",
      "object": "stone-cairn",
-     "source": "box-proxy"
+     "source": "model:stone-cairn.glb",
+     "fit": {
+      "model_dims_m": [
+       1.297,
+       1.282,
+       1.2
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.62
+     }
     },
     {
      "id": "cairn-3",
      "object": "stone-cairn",
-     "source": "box-proxy"
+     "source": "model:stone-cairn.glb",
+     "fit": {
+      "model_dims_m": [
+       1.297,
+       1.282,
+       1.2
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.62
+     }
     },
     {
      "id": "cairn-4",
      "object": "stone-cairn",
-     "source": "box-proxy"
+     "source": "model:stone-cairn.glb",
+     "fit": {
+      "model_dims_m": [
+       1.297,
+       1.282,
+       1.2
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.62
+     }
     },
     {
      "id": "cairn-5",
      "object": "stone-cairn",
-     "source": "box-proxy"
+     "source": "model:stone-cairn.glb",
+     "fit": {
+      "model_dims_m": [
+       1.297,
+       1.282,
+       1.2
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.62
+     }
     },
     {
      "id": "leaf-shoes",
      "object": "zorlop-leaf-shoes",
-     "source": "box-proxy"
+     "source": "model:zorlop-leaf-shoes.glb",
+     "fit": {
+      "model_dims_m": [
+       0.503,
+       0.6,
+       0.135
+      ],
+      "box_m": [
+       0.4,
+       0.6,
+       0.08
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.892,
+      "worst_side_ratio": 1.23
+     }
     },
     {
      "id": "pack",
@@ -2061,7 +4421,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.1
+     "render_seconds": 8.2
     },
     {
      "still": "player",
@@ -2070,34 +4430,129 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.1
+     "render_seconds": 8.2
     }
    ],
    "props": [
     {
      "id": "cairn-mark",
      "object": "stone-cairn",
-     "source": "box-proxy"
+     "source": "model:stone-cairn.glb",
+     "fit": {
+      "model_dims_m": [
+       1.297,
+       1.282,
+       1.2
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.62
+     }
     },
     {
      "id": "cairn-2",
      "object": "stone-cairn",
-     "source": "box-proxy"
+     "source": "model:stone-cairn.glb",
+     "fit": {
+      "model_dims_m": [
+       1.297,
+       1.282,
+       1.2
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.62
+     }
     },
     {
      "id": "cairn-3",
      "object": "stone-cairn",
-     "source": "box-proxy"
+     "source": "model:stone-cairn.glb",
+     "fit": {
+      "model_dims_m": [
+       1.297,
+       1.282,
+       1.2
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.62
+     }
     },
     {
      "id": "cairn-4",
      "object": "stone-cairn",
-     "source": "box-proxy"
+     "source": "model:stone-cairn.glb",
+     "fit": {
+      "model_dims_m": [
+       1.297,
+       1.282,
+       1.2
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.62
+     }
     },
     {
      "id": "cairn-5",
      "object": "stone-cairn",
-     "source": "box-proxy"
+     "source": "model:stone-cairn.glb",
+     "fit": {
+      "model_dims_m": [
+       1.297,
+       1.282,
+       1.2
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.62
+     }
     },
     {
      "id": "pack",
@@ -2145,34 +4600,129 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 10.0
+     "render_seconds": 9.9
     }
    ],
    "props": [
     {
      "id": "cairn-mark",
      "object": "stone-cairn",
-     "source": "box-proxy"
+     "source": "model:stone-cairn.glb",
+     "fit": {
+      "model_dims_m": [
+       1.297,
+       1.282,
+       1.2
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.62
+     }
     },
     {
      "id": "cairn-2",
      "object": "stone-cairn",
-     "source": "box-proxy"
+     "source": "model:stone-cairn.glb",
+     "fit": {
+      "model_dims_m": [
+       1.297,
+       1.282,
+       1.2
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.62
+     }
     },
     {
      "id": "cairn-3",
      "object": "stone-cairn",
-     "source": "box-proxy"
+     "source": "model:stone-cairn.glb",
+     "fit": {
+      "model_dims_m": [
+       1.297,
+       1.282,
+       1.2
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.62
+     }
     },
     {
      "id": "cairn-4",
      "object": "stone-cairn",
-     "source": "box-proxy"
+     "source": "model:stone-cairn.glb",
+     "fit": {
+      "model_dims_m": [
+       1.297,
+       1.282,
+       1.2
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.62
+     }
     },
     {
      "id": "cairn-5",
      "object": "stone-cairn",
-     "source": "box-proxy"
+     "source": "model:stone-cairn.glb",
+     "fit": {
+      "model_dims_m": [
+       1.297,
+       1.282,
+       1.2
+      ],
+      "box_m": [
+       0.8,
+       0.8,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.62
+     }
     },
     {
      "id": "pack",
@@ -2182,7 +4732,26 @@
     {
      "id": "camp-fire",
      "object": "campfire-ring",
-     "source": "box-proxy"
+     "source": "model:campfire-ring.glb",
+     "fit": {
+      "model_dims_m": [
+       1.2,
+       1.21,
+       0.326
+      ],
+      "box_m": [
+       1.2,
+       1.2,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.97,
+      "worst_side_ratio": 1.05
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -2216,7 +4785,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 16.2
+     "render_seconds": 14.8
     },
     {
      "still": "player",
@@ -2225,7 +4794,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 16.1
+     "render_seconds": 14.7
     },
     {
      "still": "overview",
@@ -2234,14 +4803,33 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 6.8
+     "render_seconds": 7.0
     }
    ],
    "props": [
     {
      "id": "firepit",
      "object": "campfire-ring",
-     "source": "box-proxy"
+     "source": "model:campfire-ring.glb",
+     "fit": {
+      "model_dims_m": [
+       1.2,
+       1.21,
+       0.326
+      ],
+      "box_m": [
+       1.8,
+       1.8,
+       0.45
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.456,
+      "worst_side_ratio": 1.05
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -2278,7 +4866,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.4
+     "render_seconds": 8.8
     },
     {
      "still": "player",
@@ -2287,14 +4875,33 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.2
+     "render_seconds": 8.5
     }
    ],
    "props": [
     {
      "id": "firepit",
      "object": "campfire-ring",
-     "source": "box-proxy"
+     "source": "model:campfire-ring.glb",
+     "fit": {
+      "model_dims_m": [
+       1.2,
+       1.21,
+       0.326
+      ],
+      "box_m": [
+       1.8,
+       1.8,
+       0.45
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.456,
+      "worst_side_ratio": 1.05
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -2328,14 +4935,33 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 6.8
+     "render_seconds": 6.9
     }
    ],
    "props": [
     {
      "id": "firepit",
      "object": "campfire-ring",
-     "source": "box-proxy"
+     "source": "model:campfire-ring.glb",
+     "fit": {
+      "model_dims_m": [
+       1.2,
+       1.21,
+       0.326
+      ],
+      "box_m": [
+       1.8,
+       1.8,
+       0.45
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.456,
+      "worst_side_ratio": 1.05
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -2372,7 +4998,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 16.5
+     "render_seconds": 16.7
     },
     {
      "still": "player",
@@ -2381,7 +5007,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 16.2
+     "render_seconds": 16.7
     },
     {
      "still": "overview",
@@ -2390,14 +5016,33 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 6.9
+     "render_seconds": 7.1
     }
    ],
    "props": [
     {
      "id": "reading-chair",
      "object": "reading-chair",
-     "source": "box-proxy"
+     "source": "model:reading-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       0.819,
+       0.982,
+       1.4
+      ],
+      "box_m": [
+       0.9,
+       0.9,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.1
+     }
     },
     {
      "id": "sand-book",
@@ -2407,57 +5052,250 @@
     {
      "id": "yesterdays-book",
      "object": "yesterdays-book",
-     "source": "box-proxy"
+     "source": "model:yesterdays-book.glb",
+     "fit": {
+      "model_dims_m": [
+       1.301,
+       0.852,
+       0.3
+      ],
+      "box_m": [
+       0.22,
+       0.04,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.231,
+      "worst_side_ratio": 1.31
+     }
     },
     {
      "id": "lizard-plate",
      "object": "lizard-plate",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "a lizard on a leaf plate (creature)"
+     }
     },
     {
      "id": "teacup",
      "object": "teacup",
-     "source": "box-proxy"
+     "source": "model:teacup.glb",
+     "fit": {
+      "model_dims_m": [
+       0.12,
+       0.12,
+       0.065
+      ],
+      "box_m": [
+       0.12,
+       0.12,
+       0.08
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.072,
+      "worst_side_ratio": 1.15
+     }
     },
     {
      "id": "cuckoo-clock",
      "object": "cuckoo-clock",
-     "source": "box-proxy"
+     "source": "model:cuckoo-clock.glb",
+     "fit": {
+      "model_dims_m": [
+       0.493,
+       0.407,
+       0.9
+      ],
+      "box_m": [
+       0.5,
+       0.25,
+       0.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.63
+     }
     },
     {
      "id": "broom",
      "object": "broom",
-     "source": "box-proxy"
+     "source": "model:broom.glb",
+     "fit": {
+      "model_dims_m": [
+       14.268,
+       3.386,
+       1.6
+      ],
+      "box_m": [
+       0.35,
+       0.1,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.112,
+      "worst_side_ratio": 1.79
+     }
     },
     {
      "id": "shelf-aisle-a",
      "object": "bookshelf",
-     "source": "box-proxy"
+     "source": "model:bookshelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.323,
+       0.929,
+       3.2
+      ],
+      "box_m": [
+       2.0,
+       0.5,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "shelf-aisle-b",
      "object": "bookshelf",
-     "source": "box-proxy"
+     "source": "model:bookshelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.323,
+       0.929,
+       3.2
+      ],
+      "box_m": [
+       2.0,
+       0.5,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "shelf-aisle-c",
      "object": "bookshelf",
-     "source": "box-proxy"
+     "source": "model:bookshelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.323,
+       0.929,
+       3.2
+      ],
+      "box_m": [
+       2.0,
+       0.5,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "ladder-north",
      "object": "library-ladder",
-     "source": "box-proxy"
+     "source": "model:library-ladder.glb",
+     "fit": {
+      "model_dims_m": [
+       1.404,
+       1.078,
+       3.5
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       3.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.7
+     }
     },
     {
      "id": "ladder-south",
      "object": "library-ladder",
-     "source": "box-proxy"
+     "source": "model:library-ladder.glb",
+     "fit": {
+      "model_dims_m": [
+       1.404,
+       1.078,
+       3.5
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       3.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.7
+     }
     },
     {
      "id": "ladder-gallery",
      "object": "library-ladder",
-     "source": "box-proxy"
+     "source": "model:library-ladder.glb",
+     "fit": {
+      "model_dims_m": [
+       1.404,
+       1.078,
+       3.5
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       3.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.7
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -2466,7 +5304,28 @@
     "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
-    "prop_overlap": [],
+    "prop_overlap": [
+     {
+      "prop": "cuckoo-clock",
+      "piece": "pillar-south-east",
+      "samples": "3/27"
+     },
+     {
+      "prop": "ladder-north",
+      "piece": "shelves-north-low",
+      "samples": "9/27"
+     },
+     {
+      "prop": "ladder-south",
+      "piece": "shelves-south-low",
+      "samples": "9/27"
+     },
+     {
+      "prop": "ladder-gallery",
+      "piece": "shelves-north-high",
+      "samples": "9/27"
+     }
+    ],
     "prop_off_floor": []
    },
    "render_time_overrides": [],
@@ -2491,7 +5350,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 16.5
+     "render_seconds": 16.6
     },
     {
      "still": "player",
@@ -2507,7 +5366,26 @@
     {
      "id": "reading-chair",
      "object": "reading-chair",
-     "source": "box-proxy"
+     "source": "model:reading-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       0.819,
+       0.982,
+       1.4
+      ],
+      "box_m": [
+       0.9,
+       0.9,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.1
+     }
     },
     {
      "id": "sand-book",
@@ -2517,52 +5395,242 @@
     {
      "id": "teacup",
      "object": "teacup",
-     "source": "box-proxy"
+     "source": "model:teacup.glb",
+     "fit": {
+      "model_dims_m": [
+       0.12,
+       0.12,
+       0.065
+      ],
+      "box_m": [
+       0.12,
+       0.12,
+       0.08
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.072,
+      "worst_side_ratio": 1.15
+     }
     },
     {
      "id": "cuckoo-clock",
      "object": "cuckoo-clock",
-     "source": "box-proxy"
+     "source": "model:cuckoo-clock.glb",
+     "fit": {
+      "model_dims_m": [
+       0.493,
+       0.407,
+       0.9
+      ],
+      "box_m": [
+       0.5,
+       0.25,
+       0.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.63
+     }
     },
     {
      "id": "broom",
      "object": "broom",
-     "source": "box-proxy"
+     "source": "model:broom.glb",
+     "fit": {
+      "model_dims_m": [
+       14.268,
+       3.386,
+       1.6
+      ],
+      "box_m": [
+       0.35,
+       0.1,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.112,
+      "worst_side_ratio": 1.79
+     }
     },
     {
      "id": "shelf-aisle-a",
      "object": "bookshelf",
-     "source": "box-proxy"
+     "source": "model:bookshelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.323,
+       0.929,
+       3.2
+      ],
+      "box_m": [
+       2.0,
+       0.5,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "shelf-aisle-b",
      "object": "bookshelf",
-     "source": "box-proxy"
+     "source": "model:bookshelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.323,
+       0.929,
+       3.2
+      ],
+      "box_m": [
+       2.0,
+       0.5,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "shelf-aisle-c",
      "object": "bookshelf",
-     "source": "box-proxy"
+     "source": "model:bookshelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.323,
+       0.929,
+       3.2
+      ],
+      "box_m": [
+       2.0,
+       0.5,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "ladder-north",
      "object": "library-ladder",
-     "source": "box-proxy"
+     "source": "model:library-ladder.glb",
+     "fit": {
+      "model_dims_m": [
+       1.404,
+       1.078,
+       3.5
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       3.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.7
+     }
     },
     {
      "id": "ladder-south",
      "object": "library-ladder",
-     "source": "box-proxy"
+     "source": "model:library-ladder.glb",
+     "fit": {
+      "model_dims_m": [
+       1.404,
+       1.078,
+       3.5
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       3.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.7
+     }
     },
     {
      "id": "ladder-gallery",
      "object": "library-ladder",
-     "source": "box-proxy"
+     "source": "model:library-ladder.glb",
+     "fit": {
+      "model_dims_m": [
+       1.404,
+       1.078,
+       3.5
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       3.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.7
+     }
     },
     {
      "id": "yesterdays-book-shelved",
      "object": "yesterdays-book",
-     "source": "box-proxy"
+     "source": "model:yesterdays-book.glb",
+     "fit": {
+      "model_dims_m": [
+       1.301,
+       0.852,
+       0.3
+      ],
+      "box_m": [
+       0.22,
+       0.04,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.231,
+      "worst_side_ratio": 1.31
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -2571,7 +5639,28 @@
     "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
-    "prop_overlap": [],
+    "prop_overlap": [
+     {
+      "prop": "cuckoo-clock",
+      "piece": "pillar-south-east",
+      "samples": "3/27"
+     },
+     {
+      "prop": "ladder-north",
+      "piece": "shelves-north-low",
+      "samples": "9/27"
+     },
+     {
+      "prop": "ladder-south",
+      "piece": "shelves-south-low",
+      "samples": "9/27"
+     },
+     {
+      "prop": "ladder-gallery",
+      "piece": "shelves-north-high",
+      "samples": "9/27"
+     }
+    ],
     "prop_off_floor": []
    },
    "render_time_overrides": [],
@@ -2596,7 +5685,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 15.7
+     "render_seconds": 15.8
     },
     {
      "still": "player",
@@ -2605,14 +5694,33 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 15.7
+     "render_seconds": 15.8
     }
    ],
    "props": [
     {
      "id": "reading-chair",
      "object": "reading-chair",
-     "source": "box-proxy"
+     "source": "model:reading-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       0.819,
+       0.982,
+       1.4
+      ],
+      "box_m": [
+       0.9,
+       0.9,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.1
+     }
     },
     {
      "id": "sand-book",
@@ -2622,52 +5730,242 @@
     {
      "id": "teacup",
      "object": "teacup",
-     "source": "box-proxy"
+     "source": "model:teacup.glb",
+     "fit": {
+      "model_dims_m": [
+       0.12,
+       0.12,
+       0.065
+      ],
+      "box_m": [
+       0.12,
+       0.12,
+       0.08
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.072,
+      "worst_side_ratio": 1.15
+     }
     },
     {
      "id": "cuckoo-clock",
      "object": "cuckoo-clock",
-     "source": "box-proxy"
+     "source": "model:cuckoo-clock.glb",
+     "fit": {
+      "model_dims_m": [
+       0.493,
+       0.407,
+       0.9
+      ],
+      "box_m": [
+       0.5,
+       0.25,
+       0.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.63
+     }
     },
     {
      "id": "broom",
      "object": "broom",
-     "source": "box-proxy"
+     "source": "model:broom.glb",
+     "fit": {
+      "model_dims_m": [
+       14.268,
+       3.386,
+       1.6
+      ],
+      "box_m": [
+       0.35,
+       0.1,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.112,
+      "worst_side_ratio": 1.79
+     }
     },
     {
      "id": "shelf-aisle-a",
      "object": "bookshelf",
-     "source": "box-proxy"
+     "source": "model:bookshelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.323,
+       0.929,
+       3.2
+      ],
+      "box_m": [
+       2.0,
+       0.5,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "shelf-aisle-b",
      "object": "bookshelf",
-     "source": "box-proxy"
+     "source": "model:bookshelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.323,
+       0.929,
+       3.2
+      ],
+      "box_m": [
+       2.0,
+       0.5,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "shelf-aisle-c",
      "object": "bookshelf",
-     "source": "box-proxy"
+     "source": "model:bookshelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.323,
+       0.929,
+       3.2
+      ],
+      "box_m": [
+       2.0,
+       0.5,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "ladder-north",
      "object": "library-ladder",
-     "source": "box-proxy"
+     "source": "model:library-ladder.glb",
+     "fit": {
+      "model_dims_m": [
+       1.404,
+       1.078,
+       3.5
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       3.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.7
+     }
     },
     {
      "id": "ladder-south",
      "object": "library-ladder",
-     "source": "box-proxy"
+     "source": "model:library-ladder.glb",
+     "fit": {
+      "model_dims_m": [
+       1.404,
+       1.078,
+       3.5
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       3.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.7
+     }
     },
     {
      "id": "ladder-gallery",
      "object": "library-ladder",
-     "source": "box-proxy"
+     "source": "model:library-ladder.glb",
+     "fit": {
+      "model_dims_m": [
+       1.404,
+       1.078,
+       3.5
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       3.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.7
+     }
     },
     {
      "id": "yesterdays-book-shelved",
      "object": "yesterdays-book",
-     "source": "box-proxy"
+     "source": "model:yesterdays-book.glb",
+     "fit": {
+      "model_dims_m": [
+       1.301,
+       0.852,
+       0.3
+      ],
+      "box_m": [
+       0.22,
+       0.04,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.231,
+      "worst_side_ratio": 1.31
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -2676,7 +5974,28 @@
     "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
-    "prop_overlap": [],
+    "prop_overlap": [
+     {
+      "prop": "cuckoo-clock",
+      "piece": "pillar-south-east",
+      "samples": "3/27"
+     },
+     {
+      "prop": "ladder-north",
+      "piece": "shelves-north-low",
+      "samples": "9/27"
+     },
+     {
+      "prop": "ladder-south",
+      "piece": "shelves-south-low",
+      "samples": "9/27"
+     },
+     {
+      "prop": "ladder-gallery",
+      "piece": "shelves-north-high",
+      "samples": "9/27"
+     }
+    ],
     "prop_off_floor": []
    },
    "render_time_overrides": [],
@@ -2701,7 +6020,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 16.5
+     "render_seconds": 17.0
     },
     {
      "still": "player",
@@ -2710,14 +6029,33 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 16.5
+     "render_seconds": 17.1
     }
    ],
    "props": [
     {
      "id": "reading-chair",
      "object": "reading-chair",
-     "source": "box-proxy"
+     "source": "model:reading-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       0.819,
+       0.982,
+       1.4
+      ],
+      "box_m": [
+       0.9,
+       0.9,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.1
+     }
     },
     {
      "id": "sand-book",
@@ -2727,52 +6065,242 @@
     {
      "id": "teacup",
      "object": "teacup",
-     "source": "box-proxy"
+     "source": "model:teacup.glb",
+     "fit": {
+      "model_dims_m": [
+       0.12,
+       0.12,
+       0.065
+      ],
+      "box_m": [
+       0.12,
+       0.12,
+       0.08
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.072,
+      "worst_side_ratio": 1.15
+     }
     },
     {
      "id": "cuckoo-clock",
      "object": "cuckoo-clock",
-     "source": "box-proxy"
+     "source": "model:cuckoo-clock.glb",
+     "fit": {
+      "model_dims_m": [
+       0.493,
+       0.407,
+       0.9
+      ],
+      "box_m": [
+       0.5,
+       0.25,
+       0.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.63
+     }
     },
     {
      "id": "broom",
      "object": "broom",
-     "source": "box-proxy"
+     "source": "model:broom.glb",
+     "fit": {
+      "model_dims_m": [
+       14.268,
+       3.386,
+       1.6
+      ],
+      "box_m": [
+       0.35,
+       0.1,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.112,
+      "worst_side_ratio": 1.79
+     }
     },
     {
      "id": "shelf-aisle-a",
      "object": "bookshelf",
-     "source": "box-proxy"
+     "source": "model:bookshelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.323,
+       0.929,
+       3.2
+      ],
+      "box_m": [
+       2.0,
+       0.5,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "shelf-aisle-b",
      "object": "bookshelf",
-     "source": "box-proxy"
+     "source": "model:bookshelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.323,
+       0.929,
+       3.2
+      ],
+      "box_m": [
+       2.0,
+       0.5,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "shelf-aisle-c",
      "object": "bookshelf",
-     "source": "box-proxy"
+     "source": "model:bookshelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.323,
+       0.929,
+       3.2
+      ],
+      "box_m": [
+       2.0,
+       0.5,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "ladder-north",
      "object": "library-ladder",
-     "source": "box-proxy"
+     "source": "model:library-ladder.glb",
+     "fit": {
+      "model_dims_m": [
+       1.404,
+       1.078,
+       3.5
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       3.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.7
+     }
     },
     {
      "id": "ladder-south",
      "object": "library-ladder",
-     "source": "box-proxy"
+     "source": "model:library-ladder.glb",
+     "fit": {
+      "model_dims_m": [
+       1.404,
+       1.078,
+       3.5
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       3.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.7
+     }
     },
     {
      "id": "ladder-gallery",
      "object": "library-ladder",
-     "source": "box-proxy"
+     "source": "model:library-ladder.glb",
+     "fit": {
+      "model_dims_m": [
+       1.404,
+       1.078,
+       3.5
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       3.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.7
+     }
     },
     {
      "id": "yesterdays-book-shelved",
      "object": "yesterdays-book",
-     "source": "box-proxy"
+     "source": "model:yesterdays-book.glb",
+     "fit": {
+      "model_dims_m": [
+       1.301,
+       0.852,
+       0.3
+      ],
+      "box_m": [
+       0.22,
+       0.04,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.231,
+      "worst_side_ratio": 1.31
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -2781,7 +6309,28 @@
     "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
-    "prop_overlap": [],
+    "prop_overlap": [
+     {
+      "prop": "cuckoo-clock",
+      "piece": "pillar-south-east",
+      "samples": "3/27"
+     },
+     {
+      "prop": "ladder-north",
+      "piece": "shelves-north-low",
+      "samples": "9/27"
+     },
+     {
+      "prop": "ladder-south",
+      "piece": "shelves-south-low",
+      "samples": "9/27"
+     },
+     {
+      "prop": "ladder-gallery",
+      "piece": "shelves-north-high",
+      "samples": "9/27"
+     }
+    ],
     "prop_off_floor": []
    },
    "render_time_overrides": [],
@@ -2806,7 +6355,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 13.2
+     "render_seconds": 13.6
     },
     {
      "still": "player",
@@ -2815,14 +6364,33 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 13.1
+     "render_seconds": 13.5
     }
    ],
    "props": [
     {
      "id": "reading-chair",
      "object": "reading-chair",
-     "source": "box-proxy"
+     "source": "model:reading-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       0.819,
+       0.982,
+       1.4
+      ],
+      "box_m": [
+       0.9,
+       0.9,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.1
+     }
     },
     {
      "id": "sand-book",
@@ -2832,52 +6400,242 @@
     {
      "id": "teacup",
      "object": "teacup",
-     "source": "box-proxy"
+     "source": "model:teacup.glb",
+     "fit": {
+      "model_dims_m": [
+       0.12,
+       0.12,
+       0.065
+      ],
+      "box_m": [
+       0.12,
+       0.12,
+       0.08
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.072,
+      "worst_side_ratio": 1.15
+     }
     },
     {
      "id": "cuckoo-clock",
      "object": "cuckoo-clock",
-     "source": "box-proxy"
+     "source": "model:cuckoo-clock.glb",
+     "fit": {
+      "model_dims_m": [
+       0.493,
+       0.407,
+       0.9
+      ],
+      "box_m": [
+       0.5,
+       0.25,
+       0.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.63
+     }
     },
     {
      "id": "broom",
      "object": "broom",
-     "source": "box-proxy"
+     "source": "model:broom.glb",
+     "fit": {
+      "model_dims_m": [
+       14.268,
+       3.386,
+       1.6
+      ],
+      "box_m": [
+       0.35,
+       0.1,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.112,
+      "worst_side_ratio": 1.79
+     }
     },
     {
      "id": "shelf-aisle-a",
      "object": "bookshelf",
-     "source": "box-proxy"
+     "source": "model:bookshelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.323,
+       0.929,
+       3.2
+      ],
+      "box_m": [
+       2.0,
+       0.5,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "shelf-aisle-b",
      "object": "bookshelf",
-     "source": "box-proxy"
+     "source": "model:bookshelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.323,
+       0.929,
+       3.2
+      ],
+      "box_m": [
+       2.0,
+       0.5,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "shelf-aisle-c",
      "object": "bookshelf",
-     "source": "box-proxy"
+     "source": "model:bookshelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.323,
+       0.929,
+       3.2
+      ],
+      "box_m": [
+       2.0,
+       0.5,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "ladder-north",
      "object": "library-ladder",
-     "source": "box-proxy"
+     "source": "model:library-ladder.glb",
+     "fit": {
+      "model_dims_m": [
+       1.404,
+       1.078,
+       3.5
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       3.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.7
+     }
     },
     {
      "id": "ladder-south",
      "object": "library-ladder",
-     "source": "box-proxy"
+     "source": "model:library-ladder.glb",
+     "fit": {
+      "model_dims_m": [
+       1.404,
+       1.078,
+       3.5
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       3.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.7
+     }
     },
     {
      "id": "ladder-gallery",
      "object": "library-ladder",
-     "source": "box-proxy"
+     "source": "model:library-ladder.glb",
+     "fit": {
+      "model_dims_m": [
+       1.404,
+       1.078,
+       3.5
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       3.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.7
+     }
     },
     {
      "id": "yesterdays-book-shelved",
      "object": "yesterdays-book",
-     "source": "box-proxy"
+     "source": "model:yesterdays-book.glb",
+     "fit": {
+      "model_dims_m": [
+       1.301,
+       0.852,
+       0.3
+      ],
+      "box_m": [
+       0.22,
+       0.04,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.231,
+      "worst_side_ratio": 1.31
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -2886,7 +6644,28 @@
     "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
-    "prop_overlap": [],
+    "prop_overlap": [
+     {
+      "prop": "cuckoo-clock",
+      "piece": "pillar-south-east",
+      "samples": "3/27"
+     },
+     {
+      "prop": "ladder-north",
+      "piece": "shelves-north-low",
+      "samples": "9/27"
+     },
+     {
+      "prop": "ladder-south",
+      "piece": "shelves-south-low",
+      "samples": "9/27"
+     },
+     {
+      "prop": "ladder-gallery",
+      "piece": "shelves-north-high",
+      "samples": "9/27"
+     }
+    ],
     "prop_off_floor": []
    },
    "render_time_overrides": [],
@@ -2911,7 +6690,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 14.5
+     "render_seconds": 15.1
     },
     {
      "still": "player",
@@ -2920,14 +6699,33 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 14.7
+     "render_seconds": 15.1
     }
    ],
    "props": [
     {
      "id": "reading-chair",
      "object": "reading-chair",
-     "source": "box-proxy"
+     "source": "model:reading-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       0.819,
+       0.982,
+       1.4
+      ],
+      "box_m": [
+       0.9,
+       0.9,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.1
+     }
     },
     {
      "id": "sand-book",
@@ -2937,52 +6735,242 @@
     {
      "id": "teacup",
      "object": "teacup",
-     "source": "box-proxy"
+     "source": "model:teacup.glb",
+     "fit": {
+      "model_dims_m": [
+       0.12,
+       0.12,
+       0.065
+      ],
+      "box_m": [
+       0.12,
+       0.12,
+       0.08
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.072,
+      "worst_side_ratio": 1.15
+     }
     },
     {
      "id": "cuckoo-clock",
      "object": "cuckoo-clock",
-     "source": "box-proxy"
+     "source": "model:cuckoo-clock.glb",
+     "fit": {
+      "model_dims_m": [
+       0.493,
+       0.407,
+       0.9
+      ],
+      "box_m": [
+       0.5,
+       0.25,
+       0.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.63
+     }
     },
     {
      "id": "broom",
      "object": "broom",
-     "source": "box-proxy"
+     "source": "model:broom.glb",
+     "fit": {
+      "model_dims_m": [
+       14.268,
+       3.386,
+       1.6
+      ],
+      "box_m": [
+       0.35,
+       0.1,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.112,
+      "worst_side_ratio": 1.79
+     }
     },
     {
      "id": "shelf-aisle-a",
      "object": "bookshelf",
-     "source": "box-proxy"
+     "source": "model:bookshelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.323,
+       0.929,
+       3.2
+      ],
+      "box_m": [
+       2.0,
+       0.5,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "shelf-aisle-b",
      "object": "bookshelf",
-     "source": "box-proxy"
+     "source": "model:bookshelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.323,
+       0.929,
+       3.2
+      ],
+      "box_m": [
+       2.0,
+       0.5,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "shelf-aisle-c",
      "object": "bookshelf",
-     "source": "box-proxy"
+     "source": "model:bookshelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.323,
+       0.929,
+       3.2
+      ],
+      "box_m": [
+       2.0,
+       0.5,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "ladder-north",
      "object": "library-ladder",
-     "source": "box-proxy"
+     "source": "model:library-ladder.glb",
+     "fit": {
+      "model_dims_m": [
+       1.404,
+       1.078,
+       3.5
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       3.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.7
+     }
     },
     {
      "id": "ladder-south",
      "object": "library-ladder",
-     "source": "box-proxy"
+     "source": "model:library-ladder.glb",
+     "fit": {
+      "model_dims_m": [
+       1.404,
+       1.078,
+       3.5
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       3.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.7
+     }
     },
     {
      "id": "ladder-gallery",
      "object": "library-ladder",
-     "source": "box-proxy"
+     "source": "model:library-ladder.glb",
+     "fit": {
+      "model_dims_m": [
+       1.404,
+       1.078,
+       3.5
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       3.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.7
+     }
     },
     {
      "id": "yesterdays-book-shelved",
      "object": "yesterdays-book",
-     "source": "box-proxy"
+     "source": "model:yesterdays-book.glb",
+     "fit": {
+      "model_dims_m": [
+       1.301,
+       0.852,
+       0.3
+      ],
+      "box_m": [
+       0.22,
+       0.04,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.231,
+      "worst_side_ratio": 1.31
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -2991,7 +6979,28 @@
     "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
-    "prop_overlap": [],
+    "prop_overlap": [
+     {
+      "prop": "cuckoo-clock",
+      "piece": "pillar-south-east",
+      "samples": "3/27"
+     },
+     {
+      "prop": "ladder-north",
+      "piece": "shelves-north-low",
+      "samples": "9/27"
+     },
+     {
+      "prop": "ladder-south",
+      "piece": "shelves-south-low",
+      "samples": "9/27"
+     },
+     {
+      "prop": "ladder-gallery",
+      "piece": "shelves-north-high",
+      "samples": "9/27"
+     }
+    ],
     "prop_off_floor": []
    },
    "render_time_overrides": [],
@@ -3025,14 +7034,33 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 16.2
+     "render_seconds": 16.5
     }
    ],
    "props": [
     {
      "id": "reading-chair",
      "object": "reading-chair",
-     "source": "box-proxy"
+     "source": "model:reading-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       0.819,
+       0.982,
+       1.4
+      ],
+      "box_m": [
+       0.9,
+       0.9,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.1
+     }
     },
     {
      "id": "sand-book",
@@ -3042,52 +7070,242 @@
     {
      "id": "teacup",
      "object": "teacup",
-     "source": "box-proxy"
+     "source": "model:teacup.glb",
+     "fit": {
+      "model_dims_m": [
+       0.12,
+       0.12,
+       0.065
+      ],
+      "box_m": [
+       0.12,
+       0.12,
+       0.08
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.072,
+      "worst_side_ratio": 1.15
+     }
     },
     {
      "id": "cuckoo-clock",
      "object": "cuckoo-clock",
-     "source": "box-proxy"
+     "source": "model:cuckoo-clock.glb",
+     "fit": {
+      "model_dims_m": [
+       0.493,
+       0.407,
+       0.9
+      ],
+      "box_m": [
+       0.5,
+       0.25,
+       0.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.63
+     }
     },
     {
      "id": "broom",
      "object": "broom",
-     "source": "box-proxy"
+     "source": "model:broom.glb",
+     "fit": {
+      "model_dims_m": [
+       14.268,
+       3.386,
+       1.6
+      ],
+      "box_m": [
+       0.35,
+       0.1,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.112,
+      "worst_side_ratio": 1.79
+     }
     },
     {
      "id": "shelf-aisle-a",
      "object": "bookshelf",
-     "source": "box-proxy"
+     "source": "model:bookshelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.323,
+       0.929,
+       3.2
+      ],
+      "box_m": [
+       2.0,
+       0.5,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "shelf-aisle-b",
      "object": "bookshelf",
-     "source": "box-proxy"
+     "source": "model:bookshelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.323,
+       0.929,
+       3.2
+      ],
+      "box_m": [
+       2.0,
+       0.5,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "shelf-aisle-c",
      "object": "bookshelf",
-     "source": "box-proxy"
+     "source": "model:bookshelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.323,
+       0.929,
+       3.2
+      ],
+      "box_m": [
+       2.0,
+       0.5,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "ladder-north",
      "object": "library-ladder",
-     "source": "box-proxy"
+     "source": "model:library-ladder.glb",
+     "fit": {
+      "model_dims_m": [
+       1.404,
+       1.078,
+       3.5
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       3.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.7
+     }
     },
     {
      "id": "ladder-south",
      "object": "library-ladder",
-     "source": "box-proxy"
+     "source": "model:library-ladder.glb",
+     "fit": {
+      "model_dims_m": [
+       1.404,
+       1.078,
+       3.5
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       3.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.7
+     }
     },
     {
      "id": "ladder-gallery",
      "object": "library-ladder",
-     "source": "box-proxy"
+     "source": "model:library-ladder.glb",
+     "fit": {
+      "model_dims_m": [
+       1.404,
+       1.078,
+       3.5
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       3.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.7
+     }
     },
     {
      "id": "yesterdays-book-shelved",
      "object": "yesterdays-book",
-     "source": "box-proxy"
+     "source": "model:yesterdays-book.glb",
+     "fit": {
+      "model_dims_m": [
+       1.301,
+       0.852,
+       0.3
+      ],
+      "box_m": [
+       0.22,
+       0.04,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.231,
+      "worst_side_ratio": 1.31
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -3096,7 +7314,28 @@
     "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
-    "prop_overlap": [],
+    "prop_overlap": [
+     {
+      "prop": "cuckoo-clock",
+      "piece": "pillar-south-east",
+      "samples": "3/27"
+     },
+     {
+      "prop": "ladder-north",
+      "piece": "shelves-north-low",
+      "samples": "9/27"
+     },
+     {
+      "prop": "ladder-south",
+      "piece": "shelves-south-low",
+      "samples": "9/27"
+     },
+     {
+      "prop": "ladder-gallery",
+      "piece": "shelves-north-high",
+      "samples": "9/27"
+     }
+    ],
     "prop_off_floor": []
    },
    "render_time_overrides": [],
@@ -3121,14 +7360,33 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 7.0
+     "render_seconds": 7.4
     }
    ],
    "props": [
     {
      "id": "reading-chair",
      "object": "reading-chair",
-     "source": "box-proxy"
+     "source": "model:reading-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       0.819,
+       0.982,
+       1.4
+      ],
+      "box_m": [
+       0.9,
+       0.9,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.1
+     }
     },
     {
      "id": "sand-book",
@@ -3138,52 +7396,242 @@
     {
      "id": "teacup",
      "object": "teacup",
-     "source": "box-proxy"
+     "source": "model:teacup.glb",
+     "fit": {
+      "model_dims_m": [
+       0.12,
+       0.12,
+       0.065
+      ],
+      "box_m": [
+       0.12,
+       0.12,
+       0.08
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.072,
+      "worst_side_ratio": 1.15
+     }
     },
     {
      "id": "cuckoo-clock",
      "object": "cuckoo-clock",
-     "source": "box-proxy"
+     "source": "model:cuckoo-clock.glb",
+     "fit": {
+      "model_dims_m": [
+       0.493,
+       0.407,
+       0.9
+      ],
+      "box_m": [
+       0.5,
+       0.25,
+       0.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.63
+     }
     },
     {
      "id": "broom",
      "object": "broom",
-     "source": "box-proxy"
+     "source": "model:broom.glb",
+     "fit": {
+      "model_dims_m": [
+       14.268,
+       3.386,
+       1.6
+      ],
+      "box_m": [
+       0.35,
+       0.1,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.112,
+      "worst_side_ratio": 1.79
+     }
     },
     {
      "id": "shelf-aisle-a",
      "object": "bookshelf",
-     "source": "box-proxy"
+     "source": "model:bookshelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.323,
+       0.929,
+       3.2
+      ],
+      "box_m": [
+       2.0,
+       0.5,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "shelf-aisle-b",
      "object": "bookshelf",
-     "source": "box-proxy"
+     "source": "model:bookshelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.323,
+       0.929,
+       3.2
+      ],
+      "box_m": [
+       2.0,
+       0.5,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "shelf-aisle-c",
      "object": "bookshelf",
-     "source": "box-proxy"
+     "source": "model:bookshelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.323,
+       0.929,
+       3.2
+      ],
+      "box_m": [
+       2.0,
+       0.5,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "ladder-north",
      "object": "library-ladder",
-     "source": "box-proxy"
+     "source": "model:library-ladder.glb",
+     "fit": {
+      "model_dims_m": [
+       1.404,
+       1.078,
+       3.5
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       3.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.7
+     }
     },
     {
      "id": "ladder-south",
      "object": "library-ladder",
-     "source": "box-proxy"
+     "source": "model:library-ladder.glb",
+     "fit": {
+      "model_dims_m": [
+       1.404,
+       1.078,
+       3.5
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       3.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.7
+     }
     },
     {
      "id": "ladder-gallery",
      "object": "library-ladder",
-     "source": "box-proxy"
+     "source": "model:library-ladder.glb",
+     "fit": {
+      "model_dims_m": [
+       1.404,
+       1.078,
+       3.5
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       3.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.7
+     }
     },
     {
      "id": "yesterdays-book-shelved",
      "object": "yesterdays-book",
-     "source": "box-proxy"
+     "source": "model:yesterdays-book.glb",
+     "fit": {
+      "model_dims_m": [
+       1.301,
+       0.852,
+       0.3
+      ],
+      "box_m": [
+       0.22,
+       0.04,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.231,
+      "worst_side_ratio": 1.31
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -3192,7 +7640,28 @@
     "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
-    "prop_overlap": [],
+    "prop_overlap": [
+     {
+      "prop": "cuckoo-clock",
+      "piece": "pillar-south-east",
+      "samples": "3/27"
+     },
+     {
+      "prop": "ladder-north",
+      "piece": "shelves-north-low",
+      "samples": "9/27"
+     },
+     {
+      "prop": "ladder-south",
+      "piece": "shelves-south-low",
+      "samples": "9/27"
+     },
+     {
+      "prop": "ladder-gallery",
+      "piece": "shelves-north-high",
+      "samples": "9/27"
+     }
+    ],
     "prop_off_floor": []
    },
    "render_time_overrides": [],
@@ -3217,14 +7686,33 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 7.0
+     "render_seconds": 7.2
     }
    ],
    "props": [
     {
      "id": "reading-chair",
      "object": "reading-chair",
-     "source": "box-proxy"
+     "source": "model:reading-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       0.819,
+       0.982,
+       1.4
+      ],
+      "box_m": [
+       0.9,
+       0.9,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.1
+     }
     },
     {
      "id": "sand-book",
@@ -3234,52 +7722,242 @@
     {
      "id": "teacup",
      "object": "teacup",
-     "source": "box-proxy"
+     "source": "model:teacup.glb",
+     "fit": {
+      "model_dims_m": [
+       0.12,
+       0.12,
+       0.065
+      ],
+      "box_m": [
+       0.12,
+       0.12,
+       0.08
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.072,
+      "worst_side_ratio": 1.15
+     }
     },
     {
      "id": "cuckoo-clock",
      "object": "cuckoo-clock",
-     "source": "box-proxy"
+     "source": "model:cuckoo-clock.glb",
+     "fit": {
+      "model_dims_m": [
+       0.493,
+       0.407,
+       0.9
+      ],
+      "box_m": [
+       0.5,
+       0.25,
+       0.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.63
+     }
     },
     {
      "id": "broom",
      "object": "broom",
-     "source": "box-proxy"
+     "source": "model:broom.glb",
+     "fit": {
+      "model_dims_m": [
+       14.268,
+       3.386,
+       1.6
+      ],
+      "box_m": [
+       0.35,
+       0.1,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.112,
+      "worst_side_ratio": 1.79
+     }
     },
     {
      "id": "shelf-aisle-a",
      "object": "bookshelf",
-     "source": "box-proxy"
+     "source": "model:bookshelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.323,
+       0.929,
+       3.2
+      ],
+      "box_m": [
+       2.0,
+       0.5,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "shelf-aisle-b",
      "object": "bookshelf",
-     "source": "box-proxy"
+     "source": "model:bookshelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.323,
+       0.929,
+       3.2
+      ],
+      "box_m": [
+       2.0,
+       0.5,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "shelf-aisle-c",
      "object": "bookshelf",
-     "source": "box-proxy"
+     "source": "model:bookshelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.323,
+       0.929,
+       3.2
+      ],
+      "box_m": [
+       2.0,
+       0.5,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "ladder-north",
      "object": "library-ladder",
-     "source": "box-proxy"
+     "source": "model:library-ladder.glb",
+     "fit": {
+      "model_dims_m": [
+       1.404,
+       1.078,
+       3.5
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       3.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.7
+     }
     },
     {
      "id": "ladder-south",
      "object": "library-ladder",
-     "source": "box-proxy"
+     "source": "model:library-ladder.glb",
+     "fit": {
+      "model_dims_m": [
+       1.404,
+       1.078,
+       3.5
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       3.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.7
+     }
     },
     {
      "id": "ladder-gallery",
      "object": "library-ladder",
-     "source": "box-proxy"
+     "source": "model:library-ladder.glb",
+     "fit": {
+      "model_dims_m": [
+       1.404,
+       1.078,
+       3.5
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       3.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.7
+     }
     },
     {
      "id": "yesterdays-book-shelved",
      "object": "yesterdays-book",
-     "source": "box-proxy"
+     "source": "model:yesterdays-book.glb",
+     "fit": {
+      "model_dims_m": [
+       1.301,
+       0.852,
+       0.3
+      ],
+      "box_m": [
+       0.22,
+       0.04,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.231,
+      "worst_side_ratio": 1.31
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -3288,7 +7966,28 @@
     "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
-    "prop_overlap": [],
+    "prop_overlap": [
+     {
+      "prop": "cuckoo-clock",
+      "piece": "pillar-south-east",
+      "samples": "3/27"
+     },
+     {
+      "prop": "ladder-north",
+      "piece": "shelves-north-low",
+      "samples": "9/27"
+     },
+     {
+      "prop": "ladder-south",
+      "piece": "shelves-south-low",
+      "samples": "9/27"
+     },
+     {
+      "prop": "ladder-gallery",
+      "piece": "shelves-north-high",
+      "samples": "9/27"
+     }
+    ],
     "prop_off_floor": []
    },
    "render_time_overrides": [],
@@ -3313,64 +8012,273 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 7.0
+     "render_seconds": 7.2
     }
    ],
    "props": [
     {
      "id": "reading-chair",
      "object": "reading-chair",
-     "source": "box-proxy"
+     "source": "model:reading-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       0.819,
+       0.982,
+       1.4
+      ],
+      "box_m": [
+       0.9,
+       0.9,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.1
+     }
     },
     {
      "id": "teacup",
      "object": "teacup",
-     "source": "box-proxy"
+     "source": "model:teacup.glb",
+     "fit": {
+      "model_dims_m": [
+       0.12,
+       0.12,
+       0.065
+      ],
+      "box_m": [
+       0.12,
+       0.12,
+       0.08
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.072,
+      "worst_side_ratio": 1.15
+     }
     },
     {
      "id": "cuckoo-clock",
      "object": "cuckoo-clock",
-     "source": "box-proxy"
+     "source": "model:cuckoo-clock.glb",
+     "fit": {
+      "model_dims_m": [
+       0.493,
+       0.407,
+       0.9
+      ],
+      "box_m": [
+       0.5,
+       0.25,
+       0.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.63
+     }
     },
     {
      "id": "broom",
      "object": "broom",
-     "source": "box-proxy"
+     "source": "model:broom.glb",
+     "fit": {
+      "model_dims_m": [
+       14.268,
+       3.386,
+       1.6
+      ],
+      "box_m": [
+       0.35,
+       0.1,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.112,
+      "worst_side_ratio": 1.79
+     }
     },
     {
      "id": "shelf-aisle-a",
      "object": "bookshelf",
-     "source": "box-proxy"
+     "source": "model:bookshelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.323,
+       0.929,
+       3.2
+      ],
+      "box_m": [
+       2.0,
+       0.5,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "shelf-aisle-b",
      "object": "bookshelf",
-     "source": "box-proxy"
+     "source": "model:bookshelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.323,
+       0.929,
+       3.2
+      ],
+      "box_m": [
+       2.0,
+       0.5,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "shelf-aisle-c",
      "object": "bookshelf",
-     "source": "box-proxy"
+     "source": "model:bookshelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.323,
+       0.929,
+       3.2
+      ],
+      "box_m": [
+       2.0,
+       0.5,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "ladder-north",
      "object": "library-ladder",
-     "source": "box-proxy"
+     "source": "model:library-ladder.glb",
+     "fit": {
+      "model_dims_m": [
+       1.404,
+       1.078,
+       3.5
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       3.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.7
+     }
     },
     {
      "id": "ladder-south",
      "object": "library-ladder",
-     "source": "box-proxy"
+     "source": "model:library-ladder.glb",
+     "fit": {
+      "model_dims_m": [
+       1.404,
+       1.078,
+       3.5
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       3.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.7
+     }
     },
     {
      "id": "ladder-gallery",
      "object": "library-ladder",
-     "source": "box-proxy"
+     "source": "model:library-ladder.glb",
+     "fit": {
+      "model_dims_m": [
+       1.404,
+       1.078,
+       3.5
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       3.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.7
+     }
     },
     {
      "id": "yesterdays-book-shelved",
      "object": "yesterdays-book",
-     "source": "box-proxy"
+     "source": "model:yesterdays-book.glb",
+     "fit": {
+      "model_dims_m": [
+       1.301,
+       0.852,
+       0.3
+      ],
+      "box_m": [
+       0.22,
+       0.04,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.231,
+      "worst_side_ratio": 1.31
+     }
     },
     {
      "id": "sand-book-shelved",
@@ -3384,7 +8292,28 @@
     "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
-    "prop_overlap": [],
+    "prop_overlap": [
+     {
+      "prop": "cuckoo-clock",
+      "piece": "pillar-south-east",
+      "samples": "3/27"
+     },
+     {
+      "prop": "ladder-north",
+      "piece": "shelves-north-low",
+      "samples": "9/27"
+     },
+     {
+      "prop": "ladder-south",
+      "piece": "shelves-south-low",
+      "samples": "9/27"
+     },
+     {
+      "prop": "ladder-gallery",
+      "piece": "shelves-north-high",
+      "samples": "9/27"
+     }
+    ],
     "prop_off_floor": []
    },
    "render_time_overrides": [],
@@ -3409,14 +8338,33 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 6.9
+     "render_seconds": 7.2
     }
    ],
    "props": [
     {
      "id": "reading-chair",
      "object": "reading-chair",
-     "source": "box-proxy"
+     "source": "model:reading-chair.glb",
+     "fit": {
+      "model_dims_m": [
+       0.819,
+       0.982,
+       1.4
+      ],
+      "box_m": [
+       0.9,
+       0.9,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.1
+     }
     },
     {
      "id": "sand-book",
@@ -3426,52 +8374,242 @@
     {
      "id": "teacup",
      "object": "teacup",
-     "source": "box-proxy"
+     "source": "model:teacup.glb",
+     "fit": {
+      "model_dims_m": [
+       0.12,
+       0.12,
+       0.065
+      ],
+      "box_m": [
+       0.12,
+       0.12,
+       0.08
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.072,
+      "worst_side_ratio": 1.15
+     }
     },
     {
      "id": "cuckoo-clock",
      "object": "cuckoo-clock",
-     "source": "box-proxy"
+     "source": "model:cuckoo-clock.glb",
+     "fit": {
+      "model_dims_m": [
+       0.493,
+       0.407,
+       0.9
+      ],
+      "box_m": [
+       0.5,
+       0.25,
+       0.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.63
+     }
     },
     {
      "id": "broom",
      "object": "broom",
-     "source": "box-proxy"
+     "source": "model:broom.glb",
+     "fit": {
+      "model_dims_m": [
+       14.268,
+       3.386,
+       1.6
+      ],
+      "box_m": [
+       0.35,
+       0.1,
+       1.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.112,
+      "worst_side_ratio": 1.79
+     }
     },
     {
      "id": "shelf-aisle-a",
      "object": "bookshelf",
-     "source": "box-proxy"
+     "source": "model:bookshelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.323,
+       0.929,
+       3.2
+      ],
+      "box_m": [
+       2.0,
+       0.5,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "shelf-aisle-b",
      "object": "bookshelf",
-     "source": "box-proxy"
+     "source": "model:bookshelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.323,
+       0.929,
+       3.2
+      ],
+      "box_m": [
+       2.0,
+       0.5,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "shelf-aisle-c",
      "object": "bookshelf",
-     "source": "box-proxy"
+     "source": "model:bookshelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.323,
+       0.929,
+       3.2
+      ],
+      "box_m": [
+       2.0,
+       0.5,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "ladder-north",
      "object": "library-ladder",
-     "source": "box-proxy"
+     "source": "model:library-ladder.glb",
+     "fit": {
+      "model_dims_m": [
+       1.404,
+       1.078,
+       3.5
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       3.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.7
+     }
     },
     {
      "id": "ladder-south",
      "object": "library-ladder",
-     "source": "box-proxy"
+     "source": "model:library-ladder.glb",
+     "fit": {
+      "model_dims_m": [
+       1.404,
+       1.078,
+       3.5
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       3.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.7
+     }
     },
     {
      "id": "ladder-gallery",
      "object": "library-ladder",
-     "source": "box-proxy"
+     "source": "model:library-ladder.glb",
+     "fit": {
+      "model_dims_m": [
+       1.404,
+       1.078,
+       3.5
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       3.5
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.7
+     }
     },
     {
      "id": "yesterdays-book-shelved",
      "object": "yesterdays-book",
-     "source": "box-proxy"
+     "source": "model:yesterdays-book.glb",
+     "fit": {
+      "model_dims_m": [
+       1.301,
+       0.852,
+       0.3
+      ],
+      "box_m": [
+       0.22,
+       0.04,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.231,
+      "worst_side_ratio": 1.31
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -3480,7 +8618,28 @@
     "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
-    "prop_overlap": [],
+    "prop_overlap": [
+     {
+      "prop": "cuckoo-clock",
+      "piece": "pillar-south-east",
+      "samples": "3/27"
+     },
+     {
+      "prop": "ladder-north",
+      "piece": "shelves-north-low",
+      "samples": "9/27"
+     },
+     {
+      "prop": "ladder-south",
+      "piece": "shelves-south-low",
+      "samples": "9/27"
+     },
+     {
+      "prop": "ladder-gallery",
+      "piece": "shelves-north-high",
+      "samples": "9/27"
+     }
+    ],
     "prop_off_floor": []
    },
    "render_time_overrides": [],
@@ -3505,7 +8664,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.3
+     "render_seconds": 8.8
     },
     {
      "still": "player",
@@ -3514,7 +8673,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.6
+     "render_seconds": 8.9
     },
     {
      "still": "overview",
@@ -3530,57 +8689,266 @@
     {
      "id": "shelf-1",
      "object": "bookshelf",
-     "source": "box-proxy"
+     "source": "model:bookshelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.323,
+       0.929,
+       3.2
+      ],
+      "box_m": [
+       2.0,
+       0.5,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "shelf-2",
      "object": "bookshelf",
-     "source": "box-proxy"
+     "source": "model:bookshelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.323,
+       0.929,
+       3.2
+      ],
+      "box_m": [
+       2.0,
+       0.5,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "shelf-3",
      "object": "bookshelf",
-     "source": "box-proxy"
+     "source": "model:bookshelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.323,
+       0.929,
+       3.2
+      ],
+      "box_m": [
+       2.0,
+       0.5,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "shelf-4",
      "object": "bookshelf",
-     "source": "box-proxy"
+     "source": "model:bookshelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.323,
+       0.929,
+       3.2
+      ],
+      "box_m": [
+       2.0,
+       0.5,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "shelf-5",
      "object": "bookshelf",
-     "source": "box-proxy"
+     "source": "model:bookshelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.323,
+       0.929,
+       3.2
+      ],
+      "box_m": [
+       2.0,
+       0.5,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "shelf-6",
      "object": "bookshelf",
-     "source": "box-proxy"
+     "source": "model:bookshelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.323,
+       0.929,
+       3.2
+      ],
+      "box_m": [
+       2.0,
+       0.5,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "shelf-7",
      "object": "bookshelf",
-     "source": "box-proxy"
+     "source": "model:bookshelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.323,
+       0.929,
+       3.2
+      ],
+      "box_m": [
+       2.0,
+       0.5,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "shelf-8",
      "object": "bookshelf",
-     "source": "box-proxy"
+     "source": "model:bookshelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.323,
+       0.929,
+       3.2
+      ],
+      "box_m": [
+       2.0,
+       0.5,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "shelf-9",
      "object": "bookshelf",
-     "source": "box-proxy"
+     "source": "model:bookshelf.glb",
+     "fit": {
+      "model_dims_m": [
+       2.323,
+       0.929,
+       3.2
+      ],
+      "box_m": [
+       2.0,
+       0.5,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.86
+     }
     },
     {
      "id": "black-book",
      "object": "black-book",
-     "source": "box-proxy"
+     "source": "model:black-book.glb",
+     "fit": {
+      "model_dims_m": [
+       1.262,
+       0.852,
+       0.38
+      ],
+      "box_m": [
+       0.28,
+       0.07,
+       0.38
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.301,
+      "worst_side_ratio": 1.63
+     }
     },
     {
      "id": "candle",
      "object": "candlestick",
-     "source": "box-proxy"
+     "source": "model:candlestick.glb",
+     "fit": {
+      "model_dims_m": [
+       0.295,
+       0.352,
+       0.3
+      ],
+      "box_m": [
+       0.12,
+       0.12,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       90,
+       0,
+       0
+      ],
+      "scale": 0.853,
+      "worst_side_ratio": 2.13
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -3589,7 +8957,53 @@
     "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
-    "prop_overlap": [],
+    "prop_overlap": [
+     {
+      "prop": "shelf-1",
+      "piece": "shelf-backing",
+      "samples": "9/27"
+     },
+     {
+      "prop": "shelf-2",
+      "piece": "shelf-backing",
+      "samples": "9/27"
+     },
+     {
+      "prop": "shelf-3",
+      "piece": "shelf-backing",
+      "samples": "9/27"
+     },
+     {
+      "prop": "shelf-4",
+      "piece": "shelf-backing",
+      "samples": "9/27"
+     },
+     {
+      "prop": "shelf-5",
+      "piece": "shelf-backing",
+      "samples": "9/27"
+     },
+     {
+      "prop": "shelf-6",
+      "piece": "shelf-backing",
+      "samples": "9/27"
+     },
+     {
+      "prop": "shelf-7",
+      "piece": "shelf-backing",
+      "samples": "9/27"
+     },
+     {
+      "prop": "shelf-8",
+      "piece": "shelf-backing",
+      "samples": "9/27"
+     },
+     {
+      "prop": "shelf-9",
+      "piece": "shelf-backing",
+      "samples": "9/27"
+     }
+    ],
     "prop_off_floor": []
    },
    "render_time_overrides": [],
@@ -3623,7 +9037,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.0
+     "render_seconds": 7.8
     },
     {
      "still": "overview",
@@ -3632,14 +9046,33 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 5.2
+     "render_seconds": 4.9
     }
    ],
    "props": [
     {
      "id": "fathers-waterskin",
      "object": "waterskin",
-     "source": "box-proxy"
+     "source": "model:waterskin.glb",
+     "fit": {
+      "model_dims_m": [
+       0.34,
+       0.161,
+       0.4
+      ],
+      "box_m": [
+       0.25,
+       0.12,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.36
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -3676,7 +9109,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 14.1
+     "render_seconds": 13.0
     },
     {
      "still": "player",
@@ -3685,7 +9118,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 14.7
+     "render_seconds": 13.4
     },
     {
      "still": "overview",
@@ -3694,14 +9127,33 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 6.6
+     "render_seconds": 6.1
     }
    ],
    "props": [
     {
      "id": "shrine-heap",
      "object": "stone-cairn",
-     "source": "box-proxy"
+     "source": "model:stone-cairn.glb",
+     "fit": {
+      "model_dims_m": [
+       1.297,
+       1.282,
+       1.2
+      ],
+      "box_m": [
+       0.4,
+       0.4,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.5,
+      "worst_side_ratio": 1.62
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -3735,7 +9187,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 9.6
+     "render_seconds": 9.0
     },
     {
      "still": "player",
@@ -3744,7 +9196,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 7.8
+     "render_seconds": 7.9
     },
     {
      "still": "overview",
@@ -3760,7 +9212,26 @@
     {
      "id": "mirror",
      "object": "hut-mirror",
-     "source": "box-proxy"
+     "source": "model:hut-mirror.glb",
+     "fit": {
+      "model_dims_m": [
+       0.333,
+       0.074,
+       0.4
+      ],
+      "box_m": [
+       0.3,
+       0.03,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.57
+     }
     },
     {
      "id": "pack",
@@ -3770,7 +9241,26 @@
     {
      "id": "waterskin",
      "object": "waterskin",
-     "source": "box-proxy"
+     "source": "model:waterskin.glb",
+     "fit": {
+      "model_dims_m": [
+       0.34,
+       0.161,
+       0.4
+      ],
+      "box_m": [
+       0.25,
+       0.12,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.36
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -3779,7 +9269,13 @@
     "camera_inside_prop": [],
     "between_camera_and_target": [],
     "prop_inside": [],
-    "prop_overlap": [],
+    "prop_overlap": [
+     {
+      "prop": "waterskin",
+      "piece": "wall-8",
+      "samples": "3/27"
+     }
+    ],
     "prop_off_floor": []
    },
    "render_time_overrides": [
@@ -4059,7 +9555,7 @@
       "exposure_ev": -1.8
      },
      "s3_scribe_wagon": {
-      "exposure_ev": 0.0
+      "exposure_ev": -0.6
      }
     }
    }
@@ -4194,7 +9690,7 @@
       "exposure_ev": 0.0
      },
      "s3_last_cup": {
-      "exposure_ev": -1.5
+      "exposure_ev": -1.16
      }
     }
    }
@@ -4219,11 +9715,11 @@
    },
    "rig": {
     "exposure_ev": 0.0,
-    "overview_ev": 1.0,
+    "overview_ev": 2.0,
     "facing": "ccw",
     "scenes": {
      "s3_unlit_gallery": {
-      "exposure_ev": 3.5
+      "exposure_ev": 4.5
      }
     }
    }
@@ -4319,59 +9815,203 @@
  ],
  "objects": {
   "black-book": {
-   "source": "box-proxy",
-   "model": null,
+   "source": "model",
+   "model": "black-book.glb",
    "props": 2,
-   "fit": null,
+   "fit": {
+    "model_dims_m": [
+     1.262,
+     0.852,
+     0.38
+    ],
+    "box_m": [
+     0.28,
+     0.07,
+     0.38
+    ],
+    "fit_rotation_deg": [
+     0,
+     90,
+     90
+    ],
+    "scale": 0.301,
+    "worst_side_ratio": 1.63
+   },
    "note": null
   },
   "bookshelf": {
-   "source": "box-proxy",
-   "model": null,
+   "source": "model",
+   "model": "bookshelf.glb",
    "props": 43,
-   "fit": null,
+   "fit": {
+    "model_dims_m": [
+     2.323,
+     0.929,
+     3.2
+    ],
+    "box_m": [
+     1.5,
+     0.375,
+     2.4
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.75,
+    "worst_side_ratio": 1.86
+   },
    "note": null
   },
   "broom": {
-   "source": "box-proxy",
-   "model": null,
+   "source": "model",
+   "model": "broom.glb",
    "props": 11,
-   "fit": null,
+   "fit": {
+    "model_dims_m": [
+     14.268,
+     3.386,
+     1.6
+    ],
+    "box_m": [
+     0.35,
+     0.1,
+     1.6
+    ],
+    "fit_rotation_deg": [
+     0,
+     90,
+     90
+    ],
+    "scale": 0.112,
+    "worst_side_ratio": 1.79
+   },
    "note": null
   },
   "campfire-ring": {
-   "source": "box-proxy",
-   "model": null,
+   "source": "model",
+   "model": "campfire-ring.glb",
    "props": 9,
-   "fit": null,
+   "fit": {
+    "model_dims_m": [
+     1.2,
+     1.21,
+     0.326
+    ],
+    "box_m": [
+     1.2,
+     1.2,
+     0.3
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.97,
+    "worst_side_ratio": 1.05
+   },
    "note": null
   },
   "candlestick": {
-   "source": "box-proxy",
-   "model": null,
+   "source": "model",
+   "model": "candlestick.glb",
    "props": 3,
-   "fit": null,
+   "fit": {
+    "model_dims_m": [
+     0.295,
+     0.352,
+     0.3
+    ],
+    "box_m": [
+     0.12,
+     0.12,
+     0.3
+    ],
+    "fit_rotation_deg": [
+     90,
+     0,
+     0
+    ],
+    "scale": 0.853,
+    "worst_side_ratio": 2.13
+   },
    "note": null
   },
   "clerk-umbrella": {
-   "source": "box-proxy",
-   "model": null,
+   "source": "model",
+   "model": "clerk-umbrella.glb",
    "props": 1,
-   "fit": null,
+   "fit": {
+    "model_dims_m": [
+     1.1,
+     1.178,
+     1.138
+    ],
+    "box_m": [
+     1.1,
+     1.1,
+     0.95
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.835,
+    "worst_side_ratio": 1.2
+   },
    "note": null
   },
   "clerks-chair": {
-   "source": "box-proxy",
-   "model": null,
+   "source": "model",
+   "model": "clerks-chair.glb",
    "props": 2,
-   "fit": null,
+   "fit": {
+    "model_dims_m": [
+     0.769,
+     0.694,
+     1.5
+    ],
+    "box_m": [
+     0.7,
+     0.7,
+     1.5
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.0,
+    "worst_side_ratio": 1.1
+   },
    "note": null
   },
   "cuckoo-clock": {
-   "source": "box-proxy",
-   "model": null,
+   "source": "model",
+   "model": "cuckoo-clock.glb",
    "props": 11,
-   "fit": null,
+   "fit": {
+    "model_dims_m": [
+     0.493,
+     0.407,
+     0.9
+    ],
+    "box_m": [
+     0.5,
+     0.25,
+     0.9
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.0,
+    "worst_side_ratio": 1.63
+   },
    "note": null
   },
   "day-book": {
@@ -4389,73 +10029,238 @@
    "note": null
   },
   "giant-bone": {
-   "source": "box-proxy",
-   "model": null,
+   "source": "model",
+   "model": "giant-bone.glb",
    "props": 12,
-   "fit": null,
+   "fit": {
+    "model_dims_m": [
+     4.0,
+     3.773,
+     1.239
+    ],
+    "box_m": [
+     4.0,
+     1.2,
+     2.5
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.863,
+    "worst_side_ratio": 2.71
+   },
    "note": null
   },
   "hut-mirror": {
-   "source": "box-proxy",
-   "model": null,
+   "source": "model",
+   "model": "hut-mirror.glb",
    "props": 1,
-   "fit": null,
+   "fit": {
+    "model_dims_m": [
+     0.333,
+     0.074,
+     0.4
+    ],
+    "box_m": [
+     0.3,
+     0.03,
+     0.4
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.0,
+    "worst_side_ratio": 1.57
+   },
    "note": null
   },
   "kettle": {
-   "source": "box-proxy",
-   "model": null,
+   "source": "model",
+   "model": "kettle.glb",
    "props": 4,
-   "fit": null,
+   "fit": {
+    "model_dims_m": [
+     0.28,
+     0.217,
+     0.278
+    ],
+    "box_m": [
+     0.28,
+     0.2,
+     0.25
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.9,
+    "worst_side_ratio": 1.11
+   },
    "note": null
   },
   "library-ladder": {
-   "source": "box-proxy",
-   "model": null,
+   "source": "model",
+   "model": "library-ladder.glb",
    "props": 33,
-   "fit": null,
+   "fit": {
+    "model_dims_m": [
+     1.404,
+     1.078,
+     3.5
+    ],
+    "box_m": [
+     0.6,
+     0.4,
+     3.5
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.0,
+    "worst_side_ratio": 2.7
+   },
    "note": null
   },
   "lizard-plate": {
    "source": "box-proxy",
    "model": null,
    "props": 1,
-   "fit": null,
-   "note": null
+   "fit": {
+    "model_skipped": "a lizard on a leaf plate (creature)"
+   },
+   "note": "model skipped: a lizard on a leaf plate (creature)"
   },
   "loft-bell": {
-   "source": "box-proxy",
-   "model": null,
+   "source": "model",
+   "model": "loft-bell.glb",
    "props": 2,
-   "fit": null,
+   "fit": {
+    "model_dims_m": [
+     0.941,
+     0.73,
+     1.1
+    ],
+    "box_m": [
+     0.9,
+     0.9,
+     1.1
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.0,
+    "worst_side_ratio": 1.23
+   },
    "note": null
   },
   "marker-pole": {
-   "source": "box-proxy",
-   "model": null,
+   "source": "model",
+   "model": "marker-pole.glb",
    "props": 5,
-   "fit": null,
+   "fit": {
+    "model_dims_m": [
+     0.8,
+     0.753,
+     2.6
+    ],
+    "box_m": [
+     0.4,
+     0.4,
+     2.6
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.0,
+    "worst_side_ratio": 2.0
+   },
    "note": null
   },
   "pilgrim-lantern": {
-   "source": "box-proxy",
-   "model": null,
+   "source": "model",
+   "model": "pilgrim-lantern.glb",
    "props": 24,
-   "fit": null,
+   "fit": {
+    "model_dims_m": [
+     0.166,
+     0.141,
+     0.4
+    ],
+    "box_m": [
+     0.2,
+     0.2,
+     0.4
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.0,
+    "worst_side_ratio": 1.42
+   },
    "note": null
   },
   "quill-pen": {
    "source": "box-proxy",
    "model": null,
    "props": 4,
-   "fit": null,
-   "note": null
+   "fit": {
+    "model_dims_m": [
+     0.289,
+     0.324,
+     0.3
+    ],
+    "box_m": [
+     0.03,
+     0.03,
+     0.3
+    ],
+    "fit_rotation_deg": [
+     90,
+     0,
+     0
+    ],
+    "scale": 0.927,
+    "worst_side_ratio": 3.04,
+    "rejected": "proportions: a side is off by x3.0 after the best fit"
+   },
+   "note": "proportions: a side is off by x3.0 after the best fit"
   },
   "reading-chair": {
-   "source": "box-proxy",
-   "model": null,
+   "source": "model",
+   "model": "reading-chair.glb",
    "props": 11,
-   "fit": null,
+   "fit": {
+    "model_dims_m": [
+     0.819,
+     0.982,
+     1.4
+    ],
+    "box_m": [
+     0.9,
+     0.9,
+     1.4
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.0,
+    "worst_side_ratio": 1.1
+   },
    "note": null
   },
   "sand-book": {
@@ -4466,24 +10271,78 @@
    "note": null
   },
   "scribe-scroll": {
-   "source": "box-proxy",
-   "model": null,
+   "source": "model",
+   "model": "scribe-scroll.glb",
    "props": 4,
-   "fit": null,
+   "fit": {
+    "model_dims_m": [
+     0.6,
+     0.451,
+     0.086
+    ],
+    "box_m": [
+     0.6,
+     0.4,
+     0.15
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.156,
+    "worst_side_ratio": 1.51
+   },
    "note": null
   },
   "specimen-jar": {
-   "source": "box-proxy",
-   "model": null,
+   "source": "model",
+   "model": "specimen-jar.glb",
    "props": 28,
-   "fit": null,
+   "fit": {
+    "model_dims_m": [
+     0.132,
+     0.126,
+     0.3
+    ],
+    "box_m": [
+     0.15,
+     0.15,
+     0.3
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.0,
+    "worst_side_ratio": 1.19
+   },
    "note": null
   },
   "stone-cairn": {
-   "source": "box-proxy",
-   "model": null,
+   "source": "model",
+   "model": "stone-cairn.glb",
    "props": 37,
-   "fit": null,
+   "fit": {
+    "model_dims_m": [
+     1.297,
+     1.282,
+     1.2
+    ],
+    "box_m": [
+     0.667,
+     0.667,
+     1.0
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.833,
+    "worst_side_ratio": 1.62
+   },
    "note": null
   },
   "tea-tin": {
@@ -4494,10 +10353,28 @@
    "note": null
   },
   "teacup": {
-   "source": "box-proxy",
-   "model": null,
+   "source": "model",
+   "model": "teacup.glb",
    "props": 13,
-   "fit": null,
+   "fit": {
+    "model_dims_m": [
+     0.12,
+     0.12,
+     0.065
+    ],
+    "box_m": [
+     0.12,
+     0.12,
+     0.08
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.072,
+    "worst_side_ratio": 1.15
+   },
    "note": null
   },
   "travel-pack": {
@@ -4508,25 +10385,160 @@
    "note": null
   },
   "waterskin": {
-   "source": "box-proxy",
-   "model": null,
+   "source": "model",
+   "model": "waterskin.glb",
    "props": 2,
-   "fit": null,
+   "fit": {
+    "model_dims_m": [
+     0.34,
+     0.161,
+     0.4
+    ],
+    "box_m": [
+     0.25,
+     0.12,
+     0.4
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.0,
+    "worst_side_ratio": 1.36
+   },
    "note": null
   },
   "yesterdays-book": {
-   "source": "box-proxy",
-   "model": null,
+   "source": "model",
+   "model": "yesterdays-book.glb",
    "props": 11,
-   "fit": null,
+   "fit": {
+    "model_dims_m": [
+     1.301,
+     0.852,
+     0.3
+    ],
+    "box_m": [
+     0.22,
+     0.04,
+     0.3
+    ],
+    "fit_rotation_deg": [
+     0,
+     90,
+     90
+    ],
+    "scale": 0.231,
+    "worst_side_ratio": 1.31
+   },
    "note": null
   },
   "zorlop-leaf-shoes": {
-   "source": "box-proxy",
-   "model": null,
+   "source": "model",
+   "model": "zorlop-leaf-shoes.glb",
    "props": 1,
-   "fit": null,
+   "fit": {
+    "model_dims_m": [
+     0.503,
+     0.6,
+     0.135
+    ],
+    "box_m": [
+     0.4,
+     0.6,
+     0.08
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.892,
+    "worst_side_ratio": 1.23
+   },
    "note": null
   }
+ },
+ "models": {
+  "ledger": "games/endless-temple/assets/models.json of the image/model session's working copy (read only; neither the ledger nor the glbs are in this branch)",
+  "ledger_status": {
+   "built": [
+    "black-book",
+    "bookshelf",
+    "broom",
+    "campfire-ring",
+    "candlestick",
+    "clerk-umbrella",
+    "clerks-chair",
+    "cuckoo-clock",
+    "giant-bone",
+    "hut-mirror",
+    "kettle",
+    "library-ladder",
+    "lizard-plate",
+    "loft-bell",
+    "low-wooden-bench",
+    "marker-pole",
+    "pilgrim-lantern",
+    "quill-pen",
+    "reading-chair",
+    "scribe-scroll",
+    "small-iron-stove",
+    "specimen-jar",
+    "stone-cairn",
+    "teacup",
+    "waterskin",
+    "yesterdays-book",
+    "zorlop-leaf-shoes"
+   ]
+  },
+  "used_as_models": [
+   "black-book",
+   "bookshelf",
+   "broom",
+   "campfire-ring",
+   "candlestick",
+   "clerk-umbrella",
+   "clerks-chair",
+   "cuckoo-clock",
+   "giant-bone",
+   "hut-mirror",
+   "kettle",
+   "library-ladder",
+   "loft-bell",
+   "marker-pole",
+   "pilgrim-lantern",
+   "reading-chair",
+   "scribe-scroll",
+   "specimen-jar",
+   "stone-cairn",
+   "teacup",
+   "waterskin",
+   "yesterdays-book",
+   "zorlop-leaf-shoes"
+  ],
+  "named_box_proxy": {
+   "day-book": "no model used: ledger status not in ledger",
+   "father-journal": "no model used: ledger status not in ledger",
+   "lizard-plate": "model skipped: a lizard on a leaf plate (creature)",
+   "quill-pen": "proportions: a side is off by x3.0 after the best fit",
+   "sand-book": "no model used: ledger status not in ledger",
+   "tea-tin": "no model used: ledger status not in ledger",
+   "travel-pack": "no model used: ledger status not in ledger"
+  },
+  "built_in_ledger_not_in_any_scene": [
+   "low-wooden-bench",
+   "small-iron-stove"
+  ],
+  "render_copies": "full 80000-triangle models re-exported with 1024 px JPEG textures (copies made in Blender because the render box's upload link is slow; never copied into the repo)",
+  "front_check": "every built model viewed from -y and from 50 degrees (workbench) before the render",
+  "figure_policy": "all 25 models used were viewed; 'lizard-plate' shows a lizard on a leaf plate and was skipped (named box proxy). 'low-wooden-bench' and 'small-iron-stove' are built in the ledger but no scene of this game uses them."
+ },
+ "gpu": {
+  "device": "one rented RTX 4090 (Blender 5.2.1, OptiX)",
+  "final_run_s": 1116,
+  "total_s": 1433,
+  "total_h": 0.4
  }
 }

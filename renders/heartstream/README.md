@@ -1,13 +1,13 @@
 # heartstream: renders, refinement batch 7
 
 20 scenes in 14 locations (20 hero). Rendered with the build files as they are (each scene's own lights, world, camera and lens),
-real models for 12 of 26 object types and named box proxies for the rest, plus the driver's rig (`tools/render/rig.json`) and
+real models for 24 of 26 object types (247 of 258 prop instances; models re-render of 2026-11-23, every model built at that time) and named box proxies for the rest, plus the driver's rig (`tools/render/rig.json`) and
 render-time overrides (`tools/render/overrides.json`, written up as proposed diffs in `REFINEMENT_NOTES.md`). Contact sheets, one per
 location: `<location>.jpg` (the overview beside its reference image, then each scene's still; 640 px tiles, 1280 px wide).
 `flagged-before-after.jpg` shows the scenes the driver fixed, before and after. Full-size stills stay out of the repo.
 
-- Tiers: 20 hero (2560x1440, 256 samples; the scene camera and the player-start eye-height still), 0 standard (1920x1080, 128). Overviews 1920x1080, 128. 54 stills in the ledger.
-- Renderer: Cycles on OptiX (a rented RTX 4090), OpenImageDenoise, Blender 5.2.1, AgX. Final run 825 s (13.8 min) measured on the render box (render time inside Blender). The stills kept locally are 1600 px wide jpg copies.
+- Tiers: 20 hero (2560x1440, 256 samples; the scene camera and the player-start eye-height still), 0 standard (1920x1080, 128). Overviews 1920x1080, 128. 68 stills in the ledger.
+- Renderer: Cycles on OptiX (a rented RTX 4090), OpenImageDenoise, Blender 5.2.1, AgX. Final run 855 s (14.2 min) measured on the render box (render time inside Blender). The stills kept locally are 1600 px wide jpg copies.
 - Reference images: 14 location images in `games/heartstream/assets/locations/`.
-- Models: ComfyUI ledger on branch comfy-models-3d; see `REFINEMENT_NOTES.md` phase C for each object (model or box proxy and why).
+- Models: re-rendered 2026-11-23 with every built model of `games/heartstream/assets/models.json` (ComfyUI session ledger, read only; full 80k-triangle models with 1024 px JPEG textures on the render box, nothing copied into the repo): 24 object types as models, the rest named box proxies, with the reason per object in `ledger.json` `models` and in "Models re-render" of `REFINEMENT_NOTES.md`. No model was skipped as figure-like. Exposure re-matched to the box pass; rig, overrides and flags otherwise unchanged.
 - `ledger.json`: per scene tier, resolution, samples, stills, prop sources and fit records, geometry checks, overrides and flag status; per object a summary.

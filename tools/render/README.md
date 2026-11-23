@@ -143,3 +143,10 @@ tar of the output folder. `--res-scale` and `--samples-scale` give quick look-de
   (the camera stands inside the real shelf model; its triangles shatter around the lens). `rig.json` per-scene `exposure_ev` and `overview_ev` re-matched to a box-proxy
   look pass (damped log2 of the luminance ratio, as in batch 12). Remote runs need a launch that checks the remote log exists (the box refused connections now and then, and
   a background job that never started looked like a hang) and a download that retries.
+
+- Added for batch 14 (heartstream, people-of-the-bark, endless-temple, lord-of-the-sea models re-render): no driver change. All 20 + 23 + 44 + 28 scenes and their 14 + 10 + 15 + 13
+  overviews were rendered again with every built model of each game's ledger (full 80k-triangle models, 1024 px JPEG textures, made in Blender and uploaded one file at a time).
+  Skipped as creature or figure-like imagery (named box proxies): endless-temple `lizard-plate`, lord-of-the-sea `tea-board`; nothing was skipped in heartstream or
+  people-of-the-bark. Fits the driver rejects (box proxy stays): heartstream `oar`; bark `balance-rope`, `edge-stake`, `falling-leaf`, `washing-line`; temple `quill-pen`;
+  sea `gallery-mirror`, `oar`. `rig.json` changed only in a few per-scene `exposure_ev` and `overview_ev` values, re-matched to a box-proxy look pass as in batch 12. The
+  four games' overviews were joined on one owner sheet (52 locations) with `owner.py`-style stacking of `finish.py`'s tiles.

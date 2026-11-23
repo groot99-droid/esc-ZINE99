@@ -24,7 +24,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 12.1
+     "render_seconds": 12.4
     },
     {
      "still": "player",
@@ -33,7 +33,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 11.0
+     "render_seconds": 11.2
     },
     {
      "still": "overview",
@@ -42,7 +42,7 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 6.2
+     "render_seconds": 6.3
     }
    ],
    "props": [
@@ -52,9 +52,9 @@
      "source": "model:chart-table.glb",
      "fit": {
       "model_dims_m": [
-       1.42,
-       0.962,
-       1.389
+       1.4,
+       0.946,
+       1.373
       ],
       "box_m": [
        1.4,
@@ -66,14 +66,33 @@
        0,
        0
       ],
-      "scale": 0.858,
-      "worst_side_ratio": 1.25
+      "scale": 0.87,
+      "worst_side_ratio": 1.26
      }
     },
     {
      "id": "dividers",
      "object": "brass-dividers",
-     "source": "box-proxy"
+     "source": "model:brass-dividers.glb",
+     "fit": {
+      "model_dims_m": [
+       0.941,
+       0.335,
+       0.18
+      ],
+      "box_m": [
+       0.04,
+       0.02,
+       0.18
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.191,
+      "worst_side_ratio": 1.6
+     }
     },
     {
      "id": "spice-jar",
@@ -88,42 +107,194 @@
     {
      "id": "tea-caddy",
      "object": "tea-caddy",
-     "source": "box-proxy"
+     "source": "model:tea-caddy.glb",
+     "fit": {
+      "model_dims_m": [
+       0.173,
+       0.161,
+       0.18
+      ],
+      "box_m": [
+       0.14,
+       0.14,
+       0.18
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.23
+     }
     },
     {
      "id": "tea-caddy-2",
      "object": "tea-caddy",
-     "source": "box-proxy"
+     "source": "model:tea-caddy.glb",
+     "fit": {
+      "model_dims_m": [
+       0.173,
+       0.161,
+       0.18
+      ],
+      "box_m": [
+       0.14,
+       0.14,
+       0.18
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.23
+     }
     },
     {
      "id": "rum-bottle-1",
      "object": "rum-bottle",
-     "source": "box-proxy"
+     "source": "model:rum-bottle.glb",
+     "fit": {
+      "model_dims_m": [
+       0.158,
+       0.123,
+       0.32
+      ],
+      "box_m": [
+       0.09,
+       0.09,
+       0.32
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.75
+     }
     },
     {
      "id": "rum-bottle-2",
      "object": "rum-bottle",
-     "source": "box-proxy"
+     "source": "model:rum-bottle.glb",
+     "fit": {
+      "model_dims_m": [
+       0.158,
+       0.123,
+       0.32
+      ],
+      "box_m": [
+       0.09,
+       0.09,
+       0.32
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.75
+     }
     },
     {
      "id": "rum-bottle-3",
      "object": "rum-bottle",
-     "source": "box-proxy"
+     "source": "model:rum-bottle.glb",
+     "fit": {
+      "model_dims_m": [
+       0.158,
+       0.123,
+       0.32
+      ],
+      "box_m": [
+       0.09,
+       0.09,
+       0.32
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.75
+     }
     },
     {
      "id": "rum-bottle-shelf",
      "object": "rum-bottle",
-     "source": "box-proxy"
+     "source": "model:rum-bottle.glb",
+     "fit": {
+      "model_dims_m": [
+       0.158,
+       0.123,
+       0.32
+      ],
+      "box_m": [
+       0.09,
+       0.09,
+       0.32
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.75
+     }
     },
     {
      "id": "lantern",
      "object": "ship-lantern",
-     "source": "box-proxy"
+     "source": "model:ship-lantern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.213,
+       0.225,
+       0.4
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "rope-coil",
      "object": "rope-coil",
-     "source": "box-proxy"
+     "source": "model:rope-coil.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.57,
+       0.066
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.471,
+      "worst_side_ratio": 2.06
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -157,7 +328,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 12.9
+     "render_seconds": 13.4
     },
     {
      "still": "player",
@@ -166,7 +337,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 12.8
+     "render_seconds": 12.9
     }
    ],
    "props": [
@@ -176,9 +347,9 @@
      "source": "model:chart-table.glb",
      "fit": {
       "model_dims_m": [
-       1.42,
-       0.962,
-       1.389
+       1.4,
+       0.946,
+       1.373
       ],
       "box_m": [
        1.4,
@@ -190,14 +361,33 @@
        0,
        0
       ],
-      "scale": 0.858,
-      "worst_side_ratio": 1.25
+      "scale": 0.87,
+      "worst_side_ratio": 1.26
      }
     },
     {
      "id": "dividers",
      "object": "brass-dividers",
-     "source": "box-proxy"
+     "source": "model:brass-dividers.glb",
+     "fit": {
+      "model_dims_m": [
+       0.941,
+       0.335,
+       0.18
+      ],
+      "box_m": [
+       0.04,
+       0.02,
+       0.18
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.191,
+      "worst_side_ratio": 1.6
+     }
     },
     {
      "id": "sale-deed",
@@ -217,42 +407,194 @@
     {
      "id": "tea-caddy",
      "object": "tea-caddy",
-     "source": "box-proxy"
+     "source": "model:tea-caddy.glb",
+     "fit": {
+      "model_dims_m": [
+       0.173,
+       0.161,
+       0.18
+      ],
+      "box_m": [
+       0.14,
+       0.14,
+       0.18
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.23
+     }
     },
     {
      "id": "tea-caddy-2",
      "object": "tea-caddy",
-     "source": "box-proxy"
+     "source": "model:tea-caddy.glb",
+     "fit": {
+      "model_dims_m": [
+       0.173,
+       0.161,
+       0.18
+      ],
+      "box_m": [
+       0.14,
+       0.14,
+       0.18
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.23
+     }
     },
     {
      "id": "rum-bottle-1",
      "object": "rum-bottle",
-     "source": "box-proxy"
+     "source": "model:rum-bottle.glb",
+     "fit": {
+      "model_dims_m": [
+       0.158,
+       0.123,
+       0.32
+      ],
+      "box_m": [
+       0.09,
+       0.09,
+       0.32
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.75
+     }
     },
     {
      "id": "rum-bottle-2",
      "object": "rum-bottle",
-     "source": "box-proxy"
+     "source": "model:rum-bottle.glb",
+     "fit": {
+      "model_dims_m": [
+       0.158,
+       0.123,
+       0.32
+      ],
+      "box_m": [
+       0.09,
+       0.09,
+       0.32
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.75
+     }
     },
     {
      "id": "rum-bottle-3",
      "object": "rum-bottle",
-     "source": "box-proxy"
+     "source": "model:rum-bottle.glb",
+     "fit": {
+      "model_dims_m": [
+       0.158,
+       0.123,
+       0.32
+      ],
+      "box_m": [
+       0.09,
+       0.09,
+       0.32
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.75
+     }
     },
     {
      "id": "rum-bottle-shelf",
      "object": "rum-bottle",
-     "source": "box-proxy"
+     "source": "model:rum-bottle.glb",
+     "fit": {
+      "model_dims_m": [
+       0.158,
+       0.123,
+       0.32
+      ],
+      "box_m": [
+       0.09,
+       0.09,
+       0.32
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.75
+     }
     },
     {
      "id": "lantern",
      "object": "ship-lantern",
-     "source": "box-proxy"
+     "source": "model:ship-lantern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.213,
+       0.225,
+       0.4
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "rope-coil",
      "object": "rope-coil",
-     "source": "box-proxy"
+     "source": "model:rope-coil.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.57,
+       0.066
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.471,
+      "worst_side_ratio": 2.06
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -286,7 +628,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 11.2
+     "render_seconds": 11.7
     },
     {
      "still": "player",
@@ -295,7 +637,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 11.6
+     "render_seconds": 12.5
     }
    ],
    "props": [
@@ -305,9 +647,9 @@
      "source": "model:chart-table.glb",
      "fit": {
       "model_dims_m": [
-       1.42,
-       0.962,
-       1.389
+       1.4,
+       0.946,
+       1.373
       ],
       "box_m": [
        1.4,
@@ -319,24 +661,81 @@
        0,
        0
       ],
-      "scale": 0.858,
-      "worst_side_ratio": 1.25
+      "scale": 0.87,
+      "worst_side_ratio": 1.26
      }
     },
     {
      "id": "dividers",
      "object": "brass-dividers",
-     "source": "box-proxy"
+     "source": "model:brass-dividers.glb",
+     "fit": {
+      "model_dims_m": [
+       0.941,
+       0.335,
+       0.18
+      ],
+      "box_m": [
+       0.04,
+       0.02,
+       0.18
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.191,
+      "worst_side_ratio": 1.6
+     }
     },
     {
      "id": "harbour-book",
      "object": "harbour-book",
-     "source": "box-proxy"
+     "source": "model:harbour-book.glb",
+     "fit": {
+      "model_dims_m": [
+       1.005,
+       1.174,
+       0.4
+      ],
+      "box_m": [
+       0.3,
+       0.06,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       90,
+       0,
+       0
+      ],
+      "scale": 0.341,
+      "worst_side_ratio": 2.27
+     }
     },
     {
      "id": "strongbox",
      "object": "strongbox",
-     "source": "box-proxy"
+     "source": "model:strongbox.glb",
+     "fit": {
+      "model_dims_m": [
+       0.5,
+       0.499,
+       0.403
+      ],
+      "box_m": [
+       0.5,
+       0.35,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.805,
+      "worst_side_ratio": 1.24
+     }
     },
     {
      "id": "sale-deed",
@@ -356,42 +755,194 @@
     {
      "id": "tea-caddy",
      "object": "tea-caddy",
-     "source": "box-proxy"
+     "source": "model:tea-caddy.glb",
+     "fit": {
+      "model_dims_m": [
+       0.173,
+       0.161,
+       0.18
+      ],
+      "box_m": [
+       0.14,
+       0.14,
+       0.18
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.23
+     }
     },
     {
      "id": "tea-caddy-2",
      "object": "tea-caddy",
-     "source": "box-proxy"
+     "source": "model:tea-caddy.glb",
+     "fit": {
+      "model_dims_m": [
+       0.173,
+       0.161,
+       0.18
+      ],
+      "box_m": [
+       0.14,
+       0.14,
+       0.18
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.23
+     }
     },
     {
      "id": "rum-bottle-1",
      "object": "rum-bottle",
-     "source": "box-proxy"
+     "source": "model:rum-bottle.glb",
+     "fit": {
+      "model_dims_m": [
+       0.158,
+       0.123,
+       0.32
+      ],
+      "box_m": [
+       0.09,
+       0.09,
+       0.32
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.75
+     }
     },
     {
      "id": "rum-bottle-2",
      "object": "rum-bottle",
-     "source": "box-proxy"
+     "source": "model:rum-bottle.glb",
+     "fit": {
+      "model_dims_m": [
+       0.158,
+       0.123,
+       0.32
+      ],
+      "box_m": [
+       0.09,
+       0.09,
+       0.32
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.75
+     }
     },
     {
      "id": "rum-bottle-3",
      "object": "rum-bottle",
-     "source": "box-proxy"
+     "source": "model:rum-bottle.glb",
+     "fit": {
+      "model_dims_m": [
+       0.158,
+       0.123,
+       0.32
+      ],
+      "box_m": [
+       0.09,
+       0.09,
+       0.32
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.75
+     }
     },
     {
      "id": "rum-bottle-shelf",
      "object": "rum-bottle",
-     "source": "box-proxy"
+     "source": "model:rum-bottle.glb",
+     "fit": {
+      "model_dims_m": [
+       0.158,
+       0.123,
+       0.32
+      ],
+      "box_m": [
+       0.09,
+       0.09,
+       0.32
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.75
+     }
     },
     {
      "id": "lantern",
      "object": "ship-lantern",
-     "source": "box-proxy"
+     "source": "model:ship-lantern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.213,
+       0.225,
+       0.4
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "rope-coil",
      "object": "rope-coil",
-     "source": "box-proxy"
+     "source": "model:rope-coil.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.57,
+       0.066
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.471,
+      "worst_side_ratio": 2.06
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -425,7 +976,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 11.0
+     "render_seconds": 11.5
     },
     {
      "still": "player",
@@ -434,7 +985,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 11.4
+     "render_seconds": 12.0
     }
    ],
    "props": [
@@ -444,9 +995,9 @@
      "source": "model:chart-table.glb",
      "fit": {
       "model_dims_m": [
-       1.42,
-       0.962,
-       1.389
+       1.4,
+       0.946,
+       1.373
       ],
       "box_m": [
        1.4,
@@ -458,24 +1009,81 @@
        0,
        0
       ],
-      "scale": 0.858,
-      "worst_side_ratio": 1.25
+      "scale": 0.87,
+      "worst_side_ratio": 1.26
      }
     },
     {
      "id": "dividers",
      "object": "brass-dividers",
-     "source": "box-proxy"
+     "source": "model:brass-dividers.glb",
+     "fit": {
+      "model_dims_m": [
+       0.941,
+       0.335,
+       0.18
+      ],
+      "box_m": [
+       0.04,
+       0.02,
+       0.18
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.191,
+      "worst_side_ratio": 1.6
+     }
     },
     {
      "id": "harbour-book",
      "object": "harbour-book",
-     "source": "box-proxy"
+     "source": "model:harbour-book.glb",
+     "fit": {
+      "model_dims_m": [
+       1.005,
+       1.174,
+       0.4
+      ],
+      "box_m": [
+       0.3,
+       0.06,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       90,
+       0,
+       0
+      ],
+      "scale": 0.341,
+      "worst_side_ratio": 2.27
+     }
     },
     {
      "id": "strongbox",
      "object": "strongbox",
-     "source": "box-proxy"
+     "source": "model:strongbox.glb",
+     "fit": {
+      "model_dims_m": [
+       0.5,
+       0.499,
+       0.403
+      ],
+      "box_m": [
+       0.5,
+       0.35,
+       0.3
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.805,
+      "worst_side_ratio": 1.24
+     }
     },
     {
      "id": "sale-deed",
@@ -495,42 +1103,194 @@
     {
      "id": "tea-caddy",
      "object": "tea-caddy",
-     "source": "box-proxy"
+     "source": "model:tea-caddy.glb",
+     "fit": {
+      "model_dims_m": [
+       0.173,
+       0.161,
+       0.18
+      ],
+      "box_m": [
+       0.14,
+       0.14,
+       0.18
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.23
+     }
     },
     {
      "id": "tea-caddy-2",
      "object": "tea-caddy",
-     "source": "box-proxy"
+     "source": "model:tea-caddy.glb",
+     "fit": {
+      "model_dims_m": [
+       0.173,
+       0.161,
+       0.18
+      ],
+      "box_m": [
+       0.14,
+       0.14,
+       0.18
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.23
+     }
     },
     {
      "id": "rum-bottle-1",
      "object": "rum-bottle",
-     "source": "box-proxy"
+     "source": "model:rum-bottle.glb",
+     "fit": {
+      "model_dims_m": [
+       0.158,
+       0.123,
+       0.32
+      ],
+      "box_m": [
+       0.09,
+       0.09,
+       0.32
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.75
+     }
     },
     {
      "id": "rum-bottle-2",
      "object": "rum-bottle",
-     "source": "box-proxy"
+     "source": "model:rum-bottle.glb",
+     "fit": {
+      "model_dims_m": [
+       0.158,
+       0.123,
+       0.32
+      ],
+      "box_m": [
+       0.09,
+       0.09,
+       0.32
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.75
+     }
     },
     {
      "id": "rum-bottle-3",
      "object": "rum-bottle",
-     "source": "box-proxy"
+     "source": "model:rum-bottle.glb",
+     "fit": {
+      "model_dims_m": [
+       0.158,
+       0.123,
+       0.32
+      ],
+      "box_m": [
+       0.09,
+       0.09,
+       0.32
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.75
+     }
     },
     {
      "id": "rum-bottle-shelf",
      "object": "rum-bottle",
-     "source": "box-proxy"
+     "source": "model:rum-bottle.glb",
+     "fit": {
+      "model_dims_m": [
+       0.158,
+       0.123,
+       0.32
+      ],
+      "box_m": [
+       0.09,
+       0.09,
+       0.32
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.75
+     }
     },
     {
      "id": "lantern",
      "object": "ship-lantern",
-     "source": "box-proxy"
+     "source": "model:ship-lantern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.213,
+       0.225,
+       0.4
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "rope-coil",
      "object": "rope-coil",
-     "source": "box-proxy"
+     "source": "model:rope-coil.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.57,
+       0.066
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.471,
+      "worst_side_ratio": 2.06
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -564,7 +1324,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 13.0
+     "render_seconds": 13.2
     },
     {
      "still": "player",
@@ -583,9 +1343,9 @@
      "source": "model:chart-table.glb",
      "fit": {
       "model_dims_m": [
-       1.42,
-       0.962,
-       1.389
+       1.4,
+       0.946,
+       1.373
       ],
       "box_m": [
        1.4,
@@ -597,14 +1357,33 @@
        0,
        0
       ],
-      "scale": 0.858,
-      "worst_side_ratio": 1.25
+      "scale": 0.87,
+      "worst_side_ratio": 1.26
      }
     },
     {
      "id": "dividers",
      "object": "brass-dividers",
-     "source": "box-proxy"
+     "source": "model:brass-dividers.glb",
+     "fit": {
+      "model_dims_m": [
+       0.941,
+       0.335,
+       0.18
+      ],
+      "box_m": [
+       0.04,
+       0.02,
+       0.18
+      ],
+      "fit_rotation_deg": [
+       0,
+       90,
+       90
+      ],
+      "scale": 0.191,
+      "worst_side_ratio": 1.6
+     }
     },
     {
      "id": "sale-deed",
@@ -624,42 +1403,194 @@
     {
      "id": "tea-caddy",
      "object": "tea-caddy",
-     "source": "box-proxy"
+     "source": "model:tea-caddy.glb",
+     "fit": {
+      "model_dims_m": [
+       0.173,
+       0.161,
+       0.18
+      ],
+      "box_m": [
+       0.14,
+       0.14,
+       0.18
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.23
+     }
     },
     {
      "id": "tea-caddy-2",
      "object": "tea-caddy",
-     "source": "box-proxy"
+     "source": "model:tea-caddy.glb",
+     "fit": {
+      "model_dims_m": [
+       0.173,
+       0.161,
+       0.18
+      ],
+      "box_m": [
+       0.14,
+       0.14,
+       0.18
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.23
+     }
     },
     {
      "id": "rum-bottle-1",
      "object": "rum-bottle",
-     "source": "box-proxy"
+     "source": "model:rum-bottle.glb",
+     "fit": {
+      "model_dims_m": [
+       0.158,
+       0.123,
+       0.32
+      ],
+      "box_m": [
+       0.09,
+       0.09,
+       0.32
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.75
+     }
     },
     {
      "id": "rum-bottle-2",
      "object": "rum-bottle",
-     "source": "box-proxy"
+     "source": "model:rum-bottle.glb",
+     "fit": {
+      "model_dims_m": [
+       0.158,
+       0.123,
+       0.32
+      ],
+      "box_m": [
+       0.09,
+       0.09,
+       0.32
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.75
+     }
     },
     {
      "id": "rum-bottle-3",
      "object": "rum-bottle",
-     "source": "box-proxy"
+     "source": "model:rum-bottle.glb",
+     "fit": {
+      "model_dims_m": [
+       0.158,
+       0.123,
+       0.32
+      ],
+      "box_m": [
+       0.09,
+       0.09,
+       0.32
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.75
+     }
     },
     {
      "id": "rum-bottle-shelf",
      "object": "rum-bottle",
-     "source": "box-proxy"
+     "source": "model:rum-bottle.glb",
+     "fit": {
+      "model_dims_m": [
+       0.158,
+       0.123,
+       0.32
+      ],
+      "box_m": [
+       0.09,
+       0.09,
+       0.32
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.75
+     }
     },
     {
      "id": "lantern",
      "object": "ship-lantern",
-     "source": "box-proxy"
+     "source": "model:ship-lantern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.213,
+       0.225,
+       0.4
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "rope-coil",
      "object": "rope-coil",
-     "source": "box-proxy"
+     "source": "model:rope-coil.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.57,
+       0.066
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.471,
+      "worst_side_ratio": 2.06
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -693,7 +1624,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.5
+     "render_seconds": 8.6
     },
     {
      "still": "player",
@@ -702,7 +1633,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.3
+     "render_seconds": 8.4
     },
     {
      "still": "overview",
@@ -711,14 +1642,33 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 4.8
+     "render_seconds": 5.0
     }
    ],
    "props": [
     {
      "id": "dinghy",
      "object": "dinghy",
-     "source": "box-proxy"
+     "source": "model:dinghy.glb",
+     "fit": {
+      "model_dims_m": [
+       1.678,
+       3.2,
+       1.381
+      ],
+      "box_m": [
+       1.4,
+       3.2,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.713,
+      "worst_side_ratio": 1.64
+     }
     },
     {
      "id": "oar-1",
@@ -726,7 +1676,7 @@
      "source": "box-proxy",
      "fit": {
       "model_dims_m": [
-       2.223,
+       2.221,
        1.6,
        2.4
       ],
@@ -751,7 +1701,7 @@
      "source": "box-proxy",
      "fit": {
       "model_dims_m": [
-       2.223,
+       2.221,
        1.6,
        2.4
       ],
@@ -773,17 +1723,74 @@
     {
      "id": "rope-mast",
      "object": "rope-coil",
-     "source": "box-proxy"
+     "source": "model:rope-coil.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.57,
+       0.066
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.471,
+      "worst_side_ratio": 2.06
+     }
     },
     {
      "id": "rope-dinghy-line",
      "object": "rope-coil",
-     "source": "box-proxy"
+     "source": "model:rope-coil.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.57,
+       0.066
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.471,
+      "worst_side_ratio": 2.06
+     }
     },
     {
      "id": "lantern-mast",
      "object": "ship-lantern",
-     "source": "box-proxy"
+     "source": "model:ship-lantern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.213,
+       0.225,
+       0.4
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.12
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -794,7 +1801,13 @@
      "mast"
     ],
     "prop_inside": [],
-    "prop_overlap": [],
+    "prop_overlap": [
+     {
+      "prop": "lantern-mast",
+      "piece": "mast",
+      "samples": "3/27"
+     }
+    ],
     "prop_off_floor": []
    },
    "render_time_overrides": [],
@@ -820,7 +1833,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 15.2
+     "render_seconds": 15.4
     },
     {
      "still": "player",
@@ -829,7 +1842,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 15.6
+     "render_seconds": 15.7
     },
     {
      "still": "overview",
@@ -838,24 +1851,81 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 6.7
+     "render_seconds": 6.8
     }
    ],
    "props": [
     {
      "id": "bottle-asked-for",
      "object": "rum-bottle",
-     "source": "box-proxy"
+     "source": "model:rum-bottle.glb",
+     "fit": {
+      "model_dims_m": [
+       0.158,
+       0.123,
+       0.32
+      ],
+      "box_m": [
+       0.09,
+       0.09,
+       0.32
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.75
+     }
     },
     {
      "id": "bottle-shelf",
      "object": "rum-bottle",
-     "source": "box-proxy"
+     "source": "model:rum-bottle.glb",
+     "fit": {
+      "model_dims_m": [
+       0.158,
+       0.123,
+       0.32
+      ],
+      "box_m": [
+       0.09,
+       0.09,
+       0.32
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.75
+     }
     },
     {
      "id": "tea-caddy",
      "object": "tea-caddy",
-     "source": "box-proxy"
+     "source": "model:tea-caddy.glb",
+     "fit": {
+      "model_dims_m": [
+       0.173,
+       0.161,
+       0.18
+      ],
+      "box_m": [
+       0.14,
+       0.14,
+       0.18
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.23
+     }
     },
     {
      "id": "account-book",
@@ -865,17 +1935,74 @@
     {
      "id": "lantern-counter",
      "object": "ship-lantern",
-     "source": "box-proxy"
+     "source": "model:ship-lantern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.213,
+       0.225,
+       0.4
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "rope-coil",
      "object": "rope-coil",
-     "source": "box-proxy"
+     "source": "model:rope-coil.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.57,
+       0.066
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.471,
+      "worst_side_ratio": 2.06
+     }
     },
     {
      "id": "lobster-pot",
      "object": "lobster-pot",
-     "source": "box-proxy"
+     "source": "model:lobster-pot.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.479,
+       0.38
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.958,
+      "worst_side_ratio": 1.15
+     }
     }
    ],
    "flagged_in_first_pass": [
@@ -916,7 +2043,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 7.9
+     "render_seconds": 8.1
     },
     {
      "still": "player",
@@ -934,104 +2061,465 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 4.7
+     "render_seconds": 4.8
     }
    ],
    "props": [
     {
      "id": "buoy-west-1",
      "object": "company-buoy",
-     "source": "box-proxy"
+     "source": "model:company-buoy.glb",
+     "fit": {
+      "model_dims_m": [
+       1.718,
+       1.72,
+       3.2
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.08
+     }
     },
     {
      "id": "buoy-west-2",
      "object": "company-buoy",
-     "source": "box-proxy"
+     "source": "model:company-buoy.glb",
+     "fit": {
+      "model_dims_m": [
+       1.718,
+       1.72,
+       3.2
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.08
+     }
     },
     {
      "id": "buoy-west-3",
      "object": "company-buoy",
-     "source": "box-proxy"
+     "source": "model:company-buoy.glb",
+     "fit": {
+      "model_dims_m": [
+       1.718,
+       1.72,
+       3.2
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.08
+     }
     },
     {
      "id": "buoy-west-4",
      "object": "company-buoy",
-     "source": "box-proxy"
+     "source": "model:company-buoy.glb",
+     "fit": {
+      "model_dims_m": [
+       1.718,
+       1.72,
+       3.2
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.08
+     }
     },
     {
      "id": "buoy-west-5",
      "object": "company-buoy",
-     "source": "box-proxy"
+     "source": "model:company-buoy.glb",
+     "fit": {
+      "model_dims_m": [
+       1.718,
+       1.72,
+       3.2
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.08
+     }
     },
     {
      "id": "buoy-west-6",
      "object": "company-buoy",
-     "source": "box-proxy"
+     "source": "model:company-buoy.glb",
+     "fit": {
+      "model_dims_m": [
+       1.718,
+       1.72,
+       3.2
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.08
+     }
     },
     {
      "id": "buoy-west-7",
      "object": "company-buoy",
-     "source": "box-proxy"
+     "source": "model:company-buoy.glb",
+     "fit": {
+      "model_dims_m": [
+       1.718,
+       1.72,
+       3.2
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.08
+     }
     },
     {
      "id": "buoy-west-8",
      "object": "company-buoy",
-     "source": "box-proxy"
+     "source": "model:company-buoy.glb",
+     "fit": {
+      "model_dims_m": [
+       1.718,
+       1.72,
+       3.2
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.08
+     }
     },
     {
      "id": "buoy-west-9",
      "object": "company-buoy",
-     "source": "box-proxy"
+     "source": "model:company-buoy.glb",
+     "fit": {
+      "model_dims_m": [
+       1.718,
+       1.72,
+       3.2
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.08
+     }
     },
     {
      "id": "buoy-east-1",
      "object": "company-buoy",
-     "source": "box-proxy"
+     "source": "model:company-buoy.glb",
+     "fit": {
+      "model_dims_m": [
+       1.718,
+       1.72,
+       3.2
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.08
+     }
     },
     {
      "id": "buoy-east-2",
      "object": "company-buoy",
-     "source": "box-proxy"
+     "source": "model:company-buoy.glb",
+     "fit": {
+      "model_dims_m": [
+       1.718,
+       1.72,
+       3.2
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.08
+     }
     },
     {
      "id": "buoy-east-3",
      "object": "company-buoy",
-     "source": "box-proxy"
+     "source": "model:company-buoy.glb",
+     "fit": {
+      "model_dims_m": [
+       1.718,
+       1.72,
+       3.2
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.08
+     }
     },
     {
      "id": "buoy-east-4",
      "object": "company-buoy",
-     "source": "box-proxy"
+     "source": "model:company-buoy.glb",
+     "fit": {
+      "model_dims_m": [
+       1.718,
+       1.72,
+       3.2
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.08
+     }
     },
     {
      "id": "buoy-east-5",
      "object": "company-buoy",
-     "source": "box-proxy"
+     "source": "model:company-buoy.glb",
+     "fit": {
+      "model_dims_m": [
+       1.718,
+       1.72,
+       3.2
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.08
+     }
     },
     {
      "id": "buoy-east-6",
      "object": "company-buoy",
-     "source": "box-proxy"
+     "source": "model:company-buoy.glb",
+     "fit": {
+      "model_dims_m": [
+       1.718,
+       1.72,
+       3.2
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.08
+     }
     },
     {
      "id": "buoy-east-7",
      "object": "company-buoy",
-     "source": "box-proxy"
+     "source": "model:company-buoy.glb",
+     "fit": {
+      "model_dims_m": [
+       1.718,
+       1.72,
+       3.2
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.08
+     }
     },
     {
      "id": "buoy-east-8",
      "object": "company-buoy",
-     "source": "box-proxy"
+     "source": "model:company-buoy.glb",
+     "fit": {
+      "model_dims_m": [
+       1.718,
+       1.72,
+       3.2
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.08
+     }
     },
     {
      "id": "buoy-east-9",
      "object": "company-buoy",
-     "source": "box-proxy"
+     "source": "model:company-buoy.glb",
+     "fit": {
+      "model_dims_m": [
+       1.718,
+       1.72,
+       3.2
+      ],
+      "box_m": [
+       1.6,
+       1.6,
+       3.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.08
+     }
     },
     {
      "id": "revenue-cutter",
      "object": "revenue-cutter",
-     "source": "box-proxy"
+     "source": "model:revenue-cutter.glb",
+     "fit": {
+      "model_dims_m": [
+       6.726,
+       24.0,
+       20.756
+      ],
+      "box_m": [
+       6.0,
+       24.0,
+       22.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.06,
+      "worst_side_ratio": 1.19
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -1065,7 +2553,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 10.7
+     "render_seconds": 10.8
     },
     {
      "still": "player",
@@ -1074,7 +2562,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 10.7
+     "render_seconds": 10.8
     },
     {
      "still": "overview",
@@ -1090,7 +2578,10 @@
     {
      "id": "tea-board",
      "object": "tea-board",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "a tea board with game pieces in the shape of small standing figures and a horse (figure-like pieces)"
+     }
     },
     {
      "id": "ledger-west-1",
@@ -1115,32 +2606,146 @@
     {
      "id": "lamp-desk-west",
      "object": "ship-lantern",
-     "source": "box-proxy"
+     "source": "model:ship-lantern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.213,
+       0.225,
+       0.4
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "lamp-desk-east",
      "object": "ship-lantern",
-     "source": "box-proxy"
+     "source": "model:ship-lantern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.213,
+       0.225,
+       0.4
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "lamp-counter-east",
      "object": "ship-lantern",
-     "source": "box-proxy"
+     "source": "model:ship-lantern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.213,
+       0.225,
+       0.4
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "lamp-hanging",
      "object": "ship-lantern",
-     "source": "box-proxy"
+     "source": "model:ship-lantern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.213,
+       0.225,
+       0.4
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "tea-chest-1",
      "object": "tea-chest",
-     "source": "box-proxy"
+     "source": "model:tea-chest.glb",
+     "fit": {
+      "model_dims_m": [
+       0.804,
+       0.535,
+       0.6
+      ],
+      "box_m": [
+       0.5,
+       0.5,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.61
+     }
     },
     {
      "id": "tea-chest-2",
      "object": "tea-chest",
-     "source": "box-proxy"
+     "source": "model:tea-chest.glb",
+     "fit": {
+      "model_dims_m": [
+       0.804,
+       0.535,
+       0.6
+      ],
+      "box_m": [
+       0.5,
+       0.5,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.61
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -1174,7 +2779,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 11.0
+     "render_seconds": 11.1
     },
     {
      "still": "player",
@@ -1183,14 +2788,17 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 11.7
+     "render_seconds": 11.9
     }
    ],
    "props": [
     {
      "id": "tea-board",
      "object": "tea-board",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_skipped": "a tea board with game pieces in the shape of small standing figures and a horse (figure-like pieces)"
+     }
     },
     {
      "id": "ledger-west-1",
@@ -1215,32 +2823,146 @@
     {
      "id": "lamp-desk-west",
      "object": "ship-lantern",
-     "source": "box-proxy"
+     "source": "model:ship-lantern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.213,
+       0.225,
+       0.4
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "lamp-desk-east",
      "object": "ship-lantern",
-     "source": "box-proxy"
+     "source": "model:ship-lantern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.213,
+       0.225,
+       0.4
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "lamp-counter-east",
      "object": "ship-lantern",
-     "source": "box-proxy"
+     "source": "model:ship-lantern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.213,
+       0.225,
+       0.4
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "lamp-hanging",
      "object": "ship-lantern",
-     "source": "box-proxy"
+     "source": "model:ship-lantern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.213,
+       0.225,
+       0.4
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "tea-chest-1",
      "object": "tea-chest",
-     "source": "box-proxy"
+     "source": "model:tea-chest.glb",
+     "fit": {
+      "model_dims_m": [
+       0.804,
+       0.535,
+       0.6
+      ],
+      "box_m": [
+       0.5,
+       0.5,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.61
+     }
     },
     {
      "id": "tea-chest-2",
      "object": "tea-chest",
-     "source": "box-proxy"
+     "source": "model:tea-chest.glb",
+     "fit": {
+      "model_dims_m": [
+       0.804,
+       0.535,
+       0.6
+      ],
+      "box_m": [
+       0.5,
+       0.5,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.61
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -1274,7 +2996,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.7
+     "render_seconds": 8.9
     },
     {
      "still": "player",
@@ -1290,7 +3012,26 @@
     {
      "id": "dinghy",
      "object": "dinghy",
-     "source": "box-proxy"
+     "source": "model:dinghy.glb",
+     "fit": {
+      "model_dims_m": [
+       1.678,
+       3.2,
+       1.381
+      ],
+      "box_m": [
+       1.4,
+       3.2,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.713,
+      "worst_side_ratio": 1.64
+     }
     },
     {
      "id": "oar",
@@ -1298,7 +3039,7 @@
      "source": "box-proxy",
      "fit": {
       "model_dims_m": [
-       2.223,
+       2.221,
        1.6,
        2.4
       ],
@@ -1320,12 +3061,50 @@
     {
      "id": "lobster-pot",
      "object": "lobster-pot",
-     "source": "box-proxy"
+     "source": "model:lobster-pot.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.479,
+       0.38
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.958,
+      "worst_side_ratio": 1.15
+     }
     },
     {
      "id": "lobster-pot-2",
      "object": "lobster-pot",
-     "source": "box-proxy"
+     "source": "model:lobster-pot.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.479,
+       0.38
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.958,
+      "worst_side_ratio": 1.15
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -1359,7 +3138,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.5
+     "render_seconds": 8.6
     },
     {
      "still": "player",
@@ -1368,14 +3147,33 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.4
+     "render_seconds": 8.5
     }
    ],
    "props": [
     {
      "id": "dinghy",
      "object": "dinghy",
-     "source": "box-proxy"
+     "source": "model:dinghy.glb",
+     "fit": {
+      "model_dims_m": [
+       1.678,
+       3.2,
+       1.381
+      ],
+      "box_m": [
+       1.4,
+       3.2,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.713,
+      "worst_side_ratio": 1.64
+     }
     },
     {
      "id": "oar",
@@ -1383,7 +3181,7 @@
      "source": "box-proxy",
      "fit": {
       "model_dims_m": [
-       2.223,
+       2.221,
        1.6,
        2.4
       ],
@@ -1405,12 +3203,50 @@
     {
      "id": "lobster-pot",
      "object": "lobster-pot",
-     "source": "box-proxy"
+     "source": "model:lobster-pot.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.479,
+       0.38
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.958,
+      "worst_side_ratio": 1.15
+     }
     },
     {
      "id": "lobster-pot-2",
      "object": "lobster-pot",
-     "source": "box-proxy"
+     "source": "model:lobster-pot.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.479,
+       0.38
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.958,
+      "worst_side_ratio": 1.15
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -1444,7 +3280,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.3
+     "render_seconds": 8.5
     },
     {
      "still": "player",
@@ -1453,19 +3289,57 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.5
+     "render_seconds": 8.6
     }
    ],
    "props": [
     {
      "id": "tideline-stone",
      "object": "tideline-stone",
-     "source": "box-proxy"
+     "source": "model:tideline-stone.glb",
+     "fit": {
+      "model_dims_m": [
+       0.869,
+       0.827,
+       1.4
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.07
+     }
     },
     {
      "id": "dinghy",
      "object": "dinghy",
-     "source": "box-proxy"
+     "source": "model:dinghy.glb",
+     "fit": {
+      "model_dims_m": [
+       1.678,
+       3.2,
+       1.381
+      ],
+      "box_m": [
+       1.4,
+       3.2,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.713,
+      "worst_side_ratio": 1.64
+     }
     },
     {
      "id": "oar",
@@ -1473,7 +3347,7 @@
      "source": "box-proxy",
      "fit": {
       "model_dims_m": [
-       2.223,
+       2.221,
        1.6,
        2.4
       ],
@@ -1495,12 +3369,50 @@
     {
      "id": "lobster-pot",
      "object": "lobster-pot",
-     "source": "box-proxy"
+     "source": "model:lobster-pot.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.479,
+       0.38
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.958,
+      "worst_side_ratio": 1.15
+     }
     },
     {
      "id": "lobster-pot-2",
      "object": "lobster-pot",
-     "source": "box-proxy"
+     "source": "model:lobster-pot.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.479,
+       0.38
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.958,
+      "worst_side_ratio": 1.15
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -1534,7 +3446,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 9.1
+     "render_seconds": 9.0
     },
     {
      "still": "player",
@@ -1552,19 +3464,57 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 4.8
+     "render_seconds": 4.9
     }
    ],
    "props": [
     {
      "id": "tideline-stone",
      "object": "tideline-stone",
-     "source": "box-proxy"
+     "source": "model:tideline-stone.glb",
+     "fit": {
+      "model_dims_m": [
+       0.869,
+       0.827,
+       1.4
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.07
+     }
     },
     {
      "id": "dinghy",
      "object": "dinghy",
-     "source": "box-proxy"
+     "source": "model:dinghy.glb",
+     "fit": {
+      "model_dims_m": [
+       1.678,
+       3.2,
+       1.381
+      ],
+      "box_m": [
+       1.4,
+       3.2,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.713,
+      "worst_side_ratio": 1.64
+     }
     },
     {
      "id": "oar",
@@ -1572,7 +3522,7 @@
      "source": "box-proxy",
      "fit": {
       "model_dims_m": [
-       2.223,
+       2.221,
        1.6,
        2.4
       ],
@@ -1594,12 +3544,50 @@
     {
      "id": "lobster-pot",
      "object": "lobster-pot",
-     "source": "box-proxy"
+     "source": "model:lobster-pot.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.479,
+       0.38
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.958,
+      "worst_side_ratio": 1.15
+     }
     },
     {
      "id": "lobster-pot-2",
      "object": "lobster-pot",
-     "source": "box-proxy"
+     "source": "model:lobster-pot.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.479,
+       0.38
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.958,
+      "worst_side_ratio": 1.15
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -1643,12 +3631,50 @@
     {
      "id": "tideline-stone",
      "object": "tideline-stone",
-     "source": "box-proxy"
+     "source": "model:tideline-stone.glb",
+     "fit": {
+      "model_dims_m": [
+       0.869,
+       0.827,
+       1.4
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.07
+     }
     },
     {
      "id": "dinghy",
      "object": "dinghy",
-     "source": "box-proxy"
+     "source": "model:dinghy.glb",
+     "fit": {
+      "model_dims_m": [
+       1.678,
+       3.2,
+       1.381
+      ],
+      "box_m": [
+       1.4,
+       3.2,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.713,
+      "worst_side_ratio": 1.64
+     }
     },
     {
      "id": "oar",
@@ -1656,7 +3682,7 @@
      "source": "box-proxy",
      "fit": {
       "model_dims_m": [
-       2.223,
+       2.221,
        1.6,
        2.4
       ],
@@ -1678,12 +3704,50 @@
     {
      "id": "lobster-pot",
      "object": "lobster-pot",
-     "source": "box-proxy"
+     "source": "model:lobster-pot.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.479,
+       0.38
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.958,
+      "worst_side_ratio": 1.15
+     }
     },
     {
      "id": "lobster-pot-2",
      "object": "lobster-pot",
-     "source": "box-proxy"
+     "source": "model:lobster-pot.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.479,
+       0.38
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.958,
+      "worst_side_ratio": 1.15
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -1726,19 +3790,57 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.1
+     "render_seconds": 8.4
     }
    ],
    "props": [
     {
      "id": "tideline-stone",
      "object": "tideline-stone",
-     "source": "box-proxy"
+     "source": "model:tideline-stone.glb",
+     "fit": {
+      "model_dims_m": [
+       0.869,
+       0.827,
+       1.4
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.07
+     }
     },
     {
      "id": "dinghy",
      "object": "dinghy",
-     "source": "box-proxy"
+     "source": "model:dinghy.glb",
+     "fit": {
+      "model_dims_m": [
+       1.678,
+       3.2,
+       1.381
+      ],
+      "box_m": [
+       1.4,
+       3.2,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.713,
+      "worst_side_ratio": 1.64
+     }
     },
     {
      "id": "oar",
@@ -1746,7 +3848,7 @@
      "source": "box-proxy",
      "fit": {
       "model_dims_m": [
-       2.223,
+       2.221,
        1.6,
        2.4
       ],
@@ -1768,12 +3870,50 @@
     {
      "id": "lobster-pot",
      "object": "lobster-pot",
-     "source": "box-proxy"
+     "source": "model:lobster-pot.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.479,
+       0.38
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.958,
+      "worst_side_ratio": 1.15
+     }
     },
     {
      "id": "lobster-pot-2",
      "object": "lobster-pot",
-     "source": "box-proxy"
+     "source": "model:lobster-pot.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.479,
+       0.38
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.958,
+      "worst_side_ratio": 1.15
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -1807,19 +3947,57 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 4.8
+     "render_seconds": 5.0
     }
    ],
    "props": [
     {
      "id": "tideline-stone",
      "object": "tideline-stone",
-     "source": "box-proxy"
+     "source": "model:tideline-stone.glb",
+     "fit": {
+      "model_dims_m": [
+       0.869,
+       0.827,
+       1.4
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.07
+     }
     },
     {
      "id": "dinghy",
      "object": "dinghy",
-     "source": "box-proxy"
+     "source": "model:dinghy.glb",
+     "fit": {
+      "model_dims_m": [
+       1.678,
+       3.2,
+       1.381
+      ],
+      "box_m": [
+       1.4,
+       3.2,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.713,
+      "worst_side_ratio": 1.64
+     }
     },
     {
      "id": "oar",
@@ -1827,7 +4005,7 @@
      "source": "box-proxy",
      "fit": {
       "model_dims_m": [
-       2.223,
+       2.221,
        1.6,
        2.4
       ],
@@ -1849,7 +4027,26 @@
     {
      "id": "lobster-pot-2",
      "object": "lobster-pot",
-     "source": "box-proxy"
+     "source": "model:lobster-pot.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.479,
+       0.38
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.958,
+      "worst_side_ratio": 1.15
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -1883,7 +4080,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.5
+     "render_seconds": 8.8
     },
     {
      "still": "player",
@@ -1892,19 +4089,57 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.7
+     "render_seconds": 8.8
     }
    ],
    "props": [
     {
      "id": "tideline-stone",
      "object": "tideline-stone",
-     "source": "box-proxy"
+     "source": "model:tideline-stone.glb",
+     "fit": {
+      "model_dims_m": [
+       0.869,
+       0.827,
+       1.4
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.07
+     }
     },
     {
      "id": "dinghy",
      "object": "dinghy",
-     "source": "box-proxy"
+     "source": "model:dinghy.glb",
+     "fit": {
+      "model_dims_m": [
+       1.678,
+       3.2,
+       1.381
+      ],
+      "box_m": [
+       1.4,
+       3.2,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.713,
+      "worst_side_ratio": 1.64
+     }
     },
     {
      "id": "oar",
@@ -1912,7 +4147,7 @@
      "source": "box-proxy",
      "fit": {
       "model_dims_m": [
-       2.223,
+       2.221,
        1.6,
        2.4
       ],
@@ -1934,17 +4169,74 @@
     {
      "id": "rum-bottle",
      "object": "rum-bottle",
-     "source": "box-proxy"
+     "source": "model:rum-bottle.glb",
+     "fit": {
+      "model_dims_m": [
+       0.158,
+       0.123,
+       0.32
+      ],
+      "box_m": [
+       0.09,
+       0.09,
+       0.32
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.75
+     }
     },
     {
      "id": "lobster-pot",
      "object": "lobster-pot",
-     "source": "box-proxy"
+     "source": "model:lobster-pot.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.479,
+       0.38
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.958,
+      "worst_side_ratio": 1.15
+     }
     },
     {
      "id": "lobster-pot-2",
      "object": "lobster-pot",
-     "source": "box-proxy"
+     "source": "model:lobster-pot.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.479,
+       0.38
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.958,
+      "worst_side_ratio": 1.15
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -1978,7 +4270,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 9.1
+     "render_seconds": 9.3
     },
     {
      "still": "player",
@@ -1994,12 +4286,50 @@
     {
      "id": "tideline-stone",
      "object": "tideline-stone",
-     "source": "box-proxy"
+     "source": "model:tideline-stone.glb",
+     "fit": {
+      "model_dims_m": [
+       0.869,
+       0.827,
+       1.4
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.07
+     }
     },
     {
      "id": "dinghy",
      "object": "dinghy",
-     "source": "box-proxy"
+     "source": "model:dinghy.glb",
+     "fit": {
+      "model_dims_m": [
+       1.678,
+       3.2,
+       1.381
+      ],
+      "box_m": [
+       1.4,
+       3.2,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.713,
+      "worst_side_ratio": 1.64
+     }
     },
     {
      "id": "oar",
@@ -2007,7 +4337,7 @@
      "source": "box-proxy",
      "fit": {
       "model_dims_m": [
-       2.223,
+       2.221,
        1.6,
        2.4
       ],
@@ -2029,12 +4359,50 @@
     {
      "id": "lobster-pot",
      "object": "lobster-pot",
-     "source": "box-proxy"
+     "source": "model:lobster-pot.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.479,
+       0.38
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.958,
+      "worst_side_ratio": 1.15
+     }
     },
     {
      "id": "lobster-pot-2",
      "object": "lobster-pot",
-     "source": "box-proxy"
+     "source": "model:lobster-pot.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.479,
+       0.38
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.958,
+      "worst_side_ratio": 1.15
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -2077,7 +4445,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 11.9
+     "render_seconds": 12.0
     },
     {
      "still": "overview",
@@ -2086,64 +4454,283 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 7.4
+     "render_seconds": 7.5
     }
    ],
    "props": [
     {
      "id": "throne",
      "object": "throne",
-     "source": "box-proxy"
+     "source": "model:throne.glb",
+     "fit": {
+      "model_dims_m": [
+       1.255,
+       1.372,
+       2.2
+      ],
+      "box_m": [
+       1.2,
+       1.0,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.37
+     }
     },
     {
      "id": "mirror-west-1",
      "object": "gallery-mirror",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       1.249,
+       0.879,
+       2.6
+      ],
+      "box_m": [
+       1.2,
+       0.15,
+       2.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.547,
+      "worst_side_ratio": 3.21,
+      "rejected": "proportions: a side is off by x3.2 after the best fit"
+     }
     },
     {
      "id": "mirror-west-2",
      "object": "gallery-mirror",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       1.249,
+       0.879,
+       2.6
+      ],
+      "box_m": [
+       1.2,
+       0.15,
+       2.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.547,
+      "worst_side_ratio": 3.21,
+      "rejected": "proportions: a side is off by x3.2 after the best fit"
+     }
     },
     {
      "id": "mirror-west-3",
      "object": "gallery-mirror",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       1.249,
+       0.879,
+       2.6
+      ],
+      "box_m": [
+       1.2,
+       0.15,
+       2.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.547,
+      "worst_side_ratio": 3.21,
+      "rejected": "proportions: a side is off by x3.2 after the best fit"
+     }
     },
     {
      "id": "mirror-west-4",
      "object": "gallery-mirror",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       1.249,
+       0.879,
+       2.6
+      ],
+      "box_m": [
+       1.2,
+       0.15,
+       2.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.547,
+      "worst_side_ratio": 3.21,
+      "rejected": "proportions: a side is off by x3.2 after the best fit"
+     }
     },
     {
      "id": "mirror-west-5",
      "object": "gallery-mirror",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       1.249,
+       0.879,
+       2.6
+      ],
+      "box_m": [
+       1.2,
+       0.15,
+       2.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.547,
+      "worst_side_ratio": 3.21,
+      "rejected": "proportions: a side is off by x3.2 after the best fit"
+     }
     },
     {
      "id": "mirror-west-6",
      "object": "gallery-mirror",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       1.249,
+       0.879,
+       2.6
+      ],
+      "box_m": [
+       1.2,
+       0.15,
+       2.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.547,
+      "worst_side_ratio": 3.21,
+      "rejected": "proportions: a side is off by x3.2 after the best fit"
+     }
     },
     {
      "id": "mirror-west-7",
      "object": "gallery-mirror",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       1.249,
+       0.879,
+       2.6
+      ],
+      "box_m": [
+       1.2,
+       0.15,
+       2.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.547,
+      "worst_side_ratio": 3.21,
+      "rejected": "proportions: a side is off by x3.2 after the best fit"
+     }
     },
     {
      "id": "mirror-east-1",
      "object": "gallery-mirror",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       1.249,
+       0.879,
+       2.6
+      ],
+      "box_m": [
+       1.2,
+       0.15,
+       2.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.547,
+      "worst_side_ratio": 3.21,
+      "rejected": "proportions: a side is off by x3.2 after the best fit"
+     }
     },
     {
      "id": "mirror-east-2",
      "object": "gallery-mirror",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       1.249,
+       0.879,
+       2.6
+      ],
+      "box_m": [
+       1.2,
+       0.15,
+       2.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.547,
+      "worst_side_ratio": 3.21,
+      "rejected": "proportions: a side is off by x3.2 after the best fit"
+     }
     },
     {
      "id": "mirror-east-3",
      "object": "gallery-mirror",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       1.249,
+       0.879,
+       2.6
+      ],
+      "box_m": [
+       1.2,
+       0.15,
+       2.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.547,
+      "worst_side_ratio": 3.21,
+      "rejected": "proportions: a side is off by x3.2 after the best fit"
+     }
     },
     {
      "id": "coin-chest",
@@ -2192,7 +4779,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 19.1
+     "render_seconds": 18.9
     },
     {
      "still": "player",
@@ -2201,64 +4788,283 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 18.9
+     "render_seconds": 19.0
     }
    ],
    "props": [
     {
      "id": "throne",
      "object": "throne",
-     "source": "box-proxy"
+     "source": "model:throne.glb",
+     "fit": {
+      "model_dims_m": [
+       1.255,
+       1.372,
+       2.2
+      ],
+      "box_m": [
+       1.2,
+       1.0,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.37
+     }
     },
     {
      "id": "mirror-west-1",
      "object": "gallery-mirror",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       1.249,
+       0.879,
+       2.6
+      ],
+      "box_m": [
+       1.2,
+       0.15,
+       2.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.547,
+      "worst_side_ratio": 3.21,
+      "rejected": "proportions: a side is off by x3.2 after the best fit"
+     }
     },
     {
      "id": "mirror-west-2",
      "object": "gallery-mirror",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       1.249,
+       0.879,
+       2.6
+      ],
+      "box_m": [
+       1.2,
+       0.15,
+       2.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.547,
+      "worst_side_ratio": 3.21,
+      "rejected": "proportions: a side is off by x3.2 after the best fit"
+     }
     },
     {
      "id": "mirror-west-3",
      "object": "gallery-mirror",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       1.249,
+       0.879,
+       2.6
+      ],
+      "box_m": [
+       1.2,
+       0.15,
+       2.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.547,
+      "worst_side_ratio": 3.21,
+      "rejected": "proportions: a side is off by x3.2 after the best fit"
+     }
     },
     {
      "id": "mirror-west-4",
      "object": "gallery-mirror",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       1.249,
+       0.879,
+       2.6
+      ],
+      "box_m": [
+       1.2,
+       0.15,
+       2.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.547,
+      "worst_side_ratio": 3.21,
+      "rejected": "proportions: a side is off by x3.2 after the best fit"
+     }
     },
     {
      "id": "mirror-west-5",
      "object": "gallery-mirror",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       1.249,
+       0.879,
+       2.6
+      ],
+      "box_m": [
+       1.2,
+       0.15,
+       2.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.547,
+      "worst_side_ratio": 3.21,
+      "rejected": "proportions: a side is off by x3.2 after the best fit"
+     }
     },
     {
      "id": "mirror-west-6",
      "object": "gallery-mirror",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       1.249,
+       0.879,
+       2.6
+      ],
+      "box_m": [
+       1.2,
+       0.15,
+       2.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.547,
+      "worst_side_ratio": 3.21,
+      "rejected": "proportions: a side is off by x3.2 after the best fit"
+     }
     },
     {
      "id": "mirror-west-7",
      "object": "gallery-mirror",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       1.249,
+       0.879,
+       2.6
+      ],
+      "box_m": [
+       1.2,
+       0.15,
+       2.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.547,
+      "worst_side_ratio": 3.21,
+      "rejected": "proportions: a side is off by x3.2 after the best fit"
+     }
     },
     {
      "id": "mirror-east-1",
      "object": "gallery-mirror",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       1.249,
+       0.879,
+       2.6
+      ],
+      "box_m": [
+       1.2,
+       0.15,
+       2.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.547,
+      "worst_side_ratio": 3.21,
+      "rejected": "proportions: a side is off by x3.2 after the best fit"
+     }
     },
     {
      "id": "mirror-east-2",
      "object": "gallery-mirror",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       1.249,
+       0.879,
+       2.6
+      ],
+      "box_m": [
+       1.2,
+       0.15,
+       2.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.547,
+      "worst_side_ratio": 3.21,
+      "rejected": "proportions: a side is off by x3.2 after the best fit"
+     }
     },
     {
      "id": "mirror-east-3",
      "object": "gallery-mirror",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       1.249,
+       0.879,
+       2.6
+      ],
+      "box_m": [
+       1.2,
+       0.15,
+       2.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.547,
+      "worst_side_ratio": 3.21,
+      "rejected": "proportions: a side is off by x3.2 after the best fit"
+     }
     },
     {
      "id": "ledger-gallery",
@@ -2302,7 +5108,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 18.7
+     "render_seconds": 18.9
     },
     {
      "still": "player",
@@ -2311,64 +5117,283 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 17.3
+     "render_seconds": 17.4
     }
    ],
    "props": [
     {
      "id": "throne",
      "object": "throne",
-     "source": "box-proxy"
+     "source": "model:throne.glb",
+     "fit": {
+      "model_dims_m": [
+       1.255,
+       1.372,
+       2.2
+      ],
+      "box_m": [
+       1.2,
+       1.0,
+       2.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.37
+     }
     },
     {
      "id": "mirror-west-1",
      "object": "gallery-mirror",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       1.249,
+       0.879,
+       2.6
+      ],
+      "box_m": [
+       1.2,
+       0.15,
+       2.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.547,
+      "worst_side_ratio": 3.21,
+      "rejected": "proportions: a side is off by x3.2 after the best fit"
+     }
     },
     {
      "id": "mirror-west-2",
      "object": "gallery-mirror",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       1.249,
+       0.879,
+       2.6
+      ],
+      "box_m": [
+       1.2,
+       0.15,
+       2.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.547,
+      "worst_side_ratio": 3.21,
+      "rejected": "proportions: a side is off by x3.2 after the best fit"
+     }
     },
     {
      "id": "mirror-west-3",
      "object": "gallery-mirror",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       1.249,
+       0.879,
+       2.6
+      ],
+      "box_m": [
+       1.2,
+       0.15,
+       2.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.547,
+      "worst_side_ratio": 3.21,
+      "rejected": "proportions: a side is off by x3.2 after the best fit"
+     }
     },
     {
      "id": "mirror-west-4",
      "object": "gallery-mirror",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       1.249,
+       0.879,
+       2.6
+      ],
+      "box_m": [
+       1.2,
+       0.15,
+       2.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.547,
+      "worst_side_ratio": 3.21,
+      "rejected": "proportions: a side is off by x3.2 after the best fit"
+     }
     },
     {
      "id": "mirror-west-5",
      "object": "gallery-mirror",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       1.249,
+       0.879,
+       2.6
+      ],
+      "box_m": [
+       1.2,
+       0.15,
+       2.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.547,
+      "worst_side_ratio": 3.21,
+      "rejected": "proportions: a side is off by x3.2 after the best fit"
+     }
     },
     {
      "id": "mirror-west-6",
      "object": "gallery-mirror",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       1.249,
+       0.879,
+       2.6
+      ],
+      "box_m": [
+       1.2,
+       0.15,
+       2.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.547,
+      "worst_side_ratio": 3.21,
+      "rejected": "proportions: a side is off by x3.2 after the best fit"
+     }
     },
     {
      "id": "mirror-west-7",
      "object": "gallery-mirror",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       1.249,
+       0.879,
+       2.6
+      ],
+      "box_m": [
+       1.2,
+       0.15,
+       2.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.547,
+      "worst_side_ratio": 3.21,
+      "rejected": "proportions: a side is off by x3.2 after the best fit"
+     }
     },
     {
      "id": "mirror-east-1",
      "object": "gallery-mirror",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       1.249,
+       0.879,
+       2.6
+      ],
+      "box_m": [
+       1.2,
+       0.15,
+       2.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.547,
+      "worst_side_ratio": 3.21,
+      "rejected": "proportions: a side is off by x3.2 after the best fit"
+     }
     },
     {
      "id": "mirror-east-2",
      "object": "gallery-mirror",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       1.249,
+       0.879,
+       2.6
+      ],
+      "box_m": [
+       1.2,
+       0.15,
+       2.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.547,
+      "worst_side_ratio": 3.21,
+      "rejected": "proportions: a side is off by x3.2 after the best fit"
+     }
     },
     {
      "id": "mirror-east-3",
      "object": "gallery-mirror",
-     "source": "box-proxy"
+     "source": "box-proxy",
+     "fit": {
+      "model_dims_m": [
+       1.249,
+       0.879,
+       2.6
+      ],
+      "box_m": [
+       1.2,
+       0.15,
+       2.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.547,
+      "worst_side_ratio": 3.21,
+      "rejected": "proportions: a side is off by x3.2 after the best fit"
+     }
     },
     {
      "id": "ledger-gallery",
@@ -2412,7 +5437,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.6
+     "render_seconds": 8.8
     },
     {
      "still": "player",
@@ -2421,7 +5446,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.8
+     "render_seconds": 9.0
     },
     {
      "still": "overview",
@@ -2437,22 +5462,98 @@
     {
      "id": "lighthouse-lamp",
      "object": "lighthouse-lamp",
-     "source": "box-proxy"
+     "source": "model:lighthouse-lamp.glb",
+     "fit": {
+      "model_dims_m": [
+       0.555,
+       0.482,
+       0.9
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.9
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.25
+     }
     },
     {
      "id": "tideline-stone",
      "object": "tideline-stone",
-     "source": "box-proxy"
+     "source": "model:tideline-stone.glb",
+     "fit": {
+      "model_dims_m": [
+       0.869,
+       0.827,
+       1.4
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.07
+     }
     },
     {
      "id": "landing-lantern",
      "object": "ship-lantern",
-     "source": "box-proxy"
+     "source": "model:ship-lantern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.213,
+       0.225,
+       0.4
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.12
+     }
     },
     {
      "id": "lamp-room-lantern",
      "object": "ship-lantern",
-     "source": "box-proxy"
+     "source": "model:ship-lantern.glb",
+     "fit": {
+      "model_dims_m": [
+       0.213,
+       0.225,
+       0.4
+      ],
+      "box_m": [
+       0.2,
+       0.2,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.12
+     }
     }
    ],
    "flagged_in_first_pass": [
@@ -2499,7 +5600,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.1
+     "render_seconds": 8.3
     },
     {
      "still": "player",
@@ -2508,7 +5609,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.0
+     "render_seconds": 8.1
     },
     {
      "still": "overview",
@@ -2524,22 +5625,98 @@
     {
      "id": "diving-boat",
      "object": "diving-boat",
-     "source": "box-proxy"
+     "source": "model:diving-boat.glb",
+     "fit": {
+      "model_dims_m": [
+       7.045,
+       7.0,
+       2.199
+      ],
+      "box_m": [
+       1.2,
+       7.0,
+       1.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.453,
+      "worst_side_ratio": 2.66
+     }
     },
     {
      "id": "tideline-stone",
      "object": "tideline-stone",
-     "source": "box-proxy"
+     "source": "model:tideline-stone.glb",
+     "fit": {
+      "model_dims_m": [
+       0.869,
+       0.827,
+       1.4
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.07
+     }
     },
     {
      "id": "lobster-pot-1",
      "object": "lobster-pot",
-     "source": "box-proxy"
+     "source": "model:lobster-pot.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.479,
+       0.38
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.958,
+      "worst_side_ratio": 1.15
+     }
     },
     {
      "id": "lobster-pot-2",
      "object": "lobster-pot",
-     "source": "box-proxy"
+     "source": "model:lobster-pot.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.479,
+       0.38
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.958,
+      "worst_side_ratio": 1.15
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -2573,7 +5750,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.9
+     "render_seconds": 9.2
     },
     {
      "still": "player",
@@ -2582,7 +5759,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 9.2
+     "render_seconds": 9.4
     },
     {
      "still": "overview",
@@ -2598,27 +5775,122 @@
     {
      "id": "tideline-stone",
      "object": "tideline-stone",
-     "source": "box-proxy"
+     "source": "model:tideline-stone.glb",
+     "fit": {
+      "model_dims_m": [
+       0.869,
+       0.827,
+       1.4
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.07
+     }
     },
     {
      "id": "tally-chest",
      "object": "tea-chest",
-     "source": "box-proxy"
+     "source": "model:tea-chest.glb",
+     "fit": {
+      "model_dims_m": [
+       0.804,
+       0.535,
+       0.6
+      ],
+      "box_m": [
+       0.5,
+       0.5,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.61
+     }
     },
     {
      "id": "lobster-pot-hut",
      "object": "lobster-pot",
-     "source": "box-proxy"
+     "source": "model:lobster-pot.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.479,
+       0.38
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.958,
+      "worst_side_ratio": 1.15
+     }
     },
     {
      "id": "lobster-pot-reef",
      "object": "lobster-pot",
-     "source": "box-proxy"
+     "source": "model:lobster-pot.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.479,
+       0.38
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       0.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.958,
+      "worst_side_ratio": 1.15
+     }
     },
     {
      "id": "rope-nets",
      "object": "rope-coil",
-     "source": "box-proxy"
+     "source": "model:rope-coil.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.57,
+       0.066
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.471,
+      "worst_side_ratio": 2.06
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -2659,7 +5931,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.7
+     "render_seconds": 8.8
     },
     {
      "still": "player",
@@ -2668,7 +5940,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.4
+     "render_seconds": 8.5
     },
     {
      "still": "overview",
@@ -2684,37 +5956,170 @@
     {
      "id": "pay-table",
      "object": "pay-table",
-     "source": "box-proxy"
+     "source": "model:pay-table.glb",
+     "fit": {
+      "model_dims_m": [
+       1.8,
+       0.712,
+       1.119
+      ],
+      "box_m": [
+       1.8,
+       0.8,
+       0.8
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.93,
+      "worst_side_ratio": 1.3
+     }
     },
     {
      "id": "tea-chest-1",
      "object": "tea-chest",
-     "source": "box-proxy"
+     "source": "model:tea-chest.glb",
+     "fit": {
+      "model_dims_m": [
+       0.804,
+       0.535,
+       0.6
+      ],
+      "box_m": [
+       0.5,
+       0.5,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.61
+     }
     },
     {
      "id": "tea-chest-2",
      "object": "tea-chest",
-     "source": "box-proxy"
+     "source": "model:tea-chest.glb",
+     "fit": {
+      "model_dims_m": [
+       0.804,
+       0.535,
+       0.6
+      ],
+      "box_m": [
+       0.5,
+       0.5,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.61
+     }
     },
     {
      "id": "tea-chest-3",
      "object": "tea-chest",
-     "source": "box-proxy"
+     "source": "model:tea-chest.glb",
+     "fit": {
+      "model_dims_m": [
+       0.804,
+       0.535,
+       0.6
+      ],
+      "box_m": [
+       0.5,
+       0.5,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.61
+     }
     },
     {
      "id": "tea-chest-office",
      "object": "tea-chest",
-     "source": "box-proxy"
+     "source": "model:tea-chest.glb",
+     "fit": {
+      "model_dims_m": [
+       0.804,
+       0.535,
+       0.6
+      ],
+      "box_m": [
+       0.5,
+       0.5,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.61
+     }
     },
     {
      "id": "rope-stair",
      "object": "rope-coil",
-     "source": "box-proxy"
+     "source": "model:rope-coil.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.57,
+       0.066
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.471,
+      "worst_side_ratio": 2.06
+     }
     },
     {
      "id": "tideline-stone",
      "object": "tideline-stone",
-     "source": "box-proxy"
+     "source": "model:tideline-stone.glb",
+     "fit": {
+      "model_dims_m": [
+       0.869,
+       0.827,
+       1.4
+      ],
+      "box_m": [
+       0.6,
+       0.4,
+       1.4
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 2.07
+     }
     }
    ],
    "flagged_in_first_pass": [
@@ -2765,7 +6170,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 7.9
+     "render_seconds": 8.0
     },
     {
      "still": "overview",
@@ -2781,8 +6186,27 @@
     {
      "id": "gullwife-boat",
      "object": "gullwife-boat",
-     "source": "box-proxy",
-     "name": "far-boat"
+     "source": "model:gullwife-boat.glb",
+     "name": "far-boat",
+     "fit": {
+      "model_dims_m": [
+       5.57,
+       12.0,
+       9.967
+      ],
+      "box_m": [
+       4.0,
+       12.0,
+       10.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.003,
+      "worst_side_ratio": 1.4
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -2816,7 +6240,7 @@
       1440
      ],
      "samples": 256,
-     "render_seconds": 8.2
+     "render_seconds": 8.4
     },
     {
      "still": "player",
@@ -2834,54 +6258,225 @@
       1080
      ],
      "samples": 128,
-     "render_seconds": 4.8
+     "render_seconds": 4.9
     }
    ],
    "props": [
     {
      "id": "ferry",
      "object": "harbour-ferry",
-     "source": "box-proxy"
+     "source": "model:harbour-ferry.glb",
+     "fit": {
+      "model_dims_m": [
+       4.75,
+       10.0,
+       7.701
+      ],
+      "box_m": [
+       3.5,
+       10.0,
+       5.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.782,
+      "worst_side_ratio": 1.28
+     }
     },
     {
      "id": "notice-board",
      "object": "notice-board",
-     "source": "box-proxy"
+     "source": "model:notice-board.glb",
+     "fit": {
+      "model_dims_m": [
+       1.613,
+       0.824,
+       2.0
+      ],
+      "box_m": [
+       1.2,
+       0.2,
+       2.0
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 0.565,
+      "worst_side_ratio": 2.33
+     }
     },
     {
      "id": "tea-chest-1",
      "object": "tea-chest",
-     "source": "box-proxy"
+     "source": "model:tea-chest.glb",
+     "fit": {
+      "model_dims_m": [
+       0.804,
+       0.535,
+       0.6
+      ],
+      "box_m": [
+       0.5,
+       0.5,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.61
+     }
     },
     {
      "id": "tea-chest-2",
      "object": "tea-chest",
-     "source": "box-proxy"
+     "source": "model:tea-chest.glb",
+     "fit": {
+      "model_dims_m": [
+       0.804,
+       0.535,
+       0.6
+      ],
+      "box_m": [
+       0.5,
+       0.5,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.61
+     }
     },
     {
      "id": "tea-chest-3",
      "object": "tea-chest",
-     "source": "box-proxy"
+     "source": "model:tea-chest.glb",
+     "fit": {
+      "model_dims_m": [
+       0.804,
+       0.535,
+       0.6
+      ],
+      "box_m": [
+       0.5,
+       0.5,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.61
+     }
     },
     {
      "id": "tea-chest-tavern",
      "object": "tea-chest",
-     "source": "box-proxy"
+     "source": "model:tea-chest.glb",
+     "fit": {
+      "model_dims_m": [
+       0.804,
+       0.535,
+       0.6
+      ],
+      "box_m": [
+       0.5,
+       0.5,
+       0.6
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.0,
+      "worst_side_ratio": 1.61
+     }
     },
     {
      "id": "rope-quay",
      "object": "rope-coil",
-     "source": "box-proxy"
+     "source": "model:rope-coil.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.57,
+       0.066
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.471,
+      "worst_side_ratio": 2.06
+     }
     },
     {
      "id": "rope-pontoon",
      "object": "rope-coil",
-     "source": "box-proxy"
+     "source": "model:rope-coil.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.57,
+       0.066
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.471,
+      "worst_side_ratio": 2.06
+     }
     },
     {
      "id": "rope-chandlery",
      "object": "rope-coil",
-     "source": "box-proxy"
+     "source": "model:rope-coil.glb",
+     "fit": {
+      "model_dims_m": [
+       0.6,
+       0.57,
+       0.066
+      ],
+      "box_m": [
+       0.6,
+       0.6,
+       0.2
+      ],
+      "fit_rotation_deg": [
+       0,
+       0,
+       0
+      ],
+      "scale": 1.471,
+      "worst_side_ratio": 2.06
+     }
     }
    ],
    "flagged_in_first_pass": [],
@@ -2927,7 +6522,7 @@
       "exposure_ev": 3.8
      },
      "s-cabin-princess": {
-      "exposure_ev": 1.9
+      "exposure_ev": 2.37
      },
      "s-cabin-tally": {
       "exposure_ev": 3.7
@@ -2936,7 +6531,7 @@
       "exposure_ev": 4.3
      },
      "s-the-inventory": {
-      "exposure_ev": 3.1
+      "exposure_ev": 3.37
      }
     }
    }
@@ -3349,10 +6944,28 @@
  ],
  "objects": {
   "brass-dividers": {
-   "source": "box-proxy",
-   "model": null,
+   "source": "model",
+   "model": "brass-dividers.glb",
    "props": 5,
-   "fit": null,
+   "fit": {
+    "model_dims_m": [
+     0.941,
+     0.335,
+     0.18
+    ],
+    "box_m": [
+     0.04,
+     0.02,
+     0.18
+    ],
+    "fit_rotation_deg": [
+     0,
+     90,
+     90
+    ],
+    "scale": 0.191,
+    "worst_side_ratio": 1.6
+   },
    "note": null
   },
   "chart-table": {
@@ -3361,9 +6974,9 @@
    "props": 5,
    "fit": {
     "model_dims_m": [
-     1.42,
-     0.962,
-     1.389
+     1.4,
+     0.946,
+     1.373
     ],
     "box_m": [
      1.4,
@@ -3375,8 +6988,8 @@
      0,
      0
     ],
-    "scale": 0.858,
-    "worst_side_ratio": 1.25
+    "scale": 0.87,
+    "worst_side_ratio": 1.26
    },
    "note": null
   },
@@ -3388,52 +7001,179 @@
    "note": null
   },
   "company-buoy": {
-   "source": "box-proxy",
-   "model": null,
+   "source": "model",
+   "model": "company-buoy.glb",
    "props": 18,
-   "fit": null,
+   "fit": {
+    "model_dims_m": [
+     1.718,
+     1.72,
+     3.2
+    ],
+    "box_m": [
+     1.6,
+     1.6,
+     3.2
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.0,
+    "worst_side_ratio": 1.08
+   },
    "note": null
   },
   "dinghy": {
-   "source": "box-proxy",
-   "model": null,
+   "source": "model",
+   "model": "dinghy.glb",
    "props": 10,
-   "fit": null,
+   "fit": {
+    "model_dims_m": [
+     1.678,
+     3.2,
+     1.381
+    ],
+    "box_m": [
+     1.4,
+     3.2,
+     0.6
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.713,
+    "worst_side_ratio": 1.64
+   },
    "note": null
   },
   "diving-boat": {
-   "source": "box-proxy",
-   "model": null,
+   "source": "model",
+   "model": "diving-boat.glb",
    "props": 1,
-   "fit": null,
+   "fit": {
+    "model_dims_m": [
+     7.045,
+     7.0,
+     2.199
+    ],
+    "box_m": [
+     1.2,
+     7.0,
+     1.2
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.453,
+    "worst_side_ratio": 2.66
+   },
    "note": null
   },
   "gallery-mirror": {
    "source": "box-proxy",
    "model": null,
    "props": 30,
-   "fit": null,
-   "note": null
+   "fit": {
+    "model_dims_m": [
+     1.249,
+     0.879,
+     2.6
+    ],
+    "box_m": [
+     1.2,
+     0.15,
+     2.6
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.547,
+    "worst_side_ratio": 3.21,
+    "rejected": "proportions: a side is off by x3.2 after the best fit"
+   },
+   "note": "proportions: a side is off by x3.2 after the best fit"
   },
   "gullwife-boat": {
-   "source": "box-proxy",
-   "model": null,
+   "source": "model",
+   "model": "gullwife-boat.glb",
    "props": 1,
-   "fit": null,
+   "fit": {
+    "model_dims_m": [
+     5.57,
+     12.0,
+     9.967
+    ],
+    "box_m": [
+     4.0,
+     12.0,
+     10.0
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.003,
+    "worst_side_ratio": 1.4
+   },
    "note": null
   },
   "harbour-book": {
-   "source": "box-proxy",
-   "model": null,
+   "source": "model",
+   "model": "harbour-book.glb",
    "props": 2,
-   "fit": null,
+   "fit": {
+    "model_dims_m": [
+     1.005,
+     1.174,
+     0.4
+    ],
+    "box_m": [
+     0.3,
+     0.06,
+     0.4
+    ],
+    "fit_rotation_deg": [
+     90,
+     0,
+     0
+    ],
+    "scale": 0.341,
+    "worst_side_ratio": 2.27
+   },
    "note": null
   },
   "harbour-ferry": {
-   "source": "box-proxy",
-   "model": null,
+   "source": "model",
+   "model": "harbour-ferry.glb",
    "props": 1,
-   "fit": null,
+   "fit": {
+    "model_dims_m": [
+     4.75,
+     10.0,
+     7.701
+    ],
+    "box_m": [
+     3.5,
+     10.0,
+     5.0
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.782,
+    "worst_side_ratio": 1.28
+   },
    "note": null
   },
   "ledger": {
@@ -3444,24 +7184,78 @@
    "note": null
   },
   "lighthouse-lamp": {
-   "source": "box-proxy",
-   "model": null,
+   "source": "model",
+   "model": "lighthouse-lamp.glb",
    "props": 1,
-   "fit": null,
+   "fit": {
+    "model_dims_m": [
+     0.555,
+     0.482,
+     0.9
+    ],
+    "box_m": [
+     0.6,
+     0.6,
+     0.9
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.0,
+    "worst_side_ratio": 1.25
+   },
    "note": null
   },
   "lobster-pot": {
-   "source": "box-proxy",
-   "model": null,
+   "source": "model",
+   "model": "lobster-pot.glb",
    "props": 22,
-   "fit": null,
+   "fit": {
+    "model_dims_m": [
+     0.6,
+     0.479,
+     0.38
+    ],
+    "box_m": [
+     0.6,
+     0.4,
+     0.4
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.958,
+    "worst_side_ratio": 1.15
+   },
    "note": null
   },
   "notice-board": {
-   "source": "box-proxy",
-   "model": null,
+   "source": "model",
+   "model": "notice-board.glb",
    "props": 1,
-   "fit": null,
+   "fit": {
+    "model_dims_m": [
+     1.613,
+     0.824,
+     2.0
+    ],
+    "box_m": [
+     1.2,
+     0.2,
+     2.0
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.565,
+    "worst_side_ratio": 2.33
+   },
    "note": null
   },
   "oar": {
@@ -3470,7 +7264,7 @@
    "props": 11,
    "fit": {
     "model_dims_m": [
-     2.223,
+     2.221,
      1.6,
      2.4
     ],
@@ -3491,31 +7285,103 @@
    "note": "proportions: a side is off by x3.7 after the best fit"
   },
   "pay-table": {
-   "source": "box-proxy",
-   "model": null,
+   "source": "model",
+   "model": "pay-table.glb",
    "props": 1,
-   "fit": null,
+   "fit": {
+    "model_dims_m": [
+     1.8,
+     0.712,
+     1.119
+    ],
+    "box_m": [
+     1.8,
+     0.8,
+     0.8
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.93,
+    "worst_side_ratio": 1.3
+   },
    "note": null
   },
   "revenue-cutter": {
-   "source": "box-proxy",
-   "model": null,
+   "source": "model",
+   "model": "revenue-cutter.glb",
    "props": 1,
-   "fit": null,
+   "fit": {
+    "model_dims_m": [
+     6.726,
+     24.0,
+     20.756
+    ],
+    "box_m": [
+     6.0,
+     24.0,
+     22.0
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.06,
+    "worst_side_ratio": 1.19
+   },
    "note": null
   },
   "rope-coil": {
-   "source": "box-proxy",
-   "model": null,
+   "source": "model",
+   "model": "rope-coil.glb",
    "props": 13,
-   "fit": null,
+   "fit": {
+    "model_dims_m": [
+     0.6,
+     0.57,
+     0.066
+    ],
+    "box_m": [
+     0.6,
+     0.6,
+     0.2
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.471,
+    "worst_side_ratio": 2.06
+   },
    "note": null
   },
   "rum-bottle": {
-   "source": "box-proxy",
-   "model": null,
+   "source": "model",
+   "model": "rum-bottle.glb",
    "props": 23,
-   "fit": null,
+   "fit": {
+    "model_dims_m": [
+     0.158,
+     0.123,
+     0.32
+    ],
+    "box_m": [
+     0.09,
+     0.09,
+     0.32
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.0,
+    "worst_side_ratio": 1.75
+   },
    "note": null
   },
   "sale-deed": {
@@ -3526,10 +7392,28 @@
    "note": null
   },
   "ship-lantern": {
-   "source": "box-proxy",
-   "model": null,
+   "source": "model",
+   "model": "ship-lantern.glb",
    "props": 17,
-   "fit": null,
+   "fit": {
+    "model_dims_m": [
+     0.213,
+     0.225,
+     0.4
+    ],
+    "box_m": [
+     0.2,
+     0.2,
+     0.4
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.0,
+    "worst_side_ratio": 1.12
+   },
    "note": null
   },
   "spice-jar": {
@@ -3540,46 +7424,211 @@
    "note": null
   },
   "strongbox": {
-   "source": "box-proxy",
-   "model": null,
+   "source": "model",
+   "model": "strongbox.glb",
    "props": 2,
-   "fit": null,
+   "fit": {
+    "model_dims_m": [
+     0.5,
+     0.499,
+     0.403
+    ],
+    "box_m": [
+     0.5,
+     0.35,
+     0.3
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 0.805,
+    "worst_side_ratio": 1.24
+   },
    "note": null
   },
   "tea-board": {
    "source": "box-proxy",
    "model": null,
    "props": 2,
-   "fit": null,
-   "note": null
+   "fit": {
+    "model_skipped": "a tea board with game pieces in the shape of small standing figures and a horse (figure-like pieces)"
+   },
+   "note": "model skipped: a tea board with game pieces in the shape of small standing figures and a horse (figure-like pieces)"
   },
   "tea-caddy": {
-   "source": "box-proxy",
-   "model": null,
+   "source": "model",
+   "model": "tea-caddy.glb",
    "props": 11,
-   "fit": null,
+   "fit": {
+    "model_dims_m": [
+     0.173,
+     0.161,
+     0.18
+    ],
+    "box_m": [
+     0.14,
+     0.14,
+     0.18
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.0,
+    "worst_side_ratio": 1.23
+   },
    "note": null
   },
   "tea-chest": {
-   "source": "box-proxy",
-   "model": null,
+   "source": "model",
+   "model": "tea-chest.glb",
    "props": 13,
-   "fit": null,
+   "fit": {
+    "model_dims_m": [
+     0.804,
+     0.535,
+     0.6
+    ],
+    "box_m": [
+     0.5,
+     0.5,
+     0.6
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.0,
+    "worst_side_ratio": 1.61
+   },
    "note": null
   },
   "throne": {
-   "source": "box-proxy",
-   "model": null,
+   "source": "model",
+   "model": "throne.glb",
    "props": 3,
-   "fit": null,
+   "fit": {
+    "model_dims_m": [
+     1.255,
+     1.372,
+     2.2
+    ],
+    "box_m": [
+     1.2,
+     1.0,
+     2.2
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.0,
+    "worst_side_ratio": 1.37
+   },
    "note": null
   },
   "tideline-stone": {
-   "source": "box-proxy",
-   "model": null,
+   "source": "model",
+   "model": "tideline-stone.glb",
    "props": 11,
-   "fit": null,
+   "fit": {
+    "model_dims_m": [
+     0.869,
+     0.827,
+     1.4
+    ],
+    "box_m": [
+     0.6,
+     0.4,
+     1.4
+    ],
+    "fit_rotation_deg": [
+     0,
+     0,
+     0
+    ],
+    "scale": 1.0,
+    "worst_side_ratio": 2.07
+   },
    "note": null
   }
+ },
+ "models": {
+  "ledger": "games/lord-of-the-sea/assets/models.json of the image/model session's working copy (read only; neither the ledger nor the glbs are in this branch)",
+  "ledger_status": {
+   "built": [
+    "brass-dividers",
+    "chart-table",
+    "company-buoy",
+    "dinghy",
+    "diving-boat",
+    "gallery-mirror",
+    "gullwife-boat",
+    "harbour-book",
+    "harbour-ferry",
+    "lighthouse-lamp",
+    "lobster-pot",
+    "notice-board",
+    "oar",
+    "pay-table",
+    "revenue-cutter",
+    "rope-coil",
+    "rum-bottle",
+    "ship-lantern",
+    "strongbox",
+    "tea-board",
+    "tea-caddy",
+    "tea-chest",
+    "throne",
+    "tideline-stone"
+   ]
+  },
+  "used_as_models": [
+   "brass-dividers",
+   "chart-table",
+   "company-buoy",
+   "dinghy",
+   "diving-boat",
+   "gullwife-boat",
+   "harbour-book",
+   "harbour-ferry",
+   "lighthouse-lamp",
+   "lobster-pot",
+   "notice-board",
+   "pay-table",
+   "revenue-cutter",
+   "rope-coil",
+   "rum-bottle",
+   "ship-lantern",
+   "strongbox",
+   "tea-caddy",
+   "tea-chest",
+   "throne",
+   "tideline-stone"
+  ],
+  "named_box_proxy": {
+   "coin-chest": "no model used: ledger status not in ledger",
+   "gallery-mirror": "proportions: a side is off by x3.2 after the best fit",
+   "ledger": "no model used: ledger status not in ledger",
+   "oar": "proportions: a side is off by x3.7 after the best fit",
+   "sale-deed": "no model used: ledger status not in ledger",
+   "spice-jar": "no model used: ledger status not in ledger",
+   "tea-board": "model skipped: a tea board with game pieces in the shape of small standing figures and a horse (figure-like pieces)"
+  },
+  "built_in_ledger_not_in_any_scene": [],
+  "render_copies": "full 80000-triangle models re-exported with 1024 px JPEG textures (copies made in Blender because the render box's upload link is slow; never copied into the repo)",
+  "front_check": "every built model viewed from -y and from 50 degrees (workbench) before the render",
+  "figure_policy": "all built models were viewed; 'tea-board' has game pieces in the shape of small standing figures and a horse and was skipped (named box proxy); the Gullwife boat keeps its neutral-named proxy."
+ },
+ "gpu": {
+  "device": "one rented RTX 4090 (Blender 5.2.1, OptiX)",
+  "final_run_s": 682,
+  "total_s": 902,
+  "total_h": 0.25
  }
 }

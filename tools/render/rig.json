@@ -3327,7 +3327,7 @@
     "facing": "ccw",
     "scenes": {
       "s3_backwater": {
-        "exposure_ev": -1.8
+        "exposure_ev": -1.48
       }
     }
   },
@@ -3378,7 +3378,7 @@
     "facing": "ccw",
     "scenes": {
       "s3_bank_years_on": {
-        "exposure_ev": 0.0
+        "exposure_ev": -0.27
       },
       "s3_river": {
         "exposure_ev": -1.1
@@ -3734,11 +3734,11 @@
       "lens_mm": 28
     },
     "exposure_ev": 0.0,
-    "overview_ev": -0.5,
+    "overview_ev": 0.3,
     "facing": "ccw",
     "scenes": {
       "c2_temple": {
-        "exposure_ev": -5.1
+        "exposure_ev": -4.5
       }
     }
   },
@@ -3906,11 +3906,11 @@
       "lens_mm": 28
     },
     "exposure_ev": 0.0,
-    "overview_ev": 0.0,
+    "overview_ev": 0.33,
     "facing": "ccw",
     "scenes": {
       "c1_battlements": {
-        "exposure_ev": -4.8
+        "exposure_ev": -4.52
       },
       "c3_wind": {
         "exposure_ev": -3.0
@@ -4168,7 +4168,7 @@
         "exposure_ev": -1.8
       },
       "s3_scribe_wagon": {
-        "exposure_ev": 0.0
+        "exposure_ev": -0.6
       }
     }
   },
@@ -4288,7 +4288,7 @@
         "exposure_ev": 0.0
       },
       "s3_last_cup": {
-        "exposure_ev": -1.5
+        "exposure_ev": -1.16
       }
     }
   },
@@ -4308,11 +4308,11 @@
       "lens_mm": 20
     },
     "exposure_ev": 0.0,
-    "overview_ev": 1.0,
+    "overview_ev": 2.0,
     "facing": "ccw",
     "scenes": {
       "s3_unlit_gallery": {
-        "exposure_ev": 3.5
+        "exposure_ev": 4.5
       }
     }
   },
@@ -4412,7 +4412,7 @@
         "exposure_ev": 3.8
       },
       "s-cabin-princess": {
-        "exposure_ev": 1.9
+        "exposure_ev": 2.37
       },
       "s-cabin-tally": {
         "exposure_ev": 3.7
@@ -4421,7 +4421,7 @@
         "exposure_ev": 4.3
       },
       "s-the-inventory": {
-        "exposure_ev": 3.1
+        "exposure_ev": 3.37
       }
     }
   },
