@@ -117,6 +117,33 @@ def apply(bpy, sc, game, location, scene, K, rig, views, made, pieces, dress_dir
                 continue
             materials.dress_material(m, p, ctx, K, mname)
             used[m.name] = p["family"]
+        # R1: pieces whose material displaces get a simple (box-keeping) subdivision so the displacement has vertices to move
+        sub = {}
+        for ob in sorted(pieces, key=lambda o: o.name):
+            if ob.hide_render or not ob.material_slots or ob.material_slots[0].material is None:
+                continue
+            mr = rec["materials"].get(ob.material_slots[0].material.name[3:])
+            if mr and mr.get("displace_m"):
+                # R2: one welded, smooth-shaded copy of the box (split or flat-shaded corners open into slabs under displacement), and
+                # the box size for the displacement's edge fade (materials.edge_mask)
+                import bmesh
+                ob.data = ob.data.copy()
+                bm = bmesh.new()
+                bm.from_mesh(ob.data)
+                bmesh.ops.remove_doubles(bm, verts=bm.verts, dist=1e-4 * K)
+                bm.to_mesh(ob.data)
+                bm.free()
+                for pl in ob.data.polygons:
+                    pl.use_smooth = True
+                lo = [min(c[i] for c in ob.bound_box) for i in range(3)]
+                hi = [max(c[i] for c in ob.bound_box) for i in range(3)]
+                ob["dress_dims"] = [abs((hi[i] - lo[i]) * ob.scale[i]) for i in range(3)]
+                md = ob.modifiers.new("dress-subdiv", "SUBSURF")
+                md.subdivision_type = "SIMPLE"
+                md.levels = md.render_levels = mr.get("subdiv", 6)
+                sub[ob.name[3:]] = md.render_levels
+        if sub:
+            rec["subdivided"] = sub
         rec["layers"]["surfaces"] = {"materials": sorted(used.items())}
         rec["dressed_pieces"] = sorted(o.name[3:] for o in pieces if o.material_slots and o.material_slots[0].material is not None
                                        and o.material_slots[0].material.name in used)
@@ -140,8 +167,15 @@ def apply(bpy, sc, game, location, scene, K, rig, views, made, pieces, dress_dir
         rec["layers"]["decals"] = grime.decals_layer(ctx, loc_cfg["decals"])
     if "kits" in allowed and loc_cfg.get("kits"):
         rec["layers"]["kits"] = kits.kits_layer(ctx, loc_cfg["kits"])
-    # ---- atmosphere: the camera-only sky plate
-    plate = (loc_cfg.get("atmos") or {}).get("sky_plate")
+    # ---- atmosphere: haze volume and interior backdrop (R1), then the camera-only sky plate
+    acfg = loc_cfg.get("atmos") or {}
+    if "atmos" in allowed and acfg.get("haze"):
+        rec["layers"].setdefault("atmos", {})["haze"] = atmos.haze_box(bpy, ctx, acfg["haze"])
+    if "atmos" in allowed and acfg.get("fog"):  # R2: ground fog layer
+        rec["layers"].setdefault("atmos", {})["fog"] = atmos.haze_box(bpy, ctx, dict(acfg["fog"], _name="fog"))
+    if "atmos" in allowed and acfg.get("backdrop"):
+        rec["layers"].setdefault("atmos", {})["backdrop"] = atmos.backdrop(sc, acfg["backdrop"])
+    plate = acfg.get("sky_plate")
     if "atmos" in allowed and plate:
         plate = dict(plate)
         if plate.get("hdri"):
@@ -152,7 +186,7 @@ def apply(bpy, sc, game, location, scene, K, rig, views, made, pieces, dress_dir
         rec["layers"]["atmos"] = dict(rec["layers"].get("atmos", {}), sky_plate=atmos.wrap_world(sc, plate, K))
     bpy.context.view_layer.update()
     # ---- budget and placement facts, manifest hash
-    dress_objs = [o for o in bpy.data.objects if o.get("dress_group")]
+    dress_objs = [o for o in bpy.data.objects if o.get("dress_group") and not o["dress_group"].startswith("atmos/")]
     cams = [Vector(v[0]) for v in views.values()]
     near = 0
     for o in dress_objs:
@@ -198,6 +232,11 @@ def view_record(bpy, sc, view, res, dctx):
     up = right.cross(f)
     tw = 18.0 / lens
     th = tw * res[1] / res[0]
+    hz = [o for o in bpy.data.objects if str(o.get("dress_group", "")).startswith("atmos/")]
+    for o in hz:  # the haze box would be the first hit of every ray
+        o.hide_viewport = True
+    if hz:
+        bpy.context.view_layer.update()
     dg = bpy.context.evaluated_depsgraph_get()
     grid = []
     for j in range(7):
@@ -209,9 +248,13 @@ def view_record(bpy, sc, view, res, dctx):
                          round((p - Vector(loc)).length, 3) if hit else None])
     hit, p, n, idx, obj, mat = sc.ray_cast(dg, Vector(loc), f)
     centre = {"group": idpass.group_key(obj) if hit and obj is not None else None, "distance_m": round((p - Vector(loc)).length, 3) if hit else None}
+    for o in hz:
+        o.hide_viewport = False
+    if hz:
+        bpy.context.view_layer.update()
     mind = None
     for o in bpy.data.objects:
-        if o.get("dress_group"):
+        if o.get("dress_group") and not str(o["dress_group"]).startswith("atmos/"):
             b = _bbox(o)
             c = Vector(loc)
             d = Vector((max(b[0] - c.x, 0, c.x - b[3]), max(b[1] - c.y, 0, c.y - b[4]), max(b[2] - c.z, 0, c.z - b[5]))).length
@@ -220,6 +263,10 @@ def view_record(bpy, sc, view, res, dctx):
 
 
 def after_overview(bpy, sc, dctx, rig):
-    """The overview rig rebuilds the world; the sky plate is wrapped around the new one."""
+    """The overview rig rebuilds the world; the sky plate is wrapped around the new one. The attic cap (R1) is hidden: an overview
+    looks into the room from above."""
+    for o in bpy.data.objects:
+        if str(o.get("dress_group", "")).startswith(("kits/attic", "atmos/window_plate")):
+            o.hide_render = True
     if dctx.get("atmos_spec"):
         atmos.wrap_world(sc, dctx["atmos_spec"], dctx["ctx"]["K"])

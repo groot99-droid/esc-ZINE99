@@ -2812,6 +2812,31 @@
   }
  },
  "description": "Textures, hdris and models the dressing layer may use, with licence, source and md5. No downloads are made from this repo.",
+ "generated": {
+  "membrane_hf_1": {
+   "albedo_file": "membrane_hf_1_diff_1k.jpg",
+   "cost_credits": 0.75,
+   "date": "2026-11-23",
+   "files": {
+    "membrane_hf_1_diff_1k.jpg": {
+     "md5": "d6ecff306050c0143cc2f23ec0950479",
+     "source_png_md5": "4a4b34b39167191ae0d5ad4bddf2720d"
+    }
+   },
+   "job_id": "47e1c795-4c81-4dda-b38c-4450e0e01d98",
+   "licence": "generated (Higgsfield, owner's account), not CC0",
+   "mean_albedo_linear": [
+    0.26374,
+    0.1515,
+    0.18819
+   ],
+   "model": "gpt_image_2_6",
+   "owner_ruling": "2026-11-23: marrow tissue only",
+   "prompt": "Seamless tileable texture, top-down orthographic view of an abstract wet organic membrane surface: soft folds, fine branching vessel-like lines, subtle fibrous striations, glossy moist sheen. Muted dusky rose and violet-grey tones, flat even lighting, no shadows, no perspective. Abstract material swatch only: no anatomy, no organs, no faces, no figures, no creatures, no blood, no gore, no text.",
+   "service": "higgsfield",
+   "type": "texture"
+  }
+ },
  "hdris": {
   "dikhololo_night_2k.hdr": {
    "licence": "CC0-1.0",

@@ -3,6 +3,7 @@
     python sheet.py <sheet.json> <out.png>
 
 sheet.json: {"title": "...", "places": [{"label": "...", "sub": "...", "before": "<image>", "after": "<image>", "caption": "..."}]}
+R1: a place may give "rows": [{"tag": "BEFORE", "image": "<image>", "note": "..."}, ...] instead of before/after (before, P0, R1).
 Image paths are read as given (absolute or relative to the working folder); nothing is copied.
 """
 import json
@@ -42,10 +43,11 @@ def build(spec, out):
         parts.append(_bar(spec["title"], spec.get("subtitle"), 52, (12, 12, 16), (255, 255, 255)))
     for pl in spec["places"]:
         parts.append(_bar(pl["label"], pl.get("sub"), 44, (40, 44, 58)))
-        parts.append(_bar("BEFORE", None, 30, (70, 40, 40)))
-        parts.append(fit(Image.open(pl["before"])))
-        parts.append(_bar("AFTER", None, 30, (36, 70, 48)))
-        parts.append(fit(Image.open(pl["after"])))
+        rows = pl.get("rows") or [{"tag": "BEFORE", "image": pl["before"]}, {"tag": "AFTER", "image": pl["after"]}]
+        tints = [(70, 40, 40), (70, 62, 36), (36, 70, 48), (36, 52, 78)]
+        for i, r in enumerate(rows):
+            parts.append(_bar(r["tag"] + ("   " + r["note"] if r.get("note") else ""), None, 30, r.get("color") and tuple(r["color"]) or tints[min(i, 3) if len(rows) > 2 else (0 if i == 0 else 2)]))
+            parts.append(fit(Image.open(r["image"])))
         if pl.get("caption"):
             im = Image.new("RGB", (W, 34), (18, 18, 22))
             ImageDraw.Draw(im).text((14, 6), pl["caption"], font=font(18), fill=(200, 200, 195))

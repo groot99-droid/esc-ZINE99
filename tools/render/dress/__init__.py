@@ -2,4 +2,4 @@
 
 Only `seeds`, `rules`, `placement` and `measure` import without Blender; every other module needs `bpy`.
 """
-VERSION = "0.1.0-P0"
+VERSION = "0.2.0-R1"

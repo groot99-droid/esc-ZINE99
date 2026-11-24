@@ -6,6 +6,7 @@ player-start disc, in the camera's foreground corridor, or within `near_camera_m
 (linked duplicates), so the unique triangle count stays small and the expanded count is the instance count x the variant size.
 """
 import math
+import os
 import random
 
 import bmesh
@@ -93,8 +94,128 @@ KINDS = {  # kind -> (variant builder, variants, size range in metres, shadow ca
     "rubble": (lambda n, r: _lump(n, r, 0.38, 0.62), 4, (0.12, 0.55)),
     "nodules": (_nodule, 3, (0.15, 0.6)),
     "twigs": (_twig, 4, (0.25, 0.9)),
-    "grass": (_tuft, 3, (0.18, 0.45)),
+    "grass": (lambda n, r: _tuft(n, r, blades=r.randint(6, 16)), 6, (0.16, 0.5)),
 }
+
+
+def _model_variants(ctx, spec, K):
+    """R1 kind "model": the locked CC0 glTF models (dress.lock.json `models`), imported once, every mesh object of a file one variant
+    (rock_moss_set_01 holds several rocks). Returns [(mesh, base height in metres, model name, weight, model spec)]; the import
+    objects are removed and the meshes are used as linked duplicates. Models keep their own PBR materials (normal maps, alpha twigs)."""
+    out = []
+    cache = ctx.setdefault("_model_cache", {})
+    lk = materials.lock(ctx["dress_dir"]).get("models", {})
+    root = os.path.join(materials.cache_dir(ctx["dress_dir"]), "models")
+    for m in spec["models"]:
+        name = m["name"]
+        if name not in lk:
+            continue
+        ckey = (name, m.get("max_tris", spec.get("max_tris", 0)), m.get("albedo_gain", spec.get("albedo_gain", 1.0)))
+        if ckey in cache:  # a second set using the same model shares its meshes (unique triangles counted once)
+            for (me, hgt, w) in cache[ckey]:
+                out.append((me, hgt, name, m.get("weight", 1.0) * w, m))
+            continue
+        gl = next((f for f in sorted(lk[name]["files"]) if f.endswith(".gltf")), None)
+        path = os.path.join(root, name, gl) if gl else None
+        if not path or not os.path.exists(path):
+            continue
+        before = set(bpy.data.objects)
+        bpy.ops.import_scene.gltf(filepath=path)
+        new = [o for o in bpy.data.objects if o not in before]
+        groups = {}
+        for o in new:  # one variant per top-level node of the file; a file of many loose parts (fern fronds) is one variant
+            if o.type != "MESH":
+                continue
+            r = o
+            while r.parent is not None:
+                r = r.parent
+            groups.setdefault(r.name, []).append(o)
+        if len(groups) > m.get("max_variants", 6):
+            groups = {"all": [o for g in groups.values() for o in g]}
+        meshes = []
+        for gname in sorted(groups):
+            grp = sorted(groups[gname], key=lambda o: o.name)
+            if len(grp) > 1:
+                bpy.ops.object.select_all(action="DESELECT")
+                for o in grp:
+                    o.select_set(True)
+                bpy.context.view_layer.objects.active = grp[0]
+                bpy.ops.object.join()
+            meshes.append(grp[0])
+        new = [o for o in bpy.data.objects if o not in before]
+        ag = m.get("albedo_gain", spec.get("albedo_gain", 1.0))
+        if abs(ag - 1.0) > 1e-4:  # R1: lift (or lower) the model's base colour so its darkest crevices do not crush the frame's blacks
+            for o in meshes:
+                for slot in o.material_slots:
+                    mt = slot.material
+                    if mt is None or not mt.use_nodes or mt.get("dress_gain"):
+                        continue
+                    bsdf = next((n for n in mt.node_tree.nodes if n.bl_idname == "ShaderNodeBsdfPrincipled"), None)
+                    if bsdf is None or not bsdf.inputs["Base Color"].links:
+                        continue
+                    src = bsdf.inputs["Base Color"].links[0].from_socket
+                    mx = mt.node_tree.nodes.new("ShaderNodeMix")
+                    mx.data_type, mx.blend_type, mx.clamp_result = "RGBA", "MULTIPLY", True
+                    mx.inputs[0].default_value = 1.0
+                    mx.inputs[7].default_value = (ag, ag, ag, 1.0)
+                    mt.node_tree.links.new(src, mx.inputs[6])
+                    mt.node_tree.links.new(mx.outputs[2], bsdf.inputs["Base Color"])
+                    mt["dress_gain"] = ag
+        mt = m.get("max_tris", spec.get("max_tris", 0))
+        built = []
+        for o in meshes:
+            o.data.calc_loop_triangles()
+            nt = len(o.data.loop_triangles)
+            if mt and nt > mt:  # R1: decimate heavy scans to a triangle budget (G13)
+                md = o.modifiers.new("dress-decimate", "DECIMATE")
+                md.ratio = max(0.02, mt / float(nt))
+                dg = bpy.context.evaluated_depsgraph_get()
+                me = bpy.data.meshes.new_from_object(o.evaluated_get(dg))
+            else:
+                me = o.data.copy()
+            me.transform(o.matrix_world)  # bake the import transform (glTF Y-up to Z-up) into the mesh
+            xs = [v.co.x for v in me.vertices]
+            ys = [v.co.y for v in me.vertices]
+            zs = [v.co.z for v in me.vertices]
+            cx, cy, z0 = (min(xs) + max(xs)) / 2, (min(ys) + max(ys)) / 2, min(zs)
+            for v in me.vertices:  # origin at the base centre
+                v.co.x -= cx
+                v.co.y -= cy
+                v.co.z -= z0
+            me.name = "dress-model-%s-%d" % (name, len(out))
+            out.append((me, max(zs) - z0, name, m.get("weight", 1.0) / max(1, len(meshes)), m))
+            built.append((me, max(zs) - z0, 1.0 / max(1, len(meshes))))
+        cache[ckey] = built
+        for o in new:
+            bpy.data.objects.remove(o, do_unlink=True)
+        ctx["record"]["textures"]["model:" + name] = {"licence": lk[name].get("licence"), "md5": {f: v["md5"] for f, v in sorted(lk[name]["files"].items())}}
+    return out
+
+
+def _sunlit(ctx, pts, probe):
+    """Keep the points from which a ray toward the strongest sun light (probe height above the ground) hits nothing."""
+    suns = [o for o in bpy.data.objects if o.type == "LIGHT" and o.data.type == "SUN" and not o.hide_render]
+    if not suns:
+        return pts
+    sun = max(suns, key=lambda o: o.data.energy)
+    d = (sun.matrix_world.to_quaternion() @ Vector((0.0, 0.0, 1.0))).normalized()  # toward the sun (a sun shines along its -Z)
+    dg = bpy.context.evaluated_depsgraph_get()
+    out = []
+    for p in pts:
+        hit = ctx["sc"].ray_cast(dg, Vector((p["x"], p["y"], p["z"] + probe)), d)[0]
+        if not hit:
+            out.append(p)
+    return out
+
+
+def _pick(variants, u):
+    tot = sum(v[3] for v in variants)
+    acc = 0.0
+    for v in variants:
+        acc += v[3] / tot
+        if u <= acc:
+            return v
+    return variants[-1]
 
 
 def _material_for(ctx, kind, spec, K):
@@ -144,15 +265,24 @@ def scatter_layer(ctx, specs):
     ps = ctx.get("player_start")
     for spec in specs:
         kind = spec["kind"]
-        if kind not in KINDS:
+        if kind not in KINDS and kind != "model":
             continue
-        build, nvar, (smin, smax) = KINDS[kind]
         name = spec.get("name", kind)
-        rng = seeds.rng(ctx["game"], ctx["location"], "scatter", name, "variants")
-        meshes = [build("dress-%s-%d" % (name, i), rng) for i in range(nvar)]
-        mat = _material_for(ctx, kind, spec, K)
-        for me in meshes:
-            me.materials.append(mat)
+        variants = None
+        if kind == "model":
+            variants = _model_variants(ctx, spec, K)
+            if not variants:
+                continue
+            meshes = [v[0] for v in variants]
+            nvar = len(meshes)
+            smin, smax = 1.0, 1.0
+        else:
+            build, nvar, (smin, smax) = KINDS[kind]
+            rng = seeds.rng(ctx["game"], ctx["location"], "scatter", name, "variants")
+            meshes = [build("dress-%s-%d" % (name, i), rng) for i in range(nvar)]
+            mat = _material_for(ctx, kind, spec, K)
+            for me in meshes:
+                me.materials.append(mat)
         tri = sum(len(m.polygons) for m in meshes)
         # surfaces
         want = spec.get("on", {})
@@ -172,8 +302,14 @@ def scatter_layer(ctx, specs):
             if rect[2] - rect[0] < 0.05 or rect[3] - rect[1] < 0.05:
                 continue
             obst = list(pbx)
+            avoid = set(spec.get("avoid_materials", []))
+            am = spec.get("avoid_margin_m", 0.0) * K
             for other in ctx["pieces"]:
                 if other is sob or other.hide_render or other.get("role") == "sky":
+                    continue
+                if avoid and other.active_material and other.active_material.name[3:] in avoid:  # R1: a road, a creek
+                    ob2 = _bbox(other)
+                    obst.append((ob2[0] - am, ob2[1] - am, ob2[3] + am, ob2[4] + am))
                     continue
                 if other in surfaces and other.get("role") in ("floor", "terrain"):
                     continue
@@ -188,24 +324,60 @@ def scatter_layer(ctx, specs):
                 keep.extend(placement.corridor_keepouts(v[0], v[1], radius=0.3 * K))
             for c in cams:
                 keep.append((c[0], c[1], spec.get("near_camera_m", 0.9) * K))
+            if spec.get("sightlines_m"):  # R1: tall dressing stays off every camera's line to its look-at point and to every prop
+                rr = spec["sightlines_m"] * K
+                for v in ctx["views"].values():
+                    far = tuple(v[0][i] + (v[1][i] - v[0][i]) * 50.0 for i in range(3))  # past the look-at point too (the centre ray goes on)
+                    keep.extend(placement.corridor_keepouts(v[0], far, step=0.5 * K, radius=rr, length=120.0 * K))
+                    for (bb, pr) in prop_boxes:
+                        tgt = ((bb[0] + bb[3]) / 2, (bb[1] + bb[4]) / 2, (bb[2] + bb[5]) / 2)
+                        keep.extend(placement.corridor_keepouts(v[0], tgt, step=0.5 * K, radius=rr, length=80.0 * K))
             pts = placement.place("%s/%s/%s/%s" % (ctx["game"], ctx["location"], name, sob.name), rect, z_top, spec["density"] / (K * K),
-                                  cones, spec.get("max_dist_m", 40.0) * K, obst, keep, limit=spec.get("limit", 6000), thin_far=spec.get("thin_far", 0.5))
+                                  cones, spec.get("max_dist_m", 40.0) * K, obst, keep, limit=spec.get("limit", 6000), thin_far=spec.get("thin_far", 0.5),
+                                  patch=spec.get("patch"), jitter=spec.get("jitter", 0.8))
+            if spec.get("near_materials"):  # R1: only within near_m of a piece of these materials (a forest edge), outside its footprint
+                nm = spec.get("near_m", 4.0) * K
+                rects = [_bbox(o) for o in ctx["pieces"] if not o.hide_render and o.active_material and o.active_material.name[3:] in spec["near_materials"]]
+                pts = [p for p in pts if any(placement.rect_dist(p["x"], p["y"], (bb[0], bb[1], bb[3], bb[4])) <= nm for bb in rects)]
+            if spec.get("sunlit_only"):  # R1: only where the scene's sun reaches (a plant in a wall's deep shadow renders near-black, G4)
+                pts = _sunlit(ctx, pts, spec.get("sun_probe_m", 1.0) * K)
+            if spec.get("cluster"):  # R1: groups of 3 to 7 around each point instead of an even spread
+                pts = placement.cluster(pts, spec["cluster"], K, rect, obst, keep, "%s/%s/%s" % (ctx["game"], ctx["location"], name))[:spec.get("limit", 6000)]
             for i, p in enumerate(pts):
+                if variants is not None:
+                    me, hgt, mname, _, mspec = _pick(variants, p["v"])
+                    lo, hi = mspec.get("size", [0.8, 1.25])
+                    s = (lo + (hi - lo) * p["s"]) * K * spec.get("scale", 1.0)
+                    ob = bpy.data.objects.new("dress-%s-%d" % (name, out_cnt), me)
+                    ob.location = (p["x"], p["y"], p["z"] - mspec.get("sink", 0.03) * hgt * s)
+                    ob.rotation_euler = (0, 0, p["r"] * 2 * math.pi)
+                    ob.scale = (s, s, s)
+                    ob["dress_group"] = "scatter/" + name
+                    col.objects.link(ob)
+                    out_cnt += 1
+                    continue
                 v = min(int(p["v"] * nvar), nvar - 1)
                 s = (smin + (smax - smin) * (p["s"] ** 2)) * K * spec.get("scale", 1.0)
                 ob = bpy.data.objects.new("dress-%s-%d" % (name, out_cnt), meshes[v])
                 ob.location = (p["x"], p["y"], p["z"] - 0.01 * K)
                 ob.rotation_euler = (0, 0, p["r"] * 2 * math.pi)
+                if kind == "grass" and spec.get("tilt_deg"):  # R2: tufts lean a little, each its own way
+                    tl = math.radians(spec["tilt_deg"])
+                    ob.rotation_euler = ((p["v"] - 0.5) * 2 * tl, (p["s"] - 0.5) * 2 * tl, p["r"] * 2 * math.pi)
                 zs = s * (1.0 if kind in ("grass", "twigs") else 0.6 + 0.5 * p["s"])
                 ob.scale = (s, s, zs) if kind != "twigs" else (s * 0.4, s * 0.4, s)
                 if kind == "twigs":
                     ob.rotation_euler = (math.radians(86 + 8 * p["s"]), 0, p["r"] * 2 * math.pi)
                     ob.location.z = p["z"] + 0.012 * K
+                if spec.get("sink"):  # R1: half-buried (a share of the instance height below the surface)
+                    ob.location.z -= spec["sink"] * zs * 0.45
                 ob["dress_group"] = "scatter/" + name
                 col.objects.link(ob)
                 out_cnt += 1
             srec.append({"surface": sob.name[3:], "instances": len(pts)})
         rec["sets"][name] = {"kind": kind, "instances": out_cnt, "variants": nvar, "tris_per_variant": tri // nvar, "surfaces": srec}
+        if variants is not None:
+            rec["sets"][name]["models"] = sorted({v[2] for v in variants})
         rec["instances"] += out_cnt
         rec["triangles_unique"] += tri
         rec["triangles_expanded"] += out_cnt * (tri // nvar)

@@ -1,4 +1,4 @@
-# Dressing layer (P0 of the realism programme)
+# Dressing layer (P0 and refinement pass R1 of the realism programme)
 
 A render-side layer that adds surfaces, scatter, grime, kits and camera-only skies to the box-proxy scenes at render time. It never
 edits a build file, `assets.json`, a design or a data file. Each scene keeps its own lights, world (non-camera branch), camera and
@@ -9,7 +9,7 @@ lens; gate G1 proves it by hash. This is phase P0: foundations, measuring, a fou
 | File | What it does |
 | --- | --- |
 | `dress.py` | `apply()` (one call per scene from `render_scenes.py`), `view_record()`, `after_overview()` |
-| `materials.py` | Tone-locked PBR families: `scan`, `noise`, `grid`, `wallpaper`, `metal`, `tissue`, `foliage`, `dirt-only` |
+| `materials.py` | Tone-locked PBR families: `scan`, `noise`, `grid`, `wallpaper`, `metal`, `tissue`, `foliage`, `dirt-only`; R1 adds `membrane` and `water` and the wear options (see R1 below) |
 | `scatter.py`, `placement.py` | Seeded scatter (pebbles, rubble, nodules, twigs, grass); `placement.py` is pure Python |
 | `kits.py` | Baseboard, ceiling joists, ceiling grid, conduit (bodies only, no emitters) |
 | `grime.py` | Discrete stain decals (large-area grime is in the materials) |
@@ -20,6 +20,7 @@ lens; gate G1 proves it by hash. This is phase P0: foundations, measuring, a fou
 | `calibrate.py` | Noise-floor run and calibrated thresholds; G8 positive control |
 | `batch_describe.py`, `finalize_run.py`, `run_remote.sh`, `run_post.sh` | Run a game on a render box, describe, shrink |
 | `sheet.py` | Owner sheet (before above after, 720 px wide) |
+| `gains.py` | R1: per-material albedo gain and tint from a before run and a dressed run (`--apply` writes them into the configs) |
 | `make_lock.py`, `add_assets.py`, `dress.lock.json` | Licence lock: 69 Poly Haven CC0 textures (46 reused cave scans, 23 approved on 2026-11-23), 6 sky hdris, 5 models; md5s, mean albedo and roughness. `add_assets.py` merges folders already on disk, no network |
 | `g17.py` | Gate G17: two runs of the same inputs compared |
 | `rules.json`, `rules.py` | Arena = materials only; Man Eater: no decals, stain-band filter; banned words |
@@ -69,3 +70,142 @@ procedural prop kits beyond four basic ones (P6); sound. Door-pair material cons
 * G17: the same pilot rendered twice gives equal manifest hashes and intent hashes on 64 of 64 stills, mean luma within 4e-7, and the same id masks pixel for pixel; beauty pixels differ by at most 2 codes on 0.03 % of pixels (GPU float order), so byte identity is not reached on the card.
 * Approved downloads (34 Poly Haven assets) are in the lock and credited; the pilot uses `plastered_wall_04` or `concrete_wall_008`, `forrest_ground_01`, `gravel_floor`, `rocky_trail` and the `kloofendal_overcast` hdri. The 5 glTF models and the other hdris are locked but no layer uses them yet (P2/P3).
 * Box note: the container's start script sets a 10 hour stop timer on every start, in addition to the owner's 31 hour one; it would end the window about 10 hours after the restart.
+
+## R1 refinement pass (2026-11-23)
+
+The owner was not satisfied with P0. R1 keeps the P0 layer and adds, all opt-in per config entry (old configs render as before):
+
+| Option (config) | Where | What |
+| --- | --- | --- |
+| `third` | scan, grid `detail_scan` | a third stochastic sample (other scale and offset, its own mask) |
+| `obj_jitter_m` | scan, foliage, membrane | per-object random texture offset (Object Info > Random): pieces of one material never share a tile phase |
+| `macro2` | scan | a second, very large brightness field |
+| `courses` {h_m, seam_m, jitter, hue, seam_tone, vary} | scan | board or log courses: per-course grain offset, value and hue jitter, dark seams; `vary` warps course heights (two incommensurate sines, still monotonic) so courses are not one fixed pitch |
+| `patches` {size_m, share, amount, rough} | any | touch-up paint patches (Voronoi cells with a slight tone and roughness change) |
+| `scuffs` {height_m, amount, tint} | any | horizontal scuff streaks that fade out above `height_m` |
+| `edge_wear` {radius_m, amount, tint, rough, break_scale} | any | worn or chipped edges from a bevel-normal mask, broken up by noise |
+| `round_m` | any | the bevel normal under the bump: box edges catch light like rounded ones |
+| `coat`, `coat_roughness` | any | clear coat (floor wax, wet film) |
+| `sss`, `sss_radius`, `sss_scale_m` | any | subsurface |
+| `tint`, `gain` | any | per-material colour and albedo correction (written by `gains.py`) |
+| `rough_scale` | any | roughness multiplier |
+| `displace_m`, `displace_mid`, `subdiv` | membrane | true displacement; dress.py adds a SIMPLE subdivision (box corners kept) to those pieces; `displace_mid` 0 = outward only, so joints between pieces never open |
+| `tile_jitter`, `joint_rough`, `detail_scan` | grid | per-tile value spread, rougher joints, a scan's wear detail over the tiles |
+| `trunks` {spacing_m, dark, width} | foliage | a forest block seen from the road: warped dark vertical gaps between stems (mean tone kept) |
+| `seam_m`, `yellow` | wallpaper | strip seams, yellowing toward the ceiling |
+| family `membrane` | marrow | layered procedural: per-piece phase, vertical stretch, domain warp, two vein scales (zero-crossing lines of warped noise, not a cell network), fibres, ridges, absolute wet-to-matte roughness; `overlay` adds a locked generated image as a luminance detail layer |
+| family `water` | puddles | dark absorbing base, IOR 1.33, low roughness, ripple bump; emission kept |
+| scatter kind `model` | loop road | the locked CC0 glTF models: one variant per top-level node (a file of loose parts is one variant), decimated to `max_tris`, shared between sets, `albedo_gain` per model |
+| scatter `avoid_materials`, `avoid_margin_m`, `sightlines_m`, `near_materials`, `near_m`, `sunlit_only`, `cluster`, `sink` | scatter | keep off roads and creeks; keep off every camera's line to its look-at point (and past it) and to every prop; only near a material (forest edge); only where the strongest sun reaches; groups of 3 to 7; half-buried |
+| kit `baseboard` `z_m` | kits | the same strip raised: a crash rail |
+| kit `frames` | kits | architraves around glass panels and doors |
+| kit `attic_cap` | kits | built and tried, not used (see below) |
+| kits `clear_centre` (default on) | kits | a kit object under a view's centre ray is removed (G10b) |
+| atmos `haze` | atmos | a low-density scattering volume over the blockout extent; left out of the id pass and of the per-still ray grid |
+| atmos `backdrop` | atmos | built and tried, not used (see below) |
+
+`gains.py` turns a before run and a dressed run into per-material gain and tint (area-weighted over every still of a location;
+Lab means turned back into linear RGB), damped and clamped; `--apply` writes them into the configs (a piece entry starts from its
+material's gain and tint). This is how the cabin tone is fixed in the materials and not in the exposure.
+
+Generated image: `membrane_hf_1` (Higgsfield, owner ruling 2026-11-23, marrow tissue only) is recorded in `dress.lock.json` under
+`generated`, with its job id, prompt, cost and md5, and is never counted as CC0.
+
+Changes of approach during R1 (and why):
+
+* Displacement on the large marrow walls made streaks (the box projection switches axis on steep folds at 0.6 m cells): only the
+  dividers and piers are displaced; walls next to the shaft opening and the lintel are not, so the dark opening is not covered.
+* Outward-only displacement: centred displacement opened dark cracks at piece joints.
+* Voronoi edges for veins read as crazed ice; veins are now zero-crossing lines of warped noise.
+* Interior backdrop (camera rays looking up see a dark attic) and the camera-only attic cap: both fixed the blue strip above the cabin
+  stairs, but some cabin player views look up through that opening as their whole upper frame, so the tone gate failed by 40 %; both
+  are left out of the config and the strip stays (it is the build file).
+* Ceiling joists (P0) darkened the cabin frames (G2), made the ceiling periodic (G8) and took light off floor props (G11): removed.
+* The hospital wall scan with formwork tie holes repeated (G8): the walls use `concrete_floor_worn_001` (painted concrete without
+  a tie-hole grid).
+* Roadside models in a forest block's shadow render near-black (G4): models are placed only where the sun reaches.
+* Cabin tone: the per-material gains from `gains.py` (all below 1) took bounce light out of the room, so every hero prop came out
+  10 to 15 % darker (G11 0 of 27). A location albedo gain (`grime.tone_gain`) of 1.15 overshot (props 5 % bright), 1.10 put G11 at
+  27 of 27 with tone and colour inside the limits. 1.12 did not lift the darkest pixels of four outdoor player views (G4b, dark
+  patches in the floor scan) and pushed the overview's contrast out of its band, so 1.10 stays. Lifting the floor alone by 4 % did the same (overview contrast out, darkest pixels unchanged): not used.
+  Interior tone is a room-wide bounce problem, not a per-material one: correct the whole room's albedo first, then per material.
+* Camera-only sky plate in the cabin and the hospital: built and tried, not used. The hospital window glass hides it; in the cabin
+  14 outdoor night player views, whose upper half is sky, lost 15 to 24 % of their tone (G2). The loop road now uses the overcast
+  sky picture: the partly cloudy one, divided by its own mean, came out darker than the flat sky in the slot between the forest
+  blocks (its sun pulls the mean up), and the frames lost contrast (G6b).
+* Marrow veins: brighter vessels (`vein_dark` < 0) read less like cracks but made the repeat score worse (G8 0.79): long
+  vertically stretched lines correlate with themselves. Kept: mild darkening (0.2), warm tint, stretch 1.5 (1.0 on the far wall).
+  Leaving the generated overlay off the far wall made its repeat score worse (the procedural alone is more regular at that
+  distance), so the overlay stays on every wall.
+  Displacement 0.2 m made blocky steps on the dividers (box projection); 0.07 m keeps relief without them.
+* G14 now needs a physical join: two coplanar pieces of the same material whose boxes are more than 5 cm apart only meet in the
+  picture (on the loop road a far road end behind the near pads, 4.5 m apart), and the luma step between them is distance, not a
+  seam. `measure.box_gap`, tested.
+* The hospital prop models' ledger on the box pointed into a folder another job had cleared; the 33 GLBs were restored from the
+  local copy into the job folder and `models.map` points there.
+
+## R2 refinement pass (2026-11-24)
+
+The owner was not satisfied with R1 ("create a new refinement pass"). R2 adds, again opt-in per config entry:
+
+* `trees.py` (kits `treeline`, `conifer_wrap`): procedural spruces of 12 to 17 drooping, ragged branch skirts (about 500 triangles,
+  shared variant meshes). `treeline` stands them along the faces of the big forest blocks that a view looks at (trunks straddling the
+  face, heights 0.75 to 1.5 of the block, so its flat top becomes a ragged skyline); `conifer_wrap` puts a tiered crown over every
+  blockout cone crown. `no_shadow_near_props_m` keeps a tree's shadow off a hero prop (G11).
+* `plates.py` (kit `window_plate`): a camera-ray-only panel outside every window and door opening of an interior (an opening is a
+  `-head` wall piece; a `-sill` under it makes it a window), with a procedural sky, ragged tree line and ground band tone-locked to
+  the scene's own flat world colour. No light, shadow or reflection changes; the overview hides it.
+* Ground fog (`atmos.fog`: `top_m`, `falloff`, `wisp_m`, `wisp`): a second volume from the floor up, thick at the ground and gone at
+  `top_m`, broken by a slow noise.
+* Scatter: `patch` (low-frequency value-noise clumps and gaps), `jitter` (> 0.8 lets points leave their grid cell) and `tilt_deg`
+  for grass; grass now has 6 tuft variants of 6 to 16 blades.
+* Displacement: each displaced piece is a welded, smooth-shaded copy with its box size in `dress_dims`; `edge_fade_m`,
+  `edge_floor`, `edge_mid` pull the displacement toward its middle near the box edges (no slabs or grooves on a silhouette), and
+  `disp_ridge` sets how much fine ridge noise goes into the true displacement.
+* Glass (`dirt-only`) `frost`: wired, frosted safety glass (mottle, wipe marks, square wire mesh, rougher), mean tone kept.
+* Kits: `cast_shadow: false` (ceiling beams that must not take light off the props).
+* Board ceiling (`grid` with `board_m`, `board_axis`): boards of `tile_m` width and `board_m` length, used on the cabin's main
+  ceiling between the beams.
+
+Changes of approach during R2 (and why):
+
+* Room haze in the cabin (0.014 to 0.035 per metre) and the hospital (0.012): every prop lost 10 to 30 % of its light (G11) and the
+  frames their tone (G2); taken out. Ground fog on the loop road (0.014, 3 m): tone and colour gates failed on 7 of 9 stills; taken
+  out. The loop road keeps a faint haze (0.0012 per metre).
+* The attic cap is still out (same reason as R1: player views that look up through the stairwell opening lose 40 % of their tone).
+* Ceiling beams: with shadows they took light off the props (R1). With `cast_shadow: false` and `camera_only_light` they no longer
+  change the room's light, but they cut the plaster ceiling into strips that the repeat detector reads as a tiling (G8 on 8 views):
+  the ceiling between them is now boards (`grid`, periodic by design, which G8 skips, as for tiles and wallpaper).
+* A masked high-pass in the G8 detector (local mean from the region's own pixels) removed the beam artefact but raised other
+  regions' scores against the calibrated limit; reverted, the calibrated detector stays.
+* Trees that cast shadows darkened the road views (G2, G3b, G4b); trees that block bounce light took light off the camp props (G11).
+  Trees now cast no shadow and are invisible to bounce light (`cast_shadow: false`, `camera_only_light`); an `underside` darkening
+  on the foliage keeps their skirts from reading flat. Smooth-shaded skirts and hiding the blockout cone from the camera (inside its
+  own shadow) both made trees render black (G4b): reverted.
+* Window plates first went behind every `-head` piece, including the hall partition's doorway inside the room: exterior walls only.
+* Marrow: a 5.5 m overlay tile raised the far-wall repeat score; back to 3.7 m.
+
+## R3 refinement pass (2026-11-24)
+
+The owner was not satisfied with R2. R3 works through the critic's points, again opt-in per config entry:
+
+* Board ceiling (`grid` with `board_m`): no longer built on Blender's Brick texture, whose per-brick tint is a weak hash of row and
+  column; with a fixed row offset it lined up into diagonal staircases of darker boards. Every row now gets a random butt-joint
+  offset, every board its own white-noise value, and a faint lengthwise `grain`.
+* Log courses: `courses.round_m` puts a round log profile into the bump (depth `round_m`) and `round_shade` darkens each log toward
+  its seams, so the wall reads as stacked logs with chinking instead of a flat print.
+* Ceiling beams: thinner (0.13 by 0.15 m), rounded (`round_m`) and worn on the edges (`edge_wear`), finer grain (0.7 m tile).
+* Window plates: `tiers` (whorls of branches along each silhouette) and `blur` (soft, out-of-focus edges), more and smaller trees in
+  two rows, instead of hard spikes.
+* Marrow: `base_color` gives a material another albedo hue at the build colour's luminance (emission keeps the build colour); the
+  marrow uses a dusky rose (linear 0.30, 0.12, 0.14), so under the blue light it reads violet-grey. The per-piece `tint` corrections
+  toward the blue are removed.
+* Marrow black slits: `edge_mask` picked a face's axis from the shading normal, which bends to 45 degrees in the smooth ring along
+  every edge of a welded box; the mask jumped back to full displacement right at the edge and the surface folded into black slits.
+  The edge distance is now the second smallest of the three per-axis distances to the box's faces (normal-free).
+* Kit `swell` (`swell.py`): noise-swollen, round-capped tubes of the wall's own material along the bottom edges of the marrow walls
+  and piers, so walls meet the floor in a quarter-round swelling instead of a box corner. Lengths near props and cameras are cut out.
+* Marrow floor: the larger rocks of P0 are back (`rubble`, `rock_01` scan, clustered, half-buried); the floor is a little darker.
+* Trees (`style: branches`): every tier is 16 to 24 feathered, drooping branch strips with zig-zag needle edges, each rolled a little,
+  instead of one flat star-shaped skirt. `treeline.rows`: a front row along the block faces and a taller back row inside them, so
+  tree tops break the box's top edge. More CC0 saplings and dead trunks at the forest edge.

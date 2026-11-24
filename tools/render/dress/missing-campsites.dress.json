@@ -1,7 +1,7 @@
 {
  "game": "missing-campsites",
- "version": 1,
- "note": "P0 pilot entry: loop-road (4 scenes). Outdoor: surfaces, scatter and a camera-only sky plate.",
+ "version": 2,
+ "note": "R1: loop-road (4 scenes). Adds the five locked CC0 glTF models (ferns, saplings, stumps, mossy rocks, a dead trunk) on the forest floor beside the road, kept off the road, the creek and every camera's line to its look-at point and to each prop; per-object phase on the conifer blocks; camera-only overcast sky.",
  "locations": {
   "loop-road": {
    "grime": {
@@ -11,7 +11,7 @@
     "damp": 0.1,
     "damp_height_m": 0.3,
     "ao_distance_m": 1.0,
-    "tone_gain": 1.04
+    "tone_gain": 1.06
    },
    "materials": {
     "forest-floor": {
@@ -21,7 +21,15 @@
      "tile_m": 2.2,
      "chroma": 0.5,
      "bump": 0.8,
-     "macro": 0.14
+     "macro": 0.14,
+     "third": true,
+     "macro2": 0.12,
+     "gain": 1.1622,
+     "tint": [
+      0.9963,
+      0.9993,
+      1.0177
+     ]
     },
     "gravel": {
      "family": "scan",
@@ -29,8 +37,17 @@
      "res": "2k",
      "tile_m": 1.8,
      "chroma": 0.3,
-     "bump": 0.8,
-     "macro": 0.1
+     "bump": 0.9,
+     "macro": 0.1,
+     "third": true,
+     "macro2": 0.1,
+     "gain": 1.0871,
+     "tint": [
+      1.0045,
+      0.9987,
+      1.0
+     ],
+     "grime": 0.4
     },
     "gravel-wet": {
      "family": "scan",
@@ -57,13 +74,30 @@
      "chroma": 0.3,
      "bump": 0.9,
      "macro": 0.12,
-     "grime": 0.3
+     "grime": 0.3,
+     "third": true,
+     "obj_jitter_m": 20.0
     },
     "conifer": {
      "family": "foliage",
      "tile_m": 3.0,
      "grime": 0.0,
-     "bump": 0.0
+     "bump": 0.6,
+     "obj_jitter_m": 60.0,
+     "macro": 0.6,
+     "fine": 0.35,
+     "gain": 1.0537,
+     "tint": [
+      0.9905,
+      1.0028,
+      0.9999
+     ],
+     "trunks": {
+      "spacing_m": 1.1,
+      "dark": 0.6,
+      "width": 0.5
+     },
+     "bump_m": 0.05
     },
     "creek": {
      "family": "noise",
@@ -84,13 +118,13 @@
        "forest-floor"
       ]
      },
-     "density": 110,
-     "max_dist_m": 32,
-     "limit": 5000,
+     "density": 2600,
+     "max_dist_m": 22,
+     "limit": 14000,
      "color": [
-      0.3,
-      0.34,
-      0.16
+      0.33,
+      0.37,
+      0.17
      ],
      "roughness": 0.8,
      "surface": {
@@ -99,7 +133,15 @@
       "macro": 0.2,
       "fine": 0.12,
       "bump": 0.0
-     }
+     },
+     "scale": 1.2,
+     "patch": {
+      "scale_m": 1.6,
+      "cut": 0.38,
+      "soft": 0.14
+     },
+     "jitter": 1.7,
+     "tilt_deg": 14
     },
     {
      "kind": "pebbles",
@@ -110,13 +152,13 @@
        "gravel-wet"
       ]
      },
-     "density": 400,
+     "density": 220,
      "max_dist_m": 26,
      "limit": 5000,
      "color": [
-      0.55,
-      0.5,
-      0.42
+      0.44,
+      0.4,
+      0.34
      ],
      "roughness": 0.9,
      "surface": {
@@ -126,7 +168,8 @@
       "tile_m": 0.5,
       "chroma": 0.4,
       "bump": 0.3
-     }
+     },
+     "scale": 0.7
     },
     {
      "kind": "twigs",
@@ -153,20 +196,238 @@
       "chroma": 0.3,
       "bump": 0.4
      }
+    },
+    {
+     "kind": "model",
+     "name": "roadside",
+     "on": {
+      "materials": [
+       "forest-floor"
+      ]
+     },
+     "density": 25,
+     "max_dist_m": 70,
+     "limit": 160,
+     "avoid_materials": [
+      "gravel",
+      "gravel-wet",
+      "creek"
+     ],
+     "avoid_margin_m": 0.6,
+     "sightlines_m": 1.4,
+     "near_camera_m": 7.0,
+     "thin_far": 0.4,
+     "models": [
+      {
+       "name": "fern_02",
+       "weight": 5,
+       "size": [
+        0.8,
+        1.3
+       ],
+       "sink": 0.02,
+       "albedo_gain": 2.2
+      },
+      {
+       "name": "pine_sapling_small",
+       "weight": 3,
+       "size": [
+        0.8,
+        1.4
+       ],
+       "sink": 0.02,
+       "albedo_gain": 3.2
+      },
+      {
+       "name": "rock_moss_set_01",
+       "weight": 1.5,
+       "size": [
+        0.5,
+        1.1
+       ],
+       "sink": 0.3,
+       "albedo_gain": 2.0
+      }
+     ],
+     "max_tris": 14000,
+     "sunlit_only": true,
+     "sun_probe_m": 1.2
+    },
+    {
+     "kind": "model",
+     "name": "forest-edge",
+     "on": {
+      "materials": [
+       "forest-floor"
+      ]
+     },
+     "density": 110,
+     "max_dist_m": 90,
+     "limit": 420,
+     "near_materials": [
+      "conifer"
+     ],
+     "near_m": 3.5,
+     "avoid_materials": [
+      "gravel",
+      "gravel-wet",
+      "creek"
+     ],
+     "avoid_margin_m": 0.4,
+     "sightlines_m": 1.4,
+     "near_camera_m": 7.0,
+     "thin_far": 0.7,
+     "models": [
+      {
+       "name": "pine_sapling_small",
+       "weight": 5,
+       "size": [
+        2.4,
+        4.6
+       ],
+       "sink": 0.02,
+       "albedo_gain": 3.2
+      },
+      {
+       "name": "fern_02",
+       "weight": 3,
+       "size": [
+        1.0,
+        1.6
+       ],
+       "sink": 0.02,
+       "albedo_gain": 2.2
+      },
+      {
+       "name": "dead_tree_trunk_02",
+       "weight": 1.5,
+       "size": [
+        0.9,
+        1.2
+       ],
+       "sink": 0.1,
+       "albedo_gain": 1.8
+      }
+     ],
+     "max_tris": 14000,
+     "sunlit_only": true,
+     "sun_probe_m": 1.2
     }
    ],
    "atmos": {
     "sky_plate": {
-     "name": "overcast-hdri",
-     "horizon_gain": 1.15,
-     "zenith_gain": 0.88,
+     "name": "partly-cloudy-hdri",
+     "horizon_gain": 1.1,
+     "zenith_gain": 0.95,
      "cloud_scale": 3.0,
      "cloud_contrast": 0.32,
      "hdri": "kloofendal_overcast_puresky_2k.hdr",
      "rotation_deg": 30,
-     "mix": 0.85
+     "mix": 0.7
+    },
+    "haze": {
+     "density": 0.0012,
+     "color": [
+      0.82,
+      0.84,
+      0.86
+     ],
+     "anisotropy": 0.25
     }
-   }
+   },
+   "kits": [
+    {
+     "kit": "treeline",
+     "name": "treeline",
+     "materials": [
+      "conifer"
+     ],
+     "min_size_m": 8.0,
+     "spacing_m": 3.6,
+     "offset_m": [
+      -1.4,
+      0.9
+     ],
+     "height": [
+      0.75,
+      1.5
+     ],
+     "radius": 0.14,
+     "variants": 7,
+     "max_dist_m": 150,
+     "avoid_materials": [
+      "gravel",
+      "gravel-wet",
+      "creek",
+      "cedar"
+     ],
+     "avoid_margin_m": 0.5,
+     "no_shadow_near_props_m": 6.0,
+     "clear_centre": true,
+     "cast_shadow": false,
+     "surface": {
+      "family": "foliage",
+      "tile_m": 1.2,
+      "macro": 0.45,
+      "fine": 0.35,
+      "bump": 0.6,
+      "bump_m": 0.03,
+      "obj_jitter_m": 40.0,
+      "gain": 1.12,
+      "underside": 0.08
+     },
+     "camera_only_light": true,
+     "style": "branches",
+     "rows": [
+      {
+       "offset_m": [
+        -1.4,
+        0.9
+       ],
+       "height": [
+        0.95,
+        1.55
+       ],
+       "spacing_m": 3.0
+      },
+      {
+       "offset_m": [
+        -5.5,
+        -2.5
+       ],
+       "height": [
+        1.1,
+        1.6
+       ],
+       "spacing_m": 5.5
+      }
+     ]
+    },
+    {
+     "kit": "conifer_wrap",
+     "name": "crowns",
+     "name_contains": "-crown",
+     "height_gain": 1.06,
+     "radius_gain": 1.35,
+     "lift": 0.02,
+     "no_shadow_near_props_m": 6.0,
+     "clear_centre": false,
+     "cast_shadow": false,
+     "surface": {
+      "family": "foliage",
+      "tile_m": 1.2,
+      "macro": 0.45,
+      "fine": 0.35,
+      "bump": 0.6,
+      "bump_m": 0.03,
+      "obj_jitter_m": 40.0,
+      "gain": 1.12,
+      "underside": 0.08
+     },
+     "camera_only_light": true,
+     "style": "branches"
+    }
+   ]
   }
  }
 }

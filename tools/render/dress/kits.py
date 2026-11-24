@@ -8,7 +8,7 @@ import math
 import bpy
 from mathutils import Vector
 
-from . import materials
+from . import materials, seeds
 
 
 def _bbox(ob):
@@ -89,10 +89,12 @@ def baseboard(ctx, spec, col):
         b = _bbox(ob)
         if b[2] > room[2] + 0.06 * K:  # a head or lintel piece does not reach the floor
             continue
+        if b[5] < room[2] + (spec.get("z_m", 0.0) + h / K) * K:  # a sill piece lower than the rail
+            continue
         sx, sy = b[3] - b[0], b[4] - b[1]
         if min(sx, sy) > 0.6 * K or max(sx, sy) < 0.2 * K:
             continue
-        zlo = room[2] + 0.001 * K
+        zlo = room[2] + 0.001 * K + spec.get("z_m", 0.0) * K  # z_m > 0: a rail (crash rail, dado) instead of a skirting board
         if sx >= sy:  # wall along x: the strip goes on the face that looks at the room
             yface = b[1] - t if room[1] < (b[1] + b[4]) / 2 else b[4]
             lo, hi = (b[0], yface, zlo), (b[3], yface + t, zlo + h)
@@ -116,8 +118,11 @@ def ceiling_joists(ctx, spec, col):
     step = spec.get("spacing_m", 0.9) * K
     mat = _kit_material(ctx, K, spec, spec.get("name", "joists"))
     out, n = [], int((b[3] - b[0]) / step)
+    jit = spec.get("spacing_jitter", 0.0)
     for i in range(1, n + 1):
         x = b[0] + i * (b[3] - b[0]) / (n + 1)
+        if jit:  # R1: hand-set beams are not on an exact grid (also keeps the ceiling from reading as a tiling)
+            x += (seeds.unit(ctx["game"], ctx["location"], "joist", i) - 0.5) * 2 * jit * (b[3] - b[0]) / (n + 1)
         out.append(_box(col, "dress-joist-%d" % i, (x - w / 2, b[1], b[2] - hh), (x + w / 2, b[4], b[2]), mat, "kits/" + spec.get("name", "joists")))
     return out
 
@@ -170,7 +175,86 @@ def conduit(ctx, spec, col):
     return out
 
 
-KITS = {"baseboard": baseboard, "ceiling_joists": ceiling_joists, "ceiling_grid": ceiling_grid, "conduit": conduit}
+def attic_cap(ctx, spec, col):
+    """R1: one thin dark box over the whole ceiling extent, just above it, seen by camera rays only (no shadow, no bounce, no
+    reflection): a stairwell opening or a joint between wall and ceiling shows a dark attic instead of the world colour. Light from
+    the world through those gaps is unchanged."""
+    K = ctx["K"]
+    ceil = [_bbox(o) for o in ctx["pieces"] if o.get("role") == "ceiling" and not o.hide_render]
+    walls = [_bbox(o) for o in ctx["pieces"] if o.get("role") == "wall" and not o.hide_render]
+    if not ceil:
+        return []
+    allb = ceil + walls
+    lo = (min(b[0] for b in allb) - 0.2 * K, min(b[1] for b in allb) - 0.2 * K, max(b[5] for b in ceil) + spec.get("gap_m", 0.02) * K)
+    hi = (max(b[3] for b in allb) + 0.2 * K, max(b[4] for b in allb) + 0.2 * K, lo[2] + spec.get("thickness_m", 0.05) * K)
+    mat = bpy.data.materials.get("dress-kit-attic") or bpy.data.materials.new("dress-kit-attic")
+    mat.use_nodes = True
+    bs = mat.node_tree.nodes["Principled BSDF"]
+    bs.inputs["Base Color"].default_value = (*spec.get("color", [0.03, 0.025, 0.02]), 1.0)
+    bs.inputs["Roughness"].default_value = 0.9
+    ob = _box(col, "dress-attic-cap", lo, hi, mat, "kits/" + spec.get("name", "attic"))
+    for k in ("visible_shadow", "visible_diffuse", "visible_glossy", "visible_transmission", "visible_volume_scatter"):
+        setattr(ob, k, False)
+    return [ob]
+
+
+def frames(ctx, spec, col):
+    """R1: a frame (architrave) around every piece of the named materials (glass panels, doors): four bars of `width_m` on both faces of
+    the piece's thin axis, standing `depth_m` proud of it; `bottom` false leaves the sill bar out (a door)."""
+    K = ctx["K"]
+    w, d = spec.get("width_m", 0.06) * K, spec.get("depth_m", 0.025) * K
+    mats = set(spec.get("materials", []))
+    pids = set(spec.get("pieces", []))
+    mat = _kit_material(ctx, K, spec, spec.get("name", "frames"))
+    out = []
+    for ob in sorted(ctx["pieces"], key=lambda o: o.name):
+        if ob.hide_render or not ob.active_material:
+            continue
+        mname = ob.active_material.name[3:].split("@")[0]
+        if mname not in mats and ob.name[3:] not in pids:
+            continue
+        b = _bbox(ob)
+        size = [b[3] - b[0], b[4] - b[1], b[5] - b[2]]
+        ax = 0 if size[0] < size[1] else 1  # the thin horizontal axis (a wall panel or a door leaf)
+        ln = 1 - ax
+        bottom = spec.get("bottom", True) if ob.name[3:] not in spec.get("no_bottom_pieces", []) else False
+        for side in (0, 1):
+            lo_t = b[ax] - d if side == 0 else b[ax + 3]
+            hi_t = lo_t + d
+            bars = [((b[ln] - w, b[5]), (b[ln + 3] + w, b[5] + w)),  # head
+                    ((b[ln] - w, b[2] - (w if bottom else 0)), (b[ln], b[5])),  # left jamb
+                    ((b[ln + 3], b[2] - (w if bottom else 0)), (b[ln + 3] + w, b[5]))]  # right jamb
+            if bottom:
+                bars.append(((b[ln] - w, b[2] - w), (b[ln + 3] + w, b[2])))
+            for i, ((l0, z0), (l1, z1)) in enumerate(bars):
+                lo, hi = [0, 0, z0], [0, 0, z1]
+                lo[ax], hi[ax] = lo_t, hi_t
+                lo[ln], hi[ln] = l0, l1
+                out.append(_box(col, "dress-frame-%s-%d-%d" % (ob.name[3:], side, i), lo, hi, mat, "kits/" + spec.get("name", "frames")))
+    return out
+
+
+def conifer_wrap(ctx, spec, col):
+    from . import trees
+    return trees.conifer_wrap(ctx, spec, col, _kit_material)
+
+
+def treeline(ctx, spec, col):
+    from . import trees
+    return trees.treeline(ctx, spec, col, _kit_material)
+
+
+def window_plate(ctx, spec, col):
+    from . import plates
+    return plates.window_plates(ctx, spec, col, _box)
+
+
+def swell(ctx, spec, col):
+    from . import swell as sw
+    return sw.swell(ctx, spec, col)
+
+
+KITS = {"swell": swell, "window_plate": window_plate, "conifer_wrap": conifer_wrap, "treeline": treeline, "attic_cap": attic_cap, "frames": frames, "baseboard": baseboard, "ceiling_joists": ceiling_joists, "ceiling_grid": ceiling_grid, "conduit": conduit}
 
 
 def kits_layer(ctx, specs):
@@ -179,6 +263,27 @@ def kits_layer(ctx, specs):
     rec = {"kits": {}, "objects": 0, "no_shadow": 0}
     for spec in specs:
         objs = KITS[spec["kit"]](ctx, spec, col)
+        if spec.get("clear_centre", True) and objs:  # R1: a kit never becomes the object under a view's look-at pixel (G10b)
+            bpy.context.view_layer.update()
+            dg = bpy.context.evaluated_depsgraph_get()
+            drop = set()
+            for v in ctx["views"].values():
+                o_, f_ = Vector(v[0]), (Vector(v[1]) - Vector(v[0])).normalized()
+                hit, _, _, _, hob, _ = ctx["sc"].ray_cast(dg, o_, f_)
+                if hit and hob is not None and hob.name in {x.name for x in objs}:
+                    drop.add(hob.name)
+            if drop:
+                gone = [x for x in objs if x.name in drop]
+                objs = [x for x in objs if x.name not in drop]
+                for ob in gone:
+                    bpy.data.objects.remove(ob, do_unlink=True)
+                rec.setdefault("cleared_for_centre", []).extend(sorted(drop))
+        if spec.get("cast_shadow") is False:  # R2: a kit that must not take light off the props (ceiling beams under ceiling lights)
+            for ob in objs:
+                ob.visible_shadow = False
+                if spec.get("camera_only_light"):  # nor does it block bounce light (the room's light is the build file's)
+                    ob.visible_diffuse = False
+                    ob.visible_glossy = False
         ns = 0
         for ob in objs:  # no shadow within 0.5 m of a light
             b = _bbox(ob)

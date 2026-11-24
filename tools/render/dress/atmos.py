@@ -83,3 +83,111 @@ def _hdri_colour(b, nt, path, flat, spec, tc):
     k = spec.get("strength_gain", 1.0)
     tinted = b.mix(env.outputs["Color"], gain, 1.0, "MULTIPLY")
     return b.mix(tuple(flat[:3]), b.mix(tinted, (k, k, k), 1.0, "MULTIPLY"), spec.get("mix", 0.85))
+
+
+# ---------------------------------------------------------------- R1: interior backdrop and haze volume
+def backdrop(sc, spec):
+    """Interior backdrop: a camera ray that leaves an interior through a gap (a stairwell opening, a joint between a wall and the
+    ceiling) sees a dark attic tone instead of the flat world colour. Non-camera rays keep the flat world (lighting unchanged; G1)."""
+    w = sc.world
+    if w is None or not w.use_nodes:
+        return None
+    nt = w.node_tree
+    out = next((n for n in nt.nodes if n.bl_idname == "ShaderNodeOutputWorld"), None)
+    if out is None or not out.inputs["Surface"].links:
+        return None
+    src = out.inputs["Surface"].links[0].from_node
+    if src.bl_idname == "ShaderNodeMixShader" and src.name in ("plate-mix", "backdrop-mix"):
+        return {"already": True}
+    src.name = "flat-bg" if src.bl_idname == "ShaderNodeBackground" else src.name
+    flat_out = out.inputs["Surface"].links[0].from_socket
+    b = materials.B(nt)
+    lp = b.n("ShaderNodeLightPath")
+    mixs = b.n("ShaderNodeMixShader")
+    mixs.name = "backdrop-mix"
+    bg = b.n("ShaderNodeBackground")
+    bg.name = "plate-backdrop"
+    bg.inputs["Color"].default_value = (*spec.get("color", [0.02, 0.016, 0.012]), 1.0)
+    bg.inputs["Strength"].default_value = 1.0
+    fac = lp.outputs["Is Camera Ray"]
+    if spec.get("min_up") is not None:  # only rays that look up (a stairwell, a ceiling joint), not level ones through a window
+        tc = b.n("ShaderNodeTexCoord")
+        sep = b.n("ShaderNodeSeparateXYZ")
+        b.link(tc.outputs["Generated"], sep.inputs[0])
+        dz = b.math("SUBTRACT", b.math("MULTIPLY", sep.outputs["Z"], 2.0), 1.0)
+        fac = b.math("MULTIPLY", fac, b.mapr(dz, spec["min_up"], spec["min_up"] + 0.12))
+    b.link(fac, mixs.inputs[0])
+    nt.links.new(flat_out, mixs.inputs[1])
+    nt.links.new(bg.outputs["Background"], mixs.inputs[2])
+    nt.links.new(mixs.outputs["Shader"], out.inputs["Surface"])
+    return {"min_up": spec.get("min_up"), "backdrop": [round(c, 4) for c in spec.get("color", [0.02, 0.016, 0.012])]}
+
+
+def haze_box(bpy, ctx, spec):
+    """A low-density scattering volume filling the location's blockout extent (pieces, not the sky): distant parts fall off and
+    light sources get a soft halo. It is a mesh in DRESS/atmos (`dress_group` atmos/haze); the id pass and the per-still ray grid
+    leave it out (it would cover the whole frame). Density in 1/m at scene scale 1; it is divided by K for millimetre scenes."""
+    K = ctx["K"]
+    pcs = [o for o in ctx["pieces"] if not o.hide_render and o.get("role") != "sky"]
+    if not pcs:
+        return None
+    from mathutils import Vector
+    pts = [o.matrix_world @ Vector(c) for o in pcs for c in o.bound_box]
+    lo = [min(p[i] for p in pts) for i in range(3)]
+    hi = [max(p[i] for p in pts) for i in range(3)]
+    pad = spec.get("inset_m", 0.05) * K
+    lo = [lo[0] + pad, lo[1] + pad, lo[2] + pad]
+    hi = [hi[0] - pad, hi[1] - pad, hi[2] - pad]
+    if spec.get("top_m") is not None:  # R2: a ground fog layer, from the floor up to top_m
+        lo[2] = ctx["floor_z"] * K - 0.2 * K
+        hi[2] = ctx["floor_z"] * K + spec["top_m"] * K
+    name = spec.get("_name", "haze")
+    me = bpy.data.meshes.new("dress-" + name)
+    v = [(x, y, z) for x in (lo[0], hi[0]) for y in (lo[1], hi[1]) for z in (lo[2], hi[2])]
+    f = [(0, 1, 3, 2), (4, 6, 7, 5), (0, 4, 5, 1), (2, 3, 7, 6), (0, 2, 6, 4), (1, 5, 7, 3)]
+    me.from_pydata(v, [], f)
+    me.update()
+    mat = bpy.data.materials.new("dress-" + name)
+    mat.use_nodes = True
+    nt = mat.node_tree
+    nt.nodes.clear()
+    outn = nt.nodes.new("ShaderNodeOutputMaterial")
+    vol = nt.nodes.new("ShaderNodeVolumePrincipled")
+    vol.inputs["Color"].default_value = (*spec.get("color", [0.8, 0.82, 0.9]), 1.0)
+    vol.inputs["Density"].default_value = spec.get("density", 0.012) / K
+    vol.inputs["Anisotropy"].default_value = spec.get("anisotropy", 0.3)
+    if spec.get("top_m") is not None:  # density falls off with height (thick at the ground, gone at the top)
+        tc = nt.nodes.new("ShaderNodeTexCoord")
+        sep = nt.nodes.new("ShaderNodeSeparateXYZ")
+        nt.links.new(tc.outputs["Generated"], sep.inputs[0])
+        fall = nt.nodes.new("ShaderNodeMapRange")
+        fall.inputs[1].default_value, fall.inputs[2].default_value = 0.0, 1.0
+        fall.inputs[3].default_value, fall.inputs[4].default_value = 1.0, 0.0
+        nt.links.new(sep.outputs["Z"], fall.inputs[0])
+        pw = nt.nodes.new("ShaderNodeMath")
+        pw.operation = "POWER"
+        nt.links.new(fall.outputs[0], pw.inputs[0])
+        pw.inputs[1].default_value = spec.get("falloff", 1.6)
+        nz = nt.nodes.new("ShaderNodeTexNoise")
+        nz.inputs["Scale"].default_value = 1.0 / (spec.get("wisp_m", 6.0) * K)
+        nt.links.new(nt.nodes.new("ShaderNodeNewGeometry").outputs["Position"], nz.inputs["Vector"])
+        wm = nt.nodes.new("ShaderNodeMapRange")
+        wm.inputs[1].default_value, wm.inputs[2].default_value = 0.3, 0.7
+        wm.inputs[3].default_value, wm.inputs[4].default_value = 1.0 - spec.get("wisp", 0.6), 1.0 + spec.get("wisp", 0.6)
+        nt.links.new(nz.outputs["Fac"], wm.inputs[0])
+        m1 = nt.nodes.new("ShaderNodeMath")
+        m1.operation = "MULTIPLY"
+        nt.links.new(pw.outputs[0], m1.inputs[0])
+        nt.links.new(wm.outputs[0], m1.inputs[1])
+        m2 = nt.nodes.new("ShaderNodeMath")
+        m2.operation = "MULTIPLY"
+        nt.links.new(m1.outputs[0], m2.inputs[0])
+        m2.inputs[1].default_value = spec.get("density", 0.012) / K
+        nt.links.new(m2.outputs[0], vol.inputs["Density"])
+    nt.links.new(vol.outputs["Volume"], outn.inputs["Volume"])
+    me.materials.append(mat)
+    ob = bpy.data.objects.new("dress-" + name, me)
+    ob["dress_group"] = "atmos/" + name
+    ctx["collection"]("DRESS/atmos").objects.link(ob)
+    return {"name": name, "top_m": spec.get("top_m"), "density_per_m": spec.get("density", 0.012), "anisotropy": spec.get("anisotropy", 0.3), "color": spec.get("color", [0.8, 0.82, 0.9]),
+            "size_m": [round((hi[i] - lo[i]) / K, 2) for i in range(3)]}

@@ -61,7 +61,7 @@ def render_ids(sc, path, leg):
     meshes = [o for o in bpy.data.objects if o.type == "MESH" and not o.hide_render]
     # stain decals are soft translucent blobs on quads: as flat id squares they would cover props that touch the wall, so they are left
     # out of the mask for the render (the surface under them keeps its own id)
-    hidden = [o for o in meshes if (group_key(o) or "").startswith("dress:decals/")]
+    hidden = [o for o in meshes if (group_key(o) or "").startswith(("dress:decals/", "dress:atmos/"))]  # decals and the haze volume (R1)
     for o in hidden:
         o.hide_render = True
     meshes = [o for o in meshes if o not in hidden]

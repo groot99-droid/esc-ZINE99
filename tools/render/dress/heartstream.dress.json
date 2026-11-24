@@ -1,50 +1,153 @@
 {
  "game": "heartstream",
- "version": 1,
- "note": "P0 pilot entry: marrow-caverns (3 scenes). No CC0 source for organic tissue: procedural abstract wet membrane, nothing wound-like.",
+ "version": 2,
+ "note": "R1: marrow-caverns (3 scenes). Abstract wet membrane as a layered procedural (per-piece phase, vertical fibres, domain warp, two vein scales, wet coat, subsurface, 4 cm displacement, rounded edges); darker mixed rock floor with stronger contact darkening; water puddles; half-buried glossy nodule clusters; a thin haze volume. Hue stays the build file's blue. R2: displacement on a welded, smooth copy of each box with an edge fade (no slabs on pillar silhouettes); stronger veins and wet coat.",
  "locations": {
   "marrow-caverns": {
    "grime": {
-    "strength": 0.5,
-    "ao": 0.22,
+    "strength": 0.8,
+    "ao": 0.45,
     "dust": 0.04,
     "damp": 0.0,
-    "ao_distance_m": 1.5,
+    "ao_distance_m": 0.6,
     "tone_gain": 1.07
    },
    "materials": {
     "marrow-floor": {
      "family": "scan",
-     "scan": "low_tide_rocks",
-     "res": "1k",
-     "tile_m": 2.2,
-     "chroma": 0.18,
-     "bump": 0.7,
-     "macro": 0.1
+     "scan": "rock_ground_02",
+     "res": "2k",
+     "tile_m": 3.0,
+     "chroma": 0.2,
+     "bump": 0.9,
+     "macro": 0.2,
+     "macro2": 0.18,
+     "third": true,
+     "gain": 1.08,
+     "grime": 1.4,
+     "tint": [
+      1.0075,
+      0.9968,
+      1.0074
+     ]
     },
     "marrow-tissue": {
-     "family": "tissue",
-     "tile_m": 2.4,
-     "macro": 0.28,
-     "fine": 0.1,
-     "bump": 0.9,
-     "bump_m": 0.02,
-     "grime": 0.6
+     "family": "membrane",
+     "macro": 0.4,
+     "fine": 0.05,
+     "bump": 0.8,
+     "bump_m": 0.015,
+     "grime": 0.6,
+     "coat": 0.55,
+     "coat_roughness": 0.08,
+     "sss": 0.2,
+     "sss_radius": [
+      1.0,
+      0.35,
+      0.2
+     ],
+     "sss_scale_m": 0.01,
+     "displace_m": 0.07,
+     "subdiv": 6,
+     "round_m": 0.2,
+     "vein_m": 0.6,
+     "vein_fine_m": 0.15,
+     "vein_w": 0.03,
+     "vein_dark": 0.28,
+     "vein_tint": [
+      1.3,
+      0.84,
+      0.95
+     ],
+     "stretch": 1.5,
+     "rough_range": [
+      0.22,
+      0.6
+     ],
+     "gain": 1.0717,
+     "vein_relief": 0.35,
+     "fibre": 0.15,
+     "fibre_m": 0.035,
+     "fibre_stretch": 3.0,
+     "ridge_m": 0.7,
+     "displace_mid": 0.0,
+     "overlay": {
+      "image": "membrane_hf_1",
+      "tile_m": 3.7,
+      "strength": 0.3,
+      "chroma": 0.15,
+      "height": 1.2
+     },
+     "edge_fade_m": 0.5,
+     "edge_floor": 0.15,
+     "disp_ridge": 0.12,
+     "base_color": [
+      0.3,
+      0.12,
+      0.14
+     ]
     },
     "marrow-deep": {
-     "family": "tissue",
-     "tile_m": 3.0,
-     "macro": 0.28,
-     "fine": 0.1,
-     "bump": 0.9,
-     "bump_m": 0.02,
-     "grime": 0.5
+     "family": "membrane",
+     "macro": 0.4,
+     "fine": 0.05,
+     "bump": 0.8,
+     "bump_m": 0.015,
+     "grime": 0.5,
+     "coat": 0.55,
+     "coat_roughness": 0.08,
+     "sss": 0.2,
+     "sss_radius": [
+      1.0,
+      0.35,
+      0.2
+     ],
+     "sss_scale_m": 0.01,
+     "displace_m": 0.0,
+     "subdiv": 5,
+     "round_m": 0.0,
+     "vein_m": 0.6,
+     "vein_fine_m": 0.15,
+     "vein_w": 0.03,
+     "vein_dark": 0.28,
+     "vein_tint": [
+      1.3,
+      0.84,
+      0.95
+     ],
+     "stretch": 1.5,
+     "rough_range": [
+      0.22,
+      0.6
+     ],
+     "gain": 0.608,
+     "vein_relief": 0.35,
+     "fibre": 0.15,
+     "fibre_m": 0.035,
+     "fibre_stretch": 3.0,
+     "ridge_m": 0.7,
+     "overlay": {
+      "image": "membrane_hf_1",
+      "tile_m": 3.7,
+      "strength": 0.3,
+      "chroma": 0.15,
+      "height": 1.2
+     },
+     "base_color": [
+      0.3,
+      0.12,
+      0.14
+     ]
     },
     "marrow-glow": {
      "family": "keep"
     },
     "puddle": {
-     "family": "keep"
+     "family": "water",
+     "dark": 0.9,
+     "roughness": 0.03,
+     "ripple": 0.15,
+     "specular": 1.0
     },
     "shaft-dark": {
      "family": "keep"
@@ -59,7 +162,7 @@
        "marrow-floor"
       ]
      },
-     "density": 9,
+     "density": 5,
      "max_dist_m": 38,
      "limit": 900,
      "color": [
@@ -68,14 +171,33 @@
       0.7
      ],
      "roughness": 0.45,
-     "scale": 1.0,
+     "scale": 1.3,
      "surface": {
-      "family": "scan",
-      "scan": "low_tide_rocks",
-      "res": "1k",
-      "tile_m": 0.6,
-      "chroma": 0.15,
-      "bump": 0.4
+      "family": "membrane",
+      "macro": 0.2,
+      "bump": 0.4,
+      "bump_m": 0.006,
+      "coat": 0.6,
+      "coat_roughness": 0.06,
+      "rough_range": [
+       0.15,
+       0.45
+      ],
+      "grime": 0.6,
+      "obj_jitter_m": 5.0,
+      "overlay": {
+       "image": "membrane_hf_1",
+       "tile_m": 0.5,
+       "strength": 0.5,
+       "chroma": 0.1,
+       "height": 0.8
+      }
+     },
+     "sink": 0.45,
+     "cluster": {
+      "min": 2,
+      "max": 6,
+      "radius_m": 0.7
      }
     },
     {
@@ -86,13 +208,13 @@
        "marrow-floor"
       ]
      },
-     "density": 80,
+     "density": 60,
      "max_dist_m": 24,
      "limit": 4000,
      "color": [
-      0.5,
-      0.55,
-      0.66
+      0.42,
+      0.46,
+      0.55
      ],
      "roughness": 0.6,
      "scale": 0.8,
@@ -104,6 +226,116 @@
       "chroma": 0.15,
       "bump": 0.3
      }
+    },
+    {
+     "kind": "rubble",
+     "name": "rocks",
+     "on": {
+      "materials": [
+       "marrow-floor"
+      ]
+     },
+     "density": 3.5,
+     "max_dist_m": 36,
+     "limit": 500,
+     "color": [
+      0.4,
+      0.42,
+      0.48
+     ],
+     "roughness": 0.55,
+     "scale": 1.5,
+     "sink": 0.3,
+     "cluster": {
+      "min": 2,
+      "max": 5,
+      "radius_m": 0.9
+     },
+     "surface": {
+      "family": "scan",
+      "scan": "rock_01",
+      "res": "1k",
+      "tile_m": 0.8,
+      "chroma": 0.2,
+      "bump": 0.6
+     }
+    }
+   ],
+   "atmos": {
+    "haze": {
+     "density": 0.003,
+     "color": [
+      0.78,
+      0.82,
+      0.95
+     ],
+     "anisotropy": 0.3
+    }
+   },
+   "pieces": {
+    "wall-north-above": {
+     "family": "membrane",
+     "displace_m": 0.0,
+     "gain": 0.9169
+    },
+    "wall-north-below": {
+     "family": "membrane",
+     "displace_m": 0.0,
+     "gain": 1.1014
+    },
+    "wall-north-left": {
+     "family": "membrane",
+     "displace_m": 0.0,
+     "gain": 1.0945
+    },
+    "wall-north-right": {
+     "family": "membrane",
+     "displace_m": 0.0,
+     "gain": 0.9195
+    },
+    "wall-south-lintel": {
+     "family": "membrane",
+     "displace_m": 0.0,
+     "gain": 1.062
+    },
+    "wall-east": {
+     "family": "membrane",
+     "displace_m": 0.0,
+     "stretch": 1.0
+    },
+    "wall-west": {
+     "family": "membrane",
+     "displace_m": 0.0
+    },
+    "wall-south-left": {
+     "family": "membrane",
+     "displace_m": 0.0
+    },
+    "wall-south-right": {
+     "family": "membrane",
+     "displace_m": 0.0
+    }
+   },
+   "kits": [
+    {
+     "kit": "swell",
+     "name": "swell",
+     "materials": [
+      "marrow-tissue"
+     ],
+     "roles": [
+      "wall",
+      "structure"
+     ],
+     "radius_m": [
+      0.25,
+      0.45
+     ],
+     "noise": 0.25,
+     "segment_m": 0.12,
+     "prop_margin_m": 0.9,
+     "camera_clear_m": 1.2,
+     "clear_centre": true
     }
    ]
   }

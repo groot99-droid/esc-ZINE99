@@ -1,7 +1,7 @@
 {
  "game": "stuffed-ones",
- "version": 1,
- "note": "P0 pilot entry: cabin-living-room (20 scenes). Wallpaper is plain paper (no pattern, no figures).",
+ "version": 2,
+ "note": "R1: cabin-living-room (20 scenes). Log wall as 0.2 m board courses (offset grain, value and hue jitter, dark chinking); stairs with worn lighter nosings; wallpaper strips with seams and yellowing; plaster without the cream cast. Tone fixed in the materials (per-material gains and a location albedo gain of 1.10 that restores the bounce light the darker scans took), not exposure.",
  "locations": {
   "cabin-living-room": {
    "grime": {
@@ -10,7 +10,7 @@
     "dust": 0.1,
     "damp": 0.14,
     "damp_height_m": 0.45,
-    "tone_gain": 1.22
+    "tone_gain": 1.1
    },
    "materials": {
     "worn-pine": {
@@ -19,33 +19,103 @@
      "res": "2k",
      "tile_m": 3.0,
      "chroma": 0.3,
-     "bump": 0.45,
-     "macro": 0.1
+     "bump": 0.55,
+     "macro": 0.1,
+     "third": true,
+     "macro2": 0.08,
+     "gain": 0.9892,
+     "tint": [
+      1.0056,
+      0.9997,
+      0.9855
+     ]
     },
     "cedar-log": {
      "family": "scan",
      "scan": "dark_wood",
      "res": "1k",
-     "tile_m": 2.0,
-     "chroma": 0.25,
-     "bump": 0.5,
-     "macro": 0.1
+     "tile_m": 1.2,
+     "chroma": 0.3,
+     "bump": 0.6,
+     "bump_m": 0.004,
+     "macro": 0.08,
+     "third": true,
+     "courses": {
+      "h_m": 0.2,
+      "seam_m": 0.02,
+      "jitter": 0.1,
+      "hue": 0.04,
+      "seam_tone": 0.62,
+      "vary": 1.0,
+      "round_m": 0.035,
+      "round_shade": 0.07
+     },
+     "round_m": 0.01,
+     "edge_wear": {
+      "radius_m": 0.015,
+      "amount": 0.5,
+      "tint": [
+       1.2,
+       1.15,
+       1.08
+      ],
+      "rough": 0.1
+     },
+     "gain": 0.9932,
+     "tint": [
+      1.0,
+      1.0,
+      0.98
+     ]
     },
     "plaster": {
      "family": "scan",
      "scan": "plastered_wall_04",
      "res": "2k",
      "tile_m": 1.8,
-     "chroma": 0.1,
-     "bump": 0.18,
-     "macro": 0.06
+     "chroma": 0.0,
+     "bump": 0.4,
+     "macro": 0.1,
+     "third": true,
+     "obj_jitter_m": 20.0,
+     "macro2": 0.05,
+     "grime": 1.3,
+     "gain": 0.9412,
+     "tint": [
+      1.01,
+      1.0,
+      0.97
+     ],
+     "patches": {
+      "size_m": 0.8,
+      "share": 0.25,
+      "amount": 0.04,
+      "rough": 0.05
+     }
     },
     "wallpaper": {
      "family": "wallpaper",
      "tile_m": 0.18,
      "stripe": 0.03,
      "bump": 0.1,
-     "grime": 1.1
+     "grime": 1.1,
+     "seam_m": 0.53,
+     "seam_tone": 0.86,
+     "yellow": {
+      "from_m": 1.5,
+      "to_m": 2.4,
+      "tint": [
+       1.0,
+       0.97,
+       0.9
+      ]
+     },
+     "gain": 0.9138,
+     "tint": [
+      1.0,
+      1.0,
+      0.97
+     ]
     },
     "stone": {
      "family": "scan",
@@ -54,13 +124,25 @@
      "tile_m": 2.0,
      "chroma": 0.3,
      "bump": 0.7,
-     "macro": 0.08
+     "macro": 0.08,
+     "gain": 0.9097,
+     "tint": [
+      1.0203,
+      0.9972,
+      0.9684
+     ]
     },
     "stove-iron": {
      "family": "metal",
      "tile_m": 0.5,
      "bump": 0.2,
-     "grime": 0.8
+     "grime": 0.8,
+     "gain": 0.8782,
+     "tint": [
+      0.9852,
+      1.0097,
+      0.9478
+     ]
     }
    },
    "kits": [
@@ -90,21 +172,58 @@
      "kit": "ceiling_joists",
      "name": "joists",
      "color": [
-      0.3,
-      0.2,
-      0.12
+      0.5,
+      0.37,
+      0.24
      ],
      "roughness": 0.8,
-     "width_m": 0.1,
-     "depth_m": 0.14,
-     "spacing_m": 1.2,
+     "width_m": 0.13,
+     "depth_m": 0.15,
+     "spacing_m": 1.5,
+     "spacing_jitter": 0.25,
+     "cast_shadow": false,
+     "clear_centre": true,
      "surface": {
       "family": "scan",
       "scan": "dark_wood",
-      "tile_m": 1.0,
+      "tile_m": 0.7,
       "chroma": 0.2,
-      "bump": 0.3
-     }
+      "bump": 0.4,
+      "round_m": 0.015,
+      "edge_wear": {
+       "radius_m": 0.02,
+       "amount": 0.5,
+       "tint": [
+        1.22,
+        1.16,
+        1.08
+       ],
+       "rough": 0.1,
+       "break_scale": 6.0
+      }
+     },
+     "camera_only_light": true
+    },
+    {
+     "kit": "window_plate",
+     "name": "window_plate",
+     "offset_m": 0.6,
+     "pad_m": 0.35,
+     "above_m": 0.6,
+     "tree_gain": 0.6,
+     "ground_gain": 0.55,
+     "horizon_gain": 1.2,
+     "zenith_gain": 0.95,
+     "clear_centre": false,
+     "tiers": 6.0,
+     "blur": 0.07,
+     "far_n": 14.0,
+     "near_n": 7.0,
+     "far_range": 0.3,
+     "near_range": 0.45,
+     "far_k": 1.5,
+     "near_k": 1.25,
+     "far_gain": 0.8
     }
    ],
    "decals": [
@@ -130,7 +249,246 @@
      ]
     }
    ],
-   "exposure_ev_delta": {}
+   "exposure_ev_delta": {},
+   "pieces": {
+    "stair-1": {
+     "family": "scan",
+     "scan": "old_wood_floor",
+     "res": "2k",
+     "tile_m": 1.6,
+     "chroma": 0.3,
+     "bump": 0.5,
+     "macro": 0.08,
+     "round_m": 0.01,
+     "edge_wear": {
+      "radius_m": 0.025,
+      "amount": 0.85,
+      "tint": [
+       1.3,
+       1.24,
+       1.12
+      ],
+      "rough": 0.15,
+      "break_scale": 5.0
+     },
+     "gain": 0.9822,
+     "tint": [
+      1.0036,
+      1.001,
+      0.9802
+     ]
+    },
+    "stair-2": {
+     "family": "scan",
+     "scan": "old_wood_floor",
+     "res": "2k",
+     "tile_m": 1.6,
+     "chroma": 0.3,
+     "bump": 0.5,
+     "macro": 0.08,
+     "round_m": 0.01,
+     "edge_wear": {
+      "radius_m": 0.025,
+      "amount": 0.85,
+      "tint": [
+       1.3,
+       1.24,
+       1.12
+      ],
+      "rough": 0.15,
+      "break_scale": 5.0
+     },
+     "gain": 0.9605,
+     "tint": [
+      1.0079,
+      0.9994,
+      0.9824
+     ]
+    },
+    "stair-3": {
+     "family": "scan",
+     "scan": "old_wood_floor",
+     "res": "2k",
+     "tile_m": 1.6,
+     "chroma": 0.3,
+     "bump": 0.5,
+     "macro": 0.08,
+     "round_m": 0.01,
+     "edge_wear": {
+      "radius_m": 0.025,
+      "amount": 0.85,
+      "tint": [
+       1.3,
+       1.24,
+       1.12
+      ],
+      "rough": 0.15,
+      "break_scale": 5.0
+     },
+     "gain": 0.9155,
+     "tint": [
+      0.9986,
+      1.001,
+      0.9938
+     ]
+    },
+    "stair-4": {
+     "family": "scan",
+     "scan": "old_wood_floor",
+     "res": "2k",
+     "tile_m": 1.6,
+     "chroma": 0.3,
+     "bump": 0.5,
+     "macro": 0.08,
+     "round_m": 0.01,
+     "edge_wear": {
+      "radius_m": 0.025,
+      "amount": 0.85,
+      "tint": [
+       1.3,
+       1.24,
+       1.12
+      ],
+      "rough": 0.15,
+      "break_scale": 5.0
+     },
+     "gain": 0.9071,
+     "tint": [
+      1.0068,
+      0.9988,
+      0.9906
+     ]
+    },
+    "stair-5": {
+     "family": "scan",
+     "scan": "old_wood_floor",
+     "res": "2k",
+     "tile_m": 1.6,
+     "chroma": 0.3,
+     "bump": 0.5,
+     "macro": 0.08,
+     "round_m": 0.01,
+     "edge_wear": {
+      "radius_m": 0.025,
+      "amount": 0.85,
+      "tint": [
+       1.3,
+       1.24,
+       1.12
+      ],
+      "rough": 0.15,
+      "break_scale": 5.0
+     },
+     "gain": 0.9034,
+     "tint": [
+      1.0127,
+      0.9972,
+      0.9882
+     ]
+    },
+    "stair-6": {
+     "family": "scan",
+     "scan": "old_wood_floor",
+     "res": "2k",
+     "tile_m": 1.6,
+     "chroma": 0.3,
+     "bump": 0.5,
+     "macro": 0.08,
+     "round_m": 0.01,
+     "edge_wear": {
+      "radius_m": 0.025,
+      "amount": 0.85,
+      "tint": [
+       1.3,
+       1.24,
+       1.12
+      ],
+      "rough": 0.15,
+      "break_scale": 5.0
+     },
+     "gain": 0.8721,
+     "tint": [
+      1.035,
+      0.9928,
+      0.9683
+     ]
+    },
+    "game-table": {
+     "family": "scan",
+     "scan": "dark_wood",
+     "res": "1k",
+     "tile_m": 1.0,
+     "chroma": 0.3,
+     "bump": 0.4,
+     "macro": 0.06,
+     "round_m": 0.008,
+     "edge_wear": {
+      "radius_m": 0.012,
+      "amount": 0.6,
+      "tint": [
+       1.25,
+       1.18,
+       1.08
+      ],
+      "rough": 0.1
+     },
+     "gain": 1.0813,
+     "tint": [
+      1.003,
+      1.0064,
+      0.9285
+     ]
+    },
+    "entry-table": {
+     "family": "scan",
+     "scan": "dark_wood",
+     "res": "1k",
+     "tile_m": 1.0,
+     "chroma": 0.3,
+     "bump": 0.4,
+     "macro": 0.06,
+     "round_m": 0.008,
+     "edge_wear": {
+      "radius_m": 0.012,
+      "amount": 0.6,
+      "tint": [
+       1.25,
+       1.18,
+       1.08
+      ],
+      "rough": 0.1
+     },
+     "gain": 1.044,
+     "tint": [
+      1.0024,
+      1.0026,
+      0.9672
+     ]
+    },
+    "ceiling-main": {
+     "family": "grid",
+     "tile_m": 0.14,
+     "board_m": 2.4,
+     "board_axis": "x",
+     "joint": 0.022,
+     "joint_tone": 0.9,
+     "tile_jitter": 0.025,
+     "macro": 0.06,
+     "fine": 0.03,
+     "bump": 0.3,
+     "grime": 1.0,
+     "gain": 1.0,
+     "detail_scan": {
+      "scan": "plastered_wall_04",
+      "res": "2k",
+      "tile_m": 1.8,
+      "chroma": 0.0,
+      "macro": 0.05,
+      "height": 0.2
+     },
+     "grain": 0.035
+    }
+   }
   }
  }
 }

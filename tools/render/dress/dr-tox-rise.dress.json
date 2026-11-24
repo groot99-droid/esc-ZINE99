@@ -1,63 +1,174 @@
 {
  "game": "dr-tox-rise",
- "version": 1,
- "note": "P0 pilot entry: hospital-room. Walls use the approved Poly Haven painted-concrete scan (tone-locked to the build file's white); floor and ceiling are tile grids. Other locations come in P1.",
+ "version": 2,
+ "note": "R1: hospital-room. Painted concrete walls (owner ruling: walls stay concrete) with wear: edge chips, scuffs to 1 m, touch-up patches, rounded edges; tile floor with a scan's wear detail, per-tile variation, dirty joints and a wax coat.",
  "locations": {
   "hospital-room": {
    "grime": {
     "strength": 1.0,
-    "ao": 0.22,
+    "ao": 0.3,
     "dust": 0.1,
     "damp": 0.1,
     "damp_height_m": 0.5,
-    "tone_gain": 1.12
+    "tone_gain": 1.12,
+    "ao_distance_m": 0.5
    },
    "materials": {
     "clinical-white": {
      "family": "scan",
-     "scan": "concrete_wall_008",
+     "scan": "concrete_floor_worn_001",
      "res": "2k",
-     "tile_m": 1.4,
+     "tile_m": 1.45,
      "chroma": 0.1,
-     "bump": 0.25,
-     "macro": 0.06,
-     "grime": 1.0
+     "bump": 0.5,
+     "macro": 0.09,
+     "grime": 1.0,
+     "third": true,
+     "macro2": 0.05,
+     "round_m": 0.012,
+     "patches": {
+      "size_m": 1.2,
+      "share": 0.28,
+      "amount": 0.05,
+      "rough": 0.08
+     },
+     "scuffs": {
+      "height_m": 1.05,
+      "amount": 0.45,
+      "tint": [
+       0.62,
+       0.6,
+       0.57
+      ]
+     },
+     "edge_wear": {
+      "radius_m": 0.02,
+      "amount": 0.8,
+      "tint": [
+       0.72,
+       0.71,
+       0.69
+      ],
+      "rough": 0.2,
+      "break_scale": 9.0
+     },
+     "rough_scale": 0.8
     },
     "steel": {
      "family": "metal",
      "tile_m": 0.5,
      "bump": 0.15,
-     "grime": 0.8
+     "grime": 0.8,
+     "edge_wear": {
+      "radius_m": 0.01,
+      "amount": 0.6,
+      "tint": [
+       1.3,
+       1.3,
+       1.3
+      ],
+      "rough": -0.1
+     },
+     "round_m": 0.006
     },
     "glass": {
      "family": "dirt-only",
-     "dirt": 0.2
+     "dirt": 0.15,
+     "frost": {
+      "mottle": 0.12,
+      "mottle_m": 0.3,
+      "wipe": 0.08,
+      "wire_m": 0.025,
+      "wire_w": 0.06,
+      "wire_dark": 0.25,
+      "wire_share": 0.07,
+      "rough": 0.32
+     }
     }
    },
    "pieces": {
     "floor": {
      "family": "grid",
      "tile_m": 0.5,
-     "joint": 0.008,
-     "joint_tone": 0.78,
-     "macro": 0.05,
-     "bump": 0.2,
-     "grime": 1.2
+     "joint": 0.01,
+     "joint_tone": 0.55,
+     "macro": 0.07,
+     "bump": 0.35,
+     "grime": 1.2,
+     "tile_jitter": 0.05,
+     "joint_rough": 0.4,
+     "coat": 0.35,
+     "coat_roughness": 0.12,
+     "detail_scan": {
+      "scan": "concrete_floor_worn_001",
+      "res": "2k",
+      "tile_m": 1.7,
+      "chroma": 0.0,
+      "macro": 0.05,
+      "third": true,
+      "height": 0.4
+     }
     },
     "ceiling": {
      "family": "grid",
      "tile_m": 0.6,
      "joint": 0.012,
-     "joint_tone": 0.8,
+     "joint_tone": 0.7,
      "bond_offset": 0.0,
      "bump": 0.1,
-     "grime": 0.6
+     "grime": 0.6,
+     "tile_jitter": 0.04,
+     "detail_scan": {
+      "scan": "plastered_wall_04",
+      "res": "1k",
+      "tile_m": 1.3,
+      "chroma": 0.0,
+      "macro": 0.04,
+      "height": 0.2
+     }
     },
     "fluoro-1": {
      "family": "metal",
      "tile_m": 0.4,
      "bump": 0.0,
      "grime": 0.3
+    },
+    "door": {
+     "family": "scan",
+     "scan": "concrete_floor_worn_001",
+     "res": "2k",
+     "tile_m": 1.2,
+     "chroma": 0.0,
+     "macro": 0.09,
+     "third": true,
+     "bump": 0.35,
+     "round_m": 0.006,
+     "edge_wear": {
+      "radius_m": 0.01,
+      "amount": 0.6,
+      "tint": [
+       1.25,
+       1.25,
+       1.25
+      ],
+      "rough": -0.1
+     },
+     "grime": 0.8,
+     "patches": {
+      "size_m": 0.5,
+      "share": 0.3,
+      "amount": 0.05,
+      "rough": 0.08
+     },
+     "scuffs": {
+      "height_m": 0.5,
+      "amount": 0.5,
+      "tint": [
+       0.6,
+       0.58,
+       0.55
+      ]
+     }
     }
    },
    "kits": [
@@ -77,6 +188,35 @@
       "tile_m": 0.8,
       "macro": 0.04,
       "bump": 0.05
+     }
+    },
+    {
+     "kit": "baseboard",
+     "name": "crash-rail",
+     "color": [
+      0.62,
+      0.66,
+      0.68
+     ],
+     "roughness": 0.35,
+     "height_m": 0.14,
+     "thickness_m": 0.028,
+     "z_m": 0.82,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.6,
+      "macro": 0.05,
+      "bump": 0.05,
+      "round_m": 0.01,
+      "edge_wear": {
+       "radius_m": 0.01,
+       "amount": 0.5,
+       "tint": [
+        0.85,
+        0.85,
+        0.85
+       ]
+      }
      }
     },
     {
@@ -115,6 +255,42 @@
       "family": "metal",
       "tile_m": 0.4,
       "bump": 0.0
+     }
+    },
+    {
+     "kit": "frames",
+     "name": "frames",
+     "materials": [
+      "glass",
+      "steel"
+     ],
+     "no_bottom_pieces": [
+      "door"
+     ],
+     "width_m": 0.06,
+     "depth_m": 0.03,
+     "color": [
+      0.7,
+      0.72,
+      0.73
+     ],
+     "roughness": 0.35,
+     "metallic": 0.0,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.5,
+      "macro": 0.04,
+      "bump": 0.05,
+      "round_m": 0.008,
+      "edge_wear": {
+       "radius_m": 0.01,
+       "amount": 0.5,
+       "tint": [
+        0.8,
+        0.8,
+        0.8
+       ]
+      }
      }
     }
    ],

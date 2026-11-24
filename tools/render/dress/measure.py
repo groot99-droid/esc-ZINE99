@@ -417,6 +417,11 @@ def _g_density(dr, sta, ma, T):
     return _g("G9", ok, vals, [T["g9_lo"], T["g9_hi"]], "texels per screen pixel at the region's median depth; minified (info only): %s" % over)
 
 
+def box_gap(ga, gb):
+    """Largest gap between two axis-aligned boxes ({"center", "size"}) along any axis; 0 when they touch or overlap."""
+    return max(max(0.0, abs(ga["center"][i] - gb["center"][i]) - (ga["size"][i] + gb["size"][i]) / 2.0) for i in range(3))
+
+
 def _g_seams(dr, mb, ma, T):
     geo, pm = dr.get("piece_geom", {}), dr.get("piece_materials", {})
     worst, rec = None, {}
@@ -431,6 +436,8 @@ def _g_seams(dr, mb, ma, T):
         # coplanar: same thin axis and within 5 cm along it
         ta, tb = int(np.argmin(np.array(ga["size"]))), int(np.argmin(np.array(gb["size"])))
         if ta != tb or abs(ga["center"][ta] - gb["center"][tb]) > 0.05:
+            continue
+        if box_gap(ga, gb) > 0.05:  # R1: they only meet in the picture (a far piece behind a near one), not a physical join
             continue
         before = mb.get("joins", {}).get(k, {}).get("step", 0.0)
         excess = max(0.0, v["step"] - before)

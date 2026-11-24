@@ -12,7 +12,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 DRESS = os.path.dirname(HERE)
 sys.path.insert(0, os.path.dirname(DRESS))
 
-from dress import measure, placement, rules, seeds  # noqa: E402
+from dress import gains, measure, placement, rules, seeds  # noqa: E402
 
 
 class Seeds(unittest.TestCase):
@@ -194,5 +194,164 @@ class Lock(unittest.TestCase):
             self.assertEqual(h["licence"], "CC0-1.0")
 
 
+class R1Cluster(unittest.TestCase):
+    def test_cluster_stable_bounded_and_clear(self):
+        pts = [{"x": 0.0, "y": 0.0, "z": 0.0, "v": 0.1, "s": 0.5, "r": 0.2, "d": 3.0}, {"x": 4.0, "y": 1.0, "z": 0.0, "v": 0.7, "s": 0.2, "r": 0.9, "d": 5.0}]
+        cl = {"min": 2, "max": 6, "radius_m": 0.6}
+        a = placement.cluster(pts, cl, 1.0, (-10, -10, 10, 10), salt="t")
+        b = placement.cluster(pts, cl, 1.0, (-10, -10, 10, 10), salt="t")
+        self.assertEqual(a, b)
+        self.assertEqual(a[:2], pts)
+        self.assertGreaterEqual(len(a), 2 + 2 * 2 - 4)  # satellites may fall outside; most stay
+        for q in a[2:]:
+            near = min(math.hypot(q["x"] - p["x"], q["y"] - p["y"]) for p in pts)
+            self.assertLessEqual(near, 1.25 * 0.6 + 1e-9)
+        cut = placement.cluster(pts, cl, 1.0, (-10, -10, 10, 10), obstacles=[(-1, -1, 1, 1)], keepouts=[(4, 1, 1.0)], salt="t")
+        for q in cut[2:]:
+            self.assertFalse(-1 <= q["x"] <= 1 and -1 <= q["y"] <= 1)
+            self.assertGreater(math.hypot(q["x"] - 4, q["y"] - 1), 1.0)
+        inside = placement.cluster(pts, cl, 1.0, (-0.1, -0.1, 0.1, 0.1), salt="t")
+        self.assertTrue(all(-0.1 <= q["x"] <= 0.1 and -0.1 <= q["y"] <= 0.1 for q in inside[2:]))
+
+
+class R1RectDist(unittest.TestCase):
+    def test_rect_dist(self):
+        r = (0, 0, 2, 1)
+        self.assertEqual(placement.rect_dist(1, 0.5, r), 0.0)
+        self.assertAlmostEqual(placement.rect_dist(3, 0.5, r), 1.0)
+        self.assertAlmostEqual(placement.rect_dist(-3, -4, r), 5.0)
+
+
+class R1Gains(unittest.TestCase):
+    def test_lab_roundtrip(self):
+        for rgb in ([0.5, 0.4, 0.3], [0.2, 0.3, 0.6], [0.9, 0.9, 0.9]):
+            lab = measure.srgb_to_lab(np.array([[rgb]], dtype=np.float64))[0, 0]
+            lin = gains.lab_to_linear(lab)
+            srgb = np.where(lin <= 0.0031308, lin * 12.92, 1.055 * lin ** (1 / 2.4) - 0.055)
+            self.assertTrue(np.allclose(srgb, rgb, atol=2e-3), (rgb, srgb))
+
+    def _lab(self, rgb):
+        return [float(x) for x in measure.srgb_to_lab(np.array([[rgb]], dtype=np.float64))[0, 0]]
+
+    def test_suggest_darker_and_warmer(self):
+        before = self._lab([0.6, 0.6, 0.6])
+        after = self._lab([0.45, 0.43, 0.38])  # darker and yellower after dressing
+        s = gains.suggest([("g", "l", "wall", 0.2, before, after)], damp=1.0)["g"]["l"]["wall"]
+        self.assertGreater(s["gain"], 1.3)
+        self.assertGreater(s["tint"][2], s["tint"][0])  # the tint pulls blue back up
+        self.assertAlmostEqual(0.2126 * s["tint"][0] + 0.7152 * s["tint"][1] + 0.0722 * s["tint"][2], 1.0, delta=0.03)
+        same = gains.suggest([("g", "l", "w", 0.2, before, before)])["g"]["l"]["w"]
+        self.assertAlmostEqual(same["gain"], 1.0, places=4)
+        clamp = gains.suggest([("g", "l", "w", 0.2, self._lab([0.9, 0.9, 0.9]), self._lab([0.05, 0.05, 0.05]))])["g"]["l"]["w"]
+        self.assertLessEqual(clamp["gain"], 1.6)
+
+    def test_apply_multiplies_and_skips(self):
+        with tempfile.TemporaryDirectory() as d:
+            cfg = {"game": "g", "locations": {"l": {"materials": {"wall": {"family": "scan", "gain": 1.1}, "glass": {"family": "dirt-only"}},
+                                                    "pieces": {"stair": {"family": "scan"}}}}}
+            with open(os.path.join(d, "g.dress.json"), "w") as f:
+                json.dump(cfg, f)
+            sug = {"g": {"l": {"wall": {"gain": 1.2, "tint": [1.0, 1.0, 1.05]}, "glass": {"gain": 1.5, "tint": [1, 1, 1]},
+                               "worn@stair": {"gain": 0.9, "tint": [1, 1, 1]}, "tiny": {"gain": 1.001, "tint": [1, 1, 1]}}}}
+            ch = gains.apply(sug, d)
+            with open(os.path.join(d, "g.dress.json")) as f:
+                out = json.load(f)["locations"]["l"]
+            self.assertAlmostEqual(out["materials"]["wall"]["gain"], 1.32, places=3)
+            self.assertEqual(out["materials"]["wall"]["tint"], [1.0, 1.0, 1.05])
+            self.assertNotIn("gain", out["materials"]["glass"])
+            self.assertAlmostEqual(out["pieces"]["stair"]["gain"], 0.9)  # another material's piece: no inheritance
+            cfg2 = {"game": "h", "locations": {"l": {"materials": {"wall": {"family": "scan", "gain": 1.2, "tint": [1.0, 1.0, 1.1]}},
+                                                     "pieces": {"north": {"family": "scan", "bump": 0.1}}}}}
+            with open(os.path.join(d, "h.dress.json"), "w") as f:
+                json.dump(cfg2, f)
+            gains.apply({"h": {"l": {"wall@north": {"gain": 0.5, "tint": [1.0, 1.0, 1.0]}}}}, d)
+            with open(os.path.join(d, "h.dress.json")) as f:
+                n = json.load(f)["locations"]["l"]["pieces"]["north"]
+            self.assertAlmostEqual(n["gain"], 0.6)  # starts from the material's 1.2
+            self.assertEqual(n["tint"], [1.0, 1.0, 1.1])
+            self.assertEqual(len(ch), 2)
+
+
+class R1Configs(unittest.TestCase):
+    def test_pilot_configs_use_locked_assets_and_known_options(self):
+        with open(os.path.join(DRESS, "dress.lock.json"), encoding="utf-8") as f:
+            lk = json.load(f)
+        fams = {"scan", "noise", "grid", "wallpaper", "metal", "tissue", "foliage", "membrane", "water", "dirt-only", "keep"}
+        for game in ("dr-tox-rise", "stuffed-ones", "missing-campsites", "heartstream"):
+            with open(os.path.join(DRESS, game + ".dress.json"), encoding="utf-8") as f:
+                cfg = json.load(f)
+            for loc, L in cfg["locations"].items():
+                ents = list(L.get("materials", {}).values()) + list(L.get("pieces", {}).values())
+                ents += [s.get("surface", {}) for s in L.get("scatter", [])] + [k.get("surface", {}) for k in L.get("kits", [])]
+                for e in ents:
+                    if e.get("family"):
+                        self.assertIn(e["family"], fams, (game, loc, e))
+                    for sc in (e.get("scan"), (e.get("detail_scan") or {}).get("scan")):
+                        if sc:
+                            self.assertIn(sc, lk["assets"], (game, loc, sc))
+                    if e.get("overlay"):  # a generated image: locked, costed, never claimed as CC0
+                        g = lk["generated"][e["overlay"]["image"]]
+                        self.assertNotIn("CC0", g["licence"].replace("not CC0", ""))
+                        self.assertGreater(g["cost_credits"], 0)
+                        self.assertEqual(len(g["files"][g["albedo_file"]]["md5"]), 32)
+                    if e.get("displace_m"):
+                        self.assertLessEqual(e["displace_m"], 0.3)
+                        self.assertLessEqual(e.get("subdiv", 6), 6)
+                for s in L.get("scatter", []):
+                    for m in s.get("models", []):
+                        self.assertIn(m["name"], lk["models"])
+                    if s["kind"] == "model":
+                        self.assertTrue(s.get("avoid_materials") and s.get("sightlines_m"))
+                hz = (L.get("atmos") or {}).get("haze")
+                if hz:
+                    self.assertLessEqual(hz["density"], 0.03)
+                tg = L.get("grime", {}).get("tone_gain", 1.0)
+                for e in ents:  # the effective albedo gain stays a correction, not a relight
+                    if e.get("family") not in (None, "keep", "water", "dirt-only"):
+                        self.assertTrue(0.5 <= tg * e.get("gain", 1.0) <= 1.5, (game, loc, e.get("family"), tg, e.get("gain")))
+                    tr = e.get("trunks")
+                    if tr:  # forest-block stems: dark gaps of bounded strength and width, so the mean tone holds
+                        self.assertEqual(e["family"], "foliage")
+                        self.assertTrue(0.0 < tr.get("dark", 0.45) <= 0.6 and 0.1 <= tr.get("width", 0.35) <= 0.6 and tr.get("spacing_m", 1.6) > 0.3)
+
+    def test_g14_needs_a_physical_join(self):
+        from dress import measure
+        pads = {"center": [0.0, -60.0, 0.025], "size": [210.0, 12.0, 0.05]}  # loop road: they meet only in the picture
+        end = {"center": [-112.0, 0.0, 0.03], "size": [5.0, 145.0, 0.06]}
+        self.assertAlmostEqual(measure.box_gap(pads, end), 4.5, places=6)
+        touching = {"center": [-107.5, -60.0, 0.025], "size": [5.0, 12.0, 0.05]}
+        self.assertEqual(measure.box_gap(pads, touching), 0.0)
+        dr = {"piece_geom": {"pads": pads, "end": end, "near": touching}, "piece_materials": {"pads": "gravel", "end": "gravel", "near": "gravel"}}
+        ma = {"joins": {"piece:pads|piece:end": {"step": 0.4, "n": 99}, "piece:pads|piece:near": {"step": 0.01, "n": 99}}}
+        g = measure._g_seams(dr, {"joins": {}}, ma, {"g14_step": 0.06})
+        self.assertTrue(g["pass"])
+        ma["joins"]["piece:pads|piece:near"]["step"] = 0.3
+        self.assertFalse(measure._g_seams(dr, {"joins": {}}, ma, {"g14_step": 0.06})["pass"])
+
+    def test_trunk_bands_keep_the_mean(self):
+        """materials.fam_foliage: value x ((1 + dark/2) - dark x band), band a symmetric 0..1 ramp around 0.5: mean factor 1."""
+        import random
+        rnd = random.Random(7)
+        for dark in (0.2, 0.45, 0.6):
+            for width in (0.2, 0.35, 0.6):
+                lo, hi = 0.5 - width / 2, 0.5 + width / 2
+                xs = [rnd.random() for _ in range(40000)]  # a symmetric stand-in for the noise
+                band = [min(1.0, max(0.0, (x - lo) / (hi - lo))) for x in xs]
+                m = sum((1 + dark / 2) - dark * b for b in band) / len(band)
+                self.assertAlmostEqual(m, 1.0, delta=0.01)
+
+
 if __name__ == "__main__":
     unittest.main()
+
+
+def test_r2_patch_and_jitter_are_stable_and_thin():
+    from dress import placement
+    cone = placement.view_cone((0, 0, 1.6), (10, 0, 1.6), 24)
+    a = placement.place("t/grass", (0, -10, 30, 10), 0.0, 900, [cone], 25.0)
+    b = placement.place("t/grass", (0, -10, 30, 10), 0.0, 900, [cone], 25.0, patch={"scale_m": 1.6, "cut": 0.45}, jitter=1.6)
+    c = placement.place("t/grass", (0, -10, 30, 10), 0.0, 900, [cone], 25.0, patch={"scale_m": 1.6, "cut": 0.45}, jitter=1.6)
+    assert b == c
+    assert 0.2 * len(a) < len(b) < 0.8 * len(a)
+    assert all(0.0 <= placement.value_noise("s", x * 0.37, x * 0.11, 2.0) <= 1.0 for x in range(200))
+
