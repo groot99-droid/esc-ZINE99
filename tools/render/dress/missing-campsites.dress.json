@@ -452,6 +452,29 @@
      ]
     }
    ]
+  },
+  "tam-flat": {
+   "props": [
+    {
+     "model": "crate-coffee-table",
+     "glb": "missing-campsites/crate-coffee-table.glb",
+     "md5": "8fa3e33c5950f9eed21bd873846a89ae",
+     "hide_pieces": [
+      "crate-table"
+     ],
+     "scale": 1.0,
+     "items": [
+      {
+       "at": [
+        -0.8,
+        -2.2,
+        0.0
+       ],
+       "yaw_deg": -90
+      }
+     ]
+    }
+   ]
   }
  }
 }

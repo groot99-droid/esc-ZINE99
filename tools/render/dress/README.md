@@ -235,3 +235,13 @@ are realism-list items that were blockout boxes, openings or missing; they go in
   (the five 9-px patches moved with a few mask pixels and read up to 1.2 on a sack whose own mean changed 2 %), and G10b passes when
   the object that was under the look-at point is the one the model replaced. The usual `report.py` gates are reported too.
 
+
+## Rebuild of three models (2026-11-24)
+
+The three models the new-models pass left out (the washer came out an oil drum, the truck door a whole cab, the crate table had a
+laptop on it) were rebuilt with Higgsfield (a new reference image, then image-to-3D, textured with PBR maps, about 60k triangles),
+fitted to real size in Blender (bottom centre at the origin, front on -Y) and placed through the props layer:
+`drum-washing-machine` x4 in the laundry (replacing drum-1..4, moved 0.4 m north so the first clears the side table),
+`truck-door` in the truck cab (replacing door-open; hinged at the front pillar, 60 degrees open; the door-step box stays) and
+`crate-coffee-table` in tam-flat (replacing crate-table; its top at 0.45 m carries the scene's notebook and phone). The models are
+credited as generated (Higgsfield). Tests: `tests/test_props.py` class `Rebuild3`.

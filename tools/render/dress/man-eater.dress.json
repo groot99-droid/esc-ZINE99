@@ -161,6 +161,25 @@
        "yaw_deg": -55
       }
      ]
+    },
+    {
+     "model": "truck-door",
+     "glb": "man-eater/truck-door.glb",
+     "md5": "8b7488a7c21ac3c6b1184e8c36449b11",
+     "hide_pieces": [
+      "door-open"
+     ],
+     "scale": 1.0,
+     "items": [
+      {
+       "at": [
+        -0.183,
+        2.6,
+        1.05
+       ],
+       "yaw_deg": -150
+      }
+     ]
     }
    ]
   },
@@ -360,6 +379,56 @@
         0.0
        ],
        "yaw_deg": -19
+      }
+     ]
+    }
+   ]
+  },
+  "laundry": {
+   "props": [
+    {
+     "model": "drum-washing-machine",
+     "glb": "man-eater/drum-washing-machine.glb",
+     "md5": "4e962cdaf13d5330160f587fdf0162f7",
+     "hide_pieces": [
+      "drum-1",
+      "drum-2",
+      "drum-3",
+      "drum-4"
+     ],
+     "scale": 1.0,
+     "items": [
+      {
+       "at": [
+        3.35,
+        -1.52,
+        0.0
+       ],
+       "yaw_deg": -90
+      },
+      {
+       "at": [
+        3.35,
+        -0.25,
+        0.0
+       ],
+       "yaw_deg": -90
+      },
+      {
+       "at": [
+        3.35,
+        1.02,
+        0.0
+       ],
+       "yaw_deg": -90
+      },
+      {
+       "at": [
+        3.35,
+        2.29,
+        0.0
+       ],
+       "yaw_deg": -90
       }
      ]
     }

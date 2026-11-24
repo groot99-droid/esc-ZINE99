@@ -221,6 +221,58 @@ class Placements(unittest.TestCase):
             self.assertLess(math.sqrt(sum(o * o for o in off)), 0.1)
 
 
+class Rebuild3(unittest.TestCase):
+    """The three models rebuilt with Higgsfield (2026-11-24). The GLBs are fitted to real size with the bottom centre at the
+    origin and the front on -Y, so their boxes are the size asked for; scene numbers are the build's pieces and cameras."""
+    spec = staticmethod(Placements.spec)
+    copies = Placements.copies
+
+    def test_washers_face_the_room_clear_of_the_side_table(self):
+        sp = self.spec("man-eater", "laundry", "drum-washing-machine")
+        self.assertEqual(sorted(sp["hide_pieces"]), ["drum-1", "drum-2", "drum-3", "drum-4"])
+        cps = self.copies(sp, [-0.475, -0.475, 0.0], [0.475, 0.475, 1.1])
+        self.assertEqual(len(cps), 4)
+        views = {"camera": ([2.0, -2.4, 2.05], [-3.7, 0.0, 1.3], 24)}
+        ys = []
+        for s, r, wlo, whi in cps:
+            self.assertTrue(close(modelplace.front_dir(r), [-1, 0, 0]))  # the porthole door looks into the room
+            self.assertLess(whi[0], 4.0)                                  # east wall inner face at x 4.005
+            self.assertGreater(wlo[1], -2.0 - 1e-9)                        # the side table ends at y -2.0
+            self.assertLess(whi[1], 3.0)                                   # north wall inner face at y 3.005
+            self.assertEqual(modelplace.clearance(wlo, whi, views), [])
+            ys.append((wlo[1], whi[1]))
+        ys.sort()
+        for (lo1, hi1), (lo2, hi2) in zip(ys, ys[1:]):
+            self.assertGreater(lo2 - hi1, 0.2)                             # a gap between machines
+
+    def test_truck_door_hinged_at_the_front_pillar_and_clear_of_the_camera(self):
+        sp = self.spec("man-eater", "truck-cab", "truck-door")
+        self.assertEqual(sp["hide_pieces"], ["door-open"])
+        (s, r, wlo, whi), = self.copies(sp, [-0.5, -0.138, 0.0], [0.5, 0.138, 1.3])
+        R = modelplace.euler_matrix(r)
+        c = [(wlo[i] + whi[i]) / 2 for i in range(3)]
+        edge = modelplace._mul(R, [-0.5, 0.0, 0.0])  # the hinges are on the model's -X edge
+        hinge = [c[i] + edge[i] for i in range(3)]
+        self.assertLess(abs(hinge[0] - 0.25), 0.01)   # the cab's open side, x 0.25
+        self.assertLess(abs(hinge[1] - 2.85), 0.01)   # its front edge (windscreen at y 2.83)
+        out = modelplace.front_dir(r)                 # outer face (handle side) turned out and forward: swung open
+        self.assertLess(out[0], -0.4)
+        self.assertGreater(out[1], 0.7)
+        self.assertAlmostEqual(wlo[2], 1.05)          # the bottom edge at the cab floor (top 1.04)
+        views = {"camera": ([-0.55, 1.9, 1.98], [1.7, 2.4, 1.5], 24)}
+        self.assertEqual(modelplace.clearance(wlo, whi, views), [])
+
+    def test_crate_table_top_carries_the_notebook_and_phone(self):
+        sp = self.spec("missing-campsites", "tam-flat", "crate-coffee-table")
+        self.assertEqual(sp["hide_pieces"], ["crate-table"])
+        (s, r, wlo, whi), = self.copies(sp, [-0.4, -0.3, 0.0], [0.4, 0.3, 0.45])
+        self.assertAlmostEqual(whi[2], 0.45)                      # the notebook and phone props rest at z 0.45
+        self.assertAlmostEqual(whi[1] - wlo[1], 0.8)              # long side along y, like the build's box
+        self.assertAlmostEqual(whi[0] - wlo[0], 0.6)
+        for p in ([-0.95, -2.3], [-0.6, -2.0]):                   # both props stand on the top
+            self.assertTrue(wlo[0] < p[0] < whi[0] and wlo[1] < p[1] < whi[1])
+
+
 class PropGates(unittest.TestCase):
     T = dict(measure.PLAN)
 
