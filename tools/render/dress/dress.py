@@ -13,9 +13,9 @@ import os
 
 from mathutils import Vector
 
-from . import VERSION, atmos, grime, idpass, kits, materials, rules as rules_mod, scatter, seeds
+from . import VERSION, atmos, grime, idpass, kits, materials, propmodels, rules as rules_mod, scatter, seeds
 
-LAYERS = ["surfaces", "scatter", "decals", "kits", "atmos"]
+LAYERS = ["surfaces", "scatter", "decals", "kits", "atmos", "props"]
 
 
 def _load_cfg(dress_dir, game):
@@ -167,6 +167,8 @@ def apply(bpy, sc, game, location, scene, K, rig, views, made, pieces, dress_dir
         rec["layers"]["decals"] = grime.decals_layer(ctx, loc_cfg["decals"])
     if "kits" in allowed and loc_cfg.get("kits"):
         rec["layers"]["kits"] = kits.kits_layer(ctx, loc_cfg["kits"])
+    if "props" in allowed and loc_cfg.get("props"):  # new-models pass: whole models replacing blockout boxes (propmodels.py)
+        rec["layers"]["props"] = propmodels.props_layer(ctx, loc_cfg["props"])
     # ---- atmosphere: haze volume and interior backdrop (R1), then the camera-only sky plate
     acfg = loc_cfg.get("atmos") or {}
     if "atmos" in allowed and acfg.get("haze"):

@@ -428,6 +428,30 @@
      "style": "branches"
     }
    ]
+  },
+  "fire-ring": {
+   "props": [
+    {
+     "model": "split-wood-pile",
+     "glb": "missing-campsites/split-wood-pile.glb",
+     "md5": "0599c7159f4eee2c0b956421748a1a72",
+     "hide_pieces": [
+      "woodpile"
+     ],
+     "scale": 1.0,
+     "albedo_gain": 1.6,
+     "items": [
+      {
+       "at": [
+        -4.6,
+        2.2,
+        0.0
+       ],
+       "yaw_deg": 12
+      }
+     ]
+    }
+   ]
   }
  }
 }

@@ -68,7 +68,7 @@ class Rules(unittest.TestCase):
         self.r = rules.load(DRESS)
 
     def test_arena_and_man_eater(self):
-        self.assertEqual(rules.allowed_layers(self.r, "dr-tox-rise", "trial-53-arena"), ["surfaces"])
+        self.assertEqual(rules.allowed_layers(self.r, "dr-tox-rise", "trial-53-arena"), ["surfaces", "props"])
         self.assertNotIn("decals", rules.allowed_layers(self.r, "man-eater", "gate-yard"))
         self.assertIn("scatter", rules.allowed_layers(self.r, "stuffed-ones", "cabin-living-room"))
         self.assertEqual(rules.allowed_layers(self.r, "stuffed-ones", "x", ["kits", "surfaces"]), ["surfaces", "kits"])

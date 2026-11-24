@@ -314,6 +314,47 @@
      ]
     }
    ]
+  },
+  "trial-53-arena": {
+   "props": [
+    {
+     "model": "floodlight-housing",
+     "glb": "dr-tox-rise/floodlight-housing.glb",
+     "md5": "0ff67356a18138f703220b1b52209a26",
+     "dims_m": [
+      0.5,
+      0.5,
+      0.46
+     ],
+     "cast_shadow": false,
+     "items": [
+      {
+       "at": [
+        0.0,
+        12.75,
+        11.35
+       ],
+       "rot_deg": [
+        132.5,
+        0.0,
+        0.0
+       ]
+      },
+      {
+       "at": [
+        0.0,
+        -12.75,
+        11.35
+       ],
+       "rot_deg": [
+        -132.5,
+        0.0,
+        0.0
+       ]
+      }
+     ]
+    }
+   ]
   }
  }
 }

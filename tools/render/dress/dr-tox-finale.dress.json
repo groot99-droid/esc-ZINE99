@@ -1,0 +1,144 @@
+{
+ "game": "dr-tox-finale",
+ "version": 2,
+ "note": "New-models pass (2026-11-24): ComfyUI models from the final ledgers put into the scenes where the realism list asks for them; each hides the blockout box or opening it replaces in the render only. Props layer only.",
+ "locations": {
+  "snakehead-overrun": {
+   "props": [
+    {
+     "model": "steel-cell-door",
+     "glb": "dr-tox-finale/steel-cell-door.glb",
+     "md5": "2281f187761af08b91f6ae0d8c08e701",
+     "dims_m": [
+      1.25,
+      0.3,
+      2.15
+     ],
+     "items": [
+      {
+       "at": [
+        19.59,
+        -9.0,
+        0.0
+       ],
+       "yaw_deg": -90
+      },
+      {
+       "at": [
+        19.59,
+        -4.0,
+        0.0
+       ],
+       "yaw_deg": -90
+      },
+      {
+       "at": [
+        19.59,
+        1.0,
+        0.0
+       ],
+       "yaw_deg": -90
+      }
+     ]
+    },
+    {
+     "model": "tract-booklet",
+     "glb": "dr-tox-finale/tract-booklet.glb",
+     "md5": "026ea543cf942e11bbb11bb9c906ad9b",
+     "scenes": [
+      "s3_overrun_after"
+     ],
+     "dims_m": [
+      0.15,
+      0.2,
+      0.02
+     ],
+     "items": [
+      {
+       "at": [
+        0.04,
+        11.95,
+        1.068
+       ],
+       "yaw_deg": 98
+      }
+     ]
+    }
+   ]
+  },
+  "clinical-suite": {
+   "props": [
+    {
+     "model": "service-door-steel",
+     "glb": "dr-tox-finale/service-door-steel.glb",
+     "md5": "4294cdfcf7c9760fd966a8dcfdbd87d2",
+     "hide_pieces": [
+      "service-door"
+     ],
+     "dims_m": [
+      1.4,
+      0.12,
+      2.4
+     ],
+     "items": [
+      {
+       "at": [
+        -14.94,
+        -6.0,
+        0.0
+       ],
+       "yaw_deg": 90
+      }
+     ]
+    }
+   ]
+  },
+  "final-arcology": {
+   "props": [
+    {
+     "model": "axial-fan-housing",
+     "glb": "dr-tox-finale/axial-fan-housing.glb",
+     "md5": "2bbe889fe9900a8178d1d8eec2686747",
+     "scenes": [
+      "s3_arcology_plinth"
+     ],
+     "scale": 1.6,
+     "items": [
+      {
+       "at": [
+        -36.0,
+        -3.25,
+        12.4
+       ],
+       "yaw_deg": 0
+      },
+      {
+       "at": [
+        -30.0,
+        -3.25,
+        12.4
+       ],
+       "yaw_deg": 0
+      },
+      {
+       "at": [
+        -10.0,
+        -3.25,
+        12.4
+       ],
+       "yaw_deg": 0
+      },
+      {
+       "at": [
+        -4.0,
+        -3.25,
+        12.4
+       ],
+       "yaw_deg": 0
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

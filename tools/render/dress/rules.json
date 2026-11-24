@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "arena": {"game": "dr-tox-rise", "location": "trial-53-arena", "allowed_layers": ["surfaces"], "note": "materials on the existing pieces only; no scatter, grime decals, kits or atmosphere; the arena stays empty"},
-  "layers": ["surfaces", "scatter", "decals", "kits", "atmos"],
+  "arena": {"game": "dr-tox-rise", "location": "trial-53-arena", "allowed_layers": ["surfaces", "props"], "props_allowed": ["floodlight-housing"], "props_min_z_m": 6.0, "note": "materials on the existing pieces only; no scatter, grime decals, kits or atmosphere; the arena stays empty. New-models pass: the props layer may only hang floodlight housings from the ceiling on the existing flood lights' beam axes, 6 m or more above the floor (fixtures, no figures)"},
+  "layers": ["surfaces", "scatter", "decals", "kits", "atmos", "props"],
   "keep_materials": ["glass", "frosted-glass", "haze", "door-light"],
   "man_eater": {
     "game": "man-eater",

@@ -1,0 +1,369 @@
+{
+ "game": "man-eater",
+ "version": 2,
+ "note": "New-models pass (2026-11-24): ComfyUI models from the final ledgers put into the scenes where the realism list asks for them; each hides the blockout boxes it replaces in the render only. Props layer only.",
+ "locations": {
+  "truck-cab": {
+   "props": [
+    {
+     "model": "cab-bench-seat",
+     "glb": "man-eater/cab-bench-seat.glb",
+     "md5": "44723ec5697d8d7112cff4a1d38e4ce2",
+     "hide_pieces": [
+      "bench-seat",
+      "bench-back"
+     ],
+     "dims_m": [
+      1.62,
+      0.74,
+      0.92
+     ],
+     "albedo_gain": [
+      2.4,
+      2.4,
+      2.0
+     ],
+     "items": [
+      {
+       "at": [
+        1.27,
+        1.775,
+        1.04
+       ],
+       "yaw_deg": 180
+      }
+     ]
+    },
+    {
+     "model": "dashboard",
+     "glb": "man-eater/dashboard.glb",
+     "md5": "bd54b76b2befc23d2cc41bbae60236ce",
+     "hide_pieces": [
+      "dashboard"
+     ],
+     "dims_m": [
+      1.9,
+      0.33,
+      0.5
+     ],
+     "items": [
+      {
+       "at": [
+        1.2,
+        2.665,
+        1.25
+       ],
+       "yaw_deg": 180
+      }
+     ]
+    },
+    {
+     "model": "envelope-bundle",
+     "glb": "man-eater/envelope-bundle.glb",
+     "md5": "c7d816f59649dc9178e532c3afe065e5",
+     "hide_pieces": [
+      "letters-in-glovebox",
+      "letters-on-seat"
+     ],
+     "rot_deg": [
+      -90,
+      0,
+      0
+     ],
+     "scale": 1.0,
+     "items": [
+      {
+       "at": [
+        1.59,
+        2.4930000000000003,
+        1.402
+       ],
+       "yaw_deg": 0.0
+      },
+      {
+       "at": [
+        1.8172000000000001,
+        2.483,
+        1.402
+       ],
+       "yaw_deg": 3.0
+      },
+      {
+       "at": [
+        1.584,
+        2.4945000000000004,
+        1.46
+       ],
+       "yaw_deg": -2.5
+      },
+      {
+       "at": [
+        1.8136,
+        2.4880000000000004,
+        1.46
+       ],
+       "yaw_deg": 1.5
+      },
+      {
+       "at": [
+        1.5816000000000001,
+        2.498,
+        1.518
+       ],
+       "yaw_deg": -3.5
+      },
+      {
+       "at": [
+        1.8154000000000001,
+        2.49,
+        1.518
+       ],
+       "yaw_deg": 2.25
+      },
+      {
+       "at": [
+        1.3,
+        1.92,
+        1.515
+       ],
+       "yaw_deg": 12
+      },
+      {
+       "at": [
+        1.52,
+        1.95,
+        1.515
+       ],
+       "yaw_deg": -20
+      },
+      {
+       "at": [
+        1.41,
+        1.93,
+        1.573
+       ],
+       "yaw_deg": 35
+      },
+      {
+       "at": [
+        1.74,
+        1.9,
+        1.515
+       ],
+       "yaw_deg": 80
+      },
+      {
+       "at": [
+        1.1,
+        1.97,
+        1.515
+       ],
+       "yaw_deg": -55
+      }
+     ]
+    }
+   ]
+  },
+  "cafeteria": {
+   "props": [
+    {
+     "model": "servery-counter",
+     "glb": "man-eater/servery-counter.glb",
+     "md5": "2ba93d50069bf3e19746bb385dafcaea",
+     "hide_pieces": [
+      "hatch-counter",
+      "hatch-dark"
+     ],
+     "dims_m": [
+      1.56,
+      0.9,
+      1.98
+     ],
+     "row": {
+      "start": [
+       -7.1,
+       -3.78,
+       0.0
+      ],
+      "step": [
+       0.0,
+       1.56,
+       0.0
+      ],
+      "n": 5,
+      "yaw_deg": 90
+     }
+    }
+   ]
+  },
+  "cold-store": {
+   "props": [
+    {
+     "model": "dead-forklift",
+     "glb": "man-eater/dead-forklift.glb",
+     "md5": "59fcd9ec944f40a5ab7f0d4884be9b72",
+     "hide_pieces": [
+      "forklift-body",
+      "forklift-mast"
+     ],
+     "scale": 1.35,
+     "items": [
+      {
+       "at": [
+        -8.0,
+        2.9,
+        0.0
+       ],
+       "yaw_deg": -86
+      }
+     ]
+    },
+    {
+     "model": "roller-shutter-door",
+     "glb": "man-eater/roller-shutter-door.glb",
+     "md5": "3ce9535c0d80738666402faa6311620b",
+     "hide_pieces": [
+      "roller-shutter"
+     ],
+     "dims_m": [
+      6.0,
+      0.2,
+      2.1
+     ],
+     "cast_shadow": false,
+     "items": [
+      {
+       "at": [
+        -15.0,
+        3.9,
+        2.1
+       ],
+       "yaw_deg": 0
+      }
+     ]
+    }
+   ]
+  },
+  "rec-room": {
+   "props": [
+    {
+     "model": "wooden-chair",
+     "glb": "man-eater/wooden-chair.glb",
+     "md5": "4464914caa54c2b026b52c50e7c13dc8",
+     "hide_pieces": [
+      "chair-1",
+      "chair-2",
+      "chair-3",
+      "chair-4",
+      "chair-5",
+      "chair-6"
+     ],
+     "scale": 0.88,
+     "items": [
+      {
+       "at": [
+        0.866,
+        0.8,
+        0.0
+       ],
+       "yaw_deg": -60.0
+      },
+      {
+       "at": [
+        0.0,
+        1.3,
+        0.0
+       ],
+       "yaw_deg": 3.5999999999999996
+      },
+      {
+       "at": [
+        -0.866,
+        0.8,
+        0.0
+       ],
+       "yaw_deg": 57.0
+      },
+      {
+       "at": [
+        -0.866,
+        -0.2,
+        0.0
+       ],
+       "yaw_deg": 121.8
+      },
+      {
+       "at": [
+        -0.0,
+        -0.7,
+        0.0
+       ],
+       "yaw_deg": 175.8
+      },
+      {
+       "at": [
+        0.866,
+        -0.2,
+        0.0
+       ],
+       "yaw_deg": 242.7
+      }
+     ]
+    }
+   ]
+  },
+  "mail-room": {
+   "props": [
+    {
+     "model": "sorting-counter",
+     "glb": "man-eater/sorting-counter.glb",
+     "md5": "26f796ef8ef9dcf0ef7e91ee6b5fde8b",
+     "hide_pieces": [
+      "counter",
+      "pigeonholes",
+      "letters"
+     ],
+     "dims_m": [
+      2.4,
+      0.6,
+      2.2
+     ],
+     "items": [
+      {
+       "at": [
+        -0.4,
+        1.2,
+        0.0
+       ],
+       "yaw_deg": 0
+      }
+     ]
+    }
+   ]
+  },
+  "the-cave": {
+   "props": [
+    {
+     "model": "small-generator",
+     "glb": "man-eater/small-generator.glb",
+     "md5": "5f50ac930a31a88a35dd034845997a52",
+     "hide_pieces": [
+      "generator"
+     ],
+     "scale": 1.0,
+     "albedo_gain": 2.5,
+     "items": [
+      {
+       "at": [
+        -2.6,
+        -6.0,
+        0.0
+       ],
+       "yaw_deg": -19
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

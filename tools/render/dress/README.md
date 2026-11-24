@@ -20,13 +20,14 @@ lens; gate G1 proves it by hash. This is phase P0: foundations, measuring, a fou
 | `calibrate.py` | Noise-floor run and calibrated thresholds; G8 positive control |
 | `batch_describe.py`, `finalize_run.py`, `run_remote.sh`, `run_post.sh` | Run a game on a render box, describe, shrink |
 | `sheet.py` | Owner sheet (before above after, 720 px wide) |
+| `propmodels.py`, `modelplace.py`, `propgates.py` | New-models pass: the `props` layer (whole models replacing blockout boxes, placement maths in pure Python) and its gates |
 | `gains.py` | R1: per-material albedo gain and tint from a before run and a dressed run (`--apply` writes them into the configs) |
 | `make_lock.py`, `add_assets.py`, `dress.lock.json` | Licence lock: 69 Poly Haven CC0 textures (46 reused cave scans, 23 approved on 2026-11-23), 6 sky hdris, 5 models; md5s, mean albedo and roughness. `add_assets.py` merges folders already on disk, no network |
 | `g17.py` | Gate G17: two runs of the same inputs compared |
 | `rules.json`, `rules.py` | Arena = materials only; Man Eater: no decals, stain-band filter; banned words |
 | `<game>.dress.json` | Per game, per location config (pilot: four places) |
 | `overrides.json` | Per scene exclusions (layer off, seed salt); empty in P0 |
-| `tests/` | `python -W ignore tools/render/dress/tests/test_dress.py` (no Blender needed) |
+| `tests/` | `python -W ignore tools/render/dress/tests/test_dress.py` and `tests/test_props.py` (no Blender needed) |
 
 ## Driver flags (render_scenes.py)
 
@@ -199,7 +200,8 @@ The owner was not satisfied with R2. R3 works through the critic's points, again
   two rows, instead of hard spikes.
 * Marrow: `base_color` gives a material another albedo hue at the build colour's luminance (emission keeps the build colour); the
   marrow uses a dusky rose (linear 0.30, 0.12, 0.14), so under the blue light it reads violet-grey. The per-piece `tint` corrections
-  toward the blue are removed.
+  toward the blue are removed. Owner ruling (2026-11-24): keep the rose; the marrow region-colour misses (G3a, G3b) it causes
+  are intended.
 * Marrow black slits: `edge_mask` picked a face's axis from the shading normal, which bends to 45 degrees in the smooth ring along
   every edge of a welded box; the mask jumped back to full displacement right at the edge and the surface folded into black slits.
   The edge distance is now the second smallest of the three per-axis distances to the box's faces (normal-free).
@@ -209,3 +211,27 @@ The owner was not satisfied with R2. R3 works through the critic's points, again
 * Trees (`style: branches`): every tier is 16 to 24 feathered, drooping branch strips with zig-zag needle edges, each rolled a little,
   instead of one flat star-shaped skirt. `treeline.rows`: a front row along the block faces and a taller back row inside them, so
   tree tops break the box's top edge. More CC0 saplings and dead trunks at the forest edge.
+
+## New-models pass (2026-11-24)
+
+The owner asked for the 19 new ComfyUI models of the final ledgers to go into the renders. One of them (`firewood-bundle`) is a
+prop of the build files and is swapped in through a models ledger passed with `--models` (ledger key `"fit": "mean"`: the model is
+scaled by the mean of its side ratios instead of the height rule for upright props, which made the bundle 0.65 m long). The others
+are realism-list items that were blockout boxes, openings or missing; they go in through a new dressing layer:
+
+* layer `props` (`propmodels.py`): `locations.<loc>.props` entries name a model file (under `$DRESS_MODELS`, md5-checked), its copies
+  (`items`, `ring` or `row`; `at` is the bottom centre of a copy's box), its scale (`scale`, `dims_m` per axis in the model's own frame,
+  `height_m`), `rot_deg` / `yaw_deg`, optional `scenes`, `albedo_gain` (a too dark texture), `cast_shadow`, and the blockout pieces or
+  props it replaces (`hide_pieces`, `hide_props`: hidden in the render only). Copies share meshes and materials; every mesh carries
+  `dress_group = models/<model>`, so the id pass, the camera-distance record and the manifest hash count them. Each copy's world box
+  is checked against every view (camera inside or within 0.3 m, the box on the line to the look-at point) and the player start.
+* `rules.json`: `props` is a layer; the Dr. Tox arena allows it for `floodlight-housing` only, 6 m or more above the floor (G15
+  checks both), so the arena stays empty of anything but light fixtures.
+* driver: `--check-views <json>` renders extra look-only stills (`check-<name>`, 1280x720) where no scene view sees a model, for
+  checking its scale and front by eye.
+* `propgates.py`: a model that replaces a box changes the pixels it covers by design, so G2, G3a, G4a, G4b and G6b are applied to the
+  rest of the frame (outside the new models, the boxes they replace and a swapped prop, grown by 3 px; not applied when that rest is
+  under 10 % of the frame), G10a and G11 leave out a swapped prop, G11 is measured over the pixels that show a prop in both stills
+  (the five 9-px patches moved with a few mask pixels and read up to 1.2 on a sack whose own mean changed 2 %), and G10b passes when
+  the object that was under the look-at point is the one the model replaced. The usual `report.py` gates are reported too.
+

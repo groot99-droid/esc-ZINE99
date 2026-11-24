@@ -3,7 +3,8 @@
     blender -b --factory-startup --python tools/render/render_scenes.py -- \
         --pack <pack dir> --out <out dir> [--only loc/scene,loc/scene] [--stills camera,player,overview]
         [--device OPTIX|CUDA|CPU] [--res-scale 1.0] [--samples-scale 1.0] [--models <models.json>]
-        [--no-dress 1 | --dress <dress dir> [--dress-layers surfaces,scatter,...]] [--ids 1] [--seed-offset N]
+        [--no-dress 1 | --dress <dress dir> [--dress-layers surfaces,scatter,...,props]] [--ids 1] [--seed-offset N]
+        [--check-views <json>]
 
 The pack is made by tools/render/pack.py (compiled scenes, resolved props, rig.json, overrides.json, the
 repo's tools/blender/blockout.py). Per scene it builds the set exactly as the build file says: the blockout
@@ -36,7 +37,8 @@ def argv():
 def parse(args):
     o = {"pack": None, "out": None, "only": None, "stills": "camera,player,overview", "device": "OPTIX",
          "res_scale": 1.0, "samples_scale": 1.0, "models": None, "no_overrides": "0",
-         "dress": None, "no_dress": "0", "ids": "0", "dress_layers": None, "seed_offset": 0, "denoise_passes": "albedo_normal", "jpg": "0"}
+         "dress": None, "no_dress": "0", "ids": "0", "dress_layers": None, "seed_offset": 0, "denoise_passes": "albedo_normal", "jpg": "0",
+         "check_views": None}
     i = 0
     while i < len(args):
         k = args[i].lstrip("-").replace("-", "_")
@@ -228,6 +230,7 @@ def neutral_name(rig, pr):
 
 
 FIT_CANDIDATES = [(0, 0, 0), (0, 0, 90), (90, 0, 0), (90, 0, 90), (0, 90, 0), (0, 90, 90)]  # model-local axis permutations tried
+MODEL_FIT = {}  # object -> fit mode from the models ledger's "fit" key ("height" or "mean"); rig "model_fit" wins over it
 
 
 def fit_model(sc, pr, glb, mode=None):
@@ -259,7 +262,8 @@ def fit_model(sc, pr, glb, mode=None):
             return box[2] / max(d[2], 1e-6), 0.0
         nt = [i for i in range(3) if not thin[i]] or [0, 1, 2]
         k = math.exp(sum(math.log(max(box[i], 1e-6) / max(d[i], 1e-6)) for i in nt) / len(nt))
-        if box[2] >= 0.8 * max(box) and not thin[2]:  # an upright prop (post, lamp, phone, chair): its height is what the build file fixes
+        if box[2] >= 0.8 * max(box) and not thin[2] and mode != "mean":  # an upright prop (post, lamp, phone, chair): its height is what the build file fixes
+            # (ledger "fit": "mean" keeps the geometric mean of the side ratios: a squat model in a near-cubic box, firewood-bundle)
             kh = box[2] / max(d[2], 1e-6)
             if max(d[0] * kh / max(box[0], 1e-6), d[1] * kh / max(box[1], 1e-6)) <= 3.0:
                 k = kh
@@ -278,6 +282,8 @@ def fit_model(sc, pr, glb, mode=None):
     rot, k, err, d = best
     rec = {"model_dims_m": [round(x, 3) for x in dims((0, 0, 0))], "box_m": [round(x, 3) for x in box],
            "fit_rotation_deg": list(rot), "scale": round(k, 3), "worst_side_ratio": round(math.exp(err), 2)}
+    if mode == "mean":
+        rec["fit_mode"] = "mean of the side ratios"
     if mode == "height":
         rec["fit_mode"] = "height only"
         rec["worst_side_ratio"] = round(max(max(k * d[i] / max(box[i], 1e-6), max(box[i], 1e-6) / (k * max(d[i], 1e-6))) for i in range(3)), 2)
@@ -309,7 +315,7 @@ def make_prop(sc, pr, rig, models, skipped=None):
     glb = models.get(pr["object"])
     fitrec = None
     if glb:
-        root, fitrec = fit_model(sc, pr, glb, (rig.get("model_fit") or {}).get(pr["object"]))
+        root, fitrec = fit_model(sc, pr, glb, (rig.get("model_fit") or {}).get(pr["object"]) or MODEL_FIT.get(pr["object"]))
         if root is not None:
             return root, "model:" + os.path.basename(glb), fitrec
     elif skipped and pr["object"] in skipped:
@@ -547,6 +553,8 @@ def main():
                 skipped[oid] = it["skip"]
             elif g and oid and os.path.exists(g):
                 models[oid] = g
+                if it.get("fit"):
+                    MODEL_FIT[oid] = it["fit"]
     wanted = set(o["only"].split(",")) if o["only"] else None
     stills = set(o["stills"].split(","))
     use_dress = bool(o["dress"]) and o["no_dress"] != "1"  # --dress <dir>: the dressed pass; --no-dress 1: the "before" pass (same ids, same seeds)
@@ -706,6 +714,11 @@ def main():
         if "player" in stills and ps:
             loc, look = player_view(ps, cam_spec, rig)  # rig "facing": "compass" (default) or "ccw", see player_view
             shoot("player", loc, look, cam_spec.get("lens_mm", 35), (W, H), S)
+        # --check-views <json>: extra look-only stills ("check-<name>", same lights and world, 1280x720) for checking a model's scale and
+        # front by eye where no scene view sees it; {"<location>/<scene>": [{"name", "location", "look_at", "lens_mm"}]}, build-file units
+        for cv in (jload(o["check_views"]).get(key, []) if o.get("check_views") else []):
+            shoot("check-" + cv["name"], [x * K for x in cv["location"]], [x * K for x in cv["look_at"]], cv.get("lens_mm", 35),
+                  (int(1280 * o["res_scale"]), int(720 * o["res_scale"])), max(4, int(64 * o["samples_scale"])))
         if "overview" in stills and entry.get("overview") is not None:
             ovw = merge(entry["overview"], rig.get("overview", {}))
             if K != 1.0:

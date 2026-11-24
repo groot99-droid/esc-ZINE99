@@ -459,6 +459,13 @@ def g15_rules(scene_json, rules, dress_dir_cfg=None):
     layers = set(dr.get("layers", {}))
     if dr.get("game") == rules["arena"]["game"] and dr.get("location") == rules["arena"]["location"]:
         hits += ["arena layer %s" % x for x in layers - set(rules["arena"]["allowed_layers"])]
+        # new-models pass: the arena may only get the listed fixtures, high on the walls (it stays empty of anything on the floor)
+        for m in (dr.get("layers", {}).get("props") or {}).get("models", []):
+            if m["model"] not in rules["arena"].get("props_allowed", []):
+                hits.append("arena model %s" % m["model"])
+            for c in m.get("copies", []):
+                if c["box_lo"][2] < rules["arena"].get("props_min_z_m", 0.0):
+                    hits.append("arena model %s below %.1f m" % (m["model"], rules["arena"].get("props_min_z_m", 0.0)))
     if dr.get("game") == rules["man_eater"]["game"]:
         hits += ["man-eater layer %s" % x for x in layers & set(rules["man_eater"]["denied_layers"])]
     toks = list(dr.get("dress_groups", {})) + list(dr.get("materials", {})) + list(dr.get("textures", {}))
