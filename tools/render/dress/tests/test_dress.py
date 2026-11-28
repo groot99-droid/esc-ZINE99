@@ -276,7 +276,7 @@ class R1Configs(unittest.TestCase):
     def test_pilot_configs_use_locked_assets_and_known_options(self):
         with open(os.path.join(DRESS, "dress.lock.json"), encoding="utf-8") as f:
             lk = json.load(f)
-        fams = {"scan", "noise", "grid", "wallpaper", "metal", "tissue", "foliage", "membrane", "water", "dirt-only", "keep"}
+        fams = {"scan", "noise", "grid", "wallpaper", "metal", "tissue", "foliage", "membrane", "water", "dirt-only", "keep", "paper", "leather"}
         for game in ("dr-tox-rise", "stuffed-ones", "missing-campsites", "heartstream"):
             with open(os.path.join(DRESS, game + ".dress.json"), encoding="utf-8") as f:
                 cfg = json.load(f)

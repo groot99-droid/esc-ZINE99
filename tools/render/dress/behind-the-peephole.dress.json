@@ -1,0 +1,1202 @@
+{
+ "game": "behind-the-peephole",
+ "version": 1,
+ "note": "P1 entries written by p1.py (core surfaces and grime)",
+ "locations": {
+  "back-office": {
+   "p1": {
+    "version": 1,
+    "interior": true,
+    "grade": "clean",
+    "deferred": {},
+    "unmatched": [],
+    "kept": [
+     "frosted-glass"
+    ]
+   },
+   "grime": {
+    "strength": 0.6,
+    "ao": 0.24,
+    "dust": 0.1,
+    "damp": 0.1,
+    "damp_height_m": 0.5,
+    "ao_distance_m": 0.45,
+    "tone_gain": 1.06
+   },
+   "materials": {
+    "bottle-green": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 0.0,
+     "family": "scan",
+     "scan": "hessian_380",
+     "tile_m": 0.7,
+     "chroma": 0.0,
+     "bump": 0.25,
+     "macro": 0.08,
+     "grime": 0.9,
+     "patches": {
+      "size_m": 0.7,
+      "share": 0.25,
+      "amount": 0.04,
+      "rough": 0.04
+     },
+     "p1_preset": "cloth_wall"
+    },
+    "brass": {
+     "family": "metal",
+     "tile_m": 0.3,
+     "bump": 0.12,
+     "grime": 0.8,
+     "macro": 0.14,
+     "round_m": 0.004,
+     "edge_wear": {
+      "radius_m": 0.006,
+      "amount": 0.6,
+      "tint": [
+       1.25,
+       1.2,
+       1.1
+      ],
+      "rough": -0.12
+     },
+     "patches": {
+      "size_m": 0.15,
+      "share": 0.35,
+      "amount": 0.08,
+      "rough": 0.12
+     },
+     "p1_preset": "brass"
+    },
+    "cream-paint": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.03,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "plastered_wall_04",
+     "tile_m": 2.2,
+     "chroma": 0.0,
+     "bump": 0.25,
+     "macro": 0.06,
+     "grime": 0.6,
+     "patches": {
+      "size_m": 1.0,
+      "share": 0.2,
+      "amount": 0.025,
+      "rough": 0.04
+     },
+     "p1_preset": "plaster_clean"
+    },
+    "floorboards": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 0.0,
+     "family": "scan",
+     "scan": "weathered_plank_siding",
+     "tile_m": 2.2,
+     "chroma": 0.15,
+     "bump": 0.5,
+     "macro": 0.1,
+     "grime": 1.0,
+     "coat": 0.12,
+     "coat_roughness": 0.3,
+     "p1_preset": "wood_floor"
+    },
+    "varnish": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "wood_trunk_wall",
+     "tile_m": 1.4,
+     "chroma": 0.12,
+     "bump": 0.3,
+     "macro": 0.08,
+     "grime": 0.6,
+     "round_m": 0.005,
+     "rough_scale": 0.85,
+     "coat": 0.25,
+     "coat_roughness": 0.2,
+     "edge_wear": {
+      "radius_m": 0.008,
+      "amount": 0.35,
+      "tint": [
+       1.15,
+       1.1,
+       1.05
+      ],
+      "rough": 0.05
+     },
+     "p1_preset": "timber_varnish"
+    }
+   },
+   "decals": [
+    {
+     "name": "stains",
+     "count": 3,
+     "size_m": [
+      0.4,
+      0.9
+     ],
+     "tint": [
+      0.32,
+      0.29,
+      0.24
+     ],
+     "opacity": 0.12,
+     "z_m": [
+      1.0,
+      2.4
+     ]
+    }
+   ]
+  },
+  "back-stair": {
+   "p1": {
+    "version": 1,
+    "interior": true,
+    "grade": "worn",
+    "deferred": {},
+    "unmatched": [],
+    "kept": [
+     "bulb-yellow"
+    ]
+   },
+   "grime": {
+    "strength": 1.0,
+    "ao": 0.24,
+    "dust": 0.1,
+    "damp": 0.1,
+    "damp_height_m": 0.5,
+    "ao_distance_m": 0.45,
+    "tone_gain": 1.06
+   },
+   "materials": {
+    "brick": {
+     "res": "2k",
+     "third": false,
+     "macro2": 0.05,
+     "obj_jitter_m": 0.0,
+     "family": "scan",
+     "scan": "red_brick_03",
+     "tile_m": 1.6,
+     "chroma": 0.15,
+     "bump": 0.6,
+     "macro": 0.1,
+     "grime": 1.1,
+     "streaks": {
+      "amount": 0.2,
+      "scale_m": 0.4,
+      "top_frac": 0.7,
+      "tint": [
+       0.75,
+       0.72,
+       0.68
+      ]
+     },
+     "p1_preset": "brick"
+    },
+    "concrete": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "concrete_wall_008",
+     "tile_m": 2.4,
+     "chroma": 0.1,
+     "bump": 0.5,
+     "macro": 0.1,
+     "grime": 1.2,
+     "streaks": {
+      "amount": 0.25,
+      "scale_m": 0.4,
+      "top_frac": 0.7,
+      "tint": [
+       0.78,
+       0.76,
+       0.72
+      ]
+     },
+     "cracks": {
+      "amount": 0.35,
+      "scale_m": 0.9,
+      "width": 0.006,
+      "share": 0.3
+     },
+     "p1_preset": "conc_wall"
+    },
+    "cream-paint": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.03,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "plastered_wall_04",
+     "tile_m": 2.4,
+     "chroma": 0.0,
+     "bump": 0.25,
+     "macro": 0.07,
+     "grime": 0.8,
+     "cracks": {
+      "amount": 0.25,
+      "scale_m": 1.0,
+      "width": 0.005,
+      "share": 0.2
+     },
+     "p1_preset": "ceiling"
+    },
+    "green-gloss": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "plastered_wall_04",
+     "tile_m": 2.0,
+     "chroma": 0.0,
+     "bump": 0.2,
+     "macro": 0.05,
+     "grime": 0.9,
+     "rough_scale": 0.8,
+     "patches": {
+      "size_m": 0.6,
+      "share": 0.3,
+      "amount": 0.04,
+      "rough": 0.1
+     },
+     "edge_wear": {
+      "radius_m": 0.015,
+      "amount": 0.5,
+      "tint": [
+       1.15,
+       1.13,
+       1.1
+      ],
+      "rough": 0.1
+     },
+     "p1_preset": "paint_gloss"
+    },
+    "iron": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "green_metal_rust",
+     "tile_m": 0.9,
+     "chroma": 0.0,
+     "bump": 0.35,
+     "macro": 0.1,
+     "grime": 0.8,
+     "edge_wear": {
+      "radius_m": 0.008,
+      "amount": 0.5,
+      "tint": [
+       1.35,
+       1.32,
+       1.3
+      ],
+      "rough": -0.1
+     },
+     "rust": {
+      "amount": 0.3,
+      "share": 0.12,
+      "scale_m": 0.3,
+      "tint": [
+       0.3,
+       0.17,
+       0.08
+      ]
+     },
+     "p1_preset": "stove_iron"
+    }
+   },
+   "decals": [
+    {
+     "name": "stains",
+     "count": 5,
+     "size_m": [
+      0.4,
+      0.9
+     ],
+     "tint": [
+      0.32,
+      0.29,
+      0.24
+     ],
+     "opacity": 0.18,
+     "z_m": [
+      1.0,
+      2.4
+     ]
+    }
+   ]
+  },
+  "lobby": {
+   "p1": {
+    "version": 1,
+    "interior": true,
+    "grade": "clean",
+    "deferred": {},
+    "unmatched": [],
+    "kept": [
+     "lightwell-glass"
+    ]
+   },
+   "grime": {
+    "strength": 0.6,
+    "ao": 0.24,
+    "dust": 0.1,
+    "damp": 0.1,
+    "damp_height_m": 0.5,
+    "ao_distance_m": 0.45,
+    "tone_gain": 1.06
+   },
+   "materials": {
+    "bottle-green": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 0.0,
+     "family": "scan",
+     "scan": "hessian_380",
+     "tile_m": 0.7,
+     "chroma": 0.0,
+     "bump": 0.25,
+     "macro": 0.08,
+     "grime": 0.9,
+     "patches": {
+      "size_m": 0.7,
+      "share": 0.25,
+      "amount": 0.04,
+      "rough": 0.04
+     },
+     "p1_preset": "cloth_wall"
+    },
+    "brass": {
+     "family": "metal",
+     "tile_m": 0.3,
+     "bump": 0.12,
+     "grime": 0.8,
+     "macro": 0.14,
+     "round_m": 0.004,
+     "edge_wear": {
+      "radius_m": 0.006,
+      "amount": 0.6,
+      "tint": [
+       1.25,
+       1.2,
+       1.1
+      ],
+      "rough": -0.12
+     },
+     "patches": {
+      "size_m": 0.15,
+      "share": 0.35,
+      "amount": 0.08,
+      "rough": 0.12
+     },
+     "p1_preset": "brass"
+    },
+    "cream-paint": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.03,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "plastered_wall_04",
+     "tile_m": 2.2,
+     "chroma": 0.0,
+     "bump": 0.25,
+     "macro": 0.06,
+     "grime": 0.6,
+     "patches": {
+      "size_m": 1.0,
+      "share": 0.2,
+      "amount": 0.025,
+      "rough": 0.04
+     },
+     "p1_preset": "plaster_clean"
+    },
+    "mahogany": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "wood_trunk_wall",
+     "tile_m": 1.4,
+     "chroma": 0.12,
+     "bump": 0.3,
+     "macro": 0.08,
+     "grime": 0.6,
+     "round_m": 0.005,
+     "rough_scale": 0.85,
+     "coat": 0.25,
+     "coat_roughness": 0.2,
+     "edge_wear": {
+      "radius_m": 0.008,
+      "amount": 0.35,
+      "tint": [
+       1.15,
+       1.1,
+       1.05
+      ],
+      "rough": 0.05
+     },
+     "p1_preset": "timber_varnish"
+    },
+    "marble-cream": {
+     "family": "noise",
+     "tile_m": 2.0,
+     "macro": 0.05,
+     "fine": 0.02,
+     "bump": 0.1,
+     "grime": 0.5,
+     "coat": 0.35,
+     "coat_roughness": 0.08,
+     "cracks": {
+      "amount": 0.35,
+      "scale_m": 0.7,
+      "width": 0.012,
+      "share": 0.6,
+      "tint": [
+       0.86,
+       0.84,
+       0.82
+      ],
+      "depth": 0.0
+     },
+     "p1_preset": "marble"
+    },
+    "marble-green": {
+     "family": "noise",
+     "tile_m": 2.0,
+     "macro": 0.05,
+     "fine": 0.02,
+     "bump": 0.1,
+     "grime": 0.5,
+     "coat": 0.35,
+     "coat_roughness": 0.08,
+     "cracks": {
+      "amount": 0.35,
+      "scale_m": 0.7,
+      "width": 0.012,
+      "share": 0.6,
+      "tint": [
+       0.86,
+       0.84,
+       0.82
+      ],
+      "depth": 0.0
+     },
+     "p1_preset": "marble"
+    },
+    "varnish": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "wood_trunk_wall",
+     "tile_m": 1.4,
+     "chroma": 0.12,
+     "bump": 0.3,
+     "macro": 0.08,
+     "grime": 0.6,
+     "round_m": 0.005,
+     "rough_scale": 0.85,
+     "coat": 0.25,
+     "coat_roughness": 0.2,
+     "edge_wear": {
+      "radius_m": 0.008,
+      "amount": 0.35,
+      "tint": [
+       1.15,
+       1.1,
+       1.05
+      ],
+      "rough": 0.05
+     },
+     "p1_preset": "timber_varnish"
+    }
+   },
+   "decals": [
+    {
+     "name": "stains",
+     "count": 3,
+     "size_m": [
+      0.4,
+      0.9
+     ],
+     "tint": [
+      0.32,
+      0.29,
+      0.24
+     ],
+     "opacity": 0.12,
+     "z_m": [
+      1.0,
+      2.4
+     ]
+    }
+   ]
+  },
+  "office": {
+   "p1": {
+    "version": 1,
+    "interior": true,
+    "grade": "clean",
+    "deferred": {},
+    "unmatched": [],
+    "kept": [
+     "lightwell-glass"
+    ]
+   },
+   "grime": {
+    "strength": 0.6,
+    "ao": 0.24,
+    "dust": 0.1,
+    "damp": 0.1,
+    "damp_height_m": 0.5,
+    "ao_distance_m": 0.45,
+    "tone_gain": 1.06
+   },
+   "materials": {
+    "bottle-green": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 0.0,
+     "family": "scan",
+     "scan": "hessian_380",
+     "tile_m": 0.7,
+     "chroma": 0.0,
+     "bump": 0.25,
+     "macro": 0.08,
+     "grime": 0.9,
+     "patches": {
+      "size_m": 0.7,
+      "share": 0.25,
+      "amount": 0.04,
+      "rough": 0.04
+     },
+     "p1_preset": "cloth_wall"
+    },
+    "cream-paint": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.03,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "plastered_wall_04",
+     "tile_m": 2.2,
+     "chroma": 0.0,
+     "bump": 0.25,
+     "macro": 0.06,
+     "grime": 0.6,
+     "patches": {
+      "size_m": 1.0,
+      "share": 0.2,
+      "amount": 0.025,
+      "rough": 0.04
+     },
+     "p1_preset": "plaster_clean"
+    },
+    "floorboards": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 0.0,
+     "family": "scan",
+     "scan": "weathered_plank_siding",
+     "tile_m": 2.2,
+     "chroma": 0.15,
+     "bump": 0.5,
+     "macro": 0.1,
+     "grime": 1.0,
+     "coat": 0.12,
+     "coat_roughness": 0.3,
+     "p1_preset": "wood_floor"
+    },
+    "varnish": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "wood_trunk_wall",
+     "tile_m": 1.4,
+     "chroma": 0.12,
+     "bump": 0.3,
+     "macro": 0.08,
+     "grime": 0.6,
+     "round_m": 0.005,
+     "rough_scale": 0.85,
+     "coat": 0.25,
+     "coat_roughness": 0.2,
+     "edge_wear": {
+      "radius_m": 0.008,
+      "amount": 0.35,
+      "tint": [
+       1.15,
+       1.1,
+       1.05
+      ],
+      "rough": 0.05
+     },
+     "p1_preset": "timber_varnish"
+    }
+   },
+   "decals": [
+    {
+     "name": "stains",
+     "count": 3,
+     "size_m": [
+      0.4,
+      0.9
+     ],
+     "tint": [
+      0.32,
+      0.29,
+      0.24
+     ],
+     "opacity": 0.12,
+     "z_m": [
+      1.0,
+      2.4
+     ]
+    }
+   ]
+  },
+  "river-wall": {
+   "p1": {
+    "version": 1,
+    "interior": false,
+    "grade": "worn",
+    "deferred": {
+     "P2": [
+      "fog-grey",
+      "iron",
+      "river-grey"
+     ]
+    },
+    "unmatched": [
+     "dark-window"
+    ],
+    "kept": [
+     "bulb-yellow"
+    ]
+   },
+   "grime": {
+    "strength": 0.9,
+    "ao": 0.2,
+    "dust": 0.06,
+    "damp": 0.12,
+    "damp_height_m": 0.4,
+    "ao_distance_m": 0.6,
+    "tone_gain": 1.0
+   },
+   "materials": {
+    "brick": {
+     "res": "2k",
+     "third": false,
+     "macro2": 0.05,
+     "obj_jitter_m": 0.0,
+     "family": "scan",
+     "scan": "red_brick_03",
+     "tile_m": 1.6,
+     "chroma": 0.15,
+     "bump": 0.6,
+     "macro": 0.1,
+     "grime": 1.1,
+     "streaks": {
+      "amount": 0.2,
+      "scale_m": 0.4,
+      "top_frac": 0.7,
+      "tint": [
+       0.75,
+       0.72,
+       0.68
+      ]
+     },
+     "p1_preset": "brick"
+    },
+    "flagstone": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "slate_floor_02",
+     "tile_m": 2.6,
+     "chroma": 0.1,
+     "bump": 0.6,
+     "macro": 0.1,
+     "grime": 1.0,
+     "p1_preset": "flagstone"
+    },
+    "granite": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "stone_floor",
+     "tile_m": 3.6,
+     "chroma": 0.1,
+     "bump": 0.6,
+     "macro": 0.12,
+     "grime": 1.1,
+     "streaks": {
+      "amount": 0.25,
+      "scale_m": 0.5,
+      "top_frac": 0.8,
+      "tint": [
+       0.78,
+       0.76,
+       0.72
+      ]
+     },
+     "p1_preset": "stone_block"
+    },
+    "wet-cobbles": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "stone_floor",
+     "tile_m": 1.6,
+     "chroma": 0.1,
+     "bump": 0.7,
+     "macro": 0.1,
+     "grime": 1.0,
+     "p1_preset": "cobble"
+    }
+   }
+  },
+  "staff-alley": {
+   "p1": {
+    "version": 1,
+    "interior": true,
+    "grade": "old",
+    "deferred": {
+     "P2": [
+      "fog-grey"
+     ]
+    },
+    "unmatched": [],
+    "kept": []
+   },
+   "grime": {
+    "strength": 1.25,
+    "ao": 0.24,
+    "dust": 0.1,
+    "damp": 0.16,
+    "damp_height_m": 0.7,
+    "ao_distance_m": 0.45,
+    "tone_gain": 1.06
+   },
+   "materials": {
+    "brick": {
+     "res": "2k",
+     "third": false,
+     "macro2": 0.05,
+     "obj_jitter_m": 0.0,
+     "family": "scan",
+     "scan": "red_brick_03",
+     "tile_m": 1.6,
+     "chroma": 0.15,
+     "bump": 0.6,
+     "macro": 0.1,
+     "grime": 1.1,
+     "streaks": {
+      "amount": 0.2,
+      "scale_m": 0.4,
+      "top_frac": 0.7,
+      "tint": [
+       0.75,
+       0.72,
+       0.68
+      ]
+     },
+     "p1_preset": "brick"
+    },
+    "concrete": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "concrete_wall_008",
+     "tile_m": 2.4,
+     "chroma": 0.1,
+     "bump": 0.55,
+     "macro": 0.12,
+     "grime": 1.4,
+     "streaks": {
+      "amount": 0.4,
+      "scale_m": 0.35,
+      "top_frac": 0.85,
+      "tint": [
+       0.7,
+       0.68,
+       0.64
+      ]
+     },
+     "cracks": {
+      "amount": 0.45,
+      "scale_m": 0.8,
+      "width": 0.007,
+      "share": 0.35
+     },
+     "p1_preset": "conc_wall_damp"
+    },
+    "cream-paint": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "worn_mossy_plasterwall",
+     "tile_m": 2.4,
+     "chroma": 0.0,
+     "contrast": 0.3,
+     "bump": 0.35,
+     "macro": 0.12,
+     "grime": 1.3,
+     "streaks": {
+      "amount": 0.3,
+      "scale_m": 0.35,
+      "top_frac": 0.8,
+      "tint": [
+       0.8,
+       0.76,
+       0.68
+      ]
+     },
+     "cracks": {
+      "amount": 0.45,
+      "scale_m": 0.8,
+      "width": 0.007,
+      "share": 0.35
+     },
+     "p1_preset": "plaster_old"
+    },
+    "flagstone": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "slate_floor_02",
+     "tile_m": 2.6,
+     "chroma": 0.1,
+     "bump": 0.6,
+     "macro": 0.1,
+     "grime": 1.0,
+     "p1_preset": "flagstone"
+    },
+    "granite": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "stone_floor",
+     "tile_m": 3.6,
+     "chroma": 0.1,
+     "bump": 0.6,
+     "macro": 0.12,
+     "grime": 1.1,
+     "streaks": {
+      "amount": 0.25,
+      "scale_m": 0.5,
+      "top_frac": 0.8,
+      "tint": [
+       0.78,
+       0.76,
+       0.72
+      ]
+     },
+     "p1_preset": "stone_block"
+    },
+    "green-gloss": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "plastered_wall_04",
+     "tile_m": 2.0,
+     "chroma": 0.0,
+     "bump": 0.2,
+     "macro": 0.05,
+     "grime": 0.9,
+     "rough_scale": 0.8,
+     "patches": {
+      "size_m": 0.6,
+      "share": 0.3,
+      "amount": 0.04,
+      "rough": 0.1
+     },
+     "edge_wear": {
+      "radius_m": 0.015,
+      "amount": 0.5,
+      "tint": [
+       1.15,
+       1.13,
+       1.1
+      ],
+      "rough": 0.1
+     },
+     "p1_preset": "paint_gloss"
+    },
+    "iron": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "green_metal_rust",
+     "tile_m": 0.9,
+     "chroma": 0.0,
+     "bump": 0.35,
+     "macro": 0.1,
+     "grime": 0.8,
+     "edge_wear": {
+      "radius_m": 0.008,
+      "amount": 0.5,
+      "tint": [
+       1.35,
+       1.32,
+       1.3
+      ],
+      "rough": -0.1
+     },
+     "rust": {
+      "amount": 0.3,
+      "share": 0.12,
+      "scale_m": 0.3,
+      "tint": [
+       0.3,
+       0.17,
+       0.08
+      ]
+     },
+     "p1_preset": "stove_iron"
+    },
+    "soot-brick": {
+     "res": "2k",
+     "third": false,
+     "macro2": 0.05,
+     "obj_jitter_m": 0.0,
+     "family": "scan",
+     "scan": "red_brick_03",
+     "tile_m": 1.6,
+     "chroma": 0.15,
+     "bump": 0.6,
+     "macro": 0.1,
+     "grime": 1.1,
+     "streaks": {
+      "amount": 0.2,
+      "scale_m": 0.4,
+      "top_frac": 0.7,
+      "tint": [
+       0.75,
+       0.72,
+       0.68
+      ]
+     },
+     "p1_preset": "brick"
+    },
+    "wet-cobbles": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "stone_floor",
+     "tile_m": 1.6,
+     "chroma": 0.1,
+     "bump": 0.7,
+     "macro": 0.1,
+     "grime": 1.0,
+     "p1_preset": "cobble"
+    }
+   },
+   "decals": [
+    {
+     "name": "stains",
+     "count": 5,
+     "size_m": [
+      0.4,
+      0.9
+     ],
+     "tint": [
+      0.32,
+      0.29,
+      0.24
+     ],
+     "opacity": 0.18,
+     "z_m": [
+      1.0,
+      2.4
+     ]
+    }
+   ]
+  },
+  "valet-passage": {
+   "p1": {
+    "version": 1,
+    "interior": true,
+    "grade": "worn",
+    "deferred": {},
+    "unmatched": [],
+    "kept": [
+     "lightwell-glass"
+    ]
+   },
+   "grime": {
+    "strength": 1.0,
+    "ao": 0.24,
+    "dust": 0.1,
+    "damp": 0.1,
+    "damp_height_m": 0.5,
+    "ao_distance_m": 0.45,
+    "tone_gain": 1.06
+   },
+   "materials": {
+    "bottle-green": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 0.0,
+     "family": "scan",
+     "scan": "hessian_380",
+     "tile_m": 0.7,
+     "chroma": 0.0,
+     "bump": 0.25,
+     "macro": 0.08,
+     "grime": 0.9,
+     "patches": {
+      "size_m": 0.7,
+      "share": 0.25,
+      "amount": 0.04,
+      "rough": 0.04
+     },
+     "p1_preset": "cloth_wall"
+    },
+    "brass": {
+     "family": "metal",
+     "tile_m": 0.3,
+     "bump": 0.12,
+     "grime": 0.8,
+     "macro": 0.14,
+     "round_m": 0.004,
+     "edge_wear": {
+      "radius_m": 0.006,
+      "amount": 0.6,
+      "tint": [
+       1.25,
+       1.2,
+       1.1
+      ],
+      "rough": -0.12
+     },
+     "patches": {
+      "size_m": 0.15,
+      "share": 0.35,
+      "amount": 0.08,
+      "rough": 0.12
+     },
+     "p1_preset": "brass"
+    },
+    "floorboards": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 0.0,
+     "family": "scan",
+     "scan": "weathered_plank_siding",
+     "tile_m": 2.2,
+     "chroma": 0.15,
+     "bump": 0.5,
+     "macro": 0.1,
+     "grime": 1.0,
+     "coat": 0.12,
+     "coat_roughness": 0.3,
+     "p1_preset": "wood_floor"
+    },
+    "runner": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "hessian_380",
+     "tile_m": 0.25,
+     "chroma": 0.0,
+     "bump": 0.25,
+     "macro": 0.1,
+     "grime": 0.7,
+     "p1_preset": "fabric_fine"
+    },
+    "varnish": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "wood_trunk_wall",
+     "tile_m": 1.4,
+     "chroma": 0.12,
+     "bump": 0.3,
+     "macro": 0.08,
+     "grime": 0.6,
+     "round_m": 0.005,
+     "rough_scale": 0.85,
+     "coat": 0.25,
+     "coat_roughness": 0.2,
+     "edge_wear": {
+      "radius_m": 0.008,
+      "amount": 0.35,
+      "tint": [
+       1.15,
+       1.1,
+       1.05
+      ],
+      "rough": 0.05
+     },
+     "p1_preset": "timber_varnish"
+    }
+   },
+   "decals": [
+    {
+     "name": "stains",
+     "count": 5,
+     "size_m": [
+      0.4,
+      0.9
+     ],
+     "tint": [
+      0.32,
+      0.29,
+      0.24
+     ],
+     "opacity": 0.18,
+     "z_m": [
+      1.0,
+      2.4
+     ]
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,591 @@
+{
+ "game": "people-of-the-bark",
+ "version": 1,
+ "note": "P1 entries written by p1.py (core surfaces and grime)",
+ "locations": {
+  "backyard": {
+   "p1": {
+    "version": 1,
+    "interior": false,
+    "grade": "worn",
+    "deferred": {
+     "P2": [
+      "far-green"
+     ],
+     "P3": [
+      "grass",
+      "leaf-green",
+      "tree-bark"
+     ]
+    },
+    "unmatched": [],
+    "kept": [
+     "door-dark"
+    ]
+   },
+   "grime": {
+    "strength": 0.9,
+    "ao": 0.2,
+    "dust": 0.06,
+    "damp": 0.12,
+    "damp_height_m": 0.4,
+    "ao_distance_m": 0.6,
+    "tone_gain": 1.0
+   },
+   "materials": {
+    "fence-grey": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 0.0,
+     "family": "scan",
+     "scan": "wood_trunk_wall",
+     "tile_m": 1.8,
+     "chroma": 0.15,
+     "bump": 0.5,
+     "macro": 0.1,
+     "grime": 1.0,
+     "edge_wear": {
+      "radius_m": 0.012,
+      "amount": 0.45,
+      "tint": [
+       1.18,
+       1.14,
+       1.08
+      ],
+      "rough": 0.1
+     },
+     "p1_preset": "boards_v"
+    },
+    "fence-wood": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 0.0,
+     "family": "scan",
+     "scan": "wood_trunk_wall",
+     "tile_m": 1.8,
+     "chroma": 0.15,
+     "bump": 0.5,
+     "macro": 0.1,
+     "grime": 1.0,
+     "edge_wear": {
+      "radius_m": 0.012,
+      "amount": 0.45,
+      "tint": [
+       1.18,
+       1.14,
+       1.08
+      ],
+      "rough": 0.1
+     },
+     "p1_preset": "boards_v"
+    },
+    "house-grey": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "plastered_wall_04",
+     "tile_m": 1.8,
+     "chroma": 0.0,
+     "bump": 0.4,
+     "macro": 0.1,
+     "grime": 1.1,
+     "patches": {
+      "size_m": 0.8,
+      "share": 0.25,
+      "amount": 0.04,
+      "rough": 0.05
+     },
+     "cracks": {
+      "amount": 0.35,
+      "scale_m": 0.9,
+      "width": 0.006,
+      "share": 0.25
+     },
+     "p1_preset": "plaster"
+    },
+    "path": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "rocky_trail",
+     "tile_m": 3.0,
+     "chroma": 0.1,
+     "bump": 0.6,
+     "macro": 0.12,
+     "grime": 0.5,
+     "p1_preset": "path"
+    },
+    "roof": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.03,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "plastered_wall_04",
+     "tile_m": 2.4,
+     "chroma": 0.0,
+     "bump": 0.25,
+     "macro": 0.07,
+     "grime": 0.8,
+     "cracks": {
+      "amount": 0.25,
+      "scale_m": 1.0,
+      "width": 0.005,
+      "share": 0.2
+     },
+     "p1_preset": "ceiling"
+    }
+   }
+  },
+  "bark-face": {
+   "p1": {
+    "version": 1,
+    "interior": false,
+    "grade": "worn",
+    "deferred": {
+     "P5": [
+      "bark-grey",
+      "bark-umber",
+      "home-bark"
+     ],
+     "P3": [
+      "lichen-lime",
+      "lichen-sage"
+     ]
+    },
+    "unmatched": [
+     "crack-dark"
+    ],
+    "kept": []
+   },
+   "grime": {
+    "strength": 0.9,
+    "ao": 0.2,
+    "dust": 0.06,
+    "damp": 0.12,
+    "damp_height_m": 0.4,
+    "ao_distance_m": 0.6,
+    "tone_gain": 1.0
+   },
+   "materials": {
+    "splinter-pale": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "weathered_plank_siding",
+     "tile_m": 1.6,
+     "chroma": 0.12,
+     "bump": 0.45,
+     "macro": 0.1,
+     "grime": 1.0,
+     "round_m": 0.006,
+     "edge_wear": {
+      "radius_m": 0.012,
+      "amount": 0.45,
+      "tint": [
+       1.18,
+       1.14,
+       1.08
+      ],
+      "rough": 0.1
+     },
+     "p1_preset": "timber"
+    }
+   }
+  },
+  "first-ring-temple": {
+   "p1": {
+    "version": 1,
+    "interior": true,
+    "grade": "worn",
+    "deferred": {
+     "P5": [
+      "bark-paper",
+      "bark-umber",
+      "knot-tan"
+     ]
+    },
+    "unmatched": [],
+    "kept": [
+     "lamp-glow"
+    ]
+   },
+   "grime": {
+    "strength": 1.0,
+    "ao": 0.24,
+    "dust": 0.1,
+    "damp": 0.1,
+    "damp_height_m": 0.5,
+    "ao_distance_m": 0.45,
+    "tone_gain": 1.06
+   },
+   "materials": {
+    "ring-wood": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 0.0,
+     "family": "scan",
+     "scan": "wood_trunk_wall",
+     "tile_m": 1.8,
+     "chroma": 0.15,
+     "bump": 0.5,
+     "macro": 0.1,
+     "grime": 1.0,
+     "edge_wear": {
+      "radius_m": 0.012,
+      "amount": 0.45,
+      "tint": [
+       1.18,
+       1.14,
+       1.08
+      ],
+      "rough": 0.1
+     },
+     "p1_preset": "boards_v"
+    }
+   },
+   "decals": [
+    {
+     "name": "stains",
+     "count": 5,
+     "size_m": [
+      0.4,
+      0.9
+     ],
+     "tint": [
+      0.32,
+      0.29,
+      0.24
+     ],
+     "opacity": 0.18,
+     "z_m": [
+      1.0,
+      2.4
+     ]
+    }
+   ]
+  },
+  "highridge": {
+   "p1": {
+    "version": 1,
+    "interior": false,
+    "grade": "worn",
+    "deferred": {
+     "P5": [
+      "bark-grey",
+      "bark-umber"
+     ],
+     "P3": [
+      "lichen-lime",
+      "lichen-sage"
+     ]
+    },
+    "unmatched": [
+     "crack-dark"
+    ],
+    "kept": []
+   },
+   "grime": {
+    "strength": 0.9,
+    "ao": 0.2,
+    "dust": 0.06,
+    "damp": 0.12,
+    "damp_height_m": 0.4,
+    "ao_distance_m": 0.6,
+    "tone_gain": 1.0
+   },
+   "materials": {
+    "splinter-pale": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "weathered_plank_siding",
+     "tile_m": 1.6,
+     "chroma": 0.12,
+     "bump": 0.45,
+     "macro": 0.1,
+     "grime": 1.0,
+     "round_m": 0.006,
+     "edge_wear": {
+      "radius_m": 0.012,
+      "amount": 0.45,
+      "tint": [
+       1.18,
+       1.14,
+       1.08
+      ],
+      "rough": 0.1
+     },
+     "p1_preset": "timber"
+    }
+   }
+  },
+  "highridge-square": {
+   "p1": {
+    "version": 1,
+    "interior": false,
+    "grade": "worn",
+    "deferred": {
+     "P5": [
+      "bark-grey",
+      "bark-umber"
+     ],
+     "P4": [
+      "frost"
+     ]
+    },
+    "unmatched": [],
+    "kept": []
+   },
+   "grime": {
+    "strength": 0.9,
+    "ao": 0.2,
+    "dust": 0.06,
+    "damp": 0.12,
+    "damp_height_m": 0.4,
+    "ao_distance_m": 0.6,
+    "tone_gain": 1.0
+   },
+   "materials": {
+    "paving": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "slate_floor_02",
+     "tile_m": 2.6,
+     "chroma": 0.1,
+     "bump": 0.6,
+     "macro": 0.1,
+     "grime": 1.0,
+     "p1_preset": "flagstone"
+    }
+   }
+  },
+  "knotholm-walk": {
+   "p1": {
+    "version": 1,
+    "interior": false,
+    "grade": "worn",
+    "deferred": {
+     "P5": [
+      "bark-grey",
+      "bark-umber"
+     ],
+     "P4": [
+      "frost"
+     ]
+    },
+    "unmatched": [],
+    "kept": [
+     "crack-dark"
+    ]
+   },
+   "grime": {
+    "strength": 0.9,
+    "ao": 0.2,
+    "dust": 0.06,
+    "damp": 0.12,
+    "damp_height_m": 0.4,
+    "ao_distance_m": 0.6,
+    "tone_gain": 1.0
+   },
+   "materials": {}
+  },
+  "lowridge": {
+   "p1": {
+    "version": 1,
+    "interior": false,
+    "grade": "worn",
+    "deferred": {
+     "P5": [
+      "bark-damp",
+      "bark-umber"
+     ],
+     "P3": [
+      "lichen-sage"
+     ]
+    },
+    "unmatched": [],
+    "kept": [
+     "crack-dark"
+    ]
+   },
+   "grime": {
+    "strength": 0.9,
+    "ao": 0.2,
+    "dust": 0.06,
+    "damp": 0.12,
+    "damp_height_m": 0.4,
+    "ao_distance_m": 0.6,
+    "tone_gain": 1.0
+   },
+   "materials": {
+    "paper-wall": {
+     "family": "wallpaper",
+     "tile_m": 0.18,
+     "stripe": 0.03,
+     "bump": 0.1,
+     "grime": 1.0,
+     "seam_m": 0.53,
+     "seam_tone": 0.88,
+     "yellow": {
+      "from_m": 1.5,
+      "to_m": 2.5,
+      "tint": [
+       1.0,
+       0.97,
+       0.9
+      ]
+     },
+     "p1_preset": "wallpaper"
+    }
+   }
+  },
+  "shadow-edge": {
+   "p1": {
+    "version": 1,
+    "interior": false,
+    "grade": "worn",
+    "deferred": {
+     "P5": [
+      "bark-grey",
+      "bark-umber"
+     ],
+     "P3": [
+      "lichen-lime",
+      "lichen-sage"
+     ]
+    },
+    "unmatched": [],
+    "kept": [
+     "crack-dark"
+    ]
+   },
+   "grime": {
+    "strength": 0.9,
+    "ao": 0.2,
+    "dust": 0.06,
+    "damp": 0.12,
+    "damp_height_m": 0.4,
+    "ao_distance_m": 0.6,
+    "tone_gain": 1.0
+   },
+   "materials": {}
+  },
+  "splinterwatch": {
+   "p1": {
+    "version": 1,
+    "interior": false,
+    "grade": "worn",
+    "deferred": {
+     "P5": [
+      "bark-grey",
+      "bark-umber"
+     ]
+    },
+    "unmatched": [
+     "crack-dark"
+    ],
+    "kept": []
+   },
+   "grime": {
+    "strength": 0.9,
+    "ao": 0.2,
+    "dust": 0.06,
+    "damp": 0.12,
+    "damp_height_m": 0.4,
+    "ao_distance_m": 0.6,
+    "tone_gain": 1.0
+   },
+   "materials": {
+    "dust": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "rocky_trail",
+     "tile_m": 3.0,
+     "chroma": 0.1,
+     "bump": 0.6,
+     "macro": 0.12,
+     "grime": 0.5,
+     "p1_preset": "path"
+    },
+    "splinter-pale": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "weathered_plank_siding",
+     "tile_m": 1.6,
+     "chroma": 0.12,
+     "bump": 0.45,
+     "macro": 0.1,
+     "grime": 1.0,
+     "round_m": 0.006,
+     "edge_wear": {
+      "radius_m": 0.012,
+      "amount": 0.45,
+      "tint": [
+       1.18,
+       1.14,
+       1.08
+      ],
+      "rough": 0.1
+     },
+     "p1_preset": "timber"
+    }
+   }
+  },
+  "the-branch": {
+   "p1": {
+    "version": 1,
+    "interior": false,
+    "grade": "worn",
+    "deferred": {
+     "P5": [
+      "bark-grey",
+      "bark-umber"
+     ],
+     "P2": [
+      "copper-leaves",
+      "sky"
+     ],
+     "P3": [
+      "lichen-lime",
+      "lichen-sage"
+     ]
+    },
+    "unmatched": [],
+    "kept": [
+     "crack-dark"
+    ]
+   },
+   "grime": {
+    "strength": 0.9,
+    "ao": 0.2,
+    "dust": 0.06,
+    "damp": 0.12,
+    "damp_height_m": 0.4,
+    "ao_distance_m": 0.6,
+    "tone_gain": 1.0
+   },
+   "materials": {}
+  }
+ }
+}

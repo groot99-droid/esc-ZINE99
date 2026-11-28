@@ -266,6 +266,8 @@ def fam_scan(b, p, ctx, K, mat_name):
     mean = lk["mean_albedo_linear"]
     ratio = b.mix(b.gray(b.math("DIVIDE", b.lum(col), max(1e-4, 0.2126 * mean[0] + 0.7152 * mean[1] + 0.0722 * mean[2]))),
                   b.mix(col, tuple(mean), 1.0, "DIVIDE"), p.get("chroma", 0.35))
+    if p.get("contrast", 1.0) != 1.0:  # P1: the scan's detail around the build tone at a share (a blotchy scan reads as mould at 1.0)
+        ratio = b.mix((1.0, 1.0, 1.0), ratio, p["contrast"])
     rmult = None
     rf = lk.get("roughness_file")
     if rf:
@@ -618,8 +620,104 @@ def fam_foliage(b, p, ctx, K, mat_name):
     return col, b.math("ADD", b.math("MULTIPLY", fine, 0.2), 0.9), height, s
 
 
+def fam_paper(b, p, ctx, K, mat_name):
+    """P1: blank paper, parchment or vellum (no lettering): long fibres, a laid-line ripple, soft creases and sparse foxing spots.
+    Foxing is a faint warm tint, never a stain in the red band."""
+    s = Sampler(b, 1.0 * K, "%s/%s/%s" % (ctx["game"], ctx["location"], mat_name), stochastic=False, obj_jitter=7.0 * K)
+    t = p.get("tile_m", 0.3) * K
+    fib = noise(b, _warp(b, s.pos, 3.0 / t, 0.05 * t), 90.0 / t, 3.0, 0.7)
+    sep = b.n("ShaderNodeSeparateXYZ")
+    b.link(s.pos, sep.inputs[0])
+    laid = b.math("SINE", b.math("MULTIPLY", b.math("ADD", sep.outputs["X"], sep.outputs["Y"]), 2 * 3.14159265 / (0.0012 * K * p.get("laid_scale", 1.0))))
+    crease_v = b.math("ABSOLUTE", b.math("SUBTRACT", noise(b, _warp(b, s.pos, 1.5 / t, 0.2 * t), 0.9 / t, 2.0, 0.5), 0.5))
+    crease = b.mapr(crease_v, 0.0, 0.012, 1.0, 0.0)
+    mott = around_one(b, noise(b, s.pos, 1.4 / t, 3.0, 0.6), p.get("macro", 0.06))
+    val = b.math("MULTIPLY", b.math("MULTIPLY", around_one(b, fib, p.get("fine", 0.05)), mott),
+                 b.math("ADD", 1.0, b.math("MULTIPLY", laid, p.get("laid", 0.008))))
+    val = b.math("MULTIPLY", val, b.math("SUBTRACT", 1.0, b.math("MULTIPLY", crease, p.get("crease", 0.06))))
+    col = b.gray(val)
+    fx = p.get("foxing", 0.0)
+    if fx > 0:
+        vo = voronoi(b, jitter_pos(b, s.pos, 11.0 * K), 9.0 / t, "F1", "Distance")
+        spot = b.math("MULTIPLY", b.mapr(vo, 0.0, 0.12, 1.0, 0.0), b.mapr(noise(b, s.pos, 2.0 / t, 2.0), 0.55, 0.7))
+        col = b.mix(col, b.mix(col, (0.86, 0.78, 0.62), 1.0, "MULTIPLY"), b.math("MULTIPLY", spot, fx))
+    height = b.math("ADD", b.math("MULTIPLY", fib, 0.4), b.math("MULTIPLY", crease, -0.8))
+    return col, b.math("ADD", b.math("MULTIPLY", fib, 0.2), 0.9), height, s
+
+
+def fam_leather(b, p, ctx, K, mat_name):
+    """P1: leather (book covers, seats): a pebbled grain of small warped cells, soft creases, rubbed lighter patches."""
+    s = Sampler(b, 1.0 * K, "%s/%s/%s" % (ctx["game"], ctx["location"], mat_name), stochastic=False, obj_jitter=5.0 * K)
+    t = p.get("tile_m", 0.2) * K
+    cells = voronoi(b, _warp(b, s.pos, 30.0 / t, 0.01 * t), 60.0 / t, "F1", "Distance")
+    grain = b.mapr(cells, 0.0, 0.5, 0.0, 1.0)
+    crease = b.mapr(b.math("ABSOLUTE", b.math("SUBTRACT", noise(b, _warp(b, s.pos, 2.0 / t, 0.15 * t), 1.6 / t, 3.0, 0.55), 0.5)), 0.0, 0.02, 1.0, 0.0)
+    rub = around_one(b, noise(b, s.pos, 1.2 / t, 3.0, 0.6), p.get("macro", 0.12))
+    val = b.math("MULTIPLY", b.math("MULTIPLY", around_one(b, grain, p.get("fine", 0.06)), rub),
+                 b.math("SUBTRACT", 1.0, b.math("MULTIPLY", crease, 0.12)))
+    height = b.math("SUBTRACT", grain, b.math("MULTIPLY", crease, 0.7))
+    return b.gray(val), b.math("ADD", b.math("MULTIPLY", grain, 0.25), b.math("MULTIPLY", rub, 0.65)), height, s
+
+
 FAMILIES = {"scan": fam_scan, "noise": fam_noise, "grid": fam_grid, "wallpaper": fam_wallpaper, "metal": fam_metal,
-            "tissue": fam_tissue, "foliage": fam_foliage, "membrane": fam_membrane}
+            "tissue": fam_tissue, "foliage": fam_foliage, "membrane": fam_membrane, "paper": fam_paper, "leather": fam_leather}
+
+
+def p1_grime(b, p, ctx, K, pos, nrm, base, height, rough_add):
+    """P1 grime set as shader masks (no decal quads, no z-fighting). Returns (base, height, rough_add, metal_mask).
+
+    streaks  {amount, tint, scale_m, top_frac}: water stains, soot or rust runs hanging from the top of a vertical face
+    cracks   {amount, scale_m, width, share, tint}: thin meandering hairline cracks in patches (dark, or light veins with tint > 1)
+    rust     {amount, share, scale_m, tint, low_m}: rust on metal: blotches, more near the ground; lowers metallic, raises roughness
+    """
+    metal_mask = None
+    gen = b.n("ShaderNodeTexCoord")
+    gsep = b.n("ShaderNodeSeparateXYZ")
+    b.link(gen.outputs["Generated"], gsep.inputs[0])
+    nsep = b.n("ShaderNodeSeparateXYZ")
+    b.link(nrm, nsep.inputs[0])
+    vert = b.mapr(b.math("ABSOLUTE", nsep.outputs["Z"]), 0.35, 0.15)
+    st = p.get("streaks")
+    if st:
+        sc = st.get("scale_m", 0.35) * K
+        mp = b.n("ShaderNodeMapping", vector_type="POINT")
+        mp.inputs["Scale"].default_value = (1.0 / sc, 1.0 / sc, 0.07 / sc)
+        b.link(_warp(b, pos, 0.6 / sc, 0.15 * sc), mp.inputs["Vector"])
+        runs = b.mapr(noise(b, mp.outputs[0], 1.0, 4.0, 0.6), 0.52, 0.72)
+        top = b.mapr(gsep.outputs["Z"], 1.0 - st.get("top_frac", 0.7), 1.0, 0.0, 1.0)
+        top = b.math("POWER", top, 0.7)
+        brk = b.mapr(noise(b, pos, 0.9 / sc, 2.0), 0.35, 0.6)
+        m = b.math("MULTIPLY", b.math("MULTIPLY", b.math("MULTIPLY", runs, top), b.math("MULTIPLY", vert, brk)), st.get("amount", 0.3))
+        base = b.mix(base, b.mix(base, tuple(st.get("tint", [0.78, 0.74, 0.66])), 1.0, "MULTIPLY"), m)
+        rough_add = b.math("MULTIPLY", m, 0.08) if rough_add is None else b.math("ADD", rough_add, b.math("MULTIPLY", m, 0.08))
+    ck = p.get("cracks")
+    if ck:
+        sc = ck.get("scale_m", 0.6) * K
+        q = _warp(b, pos, 1.3 / sc, 0.25 * sc)
+        v = b.math("ABSOLUTE", b.math("SUBTRACT", noise(b, q, 1.0 / sc, 3.0, 0.55), 0.5))
+        line = b.mapr(v, 0.0, ck.get("width", 0.008), 1.0, 0.0)
+        share = ck.get("share", 0.35)
+        patch = b.mapr(noise(b, pos, 0.25 / sc, 2.0), 1.0 - share, 1.0 - share + 0.12)
+        m = b.math("MULTIPLY", b.math("MULTIPLY", line, patch), ck.get("amount", 0.5))
+        base = b.mix(base, b.mix(base, tuple(ck.get("tint", [0.45, 0.43, 0.4])), 1.0, "MULTIPLY"), m)
+        if height is not None:
+            height = b.math("SUBTRACT", height, b.math("MULTIPLY", m, ck.get("depth", 1.2)))
+    ru = p.get("rust")
+    if ru:
+        sc = ru.get("scale_m", 0.5) * K
+        sh = ru.get("share", 0.3)
+        blot = b.mapr(noise(b, _warp(b, pos, 1.0 / sc, 0.2 * sc), 1.0 / sc, 5.0, 0.68), 1.0 - sh, 1.0 - sh + 0.1)
+        low = b.math("SUBTRACT", 1.0, b.mapr(gsep.outputs["Z"], 0.0, ru.get("low_frac", 0.35)))  # more rust toward the piece's bottom
+        lowm = b.math("MULTIPLY", low, b.mapr(noise(b, pos, 3.0 / sc, 3.0), 0.5, 0.7))
+        m = b.math("MULTIPLY", b.math("MINIMUM", b.math("ADD", blot, lowm), 1.0), ru.get("amount", 0.6))
+        fine = around_one(b, noise(b, pos, 25.0 / sc, 3.0, 0.7), 0.25)
+        rc = b.mix(b.gray(fine), tuple(ru.get("tint", [0.32, 0.17, 0.08])), 1.0, "MULTIPLY")
+        base = b.mix(base, rc, m)
+        rough_add = b.math("MULTIPLY", m, 0.35) if rough_add is None else b.math("ADD", rough_add, b.math("MULTIPLY", m, 0.35))
+        if height is not None:
+            height = b.math("ADD", height, b.math("MULTIPLY", b.math("MULTIPLY", m, fine), 0.6))
+        metal_mask = m
+    return base, height, rough_add, metal_mask
 
 
 # ---------------------------------------------------------------- the surface
@@ -761,6 +859,11 @@ def dress_material(mat, p, ctx, K, key):
         base = b.mix(base, b.mix(base, tuple(ew.get("tint", [1.25, 1.22, 1.18])), 1.0, "MULTIPLY", clamp=True), em)
         er = b.math("MULTIPLY", em, ew.get("rough", 0.15))
         rough_add = er if rough_add is None else b.math("ADD", rough_add, er)
+    if p.get("streaks") or p.get("cracks") or p.get("rust"):  # P1 grime set (shader masks)
+        base, height, rough_add, mm = p1_grime(b, p, ctx, K, pos, nrm, base, height, rough_add)
+        if mm is not None and metal0 > 0:
+            b.link(b.math("MULTIPLY", b.math("SUBTRACT", 1.0, mm), metal0), bs.inputs["Metallic"])
+        rec["p1_grime"] = sorted(k for k in ("streaks", "cracks", "rust") if p.get(k))
     # grime: ambient-occlusion dirt, up-facing dust, dampness near the ground
     g = ctx["grime"]
     gs = p.get("grime", 1.0) * g.get("strength", 1.0)

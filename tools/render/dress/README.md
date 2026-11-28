@@ -25,7 +25,8 @@ lens; gate G1 proves it by hash. This is phase P0: foundations, measuring, a fou
 | `make_lock.py`, `add_assets.py`, `dress.lock.json` | Licence lock: 69 Poly Haven CC0 textures (46 reused cave scans, 23 approved on 2026-11-23), 6 sky hdris, 5 models; md5s, mean albedo and roughness. `add_assets.py` merges folders already on disk, no network |
 | `g17.py` | Gate G17: two runs of the same inputs compared |
 | `rules.json`, `rules.py` | Arena = materials only; Man Eater: no decals, stain-band filter; banned words |
-| `<game>.dress.json` | Per game, per location config (pilot: four places) |
+| `<game>.dress.json` | Per game, per location config (pilot: four places by hand; P1 entries for the other 144 written by `p1.py`) |
+| `p1.py` | P1 generator: classifies every blockout material of every location into a surface preset and writes the location entries |
 | `overrides.json` | Per scene exclusions (layer off, seed salt); empty in P0 |
 | `tests/` | `python -W ignore tools/render/dress/tests/test_dress.py` and `tests/test_props.py` (no Blender needed) |
 

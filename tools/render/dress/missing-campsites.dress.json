@@ -430,6 +430,82 @@
    ]
   },
   "fire-ring": {
+   "p1": {
+    "version": 1,
+    "interior": false,
+    "grade": "worn",
+    "deferred": {
+     "P3": [
+      "trunk"
+     ]
+    },
+    "unmatched": [],
+    "kept": []
+   },
+   "grime": {
+    "strength": 0.9,
+    "ao": 0.2,
+    "dust": 0.06,
+    "damp": 0.12,
+    "damp_height_m": 0.4,
+    "ao_distance_m": 0.6,
+    "tone_gain": 1.0
+   },
+   "materials": {
+    "cedar": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "weathered_plank_siding",
+     "tile_m": 1.6,
+     "chroma": 0.12,
+     "bump": 0.45,
+     "macro": 0.1,
+     "grime": 1.0,
+     "round_m": 0.006,
+     "edge_wear": {
+      "radius_m": 0.012,
+      "amount": 0.45,
+      "tint": [
+       1.18,
+       1.14,
+       1.08
+      ],
+      "rough": 0.1
+     },
+     "p1_preset": "timber"
+    },
+    "forest-floor": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "forrest_ground_01",
+     "tile_m": 3.0,
+     "chroma": 0.1,
+     "bump": 0.6,
+     "macro": 0.12,
+     "grime": 0.5,
+     "p1_preset": "earth"
+    },
+    "gravel": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "gravel_floor",
+     "tile_m": 2.6,
+     "chroma": 0.15,
+     "bump": 0.7,
+     "macro": 0.12,
+     "grime": 0.5,
+     "p1_preset": "gravel"
+    }
+   },
    "props": [
     {
      "model": "split-wood-pile",
@@ -454,6 +530,189 @@
    ]
   },
   "tam-flat": {
+   "p1": {
+    "version": 1,
+    "interior": true,
+    "grade": "worn",
+    "deferred": {},
+    "unmatched": [],
+    "kept": [
+     "window"
+    ]
+   },
+   "grime": {
+    "strength": 1.0,
+    "ao": 0.24,
+    "dust": 0.1,
+    "damp": 0.1,
+    "damp_height_m": 0.5,
+    "ao_distance_m": 0.45,
+    "tone_gain": 1.06
+   },
+   "materials": {
+    "ceiling": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.03,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "plastered_wall_04",
+     "tile_m": 2.4,
+     "chroma": 0.0,
+     "bump": 0.25,
+     "macro": 0.07,
+     "grime": 0.8,
+     "cracks": {
+      "amount": 0.25,
+      "scale_m": 1.0,
+      "width": 0.005,
+      "share": 0.2
+     },
+     "p1_preset": "ceiling"
+    },
+    "cork": {
+     "family": "paper",
+     "tile_m": 0.3,
+     "bump": 0.15,
+     "grime": 0.4,
+     "foxing": 0.25,
+     "p1_preset": "paper"
+    },
+    "dark-wood": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "wood_trunk_wall",
+     "tile_m": 1.4,
+     "chroma": 0.12,
+     "bump": 0.3,
+     "macro": 0.08,
+     "grime": 0.6,
+     "round_m": 0.005,
+     "rough_scale": 0.85,
+     "coat": 0.25,
+     "coat_roughness": 0.2,
+     "edge_wear": {
+      "radius_m": 0.008,
+      "amount": 0.35,
+      "tint": [
+       1.15,
+       1.1,
+       1.05
+      ],
+      "rough": 0.05
+     },
+     "p1_preset": "timber_varnish"
+    },
+    "oak-floor": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 0.0,
+     "family": "scan",
+     "scan": "weathered_plank_siding",
+     "tile_m": 2.2,
+     "chroma": 0.15,
+     "bump": 0.5,
+     "macro": 0.1,
+     "grime": 1.0,
+     "coat": 0.12,
+     "coat_roughness": 0.3,
+     "p1_preset": "wood_floor"
+    },
+    "pine-ply": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "weathered_plank_siding",
+     "tile_m": 1.6,
+     "chroma": 0.12,
+     "bump": 0.45,
+     "macro": 0.1,
+     "grime": 1.0,
+     "round_m": 0.006,
+     "edge_wear": {
+      "radius_m": 0.012,
+      "amount": 0.45,
+      "tint": [
+       1.18,
+       1.14,
+       1.08
+      ],
+      "rough": 0.1
+     },
+     "p1_preset": "timber"
+    },
+    "sofa-brown": {
+     "family": "leather",
+     "tile_m": 0.2,
+     "bump": 0.3,
+     "grime": 0.5,
+     "coat": 0.1,
+     "coat_roughness": 0.35,
+     "edge_wear": {
+      "radius_m": 0.01,
+      "amount": 0.4,
+      "tint": [
+       1.18,
+       1.14,
+       1.1
+      ],
+      "rough": -0.05
+     },
+     "p1_preset": "leather"
+    },
+    "wall-white": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "plastered_wall_04",
+     "tile_m": 1.8,
+     "chroma": 0.0,
+     "bump": 0.4,
+     "macro": 0.1,
+     "grime": 1.1,
+     "patches": {
+      "size_m": 0.8,
+      "share": 0.25,
+      "amount": 0.04,
+      "rough": 0.05
+     },
+     "cracks": {
+      "amount": 0.35,
+      "scale_m": 0.9,
+      "width": 0.006,
+      "share": 0.25
+     },
+     "p1_preset": "plaster"
+    }
+   },
+   "decals": [
+    {
+     "name": "stains",
+     "count": 5,
+     "size_m": [
+      0.4,
+      0.9
+     ],
+     "tint": [
+      0.32,
+      0.29,
+      0.24
+     ],
+     "opacity": 0.18,
+     "z_m": [
+      1.0,
+      2.4
+     ]
+    }
+   ],
    "props": [
     {
      "model": "crate-coffee-table",
@@ -472,6 +731,1075 @@
        ],
        "yaw_deg": -90
       }
+     ]
+    }
+   ]
+  },
+  "creek-trail": {
+   "p1": {
+    "version": 1,
+    "interior": false,
+    "grade": "worn",
+    "deferred": {
+     "P3": [
+      "conifer",
+      "trunk"
+     ],
+     "P2": [
+      "creek"
+     ],
+     "P4": [
+      "rock"
+     ]
+    },
+    "unmatched": [],
+    "kept": []
+   },
+   "grime": {
+    "strength": 0.9,
+    "ao": 0.2,
+    "dust": 0.06,
+    "damp": 0.12,
+    "damp_height_m": 0.4,
+    "ao_distance_m": 0.6,
+    "tone_gain": 1.0
+   },
+   "materials": {
+    "forest-floor": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "forrest_ground_01",
+     "tile_m": 3.0,
+     "chroma": 0.1,
+     "bump": 0.6,
+     "macro": 0.12,
+     "grime": 0.5,
+     "p1_preset": "earth"
+    },
+    "gravel": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "gravel_floor",
+     "tile_m": 2.6,
+     "chroma": 0.15,
+     "bump": 0.7,
+     "macro": 0.12,
+     "grime": 0.5,
+     "p1_preset": "gravel"
+    },
+    "gravel-wet": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "gravel_floor",
+     "tile_m": 2.6,
+     "chroma": 0.15,
+     "bump": 0.7,
+     "macro": 0.12,
+     "grime": 0.5,
+     "p1_preset": "gravel"
+    }
+   }
+  },
+  "entrance-booth": {
+   "p1": {
+    "version": 1,
+    "interior": true,
+    "grade": "worn",
+    "deferred": {
+     "P3": [
+      "conifer",
+      "trunk"
+     ]
+    },
+    "unmatched": [],
+    "kept": []
+   },
+   "grime": {
+    "strength": 1.0,
+    "ao": 0.24,
+    "dust": 0.1,
+    "damp": 0.1,
+    "damp_height_m": 0.5,
+    "ao_distance_m": 0.45,
+    "tone_gain": 1.06
+   },
+   "materials": {
+    "car-grey": {
+     "family": "metal",
+     "tile_m": 0.8,
+     "bump": 0.08,
+     "grime": 0.7,
+     "coat": 0.6,
+     "coat_roughness": 0.08,
+     "macro": 0.05,
+     "streaks": {
+      "amount": 0.15,
+      "scale_m": 0.3,
+      "top_frac": 0.5,
+      "tint": [
+       0.85,
+       0.82,
+       0.78
+      ]
+     },
+     "p1_preset": "car_paint"
+    },
+    "cedar": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "weathered_plank_siding",
+     "tile_m": 1.6,
+     "chroma": 0.12,
+     "bump": 0.45,
+     "macro": 0.1,
+     "grime": 1.0,
+     "round_m": 0.006,
+     "edge_wear": {
+      "radius_m": 0.012,
+      "amount": 0.45,
+      "tint": [
+       1.18,
+       1.14,
+       1.08
+      ],
+      "rough": 0.1
+     },
+     "p1_preset": "timber"
+    },
+    "concrete": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "concrete_floor_worn_001",
+     "tile_m": 2.6,
+     "chroma": 0.1,
+     "bump": 0.4,
+     "macro": 0.1,
+     "grime": 1.0,
+     "rough_scale": 0.9,
+     "cracks": {
+      "amount": 0.35,
+      "scale_m": 1.2,
+      "width": 0.005,
+      "share": 0.25
+     },
+     "p1_preset": "conc_floor"
+    },
+    "forest-floor": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "forrest_ground_01",
+     "tile_m": 3.0,
+     "chroma": 0.1,
+     "bump": 0.6,
+     "macro": 0.12,
+     "grime": 0.5,
+     "p1_preset": "earth"
+    },
+    "glass": {
+     "family": "dirt-only",
+     "dirt": 0.18,
+     "p1_preset": "glass"
+    },
+    "gravel": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "gravel_floor",
+     "tile_m": 2.6,
+     "chroma": 0.15,
+     "bump": 0.7,
+     "macro": 0.12,
+     "grime": 0.5,
+     "p1_preset": "gravel"
+    },
+    "tin": {
+     "res": "2k",
+     "third": false,
+     "macro2": 0.05,
+     "obj_jitter_m": 0.0,
+     "family": "scan",
+     "scan": "corrugated_iron",
+     "tile_m": 2.0,
+     "chroma": 0.0,
+     "bump": 0.7,
+     "macro": 0.1,
+     "grime": 1.0,
+     "streaks": {
+      "amount": 0.3,
+      "scale_m": 0.3,
+      "top_frac": 0.9,
+      "tint": [
+       0.7,
+       0.55,
+       0.4
+      ]
+     },
+     "p1_preset": "corrugated"
+    }
+   },
+   "decals": [
+    {
+     "name": "stains",
+     "count": 5,
+     "size_m": [
+      0.4,
+      0.9
+     ],
+     "tint": [
+      0.32,
+      0.29,
+      0.24
+     ],
+     "opacity": 0.18,
+     "z_m": [
+      1.0,
+      2.4
+     ]
+    }
+   ]
+  },
+  "five-sites": {
+   "p1": {
+    "version": 1,
+    "interior": false,
+    "grade": "worn",
+    "deferred": {
+     "P3": [
+      "conifer",
+      "grass-faded",
+      "trunk"
+     ]
+    },
+    "unmatched": [],
+    "kept": []
+   },
+   "grime": {
+    "strength": 0.9,
+    "ao": 0.2,
+    "dust": 0.06,
+    "damp": 0.12,
+    "damp_height_m": 0.4,
+    "ao_distance_m": 0.6,
+    "tone_gain": 1.0
+   },
+   "materials": {
+    "asphalt": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "asphalt_02",
+     "tile_m": 3.5,
+     "chroma": 0.1,
+     "bump": 0.5,
+     "macro": 0.12,
+     "grime": 0.6,
+     "cracks": {
+      "amount": 0.4,
+      "scale_m": 1.6,
+      "width": 0.006,
+      "share": 0.3
+     },
+     "p1_preset": "asphalt"
+    },
+    "forest-floor": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "forrest_ground_01",
+     "tile_m": 3.0,
+     "chroma": 0.1,
+     "bump": 0.6,
+     "macro": 0.12,
+     "grime": 0.5,
+     "p1_preset": "earth"
+    },
+    "gravel": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "gravel_floor",
+     "tile_m": 2.6,
+     "chroma": 0.15,
+     "bump": 0.7,
+     "macro": 0.12,
+     "grime": 0.5,
+     "p1_preset": "gravel"
+    }
+   }
+  },
+  "gravel-clearing": {
+   "p1": {
+    "version": 1,
+    "interior": false,
+    "grade": "worn",
+    "deferred": {
+     "P3": [
+      "conifer",
+      "grass-faded",
+      "trunk"
+     ],
+     "P4": [
+      "rock"
+     ]
+    },
+    "unmatched": [],
+    "kept": []
+   },
+   "grime": {
+    "strength": 0.9,
+    "ao": 0.2,
+    "dust": 0.06,
+    "damp": 0.12,
+    "damp_height_m": 0.4,
+    "ao_distance_m": 0.6,
+    "tone_gain": 1.0
+   },
+   "materials": {
+    "asphalt": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "asphalt_02",
+     "tile_m": 3.5,
+     "chroma": 0.1,
+     "bump": 0.5,
+     "macro": 0.12,
+     "grime": 0.6,
+     "cracks": {
+      "amount": 0.4,
+      "scale_m": 1.6,
+      "width": 0.006,
+      "share": 0.3
+     },
+     "p1_preset": "asphalt"
+    },
+    "forest-floor": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "forrest_ground_01",
+     "tile_m": 3.0,
+     "chroma": 0.1,
+     "bump": 0.6,
+     "macro": 0.12,
+     "grime": 0.5,
+     "p1_preset": "earth"
+    },
+    "gravel": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "gravel_floor",
+     "tile_m": 2.6,
+     "chroma": 0.15,
+     "bump": 0.7,
+     "macro": 0.12,
+     "grime": 0.5,
+     "p1_preset": "gravel"
+    }
+   }
+  },
+  "other-entrance": {
+   "p1": {
+    "version": 1,
+    "interior": true,
+    "grade": "worn",
+    "deferred": {
+     "P3": [
+      "clean-trunk",
+      "dry-grass"
+     ],
+     "P2": [
+      "pearl"
+     ]
+    },
+    "unmatched": [],
+    "kept": []
+   },
+   "grime": {
+    "strength": 1.0,
+    "ao": 0.24,
+    "dust": 0.1,
+    "damp": 0.1,
+    "damp_height_m": 0.5,
+    "ao_distance_m": 0.45,
+    "tone_gain": 1.06
+   },
+   "materials": {
+    "car-body": {
+     "family": "metal",
+     "tile_m": 0.8,
+     "bump": 0.08,
+     "grime": 0.7,
+     "coat": 0.6,
+     "coat_roughness": 0.08,
+     "macro": 0.05,
+     "streaks": {
+      "amount": 0.15,
+      "scale_m": 0.3,
+      "top_frac": 0.5,
+      "tint": [
+       0.85,
+       0.82,
+       0.78
+      ]
+     },
+     "p1_preset": "car_paint"
+    },
+    "cedar-clean": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "weathered_plank_siding",
+     "tile_m": 1.6,
+     "chroma": 0.12,
+     "bump": 0.45,
+     "macro": 0.1,
+     "grime": 1.0,
+     "round_m": 0.006,
+     "edge_wear": {
+      "radius_m": 0.012,
+      "amount": 0.45,
+      "tint": [
+       1.18,
+       1.14,
+       1.08
+      ],
+      "rough": 0.1
+     },
+     "p1_preset": "timber"
+    },
+    "cream": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "plastered_wall_04",
+     "tile_m": 2.0,
+     "chroma": 0.0,
+     "bump": 0.2,
+     "macro": 0.05,
+     "grime": 0.9,
+     "rough_scale": 0.8,
+     "patches": {
+      "size_m": 0.6,
+      "share": 0.3,
+      "amount": 0.04,
+      "rough": 0.1
+     },
+     "edge_wear": {
+      "radius_m": 0.015,
+      "amount": 0.5,
+      "tint": [
+       1.15,
+       1.13,
+       1.1
+      ],
+      "rough": 0.1
+     },
+     "p1_preset": "paint_gloss"
+    },
+    "dead-gravel": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "gravel_floor",
+     "tile_m": 2.6,
+     "chroma": 0.15,
+     "bump": 0.7,
+     "macro": 0.12,
+     "grime": 0.5,
+     "p1_preset": "gravel"
+    },
+    "glass": {
+     "family": "dirt-only",
+     "dirt": 0.18,
+     "p1_preset": "glass"
+    }
+   },
+   "decals": [
+    {
+     "name": "stains",
+     "count": 5,
+     "size_m": [
+      0.4,
+      0.9
+     ],
+     "tint": [
+      0.32,
+      0.29,
+      0.24
+     ],
+     "opacity": 0.18,
+     "z_m": [
+      1.0,
+      2.4
+     ]
+    }
+   ]
+  },
+  "other-side-sites": {
+   "p1": {
+    "version": 1,
+    "interior": false,
+    "grade": "worn",
+    "deferred": {
+     "P3": [
+      "clean-trunk",
+      "cool-grass"
+     ],
+     "P2": [
+      "pearl"
+     ]
+    },
+    "unmatched": [
+     "cool-green"
+    ],
+    "kept": []
+   },
+   "grime": {
+    "strength": 0.9,
+    "ao": 0.2,
+    "dust": 0.06,
+    "damp": 0.12,
+    "damp_height_m": 0.4,
+    "ao_distance_m": 0.6,
+    "tone_gain": 1.0
+   },
+   "materials": {
+    "pearl-gravel": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "gravel_floor",
+     "tile_m": 2.6,
+     "chroma": 0.15,
+     "bump": 0.7,
+     "macro": 0.12,
+     "grime": 0.5,
+     "p1_preset": "gravel"
+    }
+   }
+  },
+  "school-hall": {
+   "p1": {
+    "version": 1,
+    "interior": true,
+    "grade": "worn",
+    "deferred": {},
+    "unmatched": [
+     "screen"
+    ],
+    "kept": [
+     "window"
+    ]
+   },
+   "grime": {
+    "strength": 1.0,
+    "ao": 0.24,
+    "dust": 0.1,
+    "damp": 0.1,
+    "damp_height_m": 0.5,
+    "ao_distance_m": 0.45,
+    "tone_gain": 1.06
+   },
+   "materials": {
+    "chair-black": {
+     "family": "leather",
+     "tile_m": 0.2,
+     "bump": 0.3,
+     "grime": 0.5,
+     "coat": 0.1,
+     "coat_roughness": 0.35,
+     "edge_wear": {
+      "radius_m": 0.01,
+      "amount": 0.4,
+      "tint": [
+       1.18,
+       1.14,
+       1.1
+      ],
+      "rough": -0.05
+     },
+     "p1_preset": "leather"
+    },
+    "curtain": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "hessian_380",
+     "tile_m": 0.25,
+     "chroma": 0.0,
+     "bump": 0.25,
+     "macro": 0.1,
+     "grime": 0.7,
+     "p1_preset": "fabric_fine"
+    },
+    "door": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 0.0,
+     "family": "scan",
+     "scan": "wood_trunk_wall",
+     "tile_m": 1.8,
+     "chroma": 0.15,
+     "bump": 0.5,
+     "macro": 0.1,
+     "grime": 1.0,
+     "edge_wear": {
+      "radius_m": 0.012,
+      "amount": 0.45,
+      "tint": [
+       1.18,
+       1.14,
+       1.08
+      ],
+      "rough": 0.1
+     },
+     "p1_preset": "boards_v"
+    },
+    "hall-wall": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "plastered_wall_04",
+     "tile_m": 1.8,
+     "chroma": 0.0,
+     "bump": 0.4,
+     "macro": 0.1,
+     "grime": 1.1,
+     "patches": {
+      "size_m": 0.8,
+      "share": 0.25,
+      "amount": 0.04,
+      "rough": 0.05
+     },
+     "cracks": {
+      "amount": 0.35,
+      "scale_m": 0.9,
+      "width": 0.006,
+      "share": 0.25
+     },
+     "p1_preset": "plaster"
+    },
+    "parquet": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 0.0,
+     "family": "scan",
+     "scan": "weathered_plank_siding",
+     "tile_m": 2.2,
+     "chroma": 0.15,
+     "bump": 0.5,
+     "macro": 0.1,
+     "grime": 1.0,
+     "coat": 0.12,
+     "coat_roughness": 0.3,
+     "p1_preset": "wood_floor"
+    },
+    "proscenium": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "weathered_plank_siding",
+     "tile_m": 1.6,
+     "chroma": 0.12,
+     "bump": 0.45,
+     "macro": 0.1,
+     "grime": 1.0,
+     "round_m": 0.006,
+     "edge_wear": {
+      "radius_m": 0.012,
+      "amount": 0.45,
+      "tint": [
+       1.18,
+       1.14,
+       1.08
+      ],
+      "rough": 0.1
+     },
+     "p1_preset": "timber"
+    },
+    "stage-oak": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 0.0,
+     "family": "scan",
+     "scan": "weathered_plank_siding",
+     "tile_m": 2.2,
+     "chroma": 0.15,
+     "bump": 0.5,
+     "macro": 0.1,
+     "grime": 1.0,
+     "coat": 0.12,
+     "coat_roughness": 0.3,
+     "p1_preset": "wood_floor"
+    }
+   },
+   "decals": [
+    {
+     "name": "stains",
+     "count": 5,
+     "size_m": [
+      0.4,
+      0.9
+     ],
+     "tint": [
+      0.32,
+      0.29,
+      0.24
+     ],
+     "opacity": 0.18,
+     "z_m": [
+      1.0,
+      2.4
+     ]
+    }
+   ]
+  },
+  "stairwell": {
+   "p1": {
+    "version": 1,
+    "interior": true,
+    "grade": "old",
+    "deferred": {},
+    "unmatched": [],
+    "kept": [
+     "dusk-window"
+    ]
+   },
+   "grime": {
+    "strength": 1.25,
+    "ao": 0.24,
+    "dust": 0.1,
+    "damp": 0.16,
+    "damp_height_m": 0.7,
+    "ao_distance_m": 0.45,
+    "tone_gain": 1.06
+   },
+   "materials": {
+    "door-olive": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 0.0,
+     "family": "scan",
+     "scan": "wood_trunk_wall",
+     "tile_m": 1.8,
+     "chroma": 0.15,
+     "bump": 0.5,
+     "macro": 0.1,
+     "grime": 1.0,
+     "edge_wear": {
+      "radius_m": 0.012,
+      "amount": 0.45,
+      "tint": [
+       1.18,
+       1.14,
+       1.08
+      ],
+      "rough": 0.1
+     },
+     "p1_preset": "boards_v"
+    },
+    "plaster": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "worn_mossy_plasterwall",
+     "tile_m": 2.4,
+     "chroma": 0.0,
+     "contrast": 0.3,
+     "bump": 0.35,
+     "macro": 0.12,
+     "grime": 1.3,
+     "streaks": {
+      "amount": 0.3,
+      "scale_m": 0.35,
+      "top_frac": 0.8,
+      "tint": [
+       0.8,
+       0.76,
+       0.68
+      ]
+     },
+     "cracks": {
+      "amount": 0.45,
+      "scale_m": 0.8,
+      "width": 0.007,
+      "share": 0.35
+     },
+     "p1_preset": "plaster_old"
+    },
+    "rail": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "weathered_plank_siding",
+     "tile_m": 1.6,
+     "chroma": 0.12,
+     "bump": 0.45,
+     "macro": 0.1,
+     "grime": 1.0,
+     "round_m": 0.006,
+     "edge_wear": {
+      "radius_m": 0.012,
+      "amount": 0.45,
+      "tint": [
+       1.18,
+       1.14,
+       1.08
+      ],
+      "rough": 0.1
+     },
+     "p1_preset": "timber"
+    },
+    "stone-step": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "stone_floor",
+     "tile_m": 3.6,
+     "chroma": 0.1,
+     "bump": 0.6,
+     "macro": 0.12,
+     "grime": 1.1,
+     "streaks": {
+      "amount": 0.25,
+      "scale_m": 0.5,
+      "top_frac": 0.8,
+      "tint": [
+       0.78,
+       0.76,
+       0.72
+      ]
+     },
+     "p1_preset": "stone_block"
+    }
+   },
+   "decals": [
+    {
+     "name": "stains",
+     "count": 5,
+     "size_m": [
+      0.4,
+      0.9
+     ],
+     "tint": [
+      0.32,
+      0.29,
+      0.24
+     ],
+     "opacity": 0.18,
+     "z_m": [
+      1.0,
+      2.4
+     ]
+    }
+   ]
+  },
+  "the-clearing": {
+   "p1": {
+    "version": 1,
+    "interior": false,
+    "grade": "worn",
+    "deferred": {
+     "P3": [
+      "clean-trunk",
+      "cool-grass"
+     ],
+     "P2": [
+      "pearl",
+      "still-water"
+     ]
+    },
+    "unmatched": [
+     "cool-green"
+    ],
+    "kept": []
+   },
+   "grime": {
+    "strength": 0.9,
+    "ao": 0.2,
+    "dust": 0.06,
+    "damp": 0.12,
+    "damp_height_m": 0.4,
+    "ao_distance_m": 0.6,
+    "tone_gain": 1.0
+   },
+   "materials": {}
+  },
+  "van-interior": {
+   "p1": {
+    "version": 1,
+    "interior": true,
+    "grade": "worn",
+    "deferred": {
+     "P2": [
+      "asphalt",
+      "conifer"
+     ]
+    },
+    "unmatched": [],
+    "kept": [
+     "glass"
+    ]
+   },
+   "grime": {
+    "strength": 1.0,
+    "ao": 0.24,
+    "dust": 0.1,
+    "damp": 0.1,
+    "damp_height_m": 0.5,
+    "ao_distance_m": 0.45,
+    "tone_gain": 1.06
+   },
+   "materials": {
+    "dash-black": {
+     "family": "leather",
+     "tile_m": 0.2,
+     "bump": 0.3,
+     "grime": 0.5,
+     "coat": 0.1,
+     "coat_roughness": 0.35,
+     "edge_wear": {
+      "radius_m": 0.01,
+      "amount": 0.4,
+      "tint": [
+       1.18,
+       1.14,
+       1.1
+      ],
+      "rough": -0.05
+     },
+     "p1_preset": "leather"
+    },
+    "headliner": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.03,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "plastered_wall_04",
+     "tile_m": 2.4,
+     "chroma": 0.0,
+     "bump": 0.25,
+     "macro": 0.07,
+     "grime": 0.8,
+     "cracks": {
+      "amount": 0.25,
+      "scale_m": 1.0,
+      "width": 0.005,
+      "share": 0.2
+     },
+     "p1_preset": "ceiling"
+    },
+    "seat-red": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "hessian_380",
+     "tile_m": 0.5,
+     "chroma": 0.0,
+     "bump": 0.35,
+     "macro": 0.12,
+     "grime": 0.9,
+     "p1_preset": "fabric"
+    },
+    "van-red": {
+     "family": "metal",
+     "tile_m": 0.8,
+     "bump": 0.08,
+     "grime": 0.7,
+     "coat": 0.6,
+     "coat_roughness": 0.08,
+     "macro": 0.05,
+     "streaks": {
+      "amount": 0.15,
+      "scale_m": 0.3,
+      "top_frac": 0.5,
+      "tint": [
+       0.85,
+       0.82,
+       0.78
+      ]
+     },
+     "p1_preset": "car_paint"
+    }
+   },
+   "decals": [
+    {
+     "name": "stains",
+     "count": 5,
+     "size_m": [
+      0.4,
+      0.9
+     ],
+     "tint": [
+      0.32,
+      0.29,
+      0.24
+     ],
+     "opacity": 0.18,
+     "z_m": [
+      1.0,
+      2.4
      ]
     }
    ]

@@ -316,6 +316,134 @@
    ]
   },
   "trial-53-arena": {
+   "p1": {
+    "version": 1,
+    "interior": true,
+    "grade": "worn",
+    "deferred": {},
+    "unmatched": [],
+    "kept": []
+   },
+   "grime": {
+    "strength": 1.0,
+    "ao": 0.24,
+    "dust": 0.1,
+    "damp": 0.1,
+    "damp_height_m": 0.5,
+    "ao_distance_m": 0.45,
+    "tone_gain": 1.06
+   },
+   "materials": {
+    "concrete": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "concrete_wall_008",
+     "tile_m": 2.4,
+     "chroma": 0.1,
+     "bump": 0.5,
+     "macro": 0.1,
+     "grime": 1.2,
+     "streaks": {
+      "amount": 0.25,
+      "scale_m": 0.4,
+      "top_frac": 0.7,
+      "tint": [
+       0.78,
+       0.76,
+       0.72
+      ]
+     },
+     "cracks": {
+      "amount": 0.35,
+      "scale_m": 0.9,
+      "width": 0.006,
+      "share": 0.3
+     },
+     "p1_preset": "conc_wall"
+    },
+    "concrete-dark": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "concrete_wall_008",
+     "tile_m": 2.4,
+     "chroma": 0.1,
+     "bump": 0.55,
+     "macro": 0.12,
+     "grime": 1.4,
+     "streaks": {
+      "amount": 0.4,
+      "scale_m": 0.35,
+      "top_frac": 0.85,
+      "tint": [
+       0.7,
+       0.68,
+       0.64
+      ]
+     },
+     "cracks": {
+      "amount": 0.45,
+      "scale_m": 0.8,
+      "width": 0.007,
+      "share": 0.35
+     },
+     "p1_preset": "conc_wall_damp"
+    },
+    "glass": {
+     "family": "dirt-only",
+     "dirt": 0.18,
+     "p1_preset": "glass"
+    },
+    "steel": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "green_metal_rust",
+     "tile_m": 1.4,
+     "chroma": 0.0,
+     "bump": 0.3,
+     "macro": 0.08,
+     "grime": 0.9,
+     "edge_wear": {
+      "radius_m": 0.012,
+      "amount": 0.5,
+      "tint": [
+       1.2,
+       1.18,
+       1.15
+      ],
+      "rough": -0.05
+     },
+     "rust": {
+      "amount": 0.45,
+      "share": 0.18,
+      "scale_m": 0.45,
+      "tint": [
+       0.3,
+       0.17,
+       0.08
+      ]
+     },
+     "streaks": {
+      "amount": 0.2,
+      "scale_m": 0.25,
+      "top_frac": 0.6,
+      "tint": [
+       0.8,
+       0.66,
+       0.52
+      ]
+     },
+     "p1_preset": "painted_steel"
+    }
+   },
    "props": [
     {
      "model": "floodlight-housing",
@@ -355,6 +483,802 @@
      ]
     }
    ]
+  },
+  "idaho-river-town": {
+   "p1": {
+    "version": 1,
+    "interior": false,
+    "grade": "worn",
+    "deferred": {
+     "P2": [
+      "concrete-dark",
+      "river"
+     ],
+     "P3": [
+      "grass-dry"
+     ]
+    },
+    "unmatched": [],
+    "kept": []
+   },
+   "grime": {
+    "strength": 0.9,
+    "ao": 0.2,
+    "dust": 0.06,
+    "damp": 0.12,
+    "damp_height_m": 0.4,
+    "ao_distance_m": 0.6,
+    "tone_gain": 1.0
+   },
+   "materials": {
+    "asphalt": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "asphalt_02",
+     "tile_m": 3.5,
+     "chroma": 0.1,
+     "bump": 0.5,
+     "macro": 0.12,
+     "grime": 0.6,
+     "cracks": {
+      "amount": 0.4,
+      "scale_m": 1.6,
+      "width": 0.006,
+      "share": 0.3
+     },
+     "p1_preset": "asphalt"
+    },
+    "brick": {
+     "res": "2k",
+     "third": false,
+     "macro2": 0.05,
+     "obj_jitter_m": 0.0,
+     "family": "scan",
+     "scan": "red_brick_03",
+     "tile_m": 1.6,
+     "chroma": 0.15,
+     "bump": 0.6,
+     "macro": 0.1,
+     "grime": 1.1,
+     "streaks": {
+      "amount": 0.2,
+      "scale_m": 0.4,
+      "top_frac": 0.7,
+      "tint": [
+       0.75,
+       0.72,
+       0.68
+      ]
+     },
+     "p1_preset": "brick"
+    },
+    "concrete": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "concrete_wall_008",
+     "tile_m": 2.4,
+     "chroma": 0.1,
+     "bump": 0.5,
+     "macro": 0.1,
+     "grime": 1.2,
+     "streaks": {
+      "amount": 0.25,
+      "scale_m": 0.4,
+      "top_frac": 0.7,
+      "tint": [
+       0.78,
+       0.76,
+       0.72
+      ]
+     },
+     "cracks": {
+      "amount": 0.35,
+      "scale_m": 0.9,
+      "width": 0.006,
+      "share": 0.3
+     },
+     "p1_preset": "conc_wall"
+    },
+    "earth": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "forrest_ground_01",
+     "tile_m": 3.0,
+     "chroma": 0.1,
+     "bump": 0.6,
+     "macro": 0.12,
+     "grime": 0.5,
+     "p1_preset": "earth"
+    },
+    "steel": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "green_metal_rust",
+     "tile_m": 1.4,
+     "chroma": 0.0,
+     "bump": 0.3,
+     "macro": 0.08,
+     "grime": 0.9,
+     "edge_wear": {
+      "radius_m": 0.012,
+      "amount": 0.5,
+      "tint": [
+       1.2,
+       1.18,
+       1.15
+      ],
+      "rough": -0.05
+     },
+     "rust": {
+      "amount": 0.45,
+      "share": 0.18,
+      "scale_m": 0.45,
+      "tint": [
+       0.3,
+       0.17,
+       0.08
+      ]
+     },
+     "streaks": {
+      "amount": 0.2,
+      "scale_m": 0.25,
+      "top_frac": 0.6,
+      "tint": [
+       0.8,
+       0.66,
+       0.52
+      ]
+     },
+     "p1_preset": "painted_steel"
+    }
+   }
+  },
+  "lower-ring-corridor": {
+   "p1": {
+    "version": 1,
+    "interior": true,
+    "grade": "worn",
+    "deferred": {},
+    "unmatched": [],
+    "kept": [
+     "glass"
+    ]
+   },
+   "grime": {
+    "strength": 1.0,
+    "ao": 0.24,
+    "dust": 0.1,
+    "damp": 0.1,
+    "damp_height_m": 0.5,
+    "ao_distance_m": 0.45,
+    "tone_gain": 1.06
+   },
+   "materials": {
+    "asphalt": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "asphalt_02",
+     "tile_m": 3.5,
+     "chroma": 0.1,
+     "bump": 0.5,
+     "macro": 0.12,
+     "grime": 0.6,
+     "cracks": {
+      "amount": 0.4,
+      "scale_m": 1.6,
+      "width": 0.006,
+      "share": 0.3
+     },
+     "p1_preset": "asphalt"
+    },
+    "concrete": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "concrete_wall_008",
+     "tile_m": 2.4,
+     "chroma": 0.1,
+     "bump": 0.5,
+     "macro": 0.1,
+     "grime": 1.2,
+     "streaks": {
+      "amount": 0.25,
+      "scale_m": 0.4,
+      "top_frac": 0.7,
+      "tint": [
+       0.78,
+       0.76,
+       0.72
+      ]
+     },
+     "cracks": {
+      "amount": 0.35,
+      "scale_m": 0.9,
+      "width": 0.006,
+      "share": 0.3
+     },
+     "p1_preset": "conc_wall"
+    },
+    "concrete-dark": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "concrete_wall_008",
+     "tile_m": 2.4,
+     "chroma": 0.1,
+     "bump": 0.55,
+     "macro": 0.12,
+     "grime": 1.4,
+     "streaks": {
+      "amount": 0.4,
+      "scale_m": 0.35,
+      "top_frac": 0.85,
+      "tint": [
+       0.7,
+       0.68,
+       0.64
+      ]
+     },
+     "cracks": {
+      "amount": 0.45,
+      "scale_m": 0.8,
+      "width": 0.007,
+      "share": 0.35
+     },
+     "p1_preset": "conc_wall_damp"
+    }
+   },
+   "decals": [
+    {
+     "name": "stains",
+     "count": 5,
+     "size_m": [
+      0.4,
+      0.9
+     ],
+     "tint": [
+      0.32,
+      0.29,
+      0.24
+     ],
+     "opacity": 0.18,
+     "z_m": [
+      1.0,
+      2.4
+     ]
+    }
+   ]
+  },
+  "printer-room": {
+   "p1": {
+    "version": 1,
+    "interior": true,
+    "grade": "worn",
+    "deferred": {},
+    "unmatched": [],
+    "kept": [
+     "blue-emergency",
+     "steel"
+    ]
+   },
+   "grime": {
+    "strength": 1.0,
+    "ao": 0.24,
+    "dust": 0.1,
+    "damp": 0.1,
+    "damp_height_m": 0.5,
+    "ao_distance_m": 0.45,
+    "tone_gain": 1.06
+   },
+   "materials": {
+    "concrete": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "concrete_floor_worn_001",
+     "tile_m": 2.6,
+     "chroma": 0.1,
+     "bump": 0.4,
+     "macro": 0.1,
+     "grime": 1.0,
+     "rough_scale": 0.9,
+     "cracks": {
+      "amount": 0.35,
+      "scale_m": 1.2,
+      "width": 0.005,
+      "share": 0.25
+     },
+     "p1_preset": "conc_floor"
+    },
+    "concrete-dark": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "concrete_wall_008",
+     "tile_m": 2.4,
+     "chroma": 0.1,
+     "bump": 0.55,
+     "macro": 0.12,
+     "grime": 1.4,
+     "streaks": {
+      "amount": 0.4,
+      "scale_m": 0.35,
+      "top_frac": 0.85,
+      "tint": [
+       0.7,
+       0.68,
+       0.64
+      ]
+     },
+     "cracks": {
+      "amount": 0.45,
+      "scale_m": 0.8,
+      "width": 0.007,
+      "share": 0.35
+     },
+     "p1_preset": "conc_wall_damp"
+    }
+   },
+   "decals": [
+    {
+     "name": "stains",
+     "count": 5,
+     "size_m": [
+      0.4,
+      0.9
+     ],
+     "tint": [
+      0.32,
+      0.29,
+      0.24
+     ],
+     "opacity": 0.18,
+     "z_m": [
+      1.0,
+      2.4
+     ]
+    }
+   ]
+  },
+  "sky-room": {
+   "p1": {
+    "version": 1,
+    "interior": true,
+    "grade": "worn",
+    "deferred": {},
+    "unmatched": [],
+    "kept": []
+   },
+   "grime": {
+    "strength": 1.0,
+    "ao": 0.24,
+    "dust": 0.1,
+    "damp": 0.1,
+    "damp_height_m": 0.5,
+    "ao_distance_m": 0.45,
+    "tone_gain": 1.06
+   },
+   "materials": {
+    "concrete": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "concrete_floor_worn_001",
+     "tile_m": 2.6,
+     "chroma": 0.1,
+     "bump": 0.4,
+     "macro": 0.1,
+     "grime": 1.0,
+     "rough_scale": 0.9,
+     "cracks": {
+      "amount": 0.35,
+      "scale_m": 1.2,
+      "width": 0.005,
+      "share": 0.25
+     },
+     "p1_preset": "conc_floor"
+    },
+    "field-paint": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "plastered_wall_04",
+     "tile_m": 2.0,
+     "chroma": 0.0,
+     "bump": 0.2,
+     "macro": 0.05,
+     "grime": 0.9,
+     "rough_scale": 0.8,
+     "patches": {
+      "size_m": 0.6,
+      "share": 0.3,
+      "amount": 0.04,
+      "rough": 0.1
+     },
+     "edge_wear": {
+      "radius_m": 0.015,
+      "amount": 0.5,
+      "tint": [
+       1.15,
+       1.13,
+       1.1
+      ],
+      "rough": 0.1
+     },
+     "p1_preset": "paint_gloss"
+    },
+    "sky-paint": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "plastered_wall_04",
+     "tile_m": 2.0,
+     "chroma": 0.0,
+     "bump": 0.2,
+     "macro": 0.05,
+     "grime": 0.9,
+     "rough_scale": 0.8,
+     "patches": {
+      "size_m": 0.6,
+      "share": 0.3,
+      "amount": 0.04,
+      "rough": 0.1
+     },
+     "edge_wear": {
+      "radius_m": 0.015,
+      "amount": 0.5,
+      "tint": [
+       1.15,
+       1.13,
+       1.1
+      ],
+      "rough": 0.1
+     },
+     "p1_preset": "paint_gloss"
+    },
+    "steel": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "green_metal_rust",
+     "tile_m": 1.4,
+     "chroma": 0.0,
+     "bump": 0.3,
+     "macro": 0.08,
+     "grime": 0.9,
+     "edge_wear": {
+      "radius_m": 0.012,
+      "amount": 0.5,
+      "tint": [
+       1.2,
+       1.18,
+       1.15
+      ],
+      "rough": -0.05
+     },
+     "rust": {
+      "amount": 0.45,
+      "share": 0.18,
+      "scale_m": 0.45,
+      "tint": [
+       0.3,
+       0.17,
+       0.08
+      ]
+     },
+     "streaks": {
+      "amount": 0.2,
+      "scale_m": 0.25,
+      "top_frac": 0.6,
+      "tint": [
+       0.8,
+       0.66,
+       0.52
+      ]
+     },
+     "p1_preset": "painted_steel"
+    }
+   },
+   "decals": [
+    {
+     "name": "stains",
+     "count": 5,
+     "size_m": [
+      0.4,
+      0.9
+     ],
+     "tint": [
+      0.32,
+      0.29,
+      0.24
+     ],
+     "opacity": 0.18,
+     "z_m": [
+      1.0,
+      2.4
+     ]
+    }
+   ]
+  },
+  "snakehead-archive": {
+   "p1": {
+    "version": 1,
+    "interior": true,
+    "grade": "worn",
+    "deferred": {},
+    "unmatched": [],
+    "kept": [
+     "blue-emergency"
+    ]
+   },
+   "grime": {
+    "strength": 1.0,
+    "ao": 0.24,
+    "dust": 0.1,
+    "damp": 0.1,
+    "damp_height_m": 0.5,
+    "ao_distance_m": 0.45,
+    "tone_gain": 1.06
+   },
+   "materials": {
+    "concrete": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "concrete_wall_008",
+     "tile_m": 2.4,
+     "chroma": 0.1,
+     "bump": 0.5,
+     "macro": 0.1,
+     "grime": 1.2,
+     "streaks": {
+      "amount": 0.25,
+      "scale_m": 0.4,
+      "top_frac": 0.7,
+      "tint": [
+       0.78,
+       0.76,
+       0.72
+      ]
+     },
+     "cracks": {
+      "amount": 0.35,
+      "scale_m": 0.9,
+      "width": 0.006,
+      "share": 0.3
+     },
+     "p1_preset": "conc_wall"
+    },
+    "concrete-dark": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "concrete_wall_008",
+     "tile_m": 2.4,
+     "chroma": 0.1,
+     "bump": 0.55,
+     "macro": 0.12,
+     "grime": 1.4,
+     "streaks": {
+      "amount": 0.4,
+      "scale_m": 0.35,
+      "top_frac": 0.85,
+      "tint": [
+       0.7,
+       0.68,
+       0.64
+      ]
+     },
+     "cracks": {
+      "amount": 0.45,
+      "scale_m": 0.8,
+      "width": 0.007,
+      "share": 0.35
+     },
+     "p1_preset": "conc_wall_damp"
+    },
+    "earth": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "forrest_ground_01",
+     "tile_m": 3.0,
+     "chroma": 0.1,
+     "bump": 0.6,
+     "macro": 0.12,
+     "grime": 0.5,
+     "p1_preset": "earth"
+    },
+    "glass": {
+     "family": "dirt-only",
+     "dirt": 0.18,
+     "p1_preset": "glass"
+    }
+   },
+   "decals": [
+    {
+     "name": "stains",
+     "count": 5,
+     "size_m": [
+      0.4,
+      0.9
+     ],
+     "tint": [
+      0.32,
+      0.29,
+      0.24
+     ],
+     "opacity": 0.18,
+     "z_m": [
+      1.0,
+      2.4
+     ]
+    }
+   ]
+  },
+  "spire-plaza": {
+   "p1": {
+    "version": 1,
+    "interior": false,
+    "grade": "clean",
+    "deferred": {},
+    "unmatched": [],
+    "kept": []
+   },
+   "grime": {
+    "strength": 0.6,
+    "ao": 0.2,
+    "dust": 0.06,
+    "damp": 0.12,
+    "damp_height_m": 0.4,
+    "ao_distance_m": 0.6,
+    "tone_gain": 1.0
+   },
+   "materials": {
+    "concrete": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "concrete_wall_008",
+     "tile_m": 2.4,
+     "chroma": 0.1,
+     "bump": 0.5,
+     "macro": 0.1,
+     "grime": 1.2,
+     "streaks": {
+      "amount": 0.25,
+      "scale_m": 0.4,
+      "top_frac": 0.7,
+      "tint": [
+       0.78,
+       0.76,
+       0.72
+      ]
+     },
+     "cracks": {
+      "amount": 0.35,
+      "scale_m": 0.9,
+      "width": 0.006,
+      "share": 0.3
+     },
+     "p1_preset": "conc_wall"
+    },
+    "concrete-dark": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "concrete_wall_008",
+     "tile_m": 2.4,
+     "chroma": 0.1,
+     "bump": 0.55,
+     "macro": 0.12,
+     "grime": 1.4,
+     "streaks": {
+      "amount": 0.4,
+      "scale_m": 0.35,
+      "top_frac": 0.85,
+      "tint": [
+       0.7,
+       0.68,
+       0.64
+      ]
+     },
+     "cracks": {
+      "amount": 0.45,
+      "scale_m": 0.8,
+      "width": 0.007,
+      "share": 0.35
+     },
+     "p1_preset": "conc_wall_damp"
+    },
+    "glass": {
+     "family": "dirt-only",
+     "dirt": 0.18,
+     "p1_preset": "glass"
+    },
+    "steel": {
+     "family": "metal",
+     "tile_m": 0.5,
+     "bump": 0.15,
+     "grime": 0.6,
+     "round_m": 0.006,
+     "edge_wear": {
+      "radius_m": 0.01,
+      "amount": 0.5,
+      "tint": [
+       1.25,
+       1.25,
+       1.25
+      ],
+      "rough": -0.1
+     },
+     "p1_preset": "steel_clean"
+    },
+    "stone-polished": {
+     "family": "noise",
+     "tile_m": 2.0,
+     "macro": 0.05,
+     "fine": 0.02,
+     "bump": 0.1,
+     "grime": 0.5,
+     "coat": 0.35,
+     "coat_roughness": 0.08,
+     "cracks": {
+      "amount": 0.35,
+      "scale_m": 0.7,
+      "width": 0.012,
+      "share": 0.6,
+      "tint": [
+       0.86,
+       0.84,
+       0.82
+      ],
+      "depth": 0.0
+     },
+     "p1_preset": "marble"
+    }
+   }
   }
  }
 }

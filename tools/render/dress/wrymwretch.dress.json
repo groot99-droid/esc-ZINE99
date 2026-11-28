@@ -1,0 +1,900 @@
+{
+ "game": "wrymwretch",
+ "version": 1,
+ "note": "P1 entries written by p1.py (core surfaces and grime)",
+ "locations": {
+  "astral-expanse": {
+   "p1": {
+    "version": 1,
+    "interior": false,
+    "grade": "worn",
+    "deferred": {
+     "P5": [
+      "crystal-out"
+     ],
+     "P4": [
+      "island-rock",
+      "island-top"
+     ],
+     "P3": [
+      "moss"
+     ]
+    },
+    "unmatched": [
+     "pencil"
+    ],
+    "kept": []
+   },
+   "grime": {
+    "strength": 0.9,
+    "ao": 0.2,
+    "dust": 0.06,
+    "damp": 0.12,
+    "damp_height_m": 0.4,
+    "ao_distance_m": 0.6,
+    "tone_gain": 1.0
+   },
+   "materials": {
+    "paper-plain": {
+     "family": "paper",
+     "tile_m": 0.3,
+     "bump": 0.15,
+     "grime": 0.4,
+     "foxing": 0.25,
+     "p1_preset": "paper"
+    },
+    "pebble-beach": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "gravel_floor",
+     "tile_m": 2.6,
+     "chroma": 0.15,
+     "bump": 0.7,
+     "macro": 0.12,
+     "grime": 0.5,
+     "p1_preset": "gravel"
+    }
+   }
+  },
+  "bone-choir": {
+   "p1": {
+    "version": 1,
+    "interior": false,
+    "grade": "worn",
+    "deferred": {
+     "P5": [
+      "bone",
+      "fused-bone",
+      "silver-crack"
+     ]
+    },
+    "unmatched": [],
+    "kept": [
+     "hum-crack"
+    ]
+   },
+   "grime": {
+    "strength": 0.9,
+    "ao": 0.2,
+    "dust": 0.06,
+    "damp": 0.12,
+    "damp_height_m": 0.4,
+    "ao_distance_m": 0.6,
+    "tone_gain": 1.0
+   },
+   "materials": {}
+  },
+  "duskbane-underworld": {
+   "p1": {
+    "version": 1,
+    "interior": true,
+    "grade": "old",
+    "deferred": {
+     "P5": [
+      "bone"
+     ],
+     "P4": [
+      "obsidian"
+     ]
+    },
+    "unmatched": [],
+    "kept": []
+   },
+   "grime": {
+    "strength": 1.25,
+    "ao": 0.24,
+    "dust": 0.1,
+    "damp": 0.16,
+    "damp_height_m": 0.7,
+    "ao_distance_m": 0.45,
+    "tone_gain": 1.06
+   },
+   "materials": {
+    "flagstone": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "slate_floor_02",
+     "tile_m": 2.6,
+     "chroma": 0.1,
+     "bump": 0.6,
+     "macro": 0.1,
+     "grime": 1.0,
+     "p1_preset": "flagstone"
+    },
+    "vault-stone": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "stone_floor",
+     "tile_m": 3.6,
+     "chroma": 0.1,
+     "bump": 0.6,
+     "macro": 0.12,
+     "grime": 1.1,
+     "streaks": {
+      "amount": 0.25,
+      "scale_m": 0.5,
+      "top_frac": 0.8,
+      "tint": [
+       0.78,
+       0.76,
+       0.72
+      ]
+     },
+     "p1_preset": "stone_block"
+    }
+   },
+   "decals": [
+    {
+     "name": "stains",
+     "count": 5,
+     "size_m": [
+      0.4,
+      0.9
+     ],
+     "tint": [
+      0.32,
+      0.29,
+      0.24
+     ],
+     "opacity": 0.18,
+     "z_m": [
+      1.0,
+      2.4
+     ]
+    }
+   ]
+  },
+  "galewing-sky-city": {
+   "p1": {
+    "version": 1,
+    "interior": true,
+    "grade": "worn",
+    "deferred": {
+     "P5": [
+      "bone",
+      "silver"
+     ],
+     "P2": [
+      "cloud"
+     ],
+     "P4": [
+      "rock"
+     ]
+    },
+    "unmatched": [],
+    "kept": [
+     "window-sky"
+    ]
+   },
+   "grime": {
+    "strength": 1.0,
+    "ao": 0.24,
+    "dust": 0.1,
+    "damp": 0.1,
+    "damp_height_m": 0.5,
+    "ao_distance_m": 0.45,
+    "tone_gain": 1.06
+   },
+   "materials": {
+    "pale-stone": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "stone_floor",
+     "tile_m": 3.6,
+     "chroma": 0.1,
+     "bump": 0.6,
+     "macro": 0.12,
+     "grime": 1.1,
+     "streaks": {
+      "amount": 0.25,
+      "scale_m": 0.5,
+      "top_frac": 0.8,
+      "tint": [
+       0.78,
+       0.76,
+       0.72
+      ]
+     },
+     "p1_preset": "stone_block"
+    }
+   },
+   "decals": [
+    {
+     "name": "stains",
+     "count": 5,
+     "size_m": [
+      0.4,
+      0.9
+     ],
+     "tint": [
+      0.32,
+      0.29,
+      0.24
+     ],
+     "opacity": 0.18,
+     "z_m": [
+      1.0,
+      2.4
+     ]
+    }
+   ]
+  },
+  "heart-of-wound": {
+   "p1": {
+    "version": 1,
+    "interior": false,
+    "grade": "worn",
+    "deferred": {
+     "P5": [
+      "bone",
+      "fused-gold",
+      "fused-silver",
+      "silver"
+     ],
+     "P2": [
+      "veil"
+     ]
+    },
+    "unmatched": [
+     "crack"
+    ],
+    "kept": []
+   },
+   "grime": {
+    "strength": 0.9,
+    "ao": 0.2,
+    "dust": 0.06,
+    "damp": 0.12,
+    "damp_height_m": 0.4,
+    "ao_distance_m": 0.6,
+    "tone_gain": 1.0
+   },
+   "materials": {}
+  },
+  "heartstone-caverns": {
+   "p1": {
+    "version": 1,
+    "interior": true,
+    "grade": "old",
+    "deferred": {
+     "P5": [
+      "bone",
+      "crystal-ash",
+      "gem-ochre",
+      "silver"
+     ],
+     "P4": [
+      "cavern-rock"
+     ],
+     "P2": [
+      "fissure"
+     ]
+    },
+    "unmatched": [
+     "void"
+    ],
+    "kept": []
+   },
+   "grime": {
+    "strength": 1.25,
+    "ao": 0.24,
+    "dust": 0.1,
+    "damp": 0.16,
+    "damp_height_m": 0.7,
+    "ao_distance_m": 0.45,
+    "tone_gain": 1.06
+   },
+   "materials": {
+    "plaza-stone": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "slate_floor_02",
+     "tile_m": 2.6,
+     "chroma": 0.1,
+     "bump": 0.6,
+     "macro": 0.1,
+     "grime": 1.0,
+     "p1_preset": "flagstone"
+    }
+   },
+   "decals": [
+    {
+     "name": "stains",
+     "count": 5,
+     "size_m": [
+      0.4,
+      0.9
+     ],
+     "tint": [
+      0.32,
+      0.29,
+      0.24
+     ],
+     "opacity": 0.18,
+     "z_m": [
+      1.0,
+      2.4
+     ]
+    }
+   ]
+  },
+  "ranger-outpost": {
+   "p1": {
+    "version": 1,
+    "interior": true,
+    "grade": "worn",
+    "deferred": {
+     "P5": [
+      "bone",
+      "bone-dark",
+      "silver"
+     ],
+     "P3": [
+      "moss-roof"
+     ]
+    },
+    "unmatched": [],
+    "kept": []
+   },
+   "grime": {
+    "strength": 1.0,
+    "ao": 0.24,
+    "dust": 0.1,
+    "damp": 0.1,
+    "damp_height_m": 0.5,
+    "ao_distance_m": 0.45,
+    "tone_gain": 1.06
+   },
+   "materials": {
+    "cedar-log": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 0.0,
+     "family": "scan",
+     "scan": "weathered_plank_siding",
+     "tile_m": 1.6,
+     "chroma": 0.2,
+     "bump": 0.6,
+     "macro": 0.08,
+     "courses": {
+      "h_m": 0.22,
+      "seam_m": 0.02,
+      "jitter": 0.1,
+      "hue": 0.04,
+      "seam_tone": 0.62,
+      "vary": 1.0,
+      "round_m": 0.03,
+      "round_shade": 0.07
+     },
+     "round_m": 0.01,
+     "edge_wear": {
+      "radius_m": 0.015,
+      "amount": 0.5,
+      "tint": [
+       1.2,
+       1.15,
+       1.08
+      ],
+      "rough": 0.1
+     },
+     "p1_preset": "log_wall"
+    },
+    "yard": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "rocky_trail",
+     "tile_m": 3.0,
+     "chroma": 0.1,
+     "bump": 0.6,
+     "macro": 0.12,
+     "grime": 0.5,
+     "p1_preset": "path"
+    }
+   },
+   "decals": [
+    {
+     "name": "stains",
+     "count": 5,
+     "size_m": [
+      0.4,
+      0.9
+     ],
+     "tint": [
+      0.32,
+      0.29,
+      0.24
+     ],
+     "opacity": 0.18,
+     "z_m": [
+      1.0,
+      2.4
+     ]
+    }
+   ]
+  },
+  "rim-of-wrymreach": {
+   "p1": {
+    "version": 1,
+    "interior": false,
+    "grade": "worn",
+    "deferred": {
+     "P2": [
+      "abyss",
+      "vortex"
+     ],
+     "P5": [
+      "bone",
+      "bone-dark",
+      "moss-silver"
+     ],
+     "P4": [
+      "cliff"
+     ]
+    },
+    "unmatched": [],
+    "kept": [
+     "ghost-fire"
+    ]
+   },
+   "grime": {
+    "strength": 0.9,
+    "ao": 0.2,
+    "dust": 0.06,
+    "damp": 0.12,
+    "damp_height_m": 0.4,
+    "ao_distance_m": 0.6,
+    "tone_gain": 1.0
+   },
+   "materials": {
+    "fire-pit": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "stone_floor",
+     "tile_m": 2.8,
+     "chroma": 0.1,
+     "bump": 0.85,
+     "macro": 0.14,
+     "grime": 1.2,
+     "p1_preset": "drystone"
+    },
+    "plateau": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "mud_cracked_dry_03",
+     "tile_m": 4.0,
+     "chroma": 0.0,
+     "bump": 0.45,
+     "macro": 0.12,
+     "grime": 0.4,
+     "p1_preset": "dry_ground"
+    }
+   }
+  },
+  "seabed": {
+   "p1": {
+    "version": 1,
+    "interior": false,
+    "grade": "worn",
+    "deferred": {
+     "P5": [
+      "dead-coral"
+     ],
+     "P4": [
+      "rock"
+     ],
+     "P2": [
+      "surface"
+     ]
+    },
+    "unmatched": [],
+    "kept": []
+   },
+   "grime": {
+    "strength": 0.9,
+    "ao": 0.2,
+    "dust": 0.06,
+    "damp": 0.12,
+    "damp_height_m": 0.4,
+    "ao_distance_m": 0.6,
+    "tone_gain": 1.0
+   },
+   "materials": {
+    "silt": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "forrest_ground_01",
+     "tile_m": 3.0,
+     "chroma": 0.1,
+     "bump": 0.6,
+     "macro": 0.12,
+     "grime": 0.5,
+     "p1_preset": "earth"
+    }
+   }
+  },
+  "sky-above-realms": {
+   "p1": {
+    "version": 1,
+    "interior": false,
+    "grade": "worn",
+    "deferred": {
+     "P5": [
+      "cloud-bone",
+      "realm-above",
+      "realm-below",
+      "realm-north",
+      "realm-south",
+      "realm-west"
+     ],
+     "P2": [
+      "first-light",
+      "new-stars",
+      "realm-east"
+     ]
+    },
+    "unmatched": [
+     "void"
+    ],
+    "kept": []
+   },
+   "grime": {
+    "strength": 0.9,
+    "ao": 0.2,
+    "dust": 0.06,
+    "damp": 0.12,
+    "damp_height_m": 0.4,
+    "ao_distance_m": 0.6,
+    "tone_gain": 1.0
+   },
+   "materials": {}
+  },
+  "starlit-priory": {
+   "p1": {
+    "version": 1,
+    "interior": true,
+    "grade": "worn",
+    "deferred": {
+     "P2": [
+      "cosmic-dust"
+     ]
+    },
+    "unmatched": [],
+    "kept": [
+     "door-light"
+    ]
+   },
+   "grime": {
+    "strength": 1.0,
+    "ao": 0.24,
+    "dust": 0.1,
+    "damp": 0.1,
+    "damp_height_m": 0.5,
+    "ao_distance_m": 0.45,
+    "tone_gain": 1.06
+   },
+   "materials": {
+    "gold-leaf": {
+     "family": "metal",
+     "tile_m": 0.3,
+     "bump": 0.12,
+     "grime": 0.8,
+     "macro": 0.14,
+     "round_m": 0.004,
+     "edge_wear": {
+      "radius_m": 0.006,
+      "amount": 0.6,
+      "tint": [
+       1.25,
+       1.2,
+       1.1
+      ],
+      "rough": -0.12
+     },
+     "patches": {
+      "size_m": 0.15,
+      "share": 0.35,
+      "amount": 0.08,
+      "rough": 0.12
+     },
+     "p1_preset": "brass"
+    },
+    "hill": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "forrest_ground_01",
+     "tile_m": 3.0,
+     "chroma": 0.1,
+     "bump": 0.6,
+     "macro": 0.12,
+     "grime": 0.5,
+     "p1_preset": "earth"
+    },
+    "marble": {
+     "family": "noise",
+     "tile_m": 2.0,
+     "macro": 0.05,
+     "fine": 0.02,
+     "bump": 0.1,
+     "grime": 0.5,
+     "coat": 0.35,
+     "coat_roughness": 0.08,
+     "cracks": {
+      "amount": 0.35,
+      "scale_m": 0.7,
+      "width": 0.012,
+      "share": 0.6,
+      "tint": [
+       0.86,
+       0.84,
+       0.82
+      ],
+      "depth": 0.0
+     },
+     "p1_preset": "marble"
+    },
+    "star-glass": {
+     "family": "dirt-only",
+     "dirt": 0.18,
+     "p1_preset": "glass"
+    }
+   },
+   "decals": [
+    {
+     "name": "stains",
+     "count": 5,
+     "size_m": [
+      0.4,
+      0.9
+     ],
+     "tint": [
+      0.32,
+      0.29,
+      0.24
+     ],
+     "opacity": 0.18,
+     "z_m": [
+      1.0,
+      2.4
+     ]
+    }
+   ]
+  },
+  "storm-chamber": {
+   "p1": {
+    "version": 1,
+    "interior": true,
+    "grade": "worn",
+    "deferred": {
+     "P5": [
+      "bone",
+      "crystal-wall",
+      "silver"
+     ],
+     "P2": [
+      "storm-sky"
+     ]
+    },
+    "unmatched": [],
+    "kept": [
+     "night-window",
+     "void"
+    ]
+   },
+   "grime": {
+    "strength": 1.0,
+    "ao": 0.24,
+    "dust": 0.1,
+    "damp": 0.1,
+    "damp_height_m": 0.5,
+    "ao_distance_m": 0.45,
+    "tone_gain": 1.06
+   },
+   "materials": {
+    "ring-stone": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "slate_floor_02",
+     "tile_m": 2.6,
+     "chroma": 0.1,
+     "bump": 0.6,
+     "macro": 0.1,
+     "grime": 1.0,
+     "p1_preset": "flagstone"
+    }
+   },
+   "decals": [
+    {
+     "name": "stains",
+     "count": 5,
+     "size_m": [
+      0.4,
+      0.9
+     ],
+     "tint": [
+      0.32,
+      0.29,
+      0.24
+     ],
+     "opacity": 0.18,
+     "z_m": [
+      1.0,
+      2.4
+     ]
+    }
+   ]
+  },
+  "tidecaller-shore": {
+   "p1": {
+    "version": 1,
+    "interior": true,
+    "grade": "worn",
+    "deferred": {
+     "P5": [
+      "bone",
+      "bone-dark",
+      "cottage-silver",
+      "shell-string"
+     ],
+     "P4": [
+      "cliff"
+     ],
+     "P2": [
+      "sea-oil"
+     ]
+    },
+    "unmatched": [],
+    "kept": [
+     "void"
+    ]
+   },
+   "grime": {
+    "strength": 1.0,
+    "ao": 0.24,
+    "dust": 0.1,
+    "damp": 0.1,
+    "damp_height_m": 0.5,
+    "ao_distance_m": 0.45,
+    "tone_gain": 1.06
+   },
+   "materials": {
+    "pebbles": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "gravel_floor",
+     "tile_m": 2.6,
+     "chroma": 0.15,
+     "bump": 0.7,
+     "macro": 0.12,
+     "grime": 0.5,
+     "p1_preset": "gravel"
+    }
+   },
+   "decals": [
+    {
+     "name": "stains",
+     "count": 5,
+     "size_m": [
+      0.4,
+      0.9
+     ],
+     "tint": [
+      0.32,
+      0.29,
+      0.24
+     ],
+     "opacity": 0.18,
+     "z_m": [
+      1.0,
+      2.4
+     ]
+    }
+   ]
+  },
+  "western-groves": {
+   "p1": {
+    "version": 1,
+    "interior": false,
+    "grade": "worn",
+    "deferred": {
+     "P5": [
+      "bone",
+      "bone-dark",
+      "fern-silver",
+      "moss-forgotten",
+      "silver"
+     ],
+     "P3": [
+      "moss",
+      "vine-glow"
+     ]
+    },
+    "unmatched": [],
+    "kept": [
+     "shrine-amber"
+    ]
+   },
+   "grime": {
+    "strength": 0.9,
+    "ao": 0.2,
+    "dust": 0.06,
+    "damp": 0.12,
+    "damp_height_m": 0.4,
+    "ao_distance_m": 0.6,
+    "tone_gain": 1.0
+   },
+   "materials": {
+    "earth": {
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "forrest_ground_01",
+     "tile_m": 3.0,
+     "chroma": 0.1,
+     "bump": 0.6,
+     "macro": 0.12,
+     "grime": 0.5,
+     "p1_preset": "earth"
+    }
+   }
+  }
+ }
+}
