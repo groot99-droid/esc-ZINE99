@@ -348,11 +348,12 @@
    "atmos": {
     "_p2": true,
     "sky_plate": {
-     "name": "partly cloudy-hdri",
-     "hdri": "kloofendal_48d_partly_cloudy_puresky_2k.hdr",
-     "rotation_deg": 30,
-     "mix": 0.85,
-     "strength_gain": 0.645
+     "name": "partly cloudy-procedural",
+     "horizon_gain": 1.06,
+     "zenith_gain": 0.95,
+     "cloud_scale": 3.2,
+     "cloud_contrast": 0.35,
+     "hdri_considered": "kloofendal_48d_partly_cloudy_puresky_2k.hdr"
     },
     "haze": {
      "density": 0.0005,
@@ -367,7 +368,7 @@
    "p2": {
     "version": 2,
     "sky": "partly cloudy",
-    "sky_plate": "partly cloudy-hdri",
+    "sky_plate": "partly cloudy-procedural",
     "haze": true,
     "extent_m": 10.0,
     "fx_listed": []
@@ -2175,11 +2176,12 @@
    "atmos": {
     "_p2": true,
     "sky_plate": {
-     "name": "partly cloudy-hdri",
-     "hdri": "kloofendal_48d_partly_cloudy_puresky_2k.hdr",
-     "rotation_deg": 30,
-     "mix": 0.85,
-     "strength_gain": 0.645
+     "name": "partly cloudy-procedural",
+     "horizon_gain": 1.06,
+     "zenith_gain": 0.95,
+     "cloud_scale": 3.2,
+     "cloud_contrast": 0.35,
+     "hdri_considered": "kloofendal_48d_partly_cloudy_puresky_2k.hdr"
     },
     "haze": {
      "density": 0.0005,
@@ -2194,7 +2196,7 @@
    "p2": {
     "version": 2,
     "sky": "partly cloudy",
-    "sky_plate": "partly cloudy-hdri",
+    "sky_plate": "partly cloudy-procedural",
     "haze": true,
     "extent_m": 60.0,
     "fx_listed": []
@@ -2265,17 +2267,18 @@
    "atmos": {
     "_p2": true,
     "sky_plate": {
-     "name": "partly cloudy-hdri",
-     "hdri": "kloofendal_48d_partly_cloudy_puresky_2k.hdr",
-     "rotation_deg": 30,
-     "mix": 0.85,
-     "strength_gain": 0.645
+     "name": "partly cloudy-procedural",
+     "horizon_gain": 1.06,
+     "zenith_gain": 0.95,
+     "cloud_scale": 3.2,
+     "cloud_contrast": 0.35,
+     "hdri_considered": "kloofendal_48d_partly_cloudy_puresky_2k.hdr"
     }
    },
    "p2": {
     "version": 2,
     "sky": "partly cloudy",
-    "sky_plate": "partly cloudy-hdri",
+    "sky_plate": "partly cloudy-procedural",
     "haze": false,
     "extent_m": 460.0,
     "fx_listed": []

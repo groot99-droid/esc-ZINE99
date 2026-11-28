@@ -296,17 +296,18 @@
    "atmos": {
     "_p2": true,
     "sky_plate": {
-     "name": "dusk-hdri",
-     "hdri": "qwantani_dusk_2_puresky_2k.hdr",
-     "rotation_deg": 30,
-     "mix": 0.85,
-     "strength_gain": 2.242
+     "name": "dusk-procedural",
+     "horizon_gain": 1.06,
+     "zenith_gain": 0.95,
+     "cloud_scale": 3.2,
+     "cloud_contrast": 0.25,
+     "hdri_considered": "qwantani_dusk_2_puresky_2k.hdr"
     }
    },
    "p2": {
     "version": 2,
     "sky": "dusk",
-    "sky_plate": "dusk-hdri",
+    "sky_plate": "dusk-procedural",
     "haze": false,
     "extent_m": 600.0,
     "fx_listed": []
@@ -1038,17 +1039,18 @@
    "atmos": {
     "_p2": true,
     "sky_plate": {
-     "name": "dusk-hdri",
-     "hdri": "qwantani_dusk_2_puresky_2k.hdr",
-     "rotation_deg": 30,
-     "mix": 0.85,
-     "strength_gain": 2.242
+     "name": "dusk-procedural",
+     "horizon_gain": 1.06,
+     "zenith_gain": 0.95,
+     "cloud_scale": 3.2,
+     "cloud_contrast": 0.25,
+     "hdri_considered": "qwantani_dusk_2_puresky_2k.hdr"
     }
    },
    "p2": {
     "version": 2,
     "sky": "dusk",
-    "sky_plate": "dusk-hdri",
+    "sky_plate": "dusk-procedural",
     "haze": false,
     "extent_m": 470.0,
     "fx_listed": []

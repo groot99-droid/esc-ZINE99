@@ -58,6 +58,11 @@ WATER_P = {"sea": {"family": "water", "dark": 0.9, "roughness": 0.06, "ripple": 
            "glassy": {"family": "water", "dark": 0.92, "roughness": 0.02, "ripple": 0.04, "specular": 0.6},
            "river": {"family": "water", "dark": 0.85, "roughness": 0.05, "ripple": 0.12, "specular": 0.55},
            "puddle": {"family": "water", "dark": 0.6, "roughness": 0.03, "ripple": 0.06, "specular": 0.7}}
+HDRI_OFF = set()
+_off = os.path.join(HERE, "p2_hdri_off.json")
+if os.path.exists(_off):
+    with open(_off, encoding="utf-8") as _f:
+        HDRI_OFF = {tuple(x) for x in json.load(_f)["places"]}
 FX = {}
 _fxp = os.path.join(HERE, "p2fx_needs.json")
 if os.path.exists(_fxp):
@@ -144,7 +149,7 @@ def build(game, cfg):
         if not L["p1"]["interior"] and not no_sky:
             hdri, kind = pick_sky(world)
             cc = {"night": 0.12, "dusk": 0.25, "clear": 0.15, "partly cloudy": 0.35, "overcast": 0.3}[kind]
-            if hdri in HDRI_GAIN and not HDRI_GAIN[hdri].get("procedural"):  # P2b: calibrated hdri plate (see HDRI_GAIN)
+            if hdri in HDRI_GAIN and not HDRI_GAIN[hdri].get("procedural") and (game, loc) not in HDRI_OFF:  # P2b: calibrated hdri plate
                 at["sky_plate"] = {"name": kind + "-hdri", "hdri": hdri, "rotation_deg": 30, "mix": 0.85,
                                    "strength_gain": HDRI_GAIN[hdri]["gain"]}
             else:  # procedural clouds around the flat colour (mean kept by construction); the hdri pick stays recorded
