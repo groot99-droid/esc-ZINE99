@@ -16,20 +16,19 @@ Left as built (marks, voids, dark gaps or no fitting family): matte-black, vault
 
 62 stills in 14 places, every gate per still against its own before.
 
-Gate checks: 1149 passed, 46 failed, 103 not applicable.
+Gate checks: 1151 passed, 44 failed, 103 not applicable.
 
 | Gate | What | Failed stills |
 | --- | --- | ---: |
-| G7 | detail gain | 29 |
-| G8 | repeat pattern | 12 |
+| G7 | detail gain | 30 |
+| G8 | repeat pattern | 10 |
 | G6b | light/dark spread | 4 |
-| G4b | darkest pixels | 1 |
 
 Every failing check (place, scene/still, gate, value, limit):
 
-- cinder-reach-archive b2-archive/overview: G7 1.18 (limit 2.0)
+- cinder-reach-archive b2-archive/overview: G7 1.18 (limit 1.718)
 - cinder-reach-archive b2-archive/overview: G8 0.675 (limit 0.2)
-- cinder-reach-archive b2-archive/player: G7 1.63 (limit 2.0)
+- cinder-reach-archive b2-archive/player: G7 1.63 (limit 1.644)
 - cinder-reach-archive b2-archive/player: G8 0.87 (limit 0.2)
 - continuum-outpost b3-outpost/camera: G7 1.68 (limit 2.0)
 - continuum-outpost b3-outpost/overview: G6b 0.5782 (limit 0.5125)
@@ -37,12 +36,11 @@ Every failing check (place, scene/still, gate, value, limit):
 - continuum-outpost b3-outpost/player: G7 1.27 (limit 2.0)
 - continuum-outpost b3-outpost/player: G8 0.436 (limit 0.2)
 - corporate-lab b2-lab/camera: G8 0.658 (limit 0.2)
-- corporate-lab b2-lab/overview: G7 1.31 (limit 2.0)
+- corporate-lab b2-lab/overview: G7 1.31 (limit 1.745)
 - corporate-lab b2-lab/player: G8 0.621 (limit 0.2)
-- harvest-terrace b3-midlander/camera: G8 0.541 (limit 0.2)
-- harvest-terrace b3-midlander/overview: G7 1.92 (limit 2.0)
-- harvest-terrace b3-midlander/player: G8 0.588 (limit 0.2)
-- hollin-terrace b1-terrace/overview: G7 1.72 (limit 2.0)
+- harvest-terrace b3-midlander/camera: G8 0.567 (limit 0.2)
+- harvest-terrace b3-midlander/overview: G7 2.0 (limit 2.0)
+- harvest-terrace b3-midlander/player: G8 0.636 (limit 0.2)
 - hollin-terrace end-errata/player: G8 0.418 (limit 0.2)
 - peak-core b4-core/camera: G7 0.99 (limit 2.0)
 - peak-core b4-core/overview: G7 0.99 (limit 2.0)
@@ -50,44 +48,60 @@ Every failing check (place, scene/still, gate, value, limit):
 - scorched-biome b2-lowlands/camera: G7 1.63 (limit 2.0)
 - scorched-biome b2-lowlands/overview: G7 1.2 (limit 2.0)
 - scorched-biome b2-lowlands/player: G7 1.72 (limit 2.0)
-- shear-tunnel b4-collapse/camera: G7 1.91 (limit 2.0)
-- shear-tunnel b4-collapse/player: G7 1.49 (limit 2.0)
-- shear-tunnel co-tunnel/overview: G6b 0.7704 (limit 0.6914)
-- shear-tunnel co-tunnel/overview: G7 1.69 (limit 2.0)
-- small-room b3-hiding/camera: G4b 9.05 (limit 9.19)
-- small-room b3-hiding/overview: G8 0.743 (limit 0.2)
-- small-room b3-hiding/player: G7 1.2 (limit 2.0)
-- small-room end-in-time/player: G7 1.08 (limit 2.0)
-- small-room end-written/camera: G7 1.65 (limit 2.0)
-- small-room end-written/camera: G8 0.777 (limit 0.2)
-- small-room end-written/player: G7 1.17 (limit 2.0)
-- small-room end-written/player: G8 0.472 (limit 0.2)
+- shear-tunnel b4-collapse/camera: G7 1.81 (limit 2.0)
+- shear-tunnel b4-collapse/player: G7 1.65 (limit 2.0)
+- shear-tunnel co-tunnel/overview: G6b 0.7699 (limit 0.6914)
+- shear-tunnel co-tunnel/overview: G7 1.29 (limit 2.0)
+- shear-tunnel co-tunnel/player: G7 1.81 (limit 2.0)
+- shear-tunnel ep-tunnel/player: G7 1.88 (limit 2.0)
+- small-room b3-hiding/player: G7 1.2 (limit 1.562)
+- small-room end-in-time/player: G7 1.08 (limit 1.562)
+- small-room end-written/camera: G7 1.54 (limit 1.66)
+- small-room end-written/player: G7 1.18 (limit 1.562)
+- small-room end-written/player: G8 0.468 (limit 0.2)
 - spore-weaver-valley b1-valley/camera: G7 1.01 (limit 2.0)
 - spore-weaver-valley b1-valley/overview: G6b 0.7441 (limit 0.67)
 - spore-weaver-valley b1-valley/overview: G7 1.02 (limit 2.0)
 - spore-weaver-valley b1-valley/player: G7 1.02 (limit 2.0)
-- storm-singing-ledge b3-peakborn/camera: G7 1.3 (limit 2.0)
+- storm-singing-ledge b3-peakborn/camera: G7 1.3 (limit 1.994)
 - storm-singing-ledge b3-peakborn/overview: G6b 0.5649 (limit 0.5084)
-- storm-singing-ledge b3-peakborn/overview: G7 1.06 (limit 2.0)
+- storm-singing-ledge b3-peakborn/overview: G7 1.06 (limit 1.94)
 - storm-singing-ledge b3-peakborn/player: G7 1.64 (limit 2.0)
-- subterranean-city b3-city/overview: G7 1.49 (limit 2.0)
+- subterranean-city b3-city/overview: G7 1.49 (limit 1.912)
 - subterranean-city end-resilience/player: G8 0.515 (limit 0.2)
 - subterranean-city ep-vault/camera: G7 1.93 (limit 2.0)
 
-## P2 gates (atmosphere and skies; before = the P1 render)
+## P2 and P2b gates (skies, water, motes, rain, flames, fog; before = the P1 render)
 
-15 stills in 5 places, every gate per still against its own before.
+43 stills in 9 places, every gate per still against its own before.
 
-Gate checks: 268 passed, 2 failed, 44 not applicable.
+Gate checks: 763 passed, 14 failed, 123 not applicable.
 
 | Gate | What | Failed stills |
 | --- | --- | ---: |
-| G6b | light/dark spread | 2 |
+| G4b | darkest pixels | 5 |
+| G6b | light/dark spread | 3 |
+| G3b | region colour | 2 |
+| G8 | repeat pattern | 2 |
+| G5 | colour specks | 1 |
+| G4a | dark area | 1 |
 
 Every failing check (place, scene/still, gate, value, limit):
 
-- spore-weaver-valley b1-valley/overview: G6b 0.7483 (limit 0.6697)
-- storm-singing-ledge b3-peakborn/overview: G6b 0.5641 (limit 0.5084)
+- cinder-reach-archive b2-archive/camera: G3b 6.38 (limit 6.0)
+- cinder-reach-archive b2-archive/camera: G4b 18.83 (limit 24.96)
+- cinder-reach-archive b2-archive/camera: G8 0.513 (limit 0.2)
+- cinder-reach-archive b2-archive/player: G3b 6.74 (limit 6.0)
+- cinder-reach-archive b2-archive/player: G4b 14.76 (limit 18.25)
+- cinder-reach-archive b2-archive/player: G8 1.032 (limit 0.2)
+- hollin-terrace end-errata/camera: G5 1 (limit 0)
+- shear-tunnel co-tunnel/overview: G6b 0.7698 (limit 0.6929)
+- spore-weaver-valley b1-valley/camera: G4b 0.0 (limit 1.58)
+- spore-weaver-valley b1-valley/overview: G4a 16.931 (limit 0.5)
+- spore-weaver-valley b1-valley/overview: G4b 0.79 (limit 7.16)
+- spore-weaver-valley b1-valley/overview: G6b 0.7623 (limit 0.6697)
+- spore-weaver-valley b1-valley/player: G4b 0.0 (limit 1.58)
+- storm-singing-ledge b3-peakborn/overview: G6b 0.5633 (limit 0.5084)
 
 G7 (detail gain) is counted as not applicable in P2: the surfaces are the P1 ones in both renders. G9 misses are P1's own.
 
@@ -95,5 +109,5 @@ G7 (detail gain) is counted as not applicable in P2: the surfaces are the P1 one
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.
 - Deferred materials (listed above) look as built until P3 to P5. Walls stay flat boxes (build-file work).
-- P2 is a first cut: sky plates and faint outdoor haze only; no dust, shafts, rain, snow, flames or water yet.
+- P2: no light shafts, falling snow, smoke or steam yet; flames only where the build has a fire piece. G7 is n/a in P2 and the P1 bar is 1.5 for clean painted, varnished, papered and fabric surfaces (ruling D1).
 - Half-size look renders; the full-size pass is P7.

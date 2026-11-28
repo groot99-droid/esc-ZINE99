@@ -16,81 +16,81 @@ Left as built (marks, voids, dark gaps or no fitting family): dark-window.
 
 59 stills in 7 places, every gate per still against its own before.
 
-Gate checks: 1079 passed, 56 failed, 99 not applicable.
+Gate checks: 1089 passed, 46 failed, 99 not applicable.
 
 | Gate | What | Failed stills |
 | --- | --- | ---: |
-| G7 | detail gain | 39 |
+| G7 | detail gain | 30 |
 | G6b | light/dark spread | 6 |
-| G8 | repeat pattern | 5 |
+| G8 | repeat pattern | 4 |
 | G4b | darkest pixels | 4 |
 | G3b | region colour | 1 |
 | G11 | hero-prop light | 1 |
 
 Every failing check (place, scene/still, gate, value, limit):
 
-- back-office n6_back_office/camera: G7 1.65 (limit 2.0)
-- back-office n6_back_office/overview: G6b 0.8981 (limit 0.8088)
-- back-office n6_back_office/overview: G7 1.34 (limit 2.0)
+- back-office n6_back_office/camera: G7 1.59 (limit 1.643)
+- back-office n6_back_office/overview: G6b 0.8978 (limit 0.8088)
+- back-office n6_back_office/overview: G7 1.17 (limit 1.612)
 - back-stair n3_stairwell/overview: G6b 0.3525 (limit 0.3111)
 - back-stair n3_stairwell/overview: G8 0.859 (limit 0.2)
 - back-stair n3_stairwell/player: G4b 11.67 (limit 19.66)
 - back-stair n6_stairwell/player: G4b 12.39 (limit 20.59)
-- lobby dawn_lobby/camera: G7 1.09 (limit 2.0)
+- lobby dawn_lobby/camera: G7 1.09 (limit 1.734)
 - lobby dawn_lobby/overview: G6b 0.4353 (limit 0.4052)
-- lobby dawn_lobby/overview: G7 1.21 (limit 2.0)
+- lobby dawn_lobby/overview: G7 1.21 (limit 1.692)
 - lobby dawn_lobby/overview: G8 0.584 (limit 0.2)
-- lobby end_sitter/camera: G7 1.48 (limit 2.0)
-- lobby end_wrong_picture/camera: G7 1.29 (limit 2.0)
+- lobby end_sitter/camera: G7 1.48 (limit 1.578)
+- lobby end_wrong_picture/camera: G7 1.29 (limit 1.697)
 - lobby end_wrong_picture/camera: G8 0.864 (limit 0.2)
-- lobby end_wrong_picture/player: G7 1.09 (limit 2.0)
-- office n1_morning/player: G7 1.14 (limit 2.0)
-- office n1_office/camera: G7 1.49 (limit 2.0)
-- office n1_office/overview: G6b 0.5258 (limit 0.4684)
-- office n1_office/overview: G7 1.28 (limit 2.0)
-- office n1_office/player: G7 1.04 (limit 2.0)
-- office n2_morning/player: G7 1.14 (limit 2.0)
-- office n2_office/camera: G7 1.48 (limit 2.0)
-- office n2_office/player: G7 1.02 (limit 2.0)
-- office n2_seventh_bell/camera: G7 1.13 (limit 2.0)
-- office n2_seventh_bell/player: G7 1.17 (limit 2.0)
-- office n3_morning/player: G7 1.14 (limit 2.0)
-- office n3_office/camera: G7 1.51 (limit 2.0)
-- office n3_office/player: G7 1.03 (limit 2.0)
-- office n3_tea/camera: G7 1.69 (limit 2.0)
-- office n3_tea/player: G7 1.6 (limit 2.0)
-- office n4_morning/player: G7 1.13 (limit 2.0)
-- office n4_office/camera: G7 1.49 (limit 2.0)
-- office n4_office/player: G7 1.04 (limit 2.0)
-- office n5_morning/player: G7 1.13 (limit 2.0)
-- office n5_office/camera: G7 1.5 (limit 2.0)
-- office n5_office/player: G7 1.03 (limit 2.0)
-- office n6_morning/player: G7 1.13 (limit 2.0)
-- office n6_office/camera: G7 1.48 (limit 2.0)
-- office n6_office/player: G7 1.03 (limit 2.0)
-- office n7_office/camera: G7 1.52 (limit 2.0)
-- office n7_office/player: G7 1.03 (limit 2.0)
-- office n7_your_door/camera: G7 1.38 (limit 2.0)
-- office n7_your_door/player: G7 1.3 (limit 2.0)
+- lobby end_wrong_picture/player: G7 1.09 (limit 1.676)
+- office n1_morning/player: G7 1.14 (limit 1.5)
+- office n1_office/overview: G6b 0.5251 (limit 0.4684)
+- office n1_office/overview: G7 1.09 (limit 1.577)
+- office n1_office/player: G7 1.04 (limit 1.5)
+- office n2_morning/player: G7 1.14 (limit 1.5)
+- office n2_office/player: G7 1.02 (limit 1.5)
+- office n2_seventh_bell/camera: G7 1.13 (limit 1.5)
+- office n2_seventh_bell/player: G7 1.17 (limit 1.5)
+- office n3_morning/player: G7 1.14 (limit 1.5)
+- office n3_office/player: G7 1.03 (limit 1.5)
+- office n4_morning/player: G7 1.13 (limit 1.5)
+- office n4_office/player: G7 1.04 (limit 1.5)
+- office n5_morning/player: G7 1.13 (limit 1.5)
+- office n5_office/player: G7 1.03 (limit 1.5)
+- office n6_morning/player: G7 1.13 (limit 1.5)
+- office n6_office/player: G7 1.03 (limit 1.5)
+- office n7_office/player: G7 1.03 (limit 1.5)
+- office n7_your_door/camera: G7 1.38 (limit 1.5)
+- office n7_your_door/player: G7 1.3 (limit 1.5)
 - river-wall end_open_door/camera: G4b 24.2 (limit 30.84)
-- river-wall end_open_door/player: G7 1.61 (limit 2.0)
-- river-wall end_open_door/player: G8 0.832 (limit 0.2)
-- staff-alley n1_arrival/camera: G8 0.503 (limit 0.2)
-- staff-alley n1_arrival/overview: G6b 0.2291 (limit 0.1941)
+- river-wall end_open_door/player: G7 1.62 (limit 2.0)
+- river-wall end_open_door/player: G8 0.834 (limit 0.2)
+- staff-alley n1_arrival/overview: G6b 0.228 (limit 0.1941)
 - staff-alley n1_arrival/player: G4b 54.72 (limit 63.78)
-- valet-passage end_under_door/camera: G3b 12.73 (limit 6.0)
-- valet-passage end_under_door/camera: G11 0.3094 (limit 0.08262)
-- valet-passage end_under_door/player: G7 1.3 (limit 2.0)
-- valet-passage n1_passage/camera: G7 1.33 (limit 2.0)
+- valet-passage end_under_door/camera: G3b 12.78 (limit 6.0)
+- valet-passage end_under_door/camera: G11 0.3286 (limit 0.08262)
+- valet-passage end_under_door/player: G7 1.3 (limit 1.5)
+- valet-passage n1_passage/camera: G7 1.27 (limit 1.514)
 - valet-passage n1_passage/overview: G6b 0.3729 (limit 0.3341)
-- valet-passage n1_passage/overview: G7 1.37 (limit 2.0)
-- valet-passage n1_passage/player: G7 1.34 (limit 2.0)
+- valet-passage n1_passage/overview: G7 1.32 (limit 1.514)
+- valet-passage n1_passage/player: G7 1.34 (limit 1.502)
 
-## P2 gates (atmosphere and skies; before = the P1 render)
+## P2 and P2b gates (skies, water, motes, rain, flames, fog; before = the P1 render)
 
-3 stills in 1 places, every gate per still against its own before.
+6 stills in 2 places, every gate per still against its own before.
 
-Gate checks: 55 passed, 0 failed, 6 not applicable.
+Gate checks: 110 passed, 2 failed, 12 not applicable.
+
+| Gate | What | Failed stills |
+| --- | --- | ---: |
+| G6b | light/dark spread | 1 |
+| G4b | darkest pixels | 1 |
+
+Every failing check (place, scene/still, gate, value, limit):
+
+- staff-alley n1_arrival/overview: G6b 0.2277 (limit 0.2052)
+- staff-alley n1_arrival/player: G4b 51.48 (limit 52.72)
 
 G7 (detail gain) is counted as not applicable in P2: the surfaces are the P1 ones in both renders. G9 misses are P1's own.
 
@@ -98,5 +98,5 @@ G7 (detail gain) is counted as not applicable in P2: the surfaces are the P1 one
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.
 - Deferred materials (listed above) look as built until P3 to P5. Walls stay flat boxes (build-file work).
-- P2 is a first cut: sky plates and faint outdoor haze only; no dust, shafts, rain, snow, flames or water yet.
+- P2: no light shafts, falling snow, smoke or steam yet; flames only where the build has a fire piece. G7 is n/a in P2 and the P1 bar is 1.5 for clean painted, varnished, papered and fabric surfaces (ruling D1).
 - Half-size look renders; the full-size pass is P7.

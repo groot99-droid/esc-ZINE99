@@ -27,8 +27,8 @@ Gate checks: 746 passed, 52 failed, 158 not applicable.
 
 Every failing check (place, scene/still, gate, value, limit):
 
-- backyard c7_backyard/camera: G7 1.33 (limit 2.0)
-- backyard c7_backyard/overview: G7 1.22 (limit 2.0)
+- backyard c7_backyard/camera: G7 1.33 (limit 1.718)
+- backyard c7_backyard/overview: G7 1.22 (limit 1.723)
 - bark-face c6_ring/camera: G7 1.26 (limit 2.0)
 - bark-face c6_ring/camera: G9 {'piece:splinter': 0.158} (limit [0.7, 2.0])
 - bark-face c6_shadow/camera: G7 1.52 (limit 2.0)
@@ -62,9 +62,9 @@ Every failing check (place, scene/still, gate, value, limit):
 - highridge-square c5_count/camera: G7 1.04 (limit 2.0)
 - highridge-square c5_count/overview: G7 1.0 (limit 2.0)
 - highridge-square c5_count/overview: G9 {'piece:square-paving': 0.042} (limit [0.7, 2.0])
-- lowridge c2_sorrel_wall/camera: G7 0.92 (limit 2.0)
-- lowridge c5_lowridge/camera: G7 1.01 (limit 2.0)
-- lowridge c5_lowridge/overview: G7 0.89 (limit 2.0)
+- lowridge c2_sorrel_wall/camera: G7 0.92 (limit 1.5)
+- lowridge c5_lowridge/camera: G7 1.01 (limit 1.5)
+- lowridge c5_lowridge/overview: G7 0.89 (limit 1.5)
 - splinterwatch c1_battlements/camera: G3b 8.74 (limit 6.0)
 - splinterwatch c1_battlements/camera: G6b 0.3321 (limit 0.3367)
 - splinterwatch c1_battlements/camera: G7 0.98 (limit 2.0)
@@ -80,17 +80,18 @@ Every failing check (place, scene/still, gate, value, limit):
 - splinterwatch c3_wind/player: G7 1.0 (limit 2.0)
 - splinterwatch c3_wind/player: G9 {'piece:splinter-tip': 0.003} (limit [0.7, 2.0])
 
-## P2 gates (atmosphere and skies; before = the P1 render)
+## P2 and P2b gates (skies, water, motes, rain, flames, fog; before = the P1 render)
 
-43 stills in 6 places, every gate per still against its own before.
+52 stills in 9 places, every gate per still against its own before.
 
-Gate checks: 701 passed, 19 failed, 173 not applicable.
+Gate checks: 840 passed, 22 failed, 218 not applicable.
 
 | Gate | What | Failed stills |
 | --- | --- | ---: |
 | G9 | texel density | 17 |
-| G6b | light/dark spread | 1 |
-| G4b | darkest pixels | 1 |
+| G6b | light/dark spread | 2 |
+| G4b | darkest pixels | 2 |
+| G2 | tone | 1 |
 
 Every failing check (place, scene/still, gate, value, limit):
 
@@ -107,6 +108,9 @@ Every failing check (place, scene/still, gate, value, limit):
 - highridge c5_city/camera: G9 {'piece:hall-splinter': 0.127} (limit [0.7, 2.0])
 - highridge-square c3_thumb/camera: G9 {'piece:square-paving': 0.014} (limit [0.7, 2.0])
 - highridge-square c5_count/overview: G9 {'piece:square-paving': 0.042} (limit [0.7, 2.0])
+- knotholm-walk c5_temple/overview: G2 0.3023 (limit 0.12)
+- knotholm-walk c5_temple/overview: G4b 0.14 (limit 1.57)
+- knotholm-walk c5_temple/overview: G6b 0.448 (limit 0.3858)
 - lowridge c5_lowridge/player: G4b 58.88 (limit 61.95)
 - splinterwatch c1_battlements/camera: G9 {'piece:splinter-body': 0.057, 'piece:splinter-tip': 0.056} (limit [0.7, 2.0])
 - splinterwatch c1_battlements/overview: G9 {'piece:splinter-body': 0.116, 'piece:splinter-tip': 0.115} (limit [0.7, 2.0])
@@ -120,5 +124,5 @@ G7 (detail gain) is counted as not applicable in P2: the surfaces are the P1 one
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.
 - Deferred materials (listed above) look as built until P3 to P5. Walls stay flat boxes (build-file work).
-- P2 is a first cut: sky plates and faint outdoor haze only; no dust, shafts, rain, snow, flames or water yet.
+- P2: no light shafts, falling snow, smoke or steam yet; flames only where the build has a fire piece. G7 is n/a in P2 and the P1 bar is 1.5 for clean painted, varnished, papered and fabric surfaces (ruling D1).
 - Half-size look renders; the full-size pass is P7.

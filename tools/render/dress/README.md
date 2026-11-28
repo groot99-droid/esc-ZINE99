@@ -301,3 +301,24 @@ hdri a place would get is only recorded (`hdri_considered`).
 Run: before = the P1 render of the same place, after = the same with `--dress-layers surfaces,decals,kits,atmos`. The overview of a
 place whose rig gives the overview a horizon-to-zenith gradient world keeps that gradient (`atmos.wrap_world` leaves a gradient
 world alone): wrapping it had replaced the designed dusk gradient of altrulan's glass-mountains with grey clouds.
+
+## P2b: calibrated skies, water, motes, rain, flames, fog; rulings D1 to D3 (2026-11-28)
+
+Rulings (coordinator, owner-delegated): D1 the detail-gain bar (G7) is 1.5 for clean painted plaster, varnished wood, wallpaper
+and fabric (the presets carry `g7_min`; G7 uses the area-weighted bar of the regions it measures) and stays 2.0 elsewhere; D2
+four locked cave scans already on disk replace the P1 scans for plank floors and stone (`old_wood_floor`, `weathered_planks`,
+`mossy_cobblestone`, `rock_wall_08`; `CREDITS.md` lists every asset the configs use); D3 hdri sky plates after a calibration.
+
+* The hdri lookup in `atmos._hdri_colour` remapped a world's Generated coordinate as if it were 0..1. It is already the view
+  direction, so a level ray read the picture's nadir: that, not the sun, made the R1 and P2 hdri plates dark. Fixed (the old
+  mapping stays behind `legacy_remap`).
+* Calibration: a look round of every outdoor place's camera stills with the plate at gain 1 against the same stills without it;
+  per hdri, the median sky-region luma ratio gives `strength_gain` = (1/ratio)^2.2 (`p2_hdri_gain.json`). Places whose calibrated
+  plate still failed tone or frame colour (16, `p2_hdri_off.json`) keep the procedural clouds.
+* `p2.py` v2 adds water shaders on the water pieces (`p2_materials`, family `water`: sea, glassy, river, puddle; used only when the
+  P2 layers are on; heartstream's emitting blood water is P5), and the effects the realism lists mark `needs` or `have`
+  (`p2fx_needs.json`): dust motes, rain streaks, flame cards and ground fog. `p2fx.py` builds motes, rain/snow and flames as one
+  camera-only mesh each under `atmos/` (no shadow, bounce or reflection; flames glow but add no light).
+* Not built, and why: light shafts (one listed place; a camera-only volume cone is not built yet), falling snow (both listed places
+  are interiors: the cold-store bay and the outpost), smoke and steam (laundry), flames where the build has no fire piece (three of
+  the four listed places).

@@ -16,11 +16,11 @@ Left as built (marks, voids, dark gaps or no fitting family): crack, hollow-shad
 
 82 stills in 13 places, every gate per still against its own before.
 
-Gate checks: 1529 passed, 45 failed, 141 not applicable.
+Gate checks: 1533 passed, 41 failed, 141 not applicable.
 
 | Gate | What | Failed stills |
 | --- | --- | ---: |
-| G7 | detail gain | 21 |
+| G7 | detail gain | 17 |
 | G3b | region colour | 9 |
 | G8 | repeat pattern | 6 |
 | G4b | darkest pixels | 6 |
@@ -29,24 +29,23 @@ Gate checks: 1529 passed, 45 failed, 141 not applicable.
 
 Every failing check (place, scene/still, gate, value, limit):
 
-- clerk-office s3_clerk_office/camera: G8 0.518 (limit 0.2)
-- clerk-office s3_clerk_office/player: G8 0.52 (limit 0.2)
-- clerk-office s3_hollin_choice/camera: G7 1.59 (limit 2.0)
-- clerk-office s3_hollin_choice/player: G7 1.07 (limit 2.0)
+- clerk-office s3_clerk_office/camera: G8 0.517 (limit 0.2)
+- clerk-office s3_clerk_office/player: G8 0.521 (limit 0.2)
+- clerk-office s3_hollin_choice/camera: G7 1.37 (limit 1.719)
+- clerk-office s3_hollin_choice/player: G7 1.02 (limit 1.536)
 - deep-desert s3_herd_sighting/player: G7 0.91 (limit 2.0)
-- elaris-room s3_room_morning/player: G7 1.97 (limit 2.0)
 - father-camp s3_camp_mark_c6/camera: G7 1.87 (limit 2.0)
 - father-camp s3_father_walk/player: G4b 28.11 (limit 36.09)
-- pantry s3_ledger_turned/player: G7 1.26 (limit 2.0)
-- pantry s3_pantry_c1/camera: G7 1.14 (limit 2.0)
-- pantry s3_pantry_c1/overview: G7 1.06 (limit 2.0)
-- pantry s3_pantry_c1/player: G7 0.97 (limit 2.0)
-- pantry s3_pantry_c3/camera: G7 1.15 (limit 2.0)
-- pantry s3_pantry_c3/player: G7 0.96 (limit 2.0)
-- pantry s3_pantry_c8/camera: G7 1.07 (limit 2.0)
-- pantry s3_pantry_c8/player: G7 1.07 (limit 2.0)
-- procession-road s3_scribe_wagon/camera: G7 1.26 (limit 2.0)
-- procession-road s3_scribe_wagon/player: G7 1.27 (limit 2.0)
+- pantry s3_ledger_turned/player: G7 1.26 (limit 1.526)
+- pantry s3_pantry_c1/camera: G7 1.14 (limit 1.557)
+- pantry s3_pantry_c1/overview: G7 1.06 (limit 1.552)
+- pantry s3_pantry_c1/player: G7 0.97 (limit 1.5)
+- pantry s3_pantry_c3/camera: G7 1.15 (limit 1.557)
+- pantry s3_pantry_c3/player: G7 0.96 (limit 1.5)
+- pantry s3_pantry_c8/camera: G7 1.07 (limit 1.557)
+- pantry s3_pantry_c8/player: G7 1.07 (limit 1.5)
+- procession-road s3_scribe_wagon/camera: G7 1.26 (limit 1.5)
+- procession-road s3_scribe_wagon/player: G7 1.27 (limit 1.5)
 - storyteller-hut e_returned/camera: G3b 6.68 (limit 6.0)
 - storyteller-hut s3_circle/overview: G3b 6.56 (limit 6.0)
 - storyteller-hut s3_village_return/player: G4b 33.24 (limit 38.59)
@@ -55,35 +54,37 @@ Every failing check (place, scene/still, gate, value, limit):
 - temple-halls e_stayed/camera: G8 0.535 (limit 0.2)
 - temple-halls s3_halls_c1/camera: G3b 9.06 (limit 6.0)
 - temple-halls s3_halls_c1/overview: G3b 12.57 (limit 6.0)
-- temple-halls s3_halls_c1/overview: G7 1.95 (limit 2.0)
 - temple-halls s3_halls_c1/overview: G8 0.333 (limit 0.2)
 - temple-halls s3_halls_c1/player: G3b 8.77 (limit 6.0)
 - temple-halls s3_halls_c6/camera: G3b 9.27 (limit 6.0)
 - temple-halls s3_halls_c6/player: G3b 8.93 (limit 6.0)
-- temple-halls s3_last_cup/camera: G7 1.99 (limit 2.0)
-- unlit-gallery s3_unlit_gallery/camera: G7 1.11 (limit 2.0)
+- unlit-gallery s3_unlit_gallery/camera: G7 1.11 (limit 1.668)
 - unlit-gallery s3_unlit_gallery/overview: G3b 10.25 (limit 6.0)
 - unlit-gallery s3_unlit_gallery/overview: G6b 0.591 (limit 0.552)
-- unlit-gallery s3_unlit_gallery/overview: G7 1.17 (limit 2.0)
-- unlit-gallery s3_unlit_gallery/player: G7 1.75 (limit 2.0)
+- unlit-gallery s3_unlit_gallery/overview: G7 1.17 (limit 1.663)
 - village-well s3_well_post/camera: G3b 8.71 (limit 6.0)
 - village-well s3_well_post/camera: G4b 16.55 (limit 16.7)
-- village-well s3_well_post/overview: G7 1.27 (limit 2.0)
+- village-well s3_well_post/overview: G7 1.27 (limit 1.955)
 - village-well s3_well_post/player: G4b 15.57 (limit 19.85)
 - walled-yard s3_seclusion/camera: G4b 30.91 (limit 39.52)
 - walled-yard s3_seclusion/overview: G6b 0.1753 (limit 0.1416)
 - walled-yard s3_seclusion/overview: G8 0.553 (limit 0.2)
 - walled-yard s3_seclusion/player: G4b 31.06 (limit 39.52)
 
-## P2 gates (atmosphere and skies; before = the P1 render)
+## P2 and P2b gates (skies, water, motes, rain, flames, fog; before = the P1 render)
 
-31 stills in 5 places, every gate per still against its own before.
+78 stills in 11 places, every gate per still against its own before.
 
-Gate checks: 520 passed, 5 failed, 121 not applicable.
+Gate checks: 1341 passed, 18 failed, 267 not applicable.
 
 | Gate | What | Failed stills |
 | --- | --- | ---: |
-| G4b | darkest pixels | 4 |
+| G4b | darkest pixels | 8 |
+| G8 | repeat pattern | 3 |
+| G3b | region colour | 2 |
+| G11 | hero-prop light | 2 |
+| G2 | tone | 1 |
+| G9 | texel density | 1 |
 | G6b | light/dark spread | 1 |
 
 Every failing check (place, scene/still, gate, value, limit):
@@ -91,7 +92,20 @@ Every failing check (place, scene/still, gate, value, limit):
 - deep-desert s3_herd_sighting/camera: G4b 56.05 (limit 56.77)
 - deep-desert s3_xandrix_back/camera: G4b 52.86 (limit 53.93)
 - deep-desert s3_xandrix_back/player: G4b 52.86 (limit 53.93)
-- father-camp s3_father_walk/camera: G4b 54.77 (limit 56.91)
+- father-camp s3_father_walk/camera: G4b 43.42 (limit 56.91)
+- silver-dunes s3_cairns/camera: G4b 22.86 (limit 23.49)
+- silver-dunes s3_dunes_night/player: G2 0.1611 (limit 0.12)
+- silver-dunes s3_moonlit_dunes/camera: G4b 25.75 (limit 26.88)
+- silver-dunes s3_moonlit_dunes/overview: G4b 25.75 (limit 27.32)
+- silver-dunes s3_moonlit_dunes/player: G4b 25.75 (limit 27.03)
+- storyteller-hut e_returned/camera: G3b 18.87 (limit 6.0)
+- storyteller-hut e_returned/camera: G8 0.371 (limit 0.2)
+- storyteller-hut e_returned/camera: G11 0.1105 (limit 0.08262)
+- storyteller-hut s3_circle/camera: G8 0.384 (limit 0.2)
+- storyteller-hut s3_circle/camera: G11 0.4245 (limit 0.08262)
+- storyteller-hut s3_circle/overview: G3b 15.41 (limit 6.0)
+- storyteller-hut s3_circle/player: G8 0.375 (limit 0.2)
+- storyteller-hut s3_village_return/player: G9 {'piece:dome': 0.717, 'piece:door-lintel': 0.362} (limit [0.7, 2.0])
 - walled-yard s3_seclusion/overview: G6b 0.1743 (limit 0.1578)
 
 G7 (detail gain) is counted as not applicable in P2: the surfaces are the P1 ones in both renders. G9 misses are P1's own.
@@ -100,5 +114,5 @@ G7 (detail gain) is counted as not applicable in P2: the surfaces are the P1 one
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.
 - Deferred materials (listed above) look as built until P3 to P5. Walls stay flat boxes (build-file work).
-- P2 is a first cut: sky plates and faint outdoor haze only; no dust, shafts, rain, snow, flames or water yet.
+- P2: no light shafts, falling snow, smoke or steam yet; flames only where the build has a fire piece. G7 is n/a in P2 and the P1 bar is 1.5 for clean painted, varnished, papered and fabric surfaces (ruling D1).
 - Half-size look renders; the full-size pass is P7.

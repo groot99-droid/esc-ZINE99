@@ -14,11 +14,11 @@ Not dressed in P1 (later phases): P2 (sky or water pieces): city, sky; P4 (rock,
 
 47 stills in 5 places, every gate per still against its own before.
 
-Gate checks: 898 passed, 25 failed, 52 not applicable.
+Gate checks: 899 passed, 24 failed, 52 not applicable.
 
 | Gate | What | Failed stills |
 | --- | --- | ---: |
-| G7 | detail gain | 20 |
+| G7 | detail gain | 19 |
 | G8 | repeat pattern | 4 |
 | G2 | tone | 1 |
 
@@ -47,14 +47,21 @@ Every failing check (place, scene/still, gate, value, limit):
 - snakehead-fortress s3_fortress_lamp/player: G7 1.23 (limit 2.0)
 - snakehead-fortress s3_fortress_rite/camera: G7 1.29 (limit 2.0)
 - snakehead-fortress s3_fortress_rite/player: G7 1.27 (limit 2.0)
-- spire-gala s3_gala_bond/player: G7 2.0 (limit 2.0)
 - spire-gala s3_gala_floor/overview: G8 0.208 (limit 0.2)
 
-## P2 gates (atmosphere and skies; before = the P1 render)
+## P2 and P2b gates (skies, water, motes, rain, flames, fog; before = the P1 render)
 
-16 stills in 2 places, every gate per still against its own before.
+29 stills in 3 places, every gate per still against its own before.
 
-Gate checks: 298 passed, 0 failed, 32 not applicable.
+Gate checks: 539 passed, 1 failed, 62 not applicable.
+
+| Gate | What | Failed stills |
+| --- | --- | ---: |
+| G11 | hero-prop light | 1 |
+
+Every failing check (place, scene/still, gate, value, limit):
+
+- bloom-district s3_bloom_after/player: G11 0.0829 (limit 0.08262)
 
 G7 (detail gain) is counted as not applicable in P2: the surfaces are the P1 ones in both renders. G9 misses are P1's own.
 
@@ -62,5 +69,5 @@ G7 (detail gain) is counted as not applicable in P2: the surfaces are the P1 one
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.
 - Deferred materials (listed above) look as built until P3 to P5. Walls stay flat boxes (build-file work).
-- P2 is a first cut: sky plates and faint outdoor haze only; no dust, shafts, rain, snow, flames or water yet.
+- P2: no light shafts, falling snow, smoke or steam yet; flames only where the build has a fire piece. G7 is n/a in P2 and the P1 bar is 1.5 for clean painted, varnished, papered and fabric surfaces (ruling D1).
 - Half-size look renders; the full-size pass is P7.

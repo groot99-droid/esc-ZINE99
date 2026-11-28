@@ -16,14 +16,13 @@ Left as built (marks, voids, dark gaps or no fitting family): ochre-red.
 
 17 stills in 5 places, every gate per still against its own before.
 
-Gate checks: 316 passed, 8 failed, 33 not applicable.
+Gate checks: 317 passed, 7 failed, 33 not applicable.
 
 | Gate | What | Failed stills |
 | --- | --- | ---: |
 | G4b | darkest pixels | 3 |
 | G8 | repeat pattern | 3 |
 | G6b | light/dark spread | 1 |
-| G7 | detail gain | 1 |
 
 Every failing check (place, scene/still, gate, value, limit):
 
@@ -33,12 +32,11 @@ Every failing check (place, scene/still, gate, value, limit):
 - shedding-gallery s3_gallery/overview: G8 0.41 (limit 0.2)
 - shedding-gallery s3_gallery/player: G4b 65.48 (limit 67.9)
 - shedding-gallery s3_gallery/player: G8 0.555 (limit 0.2)
-- stencil-gallery s3_stencil_gallery/overview: G7 1.77 (limit 2.0)
 - stencil-gallery s3_stencil_gallery/player: G4b 37.78 (limit 39.63)
 
 ## Still weak
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.
 - Deferred materials (listed above) look as built until P3 to P5. Walls stay flat boxes (build-file work).
-- P2 is a first cut: sky plates and faint outdoor haze only; no dust, shafts, rain, snow, flames or water yet.
+- P2: no light shafts, falling snow, smoke or steam yet; flames only where the build has a fire piece. G7 is n/a in P2 and the P1 bar is 1.5 for clean painted, varnished, papered and fabric surfaces (ruling D1).
 - Half-size look renders; the full-size pass is P7.

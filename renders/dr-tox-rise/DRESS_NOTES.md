@@ -34,13 +34,13 @@ Every failing check (place, scene/still, gate, value, limit):
 - printer-room s3_printer_room/player: G8 0.371 (limit 0.2)
 - printer-room s3_printer_room_after/camera: G7 1.08 (limit 2.0)
 - printer-room s3_printer_room_after/player: G7 1.86 (limit 2.0)
-- sky-room s3_skyroom_evening/camera: G7 1.24 (limit 2.0)
-- sky-room s3_skyroom_evening/player: G7 1.25 (limit 2.0)
+- sky-room s3_skyroom_evening/camera: G7 1.24 (limit 1.656)
+- sky-room s3_skyroom_evening/player: G7 1.25 (limit 1.643)
 - sky-room s3_skyroom_evening/player: G8 0.574 (limit 0.2)
-- sky-room s3_skyroom_small/camera: G7 1.09 (limit 2.0)
-- sky-room s3_skyroom_small/overview: G7 1.26 (limit 2.0)
+- sky-room s3_skyroom_small/camera: G7 1.09 (limit 1.712)
+- sky-room s3_skyroom_small/overview: G7 1.26 (limit 1.7)
 - sky-room s3_skyroom_small/overview: G8 0.395 (limit 0.2)
-- sky-room s3_skyroom_small/player: G7 1.07 (limit 2.0)
+- sky-room s3_skyroom_small/player: G7 1.07 (limit 1.625)
 - snakehead-archive s3_archive_alarm/camera: G7 1.14 (limit 2.0)
 - snakehead-archive s3_archive_alarm/player: G7 1.04 (limit 2.0)
 - snakehead-archive s3_archive_claimed/camera: G7 1.04 (limit 2.0)
@@ -65,7 +65,7 @@ Every failing check (place, scene/still, gate, value, limit):
 - trial-53-arena s3_arena_after/camera: G7 1.74 (limit 2.0)
 - trial-53-arena s3_arena_after/camera: G8 0.478 (limit 0.2)
 
-## P2 gates (atmosphere and skies; before = the P1 render)
+## P2 and P2b gates (skies, water, motes, rain, flames, fog; before = the P1 render)
 
 10 stills in 2 places, every gate per still against its own before.
 
@@ -77,7 +77,7 @@ Gate checks: 183 passed, 1 failed, 24 not applicable.
 
 Every failing check (place, scene/still, gate, value, limit):
 
-- idaho-river-town s3_river_night/camera: G11 0.2183 (limit 0.08262)
+- idaho-river-town s3_river_night/camera: G11 0.1983 (limit 0.08262)
 
 G7 (detail gain) is counted as not applicable in P2: the surfaces are the P1 ones in both renders. G9 misses are P1's own.
 
@@ -85,5 +85,5 @@ G7 (detail gain) is counted as not applicable in P2: the surfaces are the P1 one
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.
 - Deferred materials (listed above) look as built until P3 to P5. Walls stay flat boxes (build-file work).
-- P2 is a first cut: sky plates and faint outdoor haze only; no dust, shafts, rain, snow, flames or water yet.
+- P2: no light shafts, falling snow, smoke or steam yet; flames only where the build has a fire piece. G7 is n/a in P2 and the P1 bar is 1.5 for clean painted, varnished, papered and fabric surfaces (ruling D1).
 - Half-size look renders; the full-size pass is P7.
