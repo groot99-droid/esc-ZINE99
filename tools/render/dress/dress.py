@@ -174,6 +174,7 @@ def apply(bpy, sc, game, location, scene, K, rig, views, made, pieces, dress_dir
     if "decals" in allowed and loc_cfg.get("decals"):
         rec["layers"]["decals"] = grime.decals_layer(ctx, loc_cfg["decals"])
     kspecs = [k for k in loc_cfg.get("kits", []) if not k.get("_p6") or os.environ.get("DRESS_P6") == "1"]  # P6 kits: P6 runs only
+    kspecs = [k for k in kspecs if not k.get("_p6c") or os.environ.get("DRESS_P6C") == "1"]  # P6c window and door kits: P6c runs only
     if "kits" in allowed and kspecs:
         rec["layers"]["kits"] = kits.kits_layer(ctx, kspecs)
     if "props" in allowed and loc_cfg.get("props"):  # new-models pass: whole models replacing blockout boxes (propmodels.py)

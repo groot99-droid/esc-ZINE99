@@ -21,6 +21,10 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(HERE)))
 INST = {"man-eater", "dr-tox-rise", "dr-tox-fall", "dr-tox-finale", "dr-tox-altrulan", "lira-calyx"}
 WALLP = {"plaster", "plaster_clean", "plaster_old", "paint_gloss", "conc_wall", "conc_wall_damp", "cloth_wall", "wallpaper"}
+WINDOW_MATS = {"frosted-glass", "window", "window-glass", "rain-glass", "sky-glass", "window-gold", "amber-glass", "glass", "vitrine-glass",
+               "lightwell-glass", "window-night", "window-sky", "night-window", "dusk-window", "lit-window"}
+DOOR_LEAF_MATS = {"door", "door-wood", "door-olive", "door-dark", "varnish", "walnut", "steel"}
+DARK_GAP_MATS = {"ink", "doorway-dark", "dark-gap", "door-dark", "shaft-dark", "void"}
 SKIP = ["cedar-log", "log", "brick", "soot-brick", "stone", "drystone", "cedar-plank", "panel", "boards", "glass", "window-glass"]
 
 
@@ -67,8 +71,49 @@ def build(game, cfg):
             walls.sort(reverse=True)
             kits.append({"kit": "shelves", "name": "shelves", "wall": walls[0][2], "height_m": 2.1, "bay_m": 0.95, "max_bays": 8,
                          "clear_centre": True, "_p6": True})
+        # P6c (ruling 2026-11-28): window frames, sills and mullions; door casings and open leaves on dark door openings
+        win, lit, doors, gaps, gap_boxes = set(), set(), set(), set(), []
+        for f in sorted(glob.glob(os.path.join(ROOT, "build", "blender", game, loc, "*", "blockout.json"))):
+            with open(f, encoding="utf-8") as fh:
+                bo = json.load(fh)
+            for p in bo["pieces"]:
+                m, md, s_ = p.get("material"), bo["materials"].get(p.get("material"), {}), p.get("size_m", [1, 1, 1])
+                vertical = s_[2] > 0.4 and min(s_[0], s_[1]) < 0.2
+                if not vertical:
+                    continue
+                if m in WINDOW_MATS and p.get("role") in ("opening", "wall", "structure"):
+                    win.add(p["id"])
+                    if md.get("emission"):
+                        lit.add(p["id"])
+                elif "door" in p["id"] and m in DOOR_LEAF_MATS:
+                    doors.add(p["id"])
+                elif "door" in p["id"] and p.get("role") == "opening" and m in DARK_GAP_MATS:
+                    gaps.add(p["id"])
+            ids = {q["id"] for q in bo["pieces"]}
+            for q in bo["pieces"]:  # a door opening: a `-head` wall piece with no `-sill` under it (a window has one)
+                if q["id"].endswith("-head") and q.get("role") == "wall" and q["id"][:-5] + "-sill" not in ids:
+                    (cx, cy, cz), (sx, sy, sz) = q["location"], q["size_m"]
+                    bottom = cz - sz / 2
+                    if bottom >= 1.8 and min(sx, sy) < 0.4 and max(sx, sy) >= 0.6:
+                        gap_boxes.append([[cx - sx / 2, cy - sy / 2, 0.0], [cx + sx / 2, cy + sy / 2, bottom]])
+        wood = [0.3, 0.21, 0.13] if not inst else [0.55, 0.55, 0.53]
+        if win:
+            kits.append({"kit": "frames", "name": "window-frames", "pieces": sorted(win), "width_m": 0.07, "depth_m": 0.03, "bottom": True,
+                         "color": wood, "roughness": 0.6, "clear_centre": False, "surface": {"family": "noise", "tile_m": 0.5, "bump": 0.1},
+                         "_p6": True, "_p6c": True})
+            kits.append({"kit": "sills", "name": "sills", "pieces": sorted(win), "lit_pieces": sorted(lit), "color": wood, "roughness": 0.6,
+                         "clear_centre": False, "surface": {"family": "noise", "tile_m": 0.5, "bump": 0.1}, "_p6": True, "_p6c": True})
+        if doors | gaps:
+            kits.append({"kit": "frames", "name": "door-casings", "pieces": sorted(doors | gaps), "width_m": 0.08, "depth_m": 0.025,
+                         "bottom": False, "color": wood, "roughness": 0.6, "clear_centre": False,
+                         "surface": {"family": "noise", "tile_m": 0.5, "bump": 0.1}, "_p6": True, "_p6c": True})
+        gap_boxes = [list(x) for x in {json.dumps(g): g for g in gap_boxes}.values()]
+        if gaps or gap_boxes:
+            kits.append({"kit": "door_leaves", "name": "door-leaves", "pieces": sorted(gaps), "gap_boxes": gap_boxes, "clear_m": 0.6, "color": wood, "roughness": 0.6,
+                         "clear_centre": True, "surface": {"family": "grid", "tile_m": 0.14, "board_m": 2.4, "board_axis": "z", "row_axis": "xy",
+                                                           "grain": 0.05, "bump": 0.25}, "_p6": True, "_p6c": True})
         L["kits"] = L.get("kits", []) + kits
-        L["p6"] = {"version": 2, "kits": [k["name"] for k in kits]}
+        L["p6"] = {"version": 3, "windows": sorted(win), "doors": sorted(doors), "door_gaps": sorted(gaps) + ["head-gap-%d" % i for i in range(len(gap_boxes))], "kits": [k["name"] for k in kits]}
         rep[loc] = L["p6"]
     return cfg, rep
 

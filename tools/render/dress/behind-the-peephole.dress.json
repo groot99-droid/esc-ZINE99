@@ -243,13 +243,68 @@
       "bump": 0.1
      },
      "_p6": true
+    },
+    {
+     "kit": "frames",
+     "name": "window-frames",
+     "pieces": [
+      "frosted-window"
+     ],
+     "width_m": 0.07,
+     "depth_m": 0.03,
+     "bottom": true,
+     "color": [
+      0.3,
+      0.21,
+      0.13
+     ],
+     "roughness": 0.6,
+     "clear_centre": false,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true,
+     "_p6c": true
+    },
+    {
+     "kit": "sills",
+     "name": "sills",
+     "pieces": [
+      "frosted-window"
+     ],
+     "lit_pieces": [
+      "frosted-window"
+     ],
+     "color": [
+      0.3,
+      0.21,
+      0.13
+     ],
+     "roughness": 0.6,
+     "clear_centre": false,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true,
+     "_p6c": true
     }
    ],
    "p6": {
-    "version": 2,
+    "version": 3,
+    "windows": [
+     "frosted-window"
+    ],
+    "doors": [],
+    "door_gaps": [],
     "kits": [
      "skirting",
-     "fixtures"
+     "fixtures",
+     "window-frames",
+     "sills"
     ]
    }
   },
@@ -520,7 +575,10 @@
     }
    ],
    "p6": {
-    "version": 2,
+    "version": 3,
+    "windows": [],
+    "doors": [],
+    "door_gaps": [],
     "kits": [
      "skirting",
      "fixtures"
@@ -844,13 +902,72 @@
       "bump": 0.1
      },
      "_p6": true
+    },
+    {
+     "kit": "frames",
+     "name": "window-frames",
+     "pieces": [
+      "tall-window-1",
+      "tall-window-2"
+     ],
+     "width_m": 0.07,
+     "depth_m": 0.03,
+     "bottom": true,
+     "color": [
+      0.3,
+      0.21,
+      0.13
+     ],
+     "roughness": 0.6,
+     "clear_centre": false,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true,
+     "_p6c": true
+    },
+    {
+     "kit": "sills",
+     "name": "sills",
+     "pieces": [
+      "tall-window-1",
+      "tall-window-2"
+     ],
+     "lit_pieces": [
+      "tall-window-1",
+      "tall-window-2"
+     ],
+     "color": [
+      0.3,
+      0.21,
+      0.13
+     ],
+     "roughness": 0.6,
+     "clear_centre": false,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true,
+     "_p6c": true
     }
    ],
    "p6": {
-    "version": 2,
+    "version": 3,
+    "windows": [
+     "tall-window-1",
+     "tall-window-2"
+    ],
+    "doors": [],
+    "door_gaps": [],
     "kits": [
      "skirting",
-     "fixtures"
+     "fixtures",
+     "window-frames",
+     "sills"
     ]
    }
   },
@@ -1070,13 +1187,43 @@
       "bump": 0.1
      },
      "_p6": true
+    },
+    {
+     "kit": "frames",
+     "name": "door-casings",
+     "pieces": [
+      "office-door-leaf"
+     ],
+     "width_m": 0.08,
+     "depth_m": 0.025,
+     "bottom": false,
+     "color": [
+      0.3,
+      0.21,
+      0.13
+     ],
+     "roughness": 0.6,
+     "clear_centre": false,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true,
+     "_p6c": true
     }
    ],
    "p6": {
-    "version": 2,
+    "version": 3,
+    "windows": [],
+    "doors": [
+     "office-door-leaf"
+    ],
+    "door_gaps": [],
     "kits": [
      "skirting",
-     "fixtures"
+     "fixtures",
+     "door-casings"
     ]
    }
   },
@@ -1636,7 +1783,10 @@
     }
    ],
    "p6": {
-    "version": 2,
+    "version": 3,
+    "windows": [],
+    "doors": [],
+    "door_gaps": [],
     "kits": [
      "skirting",
      "fixtures"
@@ -1877,13 +2027,105 @@
       "bump": 0.1
      },
      "_p6": true
+    },
+    {
+     "kit": "frames",
+     "name": "window-frames",
+     "pieces": [
+      "lightwell-window-1",
+      "lightwell-window-2",
+      "lightwell-window-3"
+     ],
+     "width_m": 0.07,
+     "depth_m": 0.03,
+     "bottom": true,
+     "color": [
+      0.3,
+      0.21,
+      0.13
+     ],
+     "roughness": 0.6,
+     "clear_centre": false,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true,
+     "_p6c": true
+    },
+    {
+     "kit": "sills",
+     "name": "sills",
+     "pieces": [
+      "lightwell-window-1",
+      "lightwell-window-2",
+      "lightwell-window-3"
+     ],
+     "lit_pieces": [
+      "lightwell-window-1",
+      "lightwell-window-2",
+      "lightwell-window-3"
+     ],
+     "color": [
+      0.3,
+      0.21,
+      0.13
+     ],
+     "roughness": 0.6,
+     "clear_centre": false,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true,
+     "_p6c": true
+    },
+    {
+     "kit": "frames",
+     "name": "door-casings",
+     "pieces": [
+      "office-door-leaf",
+      "stair-door-leaf"
+     ],
+     "width_m": 0.08,
+     "depth_m": 0.025,
+     "bottom": false,
+     "color": [
+      0.3,
+      0.21,
+      0.13
+     ],
+     "roughness": 0.6,
+     "clear_centre": false,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true,
+     "_p6c": true
     }
    ],
    "p6": {
-    "version": 2,
+    "version": 3,
+    "windows": [
+     "lightwell-window-1",
+     "lightwell-window-2",
+     "lightwell-window-3"
+    ],
+    "doors": [
+     "office-door-leaf",
+     "stair-door-leaf"
+    ],
+    "door_gaps": [],
     "kits": [
      "skirting",
-     "fixtures"
+     "fixtures",
+     "window-frames",
+     "sills",
+     "door-casings"
     ]
    }
   }

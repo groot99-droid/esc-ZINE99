@@ -1290,7 +1290,10 @@
     }
    ],
    "p6": {
-    "version": 2,
+    "version": 3,
+    "windows": [],
+    "doors": [],
+    "door_gaps": [],
     "kits": [
      "skirting",
      "fixtures"

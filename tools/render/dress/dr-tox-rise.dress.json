@@ -1091,7 +1091,10 @@
     }
    ],
    "p6": {
-    "version": 2,
+    "version": 3,
+    "windows": [],
+    "doors": [],
+    "door_gaps": [],
     "kits": [
      "skirting",
      "conduit",
@@ -1272,14 +1275,44 @@
       "bump": 0.1
      },
      "_p6": true
+    },
+    {
+     "kit": "frames",
+     "name": "door-casings",
+     "pieces": [
+      "door"
+     ],
+     "width_m": 0.08,
+     "depth_m": 0.025,
+     "bottom": false,
+     "color": [
+      0.55,
+      0.55,
+      0.53
+     ],
+     "roughness": 0.6,
+     "clear_centre": false,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true,
+     "_p6c": true
     }
    ],
    "p6": {
-    "version": 2,
+    "version": 3,
+    "windows": [],
+    "doors": [
+     "door"
+    ],
+    "door_gaps": [],
     "kits": [
      "skirting",
      "conduit",
-     "fixtures"
+     "fixtures",
+     "door-casings"
     ]
    }
   },
@@ -1544,14 +1577,44 @@
       "bump": 0.1
      },
      "_p6": true
+    },
+    {
+     "kit": "frames",
+     "name": "door-casings",
+     "pieces": [
+      "door"
+     ],
+     "width_m": 0.08,
+     "depth_m": 0.025,
+     "bottom": false,
+     "color": [
+      0.55,
+      0.55,
+      0.53
+     ],
+     "roughness": 0.6,
+     "clear_centre": false,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true,
+     "_p6c": true
     }
    ],
    "p6": {
-    "version": 2,
+    "version": 3,
+    "windows": [],
+    "doors": [
+     "door"
+    ],
+    "door_gaps": [],
     "kits": [
      "skirting",
      "conduit",
-     "fixtures"
+     "fixtures",
+     "door-casings"
     ]
    }
   },
@@ -1774,7 +1837,10 @@
     }
    ],
    "p6": {
-    "version": 2,
+    "version": 3,
+    "windows": [],
+    "doors": [],
+    "door_gaps": [],
     "kits": [
      "skirting",
      "conduit",

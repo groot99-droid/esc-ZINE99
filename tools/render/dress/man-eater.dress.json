@@ -661,14 +661,81 @@
       "bump": 0.1
      },
      "_p6": true
+    },
+    {
+     "kit": "frames",
+     "name": "window-frames",
+     "pieces": [
+      "window-1",
+      "window-2",
+      "window-3",
+      "window-4"
+     ],
+     "width_m": 0.07,
+     "depth_m": 0.03,
+     "bottom": true,
+     "color": [
+      0.55,
+      0.55,
+      0.53
+     ],
+     "roughness": 0.6,
+     "clear_centre": false,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true,
+     "_p6c": true
+    },
+    {
+     "kit": "sills",
+     "name": "sills",
+     "pieces": [
+      "window-1",
+      "window-2",
+      "window-3",
+      "window-4"
+     ],
+     "lit_pieces": [
+      "window-1",
+      "window-2",
+      "window-3",
+      "window-4"
+     ],
+     "color": [
+      0.55,
+      0.55,
+      0.53
+     ],
+     "roughness": 0.6,
+     "clear_centre": false,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true,
+     "_p6c": true
     }
    ],
    "p6": {
-    "version": 2,
+    "version": 3,
+    "windows": [
+     "window-1",
+     "window-2",
+     "window-3",
+     "window-4"
+    ],
+    "doors": [],
+    "door_gaps": [],
     "kits": [
      "skirting",
      "conduit",
-     "fixtures"
+     "fixtures",
+     "window-frames",
+     "sills"
     ]
    }
   },
@@ -1018,7 +1085,10 @@
     }
    },
    "p6": {
-    "version": 2,
+    "version": 3,
+    "windows": [],
+    "doors": [],
+    "door_gaps": [],
     "kits": [
      "skirting",
      "conduit",
@@ -1352,14 +1422,69 @@
       "bump": 0.1
      },
      "_p6": true
+    },
+    {
+     "kit": "frames",
+     "name": "window-frames",
+     "pieces": [
+      "window-high"
+     ],
+     "width_m": 0.07,
+     "depth_m": 0.03,
+     "bottom": true,
+     "color": [
+      0.55,
+      0.55,
+      0.53
+     ],
+     "roughness": 0.6,
+     "clear_centre": false,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true,
+     "_p6c": true
+    },
+    {
+     "kit": "sills",
+     "name": "sills",
+     "pieces": [
+      "window-high"
+     ],
+     "lit_pieces": [
+      "window-high"
+     ],
+     "color": [
+      0.55,
+      0.55,
+      0.53
+     ],
+     "roughness": 0.6,
+     "clear_centre": false,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true,
+     "_p6c": true
     }
    ],
    "p6": {
-    "version": 2,
+    "version": 3,
+    "windows": [
+     "window-high"
+    ],
+    "doors": [],
+    "door_gaps": [],
     "kits": [
      "skirting",
      "conduit",
-     "fixtures"
+     "fixtures",
+     "window-frames",
+     "sills"
     ]
    }
   },
@@ -1658,14 +1783,44 @@
       "bump": 0.1
      },
      "_p6": true
+    },
+    {
+     "kit": "frames",
+     "name": "door-casings",
+     "pieces": [
+      "east-door"
+     ],
+     "width_m": 0.08,
+     "depth_m": 0.025,
+     "bottom": false,
+     "color": [
+      0.55,
+      0.55,
+      0.53
+     ],
+     "roughness": 0.6,
+     "clear_centre": false,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true,
+     "_p6c": true
     }
    ],
    "p6": {
-    "version": 2,
+    "version": 3,
+    "windows": [],
+    "doors": [
+     "east-door"
+    ],
+    "door_gaps": [],
     "kits": [
      "skirting",
      "conduit",
-     "fixtures"
+     "fixtures",
+     "door-casings"
     ]
    }
   },
@@ -2163,14 +2318,69 @@
       "bump": 0.1
      },
      "_p6": true
+    },
+    {
+     "kit": "frames",
+     "name": "window-frames",
+     "pieces": [
+      "drum-window"
+     ],
+     "width_m": 0.07,
+     "depth_m": 0.03,
+     "bottom": true,
+     "color": [
+      0.55,
+      0.55,
+      0.53
+     ],
+     "roughness": 0.6,
+     "clear_centre": false,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true,
+     "_p6c": true
+    },
+    {
+     "kit": "sills",
+     "name": "sills",
+     "pieces": [
+      "drum-window"
+     ],
+     "lit_pieces": [
+      "drum-window"
+     ],
+     "color": [
+      0.55,
+      0.55,
+      0.53
+     ],
+     "roughness": 0.6,
+     "clear_centre": false,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true,
+     "_p6c": true
     }
    ],
    "p6": {
-    "version": 2,
+    "version": 3,
+    "windows": [
+     "drum-window"
+    ],
+    "doors": [],
+    "door_gaps": [],
     "kits": [
      "skirting",
      "conduit",
-     "fixtures"
+     "fixtures",
+     "window-frames",
+     "sills"
     ]
    }
   },
@@ -2422,7 +2632,10 @@
     }
    },
    "p6": {
-    "version": 2,
+    "version": 3,
+    "windows": [],
+    "doors": [],
+    "door_gaps": [],
     "kits": [
      "skirting",
      "conduit",
@@ -2663,14 +2876,69 @@
       "bump": 0.1
      },
      "_p6": true
+    },
+    {
+     "kit": "frames",
+     "name": "window-frames",
+     "pieces": [
+      "window-high"
+     ],
+     "width_m": 0.07,
+     "depth_m": 0.03,
+     "bottom": true,
+     "color": [
+      0.55,
+      0.55,
+      0.53
+     ],
+     "roughness": 0.6,
+     "clear_centre": false,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true,
+     "_p6c": true
+    },
+    {
+     "kit": "sills",
+     "name": "sills",
+     "pieces": [
+      "window-high"
+     ],
+     "lit_pieces": [
+      "window-high"
+     ],
+     "color": [
+      0.55,
+      0.55,
+      0.53
+     ],
+     "roughness": 0.6,
+     "clear_centre": false,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true,
+     "_p6c": true
     }
    ],
    "p6": {
-    "version": 2,
+    "version": 3,
+    "windows": [
+     "window-high"
+    ],
+    "doors": [],
+    "door_gaps": [],
     "kits": [
      "skirting",
      "conduit",
-     "fixtures"
+     "fixtures",
+     "window-frames",
+     "sills"
     ]
    }
   },
@@ -3660,7 +3928,10 @@
     }
    ],
    "p6": {
-    "version": 2,
+    "version": 3,
+    "windows": [],
+    "doors": [],
+    "door_gaps": [],
     "kits": [
      "skirting",
      "conduit",
@@ -3852,14 +4123,89 @@
       "bump": 0.1
      },
      "_p6": true
+    },
+    {
+     "kit": "frames",
+     "name": "window-frames",
+     "pieces": [
+      "window-1",
+      "window-2",
+      "window-3",
+      "window-4",
+      "window-5",
+      "window-corner"
+     ],
+     "width_m": 0.07,
+     "depth_m": 0.03,
+     "bottom": true,
+     "color": [
+      0.55,
+      0.55,
+      0.53
+     ],
+     "roughness": 0.6,
+     "clear_centre": false,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true,
+     "_p6c": true
+    },
+    {
+     "kit": "sills",
+     "name": "sills",
+     "pieces": [
+      "window-1",
+      "window-2",
+      "window-3",
+      "window-4",
+      "window-5",
+      "window-corner"
+     ],
+     "lit_pieces": [
+      "window-1",
+      "window-2",
+      "window-3",
+      "window-4",
+      "window-5",
+      "window-corner"
+     ],
+     "color": [
+      0.55,
+      0.55,
+      0.53
+     ],
+     "roughness": 0.6,
+     "clear_centre": false,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true,
+     "_p6c": true
     }
    ],
    "p6": {
-    "version": 2,
+    "version": 3,
+    "windows": [
+     "window-1",
+     "window-2",
+     "window-3",
+     "window-4",
+     "window-5",
+     "window-corner"
+    ],
+    "doors": [],
+    "door_gaps": [],
     "kits": [
      "skirting",
      "conduit",
-     "fixtures"
+     "fixtures",
+     "window-frames",
+     "sills"
     ]
    }
   },
@@ -4072,6 +4418,92 @@
       "bump": 0.1
      },
      "_p6": true
+    },
+    {
+     "kit": "frames",
+     "name": "window-frames",
+     "pieces": [
+      "glass-front"
+     ],
+     "width_m": 0.07,
+     "depth_m": 0.03,
+     "bottom": true,
+     "color": [
+      0.55,
+      0.55,
+      0.53
+     ],
+     "roughness": 0.6,
+     "clear_centre": false,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true,
+     "_p6c": true
+    },
+    {
+     "kit": "sills",
+     "name": "sills",
+     "pieces": [
+      "glass-front"
+     ],
+     "lit_pieces": [
+      "glass-front"
+     ],
+     "color": [
+      0.55,
+      0.55,
+      0.53
+     ],
+     "roughness": 0.6,
+     "clear_centre": false,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true,
+     "_p6c": true
+    },
+    {
+     "kit": "door_leaves",
+     "name": "door-leaves",
+     "pieces": [],
+     "gap_boxes": [
+      [
+       [
+        -20.0,
+        0.85,
+        0.0
+       ],
+       [
+        20.0,
+        1.15,
+        4.800000000000001
+       ]
+      ]
+     ],
+     "clear_m": 0.6,
+     "color": [
+      0.55,
+      0.55,
+      0.53
+     ],
+     "roughness": 0.6,
+     "clear_centre": true,
+     "surface": {
+      "family": "grid",
+      "tile_m": 0.14,
+      "board_m": 2.4,
+      "board_axis": "z",
+      "row_axis": "xy",
+      "grain": 0.05,
+      "bump": 0.25
+     },
+     "_p6": true,
+     "_p6c": true
     }
    ],
    "p2": {
@@ -4102,11 +4534,21 @@
     }
    },
    "p6": {
-    "version": 2,
+    "version": 3,
+    "windows": [
+     "glass-front"
+    ],
+    "doors": [],
+    "door_gaps": [
+     "head-gap-0"
+    ],
     "kits": [
      "skirting",
      "conduit",
-     "fixtures"
+     "fixtures",
+     "window-frames",
+     "sills",
+     "door-leaves"
     ]
    }
   }

@@ -284,7 +284,17 @@ def shelves(ctx, spec, col):
     return p6kits.shelves(ctx, spec, col)
 
 
-KITS = {"fixtures": fixtures, "shelves": shelves, "crowns_round": crowns_round, "motes": motes, "precip": precip, "flames": flames, "swell": swell, "window_plate": window_plate, "conifer_wrap": conifer_wrap, "treeline": treeline, "attic_cap": attic_cap, "frames": frames, "baseboard": baseboard, "ceiling_joists": ceiling_joists, "ceiling_grid": ceiling_grid, "conduit": conduit}
+def sills(ctx, spec, col):
+    from . import p6kits
+    return p6kits.sills(ctx, spec, col)
+
+
+def door_leaves(ctx, spec, col):
+    from . import p6kits
+    return p6kits.door_leaves(ctx, spec, col)
+
+
+KITS = {"sills": sills, "door_leaves": door_leaves, "fixtures": fixtures, "shelves": shelves, "crowns_round": crowns_round, "motes": motes, "precip": precip, "flames": flames, "swell": swell, "window_plate": window_plate, "conifer_wrap": conifer_wrap, "treeline": treeline, "attic_cap": attic_cap, "frames": frames, "baseboard": baseboard, "ceiling_joists": ceiling_joists, "ceiling_grid": ceiling_grid, "conduit": conduit}
 
 
 def kits_layer(ctx, specs):

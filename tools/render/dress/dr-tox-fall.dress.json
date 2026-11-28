@@ -307,7 +307,10 @@
     }
    ],
    "p6": {
-    "version": 2,
+    "version": 3,
+    "windows": [],
+    "doors": [],
+    "door_gaps": [],
     "kits": [
      "skirting",
      "conduit",
@@ -736,6 +739,52 @@
       "bump": 0.1
      },
      "_p6": true
+    },
+    {
+     "kit": "frames",
+     "name": "window-frames",
+     "pieces": [
+      "cell-fronts"
+     ],
+     "width_m": 0.07,
+     "depth_m": 0.03,
+     "bottom": true,
+     "color": [
+      0.55,
+      0.55,
+      0.53
+     ],
+     "roughness": 0.6,
+     "clear_centre": false,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true,
+     "_p6c": true
+    },
+    {
+     "kit": "sills",
+     "name": "sills",
+     "pieces": [
+      "cell-fronts"
+     ],
+     "lit_pieces": [],
+     "color": [
+      0.55,
+      0.55,
+      0.53
+     ],
+     "roughness": 0.6,
+     "clear_centre": false,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true,
+     "_p6c": true
     }
    ],
    "p2": {
@@ -767,14 +816,6 @@
      "rock": "rock_light"
     }
    },
-   "p6": {
-    "version": 2,
-    "kits": [
-     "skirting",
-     "conduit",
-     "fixtures"
-    ]
-   },
    "p5_materials": {
     "rock": {
      "family": "scan",
@@ -803,6 +844,21 @@
     "materials": {
      "rock": "relief"
     }
+   },
+   "p6": {
+    "version": 3,
+    "windows": [
+     "cell-fronts"
+    ],
+    "doors": [],
+    "door_gaps": [],
+    "kits": [
+     "skirting",
+     "conduit",
+     "fixtures",
+     "window-frames",
+     "sills"
+    ]
    }
   },
   "spire-gala": {
@@ -983,7 +1039,10 @@
     }
    ],
    "p6": {
-    "version": 2,
+    "version": 3,
+    "windows": [],
+    "doors": [],
+    "door_gaps": [],
     "kits": [
      "skirting",
      "conduit",

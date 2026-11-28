@@ -135,3 +135,95 @@ def shelves(ctx, spec, col):
         o.visible_diffuse = True
         o.visible_glossy = True
     return out
+
+
+def _piece_boxes(ctx, pids):
+    out = []
+    for o in sorted(ctx["pieces"], key=lambda x: x.name):
+        if o.hide_render or o.name[3:] not in pids:
+            continue
+        pts = [o.matrix_world @ Vector(c) for c in o.bound_box]
+        out.append((o.name[3:], [min(p[i] for p in pts) for i in range(3)], [max(p[i] for p in pts) for i in range(3)]))
+    return out
+
+
+def sills(ctx, spec, col):
+    """P6c: a window sill under every listed window piece (projecting `depth_m` into the room on both faces) and, for panes that do
+    not emit light and are wider than `mullion_min_m`, one mullion and one transom bar. Lit panes get no bars: they stay uncovered."""
+    K = ctx["K"]
+    mat = kits._kit_material(ctx, K, spec, spec.get("name", "sills"))
+    bm = bmesh.new()
+    lit = set(spec.get("lit_pieces", []))
+    n = 0
+    for pid, lo, hi in _piece_boxes(ctx, set(spec.get("pieces", []))):
+        size = [hi[i] - lo[i] for i in range(3)]
+        ax = 0 if size[0] < size[1] else 1
+        ln = 1 - ax
+        d, t = spec.get("depth_m", 0.07) * K, spec.get("thick_m", 0.035) * K
+        a, b = [0, 0, lo[2] - t - spec.get("drop_m", 0.07) * K], [0, 0, lo[2] - spec.get("drop_m", 0.07) * K]
+        a[ax], b[ax] = lo[ax] - d, hi[ax] + d
+        a[ln], b[ln] = lo[ln] - 0.09 * K, hi[ln] + 0.09 * K
+        _box(bm, a, b)
+        n += 1
+        if pid not in lit and size[ln] >= spec.get("mullion_min_m", 1.0) * K:
+            w = spec.get("bar_m", 0.035) * K
+            mid = (lo[ln] + hi[ln]) / 2
+            a, b = [0, 0, lo[2]], [0, 0, hi[2]]
+            a[ax], b[ax] = lo[ax] - 0.01 * K, hi[ax] + 0.01 * K
+            a[ln], b[ln] = mid - w / 2, mid + w / 2
+            _box(bm, a, b)
+            zt = lo[2] + size[2] * 0.62
+            a, b = [0, 0, zt - w / 2], [0, 0, zt + w / 2]
+            a[ax], b[ax] = lo[ax] - 0.01 * K, hi[ax] + 0.01 * K
+            a[ln], b[ln] = lo[ln], hi[ln]
+            _box(bm, a, b)
+    if not n:
+        bm.free()
+        return []
+    o = _mesh_obj(col, "dress-sills", bm, mat, "kits/" + spec.get("name", "sills"))
+    o.visible_shadow = o.visible_diffuse = o.visible_glossy = True
+    return [o]
+
+
+def door_leaves(ctx, spec, col):
+    """P6c: an open door leaf beside every listed door opening (a dark doorway with no leaf in the build): hinged at one jamb, swung
+    90 degrees into the room on the side the views look from. Left out where it would come within `clear_m` of a camera or touch a
+    prop; it never covers the opening itself."""
+    K = ctx["K"]
+    mat = kits._kit_material(ctx, K, spec, spec.get("name", "door_leaves"))
+    cams = [Vector(v[0]) for v in ctx["views"].values()]
+    mc = sum(cams, Vector()) / max(len(cams), 1)
+    props = _prop_boxes(ctx)
+    bm = bmesh.new()
+    n = 0
+    gaps = [(None, [x * K for x in g[0]], [x * K for x in g[1]]) for g in spec.get("gap_boxes", [])]  # openings under a `-head` piece
+    for pid, lo, hi in _piece_boxes(ctx, set(spec.get("pieces", []))) + gaps:
+        size = [hi[i] - lo[i] for i in range(3)]
+        ax = 0 if size[0] < size[1] else 1
+        ln = 1 - ax
+        width, th = size[ln], spec.get("thick_m", 0.045) * K
+        if width < 0.5 * K or size[2] < 1.6 * K:
+            continue
+        sgn = 1 if mc[ax] > (lo[ax] + hi[ax]) / 2 else -1
+        face = hi[ax] if sgn > 0 else lo[ax]
+        for hinge in (lo[ln], hi[ln]):
+            a, b = [0, 0, lo[2] + 0.01 * K], [0, 0, lo[2] + min(size[2], 2.05 * K)]
+            a[ax], b[ax] = (face, face + sgn * width) if sgn > 0 else (face + sgn * width, face)
+            inner = hinge + (0.02 * K if hinge == lo[ln] else -0.02 * K)
+            a[ln], b[ln] = (inner - th, inner) if hinge == lo[ln] else (inner, inner + th)
+            bl = [min(a[i], b[i]) for i in range(3)]
+            bh = [max(a[i], b[i]) for i in range(3)]
+            g = spec.get("clear_m", 0.6) * K
+            near = any(bl[0] - g < c.x < bh[0] + g and bl[1] - g < c.y < bh[1] + g for c in cams)
+            hit = any(not (bh[0] < p[0][0] or bl[0] > p[1][0] or bh[1] < p[0][1] or bl[1] > p[1][1] or bh[2] < p[0][2] or bl[2] > p[1][2])
+                      for p in props)
+            if not near and not hit:
+                _box(bm, bl, bh)
+                n += 1
+                break
+    if not n:
+        bm.free()
+        return []
+    o = _mesh_obj(col, "dress-door-leaves", bm, mat, "kits/" + spec.get("name", "door_leaves"))
+    o.visible_shadow = o.visible_diffuse = o.visible_glossy = True
+    return [o]

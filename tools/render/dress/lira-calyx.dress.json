@@ -299,7 +299,10 @@
     ]
    },
    "p6": {
-    "version": 2,
+    "version": 3,
+    "windows": [],
+    "doors": [],
+    "door_gaps": [],
     "kits": [
      "skirting",
      "conduit",
@@ -722,14 +725,76 @@
       "bump": 0.1
      },
      "_p6": true
+    },
+    {
+     "kit": "frames",
+     "name": "window-frames",
+     "pieces": [
+      "mezzanine-glass",
+      "upper-partition-1",
+      "upper-partition-2",
+      "upper-partition-3"
+     ],
+     "width_m": 0.07,
+     "depth_m": 0.03,
+     "bottom": true,
+     "color": [
+      0.55,
+      0.55,
+      0.53
+     ],
+     "roughness": 0.6,
+     "clear_centre": false,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true,
+     "_p6c": true
+    },
+    {
+     "kit": "sills",
+     "name": "sills",
+     "pieces": [
+      "mezzanine-glass",
+      "upper-partition-1",
+      "upper-partition-2",
+      "upper-partition-3"
+     ],
+     "lit_pieces": [],
+     "color": [
+      0.55,
+      0.55,
+      0.53
+     ],
+     "roughness": 0.6,
+     "clear_centre": false,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true,
+     "_p6c": true
     }
    ],
    "p6": {
-    "version": 2,
+    "version": 3,
+    "windows": [
+     "mezzanine-glass",
+     "upper-partition-1",
+     "upper-partition-2",
+     "upper-partition-3"
+    ],
+    "doors": [],
+    "door_gaps": [],
     "kits": [
      "skirting",
      "conduit",
-     "fixtures"
+     "fixtures",
+     "window-frames",
+     "sills"
     ]
    }
   },
@@ -2479,14 +2544,96 @@
       "bump": 0.1
      },
      "_p6": true
+    },
+    {
+     "kit": "frames",
+     "name": "window-frames",
+     "pieces": [
+      "window"
+     ],
+     "width_m": 0.07,
+     "depth_m": 0.03,
+     "bottom": true,
+     "color": [
+      0.55,
+      0.55,
+      0.53
+     ],
+     "roughness": 0.6,
+     "clear_centre": false,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true,
+     "_p6c": true
+    },
+    {
+     "kit": "sills",
+     "name": "sills",
+     "pieces": [
+      "window"
+     ],
+     "lit_pieces": [
+      "window"
+     ],
+     "color": [
+      0.55,
+      0.55,
+      0.53
+     ],
+     "roughness": 0.6,
+     "clear_centre": false,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true,
+     "_p6c": true
+    },
+    {
+     "kit": "frames",
+     "name": "door-casings",
+     "pieces": [
+      "door"
+     ],
+     "width_m": 0.08,
+     "depth_m": 0.025,
+     "bottom": false,
+     "color": [
+      0.55,
+      0.55,
+      0.53
+     ],
+     "roughness": 0.6,
+     "clear_centre": false,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true,
+     "_p6c": true
     }
    ],
    "p6": {
-    "version": 2,
+    "version": 3,
+    "windows": [
+     "window"
+    ],
+    "doors": [
+     "door"
+    ],
+    "door_gaps": [],
     "kits": [
      "skirting",
      "conduit",
-     "fixtures"
+     "fixtures",
+     "window-frames",
+     "sills",
+     "door-casings"
     ]
    }
   },
@@ -3499,6 +3646,35 @@
      "cavern": "rock_light"
     }
    },
+   "p5_materials": {
+    "cavern": {
+     "family": "scan",
+     "third": true,
+     "macro2": 0.06,
+     "obj_jitter_m": 0.0,
+     "scan": "worn_rock_natural_01",
+     "tile_m": 3.0,
+     "res": "2k",
+     "chroma": 0.1,
+     "bump": 0.7,
+     "macro": 0.14,
+     "grime": 0.7,
+     "p4_preset": "rock_light",
+     "displace_m": 0.08,
+     "displace_mid": 0.0,
+     "subdiv": 5,
+     "edge_fade_m": 0.5,
+     "edge_floor": 0.2,
+     "edge_mid": 0.0,
+     "p5_preset": "relief"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "cavern": "relief"
+    }
+   },
    "kits": [
     {
      "kit": "baseboard",
@@ -3574,41 +3750,15 @@
     }
    ],
    "p6": {
-    "version": 2,
+    "version": 3,
+    "windows": [],
+    "doors": [],
+    "door_gaps": [],
     "kits": [
      "skirting",
      "conduit",
      "fixtures"
     ]
-   },
-   "p5_materials": {
-    "cavern": {
-     "family": "scan",
-     "third": true,
-     "macro2": 0.06,
-     "obj_jitter_m": 0.0,
-     "scan": "worn_rock_natural_01",
-     "tile_m": 3.0,
-     "res": "2k",
-     "chroma": 0.1,
-     "bump": 0.7,
-     "macro": 0.14,
-     "grime": 0.7,
-     "p4_preset": "rock_light",
-     "displace_m": 0.08,
-     "displace_mid": 0.0,
-     "subdiv": 5,
-     "edge_fade_m": 0.5,
-     "edge_floor": 0.2,
-     "edge_mid": 0.0,
-     "p5_preset": "relief"
-    }
-   },
-   "p5": {
-    "version": 1,
-    "materials": {
-     "cavern": "relief"
-    }
    }
   }
  }

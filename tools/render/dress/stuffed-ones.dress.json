@@ -1497,7 +1497,10 @@
     }
    ],
    "p6": {
-    "version": 2,
+    "version": 3,
+    "windows": [],
+    "doors": [],
+    "door_gaps": [],
     "kits": [
      "skirting",
      "fixtures"
@@ -2821,7 +2824,10 @@
     }
    ],
    "p6": {
-    "version": 2,
+    "version": 3,
+    "windows": [],
+    "doors": [],
+    "door_gaps": [],
     "kits": [
      "skirting",
      "fixtures"
@@ -3114,6 +3120,167 @@
       "bump": 0.1
      },
      "_p6": true
+    },
+    {
+     "kit": "frames",
+     "name": "window-frames",
+     "pieces": [
+      "wall-east-3-glass"
+     ],
+     "width_m": 0.07,
+     "depth_m": 0.03,
+     "bottom": true,
+     "color": [
+      0.3,
+      0.21,
+      0.13
+     ],
+     "roughness": 0.6,
+     "clear_centre": false,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true,
+     "_p6c": true
+    },
+    {
+     "kit": "sills",
+     "name": "sills",
+     "pieces": [
+      "wall-east-3-glass"
+     ],
+     "lit_pieces": [
+      "wall-east-3-glass"
+     ],
+     "color": [
+      0.3,
+      0.21,
+      0.13
+     ],
+     "roughness": 0.6,
+     "clear_centre": false,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true,
+     "_p6c": true
+    },
+    {
+     "kit": "frames",
+     "name": "door-casings",
+     "pieces": [
+      "door-bedroom-guests",
+      "door-bedroom-west",
+      "door-closet",
+      "door-lila"
+     ],
+     "width_m": 0.08,
+     "depth_m": 0.025,
+     "bottom": false,
+     "color": [
+      0.3,
+      0.21,
+      0.13
+     ],
+     "roughness": 0.6,
+     "clear_centre": false,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true,
+     "_p6c": true
+    },
+    {
+     "kit": "door_leaves",
+     "name": "door-leaves",
+     "pieces": [],
+     "gap_boxes": [
+      [
+       [
+        -3.4,
+        0.6000000000000001,
+        0.0
+       ],
+       [
+        -2.6,
+        0.75,
+        2.0500000000000003
+       ]
+      ],
+      [
+       [
+        1.1,
+        0.6000000000000001,
+        0.0
+       ],
+       [
+        1.9,
+        0.75,
+        2.0500000000000003
+       ]
+      ],
+      [
+       [
+        -1.2000000000000002,
+        -0.75,
+        0.0
+       ],
+       [
+        -0.4,
+        -0.6000000000000001,
+        2.0500000000000003
+       ]
+      ],
+      [
+       [
+        3.4499999999999997,
+        -0.75,
+        0.0
+       ],
+       [
+        4.1499999999999995,
+        -0.6000000000000001,
+        2.0500000000000003
+       ]
+      ],
+      [
+       [
+        6.0,
+        -0.35,
+        0.0
+       ],
+       [
+        6.15,
+        0.35,
+        1.8
+       ]
+      ]
+     ],
+     "clear_m": 0.6,
+     "color": [
+      0.3,
+      0.21,
+      0.13
+     ],
+     "roughness": 0.6,
+     "clear_centre": true,
+     "surface": {
+      "family": "grid",
+      "tile_m": 0.14,
+      "board_m": 2.4,
+      "board_axis": "z",
+      "row_axis": "xy",
+      "grain": 0.05,
+      "bump": 0.25
+     },
+     "_p6": true,
+     "_p6c": true
     }
    ],
    "p2": {
@@ -3122,10 +3289,30 @@
     "fx_listed": []
    },
    "p6": {
-    "version": 2,
+    "version": 3,
+    "windows": [
+     "wall-east-3-glass"
+    ],
+    "doors": [
+     "door-bedroom-guests",
+     "door-bedroom-west",
+     "door-closet",
+     "door-lila"
+    ],
+    "door_gaps": [
+     "head-gap-0",
+     "head-gap-1",
+     "head-gap-2",
+     "head-gap-3",
+     "head-gap-4"
+    ],
     "kits": [
      "skirting",
-     "fixtures"
+     "fixtures",
+     "window-frames",
+     "sills",
+     "door-casings",
+     "door-leaves"
     ]
    }
   }

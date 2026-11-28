@@ -365,14 +365,69 @@
      "max_bays": 8,
      "clear_centre": true,
      "_p6": true
+    },
+    {
+     "kit": "frames",
+     "name": "window-frames",
+     "pieces": [
+      "rain-window"
+     ],
+     "width_m": 0.07,
+     "depth_m": 0.03,
+     "bottom": true,
+     "color": [
+      0.3,
+      0.21,
+      0.13
+     ],
+     "roughness": 0.6,
+     "clear_centre": false,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true,
+     "_p6c": true
+    },
+    {
+     "kit": "sills",
+     "name": "sills",
+     "pieces": [
+      "rain-window"
+     ],
+     "lit_pieces": [
+      "rain-window"
+     ],
+     "color": [
+      0.3,
+      0.21,
+      0.13
+     ],
+     "roughness": 0.6,
+     "clear_centre": false,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true,
+     "_p6c": true
     }
    ],
    "p6": {
-    "version": 2,
+    "version": 3,
+    "windows": [
+     "rain-window"
+    ],
+    "doors": [],
+    "door_gaps": [],
     "kits": [
      "skirting",
      "fixtures",
-     "shelves"
+     "shelves",
+     "window-frames",
+     "sills"
     ]
    }
   },
@@ -706,6 +761,78 @@
       "bump": 0.1
      },
      "_p6": true
+    },
+    {
+     "kit": "frames",
+     "name": "window-frames",
+     "pieces": [
+      "window-arch"
+     ],
+     "width_m": 0.07,
+     "depth_m": 0.03,
+     "bottom": true,
+     "color": [
+      0.3,
+      0.21,
+      0.13
+     ],
+     "roughness": 0.6,
+     "clear_centre": false,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true,
+     "_p6c": true
+    },
+    {
+     "kit": "sills",
+     "name": "sills",
+     "pieces": [
+      "window-arch"
+     ],
+     "lit_pieces": [
+      "window-arch"
+     ],
+     "color": [
+      0.3,
+      0.21,
+      0.13
+     ],
+     "roughness": 0.6,
+     "clear_centre": false,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true,
+     "_p6c": true
+    },
+    {
+     "kit": "frames",
+     "name": "door-casings",
+     "pieces": [
+      "door-leaf"
+     ],
+     "width_m": 0.08,
+     "depth_m": 0.025,
+     "bottom": false,
+     "color": [
+      0.3,
+      0.21,
+      0.13
+     ],
+     "roughness": 0.6,
+     "clear_centre": false,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true,
+     "_p6c": true
     }
    ],
    "p2": {
@@ -716,10 +843,20 @@
     ]
    },
    "p6": {
-    "version": 2,
+    "version": 3,
+    "windows": [
+     "window-arch"
+    ],
+    "doors": [
+     "door-leaf"
+    ],
+    "door_gaps": [],
     "kits": [
      "skirting",
-     "fixtures"
+     "fixtures",
+     "window-frames",
+     "sills",
+     "door-casings"
     ]
    }
   },
@@ -1249,13 +1386,68 @@
       "bump": 0.1
      },
      "_p6": true
+    },
+    {
+     "kit": "frames",
+     "name": "window-frames",
+     "pieces": [
+      "window-small"
+     ],
+     "width_m": 0.07,
+     "depth_m": 0.03,
+     "bottom": true,
+     "color": [
+      0.3,
+      0.21,
+      0.13
+     ],
+     "roughness": 0.6,
+     "clear_centre": false,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true,
+     "_p6c": true
+    },
+    {
+     "kit": "sills",
+     "name": "sills",
+     "pieces": [
+      "window-small"
+     ],
+     "lit_pieces": [
+      "window-small"
+     ],
+     "color": [
+      0.3,
+      0.21,
+      0.13
+     ],
+     "roughness": 0.6,
+     "clear_centre": false,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true,
+     "_p6c": true
     }
    ],
    "p6": {
-    "version": 2,
+    "version": 3,
+    "windows": [
+     "window-small"
+    ],
+    "doors": [],
+    "door_gaps": [],
     "kits": [
      "skirting",
-     "fixtures"
+     "fixtures",
+     "window-frames",
+     "sills"
     ]
    }
   },
@@ -1874,6 +2066,54 @@
      "max_bays": 8,
      "clear_centre": true,
      "_p6": true
+    },
+    {
+     "kit": "frames",
+     "name": "window-frames",
+     "pieces": [
+      "great-window"
+     ],
+     "width_m": 0.07,
+     "depth_m": 0.03,
+     "bottom": true,
+     "color": [
+      0.3,
+      0.21,
+      0.13
+     ],
+     "roughness": 0.6,
+     "clear_centre": false,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true,
+     "_p6c": true
+    },
+    {
+     "kit": "sills",
+     "name": "sills",
+     "pieces": [
+      "great-window"
+     ],
+     "lit_pieces": [
+      "great-window"
+     ],
+     "color": [
+      0.3,
+      0.21,
+      0.13
+     ],
+     "roughness": 0.6,
+     "clear_centre": false,
+     "surface": {
+      "family": "noise",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true,
+     "_p6c": true
     }
    ],
    "p2": {
@@ -1881,14 +2121,6 @@
     "motes": true,
     "fx_listed": [
      "dust"
-    ]
-   },
-   "p6": {
-    "version": 2,
-    "kits": [
-     "skirting",
-     "fixtures",
-     "shelves"
     ]
    },
    "p5_materials": {
@@ -1925,6 +2157,21 @@
      "book-spines": "book-spines",
      "vellum": "vellum"
     }
+   },
+   "p6": {
+    "version": 3,
+    "windows": [
+     "great-window"
+    ],
+    "doors": [],
+    "door_gaps": [],
+    "kits": [
+     "skirting",
+     "fixtures",
+     "shelves",
+     "window-frames",
+     "sills"
+    ]
    }
   },
   "unlit-gallery": {
