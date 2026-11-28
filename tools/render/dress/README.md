@@ -280,3 +280,24 @@ Driver run: before = `--no-dress 1`, after = `--dress code/dress --dress-layers 
 pass and is left out of both, so the gates compare like with like), half resolution and half samples, every still. `run_post.sh`
 describes with one Python process when `$PY` is set, so the job never has more than one Blender on a shared box, and keeps the
 png files when a describe fails.
+
+## P2: atmosphere and skies, first cut (2026-11-27)
+
+`p2.py` adds to the P1 entries of 55 places (`python tools/render/dress/p2.py --write`): a camera-ray-only procedural sky plate
+on every outdoor place (clouds around the scene's own flat world colour; cloud strength by sky type, picked from that colour:
+night, dusk, clear, partly cloudy or overcast), a 0.0005 per metre haze on outdoor places under 150 m across (none at night, none
+in the bark world while D14 is open), and the R3 spruce window plate in the Stuffed Ones and Man Eater interiors with windows.
+Lighting is unchanged (G1): the plates are seen by camera rays only. A first haze of 0.001 per metre under 250 m took 8 to 25 % of
+the light off props in the 100 to 240 m Dr. Tox places (G11); it is now half that, and only under 150 m.
+
+Not added, and why: no earth sky inside the heart, under the sea, in the cosmic WRY places or on the WRY chasm rim (taken out
+after the look round: the haze lit up the dark chasm, G2 up to 1.68); no haze at Fall's salvage settlement (it veiled the far span, G11); no spruce plates in the desert
+town, the harbour or the sky city; no room haze (R1 and R2 measured it taking 10 to 30 % of the light off the props); dust motes,
+light shafts, rain, snow, flame cards and water shaders are not built yet. The six locked sky hdris were tried first: divided by
+their own mean (a mean the sun pulls up), they came out 15 to 30 % darker than the flat sky in these frames (G2), as R1 found on
+the loop road; a test that normalised by the upper hemisphere without the sun (and mixed in more of the picture) came out darker still, so the plates are procedural and the
+hdri a place would get is only recorded (`hdri_considered`).
+
+Run: before = the P1 render of the same place, after = the same with `--dress-layers surfaces,decals,kits,atmos`. The overview of a
+place whose rig gives the overview a horizon-to-zenith gradient world keeps that gradient (`atmos.wrap_world` leaves a gradient
+world alone): wrapping it had replaced the designed dusk gradient of altrulan's glass-mountains with grey clouds.

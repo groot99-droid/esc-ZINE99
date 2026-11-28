@@ -22,6 +22,8 @@ def wrap_world(sc, spec, K=1.0):
     src = out.inputs["Surface"].links[0].from_node
     if src.bl_idname == "ShaderNodeMixShader" and src.name == "plate-mix":
         return {"already": True}
+    if "Color" not in src.inputs or src.inputs["Color"].is_linked:  # P2: a gradient world (an overview's horizon-to-zenith sky) is
+        return {"skipped": "gradient world"}                         # the rig's own design: left as it is
     src.name = "flat-bg"
     flat_out = out.inputs["Surface"].links[0].from_socket
     b = materials.B(nt)

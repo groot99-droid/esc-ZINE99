@@ -31,10 +31,12 @@ WINDOW_PLATE = {"kit": "window_plate", "name": "window_plate", "offset_m": 0.6, 
 
 
 # Places where an earth sky picture is wrong (inside a body, under the sea, cosmic or void settings), and where the spruce window plate
-# is wrong (desert town, harbour, a city in the sky): left without P2 plates; listed in the notes.
-NO_SKY = {"heartstream": "*", "wrymwretch": {"astral-expanse", "bone-choir", "heart-of-wound", "seabed", "sky-above-realms"},
+# is wrong (desert town, harbour, a city in the sky): left without P2 plates; listed in the notes. rim-of-wrymreach was taken out
+# after the look round: the haze lit up the dark chasm (G2 up to 1.68).
+NO_SKY = {"heartstream": "*", "wrymwretch": {"astral-expanse", "bone-choir", "heart-of-wound", "seabed", "sky-above-realms", "rim-of-wrymreach"},
           "endless-temple": {"abyss-edge"}, "people-of-the-bark": "haze"}
 WINDOW_GAMES = {"stuffed-ones", "man-eater"}
+NO_HAZE = {("dr-tox-fall", "salvage-settlement")}  # even 0.0005 per metre veils the far freeway span and shelters (G11 up to 0.42)
 
 
 def pick_sky(col):
@@ -97,10 +99,14 @@ def build(game, cfg):
             continue
         if not L["p1"]["interior"]:
             hdri, kind = pick_sky(world)
-            at = {"_p2": True, "sky_plate": {"name": kind + "-hdri", "hdri": hdri, "rotation_deg": 30, "mix": 0.7, "horizon_gain": 1.1,
-                                            "zenith_gain": 0.95}}
-            if extent < 250 and kind != "night" and ns != "haze":  # bark: D14 (scale) still open, no per-metre haze
-                at["haze"] = {"density": 0.001, "color": [0.82, 0.84, 0.86], "anisotropy": 0.25}
+            # procedural clouds around the flat colour (mean kept by construction): the hdri plates, divided by their own mean, came
+            # out 15 to 30 % darker than the flat sky in these frames (G2), as R1 found on the loop road; the hdri pick stays recorded
+            cc = {"night": 0.12, "dusk": 0.25, "clear": 0.15, "partly cloudy": 0.35, "overcast": 0.3}[kind]
+            at = {"_p2": True, "sky_plate": {"name": kind + "-procedural", "horizon_gain": 1.06, "zenith_gain": 0.95, "cloud_scale": 3.2,
+                                            "cloud_contrast": cc, "hdri_considered": hdri}}
+            if extent < 150 and kind != "night" and ns != "haze" and (game, loc) not in NO_HAZE:  # bark: D14 (scale) still open, no per-metre haze
+                # 0.001 per metre took 8 to 25 % of the light off props in the 100 to 240 m Dr. Tox places (G11): half that, under 150 m
+                at["haze"] = {"density": 0.0005, "color": [0.82, 0.84, 0.86], "anisotropy": 0.25}
             L["atmos"] = at
             info.update(sky=kind, haze=bool(at.get("haze")), extent_m=round(extent, 1))
         elif heads and game in WINDOW_GAMES:
