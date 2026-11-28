@@ -293,6 +293,8 @@ def compare(mb, ma, sb, sa, T=None, still="camera"):
     # G2 tone
     dl = abs(ma["mean_luma"] / max(mb["mean_luma"], 1e-6) - 1)
     dm = abs(ma["median_luma"] / max(mb["median_luma"], 1e-6) - 1)
+    if mb["median_luma"] < 1e-4 and ma["median_luma"] < 1e-4:  # P1: a night frame whose median is black before and after is not a 100 % change
+        dm = 0.0
     out.append(_g("G2", max(dl, dm) <= T["g2_rel"], round(max(dl, dm), 4), T["g2_rel"], "mean %.4f -> %.4f, median %.4f -> %.4f" % (mb["mean_luma"], ma["mean_luma"], mb["median_luma"], ma["median_luma"])))
     # G3 colour shift
     de = float(np.linalg.norm(np.array(ma["lab_mean"]) - np.array(mb["lab_mean"])))

@@ -864,6 +864,23 @@ def dress_material(mat, p, ctx, K, key):
         base = b.mix(base, b.mix(base, tuple(ew.get("tint", [1.25, 1.22, 1.18])), 1.0, "MULTIPLY", clamp=True), em)
         er = b.math("MULTIPLY", em, ew.get("rough", 0.15))
         rough_add = er if rough_add is None else b.math("ADD", rough_add, er)
+    if p.get("micro"):  # P1: fine surface relief (trowel stipple, brush and grain marks, weave slubs) at a few millimetres, where a
+        # scan's own detail is too low-frequency to read at room distance; mean albedo kept (around 1)
+        mc = p["micro"]
+        ms = mc.get("scale_m", 0.012) * K
+        mpos = pos
+        if mc.get("stretch"):  # brush or grain marks: stretched along one axis
+            mmap = b.n("ShaderNodeMapping", vector_type="POINT")
+            st_ = mc["stretch"]
+            mmap.inputs["Scale"].default_value = (1.0, 1.0, 1.0 / st_) if mc.get("axis", "z") == "z" else (1.0 / st_, 1.0, 1.0)
+            b.link(pos, mmap.inputs["Vector"])
+            mpos = mmap.outputs[0]
+        mn = noise(b, mpos, 1.0 / ms, 4.0, 0.62, 0.2)
+        mv = noise(b, mpos, 0.31 / ms, 2.0, 0.5)
+        base = b.mix(base, b.gray(b.math("MULTIPLY", around_one(b, mn, mc.get("albedo", 0.05)), around_one(b, mv, mc.get("albedo", 0.05)))), 1.0, "MULTIPLY")
+        if height is not None:
+            height = b.math("ADD", height, b.math("MULTIPLY", b.math("ADD", mn, b.math("MULTIPLY", mv, 0.5)), mc.get("height", 0.6)))
+        rec["micro"] = mc
     if p.get("streaks") or p.get("cracks") or p.get("rust"):  # P1 grime set (shader masks)
         base, height, rough_add, mm = p1_grime(b, p, ctx, K, pos, nrm, base, height, rough_add)
         if mm is not None and metal0 > 0:
