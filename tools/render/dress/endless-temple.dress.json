@@ -299,7 +299,51 @@
       2.4
      ]
     }
-   ]
+   ],
+   "kits": [
+    {
+     "kit": "baseboard",
+     "name": "skirting",
+     "color": [
+      0.3,
+      0.21,
+      0.13
+     ],
+     "roughness": 0.6,
+     "height_m": 0.14,
+     "thickness_m": 0.02,
+     "skip_materials": [
+      "cedar-log",
+      "log",
+      "brick",
+      "soot-brick",
+      "stone",
+      "drystone",
+      "cedar-plank",
+      "panel",
+      "boards",
+      "glass",
+      "window-glass"
+     ],
+     "clear_centre": true,
+     "surface": {
+      "family": "grid",
+      "tile_m": 0.14,
+      "board_m": 2.4,
+      "board_axis": "x",
+      "row_axis": "z",
+      "grain": 0.05,
+      "bump": 0.2
+     },
+     "_p6": true
+    }
+   ],
+   "p6": {
+    "version": 1,
+    "kits": [
+     "skirting"
+    ]
+   }
   },
   "deep-desert": {
    "p1": {
@@ -576,6 +620,42 @@
      "clear_m": 0.8,
      "clear_centre": false,
      "_p2": true
+    },
+    {
+     "kit": "baseboard",
+     "name": "skirting",
+     "color": [
+      0.3,
+      0.21,
+      0.13
+     ],
+     "roughness": 0.6,
+     "height_m": 0.14,
+     "thickness_m": 0.02,
+     "skip_materials": [
+      "cedar-log",
+      "log",
+      "brick",
+      "soot-brick",
+      "stone",
+      "drystone",
+      "cedar-plank",
+      "panel",
+      "boards",
+      "glass",
+      "window-glass"
+     ],
+     "clear_centre": true,
+     "surface": {
+      "family": "grid",
+      "tile_m": 0.14,
+      "board_m": 2.4,
+      "board_axis": "x",
+      "row_axis": "z",
+      "grain": 0.05,
+      "bump": 0.2
+     },
+     "_p6": true
     }
    ],
    "p2": {
@@ -583,6 +663,12 @@
     "motes": true,
     "fx_listed": [
      "dust"
+    ]
+   },
+   "p6": {
+    "version": 1,
+    "kits": [
+     "skirting"
     ]
    }
   },
@@ -1056,7 +1142,51 @@
       2.4
      ]
     }
-   ]
+   ],
+   "kits": [
+    {
+     "kit": "baseboard",
+     "name": "skirting",
+     "color": [
+      0.3,
+      0.21,
+      0.13
+     ],
+     "roughness": 0.6,
+     "height_m": 0.14,
+     "thickness_m": 0.02,
+     "skip_materials": [
+      "cedar-log",
+      "log",
+      "brick",
+      "soot-brick",
+      "stone",
+      "drystone",
+      "cedar-plank",
+      "panel",
+      "boards",
+      "glass",
+      "window-glass"
+     ],
+     "clear_centre": true,
+     "surface": {
+      "family": "grid",
+      "tile_m": 0.14,
+      "board_m": 2.4,
+      "board_axis": "x",
+      "row_axis": "z",
+      "grain": 0.05,
+      "bump": 0.2
+     },
+     "_p6": true
+    }
+   ],
+   "p6": {
+    "version": 1,
+    "kits": [
+     "skirting"
+    ]
+   }
   },
   "procession-road": {
    "p1": {
@@ -1608,6 +1738,42 @@
      "clear_m": 0.8,
      "clear_centre": false,
      "_p2": true
+    },
+    {
+     "kit": "baseboard",
+     "name": "skirting",
+     "color": [
+      0.3,
+      0.21,
+      0.13
+     ],
+     "roughness": 0.6,
+     "height_m": 0.14,
+     "thickness_m": 0.02,
+     "skip_materials": [
+      "cedar-log",
+      "log",
+      "brick",
+      "soot-brick",
+      "stone",
+      "drystone",
+      "cedar-plank",
+      "panel",
+      "boards",
+      "glass",
+      "window-glass"
+     ],
+     "clear_centre": true,
+     "surface": {
+      "family": "grid",
+      "tile_m": 0.14,
+      "board_m": 2.4,
+      "board_axis": "x",
+      "row_axis": "z",
+      "grain": 0.05,
+      "bump": 0.2
+     },
+     "_p6": true
     }
    ],
    "p2": {
@@ -1651,6 +1817,12 @@
      "book-spines": "book-spines",
      "vellum": "vellum"
     }
+   },
+   "p6": {
+    "version": 1,
+    "kits": [
+     "skirting"
+    ]
    }
   },
   "unlit-gallery": {

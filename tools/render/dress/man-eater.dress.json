@@ -588,7 +588,69 @@
       "yaw_deg": 90
      }
     }
-   ]
+   ],
+   "kits": [
+    {
+     "kit": "baseboard",
+     "name": "skirting",
+     "color": [
+      0.3,
+      0.3,
+      0.29
+     ],
+     "roughness": 0.6,
+     "height_m": 0.11,
+     "thickness_m": 0.02,
+     "skip_materials": [
+      "cedar-log",
+      "log",
+      "brick",
+      "soot-brick",
+      "stone",
+      "drystone",
+      "cedar-plank",
+      "panel",
+      "boards",
+      "glass",
+      "window-glass"
+     ],
+     "clear_centre": true,
+     "surface": {
+      "family": "metal",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true
+    },
+    {
+     "kit": "conduit",
+     "name": "conduit",
+     "wall": "wall-north-upper",
+     "radius_m": 0.022,
+     "below_top_m": 0.28,
+     "color": [
+      0.55,
+      0.56,
+      0.55
+     ],
+     "roughness": 0.45,
+     "metallic": 0.6,
+     "clear_centre": true,
+     "surface": {
+      "family": "metal",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true
+    }
+   ],
+   "p6": {
+    "version": 1,
+    "kits": [
+     "skirting",
+     "conduit"
+    ]
+   }
   },
   "cold-store": {
    "p1": {
@@ -817,6 +879,59 @@
      "prop_margin_m": 0.8,
      "clear_centre": false,
      "_p2": true
+    },
+    {
+     "kit": "baseboard",
+     "name": "skirting",
+     "color": [
+      0.3,
+      0.3,
+      0.29
+     ],
+     "roughness": 0.6,
+     "height_m": 0.11,
+     "thickness_m": 0.02,
+     "skip_materials": [
+      "cedar-log",
+      "log",
+      "brick",
+      "soot-brick",
+      "stone",
+      "drystone",
+      "cedar-plank",
+      "panel",
+      "boards",
+      "glass",
+      "window-glass"
+     ],
+     "clear_centre": true,
+     "surface": {
+      "family": "metal",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true
+    },
+    {
+     "kit": "conduit",
+     "name": "conduit",
+     "wall": "wall-south-upper",
+     "radius_m": 0.022,
+     "below_top_m": 0.28,
+     "color": [
+      0.55,
+      0.56,
+      0.55
+     ],
+     "roughness": 0.45,
+     "metallic": 0.6,
+     "clear_centre": true,
+     "surface": {
+      "family": "metal",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true
     }
    ],
    "p2": {
@@ -862,6 +977,13 @@
      "frost": "frost",
      "snow": "snow"
     }
+   },
+   "p6": {
+    "version": 1,
+    "kits": [
+     "skirting",
+     "conduit"
+    ]
    }
   },
   "rec-room": {
@@ -1117,7 +1239,69 @@
       }
      ]
     }
-   ]
+   ],
+   "kits": [
+    {
+     "kit": "baseboard",
+     "name": "skirting",
+     "color": [
+      0.3,
+      0.3,
+      0.29
+     ],
+     "roughness": 0.6,
+     "height_m": 0.11,
+     "thickness_m": 0.02,
+     "skip_materials": [
+      "cedar-log",
+      "log",
+      "brick",
+      "soot-brick",
+      "stone",
+      "drystone",
+      "cedar-plank",
+      "panel",
+      "boards",
+      "glass",
+      "window-glass"
+     ],
+     "clear_centre": true,
+     "surface": {
+      "family": "metal",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true
+    },
+    {
+     "kit": "conduit",
+     "name": "conduit",
+     "wall": "wall-west-upper",
+     "radius_m": 0.022,
+     "below_top_m": 0.28,
+     "color": [
+      0.55,
+      0.56,
+      0.55
+     ],
+     "roughness": 0.45,
+     "metallic": 0.6,
+     "clear_centre": true,
+     "surface": {
+      "family": "metal",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true
+    }
+   ],
+   "p6": {
+    "version": 1,
+    "kits": [
+     "skirting",
+     "conduit"
+    ]
+   }
   },
   "mail-room": {
    "p1": {
@@ -1341,7 +1525,69 @@
       }
      ]
     }
-   ]
+   ],
+   "kits": [
+    {
+     "kit": "baseboard",
+     "name": "skirting",
+     "color": [
+      0.3,
+      0.3,
+      0.29
+     ],
+     "roughness": 0.6,
+     "height_m": 0.11,
+     "thickness_m": 0.02,
+     "skip_materials": [
+      "cedar-log",
+      "log",
+      "brick",
+      "soot-brick",
+      "stone",
+      "drystone",
+      "cedar-plank",
+      "panel",
+      "boards",
+      "glass",
+      "window-glass"
+     ],
+     "clear_centre": true,
+     "surface": {
+      "family": "metal",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true
+    },
+    {
+     "kit": "conduit",
+     "name": "conduit",
+     "wall": "wall-north-upper",
+     "radius_m": 0.022,
+     "below_top_m": 0.28,
+     "color": [
+      0.55,
+      0.56,
+      0.55
+     ],
+     "roughness": 0.45,
+     "metallic": 0.6,
+     "clear_centre": true,
+     "surface": {
+      "family": "metal",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true
+    }
+   ],
+   "p6": {
+    "version": 1,
+    "kits": [
+     "skirting",
+     "conduit"
+    ]
+   }
   },
   "the-cave": {
    "p1": {
@@ -1764,7 +2010,69 @@
       }
      ]
     }
-   ]
+   ],
+   "kits": [
+    {
+     "kit": "baseboard",
+     "name": "skirting",
+     "color": [
+      0.3,
+      0.3,
+      0.29
+     ],
+     "roughness": 0.6,
+     "height_m": 0.11,
+     "thickness_m": 0.02,
+     "skip_materials": [
+      "cedar-log",
+      "log",
+      "brick",
+      "soot-brick",
+      "stone",
+      "drystone",
+      "cedar-plank",
+      "panel",
+      "boards",
+      "glass",
+      "window-glass"
+     ],
+     "clear_centre": true,
+     "surface": {
+      "family": "metal",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true
+    },
+    {
+     "kit": "conduit",
+     "name": "conduit",
+     "wall": "wall-north-upper",
+     "radius_m": 0.022,
+     "below_top_m": 0.28,
+     "color": [
+      0.55,
+      0.56,
+      0.55
+     ],
+     "roughness": 0.45,
+     "metallic": 0.6,
+     "clear_centre": true,
+     "surface": {
+      "family": "metal",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true
+    }
+   ],
+   "p6": {
+    "version": 1,
+    "kits": [
+     "skirting",
+     "conduit"
+    ]
+   }
   },
   "boiler-room": {
    "p1": {
@@ -1910,6 +2218,59 @@
      "name": "flames",
      "clear_centre": false,
      "_p2": true
+    },
+    {
+     "kit": "baseboard",
+     "name": "skirting",
+     "color": [
+      0.3,
+      0.3,
+      0.29
+     ],
+     "roughness": 0.6,
+     "height_m": 0.11,
+     "thickness_m": 0.02,
+     "skip_materials": [
+      "cedar-log",
+      "log",
+      "brick",
+      "soot-brick",
+      "stone",
+      "drystone",
+      "cedar-plank",
+      "panel",
+      "boards",
+      "glass",
+      "window-glass"
+     ],
+     "clear_centre": true,
+     "surface": {
+      "family": "metal",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true
+    },
+    {
+     "kit": "conduit",
+     "name": "conduit",
+     "wall": "wall-south-right",
+     "radius_m": 0.022,
+     "below_top_m": 0.28,
+     "color": [
+      0.55,
+      0.56,
+      0.55
+     ],
+     "roughness": 0.45,
+     "metallic": 0.6,
+     "clear_centre": true,
+     "surface": {
+      "family": "metal",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true
     }
    ],
    "p2": {
@@ -1940,6 +2301,13 @@
     "materials": {
      "frost": "frost"
     }
+   },
+   "p6": {
+    "version": 1,
+    "kits": [
+     "skirting",
+     "conduit"
+    ]
    }
   },
   "bunk-room": {
@@ -2102,6 +2470,68 @@
      },
      "p1_preset": "plaster"
     }
+   },
+   "kits": [
+    {
+     "kit": "baseboard",
+     "name": "skirting",
+     "color": [
+      0.3,
+      0.3,
+      0.29
+     ],
+     "roughness": 0.6,
+     "height_m": 0.11,
+     "thickness_m": 0.02,
+     "skip_materials": [
+      "cedar-log",
+      "log",
+      "brick",
+      "soot-brick",
+      "stone",
+      "drystone",
+      "cedar-plank",
+      "panel",
+      "boards",
+      "glass",
+      "window-glass"
+     ],
+     "clear_centre": true,
+     "surface": {
+      "family": "metal",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true
+    },
+    {
+     "kit": "conduit",
+     "name": "conduit",
+     "wall": "wall-west",
+     "radius_m": 0.022,
+     "below_top_m": 0.28,
+     "color": [
+      0.55,
+      0.56,
+      0.55
+     ],
+     "roughness": 0.45,
+     "metallic": 0.6,
+     "clear_centre": true,
+     "surface": {
+      "family": "metal",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true
+    }
+   ],
+   "p6": {
+    "version": 1,
+    "kits": [
+     "skirting",
+     "conduit"
+    ]
    }
   },
   "gate-yard": {
@@ -3012,6 +3442,68 @@
     "materials": {
      "frost": "frost"
     }
+   },
+   "kits": [
+    {
+     "kit": "baseboard",
+     "name": "skirting",
+     "color": [
+      0.3,
+      0.3,
+      0.29
+     ],
+     "roughness": 0.6,
+     "height_m": 0.11,
+     "thickness_m": 0.02,
+     "skip_materials": [
+      "cedar-log",
+      "log",
+      "brick",
+      "soot-brick",
+      "stone",
+      "drystone",
+      "cedar-plank",
+      "panel",
+      "boards",
+      "glass",
+      "window-glass"
+     ],
+     "clear_centre": true,
+     "surface": {
+      "family": "metal",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true
+    },
+    {
+     "kit": "conduit",
+     "name": "conduit",
+     "wall": "wall-south-right",
+     "radius_m": 0.022,
+     "below_top_m": 0.28,
+     "color": [
+      0.55,
+      0.56,
+      0.55
+     ],
+     "roughness": 0.45,
+     "metallic": 0.6,
+     "clear_centre": true,
+     "surface": {
+      "family": "metal",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true
+    }
+   ],
+   "p6": {
+    "version": 1,
+    "kits": [
+     "skirting",
+     "conduit"
+    ]
    }
   },
   "tall-halls": {
@@ -3125,6 +3617,68 @@
      },
      "p1_preset": "plaster"
     }
+   },
+   "kits": [
+    {
+     "kit": "baseboard",
+     "name": "skirting",
+     "color": [
+      0.3,
+      0.3,
+      0.29
+     ],
+     "roughness": 0.6,
+     "height_m": 0.11,
+     "thickness_m": 0.02,
+     "skip_materials": [
+      "cedar-log",
+      "log",
+      "brick",
+      "soot-brick",
+      "stone",
+      "drystone",
+      "cedar-plank",
+      "panel",
+      "boards",
+      "glass",
+      "window-glass"
+     ],
+     "clear_centre": true,
+     "surface": {
+      "family": "metal",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true
+    },
+    {
+     "kit": "conduit",
+     "name": "conduit",
+     "wall": "wall-west-upper",
+     "radius_m": 0.022,
+     "below_top_m": 0.28,
+     "color": [
+      0.55,
+      0.56,
+      0.55
+     ],
+     "roughness": 0.45,
+     "metallic": 0.6,
+     "clear_centre": true,
+     "surface": {
+      "family": "metal",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true
+    }
+   ],
+   "p6": {
+    "version": 1,
+    "kits": [
+     "skirting",
+     "conduit"
+    ]
    }
   },
   "the-pens": {
@@ -3264,6 +3818,59 @@
      "near_k": 1.25,
      "far_gain": 0.8,
      "_p2": true
+    },
+    {
+     "kit": "baseboard",
+     "name": "skirting",
+     "color": [
+      0.3,
+      0.3,
+      0.29
+     ],
+     "roughness": 0.6,
+     "height_m": 0.11,
+     "thickness_m": 0.02,
+     "skip_materials": [
+      "cedar-log",
+      "log",
+      "brick",
+      "soot-brick",
+      "stone",
+      "drystone",
+      "cedar-plank",
+      "panel",
+      "boards",
+      "glass",
+      "window-glass"
+     ],
+     "clear_centre": true,
+     "surface": {
+      "family": "metal",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true
+    },
+    {
+     "kit": "conduit",
+     "name": "conduit",
+     "wall": "wall-south",
+     "radius_m": 0.022,
+     "below_top_m": 0.28,
+     "color": [
+      0.55,
+      0.56,
+      0.55
+     ],
+     "roughness": 0.45,
+     "metallic": 0.6,
+     "clear_centre": true,
+     "surface": {
+      "family": "metal",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true
     }
    ],
    "p2": {
@@ -3292,6 +3899,13 @@
     "materials": {
      "frost": "frost"
     }
+   },
+   "p6": {
+    "version": 1,
+    "kits": [
+     "skirting",
+     "conduit"
+    ]
    }
   }
  }

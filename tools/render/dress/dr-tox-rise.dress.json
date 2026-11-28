@@ -1015,7 +1015,69 @@
       2.4
      ]
     }
-   ]
+   ],
+   "kits": [
+    {
+     "kit": "baseboard",
+     "name": "skirting",
+     "color": [
+      0.3,
+      0.3,
+      0.29
+     ],
+     "roughness": 0.6,
+     "height_m": 0.11,
+     "thickness_m": 0.02,
+     "skip_materials": [
+      "cedar-log",
+      "log",
+      "brick",
+      "soot-brick",
+      "stone",
+      "drystone",
+      "cedar-plank",
+      "panel",
+      "boards",
+      "glass",
+      "window-glass"
+     ],
+     "clear_centre": true,
+     "surface": {
+      "family": "metal",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true
+    },
+    {
+     "kit": "conduit",
+     "name": "conduit",
+     "wall": "wall-south",
+     "radius_m": 0.022,
+     "below_top_m": 0.28,
+     "color": [
+      0.55,
+      0.56,
+      0.55
+     ],
+     "roughness": 0.45,
+     "metallic": 0.6,
+     "clear_centre": true,
+     "surface": {
+      "family": "metal",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true
+    }
+   ],
+   "p6": {
+    "version": 1,
+    "kits": [
+     "skirting",
+     "conduit"
+    ]
+   }
   },
   "printer-room": {
    "p1": {
@@ -1117,7 +1179,69 @@
       2.4
      ]
     }
-   ]
+   ],
+   "kits": [
+    {
+     "kit": "baseboard",
+     "name": "skirting",
+     "color": [
+      0.3,
+      0.3,
+      0.29
+     ],
+     "roughness": 0.6,
+     "height_m": 0.11,
+     "thickness_m": 0.02,
+     "skip_materials": [
+      "cedar-log",
+      "log",
+      "brick",
+      "soot-brick",
+      "stone",
+      "drystone",
+      "cedar-plank",
+      "panel",
+      "boards",
+      "glass",
+      "window-glass"
+     ],
+     "clear_centre": true,
+     "surface": {
+      "family": "metal",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true
+    },
+    {
+     "kit": "conduit",
+     "name": "conduit",
+     "wall": "wall-south",
+     "radius_m": 0.022,
+     "below_top_m": 0.28,
+     "color": [
+      0.55,
+      0.56,
+      0.55
+     ],
+     "roughness": 0.45,
+     "metallic": 0.6,
+     "clear_centre": true,
+     "surface": {
+      "family": "metal",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true
+    }
+   ],
+   "p6": {
+    "version": 1,
+    "kits": [
+     "skirting",
+     "conduit"
+    ]
+   }
   },
   "sky-room": {
    "p1": {
@@ -1307,7 +1431,69 @@
       2.4
      ]
     }
-   ]
+   ],
+   "kits": [
+    {
+     "kit": "baseboard",
+     "name": "skirting",
+     "color": [
+      0.3,
+      0.3,
+      0.29
+     ],
+     "roughness": 0.6,
+     "height_m": 0.11,
+     "thickness_m": 0.02,
+     "skip_materials": [
+      "cedar-log",
+      "log",
+      "brick",
+      "soot-brick",
+      "stone",
+      "drystone",
+      "cedar-plank",
+      "panel",
+      "boards",
+      "glass",
+      "window-glass"
+     ],
+     "clear_centre": true,
+     "surface": {
+      "family": "metal",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true
+    },
+    {
+     "kit": "conduit",
+     "name": "conduit",
+     "wall": "wall-south",
+     "radius_m": 0.022,
+     "below_top_m": 0.28,
+     "color": [
+      0.55,
+      0.56,
+      0.55
+     ],
+     "roughness": 0.45,
+     "metallic": 0.6,
+     "clear_centre": true,
+     "surface": {
+      "family": "metal",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true
+    }
+   ],
+   "p6": {
+    "version": 1,
+    "kits": [
+     "skirting",
+     "conduit"
+    ]
+   }
   },
   "snakehead-archive": {
    "p1": {
@@ -1442,7 +1628,69 @@
       2.4
      ]
     }
-   ]
+   ],
+   "kits": [
+    {
+     "kit": "baseboard",
+     "name": "skirting",
+     "color": [
+      0.3,
+      0.3,
+      0.29
+     ],
+     "roughness": 0.6,
+     "height_m": 0.11,
+     "thickness_m": 0.02,
+     "skip_materials": [
+      "cedar-log",
+      "log",
+      "brick",
+      "soot-brick",
+      "stone",
+      "drystone",
+      "cedar-plank",
+      "panel",
+      "boards",
+      "glass",
+      "window-glass"
+     ],
+     "clear_centre": true,
+     "surface": {
+      "family": "metal",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true
+    },
+    {
+     "kit": "conduit",
+     "name": "conduit",
+     "wall": "wall-south",
+     "radius_m": 0.022,
+     "below_top_m": 0.28,
+     "color": [
+      0.55,
+      0.56,
+      0.55
+     ],
+     "roughness": 0.45,
+     "metallic": 0.6,
+     "clear_centre": true,
+     "surface": {
+      "family": "metal",
+      "tile_m": 0.5,
+      "bump": 0.1
+     },
+     "_p6": true
+    }
+   ],
+   "p6": {
+    "version": 1,
+    "kits": [
+     "skirting",
+     "conduit"
+    ]
+   }
   },
   "spire-plaza": {
    "p1": {

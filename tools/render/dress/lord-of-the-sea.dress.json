@@ -1231,6 +1231,50 @@
      "sea"
     ],
     "fx_listed": []
+   },
+   "kits": [
+    {
+     "kit": "baseboard",
+     "name": "skirting",
+     "color": [
+      0.3,
+      0.21,
+      0.13
+     ],
+     "roughness": 0.6,
+     "height_m": 0.14,
+     "thickness_m": 0.02,
+     "skip_materials": [
+      "cedar-log",
+      "log",
+      "brick",
+      "soot-brick",
+      "stone",
+      "drystone",
+      "cedar-plank",
+      "panel",
+      "boards",
+      "glass",
+      "window-glass"
+     ],
+     "clear_centre": true,
+     "surface": {
+      "family": "grid",
+      "tile_m": 0.14,
+      "board_m": 2.4,
+      "board_axis": "x",
+      "row_axis": "z",
+      "grain": 0.05,
+      "bump": 0.2
+     },
+     "_p6": true
+    }
+   ],
+   "p6": {
+    "version": 1,
+    "kits": [
+     "skirting"
+    ]
    }
   },
   "lamplit-strait": {

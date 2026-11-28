@@ -173,8 +173,9 @@ def apply(bpy, sc, game, location, scene, K, rig, views, made, pieces, dress_dir
         rec["layers"]["scatter"] = scatter.scatter_layer(ctx, specs)
     if "decals" in allowed and loc_cfg.get("decals"):
         rec["layers"]["decals"] = grime.decals_layer(ctx, loc_cfg["decals"])
-    if "kits" in allowed and loc_cfg.get("kits"):
-        rec["layers"]["kits"] = kits.kits_layer(ctx, loc_cfg["kits"])
+    kspecs = [k for k in loc_cfg.get("kits", []) if not k.get("_p6") or os.environ.get("DRESS_P6") == "1"]  # P6 kits: P6 runs only
+    if "kits" in allowed and kspecs:
+        rec["layers"]["kits"] = kits.kits_layer(ctx, kspecs)
     if "props" in allowed and loc_cfg.get("props"):  # new-models pass: whole models replacing blockout boxes (propmodels.py)
         rec["layers"]["props"] = propmodels.props_layer(ctx, loc_cfg["props"])
     # ---- atmosphere: haze volume and interior backdrop (R1), then the camera-only sky plate
