@@ -113,6 +113,28 @@
     "haze": false,
     "extent_m": 160.0,
     "fx_listed": []
+   },
+   "p3_materials": {
+    "vine": {
+     "family": "foliage",
+     "tile_m": 0.6,
+     "macro": 0.3,
+     "fine": 0.35,
+     "bump": 0.6,
+     "bump_m": 0.03,
+     "obj_jitter_m": 40.0,
+     "gain": 1.12,
+     "underside": 0.08,
+     "p3_preset": "birch-leaf"
+    }
+   },
+   "p3": {
+    "version": 1,
+    "materials": [
+     "vine"
+    ],
+    "kits": [],
+    "scatter": []
    }
   },
   "light-bringers-shrine": {
@@ -302,6 +324,28 @@
     "haze": true,
     "extent_m": 48.0,
     "fx_listed": []
+   },
+   "p3_materials": {
+    "vine": {
+     "family": "foliage",
+     "tile_m": 0.6,
+     "macro": 0.3,
+     "fine": 0.35,
+     "bump": 0.6,
+     "bump_m": 0.03,
+     "obj_jitter_m": 40.0,
+     "gain": 1.12,
+     "underside": 0.08,
+     "p3_preset": "birch-leaf"
+    }
+   },
+   "p3": {
+    "version": 1,
+    "materials": [
+     "vine"
+    ],
+    "kits": [],
+    "scatter": []
    }
   },
   "metabolic-city": {
@@ -522,7 +566,29 @@
       2.4
      ]
     }
-   ]
+   ],
+   "p4_materials": {
+    "rock": {
+     "family": "scan",
+     "third": true,
+     "macro2": 0.06,
+     "obj_jitter_m": 0.0,
+     "scan": "worn_rock_natural_01",
+     "tile_m": 3.0,
+     "res": "2k",
+     "chroma": 0.1,
+     "bump": 0.7,
+     "macro": 0.14,
+     "grime": 0.7,
+     "p4_preset": "rock_light"
+    }
+   },
+   "p4": {
+    "version": 1,
+    "materials": {
+     "rock": "rock_light"
+    }
+   }
   }
  }
 }

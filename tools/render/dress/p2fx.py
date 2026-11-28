@@ -84,7 +84,8 @@ def _points(ctx, spec, lo, hi, n, rng, boxes, z_lo=None, z_hi=None):
         p = Vector((rng.uniform(lo[0], hi[0]), rng.uniform(lo[1], hi[1]), rng.uniform(zl, zh)))
         if any((p - c).length < clear for c in cams):
             continue
-        if any(b[0][0] <= p.x <= b[1][0] and b[0][1] <= p.y <= b[1][1] and b[0][2] <= p.z <= b[1][2] for b in boxes):
+        mg = spec.get("prop_margin_m", 0.0) * K
+        if any(b[0][0] - mg <= p.x <= b[1][0] + mg and b[0][1] - mg <= p.y <= b[1][1] + mg and b[0][2] - mg <= p.z <= b[1][2] + mg for b in boxes):
             continue
         out.append(p)
     return out
@@ -212,9 +213,9 @@ def flames(ctx, spec, col):
             cands.append(([min(p[i] for p in pts) for i in range(3)], [max(p[i] for p in pts) for i in range(3)], o))
     for lo, hi, o in cands:
         cx, cy = (lo[0] + hi[0]) / 2, (lo[1] + hi[1]) / 2
-        w = min(hi[0] - lo[0], hi[1] - lo[1]) * spec.get("width_share", 0.45)
-        h = w * spec.get("aspect", 1.6)
-        z0 = lo[2] + (hi[2] - lo[2]) * spec.get("base_share", 0.3)
+        w = min(hi[0] - lo[0], hi[1] - lo[1]) * spec.get("width_share", 0.3)
+        h = w * spec.get("aspect", 1.3)
+        z0 = lo[2] + (hi[2] - lo[2]) * spec.get("base_share", 1.0)  # on top of the pit: the card never covers its stones
         bm = bmesh.new()
         uvl = bm.loops.layers.uv.new("UVMap")
         for ang in (0.0, math.pi / 2):

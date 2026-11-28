@@ -37,7 +37,8 @@ NO_SKY = {"heartstream": "*", "wrymwretch": {"astral-expanse", "bone-choir", "he
           "endless-temple": {"abyss-edge"}, "people-of-the-bark": "haze"}
 WINDOW_GAMES = {"stuffed-ones", "man-eater"}
 NO_HAZE = {("dr-tox-fall", "salvage-settlement"), ("wrymwretch", "rim-of-wrymreach")}  # rim: the haze lit up the dark chasm (G2 1.68)
-NO_FOG = set()  # even 0.0005 per metre veils the far freeway span and shelters (G11 up to 0.42)
+NO_FOG = set()
+SNOW_INSIDE = {("man-eater", "cold-store"), ("lira-calyx", "continuum-outpost")}  # even 0.0005 per metre veils the far freeway span and shelters (G11 up to 0.42)
 
 
 # P2b: per-hdri plate gain from the calibration look round (sky-region luma of the hdri plate against the P1 flat sky over every
@@ -174,8 +175,10 @@ def build(game, cfg):
             kits.append({"kit": "precip", "name": "rain", "kind": "rain", "per_m3": 0.6, "max": 3000, "clear_m": 1.0, "clear_centre": False,
                          "_p2": True})
             info["rain"] = True
-        if "snow" in fx and not L["p1"]["interior"]:
-            kits.append({"kit": "precip", "name": "snow", "kind": "snow", "per_m3": 0.3, "max": 3000, "clear_m": 1.0, "clear_centre": False,
+        indoor_snow = (game, loc) in SNOW_INSIDE  # ruling 2026-11-28: light snow inside the cold-store bay and the outpost
+        if "snow" in fx and (not L["p1"]["interior"] or indoor_snow):
+            kits.append({"kit": "precip", "name": "snow", "kind": "snow", "per_m3": 0.12 if indoor_snow else 0.3, "max": 3000,
+                         "clear_m": 1.5 if indoor_snow else 1.0, "prop_margin_m": 0.8 if indoor_snow else 0.0, "clear_centre": False,
                          "_p2": True})
             info["snow"] = True
         if "flame" in fx:

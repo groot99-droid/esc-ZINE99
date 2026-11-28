@@ -87,6 +87,10 @@ def apply(bpy, sc, game, location, scene, K, rig, views, made, pieces, dress_dir
         mcfg, pcfg = loc_cfg.get("materials", {}), loc_cfg.get("pieces", {})
         if "atmos" in allowed and loc_cfg.get("p2_materials"):  # P2b: water shaders on the water pieces, only with the P2 layers on
             mcfg = dict(mcfg, **loc_cfg["p2_materials"])
+        if "scatter" in allowed and loc_cfg.get("p3_materials"):  # P3: vegetation blocks, grass and bark, only with the scatter layer on
+            mcfg = dict(mcfg, **loc_cfg["p3_materials"])
+        if os.environ.get("DRESS_P4") == "1" and loc_cfg.get("p4_materials"):  # P4: rock, snow, frost and ice (the P4 look runs set it)
+            mcfg = dict(mcfg, **loc_cfg["p4_materials"])
         used = {}
         for ob in sorted(pieces, key=lambda o: o.name):
             if ob.hide_render or not ob.material_slots or ob.material_slots[0].material is None:

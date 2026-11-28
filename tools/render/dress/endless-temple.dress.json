@@ -55,6 +55,28 @@
     "fx_listed": [
      "fog"
     ]
+   },
+   "p4_materials": {
+    "rock": {
+     "family": "scan",
+     "third": true,
+     "macro2": 0.06,
+     "obj_jitter_m": 0.0,
+     "scan": "rock_wall_08",
+     "tile_m": 3.0,
+     "res": "1k",
+     "chroma": 0.1,
+     "bump": 0.7,
+     "macro": 0.14,
+     "grime": 0.7,
+     "p4_preset": "rock_mid"
+    }
+   },
+   "p4": {
+    "version": 1,
+    "materials": {
+     "rock": "rock_mid"
+    }
    }
   },
   "clerk-office": {
@@ -1054,6 +1076,28 @@
     "haze": false,
     "extent_m": 470.0,
     "fx_listed": []
+   },
+   "p4_materials": {
+    "pale-cliff": {
+     "family": "scan",
+     "third": true,
+     "macro2": 0.06,
+     "obj_jitter_m": 0.0,
+     "scan": "marble_rock_03",
+     "tile_m": 3.0,
+     "res": "2k",
+     "chroma": 0.1,
+     "bump": 0.6,
+     "macro": 0.14,
+     "grime": 0.6,
+     "p4_preset": "rock_pale"
+    }
+   },
+   "p4": {
+    "version": 1,
+    "materials": {
+     "pale-cliff": "rock_pale"
+    }
    }
   },
   "silver-dunes": {

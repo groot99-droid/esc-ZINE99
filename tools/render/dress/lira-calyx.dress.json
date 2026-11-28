@@ -421,7 +421,49 @@
       2.4
      ]
     }
-   ]
+   ],
+   "kits": [
+    {
+     "kit": "precip",
+     "name": "snow",
+     "kind": "snow",
+     "per_m3": 0.12,
+     "max": 3000,
+     "clear_m": 1.5,
+     "prop_margin_m": 0.8,
+     "clear_centre": false,
+     "_p2": true
+    }
+   ],
+   "p2": {
+    "version": 2,
+    "snow": true,
+    "fx_listed": [
+     "snow"
+    ]
+   },
+   "p4_materials": {
+    "snow": {
+     "family": "scan",
+     "third": true,
+     "macro2": 0.06,
+     "obj_jitter_m": 0.0,
+     "scan": "snow_02",
+     "tile_m": 3.0,
+     "res": "1k",
+     "chroma": 0.0,
+     "bump": 0.5,
+     "macro": 0.08,
+     "grime": 0.15,
+     "p4_preset": "snow"
+    }
+   },
+   "p4": {
+    "version": 1,
+    "materials": {
+     "snow": "snow"
+    }
+   }
   },
   "corporate-lab": {
    "p1": {
@@ -700,6 +742,78 @@
      "flood"
     ],
     "fx_listed": []
+   },
+   "p4_materials": {
+    "gorge-rock": {
+     "family": "scan",
+     "third": true,
+     "macro2": 0.06,
+     "obj_jitter_m": 0.0,
+     "scan": "worn_rock_natural_01",
+     "tile_m": 3.0,
+     "res": "2k",
+     "chroma": 0.1,
+     "bump": 0.7,
+     "macro": 0.14,
+     "grime": 0.7,
+     "p4_preset": "rock_light"
+    }
+   },
+   "p4": {
+    "version": 1,
+    "materials": {
+     "gorge-rock": "rock_light"
+    }
+   },
+   "scatter": [
+    {
+     "kind": "grass",
+     "name": "grass",
+     "on": {
+      "materials": [
+       "hillside",
+       "terrace"
+      ]
+     },
+     "density": 1800,
+     "max_dist_m": 20,
+     "limit": 12000,
+     "color": [
+      0.33,
+      0.37,
+      0.17
+     ],
+     "roughness": 0.8,
+     "surface": {
+      "family": "foliage",
+      "tile_m": 0.3,
+      "macro": 0.2,
+      "fine": 0.12,
+      "bump": 0.0
+     },
+     "scale": 1.1,
+     "patch": {
+      "scale_m": 1.6,
+      "cut": 0.4,
+      "soft": 0.14
+     },
+     "jitter": 1.7,
+     "tilt_deg": 14,
+     "avoid_materials": [
+      "river"
+     ],
+     "avoid_margin_m": 0.3,
+     "sightlines_m": 0.8,
+     "_p3": true
+    }
+   ],
+   "p3": {
+    "version": 1,
+    "materials": [],
+    "kits": [],
+    "scatter": [
+     "grass"
+    ]
    }
   },
   "harvester-ridge": {
@@ -805,6 +919,60 @@
      "clear_m": 0.8,
      "clear_centre": false,
      "_p2": true
+    },
+    {
+     "kit": "treeline",
+     "name": "treeline",
+     "materials": [
+      "conifer"
+     ],
+     "min_size_m": 8.0,
+     "spacing_m": 3.6,
+     "offset_m": [
+      -1.4,
+      0.9
+     ],
+     "height": [
+      0.75,
+      1.5
+     ],
+     "radius": 0.14,
+     "variants": 7,
+     "max_dist_m": 150,
+     "avoid_materials": [
+      "gravel"
+     ],
+     "avoid_margin_m": 0.5,
+     "no_shadow_near_props_m": 6.0,
+     "clear_centre": true,
+     "cast_shadow": false,
+     "surface": {
+      "family": "foliage",
+      "tile_m": 1.2,
+      "macro": 0.45,
+      "fine": 0.35,
+      "bump": 0.6,
+      "bump_m": 0.03,
+      "obj_jitter_m": 40.0,
+      "gain": 1.12,
+      "underside": 0.08
+     },
+     "camera_only_light": true,
+     "style": "branches",
+     "rows": [
+      {
+       "offset_m": [
+        -1.4,
+        0.9
+       ],
+       "height": [
+        0.95,
+        1.55
+       ],
+       "spacing_m": 3.0
+      }
+     ],
+     "_p3": true
     }
    ],
    "p2": {
@@ -816,6 +984,282 @@
     "motes": true,
     "fx_listed": [
      "dust"
+    ]
+   },
+   "p4_materials": {
+    "cliff": {
+     "family": "scan",
+     "third": true,
+     "macro2": 0.06,
+     "obj_jitter_m": 0.0,
+     "scan": "worn_rock_natural_01",
+     "tile_m": 3.0,
+     "res": "2k",
+     "chroma": 0.1,
+     "bump": 0.7,
+     "macro": 0.14,
+     "grime": 0.7,
+     "p4_preset": "rock_light"
+    },
+    "outcrop": {
+     "family": "scan",
+     "third": true,
+     "macro2": 0.06,
+     "obj_jitter_m": 0.0,
+     "scan": "marble_rock_03",
+     "tile_m": 3.0,
+     "res": "2k",
+     "chroma": 0.1,
+     "bump": 0.6,
+     "macro": 0.14,
+     "grime": 0.6,
+     "p4_preset": "rock_pale"
+    }
+   },
+   "p4": {
+    "version": 1,
+    "materials": {
+     "cliff": "rock_light",
+     "outcrop": "rock_pale"
+    }
+   },
+   "p3_materials": {
+    "conifer": {
+     "family": "foliage",
+     "tile_m": 1.2,
+     "macro": 0.45,
+     "fine": 0.35,
+     "bump": 0.6,
+     "bump_m": 0.03,
+     "obj_jitter_m": 40.0,
+     "gain": 1.12,
+     "underside": 0.08,
+     "trunks": {
+      "spacing_m": 1.6,
+      "dark": 0.4,
+      "width": 0.35
+     },
+     "p3_preset": "conifer"
+    },
+    "moss": {
+     "family": "scan",
+     "scan": "forest_floor",
+     "res": "1k",
+     "tile_m": 2.6,
+     "chroma": 0.15,
+     "bump": 0.6,
+     "macro": 0.14,
+     "third": true,
+     "grime": 0.3,
+     "p3_preset": "moss"
+    }
+   },
+   "scatter": [
+    {
+     "kind": "grass",
+     "name": "grass",
+     "on": {
+      "materials": [
+       "moss"
+      ]
+     },
+     "density": 1800,
+     "max_dist_m": 20,
+     "limit": 12000,
+     "color": [
+      0.33,
+      0.37,
+      0.17
+     ],
+     "roughness": 0.8,
+     "surface": {
+      "family": "foliage",
+      "tile_m": 0.3,
+      "macro": 0.2,
+      "fine": 0.12,
+      "bump": 0.0
+     },
+     "scale": 1.1,
+     "patch": {
+      "scale_m": 1.6,
+      "cut": 0.4,
+      "soft": 0.14
+     },
+     "jitter": 1.7,
+     "tilt_deg": 14,
+     "avoid_materials": [
+      "gravel"
+     ],
+     "avoid_margin_m": 0.3,
+     "sightlines_m": 0.8,
+     "_p3": true
+    },
+    {
+     "kind": "twigs",
+     "name": "twigs",
+     "on": {
+      "materials": [
+       "moss"
+      ]
+     },
+     "density": 12,
+     "max_dist_m": 22,
+     "limit": 1000,
+     "color": [
+      0.26,
+      0.18,
+      0.11
+     ],
+     "roughness": 0.9,
+     "surface": {
+      "family": "scan",
+      "scan": "pine_bark",
+      "res": "1k",
+      "tile_m": 0.3,
+      "chroma": 0.3,
+      "bump": 0.4
+     },
+     "_p3": true
+    },
+    {
+     "kind": "model",
+     "name": "plants",
+     "on": {
+      "materials": [
+       "moss"
+      ]
+     },
+     "density": 20,
+     "max_dist_m": 60,
+     "limit": 140,
+     "avoid_materials": [
+      "gravel"
+     ],
+     "avoid_margin_m": 0.6,
+     "sightlines_m": 1.4,
+     "near_camera_m": 7.0,
+     "thin_far": 0.4,
+     "models": [
+      {
+       "name": "fern_02",
+       "weight": 5,
+       "size": [
+        0.8,
+        1.3
+       ],
+       "sink": 0.02,
+       "albedo_gain": 2.2
+      },
+      {
+       "name": "pine_sapling_small",
+       "weight": 3,
+       "size": [
+        0.8,
+        1.4
+       ],
+       "sink": 0.02,
+       "albedo_gain": 3.2
+      },
+      {
+       "name": "rock_moss_set_01",
+       "weight": 1.5,
+       "size": [
+        0.5,
+        1.1
+       ],
+       "sink": 0.3,
+       "albedo_gain": 2.0
+      },
+      {
+       "name": "tree_stump_01",
+       "weight": 0.8,
+       "size": [
+        0.5,
+        0.8
+       ],
+       "sink": 0.05,
+       "albedo_gain": 1.8
+      }
+     ],
+     "max_tris": 14000,
+     "sunlit_only": true,
+     "sun_probe_m": 1.2,
+     "_p3": true
+    },
+    {
+     "kind": "model",
+     "name": "forest-edge",
+     "on": {
+      "materials": [
+       "moss"
+      ]
+     },
+     "density": 90,
+     "max_dist_m": 90,
+     "limit": 360,
+     "near_materials": [
+      "conifer"
+     ],
+     "near_m": 3.5,
+     "avoid_materials": [
+      "gravel"
+     ],
+     "avoid_margin_m": 0.4,
+     "sightlines_m": 1.4,
+     "near_camera_m": 7.0,
+     "thin_far": 0.7,
+     "models": [
+      {
+       "name": "pine_sapling_small",
+       "weight": 5,
+       "size": [
+        2.4,
+        4.6
+       ],
+       "sink": 0.02,
+       "albedo_gain": 3.2
+      },
+      {
+       "name": "fern_02",
+       "weight": 3,
+       "size": [
+        1.0,
+        1.6
+       ],
+       "sink": 0.02,
+       "albedo_gain": 2.2
+      },
+      {
+       "name": "dead_tree_trunk_02",
+       "weight": 1.5,
+       "size": [
+        0.9,
+        1.2
+       ],
+       "sink": 0.1,
+       "albedo_gain": 1.8
+      }
+     ],
+     "max_tris": 14000,
+     "sunlit_only": true,
+     "sun_probe_m": 1.2,
+     "_p3": true
+    }
+   ],
+   "p3": {
+    "version": 1,
+    "materials": [
+     "conifer",
+     "moss"
+    ],
+    "kits": [
+     "treeline"
+    ],
+    "scatter": [
+     "grass",
+     "twigs",
+     "plants",
+     "forest-edge"
     ]
    }
   },
@@ -1111,7 +1555,29 @@
       2.4
      ]
     }
-   ]
+   ],
+   "p4_materials": {
+    "cavern": {
+     "family": "scan",
+     "third": true,
+     "macro2": 0.06,
+     "obj_jitter_m": 0.0,
+     "scan": "rock_wall_08",
+     "tile_m": 3.0,
+     "res": "1k",
+     "chroma": 0.1,
+     "bump": 0.7,
+     "macro": 0.14,
+     "grime": 0.7,
+     "p4_preset": "rock_mid"
+    }
+   },
+   "p4": {
+    "version": 1,
+    "materials": {
+     "cavern": "rock_mid"
+    }
+   }
   },
   "scorched-biome": {
    "p1": {
@@ -1195,6 +1661,28 @@
     "haze": false,
     "extent_m": 300.0,
     "fx_listed": []
+   },
+   "p4_materials": {
+    "crust": {
+     "family": "scan",
+     "third": true,
+     "macro2": 0.06,
+     "obj_jitter_m": 0.0,
+     "scan": "snow_03",
+     "tile_m": 1.2,
+     "res": "1k",
+     "chroma": 0.0,
+     "bump": 0.4,
+     "macro": 0.08,
+     "grime": 0.1,
+     "p4_preset": "frost"
+    }
+   },
+   "p4": {
+    "version": 1,
+    "materials": {
+     "crust": "frost"
+    }
    }
   },
   "shear-tunnel": {
@@ -1331,6 +1819,43 @@
     "fx_listed": [
      "dust"
     ]
+   },
+   "p4_materials": {
+    "rock": {
+     "family": "scan",
+     "third": true,
+     "macro2": 0.06,
+     "obj_jitter_m": 0.0,
+     "scan": "worn_rock_natural_01",
+     "tile_m": 3.0,
+     "res": "2k",
+     "chroma": 0.1,
+     "bump": 0.7,
+     "macro": 0.14,
+     "grime": 0.7,
+     "p4_preset": "rock_light"
+    },
+    "rubble": {
+     "family": "scan",
+     "third": true,
+     "macro2": 0.06,
+     "obj_jitter_m": 0.0,
+     "scan": "rocks_ground_06",
+     "tile_m": 2.4,
+     "res": "1k",
+     "chroma": 0.1,
+     "bump": 0.8,
+     "macro": 0.12,
+     "grime": 0.5,
+     "p4_preset": "scree"
+    }
+   },
+   "p4": {
+    "version": 1,
+    "materials": {
+     "rock": "rock_light",
+     "rubble": "scree"
+    }
    }
   },
   "small-room": {
@@ -1654,6 +2179,189 @@
     "fx_listed": [
      "dust"
     ]
+   },
+   "p4_materials": {
+    "rock": {
+     "family": "scan",
+     "third": true,
+     "macro2": 0.06,
+     "obj_jitter_m": 0.0,
+     "scan": "worn_rock_natural_01",
+     "tile_m": 3.0,
+     "res": "2k",
+     "chroma": 0.1,
+     "bump": 0.7,
+     "macro": 0.14,
+     "grime": 0.7,
+     "p4_preset": "rock_light"
+    }
+   },
+   "p4": {
+    "version": 1,
+    "materials": {
+     "rock": "rock_light"
+    }
+   },
+   "p3_materials": {
+    "grass": {
+     "family": "scan",
+     "scan": "leafy_grass",
+     "res": "2k",
+     "tile_m": 2.4,
+     "chroma": 0.2,
+     "bump": 0.5,
+     "macro": 0.14,
+     "third": true,
+     "macro2": 0.06,
+     "grime": 0.3,
+     "p3_preset": "grass"
+    }
+   },
+   "scatter": [
+    {
+     "kind": "grass",
+     "name": "grass",
+     "on": {
+      "materials": [
+       "grass",
+       "slope"
+      ]
+     },
+     "density": 1800,
+     "max_dist_m": 20,
+     "limit": 12000,
+     "color": [
+      0.33,
+      0.37,
+      0.17
+     ],
+     "roughness": 0.8,
+     "surface": {
+      "family": "foliage",
+      "tile_m": 0.3,
+      "macro": 0.2,
+      "fine": 0.12,
+      "bump": 0.0
+     },
+     "scale": 1.1,
+     "patch": {
+      "scale_m": 1.6,
+      "cut": 0.4,
+      "soft": 0.14
+     },
+     "jitter": 1.7,
+     "tilt_deg": 14,
+     "avoid_materials": [
+      "river"
+     ],
+     "avoid_margin_m": 0.3,
+     "sightlines_m": 0.8,
+     "_p3": true
+    },
+    {
+     "kind": "twigs",
+     "name": "twigs",
+     "on": {
+      "materials": [
+       "grass"
+      ]
+     },
+     "density": 12,
+     "max_dist_m": 22,
+     "limit": 1000,
+     "color": [
+      0.26,
+      0.18,
+      0.11
+     ],
+     "roughness": 0.9,
+     "surface": {
+      "family": "scan",
+      "scan": "pine_bark",
+      "res": "1k",
+      "tile_m": 0.3,
+      "chroma": 0.3,
+      "bump": 0.4
+     },
+     "_p3": true
+    },
+    {
+     "kind": "model",
+     "name": "plants",
+     "on": {
+      "materials": [
+       "grass"
+      ]
+     },
+     "density": 20,
+     "max_dist_m": 60,
+     "limit": 140,
+     "avoid_materials": [
+      "river"
+     ],
+     "avoid_margin_m": 0.6,
+     "sightlines_m": 1.4,
+     "near_camera_m": 7.0,
+     "thin_far": 0.4,
+     "models": [
+      {
+       "name": "fern_02",
+       "weight": 5,
+       "size": [
+        0.8,
+        1.3
+       ],
+       "sink": 0.02,
+       "albedo_gain": 2.2
+      },
+      {
+       "name": "pine_sapling_small",
+       "weight": 3,
+       "size": [
+        0.8,
+        1.4
+       ],
+       "sink": 0.02,
+       "albedo_gain": 3.2
+      },
+      {
+       "name": "rock_moss_set_01",
+       "weight": 1.5,
+       "size": [
+        0.5,
+        1.1
+       ],
+       "sink": 0.3,
+       "albedo_gain": 2.0
+      },
+      {
+       "name": "tree_stump_01",
+       "weight": 0.8,
+       "size": [
+        0.5,
+        0.8
+       ],
+       "sink": 0.05,
+       "albedo_gain": 1.8
+      }
+     ],
+     "max_tris": 14000,
+     "sunlit_only": true,
+     "sun_probe_m": 1.2,
+     "_p3": true
+    }
+   ],
+   "p3": {
+    "version": 1,
+    "materials": [
+     "grass"
+    ],
+    "kits": [],
+    "scatter": [
+     "grass",
+     "twigs",
+     "plants"
+    ]
    }
   },
   "storm-outpost": {
@@ -1825,7 +2533,29 @@
       2.4
      ]
     }
-   ]
+   ],
+   "p4_materials": {
+    "ridge-rock": {
+     "family": "scan",
+     "third": true,
+     "macro2": 0.06,
+     "obj_jitter_m": 0.0,
+     "scan": "worn_rock_natural_01",
+     "tile_m": 3.0,
+     "res": "2k",
+     "chroma": 0.1,
+     "bump": 0.7,
+     "macro": 0.14,
+     "grime": 0.7,
+     "p4_preset": "rock_light"
+    }
+   },
+   "p4": {
+    "version": 1,
+    "materials": {
+     "ridge-rock": "rock_light"
+    }
+   }
   },
   "storm-singing-ledge": {
    "p1": {
@@ -1977,6 +2707,28 @@
     "fx_listed": [
      "fog"
     ]
+   },
+   "p4_materials": {
+    "ledge-rock": {
+     "family": "scan",
+     "third": true,
+     "macro2": 0.06,
+     "obj_jitter_m": 0.0,
+     "scan": "worn_rock_natural_01",
+     "tile_m": 3.0,
+     "res": "2k",
+     "chroma": 0.1,
+     "bump": 0.7,
+     "macro": 0.14,
+     "grime": 0.7,
+     "p4_preset": "rock_light"
+    }
+   },
+   "p4": {
+    "version": 1,
+    "materials": {
+     "ledge-rock": "rock_light"
+    }
    }
   },
   "subterranean-city": {
@@ -2242,6 +2994,28 @@
     "fx_listed": [
      "fog"
     ]
+   },
+   "p4_materials": {
+    "cavern": {
+     "family": "scan",
+     "third": true,
+     "macro2": 0.06,
+     "obj_jitter_m": 0.0,
+     "scan": "worn_rock_natural_01",
+     "tile_m": 3.0,
+     "res": "2k",
+     "chroma": 0.1,
+     "bump": 0.7,
+     "macro": 0.14,
+     "grime": 0.7,
+     "p4_preset": "rock_light"
+    }
+   },
+   "p4": {
+    "version": 1,
+    "materials": {
+     "cavern": "rock_light"
+    }
    }
   }
  }

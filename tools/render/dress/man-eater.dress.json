@@ -372,6 +372,28 @@
     "haze": true,
     "extent_m": 10.0,
     "fx_listed": []
+   },
+   "p4_materials": {
+    "snow": {
+     "family": "scan",
+     "third": true,
+     "macro2": 0.06,
+     "obj_jitter_m": 0.0,
+     "scan": "snow_02",
+     "tile_m": 3.0,
+     "res": "1k",
+     "chroma": 0.0,
+     "bump": 0.5,
+     "macro": 0.08,
+     "grime": 0.15,
+     "p4_preset": "snow"
+    }
+   },
+   "p4": {
+    "version": 1,
+    "materials": {
+     "snow": "snow"
+    }
    }
   },
   "cafeteria": {
@@ -783,7 +805,64 @@
       }
      ]
     }
-   ]
+   ],
+   "kits": [
+    {
+     "kit": "precip",
+     "name": "snow",
+     "kind": "snow",
+     "per_m3": 0.12,
+     "max": 3000,
+     "clear_m": 1.5,
+     "prop_margin_m": 0.8,
+     "clear_centre": false,
+     "_p2": true
+    }
+   ],
+   "p2": {
+    "version": 2,
+    "snow": true,
+    "fx_listed": [
+     "snow"
+    ]
+   },
+   "p4_materials": {
+    "frost": {
+     "family": "scan",
+     "third": true,
+     "macro2": 0.06,
+     "obj_jitter_m": 0.0,
+     "scan": "snow_03",
+     "tile_m": 1.2,
+     "res": "1k",
+     "chroma": 0.0,
+     "bump": 0.4,
+     "macro": 0.08,
+     "grime": 0.1,
+     "p4_preset": "frost"
+    },
+    "snow": {
+     "family": "scan",
+     "third": true,
+     "macro2": 0.06,
+     "obj_jitter_m": 0.0,
+     "scan": "snow_02",
+     "tile_m": 3.0,
+     "res": "1k",
+     "chroma": 0.0,
+     "bump": 0.5,
+     "macro": 0.08,
+     "grime": 0.15,
+     "p4_preset": "snow"
+    }
+   },
+   "p4": {
+    "version": 1,
+    "materials": {
+     "frost": "frost",
+     "snow": "snow"
+    }
+   }
   },
   "rec-room": {
    "p1": {
@@ -1420,7 +1499,29 @@
       }
      ]
     }
-   ]
+   ],
+   "p4_materials": {
+    "frost": {
+     "family": "scan",
+     "third": true,
+     "macro2": 0.06,
+     "obj_jitter_m": 0.0,
+     "scan": "snow_03",
+     "tile_m": 1.2,
+     "res": "1k",
+     "chroma": 0.0,
+     "bump": 0.4,
+     "macro": 0.08,
+     "grime": 0.1,
+     "p4_preset": "frost"
+    }
+   },
+   "p4": {
+    "version": 1,
+    "materials": {
+     "frost": "frost"
+    }
+   }
   },
   "laundry": {
    "p1": {
@@ -1817,6 +1918,28 @@
     "fx_listed": [
      "flame"
     ]
+   },
+   "p4_materials": {
+    "frost": {
+     "family": "scan",
+     "third": true,
+     "macro2": 0.06,
+     "obj_jitter_m": 0.0,
+     "scan": "snow_03",
+     "tile_m": 1.2,
+     "res": "1k",
+     "chroma": 0.0,
+     "bump": 0.4,
+     "macro": 0.08,
+     "grime": 0.1,
+     "p4_preset": "frost"
+    }
+   },
+   "p4": {
+    "version": 1,
+    "materials": {
+     "frost": "frost"
+    }
    }
   },
   "bunk-room": {
@@ -2200,6 +2323,107 @@
     "haze": true,
     "extent_m": 60.0,
     "fx_listed": []
+   },
+   "p4_materials": {
+    "frost": {
+     "family": "scan",
+     "third": true,
+     "macro2": 0.06,
+     "obj_jitter_m": 0.0,
+     "scan": "snow_03",
+     "tile_m": 1.2,
+     "res": "1k",
+     "chroma": 0.0,
+     "bump": 0.4,
+     "macro": 0.08,
+     "grime": 0.1,
+     "p4_preset": "frost"
+    },
+    "snow": {
+     "family": "scan",
+     "third": true,
+     "macro2": 0.06,
+     "obj_jitter_m": 0.0,
+     "scan": "snow_02",
+     "tile_m": 3.0,
+     "res": "1k",
+     "chroma": 0.0,
+     "bump": 0.5,
+     "macro": 0.08,
+     "grime": 0.15,
+     "p4_preset": "snow"
+    }
+   },
+   "p4": {
+    "version": 1,
+    "materials": {
+     "frost": "frost",
+     "snow": "snow"
+    }
+   },
+   "kits": [
+    {
+     "kit": "treeline",
+     "name": "treeline",
+     "materials": [
+      "spruce"
+     ],
+     "min_size_m": 8.0,
+     "spacing_m": 3.6,
+     "offset_m": [
+      -1.4,
+      0.9
+     ],
+     "height": [
+      0.75,
+      1.5
+     ],
+     "radius": 0.14,
+     "variants": 7,
+     "max_dist_m": 150,
+     "avoid_materials": [
+      "road"
+     ],
+     "avoid_margin_m": 0.5,
+     "no_shadow_near_props_m": 6.0,
+     "clear_centre": true,
+     "cast_shadow": false,
+     "surface": {
+      "family": "foliage",
+      "tile_m": 1.2,
+      "macro": 0.45,
+      "fine": 0.35,
+      "bump": 0.6,
+      "bump_m": 0.03,
+      "obj_jitter_m": 40.0,
+      "gain": 1.12,
+      "underside": 0.08
+     },
+     "camera_only_light": true,
+     "style": "branches",
+     "rows": [
+      {
+       "offset_m": [
+        -1.4,
+        0.9
+       ],
+       "height": [
+        0.95,
+        1.55
+       ],
+       "spacing_m": 3.0
+      }
+     ],
+     "_p3": true
+    }
+   ],
+   "p3": {
+    "version": 1,
+    "materials": [],
+    "kits": [
+     "treeline"
+    ],
+    "scatter": []
    }
   },
   "perimeter": {
@@ -2282,6 +2506,128 @@
     "haze": false,
     "extent_m": 460.0,
     "fx_listed": []
+   },
+   "p4_materials": {
+    "frost": {
+     "family": "scan",
+     "third": true,
+     "macro2": 0.06,
+     "obj_jitter_m": 0.0,
+     "scan": "snow_03",
+     "tile_m": 1.2,
+     "res": "1k",
+     "chroma": 0.0,
+     "bump": 0.4,
+     "macro": 0.08,
+     "grime": 0.1,
+     "p4_preset": "frost"
+    },
+    "snow": {
+     "family": "scan",
+     "third": true,
+     "macro2": 0.06,
+     "obj_jitter_m": 0.0,
+     "scan": "snow_02",
+     "tile_m": 3.0,
+     "res": "1k",
+     "chroma": 0.0,
+     "bump": 0.5,
+     "macro": 0.08,
+     "grime": 0.15,
+     "p4_preset": "snow"
+    }
+   },
+   "p4": {
+    "version": 1,
+    "materials": {
+     "frost": "frost",
+     "snow": "snow"
+    }
+   },
+   "p3_materials": {
+    "spruce": {
+     "family": "foliage",
+     "tile_m": 1.2,
+     "macro": 0.45,
+     "fine": 0.35,
+     "bump": 0.6,
+     "bump_m": 0.03,
+     "obj_jitter_m": 40.0,
+     "gain": 1.12,
+     "underside": 0.08,
+     "trunks": {
+      "spacing_m": 1.6,
+      "dark": 0.4,
+      "width": 0.35
+     },
+     "p3_preset": "conifer"
+    }
+   },
+   "kits": [
+    {
+     "kit": "treeline",
+     "name": "treeline",
+     "materials": [
+      "spruce"
+     ],
+     "min_size_m": 8.0,
+     "spacing_m": 3.6,
+     "offset_m": [
+      -1.4,
+      0.9
+     ],
+     "height": [
+      0.75,
+      1.5
+     ],
+     "radius": 0.14,
+     "variants": 7,
+     "max_dist_m": 150,
+     "avoid_materials": [
+      "road"
+     ],
+     "avoid_margin_m": 0.5,
+     "no_shadow_near_props_m": 6.0,
+     "clear_centre": true,
+     "cast_shadow": false,
+     "surface": {
+      "family": "foliage",
+      "tile_m": 1.2,
+      "macro": 0.45,
+      "fine": 0.35,
+      "bump": 0.6,
+      "bump_m": 0.03,
+      "obj_jitter_m": 40.0,
+      "gain": 1.12,
+      "underside": 0.08
+     },
+     "camera_only_light": true,
+     "style": "branches",
+     "rows": [
+      {
+       "offset_m": [
+        -1.4,
+        0.9
+       ],
+       "height": [
+        0.95,
+        1.55
+       ],
+       "spacing_m": 3.0
+      }
+     ],
+     "_p3": true
+    }
+   ],
+   "p3": {
+    "version": 1,
+    "materials": [
+     "spruce"
+    ],
+    "kits": [
+     "treeline"
+    ],
+    "scatter": []
    }
   },
   "room-below": {
@@ -2579,6 +2925,28 @@
      },
      "p1_preset": "plaster"
     }
+   },
+   "p4_materials": {
+    "frost": {
+     "family": "scan",
+     "third": true,
+     "macro2": 0.06,
+     "obj_jitter_m": 0.0,
+     "scan": "snow_03",
+     "tile_m": 1.2,
+     "res": "1k",
+     "chroma": 0.0,
+     "bump": 0.4,
+     "macro": 0.08,
+     "grime": 0.1,
+     "p4_preset": "frost"
+    }
+   },
+   "p4": {
+    "version": 1,
+    "materials": {
+     "frost": "frost"
+    }
    }
   },
   "tall-halls": {
@@ -2837,6 +3205,28 @@
     "version": 2,
     "window_plate": true,
     "fx_listed": []
+   },
+   "p4_materials": {
+    "frost": {
+     "family": "scan",
+     "third": true,
+     "macro2": 0.06,
+     "obj_jitter_m": 0.0,
+     "scan": "snow_03",
+     "tile_m": 1.2,
+     "res": "1k",
+     "chroma": 0.0,
+     "bump": 0.4,
+     "macro": 0.08,
+     "grime": 0.1,
+     "p4_preset": "frost"
+    }
+   },
+   "p4": {
+    "version": 1,
+    "materials": {
+     "frost": "frost"
+    }
    }
   }
  }

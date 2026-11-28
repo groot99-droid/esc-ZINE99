@@ -1029,6 +1029,299 @@
      "pool"
     ],
     "fx_listed": []
+   },
+   "p3_materials": {
+    "moss-bank": {
+     "family": "scan",
+     "scan": "forest_floor",
+     "res": "1k",
+     "tile_m": 2.6,
+     "chroma": 0.15,
+     "bump": 0.6,
+     "macro": 0.14,
+     "third": true,
+     "grime": 0.3,
+     "p3_preset": "moss"
+    },
+    "trunk": {
+     "family": "scan",
+     "scan": "pine_bark",
+     "res": "1k",
+     "tile_m": 1.0,
+     "chroma": 0.15,
+     "bump": 0.7,
+     "macro": 0.1,
+     "grime": 0.6,
+     "p3_preset": "trunk"
+    }
+   },
+   "kits": [
+    {
+     "kit": "treeline",
+     "name": "treeline",
+     "materials": [
+      "canopy"
+     ],
+     "min_size_m": 8.0,
+     "spacing_m": 3.6,
+     "offset_m": [
+      -1.4,
+      0.9
+     ],
+     "height": [
+      0.75,
+      1.5
+     ],
+     "radius": 0.14,
+     "variants": 7,
+     "max_dist_m": 150,
+     "avoid_materials": [
+      "creek",
+      "path-earth"
+     ],
+     "avoid_margin_m": 0.5,
+     "no_shadow_near_props_m": 6.0,
+     "clear_centre": true,
+     "cast_shadow": false,
+     "surface": {
+      "family": "foliage",
+      "tile_m": 1.2,
+      "macro": 0.45,
+      "fine": 0.35,
+      "bump": 0.6,
+      "bump_m": 0.03,
+      "obj_jitter_m": 40.0,
+      "gain": 1.12,
+      "underside": 0.08
+     },
+     "camera_only_light": true,
+     "style": "branches",
+     "rows": [
+      {
+       "offset_m": [
+        -1.4,
+        0.9
+       ],
+       "height": [
+        0.95,
+        1.55
+       ],
+       "spacing_m": 3.0
+      }
+     ],
+     "_p3": true
+    }
+   ],
+   "scatter": [
+    {
+     "kind": "grass",
+     "name": "grass",
+     "on": {
+      "materials": [
+       "moss-bank"
+      ]
+     },
+     "density": 1800,
+     "max_dist_m": 20,
+     "limit": 12000,
+     "color": [
+      0.33,
+      0.37,
+      0.17
+     ],
+     "roughness": 0.8,
+     "surface": {
+      "family": "foliage",
+      "tile_m": 0.3,
+      "macro": 0.2,
+      "fine": 0.12,
+      "bump": 0.0
+     },
+     "scale": 1.1,
+     "patch": {
+      "scale_m": 1.6,
+      "cut": 0.4,
+      "soft": 0.14
+     },
+     "jitter": 1.7,
+     "tilt_deg": 14,
+     "avoid_materials": [
+      "creek",
+      "path-earth"
+     ],
+     "avoid_margin_m": 0.3,
+     "sightlines_m": 0.8,
+     "_p3": true
+    },
+    {
+     "kind": "twigs",
+     "name": "twigs",
+     "on": {
+      "materials": [
+       "moss-bank"
+      ]
+     },
+     "density": 12,
+     "max_dist_m": 22,
+     "limit": 1000,
+     "color": [
+      0.26,
+      0.18,
+      0.11
+     ],
+     "roughness": 0.9,
+     "surface": {
+      "family": "scan",
+      "scan": "pine_bark",
+      "res": "1k",
+      "tile_m": 0.3,
+      "chroma": 0.3,
+      "bump": 0.4
+     },
+     "_p3": true
+    },
+    {
+     "kind": "model",
+     "name": "plants",
+     "on": {
+      "materials": [
+       "moss-bank"
+      ]
+     },
+     "density": 20,
+     "max_dist_m": 60,
+     "limit": 140,
+     "avoid_materials": [
+      "creek",
+      "path-earth"
+     ],
+     "avoid_margin_m": 0.6,
+     "sightlines_m": 1.4,
+     "near_camera_m": 7.0,
+     "thin_far": 0.4,
+     "models": [
+      {
+       "name": "fern_02",
+       "weight": 5,
+       "size": [
+        0.8,
+        1.3
+       ],
+       "sink": 0.02,
+       "albedo_gain": 2.2
+      },
+      {
+       "name": "pine_sapling_small",
+       "weight": 3,
+       "size": [
+        0.8,
+        1.4
+       ],
+       "sink": 0.02,
+       "albedo_gain": 3.2
+      },
+      {
+       "name": "rock_moss_set_01",
+       "weight": 1.5,
+       "size": [
+        0.5,
+        1.1
+       ],
+       "sink": 0.3,
+       "albedo_gain": 2.0
+      },
+      {
+       "name": "tree_stump_01",
+       "weight": 0.8,
+       "size": [
+        0.5,
+        0.8
+       ],
+       "sink": 0.05,
+       "albedo_gain": 1.8
+      }
+     ],
+     "max_tris": 14000,
+     "sunlit_only": true,
+     "sun_probe_m": 1.2,
+     "_p3": true
+    },
+    {
+     "kind": "model",
+     "name": "forest-edge",
+     "on": {
+      "materials": [
+       "moss-bank"
+      ]
+     },
+     "density": 90,
+     "max_dist_m": 90,
+     "limit": 360,
+     "near_materials": [
+      "canopy"
+     ],
+     "near_m": 3.5,
+     "avoid_materials": [
+      "creek",
+      "path-earth"
+     ],
+     "avoid_margin_m": 0.4,
+     "sightlines_m": 1.4,
+     "near_camera_m": 7.0,
+     "thin_far": 0.7,
+     "models": [
+      {
+       "name": "pine_sapling_small",
+       "weight": 5,
+       "size": [
+        2.4,
+        4.6
+       ],
+       "sink": 0.02,
+       "albedo_gain": 3.2
+      },
+      {
+       "name": "fern_02",
+       "weight": 3,
+       "size": [
+        1.0,
+        1.6
+       ],
+       "sink": 0.02,
+       "albedo_gain": 2.2
+      },
+      {
+       "name": "dead_tree_trunk_02",
+       "weight": 1.5,
+       "size": [
+        0.9,
+        1.2
+       ],
+       "sink": 0.1,
+       "albedo_gain": 1.8
+      }
+     ],
+     "max_tris": 14000,
+     "sunlit_only": true,
+     "sun_probe_m": 1.2,
+     "_p3": true
+    }
+   ],
+   "p3": {
+    "version": 1,
+    "materials": [
+     "moss-bank",
+     "trunk"
+    ],
+    "kits": [
+     "treeline"
+    ],
+    "scatter": [
+     "grass",
+     "twigs",
+     "plants",
+     "forest-edge"
+    ]
    }
   },
   "labyrinth": {
@@ -1474,6 +1767,195 @@
     "haze": false,
     "extent_m": 400.3,
     "fx_listed": []
+   },
+   "p3_materials": {
+    "deadwood": {
+     "family": "scan",
+     "scan": "pine_bark",
+     "res": "1k",
+     "tile_m": 1.0,
+     "chroma": 0.15,
+     "bump": 0.7,
+     "macro": 0.1,
+     "grime": 0.6,
+     "p3_preset": "trunk"
+    },
+    "pine": {
+     "family": "foliage",
+     "tile_m": 1.2,
+     "macro": 0.45,
+     "fine": 0.35,
+     "bump": 0.6,
+     "bump_m": 0.03,
+     "obj_jitter_m": 40.0,
+     "gain": 1.12,
+     "underside": 0.08,
+     "trunks": {
+      "spacing_m": 1.6,
+      "dark": 0.4,
+      "width": 0.35
+     },
+     "p3_preset": "conifer"
+    },
+    "pine-needles": {
+     "family": "scan",
+     "scan": "forest_floor",
+     "res": "1k",
+     "tile_m": 2.6,
+     "chroma": 0.15,
+     "bump": 0.6,
+     "macro": 0.14,
+     "third": true,
+     "grime": 0.3,
+     "p3_preset": "moss"
+    }
+   },
+   "scatter": [
+    {
+     "kind": "grass",
+     "name": "grass",
+     "on": {
+      "materials": [
+       "pine-needles"
+      ]
+     },
+     "density": 1800,
+     "max_dist_m": 20,
+     "limit": 12000,
+     "color": [
+      0.33,
+      0.37,
+      0.17
+     ],
+     "roughness": 0.8,
+     "surface": {
+      "family": "foliage",
+      "tile_m": 0.3,
+      "macro": 0.2,
+      "fine": 0.12,
+      "bump": 0.0
+     },
+     "scale": 1.1,
+     "patch": {
+      "scale_m": 1.6,
+      "cut": 0.4,
+      "soft": 0.14
+     },
+     "jitter": 1.7,
+     "tilt_deg": 14,
+     "avoid_materials": [
+      "path"
+     ],
+     "avoid_margin_m": 0.3,
+     "sightlines_m": 0.8,
+     "_p3": true
+    },
+    {
+     "kind": "twigs",
+     "name": "twigs",
+     "on": {
+      "materials": [
+       "pine-needles"
+      ]
+     },
+     "density": 12,
+     "max_dist_m": 22,
+     "limit": 1000,
+     "color": [
+      0.26,
+      0.18,
+      0.11
+     ],
+     "roughness": 0.9,
+     "surface": {
+      "family": "scan",
+      "scan": "pine_bark",
+      "res": "1k",
+      "tile_m": 0.3,
+      "chroma": 0.3,
+      "bump": 0.4
+     },
+     "_p3": true
+    },
+    {
+     "kind": "model",
+     "name": "plants",
+     "on": {
+      "materials": [
+       "pine-needles"
+      ]
+     },
+     "density": 20,
+     "max_dist_m": 60,
+     "limit": 140,
+     "avoid_materials": [
+      "path"
+     ],
+     "avoid_margin_m": 0.6,
+     "sightlines_m": 1.4,
+     "near_camera_m": 7.0,
+     "thin_far": 0.4,
+     "models": [
+      {
+       "name": "fern_02",
+       "weight": 5,
+       "size": [
+        0.8,
+        1.3
+       ],
+       "sink": 0.02,
+       "albedo_gain": 2.2
+      },
+      {
+       "name": "pine_sapling_small",
+       "weight": 3,
+       "size": [
+        0.8,
+        1.4
+       ],
+       "sink": 0.02,
+       "albedo_gain": 3.2
+      },
+      {
+       "name": "rock_moss_set_01",
+       "weight": 1.5,
+       "size": [
+        0.5,
+        1.1
+       ],
+       "sink": 0.3,
+       "albedo_gain": 2.0
+      },
+      {
+       "name": "tree_stump_01",
+       "weight": 0.8,
+       "size": [
+        0.5,
+        0.8
+       ],
+       "sink": 0.05,
+       "albedo_gain": 1.8
+      }
+     ],
+     "max_tris": 14000,
+     "sunlit_only": true,
+     "sun_probe_m": 1.2,
+     "_p3": true
+    }
+   ],
+   "p3": {
+    "version": 1,
+    "materials": [
+     "deadwood",
+     "pine",
+     "pine-needles"
+    ],
+    "kits": [],
+    "scatter": [
+     "grass",
+     "twigs",
+     "plants"
+    ]
    }
   },
   "porch-clearing": {
@@ -1650,6 +2132,179 @@
     "haze": true,
     "extent_m": 60.0,
     "fx_listed": []
+   },
+   "p3_materials": {
+    "birch-leaf": {
+     "family": "foliage",
+     "tile_m": 0.6,
+     "macro": 0.3,
+     "fine": 0.35,
+     "bump": 0.6,
+     "bump_m": 0.03,
+     "obj_jitter_m": 40.0,
+     "gain": 1.12,
+     "underside": 0.08,
+     "p3_preset": "birch-leaf"
+    },
+    "meadow": {
+     "family": "scan",
+     "scan": "leafy_grass",
+     "res": "2k",
+     "tile_m": 2.4,
+     "chroma": 0.2,
+     "bump": 0.5,
+     "macro": 0.14,
+     "third": true,
+     "macro2": 0.06,
+     "grime": 0.3,
+     "p3_preset": "grass"
+    }
+   },
+   "scatter": [
+    {
+     "kind": "grass",
+     "name": "grass",
+     "on": {
+      "materials": [
+       "meadow"
+      ]
+     },
+     "density": 1800,
+     "max_dist_m": 20,
+     "limit": 12000,
+     "color": [
+      0.33,
+      0.37,
+      0.17
+     ],
+     "roughness": 0.8,
+     "surface": {
+      "family": "foliage",
+      "tile_m": 0.3,
+      "macro": 0.2,
+      "fine": 0.12,
+      "bump": 0.0
+     },
+     "scale": 1.1,
+     "patch": {
+      "scale_m": 1.6,
+      "cut": 0.4,
+      "soft": 0.14
+     },
+     "jitter": 1.7,
+     "tilt_deg": 14,
+     "avoid_materials": [
+      "gravel"
+     ],
+     "avoid_margin_m": 0.3,
+     "sightlines_m": 0.8,
+     "_p3": true
+    },
+    {
+     "kind": "twigs",
+     "name": "twigs",
+     "on": {
+      "materials": [
+       "meadow"
+      ]
+     },
+     "density": 12,
+     "max_dist_m": 22,
+     "limit": 1000,
+     "color": [
+      0.26,
+      0.18,
+      0.11
+     ],
+     "roughness": 0.9,
+     "surface": {
+      "family": "scan",
+      "scan": "pine_bark",
+      "res": "1k",
+      "tile_m": 0.3,
+      "chroma": 0.3,
+      "bump": 0.4
+     },
+     "_p3": true
+    },
+    {
+     "kind": "model",
+     "name": "plants",
+     "on": {
+      "materials": [
+       "meadow"
+      ]
+     },
+     "density": 20,
+     "max_dist_m": 60,
+     "limit": 140,
+     "avoid_materials": [
+      "gravel"
+     ],
+     "avoid_margin_m": 0.6,
+     "sightlines_m": 1.4,
+     "near_camera_m": 7.0,
+     "thin_far": 0.4,
+     "models": [
+      {
+       "name": "fern_02",
+       "weight": 5,
+       "size": [
+        0.8,
+        1.3
+       ],
+       "sink": 0.02,
+       "albedo_gain": 2.2
+      },
+      {
+       "name": "pine_sapling_small",
+       "weight": 3,
+       "size": [
+        0.8,
+        1.4
+       ],
+       "sink": 0.02,
+       "albedo_gain": 3.2
+      },
+      {
+       "name": "rock_moss_set_01",
+       "weight": 1.5,
+       "size": [
+        0.5,
+        1.1
+       ],
+       "sink": 0.3,
+       "albedo_gain": 2.0
+      },
+      {
+       "name": "tree_stump_01",
+       "weight": 0.8,
+       "size": [
+        0.5,
+        0.8
+       ],
+       "sink": 0.05,
+       "albedo_gain": 1.8
+      }
+     ],
+     "max_tris": 14000,
+     "sunlit_only": true,
+     "sun_probe_m": 1.2,
+     "_p3": true
+    }
+   ],
+   "p3": {
+    "version": 1,
+    "materials": [
+     "birch-leaf",
+     "meadow"
+    ],
+    "kits": [],
+    "scatter": [
+     "grass",
+     "twigs",
+     "plants"
+    ]
    }
   },
   "ridge-path": {
@@ -1729,6 +2384,62 @@
     "haze": false,
     "extent_m": 400.2,
     "fx_listed": []
+   },
+   "p3_materials": {
+    "pine": {
+     "family": "foliage",
+     "tile_m": 1.2,
+     "macro": 0.45,
+     "fine": 0.35,
+     "bump": 0.6,
+     "bump_m": 0.03,
+     "obj_jitter_m": 40.0,
+     "gain": 1.12,
+     "underside": 0.08,
+     "trunks": {
+      "spacing_m": 1.6,
+      "dark": 0.4,
+      "width": 0.35
+     },
+     "p3_preset": "conifer"
+    }
+   },
+   "kits": [
+    {
+     "kit": "conifer_wrap",
+     "name": "crowns",
+     "name_contains": "-crown",
+     "height_gain": 1.06,
+     "radius_gain": 1.35,
+     "lift": 0.02,
+     "no_shadow_near_props_m": 6.0,
+     "clear_centre": false,
+     "cast_shadow": false,
+     "surface": {
+      "family": "foliage",
+      "tile_m": 1.2,
+      "macro": 0.45,
+      "fine": 0.35,
+      "bump": 0.6,
+      "bump_m": 0.03,
+      "obj_jitter_m": 40.0,
+      "gain": 1.12,
+      "underside": 0.08
+     },
+     "camera_only_light": true,
+     "style": "branches",
+     "_p3": true
+    }
+   ],
+   "p3": {
+    "version": 1,
+    "materials": [
+     "pine"
+    ],
+    "kits": [
+     "conifer_wrap"
+    ],
+    "scatter": []
    }
   },
   "ritual-room": {
