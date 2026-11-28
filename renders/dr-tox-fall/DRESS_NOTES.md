@@ -89,6 +89,30 @@ G7 is listed but not meaningful for an incremental phase: it averages every dres
 - snakehead-fortress s3_fortress_workshop/camera: G7 1.0 (limit 2.0)
 - snakehead-fortress s3_fortress_workshop/player: G7 1.0 (limit 2.0)
 
+## P5 gates (per-game specials, rock relief, tree crowns; before = the P1 to P4 render)
+
+22 stills in 2 places. Gate checks: 402 passed, 9 failed, 46 not applicable (detail gain counted as n/a).
+
+- salvage-settlement s3_settlement_day/overview: G3b 10.13 (limit 6.0)
+- snakehead-fortress s3_fortress_clinic/camera: G6b 0.4513 (limit 0.4675)
+- snakehead-fortress s3_fortress_clinic/camera: G10b piece:cavern-floor (limit piece:floor)
+- snakehead-fortress s3_fortress_clinic/camera: G11 0.0883 (limit 0.08262)
+- snakehead-fortress s3_fortress_following/camera: G8 0.897 (limit 0.2)
+- snakehead-fortress s3_fortress_following/player: G8 0.816 (limit 0.2)
+- snakehead-fortress s3_fortress_rite/camera: G3b 7.73 (limit 6.0)
+- snakehead-fortress s3_fortress_rite/player: G3b 7.87 (limit 6.0)
+- snakehead-fortress s3_fortress_rite/player: G8 0.826 (limit 0.2)
+
+## P6 gates (skirting and conduit kits; before = the P1 to P5 render)
+
+31 stills in 3 places. Gate checks: 576 passed, 5 failed, 64 not applicable (detail gain counted as n/a).
+
+- relief-hall s3_relief_dawn/player: G8 0.44 (limit 0.2)
+- relief-hall s3_relief_queue/overview: G8 0.451 (limit 0.2)
+- relief-hall s3_relief_queue/player: G8 1.003 (limit 0.2)
+- spire-gala s3_gala_annex/camera: G8 0.458 (limit 0.2)
+- spire-gala s3_gala_annex/player: G8 0.684 (limit 0.2)
+
 ## Still weak
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.

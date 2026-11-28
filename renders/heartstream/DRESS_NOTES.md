@@ -34,6 +34,18 @@ Every failing check (place, scene/still, gate, value, limit):
 - shedding-gallery s3_gallery/player: G8 0.555 (limit 0.2)
 - stencil-gallery s3_stencil_gallery/player: G4b 37.78 (limit 39.63)
 
+## P5 gates (per-game specials, rock relief, tree crowns; before = the P1 to P4 render)
+
+14 stills in 4 places. Gate checks: 251 passed, 7 failed, 36 not applicable (detail gain counted as n/a).
+
+- elders-cavern s3_recognition/overview: G8 0.23 (limit 0.2)
+- pulse-wall-chamber s3_marrow_pulse/overview: G6b 0.1581 (limit 0.1417)
+- shaft-foot s3_shaft/camera: G4b 19.85 (limit 21.56)
+- shaft-foot s3_shaft/overview: G4b 17.65 (limit 18.41)
+- shaft-foot s3_shaft/player: G4b 12.69 (limit 13.09)
+- stencil-gallery s3_stencil_gallery/camera: G8 0.325 (limit 0.2)
+- stencil-gallery s3_stencil_gallery/overview: G8 0.456 (limit 0.2)
+
 ## Still weak
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.

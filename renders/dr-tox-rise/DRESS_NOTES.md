@@ -90,6 +90,18 @@ G7 (detail gain) is counted as not applicable: it averages every dressed region,
 - idaho-river-town s3_river_town/camera: G8 0.581 (limit 0.2)
 - idaho-river-town s3_river_town/player: G8 0.31 (limit 0.2)
 
+## P5 gates (per-game specials, rock relief, tree crowns; before = the P1 to P4 render)
+
+5 stills in 1 places. Gate checks: 93 passed, 0 failed, 12 not applicable (detail gain counted as n/a).
+
+
+## P6 gates (skirting and conduit kits; before = the P1 to P5 render)
+
+26 stills in 4 places. Gate checks: 485 passed, 2 failed, 55 not applicable (detail gain counted as n/a).
+
+- snakehead-archive s3_archive_claimed/player: G4a 29.208 (limit 26.049)
+- snakehead-archive s3_archive_empty/camera: G4a 12.556 (limit 12.225)
+
 ## Still weak
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.

@@ -85,6 +85,47 @@ G7 is listed but not meaningful for an incremental phase: it averages every dres
 - snakehead-overrun s3_overrun_hall/overview: G8 0.517 (limit 0.2)
 - snakehead-overrun s3_overrun_hall/player: G7 1.32 (limit 1.929)
 
+## P5 gates (per-game specials, rock relief, tree crowns; before = the P1 to P4 render)
+
+9 stills in 1 places. Gate checks: 138 passed, 29 failed, 19 not applicable (detail gain counted as n/a).
+
+- snakehead-overrun s3_overrun_after/camera: G2 0.1243 (limit 0.12)
+- snakehead-overrun s3_overrun_after/camera: G3b 8.92 (limit 6.0)
+- snakehead-overrun s3_overrun_after/camera: G4a 19.092 (limit 1.868)
+- snakehead-overrun s3_overrun_after/player: G2 0.1272 (limit 0.12)
+- snakehead-overrun s3_overrun_after/player: G3b 7.69 (limit 6.0)
+- snakehead-overrun s3_overrun_after/player: G4a 22.258 (limit 6.141)
+- snakehead-overrun s3_overrun_after/player: G6b 0.4056 (limit 0.422)
+- snakehead-overrun s3_overrun_after/player: G8 0.728 (limit 0.2)
+- snakehead-overrun s3_overrun_hall/camera: G2 0.2955 (limit 0.12)
+- snakehead-overrun s3_overrun_hall/camera: G3a 5.292 (limit 4.0)
+- snakehead-overrun s3_overrun_hall/camera: G3b 18.77 (limit 6.0)
+- snakehead-overrun s3_overrun_hall/camera: G8 0.986 (limit 0.2)
+- snakehead-overrun s3_overrun_hall/overview: G2 0.3088 (limit 0.12)
+- snakehead-overrun s3_overrun_hall/overview: G3b 28.53 (limit 6.0)
+- snakehead-overrun s3_overrun_hall/player: G2 0.5949 (limit 0.12)
+- snakehead-overrun s3_overrun_hall/player: G3a 5.049 (limit 4.0)
+- snakehead-overrun s3_overrun_hall/player: G3b 18.85 (limit 6.0)
+- snakehead-overrun s3_overrun_hall/player: G8 1.008 (limit 0.2)
+- snakehead-overrun s3_overrun_hall/player: G11 0.1456 (limit 0.08262)
+- snakehead-overrun s3_snakehead_bench/camera: G4a 10.922 (limit 9.305)
+- snakehead-overrun s3_snakehead_bench/player: G2 0.2095 (limit 0.12)
+- snakehead-overrun s3_snakehead_bench/player: G4a 5.244 (limit 2.489)
+- snakehead-overrun s3_snakehead_resin/camera: G2 0.1381 (limit 0.12)
+- snakehead-overrun s3_snakehead_resin/camera: G4a 2.763 (limit 1.744)
+- snakehead-overrun s3_snakehead_resin/camera: G4b 1.0 (limit 1.72)
+- snakehead-overrun s3_snakehead_resin/camera: G6b 0.4244 (limit 0.4349)
+- snakehead-overrun s3_snakehead_resin/player: G2 0.202 (limit 0.12)
+- snakehead-overrun s3_snakehead_resin/player: G4a 53.509 (limit 43.419)
+- snakehead-overrun s3_snakehead_resin/player: G6b 0.081 (limit 0.0867)
+
+## P6 gates (skirting and conduit kits; before = the P1 to P5 render)
+
+32 stills in 4 places. Gate checks: 577 passed, 2 failed, 79 not applicable (detail gain counted as n/a).
+
+- clinical-suite s3_suite_printer/camera: G8 0.697 (limit 0.2)
+- clinical-suite s3_suite_printer/player: G8 0.669 (limit 0.2)
+
 ## Still weak
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.

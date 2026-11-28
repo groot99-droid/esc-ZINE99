@@ -121,6 +121,22 @@ G7 is listed but not meaningful for an incremental phase: it averages every dres
 - gravel-clearing gravel_morning/overview: G7 1.0 (limit 2.0)
 - gravel-clearing gravel_morning/player: G7 1.0 (limit 2.0)
 
+## P5 gates (per-game specials, rock relief, tree crowns; before = the P1 to P4 render)
+
+26 stills in 6 places. Gate checks: 486 passed, 1 failed, 59 not applicable (detail gain counted as n/a).
+
+- fire-ring campfire_night1/overview: G6b 0.7633 (limit 0.687)
+
+## P6 gates (skirting and conduit kits; before = the P1 to P5 render)
+
+9 stills in 3 places. Gate checks: 164 passed, 5 failed, 20 not applicable (detail gain counted as n/a).
+
+- school-hall recital/overview: G6b 0.6083 (limit 0.5475)
+- school-hall recital/overview: G14 0.1649535161152107 (limit 0.06)
+- stairwell mothers_door/camera: G4b 18.97 (limit 30.12)
+- tam-flat home_apartment/overview: G8 0.943 (limit 0.2)
+- tam-flat home_apartment/player: G8 0.801 (limit 0.2)
+
 ## Still weak
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.

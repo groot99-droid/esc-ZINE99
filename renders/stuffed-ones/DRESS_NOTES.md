@@ -94,6 +94,25 @@ G7 (detail gain) is counted as not applicable: it averages every dressed region,
 - porch-clearing a3_dog/player: G4b 11.55 (limit 12.76)
 - porch-clearing e_keeper_porch/camera: G2 0.4049 (limit 0.12)
 
+## P5 gates (per-game specials, rock relief, tree crowns; before = the P1 to P4 render)
+
+14 stills in 4 places. Gate checks: 254 passed, 0 failed, 38 not applicable (detail gain counted as n/a).
+
+
+## P6 gates (skirting and conduit kits; before = the P1 to P5 render)
+
+23 stills in 3 places. Gate checks: 413 passed, 9 failed, 60 not applicable (detail gain counted as n/a).
+
+- upstairs-hall a2_gerald/camera: G11 0.149 (limit 0.08262)
+- upstairs-hall a2_night_hall/camera: G11 0.1107 (limit 0.08262)
+- upstairs-hall a2_night_hall/overview: G11 0.1142 (limit 0.08262)
+- upstairs-hall a2_night_hall/player: G11 0.8329 (limit 0.08262)
+- upstairs-hall a4_night_sounds/camera: G11 0.1573 (limit 0.08262)
+- upstairs-hall a4_night_sounds/player: G11 0.8841 (limit 0.08262)
+- upstairs-hall a4_sixty_knots/camera: G11 0.2102 (limit 0.08262)
+- upstairs-hall b8_the_door/player: G11 0.3373 (limit 0.08262)
+- upstairs-hall c11_cupboard_shut/player: G11 0.2572 (limit 0.08262)
+
 ## Still weak
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.

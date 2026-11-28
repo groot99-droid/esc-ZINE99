@@ -125,6 +125,36 @@ G7 is listed but not meaningful for an incremental phase: it averages every dres
 - procession-road s3_scribe_wagon/camera: G7 1.0 (limit 1.5)
 - procession-road s3_scribe_wagon/player: G7 1.0 (limit 1.5)
 
+## P5 gates (per-game specials, rock relief, tree crowns; before = the P1 to P4 render)
+
+60 stills in 6 places. Gate checks: 1085 passed, 10 failed, 155 not applicable (detail gain counted as n/a).
+
+- abyss-edge s3_abyss_dream/camera: G8 0.459 (limit 0.2)
+- abyss-edge s3_abyss_dream/overview: G3b 9.52 (limit 6.0)
+- abyss-edge s3_abyss_dream/player: G8 0.551 (limit 0.2)
+- abyss-edge s3_abyss_return/camera: G8 0.377 (limit 0.2)
+- abyss-edge s3_abyss_return/player: G8 0.543 (limit 0.2)
+- deep-desert s3_herd_sighting/camera: G4b 39.76 (limit 54.05)
+- deep-desert s3_herd_sighting/player: G4b 42.83 (limit 54.77)
+- father-camp s3_father_walk/player: G4b 25.75 (limit 26.17)
+- silver-dunes s3_dunes_day/player: G2 0.1536 (limit 0.12)
+- silver-dunes s3_evening_camp/player: G9 {'piece:dune-west': 0.181} (limit [0.7, 2.0])
+
+## P6 gates (skirting and conduit kits; before = the P1 to P5 render)
+
+36 stills in 4 places. Gate checks: 692 passed, 10 failed, 54 not applicable (detail gain counted as n/a).
+
+- clerk-office s3_hollin_choice/camera: G8 1.039 (limit 0.2)
+- clerk-office s3_hollin_choice/player: G8 1.146 (limit 0.2)
+- elaris-room s3_room_morning/camera: G4b 23.53 (limit 23.6)
+- elaris-room s3_room_morning/camera: G8 0.523 (limit 0.2)
+- elaris-room s3_room_morning/overview: G8 0.393 (limit 0.2)
+- elaris-room s3_room_morning/overview: G11 0.1063 (limit 0.08262)
+- pantry s3_ledger_turned/camera: G4b 4.27 (limit 4.98)
+- pantry s3_pantry_c1/camera: G4b 15.04 (limit 15.54)
+- pantry s3_pantry_c3/camera: G4b 15.04 (limit 15.39)
+- temple-halls e_stayed/camera: G8 0.468 (limit 0.2)
+
 ## Still weak
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.

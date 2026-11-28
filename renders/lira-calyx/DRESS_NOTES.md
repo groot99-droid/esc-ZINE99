@@ -155,6 +155,45 @@ G7 is listed but not meaningful for an incremental phase: it averages every dres
 - subterranean-city ep-vault/camera: G7 1.0 (limit 2.0)
 - subterranean-city ep-vault/player: G7 1.0 (limit 2.0)
 
+## P5 gates (per-game specials, rock relief, tree crowns; before = the P1 to P4 render)
+
+32 stills in 8 places. Gate checks: 561 passed, 26 failed, 83 not applicable (detail gain counted as n/a).
+
+- harvest-terrace b3-midlander/camera: G3b 11.93 (limit 6.0)
+- harvest-terrace b3-midlander/overview: G3b 14.28 (limit 6.0)
+- harvest-terrace b3-midlander/overview: G8 0.802 (limit 0.2)
+- harvest-terrace b3-midlander/player: G3b 12.42 (limit 6.0)
+- peak-core b4-core/camera: G8 0.812 (limit 0.2)
+- peak-core b4-core/overview: G8 0.911 (limit 0.2)
+- peak-core b4-core/player: G8 0.928 (limit 0.2)
+- shear-tunnel co-tunnel/overview: G3b 6.1 (limit 6.0)
+- shear-tunnel co-tunnel/overview: G6b 0.8013 (limit 0.6905)
+- shear-tunnel ep-tunnel/player: G6b 0.2054 (limit 0.2095)
+- spore-weaver-valley b1-valley/overview: G6b 0.7613 (limit 0.6851)
+- storm-outpost b1-outpost/camera: G3b 7.57 (limit 6.0)
+- storm-outpost b1-outpost/camera: G4a 1.309 (limit 1.133)
+- storm-outpost b1-outpost/camera: G8 0.597 (limit 0.2)
+- storm-outpost b1-outpost/overview: G3b 8.9 (limit 6.0)
+- storm-outpost b1-outpost/overview: G4a 0.923 (limit 0.889)
+- storm-outpost b1-outpost/overview: G8 0.458 (limit 0.2)
+- storm-outpost b1-outpost/player: G3b 7.77 (limit 6.0)
+- storm-outpost b1-outpost/player: G8 0.596 (limit 0.2)
+- storm-singing-ledge b3-peakborn/camera: G8 0.223 (limit 0.2)
+- storm-singing-ledge b3-peakborn/overview: G6b 0.6302 (limit 0.5241)
+- subterranean-city b3-city/camera: G3b 11.03 (limit 6.0)
+- subterranean-city b3-city/overview: G3a 4.102 (limit 4.0)
+- subterranean-city b3-city/overview: G3b 16.56 (limit 6.0)
+- subterranean-city b3-city/player: G3b 10.4 (limit 6.0)
+- subterranean-city b3-city/player: G4a 6.141 (limit 5.264)
+
+## P6 gates (skirting and conduit kits; before = the P1 to P5 render)
+
+20 stills in 4 places. Gate checks: 374 passed, 3 failed, 41 not applicable (detail gain counted as n/a).
+
+- corporate-lab b2-lab/camera: G8 0.659 (limit 0.2)
+- corporate-lab b2-lab/player: G8 0.622 (limit 0.2)
+- small-room end-written/camera: G4a 23.648 (limit 23.37)
+
 ## Still weak
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.

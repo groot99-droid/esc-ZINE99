@@ -184,6 +184,31 @@ G7 is listed but not meaningful for an incremental phase: it averages every dres
 - the-unwritten s-unwritten/overview: G7 1.16 (limit 2.0)
 - the-unwritten s-unwritten/player: G7 1.1 (limit 2.0)
 
+## P5 gates (per-game specials, rock relief, tree crowns; before = the P1 to P4 render)
+
+40 stills in 6 places. Gate checks: 753 passed, 12 failed, 75 not applicable (detail gain counted as n/a).
+
+- boat-cabin s-cabin-dawn/overview: G8 0.903 (limit 0.2)
+- boat-cabin s-cabin-dawn/player: G4a 11.398 (limit 10.444)
+- boat-cabin s-cabin-dawn/player: G8 0.859 (limit 0.2)
+- boat-cabin s-cabin-tally/player: G4a 35.806 (limit 34.376)
+- boat-cabin s-chart-table/camera: G4a 16.623 (limit 16.315)
+- boat-cabin s-chart-table/player: G4a 11.93 (limit 11.01)
+- boat-cabin s-the-inventory/camera: G8 0.867 (limit 0.2)
+- boat-cabin s-the-inventory/player: G4a 3.944 (limit 3.112)
+- boat-cabin s-the-inventory/player: G8 0.864 (limit 0.2)
+- chandlery s-chandlery/overview: G8 0.882 (limit 0.2)
+- chandlery s-chandlery/player: G9 {'piece:wall-east': 0.58} (limit [0.7, 2.0])
+- home-reach-beach s-tideline-final/player: G8 0.472 (limit 0.2)
+
+## P6 gates (skirting and conduit kits; before = the P1 to P5 render)
+
+7 stills in 1 places. Gate checks: 131 passed, 3 failed, 12 not applicable (detail gain counted as n/a).
+
+- kings-halls s-kings-halls/overview: G8 0.427 (limit 0.2)
+- kings-halls s-second-collision/camera: G8 0.599 (limit 0.2)
+- kings-halls s-second-collision/player: G8 0.582 (limit 0.2)
+
 ## Still weak
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.

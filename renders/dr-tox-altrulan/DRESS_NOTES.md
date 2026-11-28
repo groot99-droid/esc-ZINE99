@@ -99,6 +99,30 @@ G7 is listed but not meaningful for an incremental phase: it averages every dres
 - snakehead-holy-site s3_cave_tank/player: G7 1.51 (limit 2.0)
 - snakehead-holy-site s3_end_two_readings/camera: G7 1.89 (limit 2.0)
 
+## P5 gates (per-game specials, rock relief, tree crowns; before = the P1 to P4 render)
+
+31 stills in 3 places. Gate checks: 571 passed, 12 failed, 68 not applicable (detail gain counted as n/a).
+
+- snakehead-holy-site s3_cave_corridor/camera: G8 0.41 (limit 0.2)
+- snakehead-holy-site s3_cave_corridor/player: G8 0.401 (limit 0.2)
+- snakehead-holy-site s3_cave_store/camera: G4a 6.962 (limit 6.277)
+- snakehead-holy-site s3_cave_store/camera: G6b 0.3561 (limit 0.3782)
+- snakehead-holy-site s3_cave_store/player: G2 0.1268 (limit 0.12)
+- snakehead-holy-site s3_cave_store/player: G6b 0.4023 (limit 0.4308)
+- snakehead-holy-site s3_cave_tank/camera: G8 0.868 (limit 0.2)
+- snakehead-holy-site s3_cave_tank/overview: G8 0.466 (limit 0.2)
+- snakehead-holy-site s3_cave_tank/player: G8 0.7 (limit 0.2)
+- snakehead-holy-site s3_end_last_toad/camera: G6b 0.288 (limit 0.3038)
+- snakehead-holy-site s3_end_two_readings/camera: G3b 7.2 (limit 6.0)
+- snakehead-holy-site s3_end_two_readings/camera: G8 0.538 (limit 0.2)
+
+## P6 gates (skirting and conduit kits; before = the P1 to P5 render)
+
+9 stills in 1 places. Gate checks: 169 passed, 2 failed, 18 not applicable (detail gain counted as n/a).
+
+- snakehead-holy-site s3_cave_corridor/camera: G8 0.412 (limit 0.2)
+- snakehead-holy-site s3_cave_corridor/player: G8 0.404 (limit 0.2)
+
 ## Still weak
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.

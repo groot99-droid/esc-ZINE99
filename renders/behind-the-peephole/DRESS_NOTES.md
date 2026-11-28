@@ -94,6 +94,18 @@ Every failing check (place, scene/still, gate, value, limit):
 
 G7 (detail gain) is counted as not applicable in P2: the surfaces are the P1 ones in both renders. G9 misses are P1's own.
 
+## P6 gates (skirting and conduit kits; before = the P1 to P5 render)
+
+56 stills in 6 places. Gate checks: 1015 passed, 7 failed, 151 not applicable (detail gain counted as n/a).
+
+- back-office n6_back_office/overview: G6b 0.8978 (limit 0.808)
+- back-stair n3_stairwell/overview: G6b 0.3523 (limit 0.3173)
+- lobby dawn_lobby/overview: G6b 0.4353 (limit 0.3918)
+- lobby end_sitter/player: G4b 36.69 (limit 42.8)
+- office n1_office/overview: G6b 0.5251 (limit 0.4726)
+- staff-alley n1_arrival/overview: G6b 0.2277 (limit 0.2049)
+- valet-passage n1_passage/overview: G6b 0.3729 (limit 0.3356)
+
 ## Still weak
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.

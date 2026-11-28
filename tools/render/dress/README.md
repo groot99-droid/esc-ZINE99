@@ -334,3 +334,14 @@ four locked cave scans already on disk replace the P1 scans for plank floors and
 * Rulings: the flame card sits on top of the fire pit and is narrower; light falling snow inside the Man Eater cold-store bay and
   the LIRA outpost (`p2.SNOW_INSIDE`), 0.8 m clear of every prop (`prop_margin_m`).
 * Detail gain (G7) is not a measure of these incremental phases: it averages every dressed region against the previous render.
+
+## P5 and P6 (2026-11-28)
+
+* Rulings: near-rock relief (`p5.py` adds true displacement, outward and edge-faded, to the P4 rock entries of interiors and places
+  under 150 m; scree stays texture); round crowns (`p2fx.crowns_round`: limbs with swollen leaf clumps over sphere crowns in a foliage
+  material; `conifer_wrap` also takes the cone crowns `p3.py` lists).
+* `p5.py` per-game specials (used when the render sets `DRESS_P5=1`; they win over P4): HEART membrane walls and glowing blood water,
+  BARK bark at the story scale (provisional, D14), SEA tarred wood, LIRA crystal, WRY bone and silver, TEMP dune sand, book spines
+  and vellum.
+* `p6.py` first cut of the prop kits: skirting boards in plaster, paint and concrete rooms and a cable conduit in the institutional
+  games (built only when the render sets `DRESS_P6=1`). No built ComfyUI model is a kit of this list; models stay in the props layer.

@@ -165,6 +165,41 @@ G7 is listed but not meaningful for an incremental phase: it averages every dres
 - truck-cab n3_glovebox/camera: G7 1.0 (limit 1.882)
 - truck-cab n3_glovebox/overview: G7 1.07 (limit 1.963)
 
+## P5 gates (per-game specials, rock relief, tree crowns; before = the P1 to P4 render)
+
+16 stills in 2 places. Gate checks: 270 passed, 11 failed, 44 not applicable (detail gain counted as n/a).
+
+- perimeter e_tree_line/camera: G4b 4.29 (limit 6.93)
+- perimeter e_tree_line/player: G4b 4.29 (limit 6.93)
+- perimeter n7_set_down/camera: G2 0.1899 (limit 0.12)
+- perimeter n7_set_down/camera: G3a 4.801 (limit 4.0)
+- perimeter n7_set_down/camera: G4a 14.239 (limit 7.642)
+- perimeter n7_set_down/camera: G4b 1.5 (limit 3.93)
+- perimeter n7_set_down/camera: G10c 0.0 (limit 0.3)
+- perimeter n7_set_down/player: G2 0.1362 (limit 0.12)
+- perimeter n7_set_down/player: G4a 10.75 (limit 8.331)
+- perimeter n7_set_down/player: G4b 2.57 (limit 3.14)
+- perimeter n7_set_down/player: G10c 0.0 (limit 0.3)
+
+## P6 gates (skirting and conduit kits; before = the P1 to P5 render)
+
+66 stills in 10 places. Gate checks: 1201 passed, 14 failed, 139 not applicable (detail gain counted as n/a).
+
+- boiler-room d4_duty_boiler/overview: G6b 0.7065 (limit 0.6364)
+- bunk-room c1_bunk/overview: G8 0.736 (limit 0.2)
+- cold-store d1_duty_coldstore/overview: G4b 39.07 (limit 39.36)
+- laundry d5_duty_laundry/overview: G8 0.476 (limit 0.2)
+- mail-room d3_mail_room/overview: G6b 0.7031 (limit 0.6316)
+- mail-room d3_mail_room/overview: G8 0.526 (limit 0.2)
+- sams-office d5_sam_office/camera: G4b 27.34 (limit 29.86)
+- sams-office d5_sam_office/camera: G8 0.453 (limit 0.2)
+- sams-office n4_office/player: G4b 3.14 (limit 5.06)
+- tall-halls c1_halls/camera: G11 0.1473 (limit 0.08262)
+- tall-halls c1_halls/overview: G11 0.3324 (limit 0.08262)
+- tall-halls c1_halls/player: G11 0.1721 (limit 0.08262)
+- tall-halls d7_duty_walk/camera: G11 0.2108 (limit 0.08262)
+- tall-halls d7_duty_walk/player: G11 0.2545 (limit 0.08262)
+
 ## Still weak
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.
