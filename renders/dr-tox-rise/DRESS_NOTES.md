@@ -107,6 +107,11 @@ G7 (detail gain) is counted as not applicable: it averages every dressed region,
 26 stills in 4 places. Gate checks: 487 passed, 0 failed, 55 not applicable (detail gain counted as n/a).
 
 
+## P6c gates (window frames, sills, mullions, door casings and leaves; before = the P1 to P6b render)
+
+10 stills in 2 places. Gate checks: 188 passed, 0 failed, 21 not applicable (detail gain counted as n/a).
+
+
 ## Still weak
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.

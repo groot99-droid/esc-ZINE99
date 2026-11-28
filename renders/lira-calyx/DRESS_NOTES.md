@@ -202,6 +202,13 @@ G7 is listed but not meaningful for an incremental phase: it averages every dres
 - cinder-reach-archive b2-archive/overview: G4b 11.48 (limit 21.67)
 - small-room b3-hiding/player: G8 0.669 (limit 0.2)
 
+## P6c gates (window frames, sills, mullions, door casings and leaves; before = the P1 to P6b render)
+
+10 stills in 2 places. Gate checks: 192 passed, 2 failed, 16 not applicable (detail gain counted as n/a).
+
+- small-room b3-hiding/overview: G8 0.744 (limit 0.2)
+- small-room end-written/player: G8 0.554 (limit 0.2)
+
 ## Still weak
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.

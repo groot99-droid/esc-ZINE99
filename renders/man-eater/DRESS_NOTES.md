@@ -214,6 +214,24 @@ G7 is listed but not meaningful for an incremental phase: it averages every dres
 - boiler-room d4_duty_boiler/overview: G6b 0.7065 (limit 0.6359)
 - mail-room d3_mail_room/overview: G6b 0.7031 (limit 0.6328)
 
+## P6c gates (window frames, sills, mullions, door casings and leaves; before = the P1 to P6b render)
+
+55 stills in 7 places. Gate checks: 994 passed, 13 failed, 120 not applicable (detail gain counted as n/a).
+
+- bunk-room c1_bunk/overview: G8 0.735 (limit 0.2)
+- cafeteria d1_cafeteria/overview: G8 0.49 (limit 0.2)
+- cafeteria d1_cafeteria/player: G8 0.643 (limit 0.2)
+- laundry d5_duty_laundry/player: G3b 6.02 (limit 6.0)
+- laundry d5_duty_laundry/player: G4b 40.93 (limit 42.21)
+- laundry d5_duty_laundry/player: G8 0.802 (limit 0.2)
+- mail-room d3_mail_room/overview: G6b 0.7034 (limit 0.6328)
+- mail-room d3_mail_room/overview: G8 0.857 (limit 0.2)
+- rec-room d1_rec_room/overview: G8 0.915 (limit 0.2)
+- tall-halls c1_halls/overview: G6b 0.6675 (limit 0.5977)
+- tall-halls n7_windigo/camera: G8 0.847 (limit 0.2)
+- tall-halls n7_windigo/player: G8 0.691 (limit 0.2)
+- the-pens n6_pens/overview: G4b 4.0 (limit 5.79)
+
 ## Still weak
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.

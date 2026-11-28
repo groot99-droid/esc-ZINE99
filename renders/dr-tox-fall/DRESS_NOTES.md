@@ -118,6 +118,11 @@ G7 is listed but not meaningful for an incremental phase: it averages every dres
 31 stills in 3 places. Gate checks: 581 passed, 0 failed, 64 not applicable (detail gain counted as n/a).
 
 
+## P6c gates (window frames, sills, mullions, door casings and leaves; before = the P1 to P6b render)
+
+13 stills in 1 places. Gate checks: 244 passed, 0 failed, 28 not applicable (detail gain counted as n/a).
+
+
 ## Still weak
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.

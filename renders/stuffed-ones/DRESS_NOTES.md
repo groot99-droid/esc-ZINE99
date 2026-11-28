@@ -118,6 +118,27 @@ G7 (detail gain) is counted as not applicable: it averages every dressed region,
 23 stills in 3 places. Gate checks: 422 passed, 0 failed, 60 not applicable (detail gain counted as n/a).
 
 
+## P6c gates (window frames, sills, mullions, door casings and leaves; before = the P1 to P6b render)
+
+13 stills in 1 places. Gate checks: 221 passed, 16 failed, 35 not applicable (detail gain counted as n/a).
+
+- upstairs-hall a2_gerald/camera: G3b 9.42 (limit 6.0)
+- upstairs-hall a2_gerald/camera: G4a 6.361 (limit 0.951)
+- upstairs-hall a2_gerald/camera: G11 0.2276 (limit 0.08262)
+- upstairs-hall a2_night_hall/camera: G3b 8.61 (limit 6.0)
+- upstairs-hall a2_night_hall/overview: G3b 10.21 (limit 6.0)
+- upstairs-hall a2_night_hall/player: G3b 8.7 (limit 6.0)
+- upstairs-hall a2_night_hall/player: G11 0.1484 (limit 0.08262)
+- upstairs-hall a4_night_sounds/camera: G3b 9.6 (limit 6.0)
+- upstairs-hall a4_night_sounds/camera: G4a 1.561 (limit 1.5)
+- upstairs-hall a4_night_sounds/camera: G11 0.0964 (limit 0.08262)
+- upstairs-hall a4_night_sounds/player: G3b 9.63 (limit 6.0)
+- upstairs-hall a4_night_sounds/player: G4a 1.569 (limit 1.496)
+- upstairs-hall a4_night_sounds/player: G11 0.1466 (limit 0.08262)
+- upstairs-hall a4_sixty_knots/player: G4b 17.83 (limit 21.9)
+- upstairs-hall a4_sixty_knots/player: G6b 0.1645 (limit 0.1708)
+- upstairs-hall b8_the_door/camera: G4b 11.27 (limit 15.62)
+
 ## Still weak
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.

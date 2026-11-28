@@ -143,6 +143,14 @@ G7 is listed but not meaningful for an incremental phase: it averages every dres
 
 - school-hall recital/overview: G6b 0.6086 (limit 0.5475)
 
+## P6c gates (window frames, sills, mullions, door casings and leaves; before = the P1 to P6b render)
+
+9 stills in 3 places. Gate checks: 166 passed, 3 failed, 20 not applicable (detail gain counted as n/a).
+
+- school-hall recital/overview: G6b 0.6086 (limit 0.5477)
+- school-hall recital/overview: G14 0.26111666581062365 (limit 0.06)
+- stairwell mothers_door/player: G4b 22.83 (limit 37.12)
+
 ## Still weak
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.
