@@ -7,8 +7,8 @@ Writes `p5_materials` (used when the render sets DRESS_P5=1; they win over P4) f
   marrow piers) on rock pieces in interiors and in places under 150 m across; far rock keeps the flat texture;
 * HEART: tissue, membrane, muscle and crimson walls -> the R3 membrane family (abstract wet membrane, nothing wound-like, D9),
   emission kept; the glowing blood water -> the water family with its glow kept;
-* BARK: bark at the story's own scale (D14 read literally: the world is built at 12 cm and scaled by 1000, so a 0.6 m bark tile
-  in scene units is real bark, ridges as big as buildings for the people living on it);
+* BARK: ruling D14 (2026-11-28): a fine bark tile (0.06 m in scene units, ridges no bigger than a person); the story scale is
+  carried by layout and colour, not by the texture size;
 * SEA: tarred wood and hulls -> dark weathered planks with a tar sheen;
 * LIRA: crystal and amber pieces without emission -> a glassy, faceted look (coat, low roughness); glowing ones keep their glow;
 * WRY: bone -> pale noise with hairline cracks; silver and fused metals -> tarnished metal;
@@ -36,9 +36,9 @@ SPECIAL = {
                     (r"^(bone|bone-dark)$", {"family": "noise", "tile_m": 1.2, "macro": 0.08, "fine": 0.05, "bump": 0.3,
                                              "cracks": {"amount": 0.3, "scale_m": 0.5, "width": 0.006, "share": 0.4}})],
     "people-of-the-bark": [(r"^(bark|bark-grey|bark-umber|bark-damp|home-bark)$", {"family": "scan", "scan": "bark_brown_02", "res": "2k",
-                                                                                   "tile_m": 0.6, "chroma": 0.1, "bump": 0.9, "macro": 0.14,
+                                                                                   "tile_m": 0.06, "chroma": 0.1, "bump": 0.9, "macro": 0.14,
                                                                                    "third": True, "macro2": 0.08}),
-                           (r"^(knot-tan)$", {"family": "scan", "scan": "pine_bark", "res": "1k", "tile_m": 0.5, "chroma": 0.1, "bump": 0.8})],
+                           (r"^(knot-tan)$", {"family": "scan", "scan": "pine_bark", "res": "1k", "tile_m": 0.05, "chroma": 0.1, "bump": 0.8})],
     "lord-of-the-sea": [(r"^(tarred-wood|hull|ink-hull)$", {"family": "scan", "scan": "weathered_planks", "res": "1k", "tile_m": 2.2,
                                                            "chroma": 0.1, "contrast": 1.3, "bump": 0.6, "macro": 0.12, "coat": 0.3,
                                                            "coat_roughness": 0.25, "third": True})],

@@ -274,7 +274,17 @@ def crowns_round(ctx, spec, col):
     return p2fx.crowns_round(ctx, spec, col)
 
 
-KITS = {"crowns_round": crowns_round, "motes": motes, "precip": precip, "flames": flames, "swell": swell, "window_plate": window_plate, "conifer_wrap": conifer_wrap, "treeline": treeline, "attic_cap": attic_cap, "frames": frames, "baseboard": baseboard, "ceiling_joists": ceiling_joists, "ceiling_grid": ceiling_grid, "conduit": conduit}
+def fixtures(ctx, spec, col):
+    from . import p6kits
+    return p6kits.fixtures(ctx, spec, col)
+
+
+def shelves(ctx, spec, col):
+    from . import p6kits
+    return p6kits.shelves(ctx, spec, col)
+
+
+KITS = {"fixtures": fixtures, "shelves": shelves, "crowns_round": crowns_round, "motes": motes, "precip": precip, "flames": flames, "swell": swell, "window_plate": window_plate, "conifer_wrap": conifer_wrap, "treeline": treeline, "attic_cap": attic_cap, "frames": frames, "baseboard": baseboard, "ceiling_joists": ceiling_joists, "ceiling_grid": ceiling_grid, "conduit": conduit}
 
 
 def kits_layer(ctx, specs):

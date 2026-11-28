@@ -12,6 +12,7 @@ stays empty (rules.json denies kits there). Built ComfyUI models already go in t
 in the built ledgers is a cable, conduit or skirting kit, so P6 here is procedural.
 """
 import glob
+import re
 import json
 import os
 import sys
@@ -58,8 +59,16 @@ def build(game, cfg):
                 kits.append({"kit": "conduit", "name": "conduit", "wall": walls[0][2], "radius_m": 0.022, "below_top_m": 0.28,
                              "color": [0.55, 0.56, 0.55], "roughness": 0.45, "metallic": 0.6, "clear_centre": True,
                              "surface": {"family": "metal", "tile_m": 0.5, "bump": 0.1}, "_p6": True})
+        # P6b (ruling 2026-11-28): fixture bodies around every ceiling light, and bookshelf bays in libraries and archives
+        kits.append({"kit": "fixtures", "name": "fixtures", "near_ceiling_m": 0.7, "color": [0.6, 0.6, 0.58] if inst else [0.3, 0.24, 0.18],
+                     "roughness": 0.5, "metallic": 0.5 if inst else 0.0, "clear_centre": False,
+                     "surface": {"family": "metal", "tile_m": 0.4, "bump": 0.1}, "_p6": True})
+        if re.search(r"archive|library|temple-halls|clerk-office|record", loc):
+            walls.sort(reverse=True)
+            kits.append({"kit": "shelves", "name": "shelves", "wall": walls[0][2], "height_m": 2.1, "bay_m": 0.95, "max_bays": 8,
+                         "clear_centre": True, "_p6": True})
         L["kits"] = L.get("kits", []) + kits
-        L["p6"] = {"version": 1, "kits": [k["name"] for k in kits]}
+        L["p6"] = {"version": 2, "kits": [k["name"] for k in kits]}
         rep[loc] = L["p6"]
     return cfg, rep
 

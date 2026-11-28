@@ -285,13 +285,33 @@
       "bump": 0.1
      },
      "_p6": true
+    },
+    {
+     "kit": "fixtures",
+     "name": "fixtures",
+     "near_ceiling_m": 0.7,
+     "color": [
+      0.6,
+      0.6,
+      0.58
+     ],
+     "roughness": 0.5,
+     "metallic": 0.5,
+     "clear_centre": false,
+     "surface": {
+      "family": "metal",
+      "tile_m": 0.4,
+      "bump": 0.1
+     },
+     "_p6": true
     }
    ],
    "p6": {
-    "version": 1,
+    "version": 2,
     "kits": [
      "skirting",
-     "conduit"
+     "conduit",
+     "fixtures"
     ]
    }
   },
@@ -697,6 +717,25 @@
       "bump": 0.1
      },
      "_p6": true
+    },
+    {
+     "kit": "fixtures",
+     "name": "fixtures",
+     "near_ceiling_m": 0.7,
+     "color": [
+      0.6,
+      0.6,
+      0.58
+     ],
+     "roughness": 0.5,
+     "metallic": 0.5,
+     "clear_centre": false,
+     "surface": {
+      "family": "metal",
+      "tile_m": 0.4,
+      "bump": 0.1
+     },
+     "_p6": true
     }
    ],
    "p2": {
@@ -758,10 +797,11 @@
     }
    },
    "p6": {
-    "version": 1,
+    "version": 2,
     "kits": [
      "skirting",
-     "conduit"
+     "conduit",
+     "fixtures"
     ]
    }
   },
@@ -921,13 +961,33 @@
       "bump": 0.1
      },
      "_p6": true
+    },
+    {
+     "kit": "fixtures",
+     "name": "fixtures",
+     "near_ceiling_m": 0.7,
+     "color": [
+      0.6,
+      0.6,
+      0.58
+     ],
+     "roughness": 0.5,
+     "metallic": 0.5,
+     "clear_centre": false,
+     "surface": {
+      "family": "metal",
+      "tile_m": 0.4,
+      "bump": 0.1
+     },
+     "_p6": true
     }
    ],
    "p6": {
-    "version": 1,
+    "version": 2,
     "kits": [
      "skirting",
-     "conduit"
+     "conduit",
+     "fixtures"
     ]
    }
   }

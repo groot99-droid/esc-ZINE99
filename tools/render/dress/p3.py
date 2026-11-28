@@ -103,7 +103,7 @@ def build(game, cfg):
         if rounds:
             kits.append(dict(ROUND, materials=sorted(rounds)))
         if crowns or cones:
-            kits.append({"kit": "conifer_wrap", "name": "crowns", "name_contains": "-crown", "pieces": sorted(cones), "height_gain": 1.06, "radius_gain": 1.35,
+            kits.append({"kit": "conifer_wrap", "name": "crowns", "name_contains": "-crown", "pieces": sorted(cones), "clear_m": 0.6, "height_gain": 1.06, "radius_gain": 1.35,
                          "lift": 0.02, "no_shadow_near_props_m": 6.0, "clear_centre": False, "cast_shadow": False, "surface": FOL,
                          "camera_only_light": True, "style": "branches", "_p3": True})
         if conifer:

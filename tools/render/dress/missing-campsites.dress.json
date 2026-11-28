@@ -981,12 +981,32 @@
       "bump": 0.2
      },
      "_p6": true
+    },
+    {
+     "kit": "fixtures",
+     "name": "fixtures",
+     "near_ceiling_m": 0.7,
+     "color": [
+      0.3,
+      0.24,
+      0.18
+     ],
+     "roughness": 0.5,
+     "metallic": 0.0,
+     "clear_centre": false,
+     "surface": {
+      "family": "metal",
+      "tile_m": 0.4,
+      "bump": 0.1
+     },
+     "_p6": true
     }
    ],
    "p6": {
-    "version": 1,
+    "version": 2,
     "kits": [
-     "skirting"
+     "skirting",
+     "fixtures"
     ]
    }
   },
@@ -1162,6 +1182,7 @@
       "pine-5-crown",
       "pine-6-crown"
      ],
+     "clear_m": 0.6,
      "height_gain": 1.06,
      "radius_gain": 1.35,
      "lift": 0.02,
@@ -1764,6 +1785,7 @@
       "pine-5-crown",
       "pine-6-crown"
      ],
+     "clear_m": 0.6,
      "height_gain": 1.06,
      "radius_gain": 1.35,
      "lift": 0.02,
@@ -2285,6 +2307,7 @@
       "pine-3-crown",
       "pine-4-crown"
      ],
+     "clear_m": 0.6,
      "height_gain": 1.06,
      "radius_gain": 1.35,
      "lift": 0.02,
@@ -3195,12 +3218,32 @@
       "bump": 0.2
      },
      "_p6": true
+    },
+    {
+     "kit": "fixtures",
+     "name": "fixtures",
+     "near_ceiling_m": 0.7,
+     "color": [
+      0.3,
+      0.24,
+      0.18
+     ],
+     "roughness": 0.5,
+     "metallic": 0.0,
+     "clear_centre": false,
+     "surface": {
+      "family": "metal",
+      "tile_m": 0.4,
+      "bump": 0.1
+     },
+     "_p6": true
     }
    ],
    "p6": {
-    "version": 1,
+    "version": 2,
     "kits": [
-     "skirting"
+     "skirting",
+     "fixtures"
     ]
    }
   },
@@ -3417,12 +3460,32 @@
       "bump": 0.2
      },
      "_p6": true
+    },
+    {
+     "kit": "fixtures",
+     "name": "fixtures",
+     "near_ceiling_m": 0.7,
+     "color": [
+      0.3,
+      0.24,
+      0.18
+     ],
+     "roughness": 0.5,
+     "metallic": 0.0,
+     "clear_centre": false,
+     "surface": {
+      "family": "metal",
+      "tile_m": 0.4,
+      "bump": 0.1
+     },
+     "_p6": true
     }
    ],
    "p6": {
-    "version": 1,
+    "version": 2,
     "kits": [
-     "skirting"
+     "skirting",
+     "fixtures"
     ]
    }
   },

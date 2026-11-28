@@ -336,12 +336,43 @@
       "bump": 0.2
      },
      "_p6": true
+    },
+    {
+     "kit": "fixtures",
+     "name": "fixtures",
+     "near_ceiling_m": 0.7,
+     "color": [
+      0.3,
+      0.24,
+      0.18
+     ],
+     "roughness": 0.5,
+     "metallic": 0.0,
+     "clear_centre": false,
+     "surface": {
+      "family": "metal",
+      "tile_m": 0.4,
+      "bump": 0.1
+     },
+     "_p6": true
+    },
+    {
+     "kit": "shelves",
+     "name": "shelves",
+     "wall": "wall-north",
+     "height_m": 2.1,
+     "bay_m": 0.95,
+     "max_bays": 8,
+     "clear_centre": true,
+     "_p6": true
     }
    ],
    "p6": {
-    "version": 1,
+    "version": 2,
     "kits": [
-     "skirting"
+     "skirting",
+     "fixtures",
+     "shelves"
     ]
    }
   },
@@ -656,6 +687,25 @@
       "bump": 0.2
      },
      "_p6": true
+    },
+    {
+     "kit": "fixtures",
+     "name": "fixtures",
+     "near_ceiling_m": 0.7,
+     "color": [
+      0.3,
+      0.24,
+      0.18
+     ],
+     "roughness": 0.5,
+     "metallic": 0.0,
+     "clear_centre": false,
+     "surface": {
+      "family": "metal",
+      "tile_m": 0.4,
+      "bump": 0.1
+     },
+     "_p6": true
     }
    ],
    "p2": {
@@ -666,9 +716,10 @@
     ]
    },
    "p6": {
-    "version": 1,
+    "version": 2,
     "kits": [
-     "skirting"
+     "skirting",
+     "fixtures"
     ]
    }
   },
@@ -1179,12 +1230,32 @@
       "bump": 0.2
      },
      "_p6": true
+    },
+    {
+     "kit": "fixtures",
+     "name": "fixtures",
+     "near_ceiling_m": 0.7,
+     "color": [
+      0.3,
+      0.24,
+      0.18
+     ],
+     "roughness": 0.5,
+     "metallic": 0.0,
+     "clear_centre": false,
+     "surface": {
+      "family": "metal",
+      "tile_m": 0.4,
+      "bump": 0.1
+     },
+     "_p6": true
     }
    ],
    "p6": {
-    "version": 1,
+    "version": 2,
     "kits": [
-     "skirting"
+     "skirting",
+     "fixtures"
     ]
    }
   },
@@ -1774,6 +1845,35 @@
       "bump": 0.2
      },
      "_p6": true
+    },
+    {
+     "kit": "fixtures",
+     "name": "fixtures",
+     "near_ceiling_m": 0.7,
+     "color": [
+      0.3,
+      0.24,
+      0.18
+     ],
+     "roughness": 0.5,
+     "metallic": 0.0,
+     "clear_centre": false,
+     "surface": {
+      "family": "metal",
+      "tile_m": 0.4,
+      "bump": 0.1
+     },
+     "_p6": true
+    },
+    {
+     "kit": "shelves",
+     "name": "shelves",
+     "wall": "wall-south",
+     "height_m": 2.1,
+     "bay_m": 0.95,
+     "max_bays": 8,
+     "clear_centre": true,
+     "_p6": true
     }
    ],
    "p2": {
@@ -1819,9 +1919,11 @@
     }
    },
    "p6": {
-    "version": 1,
+    "version": 2,
     "kits": [
-     "skirting"
+     "skirting",
+     "fixtures",
+     "shelves"
     ]
    }
   },

@@ -121,6 +121,17 @@ def conifer_wrap(ctx, spec, col, kit_material):
         b = _bbox(ob)
         h = (b[5] - b[2]) * spec.get("height_gain", 1.08)
         rad = max(b[3] - b[0], b[4] - b[1]) / 2 * spec.get("radius_gain", 1.3)
+        if spec.get("clear_m"):  # P5b ruling: no needled tier reaches within clear_m of a view camera (G10c)
+            from mathutils import Vector as _V
+            cx, cy = (b[0] + b[3]) / 2, (b[1] + b[4]) / 2
+            near = False
+            for v in ctx["views"].values():
+                c = _V(v[0])
+                dxy = ((c.x - cx) ** 2 + (c.y - cy) ** 2) ** 0.5
+                if dxy - rad < spec["clear_m"] * K and b[2] - spec["clear_m"] * K < c.z < b[2] + h + spec["clear_m"] * K:
+                    near = True
+            if near:
+                continue
         me = conifer_mesh("dress-crown-%s" % pid, rng, trunk=False, crown_from=0.0, radius=rad / h, tiers=rng.randint(13, 18), style=spec.get("style", "fan"))
         me.materials.append(mat)
         o = bpy.data.objects.new("dress-crown-%s" % pid, me)
