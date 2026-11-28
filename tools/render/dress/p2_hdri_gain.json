@@ -1,0 +1,30 @@
+{
+ "note": "P2b calibration: median sky-region display-luma ratio of the hdri plate (gain 1) to the P1 flat sky over the camera stills of every outdoor place using that hdri; gain = (1/ratio)^2.2 (display to linear), clamped 0.33..3",
+ "gains": {
+  "dikhololo_night_2k.hdr": {
+   "gain": 0.775,
+   "display_ratio_median": 1.123,
+   "stills": 2
+  },
+  "kloofendal_48d_partly_cloudy_puresky_2k.hdr": {
+   "gain": 0.645,
+   "display_ratio_median": 1.221,
+   "stills": 7
+  },
+  "kloofendal_overcast_puresky_2k.hdr": {
+   "gain": 1.307,
+   "display_ratio_median": 0.886,
+   "stills": 38
+  },
+  "qwantani_dusk_2_puresky_2k.hdr": {
+   "gain": 2.242,
+   "display_ratio_median": 0.693,
+   "stills": 23
+  },
+  "syferfontein_1d_clear_puresky_2k.hdr": {
+   "gain": 1.437,
+   "display_ratio_median": 0.848,
+   "stills": 7
+  }
+ }
+}

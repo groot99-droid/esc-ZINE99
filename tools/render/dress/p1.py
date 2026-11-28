@@ -16,7 +16,8 @@ its name, role and flags into one of the P1 surface presets below, and writes `l
 * Re-running replaces the earlier P1 entry of a location (marked by `p1`), except the `gain` and `tint` that gains.py wrote, which
   are carried over when the preset of that material did not change.
 
-Only the 23 approved textures of the P1 cache are used (`P1_SCANS`); everything else is procedural.
+Only the 23 approved textures of the P1 cache and, since 2026-11-28, four locked cave scans for plank floors and stone are used
+(`P1_SCANS`); everything else is procedural.
 """
 import glob
 import json
@@ -31,7 +32,9 @@ VERSION = 1
 P1_SCANS = {"asphalt_02", "bark_brown_02", "coast_sand_01", "concrete_floor_worn_001", "concrete_wall_008", "corrugated_iron",
             "forrest_ground_01", "gravel_floor", "green_metal_rust", "hessian_380", "large_floor_tiles_02", "leafy_grass", "metal_plate",
             "mud_cracked_dry_03", "plastered_wall_04", "red_brick_03", "rocky_trail", "rust_coarse_01", "slate_floor_02", "stone_floor",
-            "weathered_plank_siding", "wood_trunk_wall", "worn_mossy_plasterwall"}
+            "weathered_plank_siding", "wood_trunk_wall", "worn_mossy_plasterwall",
+            # P2b ruling (2026-11-28): locked cave scans already on disk, for plank floors and stone only (credited in CREDITS.md)
+            "old_wood_floor", "weathered_planks", "mossy_cobblestone", "rock_wall_08"}
 
 _S = {"res": "2k", "third": True, "macro2": 0.05, "obj_jitter_m": 20.0}
 
@@ -44,18 +47,18 @@ def _scan(scan, tile, **kw):
 
 # ---------------------------------------------------------------- presets (R3 options; sizes in metres)
 PRESETS = {
-    "plaster": _scan("plastered_wall_04", 1.2, contrast=2.0, micro={"scale_m": 0.01, "albedo": 0.06, "height": 0.7}, obj_jitter_m=0.0, chroma=0.0, bump=0.55, macro=0.1, grime=1.1,
+    "plaster": _scan("plastered_wall_04", 1.2, contrast=2.0, micro={"scale_m": 0.01, "albedo": 0.06, "height": 0.7}, obj_jitter_m=0.0, g7_min=1.5, chroma=0.0, bump=0.55, macro=0.1, grime=1.1,
                      patches={"size_m": 0.8, "share": 0.25, "amount": 0.04, "rough": 0.05},
                      cracks={"amount": 0.35, "scale_m": 0.9, "width": 0.006, "share": 0.25}),
-    "plaster_clean": _scan("plastered_wall_04", 1.5, contrast=1.6, micro={"scale_m": 0.012, "albedo": 0.04, "height": 0.5}, obj_jitter_m=0.0, chroma=0.0, bump=0.4, macro=0.06, grime=0.6, macro2=0.03,
+    "plaster_clean": _scan("plastered_wall_04", 1.5, contrast=1.6, micro={"scale_m": 0.012, "albedo": 0.04, "height": 0.5}, obj_jitter_m=0.0, g7_min=1.5, chroma=0.0, bump=0.4, macro=0.06, grime=0.6, macro2=0.03,
                            patches={"size_m": 1.0, "share": 0.2, "amount": 0.025, "rough": 0.04}),
     "plaster_old": _scan("worn_mossy_plasterwall", 2.4, micro={"scale_m": 0.01, "albedo": 0.07, "height": 0.7}, obj_jitter_m=0.0, chroma=0.0, contrast=0.5, bump=0.35, macro=0.12, grime=1.3,
                          streaks={"amount": 0.3, "scale_m": 0.35, "top_frac": 0.8, "tint": [0.8, 0.76, 0.68]},
                          cracks={"amount": 0.45, "scale_m": 0.8, "width": 0.007, "share": 0.35}),
-    "paint_gloss": _scan("plastered_wall_04", 2.0, micro={"scale_m": 0.008, "albedo": 0.04, "height": 0.4, "stretch": 6.0}, obj_jitter_m=0.0, chroma=0.0, bump=0.2, macro=0.05, grime=0.9, rough_scale=0.8,
+    "paint_gloss": _scan("plastered_wall_04", 2.0, micro={"scale_m": 0.008, "albedo": 0.04, "height": 0.4, "stretch": 6.0}, obj_jitter_m=0.0, g7_min=1.5, chroma=0.0, bump=0.2, macro=0.05, grime=0.9, rough_scale=0.8,
                          patches={"size_m": 0.6, "share": 0.3, "amount": 0.04, "rough": 0.1},
                          edge_wear={"radius_m": 0.015, "amount": 0.5, "tint": [1.15, 1.13, 1.1], "rough": 0.1}),
-    "ceiling": _scan("plastered_wall_04", 1.5, contrast=1.6, micro={"scale_m": 0.012, "albedo": 0.05, "height": 0.6}, obj_jitter_m=0.0, chroma=0.0, bump=0.25, macro=0.07, grime=0.8, macro2=0.03,
+    "ceiling": _scan("plastered_wall_04", 1.5, contrast=1.6, micro={"scale_m": 0.012, "albedo": 0.05, "height": 0.6}, obj_jitter_m=0.0, g7_min=1.5, chroma=0.0, bump=0.25, macro=0.07, grime=0.8, macro2=0.03,
                      cracks={"amount": 0.25, "scale_m": 1.0, "width": 0.005, "share": 0.2}),
     "conc_wall": _scan("concrete_wall_008", 1.8, contrast=1.6, micro={"scale_m": 0.008, "albedo": 0.06, "height": 0.6}, obj_jitter_m=0.0, chroma=0.1, bump=0.5, macro=0.1, grime=1.2,
                        streaks={"amount": 0.25, "scale_m": 0.4, "top_frac": 0.7, "tint": [0.78, 0.76, 0.72]},
@@ -95,16 +98,16 @@ PRESETS = {
               "edge_wear": {"radius_m": 0.006, "amount": 0.6, "tint": [1.25, 1.2, 1.1], "rough": -0.12},
               "patches": {"size_m": 0.15, "share": 0.35, "amount": 0.08, "rough": 0.12}},
     "flagstone": _scan("slate_floor_02", 2.6, micro={"scale_m": 0.012, "albedo": 0.06, "height": 0.6}, obj_jitter_m=0.0, chroma=0.1, bump=0.6, macro=0.1, grime=1.0),
-    "cobble": _scan("stone_floor", 1.6, contrast=1.5, obj_jitter_m=0.0, chroma=0.1, bump=0.7, macro=0.1, grime=1.0),
+    "cobble": _scan("mossy_cobblestone", 1.8, contrast=1.5, obj_jitter_m=0.0, chroma=0.1, bump=0.7, macro=0.1, grime=1.0),
     "stone_block": _scan("stone_floor", 3.6, contrast=1.4, micro={"scale_m": 0.012, "albedo": 0.06, "height": 0.6}, obj_jitter_m=0.0, chroma=0.1, bump=0.6, macro=0.12, grime=1.1,
                          streaks={"amount": 0.25, "scale_m": 0.5, "top_frac": 0.8, "tint": [0.78, 0.76, 0.72]}),
-    "drystone": _scan("stone_floor", 2.8, obj_jitter_m=0.0, chroma=0.1, bump=0.85, macro=0.14, grime=1.2),
+    "drystone": _scan("rock_wall_08", 2.8, res="1k", obj_jitter_m=0.0, chroma=0.1, bump=0.85, macro=0.14, grime=1.2),
     "marble": {"micro": {"scale_m": 0.02, "albedo": 0.04, "height": 0.2}, "family": "noise", "tile_m": 2.0, "macro": 0.1, "fine": 0.05, "bump": 0.1, "grime": 0.5, "coat": 0.35,
                "coat_roughness": 0.08, "cracks": {"amount": 0.3, "scale_m": 1.4, "width": 0.01, "share": 0.3, "tint": [0.86, 0.84, 0.82],
                                                   "depth": 0.0}},
-    "wood_floor": _scan("weathered_plank_siding", 2.2, chroma=0.15, bump=0.5, macro=0.1, grime=1.0, obj_jitter_m=0.0, coat=0.12,
+    "wood_floor": _scan("old_wood_floor", 2.4, chroma=0.15, bump=0.5, macro=0.1, grime=1.0, obj_jitter_m=0.0, coat=0.12,
                         coat_roughness=0.3),
-    "wood_deck": _scan("weathered_plank_siding", 2.4, chroma=0.15, bump=0.6, macro=0.12, grime=1.1, obj_jitter_m=0.0),
+    "wood_deck": _scan("weathered_planks", 2.4, res="1k", chroma=0.15, bump=0.6, macro=0.12, grime=1.1, obj_jitter_m=0.0),
     "log_wall": _scan("weathered_plank_siding", 1.6, chroma=0.2, bump=0.6, macro=0.08, obj_jitter_m=0.0,
                       courses={"h_m": 0.22, "seam_m": 0.02, "jitter": 0.1, "hue": 0.04, "seam_tone": 0.62, "vary": 1.0, "round_m": 0.03,
                                "round_shade": 0.07},
@@ -114,17 +117,17 @@ PRESETS = {
                  "edge_wear": {"radius_m": 0.012, "amount": 0.45, "tint": [1.18, 1.14, 1.08], "rough": 0.1}},
     "timber": _scan("weathered_plank_siding", 1.6, chroma=0.12, bump=0.45, macro=0.1, grime=1.0, round_m=0.006,
                     edge_wear={"radius_m": 0.012, "amount": 0.45, "tint": [1.18, 1.14, 1.08], "rough": 0.1}),
-    "timber_varnish": {"micro": {"scale_m": 0.006, "albedo": 0.08, "height": 0.4, "stretch": 12.0}, "family": "grid", "tile_m": 0.18, "board_m": 2.2, "board_axis": "z", "row_axis": "xy", "joint": 0.012,
+    "timber_varnish": {"micro": {"scale_m": 0.006, "albedo": 0.08, "height": 0.4, "stretch": 12.0}, "g7_min": 1.5, "family": "grid", "tile_m": 0.18, "board_m": 2.2, "board_axis": "z", "row_axis": "xy", "joint": 0.012,
                        "joint_tone": 0.75, "tile_jitter": 0.06, "grain": 0.08, "fine": 0.04, "macro": 0.08, "bump": 0.25, "grime": 0.6,
                        "round_m": 0.005, "rough_scale": 0.85, "coat": 0.25, "coat_roughness": 0.2,
                        "edge_wear": {"radius_m": 0.008, "amount": 0.35, "tint": [1.15, 1.1, 1.05], "rough": 0.05}},
-    "wallpaper": {"micro": {"scale_m": 0.008, "albedo": 0.04, "height": 0.4}, "family": "wallpaper", "fine": 0.1, "macro": 0.14, "tile_m": 0.18, "stripe": 0.03, "bump": 0.1, "grime": 1.0, "seam_m": 0.53, "seam_tone": 0.88,
+    "wallpaper": {"micro": {"scale_m": 0.008, "albedo": 0.04, "height": 0.4}, "g7_min": 1.5, "family": "wallpaper", "fine": 0.1, "macro": 0.14, "tile_m": 0.18, "stripe": 0.03, "bump": 0.1, "grime": 1.0, "seam_m": 0.53, "seam_tone": 0.88,
                   "yellow": {"from_m": 1.5, "to_m": 2.5, "tint": [1.0, 0.97, 0.9]}},
-    "cloth_wall": {"micro": {"scale_m": 0.006, "albedo": 0.06, "height": 0.5}, "family": "wallpaper", "tile_m": 0.5, "stripe": 0.0, "fine": 0.12, "macro": 0.16, "bump": 0.2, "grime": 1.0,
+    "cloth_wall": {"micro": {"scale_m": 0.006, "albedo": 0.06, "height": 0.5}, "g7_min": 1.5, "family": "wallpaper", "tile_m": 0.5, "stripe": 0.0, "fine": 0.12, "macro": 0.16, "bump": 0.2, "grime": 1.0,
                    "seam_m": 0.53, "seam_tone": 0.9, "patches": {"size_m": 0.7, "share": 0.25, "amount": 0.05, "rough": 0.04},
                    "yellow": {"from_m": 1.6, "to_m": 2.6, "tint": [1.0, 0.98, 0.92]}},
-    "fabric": _scan("hessian_380", 0.5, contrast=1.8, micro={"scale_m": 0.008, "albedo": 0.08, "height": 0.6}, chroma=0.0, bump=0.35, macro=0.12, grime=0.9),
-    "fabric_fine": _scan("hessian_380", 0.35, contrast=1.8, micro={"scale_m": 0.006, "albedo": 0.07, "height": 0.5}, chroma=0.0, bump=0.25, macro=0.1, grime=0.7),
+    "fabric": _scan("hessian_380", 0.5, contrast=1.8, micro={"scale_m": 0.008, "albedo": 0.08, "height": 0.6}, g7_min=1.5, chroma=0.0, bump=0.35, macro=0.12, grime=0.9),
+    "fabric_fine": _scan("hessian_380", 0.35, contrast=1.8, micro={"scale_m": 0.006, "albedo": 0.07, "height": 0.5}, g7_min=1.5, chroma=0.0, bump=0.25, macro=0.1, grime=0.7),
     "thatch": _scan("hessian_380", 1.2, micro={"scale_m": 0.01, "albedo": 0.12, "height": 0.8, "stretch": 8.0}, chroma=0.0, bump=0.7, macro=0.16, grime=1.0),
     "paper": {"micro": {"scale_m": 0.004, "albedo": 0.05, "height": 0.4}, "family": "paper", "tile_m": 0.3, "bump": 0.15, "grime": 0.4, "foxing": 0.25},
     "leather": {"micro": {"scale_m": 0.004, "albedo": 0.05, "height": 0.5}, "family": "leather", "tile_m": 0.2, "bump": 0.3, "grime": 0.5, "coat": 0.1, "coat_roughness": 0.35,
@@ -317,7 +320,7 @@ def build(game, cfg):
                 for kk in ("gain", "tint"):
                     if kk in v:
                         ent["materials"][k][kk] = v[kk]
-        for k in ("grime_override", "props", "exposure_ev_delta", "atmos", "kits", "p2"):  # P2 keys survive a P1 re-run
+        for k in ("grime_override", "props", "exposure_ev_delta", "atmos", "kits", "p2", "p2_materials"):  # P2 keys survive a P1 re-run
             if k in old:
                 ent[k] = old[k]
         if "grime_override" in old:

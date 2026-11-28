@@ -111,6 +111,7 @@
       "albedo": 0.06,
       "height": 0.7
      },
+     "g7_min": 1.5,
      "chroma": 0.0,
      "bump": 0.55,
      "macro": 0.1,
@@ -157,6 +158,7 @@
       "albedo": 0.05,
       "height": 0.6
      },
+     "g7_min": 1.5,
      "chroma": 0.0,
      "bump": 0.25,
      "macro": 0.07,
@@ -173,19 +175,20 @@
    "atmos": {
     "_p2": true,
     "sky_plate": {
-     "name": "clear-procedural",
-     "horizon_gain": 1.06,
-     "zenith_gain": 0.95,
-     "cloud_scale": 3.2,
-     "cloud_contrast": 0.15,
-     "hdri_considered": "syferfontein_1d_clear_puresky_2k.hdr"
+     "name": "clear-hdri",
+     "hdri": "syferfontein_1d_clear_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.85,
+     "strength_gain": 1.437
     }
    },
    "p2": {
-    "version": 1,
+    "version": 2,
     "sky": "clear",
+    "sky_plate": "clear-hdri",
     "haze": false,
-    "extent_m": 25.9
+    "extent_m": 25.9,
+    "fx_listed": []
    }
   },
   "bark-face": {
@@ -248,19 +251,20 @@
    "atmos": {
     "_p2": true,
     "sky_plate": {
-     "name": "partly cloudy-procedural",
-     "horizon_gain": 1.06,
-     "zenith_gain": 0.95,
-     "cloud_scale": 3.2,
-     "cloud_contrast": 0.35,
-     "hdri_considered": "kloofendal_48d_partly_cloudy_puresky_2k.hdr"
+     "name": "partly cloudy-hdri",
+     "hdri": "kloofendal_48d_partly_cloudy_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.85,
+     "strength_gain": 0.645
     }
    },
    "p2": {
-    "version": 1,
+    "version": 2,
     "sky": "partly cloudy",
+    "sky_plate": "partly cloudy-hdri",
     "haze": false,
-    "extent_m": 0.1
+    "extent_m": 0.1,
+    "fx_listed": []
    }
   },
   "first-ring-temple": {
@@ -409,19 +413,20 @@
    "atmos": {
     "_p2": true,
     "sky_plate": {
-     "name": "overcast-procedural",
-     "horizon_gain": 1.06,
-     "zenith_gain": 0.95,
-     "cloud_scale": 3.2,
-     "cloud_contrast": 0.3,
-     "hdri_considered": "kloofendal_overcast_puresky_2k.hdr"
+     "name": "overcast-hdri",
+     "hdri": "kloofendal_overcast_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.85,
+     "strength_gain": 1.307
     }
    },
    "p2": {
-    "version": 1,
+    "version": 2,
     "sky": "overcast",
+    "sky_plate": "overcast-hdri",
     "haze": false,
-    "extent_m": 0.1
+    "extent_m": 0.1,
+    "fx_listed": []
    }
   },
   "highridge-square": {
@@ -474,19 +479,20 @@
    "atmos": {
     "_p2": true,
     "sky_plate": {
-     "name": "dusk-procedural",
-     "horizon_gain": 1.06,
-     "zenith_gain": 0.95,
-     "cloud_scale": 3.2,
-     "cloud_contrast": 0.25,
-     "hdri_considered": "qwantani_dusk_2_puresky_2k.hdr"
+     "name": "dusk-hdri",
+     "hdri": "qwantani_dusk_2_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.85,
+     "strength_gain": 2.242
     }
    },
    "p2": {
-    "version": 1,
+    "version": 2,
     "sky": "dusk",
+    "sky_plate": "dusk-hdri",
     "haze": false,
-    "extent_m": 0.0
+    "extent_m": 0.0,
+    "fx_listed": []
    }
   },
   "knotholm-walk": {
@@ -521,19 +527,20 @@
    "atmos": {
     "_p2": true,
     "sky_plate": {
-     "name": "partly cloudy-procedural",
-     "horizon_gain": 1.06,
-     "zenith_gain": 0.95,
-     "cloud_scale": 3.2,
-     "cloud_contrast": 0.35,
-     "hdri_considered": "kloofendal_48d_partly_cloudy_puresky_2k.hdr"
+     "name": "partly cloudy-hdri",
+     "hdri": "kloofendal_48d_partly_cloudy_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.85,
+     "strength_gain": 0.645
     }
    },
    "p2": {
-    "version": 1,
+    "version": 2,
     "sky": "partly cloudy",
+    "sky_plate": "partly cloudy-hdri",
     "haze": false,
-    "extent_m": 0.1
+    "extent_m": 0.1,
+    "fx_listed": []
    }
   },
   "lowridge": {
@@ -571,6 +578,7 @@
       "albedo": 0.04,
       "height": 0.4
      },
+     "g7_min": 1.5,
      "family": "wallpaper",
      "fine": 0.1,
      "macro": 0.14,
@@ -595,19 +603,20 @@
    "atmos": {
     "_p2": true,
     "sky_plate": {
-     "name": "overcast-procedural",
-     "horizon_gain": 1.06,
-     "zenith_gain": 0.95,
-     "cloud_scale": 3.2,
-     "cloud_contrast": 0.3,
-     "hdri_considered": "kloofendal_overcast_puresky_2k.hdr"
+     "name": "overcast-hdri",
+     "hdri": "kloofendal_overcast_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.85,
+     "strength_gain": 1.307
     }
    },
    "p2": {
-    "version": 1,
+    "version": 2,
     "sky": "overcast",
+    "sky_plate": "overcast-hdri",
     "haze": false,
-    "extent_m": 0.1
+    "extent_m": 0.1,
+    "fx_listed": []
    }
   },
   "shadow-edge": {
@@ -643,19 +652,20 @@
    "atmos": {
     "_p2": true,
     "sky_plate": {
-     "name": "partly cloudy-procedural",
-     "horizon_gain": 1.06,
-     "zenith_gain": 0.95,
-     "cloud_scale": 3.2,
-     "cloud_contrast": 0.35,
-     "hdri_considered": "kloofendal_48d_partly_cloudy_puresky_2k.hdr"
+     "name": "partly cloudy-hdri",
+     "hdri": "kloofendal_48d_partly_cloudy_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.85,
+     "strength_gain": 0.645
     }
    },
    "p2": {
-    "version": 1,
+    "version": 2,
     "sky": "partly cloudy",
+    "sky_plate": "partly cloudy-hdri",
     "haze": false,
-    "extent_m": 0.2
+    "extent_m": 0.2,
+    "fx_listed": []
    }
   },
   "splinterwatch": {
@@ -727,19 +737,20 @@
    "atmos": {
     "_p2": true,
     "sky_plate": {
-     "name": "overcast-procedural",
-     "horizon_gain": 1.06,
-     "zenith_gain": 0.95,
-     "cloud_scale": 3.2,
-     "cloud_contrast": 0.3,
-     "hdri_considered": "kloofendal_overcast_puresky_2k.hdr"
+     "name": "overcast-hdri",
+     "hdri": "kloofendal_overcast_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.85,
+     "strength_gain": 1.307
     }
    },
    "p2": {
-    "version": 1,
+    "version": 2,
     "sky": "overcast",
+    "sky_plate": "overcast-hdri",
     "haze": false,
-    "extent_m": 0.1
+    "extent_m": 0.1,
+    "fx_listed": []
    }
   },
   "the-branch": {
@@ -779,19 +790,20 @@
    "atmos": {
     "_p2": true,
     "sky_plate": {
-     "name": "clear-procedural",
-     "horizon_gain": 1.06,
-     "zenith_gain": 0.95,
-     "cloud_scale": 3.2,
-     "cloud_contrast": 0.15,
-     "hdri_considered": "syferfontein_1d_clear_puresky_2k.hdr"
+     "name": "clear-hdri",
+     "hdri": "syferfontein_1d_clear_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.85,
+     "strength_gain": 1.437
     }
    },
    "p2": {
-    "version": 1,
+    "version": 2,
     "sky": "clear",
+    "sky_plate": "clear-hdri",
     "haze": false,
-    "extent_m": 0.3
+    "extent_m": 0.3,
+    "fx_listed": []
    }
   }
  }

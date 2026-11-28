@@ -1,0 +1,98 @@
+{
+ "note": "Atmosphere rows marked 'needs' or 'have' in the per-game realism lists (2026-11-23), sorted into the P2b effects. Suggested extras are left out (plan D13).",
+ "locations": {
+  "behind-the-peephole": {
+   "staff-alley": [
+    "fog"
+   ],
+   "river-wall": [
+    "fog"
+   ]
+  },
+  "dr-tox-fall": {
+   "snakehead-fortress": [
+    "dust"
+   ],
+   "salvage-settlement": [
+    "dust"
+   ]
+  },
+  "endless-temple": {
+   "abyss-edge": [
+    "fog"
+   ],
+   "clerk-office": [
+    "rain"
+   ],
+   "elaris-room": [
+    "dust"
+   ],
+   "hollin-streets": [
+    "rain"
+   ],
+   "storyteller-hut": [
+    "flame"
+   ],
+   "temple-halls": [
+    "dust"
+   ],
+   "xandri-hut": [
+    "dust"
+   ]
+  },
+  "lira-calyx": {
+   "hollin-terrace": [
+    "flame",
+    "fog"
+   ],
+   "shear-tunnel": [
+    "dust"
+   ],
+   "subterranean-city": [
+    "fog"
+   ],
+   "cinder-reach-archive": [
+    "dust"
+   ],
+   "continuum-outpost": [
+    "snow"
+   ],
+   "harvester-ridge": [
+    "dust"
+   ],
+   "spore-weaver-valley": [
+    "dust"
+   ],
+   "storm-singing-ledge": [
+    "fog"
+   ]
+  },
+  "lord-of-the-sea": {
+   "the-unwritten": [
+    "fog"
+   ]
+  },
+  "man-eater": {
+   "cold-store": [
+    "snow"
+   ],
+   "boiler-room": [
+    "flame"
+   ],
+   "laundry": [
+    "smoke"
+   ]
+  },
+  "missing-campsites": {
+   "entrance-booth": [
+    "dust"
+   ],
+   "five-sites": [
+    "flame"
+   ],
+   "creek-trail": [
+    "shafts"
+   ]
+  }
+ }
+}

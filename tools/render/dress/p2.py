@@ -23,7 +23,7 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(HERE)))
-VERSION = 1
+VERSION = 2
 
 WINDOW_PLATE = {"kit": "window_plate", "name": "window_plate", "offset_m": 0.6, "pad_m": 0.35, "above_m": 0.6, "tree_gain": 0.6,
                 "ground_gain": 0.55, "horizon_gain": 1.2, "zenith_gain": 0.95, "clear_centre": False, "tiers": 6.0, "blur": 0.07,
@@ -33,10 +33,36 @@ WINDOW_PLATE = {"kit": "window_plate", "name": "window_plate", "offset_m": 0.6, 
 # Places where an earth sky picture is wrong (inside a body, under the sea, cosmic or void settings), and where the spruce window plate
 # is wrong (desert town, harbour, a city in the sky): left without P2 plates; listed in the notes. rim-of-wrymreach was taken out
 # after the look round: the haze lit up the dark chasm (G2 up to 1.68).
-NO_SKY = {"heartstream": "*", "wrymwretch": {"astral-expanse", "bone-choir", "heart-of-wound", "seabed", "sky-above-realms", "rim-of-wrymreach"},
+NO_SKY = {"heartstream": "*", "wrymwretch": {"astral-expanse", "bone-choir", "heart-of-wound", "seabed", "sky-above-realms"},
           "endless-temple": {"abyss-edge"}, "people-of-the-bark": "haze"}
 WINDOW_GAMES = {"stuffed-ones", "man-eater"}
-NO_HAZE = {("dr-tox-fall", "salvage-settlement")}  # even 0.0005 per metre veils the far freeway span and shelters (G11 up to 0.42)
+NO_HAZE = {("dr-tox-fall", "salvage-settlement"), ("wrymwretch", "rim-of-wrymreach")}  # rim: the haze lit up the dark chasm (G2 1.68)
+NO_FOG = set()  # even 0.0005 per metre veils the far freeway span and shelters (G11 up to 0.42)
+
+
+# P2b: per-hdri plate gain from the calibration look round (sky-region luma of the hdri plate against the P1 flat sky over every
+# outdoor still that uses it; gain = 1 / median ratio). A hdri whose calibrated plate still failed the tone gates stays procedural.
+HDRI_GAIN = {}
+CAL = os.path.join(HERE, "p2_hdri_gain.json")
+if os.path.exists(CAL):
+    with open(CAL, encoding="utf-8") as _f:
+        HDRI_GAIN = json.load(_f).get("gains", {})
+
+WATER = [  # P2b water shaders for the water pieces (role water, no emission): (preset, regex)
+    ("sea", r"^(sea|rough-sea|dusk-sea|sea-dawn|turquoise-sea|harbour-water|shallows|backwater-grey-rose|sea-oil)$"),
+    ("glassy", r"^(glassy-sea|still-water|pool)$"),
+    ("river", r"^(river|creek|flood|trench|gutter-water)$"),
+    ("puddle", r"^(puddle)$"),
+]
+WATER_P = {"sea": {"family": "water", "dark": 0.9, "roughness": 0.06, "ripple": 0.16, "specular": 0.6},
+           "glassy": {"family": "water", "dark": 0.92, "roughness": 0.02, "ripple": 0.04, "specular": 0.6},
+           "river": {"family": "water", "dark": 0.85, "roughness": 0.05, "ripple": 0.12, "specular": 0.55},
+           "puddle": {"family": "water", "dark": 0.6, "roughness": 0.03, "ripple": 0.06, "specular": 0.7}}
+FX = {}
+_fxp = os.path.join(HERE, "p2fx_needs.json")
+if os.path.exists(_fxp):
+    with open(_fxp, encoding="utf-8") as _f:
+        FX = json.load(_f)["locations"]
 
 
 def pick_sky(col):
@@ -77,12 +103,29 @@ def _scan_location(game, loc):
     return mean, heads, extent
 
 
+def _water_materials(game, loc):
+    import re
+    out = {}
+    for f in sorted(glob.glob(os.path.join(ROOT, "build", "blender", game, loc, "*", "blockout.json"))):
+        with open(f, encoding="utf-8") as fh:
+            bo = json.load(fh)
+        for p in bo["pieces"]:
+            m = p.get("material")
+            md = bo["materials"].get(m, {})
+            if p.get("role") != "water" or (md.get("emission") or 0) > 0 or game == "heartstream":
+                continue
+            for name, rx in WATER:
+                if re.match(rx, m):
+                    out[m] = dict(WATER_P[name], p2_preset="water_" + name)
+    return out
+
+
 def build(game, cfg):
     rep = {}
     for loc, L in sorted(cfg.get("locations", {}).items()):
         if not L.get("p1"):
             continue
-        for k in ("p2",):
+        for k in ("p2", "p2_materials"):
             L.pop(k, None)
         if L.get("atmos", {}).get("_p2"):
             L.pop("atmos")
@@ -90,30 +133,60 @@ def build(game, cfg):
         if not L["kits"]:
             L.pop("kits")
         world, heads, extent = _scan_location(game, loc)
-        arena = game == "dr-tox-rise" and loc == "trial-53-arena"
-        if arena:
+        if game == "dr-tox-rise" and loc == "trial-53-arena":
             continue
         info = {"version": VERSION}
         ns = NO_SKY.get(game)
-        if ns == "*" or (isinstance(ns, set) and loc in ns):
-            continue
-        if not L["p1"]["interior"]:
+        no_sky = ns == "*" or (isinstance(ns, set) and loc in ns)
+        fx = set(FX.get(game, {}).get(loc, []))
+        at = {"_p2": True}
+        kits = []
+        if not L["p1"]["interior"] and not no_sky:
             hdri, kind = pick_sky(world)
-            # procedural clouds around the flat colour (mean kept by construction): the hdri plates, divided by their own mean, came
-            # out 15 to 30 % darker than the flat sky in these frames (G2), as R1 found on the loop road; the hdri pick stays recorded
             cc = {"night": 0.12, "dusk": 0.25, "clear": 0.15, "partly cloudy": 0.35, "overcast": 0.3}[kind]
-            at = {"_p2": True, "sky_plate": {"name": kind + "-procedural", "horizon_gain": 1.06, "zenith_gain": 0.95, "cloud_scale": 3.2,
-                                            "cloud_contrast": cc, "hdri_considered": hdri}}
-            if extent < 150 and kind != "night" and ns != "haze" and (game, loc) not in NO_HAZE:  # bark: D14 (scale) still open, no per-metre haze
+            if hdri in HDRI_GAIN and not HDRI_GAIN[hdri].get("procedural"):  # P2b: calibrated hdri plate (see HDRI_GAIN)
+                at["sky_plate"] = {"name": kind + "-hdri", "hdri": hdri, "rotation_deg": 30, "mix": 0.85,
+                                   "strength_gain": HDRI_GAIN[hdri]["gain"]}
+            else:  # procedural clouds around the flat colour (mean kept by construction); the hdri pick stays recorded
+                at["sky_plate"] = {"name": kind + "-procedural", "horizon_gain": 1.06, "zenith_gain": 0.95, "cloud_scale": 3.2,
+                                   "cloud_contrast": cc, "hdri_considered": hdri}
+            if extent < 150 and kind != "night" and ns != "haze" and (game, loc) not in NO_HAZE:  # bark: D14 (scale) open, no haze
                 # 0.001 per metre took 8 to 25 % of the light off props in the 100 to 240 m Dr. Tox places (G11): half that, under 150 m
                 at["haze"] = {"density": 0.0005, "color": [0.82, 0.84, 0.86], "anisotropy": 0.25}
-            L["atmos"] = at
-            info.update(sky=kind, haze=bool(at.get("haze")), extent_m=round(extent, 1))
-        elif heads and game in WINDOW_GAMES:
-            L.setdefault("kits", []).append(dict(WINDOW_PLATE, _p2=True))
+            info.update(sky=kind, sky_plate=at["sky_plate"]["name"], haze=bool(at.get("haze")), extent_m=round(extent, 1))
+        elif L["p1"]["interior"] and heads and game in WINDOW_GAMES:
+            kits.append(dict(WINDOW_PLATE, _p2=True))
             info["window_plate"] = True
-        else:
+        # P2b effects from the realism lists (p2fx_needs.json)
+        if "fog" in fx and (game, loc) not in NO_FOG:
+            at["fog"] = {"density": 0.006, "top_m": 1.0, "falloff": 1.0, "wisp_m": 3.0, "wisp": 0.5, "color": [0.8, 0.82, 0.85], "anisotropy": 0.2}
+            info["fog"] = True
+        if "dust" in fx:
+            kits.append({"kit": "motes", "name": "motes", "per_m3": 0.6, "max": 1500, "radius_m": 0.003, "top_m": 3.0, "clear_m": 0.8,
+                         "clear_centre": False, "_p2": True})
+            info["motes"] = True
+        if "rain" in fx and not L["p1"]["interior"]:
+            kits.append({"kit": "precip", "name": "rain", "kind": "rain", "per_m3": 0.6, "max": 3000, "clear_m": 1.0, "clear_centre": False,
+                         "_p2": True})
+            info["rain"] = True
+        if "snow" in fx and not L["p1"]["interior"]:
+            kits.append({"kit": "precip", "name": "snow", "kind": "snow", "per_m3": 0.3, "max": 3000, "clear_m": 1.0, "clear_centre": False,
+                         "_p2": True})
+            info["snow"] = True
+        if "flame" in fx:
+            kits.append({"kit": "flames", "name": "flames", "clear_centre": False, "_p2": True})
+            info["flames"] = True
+        wm = _water_materials(game, loc)
+        if wm:
+            L["p2_materials"] = wm
+            info["water"] = sorted(wm)
+        if len(at) > 1:
+            L["atmos"] = at
+        if kits:
+            L["kits"] = L.get("kits", []) + kits
+        if len(info) == 1:
             continue
+        info["fx_listed"] = sorted(fx)
         L["p2"] = info
         rep[loc] = info
     return cfg, rep

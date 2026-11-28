@@ -739,6 +739,8 @@ def dress_material(mat, p, ctx, K, key):
     rec = {"family": fam, "scan": p.get("scan"), "blockout_color": [round(c, 4) for c in col0], "alpha": alpha0, "emission": emit0}
     if p.get("periodic"):  # a regular built pattern (brick bond, tiles): G8 treats it like a tile grid
         rec["periodic"] = True
+    if p.get("g7_min"):  # P2b ruling: the detail-gain bar for clean painted, varnished, papered and fabric surfaces
+        rec["g7_min"] = p["g7_min"]
     ctx["record"]["materials"][key] = rec
     if p.get("base_color"):  # R3: another albedo hue at the build colour's luminance (x base_lum); emission keeps the build colour
         bc = p["base_color"]

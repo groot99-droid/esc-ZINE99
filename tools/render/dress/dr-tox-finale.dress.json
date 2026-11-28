@@ -84,6 +84,7 @@
       "albedo": 0.06,
       "height": 0.7
      },
+     "g7_min": 1.5,
      "chroma": 0.0,
      "bump": 0.55,
      "macro": 0.1,
@@ -218,6 +219,7 @@
       "albedo": 0.05,
       "height": 0.6
      },
+     "g7_min": 1.5,
      "chroma": 0.0,
      "bump": 0.25,
      "macro": 0.07,
@@ -265,6 +267,7 @@
       "albedo": 0.04,
       "height": 0.5
      },
+     "g7_min": 1.5,
      "chroma": 0.0,
      "bump": 0.4,
      "macro": 0.06,
@@ -792,6 +795,7 @@
       "albedo": 0.08,
       "height": 0.6
      },
+     "g7_min": 1.5,
      "chroma": 0.0,
      "bump": 0.35,
      "macro": 0.12,
@@ -802,19 +806,20 @@
    "atmos": {
     "_p2": true,
     "sky_plate": {
-     "name": "overcast-procedural",
-     "horizon_gain": 1.06,
-     "zenith_gain": 0.95,
-     "cloud_scale": 3.2,
-     "cloud_contrast": 0.3,
-     "hdri_considered": "kloofendal_overcast_puresky_2k.hdr"
+     "name": "overcast-hdri",
+     "hdri": "kloofendal_overcast_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.85,
+     "strength_gain": 1.307
     }
    },
    "p2": {
-    "version": 1,
+    "version": 2,
     "sky": "overcast",
+    "sky_plate": "overcast-hdri",
     "haze": false,
-    "extent_m": 240.0
+    "extent_m": 240.0,
+    "fx_listed": []
    }
   }
  }

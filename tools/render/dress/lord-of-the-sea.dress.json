@@ -68,6 +68,7 @@
       "albedo": 0.08,
       "height": 0.6
      },
+     "g7_min": 1.5,
      "chroma": 0.0,
      "bump": 0.35,
      "macro": 0.12,
@@ -75,12 +76,12 @@
      "p1_preset": "fabric"
     },
     "plank": {
-     "res": "2k",
+     "res": "1k",
      "third": true,
      "macro2": 0.05,
      "obj_jitter_m": 0.0,
      "family": "scan",
-     "scan": "weathered_plank_siding",
+     "scan": "weathered_planks",
      "tile_m": 2.4,
      "chroma": 0.15,
      "bump": 0.6,
@@ -139,12 +140,12 @@
    },
    "materials": {
     "deck-plank": {
-     "res": "2k",
+     "res": "1k",
      "third": true,
      "macro2": 0.05,
      "obj_jitter_m": 0.0,
      "family": "scan",
-     "scan": "weathered_plank_siding",
+     "scan": "weathered_planks",
      "tile_m": 2.4,
      "chroma": 0.15,
      "bump": 0.6,
@@ -166,6 +167,7 @@
       "albedo": 0.08,
       "height": 0.6
      },
+     "g7_min": 1.5,
      "chroma": 0.0,
      "bump": 0.35,
      "macro": 0.12,
@@ -186,6 +188,7 @@
       "albedo": 0.08,
       "height": 0.6
      },
+     "g7_min": 1.5,
      "chroma": 0.0,
      "bump": 0.35,
      "macro": 0.12,
@@ -218,15 +221,24 @@
      "p1_preset": "timber"
     }
    },
+   "p2_materials": {
+    "sea-dawn": {
+     "family": "water",
+     "dark": 0.9,
+     "roughness": 0.06,
+     "ripple": 0.16,
+     "specular": 0.6,
+     "p2_preset": "water_sea"
+    }
+   },
    "atmos": {
     "_p2": true,
     "sky_plate": {
-     "name": "dusk-procedural",
-     "horizon_gain": 1.06,
-     "zenith_gain": 0.95,
-     "cloud_scale": 3.2,
-     "cloud_contrast": 0.25,
-     "hdri_considered": "qwantani_dusk_2_puresky_2k.hdr"
+     "name": "dusk-hdri",
+     "hdri": "qwantani_dusk_2_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.85,
+     "strength_gain": 2.242
     },
     "haze": {
      "density": 0.0005,
@@ -239,10 +251,15 @@
     }
    },
    "p2": {
-    "version": 1,
+    "version": 2,
     "sky": "dusk",
+    "sky_plate": "dusk-hdri",
     "haze": true,
-    "extent_m": 60.0
+    "extent_m": 60.0,
+    "water": [
+     "sea-dawn"
+    ],
+    "fx_listed": []
    }
   },
   "chandlery": {
@@ -292,12 +309,12 @@
      "p1_preset": "flagstone"
     },
     "plank": {
-     "res": "2k",
+     "res": "1k",
      "third": true,
      "macro2": 0.05,
      "obj_jitter_m": 0.0,
      "family": "scan",
-     "scan": "weathered_plank_siding",
+     "scan": "weathered_planks",
      "tile_m": 2.4,
      "chroma": 0.15,
      "bump": 0.6,
@@ -387,6 +404,7 @@
       "albedo": 0.08,
       "height": 0.6
      },
+     "g7_min": 1.5,
      "chroma": 0.0,
      "bump": 0.35,
      "macro": 0.12,
@@ -394,22 +412,36 @@
      "p1_preset": "fabric"
     }
    },
+   "p2_materials": {
+    "glassy-sea": {
+     "family": "water",
+     "dark": 0.92,
+     "roughness": 0.02,
+     "ripple": 0.04,
+     "specular": 0.6,
+     "p2_preset": "water_glassy"
+    }
+   },
    "atmos": {
     "_p2": true,
     "sky_plate": {
-     "name": "clear-procedural",
-     "horizon_gain": 1.06,
-     "zenith_gain": 0.95,
-     "cloud_scale": 3.2,
-     "cloud_contrast": 0.15,
-     "hdri_considered": "syferfontein_1d_clear_puresky_2k.hdr"
+     "name": "clear-hdri",
+     "hdri": "syferfontein_1d_clear_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.85,
+     "strength_gain": 1.437
     }
    },
    "p2": {
-    "version": 1,
+    "version": 2,
     "sky": "clear",
+    "sky_plate": "clear-hdri",
     "haze": false,
-    "extent_m": 2000.0
+    "extent_m": 2000.0,
+    "water": [
+     "glassy-sea"
+    ],
+    "fx_listed": []
    }
   },
   "counting-house": {
@@ -485,12 +517,12 @@
      "p1_preset": "boards_v"
     },
     "plank": {
-     "res": "2k",
+     "res": "1k",
      "third": true,
      "macro2": 0.05,
      "obj_jitter_m": 0.0,
      "family": "scan",
-     "scan": "weathered_plank_siding",
+     "scan": "weathered_planks",
      "tile_m": 2.4,
      "chroma": 0.15,
      "bump": 0.6,
@@ -531,7 +563,24 @@
       2.4
      ]
     }
-   ]
+   ],
+   "p2_materials": {
+    "sea": {
+     "family": "water",
+     "dark": 0.9,
+     "roughness": 0.06,
+     "ripple": 0.16,
+     "specular": 0.6,
+     "p2_preset": "water_sea"
+    }
+   },
+   "p2": {
+    "version": 2,
+    "water": [
+     "sea"
+    ],
+    "fx_listed": []
+   }
   },
   "home-reach-beach": {
    "p1": {
@@ -597,22 +646,36 @@
      "p1_preset": "sand"
     }
    },
+   "p2_materials": {
+    "sea": {
+     "family": "water",
+     "dark": 0.9,
+     "roughness": 0.06,
+     "ripple": 0.16,
+     "specular": 0.6,
+     "p2_preset": "water_sea"
+    }
+   },
    "atmos": {
     "_p2": true,
     "sky_plate": {
-     "name": "dusk-procedural",
-     "horizon_gain": 1.06,
-     "zenith_gain": 0.95,
-     "cloud_scale": 3.2,
-     "cloud_contrast": 0.25,
-     "hdri_considered": "qwantani_dusk_2_puresky_2k.hdr"
+     "name": "dusk-hdri",
+     "hdri": "qwantani_dusk_2_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.85,
+     "strength_gain": 2.242
     }
    },
    "p2": {
-    "version": 1,
+    "version": 2,
     "sky": "dusk",
+    "sky_plate": "dusk-hdri",
     "haze": false,
-    "extent_m": 244.0
+    "extent_m": 244.0,
+    "water": [
+     "sea"
+    ],
+    "fx_listed": []
    }
   },
   "kings-halls": {
@@ -647,6 +710,7 @@
       "height": 0.4,
       "stretch": 12.0
      },
+     "g7_min": 1.5,
      "family": "grid",
      "tile_m": 0.18,
      "board_m": 2.2,
@@ -707,12 +771,12 @@
      "p1_preset": "brass"
     },
     "jetty": {
-     "res": "2k",
+     "res": "1k",
      "third": true,
      "macro2": 0.05,
      "obj_jitter_m": 0.0,
      "family": "scan",
-     "scan": "weathered_plank_siding",
+     "scan": "weathered_planks",
      "tile_m": 2.4,
      "chroma": 0.15,
      "bump": 0.6,
@@ -762,6 +826,7 @@
       "albedo": 0.06,
       "height": 0.7
      },
+     "g7_min": 1.5,
      "chroma": 0.0,
      "bump": 0.55,
      "macro": 0.1,
@@ -815,7 +880,24 @@
       2.4
      ]
     }
-   ]
+   ],
+   "p2_materials": {
+    "sea": {
+     "family": "water",
+     "dark": 0.9,
+     "roughness": 0.06,
+     "ripple": 0.16,
+     "specular": 0.6,
+     "p2_preset": "water_sea"
+    }
+   },
+   "p2": {
+    "version": 2,
+    "water": [
+     "sea"
+    ],
+    "fx_listed": []
+   }
   },
   "lamplit-strait": {
    "p1": {
@@ -937,22 +1019,36 @@
      "p1_preset": "stone_block"
     }
    },
+   "p2_materials": {
+    "dusk-sea": {
+     "family": "water",
+     "dark": 0.9,
+     "roughness": 0.06,
+     "ripple": 0.16,
+     "specular": 0.6,
+     "p2_preset": "water_sea"
+    }
+   },
    "atmos": {
     "_p2": true,
     "sky_plate": {
-     "name": "overcast-procedural",
-     "horizon_gain": 1.06,
-     "zenith_gain": 0.95,
-     "cloud_scale": 3.2,
-     "cloud_contrast": 0.3,
-     "hdri_considered": "kloofendal_overcast_puresky_2k.hdr"
+     "name": "overcast-hdri",
+     "hdri": "kloofendal_overcast_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.85,
+     "strength_gain": 1.307
     }
    },
    "p2": {
-    "version": 1,
+    "version": 2,
     "sky": "overcast",
+    "sky_plate": "overcast-hdri",
     "haze": false,
-    "extent_m": 500.0
+    "extent_m": 500.0,
+    "water": [
+     "dusk-sea"
+    ],
+    "fx_listed": []
    }
   },
   "pearl-banks": {
@@ -997,6 +1093,7 @@
       "albedo": 0.08,
       "height": 0.6
      },
+     "g7_min": 1.5,
      "chroma": 0.0,
      "bump": 0.35,
      "macro": 0.12,
@@ -1018,12 +1115,12 @@
      "p1_preset": "sand"
     },
     "stilt-wood": {
-     "res": "2k",
+     "res": "1k",
      "third": true,
      "macro2": 0.05,
      "obj_jitter_m": 0.0,
      "family": "scan",
-     "scan": "weathered_plank_siding",
+     "scan": "weathered_planks",
      "tile_m": 2.4,
      "chroma": 0.15,
      "bump": 0.6,
@@ -1052,22 +1149,45 @@
      "p1_preset": "thatch"
     }
    },
+   "p2_materials": {
+    "shallows": {
+     "family": "water",
+     "dark": 0.9,
+     "roughness": 0.06,
+     "ripple": 0.16,
+     "specular": 0.6,
+     "p2_preset": "water_sea"
+    },
+    "trench": {
+     "family": "water",
+     "dark": 0.85,
+     "roughness": 0.05,
+     "ripple": 0.12,
+     "specular": 0.55,
+     "p2_preset": "water_river"
+    }
+   },
    "atmos": {
     "_p2": true,
     "sky_plate": {
-     "name": "clear-procedural",
-     "horizon_gain": 1.06,
-     "zenith_gain": 0.95,
-     "cloud_scale": 3.2,
-     "cloud_contrast": 0.15,
-     "hdri_considered": "syferfontein_1d_clear_puresky_2k.hdr"
+     "name": "clear-hdri",
+     "hdri": "syferfontein_1d_clear_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.85,
+     "strength_gain": 1.437
     }
    },
    "p2": {
-    "version": 1,
+    "version": 2,
     "sky": "clear",
+    "sky_plate": "clear-hdri",
     "haze": false,
-    "extent_m": 405.0
+    "extent_m": 405.0,
+    "water": [
+     "shallows",
+     "trench"
+    ],
+    "fx_listed": []
    }
   },
   "salt-steps": {
@@ -1145,6 +1265,7 @@
       "albedo": 0.06,
       "height": 0.7
      },
+     "g7_min": 1.5,
      "chroma": 0.0,
      "bump": 0.55,
      "macro": 0.1,
@@ -1253,22 +1374,36 @@
      "p1_preset": "thatch"
     }
    },
+   "p2_materials": {
+    "turquoise-sea": {
+     "family": "water",
+     "dark": 0.9,
+     "roughness": 0.06,
+     "ripple": 0.16,
+     "specular": 0.6,
+     "p2_preset": "water_sea"
+    }
+   },
    "atmos": {
     "_p2": true,
     "sky_plate": {
-     "name": "overcast-procedural",
-     "horizon_gain": 1.06,
-     "zenith_gain": 0.95,
-     "cloud_scale": 3.2,
-     "cloud_contrast": 0.3,
-     "hdri_considered": "kloofendal_overcast_puresky_2k.hdr"
+     "name": "overcast-hdri",
+     "hdri": "kloofendal_overcast_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.85,
+     "strength_gain": 1.307
     }
    },
    "p2": {
-    "version": 1,
+    "version": 2,
     "sky": "overcast",
+    "sky_plate": "overcast-hdri",
     "haze": false,
-    "extent_m": 400.0
+    "extent_m": 400.0,
+    "water": [
+     "turquoise-sea"
+    ],
+    "fx_listed": []
    }
   },
   "spice-mouth": {
@@ -1418,6 +1553,7 @@
       "albedo": 0.08,
       "height": 0.6
      },
+     "g7_min": 1.5,
      "chroma": 0.0,
      "bump": 0.35,
      "macro": 0.12,
@@ -1438,6 +1574,7 @@
       "albedo": 0.08,
       "height": 0.6
      },
+     "g7_min": 1.5,
      "chroma": 0.0,
      "bump": 0.35,
      "macro": 0.12,
@@ -1507,22 +1644,36 @@
      "p1_preset": "boards_v"
     }
    },
+   "p2_materials": {
+    "river": {
+     "family": "water",
+     "dark": 0.85,
+     "roughness": 0.05,
+     "ripple": 0.12,
+     "specular": 0.55,
+     "p2_preset": "water_river"
+    }
+   },
    "atmos": {
     "_p2": true,
     "sky_plate": {
-     "name": "dusk-procedural",
-     "horizon_gain": 1.06,
-     "zenith_gain": 0.95,
-     "cloud_scale": 3.2,
-     "cloud_contrast": 0.25,
-     "hdri_considered": "qwantani_dusk_2_puresky_2k.hdr"
+     "name": "dusk-hdri",
+     "hdri": "qwantani_dusk_2_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.85,
+     "strength_gain": 2.242
     }
    },
    "p2": {
-    "version": 1,
+    "version": 2,
     "sky": "dusk",
+    "sky_plate": "dusk-hdri",
     "haze": false,
-    "extent_m": 450.0
+    "extent_m": 450.0,
+    "water": [
+     "river"
+    ],
+    "fx_listed": []
    }
   },
   "the-unwritten": {
@@ -1555,22 +1706,52 @@
     "tone_gain": 1.0
    },
    "materials": {},
+   "p2_materials": {
+    "rough-sea": {
+     "family": "water",
+     "dark": 0.9,
+     "roughness": 0.06,
+     "ripple": 0.16,
+     "specular": 0.6,
+     "p2_preset": "water_sea"
+    }
+   },
    "atmos": {
     "_p2": true,
     "sky_plate": {
-     "name": "overcast-procedural",
-     "horizon_gain": 1.06,
-     "zenith_gain": 0.95,
-     "cloud_scale": 3.2,
-     "cloud_contrast": 0.3,
-     "hdri_considered": "kloofendal_overcast_puresky_2k.hdr"
+     "name": "overcast-hdri",
+     "hdri": "kloofendal_overcast_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.85,
+     "strength_gain": 1.307
+    },
+    "fog": {
+     "density": 0.006,
+     "top_m": 1.0,
+     "falloff": 1.0,
+     "wisp_m": 3.0,
+     "wisp": 0.5,
+     "color": [
+      0.8,
+      0.82,
+      0.85
+     ],
+     "anisotropy": 0.2
     }
    },
    "p2": {
-    "version": 1,
+    "version": 2,
     "sky": "overcast",
+    "sky_plate": "overcast-hdri",
     "haze": false,
-    "extent_m": 2000.0
+    "extent_m": 2000.0,
+    "fog": true,
+    "water": [
+     "rough-sea"
+    ],
+    "fx_listed": [
+     "fog"
+    ]
    }
   },
   "tidewater": {
@@ -1683,6 +1864,7 @@
       "albedo": 0.06,
       "height": 0.7
      },
+     "g7_min": 1.5,
      "chroma": 0.0,
      "bump": 0.55,
      "macro": 0.1,
@@ -1702,22 +1884,36 @@
      "p1_preset": "plaster"
     }
    },
+   "p2_materials": {
+    "harbour-water": {
+     "family": "water",
+     "dark": 0.9,
+     "roughness": 0.06,
+     "ripple": 0.16,
+     "specular": 0.6,
+     "p2_preset": "water_sea"
+    }
+   },
    "atmos": {
     "_p2": true,
     "sky_plate": {
-     "name": "clear-procedural",
-     "horizon_gain": 1.06,
-     "zenith_gain": 0.95,
-     "cloud_scale": 3.2,
-     "cloud_contrast": 0.15,
-     "hdri_considered": "syferfontein_1d_clear_puresky_2k.hdr"
+     "name": "clear-hdri",
+     "hdri": "syferfontein_1d_clear_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.85,
+     "strength_gain": 1.437
     }
    },
    "p2": {
-    "version": 1,
+    "version": 2,
     "sky": "clear",
+    "sky_plate": "clear-hdri",
     "haze": false,
-    "extent_m": 300.0
+    "extent_m": 300.0,
+    "water": [
+     "harbour-water"
+    ],
+    "fx_listed": []
    }
   }
  }

@@ -331,8 +331,13 @@ def compare(mb, ma, sb, sa, T=None, still="camera"):
         cap = None if ref is None else T["g7_ref_max"] * ref["band_energy"]
         area_a = sum(ma["groups"][k]["area"] for k in gains)
         ea_mean = tot_a / max(area_a, 1e-9)
-        ok = agg >= T["g7_min"] and (cap is None or ea_mean <= cap)
-        out.append(_g("G7", ok, round(agg, 2), T["g7_min"], "area-weighted gain; per region %s; dressed energy %.2e vs cap %s" % (json.dumps(gains), ea_mean, None if cap is None else "%.2e" % cap)))
+        # P2b ruling (2026-11-28): a region whose material carries `g7_min` (clean painted plaster, varnished wood, wallpaper, fabric:
+        # 1.5) uses that bar; the still's bar is the area-weighted mean of its regions' bars
+        rmat = lambda k: dr.get("materials", {}).get(dr.get("piece_materials", {}).get(k[6:], ""), {})
+        lim_w = sum(ma["groups"][k]["area"] * (rmat(k).get("g7_min") or T["g7_min"]) for k in gains)
+        lim = round(lim_w / max(sum(ma["groups"][k]["area"] for k in gains), 1e-9), 3)
+        ok = agg >= lim and (cap is None or ea_mean <= cap)
+        out.append(_g("G7", ok, round(agg, 2), lim, "area-weighted gain; per region %s; dressed energy %.2e vs cap %s" % (json.dumps(gains), ea_mean, None if cap is None else "%.2e" % cap)))
     else:
         out.append(_g("G7", None, None, T["g7_min"], "no dressed region large enough"))
     # G8 tiling

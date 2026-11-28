@@ -32,7 +32,30 @@
     "ao_distance_m": 0.6,
     "tone_gain": 1.0
    },
-   "materials": {}
+   "materials": {},
+   "atmos": {
+    "_p2": true,
+    "fog": {
+     "density": 0.006,
+     "top_m": 1.0,
+     "falloff": 1.0,
+     "wisp_m": 3.0,
+     "wisp": 0.5,
+     "color": [
+      0.8,
+      0.82,
+      0.85
+     ],
+     "anisotropy": 0.2
+    }
+   },
+   "p2": {
+    "version": 2,
+    "fog": true,
+    "fx_listed": [
+     "fog"
+    ]
+   }
   },
   "clerk-office": {
    "p1": {
@@ -62,8 +85,8 @@
      "macro2": 0.05,
      "obj_jitter_m": 0.0,
      "family": "scan",
-     "scan": "weathered_plank_siding",
-     "tile_m": 2.2,
+     "scan": "old_wood_floor",
+     "tile_m": 2.4,
      "chroma": 0.15,
      "bump": 0.5,
      "macro": 0.1,
@@ -109,6 +132,7 @@
       "height": 0.4,
       "stretch": 12.0
      },
+     "g7_min": 1.5,
      "family": "grid",
      "tile_m": 0.18,
      "board_m": 2.2,
@@ -152,6 +176,7 @@
       "albedo": 0.06,
       "height": 0.7
      },
+     "g7_min": 1.5,
      "chroma": 0.0,
      "bump": 0.55,
      "macro": 0.1,
@@ -184,6 +209,7 @@
       "albedo": 0.06,
       "height": 0.7
      },
+     "g7_min": 1.5,
      "chroma": 0.0,
      "bump": 0.55,
      "macro": 0.1,
@@ -270,19 +296,20 @@
    "atmos": {
     "_p2": true,
     "sky_plate": {
-     "name": "dusk-procedural",
-     "horizon_gain": 1.06,
-     "zenith_gain": 0.95,
-     "cloud_scale": 3.2,
-     "cloud_contrast": 0.25,
-     "hdri_considered": "qwantani_dusk_2_puresky_2k.hdr"
+     "name": "dusk-hdri",
+     "hdri": "qwantani_dusk_2_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.85,
+     "strength_gain": 2.242
     }
    },
    "p2": {
-    "version": 1,
+    "version": 2,
     "sky": "dusk",
+    "sky_plate": "dusk-hdri",
     "haze": false,
-    "extent_m": 600.0
+    "extent_m": 600.0,
+    "fx_listed": []
    }
   },
   "elaris-room": {
@@ -307,12 +334,12 @@
    },
    "materials": {
     "ceiling-planks": {
-     "res": "2k",
+     "res": "1k",
      "third": true,
      "macro2": 0.05,
      "obj_jitter_m": 0.0,
      "family": "scan",
-     "scan": "weathered_plank_siding",
+     "scan": "weathered_planks",
      "tile_m": 2.4,
      "chroma": 0.15,
      "bump": 0.6,
@@ -326,8 +353,8 @@
      "macro2": 0.05,
      "obj_jitter_m": 0.0,
      "family": "scan",
-     "scan": "weathered_plank_siding",
-     "tile_m": 2.2,
+     "scan": "old_wood_floor",
+     "tile_m": 2.4,
      "chroma": 0.15,
      "bump": 0.5,
      "macro": 0.1,
@@ -350,6 +377,7 @@
       "albedo": 0.06,
       "height": 0.7
      },
+     "g7_min": 1.5,
      "chroma": 0.0,
      "bump": 0.55,
      "macro": 0.1,
@@ -382,6 +410,7 @@
       "height": 0.4,
       "stretch": 6.0
      },
+     "g7_min": 1.5,
      "chroma": 0.0,
      "bump": 0.2,
      "macro": 0.05,
@@ -412,6 +441,7 @@
       "height": 0.4,
       "stretch": 12.0
      },
+     "g7_min": 1.5,
      "family": "grid",
      "tile_m": 0.18,
      "board_m": 2.2,
@@ -461,7 +491,27 @@
       2.4
      ]
     }
-   ]
+   ],
+   "kits": [
+    {
+     "kit": "motes",
+     "name": "motes",
+     "per_m3": 0.6,
+     "max": 1500,
+     "radius_m": 0.003,
+     "top_m": 3.0,
+     "clear_m": 0.8,
+     "clear_centre": false,
+     "_p2": true
+    }
+   ],
+   "p2": {
+    "version": 2,
+    "motes": true,
+    "fx_listed": [
+     "dust"
+    ]
+   }
   },
   "father-camp": {
    "p1": {
@@ -537,12 +587,11 @@
    "atmos": {
     "_p2": true,
     "sky_plate": {
-     "name": "overcast-procedural",
-     "horizon_gain": 1.06,
-     "zenith_gain": 0.95,
-     "cloud_scale": 3.2,
-     "cloud_contrast": 0.3,
-     "hdri_considered": "kloofendal_overcast_puresky_2k.hdr"
+     "name": "overcast-hdri",
+     "hdri": "kloofendal_overcast_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.85,
+     "strength_gain": 1.307
     },
     "haze": {
      "density": 0.0005,
@@ -555,10 +604,12 @@
     }
    },
    "p2": {
-    "version": 1,
+    "version": 2,
     "sky": "overcast",
+    "sky_plate": "overcast-hdri",
     "haze": true,
-    "extent_m": 36.0
+    "extent_m": 36.0,
+    "fx_listed": []
    }
   },
   "hollin-streets": {
@@ -593,8 +644,8 @@
      "macro2": 0.05,
      "obj_jitter_m": 0.0,
      "family": "scan",
-     "scan": "stone_floor",
-     "tile_m": 1.6,
+     "scan": "mossy_cobblestone",
+     "tile_m": 1.8,
      "contrast": 1.5,
      "chroma": 0.1,
      "bump": 0.7,
@@ -616,6 +667,7 @@
       "albedo": 0.06,
       "height": 0.7
      },
+     "g7_min": 1.5,
      "chroma": 0.0,
      "bump": 0.55,
      "macro": 0.1,
@@ -684,15 +736,24 @@
      "p1_preset": "stone_block"
     }
    },
+   "p2_materials": {
+    "gutter-water": {
+     "family": "water",
+     "dark": 0.85,
+     "roughness": 0.05,
+     "ripple": 0.12,
+     "specular": 0.55,
+     "p2_preset": "water_river"
+    }
+   },
    "atmos": {
     "_p2": true,
     "sky_plate": {
-     "name": "partly cloudy-procedural",
-     "horizon_gain": 1.06,
-     "zenith_gain": 0.95,
-     "cloud_scale": 3.2,
-     "cloud_contrast": 0.35,
-     "hdri_considered": "kloofendal_48d_partly_cloudy_puresky_2k.hdr"
+     "name": "partly cloudy-hdri",
+     "hdri": "kloofendal_48d_partly_cloudy_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.85,
+     "strength_gain": 0.645
     },
     "haze": {
      "density": 0.0005,
@@ -704,11 +765,31 @@
      "anisotropy": 0.25
     }
    },
+   "kits": [
+    {
+     "kit": "precip",
+     "name": "rain",
+     "kind": "rain",
+     "per_m3": 0.6,
+     "max": 3000,
+     "clear_m": 1.0,
+     "clear_centre": false,
+     "_p2": true
+    }
+   ],
    "p2": {
-    "version": 1,
+    "version": 2,
     "sky": "partly cloudy",
+    "sky_plate": "partly cloudy-hdri",
     "haze": true,
-    "extent_m": 120.0
+    "extent_m": 120.0,
+    "rain": true,
+    "water": [
+     "gutter-water"
+    ],
+    "fx_listed": [
+     "rain"
+    ]
    }
   },
   "pantry": {
@@ -739,6 +820,7 @@
       "height": 0.4,
       "stretch": 12.0
      },
+     "g7_min": 1.5,
      "family": "grid",
      "tile_m": 0.18,
      "board_m": 2.2,
@@ -822,6 +904,7 @@
       "albedo": 0.06,
       "height": 0.7
      },
+     "g7_min": 1.5,
      "chroma": 0.0,
      "bump": 0.55,
      "macro": 0.1,
@@ -921,6 +1004,7 @@
       "height": 0.4,
       "stretch": 12.0
      },
+     "g7_min": 1.5,
      "family": "grid",
      "tile_m": 0.18,
      "board_m": 2.2,
@@ -954,19 +1038,20 @@
    "atmos": {
     "_p2": true,
     "sky_plate": {
-     "name": "dusk-procedural",
-     "horizon_gain": 1.06,
-     "zenith_gain": 0.95,
-     "cloud_scale": 3.2,
-     "cloud_contrast": 0.25,
-     "hdri_considered": "qwantani_dusk_2_puresky_2k.hdr"
+     "name": "dusk-hdri",
+     "hdri": "qwantani_dusk_2_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.85,
+     "strength_gain": 2.242
     }
    },
    "p2": {
-    "version": 1,
+    "version": 2,
     "sky": "dusk",
+    "sky_plate": "dusk-hdri",
     "haze": false,
-    "extent_m": 470.0
+    "extent_m": 470.0,
+    "fx_listed": []
    }
   },
   "silver-dunes": {
@@ -1005,19 +1090,20 @@
    "atmos": {
     "_p2": true,
     "sky_plate": {
-     "name": "overcast-procedural",
-     "horizon_gain": 1.06,
-     "zenith_gain": 0.95,
-     "cloud_scale": 3.2,
-     "cloud_contrast": 0.3,
-     "hdri_considered": "kloofendal_overcast_puresky_2k.hdr"
+     "name": "overcast-hdri",
+     "hdri": "kloofendal_overcast_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.85,
+     "strength_gain": 1.307
     }
    },
    "p2": {
-    "version": 1,
+    "version": 2,
     "sky": "overcast",
+    "sky_plate": "overcast-hdri",
     "haze": false,
-    "extent_m": 300.0
+    "extent_m": 300.0,
+    "fx_listed": []
    }
   },
   "storyteller-hut": {
@@ -1048,6 +1134,7 @@
       "height": 0.4,
       "stretch": 12.0
      },
+     "g7_min": 1.5,
      "family": "grid",
      "tile_m": 0.18,
      "board_m": 2.2,
@@ -1165,7 +1252,22 @@
       2.4
      ]
     }
-   ]
+   ],
+   "kits": [
+    {
+     "kit": "flames",
+     "name": "flames",
+     "clear_centre": false,
+     "_p2": true
+    }
+   ],
+   "p2": {
+    "version": 2,
+    "flames": true,
+    "fx_listed": [
+     "flame"
+    ]
+   }
   },
   "temple-halls": {
    "p1": {
@@ -1207,6 +1309,7 @@
       "albedo": 0.05,
       "height": 0.6
      },
+     "g7_min": 1.5,
      "chroma": 0.0,
      "bump": 0.25,
      "macro": 0.07,
@@ -1249,6 +1352,7 @@
       "albedo": 0.06,
       "height": 0.7
      },
+     "g7_min": 1.5,
      "chroma": 0.0,
      "bump": 0.55,
      "macro": 0.1,
@@ -1274,6 +1378,7 @@
       "height": 0.4,
       "stretch": 12.0
      },
+     "g7_min": 1.5,
      "family": "grid",
      "tile_m": 0.18,
      "board_m": 2.2,
@@ -1323,7 +1428,27 @@
       2.4
      ]
     }
-   ]
+   ],
+   "kits": [
+    {
+     "kit": "motes",
+     "name": "motes",
+     "per_m3": 0.6,
+     "max": 1500,
+     "radius_m": 0.003,
+     "top_m": 3.0,
+     "clear_m": 0.8,
+     "clear_centre": false,
+     "_p2": true
+    }
+   ],
+   "p2": {
+    "version": 2,
+    "motes": true,
+    "fx_listed": [
+     "dust"
+    ]
+   }
   },
   "unlit-gallery": {
    "p1": {
@@ -1358,6 +1483,7 @@
       "height": 0.4,
       "stretch": 12.0
      },
+     "g7_min": 1.5,
      "family": "grid",
      "tile_m": 0.18,
      "board_m": 2.2,
@@ -1472,6 +1598,7 @@
       "height": 0.4,
       "stretch": 12.0
      },
+     "g7_min": 1.5,
      "family": "grid",
      "tile_m": 0.18,
      "board_m": 2.2,
@@ -1720,12 +1847,11 @@
    "atmos": {
     "_p2": true,
     "sky_plate": {
-     "name": "overcast-procedural",
-     "horizon_gain": 1.06,
-     "zenith_gain": 0.95,
-     "cloud_scale": 3.2,
-     "cloud_contrast": 0.3,
-     "hdri_considered": "kloofendal_overcast_puresky_2k.hdr"
+     "name": "overcast-hdri",
+     "hdri": "kloofendal_overcast_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.85,
+     "strength_gain": 1.307
     },
     "haze": {
      "density": 0.0005,
@@ -1738,10 +1864,12 @@
     }
    },
    "p2": {
-    "version": 1,
+    "version": 2,
     "sky": "overcast",
+    "sky_plate": "overcast-hdri",
     "haze": true,
-    "extent_m": 8.4
+    "extent_m": 8.4,
+    "fx_listed": []
    }
   },
   "xandri-hut": {
@@ -1777,6 +1905,7 @@
       "albedo": 0.08,
       "height": 0.6
      },
+     "g7_min": 1.5,
      "chroma": 0.0,
      "bump": 0.35,
      "macro": 0.12,
@@ -1877,7 +2006,27 @@
       2.4
      ]
     }
-   ]
+   ],
+   "kits": [
+    {
+     "kit": "motes",
+     "name": "motes",
+     "per_m3": 0.6,
+     "max": 1500,
+     "radius_m": 0.003,
+     "top_m": 3.0,
+     "clear_m": 0.8,
+     "clear_centre": false,
+     "_p2": true
+    }
+   ],
+   "p2": {
+    "version": 2,
+    "motes": true,
+    "fx_listed": [
+     "dust"
+    ]
+   }
   }
  }
 }

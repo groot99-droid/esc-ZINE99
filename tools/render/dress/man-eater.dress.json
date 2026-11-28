@@ -44,6 +44,7 @@
       "albedo": 0.08,
       "height": 0.6
      },
+     "g7_min": 1.5,
      "chroma": 0.0,
      "bump": 0.35,
      "macro": 0.12,
@@ -347,12 +348,11 @@
    "atmos": {
     "_p2": true,
     "sky_plate": {
-     "name": "partly cloudy-procedural",
-     "horizon_gain": 1.06,
-     "zenith_gain": 0.95,
-     "cloud_scale": 3.2,
-     "cloud_contrast": 0.35,
-     "hdri_considered": "kloofendal_48d_partly_cloudy_puresky_2k.hdr"
+     "name": "partly cloudy-hdri",
+     "hdri": "kloofendal_48d_partly_cloudy_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.85,
+     "strength_gain": 0.645
     },
     "haze": {
      "density": 0.0005,
@@ -365,10 +365,12 @@
     }
    },
    "p2": {
-    "version": 1,
+    "version": 2,
     "sky": "partly cloudy",
+    "sky_plate": "partly cloudy-hdri",
     "haze": true,
-    "extent_m": 10.0
+    "extent_m": 10.0,
+    "fx_listed": []
    }
   },
   "cafeteria": {
@@ -481,6 +483,7 @@
       "albedo": 0.06,
       "height": 0.7
      },
+     "g7_min": 1.5,
      "chroma": 0.0,
      "bump": 0.55,
      "macro": 0.1,
@@ -513,6 +516,7 @@
       "albedo": 0.06,
       "height": 0.7
      },
+     "g7_min": 1.5,
      "chroma": 0.0,
      "bump": 0.55,
      "macro": 0.1,
@@ -915,6 +919,7 @@
       "albedo": 0.06,
       "height": 0.7
      },
+     "g7_min": 1.5,
      "chroma": 0.0,
      "bump": 0.55,
      "macro": 0.1,
@@ -947,6 +952,7 @@
       "albedo": 0.06,
       "height": 0.7
      },
+     "g7_min": 1.5,
      "chroma": 0.0,
      "bump": 0.55,
      "macro": 0.1,
@@ -1081,6 +1087,7 @@
       "height": 0.4,
       "stretch": 12.0
      },
+     "g7_min": 1.5,
      "family": "grid",
      "tile_m": 0.18,
      "board_m": 2.2,
@@ -1175,6 +1182,7 @@
       "albedo": 0.06,
       "height": 0.7
      },
+     "g7_min": 1.5,
      "chroma": 0.0,
      "bump": 0.55,
      "macro": 0.1,
@@ -1207,6 +1215,7 @@
       "albedo": 0.06,
       "height": 0.7
      },
+     "g7_min": 1.5,
      "chroma": 0.0,
      "bump": 0.55,
      "macro": 0.1,
@@ -1792,6 +1801,21 @@
      },
      "p1_preset": "painted_steel_me"
     }
+   },
+   "kits": [
+    {
+     "kit": "flames",
+     "name": "flames",
+     "clear_centre": false,
+     "_p2": true
+    }
+   ],
+   "p2": {
+    "version": 2,
+    "flames": true,
+    "fx_listed": [
+     "flame"
+    ]
    }
   },
   "bunk-room": {
@@ -1902,6 +1926,7 @@
       "albedo": 0.06,
       "height": 0.7
      },
+     "g7_min": 1.5,
      "chroma": 0.0,
      "bump": 0.55,
      "macro": 0.1,
@@ -1934,6 +1959,7 @@
       "albedo": 0.06,
       "height": 0.7
      },
+     "g7_min": 1.5,
      "chroma": 0.0,
      "bump": 0.55,
      "macro": 0.1,
@@ -2149,12 +2175,11 @@
    "atmos": {
     "_p2": true,
     "sky_plate": {
-     "name": "partly cloudy-procedural",
-     "horizon_gain": 1.06,
-     "zenith_gain": 0.95,
-     "cloud_scale": 3.2,
-     "cloud_contrast": 0.35,
-     "hdri_considered": "kloofendal_48d_partly_cloudy_puresky_2k.hdr"
+     "name": "partly cloudy-hdri",
+     "hdri": "kloofendal_48d_partly_cloudy_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.85,
+     "strength_gain": 0.645
     },
     "haze": {
      "density": 0.0005,
@@ -2167,10 +2192,12 @@
     }
    },
    "p2": {
-    "version": 1,
+    "version": 2,
     "sky": "partly cloudy",
+    "sky_plate": "partly cloudy-hdri",
     "haze": true,
-    "extent_m": 60.0
+    "extent_m": 60.0,
+    "fx_listed": []
    }
   },
   "perimeter": {
@@ -2238,19 +2265,20 @@
    "atmos": {
     "_p2": true,
     "sky_plate": {
-     "name": "partly cloudy-procedural",
-     "horizon_gain": 1.06,
-     "zenith_gain": 0.95,
-     "cloud_scale": 3.2,
-     "cloud_contrast": 0.35,
-     "hdri_considered": "kloofendal_48d_partly_cloudy_puresky_2k.hdr"
+     "name": "partly cloudy-hdri",
+     "hdri": "kloofendal_48d_partly_cloudy_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.85,
+     "strength_gain": 0.645
     }
    },
    "p2": {
-    "version": 1,
+    "version": 2,
     "sky": "partly cloudy",
+    "sky_plate": "partly cloudy-hdri",
     "haze": false,
-    "extent_m": 460.0
+    "extent_m": 460.0,
+    "fx_listed": []
    }
   },
   "room-below": {
@@ -2376,6 +2404,7 @@
       "height": 0.4,
       "stretch": 12.0
      },
+     "g7_min": 1.5,
      "family": "grid",
      "tile_m": 0.18,
      "board_m": 2.2,
@@ -2495,6 +2524,7 @@
       "albedo": 0.06,
       "height": 0.7
      },
+     "g7_min": 1.5,
      "chroma": 0.0,
      "bump": 0.55,
      "macro": 0.1,
@@ -2527,6 +2557,7 @@
       "albedo": 0.06,
       "height": 0.7
      },
+     "g7_min": 1.5,
      "chroma": 0.0,
      "bump": 0.55,
      "macro": 0.1,
@@ -2606,6 +2637,7 @@
       "albedo": 0.06,
       "height": 0.7
      },
+     "g7_min": 1.5,
      "chroma": 0.0,
      "bump": 0.55,
      "macro": 0.1,
@@ -2638,6 +2670,7 @@
       "albedo": 0.06,
       "height": 0.7
      },
+     "g7_min": 1.5,
      "chroma": 0.0,
      "bump": 0.55,
      "macro": 0.1,
@@ -2798,8 +2831,9 @@
     }
    ],
    "p2": {
-    "version": 1,
-    "window_plate": true
+    "version": 2,
+    "window_plate": true,
+    "fx_listed": []
    }
   }
  }

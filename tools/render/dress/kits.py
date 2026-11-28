@@ -254,7 +254,22 @@ def swell(ctx, spec, col):
     return sw.swell(ctx, spec, col)
 
 
-KITS = {"swell": swell, "window_plate": window_plate, "conifer_wrap": conifer_wrap, "treeline": treeline, "attic_cap": attic_cap, "frames": frames, "baseboard": baseboard, "ceiling_joists": ceiling_joists, "ceiling_grid": ceiling_grid, "conduit": conduit}
+def motes(ctx, spec, col):
+    from . import p2fx
+    return p2fx.motes(ctx, spec, col)
+
+
+def precip(ctx, spec, col):
+    from . import p2fx
+    return p2fx.precip(ctx, spec, col)
+
+
+def flames(ctx, spec, col):
+    from . import p2fx
+    return p2fx.flames(ctx, spec, col)
+
+
+KITS = {"motes": motes, "precip": precip, "flames": flames, "swell": swell, "window_plate": window_plate, "conifer_wrap": conifer_wrap, "treeline": treeline, "attic_cap": attic_cap, "frames": frames, "baseboard": baseboard, "ceiling_joists": ceiling_joists, "ceiling_grid": ceiling_grid, "conduit": conduit}
 
 
 def kits_layer(ctx, specs):

@@ -67,19 +67,31 @@ def _hdri_colour(b, nt, path, flat, spec, tc):
     im.colorspace_settings.name = "Linear Rec.709" if "Linear Rec.709" in [e.identifier for e in im.colorspace_settings.bl_rna.properties["name"].enum_items] else "Non-Color"
     px = np.empty(len(im.pixels), dtype=np.float32)
     im.pixels.foreach_get(px)
-    mean = np.maximum(px.reshape(-1, 4)[:, :3].mean(0), 1e-4)
+    if spec.get("legacy_remap"):
+        mean = np.maximum(px.reshape(-1, 4)[:, :3].mean(0), 1e-4)
+    else:  # P2b calibration: the mean of the band a level camera mostly sees (5 degrees down to 25 up), sun and glare (top 0.5 %) left out
+        w_, h_ = im.size
+        a = px.reshape(h_, w_, 4)[:, :, :3]
+        lat = (np.arange(h_) + 0.5) / h_ * 180.0 - 90.0  # Blender stores rows bottom-up
+        band = a[(lat >= -5.0) & (lat <= 25.0)].reshape(-1, 3)
+        lum = band @ np.array([0.2126, 0.7152, 0.0722], dtype=np.float32)
+        band = band[lum <= np.quantile(lum, 0.995)]
+        mean = np.maximum(band.mean(0), 1e-4)
     env = b.n("ShaderNodeTexEnvironment")
     env.image = im
     mp = b.n("ShaderNodeMapping")
     mp.inputs["Rotation"].default_value = (0.0, 0.0, math.radians(spec.get("rotation_deg", 0.0)))
     # the Generated coordinate of a world is the view direction in 0..1: remap to -1..1 for the environment lookup
-    nm = b.n("ShaderNodeVectorMath", operation="SCALE")
-    nm.inputs["Scale"].default_value = 2.0
-    sub = b.n("ShaderNodeVectorMath", operation="SUBTRACT")
-    sub.inputs[1].default_value = (1.0, 1.0, 1.0)
-    b.link(tc.outputs["Generated"], nm.inputs[0])
-    b.link(nm.outputs[0], sub.inputs[0])
-    b.link(sub.outputs[0], mp.inputs["Vector"])
+    if spec.get("legacy_remap"):  # P0 to R3: Generated read as 0..1 and remapped to -1..1 (wrong: a world's Generated is already the
+        nm = b.n("ShaderNodeVectorMath", operation="SCALE")  # view direction, so a level ray looked at the image's nadir)
+        nm.inputs["Scale"].default_value = 2.0
+        sub = b.n("ShaderNodeVectorMath", operation="SUBTRACT")
+        sub.inputs[1].default_value = (1.0, 1.0, 1.0)
+        b.link(tc.outputs["Generated"], nm.inputs[0])
+        b.link(nm.outputs[0], sub.inputs[0])
+        b.link(sub.outputs[0], mp.inputs["Vector"])
+    else:
+        b.link(tc.outputs["Generated"], mp.inputs["Vector"])
     b.link(mp.outputs[0], env.inputs["Vector"])
     gain = tuple(float(flat[i]) / float(mean[i]) for i in range(3))
     k = spec.get("strength_gain", 1.0)
