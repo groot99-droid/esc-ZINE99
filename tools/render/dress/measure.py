@@ -338,7 +338,10 @@ def compare(mb, ma, sb, sa, T=None, still="camera"):
     # a tile grid (vinyl, ceiling tile) and a wallpaper stripe are periodic by design, and glass (dirt-only) shows its reflection, not a texture: G8 skips both.
     # A peak the region already had before dressing (a shading edge, a pattern the build file draws) is not the dressing's tiling.
     skip = ("grid", "wallpaper", "dirt-only", "keep")
-    peaks = {k: ma["groups"][k].get("tiling_peak") for k in dressed if k in ma["groups"] and ma["groups"][k].get("tiling_peak") is not None and fam(k) not in skip}
+    # P1: a scan of a regular built pattern (brick bond, floor tiles, diamond plate, corrugation) is marked `periodic` in its config
+    per = lambda k: dr.get("materials", {}).get(dr.get("piece_materials", {}).get(k[6:], ""), {}).get("periodic")
+    peaks = {k: ma["groups"][k].get("tiling_peak") for k in dressed if k in ma["groups"] and ma["groups"][k].get("tiling_peak") is not None
+             and fam(k) not in skip and not per(k)}
     over = {k: v for k, v in peaks.items() if v > T["g8_peak"] and v > (mb["groups"].get(k, {}).get("tiling_peak") or 0.0) + 0.05}
     if peaks:
         out.append(_g("G8", not over, round(max(peaks.values()), 3), T["g8_peak"], "over the limit and above before: %s; all %s" % (json.dumps({k: round(v, 3) for k, v in over.items()}), json.dumps({k: round(v, 3) for k, v in peaks.items()}))))

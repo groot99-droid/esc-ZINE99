@@ -49,6 +49,8 @@ def jobs_for(run, mdir, ref_root, game, tiling):
                 ref = None
                 if st["still"] == "overview" and ref_root:
                     rp = os.path.join(ref_root, "games", game, "assets", "locations", loc + ".jpg")
+                    if os.path.exists(rp[:-4] + ".png"):  # P1: a png copy for a Python without Pillow (imageio_min reads png only)
+                        rp = rp[:-4] + ".png"
                     ref = rp if os.path.exists(rp) else None
                 out = os.path.join(mdir, "%s__%s__%s.json" % (loc, scene, st["still"]))
                 if os.path.exists(png):

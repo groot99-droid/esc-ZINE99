@@ -354,12 +354,15 @@ def _boards(b, p, ctx, K, mat_name, s, t):
     into diagonal staircases of darker boards (the R2 cabin ceiling). Here every row gets its own random butt-joint offset and every
     board its own white-noise value and a faint lengthwise grain. Returns (colour, roughness multiplier, height)."""
     ax = "xyz".index(p.get("board_axis", "x"))
-    ra = "xyz".index(p.get("row_axis", "y" if ax == 0 else "x"))
+    ra_name = p.get("row_axis", "y" if ax == 0 else "x")
     L = p["board_m"] * K
     sep = b.n("ShaderNodeSeparateXYZ")
     b.link(s.pos, sep.inputs[0])
     key = seeds.unit("%s/%s/%s" % (ctx["game"], ctx["location"], mat_name), "boards") * 97.0
-    v = b.math("DIVIDE", sep.outputs[ra], t)
+    if ra_name == "xy":  # P1: vertical boards on walls facing either axis (the row runs along x + y, as the wallpaper stripe)
+        v = b.math("DIVIDE", b.math("ADD", sep.outputs[0], sep.outputs[1]), t)
+    else:
+        v = b.math("DIVIDE", sep.outputs["xyz".index(ra_name)], t)
     row = b.math("FLOOR", v)
     wr = b.n("ShaderNodeTexWhiteNoise", noise_dimensions="1D")
     b.link(b.math("ADD", row, key), wr.inputs["W"])
@@ -734,6 +737,8 @@ def dress_material(mat, p, ctx, K, key):
     ecol0 = tuple(old.inputs[ek].default_value)[:3]
     fam = p["family"]
     rec = {"family": fam, "scan": p.get("scan"), "blockout_color": [round(c, 4) for c in col0], "alpha": alpha0, "emission": emit0}
+    if p.get("periodic"):  # a regular built pattern (brick bond, tiles): G8 treats it like a tile grid
+        rec["periodic"] = True
     ctx["record"]["materials"][key] = rec
     if p.get("base_color"):  # R3: another albedo hue at the build colour's luminance (x base_lum); emission keeps the build colour
         bc = p["base_color"]

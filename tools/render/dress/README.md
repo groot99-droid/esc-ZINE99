@@ -246,3 +246,37 @@ fitted to real size in Blender (bottom centre at the origin, front on -Y) and pl
 `truck-door` in the truck cab (replacing door-open; hinged at the front pillar, 60 degrees open; the door-step box stays) and
 `crate-coffee-table` in tam-flat (replacing crate-table; its top at 0.45 m carries the scene's notebook and phone). The models are
 credited as generated (Higgsfield). Tests: `tests/test_props.py` class `Rebuild3`.
+
+## P1: core surfaces and grime (2026-11-27)
+
+`p1.py` writes a location entry for each of the 144 places that are not pilot places (`python tools/render/dress/p1.py --write`).
+It reads the compiled blockout files (read only), sorts every blockout material by name, role and flags into a preset, and keeps
+the hand-made pilot places and every `props` entry. Presets (R3 options throughout: three stochastic samples, per-object phase,
+large-scale brightness fields, worn edges, patches) use only the 23 approved P1 textures:
+
+| Preset | Texture or family | Used for |
+| --- | --- | --- |
+| `plaster`, `plaster_clean`, `plaster_old`, `ceiling`, `paint_gloss` | `plastered_wall_04`, `worn_mossy_plasterwall` (contrast 0.3: at 1.0 it reads as mould) | painted plaster in three wear grades by place (clean: labs, offices, lobbies; old: cellars, cold stores, laundries, tunnels) |
+| `conc_wall`, `conc_wall_damp`, `conc_floor`, `conc_polished` | `concrete_wall_008`, `concrete_floor_worn_001` | concrete in three grades |
+| `painted_steel`, `stove_iron`, `steel_clean`, `car_paint`, `brass` | `green_metal_rust` (luminance only), procedural metal | steel with rust blotches that lower metallic; Man Eater rust kept amber-brown |
+| `metal_plate`, `corrugated` | `metal_plate`, `corrugated_iron` | grates, tin roofs |
+| `flagstone`, `cobble`, `stone_block`, `drystone`, `marble` | `slate_floor_02`, `stone_floor`, procedural with light veins | stone |
+| `brick`, `mud_wall`, `tile`, `tile_gloss` | `red_brick_03`, `mud_cracked_dry_03`, `large_floor_tiles_02` | masonry and tile |
+| `wood_floor`, `wood_deck`, `log_wall`, `boards_v`, `timber`, `timber_varnish` | `weathered_plank_siding`, `wood_trunk_wall` | wood (logs with round courses and chinking, as the cabin) |
+| `wallpaper`, `cloth_wall`, `fabric`, `fabric_fine`, `thatch` | procedural paper, `hessian_380` | wall coverings, textiles |
+| `paper`, `leather` | procedural (fibres, laid lines, creases, faint foxing; pebbled grain, creases) | blank paper and vellum (no lettering), leather |
+| `gravel`, `path`, `earth`, `dry_ground`, `sand`, `asphalt` | `gravel_floor`, `rocky_trail`, `forrest_ground_01`, `mud_cracked_dry_03`, `coast_sand_01`, `asphalt_02` | ground |
+| `glass`, `glass_frosted` | dirt-only | glazing |
+
+Grime set (shader masks, no z-fighting): `streaks` (water, soot or rust runs from the top of a vertical face), `cracks` (hairline
+cracks in patches, or light veins for marble), `rust` (metal only; lowers metallic, raises roughness), with the R1 `scuffs`,
+`edge_wear` and `patches`, and AO dirt, dust and damp from the location's `grime` grade. Stain decals in interiors (never Man
+Eater, never the arena). Materials of later phases are not dressed and are listed per location under `p1.deferred`: sky and water
+(P2), vegetation (P3), rock, snow and ice (P4), and the per-game specials (P5: heartstream tissue, bark, LIRA crystal and glow, WRY
+bone-and-silver, SEA tarred wood, TEMP sand and books). Emitting materials (lit windows, lamps) are kept. `scan` `contrast` scales
+a scan's detail around the build tone.
+
+Driver run: before = `--no-dress 1`, after = `--dress code/dress --dress-layers surfaces,decals` (the props layer is a separate
+pass and is left out of both, so the gates compare like with like), half resolution and half samples, every still. `run_post.sh`
+describes with one Python process when `$PY` is set, so the job never has more than one Blender on a shared box, and keeps the
+png files when a describe fails.

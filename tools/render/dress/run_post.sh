@@ -23,8 +23,8 @@ done
 cd "$JOB" || exit 1
 mkdir -p "metrics/$run/$game"
 if [ -n "$PY" ]; then
-  "$PY" code/dress/batch_describe.py "out/$run/$game" "metrics/$run/$game" --ref-root refs --jobs 8 "${tiling[@]}" > "logs/post_${run}_${game}.log" 2>&1
-  "$BL" -b --factory-startup --python code/dress/finalize_run.py -- "out/$run/$game" "${keep[@]}" > "logs/fin_${run}_${game}.log" 2>&1
+  # the png files are dropped only after every still was described (a failed describe keeps them for a re-run)
+  "$PY" code/dress/batch_describe.py "out/$run/$game" "metrics/$run/$game" --ref-root refs --jobs 8 "${tiling[@]}" > "logs/post_${run}_${game}.log" 2>&1 &&   "$BL" -b --factory-startup --python code/dress/finalize_run.py -- "out/$run/$game" "${keep[@]}" > "logs/fin_${run}_${game}.log" 2>&1
 else
   for i in 0 1 2 3 4 5 6 7; do
     "$BL" -b --factory-startup --python code/dress/batch_describe.py -- "out/$run/$game" "metrics/$run/$game" --ref-root refs --shard "$i/8" "${tiling[@]}" > "logs/post_${run}_${game}_$i.log" 2>&1 &
