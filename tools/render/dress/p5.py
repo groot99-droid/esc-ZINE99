@@ -36,7 +36,7 @@ SPECIAL = {
                     (r"^(bone|bone-dark)$", {"family": "noise", "tile_m": 1.2, "macro": 0.08, "fine": 0.05, "bump": 0.3,
                                              "cracks": {"amount": 0.3, "scale_m": 0.5, "width": 0.006, "share": 0.4}})],
     "people-of-the-bark": [(r"^(bark|bark-grey|bark-umber|bark-damp|home-bark)$", {"family": "scan", "scan": "bark_brown_02", "res": "2k",
-                                                                                   "tile_m": 0.18, "far": {"tile_m": 1.8, "from_m": 4.0, "to_m": 20.0}, "chroma": 0.1, "bump": 0.35, "bump_m": 0.002, "macro": 0.14,
+                                                                                   "tile_m": 0.18, "far": {"tile_m": 1.8, "from_m": 0.02, "to_m": 0.08}, "chroma": 0.1, "bump": 0.35, "bump_m": 0.002, "macro": 0.14,
                                                                                    "third": True, "macro2": 0.08}),
                            (r"^(knot-tan)$", {"family": "scan", "scan": "pine_bark", "res": "1k", "tile_m": 0.15, "chroma": 0.1, "bump": 0.35, "bump_m": 0.002})],
     "lord-of-the-sea": [(r"^(tarred-wood|hull|ink-hull)$", {"family": "scan", "scan": "weathered_planks", "res": "1k", "tile_m": 2.2,
