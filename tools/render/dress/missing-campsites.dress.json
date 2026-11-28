@@ -1182,7 +1182,7 @@
       "pine-5-crown",
       "pine-6-crown"
      ],
-     "clear_m": 0.6,
+     "clear_m": 2.5,
      "height_gain": 1.06,
      "radius_gain": 1.35,
      "lift": 0.02,
@@ -1785,7 +1785,7 @@
       "pine-5-crown",
       "pine-6-crown"
      ],
-     "clear_m": 0.6,
+     "clear_m": 2.5,
      "height_gain": 1.06,
      "radius_gain": 1.35,
      "lift": 0.02,
@@ -2307,7 +2307,7 @@
       "pine-3-crown",
       "pine-4-crown"
      ],
-     "clear_m": 0.6,
+     "clear_m": 2.5,
      "height_gain": 1.06,
      "radius_gain": 1.35,
      "lift": 0.02,

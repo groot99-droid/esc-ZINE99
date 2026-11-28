@@ -1883,6 +1883,14 @@
      "dust"
     ]
    },
+   "p6": {
+    "version": 2,
+    "kits": [
+     "skirting",
+     "fixtures",
+     "shelves"
+    ]
+   },
    "p5_materials": {
     "book-spines": {
      "family": "grid",
@@ -1917,14 +1925,6 @@
      "book-spines": "book-spines",
      "vellum": "vellum"
     }
-   },
-   "p6": {
-    "version": 2,
-    "kits": [
-     "skirting",
-     "fixtures",
-     "shelves"
-    ]
    }
   },
   "unlit-gallery": {

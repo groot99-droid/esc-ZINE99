@@ -1889,7 +1889,7 @@
       "pine-7",
       "pine-8"
      ],
-     "clear_m": 0.6,
+     "clear_m": 2.5,
      "height_gain": 1.06,
      "radius_gain": 1.35,
      "lift": 0.02,
@@ -2297,7 +2297,7 @@
       "forest-edge-5",
       "forest-edge-6"
      ],
-     "clear_m": 0.6,
+     "clear_m": 2.5,
      "height_gain": 1.06,
      "radius_gain": 1.35,
      "lift": 0.02,
@@ -2583,7 +2583,7 @@
       "slope-pine-7",
       "slope-pine-8"
      ],
-     "clear_m": 0.6,
+     "clear_m": 2.5,
      "height_gain": 1.06,
      "radius_gain": 1.35,
      "lift": 0.02,

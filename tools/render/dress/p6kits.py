@@ -35,6 +35,8 @@ def fixtures(ctx, spec, col):
         if L.data.type == "AREA":
             sx = L.data.size * L.scale.x
             sy = (L.data.size_y if L.data.shape in ("RECTANGLE", "ELLIPSE") else L.data.size) * L.scale.y
+            if max(sx, sy) > spec.get("max_panel_m", 1.5) * K:  # a room-sized fill light is not a fitting: no tray over it
+                continue
             lo = (p.x - sx / 2 - 0.03 * K, p.y - sy / 2 - 0.03 * K, p.z + 0.01 * K)
             hi = (p.x + sx / 2 + 0.03 * K, p.y + sy / 2 + 0.03 * K, min(cz, p.z + 0.07 * K))
             if hi[2] - lo[2] < 0.01 * K:

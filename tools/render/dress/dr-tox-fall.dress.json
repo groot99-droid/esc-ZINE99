@@ -767,6 +767,14 @@
      "rock": "rock_light"
     }
    },
+   "p6": {
+    "version": 2,
+    "kits": [
+     "skirting",
+     "conduit",
+     "fixtures"
+    ]
+   },
    "p5_materials": {
     "rock": {
      "family": "scan",
@@ -795,14 +803,6 @@
     "materials": {
      "rock": "relief"
     }
-   },
-   "p6": {
-    "version": 2,
-    "kits": [
-     "skirting",
-     "conduit",
-     "fixtures"
-    ]
    }
   },
   "spire-gala": {
