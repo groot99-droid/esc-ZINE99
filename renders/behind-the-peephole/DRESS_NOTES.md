@@ -106,6 +106,21 @@ G7 (detail gain) is counted as not applicable in P2: the surfaces are the P1 one
 - staff-alley n1_arrival/overview: G6b 0.2277 (limit 0.2049)
 - valet-passage n1_passage/overview: G6b 0.3729 (limit 0.3356)
 
+## P6b gates (fixture bodies, bookshelf bays; before = the P1 to P6 render)
+
+56 stills in 6 places. Gate checks: 1012 passed, 10 failed, 151 not applicable (detail gain counted as n/a).
+
+- back-office n6_back_office/overview: G6b 0.8978 (limit 0.808)
+- back-stair n3_stairwell/overview: G6b 0.3523 (limit 0.3171)
+- lobby dawn_lobby/overview: G6b 0.4353 (limit 0.3918)
+- office n1_office/overview: G6b 0.5259 (limit 0.4726)
+- staff-alley n1_arrival/overview: G6b 0.2277 (limit 0.2049)
+- valet-passage n1_passage/camera: G10a 0.841 (limit 0.95)
+- valet-passage n1_passage/camera: G11 0.3235 (limit 0.08262)
+- valet-passage n1_passage/overview: G6b 0.3729 (limit 0.3356)
+- valet-passage n1_passage/overview: G10a 0.844 (limit 0.95)
+- valet-passage n1_passage/overview: G11 0.1159 (limit 0.08262)
+
 ## Still weak
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.

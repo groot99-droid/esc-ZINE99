@@ -113,6 +113,11 @@ G7 is listed but not meaningful for an incremental phase: it averages every dres
 - spire-gala s3_gala_annex/camera: G8 0.458 (limit 0.2)
 - spire-gala s3_gala_annex/player: G8 0.684 (limit 0.2)
 
+## P6b gates (fixture bodies, bookshelf bays; before = the P1 to P6 render)
+
+31 stills in 3 places. Gate checks: 581 passed, 0 failed, 64 not applicable (detail gain counted as n/a).
+
+
 ## Still weak
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.

@@ -113,6 +113,11 @@ G7 (detail gain) is counted as not applicable: it averages every dressed region,
 - upstairs-hall b8_the_door/player: G11 0.3373 (limit 0.08262)
 - upstairs-hall c11_cupboard_shut/player: G11 0.2572 (limit 0.08262)
 
+## P6b gates (fixture bodies, bookshelf bays; before = the P1 to P6 render)
+
+23 stills in 3 places. Gate checks: 422 passed, 0 failed, 60 not applicable (detail gain counted as n/a).
+
+
 ## Still weak
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.

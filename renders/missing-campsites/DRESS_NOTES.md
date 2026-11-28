@@ -137,6 +137,12 @@ G7 is listed but not meaningful for an incremental phase: it averages every dres
 - tam-flat home_apartment/overview: G8 0.943 (limit 0.2)
 - tam-flat home_apartment/player: G8 0.801 (limit 0.2)
 
+## P6b gates (fixture bodies, bookshelf bays; before = the P1 to P6 render)
+
+9 stills in 3 places. Gate checks: 168 passed, 1 failed, 20 not applicable (detail gain counted as n/a).
+
+- school-hall recital/overview: G6b 0.6086 (limit 0.5475)
+
 ## Still weak
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.

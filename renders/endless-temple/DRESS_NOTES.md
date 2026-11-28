@@ -155,6 +155,21 @@ G7 is listed but not meaningful for an incremental phase: it averages every dres
 - pantry s3_pantry_c3/camera: G4b 15.04 (limit 15.39)
 - temple-halls e_stayed/camera: G8 0.468 (limit 0.2)
 
+## P6b gates (fixture bodies, bookshelf bays; before = the P1 to P6 render)
+
+36 stills in 4 places. Gate checks: 692 passed, 10 failed, 54 not applicable (detail gain counted as n/a).
+
+- clerk-office s3_hollin_choice/camera: G2 0.2138 (limit 0.12)
+- clerk-office s3_hollin_choice/camera: G3a 8.132 (limit 4.0)
+- clerk-office s3_hollin_choice/camera: G3b 20.04 (limit 6.0)
+- clerk-office s3_hollin_choice/camera: G4a 23.599 (limit 22.036)
+- clerk-office s3_hollin_choice/camera: G11 0.1074 (limit 0.08262)
+- clerk-office s3_hollin_choice/player: G2 0.4198 (limit 0.12)
+- clerk-office s3_hollin_choice/player: G3a 8.484 (limit 4.0)
+- clerk-office s3_hollin_choice/player: G3b 12.69 (limit 6.0)
+- clerk-office s3_hollin_choice/player: G4a 35.313 (limit 33.401)
+- clerk-office s3_hollin_choice/player: G6b 0.4953 (limit 0.5232)
+
 ## Still weak
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.

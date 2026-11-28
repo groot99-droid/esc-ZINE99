@@ -200,6 +200,20 @@ G7 is listed but not meaningful for an incremental phase: it averages every dres
 - tall-halls d7_duty_walk/camera: G11 0.2108 (limit 0.08262)
 - tall-halls d7_duty_walk/player: G11 0.2545 (limit 0.08262)
 
+## P5b gates (finer bark, clear needled tiers; before = the P1 to P4 render)
+
+7 stills in 1 places. Gate checks: 121 passed, 2 failed, 21 not applicable (detail gain counted as n/a).
+
+- perimeter e_tree_line/camera: G4b 4.29 (limit 6.93)
+- perimeter e_tree_line/player: G4b 4.29 (limit 6.93)
+
+## P6b gates (fixture bodies, bookshelf bays; before = the P1 to P6 render)
+
+66 stills in 10 places. Gate checks: 1213 passed, 2 failed, 139 not applicable (detail gain counted as n/a).
+
+- boiler-room d4_duty_boiler/overview: G6b 0.7065 (limit 0.6359)
+- mail-room d3_mail_room/overview: G6b 0.7031 (limit 0.6328)
+
 ## Still weak
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.

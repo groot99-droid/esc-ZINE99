@@ -123,6 +123,11 @@ G7 is listed but not meaningful for an incremental phase: it averages every dres
 - snakehead-holy-site s3_cave_corridor/camera: G8 0.412 (limit 0.2)
 - snakehead-holy-site s3_cave_corridor/player: G8 0.404 (limit 0.2)
 
+## P6b gates (fixture bodies, bookshelf bays; before = the P1 to P6 render)
+
+9 stills in 1 places. Gate checks: 171 passed, 0 failed, 18 not applicable (detail gain counted as n/a).
+
+
 ## Still weak
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.

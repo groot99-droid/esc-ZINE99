@@ -102,6 +102,11 @@ G7 (detail gain) is counted as not applicable: it averages every dressed region,
 - snakehead-archive s3_archive_claimed/player: G4a 29.208 (limit 26.049)
 - snakehead-archive s3_archive_empty/camera: G4a 12.556 (limit 12.225)
 
+## P6b gates (fixture bodies, bookshelf bays; before = the P1 to P6 render)
+
+26 stills in 4 places. Gate checks: 487 passed, 0 failed, 55 not applicable (detail gain counted as n/a).
+
+
 ## Still weak
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.

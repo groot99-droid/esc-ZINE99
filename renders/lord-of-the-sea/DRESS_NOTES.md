@@ -209,6 +209,11 @@ G7 is listed but not meaningful for an incremental phase: it averages every dres
 - kings-halls s-second-collision/camera: G8 0.599 (limit 0.2)
 - kings-halls s-second-collision/player: G8 0.582 (limit 0.2)
 
+## P6b gates (fixture bodies, bookshelf bays; before = the P1 to P6 render)
+
+7 stills in 1 places. Gate checks: 134 passed, 0 failed, 12 not applicable (detail gain counted as n/a).
+
+
 ## Still weak
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.

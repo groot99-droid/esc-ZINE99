@@ -194,6 +194,14 @@ G7 is listed but not meaningful for an incremental phase: it averages every dres
 - corporate-lab b2-lab/player: G8 0.622 (limit 0.2)
 - small-room end-written/camera: G4a 23.648 (limit 23.37)
 
+## P6b gates (fixture bodies, bookshelf bays; before = the P1 to P6 render)
+
+20 stills in 4 places. Gate checks: 374 passed, 3 failed, 41 not applicable (detail gain counted as n/a).
+
+- cinder-reach-archive b2-archive/camera: G4b 16.26 (limit 16.83)
+- cinder-reach-archive b2-archive/overview: G4b 11.48 (limit 21.67)
+- small-room b3-hiding/player: G8 0.669 (limit 0.2)
+
 ## Still weak
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.

@@ -126,6 +126,11 @@ G7 is listed but not meaningful for an incremental phase: it averages every dres
 - clinical-suite s3_suite_printer/camera: G8 0.697 (limit 0.2)
 - clinical-suite s3_suite_printer/player: G8 0.669 (limit 0.2)
 
+## P6b gates (fixture bodies, bookshelf bays; before = the P1 to P6 render)
+
+32 stills in 4 places. Gate checks: 579 passed, 0 failed, 79 not applicable (detail gain counted as n/a).
+
+
 ## Still weak
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.
