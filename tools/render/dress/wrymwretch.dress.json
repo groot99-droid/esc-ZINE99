@@ -127,7 +127,29 @@
     "ao_distance_m": 0.6,
     "tone_gain": 1.0
    },
-   "materials": {}
+   "materials": {},
+   "p5_materials": {
+    "bone": {
+     "family": "noise",
+     "tile_m": 1.2,
+     "macro": 0.1,
+     "fine": 0.05,
+     "bump": 0.35,
+     "cracks": {
+      "amount": 0.35,
+      "scale_m": 0.5,
+      "width": 0.006,
+      "share": 0.4
+     },
+     "p5_preset": "bone"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "bone": "bone"
+    }
+   }
   },
   "duskbane-underworld": {
    "p1": {
@@ -248,6 +270,28 @@
     "materials": {
      "obsidian": "obsidian"
     }
+   },
+   "p5_materials": {
+    "bone": {
+     "family": "noise",
+     "tile_m": 1.2,
+     "macro": 0.1,
+     "fine": 0.05,
+     "bump": 0.35,
+     "cracks": {
+      "amount": 0.35,
+      "scale_m": 0.5,
+      "width": 0.006,
+      "share": 0.4
+     },
+     "p5_preset": "bone"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "bone": "bone"
+    }
    }
   },
   "galewing-sky-city": {
@@ -354,6 +398,75 @@
     "materials": {
      "rock": "rock_light"
     }
+   },
+   "p5_materials": {
+    "rock": {
+     "family": "scan",
+     "third": true,
+     "macro2": 0.06,
+     "obj_jitter_m": 0.0,
+     "scan": "worn_rock_natural_01",
+     "tile_m": 3.0,
+     "res": "2k",
+     "chroma": 0.1,
+     "bump": 0.7,
+     "macro": 0.14,
+     "grime": 0.7,
+     "p4_preset": "rock_light",
+     "displace_m": 0.08,
+     "displace_mid": 0.0,
+     "subdiv": 5,
+     "edge_fade_m": 0.5,
+     "edge_floor": 0.2,
+     "edge_mid": 0.0,
+     "p5_preset": "relief"
+    },
+    "bone": {
+     "family": "noise",
+     "tile_m": 1.2,
+     "macro": 0.1,
+     "fine": 0.05,
+     "bump": 0.35,
+     "cracks": {
+      "amount": 0.35,
+      "scale_m": 0.5,
+      "width": 0.006,
+      "share": 0.4
+     },
+     "p5_preset": "bone"
+    },
+    "silver": {
+     "family": "metal",
+     "tile_m": 0.4,
+     "macro": 0.16,
+     "bump": 0.15,
+     "grime": 0.9,
+     "patches": {
+      "size_m": 0.2,
+      "share": 0.4,
+      "amount": 0.1,
+      "rough": 0.15
+     },
+     "edge_wear": {
+      "radius_m": 0.008,
+      "amount": 0.5,
+      "tint": [
+       1.2,
+       1.2,
+       1.2
+      ],
+      "rough": -0.1
+     },
+     "p5_preset": "silver"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "rock": "relief",
+     "bone": "bone",
+     "silver": "silver"
+    }
    }
   },
   "heart-of-wound": {
@@ -386,7 +499,104 @@
     "ao_distance_m": 0.6,
     "tone_gain": 1.0
    },
-   "materials": {}
+   "materials": {},
+   "p5_materials": {
+    "bone": {
+     "family": "noise",
+     "tile_m": 1.2,
+     "macro": 0.1,
+     "fine": 0.05,
+     "bump": 0.35,
+     "cracks": {
+      "amount": 0.35,
+      "scale_m": 0.5,
+      "width": 0.006,
+      "share": 0.4
+     },
+     "p5_preset": "bone"
+    },
+    "fused-gold": {
+     "family": "metal",
+     "tile_m": 0.4,
+     "macro": 0.16,
+     "bump": 0.15,
+     "grime": 0.9,
+     "patches": {
+      "size_m": 0.2,
+      "share": 0.4,
+      "amount": 0.1,
+      "rough": 0.15
+     },
+     "edge_wear": {
+      "radius_m": 0.008,
+      "amount": 0.5,
+      "tint": [
+       1.2,
+       1.2,
+       1.2
+      ],
+      "rough": -0.1
+     },
+     "p5_preset": "silver"
+    },
+    "fused-silver": {
+     "family": "metal",
+     "tile_m": 0.4,
+     "macro": 0.16,
+     "bump": 0.15,
+     "grime": 0.9,
+     "patches": {
+      "size_m": 0.2,
+      "share": 0.4,
+      "amount": 0.1,
+      "rough": 0.15
+     },
+     "edge_wear": {
+      "radius_m": 0.008,
+      "amount": 0.5,
+      "tint": [
+       1.2,
+       1.2,
+       1.2
+      ],
+      "rough": -0.1
+     },
+     "p5_preset": "silver"
+    },
+    "silver": {
+     "family": "metal",
+     "tile_m": 0.4,
+     "macro": 0.16,
+     "bump": 0.15,
+     "grime": 0.9,
+     "patches": {
+      "size_m": 0.2,
+      "share": 0.4,
+      "amount": 0.1,
+      "rough": 0.15
+     },
+     "edge_wear": {
+      "radius_m": 0.008,
+      "amount": 0.5,
+      "tint": [
+       1.2,
+       1.2,
+       1.2
+      ],
+      "rough": -0.1
+     },
+     "p5_preset": "silver"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "bone": "bone",
+     "fused-gold": "silver",
+     "fused-silver": "silver",
+     "silver": "silver"
+    }
+   }
   },
   "heartstone-caverns": {
    "p1": {
@@ -482,6 +692,75 @@
     "version": 1,
     "materials": {
      "cavern-rock": "rock_light"
+    }
+   },
+   "p5_materials": {
+    "cavern-rock": {
+     "family": "scan",
+     "third": true,
+     "macro2": 0.06,
+     "obj_jitter_m": 0.0,
+     "scan": "worn_rock_natural_01",
+     "tile_m": 3.0,
+     "res": "2k",
+     "chroma": 0.1,
+     "bump": 0.7,
+     "macro": 0.14,
+     "grime": 0.7,
+     "p4_preset": "rock_light",
+     "displace_m": 0.08,
+     "displace_mid": 0.0,
+     "subdiv": 5,
+     "edge_fade_m": 0.5,
+     "edge_floor": 0.2,
+     "edge_mid": 0.0,
+     "p5_preset": "relief"
+    },
+    "bone": {
+     "family": "noise",
+     "tile_m": 1.2,
+     "macro": 0.1,
+     "fine": 0.05,
+     "bump": 0.35,
+     "cracks": {
+      "amount": 0.35,
+      "scale_m": 0.5,
+      "width": 0.006,
+      "share": 0.4
+     },
+     "p5_preset": "bone"
+    },
+    "silver": {
+     "family": "metal",
+     "tile_m": 0.4,
+     "macro": 0.16,
+     "bump": 0.15,
+     "grime": 0.9,
+     "patches": {
+      "size_m": 0.2,
+      "share": 0.4,
+      "amount": 0.1,
+      "rough": 0.15
+     },
+     "edge_wear": {
+      "radius_m": 0.008,
+      "amount": 0.5,
+      "tint": [
+       1.2,
+       1.2,
+       1.2
+      ],
+      "rough": -0.1
+     },
+     "p5_preset": "silver"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "cavern-rock": "relief",
+     "bone": "bone",
+     "silver": "silver"
     }
    }
   },
@@ -581,7 +860,69 @@
       2.4
      ]
     }
-   ]
+   ],
+   "p5_materials": {
+    "bone": {
+     "family": "noise",
+     "tile_m": 1.2,
+     "macro": 0.1,
+     "fine": 0.05,
+     "bump": 0.35,
+     "cracks": {
+      "amount": 0.35,
+      "scale_m": 0.5,
+      "width": 0.006,
+      "share": 0.4
+     },
+     "p5_preset": "bone"
+    },
+    "bone-dark": {
+     "family": "noise",
+     "tile_m": 1.2,
+     "macro": 0.1,
+     "fine": 0.05,
+     "bump": 0.35,
+     "cracks": {
+      "amount": 0.35,
+      "scale_m": 0.5,
+      "width": 0.006,
+      "share": 0.4
+     },
+     "p5_preset": "bone"
+    },
+    "silver": {
+     "family": "metal",
+     "tile_m": 0.4,
+     "macro": 0.16,
+     "bump": 0.15,
+     "grime": 0.9,
+     "patches": {
+      "size_m": 0.2,
+      "share": 0.4,
+      "amount": 0.1,
+      "rough": 0.15
+     },
+     "edge_wear": {
+      "radius_m": 0.008,
+      "amount": 0.5,
+      "tint": [
+       1.2,
+       1.2,
+       1.2
+      ],
+      "rough": -0.1
+     },
+     "p5_preset": "silver"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "bone": "bone",
+     "bone-dark": "bone",
+     "silver": "silver"
+    }
+   }
   },
   "rim-of-wrymreach": {
    "p1": {
@@ -686,6 +1027,90 @@
     "materials": {
      "cliff": "rock_light"
     }
+   },
+   "p5_materials": {
+    "cliff": {
+     "family": "scan",
+     "third": true,
+     "macro2": 0.06,
+     "obj_jitter_m": 0.0,
+     "scan": "worn_rock_natural_01",
+     "tile_m": 3.0,
+     "res": "2k",
+     "chroma": 0.1,
+     "bump": 0.7,
+     "macro": 0.14,
+     "grime": 0.7,
+     "p4_preset": "rock_light",
+     "displace_m": 0.08,
+     "displace_mid": 0.0,
+     "subdiv": 5,
+     "edge_fade_m": 0.5,
+     "edge_floor": 0.2,
+     "edge_mid": 0.0,
+     "p5_preset": "relief"
+    },
+    "bone": {
+     "family": "noise",
+     "tile_m": 1.2,
+     "macro": 0.1,
+     "fine": 0.05,
+     "bump": 0.35,
+     "cracks": {
+      "amount": 0.35,
+      "scale_m": 0.5,
+      "width": 0.006,
+      "share": 0.4
+     },
+     "p5_preset": "bone"
+    },
+    "bone-dark": {
+     "family": "noise",
+     "tile_m": 1.2,
+     "macro": 0.1,
+     "fine": 0.05,
+     "bump": 0.35,
+     "cracks": {
+      "amount": 0.35,
+      "scale_m": 0.5,
+      "width": 0.006,
+      "share": 0.4
+     },
+     "p5_preset": "bone"
+    },
+    "moss-silver": {
+     "family": "metal",
+     "tile_m": 0.4,
+     "macro": 0.16,
+     "bump": 0.15,
+     "grime": 0.9,
+     "patches": {
+      "size_m": 0.2,
+      "share": 0.4,
+      "amount": 0.1,
+      "rough": 0.15
+     },
+     "edge_wear": {
+      "radius_m": 0.008,
+      "amount": 0.5,
+      "tint": [
+       1.2,
+       1.2,
+       1.2
+      ],
+      "rough": -0.1
+     },
+     "p5_preset": "silver"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "cliff": "relief",
+     "bone": "bone",
+     "bone-dark": "bone",
+     "moss-silver": "silver"
+    }
    }
   },
   "seabed": {
@@ -754,6 +1179,35 @@
     "materials": {
      "rock": "rock_mid"
     }
+   },
+   "p5_materials": {
+    "rock": {
+     "family": "scan",
+     "third": true,
+     "macro2": 0.06,
+     "obj_jitter_m": 0.0,
+     "scan": "rock_wall_08",
+     "tile_m": 3.0,
+     "res": "1k",
+     "chroma": 0.1,
+     "bump": 0.7,
+     "macro": 0.14,
+     "grime": 0.7,
+     "p4_preset": "rock_mid",
+     "displace_m": 0.08,
+     "displace_mid": 0.0,
+     "subdiv": 5,
+     "edge_fade_m": 0.5,
+     "edge_floor": 0.2,
+     "edge_mid": 0.0,
+     "p5_preset": "relief"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "rock": "relief"
+    }
    }
   },
   "sky-above-realms": {
@@ -790,7 +1244,29 @@
     "ao_distance_m": 0.6,
     "tone_gain": 1.0
    },
-   "materials": {}
+   "materials": {},
+   "p5_materials": {
+    "cloud-bone": {
+     "family": "noise",
+     "tile_m": 1.2,
+     "macro": 0.1,
+     "fine": 0.05,
+     "bump": 0.35,
+     "cracks": {
+      "amount": 0.35,
+      "scale_m": 0.5,
+      "width": 0.006,
+      "share": 0.4
+     },
+     "p5_preset": "bone"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "cloud-bone": "bone"
+    }
+   }
   },
   "starlit-priory": {
    "p1": {
@@ -987,7 +1463,54 @@
       2.4
      ]
     }
-   ]
+   ],
+   "p5_materials": {
+    "bone": {
+     "family": "noise",
+     "tile_m": 1.2,
+     "macro": 0.1,
+     "fine": 0.05,
+     "bump": 0.35,
+     "cracks": {
+      "amount": 0.35,
+      "scale_m": 0.5,
+      "width": 0.006,
+      "share": 0.4
+     },
+     "p5_preset": "bone"
+    },
+    "silver": {
+     "family": "metal",
+     "tile_m": 0.4,
+     "macro": 0.16,
+     "bump": 0.15,
+     "grime": 0.9,
+     "patches": {
+      "size_m": 0.2,
+      "share": 0.4,
+      "amount": 0.1,
+      "rough": 0.15
+     },
+     "edge_wear": {
+      "radius_m": 0.008,
+      "amount": 0.5,
+      "tint": [
+       1.2,
+       1.2,
+       1.2
+      ],
+      "rough": -0.1
+     },
+     "p5_preset": "silver"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "bone": "bone",
+     "silver": "silver"
+    }
+   }
   },
   "tidecaller-shore": {
    "p1": {
@@ -1095,6 +1618,90 @@
     "version": 1,
     "materials": {
      "cliff": "rock_mid"
+    }
+   },
+   "p5_materials": {
+    "cliff": {
+     "family": "scan",
+     "third": true,
+     "macro2": 0.06,
+     "obj_jitter_m": 0.0,
+     "scan": "rock_wall_08",
+     "tile_m": 3.0,
+     "res": "1k",
+     "chroma": 0.1,
+     "bump": 0.7,
+     "macro": 0.14,
+     "grime": 0.7,
+     "p4_preset": "rock_mid",
+     "displace_m": 0.08,
+     "displace_mid": 0.0,
+     "subdiv": 5,
+     "edge_fade_m": 0.5,
+     "edge_floor": 0.2,
+     "edge_mid": 0.0,
+     "p5_preset": "relief"
+    },
+    "bone": {
+     "family": "noise",
+     "tile_m": 1.2,
+     "macro": 0.1,
+     "fine": 0.05,
+     "bump": 0.35,
+     "cracks": {
+      "amount": 0.35,
+      "scale_m": 0.5,
+      "width": 0.006,
+      "share": 0.4
+     },
+     "p5_preset": "bone"
+    },
+    "bone-dark": {
+     "family": "noise",
+     "tile_m": 1.2,
+     "macro": 0.1,
+     "fine": 0.05,
+     "bump": 0.35,
+     "cracks": {
+      "amount": 0.35,
+      "scale_m": 0.5,
+      "width": 0.006,
+      "share": 0.4
+     },
+     "p5_preset": "bone"
+    },
+    "cottage-silver": {
+     "family": "metal",
+     "tile_m": 0.4,
+     "macro": 0.16,
+     "bump": 0.15,
+     "grime": 0.9,
+     "patches": {
+      "size_m": 0.2,
+      "share": 0.4,
+      "amount": 0.1,
+      "rough": 0.15
+     },
+     "edge_wear": {
+      "radius_m": 0.008,
+      "amount": 0.5,
+      "tint": [
+       1.2,
+       1.2,
+       1.2
+      ],
+      "rough": -0.1
+     },
+     "p5_preset": "silver"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "cliff": "relief",
+     "bone": "bone",
+     "bone-dark": "bone",
+     "cottage-silver": "silver"
     }
    }
   },
@@ -1325,7 +1932,7 @@
     }
    ],
    "p3": {
-    "version": 1,
+    "version": 2,
     "materials": [
      "moss"
     ],
@@ -1335,6 +1942,93 @@
      "twigs",
      "plants"
     ]
+   },
+   "p5_materials": {
+    "bone": {
+     "family": "noise",
+     "tile_m": 1.2,
+     "macro": 0.1,
+     "fine": 0.05,
+     "bump": 0.35,
+     "cracks": {
+      "amount": 0.35,
+      "scale_m": 0.5,
+      "width": 0.006,
+      "share": 0.4
+     },
+     "p5_preset": "bone"
+    },
+    "bone-dark": {
+     "family": "noise",
+     "tile_m": 1.2,
+     "macro": 0.1,
+     "fine": 0.05,
+     "bump": 0.35,
+     "cracks": {
+      "amount": 0.35,
+      "scale_m": 0.5,
+      "width": 0.006,
+      "share": 0.4
+     },
+     "p5_preset": "bone"
+    },
+    "fern-silver": {
+     "family": "metal",
+     "tile_m": 0.4,
+     "macro": 0.16,
+     "bump": 0.15,
+     "grime": 0.9,
+     "patches": {
+      "size_m": 0.2,
+      "share": 0.4,
+      "amount": 0.1,
+      "rough": 0.15
+     },
+     "edge_wear": {
+      "radius_m": 0.008,
+      "amount": 0.5,
+      "tint": [
+       1.2,
+       1.2,
+       1.2
+      ],
+      "rough": -0.1
+     },
+     "p5_preset": "silver"
+    },
+    "silver": {
+     "family": "metal",
+     "tile_m": 0.4,
+     "macro": 0.16,
+     "bump": 0.15,
+     "grime": 0.9,
+     "patches": {
+      "size_m": 0.2,
+      "share": 0.4,
+      "amount": 0.1,
+      "rough": 0.15
+     },
+     "edge_wear": {
+      "radius_m": 0.008,
+      "amount": 0.5,
+      "tint": [
+       1.2,
+       1.2,
+       1.2
+      ],
+      "rough": -0.1
+     },
+     "p5_preset": "silver"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "bone": "bone",
+     "bone-dark": "bone",
+     "fern-silver": "silver",
+     "silver": "silver"
+    }
    }
   }
  }

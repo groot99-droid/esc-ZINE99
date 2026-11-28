@@ -320,7 +320,7 @@ def build(game, cfg):
                 for kk in ("gain", "tint"):
                     if kk in v:
                         ent["materials"][k][kk] = v[kk]
-        for k in ("grime_override", "props", "exposure_ev_delta", "atmos", "kits", "p2", "p2_materials", "scatter", "p3", "p3_materials", "p4", "p4_materials"):  # P2 keys survive a P1 re-run
+        for k in ("grime_override", "props", "exposure_ev_delta", "atmos", "kits", "p2", "p2_materials", "scatter", "p3", "p3_materials", "p4", "p4_materials", "p5", "p5_materials"):  # P2 keys survive a P1 re-run
             if k in old:
                 ent[k] = old[k]
         if "grime_override" in old:

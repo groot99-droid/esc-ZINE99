@@ -269,7 +269,12 @@ def flames(ctx, spec, col):
     return p2fx.flames(ctx, spec, col)
 
 
-KITS = {"motes": motes, "precip": precip, "flames": flames, "swell": swell, "window_plate": window_plate, "conifer_wrap": conifer_wrap, "treeline": treeline, "attic_cap": attic_cap, "frames": frames, "baseboard": baseboard, "ceiling_joists": ceiling_joists, "ceiling_grid": ceiling_grid, "conduit": conduit}
+def crowns_round(ctx, spec, col):
+    from . import p2fx
+    return p2fx.crowns_round(ctx, spec, col)
+
+
+KITS = {"crowns_round": crowns_round, "motes": motes, "precip": precip, "flames": flames, "swell": swell, "window_plate": window_plate, "conifer_wrap": conifer_wrap, "treeline": treeline, "attic_cap": attic_cap, "frames": frames, "baseboard": baseboard, "ceiling_joists": ceiling_joists, "ceiling_grid": ceiling_grid, "conduit": conduit}
 
 
 def kits_layer(ctx, specs):

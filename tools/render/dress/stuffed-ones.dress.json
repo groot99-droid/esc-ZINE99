@@ -1308,7 +1308,7 @@
     }
    ],
    "p3": {
-    "version": 1,
+    "version": 2,
     "materials": [
      "moss-bank",
      "trunk"
@@ -1810,6 +1810,43 @@
      "p3_preset": "moss"
     }
    },
+   "kits": [
+    {
+     "kit": "conifer_wrap",
+     "name": "crowns",
+     "name_contains": "-crown",
+     "pieces": [
+      "pine-1",
+      "pine-2",
+      "pine-3",
+      "pine-4",
+      "pine-5",
+      "pine-6",
+      "pine-7",
+      "pine-8"
+     ],
+     "height_gain": 1.06,
+     "radius_gain": 1.35,
+     "lift": 0.02,
+     "no_shadow_near_props_m": 6.0,
+     "clear_centre": false,
+     "cast_shadow": false,
+     "surface": {
+      "family": "foliage",
+      "tile_m": 1.2,
+      "macro": 0.45,
+      "fine": 0.35,
+      "bump": 0.6,
+      "bump_m": 0.03,
+      "obj_jitter_m": 40.0,
+      "gain": 1.12,
+      "underside": 0.08
+     },
+     "camera_only_light": true,
+     "style": "branches",
+     "_p3": true
+    }
+   ],
    "scatter": [
     {
      "kind": "grass",
@@ -1944,13 +1981,15 @@
     }
    ],
    "p3": {
-    "version": 1,
+    "version": 2,
     "materials": [
      "deadwood",
      "pine",
      "pine-needles"
     ],
-    "kits": [],
+    "kits": [
+     "conifer_wrap"
+    ],
     "scatter": [
      "grass",
      "twigs",
@@ -2160,6 +2199,61 @@
      "p3_preset": "grass"
     }
    },
+   "kits": [
+    {
+     "kit": "crowns_round",
+     "name": "crowns_round",
+     "clump_share": 0.32,
+     "shell_clumps": 14,
+     "clear_centre": false,
+     "surface": {
+      "family": "foliage",
+      "tile_m": 0.6,
+      "macro": 0.35,
+      "fine": 0.3,
+      "bump": 0.6,
+      "bump_m": 0.02,
+      "underside": 0.12
+     },
+     "_p3": true,
+     "materials": [
+      "birch-leaf"
+     ]
+    },
+    {
+     "kit": "conifer_wrap",
+     "name": "crowns",
+     "name_contains": "-crown",
+     "pieces": [
+      "forest-edge-1",
+      "forest-edge-2",
+      "forest-edge-3",
+      "forest-edge-4",
+      "forest-edge-5",
+      "forest-edge-6"
+     ],
+     "height_gain": 1.06,
+     "radius_gain": 1.35,
+     "lift": 0.02,
+     "no_shadow_near_props_m": 6.0,
+     "clear_centre": false,
+     "cast_shadow": false,
+     "surface": {
+      "family": "foliage",
+      "tile_m": 1.2,
+      "macro": 0.45,
+      "fine": 0.35,
+      "bump": 0.6,
+      "bump_m": 0.03,
+      "obj_jitter_m": 40.0,
+      "gain": 1.12,
+      "underside": 0.08
+     },
+     "camera_only_light": true,
+     "style": "branches",
+     "_p3": true
+    }
+   ],
    "scatter": [
     {
      "kind": "grass",
@@ -2294,12 +2388,15 @@
     }
    ],
    "p3": {
-    "version": 1,
+    "version": 2,
     "materials": [
      "birch-leaf",
      "meadow"
     ],
-    "kits": [],
+    "kits": [
+     "crowns_round",
+     "conifer_wrap"
+    ],
     "scatter": [
      "grass",
      "twigs",
@@ -2409,6 +2506,17 @@
      "kit": "conifer_wrap",
      "name": "crowns",
      "name_contains": "-crown",
+     "pieces": [
+      "lone-pine-crown",
+      "slope-pine-1",
+      "slope-pine-2",
+      "slope-pine-3",
+      "slope-pine-4",
+      "slope-pine-5",
+      "slope-pine-6",
+      "slope-pine-7",
+      "slope-pine-8"
+     ],
      "height_gain": 1.06,
      "radius_gain": 1.35,
      "lift": 0.02,
@@ -2432,7 +2540,7 @@
     }
    ],
    "p3": {
-    "version": 1,
+    "version": 2,
     "materials": [
      "pine"
     ],

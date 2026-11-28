@@ -265,6 +265,52 @@
     "haze": false,
     "extent_m": 0.1,
     "fx_listed": []
+   },
+   "p5_materials": {
+    "bark-grey": {
+     "family": "scan",
+     "scan": "bark_brown_02",
+     "res": "2k",
+     "tile_m": 0.6,
+     "chroma": 0.1,
+     "bump": 0.9,
+     "macro": 0.14,
+     "third": true,
+     "macro2": 0.08,
+     "p5_preset": "bark"
+    },
+    "bark-umber": {
+     "family": "scan",
+     "scan": "bark_brown_02",
+     "res": "2k",
+     "tile_m": 0.6,
+     "chroma": 0.1,
+     "bump": 0.9,
+     "macro": 0.14,
+     "third": true,
+     "macro2": 0.08,
+     "p5_preset": "bark"
+    },
+    "home-bark": {
+     "family": "scan",
+     "scan": "bark_brown_02",
+     "res": "2k",
+     "tile_m": 0.6,
+     "chroma": 0.1,
+     "bump": 0.9,
+     "macro": 0.14,
+     "third": true,
+     "macro2": 0.08,
+     "p5_preset": "bark"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "bark-grey": "bark",
+     "bark-umber": "bark",
+     "home-bark": "bark"
+    }
    }
   },
   "first-ring-temple": {
@@ -352,7 +398,37 @@
       2.4
      ]
     }
-   ]
+   ],
+   "p5_materials": {
+    "bark-umber": {
+     "family": "scan",
+     "scan": "bark_brown_02",
+     "res": "2k",
+     "tile_m": 0.6,
+     "chroma": 0.1,
+     "bump": 0.9,
+     "macro": 0.14,
+     "third": true,
+     "macro2": 0.08,
+     "p5_preset": "bark"
+    },
+    "knot-tan": {
+     "family": "scan",
+     "scan": "pine_bark",
+     "res": "1k",
+     "tile_m": 0.5,
+     "chroma": 0.1,
+     "bump": 0.8,
+     "p5_preset": "knot-tan"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "bark-umber": "bark",
+     "knot-tan": "knot-tan"
+    }
+   }
   },
   "highridge": {
    "p1": {
@@ -427,6 +503,39 @@
     "haze": false,
     "extent_m": 0.1,
     "fx_listed": []
+   },
+   "p5_materials": {
+    "bark-grey": {
+     "family": "scan",
+     "scan": "bark_brown_02",
+     "res": "2k",
+     "tile_m": 0.6,
+     "chroma": 0.1,
+     "bump": 0.9,
+     "macro": 0.14,
+     "third": true,
+     "macro2": 0.08,
+     "p5_preset": "bark"
+    },
+    "bark-umber": {
+     "family": "scan",
+     "scan": "bark_brown_02",
+     "res": "2k",
+     "tile_m": 0.6,
+     "chroma": 0.1,
+     "bump": 0.9,
+     "macro": 0.14,
+     "third": true,
+     "macro2": 0.08,
+     "p5_preset": "bark"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "bark-grey": "bark",
+     "bark-umber": "bark"
+    }
    }
   },
   "highridge-square": {
@@ -493,6 +602,39 @@
     "haze": false,
     "extent_m": 0.0,
     "fx_listed": []
+   },
+   "p5_materials": {
+    "bark-grey": {
+     "family": "scan",
+     "scan": "bark_brown_02",
+     "res": "2k",
+     "tile_m": 0.6,
+     "chroma": 0.1,
+     "bump": 0.9,
+     "macro": 0.14,
+     "third": true,
+     "macro2": 0.08,
+     "p5_preset": "bark"
+    },
+    "bark-umber": {
+     "family": "scan",
+     "scan": "bark_brown_02",
+     "res": "2k",
+     "tile_m": 0.6,
+     "chroma": 0.1,
+     "bump": 0.9,
+     "macro": 0.14,
+     "third": true,
+     "macro2": 0.08,
+     "p5_preset": "bark"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "bark-grey": "bark",
+     "bark-umber": "bark"
+    }
    }
   },
   "knotholm-walk": {
@@ -541,6 +683,39 @@
     "haze": false,
     "extent_m": 0.1,
     "fx_listed": []
+   },
+   "p5_materials": {
+    "bark-grey": {
+     "family": "scan",
+     "scan": "bark_brown_02",
+     "res": "2k",
+     "tile_m": 0.6,
+     "chroma": 0.1,
+     "bump": 0.9,
+     "macro": 0.14,
+     "third": true,
+     "macro2": 0.08,
+     "p5_preset": "bark"
+    },
+    "bark-umber": {
+     "family": "scan",
+     "scan": "bark_brown_02",
+     "res": "2k",
+     "tile_m": 0.6,
+     "chroma": 0.1,
+     "bump": 0.9,
+     "macro": 0.14,
+     "third": true,
+     "macro2": 0.08,
+     "p5_preset": "bark"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "bark-grey": "bark",
+     "bark-umber": "bark"
+    }
    }
   },
   "lowridge": {
@@ -618,6 +793,39 @@
     "haze": false,
     "extent_m": 0.1,
     "fx_listed": []
+   },
+   "p5_materials": {
+    "bark-damp": {
+     "family": "scan",
+     "scan": "bark_brown_02",
+     "res": "2k",
+     "tile_m": 0.6,
+     "chroma": 0.1,
+     "bump": 0.9,
+     "macro": 0.14,
+     "third": true,
+     "macro2": 0.08,
+     "p5_preset": "bark"
+    },
+    "bark-umber": {
+     "family": "scan",
+     "scan": "bark_brown_02",
+     "res": "2k",
+     "tile_m": 0.6,
+     "chroma": 0.1,
+     "bump": 0.9,
+     "macro": 0.14,
+     "third": true,
+     "macro2": 0.08,
+     "p5_preset": "bark"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "bark-damp": "bark",
+     "bark-umber": "bark"
+    }
    }
   },
   "shadow-edge": {
@@ -667,6 +875,39 @@
     "haze": false,
     "extent_m": 0.2,
     "fx_listed": []
+   },
+   "p5_materials": {
+    "bark-grey": {
+     "family": "scan",
+     "scan": "bark_brown_02",
+     "res": "2k",
+     "tile_m": 0.6,
+     "chroma": 0.1,
+     "bump": 0.9,
+     "macro": 0.14,
+     "third": true,
+     "macro2": 0.08,
+     "p5_preset": "bark"
+    },
+    "bark-umber": {
+     "family": "scan",
+     "scan": "bark_brown_02",
+     "res": "2k",
+     "tile_m": 0.6,
+     "chroma": 0.1,
+     "bump": 0.9,
+     "macro": 0.14,
+     "third": true,
+     "macro2": 0.08,
+     "p5_preset": "bark"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "bark-grey": "bark",
+     "bark-umber": "bark"
+    }
    }
   },
   "splinterwatch": {
@@ -752,6 +993,39 @@
     "haze": false,
     "extent_m": 0.1,
     "fx_listed": []
+   },
+   "p5_materials": {
+    "bark-grey": {
+     "family": "scan",
+     "scan": "bark_brown_02",
+     "res": "2k",
+     "tile_m": 0.6,
+     "chroma": 0.1,
+     "bump": 0.9,
+     "macro": 0.14,
+     "third": true,
+     "macro2": 0.08,
+     "p5_preset": "bark"
+    },
+    "bark-umber": {
+     "family": "scan",
+     "scan": "bark_brown_02",
+     "res": "2k",
+     "tile_m": 0.6,
+     "chroma": 0.1,
+     "bump": 0.9,
+     "macro": 0.14,
+     "third": true,
+     "macro2": 0.08,
+     "p5_preset": "bark"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "bark-grey": "bark",
+     "bark-umber": "bark"
+    }
    }
   },
   "the-branch": {
@@ -805,6 +1079,39 @@
     "haze": false,
     "extent_m": 0.3,
     "fx_listed": []
+   },
+   "p5_materials": {
+    "bark-grey": {
+     "family": "scan",
+     "scan": "bark_brown_02",
+     "res": "2k",
+     "tile_m": 0.6,
+     "chroma": 0.1,
+     "bump": 0.9,
+     "macro": 0.14,
+     "third": true,
+     "macro2": 0.08,
+     "p5_preset": "bark"
+    },
+    "bark-umber": {
+     "family": "scan",
+     "scan": "bark_brown_02",
+     "res": "2k",
+     "tile_m": 0.6,
+     "chroma": 0.1,
+     "bump": 0.9,
+     "macro": 0.14,
+     "third": true,
+     "macro2": 0.08,
+     "p5_preset": "bark"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "bark-grey": "bark",
+     "bark-umber": "bark"
+    }
    }
   }
  }

@@ -695,7 +695,7 @@
     }
    ],
    "p3": {
-    "version": 1,
+    "version": 2,
     "materials": [
      "trunk"
     ],
@@ -1110,6 +1110,14 @@
      "kit": "conifer_wrap",
      "name": "crowns",
      "name_contains": "-crown",
+     "pieces": [
+      "pine-1-crown",
+      "pine-2-crown",
+      "pine-3-crown",
+      "pine-4-crown",
+      "pine-5-crown",
+      "pine-6-crown"
+     ],
      "height_gain": 1.06,
      "radius_gain": 1.35,
      "lift": 0.02,
@@ -1387,7 +1395,7 @@
     }
    ],
    "p3": {
-    "version": 1,
+    "version": 2,
     "materials": [
      "conifer",
      "trunk"
@@ -1704,6 +1712,14 @@
      "kit": "conifer_wrap",
      "name": "crowns",
      "name_contains": "-crown",
+     "pieces": [
+      "pine-1-crown",
+      "pine-2-crown",
+      "pine-3-crown",
+      "pine-4-crown",
+      "pine-5-crown",
+      "pine-6-crown"
+     ],
      "height_gain": 1.06,
      "radius_gain": 1.35,
      "lift": 0.02,
@@ -2035,7 +2051,7 @@
     }
    ],
    "p3": {
-    "version": 1,
+    "version": 2,
     "materials": [
      "conifer",
      "grass-faded",
@@ -2219,6 +2235,12 @@
      "kit": "conifer_wrap",
      "name": "crowns",
      "name_contains": "-crown",
+     "pieces": [
+      "pine-1-crown",
+      "pine-2-crown",
+      "pine-3-crown",
+      "pine-4-crown"
+     ],
      "height_gain": 1.06,
      "radius_gain": 1.35,
      "lift": 0.02,
@@ -2496,7 +2518,7 @@
     }
    ],
    "p3": {
-    "version": 1,
+    "version": 2,
     "materials": [
      "conifer",
      "grass-faded",
@@ -2869,7 +2891,7 @@
     }
    ],
    "p3": {
-    "version": 1,
+    "version": 2,
     "materials": [
      "clean-trunk",
      "cool-grass"
@@ -3502,7 +3524,7 @@
     }
    ],
    "p3": {
-    "version": 1,
+    "version": 2,
     "materials": [
      "clean-trunk",
      "cool-grass"

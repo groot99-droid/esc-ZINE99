@@ -2363,6 +2363,34 @@
    },
    "kits": [
     {
+     "kit": "conifer_wrap",
+     "name": "crowns",
+     "name_contains": "-crown",
+     "pieces": [
+      "mountain"
+     ],
+     "height_gain": 1.06,
+     "radius_gain": 1.35,
+     "lift": 0.02,
+     "no_shadow_near_props_m": 6.0,
+     "clear_centre": false,
+     "cast_shadow": false,
+     "surface": {
+      "family": "foliage",
+      "tile_m": 1.2,
+      "macro": 0.45,
+      "fine": 0.35,
+      "bump": 0.6,
+      "bump_m": 0.03,
+      "obj_jitter_m": 40.0,
+      "gain": 1.12,
+      "underside": 0.08
+     },
+     "camera_only_light": true,
+     "style": "branches",
+     "_p3": true
+    },
+    {
      "kit": "treeline",
      "name": "treeline",
      "materials": [
@@ -2418,9 +2446,10 @@
     }
    ],
    "p3": {
-    "version": 1,
+    "version": 2,
     "materials": [],
     "kits": [
+     "conifer_wrap",
      "treeline"
     ],
     "scatter": []
@@ -2565,6 +2594,41 @@
    },
    "kits": [
     {
+     "kit": "conifer_wrap",
+     "name": "crowns",
+     "name_contains": "-crown",
+     "pieces": [
+      "crown-1",
+      "crown-2",
+      "crown-3",
+      "crown-4",
+      "crown-5",
+      "crown-6",
+      "crown-7",
+      "crown-8"
+     ],
+     "height_gain": 1.06,
+     "radius_gain": 1.35,
+     "lift": 0.02,
+     "no_shadow_near_props_m": 6.0,
+     "clear_centre": false,
+     "cast_shadow": false,
+     "surface": {
+      "family": "foliage",
+      "tile_m": 1.2,
+      "macro": 0.45,
+      "fine": 0.35,
+      "bump": 0.6,
+      "bump_m": 0.03,
+      "obj_jitter_m": 40.0,
+      "gain": 1.12,
+      "underside": 0.08
+     },
+     "camera_only_light": true,
+     "style": "branches",
+     "_p3": true
+    },
+    {
      "kit": "treeline",
      "name": "treeline",
      "materials": [
@@ -2620,11 +2684,12 @@
     }
    ],
    "p3": {
-    "version": 1,
+    "version": 2,
     "materials": [
      "spruce"
     ],
     "kits": [
+     "conifer_wrap",
      "treeline"
     ],
     "scatter": []

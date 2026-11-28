@@ -109,7 +109,29 @@
       2.4
      ]
     }
-   ]
+   ],
+   "p5_materials": {
+    "tarred-wood": {
+     "family": "scan",
+     "scan": "weathered_planks",
+     "res": "1k",
+     "tile_m": 2.2,
+     "chroma": 0.1,
+     "contrast": 1.3,
+     "bump": 0.6,
+     "macro": 0.12,
+     "coat": 0.3,
+     "coat_roughness": 0.25,
+     "third": true,
+     "p5_preset": "tarred-wood"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "tarred-wood": "tarred-wood"
+    }
+   }
   },
   "boat-deck": {
    "p1": {
@@ -260,6 +282,28 @@
      "sea-dawn"
     ],
     "fx_listed": []
+   },
+   "p5_materials": {
+    "tarred-wood": {
+     "family": "scan",
+     "scan": "weathered_planks",
+     "res": "1k",
+     "tile_m": 2.2,
+     "chroma": 0.1,
+     "contrast": 1.3,
+     "bump": 0.6,
+     "macro": 0.12,
+     "coat": 0.3,
+     "coat_roughness": 0.25,
+     "third": true,
+     "p5_preset": "tarred-wood"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "tarred-wood": "tarred-wood"
+    }
    }
   },
   "chandlery": {
@@ -361,7 +405,29 @@
       2.4
      ]
     }
-   ]
+   ],
+   "p5_materials": {
+    "tarred-wood": {
+     "family": "scan",
+     "scan": "weathered_planks",
+     "res": "1k",
+     "tile_m": 2.2,
+     "chroma": 0.1,
+     "contrast": 1.3,
+     "bump": 0.6,
+     "macro": 0.12,
+     "coat": 0.3,
+     "coat_roughness": 0.25,
+     "third": true,
+     "p5_preset": "tarred-wood"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "tarred-wood": "tarred-wood"
+    }
+   }
   },
   "company-lane": {
    "p1": {
@@ -442,6 +508,28 @@
      "glassy-sea"
     ],
     "fx_listed": []
+   },
+   "p5_materials": {
+    "ink-hull": {
+     "family": "scan",
+     "scan": "weathered_planks",
+     "res": "1k",
+     "tile_m": 2.2,
+     "chroma": 0.1,
+     "contrast": 1.3,
+     "bump": 0.6,
+     "macro": 0.12,
+     "coat": 0.3,
+     "coat_roughness": 0.25,
+     "third": true,
+     "p5_preset": "tarred-wood"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "ink-hull": "tarred-wood"
+    }
    }
   },
   "counting-house": {
@@ -731,6 +819,28 @@
      "p3_preset": "birch-leaf"
     }
    },
+   "kits": [
+    {
+     "kit": "crowns_round",
+     "name": "crowns_round",
+     "clump_share": 0.32,
+     "shell_clumps": 14,
+     "clear_centre": false,
+     "surface": {
+      "family": "foliage",
+      "tile_m": 0.6,
+      "macro": 0.35,
+      "fine": 0.3,
+      "bump": 0.6,
+      "bump_m": 0.02,
+      "underside": 0.12
+     },
+     "_p3": true,
+     "materials": [
+      "forest"
+     ]
+    }
+   ],
    "scatter": [
     {
      "kind": "grass",
@@ -865,17 +975,41 @@
     }
    ],
    "p3": {
-    "version": 1,
+    "version": 2,
     "materials": [
      "forest",
      "weed"
     ],
-    "kits": [],
+    "kits": [
+     "crowns_round"
+    ],
     "scatter": [
      "grass",
      "twigs",
      "plants"
     ]
+   },
+   "p5_materials": {
+    "hull": {
+     "family": "scan",
+     "scan": "weathered_planks",
+     "res": "1k",
+     "tile_m": 2.2,
+     "chroma": 0.1,
+     "contrast": 1.3,
+     "bump": 0.6,
+     "macro": 0.12,
+     "coat": 0.3,
+     "coat_roughness": 0.25,
+     "third": true,
+     "p5_preset": "tarred-wood"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "hull": "tarred-wood"
+    }
    }
   },
   "kings-halls": {
@@ -1955,6 +2089,28 @@
      "river"
     ],
     "fx_listed": []
+   },
+   "p5_materials": {
+    "hull": {
+     "family": "scan",
+     "scan": "weathered_planks",
+     "res": "1k",
+     "tile_m": 2.2,
+     "chroma": 0.1,
+     "contrast": 1.3,
+     "bump": 0.6,
+     "macro": 0.12,
+     "coat": 0.3,
+     "coat_roughness": 0.25,
+     "third": true,
+     "p5_preset": "tarred-wood"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "hull": "tarred-wood"
+    }
    }
   },
   "the-unwritten": {

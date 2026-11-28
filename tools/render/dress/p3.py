@@ -23,6 +23,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(HERE)))
 GAMES = {"missing-campsites", "stuffed-ones", "lira-calyx", "dr-tox-altrulan", "man-eater", "wrymwretch", "lord-of-the-sea", "dr-tox-rise"}
 SKIP = {("wrymwretch", "astral-expanse")}  # cosmic: no earth plants
+CONIFERS = {"conifer", "spruce", "pine", "pine-dark", "pines"}
+BROADLEAF = {"birch-leaf", "leaf-green", "canopy", "forest"}
 FOL = {"family": "foliage", "tile_m": 1.2, "macro": 0.45, "fine": 0.35, "bump": 0.6, "bump_m": 0.03, "obj_jitter_m": 40.0, "gain": 1.12,
        "underside": 0.08}
 MATS = [  # (regex, entry)
@@ -42,8 +44,13 @@ AVOID = r"^(road|street|asphalt|path|path-earth|packed-track|sandy-path|gravel|g
 FORESTY = r"^(grass|grass-faded|cool-grass|meadow|moss|moss-dark|moss-bank|pine-needles|forest-floor|forest|earth|ground)$"
 
 
+ROUND = {"kit": "crowns_round", "name": "crowns_round", "clump_share": 0.32, "shell_clumps": 14, "clear_centre": False,
+         "surface": {"family": "foliage", "tile_m": 0.6, "macro": 0.35, "fine": 0.3, "bump": 0.6, "bump_m": 0.02, "underside": 0.12},
+         "_p3": True}
+
+
 def _scan(game, loc):
-    mats, roles, crowns, conifer = set(), {}, False, False
+    mats, roles, crowns, conifer, cones, rounds = set(), {}, False, False, set(), set()
     for f in sorted(glob.glob(os.path.join(ROOT, "build", "blender", game, loc, "*", "blockout.json"))):
         with open(f, encoding="utf-8") as fh:
             bo = json.load(fh)
@@ -53,9 +60,13 @@ def _scan(game, loc):
                 continue
             mats.add(m)
             roles.setdefault(m, set()).add(p.get("role"))
+            if p.get("shape") == "cone" and m in CONIFERS:
+                cones.add(p["id"])
+            if p.get("shape") == "sphere" and m in BROADLEAF:
+                rounds.add(m)
             crowns |= p["id"].endswith("-crown")
             conifer |= m in ("conifer", "spruce", "pines", "canopy")
-    return mats, roles, crowns, conifer
+    return mats, roles, crowns, conifer, cones, rounds
 
 
 def build(game, cfg):
@@ -68,9 +79,15 @@ def build(game, cfg):
                 L[k] = [x for x in L[k] if not x.get("_p3")]
                 if not L[k]:
                     L.pop(k)
-        if game not in GAMES or not L.get("p1") or L["p1"]["interior"] or (game, loc) in SKIP:
+        if not L.get("p1") or L["p1"]["interior"] or (game, loc) in SKIP or game == "people-of-the-bark":
             continue
-        mats, roles, crowns, conifer = _scan(game, loc)
+        mats, roles, crowns, conifer, cones, rounds = _scan(game, loc)
+        if game not in GAMES:  # P5 ruling: round crowns anywhere outdoors, the rest of P3 only in the forest games
+            if rounds:
+                L["kits"] = L.get("kits", []) + [dict(ROUND, materials=sorted(rounds))]
+                L["p3"] = {"version": 2, "materials": [], "kits": ["crowns_round"], "scatter": []}
+                rep[loc] = L["p3"]
+            continue
         pm = {}
         for m in sorted(mats):
             if "sky" in roles[m] and len(roles[m]) == 1 and m not in ("conifer", "pines", "forest"):
@@ -83,8 +100,10 @@ def build(game, cfg):
         forest_ground = sorted(m for m in ground if re.match(FORESTY, m))
         avoid = sorted(m for m in mats if re.match(AVOID, m)) or ["road"]  # a place without paths still keeps the sight-line rules
         kits, scat = [], []
-        if crowns:
-            kits.append({"kit": "conifer_wrap", "name": "crowns", "name_contains": "-crown", "height_gain": 1.06, "radius_gain": 1.35,
+        if rounds:
+            kits.append(dict(ROUND, materials=sorted(rounds)))
+        if crowns or cones:
+            kits.append({"kit": "conifer_wrap", "name": "crowns", "name_contains": "-crown", "pieces": sorted(cones), "height_gain": 1.06, "radius_gain": 1.35,
                          "lift": 0.02, "no_shadow_near_props_m": 6.0, "clear_centre": False, "cast_shadow": False, "surface": FOL,
                          "camera_only_light": True, "style": "branches", "_p3": True})
         if conifer:
@@ -126,7 +145,7 @@ def build(game, cfg):
             L["kits"] = L.get("kits", []) + kits
         if scat:
             L["scatter"] = L.get("scatter", []) + scat
-        L["p3"] = {"version": 1, "materials": sorted(pm), "kits": [k["kit"] for k in kits], "scatter": [s["name"] for s in scat]}
+        L["p3"] = {"version": 2, "materials": sorted(pm), "kits": [k["kit"] for k in kits], "scatter": [s["name"] for s in scat]}
         rep[loc] = L["p3"]
     return cfg, rep
 

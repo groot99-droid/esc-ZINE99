@@ -77,6 +77,35 @@
     "materials": {
      "rock": "rock_mid"
     }
+   },
+   "p5_materials": {
+    "rock": {
+     "family": "scan",
+     "third": true,
+     "macro2": 0.06,
+     "obj_jitter_m": 0.0,
+     "scan": "rock_wall_08",
+     "tile_m": 3.0,
+     "res": "1k",
+     "chroma": 0.1,
+     "bump": 0.7,
+     "macro": 0.14,
+     "grime": 0.7,
+     "p4_preset": "rock_mid",
+     "displace_m": 0.08,
+     "displace_mid": 0.0,
+     "subdiv": 5,
+     "edge_fade_m": 0.5,
+     "edge_floor": 0.2,
+     "edge_mid": 0.0,
+     "p5_preset": "relief"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "rock": "relief"
+    }
    }
   },
   "clerk-office": {
@@ -333,6 +362,27 @@
     "haze": false,
     "extent_m": 600.0,
     "fx_listed": []
+   },
+   "p5_materials": {
+    "bleached-sand": {
+     "family": "scan",
+     "scan": "coast_sand_01",
+     "res": "2k",
+     "tile_m": 3.0,
+     "chroma": 0.05,
+     "bump": 0.5,
+     "macro": 0.14,
+     "third": true,
+     "macro2": 0.08,
+     "grime": 0.2,
+     "p5_preset": "bleached-sand"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "bleached-sand": "bleached-sand"
+    }
    }
   },
   "elaris-room": {
@@ -633,6 +683,27 @@
     "haze": true,
     "extent_m": 36.0,
     "fx_listed": []
+   },
+   "p5_materials": {
+    "dune-light": {
+     "family": "scan",
+     "scan": "coast_sand_01",
+     "res": "2k",
+     "tile_m": 3.0,
+     "chroma": 0.05,
+     "bump": 0.5,
+     "macro": 0.14,
+     "third": true,
+     "macro2": 0.08,
+     "grime": 0.2,
+     "p5_preset": "bleached-sand"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "dune-light": "bleached-sand"
+    }
    }
   },
   "hollin-streets": {
@@ -1098,6 +1169,36 @@
     "materials": {
      "pale-cliff": "rock_pale"
     }
+   },
+   "kits": [
+    {
+     "kit": "crowns_round",
+     "name": "crowns_round",
+     "clump_share": 0.32,
+     "shell_clumps": 14,
+     "clear_centre": false,
+     "surface": {
+      "family": "foliage",
+      "tile_m": 0.6,
+      "macro": 0.35,
+      "fine": 0.3,
+      "bump": 0.6,
+      "bump_m": 0.02,
+      "underside": 0.12
+     },
+     "_p3": true,
+     "materials": [
+      "canopy"
+     ]
+    }
+   ],
+   "p3": {
+    "version": 2,
+    "materials": [],
+    "kits": [
+     "crowns_round"
+    ],
+    "scatter": []
    }
   },
   "silver-dunes": {
@@ -1150,6 +1251,27 @@
     "haze": false,
     "extent_m": 300.0,
     "fx_listed": []
+   },
+   "p5_materials": {
+    "silver-sand": {
+     "family": "scan",
+     "scan": "coast_sand_01",
+     "res": "2k",
+     "tile_m": 3.0,
+     "chroma": 0.05,
+     "bump": 0.5,
+     "macro": 0.14,
+     "third": true,
+     "macro2": 0.08,
+     "grime": 0.2,
+     "p5_preset": "bleached-sand"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "silver-sand": "bleached-sand"
+    }
    }
   },
   "storyteller-hut": {
@@ -1494,6 +1616,41 @@
     "fx_listed": [
      "dust"
     ]
+   },
+   "p5_materials": {
+    "book-spines": {
+     "family": "grid",
+     "tile_m": 0.035,
+     "board_m": 0.32,
+     "board_axis": "z",
+     "row_axis": "xy",
+     "joint": 0.08,
+     "joint_tone": 0.45,
+     "tile_jitter": 0.22,
+     "grain": 0.03,
+     "fine": 0.03,
+     "macro": 0.06,
+     "bump": 0.4,
+     "grime": 0.6,
+     "g7_min": 1.5,
+     "p5_preset": "book-spines"
+    },
+    "vellum": {
+     "family": "paper",
+     "tile_m": 0.3,
+     "bump": 0.15,
+     "grime": 0.4,
+     "foxing": 0.25,
+     "g7_min": 1.5,
+     "p5_preset": "vellum"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "book-spines": "book-spines",
+     "vellum": "vellum"
+    }
    }
   },
   "unlit-gallery": {

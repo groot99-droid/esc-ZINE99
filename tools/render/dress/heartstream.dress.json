@@ -385,7 +385,33 @@
       2.4
      ]
     }
-   ]
+   ],
+   "p5_materials": {
+    "crimson-deep": {
+     "family": "membrane",
+     "stretch": 2.0,
+     "warp": 0.6,
+     "vein_m": 0.35,
+     "vein_w": 0.035,
+     "vein_dark": 0.2,
+     "macro": 0.2,
+     "fine": 0.05,
+     "bump": 0.5,
+     "coat": 0.4,
+     "coat_roughness": 0.15,
+     "rough_range": [
+      0.25,
+      0.6
+     ],
+     "p5_preset": "tissue-pink"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "crimson-deep": "tissue-pink"
+    }
+   }
   },
   "beast-hold": {
    "p1": {
@@ -412,7 +438,33 @@
     "ao_distance_m": 0.6,
     "tone_gain": 1.0
    },
-   "materials": {}
+   "materials": {},
+   "p5_materials": {
+    "membrane-white": {
+     "family": "membrane",
+     "stretch": 2.0,
+     "warp": 0.6,
+     "vein_m": 0.35,
+     "vein_w": 0.035,
+     "vein_dark": 0.2,
+     "macro": 0.2,
+     "fine": 0.05,
+     "bump": 0.5,
+     "coat": 0.4,
+     "coat_roughness": 0.15,
+     "rough_range": [
+      0.25,
+      0.6
+     ],
+     "p5_preset": "tissue-pink"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "membrane-white": "tissue-pink"
+    }
+   }
   },
   "bloodstream": {
    "p1": {
@@ -443,7 +495,70 @@
     "ao_distance_m": 0.6,
     "tone_gain": 1.0
    },
-   "materials": {}
+   "materials": {},
+   "p5_materials": {
+    "crimson": {
+     "family": "membrane",
+     "stretch": 2.0,
+     "warp": 0.6,
+     "vein_m": 0.35,
+     "vein_w": 0.035,
+     "vein_dark": 0.2,
+     "macro": 0.2,
+     "fine": 0.05,
+     "bump": 0.5,
+     "coat": 0.4,
+     "coat_roughness": 0.15,
+     "rough_range": [
+      0.25,
+      0.6
+     ],
+     "p5_preset": "tissue-pink"
+    },
+    "crimson-deep": {
+     "family": "membrane",
+     "stretch": 2.0,
+     "warp": 0.6,
+     "vein_m": 0.35,
+     "vein_w": 0.035,
+     "vein_dark": 0.2,
+     "macro": 0.2,
+     "fine": 0.05,
+     "bump": 0.5,
+     "coat": 0.4,
+     "coat_roughness": 0.15,
+     "rough_range": [
+      0.25,
+      0.6
+     ],
+     "p5_preset": "tissue-pink"
+    },
+    "blood-calm": {
+     "family": "water",
+     "dark": 0.9,
+     "roughness": 0.05,
+     "ripple": 0.1,
+     "specular": 0.6,
+     "p5_preset": "blood-water"
+    },
+    "blood-water": {
+     "family": "water",
+     "dark": 0.9,
+     "roughness": 0.05,
+     "ripple": 0.1,
+     "specular": 0.6,
+     "p5_preset": "blood-water"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "crimson": "tissue-pink",
+     "crimson-deep": "tissue-pink",
+     "blood-calm": "blood-water",
+     "blood-water": "blood-water"
+    }
+   }
   },
   "delta": {
    "p1": {
@@ -493,7 +608,61 @@
       2.4
      ]
     }
-   ]
+   ],
+   "p5_materials": {
+    "crimson": {
+     "family": "membrane",
+     "stretch": 2.0,
+     "warp": 0.6,
+     "vein_m": 0.35,
+     "vein_w": 0.035,
+     "vein_dark": 0.2,
+     "macro": 0.2,
+     "fine": 0.05,
+     "bump": 0.5,
+     "coat": 0.4,
+     "coat_roughness": 0.15,
+     "rough_range": [
+      0.25,
+      0.6
+     ],
+     "p5_preset": "tissue-pink"
+    },
+    "crimson-deep": {
+     "family": "membrane",
+     "stretch": 2.0,
+     "warp": 0.6,
+     "vein_m": 0.35,
+     "vein_w": 0.035,
+     "vein_dark": 0.2,
+     "macro": 0.2,
+     "fine": 0.05,
+     "bump": 0.5,
+     "coat": 0.4,
+     "coat_roughness": 0.15,
+     "rough_range": [
+      0.25,
+      0.6
+     ],
+     "p5_preset": "tissue-pink"
+    },
+    "blood-water": {
+     "family": "water",
+     "dark": 0.9,
+     "roughness": 0.05,
+     "ripple": 0.1,
+     "specular": 0.6,
+     "p5_preset": "blood-water"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "crimson": "tissue-pink",
+     "crimson-deep": "tissue-pink",
+     "blood-water": "blood-water"
+    }
+   }
   },
   "elders-cavern": {
    "p1": {
@@ -578,7 +747,52 @@
       2.4
      ]
     }
-   ]
+   ],
+   "p5_materials": {
+    "marrow-tissue": {
+     "family": "membrane",
+     "stretch": 2.0,
+     "warp": 0.6,
+     "vein_m": 0.35,
+     "vein_w": 0.035,
+     "vein_dark": 0.2,
+     "macro": 0.2,
+     "fine": 0.05,
+     "bump": 0.5,
+     "coat": 0.4,
+     "coat_roughness": 0.15,
+     "rough_range": [
+      0.25,
+      0.6
+     ],
+     "p5_preset": "tissue-pink"
+    },
+    "tissue-pink": {
+     "family": "membrane",
+     "stretch": 2.0,
+     "warp": 0.6,
+     "vein_m": 0.35,
+     "vein_w": 0.035,
+     "vein_dark": 0.2,
+     "macro": 0.2,
+     "fine": 0.05,
+     "bump": 0.5,
+     "coat": 0.4,
+     "coat_roughness": 0.15,
+     "rough_range": [
+      0.25,
+      0.6
+     ],
+     "p5_preset": "tissue-pink"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "marrow-tissue": "tissue-pink",
+     "tissue-pink": "tissue-pink"
+    }
+   }
   },
   "heart-atrium": {
    "p1": {
@@ -628,7 +842,61 @@
       2.4
      ]
     }
-   ]
+   ],
+   "p5_materials": {
+    "crimson-deep": {
+     "family": "membrane",
+     "stretch": 2.0,
+     "warp": 0.6,
+     "vein_m": 0.35,
+     "vein_w": 0.035,
+     "vein_dark": 0.2,
+     "macro": 0.2,
+     "fine": 0.05,
+     "bump": 0.5,
+     "coat": 0.4,
+     "coat_roughness": 0.15,
+     "rough_range": [
+      0.25,
+      0.6
+     ],
+     "p5_preset": "tissue-pink"
+    },
+    "muscle": {
+     "family": "membrane",
+     "stretch": 2.0,
+     "warp": 0.6,
+     "vein_m": 0.35,
+     "vein_w": 0.035,
+     "vein_dark": 0.2,
+     "macro": 0.2,
+     "fine": 0.05,
+     "bump": 0.5,
+     "coat": 0.4,
+     "coat_roughness": 0.15,
+     "rough_range": [
+      0.25,
+      0.6
+     ],
+     "p5_preset": "tissue-pink"
+    },
+    "blood-water": {
+     "family": "water",
+     "dark": 0.9,
+     "roughness": 0.05,
+     "ripple": 0.1,
+     "specular": 0.6,
+     "p5_preset": "blood-water"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "crimson-deep": "tissue-pink",
+     "muscle": "tissue-pink",
+     "blood-water": "blood-water"
+    }
+   }
   },
   "narrow-vessel": {
    "p1": {
@@ -679,7 +947,80 @@
       2.4
      ]
     }
-   ]
+   ],
+   "p5_materials": {
+    "crimson-deep": {
+     "family": "membrane",
+     "stretch": 2.0,
+     "warp": 0.6,
+     "vein_m": 0.35,
+     "vein_w": 0.035,
+     "vein_dark": 0.2,
+     "macro": 0.2,
+     "fine": 0.05,
+     "bump": 0.5,
+     "coat": 0.4,
+     "coat_roughness": 0.15,
+     "rough_range": [
+      0.25,
+      0.6
+     ],
+     "p5_preset": "tissue-pink"
+    },
+    "membrane-red": {
+     "family": "membrane",
+     "stretch": 2.0,
+     "warp": 0.6,
+     "vein_m": 0.35,
+     "vein_w": 0.035,
+     "vein_dark": 0.2,
+     "macro": 0.2,
+     "fine": 0.05,
+     "bump": 0.5,
+     "coat": 0.4,
+     "coat_roughness": 0.15,
+     "rough_range": [
+      0.25,
+      0.6
+     ],
+     "p5_preset": "tissue-pink"
+    },
+    "tissue-pink": {
+     "family": "membrane",
+     "stretch": 2.0,
+     "warp": 0.6,
+     "vein_m": 0.35,
+     "vein_w": 0.035,
+     "vein_dark": 0.2,
+     "macro": 0.2,
+     "fine": 0.05,
+     "bump": 0.5,
+     "coat": 0.4,
+     "coat_roughness": 0.15,
+     "rough_range": [
+      0.25,
+      0.6
+     ],
+     "p5_preset": "tissue-pink"
+    },
+    "blood-water": {
+     "family": "water",
+     "dark": 0.9,
+     "roughness": 0.05,
+     "ripple": 0.1,
+     "specular": 0.6,
+     "p5_preset": "blood-water"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "crimson-deep": "tissue-pink",
+     "membrane-red": "tissue-pink",
+     "tissue-pink": "tissue-pink",
+     "blood-water": "blood-water"
+    }
+   }
   },
   "pulse-wall-chamber": {
    "p1": {
@@ -759,7 +1100,52 @@
       2.4
      ]
     }
-   ]
+   ],
+   "p5_materials": {
+    "marrow-tissue": {
+     "family": "membrane",
+     "stretch": 2.0,
+     "warp": 0.6,
+     "vein_m": 0.35,
+     "vein_w": 0.035,
+     "vein_dark": 0.2,
+     "macro": 0.2,
+     "fine": 0.05,
+     "bump": 0.5,
+     "coat": 0.4,
+     "coat_roughness": 0.15,
+     "rough_range": [
+      0.25,
+      0.6
+     ],
+     "p5_preset": "tissue-pink"
+    },
+    "membrane-red": {
+     "family": "membrane",
+     "stretch": 2.0,
+     "warp": 0.6,
+     "vein_m": 0.35,
+     "vein_w": 0.035,
+     "vein_dark": 0.2,
+     "macro": 0.2,
+     "fine": 0.05,
+     "bump": 0.5,
+     "coat": 0.4,
+     "coat_roughness": 0.15,
+     "rough_range": [
+      0.25,
+      0.6
+     ],
+     "p5_preset": "tissue-pink"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "marrow-tissue": "tissue-pink",
+     "membrane-red": "tissue-pink"
+    }
+   }
   },
   "shaft-foot": {
    "p1": {
@@ -821,6 +1207,51 @@
      },
      "p1_preset": "plaster"
     }
+   },
+   "p5_materials": {
+    "marrow-tissue": {
+     "family": "membrane",
+     "stretch": 2.0,
+     "warp": 0.6,
+     "vein_m": 0.35,
+     "vein_w": 0.035,
+     "vein_dark": 0.2,
+     "macro": 0.2,
+     "fine": 0.05,
+     "bump": 0.5,
+     "coat": 0.4,
+     "coat_roughness": 0.15,
+     "rough_range": [
+      0.25,
+      0.6
+     ],
+     "p5_preset": "tissue-pink"
+    },
+    "tissue-pink": {
+     "family": "membrane",
+     "stretch": 2.0,
+     "warp": 0.6,
+     "vein_m": 0.35,
+     "vein_w": 0.035,
+     "vein_dark": 0.2,
+     "macro": 0.2,
+     "fine": 0.05,
+     "bump": 0.5,
+     "coat": 0.4,
+     "coat_roughness": 0.15,
+     "rough_range": [
+      0.25,
+      0.6
+     ],
+     "p5_preset": "tissue-pink"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "marrow-tissue": "tissue-pink",
+     "tissue-pink": "tissue-pink"
+    }
    }
   },
   "shared-chamber": {
@@ -871,7 +1302,61 @@
       2.4
      ]
     }
-   ]
+   ],
+   "p5_materials": {
+    "membrane-red": {
+     "family": "membrane",
+     "stretch": 2.0,
+     "warp": 0.6,
+     "vein_m": 0.35,
+     "vein_w": 0.035,
+     "vein_dark": 0.2,
+     "macro": 0.2,
+     "fine": 0.05,
+     "bump": 0.5,
+     "coat": 0.4,
+     "coat_roughness": 0.15,
+     "rough_range": [
+      0.25,
+      0.6
+     ],
+     "p5_preset": "tissue-pink"
+    },
+    "tissue-pink": {
+     "family": "membrane",
+     "stretch": 2.0,
+     "warp": 0.6,
+     "vein_m": 0.35,
+     "vein_w": 0.035,
+     "vein_dark": 0.2,
+     "macro": 0.2,
+     "fine": 0.05,
+     "bump": 0.5,
+     "coat": 0.4,
+     "coat_roughness": 0.15,
+     "rough_range": [
+      0.25,
+      0.6
+     ],
+     "p5_preset": "tissue-pink"
+    },
+    "blood-water": {
+     "family": "water",
+     "dark": 0.9,
+     "roughness": 0.05,
+     "ripple": 0.1,
+     "specular": 0.6,
+     "p5_preset": "blood-water"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "membrane-red": "tissue-pink",
+     "tissue-pink": "tissue-pink",
+     "blood-water": "blood-water"
+    }
+   }
   },
   "shedding-gallery": {
    "p1": {
@@ -1035,7 +1520,52 @@
       2.4
      ]
     }
-   ]
+   ],
+   "p5_materials": {
+    "marrow-floor": {
+     "family": "membrane",
+     "stretch": 2.0,
+     "warp": 0.6,
+     "vein_m": 0.35,
+     "vein_w": 0.035,
+     "vein_dark": 0.2,
+     "macro": 0.2,
+     "fine": 0.05,
+     "bump": 0.5,
+     "coat": 0.4,
+     "coat_roughness": 0.15,
+     "rough_range": [
+      0.25,
+      0.6
+     ],
+     "p5_preset": "tissue-pink"
+    },
+    "marrow-tissue": {
+     "family": "membrane",
+     "stretch": 2.0,
+     "warp": 0.6,
+     "vein_m": 0.35,
+     "vein_w": 0.035,
+     "vein_dark": 0.2,
+     "macro": 0.2,
+     "fine": 0.05,
+     "bump": 0.5,
+     "coat": 0.4,
+     "coat_roughness": 0.15,
+     "rough_range": [
+      0.25,
+      0.6
+     ],
+     "p5_preset": "tissue-pink"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "marrow-floor": "tissue-pink",
+     "marrow-tissue": "tissue-pink"
+    }
+   }
   },
   "stencil-gallery": {
    "p1": {
@@ -1153,7 +1683,33 @@
       2.4
      ]
     }
-   ]
+   ],
+   "p5_materials": {
+    "tissue-pink": {
+     "family": "membrane",
+     "stretch": 2.0,
+     "warp": 0.6,
+     "vein_m": 0.35,
+     "vein_w": 0.035,
+     "vein_dark": 0.2,
+     "macro": 0.2,
+     "fine": 0.05,
+     "bump": 0.5,
+     "coat": 0.4,
+     "coat_roughness": 0.15,
+     "rough_range": [
+      0.25,
+      0.6
+     ],
+     "p5_preset": "tissue-pink"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "tissue-pink": "tissue-pink"
+    }
+   }
   }
  }
 }

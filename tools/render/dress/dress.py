@@ -91,6 +91,8 @@ def apply(bpy, sc, game, location, scene, K, rig, views, made, pieces, dress_dir
             mcfg = dict(mcfg, **loc_cfg["p3_materials"])
         if os.environ.get("DRESS_P4") == "1" and loc_cfg.get("p4_materials"):  # P4: rock, snow, frost and ice (the P4 look runs set it)
             mcfg = dict(mcfg, **loc_cfg["p4_materials"])
+        if os.environ.get("DRESS_P5") == "1" and loc_cfg.get("p5_materials"):  # P5: per-game specials and near-rock relief (wins over P4)
+            mcfg = dict(mcfg, **loc_cfg["p5_materials"])
         used = {}
         for ob in sorted(pieces, key=lambda o: o.name):
             if ob.hide_render or not ob.material_slots or ob.material_slots[0].material is None:

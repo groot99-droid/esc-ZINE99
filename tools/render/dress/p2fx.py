@@ -227,3 +227,55 @@ def flames(ctx, spec, col):
                 lp_[uvl].uv = uv
         out.append(_mesh_obj(col, "dress-flame-" + o.name, bm, mat, "atmos/flame"))
     return out
+
+
+def crowns_round(ctx, spec, col):
+    """P5 ruling: round (broadleaf) crowns. Every blockout piece whose material is listed (a sphere or ellipsoid crown) gets a branch
+    structure of leaf clumps: 3 to 5 crooked limbs from the crown's base out to its shell, each carrying noise-swollen clumps, plus
+    clumps over the shell, so the silhouette breaks up like a real crown. Clumps share the crown's own colour through the R3 foliage
+    family; no shadow and no bounce (as the R3 trees), so the scene's light is unchanged."""
+    from . import kits
+    K = ctx["K"]
+    out = []
+    names = set(spec.get("materials", []))
+    for o in sorted(ctx["pieces"], key=lambda x: x.name):
+        if o.hide_render or not o.material_slots or not o.material_slots[0].material:
+            continue
+        mn = o.material_slots[0].material.name[3:].split("@")[0]
+        if mn not in names:
+            continue
+        pts = [o.matrix_world @ Vector(c) for c in o.bound_box]
+        lo = [min(p[i] for p in pts) for i in range(3)]
+        hi = [max(p[i] for p in pts) for i in range(3)]
+        c = Vector(((lo[0] + hi[0]) / 2, (lo[1] + hi[1]) / 2, (lo[2] + hi[2]) / 2))
+        r = Vector(((hi[0] - lo[0]) / 2, (hi[1] - lo[1]) / 2, (hi[2] - lo[2]) / 2))
+        if min(r) < 0.2 * K:
+            continue
+        rng = random.Random(seeds.unit("%s/%s/%s" % (ctx["game"], ctx["location"], o.name), "crown") * 1e9)
+        col0 = tuple(o.material_slots[0].material.node_tree.nodes.get("Principled BSDF").inputs["Base Color"].default_value)[:3] \
+            if o.material_slots[0].material.node_tree.nodes.get("Principled BSDF") else (0.25, 0.3, 0.15)
+        mat = kits._kit_material(ctx, K, dict(spec, color=col0), "crown-" + mn)
+        bm = bmesh.new()
+        base = Vector((c.x, c.y, lo[2] + r.z * 0.2))
+        n_limb = rng.randint(3, 5)
+        cl_r = min(r) * spec.get("clump_share", 0.32)
+        for li in range(n_limb):
+            ang = li / n_limb * 2 * math.pi + rng.uniform(-0.4, 0.4)
+            tip = c + Vector((math.cos(ang) * r.x * 0.75, math.sin(ang) * r.y * 0.75, rng.uniform(-0.1, 0.5) * r.z))
+            for t in (0.45, 0.75, 1.0):
+                p = base.lerp(tip, t) + Vector((rng.uniform(-1, 1), rng.uniform(-1, 1), rng.uniform(-0.5, 1))) * cl_r * 0.4
+                bmesh.ops.create_icosphere(bm, subdivisions=2, radius=cl_r * rng.uniform(0.7, 1.15) * (0.7 + 0.3 * t), matrix=Matrix.Translation(p))
+        for _ in range(spec.get("shell_clumps", 14)):  # clumps over the shell break the round silhouette
+            u, v = rng.uniform(0, 2 * math.pi), rng.uniform(-0.3, 1.0)
+            d = Vector((math.cos(u) * math.sqrt(1 - v * v), math.sin(u) * math.sqrt(1 - v * v), v))
+            p = c + Vector((d.x * r.x, d.y * r.y, d.z * r.z)) * rng.uniform(0.78, 0.95)
+            bmesh.ops.create_icosphere(bm, subdivisions=2, radius=cl_r * rng.uniform(0.6, 1.0), matrix=Matrix.Translation(p))
+        for v in bm.verts:  # swell each clump with noise so none is a clean sphere
+            n = math.sin(v.co.x * 7.1 / K + rng.random()) * math.sin(v.co.y * 6.3 / K) * math.sin(v.co.z * 5.7 / K)
+            v.co += (v.co - c).normalized() * n * cl_r * 0.25
+        ob = _mesh_obj(col, "dress-crown-" + o.name, bm, mat, "kits/crowns_round")
+        for k in ("visible_shadow", "visible_diffuse", "visible_glossy", "visible_transmission", "visible_volume_scatter"):
+            setattr(ob, k, k == "visible_diffuse" and False)
+        ob.visible_camera = True
+        out.append(ob)
+    return out

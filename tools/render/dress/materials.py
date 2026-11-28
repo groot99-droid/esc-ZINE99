@@ -294,6 +294,8 @@ def fam_scan(b, p, ctx, K, mat_name):
             height = b.math("ADD", height, b.math("MULTIPLY", cprof, rd / max(p.get("bump_m", 0.004), 1e-5)))
             sh = p["courses"].get("round_shade", 0.18)
             ratio = b.mix(ratio, b.gray(b.mapr(cprof, 0.0, 0.8, 1.0 - sh, 1.0 + sh * 0.25)), 1.0, "MULTIPLY")
+    if p.get("displace_m"):  # P5 ruling: true relief on near cave and cliff walls, from the scan's own luminance
+        s.disp_height = b.lum(col)
     return ratio, rmult, height, s
 
 
