@@ -110,6 +110,21 @@ Every failing check (place, scene/still, gate, value, limit):
 
 G7 (detail gain) is counted as not applicable in P2: the surfaces are the P1 ones in both renders. G9 misses are P1's own.
 
+## P4 gates (rock, snow, frost and ice; before = the P1 to P3 render)
+
+12 stills in 2 places. Gate checks: 201 passed, 9 failed, 40 not applicable.
+G7 is listed but not meaningful for an incremental phase: it averages every dressed region, most unchanged since P1.
+
+- abyss-edge s3_abyss_dream/overview: G4b 51.32 (limit 51.4)
+- abyss-edge s3_abyss_dream/overview: G7 1.15 (limit 2.0)
+- abyss-edge s3_abyss_dream/player: G4b 17.09 (limit 22.88)
+- abyss-edge s3_abyss_dream/player: G7 1.51 (limit 2.0)
+- abyss-edge s3_abyss_return/player: G4b 19.16 (limit 23.64)
+- abyss-edge s3_abyss_return/player: G7 1.53 (limit 2.0)
+- procession-road s3_procession_choice/camera: G4b 19.34 (limit 22.41)
+- procession-road s3_scribe_wagon/camera: G7 1.0 (limit 1.5)
+- procession-road s3_scribe_wagon/player: G7 1.0 (limit 1.5)
+
 ## Still weak
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.

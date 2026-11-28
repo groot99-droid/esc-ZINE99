@@ -65,6 +65,30 @@ Every failing check (place, scene/still, gate, value, limit):
 
 G7 (detail gain) is counted as not applicable in P2: the surfaces are the P1 ones in both renders. G9 misses are P1's own.
 
+## P4 gates (rock, snow, frost and ice; before = the P1 to P3 render)
+
+22 stills in 2 places. Gate checks: 415 passed, 18 failed, 24 not applicable.
+G7 is listed but not meaningful for an incremental phase: it averages every dressed region, most unchanged since P1.
+
+- salvage-settlement s3_settlement_day/camera: G7 1.0 (limit 2.0)
+- salvage-settlement s3_settlement_day/overview: G7 1.0 (limit 2.0)
+- salvage-settlement s3_settlement_day/player: G7 1.0 (limit 2.0)
+- salvage-settlement s3_settlement_haze/camera: G7 1.0 (limit 2.0)
+- salvage-settlement s3_settlement_haze/player: G7 1.0 (limit 2.0)
+- salvage-settlement s3_settlement_lost/camera: G7 1.0 (limit 2.0)
+- salvage-settlement s3_settlement_lost/player: G7 1.0 (limit 2.0)
+- salvage-settlement s3_settlement_raid/camera: G7 1.0 (limit 2.0)
+- salvage-settlement s3_settlement_raid/player: G7 1.0 (limit 2.0)
+- snakehead-fortress s3_fortress_bench/camera: G7 1.0 (limit 2.0)
+- snakehead-fortress s3_fortress_bench/player: G7 1.0 (limit 2.0)
+- snakehead-fortress s3_fortress_following/camera: G7 1.24 (limit 2.0)
+- snakehead-fortress s3_fortress_following/player: G7 1.44 (limit 2.0)
+- snakehead-fortress s3_fortress_lamp/camera: G7 1.0 (limit 2.0)
+- snakehead-fortress s3_fortress_lamp/overview: G7 1.0 (limit 2.0)
+- snakehead-fortress s3_fortress_lamp/player: G7 1.0 (limit 2.0)
+- snakehead-fortress s3_fortress_workshop/camera: G7 1.0 (limit 2.0)
+- snakehead-fortress s3_fortress_workshop/player: G7 1.0 (limit 2.0)
+
 ## Still weak
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.

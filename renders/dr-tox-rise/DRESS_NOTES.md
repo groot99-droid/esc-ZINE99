@@ -81,6 +81,15 @@ Every failing check (place, scene/still, gate, value, limit):
 
 G7 (detail gain) is counted as not applicable in P2: the surfaces are the P1 ones in both renders. G9 misses are P1's own.
 
+## P3 gates (outdoor and forest kit; before = the P1 and P2b render)
+
+5 stills in 1 places. Gate checks: 90 passed, 3 failed, 12 not applicable.
+G7 (detail gain) is counted as not applicable: it averages every dressed region, most of which P1 already dressed.
+
+- idaho-river-town s3_river_night/player: G4b 6.07 (limit 16.35)
+- idaho-river-town s3_river_town/camera: G8 0.581 (limit 0.2)
+- idaho-river-town s3_river_town/player: G8 0.31 (limit 0.2)
+
 ## Still weak
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.

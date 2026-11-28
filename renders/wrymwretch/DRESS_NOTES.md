@@ -75,6 +75,61 @@ Every failing check (place, scene/still, gate, value, limit):
 
 G7 (detail gain) is counted as not applicable in P2: the surfaces are the P1 ones in both renders. G9 misses are P1's own.
 
+## P3 gates (outdoor and forest kit; before = the P1 and P2b render)
+
+5 stills in 1 places. Gate checks: 93 passed, 7 failed, 5 not applicable.
+G7 (detail gain) is counted as not applicable: it averages every dressed region, most of which P1 already dressed.
+
+- western-groves s_cedar_grove/camera: G4b 10.96 (limit 20.06)
+- western-groves s_cedar_grove/camera: G8 0.273 (limit 0.2)
+- western-groves s_cedar_grove/player: G4b 14.86 (limit 19.64)
+- western-groves s_cedar_grove/player: G8 0.392 (limit 0.2)
+- western-groves s_elder_tree/camera: G2 0.1302 (limit 0.12)
+- western-groves s_elder_tree/camera: G3a 4.222 (limit 4.0)
+- western-groves s_elder_tree/overview: G11 0.1889 (limit 0.08262)
+
+## P4 gates (rock, snow, frost and ice; before = the P1 to P3 render)
+
+41 stills in 7 places. Gate checks: 762 passed, 36 failed, 50 not applicable.
+G7 is listed but not meaningful for an incremental phase: it averages every dressed region, most unchanged since P1.
+
+- astral-expanse s_battle_unwriter/camera: G7 1.0 (limit 2.0)
+- astral-expanse s_battle_unwriter/player: G7 1.0 (limit 2.0)
+- astral-expanse s_expanse/camera: G2 0.2594 (limit 0.12)
+- duskbane-underworld s_duskbane_halls/camera: G7 1.0 (limit 2.0)
+- duskbane-underworld s_duskbane_halls/overview: G7 1.0 (limit 2.0)
+- duskbane-underworld s_duskbane_halls/player: G7 1.0 (limit 2.0)
+- duskbane-underworld s_forbidden_chamber/camera: G7 1.0 (limit 2.0)
+- duskbane-underworld s_forbidden_chamber/player: G7 1.0 (limit 2.0)
+- duskbane-underworld s_underworld_tunnels/camera: G7 1.29 (limit 2.0)
+- duskbane-underworld s_underworld_tunnels/camera: G14 0.12118962230077657 (limit 0.06)
+- duskbane-underworld s_underworld_tunnels/player: G7 1.32 (limit 2.0)
+- duskbane-underworld s_underworld_tunnels/player: G14 0.1493238530623881 (limit 0.06)
+- galewing-sky-city s_cloud_platform/player: G7 1.0 (limit 2.0)
+- galewing-sky-city s_galewing_ward/camera: G7 1.0 (limit 2.0)
+- galewing-sky-city s_galewing_ward/overview: G7 1.0 (limit 2.0)
+- galewing-sky-city s_galewing_ward/player: G4b 28.86 (limit 31.65)
+- heartstone-caverns s_heartstone_hall/camera: G7 1.03 (limit 2.0)
+- heartstone-caverns s_heartstone_hall/overview: G7 1.05 (limit 2.0)
+- heartstone-caverns s_heartstone_hall/player: G7 1.03 (limit 2.0)
+- rim-of-wrymreach s_chasm_seal1/camera: G7 1.28 (limit 2.0)
+- rim-of-wrymreach s_moot_camp/camera: G7 1.01 (limit 2.0)
+- rim-of-wrymreach s_moot_camp/overview: G7 0.99 (limit 2.0)
+- rim-of-wrymreach s_moot_camp/player: G7 1.0 (limit 2.0)
+- rim-of-wrymreach s_moot_dawn/camera: G7 1.46 (limit 2.0)
+- rim-of-wrymreach s_moot_dawn/player: G7 1.14 (limit 2.0)
+- rim-of-wrymreach s_rim/camera: G7 1.29 (limit 2.0)
+- rim-of-wrymreach s_rim/player: G7 1.05 (limit 2.0)
+- rim-of-wrymreach s_rim_ambush/camera: G7 1.0 (limit 2.0)
+- rim-of-wrymreach s_rim_ambush/player: G7 1.01 (limit 2.0)
+- seabed s_seabed/camera: G4b 35.62 (limit 38.05)
+- seabed s_seabed/player: G4b 36.48 (limit 39.12)
+- tidecaller-shore s_shore_night/camera: G7 1.0 (limit 2.0)
+- tidecaller-shore s_shore_night/overview: G7 1.23 (limit 2.0)
+- tidecaller-shore s_shore_night/player: G7 1.0 (limit 2.0)
+- tidecaller-shore s_tide_shore/camera: G7 1.0 (limit 2.0)
+- tidecaller-shore s_tide_shore/player: G7 1.0 (limit 2.0)
+
 ## Still weak
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.

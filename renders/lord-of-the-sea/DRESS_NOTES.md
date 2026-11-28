@@ -140,6 +140,50 @@ Every failing check (place, scene/still, gate, value, limit):
 
 G7 (detail gain) is counted as not applicable in P2: the surfaces are the P1 ones in both renders. G9 misses are P1's own.
 
+## P3 gates (outdoor and forest kit; before = the P1 and P2b render)
+
+17 stills in 1 places. Gate checks: 331 passed, 0 failed, 26 not applicable.
+G7 (detail gain) is counted as not applicable: it averages every dressed region, most of which P1 already dressed.
+
+
+## P4 gates (rock, snow, frost and ice; before = the P1 to P3 render)
+
+29 stills in 5 places. Gate checks: 540 passed, 32 failed, 34 not applicable.
+G7 is listed but not meaningful for an incremental phase: it averages every dressed region, most unchanged since P1.
+
+- home-reach-beach s-beach-princess/camera: G7 1.0 (limit 2.0)
+- home-reach-beach s-beach-princess/player: G7 1.0 (limit 2.0)
+- home-reach-beach s-beach-tideline/camera: G7 1.0 (limit 2.0)
+- home-reach-beach s-beach-tideline/player: G7 1.0 (limit 2.0)
+- home-reach-beach s-end-charter/camera: G7 1.0 (limit 2.0)
+- home-reach-beach s-end-lords-peace/camera: G7 1.0 (limit 2.0)
+- home-reach-beach s-end-lords-peace/player: G7 1.0 (limit 2.0)
+- home-reach-beach s-end-no-lord/camera: G7 1.0 (limit 2.0)
+- home-reach-beach s-end-no-lord/player: G7 1.0 (limit 2.0)
+- home-reach-beach s-end-paid-in-kind/camera: G7 1.0 (limit 2.0)
+- home-reach-beach s-end-paid-in-kind/player: G7 1.0 (limit 2.0)
+- home-reach-beach s-end-wild-sea/camera: G7 1.0 (limit 2.0)
+- home-reach-beach s-home-tideline/camera: G7 1.0 (limit 2.0)
+- home-reach-beach s-home-tideline/player: G7 1.0 (limit 2.0)
+- home-reach-beach s-tideline-final/camera: G7 1.0 (limit 2.0)
+- home-reach-beach s-tideline-final/overview: G7 1.0 (limit 2.0)
+- home-reach-beach s-tideline-final/player: G7 1.0 (limit 2.0)
+- lamplit-strait s-lamplit-strait/camera: G7 1.04 (limit 2.0)
+- lamplit-strait s-lamplit-strait/overview: G7 1.0 (limit 2.0)
+- lamplit-strait s-lamplit-strait/player: G7 1.02 (limit 2.0)
+- pearl-banks s-pearl-banks/camera: G7 1.02 (limit 2.0)
+- pearl-banks s-pearl-banks/overview: G7 1.01 (limit 2.0)
+- pearl-banks s-pearl-banks/player: G7 1.0 (limit 2.0)
+- salt-steps s-salt-steps/camera: G7 1.09 (limit 1.992)
+- salt-steps s-salt-steps/camera: G8 0.506 (limit 0.2)
+- salt-steps s-salt-steps/overview: G7 1.03 (limit 2.0)
+- salt-steps s-salt-steps/player: G7 1.13 (limit 1.99)
+- salt-steps s-salt-steps/player: G8 0.547 (limit 0.2)
+- the-unwritten s-unwritten/camera: G7 1.05 (limit 2.0)
+- the-unwritten s-unwritten/overview: G4b 34.51 (limit 35.22)
+- the-unwritten s-unwritten/overview: G7 1.16 (limit 2.0)
+- the-unwritten s-unwritten/player: G7 1.1 (limit 2.0)
+
 ## Still weak
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.

@@ -82,6 +82,18 @@ Every failing check (place, scene/still, gate, value, limit):
 
 G7 (detail gain) is counted as not applicable in P2: the surfaces are the P1 ones in both renders. G9 misses are P1's own.
 
+## P3 gates (outdoor and forest kit; before = the P1 and P2b render)
+
+14 stills in 4 places. Gate checks: 248 passed, 6 failed, 38 not applicable.
+G7 (detail gain) is counted as not applicable: it averages every dressed region, most of which P1 already dressed.
+
+- overlook-trail a1_trail_overlook/camera: G4b 6.06 (limit 21.56)
+- overlook-trail a1_trail_overlook/overview: G4b 7.7 (limit 26.9)
+- overlook-trail a1_trail_overlook/player: G4b 5.99 (limit 21.49)
+- porch-clearing a3_dog/camera: G4b 14.19 (limit 16.62)
+- porch-clearing a3_dog/player: G4b 11.55 (limit 12.76)
+- porch-clearing e_keeper_porch/camera: G2 0.4049 (limit 0.12)
+
 ## Still weak
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.

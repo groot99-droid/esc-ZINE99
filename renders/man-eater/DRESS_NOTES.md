@@ -129,6 +129,42 @@ Every failing check (place, scene/still, gate, value, limit):
 
 G7 (detail gain) is counted as not applicable in P2: the surfaces are the P1 ones in both renders. G9 misses are P1's own.
 
+## P3 gates (outdoor and forest kit; before = the P1 and P2b render)
+
+16 stills in 2 places. Gate checks: 274 passed, 0 failed, 48 not applicable.
+G7 (detail gain) is counted as not applicable: it averages every dressed region, most of which P1 already dressed.
+
+
+## P4 gates (rock, snow, frost and ice; before = the P1 to P3 render)
+
+36 stills in 8 places. Gate checks: 663 passed, 24 failed, 51 not applicable.
+G7 is listed but not meaningful for an incremental phase: it averages every dressed region, most unchanged since P1.
+
+- boiler-room d4_duty_boiler/camera: G7 1.11 (limit 2.0)
+- boiler-room d4_duty_boiler/overview: G6b 0.7071 (limit 0.6364)
+- boiler-room d4_duty_boiler/overview: G7 1.0 (limit 2.0)
+- boiler-room d4_duty_boiler/player: G7 1.38 (limit 2.0)
+- cold-store d1_duty_coldstore/camera: G7 1.61 (limit 2.0)
+- cold-store d1_duty_coldstore/overview: G7 1.07 (limit 2.0)
+- cold-store d1_duty_coldstore/player: G7 1.08 (limit 2.0)
+- gate-yard d3_duty_shovel/player: G7 1.45 (limit 2.0)
+- perimeter n7_perimeter/camera: G7 1.12 (limit 2.0)
+- perimeter n7_perimeter/player: G7 1.11 (limit 2.0)
+- sams-office d5_sam_office/camera: G4b 31.86 (limit 32.69)
+- sams-office d5_sam_office/overview: G7 1.0 (limit 1.504)
+- sams-office d5_sam_office/player: G7 1.0 (limit 1.5)
+- sams-office n4_office/camera: G7 1.0 (limit 1.504)
+- sams-office n4_office/player: G7 1.0 (limit 1.5)
+- the-cave e_cave/camera: G7 1.01 (limit 2.0)
+- the-cave e_cave/overview: G6b 0.381 (limit 0.3411)
+- the-cave e_cave/overview: G7 1.29 (limit 2.0)
+- the-cave e_cave/player: G7 1.01 (limit 2.0)
+- the-pens n6_pens/camera: G7 1.67 (limit 2.0)
+- the-pens n6_pens/overview: G7 1.4 (limit 2.0)
+- the-pens n6_pens/player: G7 1.01 (limit 2.0)
+- truck-cab n3_glovebox/camera: G7 1.0 (limit 1.882)
+- truck-cab n3_glovebox/overview: G7 1.07 (limit 1.963)
+
 ## Still weak
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.

@@ -81,6 +81,46 @@ Every failing check (place, scene/still, gate, value, limit):
 
 G7 (detail gain) is counted as not applicable in P2: the surfaces are the P1 ones in both renders. G9 misses are P1's own.
 
+## P3 gates (outdoor and forest kit; before = the P1 and P2b render)
+
+26 stills in 6 places. Gate checks: 465 passed, 22 failed, 59 not applicable.
+G7 (detail gain) is counted as not applicable: it averages every dressed region, most of which P1 already dressed.
+
+- creek-trail creek_trail/camera: G4b 11.43 (limit 14.28)
+- creek-trail creek_trail/player: G4b 12.03 (limit 15.07)
+- fire-ring campfire_night1/overview: G6b 0.7633 (limit 0.687)
+- five-sites channel_two/player: G4a 39.59 (limit 39.59)
+- five-sites dusk_choice/camera: G4a 4.216 (limit 4.008)
+- five-sites dusk_choice/camera: G8 0.228 (limit 0.2)
+- five-sites dusk_choice/player: G4a 4.26 (limit 4.038)
+- five-sites fixed_sites_day1/camera: G8 0.563 (limit 0.2)
+- five-sites fixed_sites_day1/overview: G11 0.3287 (limit 0.08262)
+- five-sites fixed_sites_day1/player: G8 0.57 (limit 0.2)
+- gravel-clearing gravel_morning/camera: G4b 13.07 (limit 13.71)
+- gravel-clearing gravel_morning/camera: G11 0.1384 (limit 0.08262)
+- gravel-clearing gravel_morning/overview: G4a 2.82 (limit 1.696)
+- gravel-clearing gravel_morning/overview: G8 0.566 (limit 0.2)
+- gravel-clearing gravel_morning/player: G4b 13.0 (limit 13.72)
+- other-side-sites wrong_forest/camera: G4b 19.65 (limit 24.21)
+- other-side-sites wrong_forest/overview: G4b 6.92 (limit 8.93)
+- other-side-sites wrong_forest/player: G4b 19.57 (limit 25.2)
+- the-clearing the_clearing/camera: G4b 21.63 (limit 42.06)
+- the-clearing the_clearing/overview: G4a 0.934 (limit 0.603)
+- the-clearing the_clearing/overview: G4b 3.07 (limit 5.86)
+- the-clearing the_clearing/player: G4b 21.57 (limit 41.8)
+
+## P4 gates (rock, snow, frost and ice; before = the P1 to P3 render)
+
+6 stills in 2 places. Gate checks: 111 passed, 6 failed, 9 not applicable.
+G7 is listed but not meaningful for an incremental phase: it averages every dressed region, most unchanged since P1.
+
+- creek-trail creek_trail/camera: G7 1.0 (limit 2.0)
+- creek-trail creek_trail/overview: G7 1.0 (limit 2.0)
+- creek-trail creek_trail/player: G7 1.0 (limit 2.0)
+- gravel-clearing gravel_morning/camera: G7 1.0 (limit 2.0)
+- gravel-clearing gravel_morning/overview: G7 1.0 (limit 2.0)
+- gravel-clearing gravel_morning/player: G7 1.0 (limit 2.0)
+
 ## Still weak
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.

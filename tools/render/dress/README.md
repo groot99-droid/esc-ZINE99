@@ -322,3 +322,15 @@ four locked cave scans already on disk replace the P1 scans for plank floors and
 * Not built, and why: light shafts (one listed place; a camera-only volume cone is not built yet), falling snow (both listed places
   are interiors: the cold-store bay and the outpost), smoke and steam (laundry), flames where the build has no fire piece (three of
   the four listed places).
+
+## P3 and P4 (2026-11-28)
+
+* `p3.py` (outdoor and forest kit): 20 outdoor places of the forest games get `p3_materials` (foliage on conifer and canopy blocks,
+  locked grass, forest-floor and pine-bark scans; used only with the scatter layer on), the R3 `conifer_wrap` and `treeline` kits,
+  grass tufts, twigs and the locked CC0 models (fern_02, pine_sapling_small, rock_moss_set_01, tree_stump_01, dead_tree_trunk_02)
+  away from paths, water and sight lines. TEMP (desert), the bark world (D14) and WRY's cosmic expanse are left out.
+* `p4.py` (rock, snow, frost and ice): 38 places get `p4_materials` from the locked cave scans by tone (pale, light, mid, dark rock;
+  scree; obsidian; snow; far snow; frost and crust). dress.py merges them only when the render sets `DRESS_P4=1`.
+* Rulings: the flame card sits on top of the fire pit and is narrower; light falling snow inside the Man Eater cold-store bay and
+  the LIRA outpost (`p2.SNOW_INSIDE`), 0.8 m clear of every prop (`prop_margin_m`).
+* Detail gain (G7) is not a measure of these incremental phases: it averages every dressed region against the previous render.

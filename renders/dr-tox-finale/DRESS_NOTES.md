@@ -73,6 +73,18 @@ Every failing check (place, scene/still, gate, value, limit):
 
 G7 (detail gain) is counted as not applicable in P2: the surfaces are the P1 ones in both renders. G9 misses are P1's own.
 
+## P4 gates (rock, snow, frost and ice; before = the P1 to P3 render)
+
+9 stills in 1 places. Gate checks: 170 passed, 6 failed, 10 not applicable.
+G7 is listed but not meaningful for an incremental phase: it averages every dressed region, most unchanged since P1.
+
+- snakehead-overrun s3_overrun_after/camera: G7 1.27 (limit 1.762)
+- snakehead-overrun s3_overrun_after/player: G7 1.41 (limit 1.875)
+- snakehead-overrun s3_overrun_hall/camera: G8 0.804 (limit 0.2)
+- snakehead-overrun s3_overrun_hall/overview: G7 1.22 (limit 1.983)
+- snakehead-overrun s3_overrun_hall/overview: G8 0.517 (limit 0.2)
+- snakehead-overrun s3_overrun_hall/player: G7 1.32 (limit 1.929)
+
 ## Still weak
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.

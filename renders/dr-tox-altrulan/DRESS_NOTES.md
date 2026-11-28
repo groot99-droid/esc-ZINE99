@@ -76,6 +76,29 @@ Every failing check (place, scene/still, gate, value, limit):
 
 G7 (detail gain) is counted as not applicable in P2: the surfaces are the P1 ones in both renders. G9 misses are P1's own.
 
+## P3 gates (outdoor and forest kit; before = the P1 and P2b render)
+
+22 stills in 2 places. Gate checks: 408 passed, 4 failed, 50 not applicable.
+G7 (detail gain) is counted as not applicable: it averages every dressed region, most of which P1 already dressed.
+
+- glass-mountains s3_mountains_climb/player: G4b 40.56 (limit 41.49)
+- glass-mountains s3_mountains_foot/camera: G5 1 (limit 0)
+- light-bringers-shrine s3_end_stamp/camera: G11 0.0828 (limit 0.08262)
+- light-bringers-shrine s3_shrine_door/camera: G8 0.383 (limit 0.2)
+
+## P4 gates (rock, snow, frost and ice; before = the P1 to P3 render)
+
+9 stills in 1 places. Gate checks: 173 passed, 7 failed, 9 not applicable.
+G7 is listed but not meaningful for an incremental phase: it averages every dressed region, most unchanged since P1.
+
+- snakehead-holy-site s3_cave_corridor/camera: G7 1.08 (limit 1.653)
+- snakehead-holy-site s3_cave_corridor/player: G7 1.09 (limit 1.654)
+- snakehead-holy-site s3_cave_tank/camera: G7 1.52 (limit 2.0)
+- snakehead-holy-site s3_cave_tank/camera: G8 0.753 (limit 0.2)
+- snakehead-holy-site s3_cave_tank/overview: G7 1.34 (limit 2.0)
+- snakehead-holy-site s3_cave_tank/player: G7 1.51 (limit 2.0)
+- snakehead-holy-site s3_end_two_readings/camera: G7 1.89 (limit 2.0)
+
 ## Still weak
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.

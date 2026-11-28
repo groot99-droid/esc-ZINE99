@@ -105,6 +105,56 @@ Every failing check (place, scene/still, gate, value, limit):
 
 G7 (detail gain) is counted as not applicable in P2: the surfaces are the P1 ones in both renders. G9 misses are P1's own.
 
+## P3 gates (outdoor and forest kit; before = the P1 and P2b render)
+
+9 stills in 3 places. Gate checks: 156 passed, 10 failed, 23 not applicable.
+G7 (detail gain) is counted as not applicable: it averages every dressed region, most of which P1 already dressed.
+
+- harvest-terrace b3-midlander/player: G8 0.694 (limit 0.2)
+- spore-weaver-valley b1-valley/camera: G2 0.1973 (limit 0.12)
+- spore-weaver-valley b1-valley/camera: G3a 5.875 (limit 4.0)
+- spore-weaver-valley b1-valley/camera: G4a 7.914 (limit 5.396)
+- spore-weaver-valley b1-valley/overview: G2 0.5874 (limit 0.12)
+- spore-weaver-valley b1-valley/overview: G3a 4.199 (limit 4.0)
+- spore-weaver-valley b1-valley/overview: G6b 0.761 (limit 0.6861)
+- spore-weaver-valley b1-valley/player: G2 0.3207 (limit 0.12)
+- spore-weaver-valley b1-valley/player: G3a 4.727 (limit 4.0)
+- spore-weaver-valley b1-valley/player: G4a 27.198 (limit 26.453)
+
+## P4 gates (rock, snow, frost and ice; before = the P1 to P3 render)
+
+38 stills in 10 places. Gate checks: 708 passed, 28 failed, 59 not applicable.
+G7 is listed but not meaningful for an incremental phase: it averages every dressed region, most unchanged since P1.
+
+- continuum-outpost b3-outpost/camera: G7 1.34 (limit 2.0)
+- continuum-outpost b3-outpost/overview: G6b 0.5818 (limit 0.5204)
+- continuum-outpost b3-outpost/overview: G7 1.03 (limit 2.0)
+- continuum-outpost b3-outpost/player: G7 1.26 (limit 2.0)
+- harvest-terrace b3-midlander/camera: G7 1.03 (limit 2.0)
+- harvest-terrace b3-midlander/overview: G7 1.01 (limit 2.0)
+- harvest-terrace b3-midlander/player: G7 1.03 (limit 2.0)
+- harvest-terrace b3-midlander/player: G8 0.695 (limit 0.2)
+- peak-core b4-core/overview: G7 1.55 (limit 2.0)
+- shear-tunnel co-tunnel/overview: G6b 0.7673 (limit 0.6928)
+- spore-weaver-valley b1-valley/camera: G7 1.0 (limit 2.0)
+- spore-weaver-valley b1-valley/overview: G6b 0.7613 (limit 0.6849)
+- spore-weaver-valley b1-valley/overview: G7 1.0 (limit 2.0)
+- spore-weaver-valley b1-valley/player: G7 1.0 (limit 2.0)
+- storm-outpost b1-outpost/camera: G7 1.03 (limit 1.991)
+- storm-outpost b1-outpost/overview: G7 1.05 (limit 1.985)
+- storm-outpost b1-outpost/player: G7 1.04 (limit 1.987)
+- storm-singing-ledge b3-peakborn/camera: G7 1.24 (limit 1.999)
+- storm-singing-ledge b3-peakborn/overview: G6b 0.5823 (limit 0.5069)
+- storm-singing-ledge b3-peakborn/overview: G7 1.15 (limit 1.996)
+- storm-singing-ledge b3-peakborn/player: G7 1.03 (limit 2.0)
+- subterranean-city b3-city/camera: G7 1.01 (limit 1.988)
+- subterranean-city b3-city/overview: G7 1.01 (limit 1.942)
+- subterranean-city b3-city/player: G7 1.01 (limit 1.961)
+- subterranean-city end-resilience/camera: G7 1.0 (limit 1.976)
+- subterranean-city end-resilience/player: G7 1.0 (limit 1.916)
+- subterranean-city ep-vault/camera: G7 1.0 (limit 2.0)
+- subterranean-city ep-vault/player: G7 1.0 (limit 2.0)
+
 ## Still weak
 
 - Detail gain (G7) under 2x on clean painted, varnished and fabric surfaces; repeat-pattern (G8) misses listed above.
