@@ -38,7 +38,7 @@
    "p1": {
     "version": 1,
     "interior": true,
-    "grade": "clean",
+    "grade": "worn",
     "deferred": {},
     "unmatched": [],
     "kept": [
@@ -47,7 +47,7 @@
     ]
    },
    "grime": {
-    "strength": 0.6,
+    "strength": 1.0,
     "ao": 0.24,
     "dust": 0.1,
     "damp": 0.1,
@@ -76,10 +76,16 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "stone_floor",
      "tile_m": 3.6,
+     "contrast": 1.4,
+     "micro": {
+      "scale_m": 0.012,
+      "albedo": 0.06,
+      "height": 0.6
+     },
      "chroma": 0.1,
      "bump": 0.6,
      "macro": 0.12,
@@ -97,16 +103,24 @@
      "p1_preset": "stone_block"
     },
     "dark-wood": {
-     "res": "2k",
-     "third": true,
-     "macro2": 0.05,
-     "obj_jitter_m": 20.0,
-     "family": "scan",
-     "scan": "wood_trunk_wall",
-     "tile_m": 1.4,
-     "chroma": 0.12,
-     "bump": 0.3,
+     "micro": {
+      "scale_m": 0.006,
+      "albedo": 0.08,
+      "height": 0.4,
+      "stretch": 12.0
+     },
+     "family": "grid",
+     "tile_m": 0.18,
+     "board_m": 2.2,
+     "board_axis": "z",
+     "row_axis": "xy",
+     "joint": 0.012,
+     "joint_tone": 0.75,
+     "tile_jitter": 0.06,
+     "grain": 0.08,
+     "fine": 0.04,
      "macro": 0.08,
+     "bump": 0.25,
      "grime": 0.6,
      "round_m": 0.005,
      "rough_scale": 0.85,
@@ -127,48 +141,72 @@
     "panel-slate": {
      "res": "2k",
      "third": true,
-     "macro2": 0.03,
-     "obj_jitter_m": 20.0,
+     "macro2": 0.05,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "plastered_wall_04",
-     "tile_m": 2.2,
-     "chroma": 0.0,
-     "bump": 0.25,
-     "macro": 0.06,
-     "grime": 0.6,
-     "patches": {
-      "size_m": 1.0,
-      "share": 0.2,
-      "amount": 0.025,
-      "rough": 0.04
+     "tile_m": 1.2,
+     "contrast": 2.0,
+     "micro": {
+      "scale_m": 0.01,
+      "albedo": 0.06,
+      "height": 0.7
      },
-     "p1_preset": "plaster_clean"
+     "chroma": 0.0,
+     "bump": 0.55,
+     "macro": 0.1,
+     "grime": 1.1,
+     "patches": {
+      "size_m": 0.8,
+      "share": 0.25,
+      "amount": 0.04,
+      "rough": 0.05
+     },
+     "cracks": {
+      "amount": 0.35,
+      "scale_m": 0.9,
+      "width": 0.006,
+      "share": 0.25
+     },
+     "p1_preset": "plaster"
     },
     "plaster": {
      "res": "2k",
      "third": true,
-     "macro2": 0.03,
-     "obj_jitter_m": 20.0,
+     "macro2": 0.05,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "plastered_wall_04",
-     "tile_m": 2.2,
-     "chroma": 0.0,
-     "bump": 0.25,
-     "macro": 0.06,
-     "grime": 0.6,
-     "patches": {
-      "size_m": 1.0,
-      "share": 0.2,
-      "amount": 0.025,
-      "rough": 0.04
+     "tile_m": 1.2,
+     "contrast": 2.0,
+     "micro": {
+      "scale_m": 0.01,
+      "albedo": 0.06,
+      "height": 0.7
      },
-     "p1_preset": "plaster_clean"
+     "chroma": 0.0,
+     "bump": 0.55,
+     "macro": 0.1,
+     "grime": 1.1,
+     "patches": {
+      "size_m": 0.8,
+      "share": 0.25,
+      "amount": 0.04,
+      "rough": 0.05
+     },
+     "cracks": {
+      "amount": 0.35,
+      "scale_m": 0.9,
+      "width": 0.006,
+      "share": 0.25
+     },
+     "p1_preset": "plaster"
     }
    },
    "decals": [
     {
      "name": "stains",
-     "count": 3,
+     "count": 5,
      "size_m": [
       0.4,
       0.9
@@ -178,7 +216,7 @@
       0.29,
       0.24
      ],
-     "opacity": 0.12,
+     "opacity": 0.18,
      "z_m": [
       1.0,
       2.4
@@ -228,6 +266,23 @@
      "grime": 0.5,
      "p1_preset": "path"
     }
+   },
+   "atmos": {
+    "_p2": true,
+    "sky_plate": {
+     "name": "dusk-hdri",
+     "hdri": "qwantani_dusk_2_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.7,
+     "horizon_gain": 1.1,
+     "zenith_gain": 0.95
+    }
+   },
+   "p2": {
+    "version": 1,
+    "sky": "dusk",
+    "haze": false,
+    "extent_m": 600.0
    }
   },
   "elaris-room": {
@@ -285,12 +340,18 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "plastered_wall_04",
-     "tile_m": 1.8,
+     "tile_m": 1.2,
+     "contrast": 2.0,
+     "micro": {
+      "scale_m": 0.01,
+      "albedo": 0.06,
+      "height": 0.7
+     },
      "chroma": 0.0,
-     "bump": 0.4,
+     "bump": 0.55,
      "macro": 0.1,
      "grime": 1.1,
      "patches": {
@@ -311,10 +372,16 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "plastered_wall_04",
      "tile_m": 2.0,
+     "micro": {
+      "scale_m": 0.008,
+      "albedo": 0.04,
+      "height": 0.4,
+      "stretch": 6.0
+     },
      "chroma": 0.0,
      "bump": 0.2,
      "macro": 0.05,
@@ -339,16 +406,24 @@
      "p1_preset": "paint_gloss"
     },
     "walnut": {
-     "res": "2k",
-     "third": true,
-     "macro2": 0.05,
-     "obj_jitter_m": 20.0,
-     "family": "scan",
-     "scan": "wood_trunk_wall",
-     "tile_m": 1.4,
-     "chroma": 0.12,
-     "bump": 0.3,
+     "micro": {
+      "scale_m": 0.006,
+      "albedo": 0.08,
+      "height": 0.4,
+      "stretch": 12.0
+     },
+     "family": "grid",
+     "tile_m": 0.18,
+     "board_m": 2.2,
+     "board_axis": "z",
+     "row_axis": "xy",
+     "joint": 0.012,
+     "joint_tone": 0.75,
+     "tile_jitter": 0.06,
+     "grain": 0.08,
+     "fine": 0.04,
      "macro": 0.08,
+     "bump": 0.25,
      "grime": 0.6,
      "round_m": 0.005,
      "rough_scale": 0.85,
@@ -432,10 +507,16 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "stone_floor",
      "tile_m": 3.6,
+     "contrast": 1.4,
+     "micro": {
+      "scale_m": 0.012,
+      "albedo": 0.06,
+      "height": 0.6
+     },
      "chroma": 0.1,
      "bump": 0.6,
      "macro": 0.12,
@@ -452,6 +533,32 @@
      },
      "p1_preset": "stone_block"
     }
+   },
+   "atmos": {
+    "_p2": true,
+    "sky_plate": {
+     "name": "overcast-hdri",
+     "hdri": "kloofendal_overcast_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.7,
+     "horizon_gain": 1.1,
+     "zenith_gain": 0.95
+    },
+    "haze": {
+     "density": 0.001,
+     "color": [
+      0.82,
+      0.84,
+      0.86
+     ],
+     "anisotropy": 0.25
+    }
+   },
+   "p2": {
+    "version": 1,
+    "sky": "overcast",
+    "haze": true,
+    "extent_m": 36.0
    }
   },
   "hollin-streets": {
@@ -484,10 +591,11 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "stone_floor",
      "tile_m": 1.6,
+     "contrast": 1.5,
      "chroma": 0.1,
      "bump": 0.7,
      "macro": 0.1,
@@ -498,12 +606,18 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "plastered_wall_04",
-     "tile_m": 1.8,
+     "tile_m": 1.2,
+     "contrast": 2.0,
+     "micro": {
+      "scale_m": 0.01,
+      "albedo": 0.06,
+      "height": 0.7
+     },
      "chroma": 0.0,
-     "bump": 0.4,
+     "bump": 0.55,
      "macro": 0.1,
      "grime": 1.1,
      "patches": {
@@ -524,10 +638,15 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "slate_floor_02",
      "tile_m": 2.6,
+     "micro": {
+      "scale_m": 0.012,
+      "albedo": 0.06,
+      "height": 0.6
+     },
      "chroma": 0.1,
      "bump": 0.6,
      "macro": 0.1,
@@ -538,10 +657,16 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "stone_floor",
      "tile_m": 3.6,
+     "contrast": 1.4,
+     "micro": {
+      "scale_m": 0.012,
+      "albedo": 0.06,
+      "height": 0.6
+     },
      "chroma": 0.1,
      "bump": 0.6,
      "macro": 0.12,
@@ -558,6 +683,32 @@
      },
      "p1_preset": "stone_block"
     }
+   },
+   "atmos": {
+    "_p2": true,
+    "sky_plate": {
+     "name": "partly cloudy-hdri",
+     "hdri": "kloofendal_48d_partly_cloudy_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.7,
+     "horizon_gain": 1.1,
+     "zenith_gain": 0.95
+    },
+    "haze": {
+     "density": 0.001,
+     "color": [
+      0.82,
+      0.84,
+      0.86
+     ],
+     "anisotropy": 0.25
+    }
+   },
+   "p2": {
+    "version": 1,
+    "sky": "partly cloudy",
+    "haze": true,
+    "extent_m": 120.0
    }
   },
   "pantry": {
@@ -582,16 +733,24 @@
    },
    "materials": {
     "dark-walnut": {
-     "res": "2k",
-     "third": true,
-     "macro2": 0.05,
-     "obj_jitter_m": 20.0,
-     "family": "scan",
-     "scan": "wood_trunk_wall",
-     "tile_m": 1.4,
-     "chroma": 0.12,
-     "bump": 0.3,
+     "micro": {
+      "scale_m": 0.006,
+      "albedo": 0.08,
+      "height": 0.4,
+      "stretch": 12.0
+     },
+     "family": "grid",
+     "tile_m": 0.18,
+     "board_m": 2.2,
+     "board_axis": "z",
+     "row_axis": "xy",
+     "joint": 0.012,
+     "joint_tone": 0.75,
+     "tile_jitter": 0.06,
+     "grain": 0.08,
+     "fine": 0.04,
      "macro": 0.08,
+     "bump": 0.25,
      "grime": 0.6,
      "round_m": 0.005,
      "rough_scale": 0.85,
@@ -617,6 +776,12 @@
      "family": "scan",
      "scan": "green_metal_rust",
      "tile_m": 0.9,
+     "contrast": 1.8,
+     "micro": {
+      "scale_m": 0.005,
+      "albedo": 0.06,
+      "height": 0.5
+     },
      "chroma": 0.0,
      "bump": 0.35,
      "macro": 0.1,
@@ -647,12 +812,18 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "plastered_wall_04",
-     "tile_m": 1.8,
+     "tile_m": 1.2,
+     "contrast": 2.0,
+     "micro": {
+      "scale_m": 0.01,
+      "albedo": 0.06,
+      "height": 0.7
+     },
      "chroma": 0.0,
-     "bump": 0.4,
+     "bump": 0.55,
      "macro": 0.1,
      "grime": 1.1,
      "patches": {
@@ -673,10 +844,15 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "slate_floor_02",
      "tile_m": 2.6,
+     "micro": {
+      "scale_m": 0.012,
+      "albedo": 0.06,
+      "height": 0.6
+     },
      "chroma": 0.1,
      "bump": 0.6,
      "macro": 0.1,
@@ -739,16 +915,24 @@
    },
    "materials": {
     "sepia-wood": {
-     "res": "2k",
-     "third": true,
-     "macro2": 0.05,
-     "obj_jitter_m": 20.0,
-     "family": "scan",
-     "scan": "wood_trunk_wall",
-     "tile_m": 1.4,
-     "chroma": 0.12,
-     "bump": 0.3,
+     "micro": {
+      "scale_m": 0.006,
+      "albedo": 0.08,
+      "height": 0.4,
+      "stretch": 12.0
+     },
+     "family": "grid",
+     "tile_m": 0.18,
+     "board_m": 2.2,
+     "board_axis": "z",
+     "row_axis": "xy",
+     "joint": 0.012,
+     "joint_tone": 0.75,
+     "tile_jitter": 0.06,
+     "grain": 0.08,
+     "fine": 0.04,
      "macro": 0.08,
+     "bump": 0.25,
      "grime": 0.6,
      "round_m": 0.005,
      "rough_scale": 0.85,
@@ -766,6 +950,23 @@
      },
      "p1_preset": "timber_varnish"
     }
+   },
+   "atmos": {
+    "_p2": true,
+    "sky_plate": {
+     "name": "dusk-hdri",
+     "hdri": "qwantani_dusk_2_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.7,
+     "horizon_gain": 1.1,
+     "zenith_gain": 0.95
+    }
+   },
+   "p2": {
+    "version": 1,
+    "sky": "dusk",
+    "haze": false,
+    "extent_m": 470.0
    }
   },
   "silver-dunes": {
@@ -800,7 +1001,24 @@
     "ao_distance_m": 0.6,
     "tone_gain": 1.0
    },
-   "materials": {}
+   "materials": {},
+   "atmos": {
+    "_p2": true,
+    "sky_plate": {
+     "name": "overcast-hdri",
+     "hdri": "kloofendal_overcast_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.7,
+     "horizon_gain": 1.1,
+     "zenith_gain": 0.95
+    }
+   },
+   "p2": {
+    "version": 1,
+    "sky": "overcast",
+    "haze": false,
+    "extent_m": 300.0
+   }
   },
   "storyteller-hut": {
    "p1": {
@@ -824,16 +1042,24 @@
    },
    "materials": {
     "dark-wood": {
-     "res": "2k",
-     "third": true,
-     "macro2": 0.05,
-     "obj_jitter_m": 20.0,
-     "family": "scan",
-     "scan": "wood_trunk_wall",
-     "tile_m": 1.4,
-     "chroma": 0.12,
-     "bump": 0.3,
+     "micro": {
+      "scale_m": 0.006,
+      "albedo": 0.08,
+      "height": 0.4,
+      "stretch": 12.0
+     },
+     "family": "grid",
+     "tile_m": 0.18,
+     "board_m": 2.2,
+     "board_axis": "z",
+     "row_axis": "xy",
+     "joint": 0.012,
+     "joint_tone": 0.75,
+     "tile_jitter": 0.06,
+     "grain": 0.08,
+     "fine": 0.04,
      "macro": 0.08,
+     "bump": 0.25,
      "grime": 0.6,
      "round_m": 0.005,
      "rough_scale": 0.85,
@@ -855,7 +1081,7 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "mud_cracked_dry_03",
      "tile_m": 2.5,
@@ -887,6 +1113,12 @@
      "family": "scan",
      "scan": "hessian_380",
      "tile_m": 1.2,
+     "micro": {
+      "scale_m": 0.01,
+      "albedo": 0.12,
+      "height": 0.8,
+      "stretch": 8.0
+     },
      "chroma": 0.0,
      "bump": 0.7,
      "macro": 0.16,
@@ -901,6 +1133,12 @@
      "family": "scan",
      "scan": "hessian_380",
      "tile_m": 1.2,
+     "micro": {
+      "scale_m": 0.01,
+      "albedo": 0.12,
+      "height": 0.8,
+      "stretch": 8.0
+     },
      "chroma": 0.0,
      "bump": 0.7,
      "macro": 0.16,
@@ -959,10 +1197,16 @@
      "res": "2k",
      "third": true,
      "macro2": 0.03,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "plastered_wall_04",
-     "tile_m": 2.4,
+     "tile_m": 1.5,
+     "contrast": 1.6,
+     "micro": {
+      "scale_m": 0.012,
+      "albedo": 0.05,
+      "height": 0.6
+     },
      "chroma": 0.0,
      "bump": 0.25,
      "macro": 0.07,
@@ -983,6 +1227,7 @@
      "family": "scan",
      "scan": "large_floor_tiles_02",
      "tile_m": 2.0,
+     "periodic": true,
      "chroma": 0.0,
      "bump": 0.4,
      "macro": 0.06,
@@ -994,12 +1239,18 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "plastered_wall_04",
-     "tile_m": 1.8,
+     "tile_m": 1.2,
+     "contrast": 2.0,
+     "micro": {
+      "scale_m": 0.01,
+      "albedo": 0.06,
+      "height": 0.7
+     },
      "chroma": 0.0,
-     "bump": 0.4,
+     "bump": 0.55,
      "macro": 0.1,
      "grime": 1.1,
      "patches": {
@@ -1017,16 +1268,24 @@
      "p1_preset": "plaster"
     },
     "walnut": {
-     "res": "2k",
-     "third": true,
-     "macro2": 0.05,
-     "obj_jitter_m": 20.0,
-     "family": "scan",
-     "scan": "wood_trunk_wall",
-     "tile_m": 1.4,
-     "chroma": 0.12,
-     "bump": 0.3,
+     "micro": {
+      "scale_m": 0.006,
+      "albedo": 0.08,
+      "height": 0.4,
+      "stretch": 12.0
+     },
+     "family": "grid",
+     "tile_m": 0.18,
+     "board_m": 2.2,
+     "board_axis": "z",
+     "row_axis": "xy",
+     "joint": 0.012,
+     "joint_tone": 0.75,
+     "tile_jitter": 0.06,
+     "grain": 0.08,
+     "fine": 0.04,
      "macro": 0.08,
+     "bump": 0.25,
      "grime": 0.6,
      "round_m": 0.005,
      "rough_scale": 0.85,
@@ -1093,16 +1352,24 @@
    },
    "materials": {
     "dark-wood": {
-     "res": "2k",
-     "third": true,
-     "macro2": 0.05,
-     "obj_jitter_m": 20.0,
-     "family": "scan",
-     "scan": "wood_trunk_wall",
-     "tile_m": 1.4,
-     "chroma": 0.12,
-     "bump": 0.3,
+     "micro": {
+      "scale_m": 0.006,
+      "albedo": 0.08,
+      "height": 0.4,
+      "stretch": 12.0
+     },
+     "family": "grid",
+     "tile_m": 0.18,
+     "board_m": 2.2,
+     "board_axis": "z",
+     "row_axis": "xy",
+     "joint": 0.012,
+     "joint_tone": 0.75,
+     "tile_jitter": 0.06,
+     "grain": 0.08,
+     "fine": 0.04,
      "macro": 0.08,
+     "bump": 0.25,
      "grime": 0.6,
      "round_m": 0.005,
      "rough_scale": 0.85,
@@ -1124,10 +1391,16 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "stone_floor",
      "tile_m": 3.6,
+     "contrast": 1.4,
+     "micro": {
+      "scale_m": 0.012,
+      "albedo": 0.06,
+      "height": 0.6
+     },
      "chroma": 0.1,
      "bump": 0.6,
      "macro": 0.12,
@@ -1193,16 +1466,24 @@
    },
    "materials": {
     "carved-wood": {
-     "res": "2k",
-     "third": true,
-     "macro2": 0.05,
-     "obj_jitter_m": 20.0,
-     "family": "scan",
-     "scan": "wood_trunk_wall",
-     "tile_m": 1.4,
-     "chroma": 0.12,
-     "bump": 0.3,
+     "micro": {
+      "scale_m": 0.006,
+      "albedo": 0.08,
+      "height": 0.4,
+      "stretch": 12.0
+     },
+     "family": "grid",
+     "tile_m": 0.18,
+     "board_m": 2.2,
+     "board_axis": "z",
+     "row_axis": "xy",
+     "joint": 0.012,
+     "joint_tone": 0.75,
+     "tile_jitter": 0.06,
+     "grain": 0.08,
+     "fine": 0.04,
      "macro": 0.08,
+     "bump": 0.25,
      "grime": 0.6,
      "round_m": 0.005,
      "rough_scale": 0.85,
@@ -1224,7 +1505,7 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "mud_cracked_dry_03",
      "tile_m": 2.5,
@@ -1256,6 +1537,12 @@
      "family": "scan",
      "scan": "hessian_380",
      "tile_m": 1.2,
+     "micro": {
+      "scale_m": 0.01,
+      "albedo": 0.12,
+      "height": 0.8,
+      "stretch": 8.0
+     },
      "chroma": 0.0,
      "bump": 0.7,
      "macro": 0.16,
@@ -1266,10 +1553,16 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "stone_floor",
      "tile_m": 3.6,
+     "contrast": 1.4,
+     "micro": {
+      "scale_m": 0.012,
+      "albedo": 0.06,
+      "height": 0.6
+     },
      "chroma": 0.1,
      "bump": 0.6,
      "macro": 0.12,
@@ -1331,7 +1624,7 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "mud_cracked_dry_03",
      "tile_m": 2.5,
@@ -1342,6 +1635,11 @@
      "p1_preset": "mud_wall"
     },
     "pigment": {
+     "micro": {
+      "scale_m": 0.004,
+      "albedo": 0.05,
+      "height": 0.4
+     },
      "family": "paper",
      "tile_m": 0.3,
      "bump": 0.15,
@@ -1353,10 +1651,16 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "stone_floor",
      "tile_m": 3.6,
+     "contrast": 1.4,
+     "micro": {
+      "scale_m": 0.012,
+      "albedo": 0.06,
+      "height": 0.6
+     },
      "chroma": 0.1,
      "bump": 0.6,
      "macro": 0.12,
@@ -1412,6 +1716,32 @@
      "grime": 0.5,
      "p1_preset": "path"
     }
+   },
+   "atmos": {
+    "_p2": true,
+    "sky_plate": {
+     "name": "overcast-hdri",
+     "hdri": "kloofendal_overcast_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.7,
+     "horizon_gain": 1.1,
+     "zenith_gain": 0.95
+    },
+    "haze": {
+     "density": 0.001,
+     "color": [
+      0.82,
+      0.84,
+      0.86
+     ],
+     "anisotropy": 0.25
+    }
+   },
+   "p2": {
+    "version": 1,
+    "sky": "overcast",
+    "haze": true,
+    "extent_m": 8.4
    }
   },
   "xandri-hut": {
@@ -1441,6 +1771,12 @@
      "family": "scan",
      "scan": "hessian_380",
      "tile_m": 0.5,
+     "contrast": 1.8,
+     "micro": {
+      "scale_m": 0.008,
+      "albedo": 0.08,
+      "height": 0.6
+     },
      "chroma": 0.0,
      "bump": 0.35,
      "macro": 0.12,
@@ -1451,7 +1787,7 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "mud_cracked_dry_03",
      "tile_m": 2.5,
@@ -1469,6 +1805,7 @@
      "family": "scan",
      "scan": "forrest_ground_01",
      "tile_m": 3.0,
+     "contrast": 1.5,
      "chroma": 0.1,
      "bump": 0.6,
      "macro": 0.12,
@@ -1508,6 +1845,12 @@
      "family": "scan",
      "scan": "hessian_380",
      "tile_m": 1.2,
+     "micro": {
+      "scale_m": 0.01,
+      "albedo": 0.12,
+      "height": 0.8,
+      "stretch": 8.0
+     },
      "chroma": 0.0,
      "bump": 0.7,
      "macro": 0.16,

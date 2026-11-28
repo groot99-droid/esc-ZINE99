@@ -69,10 +69,16 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "stone_floor",
      "tile_m": 3.6,
+     "contrast": 1.4,
+     "micro": {
+      "scale_m": 0.012,
+      "albedo": 0.06,
+      "height": 0.6
+     },
      "chroma": 0.1,
      "bump": 0.6,
      "macro": 0.12,
@@ -89,6 +95,32 @@
      },
      "p1_preset": "stone_block"
     }
+   },
+   "atmos": {
+    "_p2": true,
+    "sky_plate": {
+     "name": "overcast-hdri",
+     "hdri": "kloofendal_overcast_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.7,
+     "horizon_gain": 1.1,
+     "zenith_gain": 0.95
+    },
+    "haze": {
+     "density": 0.001,
+     "color": [
+      0.82,
+      0.84,
+      0.86
+     ],
+     "anisotropy": 0.25
+    }
+   },
+   "p2": {
+    "version": 1,
+    "sky": "overcast",
+    "haze": true,
+    "extent_m": 160.0
    }
   },
   "light-bringers-shrine": {
@@ -123,12 +155,18 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "plastered_wall_04",
-     "tile_m": 1.8,
+     "tile_m": 1.2,
+     "contrast": 2.0,
+     "micro": {
+      "scale_m": 0.01,
+      "albedo": 0.06,
+      "height": 0.7
+     },
      "chroma": 0.0,
-     "bump": 0.4,
+     "bump": 0.55,
      "macro": 0.1,
      "grime": 1.1,
      "patches": {
@@ -143,7 +181,13 @@
       "width": 0.006,
       "share": 0.25
      },
-     "p1_preset": "plaster"
+     "p1_preset": "plaster",
+     "gain": 1.202,
+     "tint": [
+      0.9994,
+      0.9996,
+      1.0058
+     ]
     },
     "steel": {
      "res": "2k",
@@ -153,6 +197,13 @@
      "family": "scan",
      "scan": "green_metal_rust",
      "tile_m": 1.4,
+     "contrast": 2.0,
+     "micro": {
+      "scale_m": 0.006,
+      "albedo": 0.05,
+      "height": 0.4,
+      "stretch": 5.0
+     },
      "chroma": 0.0,
      "bump": 0.3,
      "macro": 0.08,
@@ -187,16 +238,28 @@
        0.52
       ]
      },
-     "p1_preset": "painted_steel"
+     "p1_preset": "painted_steel",
+     "gain": 1.0313,
+     "tint": [
+      0.9995,
+      1.0,
+      1.001
+     ]
     },
     "stone": {
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "stone_floor",
      "tile_m": 3.6,
+     "contrast": 1.4,
+     "micro": {
+      "scale_m": 0.012,
+      "albedo": 0.06,
+      "height": 0.6
+     },
      "chroma": 0.1,
      "bump": 0.6,
      "macro": 0.12,
@@ -211,8 +274,40 @@
        0.72
       ]
      },
-     "p1_preset": "stone_block"
+     "p1_preset": "stone_block",
+     "gain": 1.106,
+     "tint": [
+      1.0057,
+      0.9988,
+      0.9947
+     ]
     }
+   },
+   "atmos": {
+    "_p2": true,
+    "sky_plate": {
+     "name": "overcast-hdri",
+     "hdri": "kloofendal_overcast_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.7,
+     "horizon_gain": 1.1,
+     "zenith_gain": 0.95
+    },
+    "haze": {
+     "density": 0.001,
+     "color": [
+      0.82,
+      0.84,
+      0.86
+     ],
+     "anisotropy": 0.25
+    }
+   },
+   "p2": {
+    "version": 1,
+    "sky": "overcast",
+    "haze": true,
+    "extent_m": 48.0
    }
   },
   "metabolic-city": {
@@ -248,10 +343,16 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "stone_floor",
      "tile_m": 3.6,
+     "contrast": 1.4,
+     "micro": {
+      "scale_m": 0.012,
+      "albedo": 0.06,
+      "height": 0.6
+     },
      "chroma": 0.1,
      "bump": 0.6,
      "macro": 0.12,
@@ -320,10 +421,16 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "concrete_wall_008",
-     "tile_m": 2.4,
+     "tile_m": 1.8,
+     "contrast": 1.6,
+     "micro": {
+      "scale_m": 0.008,
+      "albedo": 0.06,
+      "height": 0.6
+     },
      "chroma": 0.1,
      "bump": 0.5,
      "macro": 0.1,
@@ -350,10 +457,11 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "concrete_floor_worn_001",
      "tile_m": 2.6,
+     "contrast": 1.4,
      "chroma": 0.1,
      "bump": 0.4,
      "macro": 0.1,
@@ -371,12 +479,18 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "plastered_wall_04",
-     "tile_m": 1.8,
+     "tile_m": 1.2,
+     "contrast": 2.0,
+     "micro": {
+      "scale_m": 0.01,
+      "albedo": 0.06,
+      "height": 0.7
+     },
      "chroma": 0.0,
-     "bump": 0.4,
+     "bump": 0.55,
      "macro": 0.1,
      "grime": 1.1,
      "patches": {

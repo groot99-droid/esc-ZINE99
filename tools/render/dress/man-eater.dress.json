@@ -38,6 +38,12 @@
      "family": "scan",
      "scan": "hessian_380",
      "tile_m": 0.5,
+     "contrast": 1.8,
+     "micro": {
+      "scale_m": 0.008,
+      "albedo": 0.08,
+      "height": 0.6
+     },
      "chroma": 0.0,
      "bump": 0.35,
      "macro": 0.12,
@@ -52,6 +58,13 @@
      "family": "scan",
      "scan": "green_metal_rust",
      "tile_m": 1.4,
+     "contrast": 2.0,
+     "micro": {
+      "scale_m": 0.006,
+      "albedo": 0.05,
+      "height": 0.4,
+      "stretch": 5.0
+     },
      "chroma": 0.0,
      "bump": 0.3,
      "macro": 0.08,
@@ -89,6 +102,11 @@
      "p1_preset": "painted_steel_me"
     },
     "paper": {
+     "micro": {
+      "scale_m": 0.004,
+      "albedo": 0.05,
+      "height": 0.4
+     },
      "family": "paper",
      "tile_m": 0.3,
      "bump": 0.15,
@@ -104,6 +122,13 @@
      "family": "scan",
      "scan": "green_metal_rust",
      "tile_m": 1.4,
+     "contrast": 2.0,
+     "micro": {
+      "scale_m": 0.006,
+      "albedo": 0.05,
+      "height": 0.4,
+      "stretch": 5.0
+     },
      "chroma": 0.0,
      "bump": 0.3,
      "macro": 0.08,
@@ -318,7 +343,33 @@
       }
      ]
     }
-   ]
+   ],
+   "atmos": {
+    "_p2": true,
+    "sky_plate": {
+     "name": "partly cloudy-hdri",
+     "hdri": "kloofendal_48d_partly_cloudy_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.7,
+     "horizon_gain": 1.1,
+     "zenith_gain": 0.95
+    },
+    "haze": {
+     "density": 0.001,
+     "color": [
+      0.82,
+      0.84,
+      0.86
+     ],
+     "anisotropy": 0.25
+    }
+   },
+   "p2": {
+    "version": 1,
+    "sky": "partly cloudy",
+    "haze": true,
+    "extent_m": 10.0
+   }
   },
   "cafeteria": {
    "p1": {
@@ -347,10 +398,11 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "concrete_floor_worn_001",
      "tile_m": 2.6,
+     "contrast": 1.4,
      "chroma": 0.1,
      "bump": 0.4,
      "macro": 0.1,
@@ -372,6 +424,13 @@
      "family": "scan",
      "scan": "green_metal_rust",
      "tile_m": 1.4,
+     "contrast": 2.0,
+     "micro": {
+      "scale_m": 0.006,
+      "albedo": 0.05,
+      "height": 0.4,
+      "stretch": 5.0
+     },
      "chroma": 0.0,
      "bump": 0.3,
      "macro": 0.08,
@@ -412,12 +471,18 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "plastered_wall_04",
-     "tile_m": 1.8,
+     "tile_m": 1.2,
+     "contrast": 2.0,
+     "micro": {
+      "scale_m": 0.01,
+      "albedo": 0.06,
+      "height": 0.7
+     },
      "chroma": 0.0,
-     "bump": 0.4,
+     "bump": 0.55,
      "macro": 0.1,
      "grime": 1.1,
      "patches": {
@@ -438,12 +503,18 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "plastered_wall_04",
-     "tile_m": 1.8,
+     "tile_m": 1.2,
+     "contrast": 2.0,
+     "micro": {
+      "scale_m": 0.01,
+      "albedo": 0.06,
+      "height": 0.7
+     },
      "chroma": 0.0,
-     "bump": 0.4,
+     "bump": 0.55,
      "macro": 0.1,
      "grime": 1.1,
      "patches": {
@@ -520,10 +591,11 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "concrete_floor_worn_001",
      "tile_m": 2.6,
+     "contrast": 1.4,
      "chroma": 0.1,
      "bump": 0.4,
      "macro": 0.1,
@@ -545,6 +617,13 @@
      "family": "scan",
      "scan": "green_metal_rust",
      "tile_m": 1.4,
+     "contrast": 2.0,
+     "micro": {
+      "scale_m": 0.006,
+      "albedo": 0.05,
+      "height": 0.4,
+      "stretch": 5.0
+     },
      "chroma": 0.0,
      "bump": 0.3,
      "macro": 0.08,
@@ -585,12 +664,17 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "worn_mossy_plasterwall",
      "tile_m": 2.4,
+     "micro": {
+      "scale_m": 0.01,
+      "albedo": 0.07,
+      "height": 0.7
+     },
      "chroma": 0.0,
-     "contrast": 0.3,
+     "contrast": 0.5,
      "bump": 0.35,
      "macro": 0.12,
      "grime": 1.3,
@@ -616,12 +700,17 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "worn_mossy_plasterwall",
      "tile_m": 2.4,
+     "micro": {
+      "scale_m": 0.01,
+      "albedo": 0.07,
+      "height": 0.7
+     },
      "chroma": 0.0,
-     "contrast": 0.3,
+     "contrast": 0.5,
      "bump": 0.35,
      "macro": 0.12,
      "grime": 1.3,
@@ -718,10 +807,11 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "concrete_floor_worn_001",
      "tile_m": 2.6,
+     "contrast": 1.4,
      "chroma": 0.1,
      "bump": 0.4,
      "macro": 0.1,
@@ -768,6 +858,13 @@
      "family": "scan",
      "scan": "green_metal_rust",
      "tile_m": 1.4,
+     "contrast": 2.0,
+     "micro": {
+      "scale_m": 0.006,
+      "albedo": 0.05,
+      "height": 0.4,
+      "stretch": 5.0
+     },
      "chroma": 0.0,
      "bump": 0.3,
      "macro": 0.08,
@@ -808,12 +905,18 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "plastered_wall_04",
-     "tile_m": 1.8,
+     "tile_m": 1.2,
+     "contrast": 2.0,
+     "micro": {
+      "scale_m": 0.01,
+      "albedo": 0.06,
+      "height": 0.7
+     },
      "chroma": 0.0,
-     "bump": 0.4,
+     "bump": 0.55,
      "macro": 0.1,
      "grime": 1.1,
      "patches": {
@@ -834,12 +937,18 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "plastered_wall_04",
-     "tile_m": 1.8,
+     "tile_m": 1.2,
+     "contrast": 2.0,
+     "micro": {
+      "scale_m": 0.01,
+      "albedo": 0.06,
+      "height": 0.7
+     },
      "chroma": 0.0,
-     "bump": 0.4,
+     "bump": 0.55,
      "macro": 0.1,
      "grime": 1.1,
      "patches": {
@@ -947,10 +1056,11 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "concrete_floor_worn_001",
      "tile_m": 2.6,
+     "contrast": 1.4,
      "chroma": 0.1,
      "bump": 0.4,
      "macro": 0.1,
@@ -965,16 +1075,24 @@
      "p1_preset": "conc_floor"
     },
     "dark-wood": {
-     "res": "2k",
-     "third": true,
-     "macro2": 0.05,
-     "obj_jitter_m": 20.0,
-     "family": "scan",
-     "scan": "wood_trunk_wall",
-     "tile_m": 1.4,
-     "chroma": 0.12,
-     "bump": 0.3,
+     "micro": {
+      "scale_m": 0.006,
+      "albedo": 0.08,
+      "height": 0.4,
+      "stretch": 12.0
+     },
+     "family": "grid",
+     "tile_m": 0.18,
+     "board_m": 2.2,
+     "board_axis": "z",
+     "row_axis": "xy",
+     "joint": 0.012,
+     "joint_tone": 0.75,
+     "tile_jitter": 0.06,
+     "grain": 0.08,
+     "fine": 0.04,
      "macro": 0.08,
+     "bump": 0.25,
      "grime": 0.6,
      "round_m": 0.005,
      "rough_scale": 0.85,
@@ -1000,6 +1118,13 @@
      "family": "scan",
      "scan": "green_metal_rust",
      "tile_m": 1.4,
+     "contrast": 2.0,
+     "micro": {
+      "scale_m": 0.006,
+      "albedo": 0.05,
+      "height": 0.4,
+      "stretch": 5.0
+     },
      "chroma": 0.0,
      "bump": 0.3,
      "macro": 0.08,
@@ -1040,12 +1165,18 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "plastered_wall_04",
-     "tile_m": 1.8,
+     "tile_m": 1.2,
+     "contrast": 2.0,
+     "micro": {
+      "scale_m": 0.01,
+      "albedo": 0.06,
+      "height": 0.7
+     },
      "chroma": 0.0,
-     "bump": 0.4,
+     "bump": 0.55,
      "macro": 0.1,
      "grime": 1.1,
      "patches": {
@@ -1066,12 +1197,18 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "plastered_wall_04",
-     "tile_m": 1.8,
+     "tile_m": 1.2,
+     "contrast": 2.0,
+     "micro": {
+      "scale_m": 0.01,
+      "albedo": 0.06,
+      "height": 0.7
+     },
      "chroma": 0.0,
-     "bump": 0.4,
+     "bump": 0.55,
      "macro": 0.1,
      "grime": 1.1,
      "patches": {
@@ -1149,10 +1286,16 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "stone_floor",
      "tile_m": 3.6,
+     "contrast": 1.4,
+     "micro": {
+      "scale_m": 0.012,
+      "albedo": 0.06,
+      "height": 0.6
+     },
      "chroma": 0.1,
      "bump": 0.6,
      "macro": 0.12,
@@ -1177,6 +1320,13 @@
      "family": "scan",
      "scan": "green_metal_rust",
      "tile_m": 1.4,
+     "contrast": 2.0,
+     "micro": {
+      "scale_m": 0.006,
+      "albedo": 0.05,
+      "height": 0.4,
+      "stretch": 5.0
+     },
      "chroma": 0.0,
      "bump": 0.3,
      "macro": 0.08,
@@ -1289,10 +1439,11 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "concrete_floor_worn_001",
      "tile_m": 2.6,
+     "contrast": 1.4,
      "chroma": 0.1,
      "bump": 0.4,
      "macro": 0.1,
@@ -1339,6 +1490,13 @@
      "family": "scan",
      "scan": "green_metal_rust",
      "tile_m": 1.4,
+     "contrast": 2.0,
+     "micro": {
+      "scale_m": 0.006,
+      "albedo": 0.05,
+      "height": 0.4,
+      "stretch": 5.0
+     },
      "chroma": 0.0,
      "bump": 0.3,
      "macro": 0.08,
@@ -1379,12 +1537,17 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "worn_mossy_plasterwall",
      "tile_m": 2.4,
+     "micro": {
+      "scale_m": 0.01,
+      "albedo": 0.07,
+      "height": 0.7
+     },
      "chroma": 0.0,
-     "contrast": 0.3,
+     "contrast": 0.5,
      "bump": 0.35,
      "macro": 0.12,
      "grime": 1.3,
@@ -1410,12 +1573,17 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "worn_mossy_plasterwall",
      "tile_m": 2.4,
+     "micro": {
+      "scale_m": 0.01,
+      "albedo": 0.07,
+      "height": 0.7
+     },
      "chroma": 0.0,
-     "contrast": 0.3,
+     "contrast": 0.5,
      "bump": 0.35,
      "macro": 0.12,
      "grime": 1.3,
@@ -1516,10 +1684,16 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "concrete_wall_008",
-     "tile_m": 2.4,
+     "tile_m": 1.8,
+     "contrast": 1.6,
+     "micro": {
+      "scale_m": 0.008,
+      "albedo": 0.07,
+      "height": 0.6
+     },
      "chroma": 0.1,
      "bump": 0.55,
      "macro": 0.12,
@@ -1575,6 +1749,13 @@
      "family": "scan",
      "scan": "green_metal_rust",
      "tile_m": 1.4,
+     "contrast": 2.0,
+     "micro": {
+      "scale_m": 0.006,
+      "albedo": 0.05,
+      "height": 0.4,
+      "stretch": 5.0
+     },
      "chroma": 0.0,
      "bump": 0.3,
      "macro": 0.08,
@@ -1638,10 +1819,11 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "concrete_floor_worn_001",
      "tile_m": 2.6,
+     "contrast": 1.4,
      "chroma": 0.1,
      "bump": 0.4,
      "macro": 0.1,
@@ -1663,6 +1845,13 @@
      "family": "scan",
      "scan": "green_metal_rust",
      "tile_m": 1.4,
+     "contrast": 2.0,
+     "micro": {
+      "scale_m": 0.006,
+      "albedo": 0.05,
+      "height": 0.4,
+      "stretch": 5.0
+     },
      "chroma": 0.0,
      "bump": 0.3,
      "macro": 0.08,
@@ -1703,12 +1892,18 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "plastered_wall_04",
-     "tile_m": 1.8,
+     "tile_m": 1.2,
+     "contrast": 2.0,
+     "micro": {
+      "scale_m": 0.01,
+      "albedo": 0.06,
+      "height": 0.7
+     },
      "chroma": 0.0,
-     "bump": 0.4,
+     "bump": 0.55,
      "macro": 0.1,
      "grime": 1.1,
      "patches": {
@@ -1729,12 +1924,18 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "plastered_wall_04",
-     "tile_m": 1.8,
+     "tile_m": 1.2,
+     "contrast": 2.0,
+     "micro": {
+      "scale_m": 0.01,
+      "albedo": 0.06,
+      "height": 0.7
+     },
      "chroma": 0.0,
-     "bump": 0.4,
+     "bump": 0.55,
      "macro": 0.1,
      "grime": 1.1,
      "patches": {
@@ -1789,6 +1990,13 @@
      "family": "scan",
      "scan": "green_metal_rust",
      "tile_m": 1.4,
+     "contrast": 2.0,
+     "micro": {
+      "scale_m": 0.006,
+      "albedo": 0.05,
+      "height": 0.4,
+      "stretch": 5.0
+     },
      "chroma": 0.0,
      "bump": 0.3,
      "macro": 0.08,
@@ -1829,10 +2037,16 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "concrete_wall_008",
-     "tile_m": 2.4,
+     "tile_m": 1.8,
+     "contrast": 1.6,
+     "micro": {
+      "scale_m": 0.008,
+      "albedo": 0.06,
+      "height": 0.6
+     },
      "chroma": 0.1,
      "bump": 0.5,
      "macro": 0.1,
@@ -1863,6 +2077,13 @@
      "family": "scan",
      "scan": "green_metal_rust",
      "tile_m": 1.4,
+     "contrast": 2.0,
+     "micro": {
+      "scale_m": 0.006,
+      "albedo": 0.05,
+      "height": 0.4,
+      "stretch": 5.0
+     },
      "chroma": 0.0,
      "bump": 0.3,
      "macro": 0.08,
@@ -1924,6 +2145,32 @@
      },
      "p1_preset": "timber"
     }
+   },
+   "atmos": {
+    "_p2": true,
+    "sky_plate": {
+     "name": "partly cloudy-hdri",
+     "hdri": "kloofendal_48d_partly_cloudy_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.7,
+     "horizon_gain": 1.1,
+     "zenith_gain": 0.95
+    },
+    "haze": {
+     "density": 0.001,
+     "color": [
+      0.82,
+      0.84,
+      0.86
+     ],
+     "anisotropy": 0.25
+    }
+   },
+   "p2": {
+    "version": 1,
+    "sky": "partly cloudy",
+    "haze": true,
+    "extent_m": 60.0
    }
   },
   "perimeter": {
@@ -1987,6 +2234,23 @@
      },
      "p1_preset": "timber"
     }
+   },
+   "atmos": {
+    "_p2": true,
+    "sky_plate": {
+     "name": "partly cloudy-hdri",
+     "hdri": "kloofendal_48d_partly_cloudy_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.7,
+     "horizon_gain": 1.1,
+     "zenith_gain": 0.95
+    }
+   },
+   "p2": {
+    "version": 1,
+    "sky": "partly cloudy",
+    "haze": false,
+    "extent_m": 460.0
    }
   },
   "room-below": {
@@ -2019,6 +2283,13 @@
      "family": "scan",
      "scan": "green_metal_rust",
      "tile_m": 1.4,
+     "contrast": 2.0,
+     "micro": {
+      "scale_m": 0.006,
+      "albedo": 0.05,
+      "height": 0.4,
+      "stretch": 5.0
+     },
      "chroma": 0.0,
      "bump": 0.3,
      "macro": 0.08,
@@ -2063,6 +2334,7 @@
      "family": "scan",
      "scan": "large_floor_tiles_02",
      "tile_m": 2.0,
+     "periodic": true,
      "chroma": 0.0,
      "bump": 0.3,
      "macro": 0.05,
@@ -2078,7 +2350,7 @@
    "p1": {
     "version": 1,
     "interior": true,
-    "grade": "clean",
+    "grade": "worn",
     "deferred": {
      "P4": [
       "frost"
@@ -2088,7 +2360,7 @@
     "kept": []
    },
    "grime": {
-    "strength": 0.6,
+    "strength": 1.0,
     "ao": 0.24,
     "dust": 0.1,
     "damp": 0.1,
@@ -2098,16 +2370,24 @@
    },
    "materials": {
     "dark-wood": {
-     "res": "2k",
-     "third": true,
-     "macro2": 0.05,
-     "obj_jitter_m": 20.0,
-     "family": "scan",
-     "scan": "wood_trunk_wall",
-     "tile_m": 1.4,
-     "chroma": 0.12,
-     "bump": 0.3,
+     "micro": {
+      "scale_m": 0.006,
+      "albedo": 0.08,
+      "height": 0.4,
+      "stretch": 12.0
+     },
+     "family": "grid",
+     "tile_m": 0.18,
+     "board_m": 2.2,
+     "board_axis": "z",
+     "row_axis": "xy",
+     "joint": 0.012,
+     "joint_tone": 0.75,
+     "tile_jitter": 0.06,
+     "grain": 0.08,
+     "fine": 0.04,
      "macro": 0.08,
+     "bump": 0.25,
      "grime": 0.6,
      "round_m": 0.005,
      "rough_scale": 0.85,
@@ -2151,62 +2431,119 @@
      "p1_preset": "timber"
     },
     "steel": {
-     "family": "metal",
-     "tile_m": 0.5,
-     "bump": 0.15,
-     "grime": 0.6,
-     "round_m": 0.006,
+     "res": "2k",
+     "third": true,
+     "macro2": 0.05,
+     "obj_jitter_m": 20.0,
+     "family": "scan",
+     "scan": "green_metal_rust",
+     "tile_m": 1.4,
+     "contrast": 2.0,
+     "micro": {
+      "scale_m": 0.006,
+      "albedo": 0.05,
+      "height": 0.4,
+      "stretch": 5.0
+     },
+     "chroma": 0.0,
+     "bump": 0.3,
+     "macro": 0.08,
+     "grime": 0.9,
      "edge_wear": {
-      "radius_m": 0.01,
+      "radius_m": 0.012,
       "amount": 0.5,
       "tint": [
-       1.25,
-       1.25,
-       1.25
+       1.2,
+       1.18,
+       1.15
       ],
-      "rough": -0.1
+      "rough": -0.05
      },
-     "p1_preset": "steel_clean"
+     "rust": {
+      "amount": 0.45,
+      "share": 0.18,
+      "scale_m": 0.45,
+      "tint": [
+       0.3,
+       0.22,
+       0.1
+      ]
+     },
+     "streaks": {
+      "amount": 0.2,
+      "scale_m": 0.25,
+      "top_frac": 0.6,
+      "tint": [
+       0.82,
+       0.74,
+       0.6
+      ]
+     },
+     "p1_preset": "painted_steel_me"
     },
     "wall-cream": {
      "res": "2k",
      "third": true,
-     "macro2": 0.03,
-     "obj_jitter_m": 20.0,
+     "macro2": 0.05,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "plastered_wall_04",
-     "tile_m": 2.2,
-     "chroma": 0.0,
-     "bump": 0.25,
-     "macro": 0.06,
-     "grime": 0.6,
-     "patches": {
-      "size_m": 1.0,
-      "share": 0.2,
-      "amount": 0.025,
-      "rough": 0.04
+     "tile_m": 1.2,
+     "contrast": 2.0,
+     "micro": {
+      "scale_m": 0.01,
+      "albedo": 0.06,
+      "height": 0.7
      },
-     "p1_preset": "plaster_clean"
+     "chroma": 0.0,
+     "bump": 0.55,
+     "macro": 0.1,
+     "grime": 1.1,
+     "patches": {
+      "size_m": 0.8,
+      "share": 0.25,
+      "amount": 0.04,
+      "rough": 0.05
+     },
+     "cracks": {
+      "amount": 0.35,
+      "scale_m": 0.9,
+      "width": 0.006,
+      "share": 0.25
+     },
+     "p1_preset": "plaster"
     },
     "wall-green": {
      "res": "2k",
      "third": true,
-     "macro2": 0.03,
-     "obj_jitter_m": 20.0,
+     "macro2": 0.05,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "plastered_wall_04",
-     "tile_m": 2.2,
-     "chroma": 0.0,
-     "bump": 0.25,
-     "macro": 0.06,
-     "grime": 0.6,
-     "patches": {
-      "size_m": 1.0,
-      "share": 0.2,
-      "amount": 0.025,
-      "rough": 0.04
+     "tile_m": 1.2,
+     "contrast": 2.0,
+     "micro": {
+      "scale_m": 0.01,
+      "albedo": 0.06,
+      "height": 0.7
      },
-     "p1_preset": "plaster_clean"
+     "chroma": 0.0,
+     "bump": 0.55,
+     "macro": 0.1,
+     "grime": 1.1,
+     "patches": {
+      "size_m": 0.8,
+      "share": 0.25,
+      "amount": 0.04,
+      "rough": 0.05
+     },
+     "cracks": {
+      "amount": 0.35,
+      "scale_m": 0.9,
+      "width": 0.006,
+      "share": 0.25
+     },
+     "p1_preset": "plaster"
     }
    }
   },
@@ -2237,10 +2574,11 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "concrete_floor_worn_001",
      "tile_m": 2.6,
+     "contrast": 1.4,
      "chroma": 0.1,
      "bump": 0.4,
      "macro": 0.1,
@@ -2258,12 +2596,18 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "plastered_wall_04",
-     "tile_m": 1.8,
+     "tile_m": 1.2,
+     "contrast": 2.0,
+     "micro": {
+      "scale_m": 0.01,
+      "albedo": 0.06,
+      "height": 0.7
+     },
      "chroma": 0.0,
-     "bump": 0.4,
+     "bump": 0.55,
      "macro": 0.1,
      "grime": 1.1,
      "patches": {
@@ -2284,12 +2628,18 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "plastered_wall_04",
-     "tile_m": 1.8,
+     "tile_m": 1.2,
+     "contrast": 2.0,
+     "micro": {
+      "scale_m": 0.01,
+      "albedo": 0.06,
+      "height": 0.7
+     },
      "chroma": 0.0,
-     "bump": 0.4,
+     "bump": 0.55,
      "macro": 0.1,
      "grime": 1.1,
      "patches": {
@@ -2339,10 +2689,16 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "concrete_wall_008",
-     "tile_m": 2.4,
+     "tile_m": 1.8,
+     "contrast": 1.6,
+     "micro": {
+      "scale_m": 0.008,
+      "albedo": 0.06,
+      "height": 0.6
+     },
      "chroma": 0.1,
      "bump": 0.5,
      "macro": 0.1,
@@ -2373,6 +2729,13 @@
      "family": "scan",
      "scan": "green_metal_rust",
      "tile_m": 1.4,
+     "contrast": 2.0,
+     "micro": {
+      "scale_m": 0.006,
+      "albedo": 0.05,
+      "height": 0.4,
+      "stretch": 5.0
+     },
      "chroma": 0.0,
      "bump": 0.3,
      "macro": 0.08,
@@ -2409,6 +2772,34 @@
      },
      "p1_preset": "painted_steel_me"
     }
+   },
+   "kits": [
+    {
+     "kit": "window_plate",
+     "name": "window_plate",
+     "offset_m": 0.6,
+     "pad_m": 0.35,
+     "above_m": 0.6,
+     "tree_gain": 0.6,
+     "ground_gain": 0.55,
+     "horizon_gain": 1.2,
+     "zenith_gain": 0.95,
+     "clear_centre": false,
+     "tiers": 6.0,
+     "blur": 0.07,
+     "far_n": 14.0,
+     "near_n": 7.0,
+     "far_range": 0.3,
+     "near_range": 0.45,
+     "far_k": 1.5,
+     "near_k": 1.25,
+     "far_gain": 0.8,
+     "_p2": true
+    }
+   ],
+   "p2": {
+    "version": 1,
+    "window_plate": true
    }
   }
  }

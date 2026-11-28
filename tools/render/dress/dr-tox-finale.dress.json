@@ -33,10 +33,16 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "concrete_wall_008",
-     "tile_m": 2.4,
+     "tile_m": 1.8,
+     "contrast": 1.6,
+     "micro": {
+      "scale_m": 0.008,
+      "albedo": 0.06,
+      "height": 0.6
+     },
      "chroma": 0.1,
      "bump": 0.5,
      "macro": 0.1,
@@ -68,12 +74,18 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "plastered_wall_04",
-     "tile_m": 1.8,
+     "tile_m": 1.2,
+     "contrast": 2.0,
+     "micro": {
+      "scale_m": 0.01,
+      "albedo": 0.06,
+      "height": 0.7
+     },
      "chroma": 0.0,
-     "bump": 0.4,
+     "bump": 0.55,
      "macro": 0.1,
      "grime": 1.1,
      "patches": {
@@ -196,10 +208,16 @@
      "res": "2k",
      "third": true,
      "macro2": 0.03,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "plastered_wall_04",
-     "tile_m": 2.4,
+     "tile_m": 1.5,
+     "contrast": 1.6,
+     "micro": {
+      "scale_m": 0.012,
+      "albedo": 0.05,
+      "height": 0.6
+     },
      "chroma": 0.0,
      "bump": 0.25,
      "macro": 0.07,
@@ -237,12 +255,18 @@
      "res": "2k",
      "third": true,
      "macro2": 0.03,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "plastered_wall_04",
-     "tile_m": 2.2,
+     "tile_m": 1.5,
+     "contrast": 1.6,
+     "micro": {
+      "scale_m": 0.012,
+      "albedo": 0.04,
+      "height": 0.5
+     },
      "chroma": 0.0,
-     "bump": 0.25,
+     "bump": 0.4,
      "macro": 0.06,
      "grime": 0.6,
      "patches": {
@@ -325,10 +349,16 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "concrete_wall_008",
-     "tile_m": 2.4,
+     "tile_m": 1.8,
+     "contrast": 1.6,
+     "micro": {
+      "scale_m": 0.008,
+      "albedo": 0.06,
+      "height": 0.6
+     },
      "chroma": 0.1,
      "bump": 0.5,
      "macro": 0.1,
@@ -374,10 +404,16 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "stone_floor",
      "tile_m": 3.6,
+     "contrast": 1.4,
+     "micro": {
+      "scale_m": 0.012,
+      "albedo": 0.06,
+      "height": 0.6
+     },
      "chroma": 0.1,
      "bump": 0.6,
      "macro": 0.12,
@@ -488,10 +524,16 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "concrete_wall_008",
-     "tile_m": 2.4,
+     "tile_m": 1.8,
+     "contrast": 1.6,
+     "micro": {
+      "scale_m": 0.008,
+      "albedo": 0.06,
+      "height": 0.6
+     },
      "chroma": 0.1,
      "bump": 0.5,
      "macro": 0.1,
@@ -527,6 +569,7 @@
      "family": "scan",
      "scan": "metal_plate",
      "tile_m": 1.2,
+     "periodic": true,
      "chroma": 0.0,
      "bump": 0.6,
      "macro": 0.1,
@@ -544,6 +587,12 @@
      "p1_preset": "metal_plate"
     },
     "steel": {
+     "micro": {
+      "scale_m": 0.005,
+      "albedo": 0.04,
+      "height": 0.3,
+      "stretch": 6.0
+     },
      "family": "metal",
      "tile_m": 0.5,
      "bump": 0.15,
@@ -612,10 +661,16 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "concrete_wall_008",
-     "tile_m": 2.4,
+     "tile_m": 1.8,
+     "contrast": 1.6,
+     "micro": {
+      "scale_m": 0.008,
+      "albedo": 0.06,
+      "height": 0.6
+     },
      "chroma": 0.1,
      "bump": 0.5,
      "macro": 0.1,
@@ -660,6 +715,13 @@
      "family": "scan",
      "scan": "green_metal_rust",
      "tile_m": 1.4,
+     "contrast": 2.0,
+     "micro": {
+      "scale_m": 0.006,
+      "albedo": 0.05,
+      "height": 0.4,
+      "stretch": 5.0
+     },
      "chroma": 0.0,
      "bump": 0.3,
      "macro": 0.08,
@@ -724,12 +786,44 @@
      "family": "scan",
      "scan": "hessian_380",
      "tile_m": 0.5,
+     "contrast": 1.8,
+     "micro": {
+      "scale_m": 0.008,
+      "albedo": 0.08,
+      "height": 0.6
+     },
      "chroma": 0.0,
      "bump": 0.35,
      "macro": 0.12,
      "grime": 0.9,
      "p1_preset": "fabric"
     }
+   },
+   "atmos": {
+    "_p2": true,
+    "sky_plate": {
+     "name": "overcast-hdri",
+     "hdri": "kloofendal_overcast_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.7,
+     "horizon_gain": 1.1,
+     "zenith_gain": 0.95
+    },
+    "haze": {
+     "density": 0.001,
+     "color": [
+      0.82,
+      0.84,
+      0.86
+     ],
+     "anisotropy": 0.25
+    }
+   },
+   "p2": {
+    "version": 1,
+    "sky": "overcast",
+    "haze": true,
+    "extent_m": 240.0
    }
   }
  }

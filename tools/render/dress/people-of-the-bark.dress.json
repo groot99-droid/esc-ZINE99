@@ -34,16 +34,24 @@
    },
    "materials": {
     "fence-grey": {
-     "res": "2k",
-     "third": true,
-     "macro2": 0.05,
-     "obj_jitter_m": 0.0,
-     "family": "scan",
-     "scan": "wood_trunk_wall",
-     "tile_m": 1.8,
-     "chroma": 0.15,
-     "bump": 0.5,
+     "micro": {
+      "scale_m": 0.006,
+      "albedo": 0.08,
+      "height": 0.5,
+      "stretch": 12.0
+     },
+     "family": "grid",
+     "tile_m": 0.14,
+     "board_m": 2.6,
+     "board_axis": "z",
+     "row_axis": "xy",
+     "joint": 0.035,
+     "joint_tone": 0.55,
+     "tile_jitter": 0.09,
+     "grain": 0.06,
+     "fine": 0.05,
      "macro": 0.1,
+     "bump": 0.45,
      "grime": 1.0,
      "edge_wear": {
       "radius_m": 0.012,
@@ -58,16 +66,24 @@
      "p1_preset": "boards_v"
     },
     "fence-wood": {
-     "res": "2k",
-     "third": true,
-     "macro2": 0.05,
-     "obj_jitter_m": 0.0,
-     "family": "scan",
-     "scan": "wood_trunk_wall",
-     "tile_m": 1.8,
-     "chroma": 0.15,
-     "bump": 0.5,
+     "micro": {
+      "scale_m": 0.006,
+      "albedo": 0.08,
+      "height": 0.5,
+      "stretch": 12.0
+     },
+     "family": "grid",
+     "tile_m": 0.14,
+     "board_m": 2.6,
+     "board_axis": "z",
+     "row_axis": "xy",
+     "joint": 0.035,
+     "joint_tone": 0.55,
+     "tile_jitter": 0.09,
+     "grain": 0.06,
+     "fine": 0.05,
      "macro": 0.1,
+     "bump": 0.45,
      "grime": 1.0,
      "edge_wear": {
       "radius_m": 0.012,
@@ -85,12 +101,18 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "plastered_wall_04",
-     "tile_m": 1.8,
+     "tile_m": 1.2,
+     "contrast": 2.0,
+     "micro": {
+      "scale_m": 0.01,
+      "albedo": 0.06,
+      "height": 0.7
+     },
      "chroma": 0.0,
-     "bump": 0.4,
+     "bump": 0.55,
      "macro": 0.1,
      "grime": 1.1,
      "patches": {
@@ -125,10 +147,16 @@
      "res": "2k",
      "third": true,
      "macro2": 0.03,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "plastered_wall_04",
-     "tile_m": 2.4,
+     "tile_m": 1.5,
+     "contrast": 1.6,
+     "micro": {
+      "scale_m": 0.012,
+      "albedo": 0.05,
+      "height": 0.6
+     },
      "chroma": 0.0,
      "bump": 0.25,
      "macro": 0.07,
@@ -141,6 +169,23 @@
      },
      "p1_preset": "ceiling"
     }
+   },
+   "atmos": {
+    "_p2": true,
+    "sky_plate": {
+     "name": "clear-hdri",
+     "hdri": "syferfontein_1d_clear_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.7,
+     "horizon_gain": 1.1,
+     "zenith_gain": 0.95
+    }
+   },
+   "p2": {
+    "version": 1,
+    "sky": "clear",
+    "haze": false,
+    "extent_m": 25.9
    }
   },
   "bark-face": {
@@ -199,6 +244,23 @@
      },
      "p1_preset": "timber"
     }
+   },
+   "atmos": {
+    "_p2": true,
+    "sky_plate": {
+     "name": "partly cloudy-hdri",
+     "hdri": "kloofendal_48d_partly_cloudy_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.7,
+     "horizon_gain": 1.1,
+     "zenith_gain": 0.95
+    }
+   },
+   "p2": {
+    "version": 1,
+    "sky": "partly cloudy",
+    "haze": false,
+    "extent_m": 0.1
    }
   },
   "first-ring-temple": {
@@ -229,16 +291,24 @@
    },
    "materials": {
     "ring-wood": {
-     "res": "2k",
-     "third": true,
-     "macro2": 0.05,
-     "obj_jitter_m": 0.0,
-     "family": "scan",
-     "scan": "wood_trunk_wall",
-     "tile_m": 1.8,
-     "chroma": 0.15,
-     "bump": 0.5,
+     "micro": {
+      "scale_m": 0.006,
+      "albedo": 0.08,
+      "height": 0.5,
+      "stretch": 12.0
+     },
+     "family": "grid",
+     "tile_m": 0.14,
+     "board_m": 2.6,
+     "board_axis": "z",
+     "row_axis": "xy",
+     "joint": 0.035,
+     "joint_tone": 0.55,
+     "tile_jitter": 0.09,
+     "grain": 0.06,
+     "fine": 0.05,
      "macro": 0.1,
+     "bump": 0.45,
      "grime": 1.0,
      "edge_wear": {
       "radius_m": 0.012,
@@ -250,7 +320,13 @@
       ],
       "rough": 0.1
      },
-     "p1_preset": "boards_v"
+     "p1_preset": "boards_v",
+     "gain": 1.6,
+     "tint": [
+      1.0423,
+      0.9934,
+      0.9409
+     ]
     }
    },
    "decals": [
@@ -329,6 +405,23 @@
      },
      "p1_preset": "timber"
     }
+   },
+   "atmos": {
+    "_p2": true,
+    "sky_plate": {
+     "name": "overcast-hdri",
+     "hdri": "kloofendal_overcast_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.7,
+     "horizon_gain": 1.1,
+     "zenith_gain": 0.95
+    }
+   },
+   "p2": {
+    "version": 1,
+    "sky": "overcast",
+    "haze": false,
+    "extent_m": 0.1
    }
   },
   "highridge-square": {
@@ -362,16 +455,38 @@
      "res": "2k",
      "third": true,
      "macro2": 0.05,
-     "obj_jitter_m": 20.0,
+     "obj_jitter_m": 0.0,
      "family": "scan",
      "scan": "slate_floor_02",
      "tile_m": 2.6,
+     "micro": {
+      "scale_m": 0.012,
+      "albedo": 0.06,
+      "height": 0.6
+     },
      "chroma": 0.1,
      "bump": 0.6,
      "macro": 0.1,
      "grime": 1.0,
      "p1_preset": "flagstone"
     }
+   },
+   "atmos": {
+    "_p2": true,
+    "sky_plate": {
+     "name": "dusk-hdri",
+     "hdri": "qwantani_dusk_2_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.7,
+     "horizon_gain": 1.1,
+     "zenith_gain": 0.95
+    }
+   },
+   "p2": {
+    "version": 1,
+    "sky": "dusk",
+    "haze": false,
+    "extent_m": 0.0
    }
   },
   "knotholm-walk": {
@@ -402,7 +517,24 @@
     "ao_distance_m": 0.6,
     "tone_gain": 1.0
    },
-   "materials": {}
+   "materials": {},
+   "atmos": {
+    "_p2": true,
+    "sky_plate": {
+     "name": "partly cloudy-hdri",
+     "hdri": "kloofendal_48d_partly_cloudy_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.7,
+     "horizon_gain": 1.1,
+     "zenith_gain": 0.95
+    }
+   },
+   "p2": {
+    "version": 1,
+    "sky": "partly cloudy",
+    "haze": false,
+    "extent_m": 0.1
+   }
   },
   "lowridge": {
    "p1": {
@@ -434,7 +566,14 @@
    },
    "materials": {
     "paper-wall": {
+     "micro": {
+      "scale_m": 0.008,
+      "albedo": 0.04,
+      "height": 0.4
+     },
      "family": "wallpaper",
+     "fine": 0.1,
+     "macro": 0.14,
      "tile_m": 0.18,
      "stripe": 0.03,
      "bump": 0.1,
@@ -452,6 +591,23 @@
      },
      "p1_preset": "wallpaper"
     }
+   },
+   "atmos": {
+    "_p2": true,
+    "sky_plate": {
+     "name": "overcast-hdri",
+     "hdri": "kloofendal_overcast_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.7,
+     "horizon_gain": 1.1,
+     "zenith_gain": 0.95
+    }
+   },
+   "p2": {
+    "version": 1,
+    "sky": "overcast",
+    "haze": false,
+    "extent_m": 0.1
    }
   },
   "shadow-edge": {
@@ -483,7 +639,24 @@
     "ao_distance_m": 0.6,
     "tone_gain": 1.0
    },
-   "materials": {}
+   "materials": {},
+   "atmos": {
+    "_p2": true,
+    "sky_plate": {
+     "name": "partly cloudy-hdri",
+     "hdri": "kloofendal_48d_partly_cloudy_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.7,
+     "horizon_gain": 1.1,
+     "zenith_gain": 0.95
+    }
+   },
+   "p2": {
+    "version": 1,
+    "sky": "partly cloudy",
+    "haze": false,
+    "extent_m": 0.2
+   }
   },
   "splinterwatch": {
    "p1": {
@@ -550,6 +723,23 @@
      },
      "p1_preset": "timber"
     }
+   },
+   "atmos": {
+    "_p2": true,
+    "sky_plate": {
+     "name": "overcast-hdri",
+     "hdri": "kloofendal_overcast_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.7,
+     "horizon_gain": 1.1,
+     "zenith_gain": 0.95
+    }
+   },
+   "p2": {
+    "version": 1,
+    "sky": "overcast",
+    "haze": false,
+    "extent_m": 0.1
    }
   },
   "the-branch": {
@@ -585,7 +775,24 @@
     "ao_distance_m": 0.6,
     "tone_gain": 1.0
    },
-   "materials": {}
+   "materials": {},
+   "atmos": {
+    "_p2": true,
+    "sky_plate": {
+     "name": "clear-hdri",
+     "hdri": "syferfontein_1d_clear_puresky_2k.hdr",
+     "rotation_deg": 30,
+     "mix": 0.7,
+     "horizon_gain": 1.1,
+     "zenith_gain": 0.95
+    }
+   },
+   "p2": {
+    "version": 1,
+    "sky": "clear",
+    "haze": false,
+    "extent_m": 0.3
+   }
   }
  }
 }
