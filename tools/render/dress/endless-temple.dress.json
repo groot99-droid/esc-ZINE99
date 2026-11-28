@@ -2123,6 +2123,21 @@
      "dust"
     ]
    },
+   "p6": {
+    "version": 3,
+    "windows": [
+     "great-window"
+    ],
+    "doors": [],
+    "door_gaps": [],
+    "kits": [
+     "skirting",
+     "fixtures",
+     "shelves",
+     "window-frames",
+     "sills"
+    ]
+   },
    "p5_materials": {
     "book-spines": {
      "family": "grid",
@@ -2157,21 +2172,6 @@
      "book-spines": "book-spines",
      "vellum": "vellum"
     }
-   },
-   "p6": {
-    "version": 3,
-    "windows": [
-     "great-window"
-    ],
-    "doors": [],
-    "door_gaps": [],
-    "kits": [
-     "skirting",
-     "fixtures",
-     "shelves",
-     "window-frames",
-     "sills"
-    ]
    }
   },
   "unlit-gallery": {

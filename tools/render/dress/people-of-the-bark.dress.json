@@ -272,6 +272,11 @@
      "scan": "bark_brown_02",
      "res": "2k",
      "tile_m": 0.18,
+     "far": {
+      "tile_m": 1.8,
+      "from_m": 4.0,
+      "to_m": 20.0
+     },
      "chroma": 0.1,
      "bump": 0.35,
      "bump_m": 0.002,
@@ -285,6 +290,11 @@
      "scan": "bark_brown_02",
      "res": "2k",
      "tile_m": 0.18,
+     "far": {
+      "tile_m": 1.8,
+      "from_m": 4.0,
+      "to_m": 20.0
+     },
      "chroma": 0.1,
      "bump": 0.35,
      "bump_m": 0.002,
@@ -298,6 +308,11 @@
      "scan": "bark_brown_02",
      "res": "2k",
      "tile_m": 0.18,
+     "far": {
+      "tile_m": 1.8,
+      "from_m": 4.0,
+      "to_m": 20.0
+     },
      "chroma": 0.1,
      "bump": 0.35,
      "bump_m": 0.002,
@@ -408,6 +423,11 @@
      "scan": "bark_brown_02",
      "res": "2k",
      "tile_m": 0.18,
+     "far": {
+      "tile_m": 1.8,
+      "from_m": 4.0,
+      "to_m": 20.0
+     },
      "chroma": 0.1,
      "bump": 0.35,
      "bump_m": 0.002,
@@ -515,6 +535,11 @@
      "scan": "bark_brown_02",
      "res": "2k",
      "tile_m": 0.18,
+     "far": {
+      "tile_m": 1.8,
+      "from_m": 4.0,
+      "to_m": 20.0
+     },
      "chroma": 0.1,
      "bump": 0.35,
      "bump_m": 0.002,
@@ -528,6 +553,11 @@
      "scan": "bark_brown_02",
      "res": "2k",
      "tile_m": 0.18,
+     "far": {
+      "tile_m": 1.8,
+      "from_m": 4.0,
+      "to_m": 20.0
+     },
      "chroma": 0.1,
      "bump": 0.35,
      "bump_m": 0.002,
@@ -616,6 +646,11 @@
      "scan": "bark_brown_02",
      "res": "2k",
      "tile_m": 0.18,
+     "far": {
+      "tile_m": 1.8,
+      "from_m": 4.0,
+      "to_m": 20.0
+     },
      "chroma": 0.1,
      "bump": 0.35,
      "bump_m": 0.002,
@@ -629,6 +664,11 @@
      "scan": "bark_brown_02",
      "res": "2k",
      "tile_m": 0.18,
+     "far": {
+      "tile_m": 1.8,
+      "from_m": 4.0,
+      "to_m": 20.0
+     },
      "chroma": 0.1,
      "bump": 0.35,
      "bump_m": 0.002,
@@ -699,6 +739,11 @@
      "scan": "bark_brown_02",
      "res": "2k",
      "tile_m": 0.18,
+     "far": {
+      "tile_m": 1.8,
+      "from_m": 4.0,
+      "to_m": 20.0
+     },
      "chroma": 0.1,
      "bump": 0.35,
      "bump_m": 0.002,
@@ -712,6 +757,11 @@
      "scan": "bark_brown_02",
      "res": "2k",
      "tile_m": 0.18,
+     "far": {
+      "tile_m": 1.8,
+      "from_m": 4.0,
+      "to_m": 20.0
+     },
      "chroma": 0.1,
      "bump": 0.35,
      "bump_m": 0.002,
@@ -811,6 +861,11 @@
      "scan": "bark_brown_02",
      "res": "2k",
      "tile_m": 0.18,
+     "far": {
+      "tile_m": 1.8,
+      "from_m": 4.0,
+      "to_m": 20.0
+     },
      "chroma": 0.1,
      "bump": 0.35,
      "bump_m": 0.002,
@@ -824,6 +879,11 @@
      "scan": "bark_brown_02",
      "res": "2k",
      "tile_m": 0.18,
+     "far": {
+      "tile_m": 1.8,
+      "from_m": 4.0,
+      "to_m": 20.0
+     },
      "chroma": 0.1,
      "bump": 0.35,
      "bump_m": 0.002,
@@ -895,6 +955,11 @@
      "scan": "bark_brown_02",
      "res": "2k",
      "tile_m": 0.18,
+     "far": {
+      "tile_m": 1.8,
+      "from_m": 4.0,
+      "to_m": 20.0
+     },
      "chroma": 0.1,
      "bump": 0.35,
      "bump_m": 0.002,
@@ -908,6 +973,11 @@
      "scan": "bark_brown_02",
      "res": "2k",
      "tile_m": 0.18,
+     "far": {
+      "tile_m": 1.8,
+      "from_m": 4.0,
+      "to_m": 20.0
+     },
      "chroma": 0.1,
      "bump": 0.35,
      "bump_m": 0.002,
@@ -1015,6 +1085,11 @@
      "scan": "bark_brown_02",
      "res": "2k",
      "tile_m": 0.18,
+     "far": {
+      "tile_m": 1.8,
+      "from_m": 4.0,
+      "to_m": 20.0
+     },
      "chroma": 0.1,
      "bump": 0.35,
      "bump_m": 0.002,
@@ -1028,6 +1103,11 @@
      "scan": "bark_brown_02",
      "res": "2k",
      "tile_m": 0.18,
+     "far": {
+      "tile_m": 1.8,
+      "from_m": 4.0,
+      "to_m": 20.0
+     },
      "chroma": 0.1,
      "bump": 0.35,
      "bump_m": 0.002,
@@ -1103,6 +1183,11 @@
      "scan": "bark_brown_02",
      "res": "2k",
      "tile_m": 0.18,
+     "far": {
+      "tile_m": 1.8,
+      "from_m": 4.0,
+      "to_m": 20.0
+     },
      "chroma": 0.1,
      "bump": 0.35,
      "bump_m": 0.002,
@@ -1116,6 +1201,11 @@
      "scan": "bark_brown_02",
      "res": "2k",
      "tile_m": 0.18,
+     "far": {
+      "tile_m": 1.8,
+      "from_m": 4.0,
+      "to_m": 20.0
+     },
      "chroma": 0.1,
      "bump": 0.35,
      "bump_m": 0.002,

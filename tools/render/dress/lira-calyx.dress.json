@@ -3646,35 +3646,6 @@
      "cavern": "rock_light"
     }
    },
-   "p5_materials": {
-    "cavern": {
-     "family": "scan",
-     "third": true,
-     "macro2": 0.06,
-     "obj_jitter_m": 0.0,
-     "scan": "worn_rock_natural_01",
-     "tile_m": 3.0,
-     "res": "2k",
-     "chroma": 0.1,
-     "bump": 0.7,
-     "macro": 0.14,
-     "grime": 0.7,
-     "p4_preset": "rock_light",
-     "displace_m": 0.08,
-     "displace_mid": 0.0,
-     "subdiv": 5,
-     "edge_fade_m": 0.5,
-     "edge_floor": 0.2,
-     "edge_mid": 0.0,
-     "p5_preset": "relief"
-    }
-   },
-   "p5": {
-    "version": 1,
-    "materials": {
-     "cavern": "relief"
-    }
-   },
    "kits": [
     {
      "kit": "baseboard",
@@ -3759,6 +3730,35 @@
      "conduit",
      "fixtures"
     ]
+   },
+   "p5_materials": {
+    "cavern": {
+     "family": "scan",
+     "third": true,
+     "macro2": 0.06,
+     "obj_jitter_m": 0.0,
+     "scan": "worn_rock_natural_01",
+     "tile_m": 3.0,
+     "res": "2k",
+     "chroma": 0.1,
+     "bump": 0.7,
+     "macro": 0.14,
+     "grime": 0.7,
+     "p4_preset": "rock_light",
+     "displace_m": 0.08,
+     "displace_mid": 0.0,
+     "subdiv": 5,
+     "edge_fade_m": 0.5,
+     "edge_floor": 0.2,
+     "edge_mid": 0.0,
+     "p5_preset": "relief"
+    }
+   },
+   "p5": {
+    "version": 1,
+    "materials": {
+     "cavern": "relief"
+    }
    }
   }
  }

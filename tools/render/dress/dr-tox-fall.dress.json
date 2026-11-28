@@ -816,6 +816,21 @@
      "rock": "rock_light"
     }
    },
+   "p6": {
+    "version": 3,
+    "windows": [
+     "cell-fronts"
+    ],
+    "doors": [],
+    "door_gaps": [],
+    "kits": [
+     "skirting",
+     "conduit",
+     "fixtures",
+     "window-frames",
+     "sills"
+    ]
+   },
    "p5_materials": {
     "rock": {
      "family": "scan",
@@ -844,21 +859,6 @@
     "materials": {
      "rock": "relief"
     }
-   },
-   "p6": {
-    "version": 3,
-    "windows": [
-     "cell-fronts"
-    ],
-    "doors": [],
-    "door_gaps": [],
-    "kits": [
-     "skirting",
-     "conduit",
-     "fixtures",
-     "window-frames",
-     "sills"
-    ]
    }
   },
   "spire-gala": {

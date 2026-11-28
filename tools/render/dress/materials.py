@@ -266,6 +266,16 @@ def fam_scan(b, p, ctx, K, mat_name):
     mean = lk["mean_albedo_linear"]
     ratio = b.mix(b.gray(b.math("DIVIDE", b.lum(col), max(1e-4, 0.2126 * mean[0] + 0.7152 * mean[1] + 0.0722 * mean[2]))),
                   b.mix(col, tuple(mean), 1.0, "DIVIDE"), p.get("chroma", 0.35))
+    if p.get("far"):  # P5c: a coarser second layer of the same scan for far surfaces, blended in by the camera's view distance
+        fr = p["far"]
+        s2 = Sampler(b, fr["tile_m"] * K, skey + "/far", stochastic=True, obj_jitter=p.get("obj_jitter_m", 0.0) * K)
+        col2 = s2.tex(_load(os.path.join(root, diff)))
+        ratio2 = b.mix(b.gray(b.math("DIVIDE", b.lum(col2), max(1e-4, 0.2126 * mean[0] + 0.7152 * mean[1] + 0.0722 * mean[2]))),
+                       b.mix(col2, tuple(mean), 1.0, "DIVIDE"), p.get("chroma", 0.35))
+        cam = b.n("ShaderNodeCameraData")
+        fdist = b.mapr(cam.outputs["View Distance"], fr.get("from_m", 6.0) * K, fr.get("to_m", 25.0) * K)
+        ratio = b.mix(ratio, ratio2, fdist)
+        col = b.mix(col, col2, fdist)
     if p.get("contrast", 1.0) != 1.0:  # P1: the scan's detail around the build tone at a share (a blotchy scan reads as mould at 1.0)
         ratio = b.mix((1.0, 1.0, 1.0), ratio, p["contrast"])
     rmult = None
